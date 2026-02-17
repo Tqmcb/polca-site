@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodyka i Jakość — poLCA</title>
+    <meta name="description" content="Sześciowarstwowy system zapewnienia jakości danych LCA">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="polca-sidebar" id="polcaSidebar" role="navigation" aria-label="Nawigacja portalu">
+    <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-logo">poLCA</a>
+        <div class="sidebar-subtitle">Polska Baza Danych LCA</div>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Portal</div>
+        <a href="index.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+            Dashboard
+        </a>
+        <div class="sidebar-nav-label">Baza danych</div>
+        <a href="metodyka.html" class="active">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></span>
+            Metodyka i Jakość
+        </a>
+        <a href="analiza.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            Analiza Sektorowa
+        </a>
+        <a href="kalkulator.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
+            Kalkulator Emisji
+        </a>
+        <a href="datasety.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+            Baza Datasetów
+        </a>
+        <div class="sidebar-nav-label">Informacje</div>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+            EPD Polska
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="sidebar-status">
+            <span class="status-dot"></span>
+            System aktywny — v2.0
+        </div>
+    </div>
+</aside>
+
+<header class="polca-topbar" role="banner">
+    <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-search">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj">
+        </div>
+    </div>
+    <div class="topbar-right">
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-outline">Kontakt</a>
+        <a href="datasety.html" class="topbar-btn topbar-btn-primary">Panel Eksperta</a>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-header fade-in">
+        <div class="section-num">02 — Architektura danych</div>
+        <h1 class="page-title">Metodyka i Jakość</h1>
+        <p class="page-subtitle">
+            Sześciowarstwowy system zapewnienia jakości zgodny z wymaganiami
+            ISO 14044:2006, ISO 14025:2006 oraz EN 15804:2012+A2:2019.
+        </p>
+    </div>
+
+    <div class="layers-container section-gap fade-in">
+        <div class="layer-card">
+            <span class="layer-num">I</span>
+            <div>
+                <div class="layer-title">Źródła pierwotne — zgodnie z ISO 14044:2006 §4.2.3.6</div>
+                <p class="layer-desc">Dane pochodzą z oficjalnych publikacji instytucji państwowych oraz uznanych organizacji branżowych o udokumentowanej metodologii zbierania danych.</p>
+                <div class="tag-row">
+                    <span class="tag">KOBiZE</span>
+                    <span class="tag">GUS</span>
+                    <span class="tag">PSE</span>
+                    <span class="tag">Eurostat</span>
+                    <span class="tag">IPCC</span>
+                    <span class="tag">Eurobitume</span>
+                    <span class="tag">worldsteel</span>
+                    <span class="tag">CEMBUREAU</span>
+                </div>
+            </div>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">II</span>
+            <div>
+                <div class="layer-title">Ramy normatywne — normy zharmonizowane i PCR</div>
+                <p class="layer-desc">Modelowanie inwentaryzacji cyklu życia (LCI) oparto na normatywnych procesach produkcyjnych określonych w zharmonizowanych normach europejskich oraz regułach kategorii produktowych (PCR).</p>
+                <div class="tag-row">
+                    <span class="tag">EN 206</span>
+                    <span class="tag">EN 13108</span>
+                    <span class="tag">EN 197-1</span>
+                    <span class="tag">EN 12620</span>
+                    <span class="tag">EN 10080</span>
+                    <span class="tag">EN 572</span>
+                    <span class="tag">EN 15804+A2</span>
+                    <span class="tag">ISO 21930</span>
+                </div>
+            </div>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">III</span>
+            <div>
+                <div class="layer-title">Modelowanie inżynieryjne EBLCI — zgodnie z ISO 14044 §4.3.2</div>
+                <p class="layer-desc">Metodologia Engineering-Based Life Cycle Inventory (EBLCI) wykorzystuje modele termodynamiczne oraz bilanse masowo-energetyczne w celu zapewnienia fizycznej spójności danych.</p>
+                <div class="tag-row">
+                    <span class="tag">Bilanse energetyczne</span>
+                    <span class="tag">Modele termodynamiczne</span>
+                    <span class="tag">Parametryzacja procesów</span>
+                    <span class="tag">ISO 14044 §4.3.2</span>
+                </div>
+            </div>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">IV</span>
+            <div>
+                <div class="layer-title">Krzyżowa walidacja algorytmiczna i konsensus modeli AI</div>
+                <p class="layer-desc">Automatyczne narzędzia analityczne pełnią funkcję warstwy kontroli jakości — wykrywanie niespójności między źródłami, identyfikacja wartości odstających, weryfikacja kompletności danych. Każdy zbiór danych jest niezależnie analizowany przez kilka dużych modeli językowych (LLM).</p>
+                <div class="tag-row">
+                    <span class="tag">Detekcja niespójności</span>
+                    <span class="tag">Analiza outlierów</span>
+                    <span class="tag">Kontrola kompletności</span>
+                    <span class="tag">Konsensus modeli AI</span>
+                </div>
+            </div>
+        </div>
+        <div class="layer-card">
+            <span class="layer-num">V</span>
+            <div>
+                <div class="layer-title">Walidacja instytucjonalna — ISO 14025 §8.1.3</div>
+                <p class="layer-desc">Polskie instytuty badawcze oraz stowarzyszenia branżowe pełnią rolę warstwy uwierzytelniającej, zgodnie z wymaganiami niezależnej weryfikacji przez stronę trzecią.</p>
+                <div class="tag-row">
+                    <span class="tag">IBDiM</span>
+                    <span class="tag">ICiMB</span>
+                    <span class="tag">IGSMiE PAN</span>
+                    <span class="tag">SPC</span>
+                    <span class="tag">IOŚ-PIB</span>
+                </div>
+            </div>
+        </div>
+        <div class="layer-card amber-highlight">
+            <span class="layer-num highlight">VI</span>
+            <div>
+                <div class="layer-title" style="color: #B45309;">Walidacja regulacyjna — Environmental Compliance Cross-Check</div>
+                <p class="layer-desc">Warstwa szósta wykorzystuje dane o rzeczywistych emisjach zakładów przemysłowych, raportowanych obligatoryjnie w ramach reżimów regulacyjnych UE: Rozporządzenie E-PRTR 166/2006, Dyrektywa IED 2010/75/UE, Dyrektywa EU ETS 2003/87/WE.</p>
+                <div class="grid-2 mt-2">
+                    <div class="amber-card">
+                        <div class="amber-card-title">Źródła otwarte</div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;"><strong>E-PRTR / IEP</strong> — emisje zakładowe dla ~60 000 instalacji w UE. <strong>EU ETS (EUTL)</strong> — zweryfikowane emisje CO₂ per instalacja.</p>
+                    </div>
+                    <div class="amber-card">
+                        <div class="amber-card-title">Źródła krajowe</div>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;"><strong>KOBiZE — Krajowa Baza</strong> — roczne raporty emisji. <strong>Pozwolenia zintegrowane</strong> — dopuszczalne wielkości emisji, parametry BAT.</p>
+                    </div>
+                </div>
+                <div class="tag-row mt-1">
+                    <span class="tag amber">E-PRTR v15.0</span>
+                    <span class="tag amber">EU ETS / EUTL</span>
+                    <span class="tag amber">KOBiZE</span>
+                    <span class="tag amber">WIOŚ / IPPC</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-lg section-gap fade-in">
+        <div class="card-title">Profil walidacji — przykłady sektorowe</div>
+        <p class="card-text" style="margin-bottom: 1rem;">Każdy sektor wymaga innej konfiguracji warstw walidacji dostosowanej do dostępności danych.</p>
+        <div style="overflow-x: auto;">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Warstwa walidacji</th>
+                        <th>Cement</th>
+                        <th>Stal EAF</th>
+                        <th>Kruszywa</th>
+                        <th>Drewno CLT</th>
+                        <th>Szkło płaskie</th>
+                        <th>Prefabrykaty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">I. Dane przemysłowe</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">II. Statystyka publiczna</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">III. Literatura naukowa</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">IV. Algorytmiczna + AI</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">V. Ekspercka</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                    </tr>
+                    <tr style="background: rgba(180, 83, 9, 0.04);">
+                        <td style="font-weight: 600; color: #B45309;">VI. Regulacyjna</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.7rem; color: var(--text-tertiary); margin-top: 0.6rem; font-style: italic;">
+            &#9679;&#9679;&#9679; Warstwa dominująca &nbsp;&nbsp;
+            &#9679;&#9679;&#9675; Warstwa wspierająca &nbsp;&nbsp;
+            &#9679;&#9675;&#9675; Warstwa ograniczona
+        </p>
+    </div>
+
+    <div class="grid-2 section-gap fade-in">
+        <div class="card">
+            <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Cement — walidacja głęboka</div>
+            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Wszystkie sześć warstw pracuje na pełnej mocy.</p>
+        </div>
+        <div class="card">
+            <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Kruszywa — walidacja fizyczna</div>
+            <p class="card-text">Kopalnie kruszyw operują poniżej progów raportowania E-PRTR. Ale bilans masowy i energetyczny są łatwo weryfikowalne. Dominują warstwy I, II i IV.</p>
+        </div>
+        <div class="card">
+            <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Stal EAF — walidacja dualna</div>
+            <p class="card-text">Polski sektor stalowy operuje jednocześnie trasą BF-BOF i EAF. Obie mają pełne pokrycie E-PRTR/EU ETS, ale wymagają odrębnych zbiorów danych.</p>
+        </div>
+        <div class="card">
+            <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Prefabrykaty — walidacja kompozytowa</div>
+            <p class="card-text">Producent prefabrykatów to często mały zakład poniżej progów E-PRTR. Walidacja polega na kontroli spójności komponentowej. Warstwa IV dominuje.</p>
+        </div>
+    </div>
+
+    <div class="card card-lg fade-in" style="background: linear-gradient(135deg, rgba(180,83,9,0.03) 0%, rgba(45,80,22,0.03) 100%); border-color: rgba(180,83,9,0.12);">
+        <div class="card-title" style="color: #B45309;">Dlaczego walidacja regulacyjna jest możliwa dopiero teraz</div>
+        <p class="card-text" style="margin-bottom: 1.25rem;">Konwergencja czterech czynników umożliwiła wdrożenie tego podejścia:</p>
+        <div class="grid-2" style="gap: 1rem;">
+            <div class="card" style="padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">01</div>
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dojrzałość danych regulacyjnych</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">E-PRTR v15.0 — kompletna baza emisji zakładowych z 15-letnim pokryciem danych.</p>
+            </div>
+            <div class="card" style="padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">02</div>
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Wiarygodność systemu EU ETS</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Zweryfikowane emisje z EU Transaction Log są spójne i zaudytowane.</p>
+            </div>
+            <div class="card" style="padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">03</div>
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dostępność obliczeniowa</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Krzyżowa walidacja tysięcy zbiorów danych z rekordami E-PRTR — dziś powszechnie dostępna.</p>
+            </div>
+            <div class="card" style="padding: 1rem;">
+                <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">04</div>
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Walidacja konsensusu modeli AI</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Wielkie modele językowe umożliwiają niezależną weryfikację spójności danych.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="quote-block mt-3 fade-in">
+        <p>„Walidacja adekwatna oznacza, że system nie stosuje tych samych narzędzi wszędzie jednakowo — lecz dobiera najskuteczniejsze narzędzia walidacji dla specyfiki każdego sektora."</p>
+        <div class="quote-source">— Zasada metodologiczna poLCA</div>
+    </div>
+
+    <div class="card card-lg mt-3 fade-in">
+        <div class="section-num">07 — Walidacja techniczno-ekonomiczno-geograficzna</div>
+        <div class="card-title">Precyzja proporcjonalna do wpływu środowiskowego</div>
+        <div style="overflow-x: auto; margin-top: 1rem;">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Udział w wyniku</th>
+                        <th>Wymagana precyzja</th>
+                        <th>Dopuszczalne podejście</th>
+                        <th>Zakres walidacji</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span style="color: var(--green-primary); font-weight: 600;">&gt;20% (hotspot krytyczny)</span></td>
+                        <td><strong>Maksymalna</strong></td>
+                        <td>Dane specyficzne krajowe, precyzyjne technologicznie</td>
+                        <td>Techniczny, ekonomiczny, geograficzny</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: var(--green-accent); font-weight: 500;">5–20% (hotspot istotny)</span></td>
+                        <td><strong>Wysoka</strong></td>
+                        <td>Dane krajowe lub regionalne</td>
+                        <td>Techniczny, geograficzny</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: var(--text-secondary);">1–5% (proces istotny)</span></td>
+                        <td>Średnia</td>
+                        <td>Dane regionalne lub europejskie dane branżowe</td>
+                        <td>Geograficzny</td>
+                    </tr>
+                    <tr>
+                        <td><span style="color: var(--text-tertiary);">&lt;1% (proces marginalny)</span></td>
+                        <td>Bazowa</td>
+                        <td>Dane generyczne europejskie — wystarczające</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    &copy; 2025 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+</footer>
+<script src="js/sidebar.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
