@@ -7,7 +7,7 @@
     <meta name="description" content="Mapa zniekształceń polskiego sektora budowlanego w danych LCA">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -49,7 +49,7 @@
     <div class="sidebar-footer">
         <div class="sidebar-status">
             <span class="status-dot"></span>
-            System aktywny — v3.0
+            System aktywny — v4.0
         </div>
     </div>
 </aside>
@@ -81,11 +81,11 @@
         </p>
         <div style="display: flex; gap: 1.5rem; margin-top: 1.25rem;">
             <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-tertiary);">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: #16A34A;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--func-green);"></span>
                 Polska lepsza od EU
             </div>
             <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-tertiary);">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: #DC2626;"></span>
+                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--func-red);"></span>
                 Polska za średnią EU
             </div>
         </div>
@@ -102,7 +102,7 @@
 
     <div class="section-gap fade-in">
         <div class="section-num">04a — Przykład: sektor cementowy</div>
-        <h2 style="font-family: 'EB Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
             Wyższa emisyjność energii, niższa emisyjność procesu
         </h2>
         <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
@@ -111,14 +111,14 @@
         <div class="grid-2 section-gap">
             <div class="card card-accent-red">
                 <div class="card-label" style="color: #B85C3A;">Gdzie Polska odstaje od średniej EU</div>
-                <h3 style="font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
                 <p class="card-text">
                     Polski wskaźnik emisji dla energii elektrycznej wynosi <strong>597 kg CO₂/MWh</strong> (KOBiZE 2024) wobec średniej europejskiej ~295 kg CO₂/MWh. To ponad dwukrotna różnica. Zastosowanie uśrednionych danych prowadzi do <strong>niedoszacowania</strong> wpływu środowiskowego — każdy MWh zużyty w polskiej cementowni generuje dwukrotnie więcej CO₂ niż wynika z danych generycznych.
                 </p>
             </div>
             <div class="card card-accent-green">
-                <div class="card-label" style="color: var(--green-primary);">Gdzie Polska wyprzedza średnią EU</div>
-                <h3 style="font-family: 'EB Garamond', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Technologia produkcji klinkieru</h3>
+                <div class="card-label" style="color: var(--func-green);">Gdzie Polska wyprzedza średnią EU</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Technologia produkcji klinkieru</h3>
                 <p class="card-text">
                     Polskie cementownie osiągnęły udział paliw alternatywnych na poziomie <strong>70–80%</strong> bilansu cieplnego (średnia EU: 56%). Wszystkie zakłady operują na nowoczesnym procesie suchym z prekalcynatorem. Zastosowanie uśrednionych danych prowadzi do <strong>zawyżenia</strong> emisji procesowej — kara za inwestycje w nowoczesne technologie.
                 </p>
@@ -145,12 +145,12 @@
                     </tr>
                     <tr>
                         <td><strong>CEM II</strong> (wieloskładnikowy)</td>
-                        <td class="mono" style="color: var(--green-accent); font-weight: 500;">571</td>
+                        <td class="mono" style="color: var(--func-green); font-weight: 500;">571</td>
                         <td style="color: var(--text-secondary);">Częściowe zastąpienie klinkieru dodatkami</td>
                     </tr>
                     <tr>
                         <td><strong>CEM III</strong> (hutniczy)</td>
-                        <td class="mono" style="color: var(--green-accent); font-weight: 500;">405</td>
+                        <td class="mono" style="color: var(--func-green); font-weight: 500;">405</td>
                         <td style="color: var(--text-secondary);">Wysoki udział żużla wielkopiecowego</td>
                     </tr>
                 </tbody>
@@ -180,7 +180,7 @@
         </p>
     </div>
 
-    <h2 style="font-family: 'EB Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
+    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
         Kto traci, kto zyskuje
     </h2>
     <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;" class="fade-in">
@@ -242,7 +242,7 @@
     </div>
 
     <div class="steel-highlight section-gap fade-in">
-        <div style="font-family: 'EB Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
             Studium przypadku: polski sektor stalowy — 7-krotna różnica w jednym kraju
         </div>
         <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0 0 0.8rem 0;">
@@ -250,11 +250,11 @@
         </p>
         <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
             <div class="steel-stat">
-                <div class="steel-stat-value" style="color: #7C3AED;">~0,3</div>
+                <div class="steel-stat-value" style="color: var(--func-purple);">~0,3</div>
                 <div class="steel-stat-label">t CO₂/t stali EAF</div>
             </div>
             <div class="steel-stat">
-                <div class="steel-stat-value" style="color: #DC2626;">~2,2</div>
+                <div class="steel-stat-value" style="color: var(--func-red);">~2,2</div>
                 <div class="steel-stat-label">t CO₂/t stali BF-BOF</div>
             </div>
             <div class="steel-stat">
@@ -262,7 +262,7 @@
                 <div class="steel-stat-label">t CO₂/t „średnia EU"</div>
             </div>
             <div class="steel-stat">
-                <div class="steel-stat-value" style="color: #B45309;">7×</div>
+                <div class="steel-stat-value" style="color: var(--accent);">7×</div>
                 <div class="steel-stat-label">różnica EAF vs BF-BOF</div>
             </div>
         </div>

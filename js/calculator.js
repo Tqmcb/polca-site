@@ -30,7 +30,7 @@
             var diff = ((emissionMain - emissionEU) / emissionEU) * 100;
             if (diff > 0) {
                 calcDiff.textContent = 'Różnica: +' + Math.round(diff) + '% przy zastosowaniu danych polskich';
-                calcDiff.style.color = '#00805A';
+                calcDiff.style.color = '#B85C38';
             } else if (diff < 0) {
                 calcDiff.textContent = 'Różnica: ' + Math.round(diff) + '% względem średniej europejskiej';
                 calcDiff.style.color = '#555555';
