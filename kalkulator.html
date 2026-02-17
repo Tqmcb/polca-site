@@ -76,7 +76,9 @@
         <h1 class="page-title">Kalkulator Emisji</h1>
         <p class="page-subtitle">
             Orientacyjne oszacowanie emisji CO₂ z procesu energetycznego
-            w oparciu o wskaźniki poLCA. Wyniki mają charakter poglądowy.
+            w oparciu o wskaźniki poLCA. Narzędzie ilustruje kluczową różnicę
+            między danymi polskimi a uśrednionymi danymi europejskimi — i pokazuje,
+            dlaczego dobór źródła danych ma fundamentalne znaczenie dla wyniku LCA.
         </p>
     </div>
 
@@ -180,12 +182,69 @@
         </p>
     </div>
 
-    <div class="card card-accent-orange fade-in">
+    <!-- Sekcja 03 — Wskaźniki emisji -->
+    <div class="card card-lg section-gap fade-in">
+        <div class="section-num">03 — Wskaźniki emisji w kontekście LCA</div>
+        <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
+        <div class="prose">
+            <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (597 kg CO₂/MWh) a średnią EU (295 kg CO₂/MWh) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje dwukrotnie większy wpływ niż sugerują dane generyczne.</p>
+            <p>Wskaźniki prezentowane w poLCA pochodzą z oficjalnych publikacji <strong>KOBiZE</strong> (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) i są aktualizowane corocznie. Obejmują nie tylko CO₂, ale pełen zakres emisji zanieczyszczeń do powietrza — SO₂, NOₓ, pył — wymaganych przez EN 15804+A2 dla wskaźników wpływu środowiskowego.</p>
+        </div>
+    </div>
+
+    <div class="card card-lg fade-in">
+        <div class="card-title">Porównanie źródeł wskaźników emisji</div>
+        <div style="overflow-x: auto;">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>poLCA (KOBiZE 2024)</th>
+                        <th>ecoinvent 3.10</th>
+                        <th>Różnica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">CO₂ miks elektr.</td>
+                        <td class="mono highlight">597 kg/MWh</td>
+                        <td class="mono">~295 kg/MWh (EU avg)</td>
+                        <td class="mono" style="color: #DC2626; font-weight: 600;">+102%</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Ciepło systemowe</td>
+                        <td class="mono">~380 kg CO₂/MWh</td>
+                        <td class="mono">~220 kg CO₂/MWh (EU)</td>
+                        <td class="mono" style="color: #DC2626; font-weight: 600;">+73%</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Transport drogowy</td>
+                        <td class="mono">Flota PL (~12 lat)</td>
+                        <td class="mono">Flota EU (~8 lat)</td>
+                        <td class="mono" style="color: #DC2626; font-weight: 600;">+15–25%</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Paliwa alternatywne w cemencie</td>
+                        <td class="mono" style="color: var(--green-accent);">70–80%</td>
+                        <td class="mono">56% (EU avg)</td>
+                        <td class="mono" style="color: var(--green-accent); font-weight: 600;">−12–18%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
+            Wartości orientacyjne. Rzeczywista różnica zależy od konkretnego procesu i roku odniesienia.
+        </p>
+    </div>
+
+    <div class="card card-accent-orange fade-in" style="margin-top: 1.5rem;">
         <div class="card-title">Znaczenie praktyczne</div>
         <p class="card-text">
             Producent korzystający z danych poLCA widzi precyzyjnie, że jego przewaga leży
             w nowoczesności procesu, a obciążenie wynika z miksu energetycznego — co wskazuje
-            konkretną ścieżkę dekarbonizacji. Bazy globalne nie dostarczają tej informacji.
+            konkretną ścieżkę dekarbonizacji: zmiana źródła energii, nie zmiana technologii procesowej.
+            Bazy globalne nie dostarczają tej informacji — uśrednienie zamazuje strukturę wyniku
+            i prowadzi do błędnych decyzji inwestycyjnych.
         </p>
     </div>
 </div>

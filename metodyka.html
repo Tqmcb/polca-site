@@ -76,7 +76,12 @@
         <h1 class="page-title">Metodyka i Jakość</h1>
         <p class="page-subtitle">
             Sześciowarstwowy system zapewnienia jakości zgodny z wymaganiami
-            ISO 14044:2006, ISO 14025:2006 oraz EN 15804:2012+A2:2019.
+            ISO 14044:2006 (Załącznik B — wymagania dotyczące jakości danych),
+            ISO 14025:2006 (deklaracje środowiskowe typu III) oraz
+            EN 15804:2012+A2:2019 (zasady kategorii wyrobów budowlanych).
+            Warstwa VI stanowi unikalne rozwiązanie — krzyżową walidację z danymi o rzeczywistych
+            emisjach zakładów, raportowanymi obligatoryjnie w reżimach regulacyjnych UE
+            (Rozporządzenie E-PRTR 166/2006, Dyrektywa IED 2010/75/UE).
         </p>
     </div>
 
@@ -119,25 +124,34 @@
             <span class="layer-num">III</span>
             <div>
                 <div class="layer-title">Modelowanie inżynieryjne EBLCI — zgodnie z ISO 14044 §4.3.2</div>
-                <p class="layer-desc">Metodologia Engineering-Based Life Cycle Inventory (EBLCI) wykorzystuje modele termodynamiczne oraz bilanse masowo-energetyczne w celu zapewnienia fizycznej spójności danych.</p>
-                <div class="tag-row">
+                <p class="layer-desc">Metodologia Engineering-Based Life Cycle Inventory (EBLCI) wykorzystuje modele termodynamiczne oraz bilanse masowo-energetyczne w celu zapewnienia fizycznej spójności danych — zgodnie z wymogami ISO 14044 dotyczącymi kontroli kompletności i spójności bilansu masowego. Podejście to umożliwia natywną parametryzację procesów i generowanie wariantów bez konieczności prowadzenia odrębnych kampanii pomiarowych.</p>
+                <div class="card" style="margin-top: 0.8rem; padding: 1rem; background: rgba(124, 58, 237, 0.04); border-color: rgba(124, 58, 237, 0.12);">
+                    <div style="font-weight: 600; color: #7c3aed; margin-bottom: 0.4rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;">Walidacja metody EBLCI — ograniczenia i krzyżowa kontrola</div>
+                    <p style="font-size: 0.82rem; margin: 0 0 0.6rem 0; color: var(--text-secondary); line-height: 1.6;">EBLCI jest metodą modelowania top-down — oblicza parametry procesowe z zasad fizycznych (termodynamika, stechiometria, bilanse masowe), nie z pomiarów zakładowych. Dla procesów prostych i dobrze zdefiniowanych stechiometrycznie (klinkieryzacja, topienie szkła, kruszenie skalne) modele te osiągają wysoką dokładność. Dla procesów złożonych o dużej zmienności międzyzakładowej (beton z różnymi domieszkami, stal z różną jakością złomu) modele mogą nie oddawać pełnej rozpiętości realnych warunków produkcji.</p>
+                    <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary); line-height: 1.6;"><strong>Mechanizm kontroli:</strong> Wyniki EBLCI są systematycznie porównywane z niezależnymi punktami odniesienia: (a) emisje instalacyjne z E-PRTR/EU ETS (warstwa VI), (b) zagregowane dane branżowe SPC, HIPH, CEMBUREAU (warstwa I), (c) wyniki z opublikowanych studiów LCA (benchmarking). Odchylenie modelu EBLCI od danych zakładowych jest dokumentowane w karcie walidacyjnej każdego zbioru danych.</p>
+                </div>
+                <div class="tag-row" style="margin-top: 0.7rem;">
                     <span class="tag">Bilanse energetyczne</span>
                     <span class="tag">Modele termodynamiczne</span>
                     <span class="tag">Parametryzacja procesów</span>
                     <span class="tag">ISO 14044 §4.3.2</span>
+                    <span class="tag">ISO/TS 14071</span>
                 </div>
             </div>
         </div>
         <div class="layer-card">
             <span class="layer-num">IV</span>
             <div>
-                <div class="layer-title">Krzyżowa walidacja algorytmiczna i konsensus modeli AI</div>
-                <p class="layer-desc">Automatyczne narzędzia analityczne pełnią funkcję warstwy kontroli jakości — wykrywanie niespójności między źródłami, identyfikacja wartości odstających, weryfikacja kompletności danych. Każdy zbiór danych jest niezależnie analizowany przez kilka dużych modeli językowych (LLM).</p>
+                <div class="layer-title">Krzyżowa walidacja algorytmiczna i kontrola spójności fizycznej — ISO 14044 Załącznik B</div>
+                <p class="layer-desc">Automatyczne narzędzia analityczne pełnią funkcję warstwy kontroli jakości zgodnie z wymaganiami ISO 14044 Załącznik B (ocena jakości danych) oraz ISO/TS 14071:2014 §6.4 (kontrole spójności i kompletności) — wykrywanie niespójności między źródłami, identyfikacja wartości odstających, weryfikacja kompletności danych. Warstwa ta nie generuje danych środowiskowych, lecz weryfikuje spójność danych pozyskanych z warstw I–III.</p>
+                <p class="layer-desc" style="margin-top: 0.5rem;">Mechanizm wielościeżkowej weryfikacji spójności obejmuje: kontrolę bilansów masowych i energetycznych (zamknięcie bilansu ±2%), walidację stechiometryczną reakcji procesowych, analizę outlierów metodą IQR i z-score, benchmarking wobec danych referencyjnych z literatury naukowej oraz porównanie krzyżowe z niezależnymi źródłami branżowymi.</p>
                 <div class="tag-row">
                     <span class="tag">Detekcja niespójności</span>
                     <span class="tag">Analiza outlierów</span>
                     <span class="tag">Kontrola kompletności</span>
-                    <span class="tag">Konsensus modeli AI</span>
+                    <span class="tag">Bilanse masowo-energetyczne</span>
+                    <span class="tag">Walidacja stechiometryczna</span>
+                    <span class="tag">Benchmarking referencyjny</span>
                 </div>
             </div>
         </div>
@@ -170,11 +184,33 @@
                         <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;"><strong>KOBiZE — Krajowa Baza</strong> — roczne raporty emisji. <strong>Pozwolenia zintegrowane</strong> — dopuszczalne wielkości emisji, parametry BAT.</p>
                     </div>
                 </div>
+                <div class="card" style="margin-top: 1rem; padding: 1rem; background: rgba(180, 83, 9, 0.04); border-color: rgba(180, 83, 9, 0.12);">
+                    <div style="font-weight: 600; color: #b45309; margin-bottom: 0.5rem; font-size: 0.85rem;">Mechanizm walidacji — progi sektorowe</div>
+                    <p style="font-size: 0.85rem; margin: 0 0 0.8rem 0; color: var(--text-secondary);">Dla każdego sektora wartości emisji w zbiorach danych poLCA są porównywane z zakresem emisji raportowanych przez polskie instalacje w E-PRTR i EU ETS. Progi walidacyjne są zróżnicowane sektorowo:</p>
+                    <div class="grid-3" style="gap: 0.6rem;">
+                        <div class="card" style="padding: 0.6rem; background: rgba(180, 83, 9, 0.06);">
+                            <strong style="color: #b45309; font-size: 0.8rem;">Cement, wapno</strong><br>
+                            <span style="font-size: 0.78rem;">Próg: ±8% mediany EU ETS</span><br>
+                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Niska zmienność międzyzakładowa</span>
+                        </div>
+                        <div class="card" style="padding: 0.6rem; background: rgba(180, 83, 9, 0.06);">
+                            <strong style="color: #b45309; font-size: 0.8rem;">Stal EAF / BF-BOF</strong><br>
+                            <span style="font-size: 0.78rem;">Próg: ±15% mediany EU ETS</span><br>
+                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Wysoka zmienność — jakość złomu, miks energetyczny</span>
+                        </div>
+                        <div class="card" style="padding: 0.6rem; background: rgba(180, 83, 9, 0.06);">
+                            <strong style="color: #b45309; font-size: 0.8rem;">Szkło, ceramika</strong><br>
+                            <span style="font-size: 0.78rem;">Próg: ±12% mediany E-PRTR</span><br>
+                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Zmienność zależna od proporcji elektryczność/gaz</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="tag-row mt-1">
                     <span class="tag amber">E-PRTR v15.0</span>
                     <span class="tag amber">EU ETS / EUTL</span>
                     <span class="tag amber">KOBiZE</span>
                     <span class="tag amber">WIOŚ / IPPC</span>
+                    <span class="tag amber">IEP (od 2028)</span>
                 </div>
             </div>
         </div>
@@ -225,7 +261,7 @@
                         <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">IV. Algorytmiczna + AI</td>
+                        <td style="font-weight: 600;">IV. Algorytmiczna</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
@@ -261,50 +297,197 @@
         </p>
     </div>
 
+    <div class="section-gap fade-in">
+        <div class="section-num">02a — Walidacja adekwatna</div>
+        <h2 style="font-family: 'EB Garamond', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
+            Walidacja proporcjonalna do specyfiki sektora
+        </h2>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Walidacja adekwatna oznacza, że system nie stosuje tych samych narzędzi wszędzie jednakowo — lecz dobiera najskuteczniejsze narzędzia walidacji dla specyfiki każdego sektora. Poniższe przykłady ilustrują, jak różne sektory wymagają odmiennych konfiguracji warstw walidacyjnych.
+        </p>
+    </div>
+
     <div class="grid-2 section-gap fade-in">
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Cement — walidacja głęboka</div>
-            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Wszystkie sześć warstw pracuje na pełnej mocy.</p>
+            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Dane branżowe SPC (Stowarzyszenie Producentów Cementu) dostarczają zagregowane parametry produkcji — udział paliw alternatywnych, wskaźnik klinkieru, zużycie energii na tonę. Dane EU ETS dostarczają zweryfikowane emisje CO₂ per instalacja. Wszystkie sześć warstw pracuje na pełnej mocy — to benchmark walidacyjny poLCA.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Kruszywa — walidacja fizyczna</div>
-            <p class="card-text">Kopalnie kruszyw operują poniżej progów raportowania E-PRTR. Ale bilans masowy i energetyczny są łatwo weryfikowalne. Dominują warstwy I, II i IV.</p>
+            <p class="card-text">Kopalnie kruszyw operują poniżej progów raportowania E-PRTR (warstwa VI niedostępna). Jednakże procesy pozyskania i przeróbki kruszyw — kruszenie, przesiewanie, płukanie — są fizycznie proste i dobrze zdefiniowane energetycznie. Bilans masowy jest zamknięty, zużycie energii proporcjonalne do twardości skały. Dominują warstwy I (GUS, PZPK), II (EN 12620) i IV (kontrola bilansowa) — ich kombinacja zapewnia wiarygodność porównywalną z pełnym pokryciem regulacyjnym.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Stal EAF — walidacja dualna</div>
-            <p class="card-text">Polski sektor stalowy operuje jednocześnie trasą BF-BOF i EAF. Obie mają pełne pokrycie E-PRTR/EU ETS, ale wymagają odrębnych zbiorów danych.</p>
+            <p class="card-text">Polski sektor stalowy operuje jednocześnie trasą BF-BOF (ArcelorMittal Dąbrowa Górnicza) i EAF (ArcelorMittal Warszawa, CMC Poland). Emisje obu tras różnią się 7-krotnie (~2,2 vs ~0,3 t CO₂/t stali). Obie trasy mają pełne pokrycie E-PRTR/EU ETS, ale wymagają odrębnych zbiorów danych — uśrednienie byłoby metodologicznie nieuprawnione. Walidacja dualna oznacza osobne zestawy warstw dla każdej trasy produkcyjnej.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Prefabrykaty — walidacja kompozytowa</div>
-            <p class="card-text">Producent prefabrykatów to często mały zakład poniżej progów E-PRTR. Walidacja polega na kontroli spójności komponentowej. Warstwa IV dominuje.</p>
+            <p class="card-text">Producent prefabrykatów to często mały zakład poniżej progów E-PRTR. Jednakże prefabrykat to kompozyt ze znanych komponentów — beton, stal zbrojeniowa, izolacja — każdy z osobna zwalidowany w poLCA. Walidacja polega na kontroli spójności komponentowej: suma zwalidowanych składników musi dawać spójny wynik końcowy. Warstwa IV (kontrola bilansowa) dominuje, wspierana przez warstwy I i II dla poszczególnych składników.</p>
         </div>
     </div>
 
-    <div class="card card-lg fade-in" style="background: linear-gradient(135deg, rgba(180,83,9,0.03) 0%, rgba(45,80,22,0.03) 100%); border-color: rgba(180,83,9,0.12);">
+    <!-- BLOK: Metodologia zbierania danych -->
+    <div class="card card-lg section-gap fade-in">
+        <div class="card-title">Metodologia pozyskiwania danych — trzy ścieżki wejściowe</div>
+        <p class="card-text" style="margin-bottom: 1rem;">System walidacji poLCA jest tak wiarygodny, jak dane, które waliduje. Dlatego jasne określenie źródeł i metod pozyskiwania danych wejściowych jest warunkiem koniecznym transparentności metodologicznej — zgodnie z <strong>ISO 14044:2006</strong> §4.2.3.6 i <strong>ISO 14025:2006</strong> §7.2.4.</p>
+        <div class="grid-3" style="gap: 1rem;">
+            <div class="card" style="padding: 1rem; background: rgba(45, 80, 22, 0.04); border-color: rgba(45, 80, 22, 0.12);">
+                <div style="font-weight: 700; color: var(--green-accent); font-size: 1.4rem; font-family: 'EB Garamond', serif;">A</div>
+                <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Dane publiczne i regulacyjne</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Wskaźniki emisji KOBiZE, statystyka GUS/Prodcom, bilanse energetyczne PSE, emisje zakładowe E-PRTR/EU ETS, wskaźniki IPCC. Udział: 40–60% przepływów.</p>
+            </div>
+            <div class="card" style="padding: 1rem; background: rgba(45, 80, 22, 0.04); border-color: rgba(45, 80, 22, 0.12);">
+                <div style="font-weight: 700; color: var(--green-accent); font-size: 1.4rem; font-family: 'EB Garamond', serif;">B</div>
+                <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Dane branżowe i stowarzyszeniowe</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">SPC (cement), HIPH (hutnictwo), PZPK (kruszywa), Eurobitume, worldsteel, CEMBUREAU. Udział: 20–35% przepływów.</p>
+            </div>
+            <div class="card" style="padding: 1rem; background: rgba(45, 80, 22, 0.04); border-color: rgba(45, 80, 22, 0.12);">
+                <div style="font-weight: 700; color: var(--green-accent); font-size: 1.4rem; font-family: 'EB Garamond', serif;">C</div>
+                <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Modelowanie inżynieryjne EBLCI</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Parametry procesowe z modeli termodynamicznych i bilansów masowo-energetycznych. Wyniki walidowane krzyżowo ze ścieżkami A i B. Udział: 15–30% przepływów.</p>
+            </div>
+        </div>
+        <div class="card" style="margin-top: 1rem; padding: 1rem; background: rgba(180, 83, 9, 0.04); border-color: rgba(180, 83, 9, 0.12);">
+            <p style="font-size: 0.85rem; margin: 0; color: var(--text-secondary);"><strong style="color: #b45309;">Transparentność źródłowa:</strong> Każdy przepływ w zbiorze danych poLCA posiada znacznik pochodzenia (ścieżka A, B lub C) oraz ocenę jakości danych w formacie macierzy pedigree zgodnej z <strong>ISO 14044</strong> Załącznik B (wiarygodność, kompletność, korelacja czasowa, geograficzna, technologiczna).</p>
+        </div>
+    </div>
+
+    <!-- BLOK: System tła -->
+    <div class="card card-lg fade-in">
+        <div class="card-title">System tła — granice krajowej specyficzności</div>
+        <p class="card-text" style="margin-bottom: 1rem;">Każde LCA składa się z systemu pierwszoplanowego (foreground) i systemu tła (background). poLCA tworzy krajowe dane dla systemu foreground i kluczowych procesów tła o wysokim wpływie na wynik.</p>
+        <div class="grid-2" style="gap: 1rem;">
+            <div class="card" style="padding: 1rem; background: rgba(45, 80, 22, 0.06); border-color: rgba(45, 80, 22, 0.15);">
+                <div style="font-weight: 600; color: var(--green-accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Procesy z danymi krajowymi poLCA</div>
+                <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary);">Energia elektryczna (miks PL), ciepło systemowe, gaz ziemny, węgiel, transport drogowy (flota PL), cement, klinkier, kruszywa, stal zbrojeniowa, woda wodociągowa. Te procesy odpowiadają za 70–90% wyniku GWP typowego wyrobu budowlanego.</p>
+            </div>
+            <div class="card" style="padding: 1rem; background: rgba(180, 83, 9, 0.06); border-color: rgba(180, 83, 9, 0.15);">
+                <div style="font-weight: 600; color: #b45309; margin-bottom: 0.4rem; font-size: 0.85rem;">Procesy z baz referencyjnych (background)</div>
+                <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary);">Chemikalia specjalistyczne, domieszki, pigmenty, opakowania, transport morski, wydobycie surowców poza PL. Źródło: ecoinvent 3.10+. Każdy proces tła posiada test istotności (cut-off ≤1% GWP).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOK: Niepewność danych -->
+    <div class="card card-lg fade-in" style="margin-top: 1.5rem;">
+        <div class="card-title">Kwantyfikacja niepewności — podejście i harmonogram</div>
+        <div class="grid-2" style="gap: 1rem; margin-top: 1rem;">
+            <div class="card" style="padding: 1rem; background: rgba(45, 80, 22, 0.06); border-color: rgba(45, 80, 22, 0.15);">
+                <div style="font-weight: 700; color: var(--green-accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Etap 1 — Macierz pedigree (wdrożony)</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Każdy przepływ posiada ocenę jakości w pięciu wymiarach macierzy pedigree: wiarygodność źródła (1–5), kompletność (1–5), korelacja czasowa (1–5), geograficzna (1–5), technologiczna (1–5). Oceny przekładane na bazowe współczynniki niepewności wg podejścia ecoinvent.</p>
+            </div>
+            <div class="card" style="padding: 1rem; background: rgba(180, 83, 9, 0.06); border-color: rgba(180, 83, 9, 0.15);">
+                <div style="font-weight: 700; color: #b45309; margin-bottom: 0.4rem; font-size: 0.85rem;">Etap 2 — Propagacja niepewności (2026)</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Symulacja Monte Carlo (10 000 iteracji) dla propagacji niepewności przez cały łańcuch obliczeniowy. Wyniki prezentowane jako przedziały ufności (95%) dla GWP i pozostałych wskaźników EN 15804+A2.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOK: Pozycjonowanie -->
+    <div class="card card-lg fade-in" style="margin-top: 1.5rem;">
+        <div class="card-title">Pozycjonowanie — czym poLCA jest, a czym nie jest</div>
+        <div class="grid-2" style="gap: 1rem; margin-top: 1rem;">
+            <div class="card" style="padding: 1.2rem; background: rgba(45, 80, 22, 0.04);">
+                <div style="font-weight: 600; color: var(--green-accent); margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA jest:</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Wyspecjalizowaną krajową bazą danych LCI dla polskich wyrobów budowlanych. Komplementarnym źródłem danych foreground, uzupełniającym bazy globalne o krajową specyficzność. Narzędziem umożliwiającym sporządzanie EPD opartych na danych adekwatnych do rzeczywistych warunków produkcji — zgodnie z Rozporządzeniem CPR 2024/3110.</p>
+            </div>
+            <div class="card" style="padding: 1.2rem; background: rgba(180, 83, 9, 0.04);">
+                <div style="font-weight: 600; color: #b45309; margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA nie jest:</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Zamiennikiem baz globalnych (ecoinvent, GaBi/Sphera) pokrywających ~21 000 procesów. poLCA pokrywa kilkadziesiąt procesów w kilkunastu sektorach — ale z głębokością walidacji nieosiągalną dla baz pan-europejskich. Docelowo aspiruje do pełnienia funkcji analogicznej do Ökobaudat w Niemczech.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLOK: Porównanie z bazami krajowymi -->
+    <div class="card card-lg fade-in" style="margin-top: 1.5rem;">
+        <div class="card-title">Kontekst porównawczy — krajowe bazy danych LCA w Europie</div>
+        <p class="card-text" style="margin-bottom: 1rem;">poLCA powstaje w określonym ekosystemie europejskich baz krajowych. Każda z nich ma inny status regulacyjny, model finansowania i zakres.</p>
+        <div style="overflow-x: auto;">
+            <table class="polca-table" style="font-size: 0.78rem;">
+                <thead>
+                    <tr>
+                        <th style="font-size: 0.74rem;">Parametr</th>
+                        <th style="font-size: 0.74rem;">Ökobaudat</th>
+                        <th style="font-size: 0.74rem;">INIES</th>
+                        <th style="font-size: 0.74rem;">NMD</th>
+                        <th style="font-size: 0.74rem;">ecoinvent</th>
+                        <th style="font-size: 0.74rem;">poLCA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">Status regulacyjny</td>
+                        <td>Obowiązkowa dla BNB</td>
+                        <td>Obowiązkowa dla RE2020</td>
+                        <td>Obowiązkowa dla MPG/MKI</td>
+                        <td>Brak — de facto standard</td>
+                        <td style="color: #b45309; font-weight: 500;">Brak — docelowo krajowy zbiór referencyjny</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Liczba zbiorów</td>
+                        <td>~1 400</td>
+                        <td>~3 200</td>
+                        <td>~3 000</td>
+                        <td>~21 000</td>
+                        <td style="color: #b45309; font-weight: 500;">~50 (Faza I, 2025)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">System tła</td>
+                        <td>GaBi / Sphera</td>
+                        <td>ecoinvent</td>
+                        <td>ecoinvent + branżowe</td>
+                        <td>Własny (zintegrowany)</td>
+                        <td style="color: #b45309; font-weight: 500;">Krajowy foreground + ecoinvent</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Walidacja regulacyjna (VI)</td>
+                        <td>Nie</td>
+                        <td>Nie</td>
+                        <td>Nie</td>
+                        <td>Nie</td>
+                        <td style="color: var(--green-accent); font-weight: 700;">Tak — E-PRTR, EU ETS</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Rok uruchomienia</td>
+                        <td>2011</td>
+                        <td>2004</td>
+                        <td>2012</td>
+                        <td>2003</td>
+                        <td style="color: #b45309; font-weight: 500;">2025</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size: 0.82rem; margin-top: 1rem; color: var(--text-secondary); font-style: italic;">Ökobaudat, INIES i NMD startowały z kilkudziesięcioma zbiorami danych i rozrosły się do obecnych rozmiarów w ciągu 10–20 lat. poLCA jest na etapie porównywalnym do ich roku pierwszego — z jedną fundamentalną różnicą: walidacją regulacyjną (warstwa VI).</p>
+    </div>
+
+    <div class="card card-lg fade-in" style="background: linear-gradient(135deg, rgba(180,83,9,0.03) 0%, rgba(45,80,22,0.03) 100%); border-color: rgba(180,83,9,0.12); margin-top: 1.5rem;">
         <div class="card-title" style="color: #B45309;">Dlaczego walidacja regulacyjna jest możliwa dopiero teraz</div>
-        <p class="card-text" style="margin-bottom: 1.25rem;">Konwergencja czterech czynników umożliwiła wdrożenie tego podejścia:</p>
+        <p class="card-text" style="margin-bottom: 0.8rem;">Walidacja na poziomie instalacji nie była dotychczas stosowana w bazach LCA — nie z powodu braku koncepcji, lecz z powodu braku warunków do jej realizacji. Krajowa baza LCA, operująca w ramach jednego systemu regulacyjnego, może osiągnąć głębokość walidacji niedostępną dla baz pan-europejskich.</p>
+        <p class="card-text" style="margin-bottom: 1.25rem;">Konwergencja czterech czynników umożliwiła wdrożenie tego podejścia po raz pierwszy:</p>
         <div class="grid-2" style="gap: 1rem;">
             <div class="card" style="padding: 1rem;">
                 <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">01</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dojrzałość danych regulacyjnych</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">E-PRTR v15.0 — kompletna baza emisji zakładowych z 15-letnim pokryciem danych.</p>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">E-PRTR v15.0 (grudzień 2025) — po raz pierwszy kompletna, ustandaryzowana baza emisji zakładowych z 15-letnim pokryciem (2007–2022), w formacie CSV, licencja CC-BY 4.0. Wcześniej dane były rozproszone i niespójne między latami sprawozdawczymi.</p>
             </div>
             <div class="card" style="padding: 1rem;">
                 <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">02</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Wiarygodność systemu EU ETS</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Zweryfikowane emisje z EU Transaction Log są spójne i zaudytowane.</p>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Zweryfikowane emisje z EU Transaction Log (EUTL) są dziś spójne i zaudytowane przez akredytowanych weryfikatorów zewnętrznych. Dopiero po trzecim okresie rozliczeniowym uzyskano porównywalność danych na poziomie instalacji.</p>
             </div>
             <div class="card" style="padding: 1rem;">
                 <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">03</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dostępność obliczeniowa</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Krzyżowa walidacja tysięcy zbiorów danych z rekordami E-PRTR — dziś powszechnie dostępna.</p>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Krzyżowa walidacja tysięcy zbiorów danych LCI z dziesiątkami tysięcy rekordów E-PRTR wymaga mocy obliczeniowej, która jeszcze dekadę temu wymagała dedykowanej infrastruktury. Dziś realizuje ją standardowy skrypt analityczny.</p>
             </div>
             <div class="card" style="padding: 1rem;">
                 <div style="font-size: 1.5rem; font-weight: 700; color: #B45309; font-family: 'EB Garamond', serif;">04</div>
-                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Walidacja konsensusu modeli AI</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Wielkie modele językowe umożliwiają niezależną weryfikację spójności danych.</p>
+                <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Automatyzacja wielościeżkowej kontroli spójności</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Współczesne narzędzia umożliwiają automatyzację procesów wcześniej wymagających setek osobogodzin: zamykanie bilansów masowych, walidacja stechiometryczna, screening outlierów, benchmarking — z pełną dokumentacją zgodną z ISO/TS 14071:2014 §5.4.</p>
             </div>
         </div>
+        <p style="font-size: 0.88rem; line-height: 1.7; margin-top: 1.2rem; font-style: italic; color: var(--text-secondary);">Bazy globalne nie mogą osiągnąć tej głębokości walidacji ze względów strukturalnych. Krajowa baza LCA — może.</p>
     </div>
 
     <div class="quote-block mt-3 fade-in">

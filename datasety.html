@@ -76,23 +76,29 @@
         <h1 class="page-title">Baza Datasetów</h1>
         <p class="page-subtitle">
             Zbiory danych LCI, modele licencyjne, źródła danych i partnerzy walidacyjni.
-            Każdy zbiór obejmuje pełną inwentaryzację przepływów zgodną z ISO 14044:2006.
+            Każdy zbiór obejmuje pełną inwentaryzację przepływów zgodną z ISO 14044:2006,
+            z macierzą pedigree jakości danych i dokumentacją trasowalności źródeł.
+            Faza I (2025): ~50 zbiorów w kilkunastu sektorach budowlanych.
         </p>
     </div>
 
     <div class="grid-2 section-gap fade-in">
         <div class="dataset-card">
             <div class="dataset-badge">W opracowaniu</div>
-            <h3>Mieszanki mineralno-asfaltowe</h3>
+            <h3>Mieszanki mineralno-asfaltowe (MMA)</h3>
             <p class="dataset-desc">
                 Modelowanie procesu produkcji MMA z zastosowaniem metodologii EBLCI.
-                Parametryzacja obejmuje typ paliwa, temperaturę produkcji, wilgotność kruszywa
-                oraz zawartość granulatu asfaltowego (RAP).
+                Parametryzacja obejmuje typ paliwa (gaz, olej opałowy, mieszany), temperaturę produkcji
+                (WMA/HMA), wilgotność kruszywa (wpływ na zużycie energii suszenia)
+                oraz zawartość granulatu asfaltowego (RAP). Model uwzględnia specyfikę
+                polskich wytwórni mas — w tym dominację produkcji mobilnej na budowach drogowych.
             </p>
             <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 13108-1 do -7</span></div>
+            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · NAPA EPD PCR</span></div>
             <div class="spec-row"><span class="spec-key">Dane dla bitumu</span><span class="spec-val">Eurobitume LCA 4.0</span></div>
             <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
             <div class="spec-row"><span class="spec-key">Scenariusze RAP</span><span class="spec-val">0% · 20% · 40% · 60%</span></div>
+            <div class="spec-row"><span class="spec-key">Warianty temperaturowe</span><span class="spec-val">WMA (≤140°C) · HMA (160°C+)</span></div>
             <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">IBDiM — planowana</span></div>
         </div>
         <div class="dataset-card">
@@ -101,11 +107,15 @@
             <p class="dataset-desc">
                 Model parametryczny oparty na wymaganiach normy EN 206. Umożliwia generowanie
                 profilu środowiskowego dla dowolnej klasy wytrzymałości i typu cementu.
+                Uwzględnia polskie proporcje mieszanek, krajowe kruszywa i domieszki.
+                Wynik walidowany krzyżowo z danymi SPC i emisjami EU ETS polskich cementowni.
             </p>
             <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 206</span></div>
+            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · IBU PCR beton</span></div>
             <div class="spec-row"><span class="spec-key">Klasy wytrzymałości</span><span class="spec-val">C20/25 — C50/60</span></div>
             <div class="spec-row"><span class="spec-key">Typy cementu</span><span class="spec-val">CEM I — CEM V</span></div>
             <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
+            <div class="spec-row"><span class="spec-key">Domieszki</span><span class="spec-val">EFCA — dane branżowe</span></div>
             <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">ICiMB — planowana</span></div>
         </div>
     </div>
@@ -169,6 +179,25 @@
         </div>
     </div>
 
+    <!-- Sekcja 10a — Sustainability & Governance -->
+    <div class="card card-lg section-gap fade-in" style="background: linear-gradient(135deg, rgba(45,80,22,0.03) 0%, rgba(180,83,9,0.03) 100%); border-color: rgba(45,80,22,0.12);">
+        <div class="section-num">10a — Zrównoważony rozwój i governance</div>
+        <div class="card-title">Model długoterminowej samowystarczalności</div>
+        <div class="prose">
+            <p>poLCA jest projektowana jako infrastruktura trwała, nie jako projekt grantowy z datą zakończenia. Model finansowania łączy trzy filary: dostęp otwarty (dane zagregowane, dokumentacja metodologiczna), licencje profesjonalne (pełne dane LCI, eksport, API) oraz potencjalne finansowanie instytucjonalne na etapie rozbudowy.</p>
+        </div>
+        <div class="grid-2 mt-2">
+            <div class="card" style="padding: 1rem;">
+                <div style="font-weight: 600; color: var(--green-accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Governance techniczny</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Aktualizacja coroczna wskaźników KOBiZE. Rewizja zbiorów danych przy zmianach norm (EN 15804 amendments). Procedura reklamacyjna: każdy użytkownik może zgłosić wątpliwość co do wartości w zbiorze — odpowiedź w ciągu 15 dni roboczych z dokumentacją.</p>
+            </div>
+            <div class="card" style="padding: 1rem;">
+                <div style="font-weight: 600; color: #b45309; margin-bottom: 0.4rem; font-size: 0.85rem;">Governance metodologiczny</div>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Docelowo: Rada Programowa z udziałem przedstawicieli instytutów badawczych (IBDiM, ICiMB), stowarzyszeń branżowych (SPC, HIPH) i środowisk akademickich. Niezależna weryfikacja zgodnie z ISO 14025 §8.1.3. Transparentność: pełna dokumentacja metodologiczna publicznie dostępna.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="card card-lg section-gap fade-in">
         <div class="section-num">11 — Transparentność</div>
         <div class="card-title">Źródła danych i partnerzy walidacyjni</div>
@@ -204,6 +233,16 @@
             <span class="badge official">EN 15804:2012+A2:2019</span>
             <span class="badge official">EN 15978:2011</span>
             <span class="badge official">EN 15643:2021</span>
+        </div>
+
+        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">PCR — Reguły kategorii produktowych</h4>
+        <div class="badge-grid">
+            <span class="badge official">c-PCR-001: cement i wapno</span>
+            <span class="badge official">c-PCR-003: beton i elementy betonowe</span>
+            <span class="badge official">c-PCR-004: kruszywa</span>
+            <span class="badge official">c-PCR-007: wyroby stalowe</span>
+            <span class="badge official">c-PCR-012: MMA i nawierzchnie</span>
+            <span class="badge official">c-PCR-014: szkło budowlane</span>
         </div>
 
         <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Walidacja instytucjonalna (planowana)</h4>
