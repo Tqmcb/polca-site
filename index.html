@@ -49,7 +49,7 @@
     <div class="sidebar-footer">
         <div class="sidebar-status">
             <span class="status-dot"></span>
-            System aktywny — v2.0
+            System aktywny — v3.0
         </div>
     </div>
 </aside>
@@ -70,33 +70,36 @@
 <div class="polca-content">
 
 <div class="polca-page">
-    <!-- Page Header -->
-    <div class="page-header fade-in">
-        <h1 class="page-title">Dashboard</h1>
-        <p class="page-subtitle">
-            Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych.
-            Dane reprezentatywne dla polskich warunków produkcji — miks energetyczny,
-            technologie procesowe, infrastruktura transportowa. Sześciowarstwowy system
-            walidacji z unikalną krzyżową weryfikacją wobec danych regulacyjnych E-PRTR i EU ETS.
+    <!-- Hero Header -->
+    <div class="hero-section fade-in">
+        <div class="hero-overline">Polska Baza Danych LCI</div>
+        <h1 class="hero-title">Dane środowiskowe<br>dla polskiego przemysłu</h1>
+        <p class="hero-desc">
+            Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
+            produkcji. Sześciowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
         </p>
+        <div class="hero-actions">
+            <a href="datasety.html" class="hero-btn-primary">Przeglądaj datasety</a>
+            <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+        </div>
     </div>
 
     <!-- Key Metrics -->
     <div class="grid-3 section-gap fade-in">
-        <div class="card card-accent-green">
-            <div class="card-label">Zgodność metodologiczna</div>
-            <div class="stat-value">EN 15804+A2</div>
-            <div class="stat-label">Norma europejska dla wyrobów budowlanych</div>
+        <div class="metric-card">
+            <div class="metric-number">EN 15804</div>
+            <div class="metric-label">Zgodność z normą europejską<br>dla wyrobów budowlanych</div>
+            <div class="metric-tag">+A2:2019</div>
         </div>
-        <div class="card card-accent-orange">
-            <div class="card-label">Wskaźniki emisji</div>
-            <div class="stat-value orange">KOBiZE 2024</div>
-            <div class="stat-label">Oficjalne krajowe źródło danych</div>
+        <div class="metric-card">
+            <div class="metric-number">597</div>
+            <div class="metric-label">kg CO₂/MWh — polski miks<br>wobec 295 średniej EU</div>
+            <div class="metric-tag orange">KOBiZE 2024</div>
         </div>
-        <div class="card card-accent-blue">
-            <div class="card-label">Zasada proximity</div>
-            <div class="stat-value blue">ISO 14040/44</div>
-            <div class="stat-label">Dane najbardziej reprezentatywne geograficznie</div>
+        <div class="metric-card">
+            <div class="metric-number">6</div>
+            <div class="metric-label">warstw walidacji danych<br>z weryfikacją regulacyjną</div>
+            <div class="metric-tag blue">ISO 14044</div>
         </div>
     </div>
 
@@ -139,7 +142,7 @@
         <div class="prose">
             <p>Ocena cyklu życia (LCA) jest dziś jedyną uznaną międzynarodowo metodą kwantyfikacji wpływu środowiskowego wyrobów budowlanych. Deklaracje Środowiskowe Produktu (EPD) — oparte na wynikach LCA — stają się warunkiem dostępu do rynku europejskiego na mocy znowelizowanego Rozporządzenia o wyrobach budowlanych (CPR 2024/3110).</p>
             <p><strong>Problem polega na tym, że praktycznie wszystkie EPD sporządzane dla polskich wyrobów budowlanych opierają się na bazach danych niereprezentujących polskich warunków produkcji.</strong> Ecoinvent — de facto standard branżowy — modeluje procesy jako średnie europejskie lub globalne. Oznacza to, że polski producent cementu, stali czy betonu otrzymuje wynik LCA oparty nie na rzeczywistej emisyjności jego procesu produkcyjnego, lecz na uśrednieniu kilkudziesięciu krajów.</p>
-            <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w mikksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
+            <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w miksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
         </div>
     </div>
 
@@ -255,12 +258,13 @@
             <div class="card-label">Operator bazy danych</div>
             <div class="card-title">Multicert Sp. z o.o.</div>
             <p class="card-text">
-                Operator programu EPD Polska (www.epd.org.pl). Opracowanie i utrzymanie bazy danych poLCA.
+                Operator programu EPD Polska. Opracowanie i utrzymanie bazy danych poLCA.
             </p>
             <div class="card-footer">
                 <p style="font-size: 0.82rem; color: var(--text-secondary);">
                     ul. Mydlarska 47, 04-690 Warszawa<br>
-                    <span style="color: var(--green-primary);">info@epd.org.pl</span>
+                    <span style="color: var(--green-primary);">info@epd.org.pl</span> ·
+                    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
                 </p>
             </div>
         </div>
