@@ -7,8 +7,10 @@
     <meta name="description" content="Sześciowarstwowy system zapewnienia jakości danych LCA">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -49,7 +51,7 @@
     <div class="sidebar-footer">
         <div class="sidebar-status">
             <span class="status-dot"></span>
-            System aktywny — v4.0
+            System aktywny — v5.0
         </div>
     </div>
 </aside>
@@ -60,7 +62,7 @@
             <span></span><span></span><span></span>
         </button>
         <div class="topbar-search">
-            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
         </div>
     </div>
     <div class="topbar-right">
@@ -85,6 +87,10 @@
             <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">E-PRTR 166/2006</span>
             <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">EU ETS 2003/87</span>
         </div>
+    </div>
+
+    <div class="section-image-strip fade-in">
+        <img src="images/strip-laboratory.jpg" alt="Laboratorium badawcze" loading="lazy">
     </div>
 
     <div class="layers-container section-gap fade-in">
@@ -280,7 +286,7 @@
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
                         <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
                     </tr>
-                    <tr style="background: rgba(180, 83, 9, 0.04);">
+                    <tr style="background: rgba(14, 124, 107, 0.04);">
                         <td style="font-weight: 600; color: var(--accent);">VI. Regulacyjna</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
@@ -301,7 +307,7 @@
 
     <div class="section-gap fade-in">
         <div class="section-num">02a — Walidacja adekwatna</div>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
             Walidacja proporcjonalna do specyfiki sektora
         </h2>
         <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
@@ -334,17 +340,17 @@
         <p class="card-text" style="margin-bottom: 1rem;">System walidacji poLCA jest tak wiarygodny, jak dane, które waliduje. Dlatego jasne określenie źródeł i metod pozyskiwania danych wejściowych jest warunkiem koniecznym transparentności metodologicznej — zgodnie z <strong>ISO 14044:2006</strong> §4.2.3.6 i <strong>ISO 14025:2006</strong> §7.2.4.</p>
         <div class="grid-3" style="gap: 1rem;">
             <div class="card" style="padding: 1rem; background: var(--func-green-bg); border-color: var(--func-green-border);">
-                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Playfair Display', serif;">A</div>
+                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Inter Tight', sans-serif;">A</div>
                 <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Dane publiczne i regulacyjne</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Wskaźniki emisji KOBiZE, statystyka GUS/Prodcom, bilanse energetyczne PSE, emisje zakładowe E-PRTR/EU ETS, wskaźniki IPCC. Udział: 40–60% przepływów.</p>
             </div>
             <div class="card" style="padding: 1rem; background: var(--func-green-bg); border-color: var(--func-green-border);">
-                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Playfair Display', serif;">B</div>
+                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Inter Tight', sans-serif;">B</div>
                 <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Dane branżowe i stowarzyszeniowe</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">SPC (cement), HIPH (hutnictwo), PZPK (kruszywa), Eurobitume, worldsteel, CEMBUREAU. Udział: 20–35% przepływów.</p>
             </div>
             <div class="card" style="padding: 1rem; background: var(--func-green-bg); border-color: var(--func-green-border);">
-                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Playfair Display', serif;">C</div>
+                <div style="font-weight: 700; color: var(--func-green); font-size: 1.4rem; font-family: 'Inter Tight', sans-serif;">C</div>
                 <div style="font-weight: 600; margin-bottom: 0.4rem; font-size: 0.88rem;">Modelowanie inżynieryjne EBLCI</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Parametry procesowe z modeli termodynamicznych i bilansów masowo-energetycznych. Wyniki walidowane krzyżowo ze ścieżkami A i B. Udział: 15–30% przepływów.</p>
             </div>
@@ -393,7 +399,7 @@
                 <div style="font-weight: 600; color: var(--func-green); margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA jest:</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Wyspecjalizowaną krajową bazą danych LCI dla polskich wyrobów budowlanych. Komplementarnym źródłem danych foreground, uzupełniającym bazy globalne o krajową specyficzność. Narzędziem umożliwiającym sporządzanie EPD opartych na danych adekwatnych do rzeczywistych warunków produkcji — zgodnie z Rozporządzeniem CPR 2024/3110.</p>
             </div>
-            <div class="card" style="padding: 1.2rem; background: rgba(180, 83, 9, 0.04);">
+            <div class="card" style="padding: 1.2rem; background: rgba(14, 124, 107, 0.04);">
                 <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA nie jest:</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Zamiennikiem baz globalnych (ecoinvent, GaBi/Sphera) pokrywających ~21 000 procesów. poLCA pokrywa kilkadziesiąt procesów w kilkunastu sektorach — ale z głębokością walidacji nieosiągalną dla baz pan-europejskich. Docelowo aspiruje do pełnienia funkcji analogicznej do Ökobaudat w Niemczech.</p>
             </div>
@@ -469,22 +475,22 @@
         <p class="card-text" style="margin-bottom: 1.25rem;">Konwergencja czterech czynników umożliwiła wdrożenie tego podejścia po raz pierwszy:</p>
         <div class="grid-2" style="gap: 1rem;">
             <div class="card" style="padding: 1rem;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif;">01</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Inter Tight', sans-serif;">01</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dojrzałość danych regulacyjnych</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">E-PRTR v15.0 (grudzień 2025) — po raz pierwszy kompletna, ustandaryzowana baza emisji zakładowych z 15-letnim pokryciem (2007–2022), w formacie CSV, licencja CC-BY 4.0. Wcześniej dane były rozproszone i niespójne między latami sprawozdawczymi.</p>
             </div>
             <div class="card" style="padding: 1rem;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif;">02</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Inter Tight', sans-serif;">02</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Wiarygodność systemu EU ETS</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Zweryfikowane emisje z EU Transaction Log (EUTL) są dziś spójne i zaudytowane przez akredytowanych weryfikatorów zewnętrznych. Dopiero po trzecim okresie rozliczeniowym uzyskano porównywalność danych na poziomie instalacji.</p>
             </div>
             <div class="card" style="padding: 1rem;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif;">03</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Inter Tight', sans-serif;">03</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Dostępność obliczeniowa</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Krzyżowa walidacja tysięcy zbiorów danych LCI z dziesiątkami tysięcy rekordów E-PRTR wymaga mocy obliczeniowej, która jeszcze dekadę temu wymagała dedykowanej infrastruktury. Dziś realizuje ją standardowy skrypt analityczny.</p>
             </div>
             <div class="card" style="padding: 1rem;">
-                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Playfair Display', serif;">04</div>
+                <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Inter Tight', sans-serif;">04</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Automatyzacja wielościeżkowej kontroli spójności</div>
                 <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Współczesne narzędzia umożliwiają automatyzację procesów wcześniej wymagających setek osobogodzin: zamykanie bilansów masowych, walidacja stechiometryczna, screening outlierów, benchmarking — z pełną dokumentacją zgodną z ISO/TS 14071:2014 §5.4.</p>
             </div>
@@ -543,7 +549,7 @@
 </div>
 
 <footer class="polca-portal-footer">
-    &copy; 2025 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
     <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
 </footer>
 <script src="js/sidebar.js"></script>

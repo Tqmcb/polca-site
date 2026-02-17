@@ -7,8 +7,10 @@
     <meta name="description" content="Polska Baza Danych LCA dla wyrobow budowlanych">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -49,7 +51,7 @@
     <div class="sidebar-footer">
         <div class="sidebar-status">
             <span class="status-dot"></span>
-            System aktywny — v4.0
+            System aktywny — v5.0
         </div>
     </div>
 </aside>
@@ -59,7 +61,7 @@
             <span></span><span></span><span></span>
         </button>
         <div class="topbar-search">
-            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
         </div>
     </div>
     <div class="topbar-right">
@@ -68,20 +70,27 @@
 </header>
 <div class="polca-content">
 
-<div class="polca-page">
-    <!-- Hero Header -->
-    <div class="hero-section fade-in">
-        <div class="hero-overline">Polska Baza Danych LCI</div>
-        <h1 class="hero-title">Dane środowiskowe<br>dla polskiego przemysłu</h1>
-        <p class="hero-desc">
-            Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
-            produkcji. Sześciowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
-        </p>
-        <div class="hero-actions">
-            <a href="datasety.html" class="hero-btn-primary">Przeglądaj datasety</a>
-            <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+<div class="polca-page polca-page-wide" style="padding: 0;">
+    <!-- Hero Header with Image -->
+    <div class="hero-section hero-with-image fade-in" style="padding-left: 3rem; padding-right: 3rem;">
+        <div class="hero-image-bg" style="background-image: url('images/hero-main.jpg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-overline">Polska Baza Danych LCI</div>
+            <h1 class="hero-title">Dane środowiskowe<br>dla polskiego przemysłu</h1>
+            <p class="hero-desc">
+                Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
+                produkcji. Sześciowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
+            </p>
+            <div class="hero-actions">
+                <a href="datasety.html" class="hero-btn-primary">Przeglądaj datasety</a>
+                <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="polca-page" style="padding-top: 0;">
 
     <!-- Key Metrics -->
     <div class="grid-3 section-gap fade-in">
@@ -182,7 +191,7 @@
         <!-- Dark Quote Card -->
         <div class="card card-dark card-lg">
             <div class="card-label" style="color: rgba(255,255,255,0.4);">Zasada poLCA</div>
-            <p style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1rem;">
+            <p style="font-family: 'Inter Tight', sans-serif; font-size: 1.05rem; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1rem;">
                 „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
                 gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
                 lepsze od europejskiej średniej."
@@ -281,7 +290,7 @@
 
 </div><!-- .polca-content -->
 <footer class="polca-portal-footer">
-    &copy; 2025 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
     <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
 </footer>
 <script src="js/sidebar.js"></script>

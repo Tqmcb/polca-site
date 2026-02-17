@@ -7,8 +7,10 @@
     <meta name="description" content="Mapa zniekształceń polskiego sektora budowlanego w danych LCA">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -49,7 +51,7 @@
     <div class="sidebar-footer">
         <div class="sidebar-status">
             <span class="status-dot"></span>
-            System aktywny — v4.0
+            System aktywny — v5.0
         </div>
     </div>
 </aside>
@@ -60,7 +62,7 @@
             <span></span><span></span><span></span>
         </button>
         <div class="topbar-search">
-            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
         </div>
     </div>
     <div class="topbar-right">
@@ -90,6 +92,10 @@
         </div>
     </div>
 
+    <div class="section-image-strip fade-in">
+        <img src="images/strip-industry.jpg" alt="Infrastruktura przemysłowa" loading="lazy">
+    </div>
+
     <div class="card card-lg section-gap fade-in">
         <div class="card-title">Dlaczego uśrednione dane nie oddają rzeczywistości</div>
         <div class="prose">
@@ -101,7 +107,7 @@
 
     <div class="section-gap fade-in">
         <div class="section-num">04a — Przykład: sektor cementowy</div>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
+        <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
             Wyższa emisyjność energii, niższa emisyjność procesu
         </h2>
         <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
@@ -109,15 +115,15 @@
         </p>
         <div class="grid-2 section-gap">
             <div class="card card-accent-red">
-                <div class="card-label" style="color: #B85C3A;">Gdzie Polska odstaje od średniej EU</div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
+                <div class="card-label" style="color: var(--accent);">Gdzie Polska odstaje od średniej EU</div>
+                <h3 style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
                 <p class="card-text">
                     Polski wskaźnik emisji dla energii elektrycznej wynosi <strong>597 kg CO₂/MWh</strong> (KOBiZE 2024) wobec średniej europejskiej ~295 kg CO₂/MWh. To ponad dwukrotna różnica. Zastosowanie uśrednionych danych prowadzi do <strong>niedoszacowania</strong> wpływu środowiskowego — każdy MWh zużyty w polskiej cementowni generuje dwukrotnie więcej CO₂ niż wynika z danych generycznych.
                 </p>
             </div>
             <div class="card card-accent-green">
                 <div class="card-label" style="color: var(--func-green);">Gdzie Polska wyprzedza średnią EU</div>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Technologia produkcji klinkieru</h3>
+                <h3 style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Technologia produkcji klinkieru</h3>
                 <p class="card-text">
                     Polskie cementownie osiągnęły udział paliw alternatywnych na poziomie <strong>70–80%</strong> bilansu cieplnego (średnia EU: 56%). Wszystkie zakłady operują na nowoczesnym procesie suchym z prekalcynatorem. Zastosowanie uśrednionych danych prowadzi do <strong>zawyżenia</strong> emisji procesowej — kara za inwestycje w nowoczesne technologie.
                 </p>
@@ -179,7 +185,7 @@
         </p>
     </div>
 
-    <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
+    <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
         Kto traci, kto zyskuje
     </h2>
     <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;" class="fade-in">
@@ -241,7 +247,7 @@
     </div>
 
     <div class="steel-highlight section-gap fade-in">
-        <div style="font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
+        <div style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
             Studium przypadku: polski sektor stalowy — 7-krotna różnica w jednym kraju
         </div>
         <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0 0 0.8rem 0;">
@@ -283,7 +289,7 @@
 </div>
 
 <footer class="polca-portal-footer">
-    &copy; 2025 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
     <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
 </footer>
 <script src="js/sidebar.js"></script>
