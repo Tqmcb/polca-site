@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie — poLCA Blog</title>
+    <meta name="description" content="EPD to ustandaryzowany dokument oparty na badaniu LCA, weryfikowany przez niezależną jednostkę. Od 2025 r. staje się wymogiem w zamówieniach publicznych UE. Czym dokładnie jest EPD i jak ją czytać.">
+    <link rel="canonical" href="https://polca.org.pl/blog-epd-czym-sa.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie — poLCA Blog">
+    <meta property="og:description" content="EPD to ustandaryzowany dokument oparty na LCA, weryfikowany przez niezależną jednostkę. Od 2025 r. staje się wymogiem w zamówieniach publicznych UE. Czym jest EPD i jak ją czytać.">
+    <meta property="og:url" content="https://polca.org.pl/blog-epd-czym-sa.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="article:published_time" content="2026-01-20T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="LCA / EPD">
+    <meta property="article:tag" content="EPD">
+    <meta property="article:tag" content="LCA">
+    <meta property="article:tag" content="EN 15804">
+    <meta property="article:tag" content="ISO 14025">
+    <meta property="article:tag" content="deklaracja środowiskowa">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie">
+    <meta name="twitter:description" content="EPD to ustandaryzowany dokument oparty na LCA, weryfikowany przez niezależną jednostkę. Od 2025 r. staje się wymogiem w zamówieniach publicznych UE.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-epd-czym-sa.html",
+          "headline": "EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie",
+          "description": "EPD to ustandaryzowany dokument oparty na badaniu LCA, weryfikowany przez niezależną jednostkę akredytowaną. Od 2025 roku staje się wymogiem w zamówieniach publicznych UE i kryterium zielonych certyfikatów budynków. Czym dokładnie jest EPD, co zawiera i jak ją prawidłowo interpretować.",
+          "url": "https://polca.org.pl/blog-epd-czym-sa.html",
+          "datePublished": "2026-01-20",
+          "dateModified": "2026-01-20",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["EPD", "Deklaracja Środowiskowa Produktu", "LCA", "EN 15804", "ISO 14025", "wyroby budowlane", "zielone zamówienia publiczne"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym jest EPD?",
+              "acceptedAnswer": {"@type": "Answer", "text": "EPD (Environmental Product Declaration, Deklaracja Środowiskowa Produktu) to dokument zawierający skwantyfikowane dane środowiskowe o produkcie w całym cyklu życia, oparty na badaniu LCA i zweryfikowany przez niezależną trzecią stronę. Regulują ją normy ISO 14025 i EN 15804+A2."}
+            },
+            {
+              "@type": "Question",
+              "name": "Jak długo ważna jest EPD?",
+              "acceptedAnswer": {"@type": "Answer", "text": "EPD jest ważna przez 5 lat od daty wydania. Po tym czasie wygasa lub wymaga aktualizacji, jeśli producent chce ją dalej stosować. Zmiana składu produktu lub procesu produkcji przed upływem 5 lat może wymagać wcześniejszej aktualizacji."}
+            },
+            {
+              "@type": "Question",
+              "name": "Czym różni się EPD od certyfikatu ekologicznego (np. ekoznaku)?",
+              "acceptedAnswer": {"@type": "Answer", "text": "EPD to deklaracja środowiskowa typu III — zawiera obiektywne dane liczbowe bez oceny czy produkt jest 'dobry' lub 'zły'. Ekooznakowanie (typ I, np. EU Ecolabel) i oświadczenia środowiskowe (typ II) zawierają ocenę lub selekcję produktów spełniających kryteria. EPD umożliwia porównanie między produktami, ale nie stwierdza samodzielnie, który jest lepszy środowiskowo."}
+            },
+            {
+              "@type": "Question",
+              "name": "Gdzie można znaleźć polskie EPD?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Polskie EPD są rejestrowane w programie EPD Polska (epd.org.pl) prowadzonym przez Multicert Sp. z o.o. Można je też znaleźć w globalnych bazach: EPD International (environdec.com), IBU (ibu-epd.com) oraz INIES (Francja). Łączna liczba EPD dla wyrobów budowlanych w Europie przekracza 25 000 dokumentów."}
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "EPD — czym są Deklaracje Środowiskowe Produktu"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="polca-sidebar" id="polcaSidebar" role="navigation" aria-label="Nawigacja portalu">
+    <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-logo">poLCA</a>
+        <div class="sidebar-subtitle">Polska Baza Danych LCA</div>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Portal</div>
+        <a href="index.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+            Dashboard
+        </a>
+        <div class="sidebar-nav-label">Baza danych</div>
+        <a href="metodyka.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></span>
+            Metodyka i Jako&#347;&#263;
+        </a>
+        <a href="analiza.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            Analiza Sektorowa
+        </a>
+        <a href="kalkulator.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
+            Kalkulator Emisji
+        </a>
+        <a href="datasety.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+            Baza Dataset&#243;w
+        </a>
+        <div class="sidebar-nav-label">Informacje</div>
+        <a href="blog.html" class="active">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+            Blog
+        </a>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+            EPD Polska
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="sidebar-status">
+            <span class="status-dot"></span>
+            System aktywny &mdash; v5.0
+        </div>
+    </div>
+</aside>
+
+<header class="polca-topbar" role="banner">
+    <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-search">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
+        </div>
+    </div>
+    <div class="topbar-right">
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-outline">Kontakt</a>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wr&#243;&#263; do bloga
+        </a>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag">LCA / EPD</span>
+                <span class="blog-date">20 stycznia 2026</span>
+                <span class="blog-read-time">&#183; 9 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                EPD &#8212; czym s&#261; Deklaracje &#346;rodowiskowe Produktu<br>i dlaczego maj&#261; znaczenie
+            </h1>
+            <p class="blog-post-lead">
+                Deklaracja &#346;rodowiskowa Produktu to dokument, kt&#243;ry w kilku liczbach opisuje
+                pe&#322;ny &#347;lad &#347;rodowiskowy wyrobu &#8212; od wydobycia surowc&#243;w po kres &#380;ycia.
+                Nie jest certyfikatem ani nagrod&#261;. Jest ustandaryzowanym j&#281;zykiem,
+                kt&#243;rym bran&#380;a budowlana zaczyna rozmawia&#263; o klimacie.
+            </p>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="tldr-box fade-in">
+        <div class="tldr-box-label">TL;DR &mdash; skr&#243;t dla zabieganych</div>
+        <ul>
+            <li>EPD to dokument oparty na pe&#322;nym badaniu LCA, zweryfikowany przez niezale&#380;n&#261; jednostk&#281; akredytowan&#261; &#8212; nie jest to samodeklaracja producenta.</li>
+            <li>Reguluj&#261; j&#261; normy <strong>ISO&nbsp;14025</strong> (deklaracje typ III) i <strong>EN&nbsp;15804+A2</strong> (wyroby budowlane) oraz regu&#322;y kategorii produktu (PCR).</li>
+            <li>W Polsce wydawaniem EPD zajmuje si&#281; <strong>EPD Polska</strong> (Multicert), w Europie tak&#380;e EPD International (Szwecja) i IBU (Niemcy).</li>
+            <li>EPD jest wa&#380;na <strong>5 lat</strong> i dotyczy konkretnego produktu, konkretnej instalacji produkcyjnej i konkretnego roku referencyjnego.</li>
+        </ul>
+    </div>
+
+    <!-- Key stats -->
+    <div class="key-stat-row section-gap fade-in">
+        <div class="key-stat">
+            <div class="key-stat-number">1993</div>
+            <div class="key-stat-unit">rok</div>
+            <div class="key-stat-label">Pierwsza EPD wydana<br>w Szwecji (program STEM)</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number">5</div>
+            <div class="key-stat-unit">lat</div>
+            <div class="key-stat-label">Wa&#380;no&#347;&#263; EPD od daty<br>wydania przez program</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number accent">25 000+</div>
+            <div class="key-stat-unit">dokument&#243;w</div>
+            <div class="key-stat-label">EPD dla wyrob&#243;w budowlanych<br>w europejskich bazach (2025)</div>
+        </div>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in">
+
+        <h2>Definicja i miejsce EPD w rodzinie deklaracji &#347;rodowiskowych</h2>
+        <p>
+            Norma ISO&nbsp;14020 dzieli deklaracje &#347;rodowiskowe na trzy typy:
+        </p>
+        <ul>
+            <li><strong>Typ I</strong> &#8212; ekooznakowanie (np. EU Ecolabel, Nordic Swan): zewn&#281;trzna certyfikacja, &#380;e produkt spe&#322;nia okre&#347;lone kryteria &#347;rodowiskowe. Orzeka, czy produkt jest &#8222;wystarczaj&#261;co dobry&#8221;.</li>
+            <li><strong>Typ II</strong> &#8212; samodeklaracje producenta (np. &#8222;wyprodukowane z recyklingu&#8221;): nieweryfikowane zewn&#281;trznie o&#347;wiadczenia. Reguluje je ISO&nbsp;14021.</li>
+            <li><strong>Typ III</strong> &#8212; deklaracje &#347;rodowiskowe produktu (EPD): pe&#322;ne, skwantyfikowane dane LCA, zweryfikowane przez stron&#281; trzeci&#261;. Reguluje je ISO&nbsp;14025.</li>
+        </ul>
+        <p>
+            EPD nie ocenia &#8212; informuje. To nie jest certyfikat &#8222;zielonego&#8221; produktu.
+            Producent z wysokim GWP ma EPD tak samo jak producent z niskim.
+            Warto&#347;&#263; EPD tkwi w por&#243;wnywalno&#347;ci: dwie EPD dla tego samego rodzaju wyrobu,
+            wystawione wed&#322;ug tego samego PCR, mo&#380;na ze sob&#261; zestawia&#263; i wyci&#261;ga&#263; wnioski.
+        </p>
+
+        <div class="callout callout-definition">
+            <div class="callout-label">Definicja</div>
+            <p class="callout-body">
+                <strong>EPD (Environmental Product Declaration)</strong> &#8212; ustandaryzowany dokument zawieraj&#261;cy skwantyfikowane dane &#347;rodowiskowe o produkcie w ca&#322;ym cyklu &#380;ycia, opracowany zgodnie z ISO&nbsp;14025 i odpowiednim PCR, zweryfikowany przez niezale&#380;n&#261; jednostk&#281; akredytowan&#261;. Dla wyrob&#243;w budowlanych obowi&#261;zuje ponadto EN&nbsp;15804+A2.
+            </p>
+        </div>
+
+        <h2>Podstawy normatywne: ISO&nbsp;14025, EN&nbsp;15804 i PCR</h2>
+        <p>
+            Ka&#380;da EPD dla wyrobu budowlanego opiera si&#281; na trzech poziomach norm:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">ISO&nbsp;14025 &#8212; deklaracje &#347;rodowiskowe typ III</div>
+                    <div class="process-step-text">
+                        Norma nadrz&#281;dna definiuj&#261;ca og&#243;lne wymagania dla deklaracji typ III:
+                        przejrzysto&#347;&#263;, weryfikacja stron&#261; trzeci&#261;, rejestracja w akredytowanym programie,
+                        powi&#261;zanie z PCR. Nie m&#243;wi nic o konkretnych wska&#378;nikach &#8212; tylko o procesie.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">EN&nbsp;15804+A2 &#8212; podstawowy PCR dla wyrob&#243;w budowlanych</div>
+                    <div class="process-step-text">
+                        Europejska norma definiuj&#261;ca zasady tworzenia EPD dla wszystkich wyrob&#243;w i
+                        us&#322;ug budowlanych. Okre&#347;la: modu&#322;y informacyjne (A1&ndash;D), obowi&#261;zkowe
+                        wska&#378;niki &#347;rodowiskowe (GWP, AP, EP, ODP itd.), zasady granic systemu,
+                        wymagania dotycz&#261;ce danych pierwotnych i wt&#243;rnych oraz zasad&#281;
+                        deklarowania w&#281;gla biogennego.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">PCR (Product Category Rules) &#8212; regu&#322;y dla kategorii produktu</div>
+                    <div class="process-step-text">
+                        Szczeg&#243;&#322;owe zasady dla konkretnej grupy produkt&#243;w (np. cement, stal,
+                        p&#322;yty gipsowo-kartonowe). PCR precyzuje jednostk&#281; deklarowan&#261;,
+                        domy&#347;lne scenariusze modu&#322;u C i D, wymagania dotycz&#261;ce danych pierwotnych,
+                        ew. specyficzne wska&#378;niki bran&#380;owe. Program EPD Polska stosuje
+                        PCR publikowane przez programy europejskie (IBU, EPD International).
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Co EPD zawiera: modu&#322;y informacyjne A&ndash;D</h2>
+        <p>
+            EN&nbsp;15804+A2 organizuje informacje &#347;rodowiskowe w modu&#322;y odpowiadaj&#261;ce fazom
+            cyklu &#380;ycia. Producent musi obowi&#261;zkowo zadeklarowa&#263; modu&#322;y A1&ndash;A3.
+            Pozosta&#322;e s&#261; opcjonalne lub wymagane przez PCR.
+        </p>
+
+        <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
+            <div class="card-title" style="font-size:0.9rem;">Modu&#322;y cyklu &#380;ycia w EPD</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.75rem; line-height:1.6;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--border);">
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Modu&#322;</th>
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Faza</th>
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Obowi&#261;zkowo?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">A1&ndash;A3</td>
+                        <td style="padding:0.55rem 0.75rem;">Produkcja (surowce, transport do fabryki, produkcja)</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--func-green);">Tak</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">A4&ndash;A5</td>
+                        <td style="padding:0.55rem 0.75rem;">Transport do placu budowy, wbudowanie</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Opcjonalne</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">B1&ndash;B7</td>
+                        <td style="padding:0.55rem 0.75rem;">U&#380;ytkowanie budynku (emisje, konserwacja, wymiana, energia)</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Opcjonalne</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">C1&ndash;C4</td>
+                        <td style="padding:0.55rem 0.75rem;">Koniec &#380;ycia (rozbi&#243;rka, transport, przetwarzanie, sk&#322;adowanie)</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Cz&#281;sto wymagane przez PCR</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">D</td>
+                        <td style="padding:0.55rem 0.75rem;">Korzy&#347;ci i obci&#261;&#380;enia poza granicami systemu (recykling, odzysk energii)</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Opcjonalne, poza granicami</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Wskazówka praktyczna</div>
+            <p class="callout-body">
+                Podczas por&#243;wnywania dw&#243;ch EPD upewnij si&#281;, &#380;e por&#243;wnujesz te same modu&#322;y.
+                GWP &#8222;total&#8221; obejmuje modu&#322;y A1&ndash;A3 + C + D. Warto&#347;&#263; <em>tylko</em> A1&ndash;A3
+                mo&#380;e by&#263; znacznie ni&#380;sza &#8212; nie por&#243;wnuj ich ze sob&#261;. Program EPD Polska
+                wymaga deklarowania, kt&#243;re modu&#322;y s&#261; uwzgl&#281;dnione w ka&#380;dym podanym wska&#378;niku.
+            </p>
+        </div>
+
+        <h2>Obowi&#261;zkowe wska&#378;niki &#347;rodowiskowe w EPD</h2>
+        <p>
+            EN&nbsp;15804+A2 definiuje obowi&#261;zkowy zestaw wska&#378;nik&#243;w wp&#322;ywu &#347;rodowiskowego.
+            Ka&#380;da EPD dla wyrobu budowlanego musi je zawiera&#263;:
+        </p>
+        <ul>
+            <li><strong>GWP</strong> &#8212; Global Warming Potential (potencja&#322; globalnego ocieplenia), kg CO&#8322; eq.</li>
+            <li><strong>ODP</strong> &#8212; Ozone Depletion Potential, kg CFC-11 eq.</li>
+            <li><strong>AP</strong> &#8212; Acidification Potential (potencja&#322; zakwaszenia), mol H&spplus; eq.</li>
+            <li><strong>EP-freshwater, EP-marine, EP-terrestrial</strong> &#8212; potencja&#322; eutrofizacji.</li>
+            <li><strong>POCP</strong> &#8212; Photochemical Ozone Creation Potential, kg NMVOC eq.</li>
+            <li><strong>ADP-minerals&amp;metals</strong> i <strong>ADP-fossil</strong> &#8212; potencja&#322; zubo&#380;enia zasob&#243;w.</li>
+            <li><strong>WDP</strong> &#8212; Water Deprivation Potential (zu&#380;ycie wody), m&#179; eq.</li>
+        </ul>
+        <p>
+            Poza wska&#378;nikami wp&#322;ywu, EPD zawiera r&#243;wnie&#380; przepływy zasobów (zu&#380;ycie energii pierwotnej,
+            zu&#380;ycie wody netto) i wska&#378;niki odpad&#243;w.
+        </p>
+
+        <h2>Rodzaje EPD: average, specific i sector</h2>
+        <p>
+            Nie ka&#380;da EPD dotyczy jednego produktu z jednej fabryki. W praktyce wyst&#281;puj&#261; trzy typy:
+        </p>
+        <ul>
+            <li><strong>Specific EPD</strong> &#8212; dla konkretnego produktu z konkretnej instalacji produkcyjnej w konkretnym roku. Najdok&#322;adniejsza, mo&#380;liwa do stosowania w projektach wymagaj&#261;cych danych specyficznych.</li>
+            <li><strong>Average Industry EPD</strong> &#8212; &#347;rednia bran&#380;owa dla kategorii produktu, opracowana przez stowarzyszenie producent&#243;w. Mniej precyzyjna, ale u&#380;yteczna gdy brak EPD specific.</li>
+            <li><strong>Sector EPD</strong> &#8212; podobna do average, opracowywana na poziomie sektora. Stosowana np. przez stowarzyszenia cementowe lub stalowe w LCA budynk&#243;w.</li>
+        </ul>
+
+        <div class="callout callout-warning">
+            <div class="callout-label">Uwaga metodyczna</div>
+            <p class="callout-body">
+                Average Industry EPD nie mo&#380;e by&#263; stosowana w badaniach por&#243;wnawczych mi&#281;dzy
+                producentami. Je&#380;eli projekt wymaga por&#243;wnania dostawc&#243;w &#8212; konieczne s&#261;
+                EPD specific ka&#380;dego z nich. Stosowanie &#347;redniej bran&#380;owej w takiej sytuacji
+                jest b&#322;&#281;dem metodycznym i mo&#380;e zosta&#263; zakwestionowane podczas przegl&#261;du krytycznego.
+            </p>
+        </div>
+
+        <h2>Weryfikacja: kto i jak</h2>
+        <p>
+            Ka&#380;da EPD musi przej&#347;&#263; weryfikacj&#281; przez niezale&#380;n&#261; stron&#281; trzeci&#261; &#8212; osoby
+            lub organ akredytowany przez program EPD. Weryfikator sprawdza:
+        </p>
+        <ul>
+            <li>zgodno&#347;&#263; metodyki LCA z ISO&nbsp;14040/44 i EN&nbsp;15804+A2,</li>
+            <li>zgodno&#347;&#263; danych pierwotnych z dokumentacj&#261; produkcji,</li>
+            <li>prawid&#322;owo&#347;&#263; wyboru danych wt&#243;rnych i ich reprezentatywno&#347;&#263;,</li>
+            <li>poprawno&#347;&#263; oblicze&#324; i prezentacji wynik&#243;w,</li>
+            <li>zgodno&#347;&#263; z PCR.</li>
+        </ul>
+        <p>
+            Weryfikator wydaje o&#347;wiadczenie weryfikacyjne. Bez niego EPD nie mo&#380;e
+            by&#263; zarejestrowana w programie. To kluczowa r&#243;&#380;nica mi&#281;dzy EPD
+            a nieformaln&#261; &#8222;anali&#261; LCA&#8221; dostarczaną przez producenta bez niezale&#380;nej kontroli.
+        </p>
+
+        <h2>Gdzie i jak stosuje si&#281; EPD?</h2>
+        <p>
+            EPD ma kilka g&#322;&#243;wnych zastosowa&#324; w bran&#380;y budowlanej:
+        </p>
+        <ul>
+            <li><strong>LCA budynku</strong> &#8212; EPD s&#261; g&#322;&#243;wnym &#378;r&#243;d&#322;em danych &#347;rodowiskowych dla wyrob&#243;w wbudowanych. Oprogramowanie jak One Click LCA, SimaPro czy OpenLCA je importuje.</li>
+            <li><strong>Zielone certyfikaty budynk&#243;w</strong> &#8212; BREEAM, LEED, DGNB wymagaj&#261; lub premiuj&#261; EPD dla materia&#322;&#243;w. BREEAM Mat&nbsp;01 daje punkty za EPD o ka&#380;dego materia&#322;u.</li>
+            <li><strong>Zamówienia publiczne</strong> &#8212; od 2025&nbsp;r. CPR&nbsp;2024/3110 i zielone kryteria UE (GPP) coraz cz&#281;&#347;ciej wymagaj&#261; EPD jako dokumentacji &#347;rodowiskowej wyrobu.</li>
+            <li><strong>Deklaracja w&#281;glowa producenta</strong> &#8212; EPD specific jest podstaw&#261; do komunikacji &#347;ladu w&#281;glowego produktu wobec klient&#243;w instytucjonalnych (CSRD, due diligence).</li>
+        </ul>
+
+        <h2>EPD a certyfikat: kluczowa r&#243;&#380;nica</h2>
+        <p>
+            Producent posiadaj&#261;cy EPD nie ma &#8222;certyfikatu ekologicznego&#8221; &#8212; ma dok&#322;adny opis &#347;rodowiskowy.
+            EPD z GWP 900&nbsp;kg CO&#8322;/t dla cementu jest tak samo walidowanym dokumentem
+            jak EPD z GWP 600&nbsp;kg CO&#8322;/t. R&#243;&#380;nica polega na tym, co robi z tymi danymi
+            projektant lub zamawiaj&#261;cy.
+        </p>
+        <p>
+            EPD stwarza warunki do obiektywnego por&#243;wnania &#8212; ale sama por&#243;wnania nie przeprowadza.
+            To odpowiedzialno&#347;&#263; osoby wykonuj&#261;cej LCA budynku lub opracowuj&#261;cej kryteria zakupu.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czym jest EPD?</div>
+                <div class="faq-a">
+                    EPD (Environmental Product Declaration) to dokument zawieraj&#261;cy skwantyfikowane dane
+                    &#347;rodowiskowe o produkcie w ca&#322;ym cyklu &#380;ycia, oparty na badaniu LCA i zweryfikowany
+                    przez niezale&#380;n&#261; trzeci&#261; stron&#281;. Reguluj&#261; go normy ISO&nbsp;14025
+                    i EN&nbsp;15804+A2 (dla wyrob&#243;w budowlanych).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Jak d&#322;ugo wa&#380;na jest EPD?</div>
+                <div class="faq-a">
+                    EPD jest wa&#380;na przez 5&nbsp;lat od daty wydania. Po tym czasie wygasa lub wymaga
+                    aktualizacji. Zmiana sk&#322;adu produktu lub procesu produkcji przed up&#322;ywem 5&nbsp;lat
+                    mo&#380;e wymaga&#263; wcze&#347;niejszej aktualizacji.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czym r&#243;&#380;ni si&#281; EPD od certyfikatu ekologicznego?</div>
+                <div class="faq-a">
+                    EPD to deklaracja &#347;rodowiskowa typu&nbsp;III &#8212; zawiera obiektywne dane liczbowe
+                    bez oceny. Certyfikat ekologiczny (np. EU Ecolabel) stwierdza, &#380;e produkt
+                    spe&#322;nia okre&#347;lone kryteria i jest &#8222;wystarczaj&#261;co dobry&#8221;. EPD umo&#380;liwia
+                    por&#243;wnanie mi&#281;dzy produktami, ale nie stwierdza samodzielnie, kt&#243;ry jest lepszy.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Gdzie mo&#380;na znale&#378;&#263; polskie EPD?</div>
+                <div class="faq-a">
+                    Polskie EPD s&#261; rejestrowane w programie EPD Polska (<a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">epd.org.pl</a>)
+                    prowadzonym przez Multicert. Mo&#380;na je te&#380; znale&#378;&#263; w bazach EPD International
+                    (environdec.com) i IBU (ibu-epd.com). &#321;&#261;czna liczba EPD dla wyrob&#243;w budowlanych
+                    w Europie przekracza 25&nbsp;000 dokument&#243;w.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czy EPD jest obowi&#261;zkowa?</div>
+                <div class="faq-a">
+                    Aktualnie EPD nie jest powszechnie obowi&#261;zkowa, ale staje si&#281; de facto wymogiem
+                    rynkowym. CPR&nbsp;2024/3110 wprowadza obowi&#261;zek deklarowania w&#322;a&#347;ciwo&#347;ci &#347;rodowiskowych
+                    dla okre&#347;lonych grup produkt&#243;w. Zamówienia publiczne, certyfikaty budynk&#243;w (BREEAM, LEED)
+                    i wymagania du&#380;ych inwestor&#243;w coraz cz&#281;&#347;ciej wymagaj&#261; EPD jako warunku udzia&#322;u w przetargu.
+                </div>
+            </div>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
+            <strong>&#378;r&#243;d&#322;a:</strong>
+            ISO&nbsp;14025:2006, Deklaracje &#347;rodowiskowe &mdash; zasady i procedury;
+            EN&nbsp;15804+A2:2019/A1:2021, Zr&#243;wnowa&#380;one budownictwo &mdash; deklaracje &#347;rodowiskowe wyrob&#243;w;
+            ISO&nbsp;14040:2006 i ISO&nbsp;14044:2006, Zarz&#261;dzanie &#347;rodowiskowe &mdash; ocena cyklu &#380;ycia;
+            Rozporz&#261;dzenie (UE) 2024/3110 (CPR), Dz.U. UE 2024;
+            EPD International (2025), &#8222;General Programme Instructions&#8221; v5.0;
+            IBU (2023), &#8222;PCR Part&nbsp;A: Computation Rules&#8221; v2.0;
+            EPD Polska / Multicert (2025), rejestr EPD.
+        </p>
+    </div>
+
+    <!-- Related posts -->
+    <div class="section-gap fade-in">
+        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="blog-cpr-2024.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag regulacje">Regulacje</span>
+                        <span class="blog-date">5 lutego 2026</span>
+                    </div>
+                    <div class="blog-card-title">CPR 2024/3110 &#8212; co zmienia si&#281; dla polskich producent&#243;w wyrob&#243;w budowlanych</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">8 min czytania</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-fotowoltaika-epd.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-tag">EPD</span>
+                        <span class="blog-date">18 lutego 2026</span>
+                    </div>
+                    <div class="blog-card-title">Zainstalowa&#322;e&#347; panele s&#322;oneczne w zak&#322;adzie. Twoje EPD si&#281; nie zmieni&#322;o &#8212; oto dlaczego</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">10 min czytania</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+</footer>
+<script src="js/sidebar.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

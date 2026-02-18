@@ -5,6 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog</title>
     <meta name="description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Kiedy stosować który i dlaczego mylenie ich to poważny błąd metodyczny.">
+    <link rel="canonical" href="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog">
+    <meta property="og:description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Kiedy stosować który w LCA, EPD i raportowaniu Scope 2.">
+    <meta property="og:url" content="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka LCA">
+    <meta property="article:tag" content="residual mix">
+    <meta property="article:tag" content="AIB">
+    <meta property="article:tag" content="KOBiZE">
+    <meta property="article:tag" content="Scope 2">
+    <meta property="article:tag" content="Gwarancje Pochodzenia">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej">
+    <meta name="twitter:description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z AIB — oba poprawne, ale mierzą co innego. Kiedy stosować który w LCA i Scope 2.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
+          "headline": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich",
+          "description": "597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Mylenie ich to jeden z częstszych błędów metodycznych w raportowaniu emisji Scope 2 i deklaracjach EPD.",
+          "url": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
+          "datePublished": "2026-02-18",
+          "dateModified": "2026-02-18",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["residual mix", "AIB", "KOBiZE", "Scope 2", "Gwarancje Pochodzenia", "emisje CO2", "energia elektryczna", "EPD", "LCA", "GHG Protocol"],
+          "about": [
+            {"@type": "Thing", "name": "Residual mix energii elektrycznej"},
+            {"@type": "Thing", "name": "Association of Issuing Bodies (AIB)"},
+            {"@type": "Thing", "name": "KOBiZE"},
+            {"@type": "Thing", "name": "Raportowanie emisji Scope 2"},
+            {"@type": "Thing", "name": "Gwarancje Pochodzenia (GO)"}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej"}
+          ]
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -77,6 +147,8 @@
 <div class="polca-content">
 <div class="polca-page">
 
+    <div class="post-accent-bar"></div>
+
     <div class="fade-in">
         <a href="blog.html" class="blog-back-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -129,9 +201,17 @@
         </p>
     </div>
 
-    <div class="blog-post-body section-gap fade-in">
+    <div class="blog-post-body section-gap fade-in post-chapters">
 
         <h2>Sk&#261;d bior&#261; si&#281; dwa r&#243;&#380;ne wska&#378;niki dla tego samego kraju?</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Kluczowe rozr&#243;&#380;nienie</div>
+            KOBiZE = fizyczny miks sieci.<br>
+            AIB residual mix = miks po &#8222;wyj&#281;ciu&#8221; OZE rozliczonego certyfikatami GO.<br>
+            Oba wska&#378;niki mierz&#261; t&#281; sam&#261; energi&#281; &#8212; innymi metodami.
+        </div>
+
         <p>
             W Polsce w 2023 roku w&#281;giel odpowiada&#322; za ok. 60% produkcji energii elektrycznej.
             Jednocze&#347;nie dynamicznie ro&#347;nie udzia&#322; OZE &#8212; farmy wiatrowe i fotowoltaika wytwarza&#322;y
@@ -189,13 +269,9 @@
             Ale ta energia musi sk&#261;d&#347; &#8222;wyj&#347;&#263;&#8221; z puli og&#243;lnej &#8212; i tu w&#322;a&#347;nie pojawia si&#281; residual mix.
         </p>
 
-        <div class="quote-block" style="max-width: none; margin: 2rem 0;">
-            <p>
-                Residual mix to <strong>resztkowy miks energetyczny</strong> &#8212; pula energii elektrycznej,
-                kt&#243;ra pozosta&#322;a po &#8222;wyj&#281;ciu&#8221; wszystkich energii rozliczonych certyfikatami GO.
-                Poniewa&#380; GO dotycz&#261; g&#322;&#243;wnie OZE, residual mix jest zawsze bardziej emisyjny
-                ni&#380; &#347;redni miks krajowy.
-            </p>
+        <div class="pull-quote-lg">
+            <p>Residual mix to resztkowy miks energetyczny &#8212; pula energii, kt&#243;ra zostaje po &#8222;wyj&#281;ciu&#8221; wszystkich MWh rozliczonych certyfikatami GO. Poniewa&#380; GO dotycz&#261; g&#322;&#243;wnie OZE, residual mix jest zawsze bardziej emisyjny ni&#380; &#347;redni miks krajowy.</p>
+            <cite>AIB, European Residual Mixes &#8212; definicja operacyjna</cite>
         </div>
 
         <p>

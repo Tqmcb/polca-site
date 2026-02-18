@@ -1,0 +1,54 @@
+name: Auto-deploy Claude branches to main
+
+on:
+  push:
+    branches:
+      - 'claude/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Create PR and merge to main
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+
+            // Check for existing open PR
+            const { data: pulls } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${branch}`,
+              base: 'main',
+              state: 'open'
+            });
+
+            let pullNumber;
+            if (pulls.length === 0) {
+              const { data: pr } = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: branch.replace('claude/', '').replace(/-/g, ' '),
+                head: branch,
+                base: 'main',
+                body: `Automated deployment from Claude Code session\n\nBranch: \`${branch}\``
+              });
+              pullNumber = pr.number;
+              console.log('PR created:', pr.html_url);
+            } else {
+              pullNumber = pulls[0].number;
+              console.log('Existing PR found:', pulls[0].html_url);
+            }
+
+            // Merge immediately
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullNumber,
+              merge_method: 'squash'
+            });
+            console.log('Merged PR #' + pullNumber + ' to main');
