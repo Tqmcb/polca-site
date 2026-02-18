@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metodyka i Jakość — poLCA</title>
-    <meta name="description" content="Sześciowarstwowy system zapewnienia jakości danych LCA">
+    <meta name="description" content="Siedmiowarstwowy system zapewnienia jakości danych LCA">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,9 +76,10 @@
         <div class="section-num">02 — Architektura danych</div>
         <h1 class="page-title">Metodyka i Jakość</h1>
         <p class="page-subtitle">
-            Sześciowarstwowy system zapewnienia jakości danych. Zgodny z ISO 14044,
+            Siedmiowarstwowy system zapewnienia jakości danych. Zgodny z ISO 14044,
             ISO 14025 oraz EN 15804+A2. Warstwa VI — krzyżowa walidacja z danymi
-            regulacyjnymi E-PRTR i EU ETS.
+            regulacyjnymi E-PRTR i EU ETS. Warstwa VII — operacyjna reprezentatywność
+            danych specyficznych.
         </p>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
             <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">ISO 14044:2006</span>
@@ -222,6 +223,38 @@
                 </div>
             </div>
         </div>
+        <div class="layer-card">
+            <span class="layer-num">VII</span>
+            <div>
+                <div class="layer-title">Operacyjna reprezentatywność danych specyficznych</div>
+                <p class="layer-desc">Ocena operacyjnej reprezentatywności danych specyficznych producenta przed ich kwalifikacją jako foreground. Dane niespełniające kryteriów reprezentatywności operacyjnej podlegają zastąpieniu danymi proxy zgodnymi z hierarchią jakości danych.</p>
+                <div class="grid-3" style="gap: 0.6rem; margin-top: 0.8rem;">
+                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
+                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Wykonalność technologiczna</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy dane odzwierciedlają faktycznie stosowaną technologię produkcji w danej instalacji</p>
+                    </div>
+                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
+                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Racjonalność ekonomiczna</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy parametry procesowe mieszczą się w zakresie ekonomicznie uzasadnionej eksploatacji</p>
+                    </div>
+                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
+                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Adekwatność geograficzna</div>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy dane odpowiadają warunkom geograficznym i regulacyjnym rynku docelowego</p>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 0.8rem; padding: 1rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
+                    <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.4rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;">Mechanizm zapewnienia wiarygodności</div>
+                    <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">Warstwa VII stanowi element systemu ograniczania ryzyka selektywnej optymalizacji wyników środowiskowych. Dane specyficzne producenta, które nie przechodzą trójwymiarowej oceny reprezentatywności (technologicznej, ekonomicznej, geograficznej), są zastępowane danymi proxy z hierarchii jakości danych — zapewniając, że model LCA odzwierciedla realne warunki produkcji, a nie wyselekcjonowane punkty danych.</p>
+                </div>
+                <div class="tag-row" style="margin-top: 0.7rem;">
+                    <span class="tag">Dane foreground</span>
+                    <span class="tag">Dane proxy</span>
+                    <span class="tag">Hierarchia jakości</span>
+                    <span class="tag">Reprezentatywność operacyjna</span>
+                    <span class="tag">Anti-cherry-picking</span>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="card card-lg section-gap fade-in">
@@ -295,6 +328,15 @@
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
                     </tr>
+                    <tr>
+                        <td style="font-weight: 600;">VII. Reprezentatywność</td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -318,7 +360,7 @@
     <div class="grid-2 section-gap fade-in">
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Cement — walidacja głęboka</div>
-            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Dane branżowe SPC (Stowarzyszenie Producentów Cementu) dostarczają zagregowane parametry produkcji — udział paliw alternatywnych, wskaźnik klinkieru, zużycie energii na tonę. Dane EU ETS dostarczają zweryfikowane emisje CO₂ per instalacja. Wszystkie sześć warstw pracuje na pełnej mocy — to benchmark walidacyjny poLCA.</p>
+            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Dane branżowe SPC (Stowarzyszenie Producentów Cementu) dostarczają zagregowane parametry produkcji — udział paliw alternatywnych, wskaźnik klinkieru, zużycie energii na tonę. Dane EU ETS dostarczają zweryfikowane emisje CO₂ per instalacja. Wszystkie siedem warstw pracuje na pełnej mocy — to benchmark walidacyjny poLCA.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Kruszywa — walidacja fizyczna</div>
