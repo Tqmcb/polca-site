@@ -44,10 +44,21 @@ jobs:
               console.log('Existing PR found:', pulls[0].html_url);
             }
 
-            // Merge immediately
+            // Wait for GitHub to compute mergeability (returns null initially)
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            let mergeable = null;
+            for (let i = 0; i < 8 && mergeable === null; i++) {
+              await new Promise(r => setTimeout(r, 5000));
+              const { data: prData } = await github.rest.pulls.get({ owner, repo, pull_number: pullNumber });
+              mergeable = prData.mergeable;
+              console.log(`Attempt ${i+1}: mergeable=${mergeable}`);
+            }
+            if (mergeable === false) throw new Error('PR has merge conflicts — cannot auto-merge');
+
             await github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner,
+              repo,
               pull_number: pullNumber,
               merge_method: 'squash'
             });
