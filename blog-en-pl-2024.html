@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; pr&#261;du elektrycznego w Polsce w cyklu &#380;ycia &#8212; poLCA Blog</title>
+    <meta name="description" content="Nowe warto&#347;ci wska&#378;nika poLCA-EN-PL za rok 2024: 0,718 kg CO&#8322;e/kWh &#8212; spadek o 7,9% wobec 2023. Pe&#322;ny LCA uwzgl&#281;dnia spalanie, metan z w&#281;gla i upstream paliw.">
+    <link rel="canonical" href="https://polca.org.pl/blog-en-pl-2024.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; pr&#261;du elektrycznego w Polsce w cyklu &#380;ycia">
+    <meta property="og:description" content="0,718 kg CO&#8322;e/kWh w 2024 roku &#8212; o 7,9% mniej ni&#380; rok wcze&#347;niej. Jak liczymy pe&#322;ny LCA emisyjno&#347;ci energii elektrycznej i dlaczego to wa&#380;ne dla EPD i CSRD.">
+    <meta property="og:url" content="https://polca.org.pl/blog-en-pl-2024.html">
+    <meta property="og:site_name" content="poLCA &#8212; Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+01:00">
+    <meta property="article:author" content="poLCA &#8212; Polska Baza Danych LCA">
+    <meta property="article:section" content="Dane">
+    <meta property="article:tag" content="poLCA-EN-PL">
+    <meta property="article:tag" content="emisyjno&#347;&#263; energii elektrycznej">
+    <meta property="article:tag" content="LCA">
+    <meta property="article:tag" content="KOBiZE">
+    <meta property="article:tag" content="dekarbonizacja">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; pr&#261;du w Polsce w cyklu &#380;ycia">
+    <meta name="twitter:description" content="0,718 kg CO&#8322;e/kWh w 2024 &#8212; spadek o 7,9% r/r. Pe&#322;ny LCA: spalanie + metan z w&#281;gla + upstream + infrastruktura OZE.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-en-pl-2024.html",
+          "headline": "poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia",
+          "description": "Nowe warto&#347;ci wska&#378;nika poLCA-EN-PL za rok 2024: 0,718 kg CO&#8322;e/kWh, o 7,9% mniej ni&#380; w 2023. Metodologia LCA obejmuje spalanie paliw, emisje metanu z wydobycia w&#281;gla, upstream pozosta&#322;ych paliw oraz cykl &#380;ycia infrastruktury OZE.",
+          "url": "https://polca.org.pl/blog-en-pl-2024.html",
+          "datePublished": "2026-02-18",
+          "dateModified": "2026-02-18",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA &#8212; Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["poLCA-EN-PL", "emisyjno&#347;&#263; energii elektrycznej", "LCA", "CO2e", "kWh", "KOBiZE", "dekarbonizacja", "metan z w&#281;gla", "OZE", "EPD"],
+          "about": [
+            {"@type": "Thing", "name": "Wska&#378;nik emisyjno&#347;ci energii elektrycznej LCA"},
+            {"@type": "Thing", "name": "poLCA-EN-PL"},
+            {"@type": "Thing", "name": "Emisje fugitywne metanu"},
+            {"@type": "Thing", "name": "Dekarbonizacja energetyki polskiej"},
+            {"@type": "Thing", "name": "Ocena cyklu &#380;ycia (LCA)"}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; pr&#261;du elektrycznego w Polsce w cyklu &#380;ycia"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym r&#243;&#380;ni si&#281; poLCA-EN-PL od wska&#378;nika KOBiZE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "KOBiZE raportuje wy&#322;&#261;cznie bezpo&#347;rednie emisje CO&#8322; ze spalania paliw na bramie elektrowni. poLCA-EN-PL obejmuje pe&#322;ny cykl &#380;ycia: spalanie (77%), emisje metanu z wydobycia polskiego w&#281;gla kamiennego (14%), upstream pozosta&#322;ych paliw &#8212; gaz, olej, biomasa (8%) oraz cykl &#380;ycia infrastruktury OZE &#8212; wiatr, PV (1%). Warto&#347;&#263; LCA jest wy&#380;sza od KOBiZE o oko&#322;o 20&#8211;25%."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Kiedy stosowa&#263; poLCA-EN-PL, a kiedy KOBiZE?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "poLCA-EN-PL jest w&#322;a&#347;ciwym wska&#378;nikiem w pe&#322;nych analizach LCA i EPD gdy wymagany jest zakres &#8222;od ko&#322;yski do bram&#8221; (cradle-to-gate) dla energii elektrycznej z uwzgl&#281;dnieniem &#322;a&#324;cucha dostaw paliw. KOBiZE stosuje si&#281; w uproszczonych obliczeniach i raportowaniu Scope&nbsp;2 metod&#261; lokalizacyjn&#261; (location-based)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Jak cz&#281;sto aktualizowany jest wska&#378;nik poLCA-EN-PL?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wska&#378;nik jest aktualizowany rocznie, po publikacji danych przez URE, PSE i GUS za poprzedni rok. Dane za 2024 rok opublikowano w lutym 2026. Aktualizacja obejmuje rewizj&#281; struktury produkcji energii, wsp&#243;&#322;czynnik&#243;w metanowo&#347;ci kopal&#324; i zmian w strukturze OZE."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Dlaczego metan z wydobycia w&#281;gla ma tak du&#380;y udzia&#322; w wska&#378;niku?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Polskie kopalnictwo w&#281;gla kamiennego charakteryzuje si&#281; wysokim wsp&#243;&#322;czynnikiem metanowo&#347;ci &#8212; &#347;rednio ok. 8&#8211;12 m&#179; CH&#8324; na ton&#281; wydobytego w&#281;gla. Metan ma wsp&#243;&#322;czynnik GWP100 r&#243;wny 27,9 (IPCC AR6), co sprawia, &#380;e nawet niewielkie ilo&#347;ci gazu fugitywnego istotnie wp&#322;ywaj&#261; na ca&#322;kowity &#347;lad CO&#8322;e energii elektrycznej."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="polca-sidebar" id="polcaSidebar" role="navigation" aria-label="Nawigacja portalu">
+    <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-logo">poLCA</a>
+        <div class="sidebar-subtitle">Polska Baza Danych LCA</div>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Portal</div>
+        <a href="index.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+            Dashboard
+        </a>
+        <div class="sidebar-nav-label">Baza danych</div>
+        <a href="metodyka.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></span>
+            Metodyka i Jako&#347;&#263;
+        </a>
+        <a href="analiza.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            Analiza Sektorowa
+        </a>
+        <a href="kalkulator.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
+            Kalkulator Emisji
+        </a>
+        <a href="datasety.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+            Baza Dataset&#243;w
+        </a>
+        <div class="sidebar-nav-label">Informacje</div>
+        <a href="blog.html" class="active">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+            Blog
+        </a>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+            EPD Polska
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="sidebar-status">
+            <span class="status-dot"></span>
+            System aktywny &mdash; v5.0
+        </div>
+    </div>
+</aside>
+
+<header class="polca-topbar" role="banner">
+    <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-search">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
+        </div>
+    </div>
+    <div class="topbar-right">
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-outline">Kontakt</a>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="post-accent-bar"></div>
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wr&#243;&#263; do bloga
+        </a>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag dane">Dane</span>
+                <span class="blog-tag metodyka">Metodyka</span>
+                <span class="blog-date">18 lutego 2026</span>
+                <span class="blog-read-time">&#183; 7 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia
+            </h1>
+            <p class="blog-post-lead">
+                Nowe warto&#347;ci wska&#378;nika poLCA-EN-PL za rok 2024: <strong>0,718&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> &#8212;
+                o 7,9% mniej ni&#380; w roku poprzednim. To pierwszy wska&#378;nik emisyjno&#347;ci polskiej energii elektrycznej
+                obejmuj&#261;cy pe&#322;ny &#322;a&#324;cuch cyklu &#380;ycia: od wydobycia paliw po wytwarzanie i infrastruktur&#281; OZE.
+                Poni&#380;ej metodologia, sk&#322;adowe i trendy dekarbonizacji.
+            </p>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="tldr-box fade-in">
+        <div class="tldr-box-label">TL;DR &#8212; skr&#243;t dla zabieganych</div>
+        <ul>
+            <li>Wska&#378;nik poLCA-EN-PL za 2024: <strong>0,718&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> (2023: 0,780&nbsp;kg)</li>
+            <li>Spadek o <strong>7,9%</strong> rok do roku &#8212; g&#322;&#243;wnie przez wzrost OZE i ni&#380;sze zu&#380;ycie w&#281;gla</li>
+            <li>W odr&#243;&#380;nieniu od KOBiZE, poLCA-EN-PL obejmuje metan z wydobycia w&#281;gla, upstream paliw i infrastruktur&#281; OZE</li>
+            <li>Walidacja niezale&#380;na: Lewandowska et&nbsp;al. (2025) potwierdzi&#322;a warto&#347;&#263; 0,788&nbsp;kg&nbsp;CO&#8322;/kWh za 2023</li>
+        </ul>
+    </div>
+
+    <!-- Key stats -->
+    <div class="key-stat-row section-gap fade-in">
+        <div class="key-stat">
+            <div class="key-stat-number accent">0,718</div>
+            <div class="key-stat-unit">kg CO&#8322;e/kWh</div>
+            <div class="key-stat-label">poLCA-EN-PL 2024</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number muted">0,780</div>
+            <div class="key-stat-unit">kg CO&#8322;e/kWh</div>
+            <div class="key-stat-label">poLCA-EN-PL 2023</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number" style="color: var(--func-green);">&#8722;7,9%</div>
+            <div class="key-stat-unit">zmiana r/r</div>
+            <div class="key-stat-label">Redukcja emisji</div>
+        </div>
+    </div>
+
+    <!-- Składowe wskaźnika -->
+    <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
+        <div class="card-title">Sk&#322;adowe wska&#378;nika poLCA-EN-PL 2024</div>
+        <div class="comp-bar-group" style="margin-top: 1rem;">
+            <div class="comp-bar-label">Emisje &#8222;gate&#8221; &#8212; spalanie paliw w elektrowniach</div>
+            <div class="comp-bar-track">
+                <div class="comp-bar-fill gray" style="width: 77%;">77% &mdash; 0,553&nbsp;kg CO&#8322;e/kWh</div>
+            </div>
+        </div>
+        <div class="comp-bar-group">
+            <div class="comp-bar-label">Metan fugitywny z wydobycia polskiego w&#281;gla kamiennego</div>
+            <div class="comp-bar-track">
+                <div class="comp-bar-fill gray" style="width: 14%;">14% &mdash; 0,101&nbsp;kg CO&#8322;e/kWh</div>
+            </div>
+        </div>
+        <div class="comp-bar-group">
+            <div class="comp-bar-label">Upstream pozosta&#322;ych paliw &#8212; gaz, olej, biomasa</div>
+            <div class="comp-bar-track">
+                <div class="comp-bar-fill gray" style="width: 8%;">8% &mdash; 0,057&nbsp;kg CO&#8322;e/kWh</div>
+            </div>
+        </div>
+        <div class="comp-bar-group">
+            <div class="comp-bar-label">Cykl &#380;ycia infrastruktury OZE &#8212; wiatr, PV</div>
+            <div class="comp-bar-track">
+                <div class="comp-bar-fill green" style="width: 1%; min-width: 2.5rem;">1%</div>
+            </div>
+        </div>
+        <p class="comp-note">
+            &#378;r&#243;d&#322;o: poLCA-EN-PL-2024 Metodologia, Multicert Sp. z o.o. (luty 2026).
+            GWP100 dla CH&#8324; = 27,9 (IPCC AR6).
+        </p>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in post-chapters">
+
+        <h2>Co mierzy poLCA-EN-PL i dlaczego r&#243;&#380;ni si&#281; od KOBiZE</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Kluczowe rozr&#243;&#380;nienie</div>
+            KOBiZE = bezpo&#347;rednie spalanie CO&#8322; na bramie elektrowni.<br>
+            poLCA-EN-PL = pe&#322;ny &#322;a&#324;cuch: wydobycie paliw + metan + spalanie + infrastruktura OZE.<br>
+            R&#243;&#380;nica wynosi ok. 20&ndash;25% na korzy&#347;&#263; pe&#322;nego LCA.
+        </div>
+
+        <p>
+            Krajowy O&#347;rodek Bilansowania i Zarz&#261;dzania Emisjami (KOBiZE) corocznie publikuje
+            wska&#378;nik emisyjno&#347;ci CO&#8322; dla energii elektrycznej w Polsce. Jest to &#347;rednia wa&#380;ona
+            emisji ze spalania paliw w elektrowniach &#8212; metodologicznie poprawna i szeroko stosowana
+            w raportowaniu Scope&nbsp;2 i uproszczonych kalkulacjach.
+        </p>
+        <p>
+            Wska&#378;nik poLCA-EN-PL powstaje z innego pytania: <em>ile CO&#8322;e wnosi do atmosfery
+            ka&#380;da kWh energii elektrycznej, je&#380;eli wliczymy ca&#322;y &#322;a&#324;cuch dostaw?</em>
+            Oznacza to uwzgl&#281;dnienie czterech kategorii emisji:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Emisje &#8222;gate&#8221; &mdash; 77%</div>
+                    <div class="process-step-text">
+                        Bezpo&#347;rednie spalanie w&#281;gla kamiennego, br&#261;zowego, gazu ziemnego, oleju i biomasy
+                        w elektrowniach i elektrociep&#322;owniach wchodz&#261;cych do KSE. To ten sam zakres,
+                        kt&#243;ry obejmuje KOBiZE &#8212; tyle &#380;e u nas stanowi tylko 77% ca&#322;o&#347;ci.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Metan z wydobycia w&#281;gla &mdash; 14%</div>
+                    <div class="process-step-text">
+                        Polskie kopalnie w&#281;gla kamiennego emituj&#261; &#347;rednio 8&#8211;12&nbsp;m&#179;&nbsp;CH&#8324;
+                        na ton&#281; wydobytego w&#281;gla. Przy GWP100 metanu r&#243;wnym 27,9&nbsp;(IPCC&nbsp;AR6)
+                        te emisje fugitywne stanowi&#261; 14% ca&#322;kowit&#281;go &#347;ladu &mdash; drug&#261; co do wielko&#347;ci
+                        sk&#322;adow&#261; wska&#378;nika.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Upstream pozosta&#322;ych paliw &mdash; 8%</div>
+                    <div class="process-step-text">
+                        Wydobycie, transport i dystrybucja gazu ziemnego, oleju op&#322;owego i biomasy
+                        przed dotarciem do elektrowni generuj&#261; dodatkowe 8% &#347;ladu. Dla gazu
+                        szczeg&#243;lnie istotne s&#261; straty przesy&#322;owe metanu w ruroci&#261;gach.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">4</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Infrastruktura OZE &mdash; 1%</div>
+                    <div class="process-step-text">
+                        Produkcja, transport i monta&#380; turbin wiatrowych oraz modu&#322;&#243;w fotowoltaicznych
+                        generuje emisje w fazach A1&#8211;A5. Przy rosn&#261;cym udziale OZE ta sk&#322;adowa
+                        nabiera znaczenia &mdash; cho&#263; wci&#261;&#380; marginalnego wobec emisji ze spalania paliw.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela 2023 vs 2024 -->
+        <h2>Por&#243;wnanie 2023&#8211;2024 wed&#322;ug kategorii emisji</h2>
+
+        <div class="card card-lg" style="max-width: none; margin: 1.5rem 0 2rem;">
+            <div class="card-title">poLCA-EN-PL &#8212; rozk&#322;ad sk&#322;adowych</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.875rem; line-height:1.6; margin-top: 0.75rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Kategoria emisji</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">2023</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">2024</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Zmiana</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">Emisje gate (spalanie)</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,601 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,553 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color:var(--func-green);">&#8722;8,0%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">Metan z wydobycia w&#281;gla</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,109 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,101 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color:var(--func-green);">&#8722;7,3%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">Upstream pozosta&#322;ych paliw</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,063 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,057 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color:var(--func-green);">&#8722;9,5%</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">Infrastruktura OZE</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,007 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,007 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color:var(--text-tertiary);">0,0%</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid var(--border); font-weight: 600;">
+                        <td style="padding: 0.6rem 0.75rem;">&#321;&#261;cznie poLCA-EN-PL</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,780 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">0,718 kg CO&#8322;e/kWh</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color:var(--func-green);">&#8722;7,9%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="comp-note">
+                Wszystkie warto&#347;ci wyra&#380;one w kg CO&#8322;e na kWh energii elektrycznej dostarczonej do odbiorcy.
+                GWP100: CO&#8322; = 1; CH&#8324; = 27,9; N&#8322;O = 273 (IPCC AR6, 2021).
+            </p>
+        </div>
+
+        <!-- Trendy dekarbonizacji -->
+        <h2>Trendy dekarbonizacji: co napędza poprawę</h2>
+        <p>
+            Poprawa o 7,9% r/r wynika ze zbiegu kilku trend&#243;w, kt&#243;re wzajemnie si&#281; wzmacniaj&#261;.
+            Polska energetyka przechodzi przez przyspieszenie transformacji, kt&#243;rego skutki
+            s&#261; wyra&#378;nie widoczne ju&#380; w danych za 2024 rok.
+        </p>
+
+        <div class="card card-lg section-gap" style="max-width: 760px;">
+            <div class="card-title">Produkcja energii elektrycznej z OZE w Polsce</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label">2023 &#8212; 35,2 TWh</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 83%;">35,2 TWh</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">2024 &#8212; 42,2 TWh (<strong>+20%</strong>)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill green" style="width: 100%;">42,2 TWh</div>
+                </div>
+            </div>
+            <p class="comp-note">
+                Udzia&#322; OZE w bilansie odbiorcy ko&#324;cowego: 25,2% (2023) &#8594; 28,2% (2024).
+                &#378;r&#243;d&#322;o: URE, Sprawozdanie z dzia&#322;alno&#347;ci 2024; PSE, Raport roczny 2024.
+            </p>
+        </div>
+
+        <p>
+            Kluczowe czynniki po&#322;&#261;czone z redukcj&#261; emisyjno&#347;ci w 2024 roku:
+        </p>
+        <ul>
+            <li>
+                <strong>Wzrost OZE o 20%</strong> &#8212; fotowoltaika i energetyka wiatrowa &#322;&#261;cznie
+                dostarczy&#322;y 42,2 TWh, wypieraj&#261;c produkcj&#281; w&#281;glow&#261; ze szczytu.
+            </li>
+            <li>
+                <strong>Mniejsze zu&#380;ycie w&#281;gla (&minus;10%)</strong> &#8212; redukcja produkcji z w&#281;gla kamiennego
+                bezpo&#347;rednio obni&#380;y&#322;a emisje gate i powi&#261;zan&#261; metanowo&#347;&#263; wydobycia.
+            </li>
+            <li>
+                <strong>Ni&#380;sza emisyjno&#347;&#263; upstream gazu</strong> &#8212; zmiana struktury dostaw i
+                wy&#380;szy udzia&#322; LNG redukuje straty metanu w ruroci&#261;gach przesy&#322;owych.
+            </li>
+        </ul>
+
+        <!-- Walidacja -->
+        <div class="pull-quote-lg">
+            <p>Niezale&#380;na walidacja: Lewandowska et&nbsp;al. (2025) wyznaczyli dla 2023 roku wska&#378;nik
+            market-based na poziomie <strong>0,788&nbsp;kg&nbsp;CO&#8322;/kWh</strong> &#8212; sp&#243;jny z nasz&#261;
+            warto&#347;ci&#261; 0,780&nbsp;kg&nbsp;CO&#8322;e/kWh za ten sam rok.</p>
+            <cite>Lewandowska et al. (2025), recenzowana publikacja naukowa; r&#243;&#380;nica 1,0% wynika
+            z odmiennej metodyki alokacji dla OZE</cite>
+        </div>
+
+        <h2>Jak stosowa&#263; poLCA-EN-PL w praktyce</h2>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Zastosowania wska&#378;nika</div>
+            <p class="callout-body">
+                <strong>LCA i EPD:</strong> poLCA-EN-PL jest w&#322;a&#347;ciwym wska&#378;nikiem dla analiz
+                obejmuj&#261;cych pe&#322;ny &#322;a&#324;cuch dostaw energii elektrycznej (zakres &#8222;od ko&#322;yski do bramy&#8221;).
+                Wska&#378;nik KOBiZE stosuje si&#281; w uproszczonych obliczeniach i Scope&nbsp;2 location-based.<br><br>
+                <strong>CSRD / ESG:</strong> Raportowanie GHG zgodne z CSRD i GHG Protocol Scope&nbsp;3
+                kategoria 3 (emisje po&#347;rednie od energii) powinno uwzgl&#281;dnia&#263; upstream paliw
+                &#8212; co odpowiada strukturze poLCA-EN-PL.<br><br>
+                <strong>Por&#243;wnywalno&#347;&#263; EPD:</strong> U&#380;ycie jednolitego wska&#378;nika LCA dla energii
+                elektrycznej zapewnia por&#243;wnywalno&#347;&#263; mi&#281;dzy polskimi EPD. Ka&#380;dy dataset w bazie
+                poLCA u&#380;ywa warto&#347;ci odpowiedniej dla roku referencyjnego.
+            </p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czym r&#243;&#380;ni si&#281; poLCA-EN-PL od wska&#378;nika KOBiZE?</div>
+                <div class="faq-a">
+                    KOBiZE raportuje wy&#322;&#261;cznie bezpo&#347;rednie emisje CO&#8322; ze spalania paliw na bramie
+                    elektrowni. poLCA-EN-PL obejmuje pe&#322;ny cykl &#380;ycia: spalanie (77%), emisje metanu
+                    z wydobycia polskiego w&#281;gla kamiennego (14%), upstream pozosta&#322;ych paliw &#8212; gaz,
+                    olej, biomasa (8%) oraz cykl &#380;ycia infrastruktury OZE &#8212; wiatr, PV (1%).
+                    Warto&#347;&#263; LCA jest wy&#380;sza od KOBiZE o ok. 20&#8211;25%.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Kiedy stosowa&#263; poLCA-EN-PL, a kiedy KOBiZE?</div>
+                <div class="faq-a">
+                    poLCA-EN-PL jest w&#322;a&#347;ciwym wska&#378;nikiem w pe&#322;nych analizach LCA i EPD, gdy
+                    wymagany jest zakres obejmuj&#261;cy &#322;a&#324;cuch dostaw paliw do elektrowni.
+                    KOBiZE stosuje si&#281; w raportowaniu Scope&nbsp;2 metod&#261; lokalizacyjn&#261; (location-based),
+                    kalkulatorach &#347;ladu w&#281;glowego przedsi&#281;biorstw i uproszczonych analizach Scope&nbsp;1+2.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Jak cz&#281;sto aktualizowany jest wska&#378;nik?</div>
+                <div class="faq-a">
+                    Wska&#378;nik jest aktualizowany rocznie, po publikacji danych przez URE, PSE i GUS
+                    za poprzedni rok. Dane za 2024 rok opublikowano w lutym 2026. Aktualizacja
+                    obejmuje rewizj&#281; struktury produkcji energii, wsp&#243;&#322;czynnik&#243;w metanowo&#347;ci kopal&#324;
+                    i zmian w strukturze OZE.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Dlaczego metan z wydobycia w&#281;gla ma tak du&#380;y udzia&#322; (14%)?</div>
+                <div class="faq-a">
+                    Polskie kopalnie w&#281;gla kamiennego nale&#380;&#261; do najbardziej metanono&#347;nych w Europie &#8212;
+                    &#347;rednio 8&#8211;12&nbsp;m&#179;&nbsp;CH&#8324; na ton&#281; wydobytego w&#281;gla. Metan ma wsp&#243;&#322;czynnik GWP100
+                    r&#243;wny 27,9 (IPCC AR6), wi&#281;c nawet stosunkowo niewielka ilo&#347;&#263; gazu fugitywnego
+                    przekszta&#322;ca si&#281; w istotny udzia&#322; &#347;ladu CO&#8322;e energii elektrycznej.
+                </div>
+            </div>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
+            <strong>&#378;r&#243;d&#322;a:</strong>
+            Multicert Sp. z o.o. (2026), &#8222;poLCA-EN-PL-2024 Metodologia &#8212; wska&#378;nik emisyjno&#347;ci
+            energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia&#8221;, luty 2026;
+            Lewandowska A. et al. (2025), recenzowana publikacja naukowa &#8212; wska&#378;niki market-based
+            dla Polski za 2023: 0,788&nbsp;kg&nbsp;CO&#8322;/kWh;
+            KOBiZE (2025), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;&#8221; za rok 2024;
+            URE (2025), Sprawozdanie z dzia&#322;alno&#347;ci 2024;
+            PSE S.A. (2025), Raport roczny 2024;
+            IPCC (2021), AR6 WG1 &#8212; GWP100: CH&#8324; = 27,9, N&#8322;O = 273.
+        </p>
+
+    </div>
+
+    <!-- Related posts -->
+    <div class="section-gap fade-in">
+        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="blog-residual-mix-aib-kobize.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-tag">Dane</span>
+                        <span class="blog-date">18 lutego 2026</span>
+                    </div>
+                    <div class="blog-card-title">Residual mix, AIB i KOBiZE &#8212; trzy wska&#378;niki emisji dla energii elektrycznej i kiedy stosowa&#263; ka&#380;dy z nich</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">9 min czytania</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-emisje-polska-vs-eu.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag">Dane</span>
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-date">14 lutego 2026</span>
+                    </div>
+                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">8 min czytania</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+</footer>
+<script src="js/sidebar.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
