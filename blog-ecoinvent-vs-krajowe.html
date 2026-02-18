@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA — poLCA Blog</title>
+    <meta name="description" content="Ecoinvent to największa na świecie baza danych LCI — ale jej globalne uśrednienia mogą być źródłem błędów w polskich EPD. Kiedy dataset 'PL' z ecoinvent wystarczy, a kiedy potrzebne są dane krajowe lub branżowe.">
+    <link rel="canonical" href="https://polca.org.pl/blog-ecoinvent-vs-krajowe.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA — poLCA Blog">
+    <meta property="og:description" content="Ecoinvent ma zestawy danych dla Polski — ale mogą być nieaktualne lub niedokładne. Kiedy dataset 'PL' wystarczy, a kiedy konieczne są dane z KOBiZE, EPD Polska lub pomiarów własnych.">
+    <meta property="og:url" content="https://polca.org.pl/blog-ecoinvent-vs-krajowe.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="article:published_time" content="2025-12-02T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka LCA">
+    <meta property="article:tag" content="ecoinvent">
+    <meta property="article:tag" content="bazy danych LCA">
+    <meta property="article:tag" content="dane krajowe">
+    <meta property="article:tag" content="reprezentatywność">
+    <meta property="article:tag" content="LCI">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi LCA">
+    <meta name="twitter:description" content="Ecoinvent ma dane dla Polski — ale mogą być nieaktualne. Kiedy wystarczą, a kiedy potrzebne są dane z KOBiZE lub EPD Polska.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-ecoinvent-vs-krajowe.html",
+          "headline": "Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA",
+          "description": "Ecoinvent jest dominującą bazą danych LCI na świecie, ale jej zestawy danych dla Polski mogą być nieaktualne lub zbyt zagregowane. Polska baza danych, dane KOBiZE i EPD branżowe są często dokładniejsze dla kluczowych procesów. Analiza: dla których procesów warto zastąpić ecoinvent danymi krajowymi — i jak to uzasadnić metodycznie.",
+          "url": "https://polca.org.pl/blog-ecoinvent-vs-krajowe.html",
+          "datePublished": "2025-12-02",
+          "dateModified": "2025-12-02",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["ecoinvent", "bazy danych LCA", "dane krajowe LCI", "KOBiZE", "EPD Polska", "reprezentatywność geograficzna", "ISO 14044", "dane wtórne LCA"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czym jest ecoinvent i kiedy go używać?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Ecoinvent to szwajcarska baza danych LCI zawierająca ponad 18 000 zestawów danych dla procesów produkcji, energii, transportu i usług. Jest dominującą bazą dla procesów tła (background) w LCA. Dla polskich EPD: ecoinvent jest odpowiedni dla procesów, gdzie brak krajowych danych i różnica między globalną/europejską średnią a Polską jest nieistotna dla wyniku."}
+            },
+            {
+              "@type": "Question",
+              "name": "Dla których procesów ecoinvent może prowadzić do błędów w polskim LCA?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Kluczowe procesy, gdzie ecoinvent może dawać błędne wyniki dla Polski: (1) energia elektryczna — ecoinvent 'PL electricity' może być nieaktualne; należy używać KOBiZE; (2) ciepło sieciowe — polska struktura ciepłownicza różni się od europejskiej; (3) cement i beton — dane ecoinvent dla PL mogą nie odzwierciedlać aktualnego wskaźnika klinkier/cement; (4) stal — mix produkcji PL (EAF vs BOF) różni się od europejskiej średniej."}
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Ecoinvent a krajowe bazy danych"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="polca-sidebar" id="polcaSidebar" role="navigation" aria-label="Nawigacja portalu">
+    <div class="sidebar-brand">
+        <a href="index.html" class="sidebar-logo">poLCA</a>
+        <div class="sidebar-subtitle">Polska Baza Danych LCA</div>
+    </div>
+    <nav class="sidebar-nav">
+        <div class="sidebar-nav-label">Portal</div>
+        <a href="index.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+            Dashboard
+        </a>
+        <div class="sidebar-nav-label">Baza danych</div>
+        <a href="metodyka.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg></span>
+            Metodyka i Jako&#347;&#263;
+        </a>
+        <a href="analiza.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+            Analiza Sektorowa
+        </a>
+        <a href="kalkulator.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
+            Kalkulator Emisji
+        </a>
+        <a href="datasety.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+            Baza Dataset&#243;w
+        </a>
+        <div class="sidebar-nav-label">Informacje</div>
+        <a href="blog.html" class="active">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+            Blog
+        </a>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+            EPD Polska
+        </a>
+    </nav>
+    <div class="sidebar-footer">
+        <div class="sidebar-status">
+            <span class="status-dot"></span>
+            System aktywny &mdash; v5.0
+        </div>
+    </div>
+</aside>
+
+<header class="polca-topbar" role="banner">
+    <div class="topbar-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="topbar-search">
+            <input type="text" placeholder="Szukaj w bazie danych..." aria-label="Szukaj" readonly>
+        </div>
+    </div>
+    <div class="topbar-right">
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-outline">Kontakt</a>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wr&#243;&#263; do bloga
+        </a>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag rynek">Rynek</span>
+                <span class="blog-date">2 grudnia 2025</span>
+                <span class="blog-read-time">&#183; 9 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                Ecoinvent a krajowe bazy danych &#8212;<br>kiedy u&#347;rednianie szkodzi dok&#322;adno&#347;ci LCA
+            </h1>
+            <p class="blog-post-lead">
+                Ecoinvent to standard bran&#380;y. Ale &#8222;standard&#8221; nie znaczy &#8222;zawsze poprawny&#8221;.
+                W polskich EPD i LCA budynk&#243;w kilka kluczowych dataset&#243;w z ecoinvent
+                mo&#380;e prowadzi&#263; do systematycznego b&#322;&#281;du &#8212; i mo&#380;liwo&#347;&#263; weryfikacji tego
+                b&#322;&#281;du jest teraz lepsza ni&#380; kiedykolwiek.
+            </p>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="tldr-box fade-in">
+        <div class="tldr-box-label">TL;DR &mdash; skr&#243;t dla zabieganych</div>
+        <ul>
+            <li>Ecoinvent (v3.10) ma zestawy danych oznaczone <code>PL</code> dla Polski &#8212; ale cz&#281;&#347;&#263; z nich pochodzi sprzed zmian w polskim miksie energetycznym lub bran&#380;y materia&#322;&#243;w budowlanych.</li>
+            <li>Kluczowe procesy, gdzie dane krajowe s&#261; <strong>wyra&#378;nie lepsze</strong>: energia elektryczna (KOBiZE), ciep&#322;o sieciowe (GUS + URE), cement (EPD Polska), stal (EPD producentów).</li>
+            <li>Dla proces&#243;w t&#322;a bez polskich danych (np. wydobycie surowc&#243;w za granic&#261;) ecoinvent pozostaje najlepsz&#261; opcj&#261; &#8212; tu problem nie istnieje.</li>
+            <li>ISO&nbsp;14044 §4.7.3.1 wymaga dokumentacji decyzji o wyborze danych; &#8222;u&#380;y&#322;em ecoinvent bo tak robi&#261; wszyscy&#8221; nie jest wystarczaj&#261;cym uzasadnieniem metodycznym.</li>
+        </ul>
+    </div>
+
+    <!-- Key stats -->
+    <div class="key-stat-row section-gap fade-in">
+        <div class="key-stat">
+            <div class="key-stat-number">18 000+</div>
+            <div class="key-stat-unit">dataset&#243;w</div>
+            <div class="key-stat-label">Ecoinvent v3.10 (2023)<br>pokrycie proces&#243;w globalnych</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number accent">2×</div>
+            <div class="key-stat-unit">r&#243;&#380;nica</div>
+            <div class="key-stat-label">Emisyjno&#347;&#263; polskiej sieci vs EU<br>nie zawsze odzwierciedlona w starszych PL-dataset</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number muted">5</div>
+            <div class="key-stat-unit">lat</div>
+            <div class="key-stat-label">Maksymalny akceptowalny wiek<br>danych w wi&#281;kszo&#347;ci PCR (ISO 14044)</div>
+        </div>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in">
+
+        <h2>Czym jest ecoinvent i co daje</h2>
+        <p>
+            Ecoinvent to baza danych LCI rozwijana przez Szwajcarskie Centrum Ekotechniki w Z&#252;rychu.
+            Zawiera ponad 18&nbsp;000 zestawów danych opisuj&#261;cych procesy przemys&#322;owe, energetyczne,
+            transportowe i rolnicze. Jest domy&#347;lnym &#8222;background system&#8221; w oprogramowaniu
+            SimaPro, OpenLCA i One Click LCA.
+        </p>
+        <p>
+            Ecoinvent aktualizowany jest regularnie (v3.10 &#8212; 2023; v3.9 &#8212; 2022 itd.),
+            ale pojedyncze zestawy danych mog&#261; pochodzi&#263; z oryginalnych bada&#324; sprzed wielu lat
+            i by&#263; aktualizowane rzadziej ni&#380; coroczne raporty krajowe.
+        </p>
+
+        <div class="callout callout-definition">
+            <div class="callout-label">Typy dataset&#243;w w ecoinvent</div>
+            <p class="callout-body">
+                <strong>Cutoff</strong> &#8212; domy&#347;lny system alokacji; materia&#322;y z recyklingu
+                wchodz&#261; bezobci&#261;&#380;eniowo (metoda cut-off). <strong>System Expansion (APOS)</strong>
+                &#8212; alokacja przez rozszerzenie systemu. <strong>Consequential</strong>
+                &#8212; do analiz skutkowych (LCA z pytaniem &#8222;co si&#281; stanie, je&#380;eli&hellip;&#8221;).
+                Dla EPD wyrob&#243;w budowlanych w&#322;a&#347;ciwy jest zazwyczaj system <em>cutoff</em>.
+            </p>
+        </div>
+
+        <h2>Gdzie ecoinvent mo&#380;e by&#263; niewystarczaj&#261;cy dla polskich LCA?</h2>
+        <p>
+            Przeanalizowaliśmy g&#322;&#243;wne procesy w polskich EPD materiałów budowlanych
+            i wyodr&#281;bnili&#347;my cztery obszary ryzyka:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Energia elektryczna &#8212; najwa&#380;niejszy przypadek</div>
+                    <div class="process-step-text">
+                        Wska&#378;nik emisji ecoinvent dla polskiej sieci (dataset
+                        <code>electricity production, Poland</code>) mo&#380;e r&#243;&#380;ni&#263; si&#281;
+                        od bie&#380;&#261;cego wska&#378;nika KOBiZE ze wzgl&#281;du na opó&#378;nienie aktualizacji
+                        i inn&#261; metodologi&#281; (ecoinvent uwzgl&#281;dnia pe&#322;ny LCI paliw,
+                        KOBiZE podaje emisje bezpo&#347;rednie z elektrowni).
+                        EN&nbsp;15804+A2 §6.4.3 eksplicite wymaga krajowego wska&#378;nika
+                        emisji z metodą lokalizacyjn&#261; &#8212; w Polsce jest to KOBiZE.
+                        <strong>Werdykt: zawsze u&#380;ywaj KOBiZE, nie ecoinvent PL.</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Ciep&#322;o sieciowe i ciep&#322;o technologiczne</div>
+                    <div class="process-step-text">
+                        Polska ciep&#322;ownictwo jest zdominowane przez w&#281;giel kamienny i br&#261;ztowy
+                        (ok. 60&ndash;70% udzia&#322;u wg GUS 2023). Ecoinvent mo&#380;e modelowa&#263;
+                        polskie ciep&#322;o sieciowe na podstawie starszych danych lub europejskiej &#347;redniej.
+                        Dla instalacji korzystaj&#261;cych z sieci ciep&#322;owniczej:
+                        sprawdź wska&#378;nik emisji swojego dystrybutora ciep&#322;a (obowi&#261;zkowy
+                        w Polsce na podstawie Prawa Energetycznego) i por&#243;wnaj z ecoinvent.
+                        <strong>Werdykt: weryfikacja konieczna; cz&#281;sto lepszy jest wska&#378;nik lokalny.</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Cement i beton &#8212; ecoinvent vs EPD Polska</div>
+                    <div class="process-step-text">
+                        Ecoinvent zawiera zestawy danych dla cementu i betonu,
+                        ale s&#261; one cz&#281;sto oparte na &#347;rednich europejskich lub globalnych.
+                        Dla polskiego betonu: wskaźnik klinkier/cement,
+                        miks paliw do pieca i wska&#378;nik energii elektrycznej r&#243;&#380;ni&#261; si&#281;
+                        od europejskiej &#347;redniej (patrz: artyku&#322; o polskim cemencie).
+                        Je&#380;eli producent dysponuje EPD specific &#8212; nale&#380;y j&#261; zastosowa&#263;.
+                        Je&#380;eli nie &#8212; nale&#380;y skonstruowa&#263; w&#322;asny model LCI na bazie
+                        danych krajowych, a nie u&#380;ywa&#263; bezpo&#347;rednio ecoinvent dla EU.
+                        <strong>Werdykt: u&#380;yj EPD specific dostawcy; je&#380;eli brak &#8212; model krajowy, nie ecoinvent EU.</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">4</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Stal konstrukycjna &#8212; EAF vs. BF-BOF</div>
+                    <div class="process-step-text">
+                        Polska produkuje stal g&#322;&#243;wnie metod&#261; elektryczn&#261; EAF (piece elektryczne;
+                        ok. 70% produkcji), a nie w wielkich piecach (BF-BOF jak w Niemczech czy Francji).
+                        Ecoinvent mo&#380;e zawiera&#263; zmieszane dane dla europejskiej stali.
+                        GWP stali EAF (~400&ndash;600 kg CO&#8322;/t) jest znacznie ni&#380;sze ni&#380; BF-BOF
+                        (~1700&ndash;2000 kg CO&#8322;/t) &#8212; r&#243;&#380;nica ma ogromne znaczenie dla LCA budynku
+                        z du&#380;ym udzia&#322;em stali.
+                        <strong>Werdykt: weryfikuj &#378;r&#243;d&#322;o stali; u&#380;yj EPD producenta lub dataset EAF PL.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Kiedy ecoinvent jest wystarczaj&#261;cy?</h2>
+        <p>
+            Nie ka&#380;dy dataset ecoinvent wymaga wymiany na dane krajowe.
+            Ecoinvent pozostaje najlepsz&#261; dost&#281;pn&#261; opcj&#261; dla:
+        </p>
+        <ul>
+            <li><strong>Surowc&#243;w wydobywanych poza Polsk&#261;</strong> &#8212; ruda &#380;elaza ze Szwecji,
+            boksyt z Australii, kruszywo z Belgii. Procesy wydobycia maj&#261; globalny charakter
+            i polskie dane krajowe nie istniej&#261;.</li>
+            <li><strong>Transport mi&#281;dzynarodowy</strong> &#8212; transport morski, kolejowy
+            i drogowy w krajach innych ni&#380; Polska. Tu ecoinvent jest referencj&#261; bez alternatywy.</li>
+            <li><strong>Procesy chemiczne i pomocnicze</strong> &#8212; produkcja &#347;rodk&#243;w chemicznych,
+            smarów, olejów u&#380;ywanych w procesie produkcji. Brak polskich danych branżowych.</li>
+            <li><strong>Procesy o niskim udziale w GWP</strong> &#8212; je&#380;eli dany proces contributes
+            poni&#380;ej 1&ndash;2% do GWP ca&#322;kowitego, dok&#322;adno&#347;&#263; datasetu ma marginalne znaczenie.</li>
+        </ul>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Zasada 80/20 w wyborze danych</div>
+            <p class="callout-body">
+                Zasada: 20% proces&#243;w (zwykle energia, g&#322;&#243;wne surowce) odpowiada za 80% GWP.
+                Skupiaj si&#281; na tych procesach przy wyborze mi&#281;dzy ecoinvent a danymi krajowymi.
+                Dla pozosta&#322;ych 80% proces&#243;w (które daj&#261; 20% GWP) ecoinvent jest zazwyczaj
+                wystarczaj&#261;cy &#8212; chocia&#380; zawsze wymagaj udokumentowania wyboru.
+            </p>
+        </div>
+
+        <h2>Jak to udokumentowa&#263; metodycznie?</h2>
+        <p>
+            ISO&nbsp;14044 §4.7.3.1 wymaga dokumentacji decyzji o jako&#347;ci danych.
+            W raporcie LCA lub EPD nale&#380;y zdokumentowa&#263;:
+        </p>
+        <ul>
+            <li><strong>Lista danych wt&#243;rnych</strong> &#8212; dla ka&#380;dego istotnego procesu: baza danych,
+            nazwa datasetu, wersja, rok referencyjny, kraj/region.</li>
+            <li><strong>Uzasadnienie wyboru</strong> &#8212; dlaczego ten dataset jest najbardziej
+            reprezentatywny dla badanego systemu (geograficznie, czasowo, technologicznie).</li>
+            <li><strong>Wyniki analizy wra&#380;liwo&#347;ci</strong> &#8212; dla dataset&#243;w, gdzie istnieje
+            alternatywa (ecoinvent vs. krajowy): por&#243;wnanie wynik&#243;w przy obydwu opcjach.</li>
+            <li><strong>Potwierdzenie weryfikatora</strong> &#8212; przy EPD weryfikator sprawdzi
+            zgodno&#347;&#263; wyboru dataset&#243;w z PCR i ISO&nbsp;14044.</li>
+        </ul>
+
+        <!-- Comparison table -->
+        <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
+            <div class="card-title" style="font-size:0.9rem;">Ecoinvent vs. dane krajowe &#8212; podsumowanie dla polskiego EPD</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.82rem; margin-top:0.75rem; line-height:1.6;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--border);">
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Proces</th>
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Zalecane &#378;r&#243;d&#322;o</th>
+                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Uwaga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.5rem 0.75rem;">Energia elektryczna z sieci</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--func-green);">KOBiZE (obowi&#261;zkowe)</td>
+                        <td style="padding:0.5rem 0.75rem;">EN&nbsp;15804+A2 §6.4.3</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.5rem 0.75rem;">Ciep&#322;o sieciowe</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--func-amber);">Wska&#378;nik lokalny / GUS</td>
+                        <td style="padding:0.5rem 0.75rem;">Weryfikacja z ecoinvent PL</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.5rem 0.75rem;">Cement</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--func-green);">EPD Polska (specific)</td>
+                        <td style="padding:0.5rem 0.75rem;">Je&#380;eli brak: model krajowy</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.5rem 0.75rem;">Stal (EAF)</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--func-green);">EPD producenta lub ecoinvent EAF</td>
+                        <td style="padding:0.5rem 0.75rem;">Nie u&#380;ywaj &#347;redniej EU BF+EAF</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--border);">
+                        <td style="padding:0.5rem 0.75rem;">Transport drogowy w PL</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--text-secondary);">Ecoinvent PL (akceptowalne)</td>
+                        <td style="padding:0.5rem 0.75rem;">Niewielka r&#243;&#380;nica vs EU</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0.5rem 0.75rem;">Surowce importowane</td>
+                        <td style="padding:0.5rem 0.75rem; color:var(--text-secondary);">Ecoinvent (jedyna opcja)</td>
+                        <td style="padding:0.5rem 0.75rem;">Kraj wydobycia, nie PL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>poLCA: jak uzupe&#322;niamy luk&#281; mi&#281;dzy ecoinvent a Polsk&#261;</h2>
+        <p>
+            Polska Baza Danych LCA (poLCA) jest budowana w&#322;a&#347;nie po to, by uzupe&#322;ni&#263;
+            braki ecoinvent dla polskiego kontekstu. Aktualne priorytety:
+        </p>
+        <ul>
+            <li>Zestaw danych dla energii elektrycznej z sieci (zsynchronizowany z KOBiZE),
+            z pe&#322;nym LCI (nie tylko CO&#8322;).</li>
+            <li>Dane LCI dla kruszywa naturalnego i recycled aggregate z polskich &#378;r&#243;de&#322;.</li>
+            <li>Dane dla polskich mieszanek betonowych i cementu oparte na danych EPD Polska.</li>
+            <li>Transport drogowy w Polsce z aktualn&#261; flot&#261; TIR i emisyjno&#347;ci&#261; diesel.</li>
+        </ul>
+        <p>
+            Przejrzyj dost&#281;pne datasety w sekcji
+            <a href="datasety.html">Baza Dataset&#243;w</a> &#8212; i por&#243;wnaj z danymi ecoinvent
+            dla swoich kluczowych proces&#243;w.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czym jest ecoinvent i kiedy go u&#380;ywa&#263;?</div>
+                <div class="faq-a">
+                    Ecoinvent to szwajcarska baza danych LCI z ponad 18&nbsp;000 zestawami danych.
+                    Jest standardem dla proces&#243;w t&#322;a (background) w LCA.
+                    Dla polskich EPD: odpowiedni dla proces&#243;w, gdzie brak krajowych danych
+                    i r&#243;&#380;nica mi&#281;dzy &#347;redni&#261; a Polsk&#261; jest nieistotna dla wyniku.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Dla kt&#243;rych proces&#243;w ecoinvent mo&#380;e prowadzi&#263; do b&#322;&#281;d&#243;w w polskim LCA?</div>
+                <div class="faq-a">
+                    Kluczowe procesy ryzyka: (1) energia elektryczna &#8212; nale&#380;y u&#380;ywa&#263; KOBiZE;
+                    (2) ciep&#322;o sieciowe &#8212; wska&#378;nik lokalny jest dok&#322;adniejszy;
+                    (3) cement i beton &#8212; dane ecoinvent EU nie odzwierciedlaj&#261; polskiego wska&#378;nika klinkieru;
+                    (4) stal EAF &#8212; nie nale&#380;y u&#380;ywa&#263; &#347;redniej EU mieszanej EAF+BOF.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Jak sprawdzi&#263;, kt&#243;ra wersja ecoinvent jest u&#380;yta w moim oprogramowaniu?</div>
+                <div class="faq-a">
+                    W SimaPro: w menu Bazy danych sprawdź aktywn&#261; wersj&#281; ecoinvent.
+                    W OpenLCA: w ustawieniach projektu widoczna jest baza i jej wersja.
+                    W One Click LCA: sprawdź informacje o &#378;r&#243;d&#322;ach danych w raporcie.
+                    Upewnij si&#281;, &#380;e wersja jest aktualna (ecoinvent v3.9 lub v3.10).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czy mo&#380;na miesza&#263; dane z ecoinvent i KOBiZE w jednym LCA?</div>
+                <div class="faq-a">
+                    Tak &#8212; i jest to zalecane podej&#347;cie. Dla energii elektrycznej z sieci
+                    stosuj wska&#378;nik KOBiZE. Dla innych proces&#243;w t&#322;a &#8212; ecoinvent lub inne
+                    &#378;r&#243;d&#322;a krajowe/bran&#380;owe. W raporcie LCA dokumentujesz ka&#380;de &#378;r&#243;d&#322;o danych
+                    oddzielnie. Mieszanie jest metodycznie poprawne, je&#380;eli ka&#380;dy dataset
+                    jest najlepszym dost&#281;pnym dla danego procesu.
+                </div>
+            </div>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
+            <strong>&#378;r&#243;d&#322;a:</strong>
+            Wernet G. i in. (2016), &bdquo;The ecoinvent database version 3&rdquo;,
+            Int. J. Life Cycle Assess. 21(9):1218&ndash;1230;
+            ecoinvent v3.10 (2023), dokumentacja systemu alokacji cutoff;
+            KOBiZE (2024), Wska&#378;niki emisyjno&#347;ci CO&#8322; dla energii elektrycznej, dane za 2023;
+            EN&nbsp;15804+A2:2019/A1:2021, §6.3.6 (dane wt&#243;rne), §6.4.3 (energia elektryczna);
+            ISO&nbsp;14044:2006, §4.7.3.1 (jako&#347;&#263; danych);
+            GUS (2024), Energia 2023 &#8212; struktura produkcji ciep&#322;a sieciowego;
+            EPD Polska / Multicert (2023&ndash;2025), rejestr EPD dla cementu i stali.
+        </p>
+    </div>
+
+    <!-- Related posts -->
+    <div class="section-gap fade-in">
+        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="blog-iso-14044-proximity.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-date">28 pa&#378;dziernika 2025</span>
+                    </div>
+                    <div class="blog-card-title">Zasada proximity w ISO&nbsp;14044 &#8212; co norma m&#243;wi o wyborze danych LCI</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">8 min czytania</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-cement-polska.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag dane">Dane</span>
+                        <span class="blog-date">14 listopada 2025</span>
+                    </div>
+                    <div class="blog-card-title">Polski cement a &#347;rednia europejska &#8212; gdzie jeste&#347;my naprawd&#281;</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">9 min czytania</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
+    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+</footer>
+<script src="js/sidebar.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
