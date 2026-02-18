@@ -11,55 +11,44 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Create PR and merge to main
-        uses: actions/github-script@v7
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          script: |
-            const branch = context.ref.replace('refs/heads/', '');
+          fetch-depth: 0
 
-            // Check for existing open PR
-            const { data: pulls } = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              head: `${context.repo.owner}:${branch}`,
-              base: 'main',
-              state: 'open'
-            });
+      - name: Create PR and merge to main
+        run: |
+          BRANCH="${GITHUB_REF#refs/heads/}"
+          echo "Branch: $BRANCH"
 
-            let pullNumber;
-            if (pulls.length === 0) {
-              const { data: pr } = await github.rest.pulls.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: branch.replace('claude/', '').replace(/-/g, ' '),
-                head: branch,
-                base: 'main',
-                body: `Automated deployment from Claude Code session\n\nBranch: \`${branch}\``
-              });
-              pullNumber = pr.number;
-              console.log('PR created:', pr.html_url);
-            } else {
-              pullNumber = pulls[0].number;
-              console.log('Existing PR found:', pulls[0].html_url);
-            }
+          # Check for existing open PR
+          EXISTING=$(gh pr list --base main --head "$BRANCH" --state open --json number --jq '.[0].number // ""')
 
-            // Wait for GitHub to compute mergeability (returns null initially)
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            let mergeable = null;
-            for (let i = 0; i < 8 && mergeable === null; i++) {
-              await new Promise(r => setTimeout(r, 5000));
-              const { data: prData } = await github.rest.pulls.get({ owner, repo, pull_number: pullNumber });
-              mergeable = prData.mergeable;
-              console.log(`Attempt ${i+1}: mergeable=${mergeable}`);
-            }
-            if (mergeable === false) throw new Error('PR has merge conflicts — cannot auto-merge');
+          if [ -z "$EXISTING" ]; then
+            TITLE=$(echo "$BRANCH" | sed 's|claude/||' | tr '-' ' ')
+            PR_URL=$(gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "$TITLE" \
+              --body "Automated deployment from Claude Code session. Branch: \`$BRANCH\`")
+            echo "Created PR: $PR_URL"
+            PR_NUM=$(echo "$PR_URL" | grep -oE '[0-9]+$')
+          else
+            PR_NUM="$EXISTING"
+            echo "Using existing PR #$PR_NUM"
+          fi
 
-            await github.rest.pulls.merge({
-              owner,
-              repo,
-              pull_number: pullNumber,
-              merge_method: 'squash'
-            });
-            console.log('Merged PR #' + pullNumber + ' to main');
+          # Wait for mergeability
+          for i in $(seq 1 8); do
+            sleep 5
+            MERGEABLE=$(gh pr view "$PR_NUM" --json mergeable --jq '.mergeable')
+            echo "Attempt $i: mergeable=$MERGEABLE"
+            if [ "$MERGEABLE" = "MERGEABLE" ]; then break; fi
+            if [ "$MERGEABLE" = "CONFLICTING" ]; then echo "Has conflicts"; exit 1; fi
+          done
+
+          gh pr merge "$PR_NUM" --squash --delete-branch=false
+          echo "Merged PR #$PR_NUM to main"
