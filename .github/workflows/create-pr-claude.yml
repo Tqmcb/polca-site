@@ -11,44 +11,52 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-    env:
-      GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Create PR and merge to main
+      - name: Create PR via REST API and merge
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+          BRANCH: ${{ github.ref_name }}
         run: |
-          BRANCH="${GITHUB_REF#refs/heads/}"
+          set -e
           echo "Branch: $BRANCH"
 
-          # Check for existing open PR
-          EXISTING=$(gh pr list --base main --head "$BRANCH" --state open --json number --jq '.[0].number // ""')
+          # Find existing open PR
+          OPEN=$(curl -sf -H "Authorization: token $TOKEN" \
+            "https://api.github.com/repos/$OWNER/$REPO/pulls?state=open&base=main&head=$OWNER:$BRANCH" \
+            | python3 -c "import sys,json; prs=json.load(sys.stdin); print(prs[0]['number'] if prs else '')" 2>/dev/null || true)
 
-          if [ -z "$EXISTING" ]; then
+          if [ -z "$OPEN" ]; then
             TITLE=$(echo "$BRANCH" | sed 's|claude/||' | tr '-' ' ')
-            PR_URL=$(gh pr create \
-              --base main \
-              --head "$BRANCH" \
-              --title "$TITLE" \
-              --body "Automated deployment from Claude Code session. Branch: \`$BRANCH\`")
-            echo "Created PR: $PR_URL"
-            PR_NUM=$(echo "$PR_URL" | grep -oE '[0-9]+$')
+            RESP=$(curl -sf -X POST -H "Authorization: token $TOKEN" \
+              -H "Content-Type: application/json" \
+              "https://api.github.com/repos/$OWNER/$REPO/pulls" \
+              -d "{\"title\":\"$TITLE\",\"head\":\"$BRANCH\",\"base\":\"main\",\"body\":\"Auto-deploy from Claude Code\"}" 2>&1)
+            echo "Create PR response: $RESP"
+            PR_NUM=$(echo "$RESP" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('number','ERROR: '+str(d.get('message','?'))))")
           else
-            PR_NUM="$EXISTING"
+            PR_NUM="$OPEN"
             echo "Using existing PR #$PR_NUM"
           fi
 
+          echo "PR number: $PR_NUM"
+
           # Wait for mergeability
-          for i in $(seq 1 8); do
-            sleep 5
-            MERGEABLE=$(gh pr view "$PR_NUM" --json mergeable --jq '.mergeable')
+          for i in $(seq 1 10); do
+            sleep 6
+            MERGEABLE=$(curl -sf -H "Authorization: token $TOKEN" \
+              "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUM" \
+              | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('mergeable','null'))")
             echo "Attempt $i: mergeable=$MERGEABLE"
-            if [ "$MERGEABLE" = "MERGEABLE" ]; then break; fi
-            if [ "$MERGEABLE" = "CONFLICTING" ]; then echo "Has conflicts"; exit 1; fi
+            [ "$MERGEABLE" = "true" ] && break
+            [ "$MERGEABLE" = "false" ] && echo "Conflicts!" && exit 1
           done
 
-          gh pr merge "$PR_NUM" --squash --delete-branch=false
-          echo "Merged PR #$PR_NUM to main"
+          # Merge
+          MERGE=$(curl -sf -X PUT -H "Authorization: token $TOKEN" \
+            -H "Content-Type: application/json" \
+            "https://api.github.com/repos/$OWNER/$REPO/pulls/$PR_NUM/merge" \
+            -d "{\"merge_method\":\"squash\"}" 2>&1)
+          echo "Merge response: $MERGE"
+          echo "Done."
