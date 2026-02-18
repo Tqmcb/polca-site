@@ -1,4 +1,4 @@
-name: Create PR for Claude branches
+name: Auto-deploy Claude branches to main
 
 on:
   push:
@@ -6,17 +6,19 @@ on:
       - 'claude/**'
 
 jobs:
-  create-pr:
+  deploy:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
     steps:
-      - name: Create or update PR
+      - name: Create PR and merge to main
         uses: actions/github-script@v7
         with:
           script: |
             const branch = context.ref.replace('refs/heads/', '');
+
+            // Check for existing open PR
             const { data: pulls } = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -25,16 +27,28 @@ jobs:
               state: 'open'
             });
 
+            let pullNumber;
             if (pulls.length === 0) {
-              await github.rest.pulls.create({
+              const { data: pr } = await github.rest.pulls.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: branch.replace('claude/', '').replace(/-/g, ' '),
                 head: branch,
                 base: 'main',
-                body: `Automated PR from Claude Code session\n\nBranch: \`${branch}\``
+                body: `Automated deployment from Claude Code session\n\nBranch: \`${branch}\``
               });
-              console.log('PR created');
+              pullNumber = pr.number;
+              console.log('PR created:', pr.html_url);
             } else {
-              console.log('PR already open:', pulls[0].html_url);
+              pullNumber = pulls[0].number;
+              console.log('Existing PR found:', pulls[0].html_url);
             }
+
+            // Merge immediately
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullNumber,
+              merge_method: 'squash'
+            });
+            console.log('Merged PR #' + pullNumber + ' to main');
