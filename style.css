@@ -1997,6 +1997,161 @@ noscript .fade-in,
     line-height: 1.65;
 }
 
+/* ============================================================
+   BLOG POST LAYOUT VARIANTS
+   Template A: dark hero  |  Template B: numbered guide
+   ============================================================ */
+
+/* ---- Template A: Dark hero (raport danych) ---- */
+.post-dark-hero {
+    margin: -2.5rem -3rem 2.5rem;
+    padding: 3rem 3rem 2.75rem;
+    background: var(--ink);
+    border-bottom: 3px solid var(--accent);
+}
+.post-dark-hero .blog-back-link {
+    color: rgba(255,255,255,0.42);
+    border: none;
+    padding: 0;
+    margin-bottom: 1.75rem;
+}
+.post-dark-hero .blog-back-link svg { stroke: rgba(255,255,255,0.42); }
+.post-dark-hero .blog-back-link:hover { color: #fff; }
+.post-dark-hero .blog-back-link:hover svg { stroke: #fff; }
+.post-dark-hero .blog-post-header { max-width: 700px; margin-bottom: 0; }
+.post-dark-hero .blog-post-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+}
+.post-dark-hero .blog-post-lead { color: rgba(255,255,255,0.58); }
+.post-dark-hero .blog-date,
+.post-dark-hero .blog-read-time { color: rgba(255,255,255,0.38); }
+.post-dark-hero .blog-tag {
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.68);
+    border-color: rgba(255,255,255,0.14);
+}
+.post-dark-hero .blog-tag.metodyka {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-color: rgba(255,255,255,0.28);
+}
+
+/* Verdict box — editorial dark conclusion */
+.verdict-box {
+    background: var(--ink);
+    color: #fff;
+    border-radius: var(--radius-sm);
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0 0.5rem;
+    max-width: 760px;
+}
+.verdict-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 0.65rem;
+}
+.verdict-box p {
+    font-size: 0.92rem;
+    line-height: 1.72;
+    color: rgba(255,255,255,0.82);
+    margin: 0;
+}
+.verdict-box strong { color: #fff; }
+
+/* ---- Template B: Accent bar + chapter numbers (przewodnik) ---- */
+.post-accent-bar {
+    height: 3px;
+    background: var(--accent);
+    margin: -2.5rem -3rem 2.5rem;
+    border-radius: 0;
+}
+.post-chapters { counter-reset: chapter; }
+.post-chapters h2 {
+    counter-increment: chapter;
+    padding-left: 3.75rem;
+    position: relative;
+}
+.post-chapters h2::before {
+    content: counter(chapter, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+}
+
+/* Margin note — floated annotation */
+.margin-note {
+    float: right;
+    width: 210px;
+    margin: 0.25rem 0 1.5rem 2rem;
+    padding: 0.9rem 1rem;
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--ink);
+    border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+    font-size: 0.77rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+.margin-note-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.35rem;
+}
+
+/* Large editorial pull quote */
+.pull-quote-lg {
+    margin: 2rem 0 2.5rem;
+    padding: 0 0 0 2rem;
+    border-left: 3px solid var(--accent);
+    max-width: 640px;
+}
+.pull-quote-lg p {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 1.28rem;
+    font-weight: 600;
+    line-height: 1.42;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    margin: 0;
+}
+.pull-quote-lg cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.73rem;
+    color: var(--text-tertiary);
+    margin-top: 0.65rem;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.04em;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+    .post-dark-hero {
+        margin: -1.25rem -1rem 2rem;
+        padding: 2rem 1rem 2rem;
+    }
+    .post-dark-hero .blog-post-title { font-size: 1.65rem; }
+    .post-accent-bar { margin: -1.25rem -1rem 2rem; }
+    .margin-note { float: none; width: 100%; margin: 1rem 0 1.25rem; }
+    .post-chapters h2 { padding-left: 2.75rem; }
+    .pull-quote-lg p { font-size: 1.08rem; }
+}
+
 @media (max-width: 768px) {
     .hero-with-image {
         min-height: 280px;
