@@ -246,31 +246,33 @@
         </div>
     </div>
 
-    <!-- Składowe wskaźnika -->
+    <!-- Składowe wskaźnika — donut -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
         <div class="card-title">Sk&#322;adowe wska&#378;nika poLCA-EN-PL 2024</div>
-        <div class="comp-bar-group" style="margin-top: 1rem;">
-            <div class="comp-bar-label">Emisje &#8222;gate&#8221; &#8212; spalanie paliw w elektrowniach</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 77%;">77% &mdash; 0,553&nbsp;kg CO&#8322;e/kWh</div>
+        <div class="donut-chart-wrap">
+            <div class="donut-chart" style="background: conic-gradient(var(--text-tertiary) 0deg 277.2deg, var(--accent) 277.2deg 327.6deg, var(--func-blue) 327.6deg 356.4deg, var(--func-green) 356.4deg 360deg);">
+                <div class="donut-chart-center">
+                    <div class="donut-chart-center-value">0,718</div>
+                    <div class="donut-chart-center-label">kg CO&#8322;e/kWh</div>
+                </div>
             </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Metan fugitywny z wydobycia polskiego w&#281;gla kamiennego</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 14%;">14% &mdash; 0,101&nbsp;kg CO&#8322;e/kWh</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Upstream pozosta&#322;ych paliw &#8212; gaz, olej, biomasa</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 8%;">8% &mdash; 0,057&nbsp;kg CO&#8322;e/kWh</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Cykl &#380;ycia infrastruktury OZE &#8212; wiatr, PV</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 1%; min-width: 2.5rem;">1%</div>
+            <div class="donut-legend">
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--text-tertiary);"></div>
+                    <div><span class="donut-legend-value">77%</span> Emisje &#8222;gate&#8221; &#8212; spalanie paliw w elektrowniach<br><span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-tertiary);">0,553&nbsp;kg&nbsp;CO&#8322;e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--accent);"></div>
+                    <div><span class="donut-legend-value">14%</span> Metan fugitywny z wydobycia w&#281;gla<br><span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-tertiary);">0,101&nbsp;kg&nbsp;CO&#8322;e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--func-blue);"></div>
+                    <div><span class="donut-legend-value">8%</span> Upstream paliw &#8212; gaz, olej, biomasa<br><span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-tertiary);">0,057&nbsp;kg&nbsp;CO&#8322;e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--func-green);"></div>
+                    <div><span class="donut-legend-value">1%</span> Infrastruktura OZE &#8212; wiatr, PV<br><span style="font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--text-tertiary);">0,007&nbsp;kg&nbsp;CO&#8322;e/kWh</span></div>
+                </div>
             </div>
         </div>
         <p class="comp-note">
@@ -413,17 +415,19 @@
 
         <div class="card card-lg section-gap" style="max-width: 760px;">
             <div class="card-title">Produkcja energii elektrycznej z OZE w Polsce</div>
-            <div class="comp-bar-group" style="margin-top: 1rem;">
-                <div class="comp-bar-label">2023 &#8212; 35,2 TWh</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 83%;">35,2 TWh</div>
+            <div class="vcol-chart" style="height: 180px;">
+                <div class="vcol-group">
+                    <div class="vcol-value">35,2 TWh</div>
+                    <div class="vcol-bar gray" style="height: 83%;"></div>
+                </div>
+                <div class="vcol-group">
+                    <div class="vcol-value">42,2 TWh</div>
+                    <div class="vcol-bar accent" style="height: 100%;"></div>
                 </div>
             </div>
-            <div class="comp-bar-group">
-                <div class="comp-bar-label">2024 &#8212; 42,2 TWh (<strong>+20%</strong>)</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill green" style="width: 100%;">42,2 TWh</div>
-                </div>
+            <div class="vcol-labels">
+                <div class="vcol-label">2023</div>
+                <div class="vcol-label">2024 (+20%)</div>
             </div>
             <p class="comp-note">
                 Udzia&#322; OZE w bilansie odbiorcy ko&#324;cowego: 25,2% (2023) &#8594; 28,2% (2024).
