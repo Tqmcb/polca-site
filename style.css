@@ -1,5 +1,5 @@
-/* poLCA — Polska Baza Danych LCA | v5.0.0 | polca.org.pl
-   Aesthetic: Institutional Scientific Portal
+/* poLCA — Polska Baza Danych LCA | v5.1.0 | polca.org.pl
+   Aesthetic: Institutional Scientific Portal — refreshed visual identity
    Typography: Inter Tight + Inter + IBM Plex Mono */
 
 /* === CSS VARIABLES === */
@@ -28,6 +28,12 @@
     --accent-light: #12A18A;
     --accent-subtle: rgba(14, 124, 107, 0.08);
     --accent-border: rgba(14, 124, 107, 0.2);
+
+    /* Secondary accent: warm amber — visual contrast */
+    --accent-warm: #C4721A;
+    --accent-warm-light: #D98B3A;
+    --accent-warm-subtle: rgba(196, 114, 26, 0.08);
+    --accent-warm-border: rgba(196, 114, 26, 0.2);
 
     /* Functional: muted, unsaturated */
     --func-green: #4A7C59;
@@ -172,6 +178,7 @@ a:hover { color: var(--accent-light); }
     background: var(--sidebar-active);
     color: var(--sidebar-text-active);
     font-weight: 600;
+    box-shadow: inset 3px 0 0 var(--accent-light);
 }
 
 .sidebar-nav a .nav-icon {
@@ -352,6 +359,16 @@ a:hover { color: var(--accent-light); }
     border-bottom: 2px solid var(--ink);
 }
 
+.page-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--accent);
+}
+
 .page-title {
     font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, sans-serif;
     font-size: 2.5rem;
@@ -404,9 +421,9 @@ a:hover { color: var(--accent-light); }
     position: absolute;
     top: -50%;
     right: -30%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(14,124,107,0.08) 0%, transparent 70%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(14,124,107,0.15) 0%, rgba(196,114,26,0.04) 50%, transparent 70%);
     pointer-events: none;
 }
 
@@ -556,6 +573,10 @@ a:hover { color: var(--accent-light); }
     border-top: 3px solid var(--ink);
 }
 
+.metric-card:nth-child(1) { border-top-color: var(--accent); }
+.metric-card:nth-child(2) { border-top-color: var(--accent-warm); }
+.metric-card:nth-child(3) { border-top-color: var(--func-blue); }
+
 .metric-card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
@@ -643,10 +664,15 @@ a:hover { color: var(--accent-light); }
     transform: scaleX(1);
 }
 
+.feature-card:nth-child(1)::before { background: var(--func-green); }
+.feature-card:nth-child(2)::before { background: var(--accent-warm); }
+.feature-card:nth-child(3)::before { background: var(--func-blue); }
+.feature-card:nth-child(4)::before { background: var(--func-purple); }
+
 .feature-card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-xs);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -949,6 +975,14 @@ a:hover { color: var(--accent-light); }
     line-height: 1.2;
 }
 
+/* Color-coded layer numbers for visual variety */
+.layer-card:nth-child(1) .layer-num { color: var(--func-green); }
+.layer-card:nth-child(2) .layer-num { color: var(--func-blue); }
+.layer-card:nth-child(3) .layer-num { color: var(--func-purple); }
+.layer-card:nth-child(4) .layer-num { color: var(--accent); }
+.layer-card:nth-child(5) .layer-num { color: var(--accent-warm); }
+.layer-card:nth-child(7) .layer-num { color: var(--func-purple); }
+
 .layer-num.highlight {
     background: var(--accent);
     color: #FFFFFF;
@@ -1015,7 +1049,10 @@ a:hover { color: var(--accent-light); }
     transition: transform 0.2s var(--ease-out);
 }
 
-.sector-card:hover { transform: translateY(-1px); }
+.sector-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
 
 .sector-card-green {
     background: var(--func-green-bg);
@@ -1396,9 +1433,9 @@ a:hover { color: var(--accent-light); }
 
 /* === BLOCKQUOTE — editorial === */
 .quote-block {
-    border-left: 3px solid var(--ink);
+    border-left: 3px solid var(--accent);
     padding: 1.5rem 1.75rem;
-    background: var(--paper-card);
+    background: linear-gradient(135deg, var(--paper-card) 0%, rgba(14,124,107,0.03) 100%);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     box-shadow: var(--shadow-sm);
     position: relative;
@@ -1445,6 +1482,24 @@ a:hover { color: var(--accent-light); }
 
 .section-gap { margin-bottom: 1.5rem; }
 .section-gap-lg { margin-bottom: 2.5rem; }
+
+/* Alternating section background for visual rhythm */
+.section-alt {
+    background: var(--paper-warm);
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding: 2rem 3rem;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+}
+
+@media (max-width: 768px) {
+    .section-alt {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 1.5rem 1rem;
+    }
+}
 .mt-1 { margin-top: 0.75rem; }
 .mt-2 { margin-top: 1.25rem; }
 .mt-3 { margin-top: 2rem; }
@@ -1645,7 +1700,7 @@ body::before {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(17,19,24,0.88) 0%, rgba(17,19,24,0.65) 100%);
+    background: linear-gradient(135deg, rgba(17,19,24,0.86) 0%, rgba(14,124,107,0.18) 50%, rgba(17,19,24,0.72) 100%);
     z-index: 1;
 }
 
@@ -1714,12 +1769,21 @@ body::before {
 .section-image-strip::after {
     content: '';
     position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(14,124,107,0.12) 0%, rgba(17,19,24,0.15) 50%, rgba(196,114,26,0.06) 100%);
+    pointer-events: none;
+}
+
+.section-image-strip::before {
+    content: '';
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60%;
+    height: 40%;
     background: linear-gradient(to bottom, transparent, var(--paper));
     pointer-events: none;
+    z-index: 1;
 }
 
 /* === BLOG === */
@@ -1745,6 +1809,7 @@ body::before {
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
     color: inherit;
+    border-color: var(--accent-border);
 }
 
 .blog-card-img {
@@ -1758,7 +1823,7 @@ body::before {
 .blog-card-img-placeholder {
     width: 100%;
     height: 160px;
-    background: linear-gradient(135deg, var(--accent-subtle) 0%, var(--paper-warm) 100%);
+    background: linear-gradient(135deg, var(--accent-subtle) 0%, var(--paper-warm) 60%, var(--accent-warm-subtle) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
