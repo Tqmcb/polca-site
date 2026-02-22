@@ -3,8 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — poLCA</title>
-    <meta name="description" content="Polska Baza Danych LCA dla wyrobow budowlanych">
+    <title>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</title>
+    <meta name="description" content="Krajowe dane inwentaryzacji cyklu życia (LCI) dla polskiego budownictwa. Wskaźniki emisji KOBiZE, siedmiowarstwowa walidacja, eksport ILCD+EPD i EcoSpold v2. Zgodność z EN 15804+A2 i ISO 14044.">
+    <link rel="canonical" href="https://polca.org.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="poLCA — Polska Baza Danych LCA dla wyrobów budowlanych">
+    <meta property="og:description" content="Krajowe dane LCI oparte na polskich warunkach produkcji. Wskaźniki KOBiZE, siedmiowarstwowa walidacja, eksport wieloformatowy. EN 15804+A2 i ISO 14044.">
+    <meta property="og:url" content="https://polca.org.pl/">
+    <meta property="og:image" content="https://polca.org.pl/images/hero-main.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="600">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="poLCA — Polska Baza Danych LCA dla wyrobów budowlanych">
+    <meta name="twitter:description" content="Krajowe dane LCI oparte na polskich warunkach produkcji. Wskaźniki KOBiZE, walidacja siedmiowarstwowa, eksport ILCD+EPD.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/hero-main.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://polca.org.pl/#organization",
+          "name": "Multicert Sp. z o.o.",
+          "alternateName": "EPD Polska",
+          "url": "https://www.epd.org.pl",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://polca.org.pl/favicon.svg"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Mydlarska 47",
+            "addressLocality": "Warszawa",
+            "postalCode": "04-690",
+            "addressCountry": "PL"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@epd.org.pl",
+            "contactType": "customer service",
+            "availableLanguage": ["Polish", "English"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://polca.org.pl/#website",
+          "name": "poLCA — Polska Baza Danych LCA",
+          "url": "https://polca.org.pl",
+          "description": "Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych",
+          "inLanguage": "pl-PL",
+          "publisher": {"@id": "https://polca.org.pl/#organization"}
+        },
+        {
+          "@type": "WebPage",
+          "name": "poLCA — Polska Baza Danych LCA dla wyrobów budowlanych",
+          "url": "https://polca.org.pl/",
+          "isPartOf": {"@id": "https://polca.org.pl/#website"},
+          "about": {
+            "@type": "Dataset",
+            "name": "poLCA — Polska Baza Danych LCI",
+            "description": "Dane inwentaryzacji cyklu życia specyficzne dla polskich warunków produkcji wyrobów budowlanych",
+            "license": "https://polca.org.pl/datasety.html",
+            "creator": {"@id": "https://polca.org.pl/#organization"}
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
