@@ -267,7 +267,7 @@
         { name: 'Ciep\u0142o systemowe PL (\u015brednia)',      value: '~380',      unit: 'kg CO\u2082/MWh',   source: 'URE 2024',        cat: 'energia' },
         { name: 'Fotowoltaika (PL, krzemowa)',        value: '50\u201370',     unit: 'g CO\u2082e/kWh',   source: 'poLCA 2024',      cat: 'energia' },
         { name: 'Energia wiatrowa (onshore PL)',      value: '10\u201315',     unit: 'g CO\u2082e/kWh',   source: 'IPCC 2014',       cat: 'energia' },
-        { name: '\u015arednia EU (miks elektr.)',           value: '~250',      unit: 'kg CO\u2082/MWh',   source: 'Ember/EEA 2023',        cat: 'energia' },
+        { name: '\u015arednia EU (miks elektr.)',           value: '~210',      unit: 'kg CO\u2082/MWh',   source: 'Ember 2025 (dane 2024)',        cat: 'energia' },
         { name: 'Residual mix PL (AIB)',              value: '~788',      unit: 'g CO\u2082e/kWh',   source: 'AIB 2023',        cat: 'energia' },
 
         // Paliwa
