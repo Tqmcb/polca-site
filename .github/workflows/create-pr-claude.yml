@@ -49,6 +49,6 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: pullNumber,
-              merge_method: 'squash'
+              merge_method: 'merge'
             });
             console.log('Merged PR #' + pullNumber + ' to main');
