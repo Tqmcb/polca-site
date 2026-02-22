@@ -50,6 +50,10 @@
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
             Kalkulator Emisji
         </a>
+        <a href="narzedzia.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+            Narzędzia LCA
+        </a>
         <a href="datasety.html">
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
             Baza Datasetów
@@ -132,9 +136,9 @@
                 </div>
                 <div class="calc-divider"></div>
                 <div>
-                    <div class="calc-result-label">Emisja CO₂ — średnia EU (295 kg/MWh)</div>
+                    <div class="calc-result-label">Emisja CO₂ — średnia EU (~210 kg/MWh)</div>
                     <div class="calc-result-value secondary">
-                        <span id="resultEU">29 500</span> <small>kg CO₂</small>
+                        <span id="resultEU">21 000</span> <small>kg CO₂</small>
                     </div>
                 </div>
                 <div class="calc-diff" id="calcDiff">
@@ -206,7 +210,7 @@
         <div class="section-num">03 — Wskaźniki emisji w kontekście LCA</div>
         <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
         <div class="prose">
-            <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (597 kg CO₂/MWh) a średnią EU (295 kg CO₂/MWh) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje dwukrotnie większy wpływ niż sugerują dane generyczne.</p>
+            <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (597 kg CO₂/MWh, KOBiZE, dane 2023) a średnią EU (~210 kg CO₂/MWh, Ember 2025) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje niemal trzykrotnie większy wpływ niż sugerują dane generyczne.</p>
             <p>Wskaźniki prezentowane w poLCA pochodzą z oficjalnych publikacji <strong>KOBiZE</strong> (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) i są aktualizowane corocznie. Obejmują nie tylko CO₂, ale pełen zakres emisji zanieczyszczeń do powietrza — SO₂, NOₓ, pył — wymaganych przez EN 15804+A2 dla wskaźników wpływu środowiskowego.</p>
         </div>
     </div>
@@ -227,8 +231,8 @@
                     <tr>
                         <td style="font-weight: 600;">CO₂ miks elektr.</td>
                         <td class="mono highlight">597 kg/MWh</td>
-                        <td class="mono">~295 kg/MWh (EU avg)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+102%</td>
+                        <td class="mono">~210 kg/MWh (EU avg)</td>
+                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+184%</td>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Ciepło systemowe</td>
@@ -275,6 +279,7 @@
 </footer>
 <script src="js/sidebar.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/effects.js"></script>
 <script src="js/calculator.js"></script>
 </body>
 </html>

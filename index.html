@@ -105,6 +105,10 @@
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
             Kalkulator Emisji
         </a>
+        <a href="narzedzia.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+            Narzędzia LCA
+        </a>
         <a href="datasety.html">
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
             Baza Dataset&#243;w
@@ -172,7 +176,7 @@
         </div>
         <div class="metric-card">
             <div class="metric-number">597</div>
-            <div class="metric-label">kg CO₂/MWh — polski miks<br>wobec 295 średniej EU</div>
+            <div class="metric-label">kg CO₂/MWh — polski miks<br>wobec ~210 średniej EU</div>
             <div class="metric-tag orange">KOBiZE 2024</div>
         </div>
         <div class="metric-card">
@@ -214,8 +218,20 @@
         </a>
     </div>
 
+    <!-- Narzędzia LCA — wyróżniona karta -->
+    <a href="narzedzia.html" class="card card-lg section-gap fade-in" style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; text-decoration: none; color: inherit; border-left: 3px solid var(--accent);">
+        <div class="feature-card-icon orange" style="width: 48px; height: 48px; margin-bottom: 0;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        </div>
+        <div>
+            <div style="font-family: 'Inter Tight', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem;">Narz&#281;dzia LCA — przeliczniki, kalkulator transportu, por&#243;wnywarka materia&#322;&#243;w</div>
+            <div style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6;">Praktyczne narz&#281;dzia dla specjalist&#243;w LCA, ESG i certyfikacji budynk&#243;w. Polskie wska&#378;niki emisji, kalkulator modu&#322;u A4, por&#243;wnywarka GWP materia&#322;&#243;w budowlanych.</div>
+        </div>
+    </a>
+
     <!-- Sekcja 01 — Uzasadnienie -->
-    <div class="card card-lg section-gap fade-in">
+    <div class="section-alt section-gap fade-in">
+    <div class="card card-lg">
         <div class="section-num">01 — Uzasadnienie</div>
         <div class="card-title">Dlaczego Polska potrzebuje krajowych danych LCI</div>
         <div class="prose">
@@ -224,6 +240,8 @@
             <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w miksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
         </div>
     </div>
+
+    </div><!-- /.section-alt -->
 
     <div class="card card-lg fade-in" style="background: var(--paper-warm); border-color: var(--border-strong);">
         <div class="card-title">Zasada proximity — ISO 14044 §4.2.3.6</div>
@@ -243,7 +261,7 @@
             <div class="comp-bar-group">
                 <div class="comp-bar-label">Średnia EU (bazy generyczne)</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 49%;">~295 kg CO₂/MWh</div>
+                    <div class="comp-bar-fill gray" style="width: 35%;">~210 kg CO₂/MWh</div>
                 </div>
             </div>
             <div class="comp-bar-group">
@@ -332,7 +350,7 @@
     </div>
 
     <!-- Najnowsze z bloga -->
-    <div class="section-gap fade-in">
+    <div class="section-alt section-gap fade-in">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
             <div>
                 <div class="section-num">Wiedza i komentarze</div>
@@ -372,7 +390,7 @@
                 <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-top: auto;">18 lutego 2026 &middot; 10 min</div>
             </a>
         </div>
-    </div>
+    </div><!-- /.section-alt -->
 
     <!-- About / Contact -->
     <div class="grid-2 fade-in">
@@ -409,5 +427,6 @@
 </footer>
 <script src="js/sidebar.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>

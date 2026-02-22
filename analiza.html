@@ -50,6 +50,10 @@
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg></span>
             Kalkulator Emisji
         </a>
+        <a href="narzedzia.html">
+            <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span>
+            Narzędzia LCA
+        </a>
         <a href="datasety.html">
             <span class="nav-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
             Baza Datasetów
@@ -134,7 +138,7 @@
                 <div class="card-label" style="color: var(--accent);">Gdzie Polska odstaje od średniej EU</div>
                 <h3 style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
                 <p class="card-text">
-                    Polski wskaźnik emisji dla energii elektrycznej wynosi <strong>597 kg CO₂/MWh</strong> (KOBiZE 2024) wobec średniej europejskiej ~295 kg CO₂/MWh. To ponad dwukrotna różnica. Zastosowanie uśrednionych danych prowadzi do <strong>niedoszacowania</strong> wpływu środowiskowego — każdy MWh zużyty w polskiej cementowni generuje dwukrotnie więcej CO₂ niż wynika z danych generycznych.
+                    Polski wskaźnik emisji dla energii elektrycznej wynosi <strong>597 kg CO₂/MWh</strong> (KOBiZE, dane za 2023) wobec średniej europejskiej ~210 kg CO₂/MWh (Ember 2025, dane za 2024). To niemal trzykrotna różnica. Zastosowanie uśrednionych danych prowadzi do <strong>niedoszacowania</strong> wpływu środowiskowego — każdy MWh zużyty w polskiej cementowni generuje blisko trzy razy więcej CO₂ niż wynika z danych generycznych.
                 </p>
             </div>
             <div class="card card-accent-green">
@@ -201,14 +205,15 @@
         </p>
     </div>
 
-    <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
+    <div class="section-alt fade-in" style="margin-top: 1.5rem;">
+    <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
         Kto traci, kto zyskuje
     </h2>
-    <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;" class="fade-in">
+    <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
         Uśrednianie danych środowiskowych generuje dwa typy zniekształceń.
     </p>
 
-    <div class="card card-lg card-accent-green section-gap fade-in">
+    <div class="card card-lg card-accent-green section-gap">
         <div class="card-title">Branże pokrzywdzone uśrednianiem — Polska lepsza niż średnia EU</div>
         <p class="card-text mb-2">W tych sektorach polskie zakłady osiągają parametry lepsze niż europejska średnia.</p>
         <div class="grid-2">
@@ -241,8 +246,8 @@
         <div class="grid-2">
             <div class="sector-card sector-card-red">
                 <div class="sector-title">Miks elektroenergetyczny</div>
-                <p class="sector-desc">597 kg CO₂/MWh (EU: 295). Dominacja węgla (~65% miksu).</p>
-                <div class="sector-diff-red">&#9650; Uśrednianie zaniża wpływ energii o ~100%</div>
+                <p class="sector-desc">597 kg CO₂/MWh (EU: ~210). Dominacja węgla (~60% miksu).</p>
+                <div class="sector-diff-red">&#9650; Uśrednianie zaniża wpływ energii o ~184%</div>
             </div>
             <div class="sector-card sector-card-red">
                 <div class="sector-title">Ciepłownictwo systemowe</div>
@@ -261,6 +266,8 @@
             </div>
         </div>
     </div>
+
+    </div><!-- /.section-alt -->
 
     <div class="steel-highlight section-gap fade-in">
         <div style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
@@ -310,5 +317,6 @@
 </footer>
 <script src="js/sidebar.js"></script>
 <script src="js/animations.js"></script>
+<script src="js/effects.js"></script>
 </body>
 </html>

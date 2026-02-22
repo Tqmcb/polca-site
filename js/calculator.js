@@ -9,7 +9,7 @@
     var resultMain = document.getElementById('resultMain');
     var resultEU = document.getElementById('resultEU');
     var calcDiff = document.getElementById('calcDiff');
-    var FACTOR_EU = 295;
+    var FACTOR_EU = 210;
 
     if (!energyInput || !sourceSelect) return;
 
