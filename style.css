@@ -2666,6 +2666,49 @@ noscript .fade-in,
     letter-spacing: 0.04em;
 }
 
+/* ===== Visual Effects (v5.1) ===== */
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    width: 0;
+    z-index: 101;
+    pointer-events: none;
+}
+
+/* Status dot pulse */
+.sidebar-status span {
+    animation: status-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(14, 124, 107, 0.5); }
+    50% { box-shadow: 0 0 0 4px rgba(14, 124, 107, 0); }
+}
+
+/* Cursor-following card glow */
+.card:not(.card-dark):hover,
+.metric-card:hover,
+.dataset-card:hover {
+    background-image: radial-gradient(
+        350px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgba(14, 124, 107, 0.05),
+        transparent 70%
+    );
+}
+.feature-card:hover {
+    background-image: radial-gradient(
+        350px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgba(14, 124, 107, 0.05),
+        transparent 70%
+    );
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
     .post-dark-hero {
@@ -2673,6 +2716,7 @@ noscript .fade-in,
         padding: 2rem 1rem 2rem;
     }
     .post-dark-hero .blog-post-title { font-size: 1.65rem; }
+    .scroll-progress { left: 0; }
     .post-accent-bar { margin: -1.25rem -1rem 2rem; }
     .margin-note { float: none; width: 100%; margin: 1rem 0 1.25rem; }
     .post-chapters h2 { padding-left: 2.75rem; }
