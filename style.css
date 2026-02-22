@@ -1992,6 +1992,329 @@ body::before {
     }
 }
 
+/* ============================================================
+   TOOLS PAGE — Narzędzia LCA
+   ============================================================ */
+
+/* Tool navigation pills */
+.tool-nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 0.25rem;
+}
+
+.tool-nav-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.25s var(--ease-out);
+    white-space: nowrap;
+}
+
+.tool-nav-pill:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    background: var(--accent-subtle);
+}
+
+.tool-nav-pill.active {
+    color: #FFFFFF;
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+/* Converter grid */
+.tool-converter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tool-converter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tool-converter-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+}
+
+.tool-converter-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tool-converter-row .calc-input {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+}
+
+.tool-converter-row .calc-select {
+    flex: 1.2;
+    min-width: 0;
+}
+
+/* Converter results */
+.tool-converter-results {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.tool-conv-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.35rem 0.6rem;
+    background: var(--paper-warm);
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--border-light);
+    transition: border-color 0.2s;
+}
+
+.tool-conv-item:hover {
+    border-color: var(--accent-border);
+}
+
+.tool-conv-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: -0.01em;
+}
+
+.tool-conv-unit {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-tertiary);
+    letter-spacing: 0.02em;
+}
+
+/* Search bar + filter pills */
+.tool-search-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.tool-search-bar .calc-input {
+    max-width: 400px;
+}
+
+.tool-filter-pills {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+}
+
+.tool-filter-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: var(--text-secondary);
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s var(--ease-out);
+}
+
+.tool-filter-pill:hover {
+    color: var(--accent);
+    border-color: var(--accent-border);
+    background: var(--accent-subtle);
+}
+
+.tool-filter-pill.active {
+    color: #FFFFFF;
+    background: var(--ink);
+    border-color: var(--ink);
+}
+
+/* Material selection grid */
+.material-select-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.material-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: all 0.2s var(--ease-out);
+    user-select: none;
+}
+
+.material-chip input[type="checkbox"] {
+    display: none;
+}
+
+.material-chip:hover {
+    border-color: var(--accent-border);
+    color: var(--text-primary);
+}
+
+.material-chip.active {
+    background: var(--accent-subtle);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.material-chip-name {
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+.material-chip-cat {
+    font-size: 0.62rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-tertiary);
+    letter-spacing: 0.02em;
+}
+
+.material-chip.active .material-chip-cat {
+    color: var(--accent);
+    opacity: 0.6;
+}
+
+/* Material bar chart */
+.material-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.material-bar-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.material-bar-label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    text-align: right;
+}
+
+.material-bar-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.material-bar-unit {
+    font-size: 0.62rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-tertiary);
+}
+
+.material-bar-track {
+    height: 32px;
+    background: var(--paper-warm);
+    border-radius: var(--radius-xs);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+
+.material-bar {
+    height: 100%;
+    border-radius: var(--radius-xs);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+    transition: width 0.8s var(--ease-out);
+    min-width: 60px;
+}
+
+.material-bar-pos {
+    background: var(--ink);
+}
+
+.material-bar-neg {
+    background: var(--func-green);
+}
+
+.material-bar-val {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+/* Empty state */
+.tool-empty-state {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-tertiary);
+    font-size: 0.88rem;
+    font-style: italic;
+}
+
+/* Table count */
+.tool-table-count {
+    font-size: 0.72rem;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-tertiary);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+/* Tools responsive */
+@media (max-width: 1024px) {
+    .tool-converter-grid { grid-template-columns: 1fr 1fr; }
+    .material-bar-row { grid-template-columns: 160px 1fr; }
+}
+
+@media (max-width: 768px) {
+    .tool-converter-grid { grid-template-columns: 1fr; }
+    .tool-nav { gap: 0.35rem; }
+    .tool-nav-pill { padding: 0.35rem 0.75rem; font-size: 0.72rem; }
+    .material-bar-row {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+    .material-bar-label { text-align: left; }
+}
+
+@media (max-width: 640px) {
+    .tool-converter-row { flex-direction: column; }
+    .tool-converter-row .calc-select { flex: 1; }
+}
+
 /* === NOSCRIPT FALLBACK === */
 noscript .fade-in,
 .no-js .fade-in {
