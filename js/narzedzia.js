@@ -37,7 +37,7 @@
 
     var fuelData = {
         'gas_nm3':  { kWh: 10.55,  label: 'Nm³ gazu ziemnego' },
-        'coal_t':   { kWh: 6667,   label: 't węgla kamiennego' },
+        'coal_t':   { kWh: 6322,   label: 't węgla kamiennego' },
         'diesel_l': { kWh: 10.0,   label: 'L oleju napędowego' },
         'petrol_l': { kWh: 8.89,   label: 'L benzyny' },
         'lpg_l':    { kWh: 6.67,   label: 'L LPG' },
@@ -267,8 +267,8 @@
         { name: 'Ciep\u0142o systemowe PL (\u015brednia)',      value: '~380',      unit: 'kg CO\u2082/MWh',   source: 'URE 2024',        cat: 'energia' },
         { name: 'Fotowoltaika (PL, krzemowa)',        value: '50\u201370',     unit: 'g CO\u2082e/kWh',   source: 'poLCA 2024',      cat: 'energia' },
         { name: 'Energia wiatrowa (onshore PL)',      value: '10\u201315',     unit: 'g CO\u2082e/kWh',   source: 'IPCC 2014',       cat: 'energia' },
-        { name: '\u015arednia EU (miks elektr.)',           value: '~295',      unit: 'kg CO\u2082/MWh',   source: 'EEA 2024',        cat: 'energia' },
-        { name: 'Residual mix PL (AIB)',              value: '~836',      unit: 'g CO\u2082e/kWh',   source: 'AIB 2023',        cat: 'energia' },
+        { name: '\u015arednia EU (miks elektr.)',           value: '~250',      unit: 'kg CO\u2082/MWh',   source: 'Ember/EEA 2023',        cat: 'energia' },
+        { name: 'Residual mix PL (AIB)',              value: '~788',      unit: 'g CO\u2082e/kWh',   source: 'AIB 2023',        cat: 'energia' },
 
         // Paliwa
         { name: 'Gaz ziemny',                        value: '56,1',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
@@ -320,7 +320,7 @@
 
         // Procesy przemysłowe
         { name: 'Produkcja klinkieru (PL)',          value: '~625',      unit: 'kg CO\u2082/t',     source: 'GUS/CEMBUREAU',   cat: 'procesy' },
-        { name: 'Kalcynacja CaCO\u2083 (wapna)',          value: '785',       unit: 'kg CO\u2082/t CaCO\u2083', source: 'IPCC 2006',    cat: 'procesy' },
+        { name: 'Kalcynacja CaCO\u2083 (wapna)',          value: '785',       unit: 'kg CO\u2082/t CaO', source: 'IPCC 2006',    cat: 'procesy' },
         { name: 'Produkcja wapna palonego',          value: '~750',      unit: 'kg CO\u2082/t',     source: 'EuLA',            cat: 'procesy' },
         { name: 'Huta szk\u0142a (miks PL)',              value: '~500',      unit: 'kg CO\u2082/t',     source: 'Glass for Europe', cat: 'procesy' },
         { name: 'Elektroliza aluminium',             value: '~6 500',    unit: 'kg CO\u2082e/t',    source: 'IAI',             cat: 'procesy' },
