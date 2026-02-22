@@ -241,38 +241,37 @@
         </div>
     </div>
 
-    <!-- Comp bars -->
+    <!-- Porównanie GWP — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
         <div class="card-title">Por&#243;wnanie wska&#378;nik&#243;w GWP (A1&ndash;A3) dla stali &#8212; kg CO&#8322;e/kg</div>
-        <div class="comp-bar-group" style="margin-top: 1rem;">
-            <div class="comp-bar-label">Polska stal EAF &#8212; pręt zbrojeniowy (poLCA)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 33%;">0,62</div>
+        <div class="vcol-chart" style="height: 240px;">
+            <div class="vcol-group">
+                <div class="vcol-value">0,48</div>
+                <div class="vcol-bar accent" style="height: 25%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value" style="font-weight: 700;">0,62</div>
+                <div class="vcol-bar green" style="height: 33%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">1,68</div>
+                <div class="vcol-bar gray" style="height: 89%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">1,78</div>
+                <div class="vcol-bar gray" style="height: 94%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">1,89</div>
+                <div class="vcol-bar ink" style="height: 100%;"></div>
             </div>
         </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Europejska stal d&#322;uga EAF (Eurofer Industry Report 2023)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 25%;">0,48</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Europejska stal p&#322;aska BF-BOF (Eurofer Industry Report 2023)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 89%;">1,68</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">ecoinvent 3.10 &#8222;steel, low-alloyed &#123;RER&#125;&#8221; &#8212; Europa (wa&#380;ona &#347;rednia)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 94%;">1,78</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">&#346;wiatowa &#347;rednia Worldsteel 2022 (mix BF-BOF + EAF, globalny)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 100%;">1,89</div>
-            </div>
+        <div class="vcol-labels">
+            <div class="vcol-label">EU EAF<br><span style="color: var(--text-light);">Eurofer</span></div>
+            <div class="vcol-label">PL EAF<br><span style="color: var(--text-light);">poLCA</span></div>
+            <div class="vcol-label">EU BF-BOF<br><span style="color: var(--text-light);">Eurofer</span></div>
+            <div class="vcol-label">ecoinvent<br><span style="color: var(--text-light);">RER</span></div>
+            <div class="vcol-label">&#346;wiat<br><span style="color: var(--text-light);">Worldsteel</span></div>
         </div>
         <p class="comp-note">
             Zakres: A1&ndash;A3 (cradle-to-gate), GWP100, kg CO&#8322;e/kg stali walcowanej.

@@ -178,31 +178,31 @@
         </div>
     </div>
 
-    <!-- Porównanie trzech wskaźników -->
+    <!-- Porównanie trzech wskaźników — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
         <div class="card-title">Wska&#378;niki emisji dla energii elektrycznej w Polsce (dane za 2023)</div>
-        <div class="comp-bar-group" style="margin-top: 1rem;">
-            <div class="comp-bar-label">KOBiZE &mdash; &#347;redni krajowy miks (<em>location-based</em>)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 80%;">597 kg CO&#8322;/MWh</div>
+        <div class="vcol-chart" style="height: 260px;">
+            <div class="vcol-group">
+                <div class="vcol-value">597</div>
+                <div class="vcol-bar gray" style="height: 80%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value" style="font-weight: 700;">&gt;700</div>
+                <div class="vcol-bar ink" style="height: 100%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">~0</div>
+                <div class="vcol-bar green" style="height: 1%; min-height: 3px;"></div>
             </div>
         </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">AIB &mdash; residual mix Polska (<em>market-based</em>, bez GO)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 100%;">&gt;700 kg CO&#8322;/MWh</div>
-            </div>
+        <div class="vcol-labels">
+            <div class="vcol-label">KOBiZE<br><span style="color: var(--text-light);">location-based</span></div>
+            <div class="vcol-label">AIB residual mix<br><span style="color: var(--text-light);">market-based, bez GO</span></div>
+            <div class="vcol-label">AIB z GO OZE<br><span style="color: var(--text-light);">market-based, z GO</span></div>
         </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">AIB &mdash; dostawca z GO OZE (<em>market-based</em>, z GO)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 1%; min-width: 2.5rem;">~0 kg</div>
-            </div>
-        </div>
-        <p class="comp-note">
-            &#378;r&#243;d&#322;a: KOBiZE (2024), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322; dla energii elektrycznej&#8221;; AIB,
-            &#8222;European Residual Mixes&#8221; (dane za 2022/2023). Warto&#347;&#263; residual mix dla Polski &gt;&nbsp;700 kg podana
-            orientacyjnie &mdash; AIB publikuje dane roczne z ok. 12-miesi&#281;cznym op&#243;&#378;nieniem.
+        <p class="comp-note" style="text-align: center; margin-top: 0.75rem;">
+            kg CO&#8322;/MWh &middot; &#378;r&#243;d&#322;a: KOBiZE (2024); AIB, &#8222;European Residual Mixes&#8221; (dane za 2022/2023).
+            Warto&#347;&#263; residual mix dla Polski &gt;&nbsp;700 kg podana orientacyjnie.
         </p>
     </div>
 

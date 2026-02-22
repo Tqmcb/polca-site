@@ -169,23 +169,25 @@
         </div>
     </div>
 
-    <!-- Key data card -->
+    <!-- Key data card — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
         <div class="card-title">Wska&#378;nik emisji dla energii elektrycznej</div>
-        <div class="comp-bar-group" style="margin-top: 1rem;">
-            <div class="comp-bar-label">&#346;rednia EU (bazy generyczne, ok. 2023)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 49%;">~295 kg CO&#8322;/MWh</div>
+        <div class="vcol-chart" style="height: 240px;">
+            <div class="vcol-group">
+                <div class="vcol-value">~295</div>
+                <div class="vcol-bar gray" style="height: 49%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value" style="font-size: 0.82rem; font-weight: 700;">597</div>
+                <div class="vcol-bar ink" style="height: 100%;"></div>
             </div>
         </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Polska (KOBiZE 2024, dane za 2023)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 100%;">597 kg CO&#8322;/MWh</div>
-            </div>
+        <div class="vcol-labels">
+            <div class="vcol-label">&#346;rednia EU<br><span style="color: var(--text-light);">bazy generyczne, 2023</span></div>
+            <div class="vcol-label">Polska<br><span style="color: var(--text-light);">KOBiZE, dane za 2023</span></div>
         </div>
-        <p class="comp-note">
-            &#378;r&#243;d&#322;o: KOBiZE, &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;, SO&#8322;, NO<sub>x</sub>, CO i py&#322;u ca&#322;kowitego
+        <p class="comp-note" style="text-align: center; margin-top: 0.75rem;">
+            kg CO&#8322;/MWh &middot; &#378;r&#243;d&#322;o: KOBiZE, &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;, SO&#8322;, NO<sub>x</sub>, CO i py&#322;u ca&#322;kowitego
             dla energii elektrycznej&#8221;, dane za rok 2023.
         </p>
     </div>
