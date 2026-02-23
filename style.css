@@ -3315,3 +3315,86 @@ noscript .fade-in,
 .feature-card,
 .blog-card      { will-change: transform; }
 
+/* ============================================================
+   POLISH v2 — treść portalu
+   ============================================================ */
+
+/* Większy oddech między sekcjami */
+.section-gap { margin-bottom: 2rem; }
+
+/* Nagłówek sekcji (tytuł + link "Wszystkie artykuły") */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+.section-title-md {
+    font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0.25rem 0 0;
+    letter-spacing: -0.02em;
+}
+.section-header-link {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--accent);
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+.section-header-link:hover { color: var(--accent-light); }
+
+/* CTA wide card — Narzędzia LCA i podobne */
+.card-cta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    border-left: 3px solid var(--accent);
+    text-decoration: none;
+    color: inherit;
+}
+.card-cta-title {
+    font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+.card-cta-desc {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+@media (max-width: 560px) {
+    .card-cta { grid-template-columns: 1fr; }
+    .card-cta .feature-card-icon { display: none; }
+}
+
+/* Dark card: cytat */
+.card-quote {
+    font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 1.08rem;
+    font-style: italic;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 1rem;
+}
+.card-source {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.48);
+}
+/* Etykieta w dark card — lepszy kontrast */
+.card-dark .card-label { color: rgba(255,255,255,0.52); }
+
+/* Footer: separator wizualny od treści */
+.polca-portal-footer { border-top: 1px solid var(--border); }
+
+/* Footer logo w kolorze akcentu */
+.footer-brand-logo { color: var(--accent); }
+.footer-brand-logo:hover { color: var(--accent-light); opacity: 1; }
+
