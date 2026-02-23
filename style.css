@@ -2935,7 +2935,7 @@ noscript .fade-in,
 /* Topbar: full-width, includes logo + nav */
 .polca-topbar {
     left: 0;
-    padding: 0 2.5rem;
+    padding: 0 max(2.5rem, calc((100vw - 1120px) / 2));
     background: var(--paper-card);
     box-shadow: 0 1px 0 var(--border);
 }
