@@ -41,4 +41,14 @@
             if (e.key === 'Escape') closeMenu();
         });
     });
+
+    /* Cień topbara po zjechaniu ze szczytu strony */
+    var topbarEl = document.querySelector('.polca-topbar');
+    if (topbarEl) {
+        var onScroll = function () {
+            topbarEl.classList.toggle('scrolled', window.scrollY > 4);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
 }());
