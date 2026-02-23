@@ -2945,11 +2945,25 @@ noscript .fade-in,
 .polca-topbar { height: 58px; }
 
 /* Content and footer: no sidebar offset */
-.polca-content { margin-left: 0; }
+.polca-content {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .polca-portal-footer { margin-left: 0; }
 
-/* Center page content */
-.polca-page { margin-left: auto; margin-right: auto; }
+/* Center page content — flex child centring */
+.polca-page {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+.polca-page-wide {
+    align-self: stretch;
+    max-width: 100%;
+}
 
 /* === TOPBAR BRAND === */
 .topbar-brand {
