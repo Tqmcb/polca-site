@@ -76,7 +76,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=6.2">
+    <link rel="stylesheet" href="style.css?v=6.3">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -178,13 +178,13 @@
     </div>
 
     <!-- Narzędzia LCA — wyróżniona karta -->
-    <a href="narzedzia.html" class="card card-lg section-gap fade-in" style="display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; align-items: center; text-decoration: none; color: inherit; border-left: 3px solid var(--accent);">
-        <div class="feature-card-icon orange" style="width: 48px; height: 48px; margin-bottom: 0;">
+    <a href="narzedzia.html" class="card card-lg card-cta section-gap fade-in">
+        <div class="feature-card-icon orange" style="width: 48px; height: 48px; flex-shrink: 0; margin-bottom: 0;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
         </div>
         <div>
-            <div style="font-family: 'Inter Tight', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem;">Narz&#281;dzia LCA — przeliczniki, kalkulator transportu, por&#243;wnywarka materia&#322;&#243;w</div>
-            <div style="font-size: 0.84rem; color: var(--text-secondary); line-height: 1.6;">Praktyczne narz&#281;dzia dla specjalist&#243;w LCA, ESG i certyfikacji budynk&#243;w. Polskie wska&#378;niki emisji, kalkulator modu&#322;u A4, por&#243;wnywarka GWP materia&#322;&#243;w budowlanych.</div>
+            <div class="card-cta-title">Narz&#281;dzia LCA — przeliczniki, kalkulator transportu, por&#243;wnywarka materia&#322;&#243;w</div>
+            <div class="card-cta-desc">Praktyczne narz&#281;dzia dla specjalist&#243;w LCA, ESG i certyfikacji budynk&#243;w. Polskie wska&#378;niki emisji, kalkulator modu&#322;u A4, por&#243;wnywarka GWP materia&#322;&#243;w budowlanych.</div>
         </div>
     </a>
 
@@ -202,7 +202,7 @@
 
     </div><!-- /.section-alt -->
 
-    <div class="card card-lg fade-in" style="background: var(--paper-warm); border-color: var(--border-strong);">
+    <div class="card card-lg card-accent-green fade-in" style="background: var(--paper-warm);">
         <div class="card-title">Zasada proximity — ISO 14044 §4.2.3.6</div>
         <div class="prose">
             <p>Norma ISO 14044:2006 formułuje wyraźną preferencję dla danych najbardziej reprezentatywnych geograficznie i technologicznie. Zasada ta — zwana zasadą proximity — oznacza, że dane krajowe powinny mieć pierwszeństwo nad danymi regionalnymi, a dane regionalne nad danymi globalnymi. poLCA realizuje tę zasadę, dostarczając dane inwentaryzacji cyklu życia (LCI) specyficzne dla polskich warunków produkcji, polskiego miksu energetycznego i polskiej infrastruktury transportowej.</p>
@@ -238,13 +238,13 @@
 
         <!-- Dark Quote Card -->
         <div class="card card-dark card-lg">
-            <div class="card-label" style="color: rgba(255,255,255,0.4);">Zasada poLCA</div>
-            <p style="font-family: 'Inter Tight', sans-serif; font-size: 1.05rem; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 1rem;">
+            <div class="card-label">Zasada poLCA</div>
+            <p class="card-quote">
                 „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
                 gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
                 lepsze od europejskiej średniej."
             </p>
-            <div style="font-size: 0.78rem; color: rgba(255,255,255,0.4);">
+            <div class="card-source">
                 — Zasada metodologiczna poLCA
             </div>
         </div>
@@ -310,12 +310,12 @@
 
     <!-- Najnowsze z bloga -->
     <div class="section-alt section-gap fade-in">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+        <div class="section-header">
             <div>
                 <div class="section-num">Wiedza i komentarze</div>
-                <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin: 0.25rem 0 0;">Najnowsze z bloga</h2>
+                <h2 class="section-title-md">Najnowsze z bloga</h2>
             </div>
-            <a href="blog.html" style="font-size: 0.82rem; font-weight: 500; color: var(--accent); text-decoration: none;">Wszystkie artyku&#322;y &rarr;</a>
+            <a href="blog.html" class="section-header-link">Wszystkie artyku&#322;y &rarr;</a>
         </div>
         <div class="blog-grid">
             <a href="blog-stal-lca-eaf.html" class="blog-card">
