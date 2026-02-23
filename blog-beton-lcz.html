@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP | poLCA</title>
+    <meta name="description" content="Por&oacute;wnanie &oacute;ladu w&eogon;glowego betonu kom&oacute;rkowego AAC i betonu tradycyjnego C25/30 w analizie LCA. Dane poLCA 2024 zgodne z EN 15804.">
+    <link rel="canonical" href="https://polca.org.pl/blog-beton-lcz.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP">
+    <meta property="og:description" content="Por&oacute;wnanie GWP AAC vs beton C25/30 w module A1-A3. Dlaczego jednostka funkcjonalna decyduje o wyniku analizy.">
+    <meta property="og:url" content="https://polca.org.pl/blog-beton-lcz.html">
+    <meta property="og:site_name" content="poLCA &mdash; Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-beton-lcz.jpg">
+    <meta property="article:published_time" content="2026-02-23T00:00:00+01:00">
+    <meta property="article:author" content="poLCA &mdash; Polska Baza Danych LCA">
+    <meta property="article:section" content="Dane">
+    <meta property="article:tag" content="beton">
+    <meta property="article:tag" content="AAC">
+    <meta property="article:tag" content="LCA">
+    <meta property="article:tag" content="GWP">
+    <meta property="article:tag" content="EN 15804">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Beton kom&oacute;rkowy vs tradycyjny w LCA &mdash; por&oacute;wnanie GWP">
+    <meta name="twitter:description" content="AAC klasy 400 emituje 86 kg CO&#8322;e/m&#179; vs 278 kg CO&#8322;e/m&#179; dla betonu C25/30. Analiza LCA z danymi poLCA 2024.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-beton-lcz.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-beton-lcz.html",
+          "headline": "Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP",
+          "description": "Por&oacute;wnanie &oacute;ladu w&eogon;glowego betonu kom&oacute;rkowego AAC i betonu tradycyjnego C25/30 w analizie LCA. Dane poLCA 2024 zgodne z EN 15804.",
+          "url": "https://polca.org.pl/blog-beton-lcz.html",
+          "datePublished": "2026-02-23T00:00:00+01:00",
+          "dateModified": "2026-02-23T00:00:00+01:00",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "Zesp&oacute;&lstrok; poLCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "image": "https://polca.org.pl/images/blog-beton-lcz.jpg",
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["beton kom&oacute;rkowy", "AAC", "gazobeton", "LCA", "GWP", "EN 15804", "beton C25/30", "unit funkcjonalna", "EPD"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czy beton kom&oacute;rkowy AAC ma ni&zdot;szy GWP ni&zdot; beton tradycyjny?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To zale&zdot;y od jednostki por&oacute;wnania. Na kilogram masy AAC ma wy&zdot;szy GWP (ok. 0,215&ndash;0,241 kg CO&#8322;e/kg) ni&zdot; beton C25/30 (0,116 kg CO&#8322;e/kg). Na metr sze&sacute;cienny sytuacja jest odwrotna &mdash; AAC klasy 400 ma GWP ok. 86 kg CO&#8322;e/m&#179; wobec 278 kg CO&#8322;e/m&#179; dla betonu C25/30. Dla por&oacute;wna&nacute; &#347;cian zewn&eogon;trznych naley stosowa&#263; jednostk&eogon; funkcjonaln&#261; m&#178; &soacute;ciany o okre&sacute;lonym wsp&oacute;&lstrok;czynniku U."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Sk&#261;d pochodzi wysoki GWP AAC na kg?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "G&lstrok;&oacute;wnymi sk&lstrok;adowymi GWP AAC s&agrave; wapno palone (CaO), kt&oacute;rego produkcja wymaga kalcynacji wapienia (ok. 780 kg CO&#8322;/t wapna &mdash; emisja procesowa nieunikniona) oraz cement (ok. 15&ndash;20% sk&lstrok;adu). Proszek aluminiowy stosowany jako &sacute;rodek porotw&oacute;rczy ma wysoki GWP jednostkowy (ok. 8 kg CO&#8322;e/kg), ale jego udzia&lstrok; masowy wynosi poniy&zdot;ej 1%, wi&eogon;c wp&lstrok;yw na ca&lstrok;o&sacute;&#263; jest ograniczony."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Jakie EPD s&#261; dost&#281;pne dla betonu kom&oacute;rkowego w Polsce?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "W Polsce EPD dla AAC posiadaj&#261; m.in. Xella Polska (marka Ytong) oraz Solbet. Deklaracje s&#261; opracowane zgodnie z EN 15804+A1 lub +A2 i weryfikowane przez trzeci&#261; stron&#281;. Dla betonu towarowego brak powszechnych EPD &mdash; projektanci LCA musz&#261; korzysta&#263; z danych bran&#380;owych lub danych poLCA 2024."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=6.7">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<header class="polca-topbar" role="banner">
+    <a href="index.html" class="topbar-brand">
+        <span class="topbar-brand-logo">poLCA</span>
+        <span class="topbar-brand-sep"></span>
+    </a>
+    <nav class="polca-topnav" aria-label="Nawigacja g&#322;&oacute;wna">
+        <a href="index.html">Dashboard</a>
+        <a href="analiza.html">Analiza Sektorowa</a>
+        <a href="metodyka.html">Metodyka i Jako&#347;&#263;</a>
+        <a href="datasety.html">Eksport danych</a>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD Polska</a>
+    </nav>
+    <div class="topbar-right">
+        <a href="blog.html" class="topbar-icon-btn" aria-label="Blog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </a>
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-primary">Kontakt</a>
+        <button class="nav-hamburger" aria-label="Otw&oacute;rz menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="post-accent-bar"></div>
+
+    <div style="width:100%;height:280px;overflow:hidden;margin-bottom:0;">
+        <img src="images/blog-beton-lcz.jpg"
+             alt="Plac budowy z kopark&#261; &mdash; produkcja i zastosowanie mater ia&#322;&oacute;w budowlanych" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+    </div>
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wr&oacute;&#263; do bloga
+        </a>
+
+        <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
+            <a href="index.html">poLCA</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <a href="blog.html">Blog</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-current">Beton kom&oacute;rkowy i tradycyjny w LCA</span>
+        </nav>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag dane">Dane</span>
+                <span class="blog-tag sektory">Sektory</span>
+                <span class="blog-tag materialy">Materia&#322;y</span>
+                <span class="blog-date">23 lutego 2026</span>
+                <span class="blog-read-time">&#183; 6 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP
+            </h1>
+            <p class="blog-post-lead">
+                Beton kom&oacute;rkowy autoklawizowany (AAC) i beton tradycyjny C25/30 s&#322;u&#380;&#261; r&oacute;&#380;nym celom
+                konstrukcyjnym, ale oba s&#261; powszechnie stosowane w polskim budownictwie.
+                Por&oacute;wnanie ich &acute;ladu w&eogon;glowego wymaga precyzyjnej jednostki funkcjonalnej &mdash;
+                na kg materia&#322;u wyniki s&#261; odwrotne ni&#380; na m&#179;, a na m&#178; &acute;ciany o okre&acute;lonych w&#322;a&acute;ciwo&acute;ciach
+                termicznych r&oacute;&zdot;nica si&eogon;ga <strong>70%</strong> na korzy&acute;&#263; AAC klasy 400.
+            </p>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="tldr-box fade-in">
+        <div class="tldr-box-label">TL;DR &mdash; skr&oacute;t dla zabieganych</div>
+        <ul>
+            <li>AAC klasy 400 ma GWP <strong>86 kg CO&#8322;e/m&#179;</strong> &mdash; ponad 3-krotnie ni&#380;szy ni&#380; beton C25/30 (278 kg CO&#8322;e/m&#179;)</li>
+            <li>Na kg masy wynik jest odwrotny: AAC 0,215 kg CO&#8322;e/kg vs beton C25/30 0,116 kg CO&#8322;e/kg</li>
+            <li>Przy poprawnej jednostce funkcjonalnej (m&#178; &acute;ciany o U = 0,20 W/m&#178;K) &acute;ciana z AAC 400 jest ni&#380;szoemisyjna od betonu C20/25 z izolacj&#261; o ok. <strong>60&ndash;70%</strong></li>
+            <li>Dane poLCA 2024 dla obydwu materia&#322;&oacute;w s&#261; walidowane zgodnie z EN 15804+A2</li>
+        </ul>
+    </div>
+
+    <!-- Key stats -->
+    <div class="key-stat-row section-gap fade-in">
+        <div class="key-stat">
+            <div class="key-stat-number accent">86</div>
+            <div class="key-stat-unit">kg CO&#8322;e/m&#179;</div>
+            <div class="key-stat-label">AAC klasa 400 (poLCA)</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number muted">278</div>
+            <div class="key-stat-unit">kg CO&#8322;e/m&#179;</div>
+            <div class="key-stat-label">Beton C25/30 (poLCA)</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number" style="color: var(--func-amber);">~70%</div>
+            <div class="key-stat-unit">mniej emisji</div>
+            <div class="key-stat-label">AAC vs beton (na m&#178; &acute;ciany)</div>
+        </div>
+    </div>
+
+    <!-- Porownanie GWP - tabela -->
+    <div class="card card-lg section-gap fade-in" style="max-width: 820px;">
+        <div class="card-title">Por&oacute;wnanie wska&#378;nik&oacute;w GWP (A1&ndash;A3) &mdash; beton kom&oacute;rkowy i tradycyjny</div>
+        <table class="polca-table" style="margin-top: 0.75rem;">
+            <thead>
+                <tr>
+                    <th>Materia&#322;</th>
+                    <th style="text-align:right;">G&eogon;sto&acute;&#263; [kg/m&#179;]</th>
+                    <th style="text-align:right;">GWP [kg CO&#8322;e/kg]</th>
+                    <th style="text-align:right;">GWP [kg CO&#8322;e/m&#179;]</th>
+                    <th>&#377;r&oacute;d&#322;o</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: 600;">AAC klasa 400</td>
+                    <td style="text-align:right;">400</td>
+                    <td style="text-align:right; color: var(--func-green); font-weight: 600;">0,215</td>
+                    <td style="text-align:right; color: var(--func-green); font-weight: 600;">86</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>AAC klasa 500</td>
+                    <td style="text-align:right;">500</td>
+                    <td style="text-align:right;">0,228</td>
+                    <td style="text-align:right;">114</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>AAC klasa 600</td>
+                    <td style="text-align:right;">600</td>
+                    <td style="text-align:right;">0,241</td>
+                    <td style="text-align:right;">145</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C16/20</td>
+                    <td style="text-align:right;">2350</td>
+                    <td style="text-align:right;">0,107</td>
+                    <td style="text-align:right;">252</td>
+                    <td>poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C25/30</td>
+                    <td style="text-align:right;">2400</td>
+                    <td style="text-align:right;">0,116</td>
+                    <td style="text-align:right;">278</td>
+                    <td>poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C35/45</td>
+                    <td style="text-align:right;">2450</td>
+                    <td style="text-align:right;">0,148</td>
+                    <td style="text-align:right;">362</td>
+                    <td>poLCA 2024</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="comp-note">
+            Zakres: A1&ndash;A3 (cradle-to-gate), GWP100, IPCC AR6.
+            &#378;r&oacute;d&#322;a: poLCA 2024 (Multicert), EPD Ytong PL (Xella Polska Sp. z o.o., 2023).
+        </p>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in post-chapters">
+
+        <h2>Wprowadzenie: dwa systemy, dwa profile emisyjne</h2>
+
+        <p>
+            Beton jest najszerzej stosowanym materia&#322;em budowlanym na &acute;wiecie, a jego &acute;lad w&eogon;glowy
+            ma fundamentalne znaczenie dla LCA budynk&oacute;w. W Polsce funkcjonuj&#261; dwa dominuj&#261;ce systemy:
+            beton tradycyjny (towarowy i prefabrykowany, klasy C12/15&ndash;C40/50) oraz beton
+            kom&oacute;rkowy autoklawizowany (AAC / gazobeton, klasy 400&ndash;700&nbsp;kg/m&#179;).
+        </p>
+
+        <p>
+            Obydwa materia&#322;y maj&#261; diametralnie r&oacute;&#380;ne sk&#322;ady i procesy produkcji &mdash; co przek&#322;ada si&eogon;
+            na istotne r&oacute;&#380;nice w wska&#378;nikach GWP. Jednak por&oacute;wnanie bez precyzyjnej jednostki
+            funkcjonalnej prowadzi do b&#322;&eogon;dnych wniosk&oacute;w.
+        </p>
+
+        <h2>Co to jest AAC i jak powstaje?</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Sk&#322;ad AAC klasy 400</div>
+            Cement: ~15&ndash;20%<br>
+            Wapno palone: ~20%<br>
+            Piasek kwarcowy: ~60%<br>
+            Proszek aluminiowy: &lt;1%<br>
+            Woda: reszta<br><br>
+            G&eogon;sto&acute;&#263;: 300&ndash;700 kg/m&#179;<br>
+            (beton trad.: 2200&ndash;2400 kg/m&#179;)
+        </div>
+
+        <p>
+            Beton kom&oacute;rkowy autoklawizowany (Autoclaved Aerated Concrete, AAC) to lekki materia&#322;
+            &acute;cienny wytwarzany z cementu (~15&ndash;20%), wapna palonego (~20%), piasku kwarcowego (~60%),
+            proszku aluminiowego (mniej ni&#380; 1%) i wody. W procesie produkcji aluminium reaguje
+            z wapnem i wod&#261; wytwarzaj&#261;c wod&oacute;r, kt&oacute;ry tworzy drobne, r&oacute;wnomierne pory
+            w mas&eogon; &acute;wie&#380;ego betonu.
+        </p>
+
+        <p>
+            Finalny produkt ma g&eogon;sto&acute;&#263; 300&ndash;700&nbsp;kg/m&#179; &mdash; wobec 2200&ndash;2400&nbsp;kg/m&#179;
+            dla betonu tradycyjnego. Autoklawizacja (obr&oacute;bka par&#261; pod ci&acute;nieniem ok. 12&nbsp;bar,
+            w temperaturze ok. 190&deg;C) nadaje materia&#322;owi trwa&#322;o&acute;&#263; &mdash; ale jest energoch&#322;onna
+            i stanowi jedn&#261; ze sk&#322;adowych GWP procesu produkcyjnego.
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Wapno palone &mdash; g&#322;&oacute;wna sk&#322;adowa emisyjna</div>
+                    <div class="process-step-text">
+                        Produkcja CaO wymaga wypalenia wapienia (CaCO&#8323; &rarr; CaO + CO&#8322;)
+                        w temperaturze ok. 900&deg;C. Emisja z kalcynacji wynosi ok. 780&nbsp;kg CO&#8322;/t wapna
+                        &mdash; to emisja procesowa, nieunikniona bez zastosowania technologii CCS.
+                        Przy 20% udziale wapna w AAC i g&eogon;sto&acute;ci 400&nbsp;kg/m&#179;,
+                        wapno odpowiada za ok. 62&nbsp;kg CO&#8322;e/m&#179; produktu.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Autoklawizacja &mdash; energoch&#322;onno&acute;&#263; procesu</div>
+                    <div class="process-step-text">
+                        Obr&oacute;bka w autoklawie zu&#380;ywa ok. 100&ndash;150&nbsp;kWh energii cieplnej
+                        na ton&eogon; produktu suchego. Przy polskim miksie energetycznym i cieplnym
+                        przek&#322;ada si&eogon; to na ok. 8&ndash;12&nbsp;kg CO&#8322;e/m&#179; AAC &mdash; mniejszy udzia&#322;
+                        ni&#380; wapno, ale znacz&#261;cy. Producenci redukuj&#261; t&eogon; sk&#322;adow&#261; poprzez
+                        odzysk pary mi&eogon;dzy cyklami autoklawizacji.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Jaka jednostka funkcjonalna?</h2>
+
+        <p>
+            Wyb&oacute;r jednostki funkcjonalnej ma krytyczne znaczenie w por&oacute;wnaniach LCA materia&#322;&oacute;w
+            budowlanych. ISO 14044 i EN 15804 wymagaj&#261;, aby jednostka funkcjonalna odwzorowa&#322;a
+            faktyczn&#261; funkcj&eogon; spe&#322;nian&#261; przez materia&#322; w budynku &mdash; a nie jedynie mas&eogon; lub obj&eogon;to&acute;&#263;.
+        </p>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Zasada metodyczna</div>
+            <p class="callout-body">
+                Dla &acute;cian budynku w&#322;a&acute;ciw&#261; jednostk&#261; funkcjonaln&#261; jest <strong>m&#178; &acute;ciany
+                o okre&acute;lonej izolacyjno&acute;ci termicznej (Uw) i no&acute;no&acute;ci</strong>, nie kg ani m&#179; materia&#322;u.
+                Por&oacute;wnanie kg do kg lub m&#179; do m&#179; daje wyniki mylne przy materia&#322;ach o tak r&oacute;&#380;nej g&eogon;sto&acute;ci.
+            </p>
+        </div>
+
+        <p>
+            Przyk&#322;ad dla &acute;ciany zewn&eogon;trznej o U&nbsp;=&nbsp;0,20&nbsp;W/(m&#178;K) &mdash; wymaganie wg WT 2021:
+        </p>
+
+        <div class="card card-lg" style="max-width: none; margin: 1.5rem 0 2rem;">
+            <div class="card-title">GWP (A1&ndash;A3) na m&#178; &acute;ciany zewn&eogon;trznej, U = 0,20 W/(m&#178;K)</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.875rem; line-height:1.6; margin-top: 0.75rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Wariant &acute;ciany</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Grubo&acute;&#263; materia&#322;u</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">GWP materia&#322;u</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">GWP izolacji</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">GWP &#322;&#261;cznie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border); background: color-mix(in srgb, var(--func-green) 5%, transparent);">
+                        <td style="padding: 0.6rem 0.75rem; font-weight: 600;">AAC klasa 400, 36,5 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">36,5 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color: var(--func-green); font-weight: 600;">31 kg CO&#8322;e/m&#178;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">&mdash;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right; color: var(--func-green); font-weight: 600;">31 kg CO&#8322;e/m&#178;</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">AAC klasa 600, 24 cm + we&#322;na 14 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">24 + 14 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">27 kg CO&#8322;e/m&#178;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">23 kg CO&#8322;e/m&#178;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">50 kg CO&#8322;e/m&#178;</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem;">Beton C20/25, 20 cm + izolacja 16 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">20 + 16 cm</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">56 kg CO&#8322;e/m&#178;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">23 kg CO&#8322;e/m&#178;</td>
+                        <td style="padding: 0.6rem 0.75rem; text-align:right;">79 kg CO&#8322;e/m&#178;</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="comp-note">
+                Izolacja: we&#322;na skalna 40 kg/m&#179;, GWP 1,6 kg CO&#8322;e/kg.
+                U-warto&acute;ci obliczone wg PN-EN ISO 6946. &#378;r&oacute;d&#322;a: poLCA 2024.
+            </p>
+        </div>
+
+        <div class="pull-quote-lg">
+            <p>&#346;ciana monolityczna z AAC klasy 400 (36,5&nbsp;cm) spe&#322;niaj&#261;ca wymaganie
+            WT&nbsp;2021 (U&nbsp;&le;&nbsp;0,20&nbsp;W/m&#178;K) ma GWP na poziomie zaledwie
+            <strong>31&nbsp;kg&nbsp;CO&#8322;e/m&#178;</strong> &mdash; wobec <strong>79&nbsp;kg&nbsp;CO&#8322;e/m&#178;</strong>
+            dla &acute;ciany betonowej z izolacj&#261;. R&oacute;&#380;nica to ok. 60&ndash;70% &mdash;
+            wystarczaj&#261;ca, by istotnie wp&#322;yn&#261;&#263; na wynik LCA ca&#322;ego budynku.</p>
+            <cite>Obliczenia poLCA 2024; EN 15804+A2, IPCC AR6</cite>
+        </div>
+
+        <h2>Emisje z wapna i aluminium &mdash; analiza sk&#322;adowych</h2>
+
+        <p>
+            Dwa sk&#322;adniki AAC maj&#261; nieproporcjonalnie du&#380;y udzia&#322; w GWP produktu:
+        </p>
+
+        <div class="card card-lg" style="max-width: 700px; margin: 1.25rem 0 2rem;">
+            <div class="card-title">Sk&#322;adowe GWP (A1&ndash;A3) dla AAC klasy 400, kg CO&#8322;e/m&#179;</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label">Wapno palone &mdash; kalcynacja + upstream</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 72%;">62 kg CO&#8322;e/m&#179;</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Cement CEM I / CEM III &mdash; upstream klinkieru</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 12%;">10 kg CO&#8322;e/m&#179;</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Energia autoklawizacji &mdash; para, ciep&#322;o</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 11%;">10 kg CO&#8322;e/m&#179;</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Pozosta&#322;e (piasek, proszek Al, transport)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 5%;">4 kg CO&#8322;e/m&#179;</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">&#321;&#261;cznie A1&ndash;A3</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill green" style="width: 100%; font-weight: 600;">86 kg CO&#8322;e/m&#179;</div>
+                </div>
+            </div>
+            <p class="comp-note">
+                &#378;r&oacute;d&#322;a: EPD Ytong PL (Xella Polska 2023), obliczenia poLCA 2024.
+                Wapno: 780 kg CO&#8322;/t wapna (kalcynacja) + upstream &asymp; 0,775 kg CO&#8322;e/kg CaO.
+            </p>
+        </div>
+
+        <p>
+            Mo&#380;liwo&acute;ci redukcji GWP AAC przez producent&oacute;w obejmuj&#261;:
+        </p>
+
+        <ul>
+            <li>Stosowanie cementu z wy&#380;szym udzia&#322;em materia&#322;&oacute;w substituuj&#261;cych klinkier
+                (CEM III/B z 66&ndash;80% &#380;u&#380;la wielkopiecowego, CEM IV z popio&#322;em lotnym)</li>
+            <li>Cz&eogon;&acute;ciowe zast&#261;pienie wapna popio&#322;em lotnym lub krzemionk&#261; reaktywn&#261;
+                &mdash; zmniejsza emisje z kalcynacji, ale wymaga dostosowania parametr&oacute;w autoklawizacji</li>
+            <li>Odzysk pary mi&eogon;dzy cyklami autoklaw&oacute;w &mdash; redukcja zu&#380;ycia energii cieplnej
+                o 15&ndash;25%</li>
+        </ul>
+
+        <h2>Implikacje dla LEED, BREEAM i LCA budynku</h2>
+
+        <p>
+            W certyfikacji <strong>LEED v4.1</strong> (MRc2 &mdash; Environmental Product Declarations)
+            i <strong>BREEAM Mat&nbsp;01</strong> materia&#322; jest oceniany przez pryzmat zadeklarowanego EPD
+            (EN 15804). Dla AAC w Polsce istnieje kilka EPD od producent&oacute;w &mdash; Ytong (Xella Polska),
+            Solbet. Dla betonu towarowego EPD s&#261; rzadkie, co wymusza stosowanie danych bran&#380;owych
+            lub danych poLCA 2024.
+        </p>
+
+        <p>
+            W modelach LCA budynku wielorodzinnego typowe udzia&#322;y w module A1&ndash;A3:
+        </p>
+
+        <ul>
+            <li>Konstrukcja &#380;elbetowa: 35&ndash;45% ca&#322;kowitego GWP budynku</li>
+            <li>&#346;ciany wype&#322;niaj&#261;ce i no&acute;ne (AAC lub bloczki): 8&ndash;12%</li>
+            <li>Izolacje termiczne: 15&ndash;20%</li>
+            <li>Wyko&#324;czenia i instalacje: 10&ndash;18%</li>
+        </ul>
+
+        <p>
+            Redukcja GWP &acute;cian poprzez wyb&oacute;r AAC klasy 400 zamiast bloczk&oacute;w wapienno-piaskowych
+            (ok. 0,19 kg CO&#8322;e/kg, ale 1900 kg/m&#179;) lub &acute;ciany betonowej z izolacj&#261; przynosi wymierny
+            efekt na poziomie ca&#322;ego budynku. Przy typowych 250&ndash;350&nbsp;m&#178; &acute;cian zewn&eogon;trznych
+            w bloku mieszkalnym, oszcz&eogon;dno&acute;&#263; mo&#380;e wynie&acute;&#263; 12 000&ndash;17 000&nbsp;kg CO&#8322;e/budynek &mdash;
+            co odpowiada ok. 3&ndash;5% ca&#322;kowitego GWP A1&ndash;A3 obiektu.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <div class="faq-section-title">Najcz&eogon;&acute;ciej zadawane pytania</div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czy beton kom&oacute;rkowy AAC ma ni&#380;szy GWP ni&#380; beton tradycyjny?</div>
+                <div class="faq-a">
+                    To zale&#380;y od jednostki por&oacute;wnania. Na kilogram masy AAC ma wy&#380;szy GWP
+                    (ok. 0,215&ndash;0,241&nbsp;kg CO&#8322;e/kg) ni&#380; beton C25/30 (0,116&nbsp;kg CO&#8322;e/kg).
+                    Na metr sze&acute;cienny sytuacja jest odwrotna &mdash; AAC klasy 400 ma GWP
+                    ok. 86&nbsp;kg CO&#8322;e/m&#179; wobec 278&nbsp;kg CO&#8322;e/m&#179; dla betonu C25/30.
+                    Jedynie por&oacute;wnanie przez jednostk&eogon; funkcjonaln&#261; m&#178; &acute;ciany jest metodycznie poprawne.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Sk&#261;d pochodzi wysoki GWP AAC na kg?</div>
+                <div class="faq-a">
+                    G&#322;&oacute;wnymi sk&#322;adowymi GWP AAC s&#261; wapno palone (CaO), kt&oacute;rego produkcja wymaga
+                    kalcynacji wapienia (ok. 780&nbsp;kg CO&#8322;/t wapna &mdash; emisja procesowa nieunikniona)
+                    oraz cement. Proszek aluminiowy stosowany jako &acute;rodek porotw&oacute;rczy ma wysoki GWP
+                    jednostkowy (ok. 8 kg CO&#8322;e/kg), ale jego udzia&#322; masowy wynosi poni&#380;ej 1%, wi&eogon;c
+                    jego wp&#322;yw na ca&#322;o&acute;&#263; jest ograniczony (ok. 4&nbsp;kg CO&#8322;e/m&#179; AAC).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Jakie EPD s&#261; dost&eogon;pne dla betonu kom&oacute;rkowego w Polsce?</div>
+                <div class="faq-a">
+                    W Polsce EPD dla AAC posiadaj&#261; m.in. Xella Polska (marka Ytong) oraz Solbet.
+                    Deklaracje s&#261; opracowane zgodnie z EN 15804+A1 lub +A2 i weryfikowane przez
+                    trzeci&#261; stron&eogon;. Dla betonu towarowego brak powszechnych EPD &mdash; projektanci LCA
+                    musz&#261; korzysta&#263; z danych bran&#380;owych lub danych poLCA 2024. Szczeg&oacute;&#322;y mo&#380;na
+                    uzgodni&#263; z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD Polska</a>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czy dane poLCA 2024 dla AAC s&#261; zgodne z EN 15804+A2?</div>
+                <div class="faq-a">
+                    Tak. Dane poLCA 2024 dla betonu kom&oacute;rkowego s&#261; walidowane krzy&#380;owo z EPD producent&oacute;w,
+                    wska&#378;nikami KOBiZE oraz normami EN 15804+A2. Wsp&oacute;&#322;czynniki GWP s&#261; zgodne z IPCC AR6
+                    (GWP100: CH&#8324; = 27,9, N&#8322;O = 273). Wska&#378;nik emisyjno&acute;ci energii elektrycznej
+                    pochodzi z datasetu poLCA-EN-PL-2024 (0,718 kg CO&#8322;e/kWh).
+                </div>
+            </div>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
+            <strong>&#378;r&oacute;d&#322;a:</strong>
+            Multicert Sp. z o.o. (2026), &bdquo;poLCA &mdash; Wska&#378;niki GWP materia&#322;&oacute;w &acute;ciennych 2024&rdquo;;
+            Xella Polska Sp. z o.o. (2023), EPD &bdquo;YTONG Gazobeton (AAC)&rdquo;, program EPD Polska;
+            Solbet Sp. z o.o. (2023), EPD dla bloczk&oacute;w AAC, program EPD Polska;
+            PN-EN 15804+A2 &mdash; Zr&oacute;wnowa&#380;one budownictwo &mdash; Deklaracje &acute;rodowiskowe wyrobu;
+            Rozporz&#261;dzenie WT 2021 (Dz.U. 2022 poz. 1225) &mdash; warunki techniczne dot. izolacyjno&acute;ci;
+            IPCC (2021), AR6 WG1 &mdash; GWP100.
+        </p>
+
+    </div>
+
+    <!-- Related posts -->
+    <div class="section-gap fade-in">
+        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="blog-cement-polska.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag dane">Dane</span>
+                        <span class="blog-date">14 listopada 2025</span>
+                    </div>
+                    <div class="blog-card-title">Polski cement a &acute;rednia europejska &mdash; gdzie jeste&acute;my naprawd&eogon;</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">6 min czytania</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-mma-rap.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-tag dane">Dane</span>
+                        <span class="blog-date">10 stycznia 2026</span>
+                    </div>
+                    <div class="blog-card-title">Granulat asfaltowy (RAP) w LCA &mdash; jak modelowa&#263; zawarto&acute;&#263; materia&#322;&oacute;w z recyklingu</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">7 min czytania</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    <div>
+        <a href="index.html" class="footer-brand-logo">poLCA</a>
+        <p class="footer-brand-desc">Polska baza danych inwentaryzacji cyklu &#380;ycia (LCI) dla wyrob&oacute;w budowlanych. Dane specyficzne dla polskich warunk&oacute;w produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+        <div class="footer-address">
+            ul. Mydlarska 47, 04-690 Warszawa<br>
+            <a href="mailto:info@epd.org.pl">info@epd.org.pl</a> &nbsp;&middot;&nbsp;
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+        </div>
+    </div>
+    <div>
+        <div class="footer-col-title">Operator</div>
+        <div class="footer-col-text">
+            Multicert Sp. z o.o.<br>
+            Operator programu EPD Polska.<br>
+            Opracowanie i utrzymanie bazy danych poLCA.<br><br>
+            <a href="metodyka.html">Metodyka i Jako&acute;&#263;</a><br>
+            <a href="datasety.html">Baza Dataset&oacute;w</a><br>
+            <a href="blog.html">Blog</a>
+        </div>
+    </div>
+    <div>
+        <div class="footer-col-title">Architektura techniczna</div>
+        <div class="footer-col-text">
+            Struktura grafowa, format JSON-LD,<br>
+            interfejs API (REST + GraphQL),<br>
+            aktualizacja kaskadowa, parametryzacja,<br>
+            pe&#322;na trasowalno&acute;&#263;.<br><br>
+            Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska</span>
+        <span>poLCA v6.0 &middot; <a href="sitemap.xml">Mapa strony</a></span>
+    </div>
+</footer>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+</body>
+</html>
