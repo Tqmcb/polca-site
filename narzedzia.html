@@ -68,7 +68,7 @@
 <div class="polca-page">
 
     <div class="page-header fade-in">
-        <div class="section-num">06 — Narzędzia specjalistyczne</div>
+        <div class="section-num">01 — Narzędzia specjalistyczne</div>
         <h1 class="page-title">Narzędzia LCA</h1>
         <p class="page-subtitle">
             Praktyczne kalkulatory i dane referencyjne dla specjalistów LCA, ESG
@@ -92,11 +92,18 @@
          TOOL 01 — Unit Converter
          ============================================================ -->
     <div id="przelicznik" class="card card-lg section-gap fade-in">
-        <div class="section-num">01 — Przelicznik jednostek</div>
+        <div class="section-num">02 — Przelicznik jednostek</div>
         <div class="card-title">Konwersja jednostek energii, masy i paliw</div>
-        <p class="card-text" style="margin-bottom: 1.5rem;">
+        <p class="card-text">
             Szybka konwersja jednostek stosowanych w analizach LCA, raportowaniu ESG
             i deklaracjach EPD. Wyniki aktualizowane w czasie rzeczywistym.
+        </p>
+        <p class="card-text" style="margin-bottom: 1.5rem;">
+            Przelicznik stosuje standardowe współczynniki konwersji zgodne z normą ISO 13600.
+            Wartość opałowa (LHV) dla paliw przyjmowana jest według danych GUS i KOBiZE
+            dla polskiej struktury dostaw. Wyniki mają charakter orientacyjny — dla obliczeń
+            formalnych stosuj wartości zadeklarowane przez dostawcę paliwa lub operatora sieci
+            i weryfikowane zgodnie z procedurami ISO 14064-1 / GHG Protocol.
         </p>
 
         <div class="tool-converter-grid">
@@ -153,11 +160,19 @@
          TOOL 02 — Transport Calculator (Module A4)
          ============================================================ -->
     <div id="transport" class="card card-lg section-gap fade-in">
-        <div class="section-num">02 — Moduł A4 wg EN 15804</div>
+        <div class="section-num">03 — Moduł A4 wg EN 15804</div>
         <div class="card-title">Kalkulator emisji z transportu</div>
-        <p class="card-text" style="margin-bottom: 1.25rem;">
+        <p class="card-text">
             Oblicz emisje CO₂ z transportu materiałów budowlanych. Moduł A4 wg EN 15804+A2
             obejmuje transport z bramy zakładu do placu budowy.
+        </p>
+        <p class="card-text" style="margin-bottom: 1.25rem;">
+            Wskaźniki emisji dla poszczególnych środków transportu pochodzą z bazy DEFRA/BEIS 2024
+            i odnoszą się do tonokiromeltra (tkm) przy założeniu standardowego wskaźnika
+            załadunku floty. Opcja pustego przebiegu powrotnego uwzględnia konwencję EN 15804+A2,
+            która zaleca przyjęcie 50% odległości jako domyślny powrót bez ładunku (ekwiwalent
+            faktycznego zużycia paliwa). Wskaźniki dla polskiej floty drogowej mogą być wyższe
+            o 15–25% od wartości DEFRA z uwagi na średni wiek taboru (~12 lat).
         </p>
 
         <div class="calc-grid">
@@ -225,17 +240,57 @@
          TOOL 03 — Material Comparison
          ============================================================ -->
     <div id="materialy" class="card card-lg section-gap fade-in">
-        <div class="section-num">03 — GWP materiałów budowlanych</div>
+        <div class="section-num">04 — GWP materiałów budowlanych</div>
         <div class="card-title">Porównywarka materiałów budowlanych</div>
-        <p class="card-text" style="margin-bottom: 1.25rem;">
+        <p class="card-text">
             Porównaj potencjał globalnego ocieplenia (GWP) materiałów budowlanych
             w modułach A1–A3 na podstawie polskich danych EPD i poLCA.
             Zaznacz materiały do porównania.
         </p>
+        <p class="card-text" style="margin-bottom: 1.25rem;">
+            Wskaźniki GWP wyrażone są jako ekwiwalent CO₂ (kg CO₂e) zgodnie
+            z charakteryzacją IPCC AR5 (horyzont 100 lat). Wartości dotyczą modułu
+            A1–A3 (wydobycie surowców, transport do zakładu, produkcja) bez uwzględnienia
+            faz użytkowania i końca życia (moduły B i C). Ujemne wartości GWP materiałów
+            drzewnych wynikają z wiązania biogenicznego CO₂ raportowanego zgodnie
+            z EN 15804+A2 i PEFCR for Construction Products.
+        </p>
 
         <div class="material-select-grid" id="materialSelect"></div>
 
-        <div class="material-chart" id="materialChart"></div>
+        <div class="material-chart" id="materialChart">
+            <!-- Fallback statyczny: tabela GWP materiałów (zastępowana przez JS) -->
+            <noscript>
+                <table class="polca-table">
+                    <thead>
+                        <tr>
+                            <th>Materiał</th>
+                            <th>GWP A1–A3</th>
+                            <th>Jednostka</th>
+                            <th>Źródło</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Aluminium (pierwotne)</td><td class="mono">8 000</td><td class="mono">kg CO₂e/t</td><td>EAA</td></tr>
+                        <tr><td>XPS</td><td class="mono">4 500</td><td class="mono">kg CO₂e/t</td><td>XPS Europe</td></tr>
+                        <tr><td>PIR/PUR</td><td class="mono">3 800</td><td class="mono">kg CO₂e/t</td><td>PU Europe</td></tr>
+                        <tr><td>EPS (styropian)</td><td class="mono">3 200</td><td class="mono">kg CO₂e/t</td><td>EUMEPS</td></tr>
+                        <tr><td>Miedź (pierwotna)</td><td class="mono">3 500</td><td class="mono">kg CO₂e/t</td><td>ICA</td></tr>
+                        <tr><td>Wełna mineralna</td><td class="mono">1 300</td><td class="mono">kg CO₂e/t</td><td>EPD Polska</td></tr>
+                        <tr><td>Szkło płaskie</td><td class="mono">1 200</td><td class="mono">kg CO₂e/t</td><td>Glass for Europe</td></tr>
+                        <tr><td>Stal BOF (EU avg)</td><td class="mono">1 780</td><td class="mono">kg CO₂e/t</td><td>ecoinvent 3.10</td></tr>
+                        <tr><td>Cement CEM I 42.5</td><td class="mono">800</td><td class="mono">kg CO₂e/t</td><td>EPD Polska</td></tr>
+                        <tr><td>Stal EAF (PL)</td><td class="mono">620</td><td class="mono">kg CO₂e/t</td><td>poLCA</td></tr>
+                        <tr><td>Cement CEM II/B-S</td><td class="mono">600</td><td class="mono">kg CO₂e/t</td><td>EPD Polska</td></tr>
+                        <tr><td>Aluminium (recykling)</td><td class="mono">600</td><td class="mono">kg CO₂e/t</td><td>EAA</td></tr>
+                        <tr><td>Cement CEM III/A</td><td class="mono">400</td><td class="mono">kg CO₂e/t</td><td>EPD Polska</td></tr>
+                        <tr><td>Beton C25/30</td><td class="mono">250</td><td class="mono">kg CO₂e/m³</td><td>EPD Polska</td></tr>
+                        <tr><td>Beton C20/25</td><td class="mono">200</td><td class="mono">kg CO₂e/m³</td><td>EPD Polska</td></tr>
+                        <tr><td>Drewno iglaste (C24)</td><td class="mono">−750</td><td class="mono">kg CO₂e/m³</td><td>EPD Polska</td></tr>
+                    </tbody>
+                </table>
+            </noscript>
+        </div>
 
         <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 1rem; font-style: italic;">
             Wartości orientacyjne GWP (A1–A3) na podstawie polskich EPD i danych poLCA.
@@ -248,11 +303,20 @@
          TOOL 04 — Emission Factors Reference Table
          ============================================================ -->
     <div id="wskazniki" class="card card-lg fade-in">
-        <div class="section-num">04 — Polskie wskaźniki emisji</div>
+        <div class="section-num">05 — Polskie wskaźniki emisji</div>
         <div class="card-title">Tabela wskaźników emisji GHG</div>
-        <p class="card-text" style="margin-bottom: 1rem;">
+        <p class="card-text">
             Kompilacja polskich wskaźników emisji gazów cieplarnianych
             z oficjalnych źródeł. Filtruj po kategorii lub szukaj po nazwie.
+        </p>
+        <p class="card-text" style="margin-bottom: 1rem;">
+            Wskaźniki emisji wyrażone są jako ekwiwalent CO₂ (CO₂e) z uwzględnieniem
+            potencjału globalnego ocieplenia GWP100 zgodnie z IPCC AR5. Wskaźniki emisji
+            dla energii elektrycznej dotyczą średniego miksu krajowego (location-based)
+            zgodnie z metodyką GHG Protocol Scope 2. Wartości publikowane przez KOBiZE
+            aktualizowane są corocznie w ramach Krajowego Raportu Inwentaryzacji Emisji.
+            Do raportowania zgodnego z CSRD/ESRS E1 stosuj wskaźniki market-based
+            z certyfikatami gwarancji pochodzenia (GoO/PMOZE-A) lub residual mix AIB.
         </p>
 
         <div class="tool-search-bar">

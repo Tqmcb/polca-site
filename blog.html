@@ -96,7 +96,7 @@
 
     <!-- Featured post — newest -->
     <div class="section-gap fade-in">
-        <a href="blog-stal-lca-eaf.html" class="blog-card blog-card-featured">
+        <a href="blog-stal-lca-eaf.html" class="blog-card blog-card-featured" data-tags="dane metodyka">
             <div class="blog-card-img-placeholder">
                 <img src="images/blog-stal-lca-eaf.jpg" alt="Wnętrze stalowni elektrycznej" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -127,7 +127,7 @@
 
     <!-- Featured post -->
     <div class="section-gap fade-in">
-        <a href="blog-en-pl-2024.html" class="blog-card blog-card-featured">
+        <a href="blog-en-pl-2024.html" class="blog-card blog-card-featured" data-tags="dane metodyka">
             <div class="blog-card-img-placeholder">
                 <img src="images/blog-en-pl-2024.jpg" alt="Linie wysokiego napięcia — transmisja energii elektrycznej" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -158,7 +158,7 @@
 
     <!-- Featured post -->
     <div class="section-gap fade-in">
-        <a href="blog-fotowoltaika-epd.html" class="blog-card blog-card-featured">
+        <a href="blog-fotowoltaika-epd.html" class="blog-card blog-card-featured" data-tags="metodyka">
             <div class="blog-card-img-placeholder">
                 <img src="images/blog-fotowoltaika-epd.jpg" alt="Panele fotowoltaiczne na dachu przemysłowym" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -188,7 +188,7 @@
 
     <!-- Second featured -->
     <div class="section-gap fade-in">
-        <a href="blog-residual-mix-aib-kobize.html" class="blog-card blog-card-featured">
+        <a href="blog-residual-mix-aib-kobize.html" class="blog-card blog-card-featured" data-tags="metodyka dane">
             <div class="blog-card-img-placeholder">
                 <img src="images/blog-residual-mix-aib-kobize.jpg" alt="Elektrownia — wieże chłodnicze" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -218,7 +218,7 @@
 
     <!-- Second featured (previously featured) -->
     <div class="section-gap fade-in">
-        <a href="blog-emisje-polska-vs-eu.html" class="blog-card blog-card-featured">
+        <a href="blog-emisje-polska-vs-eu.html" class="blog-card blog-card-featured" data-tags="dane metodyka">
             <div class="blog-card-img-placeholder">
                 <img src="images/blog-emisje-polska-vs-eu.jpg" alt="Słup energetyczny pod zachmurzonym niebem" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -247,6 +247,16 @@
         </a>
     </div>
 
+        <!-- Blog filter pills -->
+    <div class="blog-filter fade-in" id="blogFilter">
+      <button class="filter-pill active" data-filter="all">Wszystkie</button>
+      <button class="filter-pill" data-filter="dane">Dane</button>
+      <button class="filter-pill" data-filter="metodyka">Metodyka</button>
+      <button class="filter-pill" data-filter="regulacje">Regulacje</button>
+      <button class="filter-pill" data-filter="sektory">Sektory</button>
+      <span class="filter-count" id="filterCount"></span>
+    </div>
+
     <!-- Section divider -->
     <div class="fade-in" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
         <div style="height: 1px; flex: 1; background: linear-gradient(90deg, var(--accent-border), transparent);"></div>
@@ -257,7 +267,7 @@
     <!-- Post grid -->
     <div class="blog-grid section-gap fade-in">
 
-        <a href="blog-cpr-2024.html" class="blog-card">
+        <a href="blog-cpr-2024.html" class="blog-card" data-tags="regulacje">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-cpr-2024.jpg" alt="Żuraw na placu budowy" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -281,7 +291,7 @@
             </div>
         </a>
 
-        <a href="blog-epd-czym-sa.html" class="blog-card">
+        <a href="blog-epd-czym-sa.html" class="blog-card" data-tags="metodyka regulacje">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-epd-czym-sa.jpg" alt="Nowoczesny zielony budynek z roślinnością" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -305,7 +315,7 @@
             </div>
         </a>
 
-        <a href="blog-mma-rap.html" class="blog-card">
+        <a href="blog-mma-rap.html" class="blog-card" data-tags="metodyka dane">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-mma-rap.jpg" alt="Robotnicy układający asfalt na drodze" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -330,7 +340,7 @@
             </div>
         </a>
 
-        <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card">
+        <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card" data-tags="dane metodyka">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-ecoinvent-vs-krajowe.jpg" alt="Serwerownia — szafy rack w centrum danych" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -354,7 +364,7 @@
             </div>
         </a>
 
-        <a href="blog-cement-polska.html" class="blog-card">
+        <a href="blog-cement-polska.html" class="blog-card" data-tags="dane sektory">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-cement-polska.jpg" alt="Cementownia z silosami" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -378,7 +388,7 @@
             </div>
         </a>
 
-        <a href="blog-iso-14044-proximity.html" class="blog-card">
+        <a href="blog-iso-14044-proximity.html" class="blog-card" data-tags="metodyka regulacje">
             <div class="blog-card-img-placeholder" style="padding: 0; overflow: hidden;">
                 <img src="images/blog-iso-14044-proximity.jpg" alt="Lupa na dokumentach analitycznych" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
@@ -431,5 +441,6 @@
 <script src="js/effects.js?v=5.1"></script>
 <script src="js/search.js?v=5.1"></script>
     <script src="js/nav-mobile.js"></script>
+    <script src="js/blog-filter.js"></script>
 </body>
 </html>
