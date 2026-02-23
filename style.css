@@ -2948,6 +2948,9 @@ noscript .fade-in,
 .polca-content { margin-left: 0; }
 .polca-portal-footer { margin-left: 0; }
 
+/* Center page content */
+.polca-page { margin-left: auto; margin-right: auto; }
+
 /* === TOPBAR BRAND === */
 .topbar-brand {
     display: flex;
