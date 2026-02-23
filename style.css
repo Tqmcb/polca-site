@@ -3406,3 +3406,60 @@ noscript .fade-in,
 .footer-brand-logo { color: var(--accent); }
 .footer-brand-logo:hover { color: var(--accent-light); opacity: 1; }
 
+/* ===== DESIGN UPLIFT v6.7 ===== */
+
+/* Hero: split layout — ciemna lewa strona, obraz oddycha po prawej */
+.hero-with-image {
+    min-height: 560px;
+    padding-top: 5.5rem !important;
+    padding-bottom: 5rem !important;
+    padding-left: max(2.5rem, calc((100vw - 1120px) / 2)) !important;
+    padding-right: max(2.5rem, calc((100vw - 1120px) / 2)) !important;
+}
+.hero-overlay {
+    background: linear-gradient(
+        to right,
+        rgba(17,19,24,0.97) 0%,
+        rgba(17,19,24,0.92) 36%,
+        rgba(17,19,24,0.52) 60%,
+        rgba(17,19,24,0.10) 100%
+    );
+}
+.hero-image-bg { background-position: 62% center; }
+.hero-with-image .hero-title {
+    font-size: 4rem;
+    max-width: 540px;
+    letter-spacing: -0.04em;
+}
+.hero-with-image .hero-desc { max-width: 440px; font-size: 1rem; }
+
+/* Metric cards: subtelny gradient — więcej głębi */
+.metric-card {
+    background: linear-gradient(160deg, var(--paper-card) 0%, var(--paper-warm) 100%);
+}
+.metric-number { letter-spacing: -0.03em; }
+
+/* Blog cards: wyższy obraz, wyraźniejszy hover */
+.blog-card-img,
+.blog-card-img-placeholder { height: 200px; }
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-border);
+}
+
+/* Feature cards: cień przy hover + wyraźna linia akcentu */
+.feature-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .hero-with-image {
+        min-height: 360px !important;
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    .hero-with-image .hero-title { font-size: 2.2rem !important; }
+}
+
