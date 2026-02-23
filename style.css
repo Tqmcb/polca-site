@@ -3123,6 +3123,25 @@ noscript .fade-in,
 .footer-bottom a { color: var(--text-tertiary); }
 .footer-bottom a:hover { color: var(--accent); }
 
+/* === HAMBURGER BUTTON === */
+.nav-hamburger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.45rem;
+    border-radius: 6px;
+    color: var(--text-secondary);
+    transition: background 0.15s, color 0.15s;
+    margin-left: 0.25rem;
+}
+.nav-hamburger:hover {
+    background: var(--paper-warm);
+    color: var(--text-primary);
+}
+
 /* === RESPONSIVE TOP-NAV === */
 @media (max-width: 1100px) {
     .polca-topnav a:nth-child(n+5) { display: none; }
@@ -3133,8 +3152,43 @@ noscript .fade-in,
 }
 
 @media (max-width: 768px) {
-    .polca-topnav { display: none; }
+    /* Pokaż hamburger, ukryj poziomy nav */
+    .nav-hamburger { display: inline-flex; }
     .polca-topbar { padding: 0 1rem; }
+
+    /* Nav chowany domyślnie; widoczny po otwarciu */
+    .polca-topnav {
+        display: none;
+        position: fixed;
+        top: var(--topbar-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--paper);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        padding: 0.5rem 0;
+        z-index: 998;
+        animation: page-enter 0.18s ease-out;
+    }
+    .polca-topbar.nav-open .polca-topnav {
+        display: flex;
+    }
+    .polca-topnav a {
+        width: 100%;
+        border-radius: 0;
+        padding: 0.8rem 1.25rem;
+        font-size: 0.9rem;
+    }
+    .polca-topnav a:nth-child(n+4),
+    .polca-topnav a:nth-child(n+5) { display: flex; }
+
+    /* Animacja ikony hamburgera przy otwarciu */
+    .polca-topbar.nav-open .nav-hamburger {
+        background: var(--paper-warm);
+        color: var(--text-primary);
+    }
+
     .polca-portal-footer {
         grid-template-columns: 1fr;
         gap: 1.5rem;
