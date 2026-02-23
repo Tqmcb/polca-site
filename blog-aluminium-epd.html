@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna | poLCA</title>
+    <meta name="description" content="Dlaczego GWP aluminium pierwotnego (8,24 kg CO&#8322;e/kg) r&oacute;&#380;ni si&eogon; 10-krotnie od aluminium recyklingowego (0,55 kg CO&#8322;e/kg)? Metodologia cut-off vs system expansion w EPD.">
+    <link rel="canonical" href="https://polca.org.pl/blog-aluminium-epd.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna">
+    <meta property="og:description" content="Aluminium pierwotne (8,24 kg CO&#8322;e/kg) vs recyklingowe (0,55 kg CO&#8322;e/kg) &mdash; metodologia cut-off vs system expansion w EPD. Konsekwencje dla polskich producent&oacute;w.">
+    <meta property="og:url" content="https://polca.org.pl/blog-aluminium-epd.html">
+    <meta property="og:site_name" content="poLCA &mdash; Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-aluminium-epd.jpg">
+    <meta property="article:published_time" content="2026-02-23T00:00:00+01:00">
+    <meta property="article:author" content="poLCA &mdash; Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka">
+    <meta property="article:tag" content="aluminium">
+    <meta property="article:tag" content="recykling">
+    <meta property="article:tag" content="EPD">
+    <meta property="article:tag" content="GWP">
+    <meta property="article:tag" content="cut-off">
+    <meta property="article:tag" content="EN 15804">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna">
+    <meta name="twitter:description" content="GWP aluminium pierwotnego to 8,24 kg CO&#8322;e/kg, recyklingowego &mdash; 0,55 kg CO&#8322;e/kg. Dlaczego ta r&oacute;&#380;nica ma krytyczne znaczenie dla EPD i jak j&#261; poprawnie czyta&#263;.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-aluminium-epd.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-aluminium-epd.html",
+          "headline": "Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna",
+          "description": "Dlaczego GWP aluminium pierwotnego (8,24 kg CO&#8322;e/kg) r&oacute;&#380;ni si&eogon; 10-krotnie od aluminium recyklingowego (0,55 kg CO&#8322;e/kg). Metodologia cut-off vs system expansion w EPD.",
+          "url": "https://polca.org.pl/blog-aluminium-epd.html",
+          "datePublished": "2026-02-23T00:00:00+01:00",
+          "dateModified": "2026-02-23T00:00:00+01:00",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "Zesp&oacute;&lstrok; poLCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "image": "https://polca.org.pl/images/blog-aluminium-epd.jpg",
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["aluminium", "recykling", "EPD", "GWP", "cut-off", "system expansion", "EN 15804", "LCA", "aluminium pierwotne", "aluminium wt&oacute;rne"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Dlaczego GWP aluminium pierwotnego jest tak wysokie?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Produkcja aluminium pierwotnego wymaga elektrolizy tlenku glinu w piecu Halla-H&eacute;roaulta, zui&#380;ywaj&#261;c 13&ndash;15 kWh/kg. Przy typowym europejskim miksie energetycznym daje to 7&ndash;9 kg CO&#8322;e/kg tylko z energii. Dodatkowo dochodzi&#261; emisje procesowe (perfluorow&eogon;glowodory PFC) i emisje z anod grafitowych. Suma: 8,0&ndash;8,6 kg CO&#8322;e/kg (A1&ndash;A3)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Co to jest metoda cut-off w EPD aluminium?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Metoda cut-off (EN 15804+A1) traktuje z&#322;om aluminiowy jako odpad przekazywany do recyklingu &bdquo;za darmo&rdquo; &mdash; producent wyrobu z aluminium wt&oacute;rnego nie ponosi obci&#261;&#380;e&#324; emisyjnych z pierwotnej produkcji. W efekcie EPD wyrobu z 95% wsadem wt&oacute;rnym mo&#380;e wykazywa&#263; GWP A1&ndash;A3 poni&#380;ej 1,5 kg CO&#8322;e/kg. Metoda system expansion (EN 15804+A2) modyfikuje t&#281; zasad&#281;, alokuj&#261;c cz&eogon;&acute;&#263; emisji proporcjonalnie do warto&acute;ci z&#322;omu."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy mo&#380;na bezpo&acute;rednio por&oacute;wna&#263; dwie EPD aluminium r&oacute;&#380;nych producent&oacute;w?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tylko wtedy, gdy obydwie EPD zastosowa&#322;y t&#281; sam&#261; wersj&eogon; EN 15804 (+A1 lub +A2) i ten sam protok&oacute;&lstrok; kategorii wyrobu (PCR). R&oacute;&#380;ne wersje EN 15804 stosuj&#261; odmienne metodologie dla wsadu wt&oacute;rnego &mdash; bezpo&acute;rednie por&oacute;wnanie jest metodologicznie b&#322;&eogon;dne i mo&#380;e prowadzi&#263; do fa&#322;szywych wniosk&oacute;w."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=6.7">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<header class="polca-topbar" role="banner">
+    <a href="index.html" class="topbar-brand">
+        <span class="topbar-brand-logo">poLCA</span>
+        <span class="topbar-brand-sep"></span>
+    </a>
+    <nav class="polca-topnav" aria-label="Nawigacja g&#322;&oacute;wna">
+        <a href="index.html">Dashboard</a>
+        <a href="analiza.html">Analiza Sektorowa</a>
+        <a href="metodyka.html">Metodyka i Jako&#347;&#263;</a>
+        <a href="datasety.html">Eksport danych</a>
+        <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD Polska</a>
+    </nav>
+    <div class="topbar-right">
+        <a href="blog.html" class="topbar-icon-btn" aria-label="Blog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </a>
+        <a href="datasety.html#kontakt" class="topbar-btn topbar-btn-primary">Kontakt</a>
+        <button class="nav-hamburger" aria-label="Otw&oacute;rz menu" aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="post-accent-bar"></div>
+
+    <div style="width:100%;height:280px;overflow:hidden;margin-bottom:0;">
+        <img src="images/blog-aluminium-epd.jpg"
+             alt="Pracownik przy z&#322;omie metalowym &mdash; recykling aluminium w przemy&acute;le" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+    </div>
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wr&oacute;&#263; do bloga
+        </a>
+
+        <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
+            <a href="index.html">poLCA</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <a href="blog.html">Blog</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-current">Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna</span>
+        </nav>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag metodyka">Metodyka</span>
+                <span class="blog-tag materialy">Materia&#322;y</span>
+                <span class="blog-tag">EPD</span>
+                <span class="blog-date">23 lutego 2026</span>
+                <span class="blog-read-time">&#183; 7 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna
+            </h1>
+            <p class="blog-post-lead">
+                Aluminium jest trzecim najszerzej stosowanym materia&#322;em w budownictwie, po betonie i stali.
+                Okna, fasady, profile konstrukcyjne, blachodach&oacute;wka &mdash; wszystkie te wyroby maj&#261; EPD.
+                I wszystkie maj&#261; dramatycznie r&oacute;&#380;ny GWP w zale&#380;no&acute;ci od jednego parametru:
+                udzia&#322;u aluminium wt&oacute;rnego (recyklingowego) w wsadzie. R&oacute;&#380;nica mi&eogon;dzy
+                aluminium pierwotnym a recyklingowym wynosi oko&#322;o <strong>10-krotno&acute;ci</strong>:
+                8,24 vs 0,55 kg CO&#8322;e/kg.
+            </p>
+        </div>
+    </div>
+
+    <!-- TL;DR -->
+    <div class="tldr-box fade-in">
+        <div class="tldr-box-label">TL;DR &mdash; skr&oacute;t dla zabieganych</div>
+        <ul>
+            <li>GWP aluminium pierwotnego: <strong>8,0&ndash;8,6 kg CO&#8322;e/kg</strong> (A1&ndash;A3); recyklingowego: <strong>0,45&ndash;0,65 kg CO&#8322;e/kg</strong></li>
+            <li>R&oacute;&#380;nica wynika g&#322;&oacute;wnie z energoch&#322;onno&acute;ci elektrolizy (13&ndash;15 kWh/kg Al) vs topienia z&#322;omu (0,7 kWh/kg)</li>
+            <li>Metodologie cut-off (EN 15804+A1) i system expansion (EN 15804+A2) daj&#261; r&oacute;&#380;ne wyniki &mdash; <strong>por&oacute;wnanie EPD mi&eogon;dzy wersjami jest metodologicznie b&#322;&eogon;dne</strong></li>
+            <li>Polskie aluminium (100% wt&oacute;rne z przerobu z&#322;omu) ma GWP zbli&#380;one do dolnej granicy: 0,5&ndash;0,7 kg CO&#8322;e/kg</li>
+        </ul>
+    </div>
+
+    <!-- Key stats -->
+    <div class="key-stat-row section-gap fade-in">
+        <div class="key-stat">
+            <div class="key-stat-number muted">8,24</div>
+            <div class="key-stat-unit">kg CO&#8322;e/kg</div>
+            <div class="key-stat-label">Aluminium pierwotne (IAI 2022)</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number accent">0,55</div>
+            <div class="key-stat-unit">kg CO&#8322;e/kg</div>
+            <div class="key-stat-label">Aluminium recyklingowe (IAI 2022)</div>
+        </div>
+        <div class="key-stat">
+            <div class="key-stat-number" style="color: var(--func-amber);">~15x</div>
+            <div class="key-stat-unit">r&oacute;&#380;nica</div>
+            <div class="key-stat-label">w ekstremalnych przypadkach</div>
+        </div>
+    </div>
+
+    <!-- Porownanie GWP -->
+    <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
+        <div class="card-title">Por&oacute;wnanie GWP aluminium &mdash; pierwotne vs recyklingowe (A1&ndash;A3, kg CO&#8322;e/kg)</div>
+        <div class="vcol-chart" style="height: 240px;">
+            <div class="vcol-group">
+                <div class="vcol-value accent" style="font-weight: 700;">0,55</div>
+                <div class="vcol-bar green" style="height: 6%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">4,0</div>
+                <div class="vcol-bar gray" style="height: 46%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">8,24</div>
+                <div class="vcol-bar ink" style="height: 95%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">8,60</div>
+                <div class="vcol-bar ink" style="height: 100%;"></div>
+            </div>
+        </div>
+        <div class="vcol-labels">
+            <div class="vcol-label">Al. wt&oacute;rne<br><span style="color: var(--text-light);">IAI 2022</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span style="color: var(--text-light);">Norwegia OZE</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span style="color: var(--text-light);">IAI &acute;rednia</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span style="color: var(--text-light);">Polska sie&#263;</span></div>
+        </div>
+        <p class="comp-note">
+            Zakres: A1&ndash;A3 (cradle-to-gate), GWP100, kg CO&#8322;e/kg aluminium.
+            &#378;r&oacute;d&#322;a: IAI (International Aluminium Institute) 2022, obliczenia poLCA 2024.
+        </p>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in post-chapters">
+
+        <h2>Sk&#261;d pochodzi ta r&oacute;&#380;nica?</h2>
+
+        <h3>Aluminium pierwotne &mdash; energoch&#322;onno&acute;&#263; elektrolizy</h3>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Porz&#261;dek wielko&acute;ci</div>
+            Topienie z&#322;omu: 0,7 kWh/kg<br>
+            Elektroliza pierwotna: 13&ndash;15 kWh/kg<br><br>
+            Stosunek: <strong>20:1</strong> na korzy&acute;&#263; recyklingu
+        </div>
+
+        <p>
+            Produkcja aluminium pierwotnego wymaga trzech g&#322;&oacute;wnych etap&oacute;w:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Wydobycie boksytu i produkcja tlenku glinu (proces Bayera)</div>
+                    <div class="process-step-text">
+                        Boksyt (ruda zawieraj&#261;ca 30&ndash;60% Al&#8322;O&#8323;) przetwarzany jest na tlenek glinu
+                        w procesie Bayera (op&#322;ukiwanie &#322;ugiem sodowym, kalcynacja). Emisje z tego etapu:
+                        1,2&ndash;2,0&nbsp;t CO&#8322;e/t Al&#8322;O&#8323; &mdash; g&#322;&oacute;wnie z energii cieplnej kalcynacji.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Elektroliza &mdash; piec Halla-H&eacute;roaulta</div>
+                    <div class="process-step-text">
+                        Podstawowa reakcja: 2&nbsp;Al&#8322;O&#8323; + 3C &rarr; 4&nbsp;Al + 3&nbsp;CO&#8322;.
+                        Anody grafitowe spalaj&#261; si&eogon; w procesie, emituj&#261;c CO&#8322;. Przy zu&#380;yciu
+                        13&ndash;15&nbsp;kWh/kg i polskim miksie (0,718 kg CO&#8322;e/kWh) sama energia
+                        elektryczna generuje 9,3&ndash;10,8&nbsp;kg CO&#8322;e/kg aluminium.
+                        Dochodzi&#261; do tego emisje PFC (perfluorow&eogon;glowodory, tzw. efekt anodowy).
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Odlewanie i obr&oacute;bka &mdash; walcarki, prasy, wyciskarki</div>
+                    <div class="process-step-text">
+                        Odlewanie w&eogon;zlin, walcowanie blach lub wyciskanie profili zu&#380;ywaj&#261; dodatkow&#261;
+                        energi&eogon; (ok. 0,5&ndash;1,2&nbsp;kWh/kg), ale ich udzia&#322; w GWP jest pomijaj&#261;cy
+                        przy dominuj&#261;cej sk&#322;adowej elektrolizy.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Aluminium recyklingowe (wt&oacute;rne) &mdash; tylko topienie z&#322;omu</h3>
+
+        <p>
+            Recykling aluminium wymaga jedynie stopienia z&#322;omu &mdash; zu&#380;ywa ok. 0,7&nbsp;kWh/kg
+            (5% energii procesu pierwotnego). Emisje to ok. 0,3&ndash;0,8&nbsp;kg CO&#8322;e/kg
+            z energii topienia + transport z&#322;omu + emisje z piecza (gaz, olej opa&#322;owy).
+        </p>
+
+        <p>
+            &#321;&#261;czny GWP aluminium wt&oacute;rnego: <strong>0,45&ndash;0,65&nbsp;kg CO&#8322;e/kg</strong> (IAI 2022, A1&ndash;A3).
+            Stosunek do pierwotnego: 8,24 / 0,55 &asymp; <strong>15-krotny</strong> w ekstremalnych przypadkach,
+            typowo ok. <strong>10-krotny</strong>.
+        </p>
+
+        <h2>Problem metodologiczny: cut-off vs system expansion</h2>
+
+        <p>
+            Tu zaczyna si&eogon; kontrowersja, kt&oacute;ra ma bezpo&acute;rednie konsekwencje dla por&oacute;wnywalności EPD.
+            W EPD dla wyrob&oacute;w aluminiowych kluczowe jest, jak traktujemy z&#322;om aluminiowy
+            na pocz&#261;tku i ko&#324;cu &#380;ycia produktu.
+        </p>
+
+        <div class="card card-lg" style="max-width: none; margin: 1.5rem 0 2rem;">
+            <div class="card-title">Cut-off vs System Expansion &mdash; por&oacute;wnanie podej&acute;&#263;</div>
+            <table style="width:100%; border-collapse:collapse; font-size:0.875rem; line-height:1.6; margin-top: 0.75rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Aspekt</th>
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Metoda cut-off (EN 15804+A1)</th>
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">System expansion (EN 15804+A2)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem; font-weight: 600;">Z&#322;om wej&acute;ciowy</td>
+                        <td style="padding: 0.6rem 0.75rem;">&bdquo;Bezp&#322;atny&rdquo; odpad; brak alokacji emisji z produkcji pierwotnej</td>
+                        <td style="padding: 0.6rem 0.75rem;">Dziedziczenie cz&eogon;&acute;ci emisji proporcjonalnie do warto&acute;ci z&#322;omu</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem; font-weight: 600;">GWP wyrobu (95% wsad wt&oacute;rny)</td>
+                        <td style="padding: 0.6rem 0.75rem; color: var(--func-green);">ok. 1,1 kg CO&#8322;e/kg</td>
+                        <td style="padding: 0.6rem 0.75rem;">ok. 2,5&ndash;3,5 kg CO&#8322;e/kg</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem; font-weight: 600;">GWP wyrobu (40% wsad wt&oacute;rny)</td>
+                        <td style="padding: 0.6rem 0.75rem;">ok. 5,2 kg CO&#8322;e/kg</td>
+                        <td style="padding: 0.6rem 0.75rem;">ok. 4,2 kg CO&#8322;e/kg</td>
+                    </tr>
+                    <tr style="border-bottom: 2px solid var(--border);">
+                        <td style="padding: 0.6rem 0.75rem; font-weight: 600;">Por&oacute;wnywalno&acute;&#263;</td>
+                        <td style="padding: 0.6rem 0.75rem;">Niekompatybilna z EN 15804+A2</td>
+                        <td style="padding: 0.6rem 0.75rem;">Niekompatybilna z EN 15804+A1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="comp-note">
+                &#378;r&oacute;d&#322;a: EN 15804+A1 (2012+A1:2013), EN 15804+A2 (2019+A2:2021).
+                Warto&acute;ci GWP s&#261; orientacyjne &mdash; zale&#380;&#261; od sk&#322;adu wyrobu i kraju produkcji.
+            </p>
+        </div>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Kluczowa przestroga</div>
+            <p class="callout-body">
+                Por&oacute;wnanie dwu EPD aluminiowych system&oacute;w fasadowych, gdzie EPD-A stosuje EN 15804+A1
+                (cut-off, 95% wsad wt&oacute;rny: GWP&nbsp;=&nbsp;1,1&nbsp;kg CO&#8322;e/kg) a EPD-B stosuje EN 15804+A2
+                (system expansion, 40% wsad wt&oacute;rny: GWP&nbsp;=&nbsp;4,2&nbsp;kg CO&#8322;e/kg) &mdash; jest
+                <strong>metodologicznie niepoprawne</strong>. Naiwny wniosek &bdquo;EPD-A jest 4x lepsze&rdquo;
+                mo&#380;e by&#263; fa&#322;szywy. Zawsze weryfikuj wersj&eogon; normy przed por&oacute;wnaniem.
+            </p>
+        </div>
+
+        <h2>Aluminium w polskim budownictwie &mdash; struktura wsadu</h2>
+
+        <p>
+            Polska nie posiada w&#322;asnej huty aluminium pierwotnego. Ca&#322;e aluminium pierwotne jest
+            importowane &mdash; g&#322;&oacute;wnie z Norwegii i Islandii, gdzie huty zasilane s&#261; energi&#261; wodn&#261;
+            lub geotermaln&#261;. GWP takiego aluminium pierwotnego wynosi ok. 3&ndash;4&nbsp;kg CO&#8322;e/kg
+            &mdash; znacznie poni&#380;ej globalnej &acute;redniej 8,24&nbsp;kg CO&#8322;e/kg.
+        </p>
+
+        <p>
+            Krajowa produkcja aluminium to wy&#322;&#261;cznie przetop z&#322;omu (aluminium wt&oacute;rne).
+            Dane IBDiM/GUS wskazuj&#261;:
+        </p>
+
+        <ul>
+            <li>Ok. <strong>75%</strong> aluminium w polskim budownictwie pochodzi z wt&oacute;rnego przerobu z&#322;omu</li>
+            <li>Ok. <strong>25%</strong> to aluminium pierwotne importowane jako gotowe p&oacute;&#322;wyroby
+                (blachy, profile z Niemiec, Austrii, Norwegii)</li>
+        </ul>
+
+        <p>
+            Konsekwencja dla EPD polskich producent&oacute;w: przeci&eogon;tne EPD polskiego systemu fasadowego
+            powinno mie&#263; GWP A1&ndash;A3 w przedziale <strong>2&ndash;4&nbsp;kg CO&#8322;e/kg wyrobu aluminiowego</strong>
+            (po uwzgl&eogon;dnieniu pow&#322;ok, uszczelek, akcesori&oacute;w stalowych i innych sk&#322;adnik&oacute;w).
+            Wyroby oparte wy&#322;&#261;cznie na z&#322;omie krajowym mog&#261; osi&#261;ga&#263; GWP poni&#380;ej 1,5&nbsp;kg CO&#8322;e/kg.
+        </p>
+
+        <h2>Jak czyta&#263; EPD dla aluminium?</h2>
+
+        <div class="card card-lg" style="max-width: 720px; margin: 1.25rem 0 2rem;">
+            <div class="card-title">Lista kontrolna przy analizie EPD dla aluminium</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label" style="font-weight: 600;">1. Wersja EN 15804: +A1 czy +A2?</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">R&oacute;&#380;ne wersje &rarr; r&oacute;&#380;ne metodologie &rarr; niekompatybilne wyniki</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">2. Udzia&#322; wsadu wt&oacute;rnego (recycled content) [%]</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Kluczowy parametr &mdash; powinien by&#263; podany explicite w EPD</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">3. Kraj produkcji aluminium wsadowego</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Norwegia/Islandia (OZE): ~3&ndash;4 kg CO&#8322;e/kg; Chiny (w&eogon;giel): do 18 kg CO&#8322;e/kg</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">4. Deklaracja modu&#322;u D (potencja&#322; recyklingu)</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">Istotne dla long-life products: modul D pokazuje potencja&#322; odzysku na ko&#324;cu &#380;ycia</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-quote-lg">
+            <p>Aluminium importowane z Norwegii (OZE, hydroelektrownie) ma GWP oko&#322;o
+            <strong>3&ndash;4&nbsp;kg&nbsp;CO&#8322;e/kg</strong> &mdash; ponad dwukrotnie mniej ni&#380; globalna
+            &acute;rednia 8,24&nbsp;kg&nbsp;CO&#8322;e/kg. Polskie aluminium wt&oacute;rne (z przerobu z&#322;omu) to
+            zaledwie <strong>0,5&ndash;0,7&nbsp;kg&nbsp;CO&#8322;e/kg</strong>. Por&oacute;wnanie tych dw&oacute;ch wielko&acute;ci
+            bez znajomo&acute;ci &acute;r&oacute;d&#322;a wsadu jest pozbawione metodycznego sensu.</p>
+            <cite>IAI (2022); obliczenia poLCA 2024</cite>
+        </div>
+
+        <h2>Implikacje dla certyfikat&oacute;w i regulacji</h2>
+
+        <p>
+            <strong>LEED v4.1</strong> (MRc2) akceptuje EPD z EN 15804 lub ISO 14025. Nie por&oacute;wnuje wyrob&oacute;w
+            bezpo&acute;rednio na etapie kwalifikacji &mdash; wymaga jedynie obecno&acute;ci EPD. Jednak narz&eogon;dzia
+            LCA ca&#322;ego budynku (Tally, OneClick LCA, SimaPro) importuj&#261; GWP z EPD i wykonuj&#261;
+            obliczenia por&oacute;wnawcze &mdash; tu metodologia EPD ma bezpo&acute;redni wp&#322;yw na wynik.
+        </p>
+
+        <p>
+            <strong>BREEAM Mat&nbsp;01</strong> wymaga EPD i u&#380;ywa warto&acute;ci GWP do obliczenia punktacji.
+            R&oacute;&#380;nica 10-krotna w GWP aluminium przek&#322;ada si&eogon; bezpo&acute;rednio na wynik punktowy
+            w systemach oceniaj&#261;cych ca&#322;y budynek.
+        </p>
+
+        <p>
+            <strong>CPR 2024/3110</strong> (nowe Rozporz&#261;dzenie o wyrobach budowlanych): nowe wymagania
+            wprowadz&#261; obowi&#261;zek deklaracji GWP dla klas wyrob&oacute;w, w tym aluminium budowlanego.
+            Producenci bez EPD b&eogon;d&#261; musieli stosowa&#263; warto&acute;ci domy&acute;lne z bazy referencyjnej
+            &mdash; co oznacza g&oacute;rn&#261; granic&eogon; przedzia&#322;u (warto&acute;ci najgorsze w kategorii).
+            Dla aluminium bez EPD mo&#380;e to by&#263; warto&acute;&#263; zbli&#380;ona do 8 kg CO&#8322;e/kg,
+            nawet je&acute;li faktyczne wsad jest w 80% wt&oacute;rny.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <div class="faq-section-title">Najcz&eogon;&acute;ciej zadawane pytania</div>
+
+            <div class="faq-item">
+                <div class="faq-q">Dlaczego GWP aluminium pierwotnego jest tak wysokie?</div>
+                <div class="faq-a">
+                    Produkcja aluminium pierwotnego wymaga elektrolizy tlenku glinu w piecu
+                    Halla-H&eacute;roaulta, zu&#380;ywaj&#261;c 13&ndash;15&nbsp;kWh/kg. Przy typowym europejskim miksie
+                    energetycznym daje to 7&ndash;9&nbsp;kg CO&#8322;e/kg tylko z energii. Dodatkowo dochodzi&#261;
+                    emisje procesowe (perfluorow&eogon;glowodory PFC) z efektu anodowego oraz CO&#8322;
+                    ze spalania anod grafitowych. Suma wynosi 8,0&ndash;8,6&nbsp;kg CO&#8322;e/kg (A1&ndash;A3).
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Co to jest metoda cut-off w EPD aluminium?</div>
+                <div class="faq-a">
+                    Metoda cut-off (EN 15804+A1) traktuje z&#322;om aluminiowy jako odpad przekazywany
+                    do recyklingu &bdquo;za darmo&rdquo; &mdash; producent wyrobu z aluminium wt&oacute;rnego
+                    nie ponosi obci&#261;&#380;e&#324; emisyjnych z pierwotnej produkcji. W efekcie EPD wyrobu
+                    z 95% wsadem wt&oacute;rnym mo&#380;e wykazywa&#263; GWP A1&ndash;A3 poni&#380;ej 1,5&nbsp;kg CO&#8322;e/kg.
+                    Metoda system expansion (EN 15804+A2) modyfikuje t&eogon; zasad&eogon;,
+                    alokuj&#261;c cz&eogon;&acute;&#263; emisji proporcjonalnie do warto&acute;ci z&#322;omu.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Czy mo&#380;na bezpo&acute;rednio por&oacute;wna&#263; dwie EPD aluminium r&oacute;&#380;nych producent&oacute;w?</div>
+                <div class="faq-a">
+                    Tylko wtedy, gdy obydwie EPD zastosowa&#322;y t&eogon; sam&#261; wersj&eogon; EN 15804 (+A1 lub +A2)
+                    i ten sam protok&oacute;&#322; kategorii wyrobu (PCR). R&oacute;&#380;ne wersje EN 15804 stosuj&#261;
+                    odmienne metodologie dla wsadu wt&oacute;rnego &mdash; bezpo&acute;rednie por&oacute;wnanie
+                    jest metodologicznie b&#322;&eogon;dne i mo&#380;e prowadzi&#263; do fa&#322;szywych wniosk&oacute;w.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Jakie GWP ma aluminium z norweskich hut?</div>
+                <div class="faq-a">
+                    Huty norweskie (Hydro, Norsk Hydro) i islandzkie zasilane s&#261; pr&#261;dem
+                    z hydroelektrowni lub geotermalnym. Wska&#378;nik emisyjno&acute;ci norweskiej sieci
+                    wynosi ok. 0,011&nbsp;kg CO&#8322;e/kWh &mdash; wobec 0,718&nbsp;kg CO&#8322;e/kWh w Polsce.
+                    GWP aluminium pierwotnego z Norwegii: ok. 3,0&ndash;4,0&nbsp;kg CO&#8322;e/kg (A1&ndash;A3) &mdash;
+                    ponad 2-krotnie mniej ni&#380; globalna &acute;rednia IAI. Polscy producenci okien i fasad
+                    importuj&#261;cy profile z Norwegii mog&#261; &mdash; i powinni &mdash; uwzgl&eogon;dnia&#263; t&eogon; warto&acute;&#263;
+                    w swoich EPD, podaj&#261;c &acute;r&oacute;d&#322;o geograficzne wsadu.
+                </div>
+            </div>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
+            <strong>&#378;r&oacute;d&#322;a:</strong>
+            IAI &mdash; International Aluminium Institute (2022), &bdquo;Aluminium Sector Greenhouse Gas Pathways to 2050&rdquo;;
+            IAI (2022), &bdquo;Life Cycle Inventory Data and Environmental Metrics for the Primary Aluminium Sector&rdquo;;
+            Multicert Sp. z o.o. (2026), &bdquo;poLCA &mdash; Dane dla aluminium w polskim budownictwie 2024&rdquo;;
+            EN 15804+A2 (2019+A2:2021) &mdash; Zr&oacute;wnowa&#380;one budownictwo &mdash; Deklaracje &acute;rodowiskowe wyrobu;
+            GUS (2024), dane o strukturze importu aluminium do Polski;
+            IPCC (2021), AR6 WG1 &mdash; GWP100: CH&#8324; = 27,9, N&#8322;O = 273.
+        </p>
+
+    </div>
+
+    <!-- Related posts -->
+    <div class="section-gap fade-in">
+        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="blog-epd-czym-sa.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag">LCA / EPD</span>
+                        <span class="blog-date">20 stycznia 2026</span>
+                    </div>
+                    <div class="blog-card-title">EPD &mdash; czym s&#261; Deklaracje &Acirc;&Scedil;rodowiskowe Produktu i dlaczego maj&#261; znaczenie</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">5 min czytania</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag rynek">Rynek</span>
+                        <span class="blog-date">2 grudnia 2025</span>
+                    </div>
+                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych &mdash; kiedy u&acute;rednianie szkodzi dok&#322;adno&acute;ci LCA</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">9 min czytania</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</div>
+</div>
+
+<footer class="polca-portal-footer">
+    <div>
+        <a href="index.html" class="footer-brand-logo">poLCA</a>
+        <p class="footer-brand-desc">Polska baza danych inwentaryzacji cyklu &#380;ycia (LCI) dla wyrob&oacute;w budowlanych. Dane specyficzne dla polskich warunk&oacute;w produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+        <div class="footer-address">
+            ul. Mydlarska 47, 04-690 Warszawa<br>
+            <a href="mailto:info@epd.org.pl">info@epd.org.pl</a> &nbsp;&middot;&nbsp;
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+        </div>
+    </div>
+    <div>
+        <div class="footer-col-title">Operator</div>
+        <div class="footer-col-text">
+            Multicert Sp. z o.o.<br>
+            Operator programu EPD Polska.<br>
+            Opracowanie i utrzymanie bazy danych poLCA.<br><br>
+            <a href="metodyka.html">Metodyka i Jako&acute;&#263;</a><br>
+            <a href="datasety.html">Baza Dataset&oacute;w</a><br>
+            <a href="blog.html">Blog</a>
+        </div>
+    </div>
+    <div>
+        <div class="footer-col-title">Architektura techniczna</div>
+        <div class="footer-col-text">
+            Struktura grafowa, format JSON-LD,<br>
+            interfejs API (REST + GraphQL),<br>
+            aktualizacja kaskadowa, parametryzacja,<br>
+            pe&#322;na trasowalno&acute;&#263;.<br><br>
+            Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska</span>
+        <span>poLCA v6.0 &middot; <a href="sitemap.xml">Mapa strony</a></span>
+    </div>
+</footer>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+</body>
+</html>
