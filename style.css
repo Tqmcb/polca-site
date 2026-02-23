@@ -2996,6 +2996,7 @@ noscript .fade-in,
 .polca-topnav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.1rem;
     flex: 1;
     margin: 0 1.25rem;
