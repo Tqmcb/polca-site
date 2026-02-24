@@ -3722,3 +3722,80 @@ noscript .fade-in,
 /* --- Blog back link: animacja strzałki -------------------- */
 .blog-back-link svg { transition: transform 0.2s var(--ease-out); }
 .blog-back-link:hover svg { transform: translateX(-3px); }
+
+/* ============================================================
+   DESIGN v7.2 — Footer ciemny, section-num, CTA, post-bar
+   ============================================================ */
+
+/* --- Footer: ciemne tło — symetria z topbarem -------------- */
+.polca-portal-footer {
+    background: var(--ink);
+    border-top: none;
+}
+.footer-brand-logo {
+    color: #FFFFFF;
+    font-size: 1.25rem;
+}
+.footer-brand-logo:hover { color: rgba(255,255,255,0.75); opacity: 1; }
+.footer-brand-desc { color: rgba(255,255,255,0.42); }
+.footer-address { color: rgba(255,255,255,0.3); }
+.footer-address a { color: rgba(255,255,255,0.45); }
+.footer-address a:hover { color: var(--accent-light); }
+.footer-col-title { color: rgba(255,255,255,0.22); }
+.footer-col-text { color: rgba(255,255,255,0.48); }
+.footer-col-text a {
+    color: var(--accent-light);
+    border-bottom-color: rgba(18,161,138,0.22);
+}
+.footer-col-text a:hover {
+    color: #FFFFFF;
+    border-bottom-color: rgba(255,255,255,0.25);
+}
+.footer-bottom {
+    color: rgba(255,255,255,0.22);
+    border-top-color: rgba(255,255,255,0.07);
+}
+.footer-bottom a { color: rgba(255,255,255,0.22); }
+.footer-bottom a:hover { color: var(--accent-light); }
+
+/* --- section-num: wyraźniejszy kolor i lekkie tło ---------- */
+.section-num {
+    display: inline-block;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+}
+
+/* --- post-accent-bar: grubszy pasek na artykułach ---------- */
+.post-accent-bar {
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-warm) 100%);
+}
+
+/* --- card-cta: hover z przesunięciem ikony ----------------- */
+.card-cta:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.card-cta:hover .feature-card-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+/* --- polca-table: wyraźniejszy nagłówek -------------------- */
+.polca-table thead th {
+    background: var(--paper);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    border-bottom-width: 2px;
+    border-bottom-color: var(--ink);
+}
+.polca-table tbody tr:hover td {
+    background: var(--accent-subtle);
+}
+
+/* --- Quote block: gradient --------------------------------- */
+.quote-block {
+    background: linear-gradient(135deg, rgba(14,124,107,0.04) 0%, var(--paper-card) 100%);
+}
+
+/* --- Sekcja: wyraźniejsza separacja section-alt ------------ */
+.section-alt {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
