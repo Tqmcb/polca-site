@@ -29,10 +29,7 @@
           "name": "Multicert Sp. z o.o.",
           "alternateName": "EPD Polska",
           "url": "https://www.epd.org.pl",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://polca.org.pl/favicon.svg"
-          },
+          "logo": { "@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg" },
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "ul. Mydlarska 47",
@@ -77,7 +74,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=7.6">
-    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <link rel="stylesheet" href="style-interactive.css?v=1.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}.wf-step{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 <header class="polca-topbar" role="banner">
@@ -102,12 +100,15 @@
         </button>
     </div>
 </header>
+
 <div class="polca-content">
 
-<div class="polca-page polca-page-wide" style="padding: 0;">
-    <!-- Hero Header with Image -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════ -->
+<div class="polca-page polca-page-wide" style="padding:0;">
     <div class="hero-section hero-with-image fade-in">
-        <div class="hero-image-bg" style="background-image: url('images/hero-main.jpg');"></div>
+        <div class="hero-image-bg" style="background-image:url('images/hero-main.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <div class="hero-overline">Polska Baza Danych LCI</div>
@@ -121,277 +122,541 @@
                 <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
             </div>
         </div>
+        <!-- live ticker w hero -->
+        <div class="hero-ticker">
+            <span class="ticker-item"><span class="ticker-val">597</span> kg CO₂/MWh — miks PL</span>
+            <span class="ticker-sep">·</span>
+            <span class="ticker-item"><span class="ticker-val">295</span> kg CO₂/MWh — śr. EU</span>
+            <span class="ticker-sep">·</span>
+            <span class="ticker-item"><span class="ticker-val">+102%</span> odchylenie</span>
+            <span class="ticker-sep">·</span>
+            <span class="ticker-item"><span class="ticker-val">EN 15804+A2</span></span>
+        </div>
     </div>
 </div>
 
-<div class="polca-page" style="padding-top: 0;">
+<div class="polca-page" style="padding-top:0;">
 
-    <!-- Key Metrics -->
-    <div class="grid-3 section-gap fade-in">
-        <div class="metric-card">
-            <div class="metric-number">EN 15804</div>
-            <div class="metric-label">Zgodność z normą europejską<br>dla wyrobów budowlanych</div>
-            <div class="metric-tag">+A2:2019</div>
+<!-- ═══════════════════════════════════════════════════════════
+     KEY METRICS — animowane liczniki
+     ═══════════════════════════════════════════════════════════ -->
+<div class="grid-3 section-gap fade-in">
+    <div class="metric-card">
+        <div class="metric-number" data-counter data-target="597" data-suffix=" kg">0 kg</div>
+        <div class="metric-label">CO₂/MWh — polski miks energetyczny<br>wobec ~295 kg średniej EU</div>
+        <div class="metric-tag orange">KOBiZE 2024</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-number" data-counter data-target="7" data-suffix=" warstw">0 warstw</div>
+        <div class="metric-label">walidacji danych z weryfikacją<br>regulacyjną E-PRTR i EU ETS</div>
+        <div class="metric-tag blue">ISO 14044</div>
+    </div>
+    <div class="metric-card">
+        <div class="metric-number">EN 15804</div>
+        <div class="metric-label">Zgodność z normą europejską<br>dla wyrobów budowlanych</div>
+        <div class="metric-tag">+A2:2019</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WORKFLOW — Fazy LCA A1→A5
+     ═══════════════════════════════════════════════════════════ -->
+<section class="ix-section ix-section-dark section-gap fade-in" aria-label="Fazy cyklu życia LCA">
+    <div class="ix-section-header">
+        <div class="section-num">Cykl życia produktu</div>
+        <h2 class="ix-section-title">Od surowca do placu budowy — fazy A1÷A5</h2>
+        <p class="ix-section-sub">Każda faza generuje emisje rejestrowane i walidowane przez poLCA</p>
+    </div>
+    <div class="workflow-row">
+        <div class="wf-step" data-phase="A1">
+            <div class="wf-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>
+            </div>
+            <div class="wf-label">A1</div>
+            <div class="wf-name">Surowce</div>
+            <div class="wf-desc">Wydobycie i przygotowanie surowców — kruszywo, wapień, glina</div>
+            <div class="wf-co2">~4 kg CO₂eq/t</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">597</div>
-            <div class="metric-label">kg CO₂/MWh — polski miks<br>wobec ~210 średniej EU</div>
-            <div class="metric-tag orange">KOBiZE 2024</div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" data-phase="A2">
+            <div class="wf-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="wf-label">A2</div>
+            <div class="wf-name">Transport</div>
+            <div class="wf-desc">Transport surowców do wytwórni betonu lub cementowni</div>
+            <div class="wf-co2">~7 kg CO₂eq/t</div>
         </div>
-        <div class="metric-card">
-            <div class="metric-number">6</div>
-            <div class="metric-label">warstw walidacji danych<br>z weryfikacją regulacyjną</div>
-            <div class="metric-tag blue">ISO 14044</div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step wf-step-highlight" data-phase="A3">
+            <div class="wf-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M4 20V8l8-5 8 5v12"/><path d="M10 20v-5h4v5"/><rect x="8" y="10" width="3" height="3"/><rect x="13" y="10" width="3" height="3"/></svg>
+            </div>
+            <div class="wf-label">A3</div>
+            <div class="wf-name">Produkcja</div>
+            <div class="wf-desc">Wytwarzanie wyrobu — wypalanie klinkieru, mieszanie betonu, laminowanie</div>
+            <div class="wf-co2">~740 kg CO₂eq/t</div>
+            <div class="wf-badge">74% GWP</div>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" data-phase="A4">
+            <div class="wf-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            </div>
+            <div class="wf-label">A4</div>
+            <div class="wf-name">Transport</div>
+            <div class="wf-desc">Dostawa wyrobu gotowego na plac budowy</div>
+            <div class="wf-co2">~12 kg CO₂eq/t</div>
+        </div>
+        <div class="wf-arrow">→</div>
+        <div class="wf-step" data-phase="A5">
+            <div class="wf-icon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 22V12l10-9 10 9v10"/><path d="M9 22V13h6v9"/></svg>
+            </div>
+            <div class="wf-label">A5</div>
+            <div class="wf-name">Wbudowanie</div>
+            <div class="wf-desc">Proces budowlany — maszyny, odpady, opakowania na placu budowy</div>
+            <div class="wf-co2">~8 kg CO₂eq/t</div>
         </div>
     </div>
+    <div class="wf-legend">
+        <span class="wf-legend-item"><span class="wf-legend-dot accent"></span>Faza dominująca (A3)</span>
+        <span class="wf-legend-item"><span class="wf-legend-dot muted"></span>Fazy pomocnicze (A1, A2, A4, A5)</span>
+        <span class="wf-legend-item"><span class="wf-legend-dot orange"></span>Dane poLCA specyficzne dla PL</span>
+    </div>
+</section>
 
-    <!-- Main content: Comparison + Quote — moved above feature cards -->
-    <div class="grid-2-1 section-gap fade-in">
-        <!-- CO2 Comparison -->
-        <div class="card card-lg">
-            <div class="card-title">Wskaźnik emisji CO₂ dla energii elektrycznej</div>
-            <p class="card-text" style="margin-bottom: 1.25rem;">Wpływ doboru źródła danych na wynik końcowy LCA</p>
+<!-- ═══════════════════════════════════════════════════════════
+     HOTSPOT DIAGRAM — Wytwórnia betonu
+     ═══════════════════════════════════════════════════════════ -->
+<section class="ix-section ix-section-light section-gap fade-in" aria-label="Diagram wytwórni betonu">
+    <div class="ix-section-header ix-section-header-dark">
+        <div class="section-num">Analiza hot-spotów</div>
+        <h2 class="ix-section-title-dark">Wytwórnia betonu — gdzie powstają emisje?</h2>
+        <p class="ix-section-sub-dark">Kliknij lub najedź kursorem na punkt aby zobaczyć dane emisyjne</p>
+    </div>
 
-            <div class="comp-bar-group">
-                <div class="comp-bar-label">Średnia EU (bazy generyczne)</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 35%;">~210 kg CO₂/MWh</div>
-                </div>
+    <div class="hotspot-diagram" role="img" aria-label="Schemat wytwórni betonu z punktami emisyjnymi">
+        <!-- SVG schemat wytwórni betonu -->
+        <svg class="hotspot-svg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Tło -->
+            <rect width="900" height="420" fill="#0f1a17" rx="12"/>
+
+            <!-- Ziemia / podłoga -->
+            <rect x="0" y="360" width="900" height="60" fill="#0a1510" rx="0"/>
+            <line x1="0" y1="360" x2="900" y2="360" stroke="#1a3028" stroke-width="1.5"/>
+
+            <!-- ─── SILOS CEMENTU (lewy) ─── -->
+            <g class="hs-plant-part">
+                <rect x="60" y="140" width="90" height="200" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"/>
+                <ellipse cx="105" cy="140" rx="45" ry="14" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"/>
+                <ellipse cx="105" cy="340" rx="45" ry="10" fill="#0c1e17"/>
+                <!-- Napis -->
+                <text x="105" y="248" text-anchor="middle" fill="#4a9a7a" font-size="11" font-family="IBM Plex Mono,monospace">SILOS</text>
+                <text x="105" y="262" text-anchor="middle" fill="#4a9a7a" font-size="11" font-family="IBM Plex Mono,monospace">CEMENTU</text>
+                <!-- Rura z silosu -->
+                <line x1="150" y1="300" x2="230" y2="300" stroke="#1d4535" stroke-width="8" stroke-linecap="round"/>
+                <line x1="150" y1="300" x2="230" y2="300" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+            </g>
+
+            <!-- ─── WĘZEŁ BETONIARSKI (centrum) ─── -->
+            <g class="hs-plant-part">
+                <rect x="230" y="180" width="180" height="160" fill="#112820" stroke="#1d4535" stroke-width="2" rx="6"/>
+                <rect x="250" y="160" width="140" height="30" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5" rx="3"/>
+                <!-- Okna maszynowni -->
+                <rect x="250" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
+                <rect x="310" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
+                <rect x="350" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
+                <!-- Napis -->
+                <text x="320" y="264" text-anchor="middle" fill="#4a9a7a" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="500">WĘZEŁ</text>
+                <text x="320" y="280" text-anchor="middle" fill="#4a9a7a" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="500">BETONIARSKI</text>
+                <!-- mieszalnik -->
+                <ellipse cx="320" cy="320" rx="35" ry="18" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1.5"/>
+                <text x="320" y="325" text-anchor="middle" fill="#0DBF9F" font-size="9" font-family="IBM Plex Mono,monospace">⟳ MIESZALNIK</text>
+            </g>
+
+            <!-- ─── SILOS KRUSZYWA (prawy) ─── -->
+            <g class="hs-plant-part">
+                <rect x="460" y="200" width="80" height="140" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"/>
+                <polygon points="460,200 540,200 520,160 480,160" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"/>
+                <!-- Rura do węzła -->
+                <line x1="460" y1="280" x2="410" y2="280" stroke="#1d4535" stroke-width="6" stroke-linecap="round"/>
+                <line x1="460" y1="280" x2="410" y2="280" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"/>
+                <text x="500" y="278" text-anchor="middle" fill="#4a9a7a" font-size="10" font-family="IBM Plex Mono,monospace">KRUSZYWO</text>
+            </g>
+
+            <!-- ─── ZBIORNIK WODY ─── -->
+            <g class="hs-plant-part">
+                <ellipse cx="570" cy="290" rx="36" ry="50" fill="#0d1e2b" stroke="#1a3050" stroke-width="1.5"/>
+                <ellipse cx="570" cy="245" rx="36" ry="14" fill="#142438" stroke="#1a3050" stroke-width="1.5"/>
+                <!-- rura -->
+                <line x1="534" y1="290" x2="460" y2="290" stroke="#1a3050" stroke-width="5" stroke-linecap="round"/>
+                <text x="570" y="298" text-anchor="middle" fill="#3a7ab0" font-size="9" font-family="IBM Plex Mono,monospace">WODA</text>
+            </g>
+
+            <!-- ─── CIEPŁOWNIA / KOCIOŁ ─── -->
+            <g class="hs-plant-part">
+                <rect x="660" y="220" width="80" height="120" fill="#1e1208" stroke="#3d2408" stroke-width="1.5" rx="4"/>
+                <rect x="675" y="200" width="50" height="28" fill="#2a1a0c" stroke="#3d2408" stroke-width="1.5" rx="3"/>
+                <!-- komin -->
+                <rect x="700" y="100" width="22" height="110" fill="#1a1208" stroke="#3d2408" stroke-width="1.5" rx="3"/>
+                <!-- dym -->
+                <ellipse cx="711" cy="88" rx="12" ry="16" fill="none" stroke="#4a3020" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
+                <ellipse cx="711" cy="66" rx="18" ry="14" fill="none" stroke="#4a3020" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+                <text x="700" y="278" text-anchor="middle" fill="#8a5a30" font-size="9" font-family="IBM Plex Mono,monospace">KOCIOŁ</text>
+                <text x="700" y="291" text-anchor="middle" fill="#8a5a30" font-size="9" font-family="IBM Plex Mono,monospace">GRZEWCZY</text>
+            </g>
+
+            <!-- ─── BETONIARKA MOBILNA ─── -->
+            <g class="hs-plant-part">
+                <rect x="160" y="340" width="110" height="22" fill="#1a3c2d" stroke="#1d4535" stroke-width="1" rx="2"/>
+                <circle cx="180" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"/>
+                <circle cx="250" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"/>
+                <ellipse cx="215" cy="335" rx="40" ry="20" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1" opacity="0.6"/>
+                <text x="215" y="338" text-anchor="middle" fill="#0DBF9F" font-size="8" font-family="IBM Plex Mono,monospace">AUTOBETONOMIESZARKA</text>
+            </g>
+
+            <!-- ─── LINIE PRZESYŁOWE / PRĄD ─── -->
+            <line x1="740" y1="200" x2="740" y2="120" stroke="#2d4a2a" stroke-width="1.5"/>
+            <line x1="740" y1="120" x2="820" y2="120" stroke="#2d4a2a" stroke-width="1.5"/>
+            <line x1="820" y1="120" x2="820" y2="180" stroke="#2d4a2a" stroke-width="1.5"/>
+            <circle cx="740" cy="120" r="4" fill="#2e9e5a" opacity="0.6"/>
+            <circle cx="820" cy="120" r="4" fill="#2e9e5a" opacity="0.6"/>
+            <text x="780" y="115" text-anchor="middle" fill="#2e9e5a" font-size="9" font-family="IBM Plex Mono,monospace">SIEĆ EL.</text>
+            <rect x="795" y="180" width="50" height="60" fill="#0d1a0d" stroke="#2d4a2a" stroke-width="1.5" rx="3"/>
+            <text x="820" y="216" text-anchor="middle" fill="#2e9e5a" font-size="9" font-family="IBM Plex Mono,monospace">TRAFO</text>
+
+            <!-- ─── DROGA TRANSPORTOWA ─── -->
+            <rect x="0" y="358" width="900" height="6" fill="#151f1a"/>
+            <line x1="0" y1="361" x2="900" y2="361" stroke="#1d3028" stroke-width="1" stroke-dasharray="20 12"/>
+
+            <!-- Oznaczenia procentowe (etykiety statyczne) -->
+            <text x="105" y="128" text-anchor="middle" fill="#0DBF9F" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="600">74% GWP</text>
+            <text x="711" y="58" text-anchor="middle" fill="#D97706" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="600">13% GWP</text>
+            <text x="500" y="148" text-anchor="middle" fill="#6B7280" font-size="10" font-family="IBM Plex Mono,monospace">7% GWP</text>
+        </svg>
+
+        <!-- HOTSPOTY — pozycjonowane absolutnie nad SVG -->
+
+        <!-- Silos cementu — największy emitent -->
+        <button class="hotspot hotspot-critical" style="top:26%;left:10.5%"
+            aria-label="Silos cementu — hotspot emisji"
+            data-title="Cement (klinkier) — Hotspot #1"
+            data-value="74% udziału w GWP betonu"
+            data-desc="Produkcja klinkieru cementowego wymaga wypalania wapienia w 1450°C. Polska: 70–80% paliw alternatywnych (vs EU 56%) — niższy ślad węglowy niż dane generyczne sugerują.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+
+        <!-- Węzeł betoniarski -->
+        <button class="hotspot hotspot-medium" style="top:38%;left:34%"
+            aria-label="Węzeł betoniarski"
+            data-title="Węzeł betoniarski — energia elektryczna"
+            data-value="13% udziału w GWP"
+            data-desc="Mieszalnik, podajniki i systemy sterowania pobierają energię z polskiej sieci. Z dowodem zakupu zielonej energii (GO) ten wskaźnik spada do ~3%.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+
+        <!-- Kocioł grzewczy — transport wewnętrzny -->
+        <button class="hotspot hotspot-warm" style="top:50%;left:76%"
+            aria-label="Kocioł grzewczy"
+            data-title="Kocioł grzewczy (gaz / olej)"
+            data-value="~5% udziału w GWP"
+            data-desc="Ogrzewanie wody zarobowej, suszarnie kruszywa w warunkach zimowych. Gaz ziemny: 56,1 kg CO₂/GJ. Wskaźniki KOBiZE 2024.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+
+        <!-- Transport surowców -->
+        <button class="hotspot hotspot-low" style="top:62%;left:26%"
+            aria-label="Transport surowców"
+            data-title="Transport surowców (A2)"
+            data-value="7% udziału w GWP"
+            data-desc="Dowozy cementu (silos) i kruszywa. Średni dystans PL: 35 km dla kruszywa, 80 km dla cementu. Narzędzie A4 poLCA przelicza wg euro-klasy floty.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+
+        <!-- Zbiornik wody -->
+        <button class="hotspot hotspot-low" style="top:54%;left:62%"
+            aria-label="Woda procesowa"
+            data-title="Woda procesowa"
+            data-value="2% udziału w GWP"
+            data-desc="Pobór wody na mieszanie i pielęgnację betonu. Emisje związane z uzdatnianiem i pompowaniem. Kategoria EN 15804: Freshwater use.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+
+        <!-- Sieć energetyczna -->
+        <button class="hotspot hotspot-medium" style="top:20%;left:88%"
+            aria-label="Sieć energetyczna"
+            data-title="Miks energetyczny PL (A3)"
+            data-value="597 kg CO₂/MWh"
+            data-desc="Kluczowe odchylenie od danych generycznych: polska sieć energetyczna jest 2× bardziej emisyjna niż średnia EU. poLCA stosuje wskaźnik KOBiZE 2024 zamiast danych Ecoinvent.">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-dot"></span>
+        </button>
+    </div>
+
+    <!-- Legenda hotspotów -->
+    <div class="hotspot-legend">
+        <span class="hsl-item"><span class="hsl-dot critical"></span>Krytyczny (&gt;50% GWP)</span>
+        <span class="hsl-item"><span class="hsl-dot medium"></span>Znaczący (10–50%)</span>
+        <span class="hsl-item"><span class="hsl-dot warm"></span>Umiarkowany (5–10%)</span>
+        <span class="hsl-item"><span class="hsl-dot low"></span>Nieznaczny (&lt;5%)</span>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     WYKRESY INTERAKTYWNE — Chart.js
+     ═══════════════════════════════════════════════════════════ -->
+<section class="ix-section ix-section-dark section-gap fade-in" aria-label="Wykresy emisji">
+    <div class="ix-section-header">
+        <div class="section-num">Dane porównawcze</div>
+        <h2 class="ix-section-title">Wskaźniki emisji CO₂ — interaktywne wykresy</h2>
+    </div>
+    <div class="charts-row">
+        <!-- Wykres słupkowy -->
+        <div class="chart-card">
+            <div class="chart-card-header">
+                <div class="chart-card-title">Emisja CO₂ wg nośnika energii</div>
+                <div class="chart-card-sub">kg CO₂/MWh · najedź kursorem na słupek</div>
             </div>
-            <div class="comp-bar-group">
-                <div class="comp-bar-label">Polska (KOBiZE 2024)</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill green" style="width: 100%;">597 kg CO₂/MWh</div>
-                </div>
+            <div class="chart-wrapper">
+                <canvas id="emissionChart"></canvas>
             </div>
-
-            <p class="comp-note">
-                Źródło: KOBiZE, „Wskaźniki emisyjności CO₂, SO₂, NOₓ, CO i pyłu całkowitego
-                dla energii elektrycznej", dane za rok 2023.
-            </p>
         </div>
-
-        <!-- Dark Quote Card -->
-        <div class="card card-dark card-lg">
-            <div class="card-label">Zasada poLCA</div>
-            <p class="card-quote">
-                „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
-                gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
-                lepsze od europejskiej średniej."
-            </p>
-            <div class="card-source">
-                — Zasada metodologiczna poLCA
+        <!-- Wykres kołowy -->
+        <div class="chart-card">
+            <div class="chart-card-header">
+                <div class="chart-card-title">Struktura GWP betonu C30/37</div>
+                <div class="chart-card-sub">Udział procentowy poszczególnych procesów</div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="donutChart"></canvas>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Feature Cards -->
-    <div class="grid-4 section-gap fade-in">
-        <a href="metodyka.html" class="feature-card">
-            <div class="feature-card-icon green">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
-            </div>
-            <h3>Metodyka i Jakość</h3>
-            <p>Siedmiowarstwowy system zapewnienia jakości danych zgodny z ISO 14044, EN 15804+A2 i walidacją regulacyjną E-PRTR/EU ETS.</p>
-        </a>
-        <a href="analiza.html" class="feature-card">
-            <div class="feature-card-icon orange">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <h3>Analiza Sektorowa</h3>
-            <p>Mapa zniekształceń — które polskie branże tracą, a które zyskują na uśrednianiu danych europejskich.</p>
-        </a>
-        <a href="kalkulator.html" class="feature-card">
-            <div class="feature-card-icon blue">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
-            </div>
-            <h3>Kalkulator Emisji</h3>
-            <p>Orientacyjne oszacowanie emisji CO₂ z procesu energetycznego w oparciu o polskie wskaźniki emisji KOBiZE 2024.</p>
-        </a>
-        <a href="datasety.html" class="feature-card">
-            <div class="feature-card-icon purple">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            </div>
-            <h3>Baza Datasetów</h3>
-            <p>Zbiory danych LCI, modele licencyjne, źródła danych i partnerzy walidacyjni. Eksport ILCD+EPD, EcoSpold v2, CSV.</p>
-        </a>
-    </div>
-
-    <!-- Narzędzia LCA — wyróżniona karta -->
-    <a href="narzedzia.html" class="card card-lg card-cta section-gap fade-in">
-        <div class="feature-card-icon orange" style="width: 48px; height: 48px; flex-shrink: 0; margin-bottom: 0;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+<!-- ═══════════════════════════════════════════════════════════
+     FEATURE CARDS
+     ═══════════════════════════════════════════════════════════ -->
+<div class="grid-4 section-gap fade-in">
+    <a href="metodyka.html" class="feature-card">
+        <div class="feature-card-icon green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/></svg>
         </div>
-        <div>
-            <div class="card-cta-title">Narz&#281;dzia LCA — przeliczniki, kalkulator transportu, por&#243;wnywarka materia&#322;&#243;w</div>
-            <div class="card-cta-desc">Praktyczne narz&#281;dzia dla specjalist&#243;w LCA, ESG i certyfikacji budynk&#243;w. Polskie wska&#378;niki emisji, kalkulator modu&#322;u A4, por&#243;wnywarka GWP materia&#322;&#243;w budowlanych.</div>
-        </div>
+        <h3>Metodyka i Jakość</h3>
+        <p>Siedmiowarstwowy system zapewnienia jakości danych zgodny z ISO 14044, EN 15804+A2 i walidacją regulacyjną E-PRTR/EU ETS.</p>
     </a>
+    <a href="analiza.html" class="feature-card">
+        <div class="feature-card-icon orange">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Analiza Sektorowa</h3>
+        <p>Mapa zniekształceń — które polskie branże tracą, a które zyskują na uśrednianiu danych europejskich.</p>
+    </a>
+    <a href="kalkulator.html" class="feature-card">
+        <div class="feature-card-icon blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+        </div>
+        <h3>Kalkulator Emisji</h3>
+        <p>Orientacyjne oszacowanie emisji CO₂ z procesu energetycznego w oparciu o polskie wskaźniki emisji KOBiZE 2024.</p>
+    </a>
+    <a href="datasety.html" class="feature-card">
+        <div class="feature-card-icon purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+        </div>
+        <h3>Baza Datasetów</h3>
+        <p>Zbiory danych LCI, modele licencyjne, źródła danych i partnerzy walidacyjni. Eksport ILCD+EPD, EcoSpold v2, CSV.</p>
+    </a>
+</div>
 
-    <!-- Sekcja 01 — Uzasadnienie -->
-    <div class="section-alt section-gap fade-in">
-    <div class="card card-lg">
-        <div class="section-num">01 — Uzasadnienie</div>
-        <div class="card-title">Dlaczego Polska potrzebuje krajowych danych LCI</div>
-        <div class="prose">
-            <p>Ocena cyklu życia (LCA) jest dziś jedyną uznaną międzynarodowo metodą kwantyfikacji wpływu środowiskowego wyrobów budowlanych. Deklaracje Środowiskowe Produktu (EPD) — oparte na wynikach LCA — stają się warunkiem dostępu do rynku europejskiego na mocy znowelizowanego Rozporządzenia o wyrobach budowlanych (CPR 2024/3110).</p>
-            <p><strong>Problem polega na tym, że praktycznie wszystkie EPD sporządzane dla polskich wyrobów budowlanych opierają się na bazach danych niereprezentujących polskich warunków produkcji.</strong> Ecoinvent — de facto standard branżowy — modeluje procesy jako średnie europejskie lub globalne. Oznacza to, że polski producent cementu, stali czy betonu otrzymuje wynik LCA oparty nie na rzeczywistej emisyjności jego procesu produkcyjnego, lecz na uśrednieniu kilkudziesięciu krajów.</p>
-            <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w miksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
+<!-- ═══════════════════════════════════════════════════════════
+     CTA NARZĘDZIA
+     ═══════════════════════════════════════════════════════════ -->
+<a href="narzedzia.html" class="card card-lg card-cta section-gap fade-in">
+    <div class="feature-card-icon orange" style="width:48px;height:48px;flex-shrink:0;margin-bottom:0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+    </div>
+    <div>
+        <div class="card-cta-title">Narzędzia LCA — przeliczniki, kalkulator transportu, porównywarka materiałów</div>
+        <div class="card-cta-desc">Praktyczne narzędzia dla specjalistów LCA, ESG i certyfikacji budynków. Polskie wskaźniki emisji, kalkulator modułu A4, porównywarka GWP materiałów budowlanych.</div>
+    </div>
+</a>
+
+<!-- ═══════════════════════════════════════════════════════════
+     UZASADNIENIE
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section-alt section-gap fade-in">
+<div class="card card-lg">
+    <div class="section-num">01 — Uzasadnienie</div>
+    <div class="card-title">Dlaczego Polska potrzebuje krajowych danych LCI</div>
+    <div class="prose">
+        <p>Ocena cyklu życia (LCA) jest dziś jedyną uznaną międzynarodowo metodą kwantyfikacji wpływu środowiskowego wyrobów budowlanych. Deklaracje Środowiskowe Produktu (EPD) — oparte na wynikach LCA — stają się warunkiem dostępu do rynku europejskiego na mocy znowelizowanego Rozporządzenia o wyrobach budowlanych (CPR 2024/3110).</p>
+        <p><strong>Problem polega na tym, że praktycznie wszystkie EPD sporządzane dla polskich wyrobów budowlanych opierają się na bazach danych niereprezentujących polskich warunków produkcji.</strong> Ecoinvent — de facto standard branżowy — modeluje procesy jako średnie europejskie lub globalne. Oznacza to, że polski producent cementu, stali czy betonu otrzymuje wynik LCA oparty nie na rzeczywistej emisyjności jego procesu produkcyjnego, lecz na uśrednieniu kilkudziesięciu krajów.</p>
+        <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w miksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
+    </div>
+</div>
+</div>
+
+<div class="card card-lg card-accent-green fade-in" style="background:var(--paper-warm);">
+    <div class="card-title">Zasada proximity — ISO 14044 §4.2.3.6</div>
+    <div class="prose">
+        <p>Norma ISO 14044:2006 formułuje wyraźną preferencję dla danych najbardziej reprezentatywnych geograficznie i technologicznie. Zasada ta — zwana zasadą proximity — oznacza, że dane krajowe powinny mieć pierwszeństwo nad danymi regionalnymi, a dane regionalne nad danymi globalnymi. poLCA realizuje tę zasadę, dostarczając dane inwentaryzacji cyklu życia (LCI) specyficzne dla polskich warunków produkcji, polskiego miksu energetycznego i polskiej infrastruktury transportowej.</p>
+        <p style="margin-top:1rem;font-style:italic;color:var(--text-secondary);font-size:0.88rem;">Nie jest to kwestia narodowej dumy — lecz rzetelności metodologicznej. Normy ISO wymagają stosowania danych jak najbardziej zbliżonych do rzeczywistości ocenianego systemu.</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABELA EMISJI
+     ═══════════════════════════════════════════════════════════ -->
+<div class="card card-lg section-gap fade-in">
+    <div class="card-title">Polskie wskaźniki emisji dla nośników energii</div>
+    <p class="card-text" style="margin-bottom:1rem;">Podstawa obliczeń w bazie poLCA dla procesów energetycznych (na 1 GJ energii)</p>
+    <div style="overflow-x:auto;">
+        <table class="polca-table">
+            <thead>
+                <tr>
+                    <th>Wskaźnik</th>
+                    <th>Miks elektr. PL</th>
+                    <th>Gaz ziemny</th>
+                    <th>Olej opałowy</th>
+                    <th>Węgiel kamienny</th>
+                    <th>Biomasa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CO₂ [kg/GJ]</td>
+                    <td class="mono highlight emission-high">165,8</td>
+                    <td class="mono emission-mid">56,1</td>
+                    <td class="mono emission-high">77,4</td>
+                    <td class="mono emission-high">95,5</td>
+                    <td class="mono emission-low">0,0 *</td>
+                </tr>
+                <tr>
+                    <td>SO₂ [g/GJ]</td>
+                    <td class="mono">125,2</td>
+                    <td class="mono">0,5</td>
+                    <td class="mono">140,6</td>
+                    <td class="mono">210,0</td>
+                    <td class="mono">11,0</td>
+                </tr>
+                <tr>
+                    <td>NOₓ [g/GJ]</td>
+                    <td class="mono">145,3</td>
+                    <td class="mono">46,0</td>
+                    <td class="mono">55,0</td>
+                    <td class="mono">160,0</td>
+                    <td class="mono">85,0</td>
+                </tr>
+                <tr>
+                    <td>Pył całkowity [g/GJ]</td>
+                    <td class="mono">5,3</td>
+                    <td class="mono">0,1</td>
+                    <td class="mono">1,5</td>
+                    <td class="mono">12,0</td>
+                    <td class="mono">30,0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;font-style:italic;">
+        * Biomasa raportowana jako neutralna węglowo w cyklu krótkim, zgodnie z konwencją EU ETS.
+        Źródło: KOBiZE 2024, wskaźniki IPCC 2006/2019.
+    </p>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     BLOG
+     ═══════════════════════════════════════════════════════════ -->
+<div class="section-alt section-gap fade-in">
+    <div class="section-header">
+        <div>
+            <div class="section-num">Wiedza i komentarze</div>
+            <h2 class="section-title-md">Najnowsze z bloga</h2>
+        </div>
+        <a href="blog.html" class="section-header-link">Wszystkie artykuły &rarr;</a>
+    </div>
+    <div class="blog-grid">
+        <a href="blog-stal-lca-eaf.html" class="blog-card">
+            <img src="images/blog-stal-lca-eaf.jpg" alt="Polska stal z EAF" class="blog-card-img">
+            <div class="blog-card-body">
+                <div class="blog-card-meta">
+                    <span class="blog-tag dane">Dane</span>
+                    <span class="blog-tag metodyka">Metodyka</span>
+                </div>
+                <div class="blog-card-title">Polska stal z EAF a europejska średnia — dlaczego wybór wskaźnika LCI zmienia wynik EPD o ponad 100%</div>
+                <div class="blog-card-footer">
+                    <span class="blog-read-time">20 lutego 2026</span>
+                    <span class="blog-read-time">8 min</span>
+                </div>
+            </div>
+        </a>
+        <a href="blog-en-pl-2024.html" class="blog-card">
+            <img src="images/blog-en-pl-2024.jpg" alt="Emisyjność energii elektrycznej w Polsce" class="blog-card-img">
+            <div class="blog-card-body">
+                <div class="blog-card-meta">
+                    <span class="blog-tag dane">Dane</span>
+                    <span class="blog-tag metodyka">Metodyka</span>
+                </div>
+                <div class="blog-card-title">poLCA-EN-PL 2024 — emisyjność energii elektrycznej w Polsce w pełnym cyklu życia</div>
+                <div class="blog-card-footer">
+                    <span class="blog-read-time">18 lutego 2026</span>
+                    <span class="blog-read-time">7 min</span>
+                </div>
+            </div>
+        </a>
+        <a href="blog-fotowoltaika-epd.html" class="blog-card">
+            <img src="images/blog-fotowoltaika-epd.jpg" alt="Fotowoltaika a EPD" class="blog-card-img">
+            <div class="blog-card-body">
+                <div class="blog-card-meta">
+                    <span class="blog-tag metodyka">Metodyka</span>
+                    <span class="blog-tag">EPD</span>
+                </div>
+                <div class="blog-card-title">Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — oto dlaczego</div>
+                <div class="blog-card-footer">
+                    <span class="blog-read-time">18 lutego 2026</span>
+                    <span class="blog-read-time">10 min</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════════════════════ -->
+<div class="grid-2 fade-in">
+    <div class="card">
+        <div class="card-label">Operator bazy danych</div>
+        <div class="card-title">Multicert Sp. z o.o.</div>
+        <p class="card-text">Operator programu EPD Polska. Opracowanie i utrzymanie bazy danych poLCA.</p>
+        <div class="card-footer">
+            <p style="font-size:0.82rem;color:var(--text-secondary);">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <span style="color:var(--accent);">info@epd.org.pl</span> ·
+                <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
+            </p>
         </div>
     </div>
-
-    </div><!-- /.section-alt -->
-
-    <div class="card card-lg card-accent-green fade-in" style="background: var(--paper-warm);">
-        <div class="card-title">Zasada proximity — ISO 14044 §4.2.3.6</div>
-        <div class="prose">
-            <p>Norma ISO 14044:2006 formułuje wyraźną preferencję dla danych najbardziej reprezentatywnych geograficznie i technologicznie. Zasada ta — zwana zasadą proximity — oznacza, że dane krajowe powinny mieć pierwszeństwo nad danymi regionalnymi, a dane regionalne nad danymi globalnymi. poLCA realizuje tę zasadę, dostarczając dane inwentaryzacji cyklu życia (LCI) specyficzne dla polskich warunków produkcji, polskiego miksu energetycznego i polskiej infrastruktury transportowej.</p>
-            <p style="margin-top: 1rem; font-style: italic; color: var(--text-secondary); font-size: 0.88rem;">Nie jest to kwestia narodowej dumy — lecz rzetelności metodologicznej. Normy ISO wymagają stosowania danych jak najbardziej zbliżonych do rzeczywistości ocenianego systemu.</p>
-        </div>
-    </div>
-
-    <!-- Emissions Table -->
-    <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Polskie wskaźniki emisji dla nośników energii</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Podstawa obliczeń w bazie poLCA dla procesów energetycznych (na 1 GJ energii)</p>
-        <div style="overflow-x: auto;">
-            <table class="polca-table">
-                <thead>
-                    <tr>
-                        <th>Wskaźnik</th>
-                        <th>Miks elektr. PL</th>
-                        <th>Gaz ziemny</th>
-                        <th>Olej opałowy</th>
-                        <th>Węgiel kamienny</th>
-                        <th>Biomasa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CO₂ [kg/GJ]</td>
-                        <td class="mono highlight emission-high">165,8</td>
-                        <td class="mono emission-mid">56,1</td>
-                        <td class="mono emission-high">77,4</td>
-                        <td class="mono emission-high">95,5</td>
-                        <td class="mono emission-low">0,0 *</td>
-                    </tr>
-                    <tr>
-                        <td>SO₂ [g/GJ]</td>
-                        <td class="mono">125,2</td>
-                        <td class="mono">0,5</td>
-                        <td class="mono">140,6</td>
-                        <td class="mono">210,0</td>
-                        <td class="mono">11,0</td>
-                    </tr>
-                    <tr>
-                        <td>NO<sub>x</sub> [g/GJ]</td>
-                        <td class="mono">145,3</td>
-                        <td class="mono">46,0</td>
-                        <td class="mono">55,0</td>
-                        <td class="mono">160,0</td>
-                        <td class="mono">85,0</td>
-                    </tr>
-                    <tr>
-                        <td>Pył całkowity [g/GJ]</td>
-                        <td class="mono">5,3</td>
-                        <td class="mono">0,1</td>
-                        <td class="mono">1,5</td>
-                        <td class="mono">12,0</td>
-                        <td class="mono">30,0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            * Biomasa raportowana jako neutralna węglowo w cyklu krótkim, zgodnie z konwencją EU ETS.
-            Źródło: KOBiZE 2024, wskaźniki IPCC 2006/2019.
+    <div class="card">
+        <div class="card-label">Architektura techniczna</div>
+        <div class="card-title">Nowoczesna infrastruktura danych</div>
+        <p class="card-text">
+            Struktura grafowa, format JSON-LD, interfejs API (REST + GraphQL),
+            aktualizacja kaskadowa, natywna parametryzacja, pełna trasowalność.
+            Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX.
         </p>
     </div>
-
-    <!-- Najnowsze z bloga -->
-    <div class="section-alt section-gap fade-in">
-        <div class="section-header">
-            <div>
-                <div class="section-num">Wiedza i komentarze</div>
-                <h2 class="section-title-md">Najnowsze z bloga</h2>
-            </div>
-            <a href="blog.html" class="section-header-link">Wszystkie artyku&#322;y &rarr;</a>
-        </div>
-        <div class="blog-grid">
-            <a href="blog-stal-lca-eaf.html" class="blog-card">
-                <img src="images/blog-stal-lca-eaf.jpg" alt="Polska stal z EAF" class="blog-card-img">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag dane">Dane</span>
-                        <span class="blog-tag metodyka">Metodyka</span>
-                    </div>
-                    <div class="blog-card-title">Polska stal z EAF a europejska średnia — dlaczego wybór wskaźnika LCI zmienia wynik EPD o ponad 100%</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-time">20 lutego 2026</span>
-                        <span class="blog-read-time">8 min</span>
-                    </div>
-                </div>
-            </a>
-            <a href="blog-en-pl-2024.html" class="blog-card">
-                <img src="images/blog-en-pl-2024.jpg" alt="Emisyjność energii elektrycznej w Polsce" class="blog-card-img">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag dane">Dane</span>
-                        <span class="blog-tag metodyka">Metodyka</span>
-                    </div>
-                    <div class="blog-card-title">poLCA-EN-PL 2024 — emisyjność energii elektrycznej w Polsce w pełnym cyklu życia</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-time">18 lutego 2026</span>
-                        <span class="blog-read-time">7 min</span>
-                    </div>
-                </div>
-            </a>
-            <a href="blog-fotowoltaika-epd.html" class="blog-card">
-                <img src="images/blog-fotowoltaika-epd.jpg" alt="Fotowoltaika a EPD" class="blog-card-img">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag metodyka">Metodyka</span>
-                        <span class="blog-tag">EPD</span>
-                    </div>
-                    <div class="blog-card-title">Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — oto dlaczego</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-time">18 lutego 2026</span>
-                        <span class="blog-read-time">10 min</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div><!-- /.section-alt -->
-
-    <!-- About / Contact -->
-    <div class="grid-2 fade-in">
-        <div class="card">
-            <div class="card-label">Operator bazy danych</div>
-            <div class="card-title">Multicert Sp. z o.o.</div>
-            <p class="card-text">
-                Operator programu EPD Polska. Opracowanie i utrzymanie bazy danych poLCA.
-            </p>
-            <div class="card-footer">
-                <p style="font-size: 0.82rem; color: var(--text-secondary);">
-                    ul. Mydlarska 47, 04-690 Warszawa<br>
-                    <span style="color: var(--accent);">info@epd.org.pl</span> ·
-                    <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
-                </p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-label">Architektura techniczna</div>
-            <div class="card-title">Nowoczesna infrastruktura danych</div>
-            <p class="card-text">
-                Struktura grafowa, format JSON-LD, interfejs API (REST + GraphQL),
-                aktualizacja kaskadowa, natywna parametryzacja, pełna trasowalność.
-                Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX.
-            </p>
-        </div>
-    </div>
 </div>
 
-</div><!-- .polca-content -->
+</div><!-- /.polca-page -->
+</div><!-- /.polca-content -->
+
 <footer class="polca-portal-footer">
     <div>
         <a href="index.html" class="footer-brand-logo">poLCA</a>
@@ -425,13 +690,18 @@
     </div>
     <div class="footer-bottom">
         <span>&copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska</span>
-        <span>poLCA v6.0 &middot; <a href="sitemap.xml">Mapa strony</a></span>
+        <span>poLCA v7.6 &middot; <a href="sitemap.xml">Mapa strony</a></span>
     </div>
 </footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
 <script src="js/sidebar.js?v=5.1"></script>
 <script src="js/animations.js?v=5.1"></script>
 <script src="js/effects.js?v=5.1"></script>
 <script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
+<script src="js/nav-mobile.js"></script>
+<script src="js/interactive.js?v=1.0"></script>
 </body>
 </html>
