@@ -3799,3 +3799,25 @@ noscript .fade-in,
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
+
+/* ============================================================
+   UX/UI v7.3 — Mobile menu, dark-hero, hero image
+   ============================================================ */
+
+/* --- Mobile menu: hamburger zawsze w 3. kolumnie siatki ----
+   Gdy polca-topnav ma display:none, wypada z grid i topbar-right
+   przesuwa się do kolumny 2 (środek). Explicit grid-column: 3
+   utrzymuje go po prawej niezależnie od widoczności nav.       */
+.topbar-right {
+    grid-column: 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* --- post-dark-hero: lżejsza nakładka edytowana w HTML -----
+   Gradient rgba(0.72→0.82) zmieniony na rgba(0.38→0.52)
+   w inline style bezpośrednio w 3 plikach HTML artykułów
+   (blog-cement-polska, blog-emisje-polska-vs-eu, blog-mma-rap)
+   CSS nie może nadpisać inline background-image.             */
