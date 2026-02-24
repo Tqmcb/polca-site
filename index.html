@@ -76,7 +76,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=7.4">
+    <link rel="stylesheet" href="style.css?v=7.5">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -145,6 +145,46 @@
         </div>
     </div>
 
+    <!-- Main content: Comparison + Quote — moved above feature cards -->
+    <div class="grid-2-1 section-gap fade-in">
+        <!-- CO2 Comparison -->
+        <div class="card card-lg">
+            <div class="card-title">Wskaźnik emisji CO₂ dla energii elektrycznej</div>
+            <p class="card-text" style="margin-bottom: 1.25rem;">Wpływ doboru źródła danych na wynik końcowy LCA</p>
+
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Średnia EU (bazy generyczne)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 35%;">~210 kg CO₂/MWh</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Polska (KOBiZE 2024)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill green" style="width: 100%;">597 kg CO₂/MWh</div>
+                </div>
+            </div>
+
+            <p class="comp-note">
+                Źródło: KOBiZE, „Wskaźniki emisyjności CO₂, SO₂, NOₓ, CO i pyłu całkowitego
+                dla energii elektrycznej", dane za rok 2023.
+            </p>
+        </div>
+
+        <!-- Dark Quote Card -->
+        <div class="card card-dark card-lg">
+            <div class="card-label">Zasada poLCA</div>
+            <p class="card-quote">
+                „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
+                gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
+                lepsze od europejskiej średniej."
+            </p>
+            <div class="card-source">
+                — Zasada metodologiczna poLCA
+            </div>
+        </div>
+    </div>
+
     <!-- Feature Cards -->
     <div class="grid-4 section-gap fade-in">
         <a href="metodyka.html" class="feature-card">
@@ -207,46 +247,6 @@
         <div class="prose">
             <p>Norma ISO 14044:2006 formułuje wyraźną preferencję dla danych najbardziej reprezentatywnych geograficznie i technologicznie. Zasada ta — zwana zasadą proximity — oznacza, że dane krajowe powinny mieć pierwszeństwo nad danymi regionalnymi, a dane regionalne nad danymi globalnymi. poLCA realizuje tę zasadę, dostarczając dane inwentaryzacji cyklu życia (LCI) specyficzne dla polskich warunków produkcji, polskiego miksu energetycznego i polskiej infrastruktury transportowej.</p>
             <p style="margin-top: 1rem; font-style: italic; color: var(--text-secondary); font-size: 0.88rem;">Nie jest to kwestia narodowej dumy — lecz rzetelności metodologicznej. Normy ISO wymagają stosowania danych jak najbardziej zbliżonych do rzeczywistości ocenianego systemu.</p>
-        </div>
-    </div>
-
-    <!-- Main content: Comparison + Quote -->
-    <div class="grid-2-1 section-gap fade-in">
-        <!-- CO2 Comparison -->
-        <div class="card card-lg">
-            <div class="card-title">Wskaźnik emisji CO₂ dla energii elektrycznej</div>
-            <p class="card-text" style="margin-bottom: 1.25rem;">Wpływ doboru źródła danych na wynik końcowy LCA</p>
-
-            <div class="comp-bar-group">
-                <div class="comp-bar-label">Średnia EU (bazy generyczne)</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 35%;">~210 kg CO₂/MWh</div>
-                </div>
-            </div>
-            <div class="comp-bar-group">
-                <div class="comp-bar-label">Polska (KOBiZE 2024)</div>
-                <div class="comp-bar-track">
-                    <div class="comp-bar-fill green" style="width: 100%;">597 kg CO₂/MWh</div>
-                </div>
-            </div>
-
-            <p class="comp-note">
-                Źródło: KOBiZE, „Wskaźniki emisyjności CO₂, SO₂, NOₓ, CO i pyłu całkowitego
-                dla energii elektrycznej", dane za rok 2023.
-            </p>
-        </div>
-
-        <!-- Dark Quote Card -->
-        <div class="card card-dark card-lg">
-            <div class="card-label">Zasada poLCA</div>
-            <p class="card-quote">
-                „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
-                gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
-                lepsze od europejskiej średniej."
-            </p>
-            <div class="card-source">
-                — Zasada metodologiczna poLCA
-            </div>
         </div>
     </div>
 
