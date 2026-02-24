@@ -81,7 +81,141 @@
 .ix-section-neutral .ix-section-sub   { color: var(--text-secondary); }
 
 /* ──────────────────────────────────────────────────────────────
-   WORKFLOW — Fazy A1–A5
+   MODUŁY EN 15804+A2 — układ A→B→C→D
+   ──────────────────────────────────────────────────────────── */
+.lca-modules-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(13,191,159,0.3) transparent;
+}
+.lca-stage {
+    flex: 1;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.lca-stage.wf-visible { opacity: 1; transform: none; }
+
+.lca-stage-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0.25rem;
+}
+.lca-stage-letter {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.lca-stage-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.lca-stage-a { background: rgba(13,191,159,0.14); }
+.lca-stage-a .lca-stage-letter,
+.lca-stage-a .lca-stage-name { color: #0DBF9F; }
+
+.lca-stage-b { background: rgba(45,125,210,0.14); }
+.lca-stage-b .lca-stage-letter,
+.lca-stage-b .lca-stage-name { color: #2d7dd2; }
+
+.lca-stage-c { background: rgba(217,119,6,0.14); }
+.lca-stage-c .lca-stage-letter,
+.lca-stage-c .lca-stage-name { color: #D97706; }
+
+.lca-stage-d { background: rgba(124,77,204,0.14); }
+.lca-stage-d .lca-stage-letter,
+.lca-stage-d .lca-stage-name { color: #7c4dcc; }
+
+.lca-stage-modules { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.lca-mod {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 0.85rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.lca-mod-mandatory {
+    border-color: rgba(13,191,159,0.25);
+    background: rgba(13,191,159,0.05);
+}
+.lca-mod-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #0DBF9F;
+    letter-spacing: 0.04em;
+}
+.lca-mod-name {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #fff;
+}
+.lca-mod-desc {
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.42);
+    line-height: 1.45;
+}
+.lca-mod-badge {
+    font-size: 0.62rem;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 2px 7px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    width: fit-content;
+    margin-top: 0.2rem;
+}
+.lca-badge-required {
+    background: rgba(13,191,159,0.15);
+    color: #0DBF9F;
+    border: 1px solid rgba(13,191,159,0.3);
+}
+.lca-badge-optional {
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.lca-stage-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(13,191,159,0.35);
+    font-size: 1.2rem;
+    padding: 0 0.4rem;
+    flex-shrink: 0;
+    padding-top: 2.5rem;
+    opacity: 0;
+    transition: opacity 0.45s ease 0.3s;
+}
+.lca-stage-arrow.wf-visible { opacity: 1; }
+
+@media (max-width: 860px) {
+    .lca-stage { min-width: 150px; }
+}
+@media (max-width: 640px) {
+    .lca-stage { min-width: 130px; }
+    .lca-mod-desc { display: none; }
+    .lca-stage-arrow { padding: 0 0.15rem; font-size: 0.9rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+   WORKFLOW — Fazy A1–A5 (używany w postach blogowych)
    ──────────────────────────────────────────────────────────── */
 .workflow-row {
     display: flex;

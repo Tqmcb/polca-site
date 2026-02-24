@@ -159,70 +159,105 @@
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WORKFLOW — Fazy LCA A1→A5
+     MODUŁY EN 15804+A2 — pełny zakres
      ═══════════════════════════════════════════════════════════ -->
-<section class="ix-section ix-section-dark section-gap fade-in" aria-label="Fazy cyklu życia LCA">
+<section class="ix-section ix-section-dark section-gap fade-in" aria-label="Moduły EN 15804+A2">
     <div class="ix-section-header">
-        <div class="section-num">Cykl życia produktu</div>
-        <h2 class="ix-section-title">Od surowca do placu budowy — fazy A1÷A5</h2>
-        <p class="ix-section-sub">Każda faza generuje emisje rejestrowane i walidowane przez poLCA</p>
+        <div class="section-num">Zakres danych poLCA</div>
+        <h2 class="ix-section-title">Moduły cyklu życia według EN 15804+A2</h2>
+        <p class="ix-section-sub">Struktura modułów obowiązująca dla wszystkich wyrobów budowlanych — od surowców po potencjał recyklingu</p>
     </div>
-    <div class="workflow-row">
-        <div class="wf-step" data-phase="A1">
-            <div class="wf-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>
+
+    <div class="lca-modules-row">
+
+        <!-- ETAP A: Produkt + Budowa -->
+        <div class="lca-stage wf-visible">
+            <div class="lca-stage-header lca-stage-a">
+                <span class="lca-stage-letter">A</span>
+                <span class="lca-stage-name">Produkt &amp; Budowa</span>
             </div>
-            <div class="wf-label">A1</div>
-            <div class="wf-name">Surowce</div>
-            <div class="wf-desc">Wydobycie i przygotowanie surowców — kruszywo, wapień, glina</div>
-            <div class="wf-co2">~4 kg CO₂eq/t</div>
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-step" data-phase="A2">
-            <div class="wf-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <div class="lca-stage-modules">
+                <div class="lca-mod lca-mod-mandatory">
+                    <div class="lca-mod-label">A1–A3</div>
+                    <div class="lca-mod-name">Faza produktowa</div>
+                    <div class="lca-mod-desc">Surowce, transport do wytwórni, wytwarzanie wyrobu</div>
+                    <div class="lca-mod-badge lca-badge-required">Obowiązkowe</div>
+                </div>
+                <div class="lca-mod">
+                    <div class="lca-mod-label">A4–A5</div>
+                    <div class="lca-mod-name">Faza budowy</div>
+                    <div class="lca-mod-desc">Transport na plac budowy, montaż i instalacja</div>
+                    <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
+                </div>
             </div>
-            <div class="wf-label">A2</div>
-            <div class="wf-name">Transport</div>
-            <div class="wf-desc">Transport surowców do wytwórni betonu lub cementowni</div>
-            <div class="wf-co2">~7 kg CO₂eq/t</div>
         </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-step wf-step-highlight" data-phase="A3">
-            <div class="wf-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20h20M4 20V8l8-5 8 5v12"/><path d="M10 20v-5h4v5"/><rect x="8" y="10" width="3" height="3"/><rect x="13" y="10" width="3" height="3"/></svg>
+
+        <div class="lca-stage-arrow wf-visible">→</div>
+
+        <!-- ETAP B: Użytkowanie -->
+        <div class="lca-stage wf-visible">
+            <div class="lca-stage-header lca-stage-b">
+                <span class="lca-stage-letter">B</span>
+                <span class="lca-stage-name">Użytkowanie</span>
             </div>
-            <div class="wf-label">A3</div>
-            <div class="wf-name">Produkcja</div>
-            <div class="wf-desc">Wytwarzanie wyrobu — wypalanie klinkieru, mieszanie betonu, laminowanie</div>
-            <div class="wf-co2">~740 kg CO₂eq/t</div>
-            <div class="wf-badge">74% GWP</div>
-        </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-step" data-phase="A4">
-            <div class="wf-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <div class="lca-stage-modules">
+                <div class="lca-mod">
+                    <div class="lca-mod-label">B1–B5</div>
+                    <div class="lca-mod-name">Użytkowanie wyrobu</div>
+                    <div class="lca-mod-desc">Eksploatacja, konserwacja, naprawy, wymiana, modernizacja</div>
+                    <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
+                </div>
+                <div class="lca-mod">
+                    <div class="lca-mod-label">B6–B7</div>
+                    <div class="lca-mod-name">Energia i woda</div>
+                    <div class="lca-mod-desc">Operacyjne zużycie energii i wody w budynku</div>
+                    <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
+                </div>
             </div>
-            <div class="wf-label">A4</div>
-            <div class="wf-name">Transport</div>
-            <div class="wf-desc">Dostawa wyrobu gotowego na plac budowy</div>
-            <div class="wf-co2">~12 kg CO₂eq/t</div>
         </div>
-        <div class="wf-arrow">→</div>
-        <div class="wf-step" data-phase="A5">
-            <div class="wf-icon">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 22V12l10-9 10 9v10"/><path d="M9 22V13h6v9"/></svg>
+
+        <div class="lca-stage-arrow wf-visible">→</div>
+
+        <!-- ETAP C: Koniec życia -->
+        <div class="lca-stage wf-visible">
+            <div class="lca-stage-header lca-stage-c">
+                <span class="lca-stage-letter">C</span>
+                <span class="lca-stage-name">Koniec życia</span>
             </div>
-            <div class="wf-label">A5</div>
-            <div class="wf-name">Wbudowanie</div>
-            <div class="wf-desc">Proces budowlany — maszyny, odpady, opakowania na placu budowy</div>
-            <div class="wf-co2">~8 kg CO₂eq/t</div>
+            <div class="lca-stage-modules">
+                <div class="lca-mod">
+                    <div class="lca-mod-label">C1–C4</div>
+                    <div class="lca-mod-name">Rozbiórka i utylizacja</div>
+                    <div class="lca-mod-desc">Rozbiórka, transport, przetwarzanie odpadów, składowanie</div>
+                    <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
+                </div>
+            </div>
         </div>
+
+        <div class="lca-stage-arrow wf-visible">→</div>
+
+        <!-- ETAP D: Poza granicą -->
+        <div class="lca-stage wf-visible">
+            <div class="lca-stage-header lca-stage-d">
+                <span class="lca-stage-letter">D</span>
+                <span class="lca-stage-name">Poza granicą</span>
+            </div>
+            <div class="lca-stage-modules">
+                <div class="lca-mod">
+                    <div class="lca-mod-label">D</div>
+                    <div class="lca-mod-name">Potencjał recyklingu</div>
+                    <div class="lca-mod-desc">Ponowne użycie, odzysk i potencjał recyklingu materiału</div>
+                    <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="wf-legend">
-        <span class="wf-legend-item"><span class="wf-legend-dot accent"></span>Faza dominująca (A3)</span>
-        <span class="wf-legend-item"><span class="wf-legend-dot muted"></span>Fazy pomocnicze (A1, A2, A4, A5)</span>
-        <span class="wf-legend-item"><span class="wf-legend-dot orange"></span>Dane poLCA specyficzne dla PL</span>
+
+    <div class="wf-legend" style="margin-top:1.5rem;">
+        <span class="wf-legend-item"><span class="wf-legend-dot accent"></span>Obowiązkowe w każdym EPD (EN 15804+A2 §6.3.5)</span>
+        <span class="wf-legend-item"><span class="wf-legend-dot muted"></span>Opcjonalne — deklarowane gdy istotne</span>
+        <span class="wf-legend-item"><span class="wf-legend-dot orange"></span>poLCA dostarcza danych LCI dla modułów A1–A3 i A4</span>
     </div>
 </section>
 
