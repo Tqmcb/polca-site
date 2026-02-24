@@ -98,18 +98,18 @@
                 },
                 scales: {
                     x: {
-                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        grid: { color: 'rgba(255,255,255,0.05)' },
                         ticks: {
-                            color: '#6B7280',
+                            color: 'rgba(255,255,255,0.38)',
                             font: { family: "'IBM Plex Mono', monospace", size: 11 }
                         }
                     },
                     y: {
                         beginAtZero: true,
                         max: 700,
-                        grid: { color: 'rgba(0,0,0,0.06)' },
+                        grid: { color: 'rgba(255,255,255,0.06)' },
                         ticks: {
-                            color: '#6B7280',
+                            color: 'rgba(255,255,255,0.38)',
                             font: { family: "'IBM Plex Mono', monospace", size: 11 },
                             callback: function(v) { return v + ' kg'; }
                         }
@@ -152,7 +152,7 @@
                     legend: {
                         position: 'right',
                         labels: {
-                            color: '#555566',
+                            color: 'rgba(255,255,255,0.6)',
                             font: { family: "'Inter', sans-serif", size: 12 },
                             padding: 14,
                             boxWidth: 12,

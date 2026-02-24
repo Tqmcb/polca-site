@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=7.6">
+    <link rel="stylesheet" href="style-interactive.css?v=1.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
@@ -165,9 +166,95 @@
         </p>
     </div>
 
-    <!-- Sekcja 02 — Wskaźniki emisji -->
+    <!-- Sekcja 02 — Kalkulator materiałów -->
     <div class="card card-lg section-gap fade-in">
-        <div class="section-num">02 — Wskaźniki emisji w kontekście LCA</div>
+        <div class="section-num">02 — Kalkulator materiałów budowlanych</div>
+        <div class="card-title">GWP dla materiałów i elementów budowlanych</div>
+        <p class="card-text" style="margin-bottom: 1.5rem;">
+            Wybierz materiał i podaj ilość — kalkulator wyliczy GWP (Global Warming Potential)
+            zgodnie z modułem A1–A3 normy EN 15804+A2. Dane poLCA v7.6.
+        </p>
+        <div class="calc-grid">
+            <div class="calc-group">
+                <div>
+                    <label class="calc-label" for="matSelect">Materiał</label>
+                    <select id="matSelect" class="calc-select">
+                        <optgroup label="Spoiwa">
+                            <option value="cement_i">Cement CEM I 42.5</option>
+                            <option value="cement_ii">Cement CEM II/B-S</option>
+                            <option value="cement_iii">Cement CEM III/A</option>
+                        </optgroup>
+                        <optgroup label="Beton">
+                            <option value="concrete_20">Beton C20/25</option>
+                            <option value="concrete_25" selected>Beton C25/30</option>
+                            <option value="concrete_30">Beton C30/37</option>
+                        </optgroup>
+                        <optgroup label="Metale">
+                            <option value="steel_eaf">Stal EAF (PL)</option>
+                            <option value="steel_bof">Stal BOF (EU avg)</option>
+                            <option value="rebar">Stal zbrojeniowa (PL)</option>
+                            <option value="alu_prim">Aluminium (pierwotne)</option>
+                            <option value="alu_rec">Aluminium (recykling)</option>
+                            <option value="copper">Miedź (pierwotna)</option>
+                        </optgroup>
+                        <optgroup label="Ceramika">
+                            <option value="brick">Cegła ceramiczna</option>
+                            <option value="aac">Beton komórkowy (ABK)</option>
+                        </optgroup>
+                        <optgroup label="Izolacja">
+                            <option value="mw">Wełna mineralna</option>
+                            <option value="eps">EPS (styropian)</option>
+                            <option value="xps">XPS</option>
+                            <option value="pir">PIR/PUR</option>
+                        </optgroup>
+                        <optgroup label="Drewno">
+                            <option value="timber">Drewno iglaste (C24)</option>
+                            <option value="plywood">Sklejka</option>
+                        </optgroup>
+                        <optgroup label="Pozostałe">
+                            <option value="glass">Szkło płaskie</option>
+                            <option value="gypsum">Płyta g-k</option>
+                            <option value="pvc_pipe">Rura PVC</option>
+                            <option value="pe_pipe">Rura PE</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label class="calc-label" for="matQty">Ilość [<span id="matUnit">m³</span>]</label>
+                    <input type="number" id="matQty" class="calc-input" value="100" min="0" step="10">
+                </div>
+                <p class="calc-note">
+                    Wskaźniki GWP — moduł A1–A3 (produkcja) zgodnie z EN 15804+A2.
+                    Jednostka odniesienia zależy od materiału (t lub m³).
+                    Źródło: poLCA v7.6, dane KOBiZE 2024.
+                </p>
+            </div>
+            <div class="card calc-result-block">
+                <div>
+                    <div class="calc-result-label">GWP — całkowity [kg CO₂e]</div>
+                    <div class="calc-result-value">
+                        <span id="matResult">25 000</span> <small>kg CO₂e</small>
+                    </div>
+                </div>
+                <div style="margin: 0.75rem 0 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.3rem;">
+                        <span>Wskaźnik: <strong id="matRef" style="color: var(--text-primary);">250 kg CO₂e/m³</strong></span>
+                        <span id="matCat" style="font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--accent);">Beton</span>
+                    </div>
+                    <div style="height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;">
+                        <div id="matBar" style="height: 100%; width: 40%; background: #0DBF9F; border-radius: 3px; transition: width 0.4s cubic-bezier(0.16,1,0.3,1);"></div>
+                    </div>
+                    <div style="font-size: 0.65rem; color: var(--text-tertiary); margin-top: 0.25rem;">Relatywnie do max w kategorii</div>
+                </div>
+                <div class="calc-divider"></div>
+                <button id="matExport" class="calc-export-btn" type="button">Kopiuj CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sekcja 03 — Wskaźniki emisji -->
+    <div class="card card-lg section-gap fade-in">
+        <div class="section-num">03 — Wskaźniki emisji w kontekście LCA</div>
         <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
         <div class="prose">
             <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (597 kg CO₂/MWh, KOBiZE, dane 2023) a średnią EU (~210 kg CO₂/MWh, Ember 2025) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje niemal trzykrotnie większy wpływ niż sugerują dane generyczne.</p>
