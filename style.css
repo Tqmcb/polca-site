@@ -3513,20 +3513,8 @@ noscript .fade-in,
    DESIGN v7.0 — UI Polish & Visual Hierarchy
    ============================================================ */
 
-/* --- Topbar: brand tagline po separatorze ------------------- */
+/* --- Topbar: ukryj separator (brak tekstu po nim) ----------- */
 .topbar-brand-sep { display: none; }
-.topbar-brand::after {
-    content: '· Polska Baza LCA';
-    font-size: 0.61rem;
-    color: var(--text-tertiary);
-    font-family: 'IBM Plex Mono', monospace;
-    letter-spacing: 0.05em;
-    margin-left: 0.3rem;
-    white-space: nowrap;
-}
-@media (max-width: 900px) {
-    .topbar-brand::after { display: none; }
-}
 
 /* --- Topnav: podkreślenie zamiast tła dla active ------------ */
 .polca-topnav a {
@@ -3566,48 +3554,12 @@ noscript .fade-in,
     }
 }
 
-/* --- Feature cards: widoczny pasek akcenty na górze --------- */
+/* --- Feature cards: jeden stały pasek akcentu na górze ----- */
 .feature-card {
-    border-top: 2px solid var(--border);
+    border-top: 2px solid var(--accent);
 }
-.feature-card:nth-child(1) { border-top-color: var(--func-green); }
-.feature-card:nth-child(2) { border-top-color: var(--accent-warm); }
-.feature-card:nth-child(3) { border-top-color: var(--func-blue); }
-.feature-card:nth-child(4) { border-top-color: var(--func-purple); }
-/* Ukryj animowany pasek dolny (zastąpiony górnym) */
+/* Ukryj animowany pasek dolny */
 .feature-card::before { display: none; }
-
-/* --- Hero status badge --------------------------------------- */
-.hero-status-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.28rem 0.7rem;
-    background: rgba(14, 124, 107, 0.18);
-    border: 1px solid rgba(14, 124, 107, 0.32);
-    border-radius: 100px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.82);
-    margin-bottom: 1.25rem;
-}
-.status-dot-live {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #4ade80;
-    flex-shrink: 0;
-    animation: pulse-live 2.4s ease-in-out infinite;
-}
-@keyframes pulse-live {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
-    50%       { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
-}
-
-/* --- Metric cards: nieznacznie większa liczba -------------- */
-.metric-number { font-size: 2.45rem; }
 
 /* --- Blog card: czytelniejszy tytuł ------------------------ */
 .blog-card-title { font-size: 1.02rem; line-height: 1.4; }
@@ -3765,16 +3717,10 @@ noscript .fade-in,
     letter-spacing: 0.12em;
 }
 
-/* --- post-accent-bar: grubszy pasek na artykułach ---------- */
+/* --- post-accent-bar: prosty pasek -------------------------*/
 .post-accent-bar {
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-warm) 100%);
-}
-
-/* --- card-cta: hover z przesunięciem ikony ----------------- */
-.card-cta:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.card-cta:hover .feature-card-icon {
-    transform: scale(1.08) rotate(-3deg);
+    height: 3px;
+    background: var(--accent);
 }
 
 /* --- polca-table: wyraźniejszy nagłówek -------------------- */
@@ -3787,17 +3733,6 @@ noscript .fade-in,
 }
 .polca-table tbody tr:hover td {
     background: var(--accent-subtle);
-}
-
-/* --- Quote block: gradient --------------------------------- */
-.quote-block {
-    background: linear-gradient(135deg, rgba(14,124,107,0.04) 0%, var(--paper-card) 100%);
-}
-
-/* --- Sekcja: wyraźniejsza separacja section-alt ------------ */
-.section-alt {
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
 }
 
 /* ============================================================
