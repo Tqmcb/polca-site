@@ -3508,3 +3508,140 @@ noscript .fade-in,
 .blog-card-featured.hidden {
   display: none;
 }
+
+/* ============================================================
+   DESIGN v7.0 — UI Polish & Visual Hierarchy
+   ============================================================ */
+
+/* --- Topbar: brand tagline po separatorze ------------------- */
+.topbar-brand-sep { display: none; }
+.topbar-brand::after {
+    content: '· Polska Baza LCA';
+    font-size: 0.61rem;
+    color: var(--text-tertiary);
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.05em;
+    margin-left: 0.3rem;
+    white-space: nowrap;
+}
+@media (max-width: 900px) {
+    .topbar-brand::after { display: none; }
+}
+
+/* --- Topnav: podkreślenie zamiast tła dla active ------------ */
+.polca-topnav a {
+    height: var(--topbar-height);
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.polca-topnav a.active {
+    background: transparent;
+    color: var(--accent);
+    font-weight: 600;
+    border-bottom-color: var(--accent);
+}
+.polca-topnav a:hover {
+    background: transparent;
+    color: var(--text-primary);
+    border-bottom-color: var(--border-strong);
+}
+/* Mobile: przywróć pełną szerokość i bez border-bottom */
+@media (max-width: 768px) {
+    .polca-topnav a {
+        height: auto;
+        border-bottom: none;
+        border-radius: 0;
+    }
+    .polca-topnav a.active {
+        border-bottom: none;
+        border-left: 3px solid var(--accent);
+        padding-left: calc(1.25rem - 3px);
+        background: var(--accent-subtle);
+    }
+    .polca-topnav a:hover {
+        background: var(--paper-warm);
+        border-bottom: none;
+    }
+}
+
+/* --- Feature cards: widoczny pasek akcenty na górze --------- */
+.feature-card {
+    border-top: 2px solid var(--border);
+}
+.feature-card:nth-child(1) { border-top-color: var(--func-green); }
+.feature-card:nth-child(2) { border-top-color: var(--accent-warm); }
+.feature-card:nth-child(3) { border-top-color: var(--func-blue); }
+.feature-card:nth-child(4) { border-top-color: var(--func-purple); }
+/* Ukryj animowany pasek dolny (zastąpiony górnym) */
+.feature-card::before { display: none; }
+
+/* --- Hero status badge --------------------------------------- */
+.hero-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.28rem 0.7rem;
+    background: rgba(14, 124, 107, 0.18);
+    border: 1px solid rgba(14, 124, 107, 0.32);
+    border-radius: 100px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 1.25rem;
+}
+.status-dot-live {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+    animation: pulse-live 2.4s ease-in-out infinite;
+}
+@keyframes pulse-live {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.5); }
+    50%       { box-shadow: 0 0 0 5px rgba(74, 222, 128, 0); }
+}
+
+/* --- Metric cards: nieznacznie większa liczba -------------- */
+.metric-number { font-size: 2.45rem; }
+
+/* --- Blog card: czytelniejszy tytuł ------------------------ */
+.blog-card-title { font-size: 1.02rem; line-height: 1.4; }
+
+/* --- Section gap: więcej oddechu --------------------------- */
+.section-gap { margin-bottom: 2.5rem; }
+
+/* --- Topbar scrolled: wyraźniejsze obramowanie ------------- */
+.polca-topbar.scrolled {
+    border-bottom-color: var(--border-strong);
+}
+
+/* --- Footer: subtelne podkreślenie linków treści ------------ */
+.footer-col-text a {
+    border-bottom: 1px solid rgba(14, 124, 107, 0.18);
+    transition: border-color 0.2s, color 0.2s;
+}
+.footer-col-text a:hover {
+    border-bottom-color: var(--accent);
+}
+
+/* --- Filter pills: poprawione zmienne CSS ------------------- */
+.filter-pill {
+    border-color: var(--border-strong);
+    color: var(--text-body);
+}
+.filter-pill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-subtle);
+}
+.filter-pill.active {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+.filter-count { color: var(--text-tertiary); }
