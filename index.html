@@ -111,16 +111,35 @@
     <div class="hero-section hero-with-image fade-in">
         <div class="hero-image-bg" style="background-image:url('images/hero-main.jpg');"></div>
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-overline">Polska Baza Danych LCI</div>
-            <h1 class="hero-title">Dane środowiskowe<br>dla polskiego przemysłu</h1>
-            <p class="hero-desc">
-                Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
-                produkcji. Siedmiowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
-            </p>
-            <div class="hero-actions">
-                <a href="datasety.html" class="hero-btn-primary">Przeglądaj datasety</a>
-                <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+        <div class="hero-split">
+            <div class="hero-content">
+                <div class="hero-overline">Polska Baza Danych LCI</div>
+                <h1 class="hero-title">Dane środowiskowe<br>dla polskiego przemysłu</h1>
+                <p class="hero-desc">
+                    Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
+                    produkcji. Siedmiowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
+                </p>
+                <div class="hero-actions">
+                    <a href="datasety.html" class="hero-btn-primary">Przeglądaj datasety</a>
+                    <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+                </div>
+            </div>
+            <div class="hero-stat-panel">
+                <div class="hero-stat-card">
+                    <div class="hero-stat-val">597 <span style="font-size:0.95rem;font-weight:500;opacity:0.7;">kg</span></div>
+                    <div class="hero-stat-label"><span class="hero-live-dot"></span>CO₂/MWh — miks PL</div>
+                    <div class="hero-stat-source">KOBiZE 2024</div>
+                </div>
+                <div class="hero-stat-card hero-stat-card--warn">
+                    <div class="hero-stat-val hero-stat-val--warn">+102%</div>
+                    <div class="hero-stat-label">odchylenie vs. EU avg</div>
+                    <div class="hero-stat-source">295 → 597 kg CO₂/MWh</div>
+                </div>
+                <div class="hero-stat-card hero-stat-card--blue">
+                    <div class="hero-stat-val hero-stat-val--blue">7</div>
+                    <div class="hero-stat-label">warstw walidacji</div>
+                    <div class="hero-stat-source">ISO 14044 · E-PRTR · EU ETS</div>
+                </div>
             </div>
         </div>
         <!-- live ticker w hero -->
@@ -144,7 +163,7 @@
      KEY METRICS — animowane liczniki
      ═══════════════════════════════════════════════════════════ -->
 <div class="grid-3 section-gap fade-in">
-    <div class="metric-card">
+    <div class="metric-card metric-card--dark">
         <div class="metric-number" data-counter data-target="597" data-suffix=" kg">0 kg</div>
         <div class="metric-label">CO₂/MWh — polski miks energetyczny<br>wobec ~295 kg średniej EU</div>
         <div class="metric-tag orange">KOBiZE 2024</div>
@@ -191,6 +210,21 @@
             </div>
         </div>
     </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SEKTOR: ODCHYLENIE PL vs EU — wykres dywergencji
+     ═══════════════════════════════════════════════════════════ -->
+<section class="ix-section ix-section-dark section-gap fade-in" aria-label="Odchylenie sektorowe PL vs EU">
+    <div class="ix-section-header">
+        <div class="section-num">Analiza sektorowa</div>
+        <h2 class="ix-section-title">Które sektory tracą na danych uśrednionych?</h2>
+        <p class="ix-section-sub">Odchylenie wyniku LCA [%] przy zastąpieniu danych polskich danymi europejskimi. Czerwone słupki — dane EU zaniżają rzeczywisty ślad węglowy PL. Zielone — dane EU go zawyżają.</p>
+    </div>
+    <div class="sector-chart-wrap">
+        <canvas id="sectorChart"></canvas>
+    </div>
+    <p style="font-size:0.65rem;color:rgba(255,255,255,0.25);margin-top:0.75rem;font-family:'IBM Plex Mono',monospace;">Źródło: poLCA v7.6 · KOBiZE 2024 · EPD Polska · ecoinvent 3.10 (porównanie)</p>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════

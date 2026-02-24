@@ -222,7 +222,97 @@
     }
 
     /* =========================================================
-       5. WORKFLOW — animacja strzałek faz A1-A5
+       5. SECTOR DEVIATION CHART — PL vs EU avg per sektor
+       ========================================================= */
+    function initSectorChart() {
+        var canvas = document.getElementById('sectorChart');
+        if (!canvas || !window.Chart) return;
+        var ctx = canvas.getContext('2d');
+
+        var labels = [
+            'Stal EAF (PL vs BOF EU avg)',
+            'Cement CEM I (alt. paliwa PL)',
+            'Aluminium pierwotne',
+            'Beton C30/37',
+            'Miks energetyczny PL'
+        ];
+        var values = [-65, -6, 14, 15, 102];
+
+        var bgColors = values.map(function(v) {
+            return v < 0 ? 'rgba(13,191,159,0.75)' : 'rgba(217,119,6,0.80)';
+        });
+        var bdColors = values.map(function(v) {
+            return v < 0 ? '#0DBF9F' : '#D97706';
+        });
+
+        new window.Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Odchylenie PL vs EU avg [%]',
+                    data: values,
+                    backgroundColor: bgColors,
+                    borderColor: bdColors,
+                    borderWidth: 2,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#0d1a18',
+                        borderColor: '#0DBF9F',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        bodyColor: 'rgba(255,255,255,0.75)',
+                        padding: 12,
+                        callbacks: {
+                            label: function(c) {
+                                var v = c.raw;
+                                return (v > 0 ? '+' : '') + v + '% względem danych europejskich';
+                            },
+                            afterLabel: function(c) {
+                                return c.raw < 0
+                                    ? '✓ Dane EU zawyżają ślad węglowy — PL jest lepszy'
+                                    : '⚠ Dane EU zaniżają ślad węglowy — PL jest gorszy';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        min: -80, max: 115,
+                        grid: { color: 'rgba(255,255,255,0.06)' },
+                        ticks: {
+                            color: 'rgba(255,255,255,0.38)',
+                            font: { family: "'IBM Plex Mono', monospace", size: 11 },
+                            callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; }
+                        }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.04)' },
+                        ticks: {
+                            color: 'rgba(255,255,255,0.65)',
+                            font: { family: "'Inter', sans-serif", size: 12 }
+                        }
+                    }
+                },
+                animation: {
+                    delay: function(c) { return c.dataIndex * 110; },
+                    duration: 900,
+                    easing: 'easeOutQuart'
+                }
+            }
+        });
+    }
+
+    /* =========================================================
+       6. WORKFLOW — animacja strzałek faz A1-A5
        ========================================================= */
     function initWorkflow() {
         var steps = document.querySelectorAll('.wf-step');
@@ -244,6 +334,7 @@
     function initAll() {
         initEmissionChart();
         initDonutChart();
+        initSectorChart();
         initHotspots();
         initWorkflow();
     }

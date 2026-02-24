@@ -1,5 +1,5 @@
 /**
- * poLCA Calculator
+ * poLCA Calculator v8.0
  */
 (function() {
     'use strict';
@@ -13,27 +13,103 @@
 
     if (!energyInput || !sourceSelect) return;
 
+    /* ---- Comparison chart ---- */
+    var compChart = null;
+
+    function initCompChart() {
+        var canvas = document.getElementById('calcCompChart');
+        if (!canvas || !window.Chart) return;
+        var ctx = canvas.getContext('2d');
+        compChart = new window.Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Wybrane źródło (PL)', 'Średnia EU (~210 kg/MWh)'],
+                datasets: [{
+                    data: [0, 0],
+                    backgroundColor: ['rgba(14,124,107,0.75)', 'rgba(107,114,128,0.35)'],
+                    borderColor:     ['#0E7C6B', '#6B7280'],
+                    borderWidth: 2,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                animation: { duration: 400, easing: 'easeOutQuart' },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#111318',
+                        borderColor: '#0E7C6B',
+                        borderWidth: 1,
+                        titleColor: '#fff',
+                        bodyColor: 'rgba(255,255,255,0.7)',
+                        padding: 10,
+                        callbacks: {
+                            label: function(c) {
+                                return ' ' + Math.round(c.raw).toLocaleString('pl-PL') + ' kg CO₂';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: { font: { family: "'Inter', sans-serif", size: 11 }, color: '#6B7280' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        ticks: {
+                            font: { family: "'IBM Plex Mono', monospace", size: 10 },
+                            color: '#9CA3AF',
+                            callback: function(v) { return v.toLocaleString('pl-PL') + ' kg'; }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function updateCompChart(main, eu, factor) {
+        if (!compChart) return;
+        /* kolor słupka zależy od tego, czy PL wyższe czy niższe od EU */
+        var isPLHigher = main > eu;
+        compChart.data.datasets[0].backgroundColor = isPLHigher
+            ? 'rgba(196,114,26,0.75)'
+            : 'rgba(14,124,107,0.75)';
+        compChart.data.datasets[0].borderColor = isPLHigher ? '#C4721A' : '#0E7C6B';
+        compChart.data.datasets[0].data = [main, eu];
+        compChart.update();
+    }
+
     function formatNumber(n) {
         return Math.round(n).toLocaleString('pl-PL');
+    }
+
+    function getSourceLabel() {
+        var opt = sourceSelect.options[sourceSelect.selectedIndex];
+        return opt ? opt.text.split(' (')[0] : 'Wybrane źródło';
     }
 
     function calculate() {
         var energy = parseFloat(energyInput.value) || 0;
         var factor = parseFloat(sourceSelect.value) || 0;
         var emissionMain = energy * factor;
-        var emissionEU = energy * FACTOR_EU;
+        var emissionEU   = energy * FACTOR_EU;
 
         resultMain.textContent = formatNumber(emissionMain);
-        resultEU.textContent = formatNumber(emissionEU);
+        resultEU.textContent   = formatNumber(emissionEU);
+        updateCompChart(emissionMain, emissionEU, factor);
 
         if (emissionEU > 0 && factor > 0) {
             var diff = ((emissionMain - emissionEU) / emissionEU) * 100;
             if (diff > 0) {
                 calcDiff.textContent = 'Różnica: +' + Math.round(diff) + '% przy zastosowaniu danych polskich';
-                calcDiff.style.color = '#0E7C6B';
+                calcDiff.style.color = '#C4721A';
             } else if (diff < 0) {
                 calcDiff.textContent = 'Różnica: ' + Math.round(diff) + '% względem średniej europejskiej';
-                calcDiff.style.color = '#555555';
+                calcDiff.style.color = '#0E7C6B';
             } else {
                 calcDiff.textContent = 'Wartości zbieżne ze średnią europejską';
                 calcDiff.style.color = '#757575';
@@ -44,9 +120,91 @@
         }
     }
 
+    /* ---- CSV export ---- */
+    var csvBtn = document.getElementById('matExportCsv');
+    if (csvBtn) {
+        csvBtn.addEventListener('click', function() {
+            var energy = parseFloat(energyInput.value) || 0;
+            var factor = parseFloat(sourceSelect.value) || 0;
+            var main = energy * factor;
+            var eu   = energy * FACTOR_EU;
+            var csv = [
+                'Źródło;Zużycie [MWh];Emisja PL [kg CO₂];Emisja EU avg [kg CO₂];Różnica [%];Źródło danych',
+                [
+                    '"' + getSourceLabel() + '"',
+                    energy,
+                    Math.round(main),
+                    Math.round(eu),
+                    (factor > 0 && eu > 0 ? Math.round((main-eu)/eu*100) : 0),
+                    '"poLCA v7.6 / KOBiZE 2024"'
+                ].join(';')
+            ].join('\n');
+            try {
+                navigator.clipboard.writeText(csv).then(function() {
+                    csvBtn.textContent = 'Skopiowano!';
+                    setTimeout(function() { csvBtn.textContent = 'Kopiuj CSV'; }, 2000);
+                });
+            } catch(e) {
+                var ta = document.createElement('textarea');
+                ta.value = csv;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                csvBtn.textContent = 'Skopiowano!';
+                setTimeout(function() { csvBtn.textContent = 'Kopiuj CSV'; }, 2000);
+            }
+        });
+    }
+
+    /* ---- JSON export ---- */
+    var jsonBtn = document.getElementById('matExportJson');
+    if (jsonBtn) {
+        jsonBtn.addEventListener('click', function() {
+            var energy = parseFloat(energyInput.value) || 0;
+            var factor = parseFloat(sourceSelect.value) || 0;
+            var main = energy * factor;
+            var eu   = energy * FACTOR_EU;
+            var obj = {
+                source: getSourceLabel(),
+                energy_MWh: energy,
+                factor_kg_per_MWh: factor,
+                emission_PL_kg_CO2: Math.round(main),
+                emission_EU_avg_kg_CO2: Math.round(eu),
+                deviation_pct: factor > 0 && eu > 0 ? Math.round((main-eu)/eu*100) : null,
+                reference: 'poLCA v7.6 / KOBiZE 2024',
+                norm: 'EN 15804+A2',
+                timestamp: new Date().toISOString()
+            };
+            var json = JSON.stringify(obj, null, 2);
+            try {
+                navigator.clipboard.writeText(json).then(function() {
+                    jsonBtn.textContent = 'Skopiowano!';
+                    setTimeout(function() { jsonBtn.textContent = 'Kopiuj JSON'; }, 2000);
+                });
+            } catch(e) {
+                var ta = document.createElement('textarea');
+                ta.value = json;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                jsonBtn.textContent = 'Skopiowano!';
+                setTimeout(function() { jsonBtn.textContent = 'Kopiuj JSON'; }, 2000);
+            }
+        });
+    }
+
     energyInput.addEventListener('input', calculate);
     sourceSelect.addEventListener('change', calculate);
-    calculate();
+
+    /* init chart after DOM ready */
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { initCompChart(); calculate(); });
+    } else {
+        initCompChart();
+        calculate();
+    }
 })();
 
 /* =========================================================
