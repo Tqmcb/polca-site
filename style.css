@@ -3645,3 +3645,80 @@ noscript .fade-in,
     color: #fff;
 }
 .filter-count { color: var(--text-tertiary); }
+
+/* ============================================================
+   DESIGN v7.1 — Podstrony: nagłówki, strip, breadcrumbs, blog
+   ============================================================ */
+
+/* --- page-title: większy, bardziej wyrazisty --------------- */
+.page-title {
+    font-size: 2.85rem;
+    letter-spacing: -0.04em;
+}
+@media (max-width: 768px) {
+    .page-title { font-size: 1.8rem; }
+}
+
+/* --- page-header: grubsza kreska akcentu ------------------- */
+.page-header::after { width: 56px; height: 3px; }
+
+/* --- section-image-strip: wyższy strip --------------------- */
+.section-image-strip { height: 240px; }
+
+/* --- breadcrumb-nav (sektor-*.html) — brakujące style ------ */
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.73rem;
+    color: var(--text-tertiary);
+    margin-bottom: 1.5rem;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.02em;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--border-light);
+    flex-wrap: wrap;
+}
+.breadcrumb-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb-nav a:hover { color: var(--accent); }
+.breadcrumb-sep {
+    color: var(--text-light);
+    font-size: 0.68rem;
+}
+
+/* --- Blog wyróżniony artykuł: szerszy obraz ---------------- */
+.blog-card-featured .blog-card-img-placeholder {
+    width: 400px;
+    min-width: 400px;
+    height: 260px;
+}
+.blog-card-featured { max-height: 260px; }
+
+@media (max-width: 1024px) {
+    .blog-card-featured .blog-card-img-placeholder {
+        width: 300px;
+        min-width: 300px;
+    }
+}
+
+/* --- Blog post: nagłówek artykułu i lead ------------------- */
+.blog-post-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+}
+.blog-post-lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+.blog-post-body h2 {
+    font-size: 1.3rem;
+    margin-top: 2.75rem;
+}
+
+/* --- Blog back link: animacja strzałki -------------------- */
+.blog-back-link svg { transition: transform 0.2s var(--ease-out); }
+.blog-back-link:hover svg { transform: translateX(-3px); }
