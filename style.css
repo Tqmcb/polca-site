@@ -3642,15 +3642,16 @@ noscript .fade-in,
     font-size: 0.68rem;
 }
 
-/* --- Blog wyróżniony artykuł: szerszy obraz ---------------- */
-.blog-card-featured .blog-card-img-placeholder {
-    width: 400px;
-    min-width: 400px;
-    height: 260px;
+/* --- Blog wyróżniony artykuł: szerszy obraz — tylko desktop  */
+@media (min-width: 641px) {
+    .blog-card-featured .blog-card-img-placeholder {
+        width: 400px;
+        min-width: 400px;
+        height: 260px;
+    }
+    .blog-card-featured { max-height: 260px; }
 }
-.blog-card-featured { max-height: 260px; }
-
-@media (max-width: 1024px) {
+@media (min-width: 641px) and (max-width: 1024px) {
     .blog-card-featured .blog-card-img-placeholder {
         width: 300px;
         min-width: 300px;
