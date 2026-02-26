@@ -4355,3 +4355,183 @@ a.card.card-cta:hover {
 
 /* ── PAGE BACKGROUND: czystszy biały ── */
 :root { --paper: #FFFFFF; --paper-card: #FFFFFF; }
+
+/* ============================================================
+   v8.2 — Modern Design System: żywe kolory, głębia, dynamika
+   ============================================================ */
+
+/* ── NOWE ZMIENNE: żywszy teal, wibrujące akcenty ── */
+:root {
+    --accent:          #0CC8A8;
+    --accent-light:    #0FE0BB;
+    --accent-subtle:   rgba(12, 200, 168, 0.09);
+    --accent-border:   rgba(12, 200, 168, 0.25);
+    --accent-glow:     rgba(12, 200, 168, 0.18);
+    --func-green:      #10B981;
+    --func-green-bg:   rgba(16,185,129,0.09);
+    --func-blue:       #3B82F6;
+    --func-blue-bg:    rgba(59,130,246,0.09);
+    --func-purple:     #8B5CF6;
+    --func-purple-bg:  rgba(139,92,246,0.09);
+    --ink:             #0D1117;
+    --radius-card:     14px;
+    --shadow-float:    0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+    --shadow-hover:    0 20px 60px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* ── BODY: subtelny gradient tła ── */
+body { background: #F8FAFC; }
+.polca-content { background: #F8FAFC; }
+
+/* ── TOPBAR: frosted glass ── */
+.polca-topbar {
+    background: rgba(255,255,255,0.85) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid rgba(12,200,168,0.15) !important;
+    box-shadow: 0 1px 20px rgba(0,0,0,0.06) !important;
+}
+
+/* ── SIDEBAR: głębszy, nowocześniejszy ── */
+.polca-sidebar {
+    background: linear-gradient(180deg, #0D1117 0%, #111827 100%) !important;
+    border-right: 1px solid rgba(12,200,168,0.08) !important;
+}
+.sidebar-nav a.active {
+    background: rgba(12,200,168,0.12) !important;
+    border-left: 3px solid var(--accent) !important;
+    color: #fff !important;
+}
+
+/* ── KARTY — glassmorphism + głęboki cień ── */
+.card, .feature-card, .metric-card, .blog-card {
+    border-radius: var(--radius-card) !important;
+    border: 1px solid rgba(0,0,0,0.07) !important;
+    box-shadow: var(--shadow-float) !important;
+    transition: transform 0.3s cubic-bezier(.16,1,.3,1),
+                box-shadow 0.3s cubic-bezier(.16,1,.3,1) !important;
+}
+.card:hover, .feature-card:hover, .metric-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-hover) !important;
+    border-color: rgba(12,200,168,0.20) !important;
+}
+
+/* ── FEATURE CARDS — gradient na hover ── */
+.feature-card { overflow: hidden !important; }
+.feature-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.feature-card:hover::after { opacity: 1; }
+.feature-card:nth-child(1) { border-top: 3px solid var(--func-green) !important; }
+.feature-card:nth-child(2) { border-top: 3px solid var(--accent-warm) !important; }
+.feature-card:nth-child(3) { border-top: 3px solid var(--func-blue) !important; }
+.feature-card:nth-child(4) { border-top: 3px solid var(--func-purple) !important; }
+
+/* ── METRIC CARDS — gradient akcentu ── */
+.metric-card {
+    background: linear-gradient(135deg, #fff 60%, rgba(12,200,168,0.04) 100%) !important;
+}
+.metric-number { color: var(--ink) !important; }
+.metric-card:nth-child(1) { border-top: 3px solid var(--accent) !important; }
+.metric-card:nth-child(2) { border-top: 3px solid var(--func-blue) !important; }
+.metric-card:nth-child(3) { border-top: 3px solid var(--func-purple) !important; }
+
+/* ── BLOG CARDS — zoom zdjęcia na hover ── */
+.blog-card {
+    overflow: hidden !important;
+    border-radius: var(--radius-card) !important;
+}
+.blog-card:hover { transform: translateY(-6px) !important; box-shadow: var(--shadow-hover) !important; }
+.blog-card-img-placeholder { overflow: hidden !important; border-radius: var(--radius-card) var(--radius-card) 0 0 !important; }
+.blog-card-img-placeholder img { transition: transform 0.55s cubic-bezier(.16,1,.3,1) !important; }
+.blog-card:hover .blog-card-img-placeholder img { transform: scale(1.06) !important; }
+
+/* ── BLOG TAGS: żywsze kolory ── */
+.blog-tag.dane      { background: rgba(59,130,246,0.10); color: #2563EB; border: 1px solid rgba(59,130,246,0.2); border-radius: 20px; }
+.blog-tag.metodyka  { background: rgba(139,92,246,0.10); color: #7C3AED; border: 1px solid rgba(139,92,246,0.2); border-radius: 20px; }
+.blog-tag.regulacje { background: rgba(234,88,12,0.10);  color: #C2410C; border: 1px solid rgba(234,88,12,0.2);  border-radius: 20px; }
+.blog-tag.sektory   { background: rgba(16,185,129,0.10); color: #059669; border: 1px solid rgba(16,185,129,0.2); border-radius: 20px; }
+
+/* ── FILTER PILLS — nowoczesny styl ── */
+.filter-pill {
+    border-radius: 100px !important;
+    font-weight: 600 !important;
+    border: 1.5px solid rgba(0,0,0,0.10) !important;
+    transition: all 0.2s ease !important;
+}
+.filter-pill:hover { border-color: var(--accent) !important; color: var(--accent) !important; }
+.filter-pill.active {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 14px var(--accent-glow) !important;
+}
+
+/* ── BUTTONS — gradient + glow ── */
+.hero-btn-primary, .topbar-btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 18px var(--accent-glow) !important;
+    border-radius: 100px !important;
+    transition: all 0.25s ease !important;
+}
+.hero-btn-primary:hover, .topbar-btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 28px var(--accent-glow) !important;
+    filter: brightness(1.08) !important;
+}
+.hero-btn-outline {
+    border-radius: 100px !important;
+    border: 1.5px solid rgba(17,19,24,0.22) !important;
+}
+
+/* ── PAGE HEADER: gradient linia ── */
+.page-header {
+    border-bottom: 1px solid rgba(0,0,0,0.07) !important;
+}
+.page-header::after {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light), transparent) !important;
+    width: 120px !important;
+    height: 3px !important;
+}
+
+/* ── SEKCJE INTERAKTYWNE: lżejsze tło ── */
+.ix-section-light {
+    background: linear-gradient(135deg, #fff 0%, rgba(12,200,168,0.03) 100%) !important;
+    border: 1px solid rgba(12,200,168,0.12) !important;
+    border-top: 3px solid var(--accent) !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05) !important;
+}
+
+/* ── HERO OVERLINE: animowany pasek ── */
+.hero-overline::before {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light)) !important;
+}
+
+/* ── STAT VALUE: żywszy kolor ── */
+.stat-value { color: var(--accent) !important; }
+
+/* ── PORÓWNANIE PASKI: accent gradient ── */
+.comp-bar-fill.green {
+    background: linear-gradient(90deg, var(--accent), var(--accent-light)) !important;
+}
+
+/* ── ANIMATIONS: płynniejsze fade-in ── */
+@keyframes page-enter {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.polca-page { animation: page-enter 0.5s cubic-bezier(.16,1,.3,1); }
+
+/* ── SCROLLBAR: tealowy ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: rgba(12,200,168,0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
