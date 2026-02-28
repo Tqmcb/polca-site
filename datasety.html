@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baza Datasetów — poLCA</title>
-    <meta name="description" content="Zbiory danych LCI, modele licencyjne, źródła danych i partnerzy walidacyjni">
+    <meta name="description" content="Datasety poLCA — wskaźnik emisji energii elektrycznej poLCA-EN-PL 2024, dane historyczne 2021–2024, inne nośniki energii. Formaty ILCD+EPD, EcoSpold v2, CSV.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -80,188 +80,242 @@
         <div class="section-num">08 — Dostępne zbiory danych</div>
         <h1 class="page-title">Baza Datasetów</h1>
         <p class="page-subtitle">
-            Zbiory danych LCI z pełną inwentaryzacją przepływów zgodną z ISO 14044.
-            Macierz pedigree, dokumentacja trasowalności, eksport wieloformatowy.
+            Wskaźniki emisji energii elektrycznej dla Polski oraz dane historyczne do analiz LCA,
+            EPD i raportowania CSRD. Formaty ILCD+EPD, EcoSpold v2, CSV/XLSX.
         </p>
-        <div style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.35rem 0.75rem; background: var(--accent-subtle); border-radius: 6px; font-size: 0.75rem; color: var(--accent); font-weight: 600;">
-            Faza I (2025) — ok. 50 zbiorów w kilkunastu sektorach
+        <div style="margin-top:1rem;display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.75rem;background:var(--accent-subtle);border-radius:6px;font-size:0.75rem;color:var(--accent);font-weight:600;">
+            Główny dataset: poLCA-EN-PL 2024 — dostępny
         </div>
     </div>
 
-    <div class="section-image-strip fade-in">
-        <img src="images/strip-data.jpg" alt="Wizualizacja danych" loading="lazy">
-    </div>
-
-    <div class="grid-2 section-gap fade-in">
-        <div class="dataset-card">
-            <div class="dataset-badge">W opracowaniu</div>
-            <h3>Mieszanki mineralno-asfaltowe (MMA)</h3>
-            <p class="dataset-desc">
-                Modelowanie procesu produkcji MMA z zastosowaniem metodologii EBLCI.
-                Parametryzacja obejmuje typ paliwa (gaz, olej opałowy, mieszany), temperaturę produkcji
-                (WMA/HMA), wilgotność kruszywa (wpływ na zużycie energii suszenia)
-                oraz zawartość granulatu asfaltowego (RAP). Model uwzględnia specyfikę
-                polskich wytwórni mas — w tym dominację produkcji mobilnej na budowach drogowych.
-            </p>
-            <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 13108-1 do -7</span></div>
-            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · NAPA EPD PCR</span></div>
-            <div class="spec-row"><span class="spec-key">Dane dla bitumu</span><span class="spec-val">Eurobitume LCA 4.0</span></div>
-            <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
-            <div class="spec-row"><span class="spec-key">Scenariusze RAP</span><span class="spec-val">0% · 20% · 40% · 60%</span></div>
-            <div class="spec-row"><span class="spec-key">Warianty temperaturowe</span><span class="spec-val">WMA (≤140°C) · HMA (160°C+)</span></div>
-            <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">IBDiM — planowana</span></div>
-        </div>
-        <div class="dataset-card">
-            <div class="dataset-badge">W opracowaniu</div>
-            <h3>Beton towarowy</h3>
-            <p class="dataset-desc">
-                Model parametryczny oparty na wymaganiach normy EN 206. Umożliwia generowanie
-                profilu środowiskowego dla dowolnej klasy wytrzymałości i typu cementu.
-                Uwzględnia polskie proporcje mieszanek, krajowe kruszywa i domieszki.
-                Wynik walidowany krzyżowo z danymi SPC i emisjami EU ETS polskich cementowni.
-            </p>
-            <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 206</span></div>
-            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · IBU PCR beton</span></div>
-            <div class="spec-row"><span class="spec-key">Klasy wytrzymałości</span><span class="spec-val">C20/25 — C50/60</span></div>
-            <div class="spec-row"><span class="spec-key">Typy cementu</span><span class="spec-val">CEM I — CEM V</span></div>
-            <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
-            <div class="spec-row"><span class="spec-key">Domieszki</span><span class="spec-val">EFCA — dane branżowe</span></div>
-            <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">ICiMB — planowana</span></div>
-        </div>
-    </div>
-
-    <div class="card card-lg section-gap fade-in">
-        <div class="section-num">09 — Architektura techniczna</div>
-        <div class="card-title">Nowoczesna infrastruktura danych</div>
-        <div class="grid-3 mt-2">
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Struktura grafowa</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Procesy i przepływy modelowane jako graf z dynamicznymi zapytaniami.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Format JSON-LD</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Lekki, maszynowo czytelny format z natywnym mechanizmem linkowania.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Interfejs API</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">REST + GraphQL. Integracja z oprogramowaniem LCA bez manualnego importu.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Aktualizacja kaskadowa</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Zmiana wskaźnika źródłowego przelicza automatycznie wszystkie zależne zbiory.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Natywna parametryzacja</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Jeden model parametryczny generuje warianty na żądanie.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Pełna trasowalność</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Każda wartość posiada metadane: źródło, data, osoba i instytucja.</p>
-            </div>
-        </div>
-        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 1.25rem; line-height: 1.7;">
-            Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX. Kompatybilność z OpenLCA, SimaPro, GaBi/Sphera.
-        </p>
-    </div>
-
+    <!-- PRIMARY DATASET -->
     <div class="section-gap fade-in">
-        <div class="section-num">10 — Warunki dostępu</div>
-        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Modele licencyjne</h2>
+        <div class="section-num">⭐ Dataset główny</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            poLCA-EN-PL 2024 — Wskaźnik emisji energii elektrycznej
+        </h2>
+
+        <div class="dataset-card" style="border-left:4px solid #3730a3;position:relative;">
+            <div style="position:absolute;top:1rem;right:1rem;background:#dcfce7;color:#15803d;font-size:0.7rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;">Dostępny</div>
+            <h3 style="color:#3730a3;font-size:1.1rem;">Wskaźnik LCA emisji energii elektrycznej — Polska 2024</h3>
+            <p class="dataset-desc">
+                Pełny wskaźnik cradle-to-gate emisji GHG dla energii elektrycznej dostarczonej do końcowego użytkownika w Polsce.
+                Obejmuje emisje bezpośrednie ze spalania (77%), metan z kopalń węgla (14%), upstream paliw (8%) i emisje
+                z infrastruktury OZE (1%). Opublikowany w recenzowanym artykule naukowym
+                <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">Lewandowska et al. Energies 2025, 18(15):4092</a>.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0.75rem;margin:1rem 0;">
+                <div style="background:#f0f4ff;border-radius:6px;padding:0.75rem;text-align:center;">
+                    <div style="font-size:1.6rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">0,718</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.2rem;">kg CO₂e/kWh (2024)</div>
+                </div>
+                <div style="background:#f0f4ff;border-radius:6px;padding:0.75rem;text-align:center;">
+                    <div style="font-size:1.6rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">0,780</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.2rem;">kg CO₂e/kWh (2023)</div>
+                </div>
+                <div style="background:#f0f4ff;border-radius:6px;padding:0.75rem;text-align:center;">
+                    <div style="font-size:1.6rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">CH₄</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.2rem;">GWP100 = 27,9 (AR6)</div>
+                </div>
+            </div>
+            <div class="spec-row"><span class="spec-key">Granice systemu</span><span class="spec-val">Cradle-to-gate (upstream + spalanie + metan + OZE)</span></div>
+            <div class="spec-row"><span class="spec-key">Jednostka funkcjonalna</span><span class="spec-val">1 kWh dostarczone do końcowego użytkownika (wliczone straty sieciowe)</span></div>
+            <div class="spec-row"><span class="spec-key">Standard</span><span class="spec-val">ISO 14040/14044 · EN 15804+A2 · IPCC AR6</span></div>
+            <div class="spec-row"><span class="spec-key">Źródła danych</span><span class="spec-val">PSE, KOBiZE, URE, UNFCCC CRT PL 2025, DEFRA/DESNZ 2025</span></div>
+            <div class="spec-row"><span class="spec-key">Niepewność</span><span class="spec-val">0,62–0,77 kg CO₂e/kWh (95% CI, 2024)</span></div>
+            <div class="spec-row"><span class="spec-key">Formaty eksportu</span><span class="spec-val">ILCD+EPD · EcoSpold v2 · CSV/XLSX · JSON</span></div>
+            <div class="spec-row"><span class="spec-key">Kompatybilność</span><span class="spec-val">OpenLCA · SimaPro · GaBi/Sphera · One Click LCA</span></div>
+            <div style="margin-top:1.25rem;display:flex;gap:0.75rem;flex-wrap:wrap;">
+                <a href="datasety.html#kontakt" style="display:inline-flex;align-items:center;gap:0.4rem;background:#3730a3;color:white;padding:0.5rem 1.1rem;border-radius:6px;font-size:0.82rem;font-weight:600;text-decoration:none;">
+                    Pobierz dataset →
+                </a>
+                <a href="blog-en-pl-2024.html" style="display:inline-flex;align-items:center;gap:0.4rem;background:white;color:#3730a3;border:1px solid #c7d2fe;padding:0.5rem 1.1rem;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;">
+                    Artykuł metodyczny
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECONDARY DATASETS -->
+    <div class="section-gap fade-in">
+        <div class="section-num">09 — Dane historyczne i serie czasowe</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Seria historyczna 2021–2024
+        </h2>
+        <div class="dataset-card">
+            <div style="display:inline-block;background:#dcfce7;color:#15803d;font-size:0.7rem;font-weight:700;padding:0.25rem 0.6rem;border-radius:4px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.75rem;">Dostępny</div>
+            <h3>poLCA-EN-PL — seria roczna 2021–2024</h3>
+            <p class="dataset-desc">
+                Cztery roczne wartości wskaźnika poLCA-EN-PL z pełną dekompozycją na komponenty. Umożliwia analizę
+                trendów dekarbonizacji, obliczanie narastającego śladu węglowego i porównania w czasie.
+                Dane w formacie CSV/XLSX z podziałem na składowe (miks, metan, upstream, OZE).
+            </p>
+            <div style="overflow-x:auto;margin:0.75rem 0;">
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr>
+                            <th>Rok</th>
+                            <th>poLCA-EN-PL [kg CO₂e/MWh]</th>
+                            <th>KOBiZE [kg CO₂/MWh]</th>
+                            <th>AIB Residual Mix [kg CO₂/MWh]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2021</td><td class="mono highlight">920</td><td class="mono">707</td><td class="mono">810</td></tr>
+                        <tr><td>2022</td><td class="mono highlight">870</td><td class="mono">673</td><td class="mono">805</td></tr>
+                        <tr><td>2023</td><td class="mono highlight">780</td><td class="mono">597</td><td class="mono">788</td></tr>
+                        <tr><td>2024</td><td class="mono highlight" style="color:#3730a3;font-weight:700;">718</td><td class="mono">553</td><td class="mono">808</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="spec-row"><span class="spec-key">Format</span><span class="spec-val">CSV · XLSX · JSON</span></div>
+            <div class="spec-row"><span class="spec-key">Zawartość</span><span class="spec-val">Wartości roczne + dekompozycja na 4 komponenty + źródła</span></div>
+            <div style="margin-top:1rem;">
+                <a href="datasety.html#kontakt" style="display:inline-flex;align-items:center;gap:0.4rem;background:#f0f4ff;color:#3730a3;border:1px solid #c7d2fe;padding:0.45rem 1rem;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;">
+                    Pobierz CSV →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OTHER ENERGY CARRIERS -->
+    <div class="section-gap fade-in">
+        <div class="section-num">10 — Inne nośniki energii</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Wskaźniki emisji dla innych nośników energii (Polska)
+        </h2>
+        <div class="card card-lg">
+            <p style="font-size:0.88rem;color:var(--text-secondary);margin-bottom:1rem;line-height:1.65;">
+                Wskaźniki cradle-to-gate dla polskiego gazu ziemnego, węgla kamiennego, oleju opałowego i biomasy.
+                Niezbędne przy obliczaniu pełnego Scope 3 kat. 3 lub LCA systemu energetycznego.
+            </p>
+            <div style="overflow-x:auto;">
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr>
+                            <th>Nośnik energii</th>
+                            <th>Wskaźnik [kg CO₂e/GJ]</th>
+                            <th>Uwagi</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Gaz ziemny (sieciowy PL)</strong></td>
+                            <td class="mono">56,4</td>
+                            <td style="color:var(--text-secondary);">Upstream DEFRA/DESNZ 2025 + spalanie IPCC</td>
+                            <td><span style="background:#dcfce7;color:#15803d;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;">Dostępny</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Węgiel kamienny energetyczny</strong></td>
+                            <td class="mono">96,1</td>
+                            <td style="color:var(--text-secondary);">Wlicznie metanowość kopalń PL (UNFCCC CRT)</td>
+                            <td><span style="background:#dcfce7;color:#15803d;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;">Dostępny</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Olej opałowy lekki</strong></td>
+                            <td class="mono">74,7</td>
+                            <td style="color:var(--text-secondary);">Rafineryjny upstream + spalanie</td>
+                            <td><span style="background:#dcfce7;color:#15803d;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;">Dostępny</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Biomasa (pellet drzewny)</strong></td>
+                            <td class="mono">9,8</td>
+                            <td style="color:var(--text-secondary);">Uprawa + przetwórstwo + transport; bez biogenicznego CO₂</td>
+                            <td><span style="background:#dcfce7;color:#15803d;font-size:0.68rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:4px;">Dostępny</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-top:1rem;">
+                <a href="datasety.html#kontakt" style="display:inline-flex;align-items:center;gap:0.4rem;background:#f0f4ff;color:#3730a3;border:1px solid #c7d2fe;padding:0.45rem 1rem;border-radius:6px;font-size:0.82rem;font-weight:500;text-decoration:none;">
+                    Zapytaj o dataset →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- IN DEVELOPMENT -->
+    <div class="section-gap fade-in">
+        <div class="section-num">11 — W przygotowaniu (2025)</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Planowane datasety — LCI wyrobów budowlanych
+        </h2>
+        <div class="grid-2">
+            <div class="dataset-card" style="opacity:0.75;">
+                <div class="dataset-badge">W opracowaniu</div>
+                <h3>Mieszanki mineralno-asfaltowe (MMA)</h3>
+                <p class="dataset-desc">
+                    Model parametryczny: typ paliwa (gaz/olej), temperatura WMA/HMA, zawartość RAP (0–60%).
+                    Scenariusze: 4 warianty RAP × 2 warianty temperaturowe. Walidacja: IBDiM.
+                </p>
+                <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · NAPA EPD PCR</span></div>
+                <div class="spec-row"><span class="spec-key">Planowane</span><span class="spec-val">Q3 2025</span></div>
+            </div>
+            <div class="dataset-card" style="opacity:0.75;">
+                <div class="dataset-badge">W opracowaniu</div>
+                <h3>Beton towarowy (EN 206)</h3>
+                <p class="dataset-desc">
+                    Model parametryczny: klasy C20/25–C50/60, typy cementu CEM I–V.
+                    Walidacja krzyżowa z danymi SPC i ERMCO. Wskaźnik energii: poLCA-EN-PL 2024.
+                </p>
+                <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · IBU PCR beton</span></div>
+                <div class="spec-row"><span class="spec-key">Planowane</span><span class="spec-val">Q4 2025</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LICENSING -->
+    <div class="section-gap fade-in">
+        <div class="section-num">12 — Warunki dostępu</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">Modele licencyjne</h2>
         <div class="pricing-grid">
             <div class="price-card">
                 <div class="price-tier">Dostęp otwarty</div>
                 <div class="price-amount">Bezpłatny</div>
                 <div class="price-period">bez ograniczeń czasowych</div>
-                <p class="price-desc">Zagregowane wyniki wskaźników wpływu środowiskowego. Dokumentacja metodologiczna. Porównania z danymi z baz referencyjnych.</p>
+                <p class="price-desc">Wskaźniki zagregowane (poLCA, KOBiZE, AIB), dane historyczne CSV, dokumentacja metodologiczna, artykuł naukowy.</p>
             </div>
             <div class="price-card recommended">
                 <div class="price-tier">Licencja profesjonalna</div>
                 <div class="price-amount">2 500 zł</div>
                 <div class="price-period">netto / rok</div>
-                <p class="price-desc">Pełne zbiory danych LCI z przepływami elementarnymi. Modele parametryczne. Eksport w formatach ILCD+EPD, EcoSpold v2, CSV.</p>
+                <p class="price-desc">Pełne pliki ILCD+EPD i EcoSpold v2, dataset nośników energii, dekompozycja składowych, priorytetowe aktualizacje roczne.</p>
             </div>
             <div class="price-card">
                 <div class="price-tier">Licencja instytucjonalna</div>
                 <div class="price-amount">6 000 zł</div>
                 <div class="price-period">netto / rok</div>
-                <p class="price-desc">Pełny dostęp API (REST + GraphQL). Priorytetowe aktualizacje. Wsparcie techniczne.</p>
+                <p class="price-desc">Dostęp API (REST + GraphQL), wszystkie datasety w przygotowaniu, wsparcie techniczne, integracja z oprogramowaniem LCA.</p>
             </div>
         </div>
     </div>
 
-    <!-- Sekcja 10a — Sustainability & Governance -->
-    <div class="card card-lg section-gap fade-in" style="background: var(--paper-warm); border-color: var(--border-strong);">
-        <div class="section-num">10a — Zrównoważony rozwój i governance</div>
-        <div class="card-title">Model długoterminowej samowystarczalności</div>
-        <div class="prose">
-            <p>poLCA jest projektowana jako infrastruktura trwała, nie jako projekt grantowy z datą zakończenia. Model finansowania łączy trzy filary: dostęp otwarty (dane zagregowane, dokumentacja metodologiczna), licencje profesjonalne (pełne dane LCI, eksport, API) oraz potencjalne finansowanie instytucjonalne na etapie rozbudowy.</p>
-        </div>
-        <div class="grid-2 mt-2">
-            <div class="card" style="padding: 1rem;">
-                <div style="font-weight: 600; color: var(--func-green); margin-bottom: 0.4rem; font-size: 0.85rem;">Governance techniczny</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Aktualizacja coroczna wskaźników KOBiZE. Rewizja zbiorów danych przy zmianach norm (EN 15804 amendments). Procedura reklamacyjna: każdy użytkownik może zgłosić wątpliwość co do wartości w zbiorze — odpowiedź w ciągu 15 dni roboczych z dokumentacją.</p>
-            </div>
-            <div class="card" style="padding: 1rem;">
-                <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Governance metodologiczny</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Docelowo: Rada Programowa z udziałem przedstawicieli instytutów badawczych (IBDiM, ICiMB), stowarzyszeń branżowych (SPC, HIPH) i środowisk akademickich. Niezależna weryfikacja zgodnie z ISO 14025 §8.1.3. Transparentność: pełna dokumentacja metodologiczna publicznie dostępna.</p>
-            </div>
-        </div>
-    </div>
-
+    <!-- SOURCES -->
     <div class="card card-lg section-gap fade-in">
-        <div class="section-num">11 — Transparentność</div>
-        <div class="card-title">Źródła danych i partnerzy walidacyjni</div>
+        <div class="section-num">13 — Transparentność</div>
+        <div class="card-title">Źródła danych i ramy normatywne</div>
 
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-top: 1.25rem; margin-bottom: 0.4rem;">Oficjalne źródła danych</h4>
+        <h4 style="font-size:0.82rem;font-weight:600;color:var(--text-primary);margin-top:1.25rem;margin-bottom:0.4rem;">Oficjalne źródła danych</h4>
         <div class="badge-grid">
-            <span class="badge official">KOBiZE — wskaźniki emisji</span>
-            <span class="badge official">GUS — dane statystyczne</span>
-            <span class="badge official">PSE — miks energetyczny</span>
-            <span class="badge official">Eurostat — Prodcom</span>
-            <span class="badge official">IPCC — współczynniki 2006/2019</span>
-            <span class="badge official">E-PRTR / IEP — emisje zakładowe</span>
-            <span class="badge official">EU ETS / EUTL</span>
+            <span class="badge official">KOBiZE — wskaźniki emisji PL</span>
+            <span class="badge official">PSE — bilans produkcji i zużycia</span>
+            <span class="badge official">URE — dane regulacyjne OZE</span>
+            <span class="badge official">UNFCCC CRT Poland 2025</span>
+            <span class="badge official">DEFRA/DESNZ 2025 — WTT factors</span>
+            <span class="badge official">AIB — European Residual Mixes 2024</span>
+            <span class="badge official">IPCC AR6 — GWP100 CH₄=27,9</span>
         </div>
 
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Źródła branżowe</h4>
-        <div class="badge-grid">
-            <span class="badge">Eurobitume — lepiszcza asfaltowe</span>
-            <span class="badge">worldsteel — wyroby stalowe</span>
-            <span class="badge">CEMBUREAU — cement i klinkier</span>
-            <span class="badge">European Aluminium</span>
-            <span class="badge">EFCA — domieszki do betonu</span>
-            <span class="badge">ERMCO — beton towarowy</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Ramy normatywne</h4>
+        <h4 style="font-size:0.82rem;font-weight:600;color:var(--text-primary);margin-bottom:0.4rem;">Ramy normatywne</h4>
         <div class="badge-grid">
             <span class="badge official">ISO 14040:2006</span>
             <span class="badge official">ISO 14044:2006</span>
             <span class="badge official">ISO 14025:2006</span>
             <span class="badge official">ISO 14067:2018</span>
-            <span class="badge official">ISO 21930:2017</span>
             <span class="badge official">EN 15804:2012+A2:2019</span>
-            <span class="badge official">EN 15978:2011</span>
-            <span class="badge official">EN 15643:2021</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">PCR — Reguły kategorii produktowych</h4>
-        <div class="badge-grid">
-            <span class="badge official">c-PCR-001: cement i wapno</span>
-            <span class="badge official">c-PCR-003: beton i elementy betonowe</span>
-            <span class="badge official">c-PCR-004: kruszywa</span>
-            <span class="badge official">c-PCR-007: wyroby stalowe</span>
-            <span class="badge official">c-PCR-012: MMA i nawierzchnie</span>
-            <span class="badge official">c-PCR-014: szkło budowlane</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Walidacja instytucjonalna (planowana)</h4>
-        <div class="badge-grid">
-            <span class="badge validation">IBDiM — nawierzchnie drogowe</span>
-            <span class="badge validation">ICiMB — cement i ceramika</span>
-            <span class="badge validation">IGSMiE PAN — kruszywa mineralne</span>
-            <span class="badge validation">SPC — przemysł cementowy</span>
-            <span class="badge validation">IOŚ-PIB — metodologia LCA</span>
+            <span class="badge official">GHG Protocol Scope 2</span>
+            <span class="badge official">ESRS E1 (CSRD)</span>
         </div>
     </div>
 
@@ -270,23 +324,23 @@
             <div class="card-label">Kontakt</div>
             <div class="card-title">Multicert Sp. z o.o.</div>
             <p class="card-text">
-                Operator programu EPD Polska. Zapytania dotyczące warunków licencyjnych, współpracy
-                instytucjonalnej oraz walidacji sektorowej.
+                Operator programu EPD Polska. Zapytania dotyczące pobierania datasetów, warunków licencyjnych
+                oraz integracji z oprogramowaniem LCA.
             </p>
             <div class="card-footer">
-                <p style="font-size: 0.82rem; color: var(--text-secondary);">
+                <p style="font-size:0.82rem;color:var(--text-secondary);">
                     ul. Mydlarska 47, 04-690 Warszawa<br>
-                    <span style="color: var(--accent);">info@epd.org.pl</span> ·
+                    <span style="color:var(--accent);">info@epd.org.pl</span> ·
                     <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">www.epd.org.pl</a>
                 </p>
             </div>
         </div>
         <div class="card card-dark">
-            <div class="card-label" style="color: rgba(255,255,255,0.4);">Zasada poLCA</div>
-            <p style="font-family: 'Inter Tight', sans-serif; font-size: 1rem; font-style: italic; line-height: 1.7; color: rgba(255,255,255,0.85);">
-                „Rzetelna ocena środowiskowa wymaga danych oddających rzeczywistość — nie tylko tam,
-                gdzie wypadamy niekorzystnie, ale również tam, gdzie polska technologia osiąga wyniki
-                lepsze od europejskiej średniej."
+            <div class="card-label" style="color:rgba(255,255,255,0.4);">poLCA-EN-PL</div>
+            <p style="font-family:'Inter Tight',sans-serif;font-size:1rem;font-style:italic;line-height:1.7;color:rgba(255,255,255,0.85);">
+                „Wskaźnik emisji energii elektrycznej oparty na polskich danych LCA —
+                jedyna wartość uwzględniająca metan z kopalń, upstream paliw i OZE
+                zgodnie z pełną metodyką cradle-to-gate."
             </p>
         </div>
     </div>

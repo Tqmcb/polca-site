@@ -77,11 +77,11 @@
 <div class="polca-content">
 <div class="polca-page">
     <div class="page-header fade-in">
-        <div class="section-num">05 — Narzędzie szacunkowe</div>
+        <div class="section-num">05 — Narz&#281;dzie szacunkowe</div>
         <h1 class="page-title">Kalkulator Emisji</h1>
         <p class="page-subtitle">
-            Szacowanie emisji CO₂ z procesu energetycznego w oparciu o wskaźniki poLCA.
-            Porównanie danych polskich z uśrednionymi danymi europejskimi.
+            Przelicz zu&#380;ycie energii elektrycznej na emisje CO&#8322;e wed&#322;ug trzech r&#243;&#380;nych wska&#378;nik&#243;w &#8212;
+            poLCA-EN-PL, KOBiZE i AIB Residual Mix. Wyb&#243;r wska&#378;nika zmienia wynik o kilkadziesi&#261;t procent.
         </p>
     </div>
 
@@ -89,169 +89,170 @@
         <img src="images/strip-energy.jpg" alt="Infrastruktura energetyczna" loading="lazy">
     </div>
 
+    <!-- KALKULATOR -->
     <div class="card card-lg section-gap fade-in">
-        <div class="calc-grid">
-            <div class="calc-group">
+        <div class="card-title">Kalkulator por&#243;wnawczy &#8212; trzy wska&#378;niki</div>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; margin-top: 1rem;">
+            <div style="display:flex; flex-direction:column; gap:1rem;">
                 <div>
-                    <label class="calc-label" for="energyInput">Zużycie energii [MWh]</label>
+                    <label class="calc-label" for="energyInput">Zu&#380;ycie energii elektrycznej [MWh]</label>
                     <input type="number" id="energyInput" class="calc-input" value="100" min="0" step="10">
                 </div>
                 <div>
-                    <label class="calc-label" for="sourceSelect">Źródło energii</label>
-                    <select id="sourceSelect" class="calc-select">
-                        <option value="597">Miks elektr. PL (597 kg CO₂/MWh)</option>
-                        <option value="202">Gaz ziemny (202 kg CO₂/MWh)</option>
-                        <option value="279">Olej opałowy (279 kg CO₂/MWh)</option>
-                        <option value="344">Węgiel kamienny (344 kg CO₂/MWh)</option>
-                        <option value="0">Biomasa (0 kg CO₂/MWh)</option>
+                    <label class="calc-label" for="yearSelect">Rok wska&#378;nika</label>
+                    <select id="yearSelect" class="calc-select">
+                        <option value="2024" selected>2024</option>
+                        <option value="2023">2023</option>
                     </select>
                 </div>
                 <p class="calc-note">
-                    Wskaźniki emisji przeliczono na MWh na podstawie danych KOBiZE 2024.
-                    Dla miksu elektrycznego uwzględniono straty przesyłowe.
+                    Warto&#347;ci dla roku 2024: poLCA&#8209;EN&#8209;PL&nbsp;=&nbsp;0,718&nbsp;kg&nbsp;CO&#8322;e/kWh,
+                    KOBiZE&nbsp;=&nbsp;0,553&nbsp;kg&nbsp;CO&#8322;/kWh, AIB&nbsp;=&nbsp;0,808&nbsp;kg&nbsp;CO&#8322;/kWh.<br>
+                    Wyniki s&#261; orientacyjne i s&#322;u&#380;&#261; do por&#243;wna&#324; metodycznych.
                 </p>
             </div>
-            <div class="card calc-result-block">
-                <div>
-                    <div class="calc-result-label">Emisja CO₂ — wybrane źródło</div>
-                    <div class="calc-result-value">
-                        <span id="resultMain">59 700</span> <small>kg CO₂</small>
-                    </div>
+            <div style="display:flex; flex-direction:column; gap:0.75rem;">
+                <div style="background:#f0f4ff; border:1px solid #c7d7fd; border-left:4px solid #3730a3; border-radius:8px; padding:1rem 1.1rem;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; color:#3730a3; text-transform:uppercase; margin-bottom:0.35rem;">poLCA-EN-PL &#8212; pe&#322;ny LCA (EPD / CSRD Scope&nbsp;3)</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:700; color:#1e293b;"><span id="resultPolca">71 800</span> <small style="font-size:0.9rem; font-weight:400;">kg CO&#8322;e</small></div>
+                    <div style="font-size:0.75rem; color:#64748b; margin-top:0.2rem;">wska&#378;nik: <span id="factorPolca">718</span>&nbsp;kg&nbsp;CO&#8322;e/MWh</div>
                 </div>
-                <div class="calc-divider"></div>
-                <div>
-                    <div class="calc-result-label">Emisja CO₂ — średnia EU (295 kg/MWh)</div>
-                    <div class="calc-result-value secondary">
-                        <span id="resultEU">29 500</span> <small>kg CO₂</small>
-                    </div>
+                <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-left:4px solid #16a34a; border-radius:8px; padding:1rem 1.1rem;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; color:#15803d; text-transform:uppercase; margin-bottom:0.35rem;">KOBiZE &#8212; Scope&nbsp;2 location-based</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:700; color:#1e293b;"><span id="resultKobize">55 300</span> <small style="font-size:0.9rem; font-weight:400;">kg CO&#8322;</small></div>
+                    <div style="font-size:0.75rem; color:#64748b; margin-top:0.2rem;">wska&#378;nik: <span id="factorKobize">553</span>&nbsp;kg&nbsp;CO&#8322;/MWh</div>
                 </div>
-                <div class="calc-diff" id="calcDiff">
-                    Różnica: +102% przy zastosowaniu danych polskich
+                <div style="background:#fffbeb; border:1px solid #fcd34d; border-left:4px solid #d97706; border-radius:8px; padding:1rem 1.1rem;">
+                    <div style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; color:#92400e; text-transform:uppercase; margin-bottom:0.35rem;">AIB Residual Mix &#8212; Scope&nbsp;2 market-based</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:700; color:#1e293b;"><span id="resultAib">80 800</span> <small style="font-size:0.9rem; font-weight:400;">kg CO&#8322;</small></div>
+                    <div style="font-size:0.75rem; color:#64748b; margin-top:0.2rem;">wska&#378;nik: <span id="factorAib">808</span>&nbsp;kg&nbsp;CO&#8322;/MWh</div>
+                </div>
+                <div style="font-size:0.78rem; color:#64748b; background:#f8fafc; border-radius:6px; padding:0.65rem 0.9rem;" id="calcDiff">
+                    Rozpi&#281;to&#347;&#263; wynik&#243;w: poLCA jest o <span id="diffPct">30%</span> wy&#380;sze od KOBiZE.
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- KIEDY KTÓRY WSKAŹNIK -->
     <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Polskie wskaźniki emisji — tabela referencyjna</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Wartości na 1 GJ energii, oparte na oficjalnych publikacjach KOBiZE.</p>
-        <div style="overflow-x: auto;">
+        <div class="card-title">Kiedy u&#380;ywa&#263; kt&#243;rego wska&#378;nika</div>
+        <div style="overflow-x:auto; margin-top:0.75rem;">
             <table class="polca-table">
                 <thead>
                     <tr>
-                        <th>Wskaźnik</th>
-                        <th>Miks elektr. PL</th>
-                        <th>Gaz ziemny</th>
-                        <th>Olej opałowy</th>
-                        <th>Węgiel kamienny</th>
-                        <th>Biomasa</th>
+                        <th>Zastosowanie</th>
+                        <th style="color:#3730a3;">poLCA-EN-PL</th>
+                        <th style="color:#15803d;">KOBiZE</th>
+                        <th style="color:#92400e;">AIB Residual Mix</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>CO₂ [kg/GJ]</td>
-                        <td class="mono highlight">165,8</td>
-                        <td class="mono">56,1</td>
-                        <td class="mono">77,4</td>
-                        <td class="mono">95,5</td>
-                        <td class="mono">0,0 *</td>
+                        <td>Analiza LCA (ISO 14040/14044)</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                        <td class="mono" style="color:var(--text-tertiary);">opcjonalny</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
                     </tr>
                     <tr>
-                        <td>SO₂ [g/GJ]</td>
-                        <td class="mono">125,2</td>
-                        <td class="mono">0,5</td>
-                        <td class="mono">140,6</td>
-                        <td class="mono">210,0</td>
-                        <td class="mono">11,0</td>
+                        <td>Deklaracja &#346;rodowiskowa EPD (EN 15804+A2)</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                        <td class="mono" style="color:var(--text-tertiary);">opcjonalny</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
                     </tr>
                     <tr>
-                        <td>NO<sub>x</sub> [g/GJ]</td>
-                        <td class="mono">145,3</td>
-                        <td class="mono">46,0</td>
-                        <td class="mono">55,0</td>
-                        <td class="mono">160,0</td>
-                        <td class="mono">85,0</td>
+                        <td>CSRD / GHG Protocol Scope 2 location-based</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
                     </tr>
                     <tr>
-                        <td>Pył całkowity [g/GJ]</td>
-                        <td class="mono">5,3</td>
-                        <td class="mono">0,1</td>
-                        <td class="mono">1,5</td>
-                        <td class="mono">12,0</td>
-                        <td class="mono">30,0</td>
+                        <td>CSRD / GHG Protocol Scope 2 market-based</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                    </tr>
+                    <tr>
+                        <td>CSRD Scope 3 kat. 3 (po&#347;rednie emisje energii)</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
+                    </tr>
+                    <tr>
+                        <td>Kalkulator &#347;ladu w&#281;glowego (uproszczony)</td>
+                        <td class="mono" style="color:var(--text-tertiary);">opcjonalny</td>
+                        <td class="mono" style="color:var(--func-green);">&#10003; zalecany</td>
+                        <td class="mono" style="color:var(--text-tertiary);">nie</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            * Biomasa raportowana jako neutralna węglowo w cyklu krótkim (konwencja EU ETS).
-            Źródło: KOBiZE 2024, wskaźniki IPCC 2006/2019.
-        </p>
     </div>
 
-    <!-- Sekcja 03 — Wskaźniki emisji -->
+    <!-- TABELA REFERENCYJNA -->
     <div class="card card-lg section-gap fade-in">
-        <div class="section-num">03 — Wskaźniki emisji w kontekście LCA</div>
-        <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
-        <div class="prose">
-            <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (597 kg CO₂/MWh) a średnią EU (295 kg CO₂/MWh) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje dwukrotnie większy wpływ niż sugerują dane generyczne.</p>
-            <p>Wskaźniki prezentowane w poLCA pochodzą z oficjalnych publikacji <strong>KOBiZE</strong> (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) i są aktualizowane corocznie. Obejmują nie tylko CO₂, ale pełen zakres emisji zanieczyszczeń do powietrza — SO₂, NOₓ, pył — wymaganych przez EN 15804+A2 dla wskaźników wpływu środowiskowego.</p>
-        </div>
-    </div>
-
-    <div class="card card-lg fade-in">
-        <div class="card-title">Porównanie źródeł wskaźników emisji</div>
-        <div style="overflow-x: auto;">
+        <div class="card-title">Tabela referencyjna wska&#378;nik&#243;w &#8212; energia elektryczna w Polsce</div>
+        <div style="overflow-x:auto; margin-top:0.75rem;">
             <table class="polca-table">
                 <thead>
                     <tr>
-                        <th>Parametr</th>
-                        <th>poLCA (KOBiZE 2024)</th>
-                        <th>ecoinvent 3.10</th>
-                        <th>Różnica</th>
+                        <th>Wska&#378;nik</th>
+                        <th>Zakres emisji</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>Zmiana</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: 600;">CO₂ miks elektr.</td>
-                        <td class="mono highlight">597 kg/MWh</td>
-                        <td class="mono">~295 kg/MWh (EU avg)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+102%</td>
+                        <td style="font-weight:600; color:#3730a3;">poLCA-EN-PL</td>
+                        <td>CO&#8322;e pe&#322;ny LCA cradle-to-gate</td>
+                        <td class="mono">780 kg/MWh</td>
+                        <td class="mono highlight">718 kg/MWh</td>
+                        <td class="mono" style="color:var(--func-green);">&#8722;7,9%</td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">Ciepło systemowe</td>
-                        <td class="mono">~380 kg CO₂/MWh</td>
-                        <td class="mono">~220 kg CO₂/MWh (EU)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+73%</td>
+                        <td style="font-weight:600; color:#15803d;">KOBiZE end-user</td>
+                        <td>CO&#8322; spalanie gate</td>
+                        <td class="mono">597 kg/MWh</td>
+                        <td class="mono">553 kg/MWh</td>
+                        <td class="mono" style="color:var(--func-green);">&#8722;7,4%</td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">Transport drogowy</td>
-                        <td class="mono">Flota PL (~12 lat)</td>
-                        <td class="mono">Flota EU (~8 lat)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+15–25%</td>
+                        <td style="font-weight:600; color:#92400e;">AIB Residual Mix</td>
+                        <td>CO&#8322; market-based</td>
+                        <td class="mono">788 kg/MWh</td>
+                        <td class="mono" style="color:#b45309;">808 kg/MWh &#8593;</td>
+                        <td class="mono" style="color:#b45309;">+2,5%</td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">Paliwa alternatywne w cemencie</td>
-                        <td class="mono" style="color: var(--func-green);">70–80%</td>
-                        <td class="mono">56% (EU avg)</td>
-                        <td class="mono" style="color: var(--func-green); font-weight: 600;">−12–18%</td>
+                        <td>MKi&#346; NCR</td>
+                        <td>CO&#8322;e cz&#281;&#347;ciowy</td>
+                        <td class="mono">644 kg/MWh</td>
+                        <td class="mono">617 kg/MWh</td>
+                        <td class="mono" style="color:var(--func-green);">&#8722;4,2%</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            Wartości orientacyjne. Rzeczywista różnica zależy od konkretnego procesu i roku odniesienia.
+        <p style="font-size:0.72rem; color:var(--text-tertiary); margin-top:0.5rem; font-style:italic;">
+            Warto&#347;ci w kg CO&#8322;(e) na MWh dostarczon&#261; do odbiorcy ko&#324;cowego.
+            poLCA-EN-PL: <a href="blog-en-pl-2024.html">Multicert Sp. z o.o. (luty 2026)</a>.
+            KOBiZE: <a href="https://www.kobize.pl/pl/article/wskazniki-emisyjnosci/id/1176/" target="_blank" rel="noopener noreferrer">kobize.pl</a>.
+            AIB: <a href="https://www.aib-net.org/facts/european-residual-mixes" target="_blank" rel="noopener noreferrer">aib-net.org</a>.
         </p>
     </div>
 
-    <div class="card card-accent-orange fade-in" style="margin-top: 1.5rem;">
-        <div class="card-title">Znaczenie praktyczne</div>
+    <!-- NOTA METODYCZNA -->
+    <div class="card card-accent-orange fade-in" style="margin-top:1.5rem;">
+        <div class="card-title">Dlaczego wyniki r&#243;&#380;ni&#261; si&#281; o 30&#8211;46%?</div>
         <p class="card-text">
-            Producent korzystający z danych poLCA widzi precyzyjnie, że jego przewaga leży
-            w nowoczesności procesu, a obciążenie wynika z miksu energetycznego — co wskazuje
-            konkretną ścieżkę dekarbonizacji: zmiana źródła energii, nie zmiana technologii procesowej.
-            Bazy globalne nie dostarczają tej informacji — uśrednienie zamazuje strukturę wyniku
-            i prowadzi do błędnych decyzji inwestycyjnych.
+            KOBiZE mierzy tylko bezpo&#347;rednie spalanie paliw na bramie elektrowni.
+            poLCA-EN-PL dodaje metan fugitywny z polskich kopal&#324; w&#281;gla (14% wska&#378;nika),
+            upstream paliw przed elektrowni&#261; (8%) i cykl &#380;ycia infrastruktury OZE (1%).
+            AIB Residual Mix wzr&#243;s&#322; w 2024 roku pomimo spadku emisji &#8212;
+            paradoks eksportu gwarancji pochodzenia (GO) przez producentw OZE.
+            <a href="blog-en-pl-2024.html" style="white-space:nowrap;">Przeczytaj pe&#322;ne wyja&#347;nienie &rarr;</a>
         </p>
     </div>
 </div>

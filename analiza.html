@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analiza Sektorowa — poLCA</title>
-    <meta name="description" content="Mapa zniekształceń polskiego sektora budowlanego w danych LCA">
+    <meta name="description" content="Analiza wskaźników emisji energii elektrycznej w Polsce — poLCA-EN-PL, KOBiZE i AIB. Trend 2021–2024, mix energetyczny, implikacje CSRD.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -76,221 +77,520 @@
 
 <div class="polca-content">
 <div class="polca-page">
+
     <div class="page-header fade-in">
-        <div class="section-num">04 — Problem centralny</div>
+        <div class="section-num">04 — Analiza wskaźników</div>
         <h1 class="page-title">Analiza Sektorowa</h1>
         <p class="page-subtitle">
-            Mapa zniekształceń polskiego sektora budowlanego. W których sektorach
-            Polska jest lepsza od średniej europejskiej, a w których gorsza — i jak
-            uśrednianie maskuje oba te fakty jednocześnie.
+            Trzy wskaźniki emisji energii elektrycznej w Polsce — różne metodyki, różne zastosowania.
+            Mix energetyczny 2024, trend dekarbonizacji, paradoks AIB i implikacje dla raportowania CSRD.
         </p>
-        <div style="display: flex; gap: 1.5rem; margin-top: 1.25rem;">
-            <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-tertiary);">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--func-green);"></span>
-                Polska lepsza od EU
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; color: var(--text-tertiary);">
-                <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--func-red);"></span>
-                Polska za średnią EU
-            </div>
-        </div>
     </div>
 
-    <div class="section-image-strip fade-in">
-        <img src="images/strip-industry.jpg" alt="Infrastruktura przemysłowa" loading="lazy">
-    </div>
-
-    <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Dlaczego uśrednione dane nie oddają rzeczywistości</div>
-        <div class="prose">
-            <p>Komercyjne bazy danych LCA — w tym ecoinvent, de facto standard branżowy — opierają się na uśrednionych danych z ankiet producentów, zagregowanych na poziomie europejskim lub globalnym. Model ten był racjonalny w erze ograniczonej dostępności danych krajowych.</p>
-            <p><strong>Problem nie polega na tym, że dane generyczne są metodologicznie wadliwe — lecz na tym, że nie odzwierciedlają rzeczywistości w żadnym kierunku.</strong> Uśrednienie ukrywa zarówno przewagi, jak i słabości danego sektora krajowego. Polska jest jednocześnie liderem technologicznym w produkcji klinkieru (paliwa alternatywne) i jednym z najbardziej emisyjnych krajów UE pod względem miksu energetycznego.</p>
-            <p>Oznacza to, że uśrednione dane jednocześnie: <strong>(a)</strong> karzą polskich producentów cementu za inwestycje w nowoczesne technologie, zawyżając ich ślad procesowy, oraz <strong>(b)</strong> ukrywają rzeczywistą skalę problemu emisyjności energetycznej, zaniżając ślad energetyczny. Żadne uśrednienie nie oddaje tej dualnej natury polskiego sektora budowlanego.</p>
-        </div>
-    </div>
-
+    <!-- 01 — 3 wskaźniki, 3 zastosowania -->
     <div class="section-gap fade-in">
-        <div class="section-num">04a — Przykład: sektor cementowy</div>
-        <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
-            Wyższa emisyjność energii, niższa emisyjność procesu
+        <div class="section-num">01 — Trzy wskaźniki, trzy zastosowania</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            KOBiZE · poLCA-EN-PL · AIB — który wybrać?
         </h2>
-        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            Sektor cementowy najlepiej ilustruje dwukierunkowość problemu uśredniania. Polska jest jednocześnie gorsza (miks energetyczny) i lepsza (technologia procesowa) od średniej europejskiej — a uśrednione dane maskują oba te fakty.
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            W Polsce funkcjonują trzy powszechnie używane wskaźniki emisji energii elektrycznej. Każdy z nich odpowiada innej metodyce i spełnia inne wymagania regulacyjne — wybór nieodpowiedniego może unieważnić wyniki LCA lub sprawozdanie CSRD.
         </p>
-        <div class="grid-2 section-gap">
-            <div class="card card-accent-red">
-                <div class="card-label" style="color: var(--accent);">Gdzie Polska odstaje od średniej EU</div>
-                <h3 style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Miks energetyczny</h3>
-                <p class="card-text">
-                    Polski wskaźnik emisji dla energii elektrycznej wynosi <strong>597 kg CO₂/MWh</strong> (KOBiZE 2024) wobec średniej europejskiej ~295 kg CO₂/MWh. To ponad dwukrotna różnica. Zastosowanie uśrednionych danych prowadzi do <strong>niedoszacowania</strong> wpływu środowiskowego — każdy MWh zużyty w polskiej cementowni generuje dwukrotnie więcej CO₂ niż wynika z danych generycznych.
-                </p>
-            </div>
-            <div class="card card-accent-green">
-                <div class="card-label" style="color: var(--func-green);">Gdzie Polska wyprzedza średnią EU</div>
-                <h3 style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Technologia produkcji klinkieru</h3>
-                <p class="card-text">
-                    Polskie cementownie osiągnęły udział paliw alternatywnych na poziomie <strong>70–80%</strong> bilansu cieplnego (średnia EU: 56%). Wszystkie zakłady operują na nowoczesnym procesie suchym z prekalcynatorem. Zastosowanie uśrednionych danych prowadzi do <strong>zawyżenia</strong> emisji procesowej — kara za inwestycje w nowoczesne technologie.
-                </p>
-            </div>
-        </div>
-    </div>
 
-    <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Emisja CO₂ netto na tonę cementu — dane SPC</div>
-        <div style="overflow-x: auto;">
+        <div style="overflow-x:auto;" class="card card-lg">
             <table class="polca-table">
                 <thead>
                     <tr>
-                        <th>Typ cementu</th>
-                        <th>Emisja CO₂ netto [kg/t]</th>
-                        <th>Kontekst</th>
+                        <th>Wskaźnik</th>
+                        <th>2024 [kg CO₂(e)/MWh]</th>
+                        <th>Metodyka</th>
+                        <th>Zastosowanie</th>
+                        <th>Zakres GHG</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>CEM I</strong> (portlandzki)</td>
-                        <td class="mono highlight">710</td>
-                        <td style="color: var(--text-secondary);">Najwyższa zawartość klinkieru (~95%)</td>
+                        <td><strong>KOBiZE</strong></td>
+                        <td class="mono" style="color:var(--func-green);font-weight:600;">553</td>
+                        <td>Spalanie w elektrowniach (gate)</td>
+                        <td>Scope 2 location-based (GHG Protocol), raportowanie EU ETS</td>
+                        <td>CO₂ z procesu spalania</td>
                     </tr>
                     <tr>
-                        <td><strong>CEM II</strong> (wieloskładnikowy)</td>
-                        <td class="mono" style="color: var(--func-green); font-weight: 500;">571</td>
-                        <td style="color: var(--text-secondary);">Częściowe zastąpienie klinkieru dodatkami</td>
+                        <td><strong style="color:#3730a3;">poLCA-EN-PL</strong></td>
+                        <td class="mono highlight" style="font-weight:700;">718</td>
+                        <td>Cradle-to-gate (pełny LCA)</td>
+                        <td>EPD wyrobów (EN 15804), LCA projektów, Scope 3 kat. 3</td>
+                        <td>CO₂ + CH₄ (metan z kopalń, upstream paliw, OZE)</td>
                     </tr>
                     <tr>
-                        <td><strong>CEM III</strong> (hutniczy)</td>
-                        <td class="mono" style="color: var(--func-green); font-weight: 500;">405</td>
-                        <td style="color: var(--text-secondary);">Wysoki udział żużla wielkopiecowego</td>
+                        <td><strong style="color:#b45309;">AIB Residual Mix</strong></td>
+                        <td class="mono" style="color:#b45309;font-weight:600;">808</td>
+                        <td>Market-based (GOs i Residual Mix)</td>
+                        <td>Scope 2 market-based (GHG Protocol), zakup certyfikatów GO</td>
+                        <td>CO₂ — rynek certyfikatów energii odnawialnej</td>
+                    </tr>
+                    <tr style="background:var(--bg-secondary);">
+                        <td style="color:var(--text-tertiary);">MKiŚ (NCR)</td>
+                        <td class="mono" style="color:var(--text-tertiary);">617</td>
+                        <td>Standardowy wskaźnik krajowy</td>
+                        <td>Obliczenia audytów energetycznych, budynki</td>
+                        <td>CO₂ z procesu (pośredni)</td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            Źródło: Stowarzyszenie Producentów Cementu (SPC), raport EY, 2024.
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1.5rem;">
+            <div style="background:#f0f4ff;border-left:3px solid #3730a3;border-radius:6px;padding:1rem;">
+                <div style="font-size:0.7rem;font-weight:600;color:#3730a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.4rem;">poLCA-EN-PL — kiedy używać</div>
+                <ul style="font-size:0.82rem;color:var(--text-secondary);margin:0;padding-left:1.1rem;line-height:1.65;">
+                    <li>Deklaracje Środowiskowe Produktu (EPD)</li>
+                    <li>Pełna analiza LCA wyrobu lub budynku</li>
+                    <li>CSRD — Scope 3 kat. 3 (energia pośrednia)</li>
+                    <li>Porównania cradle-to-gate</li>
+                </ul>
+            </div>
+            <div style="background:#f0fdf4;border-left:3px solid #15803d;border-radius:6px;padding:1rem;">
+                <div style="font-size:0.7rem;font-weight:600;color:#15803d;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.4rem;">KOBiZE — kiedy używać</div>
+                <ul style="font-size:0.82rem;color:var(--text-secondary);margin:0;padding-left:1.1rem;line-height:1.65;">
+                    <li>Scope 2 location-based (GHG Protocol)</li>
+                    <li>Raportowanie EU ETS i KOBiZE</li>
+                    <li>Audyty energetyczne (metodyka UE)</li>
+                    <li>Krajowe raporty emisji CO₂</li>
+                </ul>
+            </div>
+            <div style="background:#fffbeb;border-left:3px solid #b45309;border-radius:6px;padding:1rem;">
+                <div style="font-size:0.7rem;font-weight:600;color:#b45309;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.4rem;">AIB — kiedy używać</div>
+                <ul style="font-size:0.82rem;color:var(--text-secondary);margin:0;padding-left:1.1rem;line-height:1.65;">
+                    <li>Scope 2 market-based (zakup GO / PPAs)</li>
+                    <li>Firmy bez certyfikatów energii zielonej</li>
+                    <li>Raportowanie CDP, SBTi (market-based)</li>
+                    <li>Uwaga: paradoks residual mix (patrz §04)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 02 — Mix energetyczny 2024 -->
+    <div class="section-gap fade-in">
+        <div class="section-num">02 — Mix energetyczny 2024</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            Struktura produkcji energii elektrycznej w Polsce
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            W 2024 r. Polska wyprodukowała ok. 174 TWh energii elektrycznej. Udział OZE wzrósł do 28,2% — głównie dzięki energii wiatrowej i fotowoltaice. Węgiel kamienny i brunatny nadal dominują (~64%).
         </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;" class="card card-lg">
+            <div>
+                <canvas id="energyMixChart" style="max-height:280px;"></canvas>
+            </div>
+            <div>
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr><th>Źródło</th><th>Udział</th><th>TWh</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#374151;margin-right:6px;"></span>Węgiel kamienny</td><td class="mono">43,2%</td><td class="mono">75,2</td></tr>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#6b7280;margin-right:6px;"></span>Węgiel brunatny</td><td class="mono">20,8%</td><td class="mono">36,2</td></tr>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#2563eb;margin-right:6px;"></span>Gaz ziemny</td><td class="mono">7,8%</td><td class="mono">13,6</td></tr>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#16a34a;margin-right:6px;"></span>Wiatr lądowy</td><td class="mono">14,6%</td><td class="mono">25,4</td></tr>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#22c55e;margin-right:6px;"></span>Fotowoltaika</td><td class="mono">9,1%</td><td class="mono">15,8</td></tr>
+                        <tr><td><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#86efac;margin-right:6px;"></span>Biomasa + inne OZE</td><td class="mono">4,5%</td><td class="mono">7,8</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.7rem;color:var(--text-tertiary);margin-top:0.5rem;">Źródło: PSE, URE — dane operacyjne 2024.</p>
+            </div>
+        </div>
     </div>
 
-    <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Wynik netto: beton C30/37</div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">Ecoinvent (średnia EU)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill gray" style="width: 70%;">~245 kg CO₂eq</div>
-            </div>
-        </div>
-        <div class="comp-bar-group">
-            <div class="comp-bar-label">poLCA (dane polskie)</div>
-            <div class="comp-bar-track">
-                <div class="comp-bar-fill green" style="width: 90%;">~312 kg CO₂eq</div>
-            </div>
-        </div>
-        <p class="card-text mt-2">
-            Wyższa emisyjność polskiej energii przeważa nad niższą emisyjnością procesu — wynik netto wyższy o ok. 27%. Jednakże <strong>struktura tego wyniku jest fundamentalnie inna</strong> niż w danych generycznych. W danych ecoinvent dominuje emisja procesowa (klinkieryzacja). W danych poLCA dominuje emisja energetyczna (miks PL). To fundamentalna różnica dla strategii dekarbonizacji — producent widzi, że jego ścieżka optymalizacji prowadzi przez zmianę źródła energii, nie przez zmianę technologii procesowej.
+    <!-- 03 — Wpływ na EPD -->
+    <div class="section-gap fade-in">
+        <div class="section-num">03 — Wpływ na EPD wyrobów</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            Jak zmiana wskaźnika wpływa na wyniki EPD?
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            Wskaźnik emisji energii elektrycznej pojawia się w każdym EPD wyrobu przemysłowego — w modułach A1–A3 (produkcja) oraz B6 (użytkowanie). Zmiana wskaźnika z KOBiZE (553) na poLCA-EN-PL (718) oznacza wzrost udziału energii w całkowitym GWP produktu o ok. 30%.
         </p>
-    </div>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <div style="margin-bottom:1rem;font-size:0.85rem;font-weight:600;color:var(--text-primary);">
+                GWP modułu A1–A3 [kg CO₂e] — przykład: beton C30/37 (1 m³)
+            </div>
+            <canvas id="epdImpactChart" style="max-height:260px;"></canvas>
+            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.75rem;">
+                Obliczenia szacunkowe. Udział energii w GWP betonu C30/37: ~18–22%. Wskaźnik KOBiZE=553, poLCA=718, AIB=808 kg CO₂(e)/MWh. Lewandowska et al. Energies 2025, 18(15):4092.
+            </p>
+        </div>
 
-    <h2 style="font-family: 'Inter Tight', sans-serif, Georgia, serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;" class="fade-in">
-        Kto traci, kto zyskuje
-    </h2>
-    <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;" class="fade-in">
-        Uśrednianie danych środowiskowych generuje dwa typy zniekształceń.
-    </p>
-
-    <div class="card card-lg card-accent-green section-gap fade-in">
-        <div class="card-title">Branże pokrzywdzone uśrednianiem — Polska lepsza niż średnia EU</div>
-        <p class="card-text mb-2">W tych sektorach polskie zakłady osiągają parametry lepsze niż europejska średnia.</p>
-        <div class="grid-2">
-            <div class="sector-card sector-card-green">
-                <div class="sector-title">Cement i beton</div>
-                <p class="sector-desc">70–80% paliw alternatywnych (EU: 56%). Wszystkie zakłady na procesie suchym z prekalcynatorem.</p>
-                <div class="sector-diff-green">&#9660; Uśrednianie zawyża emisję procesową o 12–18%</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;">
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">Beton C30/37</div>
+                <div style="font-size:1.5rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">+30%</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">wzrost GWP energetycznego przy zmianie KOBiZE → poLCA</div>
             </div>
-            <div class="sector-card sector-card-green">
-                <div class="sector-title">Stal z pieca łukowego (EAF)</div>
-                <p class="sector-desc">ArcelorMittal Warszawa — 100% stal ze złomu. Emisja EAF: ~0,3 t CO₂/t stali vs BF-BOF: ~2,2 t.</p>
-                <div class="sector-diff-green">&#9660; Uśrednianie z trasą BF-BOF zawyża emisję 3–5×</div>
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">Stal EAF (100% złom)</div>
+                <div style="font-size:1.5rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">+38%</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">wyższy udział energii elektrycznej → większa wrażliwość</div>
             </div>
-            <div class="sector-card sector-card-green">
-                <div class="sector-title">Kruszywa naturalne</div>
-                <p class="sector-desc">Polska — drugi producent kruszyw w EU. Krótkie dystanse transportowe (30–50 km).</p>
-                <div class="sector-diff-green">&#9660; Uśrednianie z importem zawyża transport o 40–60%</div>
-            </div>
-            <div class="sector-card sector-card-green">
-                <div class="sector-title">Drewno konstrukcyjne i CLT</div>
-                <p class="sector-desc">Polska — czwarte zasoby leśne w EU (9,3 mln ha). Krótki łańcuch dostaw.</p>
-                <div class="sector-diff-green">&#9660; Dane skandynawskie nie oddają polskich warunków</div>
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">Aluminium (wytop)</div>
+                <div style="font-size:1.5rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">+51%</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">energochłonność elektrolizy — największa wrażliwość na wskaźnik</div>
             </div>
         </div>
     </div>
 
-    <div class="card card-lg card-accent-red section-gap fade-in">
-        <div class="card-title">Branże wymagające inwestycji — Polska za średnią EU</div>
-        <p class="card-text mb-2">W tych sektorach polskie dane są gorsze niż europejska średnia. Uśrednianie maskuje skalę problemu.</p>
-        <div class="grid-2">
-            <div class="sector-card sector-card-red">
-                <div class="sector-title">Miks elektroenergetyczny</div>
-                <p class="sector-desc">597 kg CO₂/MWh (EU: 295). Dominacja węgla (~65% miksu).</p>
-                <div class="sector-diff-red">&#9650; Uśrednianie zaniża wpływ energii o ~100%</div>
-            </div>
-            <div class="sector-card sector-card-red">
-                <div class="sector-title">Ciepłownictwo systemowe</div>
-                <p class="sector-desc">~80% ciepła systemowego z węgla. Straty przesyłowe 15–25%.</p>
-                <div class="sector-diff-red">&#9650; Moduł B6 zaniżony przy danych EU</div>
-            </div>
-            <div class="sector-card sector-card-red">
-                <div class="sector-title">Szkło płaskie i izolacyjne</div>
-                <p class="sector-desc">Wyższy udział energii elektrycznej w procesach wykończeniowych podnosi ślad węglowy.</p>
-                <div class="sector-diff-red">&#9650; Pozornie neutralne, energia elektryczna zawyża wynik</div>
-            </div>
-            <div class="sector-card sector-card-red">
-                <div class="sector-title">Transport materiałów budowlanych</div>
-                <p class="sector-desc">Dominacja transportu drogowego (&gt;85%). Starsza flota pojazdów (~12 lat).</p>
-                <div class="sector-diff-red">&#9650; Moduł A4 zaniżony przy europejskim modal split</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="steel-highlight section-gap fade-in">
-        <div style="font-family: 'Inter Tight', sans-serif, serif; font-size: 1.05rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.8rem;">
-            Studium przypadku: polski sektor stalowy — 7-krotna różnica w jednym kraju
-        </div>
-        <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0 0 0.8rem 0;">
-            ArcelorMittal Poland zainwestował ponad 11 mld zł w modernizację polskiego hutnictwa. Polska operuje jednocześnie trasą BF-BOF (wielki piec — Dąbrowa Górnicza) i EAF (piec łukowy — Warszawa, Zawiercie). Uśrednianie tych dwóch fundamentalnie różnych technologii jest metodologicznie nieuprawnione — a dokładnie to robią bazy generyczne.
+    <!-- 04 — Paradoks AIB -->
+    <div class="section-gap fade-in">
+        <div class="section-num">04 — Paradoks AIB</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            Residual Mix rósł mimo dekarbonizacji — dlaczego?
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            W 2024 r. polski wskaźnik AIB Residual Mix wzrósł z 788 do 808 kg CO₂/MWh (+2,5%), podczas gdy emisyjność produkcji energii elektrycznej <em>spadła</em> o ok. 7,9%. Ten pozorny paradoks ma konkretną przyczynę.
         </p>
-        <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
-            <div class="steel-stat">
-                <div class="steel-stat-value" style="color: var(--func-purple);">~0,3</div>
-                <div class="steel-stat-label">t CO₂/t stali EAF</div>
+
+        <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:1.5rem;">
+            <div style="font-size:0.75rem;font-weight:700;color:#92400e;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.6rem;">Mechanizm paradoksu GO</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;text-align:center;">
+                <div style="background:white;border-radius:6px;padding:0.9rem;border:1px solid #fde68a;">
+                    <div style="font-size:1.5rem;margin-bottom:0.3rem;">🌬️</div>
+                    <div style="font-size:0.78rem;font-weight:600;color:var(--text-primary);">Polska farma wiatrowa</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">produkuje energię zieloną + wystawia Gwarancje Pochodzenia (GO)</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#b45309;">→</div>
+                <div style="background:white;border-radius:6px;padding:0.9rem;border:1px solid #fde68a;">
+                    <div style="font-size:1.5rem;margin-bottom:0.3rem;">📤</div>
+                    <div style="font-size:0.78rem;font-weight:600;color:var(--text-primary);">Eksport GO do UE</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">GO sprzedane do Niemiec, Szwecji, Holandii — gdzie ceny są wyższe</div>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#b45309;">→</div>
+                <div style="background:#fff0f0;border-radius:6px;padding:0.9rem;border:1px solid #fca5a5;">
+                    <div style="font-size:1.5rem;margin-bottom:0.3rem;">🏭</div>
+                    <div style="font-size:0.78rem;font-weight:600;color:#dc2626;">Polska firma bez GO</div>
+                    <div style="font-size:0.72rem;color:var(--text-secondary);margin-top:0.25rem;">używa polskiego residual mix — coraz „brudniejszego" bo OZE wyeksportowały certyfikaty</div>
+                </div>
             </div>
-            <div class="steel-stat">
-                <div class="steel-stat-value" style="color: var(--func-red);">~2,2</div>
-                <div class="steel-stat-label">t CO₂/t stali BF-BOF</div>
+        </div>
+
+        <div class="card card-lg">
+            <div class="card-title">Konsekwencje dla raportowania market-based</div>
+            <div class="prose">
+                <p>Firma raportująca Scope 2 market-based bez zakupu GO płaci podwójnie: raz poprzez faktyczne zużycie energii ze zdekarbonizowanego systemu (niższe emisje produkcji), drugi raz przez wyższy wskaźnik residual mix, bo certyfikaty OZE zostały wyeksportowane.</p>
+                <p>Rozwiązanie: zakup polskich GO lub długoterminowych umów PPA z krajowymi wytwórcami OZE. Alternatywnie — dla celów EPD/LCA stosowanie <strong>poLCA-EN-PL</strong> (cradle-to-gate), który nie zależy od rynku certyfikatów.</p>
             </div>
-            <div class="steel-stat">
-                <div class="steel-stat-value" style="color: var(--text-tertiary);">~1,3</div>
-                <div class="steel-stat-label">t CO₂/t „średnia EU"</div>
+            <a href="blog-en-pl-2024.html#aib-paradoks" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.82rem;color:#3730a3;font-weight:500;margin-top:0.75rem;text-decoration:none;">
+                Pełna analiza paradoksu AIB w artykule naukowym →
+            </a>
+        </div>
+    </div>
+
+    <!-- 05 — Trend 2021-2024 -->
+    <div class="section-gap fade-in">
+        <div class="section-num">05 — Trend 2021–2024</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            Dekarbonizacja polskiej energetyki — postęp i ograniczenia
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            Wskaźnik poLCA-EN-PL spadł z 920 kg CO₂e/MWh w 2021 r. do 718 kg CO₂e/MWh w 2024 r. — redukcja o 22% w 3 latach. Główny czynnik: dynamiczny wzrost OZE (zwłaszcza PV) i wzrost importu energii z bardziej zdekarbonizowanych systemów europejskich.
+        </p>
+        <div class="card card-lg">
+            <canvas id="trendChart" style="max-height:300px;"></canvas>
+            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.75rem;">
+                Źródło: Lewandowska et al. Energies 2025, 18(15):4092 · <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">DOI:10.3390/en18154092</a> · Dane PSE, KOBiZE, UNFCCC CRT PL 2025.
+            </p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;">
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">2021 → 2024</div>
+                <div style="font-size:1.8rem;font-weight:700;color:#15803d;font-family:'IBM Plex Mono',monospace;">−22%</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">redukcja poLCA-EN-PL (920 → 718 kg CO₂e/MWh)</div>
             </div>
-            <div class="steel-stat">
-                <div class="steel-stat-value" style="color: var(--accent);">7×</div>
-                <div class="steel-stat-label">różnica EAF vs BF-BOF</div>
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">Wzrost OZE 2021→2024</div>
+                <div style="font-size:1.8rem;font-weight:700;color:#15803d;font-family:'IBM Plex Mono',monospace;">+12 pp</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">udział OZE wzrósł z 16% do 28% wolumenu produkcji</div>
+            </div>
+            <div class="card" style="padding:1.1rem;">
+                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.3rem;">Czynnik hamujący</div>
+                <div style="font-size:1.8rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">CH₄</div>
+                <div style="font-size:0.78rem;color:var(--text-secondary);">metan z kopalń węgla: 14% wskaźnika — wolno spada przez nadal aktywne wydobycie</div>
             </div>
         </div>
     </div>
 
-    <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Implikacje dla polityki klimatycznej i zamówień publicznych</div>
-        <div class="prose">
-            <p>Zniekształcenia wynikające z uśredniania mają konsekwencje wykraczające poza same EPD. W miarę jak kryteria środowiskowe wchodzą do zamówień publicznych (Dyrektywa 2024/1760) i regulacji budowlanych (znowelizowane CPR 2024/3110), precyzja danych LCA przestaje być kwestią akademicką — staje się czynnikiem wpływającym na konkurencyjność polskich przedsiębiorstw na rynku europejskim.</p>
-            <p>Producent stali EAF, którego rzeczywista emisja wynosi 0,3 t CO₂/t, ale którego EPD opiera się na europejskiej średniej 1,3 t CO₂/t — przegrywa przetargi, które powinien wygrywać. Producent korzystający z polskiego miksu energetycznego, którego EPD zaniża wpływ energii o 100% — wygrywa przetargi, których nie powinien wygrywać. Oba scenariusze są szkodliwe.</p>
+    <!-- 06 — Prognoza 2025 -->
+    <div class="section-gap fade-in">
+        <div class="section-num">06 — Prognoza 2025</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            Oczekiwany zakres wskaźnika na 2025 rok
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            Przy utrzymaniu dynamiki rozwoju OZE i planowanym zamknięciu kolejnych bloków węglowych, prognozowany zakres poLCA-EN-PL na 2025 r. wynosi 0,63–0,68 kg CO₂e/kWh. Oficjalna wartość zostanie opublikowana po pełnym rozliczeniu bilansu PSE za 2025 r. (Q2 2026).
+        </p>
+        <div class="card card-lg">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;text-align:center;padding:0.5rem 0;">
+                <div>
+                    <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.25rem;">Scenariusz pesymistyczny</div>
+                    <div style="font-size:2rem;font-weight:700;color:#6b7280;font-family:'IBM Plex Mono',monospace;">0,68</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);">kg CO₂e/kWh<br>wolny wzrost OZE, sucha zima</div>
+                </div>
+                <div style="border-left:1px solid var(--border);border-right:1px solid var(--border);">
+                    <div style="font-size:0.7rem;color:#3730a3;font-weight:600;margin-bottom:0.25rem;">Scenariusz bazowy</div>
+                    <div style="font-size:2rem;font-weight:700;color:#3730a3;font-family:'IBM Plex Mono',monospace;">0,65</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);">kg CO₂e/kWh<br>kontynuacja trendu 2023–2024</div>
+                </div>
+                <div>
+                    <div style="font-size:0.7rem;color:#15803d;font-weight:600;margin-bottom:0.25rem;">Scenariusz optymistyczny</div>
+                    <div style="font-size:2rem;font-weight:700;color:#15803d;font-family:'IBM Plex Mono',monospace;">0,63</div>
+                    <div style="font-size:0.75rem;color:var(--text-secondary);">kg CO₂e/kWh<br>rekordowy wiatr + więcej importu</div>
+                </div>
+            </div>
+            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border);">
+                Prognoza modelowa — nie zastępuje oficjalnych danych. Oficjalna wartość poLCA-EN-PL 2025 zostanie opublikowana na tym portalu po zatwierdzeniu danych PSE/URE/UNFCCC.
+            </p>
+        </div>
+    </div>
+
+    <!-- 07 — Implikacje CSRD -->
+    <div class="section-gap fade-in">
+        <div class="section-num">07 — Implikacje CSRD</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
+            CSRD / ESRS E1 — Scope 3 kategoria 3
+        </h2>
+        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
+            Dyrektywa CSRD (2022/2464) i standard ESRS E1 wymagają raportowania emisji Scope 1, 2 i 3. Kategoria 3 Scope 3 (działania energetyczne i upstream paliw) wprost wskazuje na konieczność uwzględnienia emisji cyklu życia — co oznacza konieczność stosowania wskaźników LCA, a nie tylko gate-level.
+        </p>
+        <div class="card card-lg">
+            <div style="overflow-x:auto;">
+                <table class="polca-table">
+                    <thead>
+                        <tr>
+                            <th>Zakres raportowania CSRD</th>
+                            <th>Właściwy wskaźnik</th>
+                            <th>Uzasadnienie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Scope 2 location-based (ESRS E1-6)</td>
+                            <td><strong>KOBiZE 553</strong></td>
+                            <td>Wskaźnik sieciowy gate — standard ESRS</td>
+                        </tr>
+                        <tr>
+                            <td>Scope 2 market-based (zakup GO / PPAs)</td>
+                            <td><strong style="color:#b45309;">AIB 808</strong> (bez GO)</td>
+                            <td>Residual mix — ESRS wymaga ujawnienia</td>
+                        </tr>
+                        <tr>
+                            <td>Scope 3 kat. 3 — upstream energii</td>
+                            <td><strong style="color:#3730a3;">poLCA-EN-PL 718</strong></td>
+                            <td>LCA cradle-to-gate — metan, upstream paliw</td>
+                        </tr>
+                        <tr>
+                            <td>EPD wyrobów i ocena LCA (GWP)</td>
+                            <td><strong style="color:#3730a3;">poLCA-EN-PL 718</strong></td>
+                            <td>EN 15804+A2 — moduł A1–A3, B6</td>
+                        </tr>
+                        <tr style="background:var(--bg-secondary);">
+                            <td style="color:var(--text-tertiary);">Audyt energetyczny budynku</td>
+                            <td style="color:var(--text-tertiary);">MKiŚ 617</td>
+                            <td style="color:var(--text-tertiary);">Wymóg rozporządzenia krajowego</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="background:#f0f4ff;border:1px solid #c7d2fe;border-radius:8px;padding:1.25rem 1.5rem;margin-top:1.5rem;">
+            <div style="font-size:0.75rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5rem;">Ważne: raportowanie podwójne</div>
+            <p style="font-size:0.85rem;color:var(--text-secondary);margin:0;line-height:1.65;">
+                ESRS E1 wymaga ujawnienia zarówno wskaźnika location-based, jak i market-based. Firmy, które zakupiły GO lub mają PPAs, raportują obie wartości — to jedyna droga do wykazania faktycznego wpływu decyzji zakupowych na emisje. Stosowanie tylko KOBiZE lub tylko AIB bez wyjaśnienia kontekstu jest niezgodne z wymaganiami ESRS E1-6.
+            </p>
         </div>
     </div>
 
     <div class="quote-block fade-in">
-        <p>„Problem uśredniania nie polega na tym, że dane europejskie są złe — lecz na tym, że stosowane do polskich warunków, jednocześnie karzą branże, które zainwestowały, i ukrywają zapóźnienia tam, gdzie inwestycja jest niezbędna."</p>
-        <div class="quote-source">— Zasada metodologiczna poLCA</div>
+        <p>„Wybór wskaźnika emisji energii elektrycznej to nie kwestia techniczna — to kwestia pytania, na które chcemy odpowiedzieć. LCA pyta o rzeczywisty wpływ cyklu życia. Scope 2 pyta o emisje operacyjne. CSRD pyta o oba."</p>
+        <div class="quote-source">— poLCA / Multicert Sp. z o.o., 2025</div>
     </div>
+
 </div>
 </div>
+
+<script>
+(function(){
+    'use strict';
+
+    Chart.defaults.font.family = "'Inter', sans-serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.plugins.tooltip.backgroundColor = '#1e293b';
+    Chart.defaults.plugins.tooltip.padding = 10;
+    Chart.defaults.plugins.tooltip.cornerRadius = 6;
+    Chart.defaults.plugins.legend.labels.boxWidth = 12;
+    Chart.defaults.plugins.legend.labels.padding = 14;
+
+    // Doughnut — energy mix
+    var mixCtx = document.getElementById('energyMixChart');
+    if (mixCtx) {
+        new Chart(mixCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Węgiel kamienny', 'Węgiel brunatny', 'Gaz ziemny', 'Wiatr', 'Fotowoltaika', 'Biomasa + inne'],
+                datasets: [{
+                    data: [43.2, 20.8, 7.8, 14.6, 9.1, 4.5],
+                    backgroundColor: ['#374151','#6b7280','#2563eb','#16a34a','#22c55e','#86efac'],
+                    borderWidth: 2,
+                    borderColor: '#fff',
+                    hoverOffset: 8
+                }]
+            },
+            options: {
+                cutout: '62%',
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                return ' ' + ctx.label + ': ' + ctx.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    // Grouped bar — EPD impact
+    var epdCtx = document.getElementById('epdImpactChart');
+    if (epdCtx) {
+        new Chart(epdCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Beton C30/37', 'Stal EAF', 'Aluminium (wytop)', 'Ceramika budowlana'],
+                datasets: [
+                    {
+                        label: 'KOBiZE (553)',
+                        data: [245, 310, 820, 190],
+                        backgroundColor: '#94a3b8',
+                        borderRadius: 2
+                    },
+                    {
+                        label: 'poLCA-EN-PL (718)',
+                        data: [280, 362, 1065, 232],
+                        backgroundColor: '#3730a3',
+                        borderRadius: 2
+                    },
+                    {
+                        label: 'AIB (808)',
+                        data: [302, 398, 1192, 255],
+                        backgroundColor: '#b45309',
+                        borderRadius: 2
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y + ' kg CO₂e';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(0,0,0,0.04)' } },
+                    y: {
+                        grid: { color: 'rgba(0,0,0,0.04)' },
+                        ticks: {
+                            callback: function(v) { return v + ' kg'; }
+                        },
+                        title: { display: true, text: 'GWP A1–A3 [kg CO₂e / jednostka funkcjonalna]', font: { size: 11 } }
+                    }
+                }
+            }
+        });
+    }
+
+    // Line — trend chart
+    var trendCtx = document.getElementById('trendChart');
+    if (trendCtx) {
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ['2021', '2022', '2023', '2024'],
+                datasets: [
+                    {
+                        label: 'poLCA-EN-PL',
+                        data: [920, 870, 780, 718],
+                        borderColor: '#3730a3',
+                        backgroundColor: 'rgba(55,48,163,0.07)',
+                        fill: true,
+                        tension: 0.35,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        borderWidth: 2.5
+                    },
+                    {
+                        label: 'KOBiZE',
+                        data: [707, 673, 597, 553],
+                        borderColor: '#15803d',
+                        backgroundColor: 'transparent',
+                        fill: false,
+                        tension: 0.35,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        borderWidth: 2,
+                        borderDash: [5,3]
+                    },
+                    {
+                        label: 'AIB Residual Mix',
+                        data: [810, 805, 788, 808],
+                        borderColor: '#b45309',
+                        backgroundColor: 'transparent',
+                        fill: false,
+                        tension: 0.35,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        borderWidth: 2,
+                        borderDash: [3,3]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(ctx) {
+                                return ' ' + ctx.dataset.label + ': ' + ctx.parsed.y + ' kg CO₂(e)/MWh';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { grid: { color: 'rgba(0,0,0,0.04)' } },
+                    y: {
+                        grid: { color: 'rgba(0,0,0,0.04)' },
+                        min: 400,
+                        ticks: {
+                            callback: function(v) { return v + ' kg'; }
+                        },
+                        title: { display: true, text: 'Wskaźnik emisji [kg CO₂(e)/MWh]', font: { size: 11 } }
+                    }
+                }
+            }
+        });
+    }
+}());
+</script>
 
 <footer class="polca-portal-footer">
     &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
