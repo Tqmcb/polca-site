@@ -26,8 +26,8 @@
                 labels: ['Wybrane źródło (PL)', 'Średnia EU (~210 kg/MWh)'],
                 datasets: [{
                     data: [0, 0],
-                    backgroundColor: ['rgba(14,124,107,0.75)', 'rgba(107,114,128,0.35)'],
-                    borderColor:     ['#0E7C6B', '#6B7280'],
+                    backgroundColor: ['rgba(30,58,138,0.75)', 'rgba(107,114,128,0.35)'],
+                    borderColor:     ['#1E3A8A', '#6B7280'],
                     borderWidth: 2,
                     borderRadius: 4
                 }]
@@ -40,7 +40,7 @@
                     legend: { display: false },
                     tooltip: {
                         backgroundColor: '#111318',
-                        borderColor: '#0E7C6B',
+                        borderColor: '#1E3A8A',
                         borderWidth: 1,
                         titleColor: '#fff',
                         bodyColor: 'rgba(255,255,255,0.7)',
@@ -77,8 +77,8 @@
         var isPLHigher = main > eu;
         compChart.data.datasets[0].backgroundColor = isPLHigher
             ? 'rgba(196,114,26,0.75)'
-            : 'rgba(14,124,107,0.75)';
-        compChart.data.datasets[0].borderColor = isPLHigher ? '#C4721A' : '#0E7C6B';
+            : 'rgba(30,58,138,0.75)';
+        compChart.data.datasets[0].borderColor = isPLHigher ? '#C4721A' : '#1E3A8A';
         compChart.data.datasets[0].data = [main, eu];
         compChart.update();
     }
@@ -109,7 +109,7 @@
                 calcDiff.style.color = '#C4721A';
             } else if (diff < 0) {
                 calcDiff.textContent = 'Różnica: ' + Math.round(diff) + '% względem średniej europejskiej';
-                calcDiff.style.color = '#0E7C6B';
+                calcDiff.style.color = '#1E3A8A';
             } else {
                 calcDiff.textContent = 'Wartości zbieżne ze średnią europejską';
                 calcDiff.style.color = '#757575';
