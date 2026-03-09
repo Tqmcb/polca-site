@@ -6,23 +6,23 @@
     <title>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         /* === RESET === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-        /* === TOKENS === */
+        /* === TOKENS — aligned with style.css === */
         :root {
             --bg:          #FFFFFF;
-            --bg-subtle:   #F8F9FA;
-            --bg-warm:     #F4F5F7;
+            --bg-subtle:   #F7F8FA;
+            --bg-warm:     #EEF0F4;
             --border:      #E5E7EB;
             --border-strong: #D1D5DB;
-            --text:        #111827;
-            --text-body:   #374151;
-            --text-muted:  #6B7280;
+            --text:        #111318;
+            --text-body:   #23262F;
+            --text-muted:  #555555;
             --text-faint:  #9CA3AF;
             --accent:      #1E3A8A;
             --accent-light:#2563EB;
@@ -146,6 +146,7 @@
             margin-bottom: 1.25rem;
         }
         .hero h1 {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
             font-size: 2.75rem;
             font-weight: 700;
             line-height: 1.15;
@@ -227,6 +228,7 @@
             margin-bottom: 0.3rem;
         }
         .section-title {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
             font-size: 1.35rem;
             font-weight: 700;
             color: var(--text);
@@ -272,7 +274,7 @@
         .blog-card-img-placeholder {
             width: 100%;
             aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #e8f5f2 0%, #d1ede8 100%);
+            background: linear-gradient(135deg, #e8eef8 0%, #d1daea 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -391,6 +393,7 @@
             margin-bottom: 0.5rem;
         }
         .content-title {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
             font-size: 1.2rem;
             font-weight: 700;
             color: var(--text);
