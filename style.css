@@ -23,7 +23,7 @@
     --paper-card: #FFFFFF;
     --paper-white: #FFFFFF;
 
-    /* Accent: deep teal — institutional, scientific */
+    /* Accent: deep navy — institutional, scientific */
     --accent: #1E3A8A;
     --accent-light: #2563EB;
     --accent-subtle: rgba(30, 58, 138, 0.08);
@@ -3926,7 +3926,7 @@ body {
     --paper-card:    #FFFFFF;
 }
 
-/* --- Hero overlay: pokaż zdjęcie, teal zamiast czarny ------ */
+/* --- Hero overlay: pokaż zdjęcie, navy zamiast czarny ------ */
 .hero-overlay {
     background: linear-gradient(
         to right,
@@ -3960,7 +3960,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* --- Card dark: teal-dark zamiast zimnego czarnego --------- */
+/* --- Card dark: navy-dark zamiast zimnego czarnego --------- */
 .card-dark {
     background: #071714;
     border-color: rgba(13, 191, 159, 0.12);
@@ -4045,7 +4045,7 @@ body {
 .metric-card:nth-child(2):hover { border-top-color: var(--accent-warm-light); }
 .metric-card:nth-child(3):hover { border-top-color: #5b96cc; }
 
-/* --- Feature cards — teal glow na hover ---------------------- */
+/* --- Feature cards — navy glow na hover ---------------------- */
 .feature-card {
     transition: box-shadow 0.35s var(--ease-out),
                 transform 0.35s var(--ease-out),
@@ -4097,7 +4097,7 @@ a.card.card-cta:hover {
    Data: 2026-02-26
    ================================================================ */
 /* ── AGENT: COLOR — v9.0 ── */
-/* Żywy system kolorów: teal #1E3A8A, głęboki ink, czyste surface levels */
+/* Żywy system kolorów: navy #1E3A8A, głęboki ink, czyste surface levels */
 
 :root {
     /* ACCENT: Deep Navy — v10.0 */
@@ -4230,7 +4230,7 @@ input:focus, textarea:focus, select:focus {
     box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12) !important;
 }
 
-/* Scrollbar tealowy */
+/* Scrollbar navyowy */
 ::-webkit-scrollbar { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track { background: var(--surface-2); }
 ::-webkit-scrollbar-thumb { background: rgba(30, 58, 138, 0.3); border-radius: 3px; }
