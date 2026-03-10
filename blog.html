@@ -59,21 +59,25 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="polca-topbar">
     <div class="header-inner">
         <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="site-nav" aria-label="Nawigacja główna">
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html">Dashboard</a>
             <a href="analiza.html">Analiza Sektorowa</a>
             <a href="metodyka.html">Metodyka i Jakość</a>
-            <a href="datasety.html">Eksport danych</a>
+            <a href="datasety.html">Datasety</a>
             <a href="narzedzia.html">Narzędzia</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </nav>
         <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="blog.html" class="btn-ghost active">Blog</a>
             <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
         </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
     </div>
 </header>
 
@@ -266,7 +270,7 @@
                 </div>
                 <div class="blog-card-title">Dlaczego polskie wskaźniki emisji CO&#8322; różnią się od europejskich &mdash; i co to oznacza dla LCA</div>
                 <div class="blog-card-excerpt">
-                    597&nbsp;kg&nbsp;CO&#8322;/MWh wobec ok. 295&nbsp;kg średniej EU. Polska wytwarza energię
+                    597&nbsp;kg&nbsp;CO&#8322;/MWh wobec ~210&nbsp;kg średniej EU. Polska wytwarza energię
                     ponad dwa razy bardziej emisyjnie &mdash; konsekwencje dla ocen LCA są głębsze, niż się wydaje.
                 </div>
                 <div class="blog-card-footer">
@@ -429,32 +433,32 @@
             <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
             <p class="footer-addr">
                 ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener">www.epd.org.pl</a>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
             </p>
         </div>
         <div>
-            <div class="footer-col-title">Operator</div>
+            <div class="footer-col-title">Nawigacja</div>
             <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
                 <li><a href="metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
                 <li><a href="datasety.html">Baza Datasetów</a></li>
+                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
         <div>
-            <div class="footer-col-title">Architektura techniczna</div>
+            <div class="footer-col-title">Zasoby</div>
             <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
                 <li><a href="sitemap.xml">Mapa strony</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
     </div>
 </footer>
 <script src="js/sidebar.js?v=5.1"></script>
