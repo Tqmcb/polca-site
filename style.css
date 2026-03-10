@@ -4,14 +4,6 @@
 
 /* === CSS VARIABLES === */
 :root {
-    --sidebar-bg: #111318;
-    --sidebar-hover: #1E2028;
-    --sidebar-active: #282A33;
-    --sidebar-text: rgba(255,255,255,0.45);
-    --sidebar-text-active: #FFFFFF;
-    --sidebar-width: 256px;
-    --sidebar-border: rgba(255,255,255,0.06);
-
     /* Ink palette — cool darks */
     --ink: #111318;
     --ink-secondary: #23262F;
@@ -100,128 +92,11 @@ body {
 a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
 a:hover { color: var(--accent-light); }
 
-/* === SIDEBAR === */
-.polca-sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: var(--sidebar-width);
-    background: var(--sidebar-bg);
-    z-index: 200;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    transition: transform 0.4s var(--ease-out);
-}
-
-.sidebar-brand {
-    padding: 1.6rem 1.4rem 1.2rem;
-    border-bottom: 1px solid var(--sidebar-border);
-}
-
-.sidebar-logo {
-    font-family: 'IBM Plex Mono', 'Courier New', monospace;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #FFFFFF;
-    display: block;
-    margin-bottom: 0.15rem;
-    text-decoration: none;
-    letter-spacing: -0.03em;
-    transition: opacity 0.2s;
-}
-.sidebar-logo:hover { color: #FFFFFF; opacity: 0.8; }
-
-.sidebar-subtitle {
-    font-size: 0.6rem;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.sidebar-nav {
-    flex: 1;
-    padding: 0.75rem 0.6rem;
-}
-
-.sidebar-nav-label {
-    font-size: 0.55rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
-    padding: 0.9rem 0.75rem 0.3rem;
-}
-
-.sidebar-nav a {
-    display: flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.55rem 0.75rem;
-    border-radius: var(--radius-xs);
-    color: var(--sidebar-text);
-    font-size: 0.82rem;
-    font-weight: 500;
-    transition: all 0.2s var(--ease-out);
-    text-decoration: none;
-    margin-bottom: 1px;
-}
-
-.sidebar-nav a:hover {
-    background: var(--sidebar-hover);
-    color: rgba(255,255,255,0.8);
-}
-
-.sidebar-nav a.active {
-    background: var(--sidebar-active);
-    color: var(--sidebar-text-active);
-    font-weight: 600;
-    box-shadow: inset 3px 0 0 var(--accent-light);
-}
-
-.sidebar-nav a .nav-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.5;
-    transition: opacity 0.2s;
-}
-
-.sidebar-nav a:hover .nav-icon,
-.sidebar-nav a.active .nav-icon { opacity: 1; }
-
-.sidebar-footer {
-    padding: 0.9rem 1.4rem;
-    border-top: 1px solid var(--sidebar-border);
-}
-
-.sidebar-status {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.68rem;
-    color: rgba(255,255,255,0.3);
-    font-family: 'IBM Plex Mono', monospace;
-}
-
-.status-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-}
-
 /* === TOPBAR === */
 .polca-topbar {
     position: fixed;
     top: 0;
-    left: var(--sidebar-width);
+    left: 0;
     right: 0;
     height: var(--topbar-height);
     background: rgba(247, 248, 250, 0.92);
@@ -239,24 +114,6 @@ a:hover { color: var(--accent-light); }
     display: flex;
     align-items: center;
     gap: 1rem;
-}
-
-.sidebar-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.35rem;
-    border-radius: var(--radius-xs);
-}
-
-.sidebar-toggle span {
-    display: block;
-    width: 16px;
-    height: 1.5px;
-    background: var(--text-secondary);
-    margin: 3.5px 0;
-    transition: 0.3s var(--ease-out);
 }
 
 .topbar-search {
@@ -339,7 +196,7 @@ a:hover { color: var(--accent-light); }
 
 /* === MAIN CONTENT === */
 .polca-content {
-    margin-left: var(--sidebar-width);
+    margin-left: 0;
     padding-top: var(--topbar-height);
     min-height: 100vh;
 }
@@ -1595,7 +1452,7 @@ a:hover { color: var(--accent-light); }
 
 /* === PORTAL FOOTER === */
 .polca-portal-footer {
-    margin-left: var(--sidebar-width);
+    margin-left: 0;
     padding: 2rem 3rem;
     font-size: 0.7rem;
     color: var(--text-tertiary);
@@ -1622,29 +1479,6 @@ a:hover { color: var(--accent-light); }
 }
 
 @media (max-width: 768px) {
-    :root { --sidebar-width: 0px; }
-
-    .polca-sidebar {
-        transform: translateX(-256px);
-        width: 256px;
-    }
-
-    .polca-sidebar.active { transform: translateX(0); }
-    .polca-topbar { left: 0; }
-    .polca-content { margin-left: 0; }
-    .polca-portal-footer { margin-left: 0; }
-    .sidebar-toggle { display: block; }
-
-    .sidebar-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        backdrop-filter: blur(4px);
-        z-index: 190;
-    }
-
-    .sidebar-overlay.active { display: block; }
     .topbar-search { width: 140px; }
 
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
@@ -2819,7 +2653,7 @@ noscript .fade-in,
 .scroll-progress {
     position: fixed;
     top: 0;
-    left: var(--sidebar-width);
+    left: 0;
     right: 0;
     height: 2px;
     background: linear-gradient(90deg, var(--accent), var(--accent-light));
@@ -2828,15 +2662,6 @@ noscript .fade-in,
     pointer-events: none;
 }
 
-/* Status dot pulse */
-.sidebar-status span {
-    animation: status-pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes status-pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.5); }
-    50% { box-shadow: 0 0 0 4px rgba(30, 58, 138, 0); }
-}
 
 /* Cursor-following card glow */
 .card:not(.card-dark):hover,
@@ -3005,15 +2830,6 @@ noscript .fade-in,
     .related-articles { grid-template-columns: 1fr; }
 }
 
-/* ============================================================
-   TOP-NAV LAYOUT — v6.0
-   Replaces sidebar with horizontal top navigation
-   ============================================================ */
-
-/* Hide legacy sidebar */
-.polca-sidebar,
-.sidebar-overlay { display: none !important; }
-
 /* Topbar: full-width, includes logo + nav */
 .polca-topbar {
     left: 0;
@@ -3033,14 +2849,11 @@ noscript .fade-in,
 :root { --topbar-height: 58px; }
 .polca-topbar { height: 58px; }
 
-/* Content and footer: no sidebar offset */
 .polca-content {
-    margin-left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.polca-portal-footer { margin-left: 0; }
 
 /* Center page content — flex child centring */
 .polca-page {
@@ -4225,13 +4038,6 @@ a.card.card-cta:hover {
     --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     --ease-spring:     cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    /* SIDEBAR */
-    --sidebar-bg:          #0F1117 !important;
-    --sidebar-hover:       #1C1F28 !important;
-    --sidebar-active:      #252B37 !important;
-    --sidebar-text:        rgba(255, 255, 255, 0.50) !important;
-    --sidebar-text-active: #FFFFFF !important;
-    --sidebar-border:      rgba(255, 255, 255, 0.08) !important;
 }
 
 /* Body tło */
@@ -4251,20 +4057,6 @@ body, .polca-content {
     -webkit-backdrop-filter: blur(16px) saturate(160%) !important;
     border-bottom: 1px solid var(--border) !important;
     box-shadow: 0 1px 0 var(--border) !important;
-}
-
-/* Sidebar gradient */
-.polca-sidebar {
-    background: linear-gradient(180deg, #0F1117 0%, #12161F 100%) !important;
-    border-right: 1px solid rgba(255,255,255,0.06) !important;
-}
-
-/* Sidebar active state — accent inset */
-.sidebar-nav a.active,
-.sidebar-nav .active {
-    background: var(--sidebar-active) !important;
-    color: var(--sidebar-text-active) !important;
-    box-shadow: inset 3px 0 0 var(--accent-light) !important;
 }
 
 /* Accent line w tabeli */
@@ -4927,18 +4719,7 @@ blockquote, .pull-quote {
     margin: 2.5rem 0 !important;
 }
 
-/* ===================== SIDEBAR TRANSITIONS ===================== */
-.polca-sidebar {
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
 @media (max-width: 768px) {
-    .polca-sidebar {
-        transform: translateX(-256px) !important;
-    }
-    .polca-sidebar.open {
-        transform: translateX(0) !important;
-    }
     .polca-topbar {
         left: 0 !important;
     }
@@ -5185,7 +4966,7 @@ canvas {
 
 /* ===================== PRINT ===================== */
 @media print {
-    .site-header, .polca-sidebar, .polca-topbar { display: none !important; }
+    .site-header, .polca-topbar { display: none !important; }
     .polca-content { margin-left: 0 !important; }
     .polca-page { padding: 0 !important; max-width: 100% !important; }
 }
