@@ -4,35 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</title>
+    <meta name="description" content="Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.">
+    <link rel="canonical" href="https://polca.org.pl/">
+
+    <!-- OpenGraph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:description" content="Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach produkcji. Siedmiowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.">
+    <meta property="og:url" content="https://polca.org.pl/">
+    <meta property="og:image" content="https://polca.org.pl/images/hero-main.jpg">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="poLCA — Polska Baza Danych LCA">
+    <meta name="twitter:description" content="Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach produkcji.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/hero-main.jpg">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "poLCA",
+        "alternateName": "Polska Baza Danych LCA",
+        "url": "https://polca.org.pl",
+        "description": "Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych.",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://www.epd.org.pl",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "ul. Mydlarska 47",
+                "postalCode": "04-690",
+                "addressLocality": "Warszawa",
+                "addressCountry": "PL"
+            }
+        }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>
         /* === RESET === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
-        /* === TOKENS — aligned with style.css === */
+        /* === TOKENS === */
         :root {
-            --bg:          #FFFFFF;
-            --bg-subtle:   #F7F8FA;
-            --bg-warm:     #EEF0F4;
-            --border:      #E5E7EB;
+            --bg:            #FFFFFF;
+            --bg-subtle:     #F7F8FA;
+            --bg-warm:       #EEF0F4;
+            --border:        #E5E7EB;
             --border-strong: #D1D5DB;
-            --text:        #111318;
-            --text-body:   #23262F;
-            --text-muted:  #555555;
-            --text-faint:  #9CA3AF;
-            --accent:      #1E3A8A;
-            --accent-light:#2563EB;
-            --accent-sub:  rgba(30,58,138,0.08);
-            --accent-bdr:  rgba(30,58,138,0.22);
-            --shadow-sm:   0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-            --shadow-md:   0 4px 16px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
-            --r:           8px;
-            --max:         1080px;
-            --nav-h:       60px;
+            --text:          #111318;
+            --text-body:     #23262F;
+            --text-muted:    #555555;
+            --text-faint:    #9CA3AF;
+            --accent:        #1E3A8A;
+            --accent-light:  #2563EB;
+            --accent-sub:    rgba(30,58,138,0.08);
+            --accent-bdr:    rgba(30,58,138,0.22);
+            --accent-glow:   rgba(37,99,235,0.12);
+            --shadow-sm:     0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            --shadow-md:     0 4px 16px rgba(0,0,0,0.07), 0 1px 4px rgba(0,0,0,0.04);
+            --shadow-lg:     0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-glow:   0 0 40px rgba(30,58,138,0.08);
+            --r:             8px;
+            --r-lg:          12px;
+            --max:           1080px;
+            --nav-h:         60px;
+            --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         body {
@@ -41,22 +91,69 @@
             color: var(--text-body);
             font-size: 15px;
             line-height: 1.65;
+            overflow-x: hidden;
         }
 
-        a { color: var(--accent); text-decoration: none; }
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
         a:hover { color: var(--accent-light); }
 
+        /* === GRAIN OVERLAY === */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 256px 256px;
+        }
+
+        /* === SCROLL PROGRESS === */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            z-index: 200;
+            transition: width 0.1s linear;
+        }
+
+        /* === FADE-IN ANIMATIONS === */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in-delay-1 { transition-delay: 0.1s; }
+        .fade-in-delay-2 { transition-delay: 0.2s; }
+        .fade-in-delay-3 { transition-delay: 0.3s; }
+        .fade-in-delay-4 { transition-delay: 0.4s; }
+
         /* === HEADER === */
-        .site-header {
+        .polca-topbar {
             position: sticky;
             top: 0;
             z-index: 100;
             height: var(--nav-h);
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px) saturate(1.8);
+            -webkit-backdrop-filter: blur(12px) saturate(1.8);
+            border-bottom: 1px solid transparent;
             display: flex;
             align-items: center;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .polca-topbar.scrolled {
+            border-bottom-color: var(--border);
+            box-shadow: 0 1px 8px rgba(0,0,0,0.04);
         }
         .header-inner {
             max-width: var(--max);
@@ -74,23 +171,24 @@
             color: var(--text);
             letter-spacing: -0.02em;
             flex-shrink: 0;
+            transition: color 0.2s;
         }
         .site-logo:hover { color: var(--accent); }
-        .site-nav {
+        .polca-topnav {
             display: flex;
             align-items: center;
             gap: 0.25rem;
             flex: 1;
         }
-        .site-nav a {
+        .polca-topnav a {
             padding: 0.35rem 0.75rem;
             border-radius: 6px;
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--text-muted);
-            transition: color 0.15s, background 0.15s;
+            transition: color 0.2s, background 0.2s;
         }
-        .site-nav a:hover, .site-nav a.active {
+        .polca-topnav a:hover, .polca-topnav a.active {
             color: var(--text);
             background: var(--bg-subtle);
         }
@@ -106,7 +204,7 @@
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--text-muted);
-            transition: color 0.15s, background 0.15s;
+            transition: color 0.2s, background 0.2s;
         }
         .btn-ghost:hover { color: var(--text); background: var(--bg-subtle); }
         .btn-primary {
@@ -116,9 +214,29 @@
             font-weight: 600;
             background: var(--accent);
             color: white;
-            transition: background 0.15s;
+            transition: background 0.2s, box-shadow 0.2s;
         }
-        .btn-primary:hover { background: var(--accent-light); color: white; }
+        .btn-primary:hover {
+            background: var(--accent-light);
+            color: white;
+            box-shadow: 0 2px 12px rgba(37,99,235,0.25);
+        }
+
+        /* Hamburger */
+        .nav-hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            transition: background 0.2s;
+        }
+        .nav-hamburger:hover { background: var(--bg-subtle); }
 
         /* === MAIN LAYOUT === */
         .main-content {
@@ -130,36 +248,47 @@
         /* === HERO === */
         .hero {
             padding: 4rem 0 3.5rem;
-            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
         }
         .hero-tag {
             display: inline-block;
-            font-size: 0.78rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--accent);
             background: var(--accent-sub);
             border: 1px solid var(--accent-bdr);
             border-radius: 4px;
-            padding: 0.2rem 0.6rem;
-            margin-bottom: 1.25rem;
+            padding: 0.25rem 0.7rem;
+            margin-bottom: 1.5rem;
         }
         .hero h1 {
             font-family: 'Inter Tight', 'Inter', sans-serif;
             font-size: 2.75rem;
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.035em;
             color: var(--text);
-            margin-bottom: 1rem;
-            max-width: 640px;
+            margin-bottom: 1.25rem;
+        }
+        .hero h1 .hero-accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         .hero-desc {
             font-size: 1.05rem;
             color: var(--text-muted);
-            line-height: 1.7;
-            max-width: 560px;
+            line-height: 1.75;
+            max-width: 520px;
             margin-bottom: 2rem;
         }
         .hero-cta {
@@ -170,34 +299,112 @@
         .cta-primary {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.65rem 1.4rem;
+            gap: 0.5rem;
+            padding: 0.7rem 1.5rem;
             background: var(--accent);
             color: white;
             border-radius: 7px;
             font-size: 0.9rem;
             font-weight: 600;
-            transition: background 0.15s;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
         }
-        .cta-primary:hover { background: var(--accent-light); color: white; }
+        .cta-primary:hover {
+            background: var(--accent-light);
+            color: white;
+            box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+            transform: translateY(-1px);
+        }
+        .cta-primary svg {
+            transition: transform 0.2s var(--ease-spring);
+        }
+        .cta-primary:hover svg {
+            transform: translateX(3px);
+        }
         .cta-outline {
             display: inline-flex;
             align-items: center;
-            padding: 0.65rem 1.4rem;
+            padding: 0.7rem 1.5rem;
             border: 1.5px solid var(--border-strong);
             color: var(--text);
             border-radius: 7px;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: border-color 0.15s, background 0.15s;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
         }
-        .cta-outline:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-sub); }
-        .hero-stats {
+        .cta-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-sub);
+            transform: translateY(-1px);
+        }
+
+        /* Hero image */
+        .hero-visual {
+            position: relative;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+        }
+        .hero-visual img {
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+            border-radius: var(--r-lg);
+            filter: saturate(1.05) contrast(1.02);
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: var(--r-lg);
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+            pointer-events: none;
+        }
+        .hero-visual-badge {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            background: rgba(17,19,24,0.85);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            line-height: 1.4;
             display: flex;
-            gap: 2.5rem;
-            margin-top: 2.5rem;
-            padding-top: 2rem;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .hero-visual-badge .badge-dot {
+            width: 6px;
+            height: 6px;
+            background: #34D399;
+            border-radius: 50%;
+            animation: pulse-dot 2s ease infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Hero stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding-top: 2.5rem;
             border-top: 1px solid var(--border);
+        }
+        .hero-stat {
+            text-align: center;
+            padding: 1.25rem 0.5rem;
+            border-radius: var(--r);
+            transition: background 0.3s;
+        }
+        .hero-stat:hover {
+            background: var(--bg-subtle);
         }
         .hero-stat-num {
             font-family: 'IBM Plex Mono', monospace;
@@ -207,9 +414,22 @@
             line-height: 1;
         }
         .hero-stat-label {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text-muted);
-            margin-top: 0.3rem;
+            margin-top: 0.4rem;
+            line-height: 1.4;
+        }
+        .hero-stat-sub {
+            font-size: 0.7rem;
+            color: var(--text-faint);
+            margin-top: 0.15rem;
+        }
+
+        /* === SECTION DIVIDER === */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+            margin: 0;
         }
 
         /* === SECTION HEADERS === */
@@ -217,12 +437,12 @@
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            margin: 3rem 0 1.5rem;
+            margin: 3.5rem 0 1.5rem;
         }
         .section-label {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.07em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--text-faint);
             margin-bottom: 0.3rem;
@@ -239,8 +459,12 @@
             font-weight: 500;
             color: var(--accent);
             white-space: nowrap;
+            transition: color 0.2s, gap 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
         }
-        .section-link:hover { color: var(--accent-light); }
+        .section-link:hover { color: var(--accent-light); gap: 0.5rem; }
 
         /* === BLOG CARDS === */
         .blog-grid {
@@ -255,13 +479,13 @@
             border: 1px solid var(--border);
             border-radius: var(--r);
             overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s var(--ease-out);
             color: var(--text-body);
         }
         .blog-card:hover {
             border-color: var(--accent-bdr);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
             color: var(--text-body);
         }
         .blog-card-img {
@@ -270,16 +494,15 @@
             object-fit: cover;
             background: var(--bg-warm);
             display: block;
+            transition: transform 0.5s var(--ease-out);
         }
-        .blog-card-img-placeholder {
-            width: 100%;
+        .blog-card:hover .blog-card-img {
+            transform: scale(1.03);
+        }
+        .blog-card-img-wrap {
+            overflow: hidden;
             aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #e8eef8 0%, #d1daea 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-        .blog-card-img-placeholder svg { opacity: 0.3; }
         .blog-card-body {
             padding: 1.1rem 1.25rem 1.25rem;
             display: flex;
@@ -293,13 +516,14 @@
             flex-wrap: wrap;
         }
         .blog-tag {
-            font-size: 0.7rem;
+            font-size: 0.68rem;
             font-weight: 600;
             letter-spacing: 0.04em;
             color: var(--accent);
             background: var(--accent-sub);
             border-radius: 3px;
             padding: 0.15rem 0.5rem;
+            text-transform: uppercase;
         }
         .blog-card-title {
             font-size: 0.95rem;
@@ -318,7 +542,7 @@
             margin-top: 0.75rem;
         }
         .blog-card-meta span + span::before {
-            content: '·';
+            content: '\00b7';
             margin-right: 0.5rem;
         }
 
@@ -327,36 +551,53 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
-            margin: 3rem 0;
+            margin: 3.5rem 0;
             padding: 2rem;
             background: var(--bg-subtle);
-            border-radius: 12px;
+            border-radius: var(--r-lg);
             border: 1px solid var(--border);
+            position: relative;
         }
+        .nav-grid::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--r-lg);
+            background: linear-gradient(135deg, var(--accent-sub), transparent 40%, transparent 60%, var(--accent-sub));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .nav-grid:hover::before { opacity: 1; }
+
         .nav-card {
             display: flex;
             flex-direction: column;
             gap: 0.6rem;
-            padding: 1.1rem;
+            padding: 1.25rem;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: var(--r);
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: border-color 0.2s, box-shadow 0.3s, transform 0.3s var(--ease-out);
             color: var(--text-body);
+            position: relative;
         }
         .nav-card:hover {
             border-color: var(--accent-bdr);
-            box-shadow: var(--shadow-sm);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
             color: var(--text-body);
         }
         .nav-card-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 7px;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s var(--ease-spring);
         }
+        .nav-card:hover .nav-card-icon { transform: scale(1.1); }
         .nav-card-icon.green  { background: rgba(74,124,89,0.1); color: #3a7a4e; }
         .nav-card-icon.orange { background: rgba(200,100,30,0.1); color: #c06418; }
         .nav-card-icon.blue   { background: rgba(59,107,155,0.1); color: #3b6b9b; }
@@ -369,28 +610,35 @@
         .nav-card-desc {
             font-size: 0.8rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.55;
         }
         .nav-card-arrow {
             font-size: 0.8rem;
             color: var(--text-faint);
-            margin-top: 0.25rem;
+            margin-top: auto;
+            padding-top: 0.25rem;
+            transition: color 0.2s, transform 0.2s;
         }
-        .nav-card:hover .nav-card-arrow { color: var(--accent); }
+        .nav-card:hover .nav-card-arrow {
+            color: var(--accent);
+            transform: translateX(3px);
+        }
 
         /* === CONTENT / PROSE === */
         .content-section {
-            padding: 2.25rem 0;
-            border-bottom: 1px solid var(--border);
+            padding: 2.5rem 0;
         }
-        .content-section:last-of-type { border-bottom: none; }
+        .content-section + .content-section {
+            border-top: 1px solid var(--border);
+        }
         .section-num {
             font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 500;
             color: var(--text-faint);
-            letter-spacing: 0.04em;
+            letter-spacing: 0.06em;
             margin-bottom: 0.5rem;
+            text-transform: uppercase;
         }
         .content-title {
             font-family: 'Inter Tight', 'Inter', sans-serif;
@@ -402,7 +650,7 @@
         }
         .prose p {
             color: var(--text-body);
-            line-height: 1.75;
+            line-height: 1.8;
             margin-bottom: 1rem;
             max-width: 760px;
         }
@@ -415,8 +663,20 @@
             border: 1px solid var(--border);
             border-left: 3px solid var(--accent);
             border-radius: var(--r);
-            padding: 1.5rem 1.75rem;
+            padding: 1.75rem 2rem;
             margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+            pointer-events: none;
         }
         .highlight-box-title {
             font-size: 0.9rem;
@@ -427,7 +687,7 @@
         .highlight-box p {
             font-size: 0.9rem;
             color: var(--text-body);
-            line-height: 1.7;
+            line-height: 1.75;
             max-width: none;
         }
         .highlight-box .note {
@@ -441,6 +701,8 @@
         .table-wrapper {
             overflow-x: auto;
             margin: 0.75rem 0;
+            border-radius: var(--r);
+            border: 1px solid var(--border);
         }
         .polca-table {
             width: 100%;
@@ -449,20 +711,22 @@
         }
         .polca-table th {
             text-align: left;
-            padding: 0.65rem 0.75rem;
+            padding: 0.75rem 1rem;
             background: var(--bg-subtle);
             border-bottom: 2px solid var(--border-strong);
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--text);
             white-space: nowrap;
+            letter-spacing: 0.02em;
         }
         .polca-table td {
-            padding: 0.6rem 0.75rem;
+            padding: 0.65rem 1rem;
             border-bottom: 1px solid var(--border);
             color: var(--text-body);
+            transition: background 0.15s;
         }
-        .polca-table tbody tr:hover { background: var(--bg-subtle); }
+        .polca-table tbody tr:hover { background: var(--accent-sub); }
         .polca-table td.mono {
             font-family: 'IBM Plex Mono', monospace;
             font-size: 0.85rem;
@@ -477,7 +741,7 @@
             font-size: 0.75rem;
             color: var(--text-muted);
             font-style: italic;
-            margin-top: 0.5rem;
+            margin-top: 0.75rem;
         }
 
         /* === CONTACT GRID === */
@@ -488,18 +752,23 @@
             margin: 3rem 0 2rem;
         }
         .contact-card {
-            padding: 1.5rem;
+            padding: 1.75rem;
             border: 1px solid var(--border);
             border-radius: var(--r);
             background: var(--bg);
+            transition: border-color 0.2s, box-shadow 0.3s;
+        }
+        .contact-card:hover {
+            border-color: var(--accent-bdr);
+            box-shadow: var(--shadow-sm);
         }
         .contact-label {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
             color: var(--text-faint);
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.5rem;
         }
         .contact-title {
             font-size: 1.05rem;
@@ -510,7 +779,7 @@
         .contact-text {
             font-size: 0.875rem;
             color: var(--text-muted);
-            line-height: 1.6;
+            line-height: 1.65;
         }
         .contact-meta {
             margin-top: 1rem;
@@ -525,7 +794,18 @@
         .site-footer {
             background: var(--text);
             color: rgba(255,255,255,0.6);
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem 1.5rem;
+            position: relative;
+        }
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-light), transparent);
+            opacity: 0.3;
         }
         .footer-inner {
             max-width: var(--max);
@@ -539,12 +819,12 @@
             font-size: 1rem;
             font-weight: 600;
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: block;
         }
         .footer-desc {
             font-size: 0.82rem;
-            line-height: 1.65;
+            line-height: 1.7;
             margin-bottom: 0.75rem;
         }
         .footer-addr {
@@ -552,76 +832,118 @@
             line-height: 1.7;
         }
         .footer-col-title {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.35);
             margin-bottom: 0.75rem;
         }
         .footer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
         .footer-links a {
             font-size: 0.85rem;
             color: rgba(255,255,255,0.6);
-            transition: color 0.15s;
+            transition: color 0.2s;
         }
         .footer-links a:hover { color: white; }
         .footer-bottom {
             max-width: var(--max);
-            margin: 1.5rem auto 0;
+            margin: 2rem auto 0;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255,255,255,0.06);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 0.78rem;
-            color: rgba(255,255,255,0.35);
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
         }
-
-        /* === DIVIDER === */
-        .section-gap { margin-top: 2.5rem; }
 
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
-            .blog-grid { grid-template-columns: 1fr; }
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-visual { order: -1; }
+            .hero h1 { font-size: 2.1rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .blog-grid { grid-template-columns: 1fr; max-width: 480px; }
             .nav-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-inner { grid-template-columns: 1fr 1fr; }
-            .hero h1 { font-size: 2rem; }
-            .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
         }
+
         @media (max-width: 600px) {
             .header-inner { padding: 0 1rem; gap: 1rem; }
             .main-content { padding: 0 1rem 3rem; }
-            .site-nav { display: none; }
-            .nav-grid { grid-template-columns: 1fr; }
+            .polca-topnav { display: none; }
+            .nav-hamburger { display: flex; }
+            .nav-grid { grid-template-columns: 1fr; padding: 1.25rem; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-visual img { height: 220px; }
+            .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+        }
+
+        /* Mobile nav overlay */
+        @media (max-width: 600px) {
+            .polca-topbar.nav-open .polca-topnav {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: var(--nav-h);
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(16px);
+                -webkit-backdrop-filter: blur(16px);
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-lg);
+                padding: 0.75rem 1rem;
+                gap: 0.25rem;
+                animation: nav-slide 0.25s var(--ease-out);
+            }
+            .polca-topbar.nav-open .polca-topnav a {
+                padding: 0.65rem 0.75rem;
+                font-size: 0.95rem;
+            }
+            .polca-topbar.nav-open .nav-hamburger .hamburger-open { display: none; }
+            .polca-topbar.nav-open .nav-hamburger .hamburger-close { display: block; }
+            .nav-hamburger .hamburger-close { display: none; }
+        }
+        @keyframes nav-slide {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
+<header class="polca-topbar">
     <div class="header-inner">
         <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="site-nav" aria-label="Nawigacja główna">
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html" class="active">Dashboard</a>
             <a href="analiza.html">Analiza Sektorowa</a>
             <a href="metodyka.html">Metodyka i Jakość</a>
-            <a href="datasety.html">Eksport danych</a>
+            <a href="datasety.html">Datasety</a>
             <a href="narzedzia.html">Narzędzia</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
         </nav>
         <div class="header-actions">
             <a href="blog.html" class="btn-ghost">Blog</a>
             <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
         </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
     </div>
 </header>
 
@@ -630,53 +952,72 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-tag">Polska Baza Danych LCI</div>
-        <h1>Dane środowiskowe<br>dla polskiego przemysłu</h1>
-        <p class="hero-desc">
-            Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach
-            produkcji. Siedmiowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.
-        </p>
-        <div class="hero-cta">
-            <a href="datasety.html" class="cta-primary">
-                Przeglądaj datasety
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="metodyka.html" class="cta-outline">Metodyka</a>
+        <div class="hero-grid">
+            <div>
+                <div class="hero-tag fade-in">Polska Baza Danych LCI · w budowie</div>
+                <h1 class="fade-in fade-in-delay-1">Dane środowiskowe<br>dla <span class="hero-accent">polskiego przemysłu</span></h1>
+                <p class="hero-desc fade-in fade-in-delay-2">
+                    Ile CO₂ naprawdę generuje polska cementownia, huta czy betoniarnia? Dotychczas nie było skąd tego wiarygodnie sprawdzić — europejskie bazy uśredniają dane z kilkudziesięciu krajów. poLCA to pierwsza baza danych środowiskowych oparta na rzeczywistych polskich warunkach produkcji.
+                </p>
+                <div class="hero-cta fade-in fade-in-delay-3">
+                    <a href="analiza.html" class="cta-primary">
+                        Dlaczego to ważne
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="metodyka.html" class="cta-outline">Metodyka</a>
+                </div>
+            </div>
+            <div class="hero-visual fade-in fade-in-delay-2">
+                <img src="images/hero-main.jpg" alt="Panele fotowoltaiczne — symbol zrównoważonej energii w polskim przemyśle" width="540" height="340" loading="eager">
+                <div class="hero-visual-badge">
+                    <span class="badge-dot"></span>
+                    EN 15804+A2 · ISO 14044
+                </div>
+            </div>
         </div>
-        <div class="hero-stats">
-            <div>
+
+        <div class="hero-stats fade-in fade-in-delay-4">
+            <div class="hero-stat">
                 <div class="hero-stat-num">597 kg</div>
-                <div class="hero-stat-label">CO₂/MWh — miks PL<br><span style="color:var(--text-faint);font-size:0.75rem">wobec ~295 śr. EU</span></div>
+                <div class="hero-stat-label">CO₂/MWh — miks PL</div>
+                <div class="hero-stat-sub">wobec ~210 śr. EU (Ember 2025)</div>
             </div>
-            <div>
-                <div class="hero-stat-num">+102%</div>
-                <div class="hero-stat-label">odchylenie vs. EU avg<br><span style="color:var(--text-faint);font-size:0.75rem">KOBiZE 2024</span></div>
+            <div class="hero-stat">
+                <div class="hero-stat-num">+184%</div>
+                <div class="hero-stat-label">odchylenie vs. EU avg</div>
+                <div class="hero-stat-sub">KOBiZE 2024</div>
             </div>
-            <div>
+            <div class="hero-stat">
                 <div class="hero-stat-num">7</div>
-                <div class="hero-stat-label">warstw walidacji<br><span style="color:var(--text-faint);font-size:0.75rem">ISO 14044 · E-PRTR · EU ETS</span></div>
+                <div class="hero-stat-label">warstw walidacji</div>
+                <div class="hero-stat-sub">ISO 14044 · E-PRTR · EU ETS</div>
             </div>
-            <div>
+            <div class="hero-stat">
                 <div class="hero-stat-num">EN 15804</div>
-                <div class="hero-stat-label">Zgodność z normą<br><span style="color:var(--text-faint);font-size:0.75rem">+A2:2019</span></div>
+                <div class="hero-stat-label">Zgodność z normą</div>
+                <div class="hero-stat-sub">+A2:2019</div>
             </div>
         </div>
     </section>
 
-    <!-- BLOG SECTION — na górze, widoczny -->
+    <div class="section-divider"></div>
+
+    <!-- BLOG SECTION -->
     <section>
-        <div class="section-header">
+        <div class="section-header fade-in">
             <div>
                 <div class="section-label">Wiedza i komentarze</div>
                 <div class="section-title">Najnowsze z bloga</div>
             </div>
-            <a href="blog.html" class="section-link">Wszystkie artykuły →</a>
+            <a href="blog.html" class="section-link">Wszystkie artykuły
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
         </div>
         <div class="blog-grid">
 
-            <a href="blog-stal-lca-eaf.html" class="blog-card">
-                <div class="blog-card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            <a href="blog-stal-lca-eaf.html" class="blog-card fade-in">
+                <div class="blog-card-img-wrap">
+                    <img class="blog-card-img" src="images/blog-stal-lca-eaf.jpg" alt="Stal z pieca łukowego EAF" width="400" height="225" loading="lazy">
                 </div>
                 <div class="blog-card-body">
                     <div class="blog-tags">
@@ -691,9 +1032,9 @@
                 </div>
             </a>
 
-            <a href="blog-en-pl-2024.html" class="blog-card">
-                <div class="blog-card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <a href="blog-en-pl-2024.html" class="blog-card fade-in fade-in-delay-1">
+                <div class="blog-card-img-wrap">
+                    <img class="blog-card-img" src="images/blog-en-pl-2024.jpg" alt="Elektrownia — emisyjność polskiej energii" width="400" height="225" loading="lazy">
                 </div>
                 <div class="blog-card-body">
                     <div class="blog-tags">
@@ -708,9 +1049,9 @@
                 </div>
             </a>
 
-            <a href="blog-fotowoltaika-epd.html" class="blog-card">
-                <div class="blog-card-img-placeholder">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="7.05" y2="7.05"/><line x1="16.95" y1="16.95" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="7.05" y2="16.95"/><line x1="16.95" y1="7.05" x2="19.78" y2="4.22"/></svg>
+            <a href="blog-fotowoltaika-epd.html" class="blog-card fade-in fade-in-delay-2">
+                <div class="blog-card-img-wrap">
+                    <img class="blog-card-img" src="images/blog-fotowoltaika-epd.jpg" alt="Panele fotowoltaiczne" width="400" height="225" loading="lazy">
                 </div>
                 <div class="blog-card-body">
                     <div class="blog-tags">
@@ -729,7 +1070,7 @@
     </section>
 
     <!-- NAVIGATION CARDS -->
-    <div class="nav-grid">
+    <div class="nav-grid fade-in">
         <a href="metodyka.html" class="nav-card">
             <div class="nav-card-icon green">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
@@ -764,19 +1105,29 @@
         </a>
     </div>
 
-    <!-- CONTENT: 01 — Uzasadnienie -->
-    <div class="content-section">
-        <div class="section-num">01 — Uzasadnienie</div>
-        <div class="content-title">Dlaczego Polska potrzebuje krajowych danych LCI</div>
+    <!-- CONTENT: Kontekst -->
+    <div class="content-section fade-in">
+        <div class="section-num">00 — Kontekst</div>
+        <div class="content-title">O co chodzi z LCA i EPD?</div>
         <div class="prose">
-            <p>Ocena cyklu życia (LCA) jest dziś jedyną uznaną międzynarodowo metodą kwantyfikacji wpływu środowiskowego wyrobów budowlanych. Deklaracje Środowiskowe Produktu (EPD) — oparte na wynikach LCA — stają się warunkiem dostępu do rynku europejskiego na mocy znowelizowanego Rozporządzenia o wyrobach budowlanych (CPR 2024/3110).</p>
-            <p><strong>Problem polega na tym, że praktycznie wszystkie EPD sporządzane dla polskich wyrobów budowlanych opierają się na bazach danych niereprezentujących polskich warunków produkcji.</strong> Ecoinvent — de facto standard branżowy — modeluje procesy jako średnie europejskie lub globalne. Oznacza to, że polski producent cementu, stali czy betonu otrzymuje wynik LCA oparty nie na rzeczywistej emisyjności jego procesu produkcyjnego, lecz na uśrednieniu kilkudziesięciu krajów.</p>
-            <p>Konsekwencje tego stanu rzeczy działają w obu kierunkach. W sektorach, gdzie Polska osiąga wyniki lepsze od europejskiej średniej — jak technologia produkcji klinkieru z wysokim udziałem paliw alternatywnych (70–80% wobec średniej EU 56%) — uśrednione dane zawyżają ślad węglowy polskich produktów, karząc za inwestycje w nowoczesne technologie. W sektorach, gdzie Polska odstaje — przede wszystkim w miksie energetycznym (597 kg CO₂/MWh wobec EU ~295) — te same dane zaniżają rzeczywisty wpływ środowiskowy, ukrywając pilną potrzebę dekarbonizacji.</p>
+            <p><strong>LCA (Life Cycle Assessment)</strong> to metoda liczenia, ile zanieczyszczeń generuje wyrób od wydobycia surowców do końca życia. <strong>EPD (Environmental Product Declaration)</strong> to dokument, który te wyniki prezentuje — coraz częściej wymagany przy sprzedaży materiałów budowlanych w Europie.</p>
+            <p>Problem: żeby policzyć EPD, potrzebne są dane o emisjach — ile CO₂ wytwarza elektrownia, ile paliwa zużywa cementownia, ile energii pochłania transport. Te dane zbiera się w bazach <strong>LCI (Life Cycle Inventory)</strong>. Dotychczas polscy producenci musieli korzystać z baz europejskich, które uśredniają dane z kilkudziesięciu krajów. poLCA ma to zmienić.</p>
+        </div>
+    </div>
+
+    <!-- CONTENT: 01 — Uzasadnienie -->
+    <div class="content-section fade-in">
+        <div class="section-num">01 — Uzasadnienie</div>
+        <div class="content-title">Dlaczego to ważne dla polskich producentów</div>
+        <div class="prose">
+            <p>Nowe Rozporządzenie o wyrobach budowlanych (CPR 2024/3110) sprawia, że EPD stają się warunkiem dostępu do rynku europejskiego. Ale praktycznie wszystkie EPD sporządzane dla polskich wyrobów opierają się na bazach danych, które nie odzwierciedlają polskich warunków produkcji.</p>
+            <p><strong>Uśrednianie działa w obie strony jednocześnie.</strong> Polskie cementownie zainwestowały w paliwa alternatywne (70–80% bilansu cieplnego, wobec średniej EU 56%) — ale europejskie dane tego nie pokazują i zawyżają ich ślad węglowy. Z drugiej strony, polski miks energetyczny jest prawie trzykrotnie bardziej emisyjny niż średnia EU (597 vs ~210 kg CO₂/MWh) — a europejskie dane ten problem ukrywają.</p>
+            <p>Wynik: producent, który zainwestował w czystszą technologię, jest karany w przetargach. Producent, który korzysta z brudnej energii, jest nagradzany. Żadne uśrednienie nie oddaje tej dualnej rzeczywistości polskiego przemysłu.</p>
         </div>
     </div>
 
     <!-- CONTENT: Zasada proximity -->
-    <div class="content-section">
+    <div class="content-section fade-in">
         <div class="highlight-box">
             <div class="highlight-box-title">Zasada proximity — ISO 14044 §4.2.3.6</div>
             <p>Norma ISO 14044:2006 formułuje wyraźną preferencję dla danych najbardziej reprezentatywnych geograficznie i technologicznie. Zasada ta — zwana zasadą proximity — oznacza, że dane krajowe powinny mieć pierwszeństwo nad danymi regionalnymi, a dane regionalne nad danymi globalnymi. poLCA realizuje tę zasadę, dostarczając dane inwentaryzacji cyklu życia (LCI) specyficzne dla polskich warunków produkcji, polskiego miksu energetycznego i polskiej infrastruktury transportowej.</p>
@@ -785,7 +1136,7 @@
     </div>
 
     <!-- TABLE -->
-    <div class="content-section">
+    <div class="content-section fade-in">
         <div class="content-title">Polskie wskaźniki emisji dla nośników energii</div>
         <p style="font-size:0.875rem;color:var(--text-muted);margin-bottom:1rem;">Podstawa obliczeń w bazie poLCA dla procesów energetycznych (na 1 GJ energii)</p>
         <div class="table-wrapper">
@@ -840,7 +1191,7 @@
     </div>
 
     <!-- CONTACT -->
-    <div class="contact-grid">
+    <div class="contact-grid fade-in">
         <div class="contact-card">
             <div class="contact-label">Operator bazy danych</div>
             <div class="contact-title">Multicert Sp. z o.o.</div>
@@ -876,29 +1227,34 @@
             </p>
         </div>
         <div>
-            <div class="footer-col-title">Operator</div>
+            <div class="footer-col-title">Nawigacja</div>
             <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
                 <li><a href="metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
                 <li><a href="datasety.html">Baza Datasetów</a></li>
+                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
         <div>
-            <div class="footer-col-title">Architektura techniczna</div>
+            <div class="footer-col-title">Zasoby</div>
             <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
                 <li><a href="sitemap.xml">Mapa strony</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
         <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v8.0 mockup</span>
+        <span>poLCA · polca.org.pl</span>
     </div>
 </footer>
+
+<!-- Scripts -->
+<script src="js/nav-mobile.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/effects.js"></script>
 
 </body>
 </html>
