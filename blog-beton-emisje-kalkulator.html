@@ -52,21 +52,25 @@
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
-<header class="site-header">
+<header class="polca-topbar">
     <div class="header-inner">
         <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="site-nav" aria-label="Nawigacja główna">
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html">Dashboard</a>
             <a href="analiza.html">Analiza Sektorowa</a>
             <a href="metodyka.html">Metodyka i Jakość</a>
-            <a href="datasety.html">Eksport danych</a>
+            <a href="datasety.html">Datasety</a>
             <a href="narzedzia.html">Narzędzia</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </nav>
         <div class="header-actions">
             <a href="blog.html" class="btn-ghost">Blog</a>
             <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
         </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
     </div>
 </header>
 
@@ -242,7 +246,7 @@
                 </button>
                 <button class="hotspot hotspot-medium" style="top:20%;left:88%"
                     data-title="Miks energetyczny PL — kluczowa różnica"
-                    data-value="597 kg CO₂/MWh vs 295 EU"
+                    data-value="597 kg CO₂/MWh vs 210 EU"
                     data-desc="To największa pojedyncza różnica między danymi poLCA a Ecoinvent. Polska sieć jest 2× bardziej emisyjna niż średnia EU. Bez korekty, GWP betonu jest zaniżone o ok. 18%.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
@@ -267,7 +271,7 @@
 
             <h2>Hot-spot nr 2: energia elektryczna w węźle (13% GWP)</h2>
             <p>Mieszalnik betonomieszarni, podajniki ślimakowe, systemy ważące i sterowanie — wszystko to pobiera energię elektryczną. W typowej wytwórni betonu towarowego zużycie energii elektrycznej wynosi 3–6 kWh/m³ betonu.</p>
-            <p>Przy polskim wskaźniku KOBiZE 2024 wynoszącym <strong>597 kg CO₂/MWh</strong> (wobec ~295 kg dla średniej EU), każda MWh zużytej energii generuje dwukrotnie więcej emisji niż wynikałoby z danych generycznych. Dla wytwórni produkującej 50 000 m³/rok oznacza to różnicę rzędu <strong>75–150 t CO₂/rok</strong> w porównaniu z wynikiem opartym na Ecoinvent EU.</p>
+            <p>Przy polskim wskaźniku KOBiZE 2024 wynoszącym <strong>597 kg CO₂/MWh</strong> (wobec ~210 kg dla średniej EU), każda MWh zużytej energii generuje niemal trzykrotnie więcej emisji niż wynikałoby z danych generycznych. Dla wytwórni produkującej 50 000 m³/rok oznacza to różnicę rzędu <strong>150–250 t CO₂/rok</strong> w porównaniu z wynikiem opartym na Ecoinvent EU.</p>
 
             <div class="post-callout post-callout-accent">
                 <strong>Ważne:</strong> Jeśli wytwórnia posiada Gwarancje Pochodzenia (GO) lub własną instalację OZE, udział energii elektrycznej w GWP spada z ~13% do ok. 3%. Wymaga to jednak odpowiedniej dokumentacji w raporcie LCA — sama faktura za prąd z OZE nie wystarczy bez potwierdzenia atrybutu środowiskowego.
@@ -432,7 +436,7 @@
         <div class="sidebar-card sidebar-card-accent">
             <div class="sidebar-card-title">Kluczowy wskaźnik</div>
             <div class="sidebar-stat">597 <span>kg CO₂/MWh</span></div>
-            <div class="sidebar-stat-label">Miks PL (KOBiZE 2024)<br>vs ~295 kg średnia EU</div>
+            <div class="sidebar-stat-label">Miks PL (KOBiZE 2024)<br>vs ~210 kg średnia EU</div>
         </div>
     </aside>
     </div><!-- /.blog-post-layout -->
@@ -499,8 +503,8 @@
             <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
             <p class="footer-addr">
                 ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener">www.epd.org.pl</a>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
             </p>
         </div>
         <div>
