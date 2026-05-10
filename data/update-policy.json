@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "title": "POLCA LCI data update and versioning policy",
+    "version": "2026.1-draft",
+    "updated_at": "2026-05-03",
+    "purpose": "Zasady aktualizacji, wersjonowania i audytowalności bazy LCI/LCIA POLCA."
+  },
+  "principle": "POLCA powinna działać jak kontrolowana baza referencyjna, a nie edytowalna tabela. Każdy rekord LCI/LCIA ma wersję, źródło, datę sprawdzenia, termin następnego przeglądu, status, zakres modułu i historię zmian. Wyniki ocen środowiskowych muszą zapisywać snapshot wersji danych użytej w obliczeniu.",
+  "regulatory_patterns": [
+    {
+      "name": "CPR 2024/3110 i Digital Product Passport",
+      "rule_for_polca": "Dane powinny być maszynowo czytelne, interoperacyjne, identyfikowalne i powiązane z wyrobem, producentem, deklaracją oraz zakresem środowiskowym.",
+      "url": "https://eur-lex.europa.eu/legal-content/en/AUTO/?uri=CELEX%3A32024R3110"
+    },
+    {
+      "name": "CBAM default values",
+      "rule_for_polca": "Wartości domyślne powinny być rewidowane regularnie po pozyskaniu nowych danych i informacji zwrotnych z rynku, a nie zmieniane uznaniowo.",
+      "url": "https://taxation-customs.ec.europa.eu/news/commission-publishes-default-values-determining-embedded-emissions-during-cbam-transitional-period-2023-12-22_en"
+    },
+    {
+      "name": "ILCD / Life Cycle Data Network",
+      "rule_for_polca": "Dataset LCA musi mieć odpowiedzialny podmiot, metadane, dokumentację, identyfikator, wersję i opis zakresu danych.",
+      "url": "https://publications.jrc.ec.europa.eu/repository/handle/JRC58194"
+    },
+    {
+      "name": "openEPD / EC3",
+      "rule_for_polca": "Rekordy powinny mieć identyfikatory, wersje, źródła, PCR/cPCR, zakres modułów, jednostki i pola jakości danych, aby dało się je wymieniać przez format danych.",
+      "url": "https://www.open-epd-forum.org/"
+    }
+  ],
+  "record_required_fields": [
+    "dataset_code",
+    "dataset_version",
+    "semantic_version",
+    "status",
+    "valid_from",
+    "valid_until",
+    "last_reviewed_at",
+    "next_review_due",
+    "review_cycle",
+    "update_trigger",
+    "source_name",
+    "source_url",
+    "source_version",
+    "source_published_at",
+    "license_or_access_rule",
+    "geography",
+    "module_scope",
+    "declared_unit",
+    "lci_flows",
+    "lcia_method",
+    "indicators",
+    "data_quality",
+    "quality_score",
+    "review_owner",
+    "approved_by",
+    "change_log",
+    "supersedes",
+    "superseded_by"
+  ],
+  "review_cycles": [
+    {
+      "code": "quarterly",
+      "name": "Przegląd kwartalny",
+      "applies_to": ["energia elektryczna", "paliwa", "transport", "kursy i przeliczniki operacyjne"],
+      "rule": "Co kwartał sprawdź, czy źródło publiczne, krajowy wskaźnik, regulacja albo baza referencyjna opublikowały nową wersję."
+    },
+    {
+      "code": "annual",
+      "name": "Przegląd roczny",
+      "applies_to": ["datasets POLCA", "wartości domyślne", "dane sektorowe", "źródła publiczne"],
+      "rule": "Raz w roku wykonaj pełny przegląd źródeł, zmian normatywnych, cPCR, danych branżowych i jakości datasetów."
+    },
+    {
+      "code": "event_driven",
+      "name": "Aktualizacja zdarzeniowa",
+      "applies_to": ["nowa EPD dostawcy", "zmiana cPCR", "nowa norma", "wykryty błąd", "zmiana źródła danych"],
+      "rule": "Aktualizuj natychmiast, gdy zmiana wpływa na hotspot, zgodność audytową albo wynik istotnego wyrobu."
+    },
+    {
+      "code": "major_method_review",
+      "name": "Przegląd metody głównej",
+      "applies_to": ["metody LCIA", "reguły wartości domyślnych", "granice systemu", "alokacja"],
+      "rule": "Zmiana metody głównej tworzy nową wersję major i nie nadpisuje wyników historycznych."
+    }
+  ],
+  "versioning_rules": [
+    "Zmiana tekstu, cytowania albo metadanych bez wpływu na wynik zwiększa wersję patch.",
+    "Zmiana źródła, jakości danych, przelicznika albo wyniku w tej samej metodzie zwiększa wersję minor.",
+    "Zmiana metody LCIA, granicy systemu, cPCR, jednostki deklarowanej albo alokacji zwiększa wersję major.",
+    "Wynik klienta zapisuje dataset_code, dataset_version, source_version i calculation_snapshot_id.",
+    "Nowa wersja datasetu nie zmienia automatycznie podpisanych lub przekazanych dokumentów; system pokazuje możliwość przeliczenia."
+  ],
+  "update_proces": [
+    {
+      "step": 1,
+      "name": "Monitorowanie źródeł",
+      "output": "Lista źródeł z datą ostatniego sprawdzenia i statusem zmian."
+    },
+    {
+      "step": 2,
+      "name": "Import lub ręczna rejestracja zmiany",
+      "output": "Nowa wersja źródła zapisana jako kandydat datasetu."
+    },
+    {
+      "step": 3,
+      "name": "Normalizacja LCI",
+      "output": "Jednostka, moduł, geografia, rok, metoda i przepływy LCI przeliczone do formatu POLCA."
+    },
+    {
+      "step": 4,
+      "name": "Przeliczenie LCIA",
+      "output": "Wynikowe wskaźniki środowiskowe, w tym GWP, policzone według wybranej metody."
+    },
+    {
+      "step": 5,
+      "name": "Kontrola jakości",
+      "output": "Ocena jakości danych, hotspoty, ograniczenia, porównanie z poprzednią wersją i flagi audytowe."
+    },
+    {
+      "step": 6,
+      "name": "Zatwierdzenie i publikacja",
+      "output": "Status active, changelog, archiwizacja poprzedniej wersji i data następnego przeglądu."
+    }
+  ],
+  "statuses": [
+    "draft",
+    "under_review",
+    "active",
+    "superseded",
+    "deprecated",
+    "withdrawn"
+  ],
+  "audit_rule": "Audytor musi móc odtwórczo sprawdzić, która wersja danych, źródła i metody została użyta w konkretnym wyniku. Dlatego POLCA nie usuwa starych wersji, tylko je archiwizuje i oznacza statusem superseded albo withdrawn."
+}

@@ -1,0 +1,109 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
+    "name": "Cement CEM IV — średnia krajowa PL",
+    "category": "materiał",
+    "module_default": "A1-A3",
+    "unit": "t",
+    "gwp_total_kg_co2e": 397,
+    "year": 2025,
+    "geography": "PL",
+    "technology": "cement pucolanowy CEM IV zgodny z EN 197-1; średnia krajowa produkcji w Polsce, reprezentatywność danych 2022",
+    "data_quality": "verified_sector_epd_reference",
+    "status": "published_reference_dataset",
+    "source_name": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce",
+    "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+    "scope": "Wartość A1-A3 dla 1 t cementu CEM IV produkowanego w Polsce, przed transportem do zakładu klienta. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+    "methodology_note": "Dataset oparto na zweryfikowanej EPD Typu III Stowarzyszenia Producentów Cementu / ITB z 2025 r. EPD podaje ślad węglowy CEM IV równy 0,397 t CO2/t dla A1-A3. W tej samej tabeli podano także wartość globalnego ocieplenia brutto 510 kg CO2e/t jako informację kontrolną; główna wartość POLCA stosuje ślad węglowy wskazany w EPD.",
+    "limitations": "Jest to średnia krajowa dla CEM IV, a nie EPD konkretnego cementu ani konkretnej cementowni. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani wpływu konkretnej recepty betonu.",
+    "preferred_replacement": "EPD konkretnego cementu CEM IV, wskaźnik dostawcy albo zweryfikowane dane cementowni dla użytego cementu.",
+    "publication_status": "published_reference_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_preparation"
+    ],
+    "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu CEM IV, EPD dostawcy ma pierwszeństwo przed średnią krajową POLCA.",
+    "source_trace": [
+      {
+        "name": "EPD SPC/ITB 2025 — Cementy CEM I-CEM V produkowane w Polsce",
+        "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+        "role": "źródło wartości A1-A3 dla CEM IV: 397 kg CO2/t oraz wartość brutto 510 kg CO2e/t jako kontrola",
+        "type": "verified_sector_epd_reference"
+      },
+      {
+        "name": "EN 16908 i EN 15804+A2",
+        "url": "https://standards.iteh.ai/catalog/standards/cen/c98127b4-8dc2-48a4-9338-3e1366b16669/en-15804-2012a2-2019",
+        "role": "granice systemu A1-A3 i zasady EPD dla cementu jako produktu pośredniego",
+        "type": "normative_reference"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanej EPD sektorowej SPC/ITB. Dla konkretnego dostawcy pierwszeństwo ma EPD tego cementu albo potwierdzony wskaźnik dostawcy.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {
+      "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD SPC/ITB 2025",
+      "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego CEM IV; wynik oznaczony jako wartość referencyjna średnia krajowa.",
+      "auditor_note": "Sprawdzić typ CEM IV, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy dla CEM IV, stosowana jest wartość referencyjna POLCA dla średniego CEM IV produkowanego w Polsce.",
+    "default_methodology": {
+      "declared_value": "397 kg CO2e/t; wartość brutto w tabeli EPD: 510 kg CO2e/t",
+      "module": "A1-A3",
+      "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+      "process_model": [
+        "surowce i przygotowanie mączki surowcowej",
+        "produkcja klinkieru",
+        "mielenie cementu",
+        "popiół/pucolana i dodatki główne",
+        "załadunek cementu luzem"
+      ],
+      "source_basis": [
+        {
+          "name": "EPD SPC/ITB 2025 — Cementy CEM I-CEM V produkowane w Polsce",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+          "role": "zweryfikowana wartość A1-A3 dla CEM IV"
+        }
+      ],
+      "rationale": "CEM IV jest ważny dla betonów niskoemisyjnych i mieszanek z dodatkiem pucolanowym/popiołowym. Wartość średnia krajowa umożliwia spójne obliczenia, gdy brak EPD dostawcy.",
+      "required_replacement": "EPD konkretnego cementu CEM IV lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+      "audit_checks": [
+        "typ CEM IV",
+        "producent",
+        "numer i ważność EPD",
+        "udział cementu w recepcie",
+        "transport A2",
+        "zgodność jednostki i modułów"
+      ]
+    },
+    "product_groups": [
+      "beton",
+      "prefabrykaty",
+      "zaprawy",
+      "ogolne-epd"
+    ],
+    "material_role": "cement",
+    "record_use_status": "ready_to_use_reference_dataset"
+  }
+}

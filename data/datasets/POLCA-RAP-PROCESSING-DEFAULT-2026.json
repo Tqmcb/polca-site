@@ -1,0 +1,98 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-RAP-PROCESSING-DEFAULT-2026",
+    "name": "RAP / destrukt asfaltowy - przygotowanie do ponownego użycia",
+    "category": "materiał",
+    "module_default": "A1/A3",
+    "unit": "t",
+    "gwp_total_kg_co2e": 3,
+    "year": 2026,
+    "geography": "PL",
+    "technology": "Kruszenie, przesiewanie i przygotowanie RAP",
+    "data_quality": "industry",
+    "status": "published_sector_dataset",
+    "source_name": "POLCA 2026, wartość sektorowa dla przetwarzania RAP",
+    "source_url": "https://polca.org.pl/metodyka.html",
+    "scope": "Przygotowanie RAP do wykorzystania w mieszance. Moduł zależy od granicy systemu i zasad cPCR/wytycznych EPD Polska.",
+    "methodology_note": "Dataset służy do modelowania dodatkówego procesu przygotowania destruktu asfaltowego. W EPD rekord pokazuje status RAP jako materiału wtórnego oraz zasady alokacji i modułu D. Podstawa wartości domyślnej: RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
+    "limitations": "Nie rozróżnia wilgotności RAP, technologii podawania, frakcji, podgrzewania ani rzeczywistego zużycia energii.",
+    "preferred_replacement": "Dane zakładu dotyczące przetwarzania RAP, zużycie energii i paliw, zasady cPCR/wytycznych EPD Polska.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "source_trace": [
+      {
+        "name": "Model EPD MMA / EN 15804+A2/cPCR",
+        "url": "https://polca.org.pl/datasety.html",
+        "role": "modelowanie materiału wtórnego i zasad alokacji",
+        "type": "methodology_source"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {
+      "priority": "dane kopalni lub EPD > regionalny dataset POLCA > proxy publiczne",
+      "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
+      "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "default_methodology": {
+      "declared_value": "3 kg CO2e/t",
+      "module": "A1/A3 zależnie od granicy systemu",
+      "system_boundary": "przygotowanie destruktu asfaltowego do ponownego użycia",
+      "process_model": [
+        "frezowanie lub przyjęcie materiału",
+        "kruszenie",
+        "przesiewanie",
+        "magazynowanie"
+      ],
+      "source_basis": [
+        {
+          "name": "Model EPD MMA / EN 15804+A2/cPCR",
+          "url": "https://polca.org.pl/datasety.html",
+          "role": "modelowanie materiału wtórnego i zasad alokacji"
+        }
+      ],
+      "rationale": "RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
+      "required_replacement": "Dane procesu recyklingu i audyt statusu materiału.",
+      "audit_checks": [
+        "WWA/SVHC",
+        "status End-of-Waste",
+        "wilgotność",
+        "udział RAP",
+        "alokacja i moduł D"
+      ]
+    },
+    "product_groups": [
+      "mma"
+    ],
+    "material_role": "destrukt asfaltowy / recykling",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

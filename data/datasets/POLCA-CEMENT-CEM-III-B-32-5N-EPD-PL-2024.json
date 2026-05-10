@@ -1,0 +1,114 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024",
+    "name": "Cement CEM III/B 32,5N",
+    "category": "materiał",
+    "module_default": "A1-A3",
+    "unit": "t",
+    "gwp_total_kg_co2e": 228,
+    "year": 2024,
+    "geography": "PL",
+    "technology": "cement hutniczy zgodny z EN 197-1",
+    "data_quality": "producer_epd_reference",
+    "status": "published_reference_dataset",
+    "source_name": "EPD Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+    "source_url": "https://www.epd.org.pl/",
+    "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+    "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+    "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+    "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+    "publication_status": "published_reference_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_preparation"
+    ],
+    "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+    "source_trace": [
+      {
+        "name": "EPD Dyckerhoff PL 2024",
+        "url": "https://www.epd.org.pl/",
+        "role": "źródło wartości GWP A1-A3 dla cementu",
+        "type": "verified_epd_reference"
+      },
+      {
+        "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+        "url": "https://www.polskicement.pl/",
+        "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+        "type": "sector_context"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {
+      "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+      "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+      "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+    "default_methodology": {
+      "declared_value": "228 kg CO2e/t",
+      "module": "A1-A3",
+      "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+      "process_model": [
+        "surowce i przygotowanie mączki surowcowej",
+        "produkcja klinkieru",
+        "mielenie cementu",
+        "dodatki główne",
+        "pakowanie lub załadunek luzem"
+      ],
+      "source_basis": [
+        {
+          "name": "EPD Dyckerhoff PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "wartość GWP A1-A3 cementu"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+        }
+      ],
+      "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+      "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+      "audit_checks": [
+        "typ CEM",
+        "producent",
+        "numer i ważność EPD",
+        "udział cementu w recepcie",
+        "transport A2",
+        "zgodność jednostki i modułów"
+      ]
+    },
+    "product_groups": [
+      "beton",
+      "prefabrykaty",
+      "zaprawy",
+      "ogolne-epd"
+    ],
+    "material_role": "cement",
+    "record_use_status": "ready_to_use_reference_dataset"
+  }
+}

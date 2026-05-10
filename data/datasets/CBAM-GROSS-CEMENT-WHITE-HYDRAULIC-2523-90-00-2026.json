@@ -1,0 +1,128 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
+    "name": "CBAM brutto 2026 — cement hydrauliczny biały",
+    "category": "regulacyjne",
+    "module_default": "CBAM direct+indirect 2026",
+    "unit": "t",
+    "gwp_total_kg_co2e": 1639,
+    "year": 2026,
+    "geography": "Other Countries and Territories",
+    "technology": "White hydraulic cements; CN 2523 90 00",
+    "data_quality": "regulatory_control_cbam_gross",
+    "status": "published_cbam_default_reference",
+    "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+    "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+    "scope": "Wartość domyślna CBAM 2026 dla White hydraulic cements, CN 2523 90 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+    "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+    "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+    "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+    "publication_status": "published_cbam_default_reference",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "quality_control",
+      "data_gap_assessment"
+    ],
+    "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+    "source_trace": [
+      {
+        "name": "European Commission — CBAM Legislation and Guidance",
+        "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+        "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+        "type": "official_public"
+      },
+      {
+        "name": "Commission Implementing Regulation (EU) 2025/2621",
+        "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+        "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+        "type": "public_regulation"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+    "evidence_level": "regulatory_control",
+    "source_policy": {
+      "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+      "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+      "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_data",
+    "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+    "default_methodology": {
+      "declared_value": "1639 kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+      "calculation_components": [
+        {
+          "name": "direct emissions",
+          "value_kg_co2e_per_t": 1310
+        },
+        {
+          "name": "indirect emissions",
+          "value_kg_co2e_per_t": 180
+        },
+        {
+          "name": "total emissions before mark-up",
+          "value_kg_co2e_per_t": 1490
+        },
+        {
+          "name": "2026 default value including mark-up",
+          "value_kg_co2e_per_t": 1639
+        },
+        {
+          "name": "2027 default value including mark-up",
+          "value_kg_co2e_per_t": 1788
+        },
+        {
+          "name": "2028 and onwards default value including mark-up",
+          "value_kg_co2e_per_t": 1937
+        }
+      ],
+      "source_basis": [
+        {
+          "name": "Komisja Europejska — Default values definitive period",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "wartość domyślna CBAM dla okresu definitywnego"
+        }
+      ],
+      "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+      "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "audit_checks": [
+        "kod CN",
+        "kraj pochodzenia",
+        "rok CBAM",
+        "direct emissions",
+        "indirect emissions",
+        "narzut",
+        "czy istnieją dane producenta"
+      ]
+    },
+    "product_groups": [
+      "regulacyjne",
+      "cement",
+      "beton"
+    ],
+    "material_role": "wartość kontrolna CBAM",
+    "record_use_status": "ready_to_use_control_dataset"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
+    "name": "Lepiszcze asfaltowe drogowe",
+    "category": "materiał",
+    "module_default": "A1",
+    "unit": "t",
+    "gwp_total_kg_co2e": 450,
+    "year": 2026,
+    "geography": "PL/EU",
+    "technology": "Produkcja asfaltu drogowego przed transportem do wytwórni",
+    "data_quality": "industry",
+    "status": "published_sector_dataset",
+    "source_name": "Eurobitume LCA 4.0, background branżowy dla bitumu",
+    "source_url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+    "scope": "A1 produkcji lepiszcza. Transport do wytwórni liczyć oddzielnie w A2.",
+    "methodology_note": "Dataset lepiszcza opiera się na podejściu branżowym Eurobitume LCA 4.0 dla bitumu w zakresie cradle-to-gate. Rekord ma status backgroundu branżowego A1. Dla dostawcy z własną EPD baza wskazuje deklarację producenta; dla braku EPD stosuje wartość sektorową z jawnie oznaczoną jakością danych.",
+    "limitations": "Nie rozróżnia rafinerii, konkretnego producenta, asfaltów modyfikowanych, dodatków specjalnych, transportu do wytwórni ani alokacji właściwej dla konkretnej dostawy.",
+    "preferred_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy dla konkretnego produktu i zakładu.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "source_trace": [
+      {
+        "name": "Eurobitume LCA 4.0",
+        "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+        "role": "branżowy background cradle-to-gate dla bitumu",
+        "type": "methodology_source"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {
+      "priority": "EPD dostawcy > Eurobitume background > konserwatywny proxy POLCA",
+      "when_allowed": "Brak EPD dostawcy lub brak danych konkretnej rafinerii; wynik oznaczony jako dane branżowe/proxy.",
+      "auditor_note": "Sprawdzić typ lepiszcza, producenta, lokalizację dostawy, dokument dostawcy i wpływ lepiszcza na kluczowe źródła wpływu."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "default_methodology": {
+      "declared_value": "450 kg CO2e/t",
+      "module": "A1",
+      "system_boundary": "produkcja lepiszcza przed transportem do wytwórni",
+      "process_model": [
+        "wydobycie i dostawa ropy",
+        "rafinacja",
+        "magazynowanie bitumu"
+      ],
+      "source_basis": [
+        {
+          "name": "Eurobitume LCA 4.0",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "branżowy background cradle-to-gate dla bitumu"
+        }
+      ],
+      "rationale": "Lepiszcze jest zwykle kluczowe źródło wpływuem MMA, dlatego wartość domyślna jest dopuszczalna tylko przy braku danych dostawcy.",
+      "required_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy.",
+      "audit_checks": [
+        "typ asfaltu",
+        "rafineria/dostawca",
+        "PMB lub asfalt zwykły",
+        "transport A2"
+      ]
+    },
+    "product_groups": [
+      "mma",
+      "emulsje",
+      "roboty-drogowe"
+    ],
+    "material_role": "lepiszcze",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

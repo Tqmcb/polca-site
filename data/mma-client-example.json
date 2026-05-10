@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "id": "POLCA-MMA-CLIENT-EXAMPLE-AC16W-20RAP-2026",
+    "name": "Przykładowy profil danych klienta dla MMA AC 16 W HMA z 20% RAP",
+    "version": "2026.1",
+    "status": "example_profile",
+    "published_at": "2026-05-04",
+    "declared_unit": "1 Mg mieszanki mineralno-asfaltowej",
+    "standards": [
+      "EN 13108-1",
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "cPCR MMA EPD Polska - profil roboczy"
+    ],
+    "scope_note": "Profil przykładowy do pokazania przepływu danych EPD+. Nie jest deklaracją konkretnego producenta i nie zastępuje EPD wyrobu."
+  },
+  "client_example": {
+    "owner": "Przykładowy producent MMA",
+    "plant": "Wytwórnia stacjonarna, Polska centralna",
+    "product": "AC 16 W 35/50",
+    "technology": "HMA, mieszanka na gorąco",
+    "declared_unit_mass_kg": 1000,
+    "reference_epd_profile": "AC 16 W HMA z 20% RAP, zakres typowy A1-A3 38-55 kg CO2e/Mg według benchmarku generatora EPD+ MMA"
+  },
+  "activity_data": {
+    "recipe_kg_per_mg": {
+      "virgin_aggregate": 720,
+      "rap": 200,
+      "road_bitumen_35_50": 48,
+      "limestone_filler": 30,
+      "additives": 2
+    },
+    "transport_km": {
+      "virgin_aggregate_to_plant": 50,
+      "rap_to_plant": 25,
+      "bitumen_to_plant": 180,
+      "filler_to_plant": 60,
+      "additives_to_plant": 200,
+      "plant_to_site_a4": 25,
+      "rap_to_processing_c2": 30
+    },
+    "production_a3": {
+      "natural_gas_m3_per_mg": 5.9,
+      "electricity_kwh_per_mg": 7.2,
+      "diesel_l_per_mg": 0.05
+    },
+    "scenario_a5_c_d": {
+      "paving_diesel_l_per_mg": 0.35,
+      "tack_coat_emulsion_kg_per_mg": 0.3,
+      "installation_waste_percent": 0.5,
+      "milling_diesel_l_per_mg": 0.25,
+      "rap_processing_electricity_kwh_per_mg": 1.2,
+      "rap_processing_diesel_l_per_mg": 0.15,
+      "landfill_share_percent": 5,
+      "recycling_share_percent": 80,
+      "module_d_credit_kg_co2e_per_mg": -6.4
+    }
+  },
+  "background_factors": [
+    {
+      "dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+      "name": "Kruszywo łamane twarde",
+      "value": 5.5,
+      "unit": "kg CO2e/t",
+      "module": "A1",
+      "replacement": "EPD kopalni lub zweryfikowane dane kopalni"
+    },
+    {
+      "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
+      "name": "Lepiszcze asfaltowe drogowe",
+      "value": 450,
+      "unit": "kg CO2e/t",
+      "module": "A1",
+      "replacement": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy"
+    },
+    {
+      "dataset_code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
+      "name": "Wypełniacz wapienny",
+      "value": 30,
+      "unit": "kg CO2e/t",
+      "module": "A1",
+      "replacement": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia"
+    },
+    {
+      "dataset_code": "POLCA-RAP-PROCESSING-DEFAULT-2026",
+      "name": "RAP / destrukt asfaltowy, przygotowanie",
+      "value": 3,
+      "unit": "kg CO2e/t",
+      "module": "A1/A3",
+      "replacement": "dane zakładu: frakcjonowanie, wilgotność, energia i podgrzewanie RAP"
+    },
+    {
+      "dataset_code": "POLCA-TRUCK-40T-DEFAULT-2026",
+      "name": "Transport drogowy 40 t",
+      "value": 0.095,
+      "unit": "kg CO2e/tkm",
+      "module": "A2/A4/C2",
+      "replacement": "dokumenty WZ/CMR, trasa, ładowność i spalanie floty"
+    },
+    {
+      "dataset_code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+      "name": "Gaz ziemny",
+      "value": 2,
+      "unit": "kg CO2e/m3",
+      "module": "A3",
+      "replacement": "faktury, wartość opałowa i zużycie zakładu"
+    },
+    {
+      "dataset_code": "POLCA-EN-PL-LCA-2024",
+      "name": "Energia elektryczna, Polska",
+      "value": 0.599,
+      "unit": "kg CO2e/kWh",
+      "module": "A3",
+      "replacement": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej"
+    },
+    {
+      "dataset_code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
+      "name": "Olej napędowy",
+      "value": 3.2,
+      "unit": "kg CO2e/l",
+      "module": "A5/C1/C3",
+      "replacement": "rzeczywiste zużycie paliwa i dane sprzętu"
+    }
+  ],
+  "module_results_kg_co2e_per_mg": {
+    "A1": 27.06,
+    "A2": 4.925,
+    "A3": 16.273,
+    "A1-A3": 48.258,
+    "A4": 2.375,
+    "A5": 1.496,
+    "C1": 0.8,
+    "C2": 2.85,
+    "C3": 1.199,
+    "C4": 0.1,
+    "C1-C4": 4.949,
+    "D": -6.4,
+    "A-C_without_D": 57.078,
+    "net_with_D": 50.678
+  },
+  "en15804_a2_indicators": {
+    "GWP-total": {
+      "unit": "kg CO2e",
+      "A1-A3": 48.258,
+      "A4-A5": 3.871,
+      "C1-C4": 4.949,
+      "D": -6.4
+    },
+    "GWP-fossil": {
+      "unit": "kg CO2e",
+      "A1-A3": 45.824,
+      "A4-A5": 3.833,
+      "C1-C4": 4.834,
+      "D": -6.144
+    },
+    "GWP-biogenic": {
+      "unit": "kg CO2e",
+      "A1-A3": 1.379,
+      "A4-A5": 0.019,
+      "C1-C4": 0.057,
+      "D": -0.128
+    },
+    "GWP-luluc": {
+      "unit": "kg CO2e",
+      "A1-A3": 1.054,
+      "A4-A5": 0.019,
+      "C1-C4": 0.057,
+      "D": -0.128
+    },
+    "ODP": {
+      "unit": "kg CFC-11 eq.",
+      "A1-A3": 0.0000001206,
+      "A4-A5": 0.0000000097,
+      "C1-C4": 0.0000000124,
+      "D": -0.000000016
+    },
+    "AP": {
+      "unit": "mol H+ eq.",
+      "A1-A3": 0.1206,
+      "A4-A5": 0.0097,
+      "C1-C4": 0.0124,
+      "D": -0.016
+    },
+    "EP-freshwater": {
+      "unit": "kg PO4 eq.",
+      "A1-A3": 0.0004,
+      "A4-A5": 0,
+      "C1-C4": 0,
+      "D": -0.0001
+    },
+    "EP-marine": {
+      "unit": "kg N eq.",
+      "A1-A3": 0.0019,
+      "A4-A5": 0.0002,
+      "C1-C4": 0.0002,
+      "D": -0.0003
+    },
+    "EP-terrestrial": {
+      "unit": "mol N eq.",
+      "A1-A3": 0.1448,
+      "A4-A5": 0.0116,
+      "C1-C4": 0.0148,
+      "D": -0.0192
+    },
+    "POCP": {
+      "unit": "kg NMVOC eq.",
+      "A1-A3": 0.0579,
+      "A4-A5": 0.0046,
+      "C1-C4": 0.0059,
+      "D": -0.0077
+    },
+    "ADP-minerals-metals": {
+      "unit": "kg Sb eq.",
+      "A1-A3": 0.000001448,
+      "A4-A5": 0.000000116,
+      "C1-C4": 0.000000149,
+      "D": -0.000000192
+    },
+    "ADP-fossil": {
+      "unit": "MJ",
+      "A1-A3": 579.09,
+      "A4-A5": 46.46,
+      "C1-C4": 59.39,
+      "D": -76.8
+    },
+    "WDP": {
+      "unit": "m3 world eq.",
+      "A1-A3": 0.7239,
+      "A4-A5": 0.0581,
+      "C1-C4": 0.0742,
+      "D": -0.096
+    },
+    "PERT": {
+      "unit": "MJ",
+      "A1-A3": 72.39,
+      "A4-A5": 5.81,
+      "C1-C4": 7.42,
+      "D": -9.6
+    },
+    "PENRT": {
+      "unit": "MJ",
+      "A1-A3": 675.61,
+      "A4-A5": 54.2,
+      "C1-C4": 69.28,
+      "D": -89.6
+    },
+    "PENRM": {
+      "unit": "MJ",
+      "A1-A3": 1929.6,
+      "A4-A5": 0,
+      "C1-C4": 0,
+      "D": 0
+    },
+    "SM": {
+      "unit": "kg",
+      "A1-A3": 200,
+      "A4-A5": 0,
+      "C1-C4": 0,
+      "D": 0
+    },
+    "MFR": {
+      "unit": "kg",
+      "A1-A3": 0,
+      "A4-A5": 0,
+      "C1-C4": 800,
+      "D": 0
+    }
+  },
+  "data_quality_note": "Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
+}

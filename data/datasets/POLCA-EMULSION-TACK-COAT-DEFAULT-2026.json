@@ -1,0 +1,68 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-EMULSION-TACK-COAT-DEFAULT-2026",
+    "name": "Emulsja asfaltowa / warstwa sczepna",
+    "category": "materiał",
+    "module_default": "A5",
+    "unit": "kg",
+    "gwp_total_kg_co2e": 0.45,
+    "year": 2026,
+    "geography": "PL/EU",
+    "technology": "Emulsja asfaltowa stosowana jako warstwa sczepna",
+    "data_quality": "industry",
+    "status": "published_sector_dataset",
+    "source_name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+    "source_url": "https://polca.org.pl/metodyka.html",
+    "scope": "Współczynnik dla kg emulsji stosowanej w scenariuszu wbudowania A5.",
+    "methodology_note": "Dataset jest kontrolowaną wartością domyślną dla scenariuszy wbudowania, gdy znana jest ilość emulsji na 1 Mg mieszanki lub na powierzchnię. Dla istotnego udziału emulsji pierwszeństwo mają dane producenta.",
+    "limitations": "Nie rozróżnia typu emulsji, zawartości lepiszcza, dodatków ani transportu.",
+    "preferred_replacement": "EPD producenta emulsji lub karta produktu ze zweryfikowanym wskaźnikiem.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "source_trace": [
+      {
+        "name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+        "url": "https://polca.org.pl/metodyka.html",
+        "role": "source"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {},
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "product_groups": [
+      "emulsje",
+      "mma",
+      "roboty-drogowe"
+    ],
+    "material_role": "warstwa sczepna / emulsja",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

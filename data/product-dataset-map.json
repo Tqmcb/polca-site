@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "title": "POLCA product-to-dataset map",
+    "version": "2026.5-aggregate-layer",
+    "purpose": "Mapa pokazuje, które wspólne datasety POLCA mogą być stosowane w poszczególnych grupach wyrobów. Dataset jest utrzymywany raz, a karta wyrobu określa zastosowanie, moduł i wymagane dane aktywności.",
+    "rule": "Nie kopiować wskaźników do każdego wyrobu. Produkt używa wspólnych rekordów przez identyfikator datasetu, a wynik zapisuje wersję datasetu i jakość danych."
+  },
+  "shared_datasets": [
+    {
+      "code": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
+      "name": "Cement CEM IV — średnia krajowa PL",
+      "used_by": [
+        "concrete",
+        "precast",
+        "mortar",
+        "cement_product"
+      ],
+      "not_used_by_default": [
+        "mma",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD konkretnego cementu CEM IV albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
+      "name": "Cement CEM III/A 42,5N",
+      "used_by": [
+        "concrete",
+        "precast",
+        "mortar",
+        "cement_product"
+      ],
+      "not_used_by_default": [
+        "mma",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
+      "name": "Cement CEM II/B-S 32,5R",
+      "used_by": [
+        "concrete",
+        "precast",
+        "mortar",
+        "cement_product"
+      ],
+      "not_used_by_default": [
+        "mma",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
+      "name": "Cement CEM I 42,5R",
+      "used_by": [
+        "concrete",
+        "precast",
+        "mortar",
+        "cement_product"
+      ],
+      "not_used_by_default": [
+        "mma",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+    },
+    {
+      "code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+      "name": "Kruszywo łamane twarde",
+      "used_by": [
+        "mma",
+        "concrete",
+        "road_base",
+        "aggregate_product"
+      ],
+      "not_used_by_default": [
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD kopalni albo zweryfikowane dane kopalni dla właściwej skały i frakcji zastępują wartość POLCA."
+    },
+    {
+      "code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
+      "name": "Kruszywo wapienne",
+      "used_by": [
+        "mma",
+        "concrete",
+        "road_base",
+        "aggregate_product"
+      ],
+      "not_used_by_default": [
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD kopalni wapienia albo dane zakładowe zastępują wartość POLCA."
+    },
+    {
+      "code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
+      "name": "Kruszywo dolomitowe",
+      "used_by": [
+        "mma",
+        "concrete",
+        "road_base",
+        "aggregate_product"
+      ],
+      "not_used_by_default": [
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD kopalni dolomitu albo dane zakładowe zastępują wartość POLCA."
+    },
+    {
+      "code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+      "name": "Kruszywo naturalne: piasek i żwir",
+      "used_by": [
+        "mma",
+        "concrete",
+        "road_base",
+        "aggregate_product"
+      ],
+      "not_used_by_default": [
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD kopalni, dane płukania/sortowania i transportu zastępują wartość POLCA."
+    },
+    {
+      "code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
+      "name": "Lepiszcze asfaltowe",
+      "used_by": [
+        "mma",
+        "asphalt_emulsion",
+        "tack_coat",
+        "bituminous_products"
+      ],
+      "not_used_by_default": [
+        "concrete"
+      ],
+      "replacement_rule": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy zastępuje wartość POLCA."
+    },
+    {
+      "code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
+      "name": "Wypełniacz wapienny",
+      "used_by": [
+        "mma"
+      ],
+      "not_used_by_default": [
+        "concrete",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia zastępują wartość POLCA."
+    },
+    {
+      "code": "POLCA-EN-PL-LCA-2024",
+      "name": "Energia elektryczna PL",
+      "used_by": [
+        "mma",
+        "concrete",
+        "asphalt_emulsion",
+        "aggregate_product",
+        "road_works"
+      ],
+      "not_used_by_default": [],
+      "replacement_rule": "Zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej mogą zastąpić rekord POLCA zgodnie z metodyką."
+    },
+    {
+      "code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+      "name": "Gaz ziemny",
+      "used_by": [
+        "mma",
+        "concrete",
+        "asphalt_emulsion",
+        "aggregate_product"
+      ],
+      "not_used_by_default": [],
+      "replacement_rule": "Dane dostawcy paliwa, faktury z wartością opałową i zużycie zakładu zastępują wartości domyślne."
+    },
+    {
+      "code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
+      "name": "Olej napędowy",
+      "used_by": [
+        "mma",
+        "concrete",
+        "asphalt_emulsion",
+        "aggregate_product",
+        "road_works"
+      ],
+      "not_used_by_default": [],
+      "replacement_rule": "Rzeczywiste zużycie paliwa i dane sprzętu/floty zastępują wartości domyślne."
+    },
+    {
+      "code": "POLCA-TRUCK-40T-DEFAULT-2026",
+      "name": "Transport drogowy 40 t",
+      "used_by": [
+        "mma",
+        "concrete",
+        "asphalt_emulsion",
+        "aggregate_product",
+        "road_works"
+      ],
+      "not_used_by_default": [],
+      "replacement_rule": "Dokumenty WZ/CMR, dane floty, trasa i ładowność zastępują domyślną wartość tkm."
+    }
+  ],
+  "product_models": [
+    {
+      "code": "mma",
+      "name": "Mieszanki mineralno-asfaltowe",
+      "inherits": [
+        "kruszywa",
+        "lepiszcze",
+        "wypełniacz",
+        "RAP",
+        "energia",
+        "paliwa",
+        "transport"
+      ],
+      "specific_inputs": [
+        "recepta",
+        "temperatura produkcji",
+        "wilgotność kruszyw",
+        "udział RAP",
+        "energia wytwórni"
+      ]
+    },
+    {
+      "code": "concrete",
+      "name": "Beton",
+      "inherits": [
+        "cement",
+        "kruszywa",
+        "energia",
+        "paliwa",
+        "transport"
+      ],
+      "specific_inputs": [
+        "cement",
+        "dodatki mineralne",
+        "domieszki",
+        "woda",
+        "klasa betonu",
+        "alokacja zakładu"
+      ]
+    },
+    {
+      "code": "asphalt_emulsion",
+      "name": "Emulsje asfaltowe",
+      "inherits": [
+        "lepiszcze",
+        "energia",
+        "paliwa",
+        "transport"
+      ],
+      "specific_inputs": [
+        "woda",
+        "emulgator",
+        "dodatki chemiczne",
+        "zawartość lepiszcza",
+        "technologia produkcji"
+      ],
+      "note": "Kruszywa nie są składnikiem emulsji asfaltowej; pojawiają się dopiero w produkcie lub warstwie, w której emulsja jest stosowana."
+    },
+    {
+      "code": "aggregate_product",
+      "name": "Kruszywa jako wyrób",
+      "inherits": [
+        "energia",
+        "paliwa",
+        "transport wewnętrzny"
+      ],
+      "specific_inputs": [
+        "złoże",
+        "rodzaj skały",
+        "frakcja",
+        "kruszenie",
+        "przesiewanie",
+        "płukanie",
+        "dane kopalni"
+      ]
+    }
+  ],
+  "regulatory_control_datasets": [
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
+      "name": "CBAM brutto 2026 — cement portlandzki szary",
+      "used_for": [
+        "kontrola braku danych producenta",
+        "porównanie konserwatywne",
+        "ocena luki danych"
+      ],
+      "not_used_as": [
+        "dataset EPD produktu",
+        "standardowy wskaźnik GWP produktu",
+        "zamiennik danych producenta"
+      ],
+      "rule": "CBAM pozostaje warstwą regulacyjną i kontrolną. Nie mieszać z głównymi wartościami GWP/EPD bez jawnego oznaczenia zakresu."
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026",
+      "name": "CBAM brutto 2026 — cement hydrauliczny szary",
+      "used_for": [
+        "kontrola braku danych producenta",
+        "porównanie konserwatywne",
+        "ocena luki danych"
+      ],
+      "not_used_as": [
+        "dataset EPD produktu",
+        "standardowy wskaźnik GWP produktu",
+        "zamiennik danych producenta"
+      ],
+      "rule": "CBAM pozostaje warstwą regulacyjną i kontrolną. Nie mieszać z głównymi wartościami GWP/EPD bez jawnego oznaczenia zakresu."
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026",
+      "name": "CBAM brutto 2026 — klinkier szary",
+      "used_for": [
+        "kontrola braku danych producenta",
+        "porównanie konserwatywne",
+        "ocena luki danych"
+      ],
+      "not_used_as": [
+        "dataset EPD produktu",
+        "standardowy wskaźnik GWP produktu",
+        "zamiennik danych producenta"
+      ],
+      "rule": "CBAM pozostaje warstwą regulacyjną i kontrolną. Nie mieszać z głównymi wartościami GWP/EPD bez jawnego oznaczenia zakresu."
+    }
+  ]
+}

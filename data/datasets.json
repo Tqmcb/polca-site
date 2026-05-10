@@ -1,0 +1,3092 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "datasets": [
+    {
+      "code": "KOBIZE-EN-PL-ENDUSER-2024",
+      "name": "Energia elektryczna - Polska, KOBiZE end-user CO2",
+      "category": "electricity",
+      "module_default": "A3",
+      "unit": "kWh",
+      "gwp_total_kg_co2e": 0.553,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "Polski miks energii elektrycznej dla odbiorcy końcowego",
+      "data_quality": "official_public",
+      "status": "active",
+      "source_name": "KOBiZE, wskaźniki emisyjności dla energii elektrycznej za 2024 rok",
+      "source_url": "https://www.kobize.pl/",
+      "scope": "Oficjalny wskaźnik KOBiZE dla energii elektrycznej dostarczonej do odbiorcy końcowego. To jest wskaźnik CO2 ze spalania, nie pełny wskaźnik LCA CO2e.",
+      "methodology_note": "Stosowany jako publiczne wejście kontrolne i punkt odniesienia. Nie zawiera emisji upstream paliw, metanu z górnictwa ani infrastruktury OZE, dlatego dla obliczeń LCA/EPD rekomendowany jest model POLCA-EN-PL-LCA-2024.",
+      "limitations": "Zakres CO2 only / end-user; nie jest pełnym GWP-fossil w cyklu życia. Rekord ma inną granicę systemu niż wynik 0,599 kg CO2e/kWh.",
+      "preferred_replacement": "POLCA-EN-PL-LCA-2024 dla obliczeń LCA/EPD albo zweryfikowany wskaźnik energii kontraktowej zgodny z metodyką programu.",
+      "publication_status": "official_input",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Dane pierwotne/EPD dostawcy mają pierwszeństwo. Dane domyślne mają jawny status jakości i wskazują lepsze źródło dla kluczowych źródeł wyniku.",
+      "source_trace": [
+        {
+          "name": "KOBiZE",
+          "type": "official_public",
+          "use": "emisje CO2 i wskaźnik end-user energii elektrycznej",
+          "url": "https://www.kobize.pl/"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Dane publiczne KOBiZE; publikacja POLCA nie zastępuje oryginalnego dokumentu źródłowego.",
+      "evidence_level": "official_public",
+      "source_policy": {},
+      "selection_mode": "mandatory_reference_input",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe",
+        "ogolne-epd"
+      ],
+      "material_role": "energia elektryczna",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-EN-PL-LCA-2024",
+      "name": "Energia elektryczna - Polska, poLCA full LCA location-based",
+      "category": "electricity",
+      "module_default": "A3/A5/B6/C3/D",
+      "unit": "kWh",
+      "gwp_total_kg_co2e": 0.599,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "Polski miks energii elektrycznej dla odbiorcy końcowego, CO2e full LCA",
+      "data_quality": "polca_model",
+      "evidence_level": "polca_model",
+      "status": "published_polca_model",
+      "publication_status": "published_polca_model",
+      "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
+      "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+      "scope": "Referencyjny wskaźnik POLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy.",
+      "methodology_note": "Wynik 0,599 kg CO2e/kWh powstaje z sumy: EF_oper 0,528, WTT_CH4 0,057, WTT_fuels 0,008 i WTT_OZE 0,006 kg CO2e/kWh. Dane wejściowe pochodzą z KOBiZE, PSE, WUG, GUS i EEA; przeliczenie CO2e bazuje na IPCC AR6/EF 3.1 oraz JEC WTT v5. Jest to model jawny, przeznaczony do konsultacji i walidacji zewnętrznej.",
+      "limitations": "Nie jest oficjalnym wskaźnikiem państwowym. Element WTT_OZE opiera się na wartości referencyjnej z bazy licencjonowanej, dlatego publikowany jest wynik i metodyka, a nie pełny zamknięty inwentarz. Finalna EPD wymaga potwierdzenia aktualnego roku danych i zasad energii kontraktowej.",
+      "preferred_replacement": "Zweryfikowane dane dostawcy energii albo aktualizacja roczna po publikacji KOBiZE/PSE/WUG/GUS.",
+      "calculation_components": [
+        {
+          "code": "EF_oper",
+          "value_kg_co2e_per_kwh": 0.528,
+          "share_pct": 88.1,
+          "sources": [
+            "KOBiZE",
+            "PSE",
+            "EEA"
+          ]
+        },
+        {
+          "code": "WTT_CH4",
+          "value_kg_co2e_per_kwh": 0.057,
+          "share_pct": 9.5,
+          "sources": [
+            "WUG",
+            "GUS",
+            "IPCC AR6"
+          ]
+        },
+        {
+          "code": "WTT_fuels",
+          "value_kg_co2e_per_kwh": 0.008,
+          "share_pct": 1.3,
+          "sources": [
+            "JEC WTT v5"
+          ]
+        },
+        {
+          "code": "WTT_OZE",
+          "value_kg_co2e_per_kwh": 0.006,
+          "share_pct": 1,
+          "sources": [
+            "ecoinvent 3.12 reference value"
+          ]
+        }
+      ],
+      "source_trace": [
+        {
+          "name": "KOBiZE",
+          "type": "official_public",
+          "use": "emisje CO2 i wskaźnik end-user energii elektrycznej",
+          "url": "https://www.kobize.pl/"
+        },
+        {
+          "name": "PSE",
+          "type": "official_public",
+          "use": "produkcja, import/eksport i bilans KSE",
+          "url": "https://www.pse.pl/"
+        },
+        {
+          "name": "WUG",
+          "type": "official_public",
+          "use": "emisje metanu z górnictwa węgla",
+          "url": "https://www.wug.gov.pl/"
+        },
+        {
+          "name": "GUS",
+          "type": "official_public",
+          "use": "gospodarka paliwowo-energetyczna i współczynniki alokacji",
+          "url": "https://stat.gov.pl/"
+        },
+        {
+          "name": "EEA",
+          "type": "official_public",
+          "use": "intensywność emisji energii elektrycznej krajów sąsiednich",
+          "url": "https://www.eea.europa.eu/"
+        },
+        {
+          "name": "IPCC AR6 / EF 3.1",
+          "type": "method_reference",
+          "use": "GWP i charakterystyka CO2e",
+          "url": "https://www.ipcc.ch/"
+        },
+        {
+          "name": "JEC Well-to-Tank v5",
+          "type": "method_reference",
+          "use": "emisje upstream paliw",
+          "url": "https://publications.jrc.ec.europa.eu/"
+        },
+        {
+          "name": "ecoinvent 3.12",
+          "type": "restricted_reference",
+          "use": "referencyjna infrastruktura OZE; nie jest otwarta baza do publikacji inwentarza",
+          "url": "https://ecoinvent.org/"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka-en-pl.html",
+      "machine_methodology": "https://polca.org.pl/data/polca-en-pl-2024.json",
+      "open_data_note": "Dane publiczne: KOBiZE, PSE, WUG, GUS, EEA, IPCC/JEC. Uwaga: ecoinvent nie jest darmowa baza; w publicznym katalogu pokazujemy tylko wynik referencyjny i status ograniczenia.",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation",
+        "auditor_review_after_confirmation"
+      ],
+      "quality_rule": "Dane pierwotne/EPD dostawcy mają pierwszeństwo. Dane domyślne mają jawny status jakości i wskazują lepsze źródło dla kluczowych źródeł wyniku.",
+      "source_policy": {},
+      "selection_mode": "mandatory_polca_model",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe",
+        "ogolne-epd"
+      ],
+      "material_role": "energia elektryczna",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
+      "name": "Olej napędowy - sprzęt i procesy pomocnicze",
+      "category": "fuel",
+      "module_default": "A5/C1/C3",
+      "unit": "l",
+      "gwp_total_kg_co2e": 3.2,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Spalanie oleju napędowego w maszynach i transporcie pomocniczym",
+      "data_quality": "industry",
+      "status": "published_polca_default",
+      "source_name": "POLCA 2026, wartość domyślna dla oleju napędowego",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "Współczynnik dla litra oleju napędowego stosowany w scenariuszach wbudowania, frezowania lub przetwarzania RAP.",
+      "methodology_note": "Dataset służy do scenariuszy, w ktorych znane jest zużycie paliwa na 1 Mg albo na operacje technologiczna. W EPD jako lepsze źródło stosuje się dane ze zużycia sprzętu lub potwierdzony wskaźnik paliwowy dla istotnego udziału w wyniku.",
+      "limitations": "Nie rozróżnia biokomponentów, normy emisji silnika ani rzeczywistego obciążenia maszyny.",
+      "preferred_replacement": "Rejestr zużycia paliwa, dane wykonawcy robót drogowych lub EPD/dane dostawcy paliwa.",
+      "publication_status": "published_polca_default",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "KOBiZE",
+          "type": "official_public",
+          "role": "fuel emission factor control",
+          "url": "https://www.kobize.pl/"
+        },
+        {
+          "name": "JEC Well-to-Tank v5",
+          "type": "method_reference",
+          "role": "upstream fuel factor",
+          "url": "https://publications.jrc.ec.europa.eu/"
+        },
+        {
+          "name": "faktury i dane klienta",
+          "type": "primary_verified",
+          "role": "preferred activity data",
+          "url": "https://polca.org.pl/metodyka.html"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "conservative_default",
+      "source_policy": {
+        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy POLCA",
+        "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
+        "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
+      },
+      "selection_mode": "mandatory_default_when_no_better_data",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe",
+        "ogolne-epd"
+      ],
+      "material_role": "paliwo / proces pomocniczy",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+      "name": "Gaz ziemny - spalanie w procesie produkcyjnym",
+      "category": "fuel",
+      "module_default": "A3",
+      "unit": "m3",
+      "gwp_total_kg_co2e": 2,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Spalanie gazu ziemnego w źródle ciepła wytwórni",
+      "data_quality": "industry",
+      "status": "published_polca_default",
+      "source_name": "POLCA 2026, wartość domyślna dla gazu ziemnego",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "Współczynnik dla m3 gazu ziemnego zużytego w produkcji MMA, suszeniu kruszywa lub podgrzewaniu procesu.",
+      "methodology_note": "Dataset jest kontrolowaną wartością domyślną dla gazu ziemnego, stosowaną gdy producent zna zużycie gazu, ale nie posiada zweryfikowanego współczynnika dostawcy. Zużycie gazu pochodzi z faktur, liczników albo rocznej alokacji na wolumen produkcji.",
+      "limitations": "Wartość nie uwzględnia szczegółowego składu gazu ani sprawności konkretnej instalacji. Dla finalnej EPD rekord wskazuje współczynnik i zużycie jako dane do potwierdzenia źródłowego.",
+      "preferred_replacement": "Dane dostawcy paliwa, faktury z wartością opałową lub zweryfikowany model spalania.",
+      "publication_status": "published_polca_default",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "KOBiZE",
+          "type": "official_public",
+          "role": "fuel emission factor control",
+          "url": "https://www.kobize.pl/"
+        },
+        {
+          "name": "JEC Well-to-Tank v5",
+          "type": "method_reference",
+          "role": "upstream fuel factor",
+          "url": "https://publications.jrc.ec.europa.eu/"
+        },
+        {
+          "name": "faktury i dane klienta",
+          "type": "primary_verified",
+          "role": "preferred activity data",
+          "url": "https://polca.org.pl/metodyka.html"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "conservative_default",
+      "source_policy": {
+        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy POLCA",
+        "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
+        "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
+      },
+      "selection_mode": "mandatory_default_when_no_better_data",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe",
+        "ogolne-epd"
+      ],
+      "material_role": "paliwo / proces pomocniczy",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-TRUCK-40T-DEFAULT-2026",
+      "name": "Transport drogowy - zestaw 40 t",
+      "category": "transport",
+      "module_default": "A2/A4/C2",
+      "unit": "tkm",
+      "gwp_total_kg_co2e": 0.095,
+      "year": 2026,
+      "geography": "PL/EU",
+      "technology": "Samochod ciężarowy / zestaw 40 t, transport drogowy",
+      "data_quality": "industry",
+      "status": "published_polca_default",
+      "source_name": "ÖKOBAUDAT / EMEP-EEA jako publiczne punkty odniesienia dla transportu",
+      "source_url": "https://www.oekobaudat.de/",
+      "scope": "Współczynnik dla transportu liczony jako tkm. POLCA moze przeliczyć mase ladunku i odleglosc z lokalizacji dostawcy oraz wytwórni.",
+      "methodology_note": "Transport jest liczony jako tkm z masy ładunku i odległości. Publiczne bazy służą jako punkt odniesienia, ale dla klienta preferowane są dane floty, trasy, ładowności i puste przebiegi.",
+      "limitations": "Nie rozróżnia normy EURO, spalania konkretnej floty, pustych przebiegow ani rodzaju drogi. Dla finalnej EPD wymaga potwierdzenia założeń transportowych.",
+      "preferred_replacement": "Dane floty, dokumenty WZ/CMR, potwierdzona trasa i rzeczywiste spalanie.",
+      "publication_status": "published_polca_default",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "ÖKOBAUDAT",
+          "type": "public_database",
+          "role": "transport/building LCA proxy",
+          "url": "https://www.oekobaudat.de/"
+        },
+        {
+          "name": "EMEP/EEA Guidebook 2023",
+          "type": "official_public",
+          "role": "road transport emission factors cross-check",
+          "url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "conservative_default",
+      "source_policy": {
+        "priority": "dane floty/trasy > dokumenty WZ/CMR > ÖKOBAUDAT/EMEP proxy",
+        "when_allowed": "Brak danych przewoźnika; system zna masę i odległość.",
+        "auditor_note": "Sprawdzić czy trasa i ładowność odpowiadają rzeczywistemu transportowi surowców lub mieszanki."
+      },
+      "selection_mode": "mandatory_default_when_no_better_data",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe",
+        "ogolne-epd"
+      ],
+      "material_role": "transport",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+      "name": "Kruszywo łamane twarde do MMA i betonu",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 5.5,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wydobycie, kruszenie i przesiewanie twardych skał magmowych lub metamorficznych przed transportem",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "A1 produkcji kruszywa twardego. Transport z kopalni do wytwórni lub betoniarni jest odrębnym rekordem A2.",
+      "methodology_note": "Dataset obejmuje kruszywa łamane twarde, np. bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit i kwarcyt. Wartość 5,5 kg CO2e/t jest kontrolowaną wartością grupową POLCA dla braku EPD kopalni lub danych zakładowych. Różnice między skałami wynikają głównie z energochłonności kruszenia, przesiewania, płukania, frakcji i organizacji zakładu.",
+      "limitations": "Nie zastępuje danych konkretnej kopalni. Nie rozróżnia dokładnej frakcji, zużycia energii, materiałów wybuchowych, płukania, wilgotności ani transportu A2.",
+      "preferred_replacement": "EPD konkretnej kopalni, zweryfikowane dane energii i paliw kopalni albo dataset dla właściwej skały i frakcji.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
+      "source_trace": [
+        {
+          "name": "EPD Polska — cPCR Kruszywa Budowlane",
+          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+          "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
+          "type": "official_public_register"
+        },
+        {
+          "name": "Polski Związek Producentów Kruszyw",
+          "url": "https://kruszpol.pl/",
+          "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
+          "type": "sector_context"
+        },
+        {
+          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+          "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
+          "type": "verified_epd_benchmark"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+        "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ kruszywa, dostawcę, kopalnię i lokalizację. System dobiera kontrolowany dataset; użytkownik nie wybiera niższego wskaźnika bez dowodu.",
+      "default_methodology": {
+        "declared_value": "5,5 kg CO2e/t",
+        "module": "A1",
+        "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+        "process_model": [
+          "zdejmowanie nadkładu i wydobycie",
+          "kruszenie",
+          "przesiewanie",
+          "opcjonalne płukanie lub suszenie",
+          "magazynowanie i załadunek"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Polska — cPCR Kruszywa Budowlane",
+            "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+            "role": "reguły kategorii produktu dla kruszyw budowlanych"
+          },
+          {
+            "name": "PIG-PIB MIDAS",
+            "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+            "role": "klasyfikacja złoża i kopaliny"
+          },
+          {
+            "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+            "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+            "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
+          },
+          {
+            "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+            "url": "https://www.oekobaudat.de/",
+            "role": "kontrola rzędu wielkości LCA"
+          }
+        ],
+        "rationale": "Twarde kruszywa łamane mają zwykle wyższą energochłonność przeróbki niż kruszywa węglanowe i naturalne. Dataset jest konserwatywną wartością grupową do czasu pozyskania danych kopalni.",
+        "required_replacement": "EPD konkretnej kopalni, zweryfikowane dane energii i paliw kopalni albo dataset dla właściwej skały i frakcji.",
+        "audit_checks": [
+          "rodzaj skały",
+          "frakcja d/D",
+          "energia kruszenia",
+          "płukanie/suszenie",
+          "materiały wybuchowe",
+          "transport A2"
+        ]
+      },
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe"
+      ],
+      "material_role": "kruszywo",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
+      "name": "Kruszywo wapienne",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 4,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wydobycie, kruszenie i przesiewanie kruszywa wapiennego przed transportem",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość grupowa dla kruszyw wapiennych",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "A1 produkcji kruszywa wapiennego. Transport z kopalni do zakładu klienta jest liczony oddzielnie w A2.",
+      "methodology_note": "Dataset oparto na koszyku źródeł dla kruszyw węglanowych. Kluczowym punktem kontrolnym jest ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych: 1 t, A1-A3, GWP total 3,27 kg CO2e/t. POLCA stosuje 4,0 kg CO2e/t jako wartość grupową, aby uwzględnić różnice kopalni, frakcji, płukania i przeróbki przy braku danych konkretnego dostawcy.",
+      "limitations": "Nie zastępuje EPD Trzuskawica ani EPD innej konkretnej kopalni. Nie obejmuje transportu A2 do wytwórni/betoniarni.",
+      "preferred_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
+      "source_trace": [
+        {
+          "name": "EPD Polska — cPCR Kruszywa Budowlane",
+          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+          "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
+          "type": "official_public_register"
+        },
+        {
+          "name": "Polski Związek Producentów Kruszyw",
+          "url": "https://kruszpol.pl/",
+          "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
+          "type": "sector_context"
+        },
+        {
+          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+          "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
+          "type": "verified_epd_benchmark"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+        "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ kruszywa, dostawcę, kopalnię i lokalizację. System dobiera kontrolowany dataset; użytkownik nie wybiera niższego wskaźnika bez dowodu.",
+      "default_methodology": {
+        "declared_value": "4,0 kg CO2e/t; benchmark EPD Trzuskawica: 3,27 kg CO2e/t A1-A3",
+        "module": "A1",
+        "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+        "process_model": [
+          "wydobycie wapienia",
+          "kruszenie",
+          "przesiewanie",
+          "opcjonalne płukanie",
+          "magazynowanie i załadunek"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Polska — cPCR Kruszywa Budowlane",
+            "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+            "role": "reguły kategorii produktu dla kruszyw budowlanych"
+          },
+          {
+            "name": "PIG-PIB MIDAS",
+            "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+            "role": "klasyfikacja złoża i kopaliny"
+          },
+          {
+            "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+            "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+            "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
+          },
+          {
+            "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+            "url": "https://www.oekobaudat.de/",
+            "role": "kontrola rzędu wielkości LCA"
+          }
+        ],
+        "rationale": "Wapień ma zwykle niższą energochłonność kruszenia niż skały bardzo twarde, ale wynik zależy od zakładu i frakcji. Wartość POLCA jest wartością grupową, nie wynikiem konkretnej kopalni.",
+        "required_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+        "audit_checks": [
+          "kopalnia",
+          "frakcja",
+          "płukanie",
+          "zużycie energii",
+          "wilgotność",
+          "transport A2"
+        ]
+      },
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe"
+      ],
+      "material_role": "kruszywo",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
+      "name": "Kruszywo dolomitowe",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 4.5,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wydobycie, kruszenie i przesiewanie kruszywa dolomitowego przed transportem",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość grupowa dla kruszyw dolomitowych",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "A1 produkcji kruszywa dolomitowego. Transport do zakładu klienta jest liczony oddzielnie w A2.",
+      "methodology_note": "Dataset służy do mapowania kruszyw dolomitowych, gdy brak EPD kopalni lub danych zakładowych. Wartość 4,5 kg CO2e/t rozdziela dolomit od wapienia i twardych skał magmowych, zachowując konserwatywny charakter dla braku danych dostawcy.",
+      "limitations": "Nie rozróżnia kopalni, frakcji, wilgotności, płukania, zużycia energii ani transportu A2.",
+      "preferred_replacement": "EPD kopalni dolomitu albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
+      "source_trace": [
+        {
+          "name": "EPD Polska — cPCR Kruszywa Budowlane",
+          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+          "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
+          "type": "official_public_register"
+        },
+        {
+          "name": "Polski Związek Producentów Kruszyw",
+          "url": "https://kruszpol.pl/",
+          "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
+          "type": "sector_context"
+        },
+        {
+          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+          "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
+          "type": "verified_epd_benchmark"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+        "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ kruszywa, dostawcę, kopalnię i lokalizację. System dobiera kontrolowany dataset; użytkownik nie wybiera niższego wskaźnika bez dowodu.",
+      "default_methodology": {
+        "declared_value": "4,5 kg CO2e/t",
+        "module": "A1",
+        "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+        "process_model": [
+          "wydobycie dolomitu",
+          "kruszenie",
+          "przesiewanie",
+          "opcjonalne płukanie",
+          "magazynowanie i załadunek"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Polska — cPCR Kruszywa Budowlane",
+            "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+            "role": "reguły kategorii produktu dla kruszyw budowlanych"
+          },
+          {
+            "name": "PIG-PIB MIDAS",
+            "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+            "role": "klasyfikacja złoża i kopaliny"
+          },
+          {
+            "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+            "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+            "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
+          },
+          {
+            "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+            "url": "https://www.oekobaudat.de/",
+            "role": "kontrola rzędu wielkości LCA"
+          }
+        ],
+        "rationale": "Dolomit jest kruszywem węglanowym, ale jego przeróbka i właściwości mogą odbiegać od wapienia. Osobny rekord ogranicza mieszanie różnych kruszyw w jednym wskaźniku.",
+        "required_replacement": "EPD kopalni dolomitu albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+        "audit_checks": [
+          "kopalnia",
+          "frakcja",
+          "płukanie",
+          "zużycie energii",
+          "wilgotność",
+          "transport A2"
+        ]
+      },
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe"
+      ],
+      "material_role": "kruszywo",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+      "name": "Kruszywo naturalne: piasek i żwir",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 3.5,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Pozyskanie, sortowanie i ewentualne płukanie kruszywa naturalnego przed transportem",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość grupowa dla kruszyw naturalnych",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "A1 produkcji kruszywa naturalnego. Transport do wytwórni, betoniarni lub budowy jest odrębnym rekordem A2/A4.",
+      "methodology_note": "Dataset obejmuje piasek, żwir i pospółkę, gdy brak danych konkretnego źródła. Kruszywa naturalne zwykle wymagają mniej energochłonnego kruszenia niż kruszywa łamane, ale wynik zależy od płukania, sortowania, wilgotności i lokalizacji złoża.",
+      "limitations": "Nie rozróżnia płukania, sortowania, frakcji, wilgotności, rzeczywistego zużycia energii i transportu A2.",
+      "preferred_replacement": "EPD kopalni, dane płukania/sortowania, zużycie energii i rzeczywisty transport z lokalizacji dostawcy.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
+      "source_trace": [
+        {
+          "name": "EPD Polska — cPCR Kruszywa Budowlane",
+          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+          "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
+          "type": "official_public_register"
+        },
+        {
+          "name": "Polski Związek Producentów Kruszyw",
+          "url": "https://kruszpol.pl/",
+          "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
+          "type": "sector_context"
+        },
+        {
+          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+          "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
+          "type": "verified_epd_benchmark"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+        "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ kruszywa, dostawcę, kopalnię i lokalizację. System dobiera kontrolowany dataset; użytkownik nie wybiera niższego wskaźnika bez dowodu.",
+      "default_methodology": {
+        "declared_value": "3,5 kg CO2e/t",
+        "module": "A1",
+        "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+        "process_model": [
+          "wydobycie ze złoża",
+          "sortowanie",
+          "opcjonalne płukanie",
+          "magazynowanie i załadunek"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Polska — cPCR Kruszywa Budowlane",
+            "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+            "role": "reguły kategorii produktu dla kruszyw budowlanych"
+          },
+          {
+            "name": "PIG-PIB MIDAS",
+            "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+            "role": "klasyfikacja złoża i kopaliny"
+          },
+          {
+            "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+            "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+            "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
+          },
+          {
+            "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+            "url": "https://www.oekobaudat.de/",
+            "role": "kontrola rzędu wielkości LCA"
+          }
+        ],
+        "rationale": "Wartość grupowa dla piasku i żwiru jest niższa niż dla kruszyw łamanych, ale nie może zastąpić danych kopalni w wyniku zweryfikowanym.",
+        "required_replacement": "EPD kopalni, dane płukania/sortowania, zużycie energii i rzeczywisty transport z lokalizacji dostawcy.",
+        "audit_checks": [
+          "źródło złoża",
+          "płukanie",
+          "sortowanie",
+          "wilgotność",
+          "frakcja",
+          "transport A2"
+        ]
+      },
+      "product_groups": [
+        "mma",
+        "beton",
+        "roboty-drogowe"
+      ],
+      "material_role": "kruszywo",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
+      "name": "Lepiszcze asfaltowe drogowe",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 450,
+      "year": 2026,
+      "geography": "PL/EU",
+      "technology": "Produkcja asfaltu drogowego przed transportem do wytwórni",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "Eurobitume LCA 4.0, background branżowy dla bitumu",
+      "source_url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+      "scope": "A1 produkcji lepiszcza. Transport do wytwórni liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset lepiszcza opiera się na podejściu branżowym Eurobitume LCA 4.0 dla bitumu w zakresie cradle-to-gate. Rekord ma status backgroundu branżowego A1. Dla dostawcy z własną EPD baza wskazuje deklarację producenta; dla braku EPD stosuje wartość sektorową z jawnie oznaczoną jakością danych.",
+      "limitations": "Nie rozróżnia rafinerii, konkretnego producenta, asfaltów modyfikowanych, dodatków specjalnych, transportu do wytwórni ani alokacji właściwej dla konkretnej dostawy.",
+      "preferred_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy dla konkretnego produktu i zakładu.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "Eurobitume LCA 4.0",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "branżowy background cradle-to-gate dla bitumu",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD dostawcy > Eurobitume background > konserwatywny proxy POLCA",
+        "when_allowed": "Brak EPD dostawcy lub brak danych konkretnej rafinerii; wynik oznaczony jako dane branżowe/proxy.",
+        "auditor_note": "Sprawdzić typ lepiszcza, producenta, lokalizację dostawy, dokument dostawcy i wpływ lepiszcza na kluczowe źródła wpływu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "default_methodology": {
+        "declared_value": "450 kg CO2e/t",
+        "module": "A1",
+        "system_boundary": "produkcja lepiszcza przed transportem do wytwórni",
+        "process_model": [
+          "wydobycie i dostawa ropy",
+          "rafinacja",
+          "magazynowanie bitumu"
+        ],
+        "source_basis": [
+          {
+            "name": "Eurobitume LCA 4.0",
+            "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+            "role": "branżowy background cradle-to-gate dla bitumu"
+          }
+        ],
+        "rationale": "Lepiszcze jest zwykle kluczowe źródło wpływuem MMA, dlatego wartość domyślna jest dopuszczalna tylko przy braku danych dostawcy.",
+        "required_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy.",
+        "audit_checks": [
+          "typ asfaltu",
+          "rafineria/dostawca",
+          "PMB lub asfalt zwykły",
+          "transport A2"
+        ]
+      },
+      "product_groups": [
+        "mma",
+        "emulsje",
+        "roboty-drogowe"
+      ],
+      "material_role": "lepiszcze",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-EMULSION-TACK-COAT-DEFAULT-2026",
+      "name": "Emulsja asfaltowa / warstwa sczepna",
+      "category": "materiał",
+      "module_default": "A5",
+      "unit": "kg",
+      "gwp_total_kg_co2e": 0.45,
+      "year": 2026,
+      "geography": "PL/EU",
+      "technology": "Emulsja asfaltowa stosowana jako warstwa sczepna",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "Współczynnik dla kg emulsji stosowanej w scenariuszu wbudowania A5.",
+      "methodology_note": "Dataset jest kontrolowaną wartością domyślną dla scenariuszy wbudowania, gdy znana jest ilość emulsji na 1 Mg mieszanki lub na powierzchnię. Dla istotnego udziału emulsji pierwszeństwo mają dane producenta.",
+      "limitations": "Nie rozróżnia typu emulsji, zawartości lepiszcza, dodatków ani transportu.",
+      "preferred_replacement": "EPD producenta emulsji lub karta produktu ze zweryfikowanym wskaźnikiem.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+          "url": "https://polca.org.pl/metodyka.html",
+          "role": "source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {},
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "product_groups": [
+        "emulsje",
+        "mma",
+        "roboty-drogowe"
+      ],
+      "material_role": "warstwa sczepna / emulsja",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
+      "name": "Wypełniacz wapienny do MMA",
+      "category": "materiał",
+      "module_default": "A1",
+      "unit": "t",
+      "gwp_total_kg_co2e": 30,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Produkcja wypełniacza wapiennego przed transportem",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "A1 produkcji wypełniacza. Transport do wytwórni liczyć oddzielnie.",
+      "methodology_note": "Dataset jest wartością domyślną dla wypełniacza wapiennego w mieszankach mineralno-asfaltowych. Dla finalnej EPD preferowane są dane dostawcy, szczególnie gdy wypełniacz ma nietypowy udział lub pochodzi z procesu o innej energochłonności. Podstawa wartości domyślnej: Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+      "limitations": "Nie rozróżnia technologii mielenia, suszenia, pochodzenia surowca ani transportu.",
+      "preferred_replacement": "EPD dostawcy wypełniacza lub zweryfikowane dane procesu.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
+          "url": "https://www.environdec.com/library/epd12771",
+          "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych",
+          "type": "methodology_source"
+        },
+        {
+          "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
+          "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
+          "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego",
+          "type": "methodology_source"
+        },
+        {
+          "name": "ÖKOBAUDAT",
+          "url": "https://www.oekobaudat.de/",
+          "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych",
+          "type": "methodology_source"
+        },
+        {
+          "name": "Model EPD MMA / background report",
+          "url": "https://polca.org.pl/datasety.html",
+          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "dane kopalni lub EPD > regionalny dataset POLCA > proxy publiczne",
+        "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
+        "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "default_methodology": {
+        "declared_value": "30 kg CO2e/t",
+        "module": "A1",
+        "system_boundary": "produkcja wypełniacza wapiennego przed transportem do wytwórni; transport A2 jest oddzielnym rekordem",
+        "process_model": [
+          "wydobycie lub pozyskanie kamienia wapiennego",
+          "kruszenie i przygotowanie surowca",
+          "suszenie, jeżeli wymagane dla produktu proszkowego",
+          "mielenie do frakcji wypełniacza",
+          "przesiewanie, magazynowanie i załadunek"
+        ],
+        "source_basis": [
+          {
+            "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
+            "url": "https://www.environdec.com/library/epd12771",
+            "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych"
+          },
+          {
+            "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
+            "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
+            "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego"
+          },
+          {
+            "name": "ÖKOBAUDAT",
+            "url": "https://www.oekobaudat.de/",
+            "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych"
+          },
+          {
+            "name": "Model EPD MMA / background report",
+            "url": "https://polca.org.pl/datasety.html",
+            "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+          }
+        ],
+        "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+        "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
+        "audit_checks": [
+          "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",
+          "czy deklarowana frakcja i wilgotność odpowiadają produktowi stosowanemu w MMA",
+          "czy transport do wytwórni jest liczony oddzielnie",
+          "czy nie istnieje EPD konkretnego dostawcy"
+        ]
+      },
+      "product_groups": [
+        "mma"
+      ],
+      "material_role": "wypełniacz",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-RAP-PROCESSING-DEFAULT-2026",
+      "name": "RAP / destrukt asfaltowy - przygotowanie do ponownego użycia",
+      "category": "materiał",
+      "module_default": "A1/A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 3,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Kruszenie, przesiewanie i przygotowanie RAP",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "POLCA 2026, wartość sektorowa dla przetwarzania RAP",
+      "source_url": "https://polca.org.pl/metodyka.html",
+      "scope": "Przygotowanie RAP do wykorzystania w mieszance. Moduł zależy od granicy systemu i zasad cPCR/wytycznych EPD Polska.",
+      "methodology_note": "Dataset służy do modelowania dodatkówego procesu przygotowania destruktu asfaltowego. W EPD rekord pokazuje status RAP jako materiału wtórnego oraz zasady alokacji i modułu D. Podstawa wartości domyślnej: RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
+      "limitations": "Nie rozróżnia wilgotności RAP, technologii podawania, frakcji, podgrzewania ani rzeczywistego zużycia energii.",
+      "preferred_replacement": "Dane zakładu dotyczące przetwarzania RAP, zużycie energii i paliw, zasady cPCR/wytycznych EPD Polska.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+      "source_trace": [
+        {
+          "name": "Model EPD MMA / EN 15804+A2/cPCR",
+          "url": "https://polca.org.pl/datasety.html",
+          "role": "modelowanie materiału wtórnego i zasad alokacji",
+          "type": "methodology_source"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "dane kopalni lub EPD > regionalny dataset POLCA > proxy publiczne",
+        "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
+        "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+      "default_methodology": {
+        "declared_value": "3 kg CO2e/t",
+        "module": "A1/A3 zależnie od granicy systemu",
+        "system_boundary": "przygotowanie destruktu asfaltowego do ponownego użycia",
+        "process_model": [
+          "frezowanie lub przyjęcie materiału",
+          "kruszenie",
+          "przesiewanie",
+          "magazynowanie"
+        ],
+        "source_basis": [
+          {
+            "name": "Model EPD MMA / EN 15804+A2/cPCR",
+            "url": "https://polca.org.pl/datasety.html",
+            "role": "modelowanie materiału wtórnego i zasad alokacji"
+          }
+        ],
+        "rationale": "RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
+        "required_replacement": "Dane procesu recyklingu i audyt statusu materiału.",
+        "audit_checks": [
+          "WWA/SVHC",
+          "status End-of-Waste",
+          "wilgotność",
+          "udział RAP",
+          "alokacja i moduł D"
+        ]
+      },
+      "product_groups": [
+        "mma"
+      ],
+      "material_role": "destrukt asfaltowy / recykling",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024",
+      "name": "Cement CEM I 52,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 883,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki o wysokiej wytrzymałości zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Górażdże/Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Górażdże/Holcim PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "883 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Górażdże/Holcim PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
+      "name": "Cement CEM I 42,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 856,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Górażdże/Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Górażdże/Holcim PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "856 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Górażdże/Holcim PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024",
+      "name": "Cement CEM I 42,5N",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 836,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Ożarów/Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Ożarów/Dyckerhoff PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "836 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Ożarów/Dyckerhoff PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024",
+      "name": "Cement CEM I 32,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 816,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Ożarów PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "816 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Ożarów PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024",
+      "name": "Cement CEM II/A-S 42,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 762,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki żużlowy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Górażdże PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Górażdże PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "762 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Górażdże PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
+      "name": "Cement CEM II/B-S 32,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 637,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki żużlowy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Holcim PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "637 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Holcim PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024",
+      "name": "Cement CEM II/A-V 32,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 703,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki popiołowy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Ożarów PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "703 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Ożarów PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024",
+      "name": "Cement CEM II/B-V 32,5R",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 556,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement portlandzki popiołowy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Ożarów PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "556 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Ożarów PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
+      "name": "Cement CEM III/A 42,5N",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 374,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement hutniczy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Dyckerhoff PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "374 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Dyckerhoff PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024",
+      "name": "Cement CEM III/B 32,5N",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 228,
+      "year": 2024,
+      "geography": "PL",
+      "technology": "cement hutniczy zgodny z EN 197-1",
+      "data_quality": "producer_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
+      "source_url": "https://www.epd.org.pl/",
+      "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+      "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD Dyckerhoff PL 2024",
+          "url": "https://www.epd.org.pl/",
+          "role": "źródło wartości GWP A1-A3 dla cementu",
+          "type": "verified_epd_reference"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+          "url": "https://www.polskicement.pl/",
+          "role": "kontekst sektorowy CO2 netto dla typów CEM I, CEM II i CEM III",
+          "type": "sector_context"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+        "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "default_methodology": {
+        "declared_value": "228 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "dodatki główne",
+          "pakowanie lub załadunek luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD Dyckerhoff PL 2024",
+            "url": "https://www.epd.org.pl/",
+            "role": "wartość GWP A1-A3 cementu"
+          },
+          {
+            "name": "Stowarzyszenie Producentów Cementu / EY 2024",
+            "url": "https://www.polskicement.pl/",
+            "role": "kontrola sektorowa emisji CO2 netto według typów cementu"
+          }
+        ],
+        "rationale": "Cement zwykle decyduje o wyniku GWP betonu. Rozróżnienie CEM I, CEM II i CEM III jest konieczne, bo udział klinkieru istotnie zmienia wynik.",
+        "required_replacement": "EPD konkretnego cementu lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
+      "name": "Cement CEM IV — średnia krajowa PL",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 397,
+      "year": 2025,
+      "geography": "PL",
+      "technology": "cement pucolanowy CEM IV zgodny z EN 197-1; średnia krajowa produkcji w Polsce, reprezentatywność danych 2022",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_reference_dataset",
+      "source_name": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+      "scope": "Wartość A1-A3 dla 1 t cementu CEM IV produkowanego w Polsce, przed transportem do zakładu klienta. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
+      "methodology_note": "Dataset oparto na zweryfikowanej EPD Typu III Stowarzyszenia Producentów Cementu / ITB z 2025 r. EPD podaje ślad węglowy CEM IV równy 0,397 t CO2/t dla A1-A3. W tej samej tabeli podano także wartość globalnego ocieplenia brutto 510 kg CO2e/t jako informację kontrolną; główna wartość POLCA stosuje ślad węglowy wskazany w EPD.",
+      "limitations": "Jest to średnia krajowa dla CEM IV, a nie EPD konkretnego cementu ani konkretnej cementowni. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani wpływu konkretnej recepty betonu.",
+      "preferred_replacement": "EPD konkretnego cementu CEM IV, wskaźnik dostawcy albo zweryfikowane dane cementowni dla użytego cementu.",
+      "publication_status": "published_reference_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu CEM IV, EPD dostawcy ma pierwszeństwo przed średnią krajową POLCA.",
+      "source_trace": [
+        {
+          "name": "EPD SPC/ITB 2025 — Cementy CEM I-CEM V produkowane w Polsce",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+          "role": "źródło wartości A1-A3 dla CEM IV: 397 kg CO2/t oraz wartość brutto 510 kg CO2e/t jako kontrola",
+          "type": "verified_sector_epd_reference"
+        },
+        {
+          "name": "EN 16908 i EN 15804+A2",
+          "url": "https://standards.iteh.ai/catalog/standards/cen/c98127b4-8dc2-48a4-9338-3e1366b16669/en-15804-2012a2-2019",
+          "role": "granice systemu A1-A3 i zasady EPD dla cementu jako produktu pośredniego",
+          "type": "normative_reference"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanej EPD sektorowej SPC/ITB. Dla konkretnego dostawcy pierwszeństwo ma EPD tego cementu albo potwierdzony wskaźnik dostawcy.",
+      "evidence_level": "sector_proxy",
+      "source_policy": {
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD SPC/ITB 2025",
+        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego CEM IV; wynik oznaczony jako wartość referencyjna średnia krajowa.",
+        "auditor_note": "Sprawdzić typ CEM IV, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_epd",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy dla CEM IV, stosowana jest wartość referencyjna POLCA dla średniego CEM IV produkowanego w Polsce.",
+      "default_methodology": {
+        "declared_value": "397 kg CO2e/t; wartość brutto w tabeli EPD: 510 kg CO2e/t",
+        "module": "A1-A3",
+        "system_boundary": "produkcja cementu przed transportem do zakładu klienta",
+        "process_model": [
+          "surowce i przygotowanie mączki surowcowej",
+          "produkcja klinkieru",
+          "mielenie cementu",
+          "popiół/pucolana i dodatki główne",
+          "załadunek cementu luzem"
+        ],
+        "source_basis": [
+          {
+            "name": "EPD SPC/ITB 2025 — Cementy CEM I-CEM V produkowane w Polsce",
+            "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
+            "role": "zweryfikowana wartość A1-A3 dla CEM IV"
+          }
+        ],
+        "rationale": "CEM IV jest ważny dla betonów niskoemisyjnych i mieszanek z dodatkiem pucolanowym/popiołowym. Wartość średnia krajowa umożliwia spójne obliczenia, gdy brak EPD dostawcy.",
+        "required_replacement": "EPD konkretnego cementu CEM IV lub potwierdzony wskaźnik dostawcy, jeżeli jest dostępny.",
+        "audit_checks": [
+          "typ CEM IV",
+          "producent",
+          "numer i ważność EPD",
+          "udział cementu w recepcie",
+          "transport A2",
+          "zgodność jednostki i modułów"
+        ]
+      },
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "ready_to_use_reference_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026",
+      "name": "CBAM brutto 2026 — glina kalcynowana",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 308,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "Calcined clay; CN 2507 00 80",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla Calcined clay, CN 2507 00 80. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "308 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 210
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 70
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 280
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 308
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 336
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 364
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026",
+      "name": "CBAM brutto 2026 — klinkier biały",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1507,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "White clinker; CN 2523 10 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla White clinker, CN 2523 10 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1507 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1320
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 60
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1370
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1507
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1644
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1781
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026",
+      "name": "CBAM brutto 2026 — klinkier szary",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1551,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "Grey clinker; CN 2523 10 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla Grey clinker, CN 2523 10 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1551 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1370
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 50
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1410
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1551
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1692
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1833
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026",
+      "name": "CBAM brutto 2026 — cement portlandzki biały",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1595,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "White Portland cement; CN 2523 21 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla White Portland cement, CN 2523 21 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1595 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1300
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 140
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1450
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1595
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1740
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1885
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
+      "name": "CBAM brutto 2026 — cement portlandzki szary",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1584,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "Grey Portland cement; CN 2523 29 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla Grey Portland cement, CN 2523 29 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1584 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1360
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 80
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1440
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1584
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1728
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1872
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
+      "name": "CBAM brutto 2026 — cement hydrauliczny biały",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1639,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "White hydraulic cements; CN 2523 90 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla White hydraulic cements, CN 2523 90 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1639 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1310
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 180
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1490
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1639
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1788
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1937
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026",
+      "name": "CBAM brutto 2026 — cement hydrauliczny szary",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 1507,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "Grey hydraulic cements; CN 2523 90 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla Grey hydraulic cements, CN 2523 90 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "1507 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1280
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 90
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 1370
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 1507
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 1644
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 1781
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    },
+    {
+      "code": "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026",
+      "name": "CBAM brutto 2026 — cement glinowy",
+      "category": "regulacyjne",
+      "module_default": "CBAM direct+indirect 2026",
+      "unit": "t",
+      "gwp_total_kg_co2e": 2233,
+      "year": 2026,
+      "geography": "Other Countries and Territories",
+      "technology": "Aluminous cement; CN 2523 30 00",
+      "data_quality": "regulatory_control_cbam_gross",
+      "status": "published_cbam_default_reference",
+      "source_name": "Komisja Europejska, CBAM default values definitive period, Excel 13.02.2026 / Implementing Regulation (EU) 2025/2621",
+      "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "scope": "Wartość domyślna CBAM 2026 dla Aluminous cement, CN 2523 30 00. Wartość brutto w tym rekordzie oznacza direct + indirect + narzut 2026, wyrażone jako kg CO2e/t wyrobu.",
+      "methodology_note": "Rekord pokazuje konserwatywną logikę CBAM: gdy brak danych rzeczywistych producenta, stosowana jest wartość domyślna, a od 2026 r. wartości obejmują narzut. To nie jest EPD produktu i nie jest wskaźnikiem polskiej cementowni.",
+      "limitations": "Nie stosować jako danych specyficznych polskiego producenta cementu. Dla EPD i obliczeń wyrobu pierwszeństwo mają EPD konkretnego cementu, dane dostawcy albo zweryfikowane dane instalacji. Wartość CBAM ma służyć jako konserwatywny punkt kontrolny przy braku danych.",
+      "preferred_replacement": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji",
+      "publication_status": "published_cbam_default_reference",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "quality_control",
+        "data_gap_assessment"
+      ],
+      "quality_rule": "Wartość CBAM brutto stosować jako kontrolę konserwatywną przy braku danych producenta. Nie wolno używać jej do obniżania wyniku ani mieszać z EPD bez oznaczenia granicy systemu.",
+      "source_trace": [
+        {
+          "name": "European Commission — CBAM Legislation and Guidance",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "źródło pliku Default values definitive period i regulacji wykonawczej",
+          "type": "official_public"
+        },
+        {
+          "name": "Commission Implementing Regulation (EU) 2025/2621",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+          "role": "prawnie wiążące wartości domyślne CBAM dla okresu definitywnego",
+          "type": "public_regulation"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/metodyka.html",
+      "open_data_note": "Rekord regulacyjny i kontrolny. Nie jest częścią głównej bazy GWP/EPD produktu i nie zastępuje danych producenta.",
+      "evidence_level": "regulatory_control",
+      "source_policy": {
+        "priority": "dane rzeczywiste producenta > EPD produktu > zweryfikowane dane instalacji > wartość domyślna CBAM brutto",
+        "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
+        "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
+      },
+      "selection_mode": "mandatory_default_when_no_supplier_data",
+      "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+      "default_methodology": {
+        "declared_value": "2233 kg CO2e/t",
+        "module": "CBAM direct+indirect 2026",
+        "system_boundary": "wartość domyślna CBAM dla wyrobu objętego kodem CN, przed użyciem w dalszym wyrobie",
+        "calculation_components": [
+          {
+            "name": "direct emissions",
+            "value_kg_co2e_per_t": 1890
+          },
+          {
+            "name": "indirect emissions",
+            "value_kg_co2e_per_t": 140
+          },
+          {
+            "name": "total emissions before mark-up",
+            "value_kg_co2e_per_t": 2030
+          },
+          {
+            "name": "2026 default value including mark-up",
+            "value_kg_co2e_per_t": 2233
+          },
+          {
+            "name": "2027 default value including mark-up",
+            "value_kg_co2e_per_t": 2436
+          },
+          {
+            "name": "2028 and onwards default value including mark-up",
+            "value_kg_co2e_per_t": 2639
+          }
+        ],
+        "source_basis": [
+          {
+            "name": "Komisja Europejska — Default values definitive period",
+            "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+            "role": "wartość domyślna CBAM dla okresu definitywnego"
+          }
+        ],
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
+        "audit_checks": [
+          "kod CN",
+          "kraj pochodzenia",
+          "rok CBAM",
+          "direct emissions",
+          "indirect emissions",
+          "narzut",
+          "czy istnieją dane producenta"
+        ]
+      },
+      "product_groups": [
+        "regulacyjne",
+        "cement",
+        "beton"
+      ],
+      "material_role": "wartość kontrolna CBAM",
+      "record_use_status": "ready_to_use_control_dataset"
+    }
+  ],
+  "meta": {
+    "registry_code": "POLCA-REF-MMA-2026-MVP",
+    "version": "2026.5-regulatory-layer",
+    "updated_at": "2026-05-03",
+    "status": "published_defaults",
+    "methodology_note": "Publiczny katalog gotowych datasetów referencyjnych POLCA. Dane dostawcy i zweryfikowane EPD mają pierwszeństwo dla składników kluczowych. Wartość domyślna jest kontrolowanym rekordem zastępczym przy braku danych producenta.",
+    "evidence_levels": {
+      "official_public": "Dane opublikowane przez instytucję publiczną; zwykle surowy wskaźnik lub parametr wejściowy.",
+      "polca_model": "Wskaźnik obliczony modelem POLCA z publicznych źródeł i jawnych przeliczników.",
+      "sector_proxy": "Dane sektorowe POLCA stosowane przy braku danych dostawcy.",
+      "conservative_default": "Kontrolowana wartość domyślna POLCA stosowana przy braku danych producenta; dla składników kluczowych wymaga potwierdzenia producenta, EPD albo dokumentu klienta."
+    },
+    "calculation_policy": {
+      "principle": "Wskaźniki emisyjne są narzucane przez kontrolowany katalog POLCA, a nie wybierane dowolnie przez użytkownika.",
+      "user_can_choose": [
+        "rzeczywisty dostawca",
+        "lokalizacja dostawcy",
+        "masa/zużycie",
+        "środek transportu zgodny z dokumentami",
+        "dokument EPD lub dane audytowe"
+      ],
+      "user_cannot_choose": [
+        "dowolny wskaźnik GWP",
+        "wygodniejsza baza danych",
+        "inny rok danych bez wersji metodyki",
+        "niższy proxy gdy istnieje EPD lub dane pierwotne"
+      ],
+      "hierarchy": [
+        "1. Zweryfikowane dane pierwotne lub EPD konkretnego dostawcy",
+        "2. Obowiązkowy dataset POLCA dla danej kategorii i geografii",
+        "3. Publiczny/backgroundowy dataset sektorowy wskazany przez POLCA",
+        "4. Kontrolowana wartość domyślna POLCA z jawną oceną jakości danych"
+      ],
+      "effect": "Dzięki temu wszyscy klienci liczą według tych samych zasad; różnice wynikają z realnych danych aktywności, dostawców i transportu, a nie z arbitralnego wyboru korzystniejszego wskaźnika."
+    }
+  }
+}
