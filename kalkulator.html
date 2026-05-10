@@ -77,7 +77,7 @@
                 <div>
                     <label class="calc-label" for="sourceSelect">Źródło energii</label>
                     <select id="sourceSelect" class="calc-select">
-                        <option value="553">Miks elektr. PL (553 kg CO₂/MWh, KOBiZE 2024)</option>
+                        <option value="599">Miks elektr. PL (599 kg CO₂e/MWh, poLCA-EN-PL 2024)</option>
                         <option value="202">Gaz ziemny (202 kg CO₂/MWh)</option>
                         <option value="279">Olej opałowy (279 kg CO₂/MWh)</option>
                         <option value="344">Węgiel kamienny (344 kg CO₂/MWh)</option>
@@ -85,8 +85,9 @@
                     </select>
                 </div>
                 <p class="calc-note">
-                    Wskaźniki emisji przeliczono na MWh na podstawie danych KOBiZE 2024.
-                    Dla miksu elektrycznego uwzględniono straty przesyłowe.
+                    Dla miksu elektrycznego stosujemy wskaźnik poLCA-EN-PL 2024 (full LCA, kg CO₂e/MWh):
+                    emisje operacyjne + WTT_CH₄ z kopalń + WTT_fuels (JEC WTT v5) + WTT_OZE (ecoinvent 3.12).
+                    Dla pozostałych paliw — KOBiZE 2024 (direct CO₂).
                 </p>
             </div>
             <div class="card calc-result-block">
@@ -122,7 +123,7 @@
 
     <div class="card card-lg section-gap fade-in">
         <div class="card-title">Polskie wskaźniki emisji — tabela referencyjna</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Wartości na 1 GJ energii, oparte na oficjalnych publikacjach KOBiZE.</p>
+        <p class="card-text" style="margin-bottom: 1rem;">Wartości na 1 GJ energii. Miks elektr. PL — poLCA-EN-PL 2024 (full LCA, CO₂e). Pozostałe paliwa — KOBiZE 2024 (direct CO₂).</p>
         <div style="overflow-x: auto;">
             <table class="polca-table">
                 <thead>
@@ -137,8 +138,8 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>CO₂ [kg/GJ]</td>
-                        <td class="mono highlight">165,8</td>
+                        <td>CO₂(e) [kg/GJ]</td>
+                        <td class="mono highlight">166,4 **</td>
                         <td class="mono">56,1</td>
                         <td class="mono">77,4</td>
                         <td class="mono">95,5</td>
@@ -172,8 +173,10 @@
             </table>
         </div>
         <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
+            ** Miks elektr. PL: poLCA-EN-PL 2024 (full LCA) = 166,4 kg CO₂e/GJ (599 kg CO₂e/MWh).
+            Składowe: EF_oper 0,528 + WTT_CH₄ 0,057 + WTT_fuels 0,008 + WTT_OZE 0,006 = 0,599 kg CO₂e/kWh.
             * Biomasa raportowana jako neutralna węglowo w cyklu krótkim (konwencja EU ETS).
-            Źródło: KOBiZE 2024, wskaźniki IPCC 2006/2019.
+            Źródła: poLCA-EN-PL-2024 v16 (Multicert, luty 2026); KOBiZE 2024; IPCC AR6 / EF 3.1 (CH₄ fossil = 29,8).
         </p>
     </div>
 
@@ -268,7 +271,7 @@
         <div class="section-num">03 — Wskaźniki emisji w kontekście LCA</div>
         <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
         <div class="prose">
-            <p>Wskaźnik emisji CO₂ dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem (553 kg CO₂/MWh, KOBiZE, dane 2024) a średnią EU (~210 kg CO₂/MWh, Ember 2025) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje ponad dwukrotnie większy wpływ niż sugerują dane generyczne.</p>
+            <p>Wskaźnik emisji CO₂e dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem w ujęciu pełnego cyklu życia (599 kg CO₂e/MWh — poLCA-EN-PL 2024) a średnią EU w ujęciu direct (~210 kg CO₂/MWh, Ember 2025) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje wielokrotnie większy wpływ niż sugerują dane generyczne.</p>
             <p>Wskaźniki prezentowane w poLCA pochodzą z oficjalnych publikacji <strong>KOBiZE</strong> (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) i są aktualizowane corocznie. Obejmują nie tylko CO₂, ale pełen zakres emisji zanieczyszczeń do powietrza — SO₂, NOₓ, pył — wymaganych przez EN 15804+A2 dla wskaźników wpływu środowiskowego.</p>
         </div>
     </div>
@@ -280,17 +283,17 @@
                 <thead>
                     <tr>
                         <th>Parametr</th>
-                        <th>poLCA (KOBiZE 2025)</th>
+                        <th>poLCA</th>
                         <th>ecoinvent 3.10</th>
                         <th>Różnica</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: 600;">CO₂ miks elektr.</td>
-                        <td class="mono highlight">553 kg/MWh</td>
-                        <td class="mono">~210 kg/MWh (EU avg)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+163%</td>
+                        <td style="font-weight: 600;">CO₂e miks elektr. (full LCA)</td>
+                        <td class="mono highlight">599 kg/MWh</td>
+                        <td class="mono">~210 kg/MWh (EU avg, direct)</td>
+                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+185%</td>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Ciepło systemowe</td>
