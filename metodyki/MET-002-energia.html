@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MET-002:2026 — Wyłączenie KOBiZE z LCA EPD wyrobów budowlanych | poLCA</title>
+    <meta name="description" content="MET-002:2026 — peer-reviewable methodology paper. Dlaczego program EPD Polska wyłącza wskaźniki KOBiZE z analiz LCA wg c-PCR-BET v1.3 §6.3.4 i stosuje poLCA-EN-PL-2024 (0,599 kg CO₂e/kWh).">
+    <link rel="canonical" href="https://polca.org.pl/metodyki/MET-002-energia.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MET-002:2026 — Wyłączenie KOBiZE z LCA EPD wyrobów budowlanych">
+    <meta property="og:description" content="Peer-reviewable methodology paper: 7 powodów wyłączenia wskaźników KOBiZE z analiz LCA wg EN 15804+A2 i EF 3.1. poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh.">
+    <meta property="og:url" content="https://polca.org.pl/metodyki/MET-002-energia.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MET-002:2026 — Wyłączenie KOBiZE z LCA EPD wyrobów budowlanych">
+    <meta name="twitter:description" content="Peer-reviewable methodology paper: dlaczego KOBiZE nie nadaje się jako primary indicator dla LCA wg EN 15804+A2.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta name="citation_title" content="MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA">
+    <meta name="citation_author" content="Multicert Sp. z o.o.">
+    <meta name="citation_publication_date" content="2026-05-10">
+    <meta name="citation_publisher" content="Program EPD Polska">
+    <meta name="citation_doi" content="10.xxxx/polca.met.2026.002">
+    <meta name="citation_language" content="pl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["ScholarlyArticle", "TechArticle"],
+      "headline": "MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA",
+      "alternativeHeadline": "MET-002:2026 — Wyłączenie KOBiZE z LCA EPD wyrobów budowlanych",
+      "description": "Peer-reviewable methodology paper definiujący dlaczego program EPD Polska (Multicert) wyłącza wskaźniki KOBiZE z analiz LCA wyrobów budowlanych wg c-PCR-BET-EPD-PL:2026 v1.3 §6.3.4. Dokument przedstawia 7 powodów technicznych i strategicznych oraz uzasadnia stosowanie poLCA-EN-PL-2024 (0,599 kg CO₂e/kWh) jako jedynego wskaźnika zgodnego z EN 15804+A2:2019 i EF 3.1.",
+      "url": "https://polca.org.pl/metodyki/MET-002-energia.html",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.xxxx/polca.met.2026.002"
+      },
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "inLanguage": "pl-PL",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "keywords": "EPD, LCA, EN 15804+A2, EF 3.1, KOBiZE, poLCA-EN-PL-2024, energia elektryczna, wskaźnik emisyjności, c-PCR-BET, AVS 3+, IPCC AR6, Multicert, EPD Polska, well-to-meter, WTT",
+      "about": [
+        {"@type": "Thing", "name": "Life Cycle Assessment"},
+        {"@type": "Thing", "name": "Environmental Product Declaration"},
+        {"@type": "Thing", "name": "Construction products"},
+        {"@type": "Thing", "name": "Polish electricity grid emission factor"}
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://multicert.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Mydlarska 47",
+          "postalCode": "04-690",
+          "addressLocality": "Warszawa",
+          "addressCountry": "PL"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Program EPD Polska",
+        "url": "https://www.epd.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "poLCA Methodology Series",
+        "url": "https://polca.org.pl/metodyki/"
+      },
+      "citation": [
+        "EN 15804:2012+A2:2019+A1:2021",
+        "ISO 14040:2006",
+        "ISO 14044:2006",
+        "ISO 14025:2006",
+        "ISO 14067:2018",
+        "ISO 21930:2017",
+        "Komisja Rec. (UE) 2021/2279",
+        "Rozp. (UE) 2024/3110 (CPR)",
+        "JRC EF 3.1 method 2022",
+        "IPCC AR6 WG1 2021"
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #abstract,#sec-1,#sec-2,#sec-3,#sec-4,#sec-5,#sec-6,#sec-7,#sec-8{scroll-margin-top:76px}
+        .met-doc-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin:1rem 0 0;padding:.85rem 1rem;background:var(--paper-warm);border:1px solid var(--border);border-radius:8px}
+        .met-doc-meta-item{font-size:.74rem;line-height:1.5}
+        .met-doc-meta-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);font-weight:700;display:block;margin-bottom:.15rem}
+        .met-doc-meta-value{color:var(--text-primary);font-weight:600}
+        .met-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin:1.6rem 0 .65rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+        .met-section-title:first-of-type{margin-top:.5rem}
+        .met-h3{font-family:'Inter Tight',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:1.4rem 0 .55rem;line-height:1.35}
+        .met-h3 .met-h3-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:700;margin-right:.4rem}
+        .met-text{font-size:.92rem;line-height:1.7;color:var(--text-body);margin:0 0 .85rem;max-width:880px}
+        .met-text strong{color:var(--text-primary);font-weight:600}
+        .met-abstract{padding:1.1rem 1.2rem;background:var(--bg-subtle);border-left:3px solid var(--accent);border-radius:6px;margin-top:1rem}
+        .met-abstract p{margin:0 0 .7rem;font-size:.9rem;line-height:1.7;color:var(--text-body)}
+        .met-abstract p:last-child{margin-bottom:0}
+        .met-keywords{font-size:.78rem;color:var(--text-secondary);margin-top:.85rem;font-family:'IBM Plex Mono',monospace;line-height:1.6}
+        .met-keywords-label{font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem}
+        .polca-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:1rem 0}
+        .polca-table thead th{background:var(--paper-warm);padding:.7rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .polca-table tbody td{padding:.65rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .polca-table tbody tr:last-child td{border-bottom:none}
+        .polca-table tbody tr:hover td{background:rgba(30,58,138,0.02)}
+        .polca-table .num,.polca-table .mono{font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+        .polca-table .right{text-align:right}
+        .polca-table .total td{background:var(--bg-subtle);font-weight:700;color:var(--text-primary)}
+        .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;margin:1rem 0}
+        .table-scroll .polca-table{margin:0;min-width:680px}
+        .table-caption{font-size:.78rem;color:var(--text-tertiary);font-style:italic;margin:.5rem 0 .85rem;line-height:1.5}
+        .point-card{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);margin:.75rem 0}
+        .point-card-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+        .point-card-title{font-size:.98rem;font-weight:700;color:var(--text-primary);margin:.25rem 0 .55rem;font-family:'Inter Tight',sans-serif;line-height:1.35}
+        .point-card-body{font-size:.86rem;color:var(--text-body);line-height:1.65;margin:0}
+        .point-card-body p{margin:0 0 .55rem}
+        .point-card-body p:last-child{margin-bottom:0}
+        .point-card-body ul{margin:.4rem 0 .55rem;padding-left:1.2rem;font-size:.85rem;line-height:1.6;color:var(--text-secondary)}
+        .point-card-body ul li{margin-bottom:.2rem}
+        .citation-block{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);margin:.75rem 0}
+        .citation-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:700;display:block;margin-bottom:.4rem}
+        .citation-text{font-size:.86rem;line-height:1.65;color:var(--text-body);margin:0}
+        .citation-bibtex{font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.6;color:var(--text-body);background:var(--paper-warm);padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);white-space:pre;overflow-x:auto;margin:.5rem 0 0}
+        .ref-list{list-style:none;padding:0;margin:1rem 0 0;counter-reset:none}
+        .ref-list li{display:grid;grid-template-columns:42px 1fr;gap:.6rem;padding:.55rem .7rem;border-bottom:1px solid var(--border-light);font-size:.82rem;line-height:1.55;color:var(--text-body)}
+        .ref-list li:last-child{border-bottom:none}
+        .ref-list .ref-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-tertiary);font-weight:700}
+        .ref-list a{color:var(--accent);text-decoration:none}
+        .ref-list a:hover{text-decoration:underline}
+        .doc-pill{font-size:.62rem;font-family:'IBM Plex Mono',monospace;padding:.18rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.04em;display:inline-block}
+        .doc-pill.accent{background:var(--accent-subtle);color:var(--accent)}
+        .breadcrumbs{font-size:.74rem;color:var(--text-tertiary);margin:.5rem 0 0;font-family:'IBM Plex Mono',monospace}
+        .breadcrumbs a{color:var(--text-secondary);text-decoration:none}
+        .breadcrumbs a:hover{color:var(--accent);text-decoration:underline}
+        .breadcrumbs .sep{margin:0 .35rem;color:var(--text-tertiary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-doc-meta{grid-template-columns:1fr 1fr}.ref-list li{grid-template-columns:32px 1fr;gap:.4rem}}
+        @media(max-width:600px){.polca-table{font-size:.76rem}.polca-table thead th,.polca-table tbody td{padding:.5rem .55rem}.met-doc-meta{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html" class="active">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO + DOC METADATA
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+                <a href="../index.html">poLCA</a>
+                <span class="sep">›</span>
+                <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+                <span class="sep">›</span>
+                <a href="../podstawy-normatywne.html#mapa-normatywna">Energia elektryczna PL</a>
+                <span class="sep">›</span>
+                <span>MET-002:2026</span>
+            </nav>
+            <div class="section-num" style="margin-top:.85rem;">MET-002:2026 — Methodology paper</div>
+            <h1 class="page-title">Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA</h1>
+            <p class="page-subtitle">
+                Peer-reviewable methodology paper programu EPD Polska. Uzasadnia, dlaczego
+                wskaźniki KOBiZE — fundament krajowej inwentaryzacji emisji wg UNFCCC/EU ETS — nie
+                spełniają wymagań analizy cyklu życia (LCA) wg EN 15804+A2:2019 i EF 3.1, oraz
+                dokumentuje sposób ich wykorzystania jako filaru dla wskaźnika
+                <strong>poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong>.
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span class="doc-pill accent">MET-002:2026</span>
+                <span class="doc-pill">EN 15804+A2</span>
+                <span class="doc-pill">ISO 14067:2018</span>
+                <span class="doc-pill">EF 3.1 / JRC</span>
+                <span class="doc-pill">IPCC AR6</span>
+                <span class="doc-pill accent">peer-reviewable</span>
+                <span class="doc-pill accent">DOI: 10.xxxx/polca.met.2026.002</span>
+            </div>
+            <div class="met-doc-meta">
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wydanie</span>
+                    <span class="met-doc-meta-value">v1.0 — 2026-05-10</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Autor</span>
+                    <span class="met-doc-meta-value">Multicert Sp. z o.o.</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wydawca</span>
+                    <span class="met-doc-meta-value">Program EPD Polska</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Język</span>
+                    <span class="met-doc-meta-value">polski (pl-PL)</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Licencja</span>
+                    <span class="met-doc-meta-value">CC BY 4.0</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">DOI</span>
+                    <span class="met-doc-meta-value">10.xxxx/polca.met.2026.002</span>
+                </div>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Metodyka LCA i kontrola jakości danych energii elektrycznej" loading="lazy" style="width:100%;height:240px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="tool-nav section-gap">
+        <a href="#abstract" class="tool-nav-pill">Streszczenie</a>
+        <a href="#sec-1" class="tool-nav-pill">1 — Wprowadzenie</a>
+        <a href="#sec-2" class="tool-nav-pill">2 — Materiały i metody</a>
+        <a href="#sec-3" class="tool-nav-pill">3 — Analiza (7 punktów)</a>
+        <a href="#sec-4" class="tool-nav-pill">4 — Wyniki</a>
+        <a href="#sec-5" class="tool-nav-pill">5 — Dyskusja</a>
+        <a href="#sec-6" class="tool-nav-pill">6 — Wnioski</a>
+        <a href="#sec-7" class="tool-nav-pill">7 — Cytowanie</a>
+        <a href="#sec-8" class="tool-nav-pill">8 — Bibliografia</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         STRESZCZENIE / ABSTRACT
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="abstract" class="card card-lg section-gap fade-in" aria-label="Streszczenie">
+        <div class="section-num">Streszczenie</div>
+        <div class="card-title">Abstract — wskaźnik energii elektrycznej w LCA wyrobów budowlanych w Polsce</div>
+        <div class="met-abstract">
+            <p>
+                Niniejszy dokument metodyczny (MET-002:2026) uzasadnia formalną decyzję programu
+                <strong>EPD Polska</strong> (operator: Multicert Sp. z o.o.) o wyłączeniu wskaźników
+                emisyjności publikowanych przez Krajowy Ośrodek Bilansowania i Zarządzania Emisjami
+                (KOBiZE) z analiz cyklu życia (LCA) wyrobów budowlanych — zgodnie z
+                <strong>c-PCR-BET-EPD-PL:2026 v1.3 §6.3.4</strong>. Dane KOBiZE są fundamentem
+                krajowej inwentaryzacji emisji raportowanej w ramach UNFCCC, EU ETS i krajowego
+                bilansu emisji; mandat ten różni się jednak od wymagań LCA wyrobu określonych w
+                EN 15804+A2:2019 oraz w metodzie EF 3.1 (JRC 2022).
+            </p>
+            <p>
+                Analiza wykazuje siedem przyczyn niezgodności KOBiZE z wymaganiami LCA: różny
+                mandat metodyczny (inwentaryzacja krajowa vs LCA wyrobu), wąską granicę systemu
+                (wyłącznie emisje gate, bez well-to-tank), raportowanie wyłącznie CO₂ (bez CH₄ i
+                N₂O), brak charakteryzacji wg EF 3.1, pominięcie infrastruktury wytwarzania (turbiny,
+                PV), niekompatybilność międzynarodową oraz brak audit trail dla weryfikatorów AVS 3+.
+                Wskaźnik <strong>poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong> (well-to-meter,
+                EF 3.1, IPCC AR6) usuwa wymienione luki, zachowując dane KOBiZE jako filar
+                stanowiący 88% wartości końcowej. KOBiZE pozostaje tym samym
+                <strong>fundamentem metodycznym</strong> poLCA, nie alternatywą — niniejsza decyzja
+                nie jest krytyką instytucji, lecz formalnym uzupełnieniem zakresu danych
+                niezbędnym dla zgodności z EN 15804+A2 i EF 3.1.
+            </p>
+        </div>
+        <p class="met-keywords">
+            <span class="met-keywords-label">Słowa kluczowe:</span>
+            EPD · LCA · EN 15804+A2 · EF 3.1 · KOBiZE · poLCA-EN-PL-2024 · energia elektryczna ·
+            wskaźnik emisyjności · c-PCR-BET · AVS 3+ · IPCC AR6 · well-to-meter · WTT
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         1 — WPROWADZENIE I KONTEKST
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-1" class="card card-lg section-gap fade-in" aria-label="Wprowadzenie i kontekst">
+        <div class="section-num">1 — Wprowadzenie i kontekst</div>
+        <div class="card-title">Problem rynkowy, role instytucjonalne, pytanie badawcze</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.1</span>Problem rynkowy</h3>
+        <p class="met-text">
+            Na polskim rynku zamówień publicznych w sektorze budowlanym obserwuje się rosnące
+            zapotrzebowanie na deklaracje środowiskowe wyrobu (EPD) zgodne z EN 15804+A2:2019.
+            Producenci stosują jednak różne wskaźniki emisyjności miksu polskiej energii
+            elektrycznej: wartości publikowane przez KOBiZE (Tab. 2 — end-user; Tab. 6 — gate;
+            wskaźnik krajowy = 0,553 kg CO₂/kWh za 2024), wskaźniki rynkowe AIB Residual Mix,
+            dane ecoinvent, ÖKOBAUDAT lub szacunki własne. Skutek: deklaracje EPD dla porównywalnych
+            wyrobów (np. beton C30/37, cement CEM I 42,5R) różnią się w module A1-A3 nawet o 8-15 %
+            wyłącznie z powodu odmiennego źródła wskaźnika energii elektrycznej. Stan ten utrudnia
+            uczciwe porównanie ofert na przetargach publicznych i podważa wiarygodność EPD jako
+            narzędzia decyzyjnego.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.2</span>Rola KOBiZE</h3>
+        <p class="met-text">
+            Krajowy Ośrodek Bilansowania i Zarządzania Emisjami (KOBiZE) realizuje mandat krajowy
+            wynikający z ustawy z dnia 17 lipca 2009 r. o systemie zarządzania emisjami gazów
+            cieplarnianych (Dz.U. 2009 Nr 130 poz. 1070) oraz ze zobowiązań Polski w zakresie
+            UNFCCC, EU ETS (Dyr. 2003/87/WE) i raportowania krajowego bilansu emisji. Publikowane
+            wskaźniki emisyjności energii elektrycznej (Tab. 2 — for end-user, Tab. 6 — gate, z
+            alokacją wytwarzania CHP) służą rozliczeniom obowiązkowym podmiotów ETS oraz
+            sprawozdawczości UNFCCC (NIR PL). KOBiZE jest tym samym <strong>krajową instytucją
+            zaufania publicznego</strong> w obszarze inwentaryzacji emisji.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.3</span>Rola programu EPD Polska</h3>
+        <p class="met-text">
+            Program EPD Polska, prowadzony przez Multicert Sp. z o.o. od 2026 roku, jest programem
+            deklaracji środowiskowych typu III wg ISO 14025:2006, opartym o EN 15804+A2:2019/A1:2021
+            oraz dokument c-PCR-BET-EPD-PL:2026 v1.3 (Core PCR dla betonu). Program nadzoruje
+            weryfikację EPD przez weryfikatorów akredytowanych według ISO/IEC 17029:2019, w
+            modelu AVS 3+ (Advanced Verification Scheme) opracowanym wspólnie z międzynarodowymi
+            programami EPD. Mandat programu obejmuje zapewnienie zgodności z prawem UE
+            (CPR 2024/3110, CBAM 2023/956, ESPR 2024/1781) oraz z dorobkiem normatywnym CEN/TC 350.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.4</span>Pytanie badawcze</h3>
+        <p class="met-text">
+            Czy wskaźniki KOBiZE — w postaci publikowanej (CO₂ tylko, granica gate/end-user,
+            metodyka MRR) — spełniają wymagania analizy cyklu życia wg EN 15804+A2:2019 §6.3 oraz
+            charakteryzacji wpływu wg EF 3.1 (JRC 2022) dla deklaracji EPD wyrobów budowlanych?
+            Niniejszy dokument przedstawia analizę porównawczą oraz formalne uzasadnienie decyzji
+            metodycznej programu EPD Polska.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         2 — MATERIAŁY I METODY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-2" class="card card-lg section-gap fade-in" aria-label="Materiały i metody">
+        <div class="section-num">2 — Materiały i metody</div>
+        <div class="card-title">Źródła danych, normy odniesienia, metoda porównawcza</div>
+        <p class="met-text">
+            Niniejsza analiza opiera się na porównaniu sześciu źródeł danych i metodologicznych
+            ram odniesienia. Zakres czasowy: dane za rok 2024, opublikowane w 2025 roku.
+        </p>
+
+        <div class="met-section-title">2.1 Źródła danych</div>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>KOBiZE Tab. 2:2025</strong> — wskaźniki emisyjności CO₂ dla energii elektrycznej dla odbiorcy końcowego (end-user) za rok 2024: 0,553 kg CO₂/kWh (553 kg CO₂/MWh). Granica: gate + straty sieciowe.</li>
+            <li><strong>KOBiZE Tab. 6:2025</strong> — wskaźniki emisyjności CO₂ z produkcji elektroenergetycznej (gate), z alokacją wytwarzania w skojarzeniu (CHP) zgodną z metodyką MRR (UE) 2018/2066 Art. 31 oraz Aneks VI.</li>
+            <li><strong>poLCA-EN-PL-2024 v9.1</strong> — wskaźnik well-to-meter dla polskiej energii elektrycznej, opracowany przez zespół metodyczny Multicert (2026); 0,599 kg CO₂e/kWh; granica: cradle-to-meter, włącznie z WTT_CH₄, WTT_fuels i WTT_OZE; gazy: CO₂ + CH₄ + N₂O.</li>
+            <li><strong>ecoinvent v3.12 cut-off (2024-09)</strong> — dataset „market for electricity, low voltage, PL" jako benchmark międzynarodowy.</li>
+        </ul>
+
+        <div class="met-section-title">2.2 Normy odniesienia</div>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>EN 15804:2012+A2:2019/A1:2021</strong> §5, §6.3.4 (cradle-to-gate / cradle-to-grave), §6.3.5.1 (LCIA characterization), §6.3.7.4 (energia elektryczna).</li>
+            <li><strong>ISO 14040:2006</strong> §3.2 (definicja LCA); ISO 14044:2006 §4.2-4.5 (struktura LCA).</li>
+            <li><strong>ISO 14067:2018</strong> §6.4.9 (electricity in product carbon footprint), §6.4.9.4 (location-based vs market-based).</li>
+            <li><strong>ISO 21930:2017</strong> §7.1.7 (sustainability of buildings — core rules for EPD).</li>
+            <li><strong>EF 3.1 method</strong> (JRC 2022, JRC130796) — characterization factors dla 16 kategorii wpływu.</li>
+            <li><strong>IPCC AR6 WG1 (2021)</strong>, Tab. 7.SM.7 — GWP100 (włącznie z fossil-derived CH₄ = 29,8; N₂O = 273).</li>
+        </ul>
+
+        <div class="met-section-title">2.3 Metoda porównawcza</div>
+        <p class="met-text">
+            Porównanie przeprowadzono w trzech krokach:
+            (1) ocena <strong>compliance gap</strong> KOBiZE względem EN 15804+A2:2019 §6.3 i ISO
+            14067:2018 §6.4.9 — czy zakres wskaźnika spełnia wymagania LCA;
+            (2) <strong>analiza luk metodycznych</strong> — co brakuje w KOBiZE w stosunku do
+            wskaźnika well-to-meter zgodnego z EF 3.1 i AR6;
+            (3) <strong>dekompozycja wskaźnika poLCA-EN-PL-2024</strong> — kwantyfikacja udziału
+            danych KOBiZE w wartości końcowej oraz uzupełnień (WTT_CH₄, WTT_fuels, WTT_OZE).
+            Wyniki przedstawione w sekcjach 3-4.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         3 — ANALIZA: 7 PUNKTÓW WYŁĄCZENIA KOBIZE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-3" class="card card-lg section-gap fade-in" aria-label="Analiza wyłączenia KOBiZE">
+        <div class="section-num">3 — Analiza: siedem powodów wyłączenia KOBiZE z LCA</div>
+        <div class="card-title">Compliance gap KOBiZE vs EN 15804+A2 i EF 3.1</div>
+        <p class="met-text">
+            Poniższe siedem punktów dokumentuje rozdźwięk między mandatem KOBiZE (krajowa
+            inwentaryzacja zgodna z UNFCCC/EU ETS) a wymaganiami metodyki LCA wyrobu zgodnej z
+            EN 15804+A2:2019 i EF 3.1. Każdy punkt jest udokumentowany cytatem normatywnym.
+        </p>
+
+        <div class="point-card">
+            <div class="point-card-num">3.1</div>
+            <div class="point-card-title">KOBiZE = inwentaryzacja krajowa, nie LCA wyrobu</div>
+            <div class="point-card-body">
+                <p>
+                    KOBiZE definiuje swój mandat jako: „Krajowa baza o emisjach gazów cieplarnianych
+                    — narzędzie do raportowania UNFCCC, EU ETS, krajowy bilans emisji" (KOBiZE 2024).
+                    Mandat ten różni się fundamentalnie od mandatu LCA wyrobu, który zgodnie z
+                    ISO 14040:2006 §3.2 jest definiowany jako „compilation and evaluation of the
+                    inputs, outputs and the potential environmental impacts of a product system
+                    throughout its life cycle". Inwentaryzacja krajowa raportuje emisje sektora
+                    elektroenergetycznego w sposób zagregowany (terytorialny, w danym roku),
+                    natomiast LCA wymaga przypisania emisji do funkcjonalnej jednostki wyrobu
+                    (1 kWh dostarczonej energii) w pełnym cyklu życia, włącznie z fazą upstream.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.2</div>
+            <div class="point-card-title">Granica systemu: gate vs well-to-meter</div>
+            <div class="point-card-body">
+                <p>
+                    KOBiZE raportuje wyłącznie emisje bezpośrednie ze spalania paliw na terytorium
+                    Polski (Tab. 6 — gate) oraz dodatkowo straty sieciowe (Tab. 2 — end-user).
+                    Z analizy wyłączone są:
+                </p>
+                <ul>
+                    <li><strong>WTT_CH₄</strong> — metan fugitywny z polskich kopalń węgla kamiennego (8-12 m³ CH₄/t węgla wg WUG 2024 — Wyższy Urząd Górniczy);</li>
+                    <li><strong>WTT_fuels</strong> — emisje upstream łańcucha dostaw paliw kopalnych (gaz ziemny, olej opałowy) zgodnie z metodyką JEC Well-to-Tank v5 (JRC 2020, JRC119036) oraz biomasy;</li>
+                    <li><strong>WTT_OZE</strong> — emisje cyklu życia infrastruktury wytwarzania OZE (turbiny wiatrowe, moduły fotowoltaiczne) wg ecoinvent 3.12.</li>
+                </ul>
+                <p>
+                    EN 15804+A2:2019 §6.3.4 wymaga, aby moduły A1-A3 (cradle-to-gate) obejmowały
+                    pełny łańcuch dostaw, w tym wytwarzanie i dostawę paliw oraz infrastrukturę
+                    energetyczną. KOBiZE w obecnej formie nie spełnia tego wymagania.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.3</div>
+            <div class="point-card-title">Tylko CO₂, nie CO₂e</div>
+            <div class="point-card-body">
+                <p>
+                    KOBiZE Tab. 2 i Tab. 6 raportują wyłącznie dwutlenek węgla (CO₂). Brakuje
+                    odpowiednio scharakteryzowanych emisji metanu (CH₄) i podtlenku azotu (N₂O) ze
+                    spalania paliw oraz emisji fugitywnych. Zgodnie z IPCC AR6 WG1 (2021) Tab. 7.SM.7,
+                    GWP100 dla fossil-derived CH₄ = 29,8 oraz GWP100 dla N₂O = 273 kg CO₂e/kg.
+                    EN 15804+A2:2019 §6.3.5.2 Tab. 5 wymaga raportowania wskaźnika
+                    <strong>GWP-total</strong> jako sumy CO₂ + CH₄ × GWP + N₂O × GWP, z
+                    rozszerzeniem o GWP-fossil, GWP-biogenic i GWP-luluc. Wskaźnik raportowany
+                    przez KOBiZE jest tym samym niekompletny dla celów EPD.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.4</div>
+            <div class="point-card-title">Brak zgodności z metodą charakteryzacji EF 3.1</div>
+            <div class="point-card-body">
+                <p>
+                    Komisja Europejska, w Zaleceniu (UE) 2021/2279, oraz JRC publikujący metodę
+                    EF 3.1 (luty 2023, JRC130796), wprowadziły mandat dla EPD wydawanych po
+                    1 września 2024 r.: charakteryzacja wpływu musi być prowadzona z użyciem
+                    współczynników EF 3.1. Metodyka MRR (Rozp. (UE) 2018/2066 Art. 31) stosowana
+                    przez KOBiZE wykorzystuje starsze, zharmonizowane krajowe wartości
+                    domyślne — odpowiednie dla rozliczeń EU ETS, ale niezgodne z formalnym
+                    wymaganiem EF 3.1 dla LCA wyrobu. Zastosowanie KOBiZE jako podstawy LCA
+                    skutkowałoby zapisem niezgodności metodologicznej w raporcie weryfikacyjnym.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.5</div>
+            <div class="point-card-title">Pominięcie infrastruktury wytwarzania</div>
+            <div class="point-card-body">
+                <p>
+                    LCA wyrobu wymaga uwzględnienia emisji z budowy i utrzymania infrastruktury
+                    wytwarzania energii — turbin wiatrowych, modułów PV, sieci dystrybucyjnej,
+                    farm fotowoltaicznych. KOBiZE raportuje wyłącznie emisje operacyjne (gate)
+                    związane ze spalaniem paliw. Dla rosnącego udziału OZE w polskim miksie
+                    elektroenergetycznym (28 % w 2024 r.; PSE Operator) ta luka jest
+                    <strong>strukturalnie rosnąca</strong>: im większy udział OZE, tym większy
+                    relatywny udział emisji z infrastruktury, których KOBiZE nie raportuje.
+                    EN 15804+A2:2019 §6.3.4.4 i ecoinvent 3.12 (datasety „photovoltaic, electricity
+                    production" oraz „electricity, high voltage, wind power") dostarczają danych
+                    pozwalających uzupełnić tę lukę.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.6</div>
+            <div class="point-card-title">Niekompatybilność międzynarodowa</div>
+            <div class="point-card-body">
+                <p>
+                    Programy EPD prowadzone w Europie — Environdec (SE), IBU (DE), INIES (FR),
+                    BRE/EPD UK, NMD (NL), ÖKOBAUDAT (DE) — stosują wskaźniki energii elektrycznej
+                    obliczone wg metody EF 3.1 z zastosowaniem współczynników GWP IPCC AR6.
+                    Polska EPD oparta na KOBiZE byłaby tym samym <strong>niekompatybilna</strong>
+                    z resztą europejskich programów EPD: produkty z polskich zakładów byłyby
+                    sztucznie zaniżone w module A1-A3 (KOBiZE: 0,553 kg CO₂/kWh) względem
+                    pełnego LCA stosowanego przez programy zagraniczne (poLCA-EN-PL-2024:
+                    0,599 kg CO₂e/kWh — różnica 8,3 %). Skutkiem byłaby utrata wzajemnej
+                    rozpoznawalności (mutual recognition) zgodnej z ISO 14025:2006 §9 oraz
+                    z ECO Platform Mutual Recognition Agreement.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <div class="point-card-num">3.7</div>
+            <div class="point-card-title">Audit trail dla weryfikatorów AVS 3+</div>
+            <div class="point-card-body">
+                <p>
+                    System weryfikacji AVS 3+ (Advanced Verification Scheme; stosowany przez
+                    Multicert/EPD Polska oraz Environdec, IBU, INIES) wymaga
+                    <strong>traceable methodology</strong>: każda wartość wskaźnika musi mieć
+                    udokumentowany łańcuch źródeł, metod charakteryzacji i transformacji danych
+                    zgodny z EN 15804+A2:2019 §8 i ISO/IEC 17029:2019 §6. KOBiZE w
+                    publikowanej formie nie zawiera w jawnej postaci charakteryzacji wg EF 3.1,
+                    GWP wg AR6, ani upstream WTT — co uniemożliwia weryfikatorowi pełną
+                    rekonstrukcję metodologiczną. Wskaźnik poLCA-EN-PL-2024 w wersji 9.1
+                    publikuje pełen audit trail (formuła, źródła dla każdego komponentu, zakres
+                    niepewności) — zgodnie z wymogami AVS 3+.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         4 — WYNIKI: PORÓWNANIE I DEKOMPOZYCJA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-4" class="card card-lg section-gap fade-in" aria-label="Wyniki">
+        <div class="section-num">4 — Wyniki: porównanie KOBiZE vs poLCA-EN-PL-2024</div>
+        <div class="card-title">Tabela porównawcza i dekompozycja wskaźnika</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">Tab. 4.1</span>Granica systemu, scope, zgodność</h3>
+        <p class="met-text">
+            Tabela porządkuje atrybuty obu wskaźników w siedmiu wymiarach metodycznych istotnych
+            dla EPD. Wartość 0,553 kg CO₂/kWh (KOBiZE Tab. 2) oraz 0,599 kg CO₂e/kWh (poLCA-EN-PL-2024)
+            odnoszą się do roku 2024.
+        </p>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Atrybut</th>
+                        <th>KOBiZE Tab. 2 (end-user)</th>
+                        <th>poLCA-EN-PL-2024 v9.1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Granica systemu</strong></td>
+                        <td>gate + straty sieciowe</td>
+                        <td>well-to-meter (full LCA)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gazy uwzględnione</strong></td>
+                        <td>CO₂ tylko</td>
+                        <td>CO₂ + CH₄ + N₂O (CO₂e)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GWP / charakteryzacja</strong></td>
+                        <td>starsza metodyka (MRR 2018/2066)</td>
+                        <td>IPCC AR6 (CH₄ fossil = 29,8)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Charakteryzacja wpływu</strong></td>
+                        <td>brak EF</td>
+                        <td>EF 3.1 (JRC 2022)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Infrastruktura OZE</strong></td>
+                        <td>nie</td>
+                        <td>tak (ecoinvent 3.12)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_CH₄ kopalń</strong></td>
+                        <td>nie</td>
+                        <td>tak (WUG + IPCC AR6)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wartość 2024</strong></td>
+                        <td class="mono">0,553 kg CO₂/kWh</td>
+                        <td class="mono">0,599 kg CO₂e/kWh</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 4.1. Porównanie atrybutów metodycznych KOBiZE Tab. 2:2025 (wskaźnik dla odbiorcy
+            końcowego za rok 2024) i poLCA-EN-PL-2024 v9.1. Źródła: KOBiZE 2025, Multicert 2026.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">Tab. 4.2</span>Dekompozycja poLCA-EN-PL-2024</h3>
+        <p class="met-text">
+            Wskaźnik poLCA-EN-PL-2024 jest sumą czterech komponentów. Główny komponent —
+            EF_oper (operacyjne emisje gate-to-meter z alokacją CHP, korektami N₂O i CH₄ ze
+            spalania oraz stratami sieciowymi) — pochodzi w całości z danych KOBiZE Tab. 6 i
+            metodyki MRR. Stanowi on <strong>88 % wskaźnika końcowego</strong>.
+        </p>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Komponent</th>
+                        <th class="right">Wartość [kg CO₂e/kWh]</th>
+                        <th class="right">Udział</th>
+                        <th>Źródło danych</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EF_oper</strong> — operacyjne (gate-to-meter)</td>
+                        <td class="right mono">0,528</td>
+                        <td class="right mono">88 %</td>
+                        <td>KOBiZE Tab. 6 + alokacja CHP (MRR 2018/2066) + straty sieciowe + korekty N₂O i CH₄ ze spalania</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_CH₄</strong> — metan kopalń węgla</td>
+                        <td class="right mono">0,057</td>
+                        <td class="right mono">10 %</td>
+                        <td>WUG 2024 (metanowość kopalń) + IPCC AR6 GWP100 fossil = 29,8</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_fuels</strong> — upstream paliw</td>
+                        <td class="right mono">0,008</td>
+                        <td class="right mono">1 %</td>
+                        <td>JEC WTT v5 (JRC 2020, JRC119036)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_OZE</strong> — infrastruktura</td>
+                        <td class="right mono">0,006</td>
+                        <td class="right mono">1 %</td>
+                        <td>ecoinvent 3.12 cut-off (PV, wind)</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>Σ poLCA-EN-PL-2024</strong></td>
+                        <td class="right mono"><strong>0,599</strong></td>
+                        <td class="right mono"><strong>100 %</strong></td>
+                        <td>full LCA, EF 3.1, IPCC AR6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 4.2. Dekompozycja wskaźnika poLCA-EN-PL-2024 v9.1. Wartości wyrażone w
+            kg CO₂e/kWh dostarczonej energii elektrycznej (jednostka funkcjonalna: 1 kWh
+            netto na zaciskach odbiorcy w sieci niskiego napięcia, Polska, rok 2024).
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         5 — DYSKUSJA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-5" class="card card-lg section-gap fade-in" aria-label="Dyskusja">
+        <div class="section-num">5 — Dyskusja: poLCA = KOBiZE + 12 % uzupełnienia</div>
+        <div class="card-title">Wzajemna komplementarność, niezależna walidacja, kontekst międzynarodowy</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">5.1</span>KOBiZE jako filar fundamentalny poLCA</h3>
+        <p class="met-text">
+            Z dekompozycji w Tab. 4.2 wynika, że dane KOBiZE stanowią <strong>88 %</strong>
+            wartości wskaźnika poLCA-EN-PL-2024. Wyłączenie KOBiZE z LCA <strong>nie</strong>
+            oznacza krytyki instytucji ani odrzucenia jej danych — oznacza, że dane KOBiZE w
+            surowej, publikowanej postaci nie spełniają wszystkich wymagań LCA wg EN 15804+A2:2019,
+            a po uzupełnieniu o WTT (12 %), charakteryzację EF 3.1 i GWP wg AR6 stają się
+            zgodne z wymogami programu EPD Polska. Tym samym KOBiZE pozostaje
+            <strong>fundamentem metodycznym</strong> wskaźnika poLCA, a nie alternatywą dla niego.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">5.2</span>Niezależna walidacja</h3>
+        <p class="met-text">
+            Wskaźnik poLCA-EN-PL-2024 jest spójny z niezależnymi publikacjami naukowymi i
+            referencyjnymi:
+        </p>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li>Lewandowska A. <em>et al.</em> (2025) w MDPI Energies obliczyli wskaźnik
+                location-based dla Polski za rok 2022 = 0,650 kg CO₂/kWh. Trend
+                poLCA-EN-PL: 2023 = 0,642 → 2024 = 0,599 jest spójny z obserwowaną
+                redukcją emisyjności miksu PL związaną z rosnącym udziałem OZE i wycofaniem
+                najmniej efektywnych bloków węglowych.</li>
+            <li>ÖKOBAUDAT (DE), INIES (FR), NMD (NL) i ecoinvent 3.12 — żaden z tych
+                programów referencyjnych nie używa surowej krajowej inwentaryzacji emisji
+                jako podstawy LCA. Wszystkie stosują pełny LCA upstream (well-to-meter)
+                z uwzględnieniem WTT i infrastruktury wytwarzania.</li>
+            <li>EEA (European Environment Agency) GHG Intensity 2023 — używa zharmonizowanej
+                metodyki z uwzględnieniem fugitywnych emisji metanu z górnictwa, co potwierdza
+                metodologiczną zasadność komponentu WTT_CH₄ w poLCA.</li>
+        </ul>
+
+        <h3 class="met-h3"><span class="met-h3-num">5.3</span>Implikacje dla weryfikatorów AVS 3+</h3>
+        <p class="met-text">
+            Zgodnie z c-PCR-BET-EPD-PL:2026 v1.3 §6.3.4, użycie KOBiZE jako primary indicator
+            w deklaracji EPD wyrobu betonowego w programie EPD Polska stanowi
+            <strong>niezgodność krytyczną</strong> w schemacie weryfikacyjnym AVS 3+ — analogicznie
+            do braku alokacji wg EN 15804+A2:2019 §6.3.6 lub braku charakteryzacji EF 3.1.
+            Niezgodność krytyczna skutkuje wstrzymaniem publikacji EPD do czasu korekty.
+            Producent zachowuje możliwość raportowania KOBiZE jako informacji uzupełniającej,
+            opcjonalnej, w sekcji „Additional environmental information" (EN 15804+A2:2019 §7.4),
+            jednak wartość w module A1-A3 musi być obliczona z użyciem poLCA-EN-PL-2024
+            (Poziom 1) lub Poziomu 2 (AIB Residual Mix) lub Poziomu 3 (PV on-site).
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         6 — WNIOSKI I REKOMENDACJE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-6" class="card card-lg section-gap fade-in" aria-label="Wnioski">
+        <div class="section-num">6 — Wnioski i rekomendacje</div>
+        <div class="card-title">Decyzja metodyczna programu EPD Polska</div>
+        <p class="met-text">
+            Na podstawie analizy w sekcjach 3-5 program EPD Polska formułuje następujące wnioski
+            i decyzje metodyczne:
+        </p>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li>Wskaźnik <strong>poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong> jest zalecany
+                jako Poziom 1 (location-based) w c-PCR-BET-EPD-PL:2026 v1.3 §6.3.1 — jako
+                jedyny zgodny z EN 15804+A2:2019 i EF 3.1.</li>
+            <li>Dane KOBiZE Tab. 2:2025 oraz Tab. 6:2025 są zachowane jako
+                <strong>podstawa metodyczna</strong> stanowiąca 88 % wskaźnika poLCA, nie jako
+                alternatywa.</li>
+            <li>Użycie KOBiZE jako primary indicator w module A1-A3 stanowi
+                <strong>niezgodność krytyczną</strong> w schemacie weryfikacyjnym AVS 3+.</li>
+            <li>Wskaźnik poLCA-EN-PL podlega corocznej aktualizacji w II kwartale, po publikacji
+                wskaźników KOBiZE za rok poprzedni — zgodnie z procedurą PR-02 programu EPD
+                Polska.</li>
+            <li>Dokument MET-002 podlega cyklowi review co 5 lat lub po istotnej zmianie metodyki
+                (EN 15804+A3, aktualizacja EF lub IPCC AR7) — zgodnie z procedurą PR-04.</li>
+        </ul>
+        <p class="met-text" style="margin-top:.85rem;">
+            Pełny rejestr norm i odniesień metodycznych dla obszaru energii elektrycznej zawiera
+            sekcja <a href="../podstawy-normatywne.html#mapa-normatywna" style="color:var(--accent);">02 — Mapa normatywna</a>
+            strony Podstawy normatywne (komponenty 12, 12a, 12b). Zasady operacyjne — sekcja
+            <a href="../podstawy-normatywne.html#procedury" style="color:var(--accent);">04 — Procedury PR-01..07</a>.
+            Dokument c-PCR-BET-EPD-PL:2026 v1.3 publikowany jest pod adresem
+            <a href="https://polca.org.pl/c-pcr/c-PCR-BET-v1.3.pdf" style="color:var(--accent);font-family:'IBM Plex Mono',monospace;font-size:.86rem;">polca.org.pl/c-pcr/c-PCR-BET-v1.3.pdf</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         7 — CYTOWANIE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-7" class="card card-lg section-gap fade-in" aria-label="Cytowanie">
+        <div class="section-num">7 — Cytowanie tego dokumentu</div>
+        <div class="card-title">APA, BibTeX, ISO 690</div>
+
+        <div class="citation-block">
+            <span class="citation-label">APA (7th edition)</span>
+            <p class="citation-text">
+                Multicert Sp. z o.o. (2026). <em>MET-002:2026 — Stosowanie wskaźników emisyjności
+                energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników
+                KOBiZE z analiz LCA</em>. Program EPD Polska. polca.org.pl/metodyki/MET-002-energia.
+                DOI: 10.xxxx/polca.met.2026.002 [DOI w trakcie rejestracji DataCite].
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">ISO 690</span>
+            <p class="citation-text">
+                MULTICERT SP. Z O.O. <em>MET-002:2026 — Stosowanie wskaźników emisyjności energii
+                elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z
+                analiz LCA</em>. Warszawa: Program EPD Polska, 2026. Dostęp:
+                https://polca.org.pl/metodyki/MET-002-energia.html. DOI: 10.xxxx/polca.met.2026.002.
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">BibTeX</span>
+            <pre class="citation-bibtex">@techreport{Multicert2026MET002,
+  author      = {{Multicert Sp. z o.o.}},
+  title       = {MET-002:2026 --- Stosowanie wska\'znik\'ow emisyjno\'sci energii
+                 elektrycznej w EPD wyrob\'ow budowlanych w Polsce: wy\l\k{a}czenie
+                 wska\'znik\'ow KOBiZE z analiz LCA},
+  institution = {Program EPD Polska},
+  type        = {Methodology paper},
+  number      = {MET-002:2026},
+  year        = {2026},
+  month       = {May},
+  address     = {Warszawa, Poland},
+  url         = {https://polca.org.pl/metodyki/MET-002-energia.html},
+  doi         = {10.xxxx/polca.met.2026.002},
+  language    = {polish},
+  note        = {DOI w trakcie rejestracji DataCite}
+}</pre>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         8 — BIBLIOGRAFIA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-8" class="card card-lg section-gap fade-in" aria-label="Bibliografia">
+        <div class="section-num">8 — Bibliografia</div>
+        <div class="card-title">Pełen rejestr cytowań — 23 pozycje</div>
+        <p class="met-text">
+            Pełen rejestr źródeł cytowanych w niniejszym dokumencie. Pozycje uporządkowane
+            tematycznie: normy ISO/EN (1-6), akty UE i zalecenia (7-11), dokumenty JRC i IPCC
+            (12-14), źródła krajowe (15-17), datasety i programy (18, 22), publikacje Multicert
+            i poLCA (19-20), publikacje recenzowane (21), dokumenty PCA (23).
+        </p>
+        <ol class="ref-list" start="1">
+            <li><span class="ref-num">[1]</span><span>CEN (2019/2021), <em>EN 15804:2012+A2:2019+A1:2021</em> — Sustainability of construction works — Environmental product declarations — Core rules for the product category of construction products. CEN/TC 350.</span></li>
+            <li><span class="ref-num">[2]</span><span>ISO (2006), <em>ISO 14040:2006</em> + Amd 1:2020 — Environmental management — Life cycle assessment — Principles and framework.</span></li>
+            <li><span class="ref-num">[3]</span><span>ISO (2006), <em>ISO 14044:2006</em> + Amd 2:2020 — Environmental management — Life cycle assessment — Requirements and guidelines.</span></li>
+            <li><span class="ref-num">[4]</span><span>ISO (2006), <em>ISO 14025:2006</em> — Environmental labels and declarations — Type III environmental declarations — Principles and procedures.</span></li>
+            <li><span class="ref-num">[5]</span><span>ISO (2018), <em>ISO 14067:2018</em> — Greenhouse gases — Carbon footprint of products — Requirements and guidelines for quantification.</span></li>
+            <li><span class="ref-num">[6]</span><span>ISO (2017), <em>ISO 21930:2017</em> — Sustainability in buildings and civil engineering works — Core rules for environmental product declarations of construction products and services.</span></li>
+            <li><span class="ref-num">[7]</span><span>Komisja Europejska (2024), <em>Rozporządzenie (UE) 2024/3110</em> Parlamentu Europejskiego i Rady ustanawiające zharmonizowane warunki wprowadzania do obrotu wyrobów budowlanych (CPR). Dz.U. UE L 2024/3110. <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32024R3110" target="_blank" rel="noopener">EUR-Lex CELEX:32024R3110</a>.</span></li>
+            <li><span class="ref-num">[8]</span><span>Komisja Europejska (2023), <em>Rozporządzenie (UE) 2023/956</em> ustanawiające mechanizm dostosowywania cen na granicach z uwzględnieniem emisji CO₂ (CBAM). <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32023R0956" target="_blank" rel="noopener">EUR-Lex CELEX:32023R0956</a>.</span></li>
+            <li><span class="ref-num">[9]</span><span>Komisja Europejska (2023), <em>Rozporządzenie wykonawcze (UE) 2023/1773</em> dotyczące obowiązków sprawozdawczych w okresie przejściowym CBAM. <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32023R1773" target="_blank" rel="noopener">EUR-Lex CELEX:32023R1773</a>.</span></li>
+            <li><span class="ref-num">[10]</span><span>Komisja Europejska (2018), <em>Rozporządzenie wykonawcze (UE) 2018/2066</em> w sprawie monitorowania i raportowania emisji gazów cieplarnianych (MRR). <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32018R2066" target="_blank" rel="noopener">EUR-Lex CELEX:32018R2066</a>.</span></li>
+            <li><span class="ref-num">[11]</span><span>Komisja Europejska (2021), <em>Zalecenie (UE) 2021/2279</em> w sprawie stosowania metod opartych na śladzie środowiskowym (PEF / OEF). <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:32021H2279" target="_blank" rel="noopener">EUR-Lex CELEX:32021H2279</a>.</span></li>
+            <li><span class="ref-num">[12]</span><span>JRC (2022), <em>EF 3.1 method</em> — Environmental Footprint reference package. JRC130796. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC130796" target="_blank" rel="noopener">publications.jrc.ec.europa.eu/repository/handle/JRC130796</a>.</span></li>
+            <li><span class="ref-num">[13]</span><span>JRC, EUCAR, CONCAWE (2020), <em>JEC Well-to-Tank report v5</em> — Well-to-tank emissions of fuels for road transport. JRC119036.</span></li>
+            <li><span class="ref-num">[14]</span><span>IPCC (2021), <em>AR6 WG1 — The Physical Science Basis</em>. Tab. 7.SM.7: GWP100 dla fossil-derived CH₄ = 29,8; N₂O = 273. Cambridge University Press.</span></li>
+            <li><span class="ref-num">[15]</span><span>KOBiZE (2024), <em>Krajowa baza o emisjach gazów cieplarnianych — wskaźniki emisji 2024</em>. Instytut Ochrony Środowiska — Państwowy Instytut Badawczy, Warszawa.</span></li>
+            <li><span class="ref-num">[16]</span><span>KOBiZE (2025), <em>Wskaźniki emisyjności CO₂ dla energii elektrycznej za rok 2024</em>: Tab. 2 (end-user) = 553 kg CO₂/MWh; Tab. 6 (gate, alokacja CHP). KOBiZE/IOŚ-PIB, Warszawa.</span></li>
+            <li><span class="ref-num">[17]</span><span>WUG — Wyższy Urząd Górniczy (2025), <em>Ocena stanu bezpieczeństwa i higieny pracy w górnictwie</em>. Statystyki metanowości polskich kopalń węgla kamiennego (8-12 m³ CH₄/t).</span></li>
+            <li><span class="ref-num">[18]</span><span>ecoinvent Association (2024), <em>ecoinvent database v3.12 cut-off</em> — datasety dla energii elektrycznej i infrastruktury OZE (PV, wind). Zürich.</span></li>
+            <li><span class="ref-num">[19]</span><span>Multicert Sp. z o.o. (2026), <em>poLCA-EN-PL-2024 v9.1 — wskaźnik emisyjności energii elektrycznej w pełnym cyklu życia</em>. Methodology paper i karta datasetu. polca.org.pl.</span></li>
+            <li><span class="ref-num">[20]</span><span>Multicert Sp. z o.o. (2026), <em>c-PCR-BET-EPD-PL:2026 v1.3</em> — Core PCR for Concrete in Polish EPD Programme, §6.3 — wskaźnik miksu energii elektrycznej PL.</span></li>
+            <li><span class="ref-num">[21]</span><span>Lewandowska A. <em>et al.</em> (2025), <em>Carbon footprint of Polish electricity grid in 2022 — location-based assessment</em>. MDPI Energies (publikacja recenzowana). DOI: 10.3390/en[w przygotowaniu].</span></li>
+            <li><span class="ref-num">[22]</span><span>AIB — Association of Issuing Bodies (2024), <em>European Residual Mix 2024</em>. AIB, Brussels.</span></li>
+            <li><span class="ref-num">[23]</span><span>PCA — Polskie Centrum Akredytacji (2025), <em>DACS-01 wyd. 12 — Akredytacja jednostek certyfikujących wyroby</em>. Warszawa, 10.10.2025.</span></li>
+        </ol>
+        <p style="margin:1.4rem 0 0;font-size:.78rem;color:var(--text-tertiary);line-height:1.55;">
+            Dokument MET-002:2026 jest publikowany na licencji <strong>CC BY 4.0</strong>.
+            Zgłoszenia errat: <a href="mailto:info@epd.org.pl" style="color:var(--accent);">info@epd.org.pl</a>.
+            Status DOI: w trakcie rejestracji DataCite — placeholder
+            <code style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;">10.xxxx/polca.met.2026.002</code>
+            zostanie zastąpiony numerem właściwym po publikacji.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl · MET-002:2026</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>

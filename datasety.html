@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baza Datasetów LCI — poLCA</title>
-    <meta name="description" content="Zbiory danych LCI dla polskiego budownictwa: mieszanki mineralno-asfaltowe (MMA) i beton towarowy. Eksport ILCD+EPD, EcoSpold v2, CSV. Źródła danych, partnerzy walidacyjni i modele dostępu.">
+    <title>POLCA — baza LCI dla wyrobów budowlanych CPR 2024</title>
+    <meta name="description" content="Polska baza LCI dla wyrobów budowlanych: inwentaryzacja cyklu życia, źródła, jakość danych, wartości domyślne i wynikowe wskaźniki LCIA zgodne z EN 15804+A2.">
     <link rel="canonical" href="https://polca.org.pl/datasety.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Baza Datasetów LCI — poLCA">
-    <meta property="og:description" content="Polskie zbiory danych LCI: MMA, beton towarowy. Eksport ILCD+EPD, EcoSpold v2. Źródła danych KOBiZE, GUS, Eurobitume. Partnerzy: IBDiM, ICiMB.">
+    <meta property="og:title" content="POLCA — baza LCI dla wyrobów budowlanych CPR 2024">
+    <meta property="og:description" content="Mapa rodzin CPR 2024, baza LCI, źródła, jakość danych, wartości domyślne i wynikowe wskaźniki LCIA.">
     <meta property="og:url" content="https://polca.org.pl/datasety.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Baza Datasetów LCI — poLCA">
-    <meta name="twitter:description" content="Polskie zbiory danych LCI dla budownictwa. MMA, beton towarowy. Eksport wieloformatowy, walidacja instytucjonalna.">
+    <meta name="twitter:title" content="POLCA — baza LCI dla wyrobów budowlanych CPR 2024">
+    <meta name="twitter:description" content="Baza LCI dla polskich wyrobów budowlanych: CPR 2024, datasety, źródła, jakość danych i wskaźniki LCIA.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-data.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,21 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-    <style>@media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}</style>
+    <style>
+        .polca-module-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem;margin:0 0 1.5rem}
+        .polca-module-tab{min-height:46px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text-primary);font:inherit;font-size:.82rem;font-weight:800;cursor:pointer;text-align:left;padding:.7rem .8rem}
+        .polca-module-tab span{display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:700;margin-top:.15rem}
+        .polca-module-tab.is-active{background:#102A43;color:#fff;border-color:#102A43}
+        .polca-module-tab.is-active span{color:rgba(255,255,255,.72)}
+        .polca-module-panel[hidden]{display:none!important}
+        .polca-hotspot-button{width:100%;min-height:78px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text-primary);font:inherit;text-align:left;padding:.85rem;cursor:pointer;display:grid;gap:.28rem}
+        .polca-hotspot-button strong{font-size:.84rem;color:var(--text-primary)}
+        .polca-hotspot-button span{font-size:.7rem;color:var(--text-secondary);line-height:1.35}
+        .polca-hotspot-button.is-active{background:#102A43;border-color:#102A43}
+        .polca-hotspot-button.is-active strong,.polca-hotspot-button.is-active span{color:#fff}
+        .polca-hotspot-rank{display:inline-flex;align-items:center;width:max-content;padding:.2rem .42rem;border-radius:999px;background:#9B1C1C;color:#fff;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+        @media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}#polca-reference-datasets article{grid-template-columns:1fr!important}.polca-evidence-grid,.polca-filter-grid,.polca-module-tabs,.polca-dataset-groups,.polca-default-head,.polca-default-row,.polca-ready-head,.polca-ready-row,.polca-hotspot-layout{grid-template-columns:1fr!important}.polca-default-head div:nth-child(n+2),.polca-ready-head div:nth-child(n+2){display:none}}
+    </style>
 </head>
 <body>
 
@@ -33,9 +47,11 @@
         <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html">Dashboard</a>
             <a href="analiza.html">Analiza Sektorowa</a>
-            <a href="metodyka.html">Metodyka i Jakość</a>
+            <a href="metodyka.html">Metodyka</a>
             <a href="datasety.html" class="active">Datasety</a>
             <a href="narzedzia.html">Narzędzia</a>
+            <a href="podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="pobierz.html">Pobierz</a>
             <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </nav>
         <div class="header-actions">
@@ -53,19 +69,39 @@
 <div class="polca-page">
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">01 — Dostępne zbiory danych</div>
-            <h1 class="page-title">Baza Datasetów</h1>
+            <div class="section-num">01 — Publiczna baza danych GWP</div>
+            <h1 class="page-title">POLCA — publiczna baza danych GWP dla wyrobów budowlanych</h1>
             <p class="page-subtitle">
-                Zbiory danych LCI z pełną inwentaryzacją przepływów zgodną z ISO 14044.
-            Macierz pedigree, dokumentacja trasowalności, eksport wieloformatowy.
+                POLCA publikuje kontrolowane wartości GWP, zakresy stosowania, moduły EN 15804,
+                źródła i zasady aktualizacji dla najczęściej stosowanych materiałów budowlanych w Polsce.
             </p>
-            <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.85rem; background: #FFF3E0; border: 1px solid #FFB74D; border-radius: 8px; font-size: 0.8rem; color: #E65100; font-weight: 600; line-height: 1.4;">
-                    Baza w budowie — pierwsze datasety planowane na 2026
-                </div>
-                <div style="font-size: 0.78rem; color: var(--text-tertiary); line-height: 1.5;">
-                    Poniżej prezentujemy zakres i&nbsp;metodykę przygotowywanych zbiorów danych. Gotowe datasety będą udostępniane sukcesywnie.
-                </div>
+            <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;">
+                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Katalog GWP</a>
+                <a href="#profile-gwp" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Profile GWP</a>
+                <a href="#mma-przyklad-klienta" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Przykład MMA</a>
+                <a href="#zrodla-danych" data-polca-goto="sources" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Źródła</a>
+            </div>
+            <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.6;margin-top:1rem;max-width:620px;">
+                Baza porządkuje dane referencyjne i wartości domyślne tak, aby każda opublikowana wartość miała
+                jasno opisane pochodzenie, jednostkę, granicę systemu, zastosowanie oraz ograniczenia.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin-top:1rem;max-width:620px;">
+                <a href="#profile-gwp" data-polca-goto="profiles" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
+                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Profile GWP</strong>
+                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">MMA, beton i kruszywa w osobnych profilach</span>
+                </a>
+                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
+                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Wartości GWP</strong>
+                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">jedno miejsce z rekordami i metadanymi</span>
+                </a>
+                <a href="#zrodla-danych" data-polca-goto="sources" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
+                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Źródła</strong>
+                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">rejestr źródeł i podstawa wartości</span>
+                </a>
+                <a href="#integracja" data-polca-goto="integration" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
+                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Pliki</strong>
+                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">JSON, CSV i zasady aktualizacji</span>
+                </a>
             </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
@@ -74,85 +110,424 @@
         </div>
     </div>
 
-    <div class="grid-2 section-gap fade-in">
-        <div class="dataset-card">
-            <div class="dataset-badge">W opracowaniu</div>
-            <h3>Mieszanki mineralno-asfaltowe (MMA)</h3>
-            <p class="dataset-desc">
-                Modelowanie procesu produkcji MMA z zastosowaniem metodologii EBLCI.
-                Parametryzacja obejmuje typ paliwa (gaz, olej opałowy, mieszany), temperaturę produkcji
-                (WMA/HMA), wilgotność kruszywa (wpływ na zużycie energii suszenia)
-                oraz zawartość granulatu asfaltowego (RAP). Model uwzględnia specyfikę
-                polskich wytwórni mas — w tym dominację produkcji mobilnej na budowach drogowych.
-            </p>
-            <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 13108-1 do -7</span></div>
-            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · NAPA EPD PCR</span></div>
-            <div class="spec-row"><span class="spec-key">Dane dla bitumu</span><span class="spec-val">Eurobitume LCA 4.0</span></div>
-            <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
-            <div class="spec-row"><span class="spec-key">Scenariusze RAP</span><span class="spec-val">0% · 20% · 40% · 60%</span></div>
-            <div class="spec-row"><span class="spec-key">Warianty temperaturowe</span><span class="spec-val">WMA (≤140°C) · HMA (160°C+)</span></div>
-            <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">IBDiM — planowana</span></div>
+    <nav class="polca-module-tabs fade-in" id="moduly-polca" aria-label="Obszary katalogu danych POLCA">
+        <button type="button" class="polca-module-tab is-active" data-polca-tab="datasets">Katalog GWP<span>wartości i filtry</span></button>
+        <button type="button" class="polca-module-tab" data-polca-tab="profiles">Profile wyrobów<span>MMA, beton, kruszywa</span></button>
+        <button type="button" class="polca-module-tab" data-polca-tab="sources">Źródła<span>podstawa danych</span></button>
+        <button type="button" class="polca-module-tab" data-polca-tab="integration">Pliki<span>JSON, CSV, wersje</span></button>
+    </nav>
+
+    <div class="card card-lg section-gap fade-in polca-module-panel" id="profile-gwp" data-polca-panel="profiles" hidden>
+        <div class="section-num">Obszar — Profile GWP</div>
+        <div class="card-title">Profile wyrobów i surowców</div>
+        <p class="card-text" style="max-width: 900px;">
+            Profile pokazują, które dane są kluczowe dla MMA, betonu i kruszyw. To jest warstwa procesowa:
+            normy, moduły, hotspoty i zasady zastępowania wartości POLCA danymi producenta, kopalni lub EPD.
+        </p>
+        <div style="margin-top:1rem;border:1px solid var(--border);border-radius:12px;background:#F8FAFC;overflow:hidden;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:1rem;border-bottom:1px solid var(--border);flex-wrap:wrap;">
+                <div>
+                    <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .35rem;">Profil GWP wyrobu według modułów EN 15804</h3>
+                    <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:760px;">
+                        Baza pokazuje kluczowe źródła wpływu dla danej rodziny wyrobów. Dla MMA są to m.in.
+                        lepiszcze, kruszywa, transport, energia i RAP. Dla betonu profil obejmuje cement,
+                        kruszywa, transport, energię, domieszki i dodatki mineralne. Dla kruszyw osobny profil
+                        pokazuje wydobycie, przeróbkę, płukanie, transport i jakość danych kopalni.
+                    </p>
+                </div>
+                <span style="display:inline-flex;align-items:center;padding:.42rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">MMA · profil startowy</span>
+            </div>
+            <div style="padding:1rem 1rem 0;">
+                <section style="border:1px solid #B7C7D6;border-radius:12px;background:var(--bg);overflow:hidden;">
+                    <div style="padding:1rem;background:#F8FAFC;border-bottom:1px solid var(--border);">
+                        <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .35rem;">Normy produktowe i materiałowe dla profilu GWP</h3>
+                        <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:880px;">
+                            Wartości GWP są przypisane do wyrobów i składników opisanych normami produktowymi.
+                            Normy te określają zakres wyrobu, składniki, klasyfikację i wymagania techniczne; EN 15804+A2
+                            określa sposób raportowania wpływu środowiskowego.
+                        </p>
+                    </div>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.75rem;padding:1rem;">
+                        <article style="padding:.9rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                            <div style="font-size:.68rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">MMA i wyroby bitumiczne</div>
+                            <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin:.3rem 0;">EN 13108 jako główna rodzina norm</strong>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:0;">
+                                AC: EN 13108-1, BBTM: EN 13108-2, SMA: EN 13108-5, PA: EN 13108-7.
+                                Składniki: asfalt drogowy EN 12591, asfalt modyfikowany EN 14023, kruszywa do mieszanek
+                                bitumicznych EN 13043.
+                            </p>
+                        </article>
+                        <article style="padding:.9rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                            <div style="font-size:.68rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Beton i składniki betonu</div>
+                            <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin:.3rem 0;">EN 206 i krajowe wymagania uzupełniające</strong>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:0;">
+                                Beton: EN 206 oraz PN-B-06265. Składniki: cement EN 197-1, kruszywa EN 12620,
+                                domieszki EN 934-2, woda zarobowa EN 1008, popiół lotny EN 450-1, żużel mielony
+                                EN 15167-1, pył krzemionkowy EN 13263-1.
+                            </p>
+                        </article>
+                        <article style="padding:.9rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                            <div style="font-size:.68rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Rama środowiskowa</div>
+                            <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin:.3rem 0;">EN 15804+A2 i ISO 14040/14044</strong>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:0;">
+                                EN 15804+A2 porządkuje moduły A1-D i kategorie wpływu. ISO 14040/14044 określają zasady LCA,
+                                jakość danych, granice systemu, alokację i kryteria uproszczeń.
+                            </p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+            <div style="padding:1rem 1rem 0;">
+                <section id="mma-przyklad-klienta" style="border:1px solid #B7C7D6;border-radius:12px;background:var(--bg);overflow:hidden;">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem;background:#F8FAFC;border-bottom:1px solid var(--border);">
+                        <div>
+                            <div style="font-size:.68rem;color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Przykład danych klienta</div>
+                            <h3 style="font-size:1rem;color:var(--text-primary);margin:.25rem 0 .35rem;">MMA AC 16 W HMA z 20% RAP - profil przykładowy EPD+</h3>
+                            <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:860px;">
+                                Profil pokazuje, jak dane z recepty, dostaw, energii i scenariuszy cyklu życia przechodzą
+                                na wynik EPD+. Dane liczbowe są przykładowe i zgodne z zakresem typowych EPD dla MMA;
+                                nie są deklaracją konkretnego producenta.
+                            </p>
+                        </div>
+                        <div style="display:flex;align-items:flex-start;gap:.5rem;flex-wrap:wrap;justify-content:flex-end;">
+                            <span style="display:inline-flex;align-items:center;padding:.42rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">1 Mg · EN 13108-1 · EN 15804+A2</span>
+                            <a href="data/mma-client-example.json" style="display:inline-flex;align-items:center;padding:.42rem .65rem;border-radius:7px;background:var(--bg);border:1px solid var(--border);color:var(--accent);font-size:.72rem;font-weight:800;text-decoration:none;">JSON profilu</a>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:1rem;padding:1rem;" class="polca-hotspot-layout">
+                        <div style="display:grid;gap:.75rem;">
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.65rem;">
+                                <div style="padding:.85rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <span style="display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;">Wyrób</span>
+                                    <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin-top:.25rem;">AC 16 W 35/50</strong>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.45;margin:.25rem 0 0;">mieszanka na gorąco, 20% RAP</p>
+                                </div>
+                                <div style="padding:.85rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <span style="display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;">Miejsce produkcji</span>
+                                    <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin-top:.25rem;">wytwórnia stacjonarna</strong>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.45;margin:.25rem 0 0;">Polska centralna, przykład referencyjny</p>
+                                </div>
+                                <div style="padding:.85rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <span style="display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;">Jakość danych</span>
+                                    <strong style="display:block;font-size:.9rem;color:var(--text-primary);margin-top:.25rem;">model + dane klienta</strong>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.45;margin:.25rem 0 0;">do zastąpienia EPD dostawców i dokumentami dostaw</p>
+                                </div>
+                            </div>
+                            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;">
+                                <div style="padding:.9rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <h4 style="font-size:.88rem;color:var(--text-primary);margin:0 0 .45rem;">Recepta i skład A1</h4>
+                                    <table style="width:100%;border-collapse:collapse;font-size:.76rem;color:var(--text-secondary);">
+                                        <tbody>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Kruszywo pierwotne</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">720 kg</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">RAP / destrukt asfaltowy</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">200 kg</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Lepiszcze asfaltowe 35/50</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">48 kg</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Wypełniacz wapienny</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">30 kg</td></tr>
+                                            <tr><td style="padding:.28rem 0;">Dodatki</td><td style="padding:.28rem 0;text-align:right;font-weight:800;color:var(--text-primary);">2 kg</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div style="padding:.9rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <h4 style="font-size:.88rem;color:var(--text-primary);margin:0 0 .45rem;">Dostawy i produkcja</h4>
+                                    <table style="width:100%;border-collapse:collapse;font-size:.76rem;color:var(--text-secondary);">
+                                        <tbody>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Transport kruszyw / RAP / wypełniacza</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">50 / 25 / 60 km</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Transport lepiszcza</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">180 km</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Gaz ziemny A3</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">5,9 m³/Mg</td></tr>
+                                            <tr><td style="padding:.28rem 0;border-bottom:1px solid var(--border);">Energia elektryczna A3</td><td style="padding:.28rem 0;border-bottom:1px solid var(--border);text-align:right;font-weight:800;color:var(--text-primary);">7,2 kWh/Mg</td></tr>
+                                            <tr><td style="padding:.28rem 0;">Scenariusz transportu na budowę</td><td style="padding:.28rem 0;text-align:right;font-weight:800;color:var(--text-primary);">25 km</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:grid;gap:.65rem;">
+                            <div style="padding:1rem;border-radius:10px;background:#102A43;color:#fff;">
+                                <span style="display:block;font-size:.68rem;font-weight:800;text-transform:uppercase;opacity:.78;">Wynik modelowy</span>
+                                <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:2rem;line-height:1;margin:.3rem 0;">48,26</strong>
+                                <p style="font-size:.78rem;line-height:1.5;margin:0;opacity:.86;">kg CO₂e/Mg dla A1-A3</p>
+                            </div>
+                            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;">
+                                <div style="padding:.85rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <span style="display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;">A-C bez D</span>
+                                    <strong style="display:block;font-size:1.25rem;color:var(--text-primary);margin-top:.2rem;">57,08</strong>
+                                    <p style="font-size:.72rem;color:var(--text-secondary);margin:.15rem 0 0;">kg CO₂e/Mg</p>
+                                </div>
+                                <div style="padding:.85rem;border:1px solid var(--border);border-radius:9px;background:var(--bg-subtle);">
+                                    <span style="display:block;font-size:.68rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;">z modułem D</span>
+                                    <strong style="display:block;font-size:1.25rem;color:var(--text-primary);margin-top:.2rem;">50,68</strong>
+                                    <p style="font-size:.72rem;color:var(--text-secondary);margin:.15rem 0 0;">kg CO₂e/Mg</p>
+                                </div>
+                            </div>
+                            <div style="padding:.85rem;border:1px solid #B7C7D6;border-radius:9px;background:#F8FAFC;">
+                                <strong style="display:block;font-size:.8rem;color:var(--text-primary);">Podstawa przykładu</strong>
+                                <p style="font-size:.75rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;">
+                                    Zakres AC 16 W HMA z 20% RAP mieści się w benchmarku generatora EPD+ dla MMA:
+                                    A1-A3 typowo około 45 kg CO₂e/Mg, zakres 38-55 kg CO₂e/Mg.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="padding:0 1rem 1rem;">
+                        <details open style="border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);overflow:hidden;">
+                            <summary style="cursor:pointer;padding:.85rem 1rem;background:#F8FAFC;color:var(--accent);font-size:.82rem;font-weight:800;">Wskaźniki EN 15804+A2 dla profilu przykładowego</summary>
+                            <div style="overflow-x:auto;padding:.85rem;">
+                                <table style="width:100%;min-width:820px;border-collapse:collapse;font-size:.75rem;color:var(--text-secondary);">
+                                    <thead>
+                                        <tr style="color:var(--text-primary);text-align:left;">
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);">Wskaźnik</th>
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);">Jednostka</th>
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);text-align:right;">A1-A3</th>
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);text-align:right;">A4-A5</th>
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);text-align:right;">C1-C4</th>
+                                            <th style="padding:.45rem;border-bottom:1px solid var(--border);text-align:right;">D</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">GWP-total</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg CO₂e</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">48,258</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">3,871</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">4,949</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-6,400</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">GWP-fossil</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg CO₂e</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">45,824</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">3,833</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">4,834</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-6,144</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">GWP-biogenic</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg CO₂e</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,379</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,019</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,057</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,128</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">GWP-luluc</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg CO₂e</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,054</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,019</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,057</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,128</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">ODP</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg CFC-11 eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,206E-7</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">9,7E-9</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,24E-8</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-1,6E-8</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">AP</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">mol H+ eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,1206</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0097</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0124</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,0160</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">EP-freshwater</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg PO₄ eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,000386</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,000031</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,000040</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,000051</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">EP-marine</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg N eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0019</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0002</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0002</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,0003</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">EP-terrestrial</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">mol N eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,1448</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0116</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0148</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,0192</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">POCP</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg NMVOC eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0579</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0046</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0059</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,0077</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">ADP-minerals/metals</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">kg Sb eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,448E-6</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,161E-7</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">1,485E-7</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-1,92E-7</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">ADP-fossil</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">MJ</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">579,09</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">46,46</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">59,39</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-76,80</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">WDP</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">m³ world eq.</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,7239</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0581</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">0,0742</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-0,0960</td></tr>
+                                        <tr><td style="padding:.4rem;border-bottom:1px solid var(--border);font-weight:800;color:var(--text-primary);">PERT / PENRT</td><td style="padding:.4rem;border-bottom:1px solid var(--border);">MJ</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">72,39 / 675,61</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">5,81 / 54,20</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">7,42 / 69,28</td><td style="padding:.4rem;border-bottom:1px solid var(--border);text-align:right;">-9,60 / -89,60</td></tr>
+                                        <tr><td style="padding:.4rem;font-weight:800;color:var(--text-primary);">PENRM / SM / MFR</td><td style="padding:.4rem;">MJ / kg / kg</td><td style="padding:.4rem;text-align:right;">1929,6 / 200 / 0</td><td style="padding:.4rem;text-align:right;">0 / 0 / 0</td><td style="padding:.4rem;text-align:right;">0 / 0 / 800</td><td style="padding:.4rem;text-align:right;">0 / 0 / 0</td></tr>
+                                    </tbody>
+                                </table>
+                                <p style="font-size:.73rem;color:var(--text-secondary);line-height:1.55;margin:.75rem 0 0;">
+                                    Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA
+                                    i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA,
+                                    EPD dostawców albo zweryfikowanymi danymi producenta.
+                                </p>
+                            </div>
+                        </details>
+                    </div>
+                </section>
+            </div>
+            <div style="display:grid;grid-template-columns:minmax(250px,.95fr) minmax(0,1.3fr);gap:1rem;padding:1rem;" class="polca-hotspot-layout">
+                <div style="display:grid;gap:.65rem;">
+                    <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                        <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A1 — surowce</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                            <button type="button" class="polca-hotspot-button is-active" data-polca-hotspot="bitumen"><span class="polca-hotspot-rank">kluczowe</span><strong>Lepiszcze asfaltowe</strong><span>największy wpływ w MMA</span></button>
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="aggregates"><strong>Kruszywa</strong><span>duża masa, niski wskaźnik jednostkowy</span></button>
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="filler"><strong>Wypełniacz</strong><span>mały udział, wyższa energochłonność mielenia</span></button>
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="rap"><strong>RAP / destrukt</strong><span>materiał wtórny i proces przygotowania</span></button>
+                        </div>
+                    </div>
+                    <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                        <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A2/A3 — logistyka i produkcja</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="transport"><strong>Transport surowców</strong><span>liczony z tkm i lokalizacji</span></button>
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="energy"><span class="polca-hotspot-rank">kluczowe</span><strong>Gaz, paliwa, energia</strong><span>suszenie i podgrzewanie kruszywa</span></button>
+                        </div>
+                    </div>
+                    <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                        <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Wyrób wynikowy</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="products"><strong>AC / SMA / BBTM</strong><span>benchmark z recepty, nie stały zamiennik EPD</span></button>
+                            <button type="button" class="polca-hotspot-button" data-polca-hotspot="rules"><strong>Zasada stosowania</strong><span>kiedy użyć danych zagregowanych</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div id="polca-hotspot-detail" style="min-height:420px;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-sm);"></div>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <section style="border:1px solid var(--border);border-radius:12px;background:var(--bg);overflow:hidden;">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem;background:#F8FAFC;border-bottom:1px solid var(--border);">
+                        <div>
+                            <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .35rem;">Betony — profil GWP według recepty i modułów EN 15804</h3>
+                            <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:820px;">
+                                Dla betonu nie publikuje się jednej uniwersalnej wartości. Wynik zależy od klasy betonu,
+                                ilości i rodzaju cementu, udziału dodatków mineralnych, kruszyw, transportu oraz energii
+                                węzła betoniarskiego. POLCA porządkuje dane wejściowe i wskazuje, które wartości wymagają
+                                danych producenta.
+                            </p>
+                        </div>
+                        <span style="display:inline-flex;align-items:center;padding:.42rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">beton · profil referencyjny</span>
+                    </div>
+                    <div style="display:grid;grid-template-columns:minmax(250px,.95fr) minmax(0,1.3fr);gap:1rem;padding:1rem;" class="polca-hotspot-layout">
+                        <div style="display:grid;gap:.65rem;">
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A1 — surowce i spoiwo</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button is-active" data-polca-concrete="cement"><span class="polca-hotspot-rank">kluczowe</span><strong>Cement</strong><span>typ CEM i udział klinkieru</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="aggregates"><strong>Kruszywa</strong><span>frakcje, złoże i dostawy</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="additions"><strong>Dodatki mineralne</strong><span>popiół, żużel, pył krzemionkowy</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="admixtures"><strong>Domieszki</strong><span>chemia budowlana i dozowanie</span></button>
+                                </div>
+                            </div>
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A2/A3 — dostawy i węzeł</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="transport"><strong>Transport</strong><span>cement, kruszywa, dodatki</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="plant"><strong>Energia węzła</strong><span>energia, paliwa, alokacja</span></button>
+                                </div>
+                            </div>
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Wyrób wynikowy</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="recipe"><strong>Klasa i recepta</strong><span>wytrzymałość, ekspozycja, konsystencja</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-concrete="rules"><strong>Zasada danych</strong><span>kiedy dane producenta są wymagane</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="polca-concrete-detail" style="min-height:420px;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-sm);"></div>
+                    </div>
+                </section>
+            </div>
+            <div style="padding:0 1rem 1rem;">
+                <section style="border:1px solid var(--border);border-radius:12px;background:var(--bg);overflow:hidden;">
+                    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding:1rem;background:#F8FAFC;border-bottom:1px solid var(--border);">
+                        <div>
+                            <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .35rem;">Kruszywa — profil GWP według kopalni, frakcji i procesu</h3>
+                            <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:820px;">
+                                Dla kruszyw nie wystarcza jedna wartość „kruszywo”. Wynik zależy od rodzaju skały,
+                                frakcji, wydobycia, kruszenia, przesiewania, płukania, wilgotności oraz transportu
+                                z kopalni. POLCA rozdziela wartości grupowe i wskazuje, kiedy należy zastąpić je
+                                EPD kopalni albo danymi zakładowymi.
+                            </p>
+                        </div>
+                        <span style="display:inline-flex;align-items:center;padding:.42rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">kruszywa · profil referencyjny</span>
+                    </div>
+                    <div style="display:grid;grid-template-columns:minmax(250px,.95fr) minmax(0,1.3fr);gap:1rem;padding:1rem;" class="polca-hotspot-layout">
+                        <div style="display:grid;gap:.65rem;">
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A1 — źródło i wydobycie</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button is-active" data-polca-aggregate="rock"><span class="polca-hotspot-rank">kluczowe</span><strong>Rodzaj skały</strong><span>twarde, wapienne, dolomitowe, naturalne</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="extraction"><strong>Wydobycie</strong><span>nadkład, urabianie, materiały pomocnicze</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="processing"><strong>Kruszenie i przesiewanie</strong><span>energia, frakcja, LA</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="washing"><strong>Płukanie i wilgotność</strong><span>woda, suszenie, pyły</span></button>
+                                </div>
+                            </div>
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">A2/A4 — dostawa i scenariusze</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="transport"><span class="polca-hotspot-rank">kluczowe</span><strong>Transport</strong><span>duża masa, trasa, tkm</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="recycled"><strong>Kruszywa z recyklingu</strong><span>status odpadu i alokacja</span></button>
+                                </div>
+                            </div>
+                            <div style="padding:.75rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                                <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Jakość danych</div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="epd"><strong>EPD kopalni</strong><span>kiedy zastępuje POLCA</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="rules"><strong>Zasada danych</strong><span>co sprawdza audytor</span></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="polca-aggregate-detail" style="min-height:420px;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-sm);"></div>
+                    </div>
+                </section>
+            </div>
         </div>
-        <div class="dataset-card">
-            <div class="dataset-badge">W opracowaniu</div>
-            <h3>Beton towarowy</h3>
-            <p class="dataset-desc">
-                Model parametryczny oparty na wymaganiach normy EN 206. Umożliwia generowanie
-                profilu środowiskowego dla dowolnej klasy wytrzymałości i typu cementu.
-                Uwzględnia polskie proporcje mieszanek, krajowe kruszywa i domieszki.
-                Wynik walidowany krzyżowo z danymi SPC i emisjami EU ETS polskich cementowni.
-            </p>
-            <div class="spec-row"><span class="spec-key">Norma referencyjna</span><span class="spec-val">EN 206</span></div>
-            <div class="spec-row"><span class="spec-key">PCR</span><span class="spec-val">EN 15804+A2 · IBU PCR beton</span></div>
-            <div class="spec-row"><span class="spec-key">Klasy wytrzymałości</span><span class="spec-val">C20/25 — C50/60</span></div>
-            <div class="spec-row"><span class="spec-key">Typy cementu</span><span class="spec-val">CEM I — CEM V</span></div>
-            <div class="spec-row"><span class="spec-key">Wskaźniki emisji</span><span class="spec-val">KOBiZE 2024</span></div>
-            <div class="spec-row"><span class="spec-key">Domieszki</span><span class="spec-val">EFCA — dane branżowe</span></div>
-            <div class="spec-row"><span class="spec-key">Walidacja sektorowa</span><span class="spec-val">ICiMB — planowana</span></div>
-        </div>
+        
     </div>
 
-    <div class="card card-lg section-gap fade-in">
-        <div class="section-num">02 — Architektura techniczna</div>
-        <div class="card-title">Nowoczesna infrastruktura danych</div>
-        <div class="grid-3 mt-2">
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Struktura grafowa</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Procesy i przepływy modelowane jako graf z dynamicznymi zapytaniami.</p>
+    <div class="card card-lg section-gap fade-in polca-module-panel" id="referencyjne-szczegoly" data-polca-panel="datasets" data-polca-active="true">
+        <div class="section-num">01 — Katalog wartości</div>
+        <div class="card-title">Katalog GWP POLCA</div>
+        <p class="card-text" style="max-width: 820px;">Najpierw wybierz wyrób albo materiał. Wyniki są pogrupowane według rzeczywistych kategorii użycia: energia, transport, cement, kruszywa, asfalt i dodatki.</p>
+        <p style="font-size:.75rem;color:var(--text-secondary);line-height:1.55;margin:.75rem 0 0;max-width:760px;">
+            Wartości regulacyjne CBAM są dostępne po wybraniu typu danych „Regulacyjne CBAM”. Nie są częścią głównego katalogu GWP produktu.
+        </p>
+        <div style="display:grid;gap:.8rem;margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                <div>
+                    <h3 style="font-size:.95rem;color:var(--text-primary);margin:0 0 .3rem;">Znajdź wartość GWP</h3>
+                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin:0;max-width:620px;">Najkrótsza ścieżka: wybierz wyrób, potem materiał. Wyszukiwarka działa po nazwie, kodzie i zakresie zastosowania.</p>
+                </div>
+                <span id="polca-filter-count" style="display:inline-flex;align-items:center;min-height:30px;padding:.35rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">Ładowanie</span>
             </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Format JSON-LD</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Lekki, maszynowo czytelny format z natywnym mechanizmem linkowania.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Interfejs API</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">REST + GraphQL. Integracja z oprogramowaniem LCA bez manualnego importu.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Aktualizacja kaskadowa</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Zmiana wskaźnika źródłowego przelicza automatycznie wszystkie zależne zbiory.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Natywna parametryzacja</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Jeden model parametryczny generuje warianty na żądanie.</p>
-            </div>
-            <div>
-                <h4 style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.3rem;">Pełna trasowalność</h4>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.6;">Każda wartość posiada metadane: źródło, data, osoba i instytucja.</p>
+            <div class="polca-filter-grid" style="display:grid;grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:.65rem;">
+                <label style="display:grid;gap:.3rem;font-size:.72rem;font-weight:800;color:var(--text-primary);text-transform:uppercase;letter-spacing:.02em;">
+                    Wyrób / zastosowanie
+                    <select id="polca-product-filter" style="width:100%;min-height:38px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:.55rem .65rem;color:var(--text-primary);font:inherit;text-transform:none;letter-spacing:0;font-weight:600;">
+                        <option value="all">Wszystkie rekordy</option>
+                        <option value="mma">Mieszanki mineralno-asfaltowe</option>
+                        <option value="emulsje">Emulsje asfaltowe</option>
+                        <option value="beton">Beton / kruszywa do betonu</option>
+                        <option value="roboty-drogowe">Roboty drogowe</option>
+                        <option value="ogolne-epd">Energia, paliwa i transport</option>
+                    </select>
+                </label>
+                <label style="display:grid;gap:.3rem;font-size:.72rem;font-weight:800;color:var(--text-primary);text-transform:uppercase;letter-spacing:.02em;">
+                    Materiał
+                    <select id="polca-material-filter" style="width:100%;min-height:38px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:.55rem .65rem;color:var(--text-primary);font:inherit;text-transform:none;letter-spacing:0;font-weight:600;">
+                        <option value="all">Wszystkie materiały</option>
+                    </select>
+                </label>
+                <label style="display:grid;gap:.3rem;font-size:.72rem;font-weight:800;color:var(--text-primary);text-transform:uppercase;letter-spacing:.02em;">
+                    Typ danych
+                    <select id="polca-evidence-filter" style="width:100%;min-height:38px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:.55rem .65rem;color:var(--text-primary);font:inherit;text-transform:none;letter-spacing:0;font-weight:600;">
+                        <option value="all">Główne dane GWP</option>
+                        <option value="official_public">Dane publiczne / urzędowe</option>
+                        <option value="polca_model">Model poLCA</option>
+                        <option value="sector_proxy">Dane branżowe / EPD</option>
+                        <option value="conservative_default">Wartości domyślne POLCA</option>
+                        <option value="regulatory_control">Regulacyjne CBAM</option>
+                    </select>
+                </label>
+                <label style="display:grid;gap:.3rem;font-size:.72rem;font-weight:800;color:var(--text-primary);text-transform:uppercase;letter-spacing:.02em;">
+                    Szukaj
+                    <input id="polca-search-filter" type="search" placeholder="np. wypełniacz, asfalt, energia" style="width:100%;min-height:38px;border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:.55rem .65rem;color:var(--text-primary);font:inherit;text-transform:none;letter-spacing:0;font-weight:600;">
+                </label>
             </div>
         </div>
-        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 1.25rem; line-height: 1.7;">
-            Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX. Kompatybilność z OpenLCA, SimaPro, GaBi/Sphera.
+        <div id="polca-reference-datasets" style="display:grid;gap:.85rem;margin-top:1rem;"></div>
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 0;">
+            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Pobierz JSON</a>
+            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Pobierz CSV</a>
+            <a href="data/sources.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Źródła JSON</a>
+        </div>
+
+    </div>
+
+    <div class="card card-lg section-gap fade-in polca-module-panel" id="zrodla-danych" data-polca-panel="sources" hidden>
+        <div class="section-num">Obszar — Źródła</div>
+        <div class="card-title">Podstawa danych</div>
+        <p class="card-text" style="max-width: 820px;">
+            Źródła są pokazane w kartach datasetów i w rejestrze technicznym. Strona nie wymaga czytania całej metodyki:
+            użytkownik widzi wartość i krótkie uzasadnienie, a audytor ma dostęp do pełnej ścieżki źródłowej.
         </p>
-        <p style="margin-top:1rem;font-size:0.82rem;">
-            <a href="metodyka-en-pl.html" style="color:var(--accent);text-decoration:none;font-weight:600;">
-                Dokumentacja metodologiczna poLCA-EN-PL-2024 →
-            </a>
+        <details style="margin-top:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden;" open>
+            <summary style="cursor:pointer;padding:1rem;background:var(--bg-subtle);font-size:.86rem;font-weight:800;color:var(--text-primary);">Rejestr źródeł</summary>
+            <div style="padding:1rem;">
+                <div id="polca-source-catalog" style="display:grid;gap:1rem;"></div>
+            </div>
+        </details>
+    </div>
+
+    <div class="card card-lg section-gap fade-in polca-module-panel" id="integracja" data-polca-panel="integration" hidden>
+        <div class="section-num">Obszar — Pliki</div>
+        <div class="card-title">Pliki danych i wersje</div>
+        <p class="card-text" style="max-width: 820px;">
+            Publiczne dane są dostępne w formacie HTML, JSON i CSV. Każde wydanie ma numer wersji, datę przeglądu i opis zmian.
         </p>
+        <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;">
+            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Datasety JSON</a>
+            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Datasety CSV</a>
+            <a href="data/mma-client-example.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Przykład MMA JSON</a>
+            <a href="data/update-policy.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Polityka aktualizacji</a>
+            <a href="data/epd-source-policy.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Polityka EPD</a>
+        </div>
+        <div style="margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+            <h3 style="font-size:.95rem;color:var(--text-primary);margin:0 0 .45rem;">Zasada utrzymania</h3>
+            <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;max-width:880px;">
+                Dane szybkozmienne, takie jak energia, paliwa i transport, są przeglądane częściej. Wartości materiałowe
+                są aktualizowane po pojawieniu się nowych EPD, zmianie cPCR, korekcie źródła albo zmianie zakresu stosowania.
+            </p>
+        </div>
     </div>
 
     <div class="card section-gap fade-in" style="background: var(--ink-dark); color: rgba(255,255,255,0.9); text-align: center; padding: 2.5rem 2rem;">
-        <div class="section-num" style="color: rgba(255,255,255,0.4);">03 — Dostęp</div>
+        <div class="section-num" style="color: rgba(255,255,255,0.4);">07 — Dostęp</div>
         <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem;">Chcesz być w gronie pierwszych użytkowników?</h2>
         <p style="font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; line-height: 1.7; max-width: 520px; margin-left: auto; margin-right: auto;">
             Baza danych jest w trakcie budowy. Napisz do nas, a poinformujemy Cię o uruchomieniu i warunkach dostępu.
@@ -161,63 +536,6 @@
             Napisz na info@epd.org.pl
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-    </div>
-
-    <div class="card card-lg section-gap fade-in">
-        <div class="section-num">04 — Transparentność</div>
-        <div class="card-title">Źródła danych i partnerzy walidacyjni</div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-top: 1.25rem; margin-bottom: 0.4rem;">Oficjalne źródła danych</h4>
-        <div class="badge-grid">
-            <span class="badge official">KOBiZE — wskaźniki emisji</span>
-            <span class="badge official">GUS — dane statystyczne</span>
-            <span class="badge official">PSE — miks energetyczny</span>
-            <span class="badge official">Eurostat — Prodcom</span>
-            <span class="badge official">IPCC — współczynniki 2006/2019</span>
-            <span class="badge official">E-PRTR / IEP — emisje zakładowe</span>
-            <span class="badge official">EU ETS / EUTL</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Źródła branżowe</h4>
-        <div class="badge-grid">
-            <span class="badge">Eurobitume — lepiszcza asfaltowe</span>
-            <span class="badge">worldsteel — wyroby stalowe</span>
-            <span class="badge">CEMBUREAU — cement i klinkier</span>
-            <span class="badge">European Aluminium</span>
-            <span class="badge">EFCA — domieszki do betonu</span>
-            <span class="badge">ERMCO — beton towarowy</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Ramy normatywne</h4>
-        <div class="badge-grid">
-            <span class="badge official">ISO 14040:2006</span>
-            <span class="badge official">ISO 14044:2006</span>
-            <span class="badge official">ISO 14025:2006</span>
-            <span class="badge official">ISO 14067:2018</span>
-            <span class="badge official">ISO 21930:2017</span>
-            <span class="badge official">EN 15804:2012+A2:2019</span>
-            <span class="badge official">EN 15978:2011</span>
-            <span class="badge official">EN 15643:2021</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">PCR — Reguły kategorii produktowych</h4>
-        <div class="badge-grid">
-            <span class="badge official">c-PCR-001: cement i wapno</span>
-            <span class="badge official">c-PCR-003: beton i elementy betonowe</span>
-            <span class="badge official">c-PCR-004: kruszywa</span>
-            <span class="badge official">c-PCR-007: wyroby stalowe</span>
-            <span class="badge official">c-PCR-012: MMA i nawierzchnie</span>
-            <span class="badge official">c-PCR-014: szkło budowlane</span>
-        </div>
-
-        <h4 style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.4rem;">Walidacja instytucjonalna (planowana)</h4>
-        <div class="badge-grid">
-            <span class="badge validation">IBDiM — nawierzchnie drogowe</span>
-            <span class="badge validation">ICiMB — cement i ceramika</span>
-            <span class="badge validation">IGSMiE PAN — kruszywa mineralne</span>
-            <span class="badge validation">SPC — przemysł cementowy</span>
-            <span class="badge validation">IOŚ-PIB — metodologia LCA</span>
-        </div>
     </div>
 
     <div class="grid-2 fade-in">
@@ -264,15 +582,13 @@
             <ul class="footer-links">
                 <li><a href="metodyka.html">Metodyka i Jakość</a></li>
                 <li><a href="analiza.html">Analiza Sektorowa</a></li>
-                <li><a href="datasety.html">Baza Datasetów</a></li>
-                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="datasety.html">Katalog danych POLCA</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
         </div>
         <div>
             <div class="footer-col-title">Zasoby</div>
             <ul class="footer-links">
-                <li><a href="narzedzia.html">Narzędzia</a></li>
                 <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
                 <li><a href="sitemap.xml">Mapa strony</a></li>
             </ul>
@@ -284,6 +600,933 @@
     </div>
 </footer>
 <script src="js/sidebar.js?v=5.1"></script>
+<script>
+    function polishDisplayText(value) {
+        return String(value || '')
+            .replace(/\bproxy\b/gi, 'dane przybliżone')
+            .replace(/\bdefault\b/gi, 'wartość domyślna')
+            .replace(/reference value/gi, 'wartość referencyjna');
+    }
+    function initPolcaModuleTabs() {
+        const tabs = Array.from(document.querySelectorAll('[data-polca-tab]'));
+        const panels = Array.from(document.querySelectorAll('[data-polca-panel]'));
+        if (!tabs.length || !panels.length) return;
+        const hashMap = {
+            '#cpr-2024': 'datasets',
+            '#jak-dziala-baza': 'datasets',
+            '#referencyjne-szczegoly': 'datasets',
+            '#materialy-mma': 'datasets',
+            '#profile-gwp': 'profiles',
+            '#profile-gwp-wyrobow': 'profiles',
+            '#mma-przyklad-klienta': 'profiles',
+            '#zrodla-danych': 'sources',
+            '#integracja': 'integration'
+        };
+        const tabHashMap = {
+            datasets: '#referencyjne-szczegoly',
+            profiles: '#profile-gwp',
+            sources: '#zrodla-danych',
+            integration: '#integracja'
+        };
+        const activate = (name, scroll = false, updateHash = false) => {
+            panels.forEach((panel) => {
+                const active = panel.dataset.polcaPanel === name;
+                panel.hidden = !active;
+                panel.dataset.polcaActive = active ? 'true' : 'false';
+            });
+            tabs.forEach((tab) => {
+                const active = tab.dataset.polcaTab === name;
+                tab.classList.toggle('is-active', active);
+                tab.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            if (scroll) {
+                document.getElementById('moduly-polca')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            if (updateHash && tabHashMap[name] && window.location.hash !== tabHashMap[name]) {
+                window.history.replaceState(null, '', tabHashMap[name]);
+            }
+        };
+        tabs.forEach((tab) => {
+            tab.setAttribute('role', 'tab');
+            tab.setAttribute('aria-selected', tab.classList.contains('is-active') ? 'true' : 'false');
+            tab.addEventListener('click', () => activate(tab.dataset.polcaTab, true, true));
+        });
+        document.querySelectorAll('[data-polca-goto]').forEach((link) => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const requestedHash = link.getAttribute('href') || '';
+                const anchorTarget = requestedHash.startsWith('#') ? document.getElementById(requestedHash.slice(1)) : null;
+                activate(link.dataset.polcaGoto, false, false);
+                if (requestedHash.startsWith('#') && window.location.hash !== requestedHash) {
+                    window.history.replaceState(null, '', requestedHash);
+                }
+                (anchorTarget || document.getElementById('moduly-polca'))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        window.addEventListener('hashchange', () => {
+            activate(hashMap[window.location.hash] || 'datasets', false);
+        });
+        activate(hashMap[window.location.hash] || 'datasets', false);
+    }
+    async function loadCprProductFamilies() {
+        const target = document.getElementById('polca-cpr-families');
+        if (!target) return;
+        try {
+            const response = await fetch('data/cpr-product-families.json');
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            const payload = await response.json();
+            const families = Array.isArray(payload.families) ? payload.families : [];
+            const statusLabels = {
+                active: 'Aktywne',
+                partial: 'Częściowe',
+                planned: 'Planowane'
+            };
+            const phaseLabels = {
+                phase_1: 'Etap 1 — infrastruktura drogowa',
+                phase_2: 'Etap 2 — beton, cement, stal',
+                phase_3: 'Etap 3 — materiały masowe',
+                phase_4: 'Etap 4 — wyroby specjalistyczne'
+            };
+            const count = (status) => families.filter((item) => item.polca_status === status).length;
+            const setText = (id, value) => {
+                const el = document.getElementById(id);
+                if (el) el.textContent = value;
+            };
+            setText('cpr-active-count', count('active'));
+            setText('cpr-partial-count', count('partial'));
+            setText('cpr-planned-count', count('planned'));
+            const order = ['phase_1', 'phase_2', 'phase_3', 'phase_4'];
+            const grouped = families.reduce((acc, item) => {
+                if (!acc[item.priority]) acc[item.priority] = [];
+                acc[item.priority].push(item);
+                return acc;
+            }, {});
+            target.innerHTML = order.map((phase) => `
+                <details ${phase === 'phase_1' || phase === 'phase_2' ? 'open' : ''} style="border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden;">
+                    <summary style="cursor:pointer;list-style:none;padding:1rem;background:var(--bg-subtle);">
+                        <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;">
+                            <div>
+                                <h3 style="font-size:.98rem;color:var(--text-primary);margin:0 0 .25rem;">${phaseLabels[phase]}</h3>
+                                <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin:0;">${(grouped[phase] || []).length} rodzin wyrobów</p>
+                            </div>
+                        </div>
+                    </summary>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.7rem;padding:.9rem;">
+                        ${(grouped[phase] || []).map((item) => `
+                            <article style="padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                                <div style="display:flex;justify-content:space-between;gap:.7rem;align-items:flex-start;">
+                                    <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:800;color:var(--accent);">CPR ${String(item.code).padStart(2, '0')}</div>
+                                    <span class="badge" style="white-space:nowrap;background:${item.polca_status === 'active' ? '#0B6B3A' : item.polca_status === 'partial' ? '#9A6700' : '#ECEFF4'};color:${item.polca_status === 'planned' ? '#102A43' : '#fff'};">${statusLabels[item.polca_status] || item.polca_status}</span>
+                                </div>
+                                <h4 style="font-size:.88rem;line-height:1.35;color:var(--text-primary);margin:.45rem 0 .35rem;">${item.name_pl}</h4>
+                                <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.5;margin:0;">${item.scope_note}</p>
+                            </article>
+                        `).join('')}
+                    </div>
+                </details>
+            `).join('');
+        } catch (error) {
+            target.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">Nie udało się załadować mapy rodzin CPR 2024. Brak lub błąd pliku data/cpr-product-families.json.</div>';
+        }
+    }
+    function getPolcaMmaHotspotsFallback() {
+        return [
+            {
+                id: 'bitumen',
+                title: 'Lepiszcze asfaltowe',
+                module: 'A1',
+                impact: 'Najczęściej największe źródło wpływu GWP w recepcie MMA mimo niskiego udziału masowego.',
+                use_rule: 'Stosuj wartość POLCA tylko przy braku EPD producenta asfaltu lub zweryfikowanego wskaźnika dostawcy. Dla PMB wymagaj danych producenta.',
+                values: [
+                    { name: 'Asfalt drogowy / lepiszcze asfaltowe', value: '450 kg CO2e/t', status: 'wartość sektorowa POLCA', basis: 'Eurobitume LCA 4.0; transport do wytwórni liczony oddzielnie.' },
+                    { name: 'Asfalt modyfikowany PMB', value: 'wymagana EPD producenta', status: 'brak jednej wartości v1', basis: 'Wynik zależy od polimeru, dodatków i technologii.' }
+                ]
+            },
+            {
+                id: 'aggregates',
+                title: 'Kruszywa',
+                module: 'A1 + A2 oddzielnie',
+                impact: 'Wysoki udział masowy, ale niski wskaźnik jednostkowy. Transport z kopalni często decyduje o różnicach między receptami.',
+                use_rule: 'Dla obliczeń używaj rodzaju skały i lokalizacji kopalni. EPD kopalni lub dane zakładowe zastępują wartość POLCA.',
+                values: [
+                    { name: 'Kruszywo łamane twarde', value: '5,0-6,0 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Model referencyjny POLCA, publiczne i sektorowe EPD kruszyw, ÖKOBAUDAT, literatura LCA.' },
+                    { name: 'Kruszywo wapienne / dolomitowe', value: '4,0-4,5 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Benchmark: ITB-EPD 707 Trzuskawica A1-A3 = 3,27 kg CO2e/t.' },
+                    { name: 'Piasek / żwir', value: '3,5 kg CO2e/t', status: 'wartość domyślna POLCA', basis: 'Wymaga potwierdzenia płukania, sortowania, wilgotności i transportu.' }
+                ]
+            },
+            {
+                id: 'filler',
+                title: 'Wypełniacz wapienny',
+                module: 'A1',
+                impact: 'Udział zwykle mniejszy niż kruszywa, ale proces mielenia i suszenia może być istotny.',
+                use_rule: 'Stosuj jako wartość domyślną dla wypełniacza CaCO3. Nie stosuj dla wapna palonego ani hydratyzowanego.',
+                values: [
+                    { name: 'Wypełniacz wapienny do MMA', value: '30 kg CO2e/t', status: 'konserwatywna wartość POLCA', basis: 'Benchmarki EPD dla mielonego węglanu wapnia, ÖKOBAUDAT i model referencyjny MMA.' }
+                ]
+            },
+            {
+                id: 'rap',
+                title: 'RAP / destrukt asfaltowy',
+                module: 'A1/A3 oraz D według cPCR',
+                impact: 'Może obniżać zapotrzebowanie na nowe kruszywo i lepiszcze, ale wymaga jasnych zasad alokacji.',
+                use_rule: 'Licz przygotowanie, frakcjonowanie, wilgotność, podgrzewanie i zasady modułu D według właściwego cPCR.',
+                values: [
+                    { name: 'Przygotowanie RAP do ponownego użycia', value: '3 kg CO2e/t', status: 'wartość procesowa POLCA', basis: 'Model referencyjny MMA; do zastąpienia danymi zakładu przy dużym udziale RAP.' }
+                ]
+            },
+            {
+                id: 'transport',
+                title: 'Transport surowców',
+                module: 'A2/A4/C2',
+                impact: 'Szczególnie istotny dla kruszyw, bo duża masa potrafi przewyższyć różnice między wskaźnikami A1.',
+                use_rule: 'System powinien liczyć transport z masy, adresu dostawcy i adresu wytwórni. Dokumenty WZ/CMR mają pierwszeństwo.',
+                values: [
+                    { name: 'Transport drogowy, zestaw 40 t', value: '0,095 kg CO2e/tkm', status: 'wartość domyślna POLCA', basis: 'Publiczne bazy LCA/transportu i EMEP/EEA; preferowane są dane floty i trasy.' }
+                ]
+            },
+            {
+                id: 'energy',
+                title: 'Gaz, paliwa i energia',
+                module: 'A3',
+                impact: 'Drugie główne źródło wpływu GWP w MMA: suszenie kruszywa, temperatura produkcji, wilgotność i sprawność palnika.',
+                use_rule: 'Zużycie energii i paliw powinno pochodzić z faktur, liczników albo alokacji rocznej na produkcję.',
+                values: [
+                    { name: 'Energia elektryczna PL', value: '0,599 kg CO2e/kWh', status: 'model POLCA-EN-PL', basis: 'KOBiZE, PSE, GUS, WUG, EEA, IPCC/JEC i jawny model LCA.' },
+                    { name: 'Gaz ziemny', value: '2,0 kg CO2e/m3', status: 'wartość domyślna POLCA', basis: 'Wartość przeliczeniowa; zużycie gazu musi pochodzić z danych zakładu.' },
+                    { name: 'Olej napędowy', value: '3,2 kg CO2e/l', status: 'wartość domyślna POLCA', basis: 'Spalanie i upstream paliwa; scenariusze i procesy pomocnicze.' }
+                ]
+            },
+            {
+                id: 'products',
+                title: 'Wyroby wynikowe: AC / SMA / BBTM',
+                module: 'A1-A3 jako baza; pozostałe moduły według cPCR',
+                impact: 'Dla MMA nie publikujemy jednej uniwersalnej emisji wyrobu, bo wynik zależy od recepty i wytwórni.',
+                use_rule: 'Dla wyrobu publikuj benchmark modelowy lub wynik recepty, nie stały zamiennik EPD.',
+                values: [
+                    { name: 'AC — beton asfaltowy', value: 'wynik z recepty', status: 'benchmark modelowy', basis: 'Skład mieszanki i dane wytwórni; POLCA uzupełnia brakujące tło.' },
+                    { name: 'SMA / BBTM / PA', value: 'wynik z recepty', status: 'benchmark modelowy', basis: 'Wymagane różnicowanie lepiszcza, dodatków, RAP i scenariuszy produkcji.' }
+                ]
+            },
+            {
+                id: 'rules',
+                title: 'Zasada stosowania danych zagregowanych',
+                module: 'reguła jakości danych',
+                impact: 'Dane zagregowane zapewniają porównywalność i start obliczeń, ale nie ukrywają braku danych producenta.',
+                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > dataset POLCA > konserwatywna wartość domyślna.',
+                values: [
+                    { name: 'Screening / oferta / pre-audyt', value: 'dopuszczalne wartości POLCA', status: 'wynik roboczy', basis: 'Szybkie wskazanie głównych źródeł wpływu do poprawy.' },
+                    { name: 'Weryfikacja danych', value: 'wymagana trasowalność', status: 'do potwierdzenia danymi', basis: 'Składniki kluczowe muszą mieć EPD, faktury, lokalizacje albo dokumenty potwierdzające.' }
+                ]
+            }
+        ];
+    }
+    async function initPolcaHotspotPanel() {
+        const target = document.getElementById('polca-hotspot-detail');
+        const buttons = Array.from(document.querySelectorAll('[data-polca-hotspot]'));
+        if (!target || !buttons.length) return;
+        let hotspots = getPolcaMmaHotspotsFallback();
+        try {
+            const response = await fetch('data/mma-hotspots.json');
+            if (response.ok) {
+                const payload = await response.json();
+                if (Array.isArray(payload.hotspots) && payload.hotspots.length) hotspots = payload.hotspots;
+            }
+        } catch (error) {
+            // Podgląd pliku lokalnego nie zawsze może pobrać JSON, dlatego utrzymujemy dane zapasowe w skrypcie.
+        }
+        const byId = hotspots.reduce((acc, item) => {
+            acc[item.id] = item;
+            return acc;
+        }, {});
+        const render = (id) => {
+            const item = byId[id] || hotspots[0];
+            buttons.forEach((button) => button.classList.toggle('is-active', button.dataset.polcaHotspot === item.id));
+            target.innerHTML = `
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                    <div>
+                        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:800;color:var(--accent);">${polishDisplayText(item.module)}</div>
+                        <h3 style="font-size:1.15rem;color:var(--text-primary);margin:.25rem 0 .45rem;">${polishDisplayText(item.title)}</h3>
+                    </div>
+                    <span style="display:inline-flex;padding:.35rem .55rem;border-radius:7px;background:#EEF2F7;color:#102A43;font-size:.7rem;font-weight:800;">dataset POLCA v2026.1</span>
+                </div>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.62;margin:.25rem 0 0;">${polishDisplayText(item.impact)}</p>
+                <div style="margin-top:.85rem;padding:.8rem;border:1px solid #B7C7D6;border-radius:8px;background:#F8FAFC;">
+                    <strong style="display:block;font-size:.8rem;color:var(--text-primary);">Zasada użycia w obliczeniach</strong>
+                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.58;margin:.35rem 0 0;">${polishDisplayText(item.use_rule)}</p>
+                </div>
+                <div style="display:grid;gap:.65rem;margin-top:.85rem;">
+                    ${(item.values || []).map((row) => `
+                        <article style="padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);">
+                            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;flex-wrap:wrap;">
+                                <strong style="font-size:.86rem;color:var(--text-primary);">${polishDisplayText(row.name)}</strong>
+                                <span style="font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:800;color:var(--text-primary);">${polishDisplayText(row.value)}</span>
+                            </div>
+                            <div style="display:inline-flex;margin-top:.35rem;padding:.22rem .45rem;border-radius:6px;background:#102A43;color:#fff;font-size:.66rem;font-weight:800;">${polishDisplayText(row.status)}</div>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;">${polishDisplayText(row.basis)}</p>
+                        </article>
+                    `).join('')}
+                </div>
+                <p style="font-size:.74rem;color:var(--text-tertiary);line-height:1.5;margin:.85rem 0 0;">
+                    Publicznie pokazujemy wartość wynikową i krótką podstawę. Pełne źródła, wersje EPD,
+                    kryteria porównywalności i ograniczenia są przechowywane w kartach datasetów oraz JSON.
+                </p>
+            `;
+        };
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => render(button.dataset.polcaHotspot));
+        });
+        render('bitumen');
+    }
+    function getPolcaConcreteProfileFallback() {
+        return [
+            {
+                id: 'cement',
+                title: 'Cement i udział klinkieru',
+                module: 'A1',
+                standards: 'EN 197-1, EN 206, PN-B-06265, EN 15804+A2',
+                impact: 'Najczęściej główne źródło GWP w betonie. Wynik zależy od typu cementu, udziału klinkieru, dodatków głównych i danych cementowni.',
+                use_rule: 'Pierwszeństwo ma EPD cementu albo zweryfikowany wskaźnik dostawcy dla konkretnego typu CEM. Wartość sektorowa może być stosowana wyłącznie z oznaczeniem jakości danych.',
+                values: [
+                    { name: 'CEM I 52,5R', value: '883 kg CO2e/t', status: 'EPD PL 2024', basis: 'Wartość referencyjna POLCA na podstawie polskich EPD producentów cementu; GWP A1-A3.' },
+                    { name: 'CEM I 42,5R', value: '856 kg CO2e/t', status: 'EPD PL 2024', basis: 'Wartość referencyjna POLCA na podstawie polskich EPD producentów cementu; GWP A1-A3.' },
+                    { name: 'CEM II/B-S 32,5R', value: '637 kg CO2e/t', status: 'EPD PL 2024', basis: 'Cement wieloskładnikowy; GWP A1-A3. EPD konkretnego dostawcy ma pierwszeństwo.' },
+                    { name: 'CEM III/A 42,5N', value: '374 kg CO2e/t', status: 'EPD PL 2024', basis: 'Cement hutniczy; GWP A1-A3. EPD konkretnego dostawcy ma pierwszeństwo.' },
+                    { name: 'CEM IV — średnia krajowa PL', value: '397 kg CO2e/t', status: 'EPD SPC/ITB 2025', basis: 'Zweryfikowana EPD Typu III dla CEM I-CEM V produkowanych w Polsce; A1-A3, 1 t. Wartość brutto w tabeli EPD: 510 kg CO2e/t jako kontrola.' },
+                    { name: 'SPC/ITB 2025 — kontekst sektorowy', value: 'CEM I 584 · CEM II 473 · CEM III 398 · CEM IV 397 · CEM V 430 kg CO2/t', status: 'ślad węglowy A1-A3', basis: 'Dane sektorowe Stowarzyszenia Producentów Cementu/ITB pokazują trend klinkierowy; EPD konkretnego dostawcy nadal ma pierwszeństwo.' }
+                ]
+            },
+            {
+                id: 'aggregates',
+                title: 'Kruszywa, woda i frakcje',
+                module: 'A1 + A2 oddzielnie',
+                standards: 'EN 12620, EN 1008, EN 206, PN-B-06265',
+                impact: 'Kruszywa mają duży udział masowy. Ich A1 jest zwykle niższe niż cementu, ale transport i dobór frakcji mogą istotnie zmieniać wynik.',
+                use_rule: 'Stosuj kartę datasetu dla konkretnego rodzaju kruszywa i licz transport oddzielnie z lokalizacji dostawcy. EPD kopalni albo dane zakładowe zastępują wartość POLCA.',
+                values: [
+                    { name: 'Kruszywo łamane / naturalne', value: '3,5-5,5 kg CO2e/t', status: 'wartości POLCA', basis: 'EPD kruszyw, dane geologiczne PIG-PIB/MIDAS, publiczne bazy LCA/EPD.' },
+                    { name: 'Woda zarobowa', value: 'zwykle mały udział GWP', status: 'kontrola kompletności', basis: 'EN 1008 i dane zakładu; nie pomijać bez uzasadnienia.' }
+                ]
+            },
+            {
+                id: 'additions',
+                title: 'Dodatki mineralne',
+                module: 'A1',
+                standards: 'EN 450-1, EN 15167-1, EN 13263-1, EN 206',
+                impact: 'Dodatki mineralne mogą obniżać udział klinkieru, ale wymagają jasnej alokacji, statusu materiału i danych źródłowych.',
+                use_rule: 'Popiół lotny, żużel mielony i pył krzemionkowy powinny mieć EPD, dane dostawcy albo opisany dataset sektorowy. Nie stosować jednej wartości dla wszystkich dodatków.',
+                values: [
+                    { name: 'Popiół lotny', value: 'wg danych dostawcy', status: 'oddzielny dataset', basis: 'EN 450-1; wymagane zasady alokacji i status materiału.' },
+                    { name: 'Żużel mielony GGBS', value: 'wg danych dostawcy', status: 'oddzielny dataset', basis: 'EN 15167-1; wynik zależy od mielenia, suszenia, transportu i alokacji.' }
+                ]
+            },
+            {
+                id: 'admixtures',
+                title: 'Domieszki chemiczne',
+                module: 'A1',
+                standards: 'EN 934-2, EN 206',
+                impact: 'Udział masowy jest zwykle niewielki, ale domieszki specjalne mogą wymagać potwierdzenia źródła, zwłaszcza przy wysokim dozowaniu.',
+                use_rule: 'Domieszki traktuj jako osobną grupę danych. Przy małym wpływie możliwe jest uproszczenie, ale musi zostać zachowany ślad źródłowy.',
+                values: [
+                    { name: 'Plastyfikatory i superplastyfikatory', value: 'wg EPD lub karty dostawcy', status: 'do oceny istotności', basis: 'EN 934-2; znaczenie zależy od dozowania i typu chemii.' },
+                    { name: 'Domieszki specjalne', value: 'wymagane dane producenta', status: 'kontrola ryzyka', basis: 'Stosować dane producenta, jeżeli składnik wpływa istotnie na wynik lub właściwości wyrobu.' }
+                ]
+            },
+            {
+                id: 'transport',
+                title: 'Transport cementu, kruszyw i dodatków',
+                module: 'A2',
+                standards: 'EN 15804+A2, EN 206, dokumenty WZ/CMR',
+                impact: 'Transport jest szczególnie istotny dla kruszyw i cementu. Różnice odległości mogą zmienić wynik między receptami o podobnym składzie.',
+                use_rule: 'Licz tkm z masy, lokalizacji dostawcy i miejsca produkcji. Dokumenty WZ/CMR, trasa i dane floty mają pierwszeństwo przed wartością domyślną.',
+                values: [
+                    { name: 'Transport drogowy 40 t', value: '0,095 kg CO2e/tkm', status: 'wartość domyślna POLCA', basis: 'Publiczne bazy LCA transportu i EMEP/EEA; do zastąpienia danymi floty.' },
+                    { name: 'Dane dostaw', value: 'masa × dystans', status: 'dane aktywności', basis: 'Dokumenty WZ/CMR, lokalizacja dostawcy, lokalizacja węzła.' }
+                ]
+            },
+            {
+                id: 'plant',
+                title: 'Energia węzła i alokacja produkcji',
+                module: 'A3',
+                standards: 'EN 206, EN 15804+A2, ISO 14044',
+                impact: 'Energia węzła jest zwykle mniejsza niż wpływ cementu, ale musi być alokowana do wyrobu według jasnej zasady.',
+                use_rule: 'Zużycie energii i paliw powinno pochodzić z liczników, faktur albo rocznej alokacji produkcji. Metoda alokacji musi być opisana i odtwarzalna.',
+                values: [
+                    { name: 'Energia elektryczna PL', value: '0,599 kg CO2e/kWh', status: 'model POLCA', basis: 'KOBiZE, PSE, GUS, WUG, EEA, IPCC/JEC.' },
+                    { name: 'Alokacja na wyrób', value: 'wg masy lub produkcji', status: 'wymaga opisu', basis: 'ISO 14044 i EN 15804+A2; preferowane dane licznikowe, jeśli dostępne.' }
+                ]
+            },
+            {
+                id: 'recipe',
+                title: 'Klasa i recepta betonu',
+                module: 'A1-A3 jako baza; pozostałe moduły według PCR/cPCR',
+                standards: 'EN 206, PN-B-06265, EN 15804+A2',
+                impact: 'Nie ma jednej wartości GWP dla betonu. Wynik zależy od klasy wytrzymałości, ekspozycji, konsystencji, rodzaju cementu, w/c i składu recepty.',
+                use_rule: 'Publikuj wynik dla konkretnej recepty lub benchmark grupy recept, nie jedną wartość dla całego betonu.',
+                values: [
+                    { name: 'Beton towarowy', value: 'wynik z recepty', status: 'profil recepturowy', basis: 'Klasa, ekspozycja, konsystencja, cement, kruszywa, dodatki, transport i energia węzła.' },
+                    { name: 'Prefabrykaty betonowe', value: 'oddzielny model', status: 'zakres rozszerzony', basis: 'Wymagają dodatkowo danych zbrojenia, formowania, dojrzewania, odpadów i energii zakładu.' }
+                ]
+            },
+            {
+                id: 'rules',
+                title: 'Zasada stosowania danych dla betonu',
+                module: 'reguła jakości danych',
+                standards: 'EN 206, EN 15804+A2, ISO 14040/14044',
+                impact: 'Cement, dodatki mineralne, główne surowce, transport i energia są składnikami kluczowymi dla jakości wyniku.',
+                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > dataset POLCA > konserwatywna wartość domyślna z oznaczoną jakością.',
+                values: [
+                    { name: 'Dane producenta', value: 'pierwszeństwo', status: 'dla składników kluczowych', basis: 'EPD cementu, dane kopalni, faktury energii, dokumenty transportowe.' },
+                    { name: 'Wartość domyślna', value: 'tylko z oznaczeniem', status: 'kontrola jakości', basis: 'Stosowana, gdy brak danych producenta; musi mieć zakres, źródło i ograniczenia.' }
+                ]
+            }
+        ];
+    }
+    function initPolcaConcreteProfile() {
+        const target = document.getElementById('polca-concrete-detail');
+        const buttons = Array.from(document.querySelectorAll('[data-polca-concrete]'));
+        if (!target || !buttons.length) return;
+        const items = getPolcaConcreteProfileFallback();
+        const byId = items.reduce((acc, item) => {
+            acc[item.id] = item;
+            return acc;
+        }, {});
+        const render = (id) => {
+            const item = byId[id] || items[0];
+            buttons.forEach((button) => button.classList.toggle('is-active', button.dataset.polcaConcrete === item.id));
+            target.innerHTML = `
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                    <div>
+                        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:800;color:var(--accent);">${polishDisplayText(item.module)}</div>
+                        <h3 style="font-size:1.15rem;color:var(--text-primary);margin:.25rem 0 .45rem;">${polishDisplayText(item.title)}</h3>
+                    </div>
+                    <span style="display:inline-flex;padding:.35rem .55rem;border-radius:7px;background:#EEF2F7;color:#102A43;font-size:.7rem;font-weight:800;">profil betonu</span>
+                </div>
+                <p style="font-size:.78rem;color:var(--text-tertiary);line-height:1.5;margin:.25rem 0 0;"><strong>Normy odniesienia:</strong> ${polishDisplayText(item.standards)}</p>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.62;margin:.6rem 0 0;">${polishDisplayText(item.impact)}</p>
+                <div style="margin-top:.85rem;padding:.8rem;border:1px solid #B7C7D6;border-radius:8px;background:#F8FAFC;">
+                    <strong style="display:block;font-size:.8rem;color:var(--text-primary);">Zasada stosowania danych</strong>
+                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.58;margin:.35rem 0 0;">${polishDisplayText(item.use_rule)}</p>
+                </div>
+                <div style="display:grid;gap:.65rem;margin-top:.85rem;">
+                    ${(item.values || []).map((row) => `
+                        <article style="padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);">
+                            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;flex-wrap:wrap;">
+                                <strong style="font-size:.86rem;color:var(--text-primary);">${polishDisplayText(row.name)}</strong>
+                                <span style="font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:800;color:var(--text-primary);">${polishDisplayText(row.value)}</span>
+                            </div>
+                            <div style="display:inline-flex;margin-top:.35rem;padding:.22rem .45rem;border-radius:6px;background:#102A43;color:#fff;font-size:.66rem;font-weight:800;">${polishDisplayText(row.status)}</div>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;">${polishDisplayText(row.basis)}</p>
+                        </article>
+                    `).join('')}
+                </div>
+            `;
+        };
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => render(button.dataset.polcaConcrete));
+        });
+        render('cement');
+    }
+    function getPolcaAggregateProfileFallback() {
+        return [
+            {
+                id: 'rock',
+                title: 'Rodzaj skały i wartość grupowa',
+                module: 'A1',
+                standards: 'EN 12620, EN 13043, EN 13242, EPD Polska cPCR Kruszywa Budowlane, EN 15804+A2',
+                impact: 'Rodzaj skały decyduje o energochłonności kruszenia i przesiewania. Dlatego POLCA rozdziela kruszywa twarde, wapienne, dolomitowe i naturalne.',
+                use_rule: 'System dobiera dataset po rodzaju kruszywa. Użytkownik nie wybiera niższej wartości ręcznie; EPD kopalni albo dane zakładowe zastępują wartość POLCA.',
+                values: [
+                    { name: 'Kruszywo łamane twarde', value: '5,5 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt; A1 bez transportu.' },
+                    { name: 'Kruszywo wapienne', value: '4,0 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Benchmark: ITB-EPD 707 Trzuskawica A1-A3 = 3,27 kg CO2e/t; POLCA pozostaje wartością grupową.' },
+                    { name: 'Kruszywo dolomitowe', value: '4,5 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Oddzielone od wapienia ze względu na różnice technologii i właściwości kruszywa.' },
+                    { name: 'Piasek / żwir', value: '3,5 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Kruszywo naturalne; wynik zależy od płukania, sortowania, wilgotności i transportu.' }
+                ]
+            },
+            {
+                id: 'extraction',
+                title: 'Wydobycie i przygotowanie złoża',
+                module: 'A1',
+                standards: 'EN 12620, EN 13043, EN 13242, ISO 14044',
+                impact: 'Etap wydobycia obejmuje urabianie, zdejmowanie nadkładu, pracę maszyn, paliwa i materiały pomocnicze. Dla kruszyw z różnych kopalni może to dawać istotne różnice.',
+                use_rule: 'Przy danych kopalni wymagaj okresu danych, zużycia paliw, energii, wolumenu produkcji i alokacji na kruszywo lub frakcję.',
+                values: [
+                    { name: 'Dane kopalni', value: 'pierwszeństwo', status: 'dane pierwotne', basis: 'Faktury paliw, liczniki, produkcja roczna, alokacja i dokumentacja procesu.' },
+                    { name: 'Wartość grupowa POLCA', value: 'A1', status: 'gdy brak danych', basis: 'Stosowana tylko z oznaczeniem jakości danych i możliwością zastąpienia przez EPD/dane zakładowe.' }
+                ]
+            },
+            {
+                id: 'processing',
+                title: 'Kruszenie, przesiewanie i frakcje',
+                module: 'A1',
+                standards: 'EN 12620, EN 13043, EN 13242, EN 933, EN 1097',
+                impact: 'Kruszenie i przesiewanie są głównym technologicznym źródłem wpływu A1. Im twardsza skała i im bardziej wymagająca frakcja, tym większe ryzyko niedoszacowania.',
+                use_rule: 'Dla wyniku audytowego należy znać frakcję, technologię przeróbki, zużycie energii i czy materiał był płukany lub suszony.',
+                values: [
+                    { name: 'Frakcja d/D', value: 'wymagane', status: 'dane aktywności', basis: 'Wartość grupowa nie rozróżnia wszystkich frakcji; EPD kopalni może rozdzielać produkty.' },
+                    { name: 'Energia kruszenia', value: 'kWh/t', status: 'lepsze źródło', basis: 'Dane zakładowe zastępują wartość grupową, gdy dostępne.' }
+                ]
+            },
+            {
+                id: 'washing',
+                title: 'Płukanie, wilgotność i pyły',
+                module: 'A1/A3 zależnie od procesu',
+                standards: 'EN 933, EN 1097, EN 15804+A2',
+                impact: 'Płukanie, suszenie i wilgotność wpływają zarówno na produkcję kruszywa, jak i późniejszą produkcję MMA lub betonu. Dla MMA wilgotność kruszyw wpływa na paliwo do suszenia.',
+                use_rule: 'Nie mieszać samego wskaźnika A1 kruszywa z energią suszenia w wytwórni MMA. Suszenie w wytwórni należy liczyć w A3 wyrobu.',
+                values: [
+                    { name: 'Płukanie kruszywa', value: 'do potwierdzenia', status: 'hotspot procesu', basis: 'Zużycie wody, energia pomp, gospodarka osadami i wilgotność produktu.' },
+                    { name: 'Wilgotność dostawy', value: 'wpływa na A3 MMA', status: 'dane produkcyjne', basis: 'W MMA decyduje o energii suszenia, więc powinna być mierzona lub dokumentowana.' }
+                ]
+            },
+            {
+                id: 'transport',
+                title: 'Transport z kopalni',
+                module: 'A2/A4/C2',
+                standards: 'EN 15804+A2, dokumenty WZ/CMR, metodyka POLCA transportu',
+                impact: 'Kruszywo ma niski wskaźnik A1, ale dużą masę. Transport potrafi mieć większy wpływ na różnice między dostawcami niż sam proces wydobycia.',
+                use_rule: 'System powinien liczyć tkm z masy, adresu kopalni i adresu wytwórni/budowy. WZ/CMR i dane floty mają pierwszeństwo.',
+                values: [
+                    { name: 'Transport drogowy 40 t', value: '0,095 kg CO2e/tkm', status: 'wartość domyślna POLCA', basis: 'Do zastąpienia danymi floty, trasą i rzeczywistą ładownością.' },
+                    { name: 'Adres kopalni → zakład', value: 'masa × dystans', status: 'dane aktywności', basis: 'Automatyczne geokodowanie może wspierać obliczenia, ale dokumenty dostaw są dowodem audytowym.' }
+                ]
+            },
+            {
+                id: 'recycled',
+                title: 'Kruszywa z recyklingu',
+                module: 'A1/A3 oraz D według cPCR',
+                standards: 'EN 13242, EN 15804+A2, ISO 14044, cPCR kruszyw',
+                impact: 'Kruszywa wtórne mogą obniżać zużycie surowców pierwotnych, ale wymagają jasnego statusu odpadu/produktu, alokacji i rozliczenia modułu D.',
+                use_rule: 'Nie wolno mieszać kruszywa recyklingowego z pierwotnym bez śladu audytowego. Należy wskazać proces przygotowania, zanieczyszczenia i status prawny materiału.',
+                values: [
+                    { name: 'Kruszywo z recyklingu betonu', value: 'wymaga danych procesu', status: 'oddzielny dataset', basis: 'Kruszenie, sortowanie, usuwanie zanieczyszczeń i transport.' },
+                    { name: 'RAP / destrukt asfaltowy', value: 'oddzielne zasady', status: 'MMA', basis: 'Wymaga zasad alokacji, statusu materiału i modułu D według właściwego cPCR.' }
+                ]
+            },
+            {
+                id: 'epd',
+                title: 'EPD kopalni i dane producenta',
+                module: 'jakość danych',
+                standards: 'ISO 14025, EN 15804+A2, cPCR Kruszywa Budowlane',
+                impact: 'EPD konkretnej kopalni jest najlepszym źródłem, jeżeli dotyczy rzeczywiście użytego kruszywa, zakładu, frakcji, roku i granic systemu.',
+                use_rule: 'EPD producenta zastępuje wartość POLCA tylko dla zadeklarowanego produktu i zgodnego zakresu. EPD innej kopalni może być benchmarkiem, ale nie automatycznym zamiennikiem.',
+                values: [
+                    { name: 'EPD kopalni', value: 'pierwszeństwo', status: 'najlepsze źródło', basis: 'Numer EPD, operator programu, ważność, jednostka, moduły, produkt i zakład.' },
+                    { name: 'ITB-EPD 707 Trzuskawica', value: '3,27 kg CO2e/t', status: 'benchmark wapienia', basis: 'Bezpośrednio tylko dla zadeklarowanego produktu; w POLCA służy też jako punkt kontrolny.' }
+                ]
+            },
+            {
+                id: 'rules',
+                title: 'Zasada danych dla kruszyw',
+                module: 'reguła jakości danych',
+                standards: 'EN 15804+A2, ISO 14044, cPCR Kruszywa Budowlane',
+                impact: 'Największe ryzyka błędu to uśrednianie wszystkich kruszyw, pominięcie transportu, brak rozróżnienia frakcji i użycie EPD nie tego produktu.',
+                use_rule: 'Kolejność: EPD kopalni > dane zakładowe kopalni > dataset POLCA dla typu kruszywa > wartość grupowa z oznaczeniem jakości.',
+                values: [
+                    { name: 'Minimum danych', value: 'typ + kopalnia + frakcja', status: 'wymagane', basis: 'Bez tego wynik powinien mieć niższą ocenę jakości danych.' },
+                    { name: 'Dane do audytu', value: 'EPD/WZ/CMR/faktury', status: 'dowody', basis: 'Audytor sprawdza źródło, ilość, trasę, rok danych i zgodność z receptą.' }
+                ]
+            }
+        ];
+    }
+    function initPolcaAggregateProfile() {
+        const target = document.getElementById('polca-aggregate-detail');
+        const buttons = Array.from(document.querySelectorAll('[data-polca-aggregate]'));
+        if (!target || !buttons.length) return;
+        const items = getPolcaAggregateProfileFallback();
+        const byId = items.reduce((acc, item) => {
+            acc[item.id] = item;
+            return acc;
+        }, {});
+        const render = (id) => {
+            const item = byId[id] || items[0];
+            buttons.forEach((button) => button.classList.toggle('is-active', button.dataset.polcaAggregate === item.id));
+            target.innerHTML = `
+                <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+                    <div>
+                        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:800;color:var(--accent);">${polishDisplayText(item.module)}</div>
+                        <h3 style="font-size:1.15rem;color:var(--text-primary);margin:.25rem 0 .45rem;">${polishDisplayText(item.title)}</h3>
+                    </div>
+                    <span style="display:inline-flex;padding:.35rem .55rem;border-radius:7px;background:#EEF2F7;color:#102A43;font-size:.7rem;font-weight:800;">profil kruszyw</span>
+                </div>
+                <p style="font-size:.78rem;color:var(--text-tertiary);line-height:1.5;margin:.25rem 0 0;"><strong>Normy odniesienia:</strong> ${polishDisplayText(item.standards)}</p>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.62;margin:.6rem 0 0;">${polishDisplayText(item.impact)}</p>
+                <div style="margin-top:.85rem;padding:.8rem;border:1px solid #B7C7D6;border-radius:8px;background:#F8FAFC;">
+                    <strong style="display:block;font-size:.8rem;color:var(--text-primary);">Zasada stosowania danych</strong>
+                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.58;margin:.35rem 0 0;">${polishDisplayText(item.use_rule)}</p>
+                </div>
+                <div style="display:grid;gap:.65rem;margin-top:.85rem;">
+                    ${(item.values || []).map((row) => `
+                        <article style="padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);">
+                            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;flex-wrap:wrap;">
+                                <strong style="font-size:.86rem;color:var(--text-primary);">${polishDisplayText(row.name)}</strong>
+                                <span style="font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:800;color:var(--text-primary);">${polishDisplayText(row.value)}</span>
+                            </div>
+                            <div style="display:inline-flex;margin-top:.35rem;padding:.22rem .45rem;border-radius:6px;background:#102A43;color:#fff;font-size:.66rem;font-weight:800;">${polishDisplayText(row.status)}</div>
+                            <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;">${polishDisplayText(row.basis)}</p>
+                        </article>
+                    `).join('')}
+                </div>
+            `;
+        };
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => render(button.dataset.polcaAggregate));
+        });
+        render('rock');
+    }
+    async function loadPolcaReferenceDatasets() {
+        const target = document.getElementById('polca-reference-datasets');
+        if (!target) return;
+        try {
+            const response = await fetch('data/datasets.json');
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            const payload = await response.json();
+            const datasets = Array.isArray(payload.datasets) ? payload.datasets : [];
+            const productLabels = {
+                mma: 'MMA',
+                emulsje: 'Emulsje',
+                beton: 'Beton',
+                'roboty-drogowe': 'Roboty drogowe',
+                'ogolne-epd': 'Ogólne EPD'
+            };
+            const categoryLabels = {
+                electricity: 'energia elektryczna',
+                fuel: 'paliwa',
+                transport: 'transport',
+                materiał: 'materiał'
+            };
+            const statusLabels = {
+                active: 'aktywny',
+                published_polca_model: 'opublikowany model',
+                published_sector_dataset: 'opublikowany dataset',
+                published_polca_default: 'opublikowana wartość',
+                published_cbam_default_reference: 'wartość kontrolna CBAM'
+            };
+            const publicationLabels = {
+                official_input: 'dane oficjalne',
+                published_polca_model: 'model POLCA',
+                published_sector_dataset: 'dataset sektorowy POLCA',
+                published_polca_default: 'wartość domyślna POLCA',
+                published_cbam_default_reference: 'wartość kontrolna CBAM',
+                official_public: 'dane publiczne',
+                polca_model: 'model POLCA',
+                industry: 'dane branżowe'
+            };
+            const qualityLabels = {
+                official_public: 'oficjalne źródło publiczne',
+                polca_model: 'model POLCA',
+                sector_proxy: 'dane sektorowe',
+                conservative_default: 'wartość domyślna',
+                regulatory_control: 'wartość regulacyjna / kontrolna'
+            };
+            const renderSourceLinks = (sources) => Array.isArray(sources)
+                ? sources.map((source) => source.url
+                    ? `<a href="${source.url}" style="color:var(--accent);font-weight:700;text-decoration:none;">${polishDisplayText(source.name)}</a>`
+                    : polishDisplayText(source.name)).join(', ')
+                : '';
+            const renderDefaultMethodology = (methodology) => {
+                if (!methodology) return '';
+                const process = Array.isArray(methodology.process_model) ? methodology.process_model : [];
+                const checks = Array.isArray(methodology.audit_checks) ? methodology.audit_checks : [];
+                const sources = Array.isArray(methodology.sources) ? methodology.sources : (Array.isArray(methodology.source_basis) ? methodology.source_basis : []);
+                const declaredValue = methodology.declared_value || `${methodology.declared_value_kg_co2e_per_t} kg CO₂e/t`;
+                return `
+                    <div style="margin-top:.75rem;padding:.75rem;border:1px solid #D8DEE9;border-radius:8px;background:#F8FAFC;">
+                        <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.55rem;">
+                            <span style="display:inline-flex;padding:.28rem .5rem;border-radius:6px;background:#102A43;color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.02em;text-transform:uppercase;">wartość domyślna</span>
+                            <span style="display:inline-flex;padding:.28rem .5rem;border-radius:6px;background:#ECEFF4;color:#102A43;font-size:.68rem;font-weight:800;">${declaredValue} · ${methodology.module}</span>
+                        </div>
+                        <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Granica systemu:</strong> ${polishDisplayText(methodology.system_boundary)}</p>
+                        ${process.length ? `<p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Model procesu:</strong> ${process.map(polishDisplayText).join(' → ')}</p>` : ''}
+                        <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Uzasadnienie wartości:</strong> ${polishDisplayText(methodology.rationale)}</p>
+                        <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Źródła metodyczne:</strong> ${renderSourceLinks(sources)}</p>
+                        <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Zamiana w projekcie:</strong> ${polishDisplayText(methodology.required_replacement)}</p>
+                        ${checks.length ? `<p style="font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Kontrole audytowe:</strong> ${checks.map(polishDisplayText).join('; ')}.</p>` : ''}
+                    </div>
+                `;
+            };
+            const displayGroupOrder = ['energy', 'transport', 'cement', 'aggregates', 'bitumen', 'additives', 'regulatory', 'other'];
+            const displayGroupLabels = {
+                energy: 'Energia i paliwa',
+                transport: 'Transport',
+                cement: 'Cement i spoiwa',
+                aggregates: 'Kruszywa',
+                bitumen: 'Asfalt i emulsje',
+                additives: 'Wypełniacze, RAP i dodatki',
+                regulatory: 'Regulacyjne CBAM',
+                other: 'Pozostałe wartości'
+            };
+            const displayGroupDescriptions = {
+                energy: 'Dane wspólne stosowane w produkcji, sprzęcie i procesach pomocniczych.',
+                transport: 'Wartości przeliczeniowe dla tkm i scenariuszy dostaw.',
+                cement: 'Wartości dla cementów i spoiw stosowanych w betonie, prefabrykatach i zaprawach.',
+                aggregates: 'Wartości dla kruszyw stosowanych w MMA, betonie i robotach drogowych.',
+                bitumen: 'Wartości dla lepiszczy asfaltowych, emulsji i warstw sczepnych.',
+                additives: 'Wartości dla materiałów pomocniczych, wypełniaczy i materiałów z recyklingu.',
+                regulatory: 'Wartości kontrolne regulacyjne. Nie zastępują GWP produktu w EPD.',
+                other: 'Rekordy, które nie należą do głównych grup materiałowych.'
+            };
+            const productFilter = document.getElementById('polca-product-filter');
+            const materialFilter = document.getElementById('polca-material-filter');
+            const evidenceFilter = document.getElementById('polca-evidence-filter');
+            const searchFilter = document.getElementById('polca-search-filter');
+            const countTarget = document.getElementById('polca-filter-count');
+            const getDatasetDisplayGroup = (item) => {
+                const role = String(item.material_role || item.category || '').toLowerCase();
+                if (item.evidence_level === 'regulatory_control') return 'regulatory';
+                if (item.category === 'electricity' || item.category === 'fuel' || role.includes('energia') || role.includes('paliwo')) return 'energy';
+                if (item.category === 'transport' || role.includes('transport')) return 'transport';
+                if (role.includes('cement') || role.includes('spoiwo')) return 'cement';
+                if (role.includes('kruszywo')) return 'aggregates';
+                if (role.includes('lepiszcze') || role.includes('emulsja') || role.includes('warstwa sczepna')) return 'bitumen';
+                if (role.includes('wypełniacz') || role.includes('destrukt') || role.includes('recykling') || role.includes('dodatek')) return 'additives';
+                return 'other';
+            };
+            const roles = [...new Set(datasets.map((item) => item.material_role || item.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pl'));
+            if (materialFilter && materialFilter.options.length === 1) {
+                roles.forEach((role) => {
+                    const option = document.createElement('option');
+                    option.value = role;
+                    option.textContent = role.charAt(0).toUpperCase() + role.slice(1);
+                    materialFilter.appendChild(option);
+                });
+            }
+            const matchesFilters = (item) => {
+                const selectedProduct = productFilter ? productFilter.value : 'all';
+                const selectedMaterial = materialFilter ? materialFilter.value : 'all';
+                const selectedEvidence = evidenceFilter ? evidenceFilter.value : 'all';
+                const search = searchFilter ? searchFilter.value.trim().toLowerCase() : '';
+                const productGroups = Array.isArray(item.product_groups) ? item.product_groups : [];
+                const role = item.material_role || item.category;
+                const searchable = [item.code, item.name, item.category, role, item.scope, item.technology].filter(Boolean).join(' ').toLowerCase();
+                const includeRegulatory = selectedEvidence === 'regulatory_control';
+                return (includeRegulatory || item.evidence_level !== 'regulatory_control')
+                    && (selectedProduct === 'all' || productGroups.includes(selectedProduct))
+                    && (selectedMaterial === 'all' || role === selectedMaterial)
+                    && (selectedEvidence === 'all' || item.evidence_level === selectedEvidence)
+                    && (!search || searchable.includes(search));
+            };
+            const renderDatasets = () => {
+                const filtered = datasets.filter(matchesFilters).sort((a, b) => {
+                    const groupDelta = displayGroupOrder.indexOf(getDatasetDisplayGroup(a)) - displayGroupOrder.indexOf(getDatasetDisplayGroup(b));
+                    if (groupDelta) return groupDelta;
+                    const roleDelta = String(a.material_role || '').localeCompare(String(b.material_role || ''), 'pl');
+                    if (roleDelta) return roleDelta;
+                    return String(a.name || a.code).localeCompare(String(b.name || b.code), 'pl');
+                });
+                const grouped = filtered.reduce((acc, item) => {
+                    const key = getDatasetDisplayGroup(item);
+                    if (!acc[key]) acc[key] = [];
+                    acc[key].push(item);
+                    return acc;
+                }, {});
+                if (countTarget) {
+                    countTarget.textContent = `${filtered.length} ${filtered.length === 1 ? 'rekord' : 'rekordów'}`;
+                }
+                target.innerHTML = filtered.length ? displayGroupOrder.filter((key) => grouped[key]).map((key) => `
+                    <section style="display:grid;gap:.65rem;margin-top:.25rem;">
+                        <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-end;flex-wrap:wrap;">
+                            <div>
+                                <h3 style="font-size:1rem;color:var(--text-primary);margin:.25rem 0 .15rem;">${displayGroupLabels[key] || key}</h3>
+                                <p style="font-size:.76rem;color:var(--text-secondary);line-height:1.45;margin:0;">${displayGroupDescriptions[key] || ''}</p>
+                            </div>
+                            <span style="font-size:.72rem;color:var(--text-tertiary);font-weight:800;">${grouped[key].length} ${grouped[key].length === 1 ? 'rekord' : 'rekordów'}</span>
+                        </div>
+                        ${grouped[key].map((item) => `
+                <article style="display:grid;grid-template-columns:minmax(0,1fr) 120px 130px 125px;gap:1rem;align-items:start;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-sm);">
+                    <div>
+                        <div style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:var(--accent);word-break:break-word;">${item.code}</div>
+                        <h3 style="font-size:1rem;line-height:1.3;margin:.25rem 0 .35rem;color:var(--text-primary);">${polishDisplayText(item.name)}</h3>
+                        <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin:0;">${polishDisplayText(item.scope)}</p>
+                        <div style="display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.55rem;">
+                            ${(Array.isArray(item.product_groups) ? item.product_groups : []).map((group) => `<span style="display:inline-flex;padding:.24rem .45rem;border-radius:6px;background:#EEF2F7;color:#102A43;font-size:.68rem;font-weight:800;">${productLabels[group] || group}</span>`).join('')}
+                            <span style="display:inline-flex;padding:.24rem .45rem;border-radius:6px;background:#F8FAFC;border:1px solid var(--border);color:var(--text-secondary);font-size:.68rem;font-weight:800;">${item.material_role || item.category}</span>
+                        </div>
+                        <details style="margin-top:.65rem;">
+                            <summary style="cursor:pointer;color:var(--accent);font-size:.78rem;font-weight:700;">Uzasadnienie i źródła</summary>
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.55rem 0 0;">${polishDisplayText(item.methodology_note)}</p>
+                            ${Array.isArray(item.calculation_components) ? `<div style="display:grid;gap:.35rem;margin-top:.55rem;">${item.calculation_components.map((row) => `<div style="display:flex;justify-content:space-between;gap:.75rem;font-size:.74rem;color:var(--text-secondary);border-bottom:1px solid var(--border);padding-bottom:.25rem;"><span>${row.code} (${row.sources.map(polishDisplayText).join(', ')})</span><strong>${row.value_kg_co2e_per_kwh} kg</strong></div>`).join('')}</div>` : ''}
+                            ${renderDefaultMethodology(item.default_methodology)}
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.45rem 0 0;"><strong>Ograniczenia danych:</strong> ${polishDisplayText(item.limitations)}</p>
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.45rem 0 0;"><strong>Lepsze źródło danych:</strong> ${polishDisplayText(item.preferred_replacement)}</p>
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.45rem 0 0;"><strong>Źródła:</strong> ${renderSourceLinks(item.source_trace) || polishDisplayText(item.source_name)}</p>
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.45rem 0 0;"><strong>Status w POLCA:</strong> ${qualityLabels[item.evidence_level] || polishDisplayText(item.evidence_level)}.</p>
+                        </details>
+                    </div>
+                    <div>
+                        <span class="badge official" style="white-space:normal;">${categoryLabels[item.category] || item.category}</span>
+                        <div style="font-size:.75rem;color:var(--text-tertiary);margin-top:.5rem;">${item.module_default}</div>
+                    </div>
+                    <div>
+                        <div style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:700;color:var(--text-primary);">${item.gwp_total_kg_co2e}</div>
+                        <div style="font-size:.75rem;color:var(--text-tertiary);">kg CO₂e / ${item.unit}</div>
+                    </div>
+                    <div>
+                        <span class="badge">${statusLabels[item.status] || item.status}</span>
+                        <div style="font-size:.75rem;color:var(--text-tertiary);line-height:1.45;margin-top:.5rem;">${item.year}<br>${item.geography}<br>${publicationLabels[item.publication_status] || publicationLabels[item.data_quality] || item.publication_status || item.data_quality}</div>
+                        <a href="data/datasets/${item.code}.json" style="display:inline-flex;margin-top:.55rem;color:var(--accent);font-size:.75rem;font-weight:700;text-decoration:none;">JSON →</a>
+                    </div>
+                </article>
+                    `).join('')}
+                    </section>
+                `).join('') : '<div class="card" style="border-color:#D8DEE9;background:#F8FAFC;color:var(--text-secondary);">Brak rekordów dla wybranych filtrów. Zmień wyrób, materiał lub wyszukiwaną frazę.</div>';
+            };
+            [productFilter, materialFilter, evidenceFilter, searchFilter].filter(Boolean).forEach((control) => {
+                control.addEventListener('input', renderDatasets);
+                control.addEventListener('change', renderDatasets);
+            });
+            renderDatasets();
+        } catch (error) {
+            target.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">Nie udało się załadować publicznego katalogu danych. Brak lub błąd pliku data/datasets.json.</div>';
+        }
+    }
+    async function loadPolcaMaterialTaxonomy() {
+        const target = document.getElementById('polca-material-taxonomy');
+        const sourceRegister = document.getElementById('polca-aggregate-source-register');
+        if (!target) return;
+        try {
+            const response = await fetch('data/material-taxonomy.json');
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            const payload = await response.json();
+            const groups = Array.isArray(payload.groups) ? payload.groups : [];
+            const formatValue = (value) => value === null || value === undefined ? 'wymaga danych źródłowych' : `${value} kg CO₂e/t`;
+            const materialStatusLabels = {
+                group_proxy_to_validate: 'wartość grupowa POLCA',
+                method_required: 'wymaga metodyki projektu'
+            };
+            if (sourceRegister && Array.isArray(payload.meta?.source_register)) {
+                sourceRegister.innerHTML = `
+                    <details style="border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                        <summary style="cursor:pointer;padding:.8rem 1rem;color:var(--accent);font-size:.82rem;font-weight:700;">Rejestr źródeł dla kruszyw</summary>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.65rem;padding:.85rem;">
+                            ${payload.meta.source_register.map((source) => `
+                                <article style="padding:.75rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);">
+                                    <strong style="display:block;font-size:.8rem;color:var(--text-primary);">${source.name}</strong>
+                                    <span style="display:block;font-size:.7rem;color:var(--text-tertiary);margin-top:.2rem;">${polishDisplayText(source.type)}</span>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.55;margin:.4rem 0 0;">${polishDisplayText(source.role)}</p>
+                                    <a href="${source.url}" target="_blank" rel="noopener" style="display:inline-flex;margin-top:.55rem;color:var(--accent);font-size:.72rem;font-weight:700;text-decoration:none;">Źródło →</a>
+                                </article>
+                            `).join('')}
+                        </div>
+                    </details>
+                `;
+            }
+            target.innerHTML = groups.map((group) => `
+                <article style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);box-shadow:var(--shadow-sm);">
+                    <div style="display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:1rem;align-items:start;">
+                        <div>
+                            <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:700;color:var(--accent);">${group.code}</div>
+                            <h3 style="font-size:1rem;color:var(--text-primary);margin:.2rem 0 .35rem;">${group.label}</h3>
+                            <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:0;">${polishDisplayText(group.audit_focus)}</p>
+                        </div>
+                        <div style="text-align:right;">
+                            <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:1.05rem;color:var(--text-primary);">${formatValue(group.controlled_default_kg_co2e_per_t)}</strong>
+                            <span style="display:block;font-size:.72rem;color:var(--text-tertiary);line-height:1.35;margin-top:.2rem;">${materialStatusLabels[group.status] || group.status}</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem;">
+                        ${(group.materials || []).map((material) => `
+                            <span title="${polishDisplayText(material.note)}" style="display:inline-flex;gap:.35rem;align-items:center;padding:.38rem .55rem;border:1px solid var(--border);border-radius:999px;background:var(--bg-subtle);font-size:.75rem;color:var(--text-secondary);">
+                                <strong style="color:var(--text-primary);font-weight:600;">${material.label}</strong>
+                                <span>${formatValue(material.default_kg_co2e_per_t)}</span>
+                            </span>
+                        `).join('')}
+                    </div>
+                    <details style="margin-top:.75rem;">
+                        <summary style="cursor:pointer;color:var(--accent);font-size:.78rem;font-weight:700;">Źródła dla poszczególnych materiałów</summary>
+                        <div style="display:grid;gap:.45rem;margin-top:.65rem;">
+                            ${(group.materials || []).map((material) => `
+                                <div style="padding:.65rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);">
+                                    <strong style="display:block;font-size:.78rem;color:var(--text-primary);">${material.label} — ${formatValue(material.default_kg_co2e_per_t)}</strong>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.55;margin:.35rem 0 0;"><strong>Podstawa źródłowa:</strong> ${polishDisplayText(material.source_basis || group.source_basis)}</p>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.55;margin:.25rem 0 0;"><strong>Charakter danych:</strong> ${polishDisplayText(material.data_character || material.note)}</p>
+                                    <p style="font-size:.74rem;color:var(--text-secondary);line-height:1.55;margin:.25rem 0 0;"><strong>Wymagana walidacja:</strong> ${polishDisplayText(material.required_validation || group.audit_focus)}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </details>
+                    <details style="margin-top:.75rem;">
+                        <summary style="cursor:pointer;color:var(--accent);font-size:.78rem;font-weight:700;">Źródło, dataset i zasada audytu</summary>
+                        <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.55rem 0 0;"><strong>Dataset:</strong> ${group.default_dataset_code}</p>
+                        <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.35rem 0 0;"><strong>Pochodzenie danych:</strong> ${polishDisplayText(group.group_source_provenance || group.source_basis)}</p>
+                        <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.35rem 0 0;"><strong>Podstawa:</strong> ${polishDisplayText(group.source_basis)}</p>
+                        <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.6;margin:.35rem 0 0;"><strong>Tło metodyczne:</strong> ${group.background_note || ''}</p>
+                    </details>
+                </article>
+            `).join('');
+        } catch (error) {
+            target.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">Nie udało się załadować katalogu materiałów. Brak lub błąd pliku data/material-taxonomy.json.</div>';
+        }
+    }
+    async function loadPolcaSourceCatalog() {
+        const target = document.getElementById('polca-source-catalog');
+        if (!target) return;
+        try {
+            const response = await fetch('data/sources.json');
+            if (!response.ok) throw new Error('HTTP ' + response.status);
+            const payload = await response.json();
+            const groups = Array.isArray(payload.groups) ? payload.groups : [];
+            const sourceStatusLabels = {
+                public_if_published: 'publiczne po publikacji',
+                client_evidence: 'dowody klienta',
+                report_public_or_on_request: 'raport publiczny / na wniosek',
+                public_database: 'baza publiczna',
+                public_report: 'raport publiczny',
+                public: 'publiczne',
+                standard_paid_reference: 'norma referencyjna',
+                public_regulation: 'regulacja publiczna',
+                public_sector_source: 'źródło branżowe',
+                restricted_license: 'licencja ograniczona',
+                tool_reference: 'źródło porównawcze',
+                open_format: 'format otwarty',
+                public_api_with_rules: 'publiczna usługa z zasadami',
+                public_generic_database: 'publiczna baza generyczna',
+                public_epd_database: 'publiczna baza EPD',
+                free_with_conditions: 'bezpłatne z warunkami',
+                public_api_account: 'publiczna usługa po rejestracji',
+                verified_epd_register: 'rejestr EPD',
+                machine_readable_epd: 'EPD maszynowe'
+            };
+            target.innerHTML = groups.map((group) => `
+                <details ${group.code === 'epd_registers' || group.code === 'public_default_databases' ? 'open' : ''} style="border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden;">
+                    <summary style="cursor:pointer;list-style:none;">
+                    <div style="display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;padding:1rem;background:var(--bg-subtle);">
+                        <div>
+                            <div style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--accent);font-weight:700;">PRIORYTET ${group.priority}</div>
+                            <h3 style="font-size:1rem;color:var(--text-primary);margin:.2rem 0 .25rem;">${group.label}</h3>
+                            <p style="font-size:.8rem;color:var(--text-secondary);line-height:1.55;margin:0;">${polishDisplayText(group.description)}</p>
+                        </div>
+                    </div>
+                    </summary>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.75rem;padding:.9rem;">
+                        ${(group.sources || []).map((source) => `
+                            <article style="padding:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                                <div style="display:flex;justify-content:space-between;gap:.75rem;align-items:flex-start;">
+                                    <h4 style="font-size:.9rem;line-height:1.3;color:var(--text-primary);margin:0;">${source.name}</h4>
+                                    <span class="badge" style="white-space:nowrap;">${sourceStatusLabels[source.free_status] || source.free_status}</span>
+                                </div>
+                                <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:.55rem 0 0;"><strong>Zakres:</strong> ${polishDisplayText(source.scope)}</p>
+                                <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;"><strong>Zastosowanie w POLCA:</strong> ${polishDisplayText(source.use_when)}</p>
+                                <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;"><strong>Metadane źródła:</strong> ${polishDisplayText(source.audit_check)}</p>
+                                <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:.45rem 0 0;"><strong>Ograniczenie:</strong> ${polishDisplayText(source.limitation)}</p>
+                                <a href="${source.url}" target="_blank" rel="noopener" style="display:inline-flex;margin-top:.65rem;color:var(--accent);font-size:.76rem;font-weight:700;text-decoration:none;">Źródło →</a>
+                            </article>
+                        `).join('')}
+                    </div>
+                </details>
+            `).join('');
+        } catch (error) {
+            target.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">Nie udało się załadować macierzy źródeł. Brak lub błąd pliku data/sources.json.</div>';
+        }
+    }
+    initPolcaModuleTabs();
+    void initPolcaHotspotPanel();
+    initPolcaConcreteProfile();
+    initPolcaAggregateProfile();
+    void loadPolcaMaterialTaxonomy();
+    void loadCprProductFamilies();
+    void loadPolcaReferenceDatasets();
+    void loadPolcaSourceCatalog();
+</script>
 <script src="js/animations.js?v=5.1"></script>
 <script src="js/effects.js?v=5.1"></script>
 <script src="js/search.js?v=5.1"></script>

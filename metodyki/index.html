@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodyki poLCA — referencyjne dokumenty cytowalne — poLCA</title>
+    <meta name="description" content="Hub metodyk poLCA: dokumenty referencyjne PDF/A z DOI, semver, changelog. Każda metodyka cytowalna w pracy naukowej. Zgodność z ISO 14040/14044, EN 15804+A2, EF 3.1.">
+    <link rel="canonical" href="https://polca.org.pl/metodyki/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Metodyki poLCA — referencyjne dokumenty cytowalne">
+    <meta property="og:description" content="Hub metodyk programu poLCA: PDF/A z DOI, semver, changelog. Cytowalne w pracy naukowej. Zgodność z ISO 14040/14044, EN 15804+A2, EF 3.1.">
+    <meta property="og:url" content="https://polca.org.pl/metodyki/">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Metodyki poLCA — referencyjne dokumenty cytowalne">
+    <meta name="twitter:description" content="Hub metodyk programu poLCA: PDF/A z DOI, semver, changelog. Cytowalne w pracy naukowej.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Metodyki poLCA — referencyjne dokumenty cytowalne",
+      "description": "Hub metodyk programu poLCA: dokumenty referencyjne PDF/A z DOI, semver i changelog. Cytowalne w pracy naukowej, zgodne z ISO 14040/14044, EN 15804+A2 i EF 3.1.",
+      "url": "https://polca.org.pl/metodyki/",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)",
+          "url": "https://polca.org.pl/metodyki/MET-001-en-pl.html",
+          "creativeWorkStatus": "Planned"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "MET-002:2026 — Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych",
+          "url": "https://polca.org.pl/metodyki/MET-002-energia.html",
+          "datePublished": "2026-05-10",
+          "creativeWorkStatus": "Published",
+          "license": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "MET-003:2026 — Conservative defaults wg UE-wide approach",
+          "url": "https://polca.org.pl/metodyka-defaults-ue.html",
+          "creativeWorkStatus": "Draft"
+        }
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #wstep,#metodyki-lista,#procedura-aktualizacji{scroll-margin-top:76px}
+        .met-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1.25rem}
+        .met-card{padding:1.5rem 1.6rem;border:1px solid var(--border);border-radius:12px;background:var(--bg);position:relative;transition:border-color .15s ease, box-shadow .15s ease}
+        .met-card:hover{border-color:#B9D8C2;box-shadow:0 2px 8px rgba(15,23,42,0.04)}
+        .met-card-published{border-color:#B9D8C2;background:#F4FAF6}
+        .met-card-published:hover{border-color:#84BD96}
+        .met-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+        .met-card-id{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--accent);text-transform:uppercase}
+        .met-status{font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+        .met-status-published{background:#0B5D33;color:#fff}
+        .met-status-planned{background:var(--paper-warm);color:var(--text-secondary);border:1px solid var(--border)}
+        .met-status-draft{background:#FFF8DC;color:#8B6E1F;border:1px solid #D6C58A}
+        .met-card-title{font-size:1.18rem;font-weight:700;color:var(--text-primary);margin:.55rem 0 .65rem;font-family:'Inter Tight',sans-serif;line-height:1.35}
+        .met-card-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin:0 0 .9rem}
+        .met-card-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem .9rem;margin:.85rem 0;padding:.7rem .85rem;background:var(--paper-warm);border-radius:8px;font-size:.74rem}
+        .met-meta-row{display:flex;gap:.4rem;color:var(--text-secondary);line-height:1.5}
+        .met-meta-label{font-weight:600;color:var(--text-tertiary);min-width:64px}
+        .met-meta-value{font-family:'IBM Plex Mono',monospace;color:var(--text-primary)}
+        .met-cite{font-size:.78rem;color:var(--text-secondary);line-height:1.55;margin:.85rem 0;padding:.7rem .85rem;border-left:3px solid var(--accent);background:var(--bg-subtle);border-radius:0 6px 6px 0}
+        .met-cite-label{font-size:.65rem;font-weight:700;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem}
+        .met-card-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+        .met-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;border:1px solid var(--border);transition:all .15s ease}
+        .met-btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .met-btn-primary:hover{background:#0d4a23;border-color:#0d4a23}
+        .met-btn-secondary{background:var(--bg);color:var(--text-primary)}
+        .met-btn-secondary:hover{background:var(--paper-warm);border-color:var(--text-tertiary)}
+        .met-btn-disabled{background:var(--paper-warm);color:var(--text-tertiary);border-color:var(--border);cursor:not-allowed;pointer-events:none}
+        .met-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.7rem}
+        .met-tag{font-family:'IBM Plex Mono',monospace;font-size:.65rem;padding:.18rem .5rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em}
+        .met-tag-accent{background:var(--accent-subtle);color:var(--accent)}
+        .procedura-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin-top:1rem}
+        .procedura-item{padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:.78rem;color:var(--text-primary);line-height:1.5}
+        .procedura-item .pr-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;display:block;margin-bottom:.2rem}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-card-meta,.procedura-grid{grid-template-columns:1fr}.met-card{padding:1.2rem 1.25rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html" class="active">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji" style="font-size:.75rem;color:var(--text-tertiary);margin-bottom:.65rem;">
+                <a href="../index.html" style="color:var(--text-secondary);text-decoration:none;">poLCA</a>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>Metodyki</span>
+            </nav>
+            <div class="section-num">Metodyki poLCA</div>
+            <h1 class="page-title">Metodyki poLCA — referencyjne dokumenty cytowalne</h1>
+            <p class="page-subtitle">
+                Każda metodyka programu poLCA jest publikowana jako dokument referencyjny PDF/A
+                z DOI, semver i changelog. Wszystkie metodyki są zgodne z ISO 14040/14044,
+                EN 15804+A2:2019+A1:2021 i EF 3.1, a po rejestracji DOI w DataCite — automatycznie
+                indeksowane przez Google Scholar i CrossRef.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 14040/44</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EN 15804+A2</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EF 3.1 / JRC</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">PDF/A · DOI</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">CC BY 4.0</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Metodyki poLCA — referencyjne dokumenty cytowalne" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#wstep" class="tool-nav-pill">01 — Wprowadzenie</a>
+        <a href="#metodyki-lista" class="tool-nav-pill">02 — Lista metodyk</a>
+        <a href="#procedura-aktualizacji" class="tool-nav-pill">03 — Procedura aktualizacji</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — WSTĘP
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="wstep" class="card card-lg section-gap fade-in" aria-label="Wprowadzenie">
+        <div class="section-num">01 — Wprowadzenie</div>
+        <div class="card-title">Status referencyjny i cytowalność</div>
+        <p class="card-text" style="max-width:880px;">
+            Metodyki poLCA są publikowane jako dokumenty referencyjne PDF/A z DOI. Każda metodyka
+            ma semver (np. v1.0, v1.1), datowany changelog i jest cytowalna w pracy naukowej.
+            Wszystkie są zgodne z ISO 14040/14044, EN 15804+A2:2019+A1:2021 i EF 3.1. Dokumenty
+            metodyczne stanowią fundament weryfikacji EPD przez weryfikatorów akredytowanych
+            przez PCA (ISO 14025, ISO/IEC 17029) oraz źródło cytowalne dla audytorów akredytacyjnych.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:.8rem;">
+            Każdy dokument MET-XXX jest publikowany w trzech formatach:
+            <strong>HTML cytowalny</strong> (z anchorami sekcji), <strong>PDF/A z DOI</strong>
+            (do cytowań naukowych) oraz <strong>onepager briefing</strong> (1 strona A4 dla
+            decydentów). Pełna polityka aktualizacji metodyk — patrz <a href="../podstawy-normatywne.html#procedury">procedury PR-01 do PR-07</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — LISTA METODYK
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="metodyki-lista" class="card card-lg section-gap fade-in" aria-label="Lista metodyk poLCA">
+        <div class="section-num">02 — Lista metodyk</div>
+        <div class="card-title">Dokumenty MET-XXX programu poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Trzy metodyki w obecnym wydaniu programu — jedna zatwierdzona, dwie planowane.
+            Status każdej metodyki, link do pełnej wersji HTML, PDF/A oraz wzorzec cytowania
+            APA znajdziesz w karcie poniżej.
+        </p>
+
+        <div class="met-grid">
+
+            <!-- ───── MET-001 ───── -->
+            <article class="met-card">
+                <div class="met-card-head">
+                    <span class="met-card-id">MET-001:2026 · v9.1 (planowana)</span>
+                    <span class="met-status met-status-planned">Planowana</span>
+                </div>
+                <h2 class="met-card-title">Wskaźnik emisyjności energii elektrycznej PL — pełna metodyka poLCA-EN-PL-2024 v9.1</h2>
+                <p class="met-card-desc">
+                    Pełna metodyka wskaźnika 0,599 kg CO₂e/kWh dla polskiej sieci elektroenergetycznej —
+                    full LCA z analizą cyklu życia paliw, transportu, infrastruktury i strat sieciowych.
+                    Dokument zastąpi obecny preprint w <a href="../metodyka-en-pl.html">metodyce EN-PL</a>
+                    i będzie referencyjnym uzupełnieniem MET-002.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">v9.1</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">w toku</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Planowana publikacja</span><span class="met-meta-value">Q2 2026</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">DOI</span><span class="met-meta-value">10.xxxx/polca.met.2026.001</span></div>
+                </div>
+                <div class="met-cite">
+                    <span class="met-cite-label">Cytowanie (APA — placeholder)</span>
+                    Multicert Sp. z o.o. (2026). <em>MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL: pełna metodyka poLCA-EN-PL-2024 v9.1</em> (wersja planowana). Program EPD Polska. https://polca.org.pl/metodyki/
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag">EN 15804+A2</span>
+                    <span class="met-tag">ISO 14067</span>
+                    <span class="met-tag">EF 3.1</span>
+                    <span class="met-tag">IPCC AR6</span>
+                </div>
+                <div class="met-card-actions">
+                    <span class="met-btn met-btn-disabled">PDF — wkrótce</span>
+                    <a href="../metodyka-en-pl.html" class="met-btn met-btn-secondary">Preprint metodyki EN-PL →</a>
+                </div>
+            </article>
+
+            <!-- ───── MET-002 ───── -->
+            <article class="met-card met-card-published">
+                <div class="met-card-head">
+                    <span class="met-card-id">MET-002:2026 · v1.0</span>
+                    <span class="met-status met-status-published">Zatwierdzona</span>
+                </div>
+                <h2 class="met-card-title">Wyłączenie wskaźników KOBiZE z LCA wyrobów budowlanych — peer-reviewable methodology paper</h2>
+                <p class="met-card-desc">
+                    Peer-reviewable paper uzasadniający, dlaczego wskaźniki KOBiZE — fundament
+                    krajowej inwentaryzacji emisji wg UNFCCC/EU ETS — nie spełniają wymagań
+                    analizy cyklu życia (LCA) wg EN 15804+A2 i EF 3.1. Struktura IMRaD, 7 punktów
+                    wyłączenia, 23 referencje. Dokument referencyjny dla weryfikatorów EPD i audytorów PCA.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">v1.0</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Data publikacji</span><span class="met-meta-value">2026-05-10</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Format</span><span class="met-meta-value">HTML + PDF/A (1.5 MB)</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Licencja</span><span class="met-meta-value">CC BY 4.0</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">DOI</span><span class="met-meta-value">10.xxxx/polca.met.2026.002</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">DataCite</span><span class="met-meta-value">rejestracja w toku</span></div>
+                </div>
+                <div class="met-cite">
+                    <span class="met-cite-label">Cytowanie (APA)</span>
+                    Multicert Sp. z o.o. (2026). <em>MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA</em> (v1.0). Program EPD Polska. https://polca.org.pl/metodyki/MET-002-energia.html
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag met-tag-accent">peer-reviewable</span>
+                    <span class="met-tag">EN 15804+A2</span>
+                    <span class="met-tag">ISO 14067</span>
+                    <span class="met-tag">EF 3.1</span>
+                    <span class="met-tag">IPCC AR6</span>
+                    <span class="met-tag">IMRaD</span>
+                </div>
+                <div class="met-card-actions">
+                    <a href="MET-002-energia.html" class="met-btn met-btn-primary">Czytaj HTML →</a>
+                    <a href="MET-002-energia.pdf" class="met-btn met-btn-secondary">Pobierz PDF/A (1.5 MB)</a>
+                    <a href="../dokumenty/onepager-energia-producent.html" class="met-btn met-btn-secondary">Onepager dla producentów →</a>
+                </div>
+            </article>
+
+            <!-- ───── MET-003 ───── -->
+            <article class="met-card">
+                <div class="met-card-head">
+                    <span class="met-card-id">MET-003:2026 (planowana)</span>
+                    <span class="met-status met-status-draft">Draft</span>
+                </div>
+                <h2 class="met-card-title">Conservative defaults wg UE-wide approach — metodyka wartości domyślnych dla CBAM, Battery, RED III, ESPR i PEF</h2>
+                <p class="met-card-desc">
+                    Dokument o metodyce konserwatywnych defaults wg podejścia UE-wide stosowanego
+                    w aktach: CBAM (2023/956), Battery Regulation (2023/1542), RED III (2023/2413),
+                    ESPR (2024/1781) i PEF (Komunikat KE 2021/C 158/01). Obecnie prowizoryczna wersja
+                    w <a href="../metodyka-defaults-ue.html">/metodyka-defaults-ue.html</a> — pełny
+                    dokument MET-003 planowany na Q3 2026.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">draft 0.3</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">w toku</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Planowana publikacja</span><span class="met-meta-value">Q3 2026</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">DOI</span><span class="met-meta-value">10.xxxx/polca.met.2026.003</span></div>
+                </div>
+                <div class="met-cite">
+                    <span class="met-cite-label">Cytowanie (APA — placeholder)</span>
+                    Multicert Sp. z o.o. (2026). <em>MET-003:2026 — Conservative defaults wg UE-wide approach: metodyka wartości domyślnych dla CBAM, Battery, RED III, ESPR i PEF</em> (draft). Program EPD Polska. https://polca.org.pl/metodyka-defaults-ue.html
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag">CBAM 2023/956</span>
+                    <span class="met-tag">Battery 2023/1542</span>
+                    <span class="met-tag">RED III</span>
+                    <span class="met-tag">ESPR 2024/1781</span>
+                    <span class="met-tag">PEF</span>
+                </div>
+                <div class="met-card-actions">
+                    <a href="../metodyka-defaults-ue.html" class="met-btn met-btn-secondary">Wersja prowizoryczna →</a>
+                    <span class="met-btn met-btn-disabled">PDF — wkrótce</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — PROCEDURA AKTUALIZACJI
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="procedura-aktualizacji" class="card card-lg section-gap fade-in" aria-label="Procedura aktualizacji metodyk">
+        <div class="section-num">03 — Procedura aktualizacji</div>
+        <div class="card-title">Jak aktualizujemy metodyki poLCA — siedem procedur PR-01 do PR-07</div>
+        <p class="card-text" style="max-width:880px;">
+            Każda metodyka MET-XXX jest utrzymywana zgodnie z siedmioma procedurami jakości
+            programu poLCA, opisanymi w pełnym brzmieniu na stronie
+            <a href="../podstawy-normatywne.html#procedury">Podstawy normatywne — procedury PR-01..07</a>.
+            Procedury obejmują review roczne, walidację metodologiczną, śledzenie zmian normatywnych,
+            kontrolę wersji, archiwizację i komunikację z weryfikatorami.
+        </p>
+
+        <div class="procedura-grid">
+            <div class="procedura-item">
+                <span class="pr-num">PR-01</span>
+                Roczny review metodyki — porównanie z aktualnymi wersjami norm ISO/EN i guides UE.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-02</span>
+                Walidacja metodologiczna — peer review przez zewnętrzny panel ekspertów LCA.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-03</span>
+                Śledzenie zmian normatywnych — monitoring publikacji ISO, CEN, JRC i Komisji Europejskiej.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-04</span>
+                Kontrola wersji — semver (major.minor) z datowanym changelog dla każdej zmiany.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-05</span>
+                Archiwizacja wersji — wszystkie wydania historyczne dostępne pod stałymi DOI.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-06</span>
+                Komunikacja z weryfikatorami — biuletyn aktualizacji dla audytorów PCA i weryfikatorów EPD.
+            </div>
+            <div class="procedura-item">
+                <span class="pr-num">PR-07</span>
+                Konsultacje publiczne — okres komentarzy 30 dni przed wydaniem majora (X.0).
+            </div>
+        </div>
+
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Pełne brzmienie procedur, harmonogramy i wzorce dokumentów — zobacz
+            <a href="../podstawy-normatywne.html#procedury">Podstawy normatywne · sekcja 04</a>.
+            Zasady cytowania metodyk w pracy naukowej — zobacz
+            <a href="../o-polca/cytowanie.html">Jak cytować poLCA</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../o-polca/cytowanie.html">Jak cytować poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>

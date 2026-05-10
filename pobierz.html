@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobierz — metodyki, datasety, c-PCR, tabele referencyjne — poLCA</title>
+    <meta name="description" content="Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, datasety JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.">
+    <link rel="canonical" href="https://polca.org.pl/pobierz.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pobierz — centrum dokumentów poLCA">
+    <meta property="og:description" content="Wszystkie pobieralne dokumenty programu poLCA: metodyki PDF/A z DOI, datasety, c-PCR i tabele referencyjne.">
+    <meta property="og:url" content="https://polca.org.pl/pobierz.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pobierz — centrum dokumentów poLCA">
+    <meta name="twitter:description" content="Metodyki, datasety, c-PCR i tabele referencyjne — wszystko w jednym miejscu.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Pobierz — centrum dokumentów poLCA",
+      "description": "Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, datasety JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.",
+      "url": "https://polca.org.pl/pobierz.html",
+      "inLanguage": "pl-PL",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "ScholarlyArticle",
+            "name": "MET-002:2026 — Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych",
+            "url": "https://polca.org.pl/metodyki/MET-002-energia.pdf",
+            "encodingFormat": "application/pdf",
+            "datePublished": "2026-05-10",
+            "license": "https://creativecommons.org/licenses/by/4.0/"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Onepager: Energia elektryczna w EPD — briefing dla producentów",
+            "url": "https://polca.org.pl/dokumenty/onepager-energia-producent.pdf",
+            "encodingFormat": "application/pdf"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Dataset",
+            "name": "polca-gwp-v2026-1 — wskaźniki GWP polskich procesów (JSON-LD)",
+            "url": "https://polca.org.pl/data/polca-gwp-v2026-1.json",
+            "encodingFormat": "application/ld+json"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Dataset",
+            "name": "polca-en-pl-2024 — wskaźnik 0,599 kg CO₂e/kWh (JSON-LD)",
+            "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+            "encodingFormat": "application/ld+json"
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #metodyki,#onepagery,#datasety-pliki,#cpcr,#tabele{scroll-margin-top:76px}
+        .dl-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin:0 0 .65rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+        .dl-list{display:grid;grid-template-columns:1fr;gap:.7rem;margin-top:1rem}
+        .dl-row{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:.85rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);transition:border-color .15s ease, box-shadow .15s ease}
+        .dl-row:hover{border-color:#B9D8C2;box-shadow:0 1px 4px rgba(15,23,42,0.04)}
+        .dl-row-disabled{opacity:.6;background:var(--paper-warm)}
+        .dl-row-disabled:hover{border-color:var(--border);box-shadow:none}
+        .dl-icon{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--accent-subtle);color:var(--accent);border-radius:6px;font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.04em;flex-shrink:0}
+        .dl-icon.json{background:#E0F2E9;color:#0B5D33}
+        .dl-icon.csv{background:#E8F0FE;color:#1A56DB}
+        .dl-icon.xlsx{background:#FCE7E7;color:#9E1A1A}
+        .dl-icon.html{background:var(--paper-warm);color:var(--text-secondary)}
+        .dl-icon.draft{background:var(--paper-warm);color:var(--text-tertiary)}
+        .dl-body{min-width:0}
+        .dl-name{font-size:.92rem;font-weight:600;color:var(--text-primary);margin:0 0 .2rem;line-height:1.4}
+        .dl-name a{color:var(--text-primary);text-decoration:none}
+        .dl-name a:hover{color:var(--accent);text-decoration:underline}
+        .dl-desc{font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin:0}
+        .dl-meta{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.35rem;font-family:'IBM Plex Mono',monospace;font-size:.66rem;color:var(--text-tertiary)}
+        .dl-meta span{padding:.1rem .4rem;background:var(--paper-warm);border-radius:3px;letter-spacing:.02em}
+        .dl-meta span.draft{background:#FFF8DC;color:#8B6E1F}
+        .dl-action{display:flex;align-items:center;gap:.4rem;padding:.45rem .85rem;border-radius:6px;font-size:.76rem;font-weight:600;text-decoration:none;background:var(--accent);color:#fff;border:1px solid var(--accent);white-space:nowrap;transition:background .15s ease}
+        .dl-action:hover{background:#0d4a23}
+        .dl-action.secondary{background:var(--bg);color:var(--text-primary);border-color:var(--border)}
+        .dl-action.secondary:hover{background:var(--paper-warm)}
+        .dl-action.disabled{background:var(--paper-warm);color:var(--text-tertiary);border-color:var(--border);cursor:not-allowed;pointer-events:none}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.dl-row{grid-template-columns:1fr;gap:.7rem}.dl-row .dl-icon{order:-1}.dl-action{justify-self:start}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Dashboard</a>
+            <a href="analiza.html">Analiza Sektorowa</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="datasety.html">Datasety</a>
+            <a href="narzedzia.html">Narzędzia</a>
+            <a href="podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="pobierz.html" class="active">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <div class="section-num">Pobierz</div>
+            <h1 class="page-title">Centrum dokumentów poLCA</h1>
+            <p class="page-subtitle">
+                Wszystkie pobieralne zasoby programu poLCA w jednym miejscu — metodyki w formacie
+                PDF/A z DOI, briefingi onepager, datasety JSON-LD/CSV/XLSX, reguły kategorii c-PCR
+                oraz tabele referencyjne. Każdy plik z opisem, rozmiarem, datą publikacji i wersją.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">PDF/A</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">JSON-LD</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">CSV / XLSX</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">DOI · CC BY 4.0</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-laboratory.jpg" alt="Centrum pobierania dokumentów poLCA" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#metodyki" class="tool-nav-pill">01 — Metodyki (PDF/A)</a>
+        <a href="#onepagery" class="tool-nav-pill">02 — Onepagery</a>
+        <a href="#datasety-pliki" class="tool-nav-pill">03 — Datasety (JSON-LD/CSV)</a>
+        <a href="#cpcr" class="tool-nav-pill">04 — Reguły c-PCR</a>
+        <a href="#tabele" class="tool-nav-pill">05 — Tabele referencyjne</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — METODYKI PDF/A
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="metodyki" class="card card-lg section-gap fade-in" aria-label="Metodyki PDF/A">
+        <div class="section-num">01 — Metodyki (PDF/A z DOI)</div>
+        <div class="card-title">Dokumenty referencyjne MET-XXX</div>
+        <p class="card-text" style="max-width:880px;">
+            Metodyki programu poLCA publikowane jako PDF/A z DOI rejestrowanym w DataCite.
+            Każdy dokument ma semver (major.minor) i datowany changelog. Pełna lista metodyk
+            wraz ze statusem — zobacz <a href="metodyki/">hub metodyk</a>.
+        </p>
+
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon">PDF/A</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="metodyki/MET-002-energia.pdf">MET-002:2026 — Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych</a></p>
+                    <p class="dl-desc">Peer-reviewable methodology paper, IMRaD, 7 punktów wyłączenia, 23 referencje. Cytowalny dokument referencyjny dla weryfikatorów EPD i audytorów PCA.</p>
+                    <div class="dl-meta">
+                        <span>v1.0</span>
+                        <span>2026-05-10</span>
+                        <span>1.5 MB</span>
+                        <span>CC BY 4.0</span>
+                        <span>DOI: 10.xxxx/polca.met.2026.002</span>
+                    </div>
+                </div>
+                <a href="metodyki/MET-002-energia.pdf" class="dl-action">Pobierz PDF</a>
+            </div>
+
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon draft">PDF/A</div>
+                <div class="dl-body">
+                    <p class="dl-name">MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)</p>
+                    <p class="dl-desc">Pełna metodyka wskaźnika 0,599 kg CO₂e/kWh — full LCA z analizą cyklu życia paliw, transportu, infrastruktury i strat sieciowych. Planowana publikacja Q2 2026.</p>
+                    <div class="dl-meta">
+                        <span class="draft">w toku</span>
+                        <span>v9.1 (planowana)</span>
+                        <span>DOI: 10.xxxx/polca.met.2026.001</span>
+                    </div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon draft">PDF/A</div>
+                <div class="dl-body">
+                    <p class="dl-name">MET-003:2026 — Conservative defaults wg UE-wide approach</p>
+                    <p class="dl-desc">Metodyka wartości domyślnych dla CBAM, Battery, RED III, ESPR i PEF. Obecnie prowizoryczna wersja w <a href="metodyka-defaults-ue.html">/metodyka-defaults-ue.html</a>. Planowana publikacja Q3 2026.</p>
+                    <div class="dl-meta">
+                        <span class="draft">draft 0.3</span>
+                        <span>Q3 2026</span>
+                        <span>DOI: 10.xxxx/polca.met.2026.003</span>
+                    </div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — ONEPAGERY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="onepagery" class="card card-lg section-gap fade-in" aria-label="Briefingi onepager">
+        <div class="section-num">02 — Briefingi onepager (PDF, 1 strona A4)</div>
+        <div class="card-title">Skrócone briefingi dla decydentów i producentów</div>
+        <p class="card-text" style="max-width:880px;">
+            Onepagery to jednostronicowe streszczenia metodyk i polityk poLCA — zaprojektowane
+            do dystrybucji w komunikacji handlowej i podczas spotkań technicznych z producentami
+            wyrobów budowlanych.
+        </p>
+
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon">PDF</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="dokumenty/onepager-energia-producent.pdf">Onepager: Energia elektryczna w EPD — briefing dla producentów</a></p>
+                    <p class="dl-desc">Streszczenie MET-002 dla producentów wyrobów budowlanych: dlaczego w EPD nie używamy KOBiZE i co stosować zamiast nich (poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh).</p>
+                    <div class="dl-meta">
+                        <span>v1.0</span>
+                        <span>2026-05-10</span>
+                        <span>190 KB</span>
+                        <span>1 strona A4</span>
+                    </div>
+                </div>
+                <a href="dokumenty/onepager-energia-producent.pdf" class="dl-action">Pobierz PDF</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — DATASETY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="datasety-pliki" class="card card-lg section-gap fade-in" aria-label="Datasety i pliki danych">
+        <div class="section-num">03 — Datasety (JSON-LD / CSV / XLSX)</div>
+        <div class="card-title">Pliki danych programu poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Wszystkie datasety poLCA są publikowane w formacie JSON-LD (zgodnym z schema.org/Dataset),
+            CSV (do analiz) oraz XLSX (gdzie zasadne). Pełny katalog datasetów z metadanymi —
+            zobacz <a href="datasety.html">stronę Datasety</a>.
+        </p>
+
+        <h3 class="dl-section-title" style="margin-top:1.4rem;">Wskaźniki GWP i energia</h3>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/polca-gwp-v2026-1.json">polca-gwp-v2026-1.json</a></p>
+                    <p class="dl-desc">Główny dataset wskaźników GWP polskich procesów (cement, stal, beton, kruszywa, MMA, energia) — wydanie 2026.1, w pełni cytowalne.</p>
+                    <div class="dl-meta"><span>v2026.1</span><span>2026-05-03</span><span>JSON-LD</span></div>
+                </div>
+                <a href="data/polca-gwp-v2026-1.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon csv">CSV</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/polca-gwp-v2026-1.csv">polca-gwp-v2026-1.csv</a></p>
+                    <p class="dl-desc">Wersja CSV głównego datasetu wskaźników GWP — do analiz arkuszowych i importu do narzędzi LCA.</p>
+                    <div class="dl-meta"><span>v2026.1</span><span>2026-05-03</span><span>CSV</span></div>
+                </div>
+                <a href="data/polca-gwp-v2026-1.csv" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/polca-en-pl-2024.json">polca-en-pl-2024.json</a></p>
+                    <p class="dl-desc">Dataset wskaźnika emisyjności energii elektrycznej PL = 0,599 kg CO₂e/kWh — preprint metodyki MET-001.</p>
+                    <div class="dl-meta"><span>v9.1</span><span>JSON-LD</span></div>
+                </div>
+                <a href="data/polca-en-pl-2024.json" class="dl-action">Pobierz</a>
+            </div>
+        </div>
+
+        <h3 class="dl-section-title" style="margin-top:1.4rem;">Katalog datasetów (meta)</h3>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/datasets.json">datasets.json</a></p>
+                    <p class="dl-desc">Katalog wszystkich datasetów programu poLCA — metadane, źródła, jakość, wersje. JSON-LD zgodny z schema.org/DataCatalog.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON-LD</span></div>
+                </div>
+                <a href="data/datasets.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon csv">CSV</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/datasets.csv">datasets.csv</a></p>
+                    <p class="dl-desc">Tabelaryczna wersja katalogu datasetów — gotowa do importu do arkuszy.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>CSV</span></div>
+                </div>
+                <a href="data/datasets.csv" class="dl-action">Pobierz</a>
+            </div>
+        </div>
+
+        <h3 class="dl-section-title" style="margin-top:1.4rem;">Taksonomia i mapowania</h3>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/material-taxonomy.json">material-taxonomy.json</a></p>
+                    <p class="dl-desc">Taksonomia materiałów budowlanych w bazie poLCA — hierarchia kategorii i ich kody referencyjne.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/material-taxonomy.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/cpr-product-families.json">cpr-product-families.json</a></p>
+                    <p class="dl-desc">Mapowanie rodzin wyrobów budowlanych wg CPR 2024/3110 do kategorii poLCA.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/cpr-product-families.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/product-dataset-map.json">product-dataset-map.json</a></p>
+                    <p class="dl-desc">Mapowanie produktów do datasetów — wskazuje który dataset poLCA stosować dla danego wyrobu.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/product-dataset-map.json" class="dl-action">Pobierz</a>
+            </div>
+        </div>
+
+        <h3 class="dl-section-title" style="margin-top:1.4rem;">Polityki i kontrakty</h3>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/epd-source-policy.json">epd-source-policy.json</a></p>
+                    <p class="dl-desc">Polityka źródeł EPD: hierarchia źródeł danych (klient &gt; branża &gt; EPD &gt; darmowe &gt; komercyjne).</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/epd-source-policy.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/update-policy.json">update-policy.json</a></p>
+                    <p class="dl-desc">Polityka aktualizacji bazy poLCA — częstotliwość przeglądów, cykle wydawnicze, semver.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/update-policy.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/default-methodology.json">default-methodology.json</a></p>
+                    <p class="dl-desc">Domyślne wybory metodyczne — wskaźniki charakteryzacji, alokacja, granice systemu.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/default-methodology.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/sources.json">sources.json</a></p>
+                    <p class="dl-desc">Rejestr źródeł danych użytych w bazie poLCA — z pełnymi cytowaniami.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/sources.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/calculation-data-contract.json">calculation-data-contract.json</a></p>
+                    <p class="dl-desc">Kontrakt danych dla kalkulatora i narzędzi obliczeniowych — schemat wejść/wyjść.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/calculation-data-contract.json" class="dl-action">Pobierz</a>
+            </div>
+        </div>
+
+        <h3 class="dl-section-title" style="margin-top:1.4rem;">MMA i hot spoty</h3>
+        <div class="dl-list">
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/mma-hotspots.json">mma-hotspots.json</a></p>
+                    <p class="dl-desc">Mapa hot spotów emisyjnych w produkcji mieszanek mineralno-asfaltowych (MMA) — analiza A1-A3.</p>
+                    <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
+                </div>
+                <a href="data/mma-hotspots.json" class="dl-action">Pobierz</a>
+            </div>
+            <div class="dl-row">
+                <div class="dl-icon json">JSON</div>
+                <div class="dl-body">
+                    <p class="dl-name"><a href="data/mma-client-example.json">mma-client-example.json</a></p>
+                    <p class="dl-desc">Przykład danych klienta dla deklaracji MMA — input dla generatora EPD.</p>
+                    <div class="dl-meta"><span>2026-05-04</span><span>JSON</span></div>
+                </div>
+                <a href="data/mma-client-example.json" class="dl-action">Pobierz</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — c-PCR
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="cpcr" class="card card-lg section-gap fade-in" aria-label="Reguły kategorii c-PCR">
+        <div class="section-num">04 — Reguły kategorii c-PCR</div>
+        <div class="card-title">Category-specific PCR programu EPD Polska</div>
+        <p class="card-text" style="max-width:880px;">
+            Reguły kategorii (c-PCR) definiują szczegółowe zasady opracowywania EPD dla
+            konkretnych grup wyrobów budowlanych. Każda c-PCR jest zharmonizowana z EN 15804+A2
+            i odpowiednią normą produktową (np. EN 16757 dla betonu).
+        </p>
+
+        <div class="dl-list">
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon draft">PDF</div>
+                <div class="dl-body">
+                    <p class="dl-name">c-PCR-BET-EPD-PL:2026 v1.3 — beton i wyroby z betonu</p>
+                    <p class="dl-desc">Reguła kategorii dla betonu towarowego, prefabrykatów betonowych i mieszanek cementu z dodatkami. PDF w przygotowaniu — draft markdown w <code>/o-polca/c-pcr/</code>.</p>
+                    <div class="dl-meta">
+                        <span class="draft">draft v1.3</span>
+                        <span>EN 15804+A2</span>
+                        <span>EN 16757</span>
+                    </div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon draft">PDF</div>
+                <div class="dl-body">
+                    <p class="dl-name">c-PCR-MMA — mieszanki mineralno-asfaltowe (planowana)</p>
+                    <p class="dl-desc">Reguła kategorii dla MMA — nawierzchnie asfaltowe, podbudowy, warstwy ścieralne. Planowana publikacja H2 2026.</p>
+                    <div class="dl-meta"><span class="draft">planowana</span><span>EN 13108</span></div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon draft">PDF</div>
+                <div class="dl-body">
+                    <p class="dl-name">c-PCR-AGG — kruszywa naturalne i sztuczne (planowana)</p>
+                    <p class="dl-desc">Reguła kategorii dla kruszyw naturalnych łamanych, żwirów oraz kruszyw sztucznych. Planowana publikacja 2027.</p>
+                    <div class="dl-meta"><span class="draft">planowana</span><span>EN 13242 / EN 12620</span></div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — TABELE REFERENCYJNE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="tabele" class="card card-lg section-gap fade-in" aria-label="Tabele referencyjne">
+        <div class="section-num">05 — Tabele referencyjne (XLSX — planowane)</div>
+        <div class="card-title">Wskaźniki gotowe do importu do arkuszy</div>
+        <p class="card-text" style="max-width:880px;">
+            Tabele referencyjne XLSX z wbudowanymi formułami przeliczeniowymi. Format gotowy do
+            importu w narzędziach LCA (openLCA, SimaPro) oraz w analizach inżynierskich.
+            Wszystkie tabele będą towarzyszyły metodykom MET-XXX.
+        </p>
+
+        <div class="dl-list">
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon xlsx">XLSX</div>
+                <div class="dl-body">
+                    <p class="dl-name">Wskaźniki KOBiZE per nośnik energii (planowana)</p>
+                    <p class="dl-desc">Tabela rocznych wskaźników emisyjności KOBiZE dla nośników energii (paliwa, energia elektryczna, ciepło sieciowe) — załącznik do MET-002.</p>
+                    <div class="dl-meta"><span class="draft">planowana</span><span>XLSX</span></div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+            <div class="dl-row dl-row-disabled">
+                <div class="dl-icon xlsx">XLSX</div>
+                <div class="dl-body">
+                    <p class="dl-name">GWP factors IPCC AR6 (planowana)</p>
+                    <p class="dl-desc">Wskaźniki globalnego ocieplenia (GWP100) wg IPCC AR6 — gotowa tabela do importu w narzędziach charakteryzacji LCIA.</p>
+                    <div class="dl-meta"><span class="draft">planowana</span><span>XLSX</span></div>
+                </div>
+                <span class="dl-action disabled">Wkrótce</span>
+            </div>
+        </div>
+
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Cytowanie pobieranych dokumentów w pracy naukowej — zobacz
+            <a href="o-polca/cytowanie.html">Jak cytować poLCA</a>.
+            Lista wszystkich metodyk z opisem statusu — zobacz
+            <a href="metodyki/">hub metodyk</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="datasety.html">Datasety</a></li>
+                <li><a href="podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="metodyki/">Metodyki</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="o-polca/cytowanie.html">Jak cytować poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+<script src="js/interactive.js?v=1.0"></script>
+</body>
+</html>

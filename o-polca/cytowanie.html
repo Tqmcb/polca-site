@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak cytować poLCA — APA, ISO 690, BibTeX, RIS — poLCA</title>
+    <meta name="description" content="Wzorce cytowania portalu poLCA, metodyk MET-XXX, datasetów i artykułów blogowych w stylach APA, ISO 690, BibTeX i RIS. Status rejestracji DOI w DataCite.">
+    <link rel="canonical" href="https://polca.org.pl/o-polca/cytowanie.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jak cytować poLCA — APA, ISO 690, BibTeX, RIS">
+    <meta property="og:description" content="Wzorce cytowania portalu, metodyk, datasetów i artykułów poLCA. APA, ISO 690, BibTeX, RIS oraz status DOI.">
+    <meta property="og:url" content="https://polca.org.pl/o-polca/cytowanie.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jak cytować poLCA — APA, ISO 690, BibTeX, RIS">
+    <meta name="twitter:description" content="Wzorce cytowania portalu, metodyk, datasetów i artykułów poLCA.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Jak cytować poLCA — APA, ISO 690, BibTeX, RIS",
+      "description": "Wzorce cytowania portalu poLCA, metodyk MET-XXX, datasetów i artykułów blogowych w stylach APA, ISO 690, BibTeX i RIS oraz status rejestracji DOI w DataCite.",
+      "url": "https://polca.org.pl/o-polca/cytowanie.html",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      }
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #portal,#metodyki-cyt,#datasety-cyt,#blog-cyt,#doi-status,#crossref{scroll-margin-top:76px}
+        .cite-block{margin:.85rem 0;padding:.85rem 1rem;background:var(--bg-subtle);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;font-size:.84rem;color:var(--text-secondary);line-height:1.6;font-family:'Inter',sans-serif}
+        .cite-block.style-apa{border-left-color:var(--accent)}
+        .cite-block.style-iso{border-left-color:#1A56DB}
+        .cite-block.style-bib{border-left-color:#9E1A1A;background:#1f1f1f;color:#E5E7EB;font-family:'IBM Plex Mono',monospace;font-size:.78rem;white-space:pre-wrap;word-break:break-word;border-radius:0 6px 6px 0}
+        .cite-block.style-ris{border-left-color:#0B5D33;background:var(--paper-warm);font-family:'IBM Plex Mono',monospace;font-size:.78rem;white-space:pre-wrap;word-break:break-word}
+        .cite-style-label{display:block;font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-tertiary);margin-bottom:.4rem}
+        .cite-block.style-bib .cite-style-label{color:#9CA3AF}
+        .doi-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:1rem}
+        .doi-table thead th{background:var(--paper-warm);padding:.65rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .doi-table tbody td{padding:.7rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .doi-table tbody tr:last-child td{border-bottom:none}
+        .doi-table .doi-code{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--text-secondary)}
+        .doi-status{display:inline-block;padding:.18rem .5rem;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+        .doi-status.pending{background:#FFF8DC;color:#8B6E1F;border:1px solid #D6C58A}
+        .doi-status.planned{background:var(--paper-warm);color:var(--text-tertiary);border:1px solid var(--border)}
+        .doi-status.registered{background:#0B5D33;color:#fff}
+        .pattern-row{display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:start;padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);margin-bottom:.6rem}
+        .pattern-label{font-size:.78rem;color:var(--text-primary);font-weight:700}
+        .pattern-code{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-secondary);background:var(--paper-warm);padding:.45rem .6rem;border-radius:6px;line-height:1.5;word-break:break-word}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.pattern-row{grid-template-columns:1fr;gap:.4rem}.doi-table{font-size:.74rem}.doi-table thead th,.doi-table tbody td{padding:.55rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji" style="font-size:.75rem;color:var(--text-tertiary);margin-bottom:.65rem;">
+                <a href="../index.html" style="color:var(--text-secondary);text-decoration:none;">poLCA</a>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>O poLCA</span>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>Jak cytować</span>
+            </nav>
+            <div class="section-num">O poLCA</div>
+            <h1 class="page-title">Jak cytować poLCA w pracy naukowej</h1>
+            <p class="page-subtitle">
+                Wzorce cytowania całego portalu, dokumentów metodycznych MET-XXX, datasetów oraz
+                artykułów blogowych w stylach <strong>APA 7</strong>, <strong>ISO 690:2021</strong>,
+                <strong>BibTeX</strong> oraz <strong>RIS</strong> (do EndNote, Zotero, Mendeley).
+                Po rejestracji DOI w DataCite metadata jest automatycznie indeksowane przez
+                Google Scholar i CrossRef.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">APA 7</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 690:2021</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">BibTeX</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">RIS</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">DataCite · CrossRef</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Cytowanie poLCA w pracy naukowej" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#portal" class="tool-nav-pill">01 — Cytat ogólny portalu</a>
+        <a href="#metodyki-cyt" class="tool-nav-pill">02 — Cytat metodyki</a>
+        <a href="#datasety-cyt" class="tool-nav-pill">03 — Cytat datasetu</a>
+        <a href="#blog-cyt" class="tool-nav-pill">04 — Cytat artykułu</a>
+        <a href="#doi-status" class="tool-nav-pill">05 — Status DOI</a>
+        <a href="#crossref" class="tool-nav-pill">06 — CrossRef metadata</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — CYTAT OGÓLNY PORTALU
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="portal" class="card card-lg section-gap fade-in" aria-label="Cytat ogólny portalu">
+        <div class="section-num">01 — Cytat ogólny portalu</div>
+        <div class="card-title">Jak cytować poLCA jako bazę danych</div>
+        <p class="card-text" style="max-width:880px;">
+            Jeżeli powołujesz się na poLCA jako bazę danych jako całość (bez wskazania
+            konkretnego datasetu lub dokumentu metodycznego) — używaj cytatu ogólnego portalu.
+        </p>
+
+        <div class="cite-block style-apa">
+            <span class="cite-style-label">APA 7 (autor-rok)</span>
+            Multicert Sp. z o.o. (2026). <em>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</em> (wersja 2026.1) [Baza danych]. https://polca.org.pl
+        </div>
+
+        <div class="cite-block style-iso">
+            <span class="cite-style-label">ISO 690:2021 (numeryczna)</span>
+            MULTICERT SP. Z O.O. <em>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</em> [online]. Wersja 2026.1. Warszawa: Multicert, 2026 [dostęp: 2026-05-10]. Dostępna w: https://polca.org.pl
+        </div>
+
+        <div class="cite-block style-bib">
+<span class="cite-style-label">BibTeX (@misc)</span>@misc{polca2026,
+  author       = {{Multicert Sp. z o.o.}},
+  title        = {{poLCA --- Polska Baza Danych LCA dla wyrob\'ow budowlanych}},
+  version      = {2026.1},
+  year         = {2026},
+  publisher    = {Multicert Sp. z o.o.},
+  howpublished = {\url{https://polca.org.pl}},
+  note         = {Operator programu EPD Polska}
+}
+        </div>
+
+        <div class="cite-block style-ris">
+<span class="cite-style-label">RIS (Zotero / EndNote / Mendeley)</span>TY  - DBASE
+AU  - Multicert Sp. z o.o.
+TI  - poLCA — Polska Baza Danych LCA dla wyrobów budowlanych
+PY  - 2026
+ET  - 2026.1
+PB  - Multicert Sp. z o.o.
+UR  - https://polca.org.pl
+LA  - pl
+ER  -
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — CYTAT PER METODYKA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="metodyki-cyt" class="card card-lg section-gap fade-in" aria-label="Cytat dokumentu metodycznego">
+        <div class="section-num">02 — Cytat dokumentu metodycznego (MET-XXX)</div>
+        <div class="card-title">Jak cytować dokumenty metodyczne MET-XXX</div>
+        <p class="card-text" style="max-width:880px;">
+            Każdy dokument metodyczny MET-XXX ma własne, niezależne cytowanie. Po rejestracji DOI
+            w DataCite numer DOI należy podawać zamiast lub obok URL-a. Pełna lista metodyk
+            ze statusem DOI — zobacz <a href="../metodyki/">hub metodyk</a>.
+        </p>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Wzorzec — MET-002:2026 (zatwierdzony)</h3>
+
+        <div class="cite-block style-apa">
+            <span class="cite-style-label">APA 7</span>
+            Multicert Sp. z o.o. (2026). <em>MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA</em> (v1.0). Program EPD Polska. https://polca.org.pl/metodyki/MET-002-energia.html
+        </div>
+
+        <div class="cite-block style-iso">
+            <span class="cite-style-label">ISO 690:2021</span>
+            MULTICERT SP. Z O.O. <em>MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA</em> [online]. Wersja 1.0. Warszawa: Program EPD Polska, 10 maja 2026 [dostęp: 2026-05-10]. DOI: 10.xxxx/polca.met.2026.002. Dostępne w: https://polca.org.pl/metodyki/MET-002-energia.html
+        </div>
+
+        <div class="cite-block style-bib">
+<span class="cite-style-label">BibTeX (@techreport)</span>@techreport{polca_met002_2026,
+  author      = {{Multicert Sp. z o.o.}},
+  title       = {{MET-002:2026 --- Stosowanie wska\'znik\'ow emisyjno\'sci energii elektrycznej w EPD wyrob\'ow budowlanych w Polsce: wy\l{}\k{a}czenie wska\'znik\'ow KOBiZE z analiz LCA}},
+  institution = {{Program EPD Polska}},
+  type        = {{Methodology paper}},
+  number      = {{MET-002:2026}},
+  version     = {1.0},
+  year        = {2026},
+  month       = may,
+  doi         = {10.xxxx/polca.met.2026.002},
+  url         = {https://polca.org.pl/metodyki/MET-002-energia.html},
+  language    = {polish}
+}
+        </div>
+
+        <div class="cite-block style-ris">
+<span class="cite-style-label">RIS</span>TY  - RPRT
+AU  - Multicert Sp. z o.o.
+TI  - MET-002:2026 — Stosowanie wskaźników emisyjności energii elektrycznej w EPD wyrobów budowlanych w Polsce: wyłączenie wskaźników KOBiZE z analiz LCA
+PY  - 2026
+DA  - 2026/05/10
+ET  - 1.0
+PB  - Program EPD Polska
+DO  - 10.xxxx/polca.met.2026.002
+UR  - https://polca.org.pl/metodyki/MET-002-energia.html
+LA  - pl
+M3  - Methodology paper
+ER  -
+        </div>
+
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Po rejestracji DOI w DataCite cytowanie powinno preferować formę DOI nad URL.
+            Wzorzec dla MET-001 i MET-003 będzie identyczny po opublikowaniu — zobacz
+            <a href="#doi-status">tabelę statusu DOI</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — CYTAT PER DATASET
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="datasety-cyt" class="card card-lg section-gap fade-in" aria-label="Cytat datasetu">
+        <div class="section-num">03 — Cytat datasetu</div>
+        <div class="card-title">Jak cytować pojedynczy dataset z bazy poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Każdy dataset ma własny <code>datasetID</code> w katalogu
+            <a href="../data/datasets.json">data/datasets.json</a> i własną stronę
+            metadanych. Cytujemy go jako oddzielny rekord typu <em>Dataset</em>.
+        </p>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Wzorzec ogólny</h3>
+
+        <div class="pattern-row">
+            <span class="pattern-label">APA 7</span>
+            <span class="pattern-code">Multicert Sp. z o.o. (2026). [Nazwa datasetu] [Dataset]. poLCA Database (v[wersja]). https://polca.org.pl/datasety/[id]. DOI: [DOI gdy dostępny]</span>
+        </div>
+        <div class="pattern-row">
+            <span class="pattern-label">ISO 690:2021</span>
+            <span class="pattern-code">MULTICERT SP. Z O.O. [Nazwa datasetu] [Dataset online]. Wersja [v]. Warszawa: poLCA Database, [rok] [dostęp: RRRR-MM-DD]. DOI: [DOI]. Dostępne w: [URL]</span>
+        </div>
+        <div class="pattern-row">
+            <span class="pattern-label">BibTeX (@dataset)</span>
+            <span class="pattern-code">@dataset{[id], author={...}, title={...}, year=..., version={...}, doi={...}, url={...}}</span>
+        </div>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Przykład — polca-gwp-v2026-1</h3>
+
+        <div class="cite-block style-apa">
+            <span class="cite-style-label">APA 7</span>
+            Multicert Sp. z o.o. (2026). <em>polca-gwp-v2026-1 — wskaźniki GWP polskich procesów</em> [Dataset]. poLCA Database (v2026.1). https://polca.org.pl/data/polca-gwp-v2026-1.json
+        </div>
+
+        <div class="cite-block style-iso">
+            <span class="cite-style-label">ISO 690:2021</span>
+            MULTICERT SP. Z O.O. <em>polca-gwp-v2026-1 — wskaźniki GWP polskich procesów</em> [Dataset online]. Wersja 2026.1. Warszawa: poLCA Database, 2026 [dostęp: 2026-05-10]. Dostępne w: https://polca.org.pl/data/polca-gwp-v2026-1.json
+        </div>
+
+        <div class="cite-block style-bib">
+<span class="cite-style-label">BibTeX (@dataset)</span>@dataset{polca_gwp_2026_1,
+  author    = {{Multicert Sp. z o.o.}},
+  title     = {{polca-gwp-v2026-1 --- wska\'zniki GWP polskich proces\'ow}},
+  year      = {2026},
+  version   = {2026.1},
+  publisher = {{poLCA Database}},
+  url       = {https://polca.org.pl/data/polca-gwp-v2026-1.json},
+  language  = {polish}
+}
+        </div>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Przykład — polca-en-pl-2024 (wskaźnik energii elektrycznej)</h3>
+
+        <div class="cite-block style-apa">
+            <span class="cite-style-label">APA 7</span>
+            Multicert Sp. z o.o. (2026). <em>polca-en-pl-2024 — wskaźnik emisyjności energii elektrycznej PL = 0,599 kg CO₂e/kWh</em> [Dataset]. poLCA Database (v9.1). https://polca.org.pl/data/polca-en-pl-2024.json
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — CYTAT PER ARTYKUŁ BLOGOWY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="blog-cyt" class="card card-lg section-gap fade-in" aria-label="Cytat artykułu blogowego">
+        <div class="section-num">04 — Cytat artykułu blogowego</div>
+        <div class="card-title">Jak cytować artykuły blogowe poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Artykuły blogowe poLCA cytujemy jako <em>Web article</em>. Zawsze podajemy datę
+            publikacji i datę dostępu. Pełna lista artykułów — zobacz <a href="../blog.html">blog poLCA</a>.
+        </p>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Wzorzec ogólny</h3>
+
+        <div class="pattern-row">
+            <span class="pattern-label">APA 7</span>
+            <span class="pattern-code">[Autor lub poLCA] (RRRR, D miesiąca). [Tytuł artykułu]. <em>poLCA Blog</em>. https://polca.org.pl/[slug].html</span>
+        </div>
+        <div class="pattern-row">
+            <span class="pattern-label">ISO 690:2021</span>
+            <span class="pattern-code">[AUTOR]. [Tytuł artykułu] [online]. <em>poLCA Blog</em>, [data publ.] [dostęp: RRRR-MM-DD]. Dostępne w: [URL]</span>
+        </div>
+
+        <h3 style="font-size:.95rem;color:var(--text-primary);margin:1.4rem 0 .65rem;font-family:'Inter Tight',sans-serif;">Przykład — artykuł o wskaźniku 0,599 kg CO₂e/kWh</h3>
+
+        <div class="cite-block style-apa">
+            <span class="cite-style-label">APA 7</span>
+            poLCA. (2026, 18 lutego). <em>poLCA-EN-PL-2024 — krajowy wskaźnik emisyjności energii elektrycznej dla LCA</em>. poLCA Blog. https://polca.org.pl/blog-en-pl-2024.html
+        </div>
+
+        <div class="cite-block style-iso">
+            <span class="cite-style-label">ISO 690:2021</span>
+            POLCA. <em>poLCA-EN-PL-2024 — krajowy wskaźnik emisyjności energii elektrycznej dla LCA</em> [online]. <em>poLCA Blog</em>, 18 lutego 2026 [dostęp: 2026-05-10]. Dostępne w: https://polca.org.pl/blog-en-pl-2024.html
+        </div>
+
+        <div class="cite-block style-bib">
+<span class="cite-style-label">BibTeX (@online)</span>@online{polca_en_pl_2024_blog,
+  author = {{poLCA}},
+  title  = {{poLCA-EN-PL-2024 --- krajowy wska\'znik emisyjno\'sci energii elektrycznej dla LCA}},
+  year   = {2026},
+  month  = feb,
+  day    = {18},
+  url    = {https://polca.org.pl/blog-en-pl-2024.html},
+  urldate = {2026-05-10},
+  organization = {{poLCA Blog}}
+}
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — STATUS DOI
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="doi-status" class="card card-lg section-gap fade-in" aria-label="Status rejestracji DOI">
+        <div class="section-num">05 — Status rejestracji DOI</div>
+        <div class="card-title">Tabela rejestracji DOI w DataCite</div>
+        <p class="card-text" style="max-width:880px;">
+            Wszystkie dokumenty referencyjne MET-XXX mają zarezerwowane numery DOI w przestrzeni
+            <code>10.xxxx/polca.met.RRRR.NNN</code>. Rejestracja w DataCite trwa średnio 1–2 dni
+            roboczych po publikacji finalnego PDF/A. Po rejestracji metadata jest automatycznie
+            indeksowane przez Google Scholar, CrossRef i Scopus.
+        </p>
+
+        <table class="doi-table">
+            <thead>
+                <tr>
+                    <th>Dokument</th>
+                    <th>Numer DOI</th>
+                    <th>Status</th>
+                    <th>Data rejestracji DataCite</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>MET-001:2026</strong> v9.1<br><span style="font-size:.74rem;color:var(--text-tertiary)">Wskaźnik emisyjności energii elektrycznej PL — pełna metodyka</span></td>
+                    <td class="doi-code">10.xxxx/polca.met.2026.001</td>
+                    <td><span class="doi-status planned">planowany</span></td>
+                    <td>Q2 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>MET-002:2026</strong> v1.0<br><span style="font-size:.74rem;color:var(--text-tertiary)">Wyłączenie KOBiZE z LCA EPD wyrobów budowlanych</span></td>
+                    <td class="doi-code">10.xxxx/polca.met.2026.002</td>
+                    <td><span class="doi-status pending">w toku</span></td>
+                    <td>2026-05 (po publikacji v1.0)</td>
+                </tr>
+                <tr>
+                    <td><strong>MET-003:2026</strong> draft<br><span style="font-size:.74rem;color:var(--text-tertiary)">Conservative defaults wg UE-wide approach</span></td>
+                    <td class="doi-code">10.xxxx/polca.met.2026.003</td>
+                    <td><span class="doi-status planned">planowany</span></td>
+                    <td>Q3 2026</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Prefix DOI <code>10.xxxx</code> jest placeholderem — zostanie zastąpiony właściwym
+            prefiksem przyznanym przez DataCite po finalizacji rejestracji organizacyjnej.
+            Datasety w obecnym wydaniu (2026.1) nie mają jeszcze numerów DOI — rejestracja
+            DOI dla datasetów planowana w wydaniu 2026.2 (Q3 2026).
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — CROSSREF / DATACITE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="crossref" class="card card-lg section-gap fade-in" aria-label="CrossRef i DataCite metadata">
+        <div class="section-num">06 — CrossRef i DataCite metadata</div>
+        <div class="card-title">Indeksowanie metadanych po rejestracji DOI</div>
+        <p class="card-text" style="max-width:880px;">
+            Po rejestracji DOI każdy dokument poLCA ma metadata zgodne ze schematem
+            <strong>DataCite Metadata Schema 4.5</strong>, automatycznie publikowane przez
+            DataCite Commons API i przekazywane do następujących serwisów indeksujących:
+        </p>
+        <ul class="card-text" style="max-width:880px;list-style:disc;padding-left:1.4rem;line-height:1.8;">
+            <li><strong>Google Scholar</strong> — indeksacja w bazie cytowań naukowych (typowo 1–4 tygodnie po rejestracji DOI)</li>
+            <li><strong>CrossRef Event Data</strong> — śledzenie cytowań i referencji między dokumentami</li>
+            <li><strong>OpenAIRE</strong> — agregator europejskich publikacji naukowych</li>
+            <li><strong>BASE (Bielefeld Academic Search Engine)</strong> — meta-wyszukiwarka publikacji naukowych</li>
+            <li><strong>Scopus / Web of Science</strong> — po spełnieniu kryteriów cytowalności (zwykle &gt; 3 cytowania)</li>
+        </ul>
+        <p class="card-text" style="max-width:880px;margin-top:.85rem;">
+            Każdy dokument MET-XXX po rejestracji DOI dostaje stałą stronę metadanych w
+            <a href="https://commons.datacite.org" target="_blank" rel="noopener">DataCite Commons</a>
+            zawierającą: tytuł, autorów, wersję, datę publikacji, licencję, słowa kluczowe,
+            język, format pliku oraz pełny abstrakt. Metadane są publikowane na licencji
+            <strong>CC0</strong> (domena publiczna), co umożliwia ich swobodne wykorzystanie
+            przez systemy biblioteczne i bazy bibliograficzne.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            W przypadku pytań o cytowanie poLCA w pracy naukowej lub potrzeby wystawienia
+            zaświadczenia o cytowalności (np. dla recenzentów lub redakcji czasopisma) —
+            prosimy o kontakt: <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>

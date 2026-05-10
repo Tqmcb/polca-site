@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>poLCA · MET-002 onepager · Wskaźnik energii w EPD</title>
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    font-family: 'Inter', 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 9pt;
+    line-height: 1.35;
+    color: #111318;
+    background: #FFFFFF;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2.5mm;
+    border-bottom: 1.2pt solid #111318;
+  }
+  .brand {
+    font-family: 'Inter Tight', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    font-size: 14pt;
+    letter-spacing: -0.01em;
+    color: #111318;
+  }
+  .brand .accent {
+    color: #9B3B3B;
+  }
+  .brand-sub {
+    font-size: 7.5pt;
+    color: #6B7280;
+    margin-top: 0.5mm;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .meta {
+    text-align: right;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 7.5pt;
+    color: #6B7280;
+    line-height: 1.5;
+  }
+  .meta .doc-id {
+    color: #111318;
+    font-weight: 600;
+  }
+
+  /* TITLE */
+  .title {
+    font-family: 'Inter Tight', 'Helvetica Neue', sans-serif;
+    font-size: 17pt;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #111318;
+    margin-top: 1mm;
+  }
+  .title .em {
+    color: #9B3B3B;
+  }
+
+  /* LEAD */
+  .lead {
+    background: #FFF8E6;
+    border-left: 3pt solid #C4721A;
+    padding: 3mm 4mm;
+    font-style: italic;
+    font-size: 9.5pt;
+    line-height: 1.4;
+    color: #23262F;
+  }
+  .lead strong {
+    font-style: normal;
+    font-weight: 700;
+    color: #111318;
+  }
+
+  /* POINTS */
+  .points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3mm 5mm;
+  }
+  .point {
+    display: flex;
+    gap: 2.5mm;
+    align-items: flex-start;
+  }
+  .point .num {
+    flex: 0 0 6mm;
+    height: 6mm;
+    width: 6mm;
+    background: #9B3B3B;
+    color: #FFFFFF;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 700;
+    font-size: 11pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1mm;
+  }
+  .point .body {
+    flex: 1;
+    font-size: 8.5pt;
+    line-height: 1.4;
+  }
+  .point .body strong {
+    display: block;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #111318;
+    margin-bottom: 0.5mm;
+    line-height: 1.25;
+  }
+  .point .body span {
+    color: #374151;
+  }
+
+  /* TABLE */
+  .table-wrap {
+    margin-top: 0.5mm;
+  }
+  .table-title {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6B7280;
+    margin-bottom: 1.5mm;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8.5pt;
+  }
+  thead th {
+    background: #111318;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 2mm 2.5mm;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 600;
+    font-size: 8pt;
+    letter-spacing: 0.02em;
+  }
+  tbody td {
+    padding: 1.8mm 2.5mm;
+    border-bottom: 0.5pt solid #E5E7EB;
+    vertical-align: middle;
+  }
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+  tbody tr.default-row {
+    background: #FFF4F4;
+  }
+  td.value {
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 8.5pt;
+    white-space: nowrap;
+  }
+  td.value.strong {
+    font-weight: 700;
+    color: #9B3B3B;
+  }
+  td.status-bad {
+    color: #9B3B3B;
+    font-weight: 600;
+    font-size: 8pt;
+  }
+  td.status-good {
+    color: #4A7C59;
+    font-weight: 700;
+    font-size: 8pt;
+  }
+  td.status-neutral {
+    color: #374151;
+    font-size: 8pt;
+  }
+  td .check {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+  }
+
+  /* ACTION BOX */
+  .action {
+    border: 1.5pt solid #9B3B3B;
+    border-left-width: 4pt;
+    background: #FFFAFA;
+    padding: 3mm 4mm;
+    margin-top: 0.5mm;
+  }
+  .action h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #9B3B3B;
+    margin-bottom: 1.5mm;
+    letter-spacing: -0.01em;
+  }
+  .action ol {
+    list-style: none;
+    counter-reset: acn;
+    display: flex;
+    flex-direction: column;
+    gap: 1mm;
+  }
+  .action ol li {
+    counter-increment: acn;
+    padding-left: 6mm;
+    position: relative;
+    font-size: 8.5pt;
+    line-height: 1.4;
+    color: #23262F;
+  }
+  .action ol li::before {
+    content: counter(acn);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4.5mm;
+    height: 4.5mm;
+    background: #9B3B3B;
+    color: #FFFFFF;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .action ol li strong {
+    font-weight: 700;
+    color: #111318;
+  }
+  .action ol li code {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8pt;
+    background: #FFFFFF;
+    border: 0.5pt solid #E5E7EB;
+    padding: 0.3mm 1mm;
+    border-radius: 1pt;
+    color: #9B3B3B;
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: auto;
+    padding-top: 2mm;
+    border-top: 0.5pt solid #E5E7EB;
+    font-size: 7pt;
+    line-height: 1.5;
+    color: #6B7280;
+    font-family: 'Inter', sans-serif;
+  }
+  .footer .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 4mm;
+  }
+  .footer .row + .row {
+    margin-top: 0.5mm;
+  }
+  .footer code, .footer .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    color: #374151;
+  }
+  .footer a {
+    color: #1E3A8A;
+    text-decoration: none;
+  }
+  .footer .copy {
+    color: #9CA3AF;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="brand">po<span class="accent">LCA</span></div>
+      <div class="brand-sub">Polska Baza Danych LCA</div>
+    </div>
+    <div class="meta">
+      <div class="doc-id">MET-002 onepager</div>
+      <div>2026-05-10 &middot; v1.0</div>
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <h1 class="title">Wskaźnik energii elektrycznej w EPD: <span class="em">dlaczego poLCA, nie KOBiZE</span></h1>
+
+  <!-- LEAD -->
+  <div class="lead">
+    Twój EPD pod programem EPD Polska musi używać wskaźnika <strong>poLCA-EN-PL-2024 = 0,599 kg CO&#8322;e/kWh</strong>, nie KOBiZE = 0,553. Oto dlaczego &mdash; w 5 punktach.
+  </div>
+
+  <!-- 5 POINTS -->
+  <div class="points">
+    <div class="point">
+      <div class="num">1</div>
+      <div class="body">
+        <strong>KOBiZE = inwentaryzacja krajowa, nie LCA.</strong>
+        <span>KOBiZE raportuje emisje dla UNFCCC i EU ETS &mdash; to inny mandat niż LCA wyrobu. Twój EPD musi spełnić wymagania EN 15804+A2, nie raportowania krajowego.</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">2</div>
+      <div class="body">
+        <strong>Brakuje 12% emisji.</strong>
+        <span>KOBiZE nie obejmuje metanu z polskich kopalń węgla (10%), upstream paliw (1%) ani infrastruktury OZE (1%). poLCA dolicza te 12% &mdash; dlatego 0,599 zamiast 0,553.</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">3</div>
+      <div class="body">
+        <strong>Tylko CO&#8322;, nie CO&#8322;e.</strong>
+        <span>KOBiZE liczy CO&#8322;. EN 15804+A2 wymaga CO&#8322;e (CO&#8322; + CH&#8324; + N&#8322;O w równoważniku). Twój EPD bez CH&#8324; = niezgodny.</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">4</div>
+      <div class="body">
+        <strong>Brak EF 3.1 &mdash; wymóg UE od 2024-09-01.</strong>
+        <span>EPD International (Environdec) i wszystkie programy EPD w Europie wymagają characterization factors wg EF 3.1 (JRC 2022). KOBiZE używa starszych metodyk.</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="num">5</div>
+      <div class="body">
+        <strong>Audit trail AVS 3+.</strong>
+        <span>Akredytowany weryfikator EPD pod programem EPD Polska stwierdzi niezgodność krytyczną jeśli EPD używa KOBiZE jako primary wskaźnika energii. EPD nie zostanie zatwierdzone.</span>
+      </div>
+    </div>
+
+    <div class="point" style="visibility:hidden">
+      <div class="num">.</div>
+      <div class="body"><strong>.</strong><span>.</span></div>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <div class="table-title">Skrót: który wskaźnik wybrać</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:42%">Twój wybór wskaźnika</th>
+          <th style="width:28%">Wartość</th>
+          <th style="width:30%">Status w EPD Polska</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>KOBiZE Tab.2 (end-user)</td>
+          <td class="value">0,553 kg CO&#8322;/kWh</td>
+          <td class="status-bad">NIEZGODNE &mdash; odrzucenie EPD</td>
+        </tr>
+        <tr class="default-row">
+          <td><strong>poLCA-EN-PL-2024 (default)</strong></td>
+          <td class="value strong">0,599 kg CO&#8322;e/kWh</td>
+          <td class="status-good">DOMYŚLNE <span class="check">&#10003;</span></td>
+        </tr>
+        <tr>
+          <td>AIB residual mix (jeśli masz GO)</td>
+          <td class="value">0,808 kg CO&#8322;e/kWh</td>
+          <td class="status-neutral">Market-based, opcjonalne</td>
+        </tr>
+        <tr>
+          <td>PV on-site (twoja instalacja)</td>
+          <td class="value">0,041 kg CO&#8322;e/kWh</td>
+          <td class="status-neutral">Tylko udokumentowane</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ACTION BOX -->
+  <div class="action">
+    <h3>Co masz zrobić &mdash; w kalkulatorze EPD Polska wybierz:</h3>
+    <ol>
+      <li><strong>Domyślnie:</strong> <code>poLCA-EN-PL-2024 (0,599)</code> &mdash; Poziom 1</li>
+      <li><strong>Tylko jeśli masz gwarancje pochodzenia (GO):</strong> dodatkowo Poziom 2 <code>(0,808)</code></li>
+      <li><strong>Tylko jeśli masz własną PV:</strong> Poziom 3 <code>(0,041)</code></li>
+    </ol>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="row">
+      <span>Pełna metodyka: <a href="https://polca.org.pl/metodyki/MET-002-energia">polca.org.pl/metodyki/MET-002-energia</a></span>
+      <span class="mono">c-PCR-BET-EPD-PL:2026 v1.3 &sect;6.3</span>
+    </div>
+    <div class="row">
+      <span>Operator programu: Multicert Sp. z o.o. &middot; <a href="mailto:info@epd.org.pl">info@epd.org.pl</a> &middot; <a href="https://www.polca.org.pl">www.polca.org.pl</a></span>
+      <span class="copy">&copy; 2026 Multicert &middot; v1.0 &middot; Aktualizacja roczna po publikacji KOBiZE Q2</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
