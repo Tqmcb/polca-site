@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podstawy normatywne — poLCA</title>
+    <meta name="description" content="Mapa normatywna poLCA: 32 komponenty z odniesieniami do norm ISO/EN, guides UE/JRC, aktów UE oraz wzorce cytowań inline dla weryfikatorów EPD i akredytatorów PCA.">
+    <link rel="canonical" href="https://polca.org.pl/podstawy-normatywne.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Podstawy normatywne — poLCA">
+    <meta property="og:description" content="32 komponenty mapy normatywnej, 7 procedur jakości, wzorce cytowań inline. Fundament cytowalny bazy poLCA dla weryfikatorów EPD i audytorów PCA.">
+    <meta property="og:url" content="https://polca.org.pl/podstawy-normatywne.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Podstawy normatywne — poLCA">
+    <meta name="twitter:description" content="Mapa normatywna 32 komponentów, 7 procedur jakości, wzorce cytowań inline.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Podstawy normatywne — poLCA",
+      "description": "Mapa normatywna poLCA: 32 komponenty bazy z odniesieniami do norm ISO/EN, guides UE/JRC i aktów UE; wzorce cytowań inline; procedury jakości PR-01 do PR-07.",
+      "url": "https://polca.org.pl/podstawy-normatywne.html",
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      }
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #wstep,#mapa-normatywna,#luki-ue,#procedury,#wzorce-cytowan,#top-cytowania{scroll-margin-top:76px}
+        .norm-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin:1.5rem 0 .65rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+        .norm-section-title:first-of-type{margin-top:.5rem}
+        .norm-table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;margin-bottom:1rem}
+        .norm-table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:1080px}
+        .norm-table thead th{background:var(--paper-warm);padding:.6rem .65rem;text-align:left;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);white-space:nowrap;vertical-align:bottom}
+        .norm-table tbody td{padding:.6rem .65rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.5}
+        .norm-table tbody tr:last-child td{border-bottom:none}
+        .norm-table tbody tr:hover td{background:rgba(30,58,138,0.02)}
+        .norm-table .num{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-tertiary);font-weight:600;width:34px;white-space:nowrap}
+        .norm-table .cite{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-secondary);line-height:1.5}
+        .norm-table td.dash{color:var(--text-tertiary);text-align:center}
+        .gap-table{width:100%;border-collapse:collapse;font-size:.8rem}
+        .gap-table thead th{background:var(--paper-warm);padding:.65rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .gap-table tbody td{padding:.7rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .gap-table tbody tr:last-child td{border-bottom:none}
+        .pr-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem;margin-top:1rem}
+        .pr-card{padding:1rem 1.05rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle)}
+        .pr-card-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;letter-spacing:.04em}
+        .pr-card-title{font-size:.96rem;font-weight:700;color:var(--text-primary);margin:.25rem 0 .55rem;font-family:'Inter Tight',sans-serif}
+        .pr-card-base{font-size:.74rem;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;line-height:1.55;margin-bottom:.55rem}
+        .pr-card-body{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0}
+        .pattern-grid{display:grid;grid-template-columns:1fr;gap:.55rem;margin-top:1rem}
+        .pattern-row{display:grid;grid-template-columns:200px 1fr;gap:1rem;align-items:start;padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+        .pattern-label{font-size:.78rem;color:var(--text-primary);font-weight:700}
+        .pattern-code{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-secondary);background:var(--paper-warm);padding:.45rem .6rem;border-radius:6px;line-height:1.5;word-break:break-word}
+        .top-list{list-style:none;padding:0;margin:1rem 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem}
+        .top-list li{padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:.82rem;color:var(--text-primary);line-height:1.5}
+        .top-list .top-num{display:inline-block;width:24px;font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-tertiary);font-weight:700}
+        .top-list a{color:var(--accent);text-decoration:none;font-weight:600}
+        .top-list a:hover{text-decoration:underline}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.pr-grid,.top-list{grid-template-columns:1fr}.pattern-row{grid-template-columns:1fr;gap:.4rem}.gap-table{font-size:.74rem}.gap-table thead th,.gap-table tbody td{padding:.55rem}}
+        @media(max-width:600px){.norm-table{font-size:.72rem;min-width:960px}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Dashboard</a>
+            <a href="analiza.html">Analiza Sektorowa</a>
+            <a href="metodyka.html">Metodyka i Jakość</a>
+            <a href="datasety.html">Katalog danych</a>
+            <a href="podstawy-normatywne.html" class="active">Podstawy normatywne</a>
+            <a href="narzedzia.html">Narzędzia</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <div class="section-num">Podstawy normatywne POLCA</div>
+            <h1 class="page-title">Podstawy normatywne</h1>
+            <p class="page-subtitle">
+                Publiczna mapa normatywna poLCA — fundament cytowalny dla weryfikatorów EPD,
+                audytorów PCA i praktyków LCA. Każda decyzja metodyczna w bazie ma odniesienie
+                do konkretnej sekcji normy ISO/EN, guide UE/JRC oraz aktu unijnego.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 14040/44</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 14025</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EN 15804+A2</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">CPR 2024/3110</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">CBAM 2023/956</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">EF 3.1 / JRC</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-laboratory.jpg" alt="Podstawy normatywne i kontrola jakości danych LCA" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#wstep" class="tool-nav-pill">01 — Wstęp metodologiczny</a>
+        <a href="#mapa-normatywna" class="tool-nav-pill">02 — Mapa normatywna</a>
+        <a href="#luki-ue" class="tool-nav-pill">03 — Tymczasowe rozwiązania</a>
+        <a href="#procedury" class="tool-nav-pill">04 — Procedury PR-01..07</a>
+        <a href="#wzorce-cytowan" class="tool-nav-pill">05 — Wzorce cytowań</a>
+        <a href="#top-cytowania" class="tool-nav-pill">06 — Top 10 cytowań</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — WSTĘP METODOLOGICZNY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="wstep" class="card card-lg section-gap fade-in" aria-label="Wstęp metodologiczny">
+        <div class="section-num">01 — Wstęp metodologiczny</div>
+        <div class="card-title">Dlaczego poLCA publikuje pełne podstawy normatywne</div>
+        <p class="card-text" style="max-width:880px;">
+            Każda decyzja metodyczna w bazie poLCA — granica systemu, alokacja, wybór wskaźnika
+            charakteryzacji, klasyfikacja danych, wartość domyślna — musi być oparta o konkretną
+            sekcję normy ISO/EN, dokument metodyczny Komisji Europejskiej lub JRC oraz, gdzie ma to
+            zastosowanie, akt prawny UE. Cytowanie ogólnikowe „wg ISO 14044" lub „zgodnie z EN 15804"
+            nie jest wystarczające: weryfikator EPD i akredytator PCA muszą mieć możliwość wskazania
+            paragrafu, tabeli lub aneksu, na którym poLCA opiera daną wartość lub regułę.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:.8rem;">
+            poLCA aspiruje do statusu referencyjnego źródła danych dla programu
+            <strong>EPD Polska</strong> oraz dla weryfikatorów akredytowanych przez
+            <strong>PCA</strong> w obszarze ISO 14025 i ISO/IEC 17029. Z tego powodu wszystkie
+            cytowania w bazie utrzymujemy na poziomie sekcji, podsekcji, tabeli lub aneksu.
+            Niniejsza strona porządkuje 32 komponenty mapy normatywnej w siedmiu warstwach
+            (metodyka LCA, PCR, wskaźniki referencyjne, conservative defaults, walidacja
+            regulacyjna, aktualizacje, kalkulatory) oraz publikuje siedem procedur jakości
+            i wzorce cytowań inline, które obowiązują w całym programie.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — MAPA NORMATYWNA (32 komponenty)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="mapa-normatywna" class="card card-lg section-gap fade-in">
+        <div class="section-num">02 — Mapa normatywna (32 komponenty)</div>
+        <div class="card-title">Pełne odniesienia ISO/EN, guides UE/JRC, akty UE oraz cytowanie inline</div>
+        <p class="card-text" style="max-width:880px;">
+            Mapa porządkuje wszystkie elementy bazy poLCA, dla których istnieje twarda podstawa
+            normatywna. Kolumna „Cytowanie inline" zawiera wzorzec gotowy do skopiowania
+            do raportu LCA, deklaracji EPD lub dokumentacji walidacyjnej.
+        </p>
+
+        <div class="norm-section-title">A.1. Metodyka LCA — fundamenty</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">1</td>
+                        <td><strong>Goal &amp; scope</strong></td>
+                        <td>ISO 14040:2006 §5.2; ISO 14044:2006 §4.2</td>
+                        <td>ILCD Handbook 2010 Part 2a §6</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(ISO 14044:2006 §4.2.2; ILCD Handbook 2010 Part 2a §6.4)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">2</td>
+                        <td><strong>LCI — inwentaryzacja</strong></td>
+                        <td>ISO 14044:2006 §4.3; ISO 14048:2002</td>
+                        <td>ILCD Handbook Part 2b §7; PEF Method 2021 §6.6</td>
+                        <td>Komisja Rec. (UE) 2021/2279 Zał. I §4.4</td>
+                        <td class="cite">(ISO 14044:2006 §4.3.2; PEFCR Guidance v6.3 §4.4.6)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">3</td>
+                        <td><strong>LCIA — 16 wskaźników</strong></td>
+                        <td>EN 15804+A2:2019 §6.3.5 Tab. 5; ISO 14044 §4.4</td>
+                        <td>JRC EF 3.1 method 2022</td>
+                        <td>Komisja Rec. (UE) 2021/2279 Zał. I §4.4.7</td>
+                        <td class="cite">(EN 15804+A2:2019/A1:2021 §6.3.5.2 Tab. 5; charakteryzacja: EF 3.1, JRC 2022)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">4</td>
+                        <td><strong>Interpretacja</strong></td>
+                        <td>ISO 14044:2006 §4.5; EN 15804+A2 §6.3.10</td>
+                        <td>ILCD Handbook Part 2a §10</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(ISO 14044:2006 §4.5.2)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">5</td>
+                        <td><strong>Spójność i kompletność</strong></td>
+                        <td>ISO 14044:2006 §4.5.3.2/§4.5.3.3</td>
+                        <td>ILCD Handbook Part 2a §10.4</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(ISO 14044:2006 §4.5.3.2 Completeness check)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">6</td>
+                        <td><strong>Third-party verification</strong></td>
+                        <td>ISO 14025:2006 §8.1.3; EN 15804+A2 §8; ISO 14044 §6.2</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(ISO 14025:2006 §8.1.3; EN 15804+A2:2019 §8.1.2)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.2. PCR / c-PCR</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">7</td>
+                        <td><strong>Core PCR Construction Products</strong></td>
+                        <td>EN 15804+A2:2019 §5, §6.3.4, §6.3.6</td>
+                        <td class="dash">—</td>
+                        <td>CPR (UE) 2024/3110 Art. 22</td>
+                        <td class="cite">(EN 15804+A2:2019 §6.3.4; alokacja masowa §6.3.6.2)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">8</td>
+                        <td><strong>c-PCR-001 cement/wapno</strong></td>
+                        <td>EN 16908:2017; ECO Platform PCR-001</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(EN 16908:2017 §5.2; c-PCR-001 §6.3)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">9</td>
+                        <td><strong>c-PCR-003 beton</strong></td>
+                        <td>EN 16757:2022 §5-7</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(EN 16757:2022 §5.3 declared unit 1 m³; §6.3.5 moduły A1-A3)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">10</td>
+                        <td><strong>c-PCR-004/005 kruszywa</strong></td>
+                        <td>EN 12620:2013+A1; analogicznie EN 16908/16757</td>
+                        <td class="dash">—</td>
+                        <td>CPR (UE) 2024/3110 Zał. III</td>
+                        <td class="cite">(EN 12620:2013+A1:2008 §4; LCA wg EN 15804+A2 §6.3 — brak EU c-PCR, analogicznie do EN 16908)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">11</td>
+                        <td><strong>c-PCR-012 MMA</strong></td>
+                        <td>EN 13108-1:2016; NAPA EPD PCR for Asphalt Mixtures v2.0:2022</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(EN 13108-1:2016 §5; NAPA EPD PCR v2.0:2022 §6.2 — brak EU c-PCR)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.3. Wskaźniki referencyjne</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">12</td>
+                        <td><strong>Energia elektryczna PL — Poziom 1 location-based: poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong></td>
+                        <td>ISO 14067:2018 §6.4.9.4; EN 15804+A2 §6.3.7.4</td>
+                        <td>EEA GHG Intensity 2023; PEF Method 2021 §4.4.6.1</td>
+                        <td>c-PCR-BET-EPD-PL:2026 v1.3 §6.3.1 Poziom 1 (zatwierdzone 2026-05-10)</td>
+                        <td class="cite">(poLCA-EN-PL-2024 v9.1; c-PCR-BET v1.3 §6.3.1; ISO 14067:2018 §6.4.9.4)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">12a</td>
+                        <td><strong>Energia elektryczna PL — Poziom 2 market-based: AIB Residual Mix 2024 = 0,808 kg CO₂e/kWh</strong></td>
+                        <td>ISO 14067:2018 §6.4.9.4 lit. (c)</td>
+                        <td>AIB European Residual Mix 2024</td>
+                        <td>c-PCR-BET-EPD-PL:2026 v1.3 §6.3.3; Dyr. (UE) 2018/2001 Art. 19 (gwarancje pochodzenia)</td>
+                        <td class="cite">(AIB Residual Mix 2024; c-PCR-BET v1.3 §6.3.3 — wymaga równoczesnego raportowania Poziomu 1 jako referencji)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">12b</td>
+                        <td><strong>Energia elektryczna PL — Poziom 3 PV on-site = 0,041 kg CO₂e/kWh</strong></td>
+                        <td>ISO 14067:2018 §6.4.9.4 lit. (a)</td>
+                        <td>ÖKOBAUDAT 2024 EF 3.1 (BMWSB)</td>
+                        <td>c-PCR-BET-EPD-PL:2026 v1.3 §6.3.1 Poziom 3</td>
+                        <td class="cite">(ÖKOBAUDAT 2024 PV; c-PCR-BET v1.3 §6.3.1 Poziom 3 — wymaga udokumentowanej własnej instalacji)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">13</td>
+                        <td><strong>KOBiZE (gaz, olej, węgiel, biomasa)</strong></td>
+                        <td>ISO 14064-1:2018 §6.4.2</td>
+                        <td class="dash">—</td>
+                        <td>Rozp. wykonawcze (UE) 2018/2066 Art. 31 Zał. VI; krajowe: KOBiZE 2024</td>
+                        <td class="cite">(KOBiZE 2024 Tab. 2.1; metodyka MRR 2018/2066 Art. 31)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">14</td>
+                        <td><strong>WTT upstream — JEC WTT v5</strong></td>
+                        <td>ISO 14067:2018 §6.4.9.6</td>
+                        <td>JEC Well-to-Tank v5 (JRC 2020, JRC119036)</td>
+                        <td>Dyr. (UE) 2015/652 (FQD) Zał. II</td>
+                        <td class="cite">(JEC WTT v5, JRC 2020, Tab. 4.2)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">15</td>
+                        <td><strong>WTT_OZE — ecoinvent 3.12</strong></td>
+                        <td>ISO 14044:2006 §4.3.7</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(ecoinvent v3.12 cut-off, dataset 'photovoltaic, electricity production, PL', 2024-09)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">16</td>
+                        <td><strong>GWP factors IPCC AR6 / EF 3.1</strong></td>
+                        <td>ISO 14067:2018 §6.4.4; EN 15804+A2 §6.3.5.2</td>
+                        <td>JRC EF 3.1 method 2022</td>
+                        <td>Komisja Rec. (UE) 2021/2279 Zał. I §4.4.7</td>
+                        <td class="cite">(IPCC AR6 WG1 2021 Tab. 7.SM.7: CH₄ fossil = 29,8; N₂O = 273)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">17</td>
+                        <td><strong>Domieszki betonu</strong></td>
+                        <td>EN 934-2:2019</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(EFCA Environmental Declaration ed. 2024 §4.2; EN 934-2:2019 Tab. 3)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">18</td>
+                        <td><strong>Lepiszcze asfaltowe</strong></td>
+                        <td>EN 12591:2009</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(Eurobitume LCA Inventory v4.0:2020 §5.3; EN 12591:2009)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">19</td>
+                        <td><strong>Kruszywa</strong></td>
+                        <td>EN 12620:2013+A1; EN 13242:2013</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(EBLCI European Aggregates Industry LCI v2:2021 §6.2; EN 12620:2013+A1)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.4. Conservative defaults</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">20</td>
+                        <td><strong>Conservative defaults (80-90 percentyl)</strong></td>
+                        <td>ISO 14067:2018 §6.4.9.5; EN 15804+A2 §6.3.8</td>
+                        <td>JRC CBAM default values 2023</td>
+                        <td>UE-wide approach: CBAM Reg. 2023/1773 Aneks III §4.2; Battery Reg. 2023/1542 Art. 7; RED III Dyr. 2023/2413 Aneks V cz. A; ESPR Reg. 2024/1781 Art. 7+9; PEF Method 2021 §4.6.5</td>
+                        <td class="cite">(default 90. percentyl branży zgodnie z UE-wide approach: CBAM 2023/1773 Aneks III §4.2 + Battery 2023/1542 Art. 7 + RED III 2023/2413 Aneks V; foundation: EN 15804+A2:2019 §6.3.8)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">21</td>
+                        <td><strong>DQR — Weidema pedigree matrix</strong></td>
+                        <td>ISO 14044:2006 §4.2.3.6; EN 15804+A2 §6.3.8</td>
+                        <td>PEF Method 2021 §4.6.5 Tab. 4 (5 kryteriów: TeR, GR, TiR, P, M)</td>
+                        <td>Komisja Rec. (UE) 2021/2279 Zał. I §4.6.5</td>
+                        <td class="cite">(DQR wg PEFCR Guidance v6.3 §4.6.5: TeR=2, GR=1, TiR=1, P=2 → DQR=1,5 'good quality')</td>
+                    </tr>
+                    <tr>
+                        <td class="num">22</td>
+                        <td><strong>Monte Carlo (n&gt;30)</strong></td>
+                        <td>ISO 21930:2017 §7.1.7.4; ISO 14044:2006 §4.4.4</td>
+                        <td>ILCD Handbook Part 3 §3.4.5</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(Monte Carlo n=1000 wg ISO 21930:2017 §7.1.7.4; CV&lt;10% — ISO 14044:2006 §4.4.4)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.5. Walidacja regulacyjna</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">23</td>
+                        <td><strong>E-PRTR</strong></td>
+                        <td class="dash">—</td>
+                        <td>E-PRTR Guidance Document 2006 §2.1</td>
+                        <td>Rozp. (WE) 166/2006 Art. 5; Rozp. (UE) 2019/1010</td>
+                        <td class="cite">(E-PRTR Reg. (WE) 166/2006 Art. 5(1))</td>
+                    </tr>
+                    <tr>
+                        <td class="num">24</td>
+                        <td><strong>EU ETS / EUTL</strong></td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td>Dyr. 2003/87/WE Art. 12 i 14; Rozp. (UE) 2018/2066 (MRR) Art. 11; Rozp. (UE) 2018/2067 (AVR)</td>
+                        <td class="cite">(EU ETS verified emissions; metodyka MRR (UE) 2018/2066 Art. 24)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">25</td>
+                        <td><strong>CBAM</strong></td>
+                        <td>ISO 14067:2018 §6</td>
+                        <td>JRC CBAM default values 2023</td>
+                        <td>Rozp. (UE) 2023/956 Art. 7; Rozp. wykonawcze (UE) 2023/1773 Art. 4 + Aneks III/IV</td>
+                        <td class="cite">(embedded emissions wg CBAM (UE) 2023/956 Art. 7(2) + 2023/1773 Aneks III §2)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">26</td>
+                        <td><strong>KOBiZE krajowa</strong></td>
+                        <td>ISO 14064-1:2018 §6.4</td>
+                        <td class="dash">—</td>
+                        <td>UNFCCC NIR PL 2024; Ustawa z 17.07.2009 Dz.U. 2009 Nr 130 poz. 1070</td>
+                        <td class="cite">(KOBiZE Krajowy raport inwentaryzacyjny 2024 Tab. 3.5)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.6. Aktualizacje i wersjonowanie</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">27</td>
+                        <td><strong>Cykl aktualizacji</strong></td>
+                        <td>EN 15804+A2:2019 §5.4; ISO 14025:2006 §8.1.4</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(aktualizacja roczna po KOBiZE Q2; review co 5 lat zgodnie z EN 15804+A2:2019 §5.4)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">28</td>
+                        <td><strong>Semver / dataSetVersion</strong></td>
+                        <td>ISO 14048:2002 §6.2</td>
+                        <td>ILCD Handbook Part 2 §6.4</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(poLCA-EN-PL-2024 v16.02.001 wg ILCD dataSetVersion ISO 14048:2002 §6.2)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">29</td>
+                        <td><strong>DOI / DataCite</strong></td>
+                        <td>ISO 26324:2012 §5</td>
+                        <td class="dash">—</td>
+                        <td class="dash">—</td>
+                        <td class="cite">(DOI: 10.xxxx/polca.cement.cem-i-42.5r.2024.v16, ISO 26324:2012 §5; rejestrator DataCite)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="norm-section-title">A.7. Kalkulatory</div>
+        <div class="norm-table-scroll">
+            <table class="norm-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Komponent</th>
+                        <th>Norma ISO/EN</th>
+                        <th>Guide UE/JRC</th>
+                        <th>Akt UE</th>
+                        <th>Cytowanie inline</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="num">30</td>
+                        <td><strong>Beton towarowy</strong></td>
+                        <td>EN 206:2013+A2:2021 §5; EN 16757:2022 §6; EN 15804+A2 §6.3.5</td>
+                        <td class="dash">—</td>
+                        <td>CPR (UE) 2024/3110 Art. 22 + Zał. III</td>
+                        <td class="cite">(beton C30/37 XC2 wg EN 206:2013+A2:2021 Tab. F.1; LCA wg EN 16757:2022 §6.4 + EN 15804+A2:2019 §6.3.5)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">31</td>
+                        <td><strong>MMA</strong></td>
+                        <td>EN 13108-1:2016 §5; EN 13108-20:2016</td>
+                        <td class="dash">—</td>
+                        <td>CPR (UE) 2024/3110</td>
+                        <td class="cite">(AC 22 W 35/50 wg EN 13108-1:2016 Tab. 7; LCA wg NAPA EPD PCR v2.0:2022 §6.2 + EN 15804+A2:2019 §6.3)</td>
+                    </tr>
+                    <tr>
+                        <td class="num">32</td>
+                        <td><strong>Kruszywa</strong></td>
+                        <td>EN 12620:2013+A1; EN 13242:2013</td>
+                        <td class="dash">—</td>
+                        <td>CPR (UE) 2024/3110 Zał. III</td>
+                        <td class="cite">(kruszywo łamane 0/63 wg EN 13242:2013 Tab. 2; LCA wg EBLCI v2:2021 + EN 15804+A2:2019 §6.3)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — TYMCZASOWE ROZWIĄZANIA METODOLOGICZNE (luki UE)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="luki-ue" class="card card-lg section-gap fade-in">
+        <div class="section-num">03 — Tymczasowe rozwiązania metodologiczne (luki UE)</div>
+        <div class="card-title">Jak poLCA adresuje siedem luk regulacyjnych w prawie UE</div>
+        <p class="card-text" style="max-width:880px;">
+            Część obszarów objętych mapą normatywną nie ma jeszcze ostatecznego rozstrzygnięcia
+            regulacyjnego na poziomie UE: brakuje pełnych Delegated Acts (DACS) pod CPR 2024/3110,
+            nowelizacji EN 15804 do +A3, c-PCR dla MMA i kruszyw, oraz ostatecznych decyzji o
+            traktowaniu energii residual mix i biomasy w LCA. poLCA stosuje rozwiązania tymczasowe
+            z udokumentowanym uzasadnieniem normatywnym; są one publiczne i będą wycofywane wraz
+            z wejściem w życie aktów delegowanych UE.
+        </p>
+        <div style="overflow-x:auto;margin-top:1rem;border:1px solid var(--border);border-radius:8px;">
+            <table class="gap-table">
+                <thead>
+                    <tr>
+                        <th>Luka regulacyjna</th>
+                        <th>Status UE</th>
+                        <th>Tymczasowe rozwiązanie poLCA</th>
+                        <th>Uzasadnienie normatywne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>CPR 2024/3110 DACS dla Annex I §7</strong></td>
+                        <td>Komisja ma 5 lat (do 2029); priorytet: cement, beton, stal</td>
+                        <td>Stosujemy EN 15804+A2:2019 + JRC CBAM 2023</td>
+                        <td>EN 15804+A2 jest harmonized standard pod CPR; ISO 14044:2006 §4.2.3.7 dopuszcza konserwatywne defaults gdy data quality weak</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brak EN 15804+A3</strong></td>
+                        <td>brak draftu na maj 2026; CEN/TC 350 prowadzi prace</td>
+                        <td>EN 15804+A2:2019/A1:2021 + monitoring</td>
+                        <td>EN 15804+A2 §5.4 — 5 lat validity; +A2 obowiązuje min. do 2028</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brak PEFCR dla Construction Products</strong></td>
+                        <td>EN 15804+A2 jako lex specialis</td>
+                        <td>EN 15804+A2 §6.3.5.1 explicite uznaje EF jako kompatybilny zestaw CF</td>
+                        <td>Komisja Rec. (UE) 2021/2279 Aneks I §1.3.2 dopuszcza adaptację</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brak EU c-PCR dla MMA</strong></td>
+                        <td>brak; CEN/TC 227 draft w opracowaniu</td>
+                        <td>NAPA EPD PCR v2.0:2022 + EN 13108 + EN 15804+A2</td>
+                        <td>EN 15804+A2:2019 §5.5 — w nieobecności c-PCR można stosować comparable scheme</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brak EU c-PCR dla kruszyw</strong></td>
+                        <td>brak; analogicznie do EN 16908/16757</td>
+                        <td>EN 12620 + EN 15804+A2 §6.3</td>
+                        <td>EN 15804+A2:2019 §6.3.5.1 — stosować analogię gdy brak c-PCR</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Residual mix vs grid average</strong></td>
+                        <td>RED III nie precyzuje dla LCA</td>
+                        <td>Domyślnie residual mix PL (AIB EECS); na życzenie producenta — guarantee of origin</td>
+                        <td>ISO 14067:2018 §6.4.9.4 lit. (c)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GWP-bio dla biomasy</strong></td>
+                        <td>EF 3.1 dynamic accounting; EN 15804+A2 §6.3.5.2 GWP-biogenic = 0</td>
+                        <td>Cut-off 1% — biomasa &lt;1% energii dla beton/MMA/kruszywa</td>
+                        <td>EN 15804+A2:2019 §6.3.4.6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — PROCEDURY JAKOŚCI (PR-01 do PR-07)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="procedury" class="card card-lg section-gap fade-in">
+        <div class="section-num">04 — Procedury jakości (PR-01 do PR-07)</div>
+        <div class="card-title">Siedem procedur wewnętrznych z normatywną podstawą</div>
+        <p class="card-text" style="max-width:880px;">
+            Poniższe procedury obowiązują w całym programie poLCA. Każda ma przypisaną podstawę
+            normatywną (norma ISO/EN lub akt UE) oraz katalog elementów obligatoryjnie publikowanych
+            — tak by weryfikator EPD i audytor PCA mogli zweryfikować kompletność.
+        </p>
+        <div class="pr-grid">
+            <div class="pr-card">
+                <div class="pr-card-num">PR-01</div>
+                <div class="pr-card-title">Review datasetu</div>
+                <div class="pr-card-base">ISO 14025:2006 §8.1.3; EN 15804+A2 §8</div>
+                <p class="pr-card-body">
+                    (1) skład komitetu min. 3 ekspertów (1 niezależny);
+                    (2) checklist 32 pkt zgodna z ISO 14044 §4.5;
+                    (3) timeline 30 dni;
+                    (4) raport publikowany jako PDF z DOI.
+                </p>
+            </div>
+            <div class="pr-card">
+                <div class="pr-card-num">PR-02</div>
+                <div class="pr-card-title">Aktualizacja wskaźnika</div>
+                <div class="pr-card-base">EN 15804+A2:2019 §5.4; ISO 14048:2002 §6.2</div>
+                <p class="pr-card-body">
+                    (1) trigger (KOBiZE annual / IPCC update / EF method update);
+                    (2) test istotności (zmiana &gt;5% → minor; &gt;20% → major);
+                    (3) changelog z mapowaniem;
+                    (4) deprecation period 12 mies.
+                </p>
+            </div>
+            <div class="pr-card">
+                <div class="pr-card-num">PR-03</div>
+                <div class="pr-card-title">Korekta błędu (errata)</div>
+                <div class="pr-card-base">ISO 14025:2006 §8.1.4; ISO 14044:2006 §4.5.3</div>
+                <p class="pr-card-body">
+                    (1) klasyfikacja: typo / dane / metodyka;
+                    (2) timeline (typo: 7 dni; dane: 30 dni; metodyka: 90 dni + re-verification);
+                    (3) errata page z UTC timestamp.
+                </p>
+            </div>
+            <div class="pr-card">
+                <div class="pr-card-num">PR-04</div>
+                <div class="pr-card-title">Wersjonowanie / changelog</div>
+                <div class="pr-card-base">ISO 14048:2002 §6.2; analogia ILCD dataSetVersion XX.XX.XXX</div>
+                <p class="pr-card-body">
+                    (1) semver: major.minor.patch;
+                    (2) git-style changelog;
+                    (3) DOI dla każdej major version.
+                </p>
+            </div>
+            <div class="pr-card">
+                <div class="pr-card-num">PR-05</div>
+                <div class="pr-card-title">Conflict of interest</div>
+                <div class="pr-card-base">ISO 14025:2006 §8.1.3; ISO/IEC 17029:2019 §6.1</div>
+                <p class="pr-card-body">
+                    (1) deklaracja CoI weryfikatorów;
+                    (2) firewall producent/weryfikator (≥3 lata);
+                    (3) publiczny rejestr CoI.
+                </p>
+            </div>
+            <div class="pr-card">
+                <div class="pr-card-num">PR-06</div>
+                <div class="pr-card-title">Data quality assessment</div>
+                <div class="pr-card-base">ISO 14044 §4.2.3.6; PEFCR Guidance v6.3 §4.6.5</div>
+                <p class="pr-card-body">
+                    (1) DQR matrix dla każdego datasetu;
+                    (2) próg akceptacji DQR ≤3 (fair);
+                    (3) re-assessment co 3 lata.
+                </p>
+            </div>
+            <div class="pr-card" style="grid-column:1 / -1;">
+                <div class="pr-card-num">PR-07</div>
+                <div class="pr-card-title">Walidacja regulacyjna</div>
+                <div class="pr-card-base">Rozp. (UE) 166/2006 Art. 5; Dyr. 2003/87 Art. 14; Rozp. 2023/1773 Art. 4</div>
+                <p class="pr-card-body">
+                    (1) cross-check z E-PRTR (zakłady ≥10 MW);
+                    (2) cross-check z EUTL (instalacje ETS);
+                    (3) raport rozbieżności w karcie datasetu.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — WZORCE CYTOWAŃ INLINE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="wzorce-cytowan" class="card card-lg section-gap fade-in">
+        <div class="section-num">05 — Wzorce cytowań inline</div>
+        <div class="card-title">Wzorce gotowe do skopiowania do raportu LCA lub deklaracji EPD</div>
+        <p class="card-text" style="max-width:880px;">
+            Wszystkie cytowania w bazie poLCA i w raportach z niej wynikających stosują poniższe
+            wzorce. Pozwala to na szybką identyfikację typu źródła (norma, akt prawny, dataset)
+            i jednolitą weryfikację przez akredytatora.
+        </p>
+        <div class="pattern-grid">
+            <div class="pattern-row">
+                <span class="pattern-label">Norma</span>
+                <code class="pattern-code">(EN 15804+A2:2019 §6.3.4)</code>
+            </div>
+            <div class="pattern-row">
+                <span class="pattern-label">Akt UE</span>
+                <code class="pattern-code">(Rozp. (UE) 2023/1773 Art. 4(2) Aneks III §4.2)</code>
+            </div>
+            <div class="pattern-row">
+                <span class="pattern-label">JRC report</span>
+                <code class="pattern-code">(JRC 2022, EF 3.1 method, Tab. 4.2)</code>
+            </div>
+            <div class="pattern-row">
+                <span class="pattern-label">Polska podstawa</span>
+                <code class="pattern-code">(KOBiZE 2024 Tab. 2.1; Dz.U. 2009 Nr 130 poz. 1070)</code>
+            </div>
+            <div class="pattern-row">
+                <span class="pattern-label">Dataset poLCA</span>
+                <code class="pattern-code">(poLCA-EN-PL-2024 v16; ISO 14067:2018 §6.4.9.4)</code>
+            </div>
+            <div class="pattern-row">
+                <span class="pattern-label">Konflikt / luka</span>
+                <code class="pattern-code">(brak EU c-PCR; stosujemy NAPA EPD PCR v2.0:2022 §6.2 zgodnie z EN 15804+A2:2019 §5.5)</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — TOP 10 CYTOWAŃ FOUNDATIONAL
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="top-cytowania" class="card card-lg section-gap fade-in">
+        <div class="section-num">06 — Top 10 cytowań foundational</div>
+        <div class="card-title">Lista referencyjna z linkami do EUR-Lex / JRC</div>
+        <p class="card-text" style="max-width:880px;">
+            Dziesięć dokumentów źródłowych, do których w bazie poLCA odwołujemy się najczęściej
+            i które stanowią fundament całej mapy normatywnej.
+        </p>
+        <ol class="top-list">
+            <li><span class="top-num">01</span><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R3110" target="_blank" rel="noopener">CPR 2024/3110</a> — EUR-Lex CELEX:32024R3110</li>
+            <li><span class="top-num">02</span>CPR Working Plan 2026-2029 — COM(2025) 772 final</li>
+            <li><span class="top-num">03</span><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1773" target="_blank" rel="noopener">CBAM Implementing Reg. 2023/1773</a></li>
+            <li><span class="top-num">04</span><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956" target="_blank" rel="noopener">CBAM Reg. 2023/956</a></li>
+            <li><span class="top-num">05</span><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781" target="_blank" rel="noopener">ESPR Reg. 2024/1781</a></li>
+            <li><span class="top-num">06</span><a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC130796" target="_blank" rel="noopener">EF 3.1 — JRC130796</a></li>
+            <li><span class="top-num">07</span>EN 15804+A2:2019/A1:2021</li>
+            <li><span class="top-num">08</span>ISO 14025:2006</li>
+            <li><span class="top-num">09</span>PCA DACS-01 wyd. 12 (10.10.2025)</li>
+            <li><span class="top-num">10</span>ILCD+EPD Format v1.3 (InData WG 2025)</li>
+        </ol>
+        <p style="margin:1rem 0 0;font-size:.78rem;color:var(--text-tertiary);line-height:1.55;">
+            Pełen rejestr cytowań wraz z mapowaniem na 32 komponenty mapy normatywnej znajduje się w
+            sekcji <a href="#mapa-normatywna" style="color:var(--accent);">02 — Mapa normatywna</a>.
+            Wartości liczbowe i datasety są utrzymywane w <a href="datasety.html" style="color:var(--accent);">katalogu danych</a>;
+            zasady doboru danych — w <a href="metodyka.html" style="color:var(--accent);">metodyce</a>.
+        </p>
+    </section>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="datasety.html">Katalog danych</a></li>
+                <li><a href="podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+<script src="js/interactive.js?v=1.0"></script>
+</body>
+</html>
