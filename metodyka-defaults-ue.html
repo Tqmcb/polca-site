@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservative defaults wg UE-wide approach — Metodyka poLCA</title>
+    <meta name="description" content="Konserwatywne wartości domyślne w poLCA są spójne z podejściem UE (CBAM, Battery Reg., RED III, ESPR, EPBD, F-gas, RFNBO) oraz fundamentem ISO 14044, EN 15804+A2 i PEF Method.">
+    <link rel="canonical" href="https://polca.org.pl/metodyka-defaults-ue.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Conservative defaults wg UE-wide approach — Metodyka poLCA">
+    <meta property="og:description" content="Konserwatywne defaults nie są eksperymentem Multicert — są systemowym podejściem UE w 6+ aktach prawa środowiskowego.">
+    <meta property="og:url" content="https://polca.org.pl/metodyka-defaults-ue.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-quality.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Conservative defaults wg UE-wide approach — Metodyka poLCA">
+    <meta name="twitter:description" content="Konserwatywne defaults w 6+ aktach UE: CBAM, Battery, RED III, ESPR, EPBD, F-gas, RFNBO. Foundation: ISO 14044 + EN 15804+A2 + PEF Method.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-quality.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Conservative defaults wg UE-wide approach — Metodyka poLCA",
+      "description": "Konserwatywne wartości domyślne w poLCA są spójne z podejściem UE w wielu regulacjach środowiskowych oraz fundamentem norm LCA.",
+      "url": "https://polca.org.pl/metodyka-defaults-ue.html",
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "inLanguage": "pl-PL",
+      "author": { "@type": "Organization", "name": "Multicert Sp. z o.o.", "url": "https://polca.org.pl" },
+      "publisher": { "@type": "Organization", "name": "EPD Polska", "url": "https://www.epd.org.pl" }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}.wf-step{opacity:1!important;transform:none!important}</style></noscript>
+    <style>
+        html{scroll-padding-top:76px}
+        #streszczenie,#mapa-ue,#foundation,#sektory,#dqr,#cyrkularnosc,#aktualizacje{scroll-margin-top:76px}
+        .tool-nav.section-gap{margin-bottom:1rem!important}
+        .tool-nav-pill{border:1px solid #D8DEE9!important;background:#fff!important;color:#102A43!important;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+        .ue-table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;}
+        .ue-table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:760px;}
+        .ue-table thead tr{background:var(--bg-subtle);}
+        .ue-table th{text-align:left;padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-primary);font-weight:600;}
+        .ue-table td{padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top;}
+        .ue-table tbody tr:last-child td{border-bottom:none;}
+        .ue-table td:first-child{font-weight:700;color:var(--text-primary);white-space:nowrap;}
+        .foundation-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;}
+        .foundation-card{padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);}
+        .foundation-card h3{font-size:.95rem;color:var(--text-primary);margin:0 0 .4rem;font-family:'Inter Tight',sans-serif;}
+        .foundation-card p{font-size:.8rem;color:var(--text-secondary);line-height:1.6;margin:0;}
+        .foundation-card code{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--accent);background:var(--accent-subtle);padding:.05rem .3rem;border-radius:3px;}
+        .sector-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem;margin-top:1rem;}
+        .sector-card{padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);}
+        .sector-card h3{font-size:.95rem;color:var(--text-primary);margin:0 0 .45rem;font-family:'Inter Tight',sans-serif;}
+        .sector-card p{font-size:.8rem;color:var(--text-secondary);line-height:1.65;margin:0;}
+        .sector-card .tag-row{margin-top:.6rem;}
+        .scope-note{margin-top:1rem;padding:1rem;border:1px solid #D6C58A;border-radius:8px;background:#FFF8DC;color:var(--text-secondary);font-size:.82rem;line-height:1.65}
+        .reward-vs-penalty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.7rem;margin-top:1rem;}
+        .rvp-card{padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);}
+        .rvp-card .rvp-label{display:block;font-size:.74rem;font-family:'IBM Plex Mono',monospace;color:var(--text-tertiary);margin-bottom:.25rem;letter-spacing:.02em;}
+        .rvp-card .rvp-method{display:block;font-size:.85rem;color:var(--text-primary);font-weight:700;}
+        .rvp-card .rvp-desc{display:block;font-size:.76rem;color:var(--text-secondary);line-height:1.55;margin-top:.3rem;}
+        .rvp-card.is-penalty{border-color:#D6C58A;background:#FFF8DC;}
+        .rvp-card.is-reward{border-color:#B9D8C2;background:#F1FAF4;}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.foundation-grid,.sector-grid,.reward-vs-penalty{grid-template-columns:1fr}}
+        @media(max-width:600px){.ue-table{font-size:.74rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Dashboard</a>
+            <a href="analiza.html">Analiza Sektorowa</a>
+            <a href="metodyka.html" class="active">Metodyka i Jakość</a>
+            <a href="datasety.html">Katalog danych</a>
+            <a href="narzedzia.html">Narzędzia</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <a href="metodyka.html" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1rem;margin-top:1rem;" class="fade-in">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        Metodyka i Jakość
+    </a>
+
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1rem 0 1.5rem;">
+        <div>
+            <div class="section-num">Metodyka POLCA · Defaults UE</div>
+            <h1 class="page-title">Conservative defaults wg UE-wide approach</h1>
+            <p class="page-subtitle">
+                Konserwatywne wartości domyślne stosowane w poLCA do pre-qualify EPD nie są eksperymentem Multicert.
+                Są systemowym podejściem prawodawcy unijnego — obecnym w sześciu aktach środowiskowych oraz w fundamentach
+                norm LCA: ISO 14044, EN 15804+A2 i PEF Method.
+            </p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">CBAM 2023/1773</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">Battery 2023/1542</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">RED III 2023/2413</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--accent-subtle); color: var(--accent); border-radius: 4px; letter-spacing: 0.02em;">ESPR 2024/1781</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">ISO 14044 §4.2.3.7</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">EN 15804+A2 §6.3.8</span>
+                <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">PEF 2021/2279</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-quality.jpg" alt="Kontrola jakości danych i metodyka konserwatywnych wartości domyślnych" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#streszczenie" class="tool-nav-pill">01 — Streszczenie</a>
+        <a href="#mapa-ue" class="tool-nav-pill">02 — Mapa stosowania w UE</a>
+        <a href="#foundation" class="tool-nav-pill">03 — Foundation w normach LCA</a>
+        <a href="#sektory" class="tool-nav-pill">04 — Sektory priorytetowe</a>
+        <a href="#dqr" class="tool-nav-pill">05 — Macierz DQR Weidema</a>
+        <a href="#cyrkularnosc" class="tool-nav-pill">06 — Cyrkularność i moduł D</a>
+        <a href="#aktualizacje" class="tool-nav-pill">07 — Cykl aktualizacji</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — STRESZCZENIE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="streszczenie" class="card card-lg section-gap fade-in" aria-label="Streszczenie">
+        <div class="section-num">01 — Streszczenie</div>
+        <div class="card-title">Problem polskiego rynku EPD i odpowiedź metodyczna poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Polski rynek EPD wyrobów budowlanych nie ma zharmonizowanego źródła wskaźników tła. Producent korzystający
+            z bazy A i producent korzystający z bazy B otrzymują różne wyniki dla tej samej recepty — różnica wynika
+            z innego miksu energii referencyjnego, innej geografii kruszyw albo innego rocznika danych. Skutek jest
+            mierzalny: spory na przetargach publicznych, rozbieżne odczyty kalkulatorów GWP, podważanie wartości
+            deklaracji środowiskowych przez kupujących i instytucje finansujące.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:.85rem;">
+            Odpowiedzią poLCA jest <strong>nadzorowana, regularnie aktualizowana baza wskaźników</strong> z jawnymi
+            konserwatywnymi wartościami domyślnymi do pre-qualify EPD. Logika wartości domyślnej jest jednoznaczna:
+            producent dysponujący zweryfikowanymi danymi pierwotnymi (primary LCI) zawsze uzyska wynik korzystniejszy
+            niż wartość domyślna. Default jest karą za lukę informacyjną (penalty for data gap), nie nagrodą
+            za jej posiadanie.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:.85rem;">
+            Ta metodyka <strong>nie jest CBAM-specific</strong>. Identyczna logika — punitive defaults dla braku
+            zweryfikowanych danych — jest stosowana w sześciu aktach prawa środowiskowego UE: CBAM, Battery Regulation,
+            RED III, ESPR + DPP, EPBD oraz F-gas. Foundation metodologiczna jest jeszcze starsza: pochodzi
+            z ISO 14044 (data quality requirements §4.2.3.7), EN 15804+A2 (use of generic data §6.3.8) oraz
+            PEF Method (DQR matrix Weidema §4.6.5). poLCA operacjonalizuje tę regułę dla sektora budowlanego w PL.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — MAPA UE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="mapa-ue" class="card card-lg section-gap fade-in" aria-label="Mapa stosowania conservative defaults w UE">
+        <div class="section-num">02 — Mapa stosowania w UE</div>
+        <div class="card-title">Conservative defaults w aktach prawa środowiskowego UE</div>
+        <p class="card-text" style="max-width:900px;">
+            Tabela porównawcza pokazuje, że ta sama metoda — punitive defaults dla braku verified data —
+            jest obecna w wielu regulacjach unijnych. Nazwy bywają różne (default values, fallback factors,
+            stringent defaults, worst-case assumptions), ale konstrukcja ekonomiczna i metodyczna jest identyczna.
+        </p>
+
+        <div class="ue-table-scroll" style="margin-top:1rem;">
+            <table class="ue-table">
+                <thead>
+                    <tr>
+                        <th>Regulacja UE</th>
+                        <th>Akt</th>
+                        <th>Gdzie defaults</th>
+                        <th>Logika</th>
+                        <th>Cytowanie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>CBAM</td>
+                        <td>Reg. (UE) 2023/1773</td>
+                        <td>Importerzy bez verified data — default per kraj eksportu + markup 10/20/30% (2026/2027/2028)</td>
+                        <td>Penalty for data gap</td>
+                        <td>Aneks III §4.2</td>
+                    </tr>
+                    <tr>
+                        <td>Battery</td>
+                        <td>Reg. (UE) 2023/1542</td>
+                        <td>EV/industrial batteries — default per chemia + geo gdy brak verified</td>
+                        <td>PEFCR Battery — fallback</td>
+                        <td>Art. 7 + Aneks II</td>
+                    </tr>
+                    <tr>
+                        <td>RED III</td>
+                        <td>Dyr. (UE) 2023/2413</td>
+                        <td>Biofuels: typical (real avg) vs default (punitive — wyższy)</td>
+                        <td>Wprost: default jest gorszy żeby motywować raportowanie</td>
+                        <td>Aneks V cz. A</td>
+                    </tr>
+                    <tr>
+                        <td>ESPR + DPP</td>
+                        <td>Reg. (UE) 2024/1781</td>
+                        <td>DPP performance metrics — defaults z worst-quartile gdy brak</td>
+                        <td>Penalty</td>
+                        <td>Art. 7 + 9</td>
+                    </tr>
+                    <tr>
+                        <td>EPBD</td>
+                        <td>Dyr. (UE) 2024/1275</td>
+                        <td>Energy performance: defaults gdy brak audytu</td>
+                        <td>Penalty</td>
+                        <td>Aneks I</td>
+                    </tr>
+                    <tr>
+                        <td>F-gas</td>
+                        <td>Reg. (UE) 2024/573</td>
+                        <td>GWP defaults gdy brak verified</td>
+                        <td>Conservative</td>
+                        <td>Aneks I-IV</td>
+                    </tr>
+                    <tr>
+                        <td>Hydrogen RFNBO</td>
+                        <td>Delegated Reg. (UE) 2023/1184</td>
+                        <td>H₂ production defaults gdy brak verified</td>
+                        <td>Punitive</td>
+                        <td>Annex</td>
+                    </tr>
+                    <tr>
+                        <td>EU ETS</td>
+                        <td>Dyr. 2003/87 (Fit-for-55)</td>
+                        <td>Benchmarks „10% top performers" — odwrotne podejście (nagroda dla best)</td>
+                        <td>Reward, NIE penalty</td>
+                        <td>— różne narzędzie</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reward-vs-penalty">
+            <div class="rvp-card is-penalty">
+                <span class="rvp-label">Penalty</span>
+                <span class="rvp-method">80–90 percentyl (CBAM-style)</span>
+                <span class="rvp-desc">Wartość gorsza od średniej branżowej, motywuje producentów do dostarczania danych pierwotnych.</span>
+            </div>
+            <div class="rvp-card is-reward">
+                <span class="rvp-label">Reward</span>
+                <span class="rvp-method">10% top (ETS-style)</span>
+                <span class="rvp-desc">Benchmarki dla najlepszych instalacji — narzędzie alokacji uprawnień, nie wartość domyślna LCI.</span>
+            </div>
+            <div class="rvp-card">
+                <span class="rvp-label">Description</span>
+                <span class="rvp-method">Średnia branżowa (ecoinvent-style)</span>
+                <span class="rvp-desc">Opis statystyczny stanu rynku — neutralny względem motywacji do raportowania.</span>
+            </div>
+        </div>
+
+        <p style="margin:1rem 0 0;font-size:.82rem;color:var(--text-secondary);line-height:1.65;">
+            poLCA wybiera podejście 80–90 percentyl (penalty), ponieważ pre-qualify EPD potrzebuje
+            <strong>motywacji do raportowania</strong>, a nie statystycznego opisu rynku. Producent z lepszą recepturą
+            i niższym śladem CO₂ powinien być nagrodzony lepszym wynikiem EPD — to działa wtedy, gdy default jest
+            wyraźnie gorszy od przeciętnej. Średnia branżowa jako default odwraca tę motywację: producent nie zyskuje
+            na dostarczeniu primary LCI, więc go nie dostarcza.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — FOUNDATION W NORMACH LCA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="foundation" class="card card-lg section-gap fade-in" aria-label="Foundation metodologiczna w normach LCA">
+        <div class="section-num">03 — Foundation w normach LCA</div>
+        <div class="card-title">Conservative defaults nie są wynalazkiem regulatora — są zakorzenione w normach LCA</div>
+        <p class="card-text" style="max-width:900px;">
+            Akty prawne UE (CBAM, Battery, RED III, ESPR) są warstwą operacyjną. Warstwą metodologiczną są normy LCA
+            i wytyczne Komisji, które od dwóch dekad opisują tę samą zasadę: tam, gdzie jakość danych jest słaba,
+            stosuje się założenia konserwatywne. Cztery dokumenty są kanoniczne dla poLCA:
+        </p>
+
+        <div class="foundation-grid">
+            <div class="foundation-card">
+                <h3>ISO 14044:2006 §4.2.3.7</h3>
+                <p>
+                    Data quality requirements: „where data quality is weak, conservative assumptions shall be used".
+                    Norma wymaga, aby przy luce informacyjnej decyzja była przesunięta w kierunku gorszego wyniku
+                    środowiskowego — zarówno dla LCI, jak i dla LCIA. To pierwowzór wszystkich późniejszych
+                    regulacji <em>default</em>.
+                </p>
+            </div>
+            <div class="foundation-card">
+                <h3>EN 15804+A2:2019 §6.3.8</h3>
+                <p>
+                    Use of generic data: gdy producent nie dysponuje danymi pierwotnymi dla procesu w A1–A3, używamy
+                    danych generycznych (sektorowych, branżowych, średnich) z jawną <em>data quality penalty</em>.
+                    Wartość domyślna nie zwalnia z deklaracji jakości danych — wręcz przeciwnie, wymaga jej eksplicytnie.
+                </p>
+            </div>
+            <div class="foundation-card">
+                <h3>PEF Method 2021 (Rec. 2021/2279) §4.6.5</h3>
+                <p>
+                    Macierz DQR Weidema — pięć kryteriów: <code>TeR</code> (technological representativeness),
+                    <code>GR</code> (geographical), <code>TiR</code> (time-related), <code>P</code> (precision),
+                    <code>M</code> (methodological appropriateness). Każde kryterium oceniane w skali 1–5,
+                    średnia daje globalny DQR datasetu.
+                </p>
+            </div>
+            <div class="foundation-card">
+                <h3>PEFCR Guidance v6.3 §4.6.5</h3>
+                <p>
+                    Operacjonalizacja DQR: progi akceptowalności (≤3 = fair, ≤2 = good, ≤1,6 = excellent),
+                    procedura mieszania danych pierwotnych z generic (cut-off, completeness check) oraz wymagania
+                    raportowania dla weryfikatora. To dokument referencyjny dla katalogu wskaźników poLCA.
+                </p>
+            </div>
+        </div>
+
+        <div class="scope-note" style="margin-top:1rem;">
+            <strong style="color:#7A5600;">Wniosek terminologiczny.</strong>
+            Nazwy są różne (conservative defaults / data gap penalty / stringent defaults / punitive defaults /
+            worst-case defaults / fallback values), ale metoda jest jedna: tam, gdzie nie ma verified data,
+            decyzja idzie w kierunku gorszego wyniku środowiskowego. poLCA posługuje się terminem
+            <em>conservative defaults</em>, ponieważ jest najbliższy językowi norm LCA i PEF Method.
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — SEKTORY PRIORYTETOWE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sektory" class="card card-lg section-gap fade-in" aria-label="Metodologia poLCA dla 3 sektorów priorytetowych">
+        <div class="section-num">04 — Sektory priorytetowe</div>
+        <div class="card-title">Metodologia conservative defaults dla 3 sektorów</div>
+        <p class="card-text" style="max-width:900px;">
+            Zasady pre-qualify EPD są jedne dla całej bazy poLCA, ale operacjonalizacja zależy od specyfiki
+            recepty, dostępnych danych branżowych oraz kluczowego cPCR. Trzy sektory priorytetowe Fazy I poLCA
+            (beton, MMA, kruszywa) mają opisaną ścieżkę danych:
+        </p>
+
+        <div class="sector-grid">
+            <div class="sector-card">
+                <h3>Beton towarowy</h3>
+                <p>
+                    Recepta wg <strong>EN 206</strong>; cement (CEM I-IV) z 90 percentyl branży PL — źródła:
+                    SPC, ICiMB, EU ETS verified emissions polskich cementowni; kruszywa wg <strong>EN 12620</strong>;
+                    energia wg 3-poziomowej hierarchii c-PCR-BET v1.3 §6.3 (Poziom 1 location-based:
+                    poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh; Poziom 2 market-based: AIB residual mix = 0,808;
+                    Poziom 3 PV on-site = 0,041); transport: GUS BDL; alokacja:
+                    EN 15804+A2 §6.3.6; moduły A1–A3 + opcjonalnie C/D (cyrkularność RC concrete).
+                </p>
+                <div class="tag-row" style="margin-top:.6rem;">
+                    <span class="tag">EN 206</span>
+                    <span class="tag">c-PCR-BET v1.3</span>
+                    <span class="tag">SPC</span>
+                    <span class="tag">EU ETS</span>
+                    <span class="tag">poLCA-EN-PL</span>
+                </div>
+            </div>
+            <div class="sector-card">
+                <h3>MMA — mieszanki mineralno-asfaltowe</h3>
+                <p>
+                    Recepta wg <strong>EN 13108</strong>; lepiszcze: Eurobitume LCA v4.0:2020 (referenc EU); kruszywa:
+                    EBLCI v2:2021; granulat asfaltowy (RAP): cut-off vs system expansion (EN 15804+A2 §6.3.6 +
+                    NAPA EPD PCR v2.0:2022); energia produkcji: KOBiZE (gaz/olej, scenariusze WMA ≤140°C / HMA 160°C+);
+                    moduły A1–A3 + opcjonalnie C/D.
+                </p>
+                <div class="tag-row" style="margin-top:.6rem;">
+                    <span class="tag">EN 13108</span>
+                    <span class="tag">Eurobitume LCA 4.0</span>
+                    <span class="tag">EBLCI v2</span>
+                    <span class="tag">NAPA PCR 2.0</span>
+                </div>
+            </div>
+            <div class="sector-card">
+                <h3>Kruszywa</h3>
+                <p>
+                    Typ skały (granit, bazalt, wapień, dolomit) + typ produktu (łamane vs naturalne); bilanse
+                    energetyczne EBLCI; transport: GUS BDL flota PL; klasyfikacja: <strong>EN 12620</strong> /
+                    <strong>EN 13242</strong>; moduły A1–A3 + opcjonalnie C/D (recycling RC).
+                </p>
+                <div class="tag-row" style="margin-top:.6rem;">
+                    <span class="tag">EN 12620</span>
+                    <span class="tag">EN 13242</span>
+                    <span class="tag">EBLCI</span>
+                    <span class="tag">GUS BDL</span>
+                </div>
+            </div>
+        </div>
+
+        <p style="margin-top:1rem;font-size:.8rem;color:var(--text-tertiary);line-height:1.6;">
+            We wszystkich trzech sektorach moduły A1–A3 stanowią dataset porównywalny poLCA. Moduły A4, A5, B, C i D
+            są deklarowane zgodnie z właściwym cPCR oraz zasadami programu EPD Polska — patrz
+            <a href="metodyka.html#moduly" style="color:var(--accent);text-decoration:none;font-weight:600;">Metodyka i Jakość · 00 — Zakres i porównywalność</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — DQR MATRIX WEIDEMA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dqr" class="card card-lg section-gap fade-in" aria-label="Macierz DQR pedigree Weidema">
+        <div class="section-num">05 — Macierz DQR Weidema</div>
+        <div class="card-title">Pięć kryteriów oceny jakości danych — operacjonalizacja PEFCR</div>
+        <p class="card-text" style="max-width:900px;">
+            DQR (Data Quality Rating) jest narzędziem wymaganym przez PEF Method oraz PEFCR Guidance v6.3.
+            Ocenia jakość datasetu w pięciu wymiarach, każdy w skali 1–5 (1 = najlepszy, 5 = najgorszy).
+            Globalny DQR jest średnią arytmetyczną pięciu wymiarów. Próg akceptowalności dla EPD: ≤3 (fair).
+        </p>
+
+        <div class="ue-table-scroll" style="margin-top:1rem;">
+            <table class="ue-table">
+                <thead>
+                    <tr>
+                        <th>Kryterium</th>
+                        <th>Akronim</th>
+                        <th>Skala 1–5</th>
+                        <th>Ocena dla poLCA cement default</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wiarygodność technologiczna</td>
+                        <td>TeR</td>
+                        <td>1=verified primary; 5=qualified guess</td>
+                        <td>2 (verified industry data)</td>
+                    </tr>
+                    <tr>
+                        <td>Reprezentatywność geograficzna</td>
+                        <td>GR</td>
+                        <td>1=country exact; 5=global average</td>
+                        <td>1 (PL exact)</td>
+                    </tr>
+                    <tr>
+                        <td>Reprezentatywność czasowa</td>
+                        <td>TiR</td>
+                        <td>1=≤3 years; 5=&gt;10 years</td>
+                        <td>1 (2024)</td>
+                    </tr>
+                    <tr>
+                        <td>Precyzja</td>
+                        <td>P</td>
+                        <td>1=narrow; 5=wide range</td>
+                        <td>2 (90 percentyl)</td>
+                    </tr>
+                    <tr>
+                        <td>Kompletność</td>
+                        <td>M (Methodological)</td>
+                        <td>1=full; 5=fragmentary</td>
+                        <td>2 (good coverage)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+            <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;font-family:'Inter Tight',sans-serif;">Formuła DQR i przykład obliczeniowy</h3>
+            <p style="font-size:.85rem;color:var(--text-secondary);line-height:1.65;margin:0 0 .6rem;">
+                <code style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;background:var(--bg);padding:.15rem .4rem;border-radius:4px;border:1px solid var(--border);">DQR = (TeR + GR + TiR + P + M) / 5</code>
+            </p>
+            <p style="font-size:.85rem;color:var(--text-secondary);line-height:1.65;margin:0;">
+                Przykład dla cement default poLCA: <code style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;background:var(--bg);padding:.15rem .4rem;border-radius:4px;border:1px solid var(--border);">(2+1+1+2+2)/5 = 1,6</code>
+                — wynik klasyfikowany jako <strong>good quality</strong> (próg ≤3 = fair, ≤2 = good, ≤1,6 = excellent).
+                DQR jest publikowany w karcie datasetu razem z każdym wskaźnikiem domyślnym.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — CYRKULARNOŚĆ I MODUŁ D
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="cyrkularnosc" class="card card-lg section-gap fade-in" aria-label="Cyrkularność i moduł D">
+        <div class="section-num">06 — Cyrkularność i moduł D</div>
+        <div class="card-title">Cyrkularność w 3 sektorach priorytetowych</div>
+        <p class="card-text" style="max-width:900px;">
+            Cyrkularność w EPD jest realizowana przez moduły C (end-of-life) i D (benefits and loads beyond the system
+            boundary), a także przez założenia alokacji w A1 (input zawartości recyklatu). Każde podejście ma jawne
+            znaczenie metodyczne i jawny zapis w karcie datasetu poLCA.
+        </p>
+
+        <div class="sector-grid">
+            <div class="sector-card">
+                <h3>Beton</h3>
+                <p>
+                    SCM (cement substitutes — pyły lotne, żużel) z deklaracją źródła i alokacją wg
+                    EN 15804+A2 §6.3.6; klinkier ratio liczony per CEM; RC concrete (recycling kruszyw)
+                    deklarowany w module C/D. Hierarchia: pierwotne dane producenta &gt; SPC sectoral average &gt;
+                    poLCA conservative default.
+                </p>
+            </div>
+            <div class="sector-card">
+                <h3>MMA</h3>
+                <p>
+                    RAP (granulat asfaltowy) — dwie ścieżki dopuszczalne: <strong>cut-off</strong>
+                    (EN 15804+A2 §6.3.6.2 — RAP wchodzi z zerowym ładunkiem) lub <strong>system expansion</strong>
+                    (alokacja avoided burden bitumu pierwotnego). Wybór metody jest deklarowany w karcie datasetu
+                    i nie może być zmieniany pomiędzy wariantami tego samego produktu.
+                </p>
+            </div>
+            <div class="sector-card">
+                <h3>Kruszywa</h3>
+                <p>
+                    Kruszywo recyklingowe (RC) z rozbiórki — alokacja procesu kruszenia i klasyfikacji wg
+                    EN 12620/EN 13242. Moduł D dla kruszyw RC: avoided burden kruszywa pierwotnego, deklarowany
+                    osobno (cut-off / 50:50 / system expansion).
+                </p>
+            </div>
+        </div>
+
+        <div class="scope-note" style="margin-top:1rem;">
+            <strong style="color:#7A5600;">Każdy moduł D w karcie datasetu poLCA musi być deklarowany jednoznacznie</strong>
+            — cut-off / 50:50 / system expansion — oraz uzasadniony zgodnie z EN 15804+A2. Zmiana metody pomiędzy
+            wariantami tego samego produktu jest niedopuszczalna.
+        </div>
+
+        <p style="margin-top:1rem;font-size:.85rem;color:var(--text-secondary);line-height:1.65;">
+            Cyrkularność łączy się z <strong>ESPR (Reg. 2024/1781) + Digital Product Passport</strong>: DPP będzie
+            wymagał raportowania zawartości recyklatu, śladu CO₂ i potencjału ponownego użycia per produkt. poLCA jest
+            projektowane tak, aby karty datasetów były kompatybilne z formatem DPP — dataset z modułami A1–A3 + C/D
+            i jawnym DQR jest gotowy do importu do DPP, gdy implementacje sektorowe ESPR zostaną opublikowane.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         07 — CYKL AKTUALIZACJI
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="aktualizacje" class="card card-lg section-gap fade-in" aria-label="Cykl aktualizacji wskaźników">
+        <div class="section-num">07 — Cykl aktualizacji</div>
+        <div class="card-title">Triggery i częstotliwość aktualizacji bazy poLCA</div>
+        <p class="card-text" style="max-width:900px;">
+            Konserwatywne defaults muszą być aktualizowane razem ze swoimi źródłami. poLCA ma sześć rozróżnionych
+            triggerów aktualizacji, każdy z przypisanym horyzontem czasowym i wpływem na konkretny zbiór datasetów.
+        </p>
+
+        <div class="ue-table-scroll" style="margin-top:1rem;">
+            <table class="ue-table">
+                <thead>
+                    <tr>
+                        <th>Trigger</th>
+                        <th>Częstotliwość</th>
+                        <th>Wpływ na poLCA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>KOBiZE annual (Q2)</td>
+                        <td>1 rok</td>
+                        <td>Update wskaźnik energii PL (poLCA-EN-PL) i paliw</td>
+                    </tr>
+                    <tr>
+                        <td>JEC WTT new version</td>
+                        <td>~5–10 lat</td>
+                        <td>Update WTT_fuels</td>
+                    </tr>
+                    <tr>
+                        <td>IPCC AR new (AR7 expected ~2028)</td>
+                        <td>~7 lat</td>
+                        <td>Update GWP factors</td>
+                    </tr>
+                    <tr>
+                        <td>EF method update</td>
+                        <td>~3–5 lat</td>
+                        <td>Update characterization factors LCIA</td>
+                    </tr>
+                    <tr>
+                        <td>CPR DACS publication (expected 2026–2028)</td>
+                        <td>event-driven</td>
+                        <td>Re-publikacja datasetów cement/beton</td>
+                    </tr>
+                    <tr>
+                        <td>EN 15804+A3 (expected post-2027)</td>
+                        <td>event-driven</td>
+                        <td>Re-charakteryzacja LCIA</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="margin-top:1rem;font-size:.82rem;color:var(--text-tertiary);line-height:1.6;">
+            Każda aktualizacja datasetu poLCA jest opisana w changelogu: data publikacji, trigger, lista
+            zmienionych wskaźników, wpływ na poprzednie EPD. Zasada wstecznej zgodności: EPD wystawione przed
+            aktualizacją datasetu pozostają ważne do końca okresu deklarowanego ważności (5 lat),
+            re-walidacja jest wymagana przy odnowieniu deklaracji.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="metodyka-defaults-ue.html">Metodyka defaults UE</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="datasety.html">Katalog danych</a></li>
+                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+<script src="js/interactive.js?v=1.0"></script>
+</body>
+</html>
