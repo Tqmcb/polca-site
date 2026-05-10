@@ -1,0 +1,351 @@
+{
+  "meta": {
+    "title": "POLCA material taxonomy for asphalt mixtures",
+    "version": "2026.1-draft",
+    "updated_at": "2026-05-03",
+    "note": "Taksonomia materiałów służy do automatycznego przypisania pozycji recepty lub dostawcy do kontrolowanego datasetu POLCA. Wartości grupowe mają status wartości domyślnych do czasu uzyskania EPD dostawcy albo danych konkretnej kopalni lub zakładu.",
+    "background": {
+      "plain_language": "Wartości w katalogu materiałów nie stanowią niezależnych danych urzędowych. Są to kontrolowane wartości startowe opracowane na podstawie dostępnych źródeł publicznych i branżowych oraz modelu EPD MMA. Ich celem jest jednolite mapowanie materiałów w sytuacji braku EPD dostawcy lub danych kopalni.",
+      "source_layers": [
+        {
+          "layer": "EPD branżowe, stowarzyszeniowe i producentów kruszyw",
+          "role": "źródła porównawcze dla rzędów wielkości oraz danych specyficznych, jeżeli dotyczą właściwego produktu, geografii, roku i granic systemu"
+        },
+        {
+          "layer": "PZPK i dane branżowe producentów kruszyw",
+          "role": "kontekst krajowego sektora, typy producentów, lokalizacje oraz zakres danych do pozyskania od kopalni"
+        },
+        {
+          "layer": "PIG-PIB MIDAS i dane geologiczne",
+          "role": "potwierdzenie rodzaju złoża, rodzaju kopaliny i lokalizacji źródła surowca"
+        },
+        {
+          "layer": "Aggregates Europe / UEPG oraz dane sektorowe",
+          "role": "europejski kontekst branży kruszyw i porównanie kategorii materiałowych"
+        },
+        {
+          "layer": "ÖKOBAUDAT, sektorowe EPD i literatura LCA",
+          "role": "punkt odniesienia dla rzędów wielkości wskaźników środowiskowych oraz identyfikacji składników kluczowych procesu"
+        },
+        {
+          "layer": "Model EPD MMA i raport tła obliczeniowego",
+          "role": "spójne mapowanie materiałów w POLCA oraz zachowanie zgodności z logiką modułów A1-D"
+        },
+        {
+          "layer": "Dane klienta i audyt na miejscu",
+          "role": "ostateczne potwierdzenie dostawców, lokalizacji, transportu, energii, paliw i alokacji na wyrób"
+        }
+      ],
+      "warning": "Dla materiałów o istotnym udziałe w wyniku wartości grupowe należy zastąpić EPD dostawcy, danymi kopalni lub potwierdzić podczas audytu. Nie należy ich przedstawiać jako danych konkretnego zakładu."
+    },
+    "source_register": [
+      {
+        "name": "Polski Związek Producentów Kruszyw (PZPK)",
+        "type": "źródło branżowe / klasyfikacja sektora",
+        "role": "identyfikacja rynku kruszyw, typów producentów, lokalizacji oraz zakresu branżowego wymagającego walidacji krajowej",
+        "url": "https://kruszpol.pl/"
+      },
+      {
+        "name": "PIG-PIB MIDAS",
+        "type": "publiczna baza geologiczna",
+        "role": "weryfikacja złóż, rodzaju kopaliny, lokalizacji oraz powiązania dostawcy z rzeczywistym złożem",
+        "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas"
+      },
+      {
+        "name": "Aggregates Europe / UEPG",
+        "type": "źródło sektorowe europejskie",
+        "role": "kontekst rynku kruszyw w Europie, struktura sektora, porównanie kategorii materiałowych i praktyk branżowych",
+        "url": "https://www.aggregates-europe.eu/"
+      },
+      {
+        "name": "GUS / statystyka publiczna",
+        "type": "źródło publiczne",
+        "role": "kontrola danych makro: produkcja, zużycie, sektory gospodarki, transport i energia w Polsce",
+        "url": "https://stat.gov.pl/"
+      },
+      {
+        "name": "ÖKOBAUDAT i sektorowe EPD kruszyw",
+        "type": "publiczne lub zweryfikowane dane LCA/EPD",
+        "role": "punkt odniesienia dla rzędów wielkości GWP kruszyw, fillerów, procesów budowlanych i transportu",
+        "url": "https://www.oekobaudat.de/"
+      },
+      {
+        "name": "Literatura naukowa LCA kruszyw",
+        "type": "źródło naukowe",
+        "role": "uzasadnienie, że główne czynniki wpływu to rodzaj skały, twardość, energia wydobycia, kruszenie, przesiewanie, płukanie i transport",
+        "url": "https://link.springer.com/article/10.1007/s11367-025-02442-x"
+      },
+      {
+        "name": "EPD Polska — cPCR Kruszywa Budowlane",
+        "type": "reguły kategorii produktu / Polska",
+        "role": "podstawowe zasady jednostki deklarowanej, granic systemu, alokacji, danych i weryfikacji dla EPD kruszyw w Polsce",
+        "url": "https://epd.org.pl/cpcr-dla-kruszyw/"
+      },
+      {
+        "name": "CEMEX Polska — EPD dla kruszyw",
+        "type": "EPD producenta / Polska",
+        "role": "przykład krajowych EPD dla piasków, żwirów, grysów i kruszyw z recyklingu; użyteczne jako punkt porównawczy i źródło specyficzne tylko dla właściwych produktów CEMEX",
+        "url": "https://www.cemex.pl/w/deklaracje-srodowiskowe-epd-dla-kruszyw-cemex-polska"
+      },
+      {
+        "name": "ITB-EPD 707 — Trzuskawica S.A., kruszywa wapienne",
+        "type": "EPD producenta / Polska",
+        "role": "konkretny punkt odniesienia dla polskich kruszyw wapiennych: 1 t kruszywa, moduły A1-A3, GWP total A1-A3 = 3,27 kg CO2e/t; bezpośrednie użycie tylko dla zadeklarowanego produktu i zakładu",
+        "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf"
+      },
+      {
+        "name": "BV Kalk — Verbands-EPD dla kruszywa wapiennego",
+        "type": "EPD stowarzyszenia branżowego / Niemcy",
+        "role": "przykład niemieckiej deklaracji stowarzyszeniowej dla produktów wapiennych, w tym Kalksteinkörnung; punkt odniesienia dla kruszyw węglanowych, nie zamiennik danych polskiej kopalni",
+        "url": "https://www.kalk.de/rohstoff/rohmateriałgewinnung/abbau-1"
+      },
+      {
+        "name": "MPA / EPD sektorowe asfaltu i dane kruszyw w UK",
+        "type": "EPD sektorowe / Wielka Brytania",
+        "role": "punkt porównawczy dla mieszanek asfaltowych i udziału kruszyw w deklaracjach sektorowych; nie jest bezpośrednim polskim wskaźnikiem kruszywa",
+        "url": "https://www.mineralproducts.org/MPA/media/root/Publications/Asphalt/EPDS/EPD_Mineral_Products_Association_Ltd_Asphalt_MPA_Sector_Level_AC_HUB-1655_2024-08-19.pdf"
+      },
+      {
+        "name": "Kiwa / opublikowane EPD kruszyw",
+        "type": "EPD produktu lub średnia EPD / Europa",
+        "role": "przykład średnich EPD dla kruszyw różnych frakcji; może służyć jako kontrola rzędu wielkości po sprawdzeniu zakresu, geografii i roku",
+        "url": "https://www.kiwa.com/49312f/globalassets/germany/veroffentlichte-epds/2024/0124/epd-kiwa-ee-165629-en.pdf"
+      }
+    ],
+    "epd_use_policy": {
+      "principle": "EPD stowarzyszenia lub sektorowa może być użyta jako punkt odniesienia albo wartość domyślna tylko wtedy, gdy zakres produktu, technologia, geografia, rok danych i granice systemu są zgodne z celem obliczeńia.",
+      "preferred_order": [
+        "EPD konkretnego dostawcy i zakładu",
+        "EPD stowarzyszeniowa/sektorowa zgodna produktowo i geograficznie",
+        "kontrolowana wartość domyślna POLCA",
+        "wartość wymagająca danych źródłowych"
+      ],
+      "warning": "Kruszywa są podobne funkcjonalnie, ale nie identyczne środowiskowo. Różnice wynikają z rodzaju skały, sposóbu wydobycia, kruszenia, płukania, energii, wilgotności oraz transportu."
+    }
+  },
+  "groups": [
+    {
+      "code": "aggregate_crushed_hard_igneous",
+      "label": "Kruszywa łamane twarde / magmowe i metamorficzne",
+      "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+      "controlled_default_kg_co2e_per_t": 5.5,
+      "source_basis": "Pakiet danych obliczeniowych EPD / background report: ÖKOBAUDAT 2024 + MPA UK Sector EPD; zakres do potwierdzenia w konsultacjach POLCA.",
+      "audit_focus": "rodzaj skały, frakcja, energia kruszenia, płukanie/suszenie, lokalizacja kopalni, transport A2",
+      "status": "group_proxy_to_validate",
+      "materials": [
+        {
+          "code": "basalt",
+          "label": "Bazalt",
+          "default_kg_co2e_per_t": 6,
+          "note": "bardzo twarde kruszywo; wyższa energochłonność kruszenia",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane bardzo twarde; wyższa energochłonność kruszenia",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+        },
+        {
+          "code": "gabbro",
+          "label": "Gabro",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "twarde kruszywo magmowe",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane twarde; wartość grupowa dla skał magmowych",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+        },
+        {
+          "code": "granite",
+          "label": "Granit",
+          "default_kg_co2e_per_t": 5,
+          "note": "twarde kruszywo magmowe",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane twarde; wartość grupowa dla skał magmowych",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+        },
+        {
+          "code": "melaphyre",
+          "label": "Melafir",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "częste kruszywo drogowe, do potwierdzenia danymi kopalni",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane twarde stosowane w drogownictwie; wartość grupowa stosowana do czasu pozyskania danych kopalni",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+        },
+        {
+          "code": "porphyry",
+          "label": "Porfir",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "mapowanie grupowe do czasu danych kopalni",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "wartość grupowa dla skał magmowych/metamorficznych o zbliżonej energochłonności przeróbki",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+        },
+        {
+          "code": "diabase",
+          "label": "Diabaz",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "mapowanie grupowe do czasu danych kopalni",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "wartość grupowa dla skał magmowych/metamorficznych o zbliżonej energochłonności przeróbki",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+        },
+        {
+          "code": "amphibolite",
+          "label": "Amfibolit",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "mapowanie grupowe do czasu danych kopalni",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "wartość grupowa dla skał metamorficznych o zbliżonej energochłonności przeróbki",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+        },
+        {
+          "code": "quartzite",
+          "label": "Kwarcyt",
+          "default_kg_co2e_per_t": 5.5,
+          "note": "mapowanie grupowe do czasu danych kopalni",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "wartość grupowa dla bardzo twardych kruszyw; wymaga potwierdzenia technologii przeróbki",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+        }
+      ],
+      "background_note": "Wartości bazowe pochodzą z modelu EPD MMA i porównania z publicznymi/europejskimi datasetami kruszyw. Różnicowanie typów wynika głównie z energochłonności kruszenia twardych skał. Do potwierdzenia: dane kopalni, energia, frakcja, płukanie/suszenie i transport.",
+      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+    },
+    {
+      "code": "aggregate_crushed_carbonate",
+      "label": "Kruszywa łamane węglanowe",
+      "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+      "controlled_default_kg_co2e_per_t": 4.3,
+      "source_basis": "Pakiet danych obliczeniowych EPD / background report: wartości grupowe dla wapienia i dolomitu; wymagane potwierdzenie kopalni.",
+      "audit_focus": "mielenie/kruszenie, zapylenie, płukanie, wilgotność, frakcja, transport A2",
+      "status": "group_proxy_to_validate",
+      "materials": [
+        {
+          "code": "limestone",
+          "label": "Wapień",
+          "default_kg_co2e_per_t": 4,
+          "note": "skała osadowa, zwykle niższa energochłonność kruszenia",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane węglanowe; zwykle niższa energochłonność kruszenia niż skały bardzo twarde",
+          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport"
+        },
+        {
+          "code": "dolomite",
+          "label": "Dolomit",
+          "default_kg_co2e_per_t": 4.5,
+          "note": "kruszywo węglanowe, do potwierdzenia kopalnią",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo łamane węglanowe; wartość grupowa dla dolomitu",
+          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport"
+        }
+      ],
+      "background_note": "Wartości bazowe pochodzą z modelu EPD MMA oraz rozdzielenia kruszyw węglanowych od twardych skał magmowych. Do potwierdzenia: technologia przeróbki, frakcja, wilgotność i dane kopalni.",
+      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+    },
+    {
+      "code": "aggregate_natural",
+      "label": "Kruszywa naturalne",
+      "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+      "controlled_default_kg_co2e_per_t": 3.5,
+      "source_basis": "Kontrolowana wartość domyślna POLCA dla kruszyw naturalnych; transport oraz ewentualne płukanie i sortowanie należy modelować oddzielnie.",
+      "audit_focus": "źródło złoża, płukanie, sortowanie, frakcja, wilgotność, transport A2",
+      "status": "group_proxy_to_validate",
+      "materials": [
+        {
+          "code": "sand",
+          "label": "Piasek",
+          "default_kg_co2e_per_t": 3.5,
+          "note": "mapowanie grupowe",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo naturalne; prostszy proces pozyskania/sortowania niż kruszywa łamane",
+          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
+        },
+        {
+          "code": "gravel",
+          "label": "Żwir",
+          "default_kg_co2e_per_t": 3.5,
+          "note": "mapowanie grupowe",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo naturalne; proces pozyskania/sortowania bez typowej energochłonności kruszenia skały",
+          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
+        },
+        {
+          "code": "sand_gravel",
+          "label": "Pospółka / mieszanka piaskowo-żwirowa",
+          "default_kg_co2e_per_t": 3.5,
+          "note": "mapowanie grupowe",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "mieszanka piaskowo-żwirowa; wartość grupowa dla kruszyw naturalnych",
+          "required_validation": "potwierdzić skład, płukanie, sortowanie, wilgotność, frakcję i transport"
+        },
+        {
+          "code": "natural_crushed_gravel",
+          "label": "Grys z otoczaków / kruszywo naturalne łamane",
+          "default_kg_co2e_per_t": 4,
+          "note": "wymaga decyzji, czy traktować jako naturalne czy łamane",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo naturalne poddane kruszeniu; wymaga decyzji klasyfikacyjnej na podstawie technologii",
+          "required_validation": "potwierdzić, czy dominują procesy sortowania/płukania czy kruszenia; potwierdzić dane kopalni"
+        }
+      ],
+      "background_note": "Wartość grupowa dla kruszyw naturalnych wynika z prostszego procesu pozyskania/sortowania względem kruszyw łamanych. Do potwierdzenia: płukanie, sortowanie, frakcja, wilgotność i transport.",
+      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+    },
+    {
+      "code": "aggregate_secondary_recycled",
+      "label": "Kruszywa wtórne i z recyklingu",
+      "default_dataset_code": "POLCA-RAP-PROCESSING-DEFAULT-2026",
+      "controlled_default_kg_co2e_per_t": null,
+      "source_basis": "Wymaga zgodności z zasadami cPCR/EN 15804+A2 i potwierdzenia statusu odpadu/produktu; nie mieszać z kruszywem pierwotnym bez śladu audytowego.",
+      "audit_focus": "status materiału, punkt End-of-Waste, obróbka C3/A1, transport, zawartość zanieczyszczeń, WWA dla starego RA",
+      "status": "method_required",
+      "materials": [
+        {
+          "code": "rap",
+          "label": "RAP / destrukt asfaltowy",
+          "default_kg_co2e_per_t": 3,
+          "note": "proces przygotowania; zasady alokacji i moduł D wymagają kontroli",
+          "source_basis": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "proces przygotowania RAP: kruszenie, przesiewanie, magazynowanie; nie jest równoznaczny z kruszywem pierwotnym",
+          "required_validation": "potwierdzić status materiału, pochodzenie, WWA/SVHC, wilgotność, proces przetwarzania i transport"
+        },
+        {
+          "code": "steel_slag",
+          "label": "Żużel stalowniczy",
+          "default_kg_co2e_per_t": 2,
+          "note": "tylko po potwierdzeniu statusu i danych procesu",
+          "source_basis": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo wtórne; potencjalnie niższy wpływ produkcyjny, ale zależny od alokacji i procesu uzdatnienia",
+          "required_validation": "potwierdzić status End-of-Waste, alokację, obróbkę, zgodność techniczną i transport"
+        },
+        {
+          "code": "blast_furnace_slag",
+          "label": "Żużel wielkopiecowy",
+          "default_kg_co2e_per_t": null,
+          "note": "wymaga uzupełnienia po określeniu metody alokacji i źródła",
+          "source_basis": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "materiał wtórny zależny od systemu alokacji procesu hutniczego",
+          "required_validation": "wymagane EPD/dane producenta, status materiału, alokacja i transport"
+        },
+        {
+          "code": "recycled_concrete_aggregate",
+          "label": "Kruszywo z recyklingu betonu",
+          "default_kg_co2e_per_t": null,
+          "note": "wymaga danych procesu kruszenia/sortowania",
+          "source_basis": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo z recyklingu betonu; wpływ zależny od kruszenia, sortowania i zanieczyszczeń",
+          "required_validation": "potwierdzić proces recyklingu, frakcję, zanieczyszczenia, status materiału i transport"
+        },
+        {
+          "code": "recycled_masonry_aggregate",
+          "label": "Kruszywo z recyklingu gruzu",
+          "default_kg_co2e_per_t": null,
+          "note": "wymaga danych procesu i jakości materiału",
+          "source_basis": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "data_character": "kruszywo z recyklingu gruzu; wpływ zależny od składu i procesu przygotowania",
+          "required_validation": "potwierdzić skład, proces recyklingu, zanieczyszczenia, status materiału i transport"
+        }
+      ],
+      "background_note": "Materiały wtórne zależą od statusu odpadu lub produktu, punktu End-of-Waste, procesu przetwarzania i zasad alokacji EN 15804+A2/cPCR. Dla części pozycji wymagane jest odrębne potwierdzenie metodyczne przed przypisaniem stałego wskaźnika.",
+      "group_source_provenance": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+    }
+  ]
+}

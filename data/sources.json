@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "title": "Matryca źródeł danych POLCA dla bazy LCI i obliczeń LCIA wyrobów budowlanych",
+    "updated_at": "2026-05-03",
+    "status": "draft_consultation",
+    "rule": "POLCA jest kontrolowaną bazą LCI z warstwą obliczeń LCIA. Użytkownik podaje dane aktywności i dowody, ale nie wybiera dowolnie wskaźnika emisyjnego. Dataset LCI i wynik LCIA narzuca system zgodnie z hierarchią: EPD/dane pierwotne, dataset POLCA, dane sektorowe, konserwatywna wartość domyślna.",
+    "selection_policy": {
+      "controlled_catalog": true,
+      "purpose": "porównywalność danych LCI i wyników LCIA, brak dowolnego wybierania niższych wskaźników i jednolite zasady dla zielonych przetargów oraz audytu EPD",
+      "allowed_user_inputs": [
+        "dostawca",
+        "adres",
+        "ilość",
+        "rok danych",
+        "dokument EPD",
+        "dokumenty audytowe"
+      ],
+      "blocked_user_inputs": [
+        "ręczny wybór niższego współczynnika bez dowodu",
+        "mieszanie baz o różnych granicach systemu",
+        "zmiana roku lub geografii bez uzasadnienia metodycznego"
+      ]
+    }
+  },
+  "groups": [
+    {
+      "code": "normative_program_basis",
+      "label": "Normy, cPCR i wymagania programu",
+      "priority": 0,
+      "description": "Podstawa metodyczna. Te źródła nie podają dowolnych wskaźników emisyjnych, lecz określają zasady liczenia, granice systemu, moduły, jakość danych, raportowanie i weryfikację.",
+      "sources": [
+        {
+          "name": "EPD Polska / EPD cPCR dla MMA",
+          "scope": "Programowe reguły kategorii i wymagania raportowania dla mieszanek mineralno-asfaltowych w ścieżce EPD Polska/EPD.",
+          "use_when": "Jako główny punkt odniesienia programu dla zakresu deklaracji, modułów, scenariuszy i wymagań audytowych dla MMA.",
+          "audit_check": "Kontrola obejmuje: aktualną wersję cPCR/wytycznych EPD Polska, zgodność z EN 15804+A2, EN 13108 oraz draftem normy branżowej.",
+          "limitation": "Dokument w statusie draftu nadaje wynikowi status raportu przygotowawczego albo projektu EPD do weryfikacji.",
+          "free_status": "program_reference",
+          "url": "https://www.epd.org.pl/"
+        },
+        {
+          "name": "EN 15804+A2",
+          "scope": "Podstawowe reguły kategorii produktu dla deklaracji środowiskowych typu III wyrobów budowlanych.",
+          "use_when": "Jako główna struktura modułów A1-A3, A4-A5, B, C i D, jednostek deklarowanych, scenariuszy, LCIA, jakości danych i porównywalności EPD.",
+          "audit_check": "Kontrola obejmuje: dataset i raport wskazują moduł, jednostkę, granicę systemu, źródło danych, jakość danych i zasady porównywalności.",
+          "limitation": "Norma definiuje zasady obliczeń, ale nie zastępuje EPD dostawcy ani danych zakładowych klienta.",
+          "free_status": "standard_paid_reference",
+          "url": "https://standards.iteh.ai/catalog/standards/cen/c98127b4-8dc2-48a4-9338-3e1366b16669/en-15804-2012a2-2019"
+        },
+        {
+          "name": "ISO 14040 i ISO 14044",
+          "scope": "Zasady, ramy, wymagania i wytyczne dla LCA oraz LCI.",
+          "use_when": "Do definicji celu i zakresu, kompletności, reprezentatywności, alokacji, interpretacji, raportowania i krytycznego przeglądu.",
+          "audit_check": "Kontrola obejmuje: raport zawiera cel, zakres, jednostkę, granicę systemu, źródła, alokację, ograniczenia i interpretację wyniku.",
+          "limitation": "To normy ramowe; dla wyrobów budowlanych muszą być stosowane razem z EN 15804+A2 i właściwym cPCR.",
+          "free_status": "standard_paid_reference",
+          "url": "https://www.iso.org/standard/38498.html"
+        },
+        {
+          "name": "ISO 14025",
+          "scope": "Zasady i procedury dla deklaracji środowiskowych typu III.",
+          "use_when": "Do struktury programu EPD, przejrzystości danych, zasad komunikacji i niezależnej weryfikacji deklaracji.",
+          "audit_check": "Kontrola obejmuje: dokument odróżnia raport przygotowawczy od deklaracji, wskazuje operatora programu i ścieżkę weryfikacji.",
+          "limitation": "Nie jest samodzielną metodyką obliczeń dla konkretnego wyrobu; wymaga cPCR/wytycznych programu.",
+          "free_status": "standard_paid_reference",
+          "url": "https://www.iso.org/standard/38131.html"
+        },
+        {
+          "name": "ISO 14067",
+          "scope": "Wymagania i wytyczne dla kwantyfikacji śladu węglowego produktu.",
+          "use_when": "Gdy wynik jest komunikowany jako ślad węglowy produktu albo częściowy ślad węglowy produktu.",
+          "audit_check": "Kontrola obejmuje: spójność z ISO 14040/14044, granicę systemu, jednostkę, gazy cieplarniane i ograniczenia komunikacji wyniku.",
+          "limitation": "Dotyczy kategorii climate change; pełne EPD wymaga także pozostałych wskaźników EN 15804+A2.",
+          "free_status": "standard_paid_reference",
+          "url": "https://www.iso.org/standard/71206.html"
+        },
+        {
+          "name": "CPR 2024/3110",
+          "scope": "Harmonizowane zasady wprowadzania wyrobów budowlanych do obrotu, wspólny język techniczny, deklaracje, wymagania środowiskowe i cyfrowe.",
+          "use_when": "Do układania danych POLCA tak, aby były gotowe pod przyszłe wymagania środowiskowe, paszport produktu i ocenę zgodności wyrobów budowlanych.",
+          "audit_check": "Kontrola obejmuje: system zachowuje spójne dane wyrobu, producenta, deklaracji, właściwości użytkowych i środowiskowych.",
+          "limitation": "Szczegółowe wymagania środowiskowe będą doprecyzowywane w specyfikacjach, aktach i cPCR dla rodzin wyrobów.",
+          "free_status": "public_regulation",
+          "url": "https://single-market-economy.ec.europa.eu/sectors/construction/construction-products-regulation-cpr_en"
+        },
+        {
+          "name": "ISO/IEC 17029 i ISO 14065",
+          "scope": "Zasady działania jednostek walidujących i weryfikujących oraz wymagania dla weryfikacji informacji środowiskowej.",
+          "use_when": "Do projektowania ścieżki audytu, bezstronności, kompetencji, spójności działania i potwierdzenia danych EPD.",
+          "audit_check": "Kontrola obejmuje: rozdział odpowiedzialności między producentem, operatorem programu, audytorem i administratorem danych.",
+          "limitation": "Nie zastępuje reguł obliczeniowych EN 15804+A2 ani cPCR; opisuje ramy walidacji i weryfikacji.",
+          "free_status": "standard_paid_reference",
+          "url": "https://www.iso.org/standard/74257.html"
+        }
+      ]
+    },
+    {
+      "code": "primary_verified",
+      "label": "Dane pierwotne i EPD dostawcy",
+      "priority": 1,
+      "description": "Najwyższy poziom wiarygodności dla konkretnego klienta, dostawcy lub zakładu. Dane te zastępują wartości domyślne przy istotnym udziale w wyniku.",
+      "sources": [
+        {
+          "name": "EPD dostawcy surowca",
+          "scope": "Lepiszcze, kruszywo, wypełniacz, dodatki, paliwa lub energia, jeżeli dostawca posiada zweryfikowana deklaracje.",
+          "use_when": "Gdy produkt dostawcy jest rzeczywiście użyty w recepcie i zakres EPD odpowiada modułowi A1/A2/A3.",
+          "audit_check": "Kontrola obejmuje: numer EPD, operatora programu, rok ważności, jednostkę deklarowaną, moduł, lokalizację i zgodność z EN 15804+A2/cPCR.",
+          "limitation": "EPD innego produktu, innej rafinerii/kopalni lub nieaktualna EPD nie zastępuje automatycznie danych dla klienta.",
+          "free_status": "public_if_published",
+          "url": "https://www.epd.org.pl/"
+        },
+        {
+          "name": "Dane klienta z audytu do LCI",
+          "scope": "Faktury energii i paliw, liczniki, roczna produkcja, recepty, WZ/CMR, lokalizacje dostawców, rzeczywiste zużycie gazu/oleju i inne przepływy inwentaryzacyjne LCI.",
+          "use_when": "Dla alokacji A3, transportu A2/A4 i potwierdzenia wolumenu produkcji.",
+          "audit_check": "Kontrola obejmuje: okres danych, komplet dokumentów, spójność bilansu masy i energii oraz metodę alokacji na wyrób.",
+          "limitation": "Dane niepełne otrzymują niższą ocenę jakości danych i listę braków do potwierdzenia.",
+          "free_status": "client_evidence",
+          "url": "https://polca.org.pl/metodyka.html"
+        }
+      ]
+    },
+    {
+      "code": "sector_background",
+      "label": "Dane sektorowe",
+      "priority": 2,
+      "description": "Dane sektorowe do modelu referencyjnego, gdy brak EPD dostawcy. Stosowane do zapewnienia porównywalnych zasad, ale nie udają danych konkretnego zakładu.",
+      "sources": [
+        {
+          "name": "Eurobitume LCA 4.0",
+          "scope": "Produkcja bitumu i bitumu oksydowanego w zakresie cradle-to-gate: ropa, transport ropy, rafinacja i magazynowanie bitumu w rafinerii.",
+          "use_when": "Dla lepiszcza asfaltowego w A1, gdy brak EPD konkretnego producenta albo gdy potrzebne są europejskie dane sektorowe dla asfaltów drogowych.",
+          "audit_check": "Kontrola obejmuje: typ lepiszcza odpowiada zakresowi Eurobitume, czy nie chodzi o asfalt modyfikowany/dodatek specjalny oraz czy nie ma EPD dostawcy.",
+          "limitation": "Dane reprezentują produkcję w rafineriach członków Eurobitume; nie są danymi konkretnej dostawy, rafinerii ani transportu do wytwórni.",
+          "free_status": "report_public_or_on_request",
+          "url": "https://eurobitume.eu/lci_4-0_request/"
+        },
+        {
+          "name": "Stowarzyszenie Producentów Cementu",
+          "scope": "Polski kontekst rynku cementu, technologii, dekarbonizacji oraz zweryfikowana EPD sektorowa SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce.",
+          "use_when": "Do uzasadnienia parametrów dla cementu, klinkieru i danych sektorowych wtedy, gdy brak EPD konkretnego cementu. Dla CEM IV źródłem referencyjnym jest EPD SPC/ITB 2025, A1-A3, 1 tona.",
+          "audit_check": "Kontrola obejmuje: użyty parametr dotyczy właściwego typu cementu, roku, technologii, zakresu emisji oraz czy odróżniono ślad węglowy netto od wartości brutto w tabeli EPD.",
+          "limitation": "Dane sektorowe nie zastępują EPD konkretnej cementowni ani danych zakładowych, jeżeli są dostępne.",
+          "free_status": "public_sector_source",
+          "url": "https://www.polskicement.pl/"
+        },
+        {
+          "name": "CEMBUREAU",
+          "scope": "Europejski kontekst cementu, efektywności energetycznej, dekarbonizacji i danych sektorowych cementu.",
+          "use_when": "Do kontroli rzędu wielkości parametrów cementu, udziału klinkieru i trendów sektorowych w Europie.",
+          "audit_check": "Kontrola obejmuje: dane są europejskie, sektorowe i czy nie są mylone z danymi konkretnego polskiego dostawcy.",
+          "limitation": "Źródło europejskie; dla polskiego klienta pierwszeństwo ma EPD dostawcy lub dane zakładowe.",
+          "free_status": "public_sector_source",
+          "url": "https://www.cembureau.eu/policy-focus/climate-energy/"
+        },
+        {
+          "name": "Polski Związek Producentów Kruszyw",
+          "scope": "Polski kontekst branży kruszyw, producentów, lokalizacji, typów kopalin i praktyk sektora.",
+          "use_when": "Do opisu rynku i kwalifikacji typów kruszyw, zwłaszcza gdy dataset wymaga przypisania do polskich realiów wydobycia.",
+          "audit_check": "Kontrola obejmuje: dane nie są traktowane jako wskaźnik LCA bez dodatkowego modelu energii, procesu i transportu.",
+          "limitation": "Źródło branżowe i opisowe; wskaźnik emisyjny wymaga EPD, danych zakładowych albo modelu POLCA.",
+          "free_status": "public_sector_source",
+          "url": "https://www.kruszpol.pl/"
+        },
+        {
+          "name": "Aggregates Europe / UEPG",
+          "scope": "Europejskie źródła sektorowe dla kruszyw, w tym model EPD dla kruszyw w zakresie cradle-to-gate.",
+          "use_when": "Do kontroli granicy systemu i zakresu dla kruszyw naturalnych, łamanych, morskich, produkowanych i recyklingowych.",
+          "audit_check": "Kontrola obejmuje: wartość dla kruszywa obejmuje wydobycie, kruszenie/przesiewanie i czy transport do klienta liczony jest oddzielnie.",
+          "limitation": "Model sektorowy wymaga dostosowania do lokalnych warunków kopalni, energii i transportu.",
+          "free_status": "public_sector_source",
+          "url": "https://www.aggregates-europe.eu/"
+        },
+        {
+          "name": "JEC Well-to-Tank v5",
+          "scope": "Emisje poprzedzające spalanie paliw: wydobycie, przetwarzanie i dostarczenie paliw przed spalaniem.",
+          "use_when": "Do dopełnienia spalania paliw o emisje powstające wcześniej w łańcuchu dostaw w modelach LCA paliw i energii.",
+          "audit_check": "Kontrola obejmuje: zgodność paliwa, roku i granicy systemu z obliczeniem POLCA.",
+          "limitation": "Nie zastąpi faktur ani składu paliwa klienta; jest źródłem współczynników dla wcześniejszych etapów łańcucha dostaw paliw.",
+          "free_status": "public_report",
+          "url": "https://publications.jrc.ec.europa.eu/"
+        }
+      ]
+    },
+    {
+      "code": "epd_registers",
+      "label": "Rejestry i bazy EPD",
+      "priority": 3,
+      "description": "Istniejące, zweryfikowane EPD są kluczowym źródłem danych. EPD dostawcy może zasilać wynik bezpośrednio, a EPD innych producentów służą jako benchmark, statystyka kategorii lub źródło wartości domyślnej po filtracji porównywalności.",
+      "sources": [
+        {
+          "name": "Rejestr EPD Polska",
+          "scope": "Polski rejestr zweryfikowanych deklaracji EPD dla wyrobów, w tym wyrobów budowlanych zgodnych z ISO 14025 i EN 15804+A2.",
+          "use_when": "Jako pierwsze źródło EPD dla polskich producentów, operatora programu EPD Polska i ścieżki EPD.",
+          "audit_check": "Kontrola obejmuje: EPD ID, producenta, wyrób, jednostkę, moduły, wersję EN 15804/cPCR, datę ważności, weryfikatora i link do dokumentu.",
+          "limitation": "EPD jest bezpośrednim źródłem tylko dla deklarowanego produktu. Dla innych produktów może być benchmarkiem, nie zamiennikiem danych dostawcy.",
+          "free_status": "verified_epd_register",
+          "url": "https://epd.org.pl/rejestr-epd/"
+        },
+        {
+          "name": "EPDportal.org",
+          "scope": "Publiczny portal EPD powiązany z EPD Polska, przeznaczony do publikacji i przeglądania zweryfikowanych deklaracji.",
+          "use_when": "Do cytowania i wyszukiwania opublikowanych deklaracji EPD oraz do powiązania EPD z producentem i dokumentem źródłowym.",
+          "audit_check": "Kontrola obejmuje zgodność rekordu z dokumentem źródłowym i aktualność deklaracji.",
+          "limitation": "Portal nie zastępuje dokumentu EPD; rekord obliczeniowy zapisuje konkretną deklarację i jej zakres.",
+          "free_status": "verified_epd_register",
+          "url": "https://epdportal.org/"
+        },
+        {
+          "name": "ITB-EPD — Instytut Techniki Budowlanej",
+          "scope": "Publiczny rejestr deklaracji środowiskowych typu III dla wyrobów budowlanych prowadzony przez ITB, zgodny z PN-EN ISO 14025 i PN-EN 15804+A2.",
+          "use_when": "Jako źródło danych producentów dla polskich i europejskich wyrobów budowlanych, zwłaszcza gdy EPD dotyczy materiału użytego w recepcie albo porównywalnej kategorii wyrobu.",
+          "audit_check": "Kontrola obejmuje: numer ITB-EPD, producenta, wyrób, zakład, jednostkę deklarowaną, moduły, datę ważności, wersję EN 15804, weryfikatora i link do PDF.",
+          "limitation": "Dane z ITB-EPD są bezpośrednie tylko dla deklarowanego produktu. Dla wartości domyślnej POLCA mogą być użyte dopiero po normalizacji i filtracji porównywalnych EPD.",
+          "free_status": "verified_epd_register",
+          "url": "https://www.itb.pl/itb-epds/?lang=en"
+        },
+        {
+          "name": "IBU.data",
+          "scope": "Cyfrowe EPD IBU dla wyrobów budowlanych, dostępne jako dane LCA w formacie XML opartym o ILCD+EPD.",
+          "use_when": "Do pobierania danych z EPD w formacie maszynowym, porównania kategorii wyrobów i tworzenia benchmarków EPD.",
+          "audit_check": "Kontrola obejmuje: warunki korzystania, EPD ID, producenta, PCR, jednostkę, zakres modułów, aktualność i format XML.",
+          "limitation": "Nie każda EPD IBU jest adekwatna do rynku polskiego; użycie jako wartość domyślna wymaga filtracji i normalizacji.",
+          "free_status": "machine_readable_epd",
+          "url": "https://ibu-epd.com/en/ibu-data-start/"
+        },
+        {
+          "name": "INIES",
+          "scope": "Francuska baza FDES i PEP dla budownictwa, zawierająca deklaracje środowiskowe produktów budowlanych i wyposażenia.",
+          "use_when": "Do benchmarków kategorii, kontroli zakresu danych i porównania typów produktów, szczególnie gdy brak polskich EPD.",
+          "audit_check": "Kontrola obejmuje: status FDES/PEP, jednostkę funkcjonalną, moduły, datę ważności, PCR i dostęp do danych cyfrowych.",
+          "limitation": "Dane są francuskie; nie powinny automatycznie zastępować polskiego dostawcy ani polskich warunków produkcji.",
+          "free_status": "public_epd_database",
+          "url": "https://www.inies.fr/en/"
+        },
+        {
+          "name": "EPD-Norge Digi",
+          "scope": "Cyfrowa baza EPD-Norge zawierająca dane LCA z EPD w formacie XML udostępniane publicznie.",
+          "use_when": "Do porównania danych EPD i jako wzorzec cyfryzacji EPD w formacie maszynowym.",
+          "audit_check": "Kontrola obejmuje: format, operatora programu, produkt, producenta, zakres modułów i aktualność deklaracji.",
+          "limitation": "Źródło norweskie; wymaga oceny geografii i technologii przed użyciem jako benchmark dla Polski.",
+          "free_status": "machine_readable_epd",
+          "url": "https://lca.no/epd-i-maskinlesbart-format-epd-norge-digi/"
+        },
+        {
+          "name": "Building Transparency EC3 / openEPD",
+          "scope": "Baza EPD i format openEPD obejmujące dane deklaracji, organizacji, zakładów, PCR, wersji, niepewności i właściwości funkcjonalnych.",
+          "use_when": "Do budowy statystyk kategorii, identyfikacji rekordów EPD, atrybucji źródeł i interoperacyjności format danych.",
+          "audit_check": "Zachowaj atrybucję, warunki format danych, ostrzeżenia jakościowe, identyfikatory i statusy deklaracji.",
+          "limitation": "Dane EC3/openEPD nie zastępują EPD dostawcy ani EPD Polska; służą jako integracja, benchmark albo źródło porównawcze.",
+          "free_status": "public_api_with_rules",
+          "url": "https://www.open-epd-forum.org/"
+        }
+      ]
+    },
+    {
+      "code": "national_public",
+      "label": "Publiczne dane krajowe i europejskie",
+      "priority": 4,
+      "description": "Dane oficjalne do bilansów, energii, emisji i weryfikacji krzyżowej. Zwykle są danymi wejściowymi, a nie gotowym datasetem produktu.",
+      "sources": [
+        {
+          "name": "KOBiZE",
+          "scope": "Emisje CO2 i wskaźniki energii elektrycznej; punkt odniesienia dla energii i paliw w Polsce.",
+          "use_when": "Do oficjalnego wskaźnika end-user oraz kontroli czesci operacyjnej modelu energii elektrycznej.",
+          "audit_check": "Kontrola obejmuje: rok publikacji i czy używany jest zakres CO2 only czy CO2e full LCA.",
+          "limitation": "Nie obejmuje pełnego cyklu życia paliw; dlatego nie jest to samo co 0,599 kg CO2e/kWh.",
+          "free_status": "public",
+          "url": "https://www.kobize.pl/"
+        },
+        {
+          "name": "PSE",
+          "scope": "Produkcja energii, import/eksport i bilanse KSE.",
+          "use_when": "Do korekty miksu konsumpcyjnego i przeplywow transgranicznych w modelu energii.",
+          "audit_check": "Kontrola obejmuje: tablice raportu rocznego i rok danych.",
+          "limitation": "Nie podaje LCA produktu; służy do bilansu energii.",
+          "free_status": "public",
+          "url": "https://www.pse.pl/"
+        },
+        {
+          "name": "GUS",
+          "scope": "Gospodarka paliwowo-energetyczna, produkcja, dane statystyczne i alokacje sektorowe.",
+          "use_when": "Do alokacji metanu/energii, kontroli produkcji krajowej i danych pomocniczych.",
+          "audit_check": "Kontrola obejmuje: definicje sektorów i zgodność tablic z metodą.",
+          "limitation": "Dane statystyczne nie zastąpia danych zakladowych klienta.",
+          "free_status": "public",
+          "url": "https://stat.gov.pl/"
+        },
+        {
+          "name": "WUG",
+          "scope": "Emisje metanu z górnictwa węgla.",
+          "use_when": "Do komponentu WTT_CH4 w polskim miksie energii elektrycznej.",
+          "audit_check": "Kontrola obejmuje: wartość dotyczy emisji netto i właściwego roku.",
+          "limitation": "Wymaga alokacji do sektora energetycznego, dlatego laczona jest z GUS.",
+          "free_status": "public",
+          "url": "https://www.wug.gov.pl/"
+        },
+        {
+          "name": "EEA / EMEP Guidebook",
+          "scope": "Europejskie współczynniki emisji i przewodniki dla inwentaryzacji, w tym transport drogowy i procesy spalania.",
+          "use_when": "Do kontroli transportu, emisji z maszyn i scenariuszy, gdy brak danych floty.",
+          "audit_check": "Kontrola obejmuje: rozdział, typ pojazdu, paliwo, normę EURO i czy potrzebny jest CO2e czy emisje zanieczyszczeń powietrza.",
+          "limitation": "To baza do inwentaryzacji emisji; dla EPD trzeba pilnować granicy systemu i zgodności z EN 15804+A2.",
+          "free_status": "public",
+          "url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023"
+        }
+      ]
+    },
+    {
+      "code": "public_default_databases",
+      "label": "Publiczne bazy do wartości domyślnych POLCA",
+      "priority": 5,
+      "description": "Publiczne lub bezpłatne bazy wykorzystywane do budowy polskich datasetów LCI i wartości domyślnych LCIA po filtracji, normalizacji i uzasadnieniu. Nie są kopiowane bezpośrednio jako dane POLCA; pełnią rolę źródeł, benchmarków i wzorców konserwatywnego modelu.",
+      "sources": [
+        {
+          "name": "ÖKOBAUDAT",
+          "scope": "Niemiecka publiczna baza danych LCA dla budownictwa, w tym rekordy EN 15804+A2, EPD i dane generyczne.",
+          "use_when": "Jako wysokiej jakości punkt startowy dla procesów budowlanych, materiałów, transportu, energii i końca życia, gdy brak polskiego datasetu lub EPD dostawcy.",
+          "audit_check": "Kontrola obejmuje: wersję bazy, EN 15804+A2, jednostkę, moduły, geografię, typ rekordu oraz czy dane są generyczne czy EPD.",
+          "limitation": "Baza jest projektowana do LCA budynków, nie do samodzielnego zastępowania danych konkretnego produktu. Dane niemieckie wymagają oceny geograficznej przed użyciem jako wartość domyślna POLCA.",
+          "free_status": "public_database",
+          "url": "https://www.oekobaudat.de/en/database/database-search.html"
+        },
+        {
+          "name": "Boverket Klimatdatabas",
+          "scope": "Szwedzka publiczna baza klimatyczna dla deklaracji klimatycznych budynków: A1-A3, A4, A5, energia, paliwa i współczynniki konwersji.",
+          "use_when": "Jako wzorzec metodyczny dla konserwatywnych wartości domyślnych oraz jako benchmark dla materiałów budowlanych, energii i transportu.",
+          "audit_check": "Kontrola obejmuje: używana jest wartość typowa czy konserwatywna, moduł A1-A3/A4/A5, rok wersji i zgodność z EN 15804.",
+          "limitation": "Dane reprezentują warunki szwedzkie. W POLCA pełnią rolę benchmarku albo źródła pomocniczego, nie bezpośredniego polskiego wskaźnika.",
+          "free_status": "public_generic_database",
+          "url": "https://www.boverket.se/en/start/laws-and-regulations/climate-declaration/climate-database/"
+        },
+        {
+          "name": "Nationale Milieudatabase Category 3",
+          "scope": "Holenderskie generyczne dane środowiskowe dla wyrobów i elementów budowlanych, stosowane gdy brak danych kategorii 1 lub 2.",
+          "use_when": "Jako wzorzec systemowy dla danych domyślnych z narzutem konserwatywnym oraz jako benchmark dla elementów budowlanych.",
+          "audit_check": "Kontrola obejmuje: kategorię danych, zastosowany narzut, zakres modułów, metodę Bepalingsmethode i zgodność z EN 15804+A2.",
+          "limitation": "Dane są osadzone w systemie holenderskim i nie nadają się do formalnych polskich obliczeń bez adaptacji, ale są mocnym wzorcem metodologicznym.",
+          "free_status": "public_generic_database",
+          "url": "https://milieudatabase.nl/nl/milieudata-lca/categorie-3-data/"
+        },
+        {
+          "name": "INIES",
+          "scope": "Francuska baza FDES i PEP dla budownictwa oraz RE2020, z dostępem cyfrowym do informacji deklaracyjnych, jednostek funkcjonalnych i wskaźników środowiskowych.",
+          "use_when": "Jako źródło porównawcze EPD/FDES dla wyrobów budowlanych i punkt kontroli zakresu danych dla podobnych produktów.",
+          "audit_check": "Kontrola obejmuje: status deklaracji, jednostkę, moduły, wersję normy, datę ważności i warunki dostępu do webservice.",
+          "limitation": "Dane są francuskie i programowe; w POLCA pełnią rolę benchmarku albo źródła pomocniczego, nie automatycznego polskiego zamiennika.",
+          "free_status": "public_epd_database",
+          "url": "https://www.inies.fr/en/"
+        },
+        {
+          "name": "IBU.data",
+          "scope": "Cyfrowe EPD IBU w formacie ILCD+EPD/XML dla materiałów budowlanych.",
+          "use_when": "Do pobierania i porównywania zweryfikowanych EPD produktów oraz do budowania profili referencyjnych dla grup materiałów.",
+          "audit_check": "Kontrola obejmuje: warunki użycia, rejestrację dla XML, aktualność EPD, operatora programu, moduły i prawa do dalszego wykorzystania.",
+          "limitation": "Darmowe użycie dotyczy informacji i LCA budynku; dalsze komercyjne rozpowszechnianie danych może wymagać odrębnej licencji.",
+          "free_status": "free_with_conditions",
+          "url": "https://ibu-epd.com/en/ibu-data-start/"
+        },
+        {
+          "name": "Building Transparency EC3 / openEPD",
+          "scope": "Baza EPD, danych kategorii, PCR, organizacji i zakładów produkcyjnych dostępna w formacie openEPD.",
+          "use_when": "Do analizy rozkładów EPD, statystyk kategorii, identyfikacji zakładów i budowania reguł atrybucji dla rekordów zewnętrznych.",
+          "audit_check": "Kontrola obejmuje: uprawnienia dostępu, wymagania atrybucji, status EPD, ostrzeżenia jakościowe i warunki użycia danych w zastosowaniu produkcyjnym.",
+          "limitation": "Dostęp do danych ma limity i warunki; dane nie zastępują EPD Polska ani danych polskiego dostawcy bez kontroli zakresu.",
+          "free_status": "public_api_account",
+          "url": "https://docs.buildingtransparency.org/ec3"
+        },
+        {
+          "name": "European Commission EF/LCDN",
+          "scope": "Europejska infrastruktura jakościowo kontrolowanych datasetów LCA, w tym zasoby Environmental Footprint 3.1.",
+          "use_when": "Do procesów tła, metod LCIA i kontroli spójności z europejskim podejściem PEF/OEF, gdy zakres nie jest pokryty przez źródła budowlane EN 15804.",
+          "audit_check": "Kontrola obejmuje: licencję konkretnego datasetu, zgodność PEF/OEF albo ILCD, zakres procesu i możliwość użycia poza zatwierdzonymi grupami produktowymi.",
+          "limitation": "EF/PEF nie jest tym samym co EN 15804+A2 dla wyrobów budowlanych. Może wspierać tło obliczeniowe, ale nie zastępuje cPCR budowlanego.",
+          "free_status": "free_with_conditions",
+          "url": "https://eplca.jrc.ec.europa.eu/ELCD3/"
+        },
+        {
+          "name": "KBOB ecobalance data",
+          "scope": "Szwajcarskie dane ekobilansowe dla materiałów budowlanych, techniki budynkowej, energii, transportu i procesów unieszkodliwiania.",
+          "use_when": "Jako dodatkowy benchmark dla materiałów, procesów energii, transportu i końca życia, szczególnie gdy brakuje polskich danych.",
+          "audit_check": "Kontrola obejmuje: wersję KBOB, źródłową metodę, jednostkę, geografię Szwajcarii i możliwość porównania z EN 15804+A2.",
+          "limitation": "Dane szwajcarskie wymagają ostrożności geograficznej; używać jako benchmark lub źródło pomocnicze.",
+          "free_status": "public_database",
+          "url": "https://www.kbob.admin.ch/fr/donnees-ecobilans-dans-la-construction"
+        },
+        {
+          "name": "baubook",
+          "scope": "Austriacka baza jakościowo kontrolowanych danych ekologicznych i produktowych dla materiałów budowlanych.",
+          "use_when": "Jako punkt porównawczy dla EPD, wartości referencyjnych OI3 i parametrów materiałowych w regionie DACH.",
+          "audit_check": "Kontrola obejmuje typ rekordu: EPD, wartość referencyjna albo dane producenta, oraz warunki pobrania i użycia.",
+          "limitation": "Baza nie jest polska; do wartości domyślnych POLCA wymaga adaptacji i oznaczenia jakości danych.",
+          "free_status": "public_database",
+          "url": "https://www.baubook.info/en/baubook/product-search"
+        },
+        {
+          "name": "European Commission — CBAM default values definitive period",
+          "scope": "Wartości domyślne dla towarów CBAM, w tym cementu, klinkieru i cementów hydraulicznych. Dla okresu definitywnego wartości są publikowane w Excelu informacyjnym, a wartości prawnie wiążące określa rozporządzenie wykonawcze.",
+          "use_when": "Jako konserwatywny punkt kontrolny brutto przy braku danych rzeczywistych producenta albo EPD produktu.",
+          "audit_check": "Kontrola obejmuje: kod CN, kraj pochodzenia, rok stosowania, direct/indirect, total emissions, narzut oraz zgodność z aktualnym aktem wykonawczym.",
+          "limitation": "To nie jest EPD produktu i nie zastępuje danych producenta. W POLCA służy jako publiczny rekord kontrolny wartości domyślnej.",
+          "free_status": "public_regulation",
+          "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
+        }
+      ]
+    },
+    {
+      "code": "restricted_reference",
+      "label": "Bazy licencjonowane / tylko referencyjne",
+      "priority": 6,
+      "description": "Mogą być użyte do kontroli lub opracowania wartości referencyjnych, ale nie wolno publikować zamkniętego inwentarza jako otwartej bazy POLCA.",
+      "sources": [
+        {
+          "name": "ecoinvent 3.12",
+          "scope": "Szczegółowe inwentarze LCI dla procesów, infrastruktury i energii.",
+          "use_when": "Jako referencyjny punkt kontroli lub element modelu, gdy licencja na to pozwala.",
+          "audit_check": "Kontrola obejmuje: licencje, wersje, proces i zakres publikacji wynikow.",
+          "limitation": "Nie jest darmową bazą; POLCA nie publikuje pełnych inwentarzy pochodnych bez uprawnień.",
+          "free_status": "restricted_license",
+          "url": "https://ecoinvent.org/"
+        }
+      ]
+    },
+    {
+      "code": "data_structure_patterns",
+      "label": "Wzorce struktur i formatów danych",
+      "priority": 7,
+      "description": "Źródła nie są kopiowane jako własne wskaźniki POLCA. Służą jako wzorce struktury danych, kontroli jakości, atrybucji i interoperacyjności.",
+      "sources": [
+        {
+          "name": "GCCA EPD Tool",
+          "scope": "Branżowy model deklaracji dla kruszyw, klinkieru, cementu, betonu i prefabrykatów.",
+          "use_when": "Do projektowania struktury pakietów obliczeniowych dla cementu, betonu i kruszyw oraz rozdzielenia A1-A3 od pełnych scenariuszy EPD.",
+          "audit_check": "Kontrola obejmuje: POLCA nie przenosi zamkniętych współczynników bez uprawnień; wykorzystuj wyłącznie jawne informacje o strukturze, zakresie i przepływie danych.",
+          "limitation": "To wzorzec struktury procesu, a nie publiczna baza współczynników dla rynku polskiego.",
+          "free_status": "tool_reference",
+          "url": "https://gccaepd.org/tool"
+        },
+        {
+          "name": "openEPD",
+          "scope": "Otwarty format cyfrowych EPD z identyfikatorami organizacji, zakładów, weryfikatorów, PCR, wersji, niepewności i właściwości funkcjonalnych.",
+          "use_when": "Do oceny zgodności struktury danych POLCA z zewnętrznymi bazami EPD i formatami projektowymi.",
+          "audit_check": "Kontrola obejmuje: każdy rekord POLCA ma identyfikator, wersję, źródło, PCR/cPCR, jednostkę, zakres modułu, jakość danych i link do cytowania.",
+          "limitation": "openEPD opisuje format wymiany danych; nie jest źródłem wartości emisyjnych.",
+          "free_status": "open_format",
+          "url": "https://www.open-epd-forum.org/"
+        },
+        {
+          "name": "Building Transparency EC3",
+          "scope": "Baza EPD i format danych dla danych EPD, PCR, projektów i integracji.",
+          "use_when": "Jako wzorzec atrybucji, linkowania do źródeł, statusów jakości EPD i kontroli danych importowanych.",
+          "audit_check": "Jeżeli POLCA korzysta z danych EC3, zachować wymagane linki i atrybucję oraz nie traktować rekordów z błędami/ostrzeżeniami jako danych bezwarunkowo używalnych.",
+          "limitation": "Dane EC3 mają własne zasady dostępu, atrybucji i jakości; nie zastępują danych polskiego dostawcy ani EPD Polska.",
+          "free_status": "public_api_with_rules",
+          "url": "https://docs.buildingtransparency.org/ec3"
+        },
+        {
+          "name": "SCA / Athena Ready Mixed Concrete LCA Calculator",
+          "scope": "Model danych LCA dla betonu towarowego z wariantowaniem udziału slag cement.",
+          "use_when": "Jako wzorzec funkcji wariantowania recepty: preset mix, recepta własna, zmiana udziału składnika i szybkie przeliczenie wyniku.",
+          "audit_check": "Nie przenosić wyników z rynku USA bez korekty geografii, źródeł cementu, energii i transportu.",
+          "limitation": "Przydatne jako wzorzec UX i logiki wariantowania, nie jako bezpośrednie dane dla Polski.",
+          "free_status": "tool_reference",
+          "url": "https://www.slagcement.org/lca-calculator"
+        }
+      ]
+    }
+  ]
+}

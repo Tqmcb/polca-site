@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "title": "POLCA policy for using existing EPD data",
+    "version": "2026.1-draft",
+    "updated_at": "2026-05-03",
+    "purpose": "Zasady wykorzystywania istniejących deklaracji EPD jako źródła danych dla POLCA, ocen środowiskowych."
+  },
+  "principle": "Istniejące, zweryfikowane EPD są kluczowym źródłem danych dla POLCA. EPD konkretnego dostawcy może zasilać wynik klienta, jeżeli odpowiada rzeczywiście użytemu produktowi, jednostce, modułom, geografii i wersji EN 15804/cPCR. EPD innych producentów mogą służyć jako benchmark, statystyka kategorii albo źródło do wyprowadzenia wartości domyślnej, ale nie mogą automatycznie zastąpić danych dostawcy bez uzasadnienia.",
+  "source_registers": [
+    {
+      "name": "EPD Polska / EPDportal.org",
+      "role": "pierwsze źródło dla deklaracji EPD w programie EPD Polska i dokumentów publikowanych w ścieżce EPD",
+      "url": "https://epdportal.org/"
+    },
+    {
+      "name": "ITB-EPD",
+      "role": "publiczny rejestr deklaracji środowiskowych typu III ITB dla wyrobów budowlanych zgodnych z PN-EN ISO 14025 i PN-EN 15804+A2",
+      "url": "https://www.itb.pl/itb-epds/?lang=en"
+    },
+    {
+      "name": "Inne rejestry EPD zgodne z EN 15804+A2",
+      "role": "źródło benchmarków i statystyk kategorii po sprawdzeniu jednostki, geografii, technologii, modułów, daty ważności i zasad licencji",
+      "url": "https://www.eco-platform.org/"
+    }
+  ],
+  "use_classes": [
+    {
+      "code": "supplier_epd_direct",
+      "name": "EPD dostawcy użytego surowca",
+      "priority": 1,
+      "allowed_use": "Bezpośrednie użycie w obliczeniu dla klienta, jeżeli produkt, producent, zakład, jednostka, moduł i okres ważności są zgodne z rzeczywistą dostawą.",
+      "audit_requirement": "Wymagany numer EPD, operator programu, data ważności, link albo plik, moduły, jednostka deklarowana i dowód użycia materiału w recepcie."
+    },
+    {
+      "code": "manufacturer_epd_benchmark",
+      "name": "EPD innych producentów jako benchmark",
+      "priority": 2,
+      "allowed_use": "Analiza rozkładu wyników dla kategorii produktu, kontrola rzędu wielkości, percentyl 50/75 i uzasadnienie wartości domyślnej.",
+      "audit_requirement": "Wymagana lista EPD użytych w próbie, kryteria włączenia i wykluczenia, zakres modułów, jednostka i wersja EN 15804."
+    },
+    {
+      "code": "sector_or_association_epd",
+      "name": "EPD sektorowa lub stowarzyszeniowa",
+      "priority": 3,
+      "allowed_use": "Dane sektorowe, benchmark albo tymczasowa wartość domyślna, jeżeli zakres technologii i geografii jest adekwatny.",
+      "audit_requirement": "Wymagane sprawdzenie, czy EPD reprezentuje sektor, technologię, geografię i typ produktu zgodny z użyciem w POLCA."
+    },
+    {
+      "code": "non_comparable_epd_reference",
+      "name": "EPD nieporównywalna",
+      "priority": 4,
+      "allowed_use": "Tylko cytowanie jakościowe albo kontrola zakresu dokumentu; nie używać do wartości domyślnej.",
+      "audit_requirement": "Oznacz powód nieporównywalności: inna jednostka, inny PCR, inna geografia, inna technologia, brak modułu albo nieaktualność."
+    }
+  ],
+  "required_epd_fields": [
+    "epd_id",
+    "epd_title",
+    "programme_operator",
+    "manufacturer",
+    "production_site",
+    "product_name",
+    "product_standard",
+    "pcr_or_cpcr",
+    "en_15804_version",
+    "declared_unit",
+    "module_scope",
+    "geography",
+    "valid_from",
+    "valid_until",
+    "verification_body",
+    "source_url",
+    "document_url_or_file",
+    "indicators",
+    "gwp_total",
+    "gwp_fossil",
+    "gwp_biogenic",
+    "gwp_luluc",
+    "data_quality_note",
+    "citation_text"
+  ],
+  "normalisation_rules": [
+    "Nie łącz wyników EPD EN 15804+A1 i EN 15804+A2 w jednej statystyce bez jawnego oznaczenia.",
+    "Nie porównuj danych A1-A3 z danymi A1-D bez rozdzielenia modułów.",
+    "Nie przeliczaj EPD innego producenta na polski wynik dostawcy, jeżeli EPD jest zagregowana i nie ujawnia LCI.",
+    "Normalizuj wyniki do tej samej jednostki deklarowanej, np. 1 t mieszanki, 1 t cementu, 1 m3 betonu.",
+    "EPD bez ważnej daty, operatora programu, jednostki albo zakresu modułów oznacz jako niekwalifikowaną do wartości domyślnej.",
+    "Dla wartości domyślnej zapisuj listę EPD w próbie, medianę, percentyl 75, zakres min-max i zastosowaną regułę konserwatywną."
+  ],
+  "citation_rules": [
+    "Każda wartość pochodząca z EPD musi wskazywać EPD ID, operatora programu, producenta, nazwę produktu, moduł, jednostkę, rok i link albo archiwalny plik.",
+    "W dokumencie klienta nie cytuj tylko nazwy bazy EPD; cytuj konkretną EPD albo zbiór EPD użyty do statystyki.",
+    "Jeżeli EPD jest użyta wyłącznie jako benchmark, oznacz to wprost i nie prezentuj jej jako danych producenta klienta.",
+    "Jeżeli wynik pochodzi z publicznej bazy EPD przez format danych, zachowaj wymagania atrybucji i warunki korzystania z danej bazy."
+  ],
+  "default_value_method": {
+    "rule": "Wartości domyślne POLCA mogą być wyprowadzane z istniejących EPD tylko po filtracji porównywalnych deklaracji.",
+    "minimum_filter": [
+      "ta sama rodzina wyrobu",
+      "ta sama albo kompatybilna jednostka deklarowana",
+      "zgodna wersja EN 15804/cPCR",
+      "zgodny zakres modułów",
+      "porównywalna technologia",
+      "jawna data ważności albo status publikacji"
+    ],
+    "recommended_statistic": "mediana plus konserwatywny narzut albo percentyl 75, z opisem liczebności próby i wykluczonych rekordów",
+    "output_label": "EPD-derived default / wartość domyślna wyprowadzona z EPD"
+  },
+  "example_record": {
+    "name": "ITB-EPD 707 Trzuskawica S.A. — Limestone aggregates",
+    "declared_unit": "1 t kruszywa wapiennego",
+    "module_scope": "A1-A3",
+    "gwp_total": "3,27 kg CO2e/t",
+    "use_in_polca": "Zweryfikowany benchmark producenta dla kruszyw wapiennych; bezpośrednie użycie tylko dla zadeklarowanego produktu i zakładu, a jako wartość domyślna wyłącznie po włączeniu do koszyka porównywalnych EPD.",
+    "source_url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf"
+  },
+  "audit_rule": "Audytor musi widzieć nie tylko końcowy wskaźnik, ale też listę EPD źródłowych, kryteria porównywalności, zakres modułów, jednostki, daty ważności i powód użycia EPD jako danych bezpośrednich albo benchmarku."
+}

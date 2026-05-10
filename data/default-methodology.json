@@ -1,0 +1,319 @@
+{
+  "meta": {
+    "title": "Metodyka wartości domyślnych POLCA dla MMA",
+    "version": "2026.1-draft",
+    "updated_at": "2026-05-03",
+    "principle": "Wartości domyślne POLCA są kontrolowanymi wartościami referencyjnymi do zastosowania wtedy, gdy brak danych pierwotnych, EPD dostawcy albo danych zakładowych zgodnych z zakresem obliczenia."
+  },
+  "methodology_framework": {
+    "inspiration": "Podejście wzorowane na logice CBAM: najpierw definiuje się wyrób, ścieżkę produkcji, granice systemu, emisje bezpośrednie, emisje pośrednie i prekursory, a dopiero potem dopuszcza wartość domyślną, jeżeli brak danych rzeczywistych.",
+    "normative_alignment": [
+      "EN 15804+A2: A1-A3 jako etap wyrobu i baza datasetu porównawczego; pełny zakres deklaracji EPD, w tym moduły scenariuszowe i końca życia, wynika z właściwego cPCR/wytycznych programu EPD Polska oraz zasad programu EPD+",
+      "ISO 14040/14044: kompletność, reprezentatywność, alokacja i uzasadnienie wyłączeń",
+      "ISO 14025: przejrzystość danych do deklaracji środowiskowych typu III",
+      "ISO 14067: zasady kwantyfikacji śladu węglowego produktu",
+      "CPR 2024/3110: przygotowanie struktury danych pod przyszłe wymagania cyfrowe i środowiskowe wyrobów budowlanych",
+      "ISO/IEC 17029 i ISO 14065: podstawa dla procesu walidacji i weryfikacji informacji środowiskowej"
+    ],
+    "reference_layers": [
+      {
+        "layer": "normy_i_wymagania_programu",
+        "role": "Określają sposób obliczeń, granice systemu, moduły, jednostkę deklarowaną, alokację, jakość danych i wymagania raportowania.",
+        "examples": [
+          "EN 15804+A2",
+          "ISO 14040",
+          "ISO 14044",
+          "ISO 14025",
+          "ISO 14067",
+          "cPCR/wytyczne EPD Polska właściwe dla kategorii wyrobu",
+          "CPR 2024/3110"
+        ]
+      },
+      {
+        "layer": "dane_pierwotne_i_epd",
+        "role": "Mają pierwszeństwo dla hotspotów i danych specyficznych klienta, jeżeli są zgodne z zakresem obliczenia i możliwe do sprawdzenia w audycie.",
+        "examples": [
+          "EPD dostawcy cementu, lepiszcza, kruszywa lub dodatku",
+          "faktury energii i paliw",
+          "recepta wyrobu",
+          "WZ/CMR i odległości transportowe",
+          "roczna produkcja i metoda alokacji"
+        ]
+      },
+      {
+        "layer": "dane_branżowe",
+        "role": "Kalibrują wartości domyślne, gdy brakuje EPD dostawcy. Dane branżowe nie zastępują norm, lecz pomagają dobrać realistyczny zakres liczbowy.",
+        "examples": [
+          "Eurobitume LCI/LCA dla bitumu",
+          "Stowarzyszenie Producentów Cementu",
+          "CEMBUREAU",
+          "PZPK i Aggregates Europe/UEPG",
+          "publiczne EPD stowarzyszeniowe"
+        ]
+      },
+      {
+        "layer": "dane_publiczne_krajowe",
+        "role": "Służą do energii, paliw, bilansów, transportu i kontroli spójności wyników w polskich warunkach.",
+        "examples": [
+          "KOBiZE",
+          "PSE",
+          "GUS",
+          "WUG",
+          "PIG-PIB MIDAS",
+          "EEA/EMEP"
+        ]
+      },
+      {
+        "layer": "wartości_domyslne_polca",
+        "role": "Są stosowane tylko wtedy, gdy nie ma danych wyższej jakości. Każda wartość ma opis źródeł, ograniczeń, warunku zastąpienia i wpływu na jakość danych."
+      }
+    ],
+    "industry_data_rules": [
+      "Źródło branżowe musi być publiczne, możliwe do identyfikacji albo dostępne audytorowi.",
+      "Granica systemu źródła musi odpowiadać modułowi obliczenia; w przeciwnym razie wymagana jest jawna korekta.",
+      "Dane muszą być opisane przez rok, geografię, technologię i typ wyrobu.",
+      "Dla hotspotów nie wolno wybierać najniższej wartości z zakresu tylko dlatego, że poprawia wynik.",
+      "Jeżeli istnieje EPD konkretnego dostawcy zgodna z zakresem, ma pierwszeństwo przed wartością sektorową.",
+      "Każde użycie wartości domyślnej musi obniżać ocenę jakości danych w raporcie przygotowawczym."
+    ],
+    "hierarchy": [
+      "1. Zweryfikowana EPD konkretnego dostawcy lub wyrobu",
+      "2. Dane pierwotne klienta potwierdzone dokumentami i audytem",
+      "3. Dane sektorowe lub publiczne o zgodnej granicy systemu",
+      "4. Kontrolowana wartość domyślna POLCA z oceną jakości danych"
+    ],
+    "derivation_steps": [
+      "Zdefiniować wyrób, jednostkę deklarowaną i zakres obliczenia EN 15804+A2.",
+      "Opisać ścieżkę produkcji oraz granicę systemu wyniku bazowego: A1 surowce, A2 transport wejściowy, A3 produkcja. Zakres EPD/EPD+ dla A4, A5, B, C i D ustalić oddzielnie według właściwego cPCR/wytycznych programu EPD Polska i zasad programu.",
+      "Wskazać prekursory i procesy powiązane, które muszą być doliczone do wyniku.",
+      "Zidentyfikować hotspoty wyniku dla danego wyrobu.",
+      "Zebrać źródła: EPD, dane sektorowe, publiczne bazy LCA, dane krajowe, literatura i model EPD+.",
+      "Ujednolicić jednostki, rok danych, geografię, moduły i granice systemu.",
+      "Wybrać wartość reprezentatywną lub konserwatywną; dla hotspotów nie wolno wybierać najniższej wartości z zakresu bez dowodu.",
+      "Opisać ograniczenia, warunek zastąpienia danymi lepszej jakości i kontrole audytowe."
+    ],
+    "cut_off_rule": {
+      "principle": "Nie pomija się elementu tylko dlatego, że ma małą masę. Pominięcie jest dopuszczalne tylko wtedy, gdy element nie jest hotspotem i nie wpływa istotnie na wynik.",
+      "operational_thresholds": [
+        "pojedynczy strumień poniżej 1% wyniku GWP może być kandydatem do uproszczenia",
+        "łączny wpływ uproszczeń nie powinien przekroczyć 5% wyniku",
+        "ostrzejsze wymagania cPCR/wytycznych EPD Polska, programu EPD+ lub audytora mają pierwszeństwo"
+      ]
+    },
+    "hotspot_policy": {
+      "critical": "Jeżeli składnik lub proces przekracza 20% wyniku GWP, wartość domyślna jest dopuszczalna wyłącznie roboczo i wymaga potwierdzenia EPD, danymi pierwotnymi albo audytem.",
+      "material": "Jeżeli udział wynosi 5-20%, wartość domyślna może być użyta w raporcie przygotowawczym, ale musi być oznaczona w jakości danych.",
+      "minor": "Jeżeli udział jest poniżej 5% i nie ma szczególnego ryzyka środowiskowego, dopuszczalne jest uproszczenie pod warunkiem zachowania śladu źródłowego."
+    },
+    "product_hotspots": {
+      "concrete": [
+        "cement i udział klinkieru",
+        "dodatki mineralne",
+        "transport cementu i kruszyw",
+        "energia węzła betoniarskiego",
+        "alokacja rocznej produkcji na wyrób"
+      ],
+      "asphalt_mixes": [
+        "lepiszcze asfaltowe",
+        "paliwo suszarni i wilgotność kruszyw",
+        "transport kruszyw i bitumu",
+        "temperatura produkcji",
+        "RAP, status materiału i zasady alokacji"
+      ],
+      "cement": [
+        "kalcynacja",
+        "paliwa pieca",
+        "udział klinkieru",
+        "energia elektryczna",
+        "dodatki mineralne i alokacja"
+      ],
+      "aggregates": [
+        "wydobycie",
+        "kruszenie i przesiewanie",
+        "płukanie lub suszenie",
+        "energia elektryczna i paliwo sprzętu",
+        "transport do wytwórni"
+      ]
+    },
+    "audit_evidence": [
+      "recepta lub karta wyrobu",
+      "dostawcy i lokalizacje",
+      "dokumenty WZ/CMR i odległości transportowe",
+      "faktury energii i paliw",
+      "wolumen produkcji i zasada alokacji",
+      "EPD dostawców, jeżeli dostępne",
+      "uzasadnienie użycia wartości domyślnej"
+    ]
+  },
+  "defaults": {
+    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": {
+      "declared_value": "30 kg CO2e/t",
+      "module": "A1",
+      "system_boundary": "produkcja wypełniacza wapiennego przed transportem do wytwórni; transport A2 należy liczyć oddzielnie",
+      "process_model": [
+        "wydobycie lub pozyskanie kamienia wapiennego",
+        "kruszenie i przygotowanie surowca",
+        "suszenie, jeżeli wymagane dla produktu proszkowego",
+        "mielenie do frakcji wypełniacza",
+        "przesiewanie, magazynowanie i załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
+          "url": "https://www.environdec.com/library/epd12771",
+          "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych"
+        },
+        {
+          "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
+          "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
+          "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego"
+        },
+        {
+          "name": "ÖKOBAUDAT",
+          "url": "https://www.oekobaudat.de/",
+          "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych"
+        },
+        {
+          "name": "Model EPD+ MMA / raport tła obliczeniowego",
+          "url": "https://polca.org.pl/datasety.html",
+          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+        }
+      ],
+      "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+      "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
+      "audit_checks": [
+        "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",
+        "czy deklarowana frakcja i wilgotność odpowiadają produktowi stosowanemu w MMA",
+        "czy transport do wytwórni jest liczony oddzielnie",
+        "czy nie istnieje EPD konkretnego dostawcy"
+      ]
+    },
+    "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": {
+      "declared_value": "5,0 kg CO2e/t",
+      "module": "A1",
+      "system_boundary": "wydobycie i przeróbka kruszywa łamanego przed transportem",
+      "process_model": [
+        "wydobycie",
+        "kruszenie",
+        "przesiewanie",
+        "opcjonalne płukanie/suszenie",
+        "załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża i kopaliny"
+        },
+        {
+          "name": "PZPK",
+          "url": "https://kruszpol.pl/",
+          "role": "kontekst branży kruszyw"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA"
+        },
+        {
+          "name": "literatura LCA kruszyw",
+          "url": "https://link.springer.com/article/10.1007/s11367-025-02442-x",
+          "role": "potwierdzenie znaczenia energii kruszenia i przesiewania"
+        }
+      ],
+      "rationale": "Wartość grupowa dla kruszyw łamanych, różnicowana dalej w taksonomii według rodzaju skały.",
+      "required_replacement": "EPD kopalni albo dane energii i procesu dla konkretnego zakładu.",
+      "audit_checks": [
+        "rodzaj skały",
+        "frakcja",
+        "energia kruszenia",
+        "płukanie/suszenie",
+        "transport A2"
+      ]
+    },
+    "POLCA-AGG-PL-NATURAL-DEFAULT-2026": {
+      "declared_value": "3,5 kg CO2e/t",
+      "module": "A1",
+      "system_boundary": "pozyskanie, sortowanie i przygotowanie kruszywa naturalnego przed transportem",
+      "process_model": [
+        "wydobycie ze złoża",
+        "sortowanie",
+        "opcjonalne płukanie",
+        "magazynowanie i załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA"
+        }
+      ],
+      "rationale": "Kruszywa naturalne zwykle wymagają mniej energochłonnego kruszenia niż kruszywa łamane, ale wynik zależy od płukania, sortowania i transportu.",
+      "required_replacement": "Dane kopalni lub EPD dostawcy.",
+      "audit_checks": [
+        "płukanie",
+        "sortowanie",
+        "wilgotność",
+        "frakcja",
+        "transport A2"
+      ]
+    },
+    "POLCA-BITUMEN-ROAD-DEFAULT-2026": {
+      "declared_value": "450 kg CO2e/t",
+      "module": "A1",
+      "system_boundary": "produkcja lepiszcza przed transportem do wytwórni",
+      "process_model": [
+        "wydobycie i dostawa ropy",
+        "rafinacja",
+        "magazynowanie bitumu"
+      ],
+      "source_basis": [
+        {
+          "name": "Eurobitume LCA 4.0",
+          "url": "https://eurobitume.eu/lci_4-0_request/",
+          "role": "branżowe dane tła dla bitumu w zakresie od wydobycia surowca do bramy zakładu"
+        }
+      ],
+      "rationale": "Lepiszcze jest zwykle hotspotem MMA, dlatego wartość domyślna jest dopuszczalna tylko przy braku danych dostawcy.",
+      "required_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy.",
+      "audit_checks": [
+        "typ asfaltu",
+        "rafineria/dostawca",
+        "PMB lub asfalt zwykły",
+        "transport A2"
+      ]
+    },
+    "POLCA-RAP-PROCESSING-DEFAULT-2026": {
+      "declared_value": "3 kg CO2e/t",
+      "module": "A1/A3 zależnie od granicy systemu",
+      "system_boundary": "przygotowanie destruktu asfaltowego do ponownego użycia",
+      "process_model": [
+        "frezowanie lub przyjęcie materiału",
+        "kruszenie",
+        "przesiewanie",
+        "magazynowanie"
+      ],
+      "source_basis": [
+        {
+          "name": "Model EPD+ MMA / EN 15804+A2/cPCR",
+          "url": "https://polca.org.pl/datasety.html",
+          "role": "modelowanie materiału wtórnego i zasad alokacji"
+        }
+      ],
+      "rationale": "RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
+      "required_replacement": "Dane procesu recyklingu i audyt statusu materiału.",
+      "audit_checks": [
+        "WWA/SVHC",
+        "status End-of-Waste",
+        "wilgotność",
+        "udział RAP",
+        "alokacja i moduł D"
+      ]
+    }
+  }
+}

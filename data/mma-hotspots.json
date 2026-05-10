@@ -1,0 +1,172 @@
+{
+  "meta": {
+    "title": "POLCA MMA kluczowe źródło wpływu database",
+    "version": "2026.1-start",
+    "status": "startowy zakres publiczny",
+    "principle": "Publiczna baza pokazuje wynikowe wartości POLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
+  },
+  "kluczowe źródło wpływus": [
+    {
+      "id": "bitumen",
+      "title": "Lepiszcze asfaltowe",
+      "module": "A1",
+      "impact": "Najczęściej największe źródło wpływu GWP w recepcie MMA mimo niskiego udziału masowego.",
+      "use_rule": "Stosuj wartość POLCA tylko przy braku EPD producenta asfaltu lub zweryfikowanego wskaźnika dostawcy. Dla PMB, asfaltów specjalnych i dodatków wymagaj danych producenta.",
+      "values": [
+        {
+          "name": "Asfalt drogowy / lepiszcze asfaltowe",
+          "value": "450 kg CO2e/t",
+          "status": "wartość sektorowa POLCA",
+          "basis": "Eurobitume LCA 4.0, background branżowy dla bitumu; transport do wytwórni liczony oddzielnie."
+        },
+        {
+          "name": "Asfalt modyfikowany PMB",
+          "value": "wymagana EPD producenta",
+          "status": "brak jednej wartości v1",
+          "basis": "Wynik zależy od polimeru, dodatków i technologii. Nie należy stosować jednej uśrednionej wartości bez dokumentu dostawcy."
+        }
+      ]
+    },
+    {
+      "id": "aggregates",
+      "title": "Kruszywa",
+      "module": "A1 + A2 oddzielnie",
+      "impact": "Wysoki udział masowy, ale niski wskaźnik jednostkowy. Transport z kopalni często decyduje o różnicach między receptami.",
+      "use_rule": "Dla obliczeń używaj rodzaju skały i lokalizacji kopalni. EPD kopalni lub dane zakładowe zastępują wartość POLCA.",
+      "values": [
+        {
+          "name": "Kruszywo łamane twarde",
+          "value": "5,0-6,0 kg CO2e/t",
+          "status": "wartość grupowa POLCA",
+          "basis": "Model referencyjny POLCA dla MMA, publiczne i sektorowe EPD kruszyw, ÖKOBAUDAT, literatura LCA kruszenia i przesiewania."
+        },
+        {
+          "name": "Kruszywo wapienne / dolomitowe",
+          "value": "4,0-4,5 kg CO2e/t",
+          "status": "wartość grupowa POLCA",
+          "basis": "Benchmark: ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych A1-A3 = 3,27 kg CO2e/t; wartość POLCA pozostaje konserwatywna dla braku danych konkretnej kopalni."
+        },
+        {
+          "name": "Piasek / żwir",
+          "value": "3,5 kg CO2e/t",
+          "status": "wartość domyślna POLCA",
+          "basis": "Niższa energochłonność niż kruszywa łamane; wymaga potwierdzenia płukania, sortowania, wilgotności i transportu."
+        }
+      ]
+    },
+    {
+      "id": "filler",
+      "title": "Wypełniacz wapienny",
+      "module": "A1",
+      "impact": "Udział zwykle mniejszy niż kruszywa, ale proces mielenia i suszenia może być istotny.",
+      "use_rule": "Stosuj jako wartość domyślną dla wypełniacza CaCO3. Nie stosuj dla wapna palonego, hydratyzowanego ani produktów kalcynowanych.",
+      "values": [
+        {
+          "name": "Wypełniacz wapienny do MMA",
+          "value": "30 kg CO2e/t",
+          "status": "konserwatywna wartość POLCA",
+          "basis": "Benchmarki EPD dla mielonego węglanu wapnia, ÖKOBAUDAT i model referencyjny MMA; wartość obejmuje mielenie/suszenie, transport liczony oddzielnie."
+        }
+      ]
+    },
+    {
+      "id": "rap",
+      "title": "RAP / destrukt asfaltowy",
+      "module": "A1/A3 oraz D według cPCR",
+      "impact": "Może obniżać zapotrzebowanie na nowe kruszywo i lepiszcze, ale wymaga jasnych zasad alokacji i przygotowania materiału.",
+      "use_rule": "Nie traktuj RAP jako darmowej redukcji. Licz przygotowanie, frakcjonowanie, wilgotność, podgrzewanie i zasady modułu D według właściwego cPCR.",
+      "values": [
+        {
+          "name": "Przygotowanie RAP do ponownego użycia",
+          "value": "3 kg CO2e/t",
+          "status": "wartość procesowa POLCA",
+          "basis": "Model referencyjny MMA; wartość startowa do zastąpienia danymi zakładu, gdy RAP ma istotny udział."
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "title": "Transport surowców",
+      "module": "A2/A4/C2",
+      "impact": "Szczególnie istotny dla kruszyw, bo duża masa potrafi przewyższyć różnice między wskaźnikami A1.",
+      "use_rule": "Transport należy ustalać z masy, adresu kopalni lub dostawcy i adresu wytwórni. Dokumenty WZ/CMR lub dane floty mają pierwszeństwo.",
+      "values": [
+        {
+          "name": "Transport drogowy, zestaw 40 t",
+          "value": "0,095 kg CO2e/tkm",
+          "status": "wartość domyślna POLCA",
+          "basis": "Publiczne bazy LCA/transportu i EMEP/EEA; w projekcie preferowane są dane floty, trasy i rzeczywiste obciążenie."
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Gaz, paliwa i energia",
+      "module": "A3",
+      "impact": "Drugie główne źródło wpływu GWP w MMA: suszenie kruszywa, temperatura produkcji, wilgotność i sprawność palnika.",
+      "use_rule": "Zużycie energii i paliw powinno pochodzić z faktur, liczników albo alokacji rocznej na produkcję. Wartości POLCA są wskaźnikami do przeliczenia aktywności.",
+      "values": [
+        {
+          "name": "Energia elektryczna PL",
+          "value": "0,599 kg CO2e/kWh",
+          "status": "model POLCA-EN-PL",
+          "basis": "KOBiZE, PSE, GUS, WUG, EEA, IPCC/JEC i jawny model LCA dla polskiego miksu energii."
+        },
+        {
+          "name": "Gaz ziemny",
+          "value": "2,0 kg CO2e/m3",
+          "status": "wartość domyślna POLCA",
+          "basis": "Wartość przeliczeniowa do A3; zużycie gazu musi pochodzić z danych zakładu."
+        },
+        {
+          "name": "Olej napędowy",
+          "value": "3,2 kg CO2e/l",
+          "status": "wartość domyślna POLCA",
+          "basis": "Spalanie i upstream paliwa; stosować dla sprzętu, procesów pomocniczych i scenariuszy."
+        }
+      ]
+    },
+    {
+      "id": "products",
+      "title": "Wyroby wynikowe: AC / SMA / BBTM",
+      "module": "A1-A3 jako baza; pozostałe moduły według cPCR",
+      "impact": "Dla MMA nie należy publikować jednej uniwersalnej emisji wyrobu, bo wynik zależy od recepty, lepiszcza, RAP, wilgotności kruszyw i energii wytwórni.",
+      "use_rule": "Dla wyrobu publikuj benchmark modelowy lub wynik recepty, nie stały zamiennik EPD. Wynik powinien wynikać z recepty i składników kluczowych, a nie z jednego ręcznie wybranego współczynnika.",
+      "values": [
+        {
+          "name": "AC — beton asfaltowy",
+          "value": "wynik z recepty",
+          "status": "benchmark modelowy, nie dataset EPD",
+          "basis": "Najpierw skład mieszanki i dane wytwórni; POLCA uzupełnia brakujące tło dla lepiszcza, kruszyw, energii i transportu."
+        },
+        {
+          "name": "SMA / BBTM / PA",
+          "value": "wynik z recepty",
+          "status": "benchmark modelowy, nie dataset EPD",
+          "basis": "Wymagane różnicowanie rodzaju mieszanki, zawartości lepiszcza, dodatków, RAP i scenariuszy produkcji."
+        }
+      ]
+    },
+    {
+      "id": "rules",
+      "title": "Zasada stosowania danych zagregowanych",
+      "module": "reguła jakości danych",
+      "impact": "Dane zagregowane zapewniają porównywalność i start obliczeń, ale nie powinny ukrywać braku danych producenta.",
+      "use_rule": "Kolejność stosowania: EPD/dane producenta > dane zakładu > dataset POLCA > konserwatywna wartość domyślna. Należy zachować wersję datasetu i jakość danych.",
+      "values": [
+        {
+          "name": "Screening / oferta / pre-audyt",
+          "value": "dopuszczalne wartości POLCA",
+          "status": "wynik roboczy",
+          "basis": "Pozwala szybko policzyć emisję i wskazać główne źródła wpływu do poprawy."
+        },
+        {
+          "name": "Weryfikacja danych",
+          "value": "wymagana trasowalność",
+          "status": "do potwierdzenia danymi",
+          "basis": "Składniki kluczowe muszą mieć dane producenta, EPD, faktury, lokalizacje albo dokumenty audytowe."
+        }
+      ]
+    }
+  ]
+}

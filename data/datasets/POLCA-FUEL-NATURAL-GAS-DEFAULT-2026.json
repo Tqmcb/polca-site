@@ -1,0 +1,86 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+    "name": "Gaz ziemny - spalanie w procesie produkcyjnym",
+    "category": "fuel",
+    "module_default": "A3",
+    "unit": "m3",
+    "gwp_total_kg_co2e": 2,
+    "year": 2026,
+    "geography": "PL",
+    "technology": "Spalanie gazu ziemnego w źródle ciepła wytwórni",
+    "data_quality": "industry",
+    "status": "published_polca_default",
+    "source_name": "POLCA 2026, wartość domyślna dla gazu ziemnego",
+    "source_url": "https://polca.org.pl/metodyka.html",
+    "scope": "Współczynnik dla m3 gazu ziemnego zużytego w produkcji MMA, suszeniu kruszywa lub podgrzewaniu procesu.",
+    "methodology_note": "Dataset jest kontrolowaną wartością domyślną dla gazu ziemnego, stosowaną gdy producent zna zużycie gazu, ale nie posiada zweryfikowanego współczynnika dostawcy. Zużycie gazu pochodzi z faktur, liczników albo rocznej alokacji na wolumen produkcji.",
+    "limitations": "Wartość nie uwzględnia szczegółowego składu gazu ani sprawności konkretnej instalacji. Dla finalnej EPD rekord wskazuje współczynnik i zużycie jako dane do potwierdzenia źródłowego.",
+    "preferred_replacement": "Dane dostawcy paliwa, faktury z wartością opałową lub zweryfikowany model spalania.",
+    "publication_status": "published_polca_default",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "source_trace": [
+      {
+        "name": "KOBiZE",
+        "type": "official_public",
+        "role": "fuel emission factor control",
+        "url": "https://www.kobize.pl/"
+      },
+      {
+        "name": "JEC Well-to-Tank v5",
+        "type": "method_reference",
+        "role": "upstream fuel factor",
+        "url": "https://publications.jrc.ec.europa.eu/"
+      },
+      {
+        "name": "faktury i dane klienta",
+        "type": "primary_verified",
+        "role": "preferred activity data",
+        "url": "https://polca.org.pl/metodyka.html"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "evidence_level": "conservative_default",
+    "source_policy": {
+      "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy POLCA",
+      "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
+      "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
+    },
+    "selection_mode": "mandatory_default_when_no_better_data",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "product_groups": [
+      "mma",
+      "beton",
+      "roboty-drogowe",
+      "ogolne-epd"
+    ],
+    "material_role": "paliwo / proces pomocniczy",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

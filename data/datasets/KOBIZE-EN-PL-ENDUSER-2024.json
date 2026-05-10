@@ -1,0 +1,70 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "KOBIZE-EN-PL-ENDUSER-2024",
+    "name": "Energia elektryczna - Polska, KOBiZE end-user CO2",
+    "category": "electricity",
+    "module_default": "A3",
+    "unit": "kWh",
+    "gwp_total_kg_co2e": 0.553,
+    "year": 2024,
+    "geography": "PL",
+    "technology": "Polski miks energii elektrycznej dla odbiorcy końcowego",
+    "data_quality": "official_public",
+    "status": "active",
+    "source_name": "KOBiZE, wskaźniki emisyjności dla energii elektrycznej za 2024 rok",
+    "source_url": "https://www.kobize.pl/",
+    "scope": "Oficjalny wskaźnik KOBiZE dla energii elektrycznej dostarczonej do odbiorcy końcowego. To jest wskaźnik CO2 ze spalania, nie pełny wskaźnik LCA CO2e.",
+    "methodology_note": "Stosowany jako publiczne wejście kontrolne i punkt odniesienia. Nie zawiera emisji upstream paliw, metanu z górnictwa ani infrastruktury OZE, dlatego dla obliczeń LCA/EPD rekomendowany jest model POLCA-EN-PL-LCA-2024.",
+    "limitations": "Zakres CO2 only / end-user; nie jest pełnym GWP-fossil w cyklu życia. Rekord ma inną granicę systemu niż wynik 0,599 kg CO2e/kWh.",
+    "preferred_replacement": "POLCA-EN-PL-LCA-2024 dla obliczeń LCA/EPD albo zweryfikowany wskaźnik energii kontraktowej zgodny z metodyką programu.",
+    "publication_status": "official_input",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Dane pierwotne/EPD dostawcy mają pierwszeństwo. Dane domyślne mają jawny status jakości i wskazują lepsze źródło dla kluczowych źródeł wyniku.",
+    "source_trace": [
+      {
+        "name": "KOBiZE",
+        "type": "official_public",
+        "use": "emisje CO2 i wskaźnik end-user energii elektrycznej",
+        "url": "https://www.kobize.pl/"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Dane publiczne KOBiZE; publikacja POLCA nie zastępuje oryginalnego dokumentu źródłowego.",
+    "evidence_level": "official_public",
+    "source_policy": {},
+    "selection_mode": "mandatory_reference_input",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "product_groups": [
+      "mma",
+      "beton",
+      "roboty-drogowe",
+      "ogolne-epd"
+    ],
+    "material_role": "energia elektryczna",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

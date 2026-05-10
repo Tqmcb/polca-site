@@ -1,0 +1,141 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
+    "name": "Kruszywo wapienne",
+    "category": "materiał",
+    "module_default": "A1",
+    "unit": "t",
+    "gwp_total_kg_co2e": 4,
+    "year": 2026,
+    "geography": "PL",
+    "technology": "Wydobycie, kruszenie i przesiewanie kruszywa wapiennego przed transportem",
+    "data_quality": "industry",
+    "status": "published_sector_dataset",
+    "source_name": "POLCA 2026, wartość grupowa dla kruszyw wapiennych",
+    "source_url": "https://polca.org.pl/metodyka.html",
+    "scope": "A1 produkcji kruszywa wapiennego. Transport z kopalni do zakładu klienta jest liczony oddzielnie w A2.",
+    "methodology_note": "Dataset oparto na koszyku źródeł dla kruszyw węglanowych. Kluczowym punktem kontrolnym jest ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych: 1 t, A1-A3, GWP total 3,27 kg CO2e/t. POLCA stosuje 4,0 kg CO2e/t jako wartość grupową, aby uwzględnić różnice kopalni, frakcji, płukania i przeróbki przy braku danych konkretnego dostawcy.",
+    "limitations": "Nie zastępuje EPD Trzuskawica ani EPD innej konkretnej kopalni. Nie obejmuje transportu A2 do wytwórni/betoniarni.",
+    "preferred_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
+    "source_trace": [
+      {
+        "name": "EPD Polska — cPCR Kruszywa Budowlane",
+        "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+        "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
+        "type": "product_category_rules"
+      },
+      {
+        "name": "PIG-PIB MIDAS",
+        "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+        "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
+        "type": "official_public_register"
+      },
+      {
+        "name": "Polski Związek Producentów Kruszyw",
+        "url": "https://kruszpol.pl/",
+        "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
+        "type": "sector_context"
+      },
+      {
+        "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+        "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+        "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
+        "type": "verified_epd_benchmark"
+      },
+      {
+        "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+        "url": "https://www.oekobaudat.de/",
+        "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
+        "type": "methodology_source"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+    "evidence_level": "sector_proxy",
+    "source_policy": {
+      "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+      "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+      "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
+    },
+    "selection_mode": "mandatory_default_when_no_supplier_epd",
+    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ kruszywa, dostawcę, kopalnię i lokalizację. System dobiera kontrolowany dataset; użytkownik nie wybiera niższego wskaźnika bez dowodu.",
+    "default_methodology": {
+      "declared_value": "4,0 kg CO2e/t; benchmark EPD Trzuskawica: 3,27 kg CO2e/t A1-A3",
+      "module": "A1",
+      "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+      "process_model": [
+        "wydobycie wapienia",
+        "kruszenie",
+        "przesiewanie",
+        "opcjonalne płukanie",
+        "magazynowanie i załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "EPD Polska — cPCR Kruszywa Budowlane",
+          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
+          "role": "reguły kategorii produktu dla kruszyw budowlanych"
+        },
+        {
+          "name": "PIG-PIB MIDAS",
+          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
+          "role": "klasyfikacja złoża i kopaliny"
+        },
+        {
+          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
+          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
+          "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
+        },
+        {
+          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
+          "url": "https://www.oekobaudat.de/",
+          "role": "kontrola rzędu wielkości LCA"
+        }
+      ],
+      "rationale": "Wapień ma zwykle niższą energochłonność kruszenia niż skały bardzo twarde, ale wynik zależy od zakładu i frakcji. Wartość POLCA jest wartością grupową, nie wynikiem konkretnej kopalni.",
+      "required_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+      "audit_checks": [
+        "kopalnia",
+        "frakcja",
+        "płukanie",
+        "zużycie energii",
+        "wilgotność",
+        "transport A2"
+      ]
+    },
+    "product_groups": [
+      "mma",
+      "beton",
+      "roboty-drogowe"
+    ],
+    "material_role": "kruszywo",
+    "record_use_status": "ready_to_use_reference_dataset"
+  }
+}

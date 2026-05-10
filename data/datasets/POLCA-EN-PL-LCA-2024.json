@@ -1,0 +1,152 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-EN-PL-LCA-2024",
+    "name": "Energia elektryczna - Polska, poLCA full LCA location-based",
+    "category": "electricity",
+    "module_default": "A3/A5/B6/C3/D",
+    "unit": "kWh",
+    "gwp_total_kg_co2e": 0.599,
+    "year": 2024,
+    "geography": "PL",
+    "technology": "Polski miks energii elektrycznej dla odbiorcy końcowego, CO2e full LCA",
+    "data_quality": "polca_model",
+    "evidence_level": "polca_model",
+    "status": "published_polca_model",
+    "publication_status": "published_polca_model",
+    "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
+    "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+    "scope": "Referencyjny wskaźnik POLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy.",
+    "methodology_note": "Wynik 0,599 kg CO2e/kWh powstaje z sumy: EF_oper 0,528, WTT_CH4 0,057, WTT_fuels 0,008 i WTT_OZE 0,006 kg CO2e/kWh. Dane wejściowe pochodzą z KOBiZE, PSE, WUG, GUS i EEA; przeliczenie CO2e bazuje na IPCC AR6/EF 3.1 oraz JEC WTT v5. Jest to model jawny, przeznaczony do konsultacji i walidacji zewnętrznej.",
+    "limitations": "Nie jest oficjalnym wskaźnikiem państwowym. Element WTT_OZE opiera się na wartości referencyjnej z bazy licencjonowanej, dlatego publikowany jest wynik i metodyka, a nie pełny zamknięty inwentarz. Finalna EPD wymaga potwierdzenia aktualnego roku danych i zasad energii kontraktowej.",
+    "preferred_replacement": "Zweryfikowane dane dostawcy energii albo aktualizacja roczna po publikacji KOBiZE/PSE/WUG/GUS.",
+    "calculation_components": [
+      {
+        "code": "EF_oper",
+        "value_kg_co2e_per_kwh": 0.528,
+        "share_pct": 88.1,
+        "sources": [
+          "KOBiZE",
+          "PSE",
+          "EEA"
+        ]
+      },
+      {
+        "code": "WTT_CH4",
+        "value_kg_co2e_per_kwh": 0.057,
+        "share_pct": 9.5,
+        "sources": [
+          "WUG",
+          "GUS",
+          "IPCC AR6"
+        ]
+      },
+      {
+        "code": "WTT_fuels",
+        "value_kg_co2e_per_kwh": 0.008,
+        "share_pct": 1.3,
+        "sources": [
+          "JEC WTT v5"
+        ]
+      },
+      {
+        "code": "WTT_OZE",
+        "value_kg_co2e_per_kwh": 0.006,
+        "share_pct": 1,
+        "sources": [
+          "ecoinvent 3.12 reference value"
+        ]
+      }
+    ],
+    "source_trace": [
+      {
+        "name": "KOBiZE",
+        "type": "official_public",
+        "use": "emisje CO2 i wskaźnik end-user energii elektrycznej",
+        "url": "https://www.kobize.pl/"
+      },
+      {
+        "name": "PSE",
+        "type": "official_public",
+        "use": "produkcja, import/eksport i bilans KSE",
+        "url": "https://www.pse.pl/"
+      },
+      {
+        "name": "WUG",
+        "type": "official_public",
+        "use": "emisje metanu z górnictwa węgla",
+        "url": "https://www.wug.gov.pl/"
+      },
+      {
+        "name": "GUS",
+        "type": "official_public",
+        "use": "gospodarka paliwowo-energetyczna i współczynniki alokacji",
+        "url": "https://stat.gov.pl/"
+      },
+      {
+        "name": "EEA",
+        "type": "official_public",
+        "use": "intensywność emisji energii elektrycznej krajów sąsiednich",
+        "url": "https://www.eea.europa.eu/"
+      },
+      {
+        "name": "IPCC AR6 / EF 3.1",
+        "type": "method_reference",
+        "use": "GWP i charakterystyka CO2e",
+        "url": "https://www.ipcc.ch/"
+      },
+      {
+        "name": "JEC Well-to-Tank v5",
+        "type": "method_reference",
+        "use": "emisje upstream paliw",
+        "url": "https://publications.jrc.ec.europa.eu/"
+      },
+      {
+        "name": "ecoinvent 3.12",
+        "type": "restricted_reference",
+        "use": "referencyjna infrastruktura OZE; nie jest otwarta baza do publikacji inwentarza",
+        "url": "https://ecoinvent.org/"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka-en-pl.html",
+    "machine_methodology": "https://polca.org.pl/data/polca-en-pl-2024.json",
+    "open_data_note": "Dane publiczne: KOBiZE, PSE, WUG, GUS, EEA, IPCC/JEC. Uwaga: ecoinvent nie jest darmowa baza; w publicznym katalogu pokazujemy tylko wynik referencyjny i status ograniczenia.",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation",
+      "auditor_review_after_confirmation"
+    ],
+    "quality_rule": "Dane pierwotne/EPD dostawcy mają pierwszeństwo. Dane domyślne mają jawny status jakości i wskazują lepsze źródło dla kluczowych źródeł wyniku.",
+    "source_policy": {},
+    "selection_mode": "mandatory_polca_model",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "product_groups": [
+      "mma",
+      "beton",
+      "roboty-drogowe",
+      "ogolne-epd"
+    ],
+    "material_role": "energia elektryczna",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}

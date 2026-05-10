@@ -1,0 +1,80 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "version": "2026.4-aggregates",
+    "status": "published_defaults",
+    "published_at": "2026-05-03",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 readiness"
+    ],
+    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+  },
+  "dataset": {
+    "code": "POLCA-TRUCK-40T-DEFAULT-2026",
+    "name": "Transport drogowy - zestaw 40 t",
+    "category": "transport",
+    "module_default": "A2/A4/C2",
+    "unit": "tkm",
+    "gwp_total_kg_co2e": 0.095,
+    "year": 2026,
+    "geography": "PL/EU",
+    "technology": "Samochod ciężarowy / zestaw 40 t, transport drogowy",
+    "data_quality": "industry",
+    "status": "published_polca_default",
+    "source_name": "ÖKOBAUDAT / EMEP-EEA jako publiczne punkty odniesienia dla transportu",
+    "source_url": "https://www.oekobaudat.de/",
+    "scope": "Współczynnik dla transportu liczony jako tkm. POLCA moze przeliczyć mase ladunku i odleglosc z lokalizacji dostawcy oraz wytwórni.",
+    "methodology_note": "Transport jest liczony jako tkm z masy ładunku i odległości. Publiczne bazy służą jako punkt odniesienia, ale dla klienta preferowane są dane floty, trasy, ładowności i puste przebiegi.",
+    "limitations": "Nie rozróżnia normy EURO, spalania konkretnej floty, pustych przebiegow ani rodzaju drogi. Dla finalnej EPD wymaga potwierdzenia założeń transportowych.",
+    "preferred_replacement": "Dane floty, dokumenty WZ/CMR, potwierdzona trasa i rzeczywiste spalanie.",
+    "publication_status": "published_polca_default",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_plus_preparation"
+    ],
+    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "source_trace": [
+      {
+        "name": "ÖKOBAUDAT",
+        "type": "public_database",
+        "role": "transport/building LCA proxy",
+        "url": "https://www.oekobaudat.de/"
+      },
+      {
+        "name": "EMEP/EEA Guidebook 2023",
+        "type": "official_public",
+        "role": "road transport emission factors cross-check",
+        "url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023"
+      }
+    ],
+    "methodology_url": "https://polca.org.pl/metodyka.html",
+    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "evidence_level": "conservative_default",
+    "source_policy": {
+      "priority": "dane floty/trasy > dokumenty WZ/CMR > ÖKOBAUDAT/EMEP proxy",
+      "when_allowed": "Brak danych przewoźnika; system zna masę i odległość.",
+      "auditor_note": "Sprawdzić czy trasa i ładowność odpowiadają rzeczywistemu transportowi surowców lub mieszanki."
+    },
+    "selection_mode": "mandatory_default_when_no_better_data",
+    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "product_groups": [
+      "mma",
+      "beton",
+      "roboty-drogowe",
+      "ogolne-epd"
+    ],
+    "material_role": "transport",
+    "record_use_status": "ready_to_use_default_dataset"
+  }
+}
