@@ -45,10 +45,12 @@
       },
       "hasPart": [
         {
-          "@type": "CreativeWork",
+          "@type": "ScholarlyArticle",
           "name": "MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)",
-          "url": "https://polca.org.pl/metodyki/MET-001-en-pl.html",
-          "creativeWorkStatus": "Planned"
+          "url": "https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html",
+          "datePublished": "2026-05-10",
+          "creativeWorkStatus": "Published",
+          "license": "https://creativecommons.org/licenses/by/4.0/"
         },
         {
           "@type": "ScholarlyArticle",
@@ -198,7 +200,7 @@
         <div class="section-num">02 — Lista metodyk</div>
         <div class="card-title">Dokumenty MET-XXX programu poLCA</div>
         <p class="card-text" style="max-width:880px;">
-            Trzy metodyki w obecnym wydaniu programu — jedna zatwierdzona, dwie planowane.
+            Trzy metodyki w obecnym wydaniu programu — dwie zatwierdzone, jedna w przygotowaniu (draft).
             Status każdej metodyki, link do pełnej wersji HTML, PDF/A oraz wzorzec cytowania
             APA znajdziesz w karcie poniżej.
         </p>
@@ -206,37 +208,42 @@
         <div class="met-grid">
 
             <!-- ───── MET-001 ───── -->
-            <article class="met-card">
+            <article class="met-card met-card-published">
                 <div class="met-card-head">
-                    <span class="met-card-id">MET-001:2026 · v9.1 (planowana)</span>
-                    <span class="met-status met-status-planned">Planowana</span>
+                    <span class="met-card-id">MET-001:2026 · v9.1</span>
+                    <span class="met-status met-status-published">Zatwierdzona 2026-05-10</span>
                 </div>
                 <h2 class="met-card-title">Wskaźnik emisyjności energii elektrycznej PL — pełna metodyka poLCA-EN-PL-2024 v9.1</h2>
                 <p class="met-card-desc">
-                    Pełna metodyka wskaźnika 0,599 kg CO₂e/kWh dla polskiej sieci elektroenergetycznej —
-                    full LCA z analizą cyklu życia paliw, transportu, infrastruktury i strat sieciowych.
-                    Dokument zastąpi obecny preprint w <a href="../metodyka-en-pl.html">metodyce EN-PL</a>
-                    i będzie referencyjnym uzupełnieniem MET-002.
+                    Pełna metodyka wskaźnika <strong>0,599 kg CO₂e/kWh</strong> dla polskiej sieci elektroenergetycznej —
+                    full LCA z granicą well-to-meter, charakteryzacja EF 3.1, GWP IPCC AR6.
+                    Cztery komponenty (EF_oper, WTT_CH₄, WTT_fuels, WTT_OZE), 41 stron, załączniki A/B/C.
+                    Dokument fundamentowy dla wszystkich pozostałych metodyk i datasetów programu poLCA.
                 </p>
                 <div class="met-card-meta">
                     <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">v9.1</span></div>
-                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">w toku</span></div>
-                    <div class="met-meta-row"><span class="met-meta-label">Planowana publikacja</span><span class="met-meta-value">Q2 2026</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Data publikacji</span><span class="met-meta-value">2026-05-10</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Format</span><span class="met-meta-value">HTML + PDF/A (1,5 MB)</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Licencja</span><span class="met-meta-value">CC BY 4.0</span></div>
                     <div class="met-meta-row"><span class="met-meta-label">DOI</span><span class="met-meta-value">10.xxxx/polca.met.2026.001</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">DataCite</span><span class="met-meta-value">rejestracja w toku</span></div>
                 </div>
                 <div class="met-cite">
-                    <span class="met-cite-label">Cytowanie (APA — placeholder)</span>
-                    Multicert Sp. z o.o. (2026). <em>MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL: pełna metodyka poLCA-EN-PL-2024 v9.1</em> (wersja planowana). Program EPD Polska. https://polca.org.pl/metodyki/
+                    <span class="met-cite-label">Cytowanie (APA)</span>
+                    Multicert Sp. z o.o. (2026). <em>MET-001:2026 — Wskaźnik emisyjności energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)</em>. Program EPD Polska. https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html
                 </div>
                 <div class="met-tags">
+                    <span class="met-tag met-tag-accent">peer-reviewable</span>
                     <span class="met-tag">EN 15804+A2</span>
-                    <span class="met-tag">ISO 14067</span>
+                    <span class="met-tag">ISO 14040/14044</span>
                     <span class="met-tag">EF 3.1</span>
                     <span class="met-tag">IPCC AR6</span>
+                    <span class="met-tag">well-to-meter</span>
                 </div>
                 <div class="met-card-actions">
-                    <span class="met-btn met-btn-disabled">PDF — wkrótce</span>
-                    <a href="../metodyka-en-pl.html" class="met-btn met-btn-secondary">Preprint metodyki EN-PL →</a>
+                    <a href="MET-001-poLCA-EN-PL-2024.html" class="met-btn met-btn-primary">Czytaj HTML →</a>
+                    <a href="MET-001-poLCA-EN-PL-2024.pdf" class="met-btn met-btn-secondary">Pobierz PDF/A (1,5 MB)</a>
+                    <a href="../metodyka-en-pl.html" class="met-btn met-btn-secondary">Preprint EN-PL →</a>
                 </div>
             </article>
 
