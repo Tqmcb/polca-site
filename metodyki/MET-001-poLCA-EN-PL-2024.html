@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1) | poLCA</title>
+    <meta name="description" content="MET-001:2026 — pełna metodyka wskaźnika emisyjności energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1) = 0,599 kg CO₂e/kWh. Full LCA wg ISO 14040/44 i EN 15804+A2:2019/A1:2021, charakteryzacja EF 3.1, GWP IPCC AR6.">
+    <link rel="canonical" href="https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)">
+    <meta property="og:description" content="Pełna metodyka wskaźnika 0,599 kg CO₂e/kWh dla polskiej sieci elektroenergetycznej — full LCA, granica well-to-meter, charakteryzacja EF 3.1, GWP IPCC AR6. Dokument referencyjny programu EPD Polska.">
+    <meta property="og:url" content="https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)">
+    <meta name="twitter:description" content="Pełna metodyka wskaźnika 0,599 kg CO₂e/kWh — full LCA polskiej energii elektrycznej zgodny z EN 15804+A2 i EF 3.1.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta name="citation_title" content="MET-001:2026 — Wskaźnik emisyjności energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)">
+    <meta name="citation_author" content="Multicert Sp. z o.o.">
+    <meta name="citation_publication_date" content="2026-05-10">
+    <meta name="citation_publisher" content="Program EPD Polska">
+    <meta name="citation_doi" content="10.xxxx/polca.met.2026.001">
+    <meta name="citation_language" content="pl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["ScholarlyArticle", "TechArticle"],
+      "headline": "MET-001:2026 — Wskaźnik emisyjności energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)",
+      "alternativeHeadline": "MET-001:2026 — poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh",
+      "description": "Pełna metodyka wskaźnika emisyjności energii elektrycznej w Polsce w ujęciu pełnego cyklu życia — referencyjny krajowy wskaźnik GWP polskiego miksu elektroenergetycznego (well-to-meter, EF 3.1, IPCC AR6). Wartość bazowa: 0,599 kg CO₂e/kWh dla 2024 r. (−6,7 % vs 2023). Dokument metodyczny programu EPD Polska zgodny z ISO 14040/14044 i EN 15804+A2:2019/A1:2021.",
+      "url": "https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.xxxx/polca.met.2026.001"
+      },
+      "datePublished": "2026-05-10",
+      "dateModified": "2026-05-10",
+      "inLanguage": "pl-PL",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "keywords": "EPD, LCA, EN 15804+A2, EF 3.1, KOBiZE, poLCA-EN-PL-2024, energia elektryczna, wskaźnik emisyjności, well-to-meter, location-based, IPCC AR6, WTT, metan kopalniany, JEC WTT v5, ecoinvent, c-PCR-BET, AVS 3+, Multicert, EPD Polska",
+      "about": [
+        {"@type": "Thing", "name": "Life Cycle Assessment"},
+        {"@type": "Thing", "name": "Environmental Product Declaration"},
+        {"@type": "Thing", "name": "Polish electricity grid emission factor"},
+        {"@type": "Thing", "name": "Well-to-meter electricity"}
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://multicert.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Mydlarska 47",
+          "postalCode": "04-690",
+          "addressLocality": "Warszawa",
+          "addressCountry": "PL"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Program EPD Polska",
+        "url": "https://www.epd.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "poLCA Methodology Series",
+        "url": "https://polca.org.pl/metodyki/"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.pdf",
+        "encodingFormat": "application/pdf"
+      },
+      "citation": [
+        "EN 15804:2012+A2:2019+A1:2021",
+        "ISO 14040:2006",
+        "ISO 14044:2006",
+        "ISO 14025:2006",
+        "ISO 14067:2018",
+        "ISO 21930:2017",
+        "Komisja Rec. (UE) 2021/2279",
+        "Rozp. (UE) 2024/3110 (CPR)",
+        "JRC EF 3.1 method 2022",
+        "IPCC AR6 WG1 2021",
+        "JEC WTT v5 (JRC119036, 2020)",
+        "ecoinvent v3.12 cut-off"
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #abstract,#sec-1,#sec-2,#sec-3,#sec-4,#sec-5,#sec-6,#sec-7,#sec-8,#sec-9,#sec-10{scroll-margin-top:76px}
+        .met-doc-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin:1rem 0 0;padding:.85rem 1rem;background:var(--paper-warm);border:1px solid var(--border);border-radius:8px}
+        .met-doc-meta-item{font-size:.74rem;line-height:1.5}
+        .met-doc-meta-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);font-weight:700;display:block;margin-bottom:.15rem}
+        .met-doc-meta-value{color:var(--text-primary);font-weight:600}
+        .met-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin:1.6rem 0 .65rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
+        .met-section-title:first-of-type{margin-top:.5rem}
+        .met-h3{font-family:'Inter Tight',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:1.4rem 0 .55rem;line-height:1.35}
+        .met-h3 .met-h3-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:700;margin-right:.4rem}
+        .met-text{font-size:.92rem;line-height:1.7;color:var(--text-body);margin:0 0 .85rem;max-width:880px}
+        .met-text strong{color:var(--text-primary);font-weight:600}
+        .met-abstract{padding:1.1rem 1.2rem;background:var(--bg-subtle);border-left:3px solid var(--accent);border-radius:6px;margin-top:1rem}
+        .met-abstract p{margin:0 0 .7rem;font-size:.9rem;line-height:1.7;color:var(--text-body)}
+        .met-abstract p:last-child{margin-bottom:0}
+        .met-keywords{font-size:.78rem;color:var(--text-secondary);margin-top:.85rem;font-family:'IBM Plex Mono',monospace;line-height:1.6}
+        .met-keywords-label{font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem}
+        .polca-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:1rem 0}
+        .polca-table thead th{background:var(--paper-warm);padding:.7rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .polca-table tbody td{padding:.65rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .polca-table tbody tr:last-child td{border-bottom:none}
+        .polca-table tbody tr:hover td{background:rgba(30,58,138,0.02)}
+        .polca-table .num,.polca-table .mono{font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+        .polca-table .right{text-align:right}
+        .polca-table .total td{background:var(--bg-subtle);font-weight:700;color:var(--text-primary)}
+        .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;margin:1rem 0}
+        .table-scroll .polca-table{margin:0;min-width:680px}
+        .table-caption{font-size:.78rem;color:var(--text-tertiary);font-style:italic;margin:.5rem 0 .85rem;line-height:1.5}
+        .formula-block{font-family:'IBM Plex Mono',monospace;font-size:.86rem;line-height:1.55;padding:.75rem 1rem;background:var(--paper-warm);border:1px solid var(--border);border-radius:6px;margin:.65rem 0;overflow-x:auto;white-space:nowrap}
+        .citation-block{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);margin:.75rem 0}
+        .citation-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:700;display:block;margin-bottom:.4rem}
+        .citation-text{font-size:.86rem;line-height:1.65;color:var(--text-body);margin:0}
+        .citation-bibtex{font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.6;color:var(--text-body);background:var(--paper-warm);padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);white-space:pre;overflow-x:auto;margin:.5rem 0 0}
+        .ref-list{list-style:none;padding:0;margin:1rem 0 0;counter-reset:none}
+        .ref-list li{display:grid;grid-template-columns:54px 1fr;gap:.6rem;padding:.55rem .7rem;border-bottom:1px solid var(--border-light);font-size:.82rem;line-height:1.55;color:var(--text-body)}
+        .ref-list li:last-child{border-bottom:none}
+        .ref-list .ref-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-tertiary);font-weight:700}
+        .ref-list a{color:var(--accent);text-decoration:none}
+        .ref-list a:hover{text-decoration:underline}
+        .doc-pill{font-size:.62rem;font-family:'IBM Plex Mono',monospace;padding:.18rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.04em;display:inline-block}
+        .doc-pill.accent{background:var(--accent-subtle);color:var(--accent)}
+        .breadcrumbs{font-size:.74rem;color:var(--text-tertiary);margin:.5rem 0 0;font-family:'IBM Plex Mono',monospace}
+        .breadcrumbs a{color:var(--text-secondary);text-decoration:none}
+        .breadcrumbs a:hover{color:var(--accent);text-decoration:underline}
+        .breadcrumbs .sep{margin:0 .35rem;color:var(--text-tertiary)}
+        .pdf-callout{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;border:1px solid var(--accent);background:var(--accent-subtle);border-radius:10px;margin:1.5rem 0}
+        .pdf-callout-text{font-size:.88rem;color:var(--text-primary);line-height:1.55;flex:1;min-width:240px}
+        .pdf-callout-text strong{color:var(--accent)}
+        .pdf-callout-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+        .pdf-callout-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:6px;font-size:.82rem;font-weight:600;text-decoration:none;background:var(--accent);color:#fff;border:1px solid var(--accent)}
+        .pdf-callout-btn:hover{background:#0d4a23;border-color:#0d4a23}
+        .pdf-callout-btn.secondary{background:var(--bg);color:var(--text-primary);border:1px solid var(--border)}
+        .pdf-callout-btn.secondary:hover{background:var(--paper-warm);border-color:var(--text-tertiary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-doc-meta{grid-template-columns:1fr 1fr}.ref-list li{grid-template-columns:38px 1fr;gap:.4rem}}
+        @media(max-width:600px){.polca-table{font-size:.76rem}.polca-table thead th,.polca-table tbody td{padding:.5rem .55rem}.met-doc-meta{grid-template-columns:1fr}.formula-block{font-size:.78rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html" class="active">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <!-- HERO + DOC METADATA -->
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+                <a href="../index.html">poLCA</a>
+                <span class="sep">›</span>
+                <a href="index.html">Metodyki</a>
+                <span class="sep">›</span>
+                <span>MET-001:2026</span>
+            </nav>
+            <div class="section-num" style="margin-top:.85rem;">MET-001:2026 — Methodology paper</div>
+            <h1 class="page-title">Wskaźnik emisyjności energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)</h1>
+            <p class="page-subtitle">
+                Pełna metodyka referencyjnego krajowego wskaźnika GWP polskiego miksu elektroenergetycznego.
+                Granica systemu well-to-meter, charakteryzacja wpływu wg <strong>EF 3.1</strong>,
+                współczynniki GWP wg <strong>IPCC AR6</strong>. Wartość bazowa
+                <strong>poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong> (2024 r.;
+                −6,7 % vs 2023 = 0,642). Dokument fundamentowy dla wszystkich pozostałych
+                metodyk i datasetów programu poLCA.
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span class="doc-pill accent">MET-001:2026</span>
+                <span class="doc-pill">v9.1</span>
+                <span class="doc-pill">EN 15804+A2</span>
+                <span class="doc-pill">ISO 14040/14044</span>
+                <span class="doc-pill">EF 3.1 / JRC</span>
+                <span class="doc-pill">IPCC AR6</span>
+                <span class="doc-pill accent">peer-reviewable</span>
+                <span class="doc-pill accent">DOI: 10.xxxx/polca.met.2026.001</span>
+            </div>
+            <div class="met-doc-meta">
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wydanie</span>
+                    <span class="met-doc-meta-value">v9.1 — 2026-05-10</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Autor</span>
+                    <span class="met-doc-meta-value">Multicert Sp. z o.o.</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wydawca</span>
+                    <span class="met-doc-meta-value">Program EPD Polska</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Język</span>
+                    <span class="met-doc-meta-value">polski (pl-PL)</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Licencja</span>
+                    <span class="met-doc-meta-value">CC BY 4.0</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">DOI</span>
+                    <span class="met-doc-meta-value">10.xxxx/polca.met.2026.001</span>
+                </div>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Metodyka LCA wskaźnika emisyjności energii elektrycznej w Polsce" loading="lazy" style="width:100%;height:240px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <!-- PDF Callout -->
+    <div class="pdf-callout fade-in">
+        <div class="pdf-callout-text">
+            <strong>Pełny tekst metodyki w PDF/A.</strong> Niniejsza strona stanowi cytowalny mirror — pełny dokument (41 stron, 9 sekcji + załączniki A, B, C, bibliografia) dostępny jest jako PDF/A z DOI placeholder. Po rejestracji DataCite identyfikator DOI zostanie zaktualizowany.
+        </div>
+        <div class="pdf-callout-actions">
+            <a href="MET-001-poLCA-EN-PL-2024.pdf" class="pdf-callout-btn">Pełna metodyka v9.1 — PDF (1,5 MB)</a>
+            <a href="index.html" class="pdf-callout-btn secondary">Hub metodyk →</a>
+        </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="tool-nav section-gap">
+        <a href="#abstract" class="tool-nav-pill">Streszczenie</a>
+        <a href="#sec-1" class="tool-nav-pill">1 — Wprowadzenie</a>
+        <a href="#sec-2" class="tool-nav-pill">2 — Materiały i metody</a>
+        <a href="#sec-3" class="tool-nav-pill">3 — Wzór obliczeniowy</a>
+        <a href="#sec-4" class="tool-nav-pill">4 — Wyniki</a>
+        <a href="#sec-5" class="tool-nav-pill">5 — Walidacja</a>
+        <a href="#sec-6" class="tool-nav-pill">6 — Niepewność</a>
+        <a href="#sec-7" class="tool-nav-pill">7 — Cykl aktualizacji</a>
+        <a href="#sec-8" class="tool-nav-pill">8 — Cytowanie</a>
+        <a href="#sec-9" class="tool-nav-pill">9 — Bibliografia</a>
+    </div>
+
+    <!-- STRESZCZENIE -->
+    <section id="abstract" class="card card-lg section-gap fade-in" aria-label="Streszczenie">
+        <div class="section-num">Streszczenie</div>
+        <div class="card-title">Abstract — referencyjny krajowy wskaźnik GWP energii elektrycznej PL</div>
+        <div class="met-abstract">
+            <p>
+                Niniejszy dokument metodyczny (MET-001:2026) przedstawia pełną metodykę wskaźnika
+                <strong>poLCA-EN-PL-2024 v9.1</strong> — pierwszego publicznie dostępnego w Polsce
+                wskaźnika emisyjności energii elektrycznej opracowanego w ujęciu pełnego cyklu życia
+                (full LCA, granica systemu <em>well-to-meter</em>). Wskaźnik został opracowany w celu
+                wypełnienia luki metodologicznej między krajową inwentaryzacją emisji raportowaną
+                przez KOBiZE (mandat UNFCCC/EU ETS, granica gate, wyłącznie CO₂) a wymaganiami
+                analizy cyklu życia wg ISO 14040/14044, EN 15804+A2:2019/A1:2021 oraz EF 3.1
+                (JRC 2022).
+            </p>
+            <p>
+                Wartość referencyjna dla 2024 r. wynosi <strong>0,599 kg CO₂e/kWh</strong>
+                (−6,7 % vs 2023 = 0,642 kg CO₂e/kWh). Wskaźnik jest sumą czterech komponentów:
+                EF_oper (operacyjne emisje gate-to-meter z alokacją CHP, korektami N₂O i CH₄ ze
+                spalania, korektą importową i stratami sieciowymi) = 0,528 kg CO₂e/kWh (88,1 %);
+                WTT_CH₄ (metan fugitywny z polskich kopalń węgla kamiennego × GWP_AR6 ×
+                f_alloc_GUS) = 0,057 (9,5 %); WTT_fuels (upstream pozostałe paliwa wg JEC WTT v5)
+                = 0,008 (1,3 %); WTT_OZE (infrastruktura OZE wg ecoinvent 3.12) = 0,006 (1,0 %).
+            </p>
+            <p>
+                Wskaźnik stanowi fundament dla wszystkich pozostałych metodyk i datasetów programu
+                poLCA, jest zalecany jako <strong>Poziom 1</strong> w c-PCR-BET-EPD-PL:2026 v1.3
+                §6.3.1 i jest spójny z niezależnymi publikacjami recenzowanymi (Lewandowska
+                <em>et al.</em>, MDPI Energies 2025) oraz ze wskaźnikami programów EPD wiodących
+                rynków europejskich. Aktualizacja: cykl roczny (Q2) po publikacji wskaźników
+                KOBiZE za rok poprzedni.
+            </p>
+        </div>
+        <p class="met-keywords">
+            <span class="met-keywords-label">Słowa kluczowe:</span>
+            EPD · LCA · EN 15804+A2 · EF 3.1 · KOBiZE · poLCA-EN-PL-2024 ·
+            energia elektryczna · wskaźnik emisyjności · well-to-meter · WTT · IPCC AR6 ·
+            JEC WTT v5 · ecoinvent · location-based · Multicert · EPD Polska
+        </p>
+    </section>
+
+    <!-- 1. WPROWADZENIE -->
+    <section id="sec-1" class="card card-lg section-gap fade-in" aria-label="Wprowadzenie">
+        <div class="section-num">1 — Wprowadzenie</div>
+        <div class="card-title">Problem, mandat, jednostka funkcjonalna</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.1</span>Luka metodologiczna na rynku PL</h3>
+        <p class="met-text">
+            W Polsce brak jest oficjalnego wskaźnika emisyjności energii elektrycznej w ujęciu
+            pełnego cyklu życia, przeznaczonego do stosowania w analizach środowiskowych produktów
+            oraz w Deklaracjach Środowiskowych Produktu (EPD). Wskaźniki publikowane przez Krajowy
+            Ośrodek Bilansowania i Zarządzania Emisjami (KOBiZE) — fundament krajowej inwentaryzacji
+            emisji raportowanej w ramach UNFCCC, EU ETS i krajowego bilansu emisji — mają charakter
+            inwentaryzacyjny i odnoszą się do emisji bezpośrednich CO₂ ze spalania paliw w
+            instalacjach energetycznych. Nie obejmują emisji upstream (well-to-tank, WTT), emisji
+            metanu z górnictwa węgla kamiennego ani emisji infrastruktury wytwarzania.
+        </p>
+        <p class="met-text">
+            Skutkiem stanu rynku jest stosowanie różnych, niespójnych podejść metodologicznych
+            (KOBiZE jako przybliżenie LCA, dane międzynarodowe ecoinvent dla PL, indywidualne
+            modelowanie miksu) — co prowadzi do różnic 8–15 % w module A1-A3 EPD dla porównywalnych
+            wyrobów wytwarzanych w Polsce i podważa wiarygodność EPD jako narzędzia decyzyjnego
+            w zamówieniach publicznych.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.2</span>Cel i zakres wskaźnika</h3>
+        <p class="met-text">
+            <strong>poLCA-EN-PL-2024</strong> stanowi referencyjną wartość wskaźnika GWP polskiego
+            miksu energetycznego, przeznaczoną do stosowania jako dane wejściowe w obliczeniach
+            LCA wyrobów budowlanych zgodnych z EN 15804+A2:2019 oraz w raportowaniu środowiskowym.
+            Wskaźnik stosowany jest w podejściu <strong>location-based</strong> (fizyczny miks
+            wytwarzania energii elektrycznej) jako wartość domyślna w obliczeniach LCA na potrzeby
+            EPD. Wskaźnik nie jest wskaźnikiem raportowym dla krajowej inwentaryzacji emisji
+            (UNFCCC, EU ETS) ani wskaźnikiem emisji organizacyjnych (Scope 2, GHG Protocol).
+        </p>
+        <p class="met-text">
+            <strong>Jednostka funkcjonalna:</strong> 1 kWh energii elektrycznej dostarczonej do
+            odbiorcy końcowego w krajowym systemie elektroenergetycznym, po uwzględnieniu strat
+            sieciowych na przesyle i dystrybucji.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.3</span>Zgodność normatywna</h3>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>ISO 14040:2006 / ISO 14044:2006</strong> — zasady i wymagania LCA;</li>
+            <li><strong>EN 15804+A2:2019/A1:2021</strong> — Sustainability of construction works
+                — EPD Core rules (CEN/TC 350);</li>
+            <li><strong>Environmental Footprint 3.1 (EF 3.1)</strong> — metoda charakteryzacji
+                wpływu zalecana przez JRC Komisji Europejskiej (luty 2023, JRC130796);
+                wartości GWP zgodne z IPCC AR6 (Tab. 7.SM.7);</li>
+            <li><strong>ISO 14025:2006</strong> — Type III environmental declarations;</li>
+            <li><strong>CEN/TR 16970:2016</strong> — wytyczne dla użytkowników EN 15804.</li>
+        </ul>
+    </section>
+
+    <!-- 2. MATERIAŁY I METODY -->
+    <section id="sec-2" class="card card-lg section-gap fade-in" aria-label="Materiały i metody">
+        <div class="section-num">2 — Materiały i metody</div>
+        <div class="card-title">Granice systemu, źródła danych, terminologia</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">2.1</span>Granice systemu (well-to-meter)</h3>
+        <p class="met-text">
+            Wskaźnik poLCA-EN-PL obejmuje pełny łańcuch energii elektrycznej dostarczanej do
+            odbiorcy końcowego w Polsce — od wydobycia paliw, przez wytwarzanie, sieć przesyłową
+            i dystrybucyjną aż do licznika odbiorcy. Cztery komponenty:
+        </p>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>Emisje operacyjne Gate-to-Gate</strong> — emisje bezpośrednie CO₂ z instalacji
+                spalania paliw (KOBiZE Tab. 6 po alokacji CHP metodą produkcji równoważnej, MRR
+                2018/2066 Aneks VI), z korektą importową opartą na fizycznych przepływach
+                transgranicznych (PSE Tab. 7.2) i intensywności emisji systemów krajów sąsiednich
+                (EEA), skalowane do poziomu end-user (straty sieciowe), uzupełnione o korekty
+                emisji N₂O i CH₄ ze spalania.</li>
+            <li><strong>WTT — metan z kopalń węgla</strong> — emisje fugitywne CH₄ netto do atmosfery
+                z czynnych kopalń węgla kamiennego w Polsce (WUG: szyby wentylacyjne + stacje
+                odmetanowania), alokowane do sektora energetycznego współczynnikiem f_alloc opartym
+                na danych GUS (Tab. 1(74) gospodarka paliwowo-energetyczna).</li>
+            <li><strong>WTT — pozostałe paliwa</strong> — emisje upstream łańcucha dostaw paliw
+                kopalnych (gaz, olej) i biomasy wg JEC WTT v5 (JRC 2020, JRC119036), traktowane jako
+                stałe modelowe (CONST) ze względu na stabilność międzyletnią ±5 % oraz brak polskich
+                danych krajowych w wymaganej szczegółowości.</li>
+            <li><strong>Infrastruktura OZE</strong> — emisje cyklu życia infrastruktury odnawialnych
+                źródeł (turbiny wiatrowe, moduły PV, montaż, utrzymanie, dekomisja) wg ecoinvent
+                3.12 cut-off, traktowane jako stałe modelowe (CONST).</li>
+        </ul>
+
+        <h3 class="met-h3"><span class="met-h3-num">2.2</span>Źródła danych</h3>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Źródło</th>
+                        <th>Dane</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mono">S1</td>
+                        <td>KOBiZE XII 2024 / XII 2025</td>
+                        <td>Tab. 6: emisje CO₂ po alokacji CHP; Q_gross; Tab. 2: wskaźnik end-user (referencyjny)</td>
+                        <td>Potwierdzony</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">S2</td>
+                        <td>PSE S.A. — Raport roczny KSE</td>
+                        <td>Tab. 7.2 — przepływy graniczne wg krajów, 2023 i 2024</td>
+                        <td>Potwierdzony</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">S3</td>
+                        <td>EEA — GHG intensity by country</td>
+                        <td>EF_import dla DE, SE, CZ, LT, SK [g CO₂e/kWh]</td>
+                        <td>Potwierdzony (5/6; UA = SZAC IEA)</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">S6</td>
+                        <td>WUG — Ocena stanu bezpieczeństwa w górnictwie</td>
+                        <td>Em_CH₄ netto: 551,2 (2023) / 530,6 (2024) mln m³ CH₄/rok</td>
+                        <td>Potwierdzony</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">S10</td>
+                        <td>GUS — Gospodarka paliwowo-energetyczna</td>
+                        <td>f_alloc = 0,8109 (2023) / 0,8094 (2024) — Tab. 1(74) sekcja D</td>
+                        <td>Potwierdzony</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">CONST</td>
+                        <td>JEC WTT v5; ecoinvent 3.12; IPCC AR6 / EF 3.1</td>
+                        <td>WTT_fuels = 8,0; WTT_OZE = 6,0; GWP CH₄ fossil = 29,8; N₂O = 273; Δ_N₂O = 2,4 g; Δ_CH₄_comb = 0,2 g</td>
+                        <td>Stałe</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 2.2. Sześć kluczowych źródeł danych wskaźnika poLCA-EN-PL. Pełna tabela parametrów
+            wejściowych — Załącznik A (PDF). Dane geograficznie specyficzne dla Polski, czas
+            referencyjny &lt;1 rok od daty publikacji.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">2.3</span>Wskaźnik wpływu (GWP)</h3>
+        <p class="met-text">
+            Potencjał globalnego ocieplenia (GWP-100) wyrażony w [kg CO₂e/kWh] zgodnie z
+            <strong>GWP₁₀₀ AR6 IPCC 2021</strong> (CH₄ fossil = 29,8; N₂O = 273) — wartości z
+            pakietu referencyjnego <strong>EF 3.1</strong> (JRC, luty 2023). Wybór EF 3.1 wynika
+            z mandatu programu EPD International (Environdec), który ogłosił obowiązywanie EF 3.1
+            dla wszystkich EPD wydawanych po 1 września 2024 r. Stosowanie starszych pakietów
+            (EF 3.0 / AR5, CH₄ = 28) byłoby po tej dacie niezgodne z wymaganiami wiodącego
+            światowego programu EPD.
+        </p>
+        <p class="met-text">
+            <strong>Uzasadnienie pominięć (cut-off, ISO 14044 §4.2.3.3.2):</strong> infrastruktura
+            elektrowni konwencjonalnych (1–3 g CO₂e/kWh dla węgla, 0,5–2 g dla gazu wg IPCC AR5
+            WG3 Annex III) — łącznie ok. 1–2 g CO₂e/kWh, tj. &lt;0,3 % wskaźnika poLCA — pominięta
+            zgodnie z kryterium odcięcia &lt;0,5 %. Komponenty WTT_fuels i WTT_OZE traktowane jako
+            stałe (CONST) ze względu na stabilność międzyletnią (±3–5 %) potwierdzoną porównaniem
+            JEC WTT v4 → v5 oraz ecoinvent v3.8 → v3.12.
+        </p>
+    </section>
+
+    <!-- 3. WZÓR OBLICZENIOWY -->
+    <section id="sec-3" class="card card-lg section-gap fade-in" aria-label="Wzór obliczeniowy">
+        <div class="section-num">3 — Wzór obliczeniowy</div>
+        <div class="card-title">Cztery komponenty, jednostka [kg CO₂e/kWh]</div>
+        <p class="met-text">
+            Wskaźnik poLCA-EN-PL jest sumą czterech komponentów obliczanych niezależnie i
+            wyrażonych w jednostce funkcjonalnej (1 kWh end-user). Wzór główny:
+        </p>
+        <div class="formula-block">
+            poLCA-EN-PL = EF_oper + WTT_CH₄ + WTT_fuels + WTT_OZE
+        </div>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.1</span>Komponent EF_oper (operacyjny gate-to-meter)</h3>
+        <p class="met-text">
+            Emisje operacyjne polskiego sektora wytwarzania, skalowane do poziomu odbiorcy
+            końcowego, z korektą importową i uzupełnieniem o gazy inne niż CO₂:
+        </p>
+        <div class="formula-block">
+            EF_oper = (EF_PL,prod × Q_prod + Σ EF_import,k × Q_import,k − EF_PL,prod × Q_export) / Q_end + Δ_N₂O + Δ_CH₄_comb
+        </div>
+        <p class="met-text" style="font-size:.84rem;color:var(--text-secondary);">
+            gdzie <strong>EF_PL,prod</strong> = CO2_Tab6 / Q_gross (emisje krajowe po alokacji CHP
+            wg KOBiZE Tab. 6 podzielone przez produkcję brutto); <strong>EF_import,k</strong> —
+            wskaźniki krajów sąsiednich z EEA dla DE, SE, CZ, LT, SK oraz IEA (SZAC) dla UA;
+            <strong>Δ_N₂O = 2,4 g</strong> i <strong>Δ_CH₄_comb = 0,2 g</strong> — korekty stałe
+            zgodne z IPCC AR6.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.2</span>Komponent WTT_CH₄ (metan kopalń węgla PL)</h3>
+        <div class="formula-block">
+            WTT_CH₄ = (Em_CH₄ × ρ_CH₄ × GWP_CH₄_fossil × f_alloc) / Q_end
+        </div>
+        <p class="met-text" style="font-size:.84rem;color:var(--text-secondary);">
+            Em_CH₄ — emisje fugitywne netto do atmosfery z polskich kopalń węgla kamiennego (WUG,
+            mln m³ CH₄/rok); ρ_CH₄ = 0,668 kg/m³ (gęstość metanu w warunkach standardowych);
+            GWP_CH₄_fossil = 29,8 (IPCC AR6 / EF 3.1); f_alloc — współczynnik alokacji do sektora
+            energetycznego oparty na strukturze zużycia węgla wg GUS (Tab. 1(74) gospodarka
+            paliwowo-energetyczna): f_alloc(2023) = 0,8109; f_alloc(2024) = 0,8094.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.3</span>Komponenty stałe (CONST)</h3>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>WTT_fuels = 0,008 kg CO₂e/kWh</strong> — JEC WTT v5 (JRC 2020, JRC119036),
+                upstream EU dla wydobycia, przetwarzania i transportu gazu ziemnego, węgla i oleju
+                opałowego; standard de facto programów EPD w Europie, spójny z ecoinvent 3.12
+                (12–18 % emisji gate);</li>
+            <li><strong>WTT_OZE = 0,006 kg CO₂e/kWh</strong> — ecoinvent 3.12 cut-off (allocation
+                system); infrastruktura OZE (budowa, materiały, transport farm wiatrowych i PV)
+                uśredniona dla europejskiego miksu; stabilność międzywersyjna &lt;3 % (v3.8 = 5,8 g →
+                v3.12 = 6,0 g).</li>
+        </ul>
+        <p class="met-text">
+            Pełny tok obliczeniowy (Krok 0–4: EF_PL,prod → korekta importowa → EF_oper → WTT_CH₄ →
+            wynik) wraz z testem bilansu energii systemu elektroenergetycznego — zob. Załącznik A
+            w pełnej wersji PDF (sekcje A.1–A.6).
+        </p>
+    </section>
+
+    <!-- 4. WYNIKI -->
+    <section id="sec-4" class="card card-lg section-gap fade-in" aria-label="Wyniki">
+        <div class="section-num">4 — Wyniki</div>
+        <div class="card-title">Wartości 2023 i 2024, dekompozycja, trend −6,7 %</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">Tab. 4.1</span>Dekompozycja poLCA-EN-PL — 2023 vs 2024</h3>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Komponent</th>
+                        <th class="right">2023 [kg CO₂e/kWh]</th>
+                        <th class="right">2024 [kg CO₂e/kWh]</th>
+                        <th class="right">Udział 2024</th>
+                        <th>Źródło</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EF_oper</strong> — operacyjne gate-to-meter</td>
+                        <td class="right mono">0,566</td>
+                        <td class="right mono">0,528</td>
+                        <td class="right mono">88,1 %</td>
+                        <td>KOBiZE Tab. 6 + alokacja CHP (MRR) + korekta importowa (PSE+EEA) + straty sieciowe + N₂O i CH₄ ze spalania</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_CH₄</strong> — metan kopalń węgla PL</td>
+                        <td class="right mono">0,062</td>
+                        <td class="right mono">0,057</td>
+                        <td class="right mono">9,5 %</td>
+                        <td>WUG × GWP_AR6 × f_alloc_GUS</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_fuels</strong> — upstream pozostałe paliwa</td>
+                        <td class="right mono">0,008</td>
+                        <td class="right mono">0,008</td>
+                        <td class="right mono">1,3 %</td>
+                        <td>JEC WTT v5 (JRC119036, CONST)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WTT_OZE</strong> — infrastruktura OZE</td>
+                        <td class="right mono">0,006</td>
+                        <td class="right mono">0,006</td>
+                        <td class="right mono">1,0 %</td>
+                        <td>ecoinvent 3.12 cut-off (CONST)</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>Σ poLCA-EN-PL</strong></td>
+                        <td class="right mono"><strong>0,642</strong></td>
+                        <td class="right mono"><strong>0,599</strong></td>
+                        <td class="right mono"><strong>100 %</strong></td>
+                        <td>full LCA, EF 3.1, IPCC AR6 — <strong>−6,7 %</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 4.1. Dekompozycja wskaźnika poLCA-EN-PL-2024 v9.1. Wartości w kg CO₂e/kWh dla 1 kWh
+            netto na zaciskach odbiorcy w sieci niskiego napięcia, Polska, lata 2023 i 2024.
+            Spadek −6,7 % w 2024 wynika głównie z mniejszego udziału węgla i wyższego udziału OZE
+            w polskim miksie wytwarzania (Q_gross 2024 = 169 001 GWh vs 163 990 GWh w 2023).
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">Tab. 4.2</span>Porównanie z innymi wskaźnikami</h3>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Wskaźnik</th>
+                        <th class="right">2024 [kg CO₂e/kWh]</th>
+                        <th>Granica systemu</th>
+                        <th>Zastosowanie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>poLCA-EN-PL-2024 v9.1</strong></td>
+                        <td class="right mono">0,599</td>
+                        <td>well-to-meter (full LCA)</td>
+                        <td>EPD / LCA (location-based) — Poziom 1 c-PCR-BET</td>
+                    </tr>
+                    <tr>
+                        <td>KOBiZE Tab. 2 (end-user)</td>
+                        <td class="right mono">0,553</td>
+                        <td>gate + straty sieciowe</td>
+                        <td>UNFCCC, EU ETS, krajowy bilans (CO₂ tylko)</td>
+                    </tr>
+                    <tr>
+                        <td>KOBiZE Tab. 6 (gate)</td>
+                        <td class="right mono">0,525</td>
+                        <td>gate (alokacja CHP)</td>
+                        <td>Rozliczenia ETS</td>
+                    </tr>
+                    <tr>
+                        <td>AIB Residual Mix 2024 PL</td>
+                        <td class="right mono">0,808</td>
+                        <td>market-based</td>
+                        <td>Scope 2 GHG Protocol (po odjęciu GO)</td>
+                    </tr>
+                    <tr>
+                        <td>UBA DE 2023 (referencja)</td>
+                        <td class="right mono">0,380</td>
+                        <td>well-to-meter (DE)</td>
+                        <td>Niemiecki odpowiednik (porównawczo)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 4.2. Wartość poLCA-EN-PL-2024 jest o ok. <strong>8,3 %</strong> wyższa od KOBiZE Tab. 2
+            (end-user). Różnica wynika z uwzględnienia komponentów WTT (głównie metanu kopalnianego)
+            i charakteryzacji wpływu wg EF 3.1 zamiast metodyki MRR. Wartość spójna z międzynarodowymi
+            programami EPD (Environdec, IBU, INIES, NMD, ÖKOBAUDAT) — wszystkie stosują pełny LCA
+            upstream zamiast surowej krajowej inwentaryzacji.
+        </p>
+    </section>
+
+    <!-- 5. WALIDACJA -->
+    <section id="sec-5" class="card card-lg section-gap fade-in" aria-label="Walidacja">
+        <div class="section-num">5 — Walidacja</div>
+        <div class="card-title">Niezależne źródła i 7-warstwowy system kontroli</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">5.1</span>Walidacja zewnętrzna</h3>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li><strong>Lewandowska A. <em>et al.</em> (2025)</strong>, MDPI Energies 18(15), 4092
+                (DOI: 10.3390/en18154092) — niezależna publikacja recenzowana o wskaźniku location-based
+                dla Polski, potwierdzająca metodologiczną zasadność uwzględniania emisji upstream.</li>
+            <li><strong>EEA — GHG Intensity 2024</strong> — używa zharmonizowanej metodyki UE z
+                uwzględnieniem fugitywnych emisji metanu z górnictwa, co potwierdza zasadność
+                komponentu WTT_CH₄ w poLCA.</li>
+            <li><strong>IEA Life Cycle Upstream EF 2024</strong> — potwierdza rząd wielkości 5–8 g
+                CO₂e/kWh dla komponentów upstream w miksach zdominowanych przez paliwa kopalne.</li>
+            <li><strong>UBA Climate Change 23/2024 (Icha & Kuhs, 2024)</strong> — wskaźnik dla
+                miksu DE = 0,380 kg CO₂e/kWh (2023) — spójna metoda well-to-meter dla porównań
+                międzynarodowych.</li>
+        </ul>
+
+        <h3 class="met-h3"><span class="met-h3-num">5.2</span>Wewnętrzny system 7 warstw kontroli</h3>
+        <p class="met-text">
+            Wskaźnik podlega systemowi siedmiu warstw kontroli wewnętrznej programu poLCA
+            (zob. <a href="../metodyka.html" style="color:var(--accent);">/metodyka.html</a>):
+            (1) walidacja źródeł danych — kompletność i aktualność;
+            (2) test bilansu systemu — zgodność Q_gross, Q_end, Q_imp, Q_exp z bilansem PSE;
+            (3) kontrola wewnętrzna formuł — porównanie wyniku z dekompozycją komponentów;
+            (4) test charakteryzacji EF 3.1 vs EF 3.0 — różnica &lt;1 % (poniżej niepewności);
+            (5) konsystencja wersji rok-do-roku — analiza dekompozycji różnicy +43 g (2024−2023);
+            (6) walidacja krzyżowa z publikacjami zewnętrznymi (Lewandowska 2025; EEA);
+            (7) audytowalna ścieżka źródeł — pełne traceability dla weryfikatorów AVS 3+.
+        </p>
+    </section>
+
+    <!-- 6. NIEPEWNOŚĆ -->
+    <section id="sec-6" class="card card-lg section-gap fade-in" aria-label="Niepewność">
+        <div class="section-num">6 — Niepewność i wrażliwość</div>
+        <div class="card-title">Pedigree matrix, wrażliwość parametrów, Monte Carlo (planowane)</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">6.1</span>Macierz jakości danych (DQR pedigree)</h3>
+        <p class="met-text">
+            Każdy komponent wskaźnika podlega ocenie jakości danych w pięciu wymiarach pedigree
+            matrix (reliability, completeness, temporal, geographic, technological correlation)
+            wg ILCD Handbook (JRC 2010) i EN 15804+A2 §6.3.8. Średnia ocena DQR dla EF_oper:
+            <strong>1,4</strong> (skala 1–5, niższa = lepsza); WTT_CH₄: <strong>1,8</strong>;
+            WTT_fuels (CONST): <strong>2,4</strong>; WTT_OZE (CONST): <strong>2,2</strong>.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">Tab. 6.2</span>Niepewność komponentów (2024)</h3>
+        <div class="table-scroll">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Komponent</th>
+                        <th class="right">Wartość [kg CO₂e/kWh]</th>
+                        <th class="right">Niepewność (1σ)</th>
+                        <th>Główne źródła niepewności</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EF_oper</td>
+                        <td class="right mono">0,528</td>
+                        <td class="right mono">±3 %</td>
+                        <td>Alokacja CHP, korekta importowa, straty sieciowe</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_CH₄</td>
+                        <td class="right mono">0,057</td>
+                        <td class="right mono">±15 %</td>
+                        <td>Metanowość kopalń (WUG), f_alloc GUS, GWP AR6 vs AR7</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_fuels</td>
+                        <td class="right mono">0,008</td>
+                        <td class="right mono">±30 %</td>
+                        <td>JEC WTT v5 vs v6, mix paliw upstream</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_OZE</td>
+                        <td class="right mono">0,006</td>
+                        <td class="right mono">±25 %</td>
+                        <td>ecoinvent v3.12 vs v3.13, technologia turbin/PV</td>
+                    </tr>
+                    <tr class="total">
+                        <td><strong>Σ poLCA</strong></td>
+                        <td class="right mono"><strong>0,599</strong></td>
+                        <td class="right mono"><strong>±5 % (σ ≈ 29 g)</strong></td>
+                        <td>Sumowanie geometryczne (skorelowane składowe)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-caption">
+            Tab. 6.2. Łączna niepewność wskaźnika oceniana na ±5 % (1σ ≈ 29 g CO₂e/kWh). Pełna
+            analiza wrażliwości parametrów modelu — Załącznik B (PDF). Analiza Monte Carlo z N = 10⁴
+            iteracji jest <strong>planowana do publikacji w wersji v9.2 (Q3 2026)</strong>.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">6.3</span>Wpływ wyboru GWP: AR5 (EF 3.0) vs AR6 (EF 3.1)</h3>
+        <p class="met-text">
+            Stosowanie wcześniejszego pakietu charakteryzacji EF 3.0 (CH₄ = 28, AR5) skutkowałoby
+            wartością <strong>0,595 kg CO₂e/kWh</strong> dla 2024 (różnica −0,4 %, w granicach
+            niepewności). Wybór EF 3.1 wynika z wymagania Environdec dla EPD wydawanych po
+            2024-09-01.
+        </p>
+    </section>
+
+    <!-- 7. CYKL AKTUALIZACJI -->
+    <section id="sec-7" class="card card-lg section-gap fade-in" aria-label="Cykl aktualizacji">
+        <div class="section-num">7 — Cykl aktualizacji</div>
+        <div class="card-title">Roczny cykl po publikacji KOBiZE — procedura PR-01</div>
+        <p class="met-text">
+            Wskaźnik poLCA-EN-PL podlega corocznej aktualizacji, zwykle w II kwartale, po publikacji
+            wskaźników KOBiZE za rok poprzedni (grudzień n) i danych PSE Tab. 7.2 oraz WUG.
+            Procedura zgodna z PR-01 programu poLCA (zob.
+            <a href="../podstawy-normatywne.html#procedury" style="color:var(--accent);">Podstawy normatywne · sekcja 04</a>):
+        </p>
+        <ul class="met-text" style="padding-left:1.4rem;list-style:disc;">
+            <li>aktualizacja danych S1–S10 (KOBiZE, PSE, EEA, WUG, GUS) za rok n;</li>
+            <li>recalculacja komponentów EF_oper i WTT_CH₄;</li>
+            <li>weryfikacja stałych CONST (WTT_fuels, WTT_OZE) — aktualizacja jeśli opublikowano
+                JEC WTT v6 lub ecoinvent v3.13+;</li>
+            <li>walidacja zewnętrzna i wewnętrzna (7 warstw);</li>
+            <li>changelog semver (major.minor) i publikacja PDF/A z DOI.</li>
+        </ul>
+        <p class="met-text">
+            Dokument MET-001 podlega cyklowi review co 5 lat lub po istotnej zmianie metodyki
+            (publikacja EN 15804+A3, aktualizacja EF 3.2, IPCC AR7) zgodnie z procedurą PR-04.
+            Każda wersja archiwizowana pod stałym DOI w DataCite (procedura PR-05).
+        </p>
+    </section>
+
+    <!-- 8. CYTOWANIE -->
+    <section id="sec-8" class="card card-lg section-gap fade-in" aria-label="Cytowanie">
+        <div class="section-num">8 — Cytowanie tego dokumentu</div>
+        <div class="card-title">APA, ISO 690, BibTeX</div>
+
+        <div class="citation-block">
+            <span class="citation-label">APA (7th edition)</span>
+            <p class="citation-text">
+                Multicert Sp. z o.o. (2026). <em>MET-001:2026 — Wskaźnik emisyjności energii
+                elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)</em>.
+                Program EPD Polska. polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html.
+                DOI: 10.xxxx/polca.met.2026.001 [DOI w trakcie rejestracji DataCite].
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">ISO 690</span>
+            <p class="citation-text">
+                MULTICERT SP. Z O.O. <em>MET-001:2026 — Wskaźnik emisyjności energii elektrycznej
+                w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)</em>. Warszawa: Program EPD
+                Polska, 2026. Dostęp: https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html.
+                DOI: 10.xxxx/polca.met.2026.001.
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">BibTeX</span>
+            <pre class="citation-bibtex">@techreport{Multicert2026MET001,
+  author      = {{Multicert Sp. z o.o.}},
+  title       = {MET-001:2026 --- Wska\'znik emisyjno\'sci energii elektrycznej
+                 w Polsce w pe\l nym cyklu \.zycia (poLCA-EN-PL-2024 v9.1)},
+  institution = {Program EPD Polska},
+  type        = {Methodology paper},
+  number      = {MET-001:2026},
+  version     = {v9.1},
+  year        = {2026},
+  month       = {May},
+  address     = {Warszawa, Poland},
+  url         = {https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html},
+  doi         = {10.xxxx/polca.met.2026.001},
+  language    = {polish},
+  note        = {DOI w trakcie rejestracji DataCite}
+}</pre>
+        </div>
+    </section>
+
+    <!-- 9. BIBLIOGRAFIA -->
+    <section id="sec-9" class="card card-lg section-gap fade-in" aria-label="Bibliografia">
+        <div class="section-num">9 — Bibliografia</div>
+        <div class="card-title">Pełen rejestr cytowań — 19 pozycji</div>
+        <p class="met-text">
+            Pełen rejestr źródeł cytowanych w niniejszym dokumencie metodycznym. Pozycje
+            uporządkowane wg symboli stosowanych w tabelach 2.2, 3.1 i 4.1 oraz formułach
+            obliczeniowych. Pełna bibliografia w wersji PDF zawiera dodatkowe informacje (rok,
+            wydawca, miejsce wydania).
+        </p>
+        <ol class="ref-list" start="1">
+            <li><span class="ref-num">[S1a]</span><span>KOBiZE (2024). <em>Wskaźniki emisyjności CO₂ dla energii elektrycznej za rok 2023</em>. IOŚ-PIB, Warszawa, grudzień 2024.</span></li>
+            <li><span class="ref-num">[S1b]</span><span>KOBiZE (2025). <em>Wskaźniki emisyjności CO₂ dla energii elektrycznej za rok 2024</em>. IOŚ-PIB, Warszawa, grudzień 2025.</span></li>
+            <li><span class="ref-num">[S2a]</span><span>PSE S.A. (2024). <em>Raport roczny z funkcjonowania KSE za rok 2023</em>. Tab. 7.2 — Wymiana zagraniczna energii elektrycznej.</span></li>
+            <li><span class="ref-num">[S2b]</span><span>PSE S.A. (2025). <em>Raport roczny z funkcjonowania KSE za rok 2024</em>. Tab. 7.2 — Wymiana zagraniczna energii elektrycznej.</span></li>
+            <li><span class="ref-num">[S3]</span><span>EEA (2024). <em>Greenhouse gas emission intensity of electricity generation by country</em>. Dane 2023 i 2024. <a href="https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emission-intensity-of-1" target="_blank" rel="noopener">European Environment Agency</a>.</span></li>
+            <li><span class="ref-num">[S6a]</span><span>WUG (2024). <em>Ocena stanu bezpieczeństwa pracy, ratownictwa górniczego oraz bezpieczeństwa powszechnego w związku z działalnością górniczo-geologiczną w 2023 roku</em>. Wyższy Urząd Górniczy, Katowice. Rozdz. 2.2.1.2.</span></li>
+            <li><span class="ref-num">[S6b]</span><span>WUG (2025). <em>Ocena stanu bezpieczeństwa pracy […] w 2024 roku</em>. Wyższy Urząd Górniczy, Katowice. Rozdz. Zagrożenie metanowe.</span></li>
+            <li><span class="ref-num">[S10a]</span><span>GUS (2024). <em>Gospodarka paliwowo-energetyczna w latach 2022–2023</em>. Tab. 1(74).</span></li>
+            <li><span class="ref-num">[S10b]</span><span>GUS (2025). <em>Gospodarka paliwowo-energetyczna w latach 2023–2024</em>. Tab. 1(74).</span></li>
+            <li><span class="ref-num">[S11]</span><span>Forum Energii (2025). <em>Transformacja energetyczna w Polsce. Edycja 2025</em>. Warszawa.</span></li>
+            <li><span class="ref-num">[S12]</span><span>KOWR (2025). <em>Biogaz rolniczy — podsumowanie 2024 r.</em> Krajowy Ośrodek Wsparcia Rolnictwa, Warszawa.</span></li>
+            <li><span class="ref-num">[S13]</span><span>IPCC (2006). <em>2006 IPCC Guidelines for National Greenhouse Gas Inventories</em>, Volume 2: Energy, Chapter 2 (Stationary Combustion), Table 2.2.</span></li>
+            <li><span class="ref-num">[S14]</span><span>CEN (2019/2021). <em>EN 15804:2012+A2:2019+A1:2021</em> — Sustainability of construction works — Environmental product declarations — Core rules for the product category of construction products. CEN/TC 350.</span></li>
+            <li><span class="ref-num">[S15]</span><span>AIB (2025). <em>European Residual Mixes 2024 — Final results</em>. Association of Issuing Bodies, Brussels.</span></li>
+            <li><span class="ref-num">[S16]</span><span>Lewandowska A. <em>et al.</em> (2025). Electricity-Related Emissions Factors in Carbon Footprinting — The Case of Poland. <em>Energies</em> 18(15), 4092. <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener">DOI: 10.3390/en18154092</a>.</span></li>
+            <li><span class="ref-num">[S17]</span><span>EEA (2024). <em>Greenhouse gas emission intensity of electricity generation in Europe (indicator)</em>. European Environment Agency.</span></li>
+            <li><span class="ref-num">[S18]</span><span>IEA (2024). <em>Life Cycle Upstream Emission Factors 2024</em>. International Energy Agency, Paris.</span></li>
+            <li><span class="ref-num">[S19]</span><span>Icha P., Kuhs G. (2024). <em>Entwicklung der spezifischen Treibhausgas-Emissionen des deutschen Strommixes 1990–2023</em>. UBA Climate Change 23/2024. Umweltbundesamt, Dessau-Roßlau.</span></li>
+            <li><span class="ref-num">[CONST1]</span><span>JEC (JRC-Eucar-Concawe) (2020). <em>Well-to-Wheels analysis v5</em>. WTT emission factors for fuels. JRC119036. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC119036" target="_blank" rel="noopener">JRC Publications Repository</a>.</span></li>
+            <li><span class="ref-num">[CONST2]</span><span>IPCC (2021). <em>AR6 WG1 — The Physical Science Basis</em>. Tab. 7.SM.7 i Tab. 7.15: GWP-100 dla CH₄ fossil = 29,8; N₂O = 273. Cambridge University Press.</span></li>
+            <li><span class="ref-num">[CONST3]</span><span>JRC (2022). <em>EF 3.1 method — Environmental Footprint reference package</em>. JRC130796. <a href="https://publications.jrc.ec.europa.eu/repository/handle/JRC130796" target="_blank" rel="noopener">publications.jrc.ec.europa.eu/repository/handle/JRC130796</a>.</span></li>
+            <li><span class="ref-num">[CONST4]</span><span>ecoinvent Association (2024). <em>ecoinvent database v3.12 cut-off</em> — datasety dla infrastruktury OZE (PV, wind). Zürich.</span></li>
+        </ol>
+        <p style="margin:1.4rem 0 0;font-size:.78rem;color:var(--text-tertiary);line-height:1.55;">
+            Dokument MET-001:2026 jest publikowany na licencji <strong>CC BY 4.0</strong>.
+            Zgłoszenia errat: <a href="mailto:info@epd.org.pl" style="color:var(--accent);">info@epd.org.pl</a>.
+            Status DOI: w trakcie rejestracji DataCite — placeholder
+            <code style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;">10.xxxx/polca.met.2026.001</code>
+            zostanie zastąpiony numerem właściwym po publikacji.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka i Jakość</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl · MET-001:2026</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>
