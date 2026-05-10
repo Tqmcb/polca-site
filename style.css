@@ -4970,3 +4970,278 @@ canvas {
     .polca-content { margin-left: 0 !important; }
     .polca-page { padding: 0 !important; max-width: 100% !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   EQUATION BLOCK — blok równań dla metodyki-en-pl
+   ═══════════════════════════════════════════════════════════ */
+.equation-block {
+  background: var(--paper-warm);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  font-family: 'IBM Plex Mono', monospace;
+  overflow-x: auto;
+}
+
+.equation-formula {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+.equation-numeric {
+  font-size: 0.82rem;
+  color: var(--accent);
+  margin-top: 0.4rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.equation-note {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-top: 0.35rem;
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOC SECTION — sekcja dokumentu metodycznego
+   ═══════════════════════════════════════════════════════════ */
+.doc-section {
+  margin-bottom: 2.5rem;
+  padding-top: 0.5rem;
+}
+
+.doc-section-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.doc-section-body p {
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin: 0 0 0.75rem 0;
+}
+
+.doc-section-body p:last-child {
+  margin-bottom: 0;
+}
+
+.doc-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.doc-step-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  align-items: flex-start;
+}
+
+.doc-step-num {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 0.1rem;
+}
+
+.doc-step-content {
+  flex: 1;
+}
+
+.doc-step-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--ink);
+  margin: 0 0 0.3rem 0;
+}
+
+.doc-step-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FORMULARZ KOMENTARZY
+   ═══════════════════════════════════════════════════════════ */
+.comment-form-wrap {
+  background: var(--paper-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.comment-form-wrap label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+  margin-top: 1rem;
+}
+
+.comment-form-wrap label:first-child {
+  margin-top: 0;
+}
+
+.comment-form-wrap input,
+.comment-form-wrap select,
+.comment-form-wrap textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 0.55rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.comment-form-wrap input:focus,
+.comment-form-wrap select:focus,
+.comment-form-wrap textarea:focus {
+  border-color: var(--accent);
+}
+
+.comment-form-wrap textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.comment-submit-btn {
+  margin-top: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-xs);
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: opacity 0.15s;
+}
+
+.comment-submit-btn:hover { opacity: 0.88; }
+.comment-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.comment-success-msg {
+  padding: 1rem 1.25rem;
+  background: var(--func-green-bg, #f0fdf4);
+  border: 1px solid var(--func-green-border, #86efac);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  color: #166534;
+  margin-top: 1rem;
+}
+
+.comment-error-msg {
+  font-size: 0.78rem;
+  color: var(--func-red, #dc2626);
+  margin-top: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOC HERO — nagłówek strony dokumentu
+   ═══════════════════════════════════════════════════════════ */
+.doc-hero {
+  padding: 2rem 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.doc-hero-label {
+  font-size: 0.7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 0.5rem;
+}
+
+.doc-hero-code {
+  font-size: 1.75rem;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 0.25rem 0;
+}
+
+.doc-hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 0.2rem 0.6rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.doc-hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.doc-hero-stat-num {
+  font-size: 1.6rem;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.doc-hero-stat-unit {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.doc-hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+.doc-hero-meta {
+  margin-top: 1.25rem;
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}

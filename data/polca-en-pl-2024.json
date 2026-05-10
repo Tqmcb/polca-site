@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "version": "v16",
+    "code": "poLCA-EN-PL-2024",
+    "issued": "2026-04-04",
+    "status": "Wersja konsultacyjna — do weryfikacji zewnętrznej",
+    "operator": "Multicert Sp. z o.o.",
+    "program": "EPD Polska (www.epd.org.pl)"
+  },
+  "result": {
+    "value": 0.599,
+    "unit": "kg CO₂e/kWh",
+    "year": 2024,
+    "year_prev": 2023,
+    "value_prev": 0.642,
+    "change_pct": -6.7
+  },
+  "sections": [
+    {
+      "id": "streszczenie",
+      "title": "Streszczenie",
+      "type": "text",
+      "content": [
+        "Wskaźnik poLCA-EN-PL stanowi pierwszy publicznie dostępny w Polsce wskaźnik emisyjności energii elektrycznej opracowany w ujęciu pełnego cyklu życia (Life Cycle Assessment — LCA). Przeznaczony jest do stosowania jako dane wejściowe w obliczeniach LCA/EPD zgodnych z ISO 14040/44 i EN 15804+A2.",
+        "Wskaźnik poLCA-EN-PL-2024 wynosi 0,599 kg CO₂e/kWh i jest o około 8% wyższy od wskaźnika KOBiZE end-user (0,553 kg CO₂/kWh). Różnica wynika z uwzględnienia emisji upstream w łańcuchu dostaw paliw, emisji metanu z górnictwa węgla kamiennego oraz wpływu importu energii elektrycznej z zagranicy."
+      ]
+    },
+    {
+      "id": "wyniki-kluczowe",
+      "title": "Wyniki kluczowe",
+      "type": "table",
+      "headers": ["Wskaźnik", "2023", "2024", "Zmiana"],
+      "rows": [
+        ["poLCA-EN-PL [kg CO₂e/kWh]", "0,642", "0,599", "−6,7%"],
+        ["KOBiZE end-user [kg CO₂/kWh]", "0,597", "0,553", "−7,4%"]
+      ]
+    },
+    {
+      "id": "struktura-wskaznika",
+      "title": "Struktura wskaźnika poLCA (dane 2024)",
+      "type": "table",
+      "headers": ["Komponent", "kg CO₂e/kWh", "Udział"],
+      "rows": [
+        ["EF_oper: emisje operacyjne Gate-to-Gate", "0,528", "88,1%"],
+        ["WTT_CH₄: metan z kopalń węgla PL", "0,057", "9,5%"],
+        ["WTT_fuels: upstream pozostałe paliwa (JEC WTT v5, CONST)", "0,008", "1,3%"],
+        ["WTT_OZE: infrastruktura OZE (lifecycle, CONST)", "0,006", "1,0%"],
+        ["poLCA-EN-PL-2024 (suma)", "0,599", "100,0%"]
+      ]
+    },
+    {
+      "id": "uzasadnienie",
+      "title": "Uzasadnienie stosowania wskaźnika",
+      "type": "text",
+      "content": [
+        "W Polsce brak jest oficjalnego wskaźnika emisyjności energii elektrycznej w ujęciu pełnego cyklu życia, przeznaczonego do stosowania w analizach środowiskowych produktów oraz w Deklaracjach Środowiskowych Produktu (EPD). Publicznie dostępne wskaźniki, w szczególności publikowane przez KOBiZE, mają charakter inwentaryzacyjny i odnoszą się przede wszystkim do emisji bezpośrednich z procesu wytwarzania energii elektrycznej — nie obejmują emisji powstających w pozostałych etapach cyklu życia paliw.",
+        "W analizach LCA oraz w obliczeniach EPD wymagane jest uwzględnienie emisji gazów cieplarnianych w całym łańcuchu dostaw energii elektrycznej: emisje związane z wydobyciem i transportem paliw (upstream), emisje fugitywne metanu z górnictwa węgla kamiennego, a także emisje powiązane z budową, eksploatacją i likwidacją infrastruktury wytwarzania energii.",
+        "Wskaźnik poLCA-EN-PL został opracowany w celu wypełnienia tej luki metodologicznej oraz zapewnienia spójnego krajowego wskaźnika emisyjności energii elektrycznej zgodnego z wymaganiami norm ISO 14040, ISO 14044 oraz EN 15804+A2."
+      ]
+    },
+    {
+      "id": "s1-cel",
+      "title": "1.1 Cel i zakres",
+      "type": "text",
+      "content": [
+        "Wskaźnik poLCA-EN-PL stanowi referencyjną wartość wskaźnika GWP polskiego miksu energetycznego, przeznaczoną do stosowania jako dane wejściowe w obliczeniach LCA produktów budowlanych zgodnych z normą EN 15804+A2:2019 oraz w raportowaniu środowiskowym.",
+        "Wskaźnik stosowany jest w podejściu location-based (fizyczny miks wytwarzania energii elektrycznej) jako wartość domyślna w obliczeniach LCA na potrzeby Deklaracji Środowiskowych Produktu (EPD). Zasady opcjonalnego stosowania podejścia market-based opisano w sekcji 9.",
+        "Wskaźnik poLCA-EN-PL nie jest wskaźnikiem raportowym dla krajowej inwentaryzacji emisji ani wskaźnikiem stosowanym w raportowaniu emisji gazów cieplarnianych na poziomie organizacji (np. Scope 2). Wartość wskaźnika odnosi się do 1 kWh energii elektrycznej dostarczonej do odbiorcy końcowego w krajowym systemie elektroenergetycznym. Dokument obejmuje dane za lata 2023–2024."
+      ]
+    },
+    {
+      "id": "s1-zgodnosc",
+      "title": "1.2 Zgodność normatywna",
+      "type": "steps",
+      "steps": [
+        {
+          "num": "1",
+          "title": "ISO 14040:2006 / ISO 14044:2006",
+          "text": "Zarządzanie środowiskowe. Ocena cyklu życia (LCA). Zasady i struktury / Wymagania i wytyczne. Normy te definiują fundamentalne zasady, ramy i wymagania dla przeprowadzania oceny cyklu życia, stanowiąc podstawę metodologiczną dla niniejszego raportu."
+        },
+        {
+          "num": "2",
+          "title": "EN 15804+A2:2019",
+          "text": "Zrównoważony rozwój obiektów budowlanych. Deklaracje środowiskowe produktów. Zasady podstawowe kategorii produktów robót budowlanych. Norma ta ustanawia zasady dla EPD oraz definiuje jednostkowe wskaźniki środowiskowe stosowane do materiałów i produktów budowlanych."
+        },
+        {
+          "num": "3",
+          "title": "Environmental Footprint 3.1 (EF 3.1)",
+          "text": "Metoda charakteryzacji zalecana przez JRC Komisji Europejskiej. Zastosowano wartości GWP zgodne z IPCC AR6 (CH₄ fossil = 29,8; N₂O = 273), stanowiące obecny standard dla EPD wydawanych po 2024-09-01."
+        },
+        {
+          "num": "4",
+          "title": "ISO 14025:2006",
+          "text": "Deklaracje środowiskowe i ich weryfikacja. Typ III. Norma określa wymagania dla EPD typu III oraz procedury ich opublikowania i komunikacji."
+        },
+        {
+          "num": "5",
+          "title": "CEN/TR 16970:2016",
+          "text": "Zrównoważony rozwój obiektów budowlanych. Wytyczne dla użytkowników normy EN 15804. Dokument stanowi wskazówki implementacyjne dla zastosowania wymagań EN 15804 w praktyce."
+        }
+      ]
+    },
+    {
+      "id": "s1-terminologia",
+      "title": "1.5 Terminologia",
+      "type": "table",
+      "headers": ["Symbol", "Definicja"],
+      "rows": [
+        ["EF_PL,prod", "Wskaźnik emisji produkcji krajowej brutto: emisje CO₂ po alokacji CHP (KOBiZE Tab.6) podzielone przez produkcję brutto Q_gross. Nie uwzględnia importu/eksportu ani strat sieciowych."],
+        ["EF_oper", "Wskaźnik operacyjny (Gate-to-Gate, CO₂e): emisje KOBiZE Tab.6 z korektą importową (PSE + EEA), skalowane do poziomu end-user (straty sieciowe), plus korekty N₂O i CH₄ ze spalania."],
+        ["Consumption mix (end-user)", "Wskaźnik emisji odnoszący się do energii elektrycznej dostarczonej do odbiorcy końcowego, po uwzględnieniu miksu krajowego oraz strat sieciowych (KOBiZE Tab.2: 553 kg CO₂/MWh dla 2024). Odpowiada metodzie location-based wg GHG Protocol."],
+        ["Residual mix (market-based)", "Wskaźnik AIB po odliczeniu gwarancji pochodzenia (GO). Dla Polski 2024: 808 g CO₂/kWh. Rośnie mimo czystszej produkcji, gdy Polska eksportuje więcej GO. Nie stosuje się w obliczeniach LCA wg EN 15804."],
+        ["f_gross", "Współczynnik skalowania emisji z poziomu produkcji brutto do poziomu energii dostarczonej do odbiorcy końcowego (Q_gross/Q_end)."],
+        ["poLCA-EN-PL", "Referencyjny wskaźnik emisyjności energii elektrycznej w Polsce stosowany w analizach LCA oraz EPD. Odpowiada składowej GWP-fossil obliczonej dla fizycznego miksu energetycznego Polski (location-based) w granicach well-to-meter."]
+      ]
+    },
+    {
+      "id": "s2-granice",
+      "title": "2.1 Granice systemu",
+      "type": "text",
+      "content": [
+        "Wskaźnik poLCA-EN-PL obejmuje następujące etapy cyklu życia energii elektrycznej dostarczanej do odbiorcy końcowego w Polsce (granica systemu: well-to-meter):",
+        "• Emisje operacyjne Gate-to-Gate — emisje bezpośrednie CO₂ z instalacji spalania paliw (KOBiZE Tab. 6, po alokacji CHP metodą produkcji równoważnej), z korektą importową opartą na fizycznych przepływach transgranicznych (PSE Tab. 7.2) oraz intensywności emisji systemów elektroenergetycznych krajów sąsiednich (EEA). Wartość skalowana do poziomu end-user przez uwzględnienie strat w systemie przesyłowym i dystrybucyjnym oraz korekt emisji N₂O i CH₄.",
+        "• WTT – metan z kopalń węgla — emisje fugitywne CH₄ do atmosfery z czynnych kopalń węgla kamiennego w Polsce (WUG), obejmujące emisje netto szybami wentylacyjnymi oraz ze stacji odmetanowania. Alokowane do sektora energetycznego przy użyciu współczynnika f_alloc (GUS).",
+        "• WTT – pozostałe paliwa — emisje upstream z łańcucha dostaw paliw kopalnych i biomasy (wydobycie, przetwarzanie, transport), modelowane przy użyciu współczynników JEC WTT v5 (CONST).",
+        "• Infrastruktura OZE — emisje z cyklu życia infrastruktury odnawialnych źródeł energii (produkcja komponentów, montaż, utrzymanie, dekomisja), przyjęte jako stałe (CONST) na podstawie ecoinvent 3.12."
+      ]
+    },
+    {
+      "id": "s2-zgodnosc-iso",
+      "title": "2.2 Zgodność z ISO 14040/14044",
+      "type": "table",
+      "headers": ["Wymaganie ISO 14044", "Realizacja w poLCA", "Status"],
+      "rows": [
+        ["Funkcja systemu", "Dostawa 1 kWh energii elektrycznej do odbiorcy końcowego w Polsce", "Spełnione"],
+        ["Jednostka funkcjonalna", "1 kWh energii elektrycznej dostarczonej do odbiorcy końcowego (end-user, po stratach sieciowych; granica well-to-meter)", "Spełnione"],
+        ["Granice systemu", "Well-to-meter: wydobycie paliw → spalanie → T&D → licznik odbiorcy; infrastruktura OZE lifecycle", "Spełnione"],
+        ["Kryterium odcięcia", "Procesy <0,5% GWP pominięte z uzasadnieniem (zob. 2.3)", "Spełnione"],
+        ["Alokacja", "Alokacja CHP wg produkcji równoważnej (KOBiZE); alokacja metanu kopalnianego do EE wg f_alloc GUS", "Spełnione"],
+        ["Wskaźnik GWP", "GWP-100 wg AR6 IPCC (CH₄ fossil = 29,8; N₂O = 273) — Metoda EF 3.1, JRC", "Spełnione"],
+        ["Jakość danych", "Dane państwowe <1 rok, specyficzne geograficznie (KOBiZE, PSE, WUG, GUS)", "Spełnione"],
+        ["Analiza niepewności", "Przedziały niepewności oraz analiza wrażliwości parametrów modelu (Załącznik B)", "Spełnione"]
+      ]
+    },
+    {
+      "id": "s3-zrodla",
+      "title": "3. Źródła danych",
+      "type": "table",
+      "headers": ["Symbol", "Źródło", "Dane", "Status"],
+      "rows": [
+        ["S1", "KOBiZE XII 2024 / XII 2025", "Tab.6: emisje CO₂ po alokacji CHP; Q_gross; Tab.2: wskaźnik end-user", "Potwierdzony"],
+        ["S2", "PSE S.A. — Raport roczny KSE", "Tab.7.2 przepływy graniczne wg krajów, 2023 i 2024", "Potwierdzony"],
+        ["S3", "EEA — GHG intensity electricity by country", "Wskaźniki emisji EE wg krajów, 2023 i 2024", "Potwierdzony (5/6; UA = szacunek IEA)"],
+        ["S6", "WUG — Ocena stanu bezpieczeństwa w górnictwie", "Emisja metanu do atmosfery netto [mln m³ CH₄/rok]", "Potwierdzony"],
+        ["S10", "GUS — Gospodarka paliwowo-energetyczna", "f_alloc = Sekcja D / Kraj ogółem z Tablicy 1(74)", "Potwierdzony"],
+        ["CONST", "JEC WTT v5; ecoinvent 3.12; IPCC AR6 / EF 3.1", "WTT_fuels, WTT_OZE, GWP CH₄=29,8; N₂O=273", "Stałe metodyczne"]
+      ]
+    },
+    {
+      "id": "s3-parametry",
+      "title": "3.1 Parametry wejściowe obliczeń",
+      "type": "table",
+      "headers": ["Parametr", "Symbol", "2023", "2024", "Jednostka", "Źródło"],
+      "rows": [
+        ["Emisje CO₂ po alokacji CHP", "CO2_Tab6", "91 798 960", "88 716 280", "Mg CO₂", "KOBiZE Tab.6"],
+        ["Produkcja brutto", "Q_gross", "163 990 407", "169 001 397", "MWh", "KOBiZE"],
+        ["Energia dostarczona do odbiorców końcowych", "Q_end", "153 650 407", "160 368 397", "MWh", "KOBiZE/PSE"],
+        ["Eksport energii elektrycznej", "Q_exp", "11 293 500", "13 246 500", "MWh", "PSE Tab.7.2"],
+        ["Import energii elektrycznej (suma)", "Q_imp", "15 182 900", "15 212 300", "MWh", "PSE Tab.7.2"],
+        ["Emisja metanu WUG netto", "Em_CH₄", "551,2", "530,6", "mln m³/rok", "WUG"],
+        ["Współczynnik alokacji metanu", "f_alloc", "0,8109", "0,8094", "—", "GUS Tabl.1(74)"],
+        ["GWP metanu fossil", "GWP_CH₄", "29,8", "29,8", "—", "IPCC AR6, EF 3.1"],
+        ["Korekta N₂O ze spalania", "Delta_N₂O", "2,4", "2,4", "g CO₂e/kWh", "IPCC AR6, EF 3.1"],
+        ["Korekta CH₄_comb ze spalania", "Delta_CH₄_comb", "0,2", "0,2", "g CO₂e/kWh", "IPCC AR6, EF 3.1"],
+        ["WTT upstream paliw (CONST)", "WTT_fuels", "8,0", "8,0", "g CO₂e/kWh", "JEC WTT v5"],
+        ["WTT infrastruktura OZE (CONST)", "WTT_OZE", "6,0", "6,0", "g CO₂e/kWh", "ecoinvent 3.12"]
+      ]
+    },
+    {
+      "id": "s4-tok",
+      "title": "4. Tok obliczeniowy",
+      "type": "steps",
+      "steps": [
+        {
+          "num": "0",
+          "title": "Krok 0 — EF_PL,prod",
+          "text": "Wskaźnik emisji produkcji krajowej brutto: emisje CO₂ ze spalania po alokacji CHP (KOBiZE Tab. 6), podzielone przez całkowitą produkcję brutto energii elektrycznej. Wskaźnik jest niższy niż KOBiZE Tab.1, ponieważ mianownik uwzględnia całą produkcję włącznie z OZE i hydroenergetyką.",
+          "equation": {
+            "formula": "EF_PL,prod = CO₂_Tab6 / Q_gross × 1000   [g CO₂/kWh]",
+            "numeric": "2023: 91 798 960 / 163 990 407 × 1000 = 559,8 g CO₂/kWh\n2024: 88 716 280 / 169 001 397 × 1000 = 524,9 g CO₂/kWh",
+            "note": "Wzór (A.2) — CO₂_Tab6 w [Mg CO₂], Q_gross w [MWh]"
+          }
+        },
+        {
+          "num": "1",
+          "title": "Krok 1 — Korekta importowa → EF_cons,gross",
+          "text": "Korekta uwzględnia fizyczne przepływy graniczne energii elektrycznej (PSE Tab. 7.2) oraz intensywność emisji energii importowanej z krajów sąsiednich (EEA). Q_cons = Q_gross − Q_exp + Q_imp.",
+          "equation": {
+            "formula": "EF_cons,gross = (E_PL→PL + E_import) / Q_cons × 1000   [g CO₂e/kWh]",
+            "numeric": "2023: (85 477 + 3 159) Gg / 167 880 GWh × 1000 = 528,0 g/kWh\n2024: (81 763 + 3 424) Gg / 170 967 GWh × 1000 = 498,3 g/kWh",
+            "note": "Wzory (A.3a–c) — E_import = Σ_k (Q_imp_k × EF_k) / 1 000 000 [Gg CO₂e]"
+          }
+        },
+        {
+          "num": "2",
+          "title": "Krok 2 — EF_oper",
+          "text": "Skalowanie do poziomu end-user przez f_gross = Q_gross / Q_end, plus korekty GHG ze spalania (N₂O, CH₄_comb). Korekty stosowane wyłącznie do komponentu krajowego s_PL = udział energii krajowej w miksie konsumpcyjnym.",
+          "equation": {
+            "formula": "EF_oper = EF_cons,gross × (Q_gross / Q_end) + s_PL × (Delta_N₂O + Delta_CH₄_comb)",
+            "numeric": "2023: 528,0 × 1,0673 + 0,9096 × 2,6 = 563,5 + 2,4 = 565,9 g CO₂e/kWh\n2024: 498,3 × 1,0539 + 0,9110 × 2,6 = 525,1 + 2,4 = 527,5 g CO₂e/kWh",
+            "note": "Wzory (A.4a–b) — s_PL 2023: 91,0%, 2024: 91,1%"
+          }
+        },
+        {
+          "num": "3",
+          "title": "Krok 3 — WTT_CH₄",
+          "text": "Emisje fugitywne metanu z czynnych kopalń węgla kamiennego w Polsce, alokowane do sektora elektroenergetyki. Em_CH₄ pochodzi z danych WUG (emisja netto do atmosfery); f_alloc obliczono z GUS jako udział zużycia węgla przez sektor elektroenergetyczny w łącznym zużyciu krajowym.",
+          "equation": {
+            "formula": "WTT_CH₄ = Em_CH₄ [mln m³] × 0,717 × GWP_CH₄ × f_alloc / Q_end [TWh]",
+            "numeric": "2023: 551,2 × 0,717 × 29,8 × 0,8109 / 153,650 = 62,2 g CO₂e/kWh\n2024: 530,6 × 0,717 × 29,8 × 0,8094 / 160,368 = 57,2 g CO₂e/kWh",
+            "note": "Wzór (A.5) — 0,717 kg/m³ = gęstość CH₄; Q_end w TWh"
+          }
+        },
+        {
+          "num": "4",
+          "title": "Krok 4 — Wynik końcowy",
+          "text": "Suma czterech komponentów modelu. WTT_fuels = 8,0 g i WTT_OZE = 6,0 g są stałymi metodycznymi (CONST) na podstawie JEC WTT v5 i ecoinvent 3.12.",
+          "equation": {
+            "formula": "poLCA = EF_oper + WTT_CH₄ + WTT_fuels + WTT_OZE   [g CO₂e/kWh]",
+            "numeric": "2023: 565,9 + 62,2 + 8,0 + 6,0 = 642,1 g → 0,642 kg CO₂e/kWh\n2024: 527,5 + 57,2 + 8,0 + 6,0 = 598,7 g → 0,599 kg CO₂e/kWh",
+            "note": "Wzór (A.1) — wartość referencyjna zaokrąglona do 3 miejsc po przecinku"
+          }
+        }
+      ]
+    },
+    {
+      "id": "s4-kontrola",
+      "title": "4.6 Kontrola spójności obliczeń",
+      "type": "table",
+      "headers": ["Rok", "EF_oper", "WTT_CH₄", "WTT_fuels", "WTT_OZE", "Suma [g]", "Wynik [kg]"],
+      "rows": [
+        ["2023", "565,9", "62,2", "8,0", "6,0", "642,1", "0,642"],
+        ["2024", "527,5", "57,2", "8,0", "6,0", "598,7", "0,599"]
+      ],
+      "note": "Różnice wynikające z zaokrągleń nie przekraczają 0,1 g CO₂e/kWh."
+    },
+    {
+      "id": "s4-model",
+      "title": "4.7 Struktura modelu obliczeniowego poLCA",
+      "type": "table",
+      "headers": ["Komponent", "Symbol", "Jednostka", "Źródło danych"],
+      "rows": [
+        ["Emisje operacyjne produkcji energii", "EF_oper", "g CO₂e/kWh", "KOBiZE, PSE, EEA"],
+        ["Metan kopalniany (upstream)", "WTT_CH₄", "g CO₂e/kWh", "WUG, GUS"],
+        ["Upstream paliw kopalnych i biomasy", "WTT_fuels", "g CO₂e/kWh", "JEC WTT v5 (CONST)"],
+        ["Infrastruktura OZE (lifecycle)", "WTT_OZE", "g CO₂e/kWh", "ecoinvent 3.12 (CONST)"]
+      ]
+    },
+    {
+      "id": "s5-dekompozycja",
+      "title": "5.1 Porównanie 2023 vs 2024 — dekompozycja różnicy +43 g",
+      "type": "table",
+      "headers": ["Czynnik", "Efekt [g CO₂e/kWh]", "Wyjaśnienie"],
+      "rows": [
+        ["Wyższe emisje KOBiZE Tab.6 w 2023", "+34,9", "Większy udział węgla, mniejszy OZE w 2023"],
+        ["Efekt korekty importowej", "−5,2", "Aktualizacja wskaźników emisji EEA i różnice w strukturze importu; dominujący kierunek niemiecki"],
+        ["Efekt strat sieciowych i skalowania do end-user", "+8,7", "Wyższy stosunek Q_gross/Q_end w 2023 → większe straty systemowe"],
+        ["WTT_CH₄", "+5,0", "Wyższe WTT_CH₄ w 2023 (62,2 vs 57,2 g/kWh) — wyższa emisja WUG (551,2 vs 530,6 mln m³)"],
+        ["WTT_fuels i WTT_OZE", "0,0", "Wartości stałe (CONST)"],
+        ["ŁĄCZNIE", "+43,4", "2023 bardziej emisyjne o ~7% vs 2024"]
+      ]
+    },
+    {
+      "id": "s5-kobize",
+      "title": "5.2 Porównanie z KOBiZE i danymi międzynarodowymi",
+      "type": "comparison",
+      "headers": ["Źródło wskaźnika", "2023", "2024", "Zakres"],
+      "rows": [
+        ["KOBiZE Tab.2 end-user (CO₂ only)", "0,597", "0,553", "CO₂ ze spalania"],
+        ["AIB Residual Mix (CO₂, market-based)", "0,788", "0,808", "CO₂ atrybutowy"],
+        ["poLCA-EN-PL", "0,642", "0,599", "CO₂e full LCA, location-based"],
+        ["EEA (2024, bezpośrednie)", "—", "0,662", "Emisje bezpośrednie bez korekty LCA"],
+        ["Lewandowska et al. (2025), MDPI", "—", "0,650*", "Location-based, miks konsumpcyjny 2022"],
+        ["IEA Emission Factors 2024", "—", "~0,60–0,65", "LCA upstream, różne granice systemu"]
+      ],
+      "note": "*Rok referencyjny 2022; różnica wynika z różnych lat i granic systemu. Wszystkie wartości w kg CO₂e/kWh."
+    },
+    {
+      "id": "s6-pedigree",
+      "title": "6b. Matryca jakości danych (pedigree matrix)",
+      "type": "table",
+      "headers": ["Źródło danych", "Wiarygodność", "Kompletność", "Korel. czasowa", "Korel. geogr.", "Korel. technol."],
+      "rows": [
+        ["KOBiZE Tab.6 (emisje CO₂)", "1", "1", "1", "1", "1"],
+        ["PSE Tab.7.2 (przepływy trans.)", "1", "2", "1", "1", "1"],
+        ["WUG (metan z kopalń)", "2", "2", "1", "1", "2"],
+        ["GUS (współczynnik alokacji)", "1", "1", "2", "1", "1"],
+        ["EEA (wskaźniki krajów importu)", "2", "2", "2", "2", "2"],
+        ["IPCC AR6 (GWP)", "1", "1", "1", "1", "1"],
+        ["JEC WTT v5 (upstream paliw)", "2", "2", "3", "3", "2"],
+        ["ecoinvent 3.12 (cykl OZE)", "2", "2", "2", "2", "2"]
+      ],
+      "note": "Skala Weidemy: 1 = dane zmierzone/zweryfikowane; 2 = dane z zatwierdzonych procedur; 3 = dane szacunkowe. DQR = 1,69 (wysoka jakość)."
+    },
+    {
+      "id": "s6-ograniczenia",
+      "title": "6a. Ograniczenia metody",
+      "type": "table",
+      "headers": ["Ograniczenie", "Opis i uzasadnienie"],
+      "rows": [
+        ["Proxy dla EF Ukrainy", "EF_UA = 210 g CO₂/kWh to oszacowanie sprzed 2022 r. (IEA/GTO). Wpływ na wskaźnik końcowy: zmiana EF_UA o ±50% zmienia poLCA o <0,5 g CO₂e/kWh."],
+        ["Stałość WTT_fuels i WTT_OZE", "Współczynniki WTT_fuels (8,0 g) i WTT_OZE (6,0 g) przyjęto jako CONST na podstawie JEC WTT v5 i ecoinvent 3.12. Ich łączny wpływ na wskaźnik wynosi ok. 14 g CO₂e/kWh (~2,3%)."],
+        ["Uproszczenie GWP-biogenic", "Wartość referencyjna GWP-biogenic ≈ 0 wynika z uproszczenia bilansowego. Wartość brutto wynosi ok. 0,029 kg CO₂e/kWh. Spójne z praktyką EN 15804+A2."],
+        ["Infrastruktura konwencjonalna", "Emisje z budowy i dekomisji elektrowni konwencjonalnych pominięto. Wg IPCC AR5 wynoszą 1–3 g CO₂e/kWh dla węgla, <0,3% wskaźnika — w granicach kryterium odcięcia ISO 14044."],
+        ["Uproszczona analiza niepewności", "Zastosowano metodę RSS z eksperckimi oszacowaniami. Nie przeprowadzono pełnej symulacji Monte Carlo. Podane przedziały mają charakter orientacyjny."]
+      ]
+    },
+    {
+      "id": "s7-niepewnosc",
+      "title": "7. Analiza niepewności i wrażliwości",
+      "type": "uncertainty",
+      "headers": ["Komponent", "2024 [g CO₂e/kWh]", "Niepewność", "Źródło niepewności"],
+      "rows": [
+        ["EF_oper", "527,5", "±5%", "Rozrzut KOBiZE vs PSE; EF importu (EEA vs Ember); metodologia alokacji CHP"],
+        ["WTT_CH₄", "57,2", "±20%", "WUG jako jedyne źródło; brak niezależnej weryfikacji; f_alloc wrażliwy na klasyfikację GUS"],
+        ["WTT_fuels", "8,0", "±30%", "Stała CONST — brak aktualizacji do warunków PL; wartości JEC WTT v5 sprzed 2020"],
+        ["WTT_OZE", "6,0", "±30%", "Stała CONST — rozrzut IPCC dla różnych technologii i lokalizacji"]
+      ],
+      "sensitivity": {
+        "title": "Analiza wrażliwości (wartość bazowa = 0,599 kg CO₂e/kWh)",
+        "headers": ["Parametr", "Zmiana", "poLCA [kg/kWh]", "Δ%"],
+        "rows": [
+          ["WTT_CH₄ (Em_CH₄)", "+20%", "0,610", "+1,9%"],
+          ["WTT_CH₄ (Em_CH₄)", "−20%", "0,588", "−1,9%"],
+          ["f_alloc", "+10% (0,809→0,890)", "0,605", "+1,0%"],
+          ["f_alloc", "−10% (0,809→0,728)", "0,593", "−1,0%"],
+          ["EF_import DE (+50 g)", "298→348 g/kWh", "0,602", "+0,5%"],
+          ["GWP_CH₄ AR5 vs AR6", "+6,4%", "0,603", "+0,6%"],
+          ["EF_oper", "±5%", "0,625 / 0,573", "±4,4%"],
+          ["Infrastruktura konwencj. (pominięta)", "+2 g", "0,601", "+0,3%"]
+        ]
+      },
+      "note": "Łączna niepewność σ ≈ 0,029 kg CO₂e/kWh (~±4,8%). Przedziały: 68% CI: 0,570–0,628; 95% CI: 0,541–0,657."
+    },
+    {
+      "id": "s8-trendy",
+      "title": "8. Analiza trendów",
+      "type": "text",
+      "content": [
+        "Porównanie danych za lata 2023–2024 ujawnia wyraźny trend dekarbonizacji polskiego sektora elektroenergetycznego:",
+        "• Wzrost udziału OZE — udział OZE w bilansie end-user wzrósł z 25,2% do 28,2%, a produkcja z wiatru, fotowoltaiki, biomasy i hydroenergetyki zwiększyła się z ok. 38,8 TWh do 45,3 TWh (+17%).",
+        "• Spadek wykorzystania węgla — zużycie węgla kamiennego w sektorze elektroenergetycznym spadło o ok. 10%, podczas gdy całkowita produkcja ze spalania paliw kopalnych zmniejszyła się o ok. 1,2%.",
+        "• Zmniejszenie strat sieciowych — różnica Q_gross − Q_end spadła z 10,3 TWh do 8,6 TWh (−16%), wskazując na poprawę efektywności systemu.",
+        "• Zmiana struktury importu — wzrósł import z Niemiec (+1,4 TWh), spadł ze Szwecji (−1,0 TWh). Korekta importowa była nieco mniej korzystna w 2024 (−26,7 g vs −31,8 g CO₂/kWh w 2023), lecz efekt wzrostu OZE dominuje.",
+        "Prognoza: przy utrzymaniu obecnego tempa wzrostu OZE wskaźnik poLCA-EN-PL dla roku 2025 szacuje się w przedziale 0,57–0,62 kg CO₂e/kWh. Wskaźnik aktualizowany jest corocznie po publikacji danych KOBiZE (zwykle IV kwartał roku następnego)."
+      ]
+    },
+    {
+      "id": "s9-zastosowanie",
+      "title": "9. Zastosowanie w EPD/LCA",
+      "type": "text",
+      "content": [
+        "Wskaźnik poLCA-EN-PL może być stosowany jako referencyjna wartość emisyjności energii elektrycznej w analizach środowiskowych procesów i produktów realizowanych w Polsce. Typowe zastosowania: analizy LCA, Deklaracje Środowiskowe Produktu (EPD), obliczenia śladu węglowego produktów (PCF), analizy środowiskowe procesów przemysłowych.",
+        "Program EPD Polska rekomenduje stosowanie wskaźnika poLCA-EN-PL jako wartości referencyjnej polskiego miksu energetycznego: dane z roku 2023 → 0,642 kg CO₂e/kWh; dane z roku 2024 → 0,599 kg CO₂e/kWh.",
+        "Wskaźnik poLCA jest wskaźnikiem typu well-to-meter i stanowi pojedynczą wartość emisyjności przepływu \u201eenergia elektryczna z sieci PL\u201d — nie wymaga dalszej dezagregacji w obliczeniach EPD. poLCA-EN-PL-2024 obowiązuje do publikacji wskaźnika za rok 2025."
+      ]
+    },
+    {
+      "id": "s9-modul-epd",
+      "title": "9.3 Mapowanie do modułów EN 15804+A2:2019",
+      "type": "table",
+      "headers": ["Kontekst zużycia EE w cyklu życia wyrobu", "Moduł", "Wskaźnik (2024)"],
+      "rows": [
+        ["EE w procesie produkcji wyrobu", "A3", "0,599 kg CO₂e/kWh"],
+        ["EE na placu budowy", "A5", "0,599 kg CO₂e/kWh"],
+        ["EE w fazie eksploatacji budynku", "B6", "0,599 kg CO₂e/kWh"],
+        ["EE w procesach przetwarzania odpadów", "C3", "0,599 kg CO₂e/kWh"],
+        ["Uniknięta produkcja energii elektrycznej (odzysk)", "D", "0,599 kg CO₂e/kWh"]
+      ],
+      "note": "poLCA jest wskaźnikiem zagregowanym (well-to-meter) i stanowi pojedynczą wartość dla przepływu \u201eenergia elektryczna z sieci PL\u201d we wszystkich modułach cyklu życia."
+    },
+    {
+      "id": "s9-split",
+      "title": "9.4 Podział GWP — fossil / biogenic / luluc",
+      "type": "table",
+      "headers": ["Składowa", "Symbol EPD", "Wartość 2024", "Jednostka"],
+      "rows": [
+        ["Potencjał globalnego ocieplenia — paliwa kopalne", "GWP-fossil", "0,599", "kg CO₂e/kWh"],
+        ["Potencjał globalnego ocieplenia — biogeniczny", "GWP-biogenic", "≈ 0 (netto)", "kg CO₂ biogenic/kWh"],
+        ["Potencjał globalnego ocieplenia — użytkowanie ziemi", "GWP-luluc", "0,001", "kg CO₂e/kWh"],
+        ["GWP-total (informacyjnie)", "GWP-total", "0,600", "kg CO₂e/kWh"]
+      ],
+      "note": "GWP-biogenic netto ≈ 0: uproszczenie referencyjne zakładające zrównoważone pozyskanie biomasy. Wartość brutto GWP-biogenic (informacyjnie): ~0,029 kg CO₂ biogenic/kWh."
+    },
+    {
+      "id": "za-tok",
+      "title": "Załącznik A — Pełny tok obliczeniowy (referencyjny)",
+      "type": "steps",
+      "steps": [
+        {
+          "num": "A.1",
+          "title": "Równanie główne",
+          "text": "poLCA = EF_oper + WTT_CH₄ + WTT_fuels + WTT_OZE [g CO₂e/kWh], gdzie każdy komponent odniesiony jest do 1 kWh end-user.",
+          "equation": {
+            "formula": "poLCA = EF_oper + WTT_CH₄ + WTT_fuels + WTT_OZE",
+            "numeric": "2024: 527,5 + 57,2 + 8,0 + 6,0 = 598,7 g → 0,599 kg CO₂e/kWh",
+            "note": "Wzór (A.1)"
+          }
+        },
+        {
+          "num": "A.2",
+          "title": "EF_PL,prod",
+          "text": "Wskaźnik emisji produkcji krajowej brutto.",
+          "equation": {
+            "formula": "EF_PL,prod = CO₂_Tab6 [Mg CO₂] / Q_gross [MWh] × 1000",
+            "numeric": "2023: 91 798 960 / 163 990 407 × 1000 = 559,78 g CO₂/kWh\n2024: 88 716 280 / 169 001 397 × 1000 = 524,94 g CO₂/kWh",
+            "note": "Wzór (A.2)"
+          }
+        },
+        {
+          "num": "A.3",
+          "title": "Korekta importowa",
+          "text": "Uwzględnia fizyczne przepływy graniczne energii elektrycznej.",
+          "equation": {
+            "formula": "E_PL→PL = CO₂_Tab6 × (1 − Q_exp / Q_gross)   [Mg CO₂]\nE_import = Σ_k Q_k [GWh] × EF_k [g/kWh] / 1 000 000   [Gg]\nEF_cons,gross = (E_PL→PL + E_import) / Q_cons × 1000",
+            "numeric": "2023: (85 477 + 3 159) / 167 879 × 1000 = 528,0 g/kWh\n2024: (81 763 + 3 424) / 170 967 × 1000 = 498,3 g/kWh",
+            "note": "Wzory (A.3a–c)"
+          }
+        },
+        {
+          "num": "A.4",
+          "title": "EF_oper",
+          "text": "Skalowanie do end-user i korekty GHG ze spalania.",
+          "equation": {
+            "formula": "EF_cons,eu,CO₂ = EF_cons,gross × (Q_gross / Q_end)\nEF_oper = EF_cons,eu,CO₂ + s_PL × (Delta_N₂O + Delta_CH₄_comb)",
+            "numeric": "2023: 528,0 × 1,0673 = 563,5; 563,5 + 0,9096 × 2,6 = 565,9 g CO₂e/kWh\n2024: 498,3 × 1,0539 = 525,1; 525,1 + 0,9110 × 2,6 = 527,5 g CO₂e/kWh",
+            "note": "Wzory (A.4a–b)"
+          }
+        },
+        {
+          "num": "A.5",
+          "title": "WTT_CH₄",
+          "text": "Emisje fugitywne metanu z kopalń, alokowane do sektora elektroenergetycznego.",
+          "equation": {
+            "formula": "WTT_CH₄ = Em_CH₄ [mln m³] × 0,717 × GWP_CH₄ × f_alloc / Q_end [TWh]",
+            "numeric": "2023: 551,2 × 0,717 × 29,8 × 0,8109 / 153,650 = 62,2 g CO₂e/kWh\n2024: 530,6 × 0,717 × 29,8 × 0,8094 / 160,368 = 57,2 g CO₂e/kWh",
+            "note": "Wzór (A.5)"
+          }
+        },
+        {
+          "num": "A.6",
+          "title": "Wynik końcowy",
+          "text": "Suma czterech komponentów — kontrola spójności.",
+          "equation": {
+            "formula": "poLCA = EF_oper + WTT_CH₄ + 8,0 + 6,0",
+            "numeric": "2023: 565,9 + 62,2 + 8,0 + 6,0 = 642,1 g → 0,642 kg CO₂e/kWh\n2024: 527,5 + 57,2 + 8,0 + 6,0 = 598,7 g → 0,599 kg CO₂e/kWh",
+            "note": "Wzór (A.1)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "zb-niepewnosc",
+      "title": "Załącznik B — Analiza niepewności",
+      "type": "uncertainty",
+      "headers": ["Komponent (i)", "xᵢ [kg/kWh]", "uᵢ [±%]", "σᵢ [kg/kWh]", "Udział w wariancji"],
+      "rows": [
+        ["EF_oper", "0,528", "5%", "0,0264", "~84%"],
+        ["WTT_CH₄", "0,057", "20%", "0,0114", "~16%"],
+        ["WTT_fuels", "0,008", "30%", "0,0024", "~1%"],
+        ["WTT_OZE", "0,006", "30%", "0,0018", "<1%"],
+        ["Suma", "0,599", "—", "σ = 0,029", "100%"]
+      ],
+      "sensitivity": {
+        "title": "B.3 Wpływ wyboru GWP: AR5 vs AR6",
+        "headers": ["Substancja", "GWP AR5", "GWP AR6", "Zmiana", "Wpływ na poLCA 2024"],
+        "rows": [
+          ["CH₄ fossil (kopalniany)", "28", "29,8", "+6,4%", "+0,003–0,004 kg CO₂e/kWh (+0,6%)"],
+          ["N₂O", "265", "273", "+3,0%", "<+0,001 kg CO₂e/kWh"],
+          ["Łączny efekt AR5→AR6", "—", "—", "—", "+0,004–0,005 kg CO₂e/kWh (+0,6–0,8%)"]
+        ]
+      },
+      "note": "Metoda RSS (Root Sum of Squares). σ_poLCA = √(σ²_oper + σ²_CH4 + σ²_fuels + σ²_OZE) = 0,029 kg CO₂e/kWh. Przedziały orientacyjne: 68% CI: 0,570–0,628; 95% CI: 0,541–0,657 kg CO₂e/kWh."
+    },
+    {
+      "id": "zc-split",
+      "title": "Załącznik C — Split GWP-fossil / GWP-biogenic / GWP-luluc",
+      "type": "table",
+      "headers": ["Składnik poLCA", "Wartość 2024 [g/kWh]", "GWP-fossil", "GWP-biogenic", "GWP-luluc"],
+      "rows": [
+        ["EF_oper (KOBiZE, N₂O, CH₄_comb)", "527,5", "527,5", "0", "0"],
+        ["WTT_CH₄ (metan z kopalń)", "57,2", "57,2", "0", "0"],
+        ["WTT_fuels (JEC WTT v5)", "8,0", "8,0", "0", "0"],
+        ["WTT_OZE (ecoinvent 3.12)", "6,0", "5,5", "0,2", "0,3"],
+        ["RAZEM", "598,7", "598,2 → 0,599 kg", "0,2 g (netto ≈ 0)", "0,3 g → 0,001 kg"]
+      ],
+      "note": "GWP-biogenic netto ≈ 0: uproszczenie zakładające zrównoważone pozyskanie biomasy. GWP-biogenic brutto (informacyjnie): ~0,029 kg CO₂ biogenic/kWh."
+    },
+    {
+      "id": "zd-ilcd",
+      "title": "Załącznik D — Metadane datasetu ILCD",
+      "type": "table",
+      "headers": ["Pole metadanych", "Wartość"],
+      "rows": [
+        ["Dataset name", "Electricity, at consumer, Poland, 2024"],
+        ["UUID", "poLCA-EN-PL-2024-v16"],
+        ["Classification", "ILCD: Energy carriers and technologies / Electricity"],
+        ["Reference flow", "1 kWh electricity, at consumer, PL"],
+        ["Location", "PL (Poland)"],
+        ["Time representativeness", "2024 (data year)"],
+        ["Technology level", "Current technology (as of 2024)"],
+        ["Modelling approach", "attributional, location-based, full LCA (well-to-meter)"],
+        ["Impact category", "GWP-fossil (climate change); GWP100, IPCC AR6 / EF 3.1"],
+        ["Result", "0,599 kg CO₂e/kWh"],
+        ["Data owner", "Multicert Sp. z o.o., Operator EPD Polska"],
+        ["Version", "v16"],
+        ["Publication date", "2026-04-04"],
+        ["Status", "Wersja konsultacyjna — do weryfikacji zewnętrznej"]
+      ]
+    },
+    {
+      "id": "bibliografia",
+      "title": "Bibliografia",
+      "type": "text",
+      "content": [
+        "[S1a] KOBiZE, Wskaźniki emisyjności CO₂ dla energii elektrycznej za rok 2023, Warszawa, grudzień 2024.",
+        "[S1b] KOBiZE, Wskaźniki emisyjności CO₂ dla energii elektrycznej za rok 2024, Warszawa, grudzień 2025.",
+        "[S2a/b] PSE S.A., Raport roczny z funkcjonowania KSE za rok 2023 i 2024. Tab.7.2 — Wymiana zagraniczna energii elektrycznej.",
+        "[S3] EEA, Greenhouse gas emission intensity of electricity generation by country, dane 2023 i 2024.",
+        "[S6a/b] WUG, Ocena stanu bezpieczeństwa pracy [...] w 2023 i 2024 roku. Rozdz. Zagrożenie metanowe.",
+        "[S10a/b] GUS, Gospodarka paliwowo-energetyczna w latach 2022–2023 i 2023–2024, Tablica 1(74).",
+        "[S15] AIB, European Residual Mixes 2024. Final results, published May 2025.",
+        "[S16] Lewandowska A. et al. Electricity-Related Emissions Factors in Carbon Footprinting — The Case of Poland. Energies 2025, 18(15), 4092. DOI: 10.3390/en18154092",
+        "[S18] IEA, Life Cycle Upstream Emission Factors 2024. International Energy Agency, Paris, 2024.",
+        "[CONST1] JEC (JRC-Eucar-Concawe), Well-to-Wheels analysis v5, 2020.",
+        "[CONST2] IPCC AR6 WGI, 2021. Table 7.15 — GWP-100 / JRC EF 3.1.",
+        "[CONST3] EN 15804:2012+A2:2019. Sustainability of construction works — Environmental product declarations.",
+        "[CONST4] ISO 14040:2006 i ISO 14044:2006. Environmental management — Life cycle assessment."
+      ]
+    }
+  ]
+}
