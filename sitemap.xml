@@ -55,6 +55,24 @@
     <priority>0.95</priority>
   </url>
   <url>
+    <loc>https://polca.org.pl/metodyki/</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/pobierz.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/o-polca/cytowanie.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://polca.org.pl/blog.html</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>

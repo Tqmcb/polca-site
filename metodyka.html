@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Metodyka i Jakość Danych — poLCA</title>
-    <meta name="description" content="Siedmiowarstwowy system zapewnienia jakości danych LCA: od źródeł KOBiZE i GUS przez ramy normatywne ISO 14044 po walidację krzyżową z EU ETS i E-PRTR. Pełna trasowalność danych.">
+    <meta name="description" content="Kontrolowany system jakości danych LCA: reguły programu, dane branżowe i publiczne, model obliczeń, audyt oraz pełna trasowalność źródeł.">
     <link rel="canonical" href="https://polca.org.pl/metodyka.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Metodyka i Jakość Danych — poLCA">
-    <meta property="og:description" content="Siedmiowarstwowy system walidacji danych LCA. Źródła KOBiZE, GUS, normy ISO 14044, EN 15804+A2. Weryfikacja krzyżowa z EU ETS i E-PRTR.">
+    <meta property="og:description" content="Metodyka jakości danych LCA: reguły programu, źródła branżowe, model obliczeń i kontrola audytowa.">
     <meta property="og:url" content="https://polca.org.pl/metodyka.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Metodyka i Jakość Danych — poLCA">
-    <meta name="twitter:description" content="Siedmiowarstwowy system walidacji danych LCA. Pełna trasowalność i weryfikacja krzyżowa z rejestrami emisji.">
+    <meta name="twitter:description" content="Metodyka jakości danych LCA: reguły programu, źródła branżowe, model obliczeń i kontrola audytowa.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,26 @@
     <link rel="stylesheet" href="style.css?v=10.0">
     <link rel="stylesheet" href="style-interactive.css?v=1.1">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}.wf-step{opacity:1!important;transform:none!important}</style></noscript>
-    <style>@media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}</style>
+    <style>
+        html{scroll-padding-top:76px}
+        #moduly,#wartosci-domyslne,#zalaczniki-techniczne,#walidacja,#walidacja-teg{scroll-margin-top:76px}
+        #moduly{padding:1.55rem 1.7rem!important}
+        #moduly .card-title{font-size:1.2rem!important}
+        .module-scope-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:1rem}
+        .module-card{padding:.85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+        .module-card-core{border-color:#B9D8C2;background:#F1FAF4}
+        .module-code{display:block;font-size:.86rem;font-weight:700;color:#0B5D33}
+        .module-name{display:block;font-size:.78rem;color:var(--text-primary);font-weight:700}
+        .module-desc{display:block;font-size:.74rem;color:var(--text-secondary);line-height:1.45;margin-top:.2rem}
+        .scope-note{margin-top:1rem;padding:1rem;border:1px solid #D6C58A;border-radius:8px;background:#FFF8DC;color:var(--text-secondary);font-size:.82rem;line-height:1.65}
+        .technical-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+        #moduly table{min-width:0}
+        .tool-nav.section-gap{margin-bottom:1rem!important}
+        .tool-nav-pill{border:1px solid #D8DEE9!important;background:#fff!important;color:#102A43!important;box-shadow:0 1px 2px rgba(15,23,42,.04)}
+        .default-table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.module-scope-grid,.technical-links{grid-template-columns:1fr}#moduly{padding:1.35rem!important}.default-intro-grid,.default-source-grid,.default-steps-grid,.default-two-grid{grid-template-columns:1fr!important;width:100%!important;max-width:100%!important}}
+        @media(max-width:600px){.module-scope-grid{grid-template-columns:1fr}#moduly .card-title{font-size:1.12rem!important}#moduly table{min-width:680px}}
+    </style>
 </head>
 <body>
 
@@ -34,9 +53,11 @@
         <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html">Dashboard</a>
             <a href="analiza.html">Analiza Sektorowa</a>
-            <a href="metodyka.html" class="active">Metodyka i Jakość</a>
+            <a href="metodyka.html" class="active">Metodyka</a>
             <a href="datasety.html">Datasety</a>
             <a href="narzedzia.html">Narzędzia</a>
+            <a href="podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="pobierz.html">Pobierz</a>
             <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
             </a>
@@ -54,12 +75,13 @@
 
 <div class="polca-content">
 <div class="polca-page">
-    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
         <div>
-            <div class="section-num">01 — Architektura danych</div>
+            <div class="section-num">Metodyka POLCA</div>
             <h1 class="page-title">Metodyka i Jakość</h1>
             <p class="page-subtitle">
-                Skąd wiemy, że nasze dane są wiarygodne? Każda wartość w bazie poLCA przechodzi siedem warstw kontroli — od źródeł publicznych (KOBiZE, GUS), przez modelowanie inżynieryjne, po krzyżową weryfikację z rzeczywistymi emisjami raportowanymi przez polskie zakłady do E-PRTR i EU ETS.
+                Skąd wiemy, że nasze dane są wiarygodne? Każda wartość w bazie poLCA ma przypisaną regułę programu,
+                źródło danych, granicę systemu, model obliczeniowy, ocenę jakości oraz wymagania audytowe.
             </p>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
                 <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">ISO 14044:2006</span>
@@ -70,291 +92,251 @@
             </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
-            <img src="images/strip-quality.jpg" alt="Metodyka naukowa — równania i walidacja" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.05) contrast(1.02);">
+            <img src="images/strip-data.jpg" alt="Analiza danych środowiskowych i kontrola metodyki" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
             <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
         </div>
     </div>
 
-    <div class="tool-nav section-gap fade-in">
-        <a href="#moduly" class="tool-nav-pill">00 — Zakres normatywny</a>
+    <div class="tool-nav section-gap">
+        <a href="#moduly" class="tool-nav-pill">00 — Zakres i porównywalność</a>
+        <a href="#wartosci-domyslne" class="tool-nav-pill">01 — Hierarchia danych</a>
         <a href="#walidacja" class="tool-nav-pill">02 — Walidacja adekwatna</a>
         <a href="#walidacja-teg" class="tool-nav-pill">03 — Walidacja TEG</a>
+        <a href="#zalaczniki-techniczne" class="tool-nav-pill">04 — Załączniki techniczne</a>
     </div>
 
     <!-- ═══════════════════════════════════════════════════════════
-         MODUŁY EN 15804+A2 — pełny zakres cyklu życia
+         MODUŁY EN 15804+A2 — zakres obliczeń POLCA
          ═══════════════════════════════════════════════════════════ -->
-    <section id="moduly" class="ix-section ix-section-dark section-gap fade-in" aria-label="Moduły EN 15804+A2">
-        <div class="ix-section-header">
-            <div class="section-num">00 — Zakres normatywny</div>
-            <h2 class="ix-section-title">Moduły cyklu życia według EN 15804+A2</h2>
-            <p class="ix-section-sub">Struktura modułów obowiązująca dla wszystkich wyrobów budowlanych — od surowców po potencjał recyklingu. Metodyka poLCA obejmuje moduły A1–A3 (obowiązkowe) i A4 (opcjonalne).</p>
+    <section id="moduly" class="card card-lg section-gap fade-in" aria-label="Zakres porównywalności POLCA">
+        <div class="section-num">00 — Zakres i porównywalność</div>
+        <div class="card-title">Dataset porównywalny POLCA = A1–A3. Zakres EPD wynika z programu EPD Polska i właściwego cPCR.</div>
+        <p class="card-text" style="max-width:860px;">
+            POLCA rozdziela <strong>dataset produktu</strong> od <strong>zakresu deklaracji EPD</strong>.
+            Do porównania recept, wytwórni i wyrobów stosujemy etap wyrobu <strong>A1–A3</strong>.
+            Pełny zakres EPD nie jest ustalany na tej stronie arbitralnie: wynika z zasad programu EPD Polska/EPD+,
+            właściwego cPCR lub draftu normy dla kategorii wyrobu oraz z EN 15804+A2. Dla MMA kluczowe są również
+            wymagania techniczne EN 13108 i dane branżowe Eurobitume dla lepiszcza.
+        </p>
+
+        <div class="module-scope-grid">
+            <div class="module-card module-card-core">
+                <strong class="module-code">A1</strong>
+                <span class="module-name">Surowce</span>
+                <span class="module-desc">cement, kruszywa, lepiszcza, dodatki, paliwa.</span>
+            </div>
+            <div class="module-card module-card-core">
+                <strong class="module-code">A2</strong>
+                <span class="module-name">Transport do zakładu</span>
+                <span class="module-desc">odległość, pojazd, masa, współczynnik transportu.</span>
+            </div>
+            <div class="module-card module-card-core">
+                <strong class="module-code">A3</strong>
+                <span class="module-name">Produkcja</span>
+                <span class="module-desc">energia, paliwo, proces technologiczny, alokacja.</span>
+            </div>
         </div>
 
-        <div class="lca-modules-row">
-
-            <!-- ETAP A: Produkt + Budowa -->
-            <div class="lca-stage wf-visible">
-                <div class="lca-stage-header lca-stage-a">
-                    <span class="lca-stage-letter">A</span>
-                    <span class="lca-stage-name">Produkt &amp; Budowa</span>
-                </div>
-                <div class="lca-stage-modules">
-                    <div class="lca-mod lca-mod-mandatory">
-                        <div class="lca-mod-label">A1–A3</div>
-                        <div class="lca-mod-name">Faza produktowa</div>
-                        <div class="lca-mod-desc">Surowce, transport do wytwórni, wytwarzanie wyrobu</div>
-                        <div class="lca-mod-badge lca-badge-required">Obowiązkowe</div>
-                    </div>
-                    <div class="lca-mod">
-                        <div class="lca-mod-label">A4–A5</div>
-                        <div class="lca-mod-name">Faza budowy</div>
-                        <div class="lca-mod-desc">Transport na plac budowy, montaż i instalacja</div>
-                        <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lca-stage-arrow wf-visible">→</div>
-
-            <!-- ETAP B: Użytkowanie -->
-            <div class="lca-stage wf-visible">
-                <div class="lca-stage-header lca-stage-b">
-                    <span class="lca-stage-letter">B</span>
-                    <span class="lca-stage-name">Użytkowanie</span>
-                </div>
-                <div class="lca-stage-modules">
-                    <div class="lca-mod">
-                        <div class="lca-mod-label">B1–B5</div>
-                        <div class="lca-mod-name">Użytkowanie wyrobu</div>
-                        <div class="lca-mod-desc">Eksploatacja, konserwacja, naprawy, wymiana, modernizacja</div>
-                        <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
-                    </div>
-                    <div class="lca-mod">
-                        <div class="lca-mod-label">B6–B7</div>
-                        <div class="lca-mod-name">Energia i woda</div>
-                        <div class="lca-mod-desc">Operacyjne zużycie energii i wody w budynku</div>
-                        <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lca-stage-arrow wf-visible">→</div>
-
-            <!-- ETAP C: Koniec życia -->
-            <div class="lca-stage wf-visible">
-                <div class="lca-stage-header lca-stage-c">
-                    <span class="lca-stage-letter">C</span>
-                    <span class="lca-stage-name">Koniec życia</span>
-                </div>
-                <div class="lca-stage-modules">
-                    <div class="lca-mod">
-                        <div class="lca-mod-label">C1–C4</div>
-                        <div class="lca-mod-name">Rozbiórka i utylizacja</div>
-                        <div class="lca-mod-desc">Rozbiórka, transport, przetwarzanie odpadów, składowanie</div>
-                        <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="lca-stage-arrow wf-visible">→</div>
-
-            <!-- ETAP D: Poza granicą -->
-            <div class="lca-stage wf-visible">
-                <div class="lca-stage-header lca-stage-d">
-                    <span class="lca-stage-letter">D</span>
-                    <span class="lca-stage-name">Poza granicą</span>
-                </div>
-                <div class="lca-stage-modules">
-                    <div class="lca-mod">
-                        <div class="lca-mod-label">D</div>
-                        <div class="lca-mod-name">Potencjał recyklingu</div>
-                        <div class="lca-mod-desc">Ponowne użycie, odzysk i potencjał recyklingu materiału</div>
-                        <div class="lca-mod-badge lca-badge-optional">Opcjonalne</div>
-                    </div>
-                </div>
-            </div>
-
+        <div class="scope-note">
+            <strong style="color:#7A5600;">Zakres EPD nie kończy się na A4.</strong>
+            Moduły A4, A5, B, C i D są modułami scenariuszowymi lub deklaracyjnymi. System może je liczyć,
+            jeżeli wymaga tego cPCR, program EPD Polska/EPD+ albo zakres projektu, ale nie miesza ich z datasetem bazowym A1–A3.
         </div>
 
-        <div class="wf-legend" style="margin-top:1.5rem;">
-            <span class="wf-legend-item"><span class="wf-legend-dot accent"></span>Obowiązkowe w każdym EPD (EN 15804+A2 §6.3.5)</span>
-            <span class="wf-legend-item"><span class="wf-legend-dot muted"></span>Opcjonalne — deklarowane gdy istotne dla wyniku</span>
-            <span class="wf-legend-item"><span class="wf-legend-dot orange"></span>poLCA dostarcza danych LCI dla modułów A1–A3 i A4</span>
+        <div style="overflow-x:auto;margin-top:1rem;border:1px solid var(--border);border-radius:8px;">
+            <table style="width:100%;border-collapse:collapse;font-size:.8rem;">
+                <thead>
+                    <tr style="background:var(--bg-subtle);">
+                        <th style="text-align:left;padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-primary);">Zakres</th>
+                        <th style="text-align:left;padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-primary);">Rola w POLCA</th>
+                        <th style="text-align:left;padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-primary);">Status</th>
+                        <th style="text-align:left;padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-primary);">Uwaga audytowa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--text-primary);">A1–A3</td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);">dataset produktu i główny zakres porównywania recept, wytwórni i dostawców</td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);"><span class="badge" style="background:#0B6B3A;color:#fff;">dataset</span></td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);">wymaga recepty, źródeł danych, jakości danych i zasady alokacji</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);font-weight:700;color:var(--text-primary);">Zakres EPD</td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);">moduły wymagane przez program EPD Polska/EPD+, właściwy cPCR lub draft normy oraz zasady EN 15804+A2</td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);"><span class="badge" style="background:#102A43;color:#fff;white-space:nowrap;">wg programu</span></td>
+                        <td style="padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);">dla MMA: EN 13108 + cPCR/wytyczne EPD Polska; dla lepiszcza: Eurobitume LCA 4.0 jako kluczowy background A1</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:.7rem;font-weight:700;color:var(--text-primary);">A4, A5, B, C, D</td>
+                        <td style="padding:.7rem;color:var(--text-secondary);">moduły scenariuszowe, końca życia i korzyści poza systemem</td>
+                        <td style="padding:.7rem;"><span class="badge">scenariusze</span></td>
+                        <td style="padding:.7rem;color:var(--text-secondary);">liczyć i raportować zgodnie z cPCR/programem EPD Polska; nie traktować jako część wskaźnika materiałowego A1–A3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p style="margin:.85rem 0 0;font-size:.78rem;color:var(--text-tertiary);line-height:1.55;">
+            Wniosek praktyczny: A1–A3 jest rdzeniem porównywalnego datasetu produktu. Dokument EPD lub raport EPD+
+            musi mieć zakres wynikający z właściwego cPCR/programu EPD Polska dla wyrobu, w tym moduły dalsze,
+            jeżeli są wymagane.
+        </p>
+    </section>
+
+    <section id="wartosci-domyslne" class="card card-lg section-gap fade-in">
+        <div class="section-num">01 — Hierarchia danych</div>
+        <div class="card-title">Zasady doboru danych i wartości domyślnych</div>
+        <p class="card-text" style="max-width:880px;">
+            Wartość domyślna nie jest liczbą przyjętą „z głowy”. Każdy wskaźnik musi mieć opisany wyrób,
+            jednostkę deklarowaną, granicę systemu, główne procesy, źródła danych, hotspoty wyniku oraz warunek,
+            kiedy należy zastąpić go danymi pierwotnymi, EPD dostawcy albo danymi potwierdzonymi podczas audytu.
+        </p>
+
+        <div class="default-intro-grid" style="display:grid;grid-template-columns:1.05fr .95fr;gap:1rem;margin-top:1.1rem;">
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+                <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;">Wzorzec z CBAM</h3>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin:0;">
+                    CBAM pokazuje właściwą logikę: najpierw definiuje się wyrób, ścieżkę produkcji,
+                    granice systemu, emisje bezpośrednie, emisje pośrednie i prekursory. Wartości domyślne
+                    stosuje się wtedy, gdy nie ma wystarczających danych rzeczywistych. Dla okresu docelowego
+                    Komisja Europejska publikuje wartości domyślne w akcie wykonawczym, a nie jako luźną tabelę.
+                </p>
+            </div>
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;">Zasada POLCA</h3>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin:0;">
+                    POLCA stosuje podobny porządek metodyczny, ale dla wyrobów budowlanych i zgodnie z EN 15804+A2:
+                    wartość domyślna jest jawna, konserwatywna i przypisana do konkretnej roli w A1, A2 albo A3.
+                    Moduły scenariuszowe i dalsze etapy deklaracji EPD wynikają z cPCR/wytycznych programu EPD Polska
+                    oraz EN 15804+A2. Dla MMA Eurobitume LCA 4.0 jest kluczowym źródłem background dla lepiszcza,
+                    ale nie zastępuje danych konkretnego dostawcy ani audytu danych.
+                </p>
+            </div>
+        </div>
+
+        <div class="default-source-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem;">
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--paper-warm);">
+                <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;">Podstawa normatywna</h3>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin:0 0 .7rem;">
+                    Normy i rozporządzenia nie są źródłem jednej liczby emisyjnej. Wyznaczają sposób liczenia:
+                    jednostkę deklarowaną, moduły cyklu życia, granice systemu, alokację, jakość danych,
+                    kryteria pomijalności oraz zasady weryfikacji.
+                </p>
+                <div class="tag-row" style="margin-top:.5rem;">
+                    <span class="tag">EN 15804+A2</span>
+                    <span class="tag">ISO 14040/14044</span>
+                    <span class="tag">ISO 14025</span>
+                    <span class="tag">ISO 14067</span>
+                    <span class="tag">CPR 2024/3110</span>
+                    <span class="tag">ISO/IEC 17029</span>
+                    <span class="tag">ISO 14065</span>
+                </div>
+            </div>
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;">Podstawa branżowa</h3>
+                <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin:0 0 .7rem;">
+                    Dane branżowe służą do kalibracji wartości domyślnych wtedy, gdy brakuje EPD dostawcy lub danych
+                    zakładowych. Muszą być przypisane do konkretnego wyrobu, regionu, roku danych, technologii i
+                    granicy systemu. Nie wolno mieszać źródeł o innych modułach bez korekty metodycznej.
+                </p>
+                <div class="tag-row" style="margin-top:.5rem;">
+                    <span class="tag">SPC</span>
+                    <span class="tag">CEMBUREAU</span>
+                    <span class="tag">Eurobitume</span>
+                    <span class="tag">PZPK</span>
+                    <span class="tag">Aggregates Europe</span>
+                    <span class="tag">KOBiZE</span>
+                    <span class="tag">PSE/GUS/WUG</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="default-steps-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;margin-top:1rem;">
+            <div style="padding:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.88rem;">1. Wyrób i jednostka</strong>
+                <span style="display:block;color:var(--text-secondary);font-size:.76rem;line-height:1.5;margin-top:.25rem;">np. 1 t MMA, 1 m³ betonu, 1 t cementu lub 1 t kruszywa.</span>
+            </div>
+            <div style="padding:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.88rem;">2. Granica systemu</strong>
+                <span style="display:block;color:var(--text-secondary);font-size:.76rem;line-height:1.5;margin-top:.25rem;">A1 surowce, A2 transport wejściowy, A3 produkcja; pozostałe moduły według cPCR/wytycznych EPD Polska.</span>
+            </div>
+            <div style="padding:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.88rem;">3. Hotspoty</strong>
+                <span style="display:block;color:var(--text-secondary);font-size:.76rem;line-height:1.5;margin-top:.25rem;">elementy o największym wpływie muszą mieć mocniejsze dane i kontrolę audytową.</span>
+            </div>
+            <div style="padding:.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.88rem;">4. Jakość danych</strong>
+                <span style="display:block;color:var(--text-secondary);font-size:.76rem;line-height:1.5;margin-top:.25rem;">EPD i dane pierwotne mają pierwszeństwo przed wartością domyślną.</span>
+            </div>
+        </div>
+
+        <div style="margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+            <h3 style="font-size:1rem;color:var(--text-primary);margin:0 0 .45rem;">Reguła stosowania źródeł</h3>
+            <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.65;margin:0;">
+                POLCA nie pozwala użytkownikowi wybierać „najkorzystniejszego” wskaźnika. System dobiera wskaźnik
+                z kontrolowanego katalogu: najpierw EPD i dane pierwotne, później dane sektorowe o zgodnym zakresie,
+                a na końcu jawna wartość domyślna. Dla hotspotów wartość domyślna jest rozwiązaniem roboczym do czasu
+                potwierdzenia danych podczas audytu albo dostarczenia EPD dostawcy.
+            </p>
+        </div>
+
+        <p style="margin-top:1rem;font-size:.82rem;">
+            <a href="data/default-methodology.json" style="color:var(--accent);text-decoration:none;font-weight:600;">Maszynowy zapis metodyki wartości domyślnych →</a>
+            <span style="color:var(--text-tertiary);margin:0 .45rem;">·</span>
+            <a href="datasety.html#referencyjne-szczegoly" style="color:var(--accent);text-decoration:none;font-weight:600;">Przejdź do katalogu wskaźników →</a>
+        </p>
+    </section>
+
+    <section id="matryca-metodyczna" class="card card-lg section-gap fade-in">
+        <div class="section-num">02 — Matryca metodyczna</div>
+        <div class="card-title">Co jest regułą, co jest danymi, a co jest kontrolą audytową</div>
+        <p class="card-text" style="max-width:900px;">
+            Ta część porządkuje logikę źródeł. W POLCA nie mieszamy norm, danych branżowych
+            i audytu w jednej liście. Najpierw ustalamy regułę obliczeń, potem dobieramy dane, następnie liczymy
+            model i dopiero na końcu oceniamy jakość oraz ryzyko wyniku.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.8rem;margin-top:1rem;">
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
+                <strong style="display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.35rem;">1. Reguły programu</strong>
+                <p style="margin:0;color:var(--text-secondary);font-size:.78rem;line-height:1.55;">
+                    EN 15804+A2, ISO 14025, CPR 2024 oraz cPCR/wytyczne programu EPD Polska. Dla MMA podstawą
+                    techniczną pozostaje EN 13108 i dokument branżowy/draft normy właściwy dla mieszanek.
+                </p>
+            </div>
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.35rem;">2. Dane i źródła</strong>
+                <p style="margin:0;color:var(--text-secondary);font-size:.78rem;line-height:1.55;">
+                    EPD dostawcy i dane zakładowe mają pierwszeństwo. Gdy ich brakuje, system używa danych
+                    sektorowych i publicznych: Eurobitume dla bitumu, KOBiZE/PSE/GUS dla energii i paliw,
+                    źródeł branżowych dla cementu, kruszyw i stali.
+                </p>
+            </div>
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.35rem;">3. Model obliczeń</strong>
+                <p style="margin:0;color:var(--text-secondary);font-size:.78rem;line-height:1.55;">
+                    Recepta, dostawcy, transport wejściowy, energia, paliwa, alokacja produkcji i hotspoty.
+                    Dataset porównawczy jest liczony w A1–A3, a dalsze moduły EPD są scenariuszami zgodnymi
+                    z programem i cPCR.
+                </p>
+            </div>
+            <div style="padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);">
+                <strong style="display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.35rem;">4. Audyt i jakość</strong>
+                <p style="margin:0;color:var(--text-secondary);font-size:.78rem;line-height:1.55;">
+                    System oznacza, które dane są pierwotne, sektorowe albo domyślne. Hotspoty nie mogą opierać
+                    się wyłącznie na wartości domyślnej bez uzasadnienia i kontroli dokumentów na miejscu.
+                </p>
+            </div>
         </div>
     </section>
 
-    <div class="layers-container section-gap fade-in">
-        <div class="layer-card">
-            <span class="layer-num">I</span>
-            <div>
-                <div class="layer-title">Źródła pierwotne — zgodnie z ISO 14044:2006 §4.2.3.6</div>
-                <p class="layer-desc">Dane pochodzą z oficjalnych publikacji instytucji państwowych oraz uznanych organizacji branżowych o udokumentowanej metodologii zbierania danych.</p>
-                <div class="tag-row">
-                    <span class="tag">KOBiZE</span>
-                    <span class="tag">GUS</span>
-                    <span class="tag">PSE</span>
-                    <span class="tag">Eurostat</span>
-                    <span class="tag">IPCC</span>
-                    <span class="tag">Eurobitume</span>
-                    <span class="tag">worldsteel</span>
-                    <span class="tag">CEMBUREAU</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card">
-            <span class="layer-num">II</span>
-            <div>
-                <div class="layer-title">Ramy normatywne — normy zharmonizowane i PCR</div>
-                <p class="layer-desc">Modelowanie inwentaryzacji cyklu życia (LCI) oparto na normatywnych procesach produkcyjnych określonych w zharmonizowanych normach europejskich oraz regułach kategorii produktowych (PCR).</p>
-                <div class="tag-row">
-                    <span class="tag">EN 206</span>
-                    <span class="tag">EN 13108</span>
-                    <span class="tag">EN 197-1</span>
-                    <span class="tag">EN 12620</span>
-                    <span class="tag">EN 10080</span>
-                    <span class="tag">EN 572</span>
-                    <span class="tag">EN 15804+A2</span>
-                    <span class="tag">ISO 21930</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card">
-            <span class="layer-num">III</span>
-            <div>
-                <div class="layer-title">Modelowanie inżynieryjne EBLCI — zgodnie z ISO 14044 §4.3.2</div>
-                <p class="layer-desc">Metodologia Engineering-Based Life Cycle Inventory (EBLCI) wykorzystuje modele termodynamiczne oraz bilanse masowo-energetyczne w celu zapewnienia fizycznej spójności danych — zgodnie z wymogami ISO 14044 dotyczącymi kontroli kompletności i spójności bilansu masowego. Podejście to umożliwia natywną parametryzację procesów i generowanie wariantów bez konieczności prowadzenia odrębnych kampanii pomiarowych.</p>
-                <div class="card" style="margin-top: 0.8rem; padding: 1rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
-                    <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.4rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;">Walidacja metody EBLCI — ograniczenia i krzyżowa kontrola</div>
-                    <p style="font-size: 0.82rem; margin: 0 0 0.6rem 0; color: var(--text-secondary); line-height: 1.6;">EBLCI jest metodą modelowania top-down — oblicza parametry procesowe z zasad fizycznych (termodynamika, stechiometria, bilanse masowe), nie z pomiarów zakładowych. Dla procesów prostych i dobrze zdefiniowanych stechiometrycznie (klinkieryzacja, topienie szkła, kruszenie skalne) modele te osiągają wysoką dokładność. Dla procesów złożonych o dużej zmienności międzyzakładowej (beton z różnymi domieszkami, stal z różną jakością złomu) modele mogą nie oddawać pełnej rozpiętości realnych warunków produkcji.</p>
-                    <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary); line-height: 1.6;"><strong>Mechanizm kontroli:</strong> Wyniki EBLCI są systematycznie porównywane z niezależnymi punktami odniesienia: (a) emisje instalacyjne z E-PRTR/EU ETS (warstwa VI), (b) zagregowane dane branżowe SPC, HIPH, CEMBUREAU (warstwa I), (c) wyniki z opublikowanych studiów LCA (benchmarking). Odchylenie modelu EBLCI od danych zakładowych jest dokumentowane w karcie walidacyjnej każdego zbioru danych.</p>
-                </div>
-                <div class="tag-row" style="margin-top: 0.7rem;">
-                    <span class="tag">Bilanse energetyczne</span>
-                    <span class="tag">Modele termodynamiczne</span>
-                    <span class="tag">Parametryzacja procesów</span>
-                    <span class="tag">ISO 14044 §4.3.2</span>
-                    <span class="tag">ISO/TS 14071</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card">
-            <span class="layer-num">IV</span>
-            <div>
-                <div class="layer-title">Krzyżowa walidacja algorytmiczna i kontrola spójności fizycznej — ISO 14044 Załącznik B</div>
-                <p class="layer-desc">Automatyczne narzędzia analityczne pełnią funkcję warstwy kontroli jakości zgodnie z wymaganiami ISO 14044 Załącznik B (ocena jakości danych) oraz ISO/TS 14071:2014 §6.4 (kontrole spójności i kompletności) — wykrywanie niespójności między źródłami, identyfikacja wartości odstających, weryfikacja kompletności danych. Warstwa ta nie generuje danych środowiskowych, lecz weryfikuje spójność danych pozyskanych z warstw I–III.</p>
-                <p class="layer-desc" style="margin-top: 0.5rem;">Mechanizm wielościeżkowej weryfikacji spójności obejmuje: kontrolę bilansów masowych i energetycznych (zamknięcie bilansu ±2%), walidację stechiometryczną reakcji procesowych, analizę outlierów metodą IQR i z-score, benchmarking wobec danych referencyjnych z literatury naukowej oraz porównanie krzyżowe z niezależnymi źródłami branżowymi.</p>
-                <div class="tag-row">
-                    <span class="tag">Detekcja niespójności</span>
-                    <span class="tag">Analiza outlierów</span>
-                    <span class="tag">Kontrola kompletności</span>
-                    <span class="tag">Bilanse masowo-energetyczne</span>
-                    <span class="tag">Walidacja stechiometryczna</span>
-                    <span class="tag">Benchmarking referencyjny</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card">
-            <span class="layer-num">V</span>
-            <div>
-                <div class="layer-title">Walidacja instytucjonalna — ISO 14025 §8.1.3</div>
-                <p class="layer-desc">Polskie instytuty badawcze oraz stowarzyszenia branżowe pełnią rolę warstwy uwierzytelniającej, zgodnie z wymaganiami niezależnej weryfikacji przez stronę trzecią.</p>
-                <div class="tag-row">
-                    <span class="tag">IBDiM</span>
-                    <span class="tag">ICiMB</span>
-                    <span class="tag">IGSMiE PAN</span>
-                    <span class="tag">SPC</span>
-                    <span class="tag">IOŚ-PIB</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card amber-highlight">
-            <span class="layer-num highlight">VI</span>
-            <div>
-                <div class="layer-title" style="color: var(--accent);">Walidacja regulacyjna — Environmental Compliance Cross-Check</div>
-                <p class="layer-desc">Warstwa szósta wykorzystuje dane o rzeczywistych emisjach zakładów przemysłowych, raportowanych obligatoryjnie w ramach reżimów regulacyjnych UE: Rozporządzenie E-PRTR 166/2006, Dyrektywa IED 2010/75/UE, Dyrektywa EU ETS 2003/87/WE.</p>
-                <div class="grid-2 mt-2">
-                    <div class="amber-card">
-                        <div class="amber-card-title">Źródła otwarte</div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;"><strong>E-PRTR / IEP</strong> — emisje zakładowe dla ~60 000 instalacji w UE. <strong>EU ETS (EUTL)</strong> — zweryfikowane emisje CO₂ per instalacja.</p>
-                    </div>
-                    <div class="amber-card">
-                        <div class="amber-card-title">Źródła krajowe</div>
-                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0;"><strong>KOBiZE — Krajowa Baza</strong> — roczne raporty emisji. <strong>Pozwolenia zintegrowane</strong> — dopuszczalne wielkości emisji, parametry BAT.</p>
-                    </div>
-                </div>
-                <div class="card" style="margin-top: 1rem; padding: 1rem; background: var(--accent-subtle); border-color: var(--accent-border);">
-                    <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.5rem; font-size: 0.85rem;">Mechanizm walidacji — progi sektorowe</div>
-                    <p style="font-size: 0.85rem; margin: 0 0 0.8rem 0; color: var(--text-secondary);">Dla każdego sektora wartości emisji w zbiorach danych poLCA są porównywane z zakresem emisji raportowanych przez polskie instalacje w E-PRTR i EU ETS. Progi walidacyjne są zróżnicowane sektorowo:</p>
-                    <div class="grid-3" style="gap: 0.6rem;">
-                        <div class="card" style="padding: 0.6rem; background: var(--accent-subtle);">
-                            <strong style="color: var(--accent); font-size: 0.8rem;">Cement, wapno</strong><br>
-                            <span style="font-size: 0.78rem;">Próg: ±8% mediany EU ETS</span><br>
-                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Niska zmienność międzyzakładowa</span>
-                        </div>
-                        <div class="card" style="padding: 0.6rem; background: var(--accent-subtle);">
-                            <strong style="color: var(--accent); font-size: 0.8rem;">Stal EAF / BF-BOF</strong><br>
-                            <span style="font-size: 0.78rem;">Próg: ±15% mediany EU ETS</span><br>
-                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Wysoka zmienność — jakość złomu, miks energetyczny</span>
-                        </div>
-                        <div class="card" style="padding: 0.6rem; background: var(--accent-subtle);">
-                            <strong style="color: var(--accent); font-size: 0.8rem;">Szkło, ceramika</strong><br>
-                            <span style="font-size: 0.78rem;">Próg: ±12% mediany E-PRTR</span><br>
-                            <span style="color: var(--text-tertiary); font-size: 0.72rem;">Zmienność zależna od proporcji elektryczność/gaz</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="tag-row mt-1">
-                    <span class="tag amber">E-PRTR v15.0</span>
-                    <span class="tag amber">EU ETS / EUTL</span>
-                    <span class="tag amber">KOBiZE</span>
-                    <span class="tag amber">WIOŚ / IPPC</span>
-                    <span class="tag amber">IEP (od 2028)</span>
-                </div>
-            </div>
-        </div>
-        <div class="layer-card">
-            <span class="layer-num">VII</span>
-            <div>
-                <div class="layer-title">Operacyjna reprezentatywność danych specyficznych</div>
-                <p class="layer-desc">Ocena operacyjnej reprezentatywności danych specyficznych producenta przed ich kwalifikacją jako foreground. Dane niespełniające kryteriów reprezentatywności operacyjnej podlegają zastąpieniu danymi proxy zgodnymi z hierarchią jakości danych.</p>
-                <div class="grid-3" style="gap: 0.6rem; margin-top: 0.8rem;">
-                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
-                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Wykonalność technologiczna</div>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy dane odzwierciedlają faktycznie stosowaną technologię produkcji w danej instalacji</p>
-                    </div>
-                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
-                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Racjonalność ekonomiczna</div>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy parametry procesowe mieszczą się w zakresie ekonomicznie uzasadnionej eksploatacji</p>
-                    </div>
-                    <div class="card" style="padding: 0.8rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
-                        <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.3rem; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Adekwatność geograficzna</div>
-                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Czy dane odpowiadają warunkom geograficznym i regulacyjnym rynku docelowego</p>
-                    </div>
-                </div>
-                <div class="card" style="margin-top: 0.8rem; padding: 1rem; background: var(--func-purple-bg); border-color: var(--func-purple-border);">
-                    <div style="font-weight: 600; color: var(--func-purple); margin-bottom: 0.4rem; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.05em;">Mechanizm zapewnienia wiarygodności</div>
-                    <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary); line-height: 1.6;">Warstwa VII stanowi element systemu ograniczania ryzyka selektywnej optymalizacji wyników środowiskowych. Dane specyficzne producenta, które nie przechodzą trójwymiarowej oceny reprezentatywności (technologicznej, ekonomicznej, geograficznej), są zastępowane danymi proxy z hierarchii jakości danych — zapewniając, że model LCA odzwierciedla realne warunki produkcji, a nie wyselekcjonowane punkty danych.</p>
-                </div>
-                <div class="tag-row" style="margin-top: 0.7rem;">
-                    <span class="tag">Dane foreground</span>
-                    <span class="tag">Dane proxy</span>
-                    <span class="tag">Hierarchia jakości</span>
-                    <span class="tag">Reprezentatywność operacyjna</span>
-                    <span class="tag">Anti-cherry-picking</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Profil walidacji — przykłady sektorowe</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Każdy sektor wymaga innej konfiguracji warstw walidacji dostosowanej do dostępności danych.</p>
+        <div class="card-title">Profil kontroli danych — przykłady sektorowe</div>
+        <p class="card-text" style="margin-bottom: 1rem;">Każdy sektor ma inne hotspoty i inną dostępność danych. Tabela pokazuje, które typy kontroli są najważniejsze dla danego wyrobu.</p>
         <div style="overflow-x: auto;">
             <table class="polca-table">
                 <thead>
                     <tr>
-                        <th>Warstwa walidacji</th>
+                        <th>Typ kontroli</th>
                         <th>Cement</th>
                         <th>Stal EAF</th>
                         <th>Kruszywa</th>
@@ -365,7 +347,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="font-weight: 600;">I. Dane przemysłowe</td>
+                        <td style="font-weight: 600;">Dane pierwotne i EPD dostawcy</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
@@ -374,25 +356,16 @@
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">II. Statystyka publiczna</td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
+                        <td style="font-weight: 600;">Dane sektorowe i publiczne</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
+                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">III. Literatura naukowa</td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: 600;">IV. Algorytmiczna</td>
+                        <td style="font-weight: 600;">Model, bilans i alokacja</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
@@ -401,25 +374,7 @@
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
                     </tr>
                     <tr>
-                        <td style="font-weight: 600;">V. Ekspercka</td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                    </tr>
-                    <tr style="background: rgba(30, 58, 138, 0.04);">
-                        <td style="font-weight: 600; color: var(--accent);">VI. Regulacyjna</td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                        <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
-                        <td style="text-align: center;"><span class="dot-low">&#9679;&#9675;&#9675;</span></td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: 600;">VII. Reprezentatywność</td>
+                        <td style="font-weight: 600;">Audyt, reprezentatywność i ryzyko hotspotów</td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-full">&#9679;&#9679;&#9679;</span></td>
                         <td style="text-align: center;"><span class="dot-mid">&#9679;&#9679;&#9675;</span></td>
@@ -431,38 +386,40 @@
             </table>
         </div>
         <p style="font-size: 0.7rem; color: var(--text-tertiary); margin-top: 0.6rem; font-style: italic;">
-            &#9679;&#9679;&#9679; Warstwa dominująca &nbsp;&nbsp;
-            &#9679;&#9679;&#9675; Warstwa wspierająca &nbsp;&nbsp;
-            &#9679;&#9675;&#9675; Warstwa ograniczona
+            &#9679;&#9679;&#9679; kontrola dominująca &nbsp;&nbsp;
+            &#9679;&#9679;&#9675; kontrola wspierająca &nbsp;&nbsp;
+            &#9679;&#9675;&#9675; kontrola ograniczona
         </p>
     </div>
 
     <div id="walidacja" class="section-gap fade-in">
-        <div class="section-num">02 — Walidacja adekwatna</div>
+        <div class="section-num">03 — Walidacja adekwatna</div>
         <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">
             Walidacja proporcjonalna do specyfiki sektora
         </h2>
         <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
-            Walidacja adekwatna oznacza, że system nie stosuje tych samych narzędzi wszędzie jednakowo — lecz dobiera najskuteczniejsze narzędzia walidacji dla specyfiki każdego sektora. Poniższe przykłady ilustrują, jak różne sektory wymagają odmiennych konfiguracji warstw walidacyjnych.
+            Walidacja adekwatna oznacza, że system nie stosuje tych samych narzędzi wszędzie jednakowo — lecz dobiera
+            najskuteczniejsze kontrole dla specyfiki każdego sektora. Poniższe przykłady pokazują, gdzie potrzebne
+            są dane pierwotne, gdzie wystarczą dane sektorowe, a gdzie konieczny jest audyt.
         </p>
     </div>
 
     <div class="grid-2 section-gap fade-in">
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Cement — walidacja głęboka</div>
-            <p class="card-text">Sektor cementowy to idealny przypadek dla poLCA: każda z 12 polskich cementowni raportuje emisje do E-PRTR i EU ETS. Dane branżowe SPC (Stowarzyszenie Producentów Cementu) dostarczają zagregowane parametry produkcji — udział paliw alternatywnych, wskaźnik klinkieru, zużycie energii na tonę. Dane EU ETS dostarczają zweryfikowane emisje CO₂ per instalacja. Wszystkie siedem warstw pracuje na pełnej mocy — to benchmark walidacyjny poLCA.</p>
+            <p class="card-text">Sektor cementowy to mocny punkt odniesienia dla poLCA: polskie cementownie raportują emisje do E-PRTR i EU ETS. Dane branżowe SPC dostarczają zagregowane parametry produkcji — udział paliw alternatywnych, wskaźnik klinkieru i zużycie energii na tonę. Dane EU ETS dostarczają zweryfikowane emisje CO₂ per instalacja.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Kruszywa — walidacja fizyczna</div>
-            <p class="card-text">Kopalnie kruszyw operują poniżej progów raportowania E-PRTR (warstwa VI niedostępna). Jednakże procesy pozyskania i przeróbki kruszyw — kruszenie, przesiewanie, płukanie — są fizycznie proste i dobrze zdefiniowane energetycznie. Bilans masowy jest zamknięty, zużycie energii proporcjonalne do twardości skały. Dominują warstwy I (GUS, PZPK), II (EN 12620) i IV (kontrola bilansowa) — ich kombinacja zapewnia wiarygodność porównywalną z pełnym pokryciem regulacyjnym.</p>
+            <p class="card-text">Kopalnie kruszyw często działają poniżej progów raportowania E-PRTR. Procesy pozyskania i przeróbki kruszyw — kruszenie, przesiewanie, płukanie — są jednak fizycznie proste i dobrze zdefiniowane energetycznie. Kluczowe są: typ skały, energia, paliwo, wydajność procesu, dane PZPK/PIG-PIB oraz kontrola bilansu.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Stal EAF — walidacja dualna</div>
-            <p class="card-text">Polski sektor stalowy operuje jednocześnie trasą BF-BOF (ArcelorMittal Dąbrowa Górnicza) i EAF (ArcelorMittal Warszawa, CMC Poland). Emisje obu tras różnią się 7-krotnie (~2,2 vs ~0,3 t CO₂/t stali). Obie trasy mają pełne pokrycie E-PRTR/EU ETS, ale wymagają odrębnych zbiorów danych — uśrednienie byłoby metodologicznie nieuprawnione. Walidacja dualna oznacza osobne zestawy warstw dla każdej trasy produkcyjnej.</p>
+            <p class="card-text">Polski sektor stalowy operuje jednocześnie trasą BF-BOF i EAF. Emisje obu tras mogą różnić się wielokrotnie, dlatego wymagają odrębnych zbiorów danych. Uśrednienie bez rozróżnienia technologii byłoby metodologicznie nieuprawnione.</p>
         </div>
         <div class="card">
             <div style="font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Prefabrykaty — walidacja kompozytowa</div>
-            <p class="card-text">Producent prefabrykatów to często mały zakład poniżej progów E-PRTR. Jednakże prefabrykat to kompozyt ze znanych komponentów — beton, stal zbrojeniowa, izolacja — każdy z osobna zwalidowany w poLCA. Walidacja polega na kontroli spójności komponentowej: suma zwalidowanych składników musi dawać spójny wynik końcowy. Warstwa IV (kontrola bilansowa) dominuje, wspierana przez warstwy I i II dla poszczególnych składników.</p>
+            <p class="card-text">Producent prefabrykatów to często mniejszy zakład poza progami raportowania. Prefabrykat jest jednak kompozytem znanych komponentów — betonu, stali zbrojeniowej, izolacji. Kontrola polega na spójności komponentowej: suma zweryfikowanych składników musi dawać logiczny wynik końcowy.</p>
         </div>
     </div>
 
@@ -495,14 +452,14 @@
     <!-- BLOK: System tła -->
     <div class="card card-lg fade-in">
         <div class="card-title">System tła — granice krajowej specyficzności</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Każde LCA składa się z systemu pierwszoplanowego (foreground) i systemu tła (background). poLCA tworzy krajowe dane dla systemu foreground i kluczowych procesów tła o wysokim wpływie na wynik.</p>
+        <p class="card-text" style="margin-bottom: 1rem;">Każde LCA składa się z systemu pierwszoplanowego, czyli danych bezpośrednio związanych z produktem i zakładem, oraz systemu tła obejmującego energię, paliwa, transport i procesy poprzedzające w łańcuchu dostaw. poLCA tworzy krajowe dane dla systemu pierwszoplanowego i kluczowych procesów tła o wysokim wpływie na wynik.</p>
         <div class="grid-2" style="gap: 1rem;">
             <div class="card" style="padding: 1rem; background: var(--func-green-bg); border-color: var(--func-green-border);">
                 <div style="font-weight: 600; color: var(--func-green); margin-bottom: 0.4rem; font-size: 0.85rem;">Procesy z danymi krajowymi poLCA</div>
                 <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary);">Energia elektryczna (miks PL), ciepło systemowe, gaz ziemny, węgiel, transport drogowy (flota PL), cement, klinkier, kruszywa, stal zbrojeniowa, woda wodociągowa. Te procesy odpowiadają za 70–90% wyniku GWP typowego wyrobu budowlanego.</p>
             </div>
             <div class="card" style="padding: 1rem; background: var(--accent-subtle); border-color: var(--accent-border);">
-                <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Procesy z baz referencyjnych (background)</div>
+                <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.4rem; font-size: 0.85rem;">Procesy z baz referencyjnych — system tła</div>
                 <p style="font-size: 0.82rem; margin: 0; color: var(--text-secondary);">Chemikalia specjalistyczne, domieszki, pigmenty, opakowania, transport morski, wydobycie surowców poza PL. Źródło: ecoinvent 3.10+. Każdy proces tła posiada test istotności (cut-off ≤1% GWP).</p>
             </div>
         </div>
@@ -529,7 +486,7 @@
         <div class="grid-2" style="gap: 1rem; margin-top: 1rem;">
             <div class="card" style="padding: 1.2rem; background: var(--func-green-bg);">
                 <div style="font-weight: 600; color: var(--func-green); margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA jest:</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Wyspecjalizowaną krajową bazą danych LCI dla polskich wyrobów budowlanych. Komplementarnym źródłem danych foreground, uzupełniającym bazy globalne o krajową specyficzność. Narzędziem umożliwiającym sporządzanie EPD opartych na danych adekwatnych do rzeczywistych warunków produkcji — zgodnie z Rozporządzeniem CPR 2024/3110.</p>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.7;">Wyspecjalizowaną krajową bazą danych LCI dla polskich wyrobów budowlanych. Komplementarnym źródłem danych pierwszoplanowych, uzupełniającym bazy globalne o krajową specyficzność. Narzędziem umożliwiającym sporządzanie EPD opartych na danych adekwatnych do rzeczywistych warunków produkcji — zgodnie z Rozporządzeniem CPR 2024/3110.</p>
             </div>
             <div class="card" style="padding: 1.2rem; background: rgba(30, 58, 138, 0.04);">
                 <div style="font-weight: 600; color: var(--accent); margin-bottom: 0.6rem; font-size: 0.88rem;">poLCA nie jest:</div>
@@ -577,7 +534,7 @@
                         <td>ecoinvent</td>
                         <td>ecoinvent + branżowe</td>
                         <td>Własny (zintegrowany)</td>
-                        <td style="color: var(--accent); font-weight: 500;">Krajowy foreground + ecoinvent</td>
+                        <td style="color: var(--accent); font-weight: 500;">Dane krajowe + ecoinvent</td>
                     </tr>
                     <tr>
                         <td style="font-weight: 600;">Walidacja regulacyjna (VI)</td>
@@ -598,7 +555,7 @@
                 </tbody>
             </table>
         </div>
-        <p style="font-size: 0.82rem; margin-top: 1rem; color: var(--text-secondary); font-style: italic;">Ökobaudat, INIES i NMD startowały z kilkudziesięcioma zbiorami danych i rozrosły się do obecnych rozmiarów w ciągu 10–20 lat. poLCA jest na etapie porównywalnym do ich roku pierwszego — z jedną fundamentalną różnicą: walidacją regulacyjną (warstwa VI).</p>
+        <p style="font-size: 0.82rem; margin-top: 1rem; color: var(--text-secondary); font-style: italic;">Ökobaudat, INIES i NMD startowały z kilkudziesięcioma zbiorami danych i rozrosły się do obecnych rozmiarów w ciągu 10–20 lat. poLCA jest na etapie porównywalnym do ich roku pierwszego — z naciskiem na kontrolę regulacyjną, źródła krajowe i audyt danych.</p>
     </div>
 
     <div class="card card-lg fade-in" style="background: var(--paper-warm); border-color: var(--border-strong); margin-top: 1.5rem;">
@@ -624,7 +581,7 @@
             <div class="card" style="padding: 1rem;">
                 <div style="font-size: 1.5rem; font-weight: 700; color: var(--accent); font-family: 'Inter Tight', sans-serif;">04</div>
                 <div style="font-weight: 600; font-size: 0.88rem; margin-bottom: 0.3rem;">Automatyzacja wielościeżkowej kontroli spójności</div>
-                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Współczesne narzędzia umożliwiają automatyzację procesów wcześniej wymagających setek osobogodzin: zamykanie bilansów masowych, walidacja stechiometryczna, screening outlierów, benchmarking — z pełną dokumentacją zgodną z ISO/TS 14071:2014 §5.4.</p>
+                <p style="font-size: 0.82rem; color: var(--text-secondary); margin: 0;">Współczesne narzędzia umożliwiają automatyzację procesów wcześniej wymagających setek osobogodzin: zamykanie bilansów masowych, walidacja stechiometryczna, wstępna analiza wartości odstających, porównanie z danymi referencyjnymi — z pełną dokumentacją zgodną z ISO/TS 14071:2014 §5.4.</p>
             </div>
         </div>
         <p style="font-size: 0.88rem; line-height: 1.7; margin-top: 1.2rem; font-style: italic; color: var(--text-secondary);">Bazy globalne nie mogą osiągnąć tej głębokości walidacji ze względów strukturalnych. Krajowa baza LCA — może.</p>
@@ -677,6 +634,27 @@
             </table>
         </div>
     </div>
+
+    <section id="zalaczniki-techniczne" class="card card-lg section-gap fade-in" style="margin-top:1.5rem;">
+        <div class="section-num">04 — Załączniki techniczne</div>
+        <div class="card-title">Wskaźniki liczbowe są w katalogu danych</div>
+        <p class="card-text" style="max-width:820px;">
+            Konkretne liczby, takie jak <strong>poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</strong>,
+            nie są zasadą metodologiczną strony głównej. To dataset techniczny energii elektrycznej,
+            stosowany w A3, A5, B6, C3 lub D zależnie od miejsca zużycia energii. Dokumentacja metodyki
+            pokazuje zasady doboru danych; pełne tabele i wartości są utrzymywane w katalogu danych.
+        </p>
+        <div class="technical-links">
+            <a href="data/polca-en-pl-2024.json" style="display:block;padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text-primary);text-decoration:none;">
+                <strong style="display:block;font-size:.88rem;">Dataset energii elektrycznej 0,599</strong>
+                <span style="display:block;font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin-top:.25rem;">Maszynowy zapis wskaźnika poLCA-EN-PL-2024.</span>
+            </a>
+            <a href="datasety.html#referencyjne-szczegoly" style="display:block;padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text-primary);text-decoration:none;">
+                <strong style="display:block;font-size:.88rem;">Katalog wskaźników</strong>
+                <span style="display:block;font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin-top:.25rem;">Wartości, źródła, status jakości danych i zakres stosowania.</span>
+            </a>
+        </div>
+    </section>
 </div>
 </div>
 
@@ -696,7 +674,7 @@
             <ul class="footer-links">
                 <li><a href="metodyka.html">Metodyka i Jakość</a></li>
                 <li><a href="analiza.html">Analiza Sektorowa</a></li>
-                <li><a href="datasety.html">Baza Datasetów</a></li>
+                <li><a href="datasety.html">Datasety</a></li>
                 <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
                 <li><a href="blog.html">Blog</a></li>
             </ul>
