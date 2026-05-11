@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator pre-qualify EPD dla MMA | poLCA</title>
+    <meta name="description" content="Oszacuj GWP A1-A3 [kg CO2eq/t MMA] na podstawie receptury mieszanki mineralno-asfaltowej. Kalkulator pre-qualify zgodny z c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT i EN 15804+A2.">
+    <link rel="canonical" href="https://polca.org.pl/kalkulator-mma.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kalkulator pre-qualify EPD dla MMA | poLCA">
+    <meta property="og:description" content="Oszacuj GWP A1-A3 dla mieszanek mineralno-asfaltowych z receptury (kruszywa, bitumen, filler, RA, technologia, transport). Zgodne z c-PCR-MMA v1.0-DRAFT i EN 15804+A2.">
+    <meta property="og:url" content="https://polca.org.pl/kalkulator-mma.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kalkulator pre-qualify EPD dla MMA | poLCA">
+    <meta name="twitter:description" content="Oszacuj GWP A1-A3 dla mieszanek mineralno-asfaltowych z receptury. Zgodne z c-PCR-MMA v1.0-DRAFT i EN 15804+A2.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "Kalkulator pre-qualify EPD dla MMA",
+          "url": "https://polca.org.pl/kalkulator-mma.html",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PLN"},
+          "description": "Oszacowanie GWP A1-A3 dla mieszanek mineralno-asfaltowych na podstawie receptury, zgodne z c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT i EN 15804+A2.",
+          "isPartOf": {"@id": "https://polca.org.pl/#website"},
+          "publisher": {"@id": "https://polca.org.pl/#organization"}
+        },
+        {
+          "@type": "WebPage",
+          "name": "Kalkulator pre-qualify EPD dla MMA — poLCA",
+          "url": "https://polca.org.pl/kalkulator-mma.html",
+          "description": "Kalkulator pre-qualify GWP A1-A3 dla mieszanek mineralno-asfaltowych.",
+          "isPartOf": {"@id": "https://polca.org.pl/#website"},
+          "publisher": {"@id": "https://polca.org.pl/#organization"}
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <link rel="stylesheet" href="style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <style>
+        @media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}
+        .mma-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem 1.75rem;}
+        @media(max-width:760px){.mma-form-grid{grid-template-columns:1fr;}}
+        .mma-field{display:flex;flex-direction:column;gap:.35rem;}
+        .mma-field-full{grid-column:1 / -1;}
+        .mma-radio-row{display:flex;flex-wrap:wrap;gap:.6rem;}
+        .mma-radio-row label{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;color:var(--text-body);cursor:pointer;padding:.45rem .8rem;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--paper-card);transition:all .2s var(--ease-out);}
+        .mma-radio-row label:hover{border-color:var(--accent-border);}
+        .mma-radio-row input{accent-color:var(--accent);}
+        .mma-input-sm{width:100%;padding:.5rem .65rem;border:1px solid var(--border);border-radius:var(--radius-sm);font-family:'IBM Plex Mono',monospace;font-size:.92rem;color:var(--accent);background:var(--paper-card);transition:all .2s var(--ease-out);}
+        .mma-input-sm:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(30,58,138,.06);}
+        .mma-subhead{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:600;margin:1.5rem 0 .35rem;grid-column:1 / -1;border-top:1px solid var(--border);padding-top:1rem;}
+        .mma-comp-grid{display:grid;grid-template-columns:1fr 110px;gap:.4rem .8rem;align-items:end;}
+        @media(max-width:760px){.mma-comp-grid{grid-template-columns:1fr 90px;}}
+        .mma-warn{font-size:.78rem;font-family:'IBM Plex Mono',monospace;font-weight:600;padding:.6rem .85rem;border-radius:var(--radius-sm);margin-top:.85rem;}
+        .mma-warn.ok{color:#166534;background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);}
+        .mma-warn.bad{color:#b91c1c;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);}
+        .mma-result-hero{font-family:'IBM Plex Mono',monospace;font-size:2.6rem;font-weight:700;color:var(--func-red);letter-spacing:-.02em;line-height:1.05;}
+        .mma-result-hero small{font-size:.95rem;font-weight:400;color:var(--text-secondary);}
+        .mma-mod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin:1.25rem 0;}
+        @media(max-width:560px){.mma-mod-grid{grid-template-columns:1fr;}}
+        .mma-mod-box{border:1px solid var(--border);border-radius:var(--radius-sm);padding:.85rem .95rem;background:var(--paper-card);}
+        .mma-mod-name{font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:600;}
+        .mma-mod-val{font-family:'IBM Plex Mono',monospace;font-size:1.25rem;font-weight:700;color:var(--accent);margin-top:.15rem;}
+        .mma-mod-share{font-size:.7rem;color:var(--text-secondary);font-family:'IBM Plex Mono',monospace;margin-top:.1rem;}
+        .mma-chart-wrap{margin-top:1.25rem;}
+        .mma-chart-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:600;margin-bottom:.5rem;}
+        .mma-chart-canvas{position:relative;height:200px;}
+        .mma-bench{font-size:.82rem;font-family:'IBM Plex Mono',monospace;font-weight:600;padding:.65rem .9rem;border-radius:var(--radius-sm);margin-top:1.1rem;color:var(--text-body);background:var(--accent-subtle);border:1px solid var(--accent-border);}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Dashboard</a>
+            <a href="analiza.html">Analiza Sektorowa</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="datasety.html">Datasety</a>
+            <a href="narzedzia.html" class="active">Narzędzia</a>
+            <a href="podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
+        <div>
+            <div class="section-num">Narzędzie · pre-qualify EPD</div>
+            <h1 class="page-title">Kalkulator pre-qualify EPD dla mieszanek mineralno-asfaltowych</h1>
+            <p class="page-subtitle">
+                Oszacuj GWP A1-A3 [kg CO₂eq/t MMA] na podstawie receptury. Zgodne z
+                c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT i EN 15804+A2. To oszacowanie pre-qualify —
+                nie zastępuje pełnego EPD weryfikowanego przez akredytowanego weryfikatora.
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span class="doc-pill">EN 15804+A2</span>
+                <span class="doc-pill">c-PCR-MMA v1.0-DRAFT</span>
+                <span class="doc-pill">poLCA-EN-PL-2024 v9.1 · 0,599</span>
+                <span class="doc-pill warn">pre-qualify — nie pełne EPD</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-laboratory.jpg" alt="Analiza danych i obliczenia LCA" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.05) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap fade-in">
+        <a href="#receptura" class="tool-nav-pill">01 — Receptura</a>
+        <a href="#wyniki" class="tool-nav-pill">02 — Wyniki</a>
+        <a href="#metodyka" class="tool-nav-pill">03 — Metodyka i ograniczenia</a>
+        <a href="c-pcr/mma.html" class="tool-nav-pill">c-PCR-MMA →</a>
+    </div>
+
+    <!-- ============================================================
+         01 — FORMULARZ RECEPTURY
+         ============================================================ -->
+    <div id="receptura" class="card card-lg section-gap fade-in">
+        <div class="section-num">01 — Receptura mieszanki</div>
+        <div class="card-title">Składniki na 1 tonę (1000 kg) gotowej mieszanki, technologia, paliwo i transport</div>
+        <p class="card-text" style="margin-bottom:1.5rem;">
+            Wybierz preset receptury normatywnej lub wprowadź własne wartości. Wyniki obliczane są
+            w czasie rzeczywistym z wykorzystaniem wartości domyślnych (default data) wg datasetu
+            POLCA-MMA-LCI-DEFAULTS-2026 i c-PCR-MMA v1.0-DRAFT. Bitumen — Eurobitume LCA 4.0 (2025).
+        </p>
+
+        <div class="mma-form-grid">
+            <div class="mma-field mma-field-full">
+                <label class="calc-label" for="mmaPreset">Preset receptury</label>
+                <select id="mmaPreset" class="calc-select">
+                    <option value="ac11s">AC 11 S — ścieralna (EN 13108-1, HMA, 165°C)</option>
+                    <option value="ac16w" selected>AC 16 W — wiążąca (EN 13108-1, HMA, 160°C)</option>
+                    <option value="ac22p">AC 22 P — podbudowa (EN 13108-1, HMA, 155°C)</option>
+                    <option value="sma11s">SMA 11 S — ścieralna (EN 13108-5, HMA, 170°C)</option>
+                    <option value="bbtm11">BBTM 11 A — ścieralna (EN 13108-2, HMA, 170°C)</option>
+                    <option value="pa11">PA 11 — ścieralna porowata (EN 13108-7, HMA, 175°C)</option>
+                    <option value="ma11">MA 11 — asfalt lany (EN 13108-6, HMA, 230°C)</option>
+                    <option value="ac16wma">AC 16 W-WMA — wiążąca (EN 13108-1, WMA, 130°C)</option>
+                    <option value="ac16ra30">AC 16 W-RA30 — wiążąca z 30% RA (EN 13108-1, HMA, 165°C)</option>
+                    <option value="custom">Własna receptura</option>
+                </select>
+            </div>
+
+            <div class="mma-field">
+                <label class="calc-label">Technologia produkcji</label>
+                <div class="mma-radio-row" id="mmaTech">
+                    <label><input type="radio" name="mmaTech" value="HMA" checked> HMA (na gorąco)</label>
+                    <label><input type="radio" name="mmaTech" value="WMA"> WMA (na ciepło)</label>
+                    <label><input type="radio" name="mmaTech" value="HMA+RA"> HMA + RA</label>
+                </div>
+            </div>
+            <div class="mma-field">
+                <label class="calc-label">Paliwo wytwórni</label>
+                <div class="mma-radio-row" id="mmaFuel">
+                    <label><input type="radio" name="mmaFuel" value="olej" checked> Olej opałowy</label>
+                    <label><input type="radio" name="mmaFuel" value="gaz"> Gaz ziemny</label>
+                </div>
+            </div>
+
+            <div class="mma-field">
+                <label class="calc-label" for="mmaTemp">Temperatura produkcji [°C]</label>
+                <input type="number" id="mmaTemp" class="mma-input-sm" value="160" min="80" max="280" step="5">
+                <p class="calc-note">Korekta paliwa: +5% zużycia (i emisji) na każde 10°C powyżej temperatury bazowej (160°C dla HMA, 130°C dla WMA).</p>
+            </div>
+            <div class="mma-field">
+                <label class="calc-label" for="mmaTypeBit">Rodzaj bitumenu</label>
+                <select id="mmaTypeBit" class="calc-select">
+                    <option value="530" selected>Bitumen drogowy 35/50, 50/70, 70/100 — 530 kg CO₂eq/t</option>
+                    <option value="560">Bitumen PMB (modyfikowany polimerem) — 560 kg CO₂eq/t</option>
+                </select>
+            </div>
+
+            <div class="mma-subhead">Składniki receptury [kg / 1 tonę MMA]</div>
+
+            <div class="mma-field">
+                <label class="calc-label" for="mmaTypeAgg">Rodzaj kruszywa grubego (łamanego)</label>
+                <select id="mmaTypeAgg" class="calc-select">
+                    <option value="3.99">Kruszywo bazaltowe łamane — 3,99 kg CO₂eq/t</option>
+                    <option value="4.50">Kruszywo granitowe łamane — 4,50 kg CO₂eq/t</option>
+                    <option value="3.20">Kruszywo wapienne łamane — 3,20 kg CO₂eq/t</option>
+                    <option value="3.80" selected>Kruszywo — średnia ważona PL — 3,80 kg CO₂eq/t</option>
+                </select>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mAggC" style="margin-bottom:0;">Kruszywo grube łamane [kg/t]</label>
+                    <input type="number" id="mAggC" class="mma-input-sm" value="555" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mAggF" style="margin-bottom:0;">Kruszywo drobne — piasek / żwir [kg/t]</label>
+                    <input type="number" id="mAggF" class="mma-input-sm" value="320" min="0" step="5">
+                </div>
+                <p class="calc-note">Kruszywo naturalne (piasek, żwir) — 1,80 kg CO₂eq/t.</p>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mFiller" style="margin-bottom:0;">Filler wapienny [kg/t]</label>
+                    <input type="number" id="mFiller" class="mma-input-sm" value="50" min="0" step="5">
+                </div>
+                <p class="calc-note">Mączka wapienna — 5,50 kg CO₂eq/t.</p>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mBitumen" style="margin-bottom:0;">Bitumen [kg/t]</label>
+                    <input type="number" id="mBitumen" class="mma-input-sm" value="75" min="0" step="1">
+                </div>
+                <p class="calc-note">Zawartość lepiszcza — udział masowy w mieszance.</p>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mRA" style="margin-bottom:0;">Granulat asfaltowy RA [kg/t]</label>
+                    <input type="number" id="mRA" class="mma-input-sm" value="0" min="0" step="5">
+                </div>
+                <p class="calc-note">RA — cut-off w module A1 (GWP = 0). Liczy się tylko transport A2 i podgrzewanie A3.</p>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mFiber" style="margin-bottom:0;">Włókno celulozowe [kg/t] — opcjonalne (SMA)</label>
+                    <input type="number" id="mFiber" class="mma-input-sm" value="0" min="0" step="0.5">
+                </div>
+                <p class="calc-note">Stabilizator dla SMA — 800 kg CO₂eq/t.</p>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="mAddWma" style="margin-bottom:0;">Dodatek WMA chemiczny [kg/t] — opcjonalne</label>
+                    <input type="number" id="mAddWma" class="mma-input-sm" value="0" min="0" step="0.5">
+                </div>
+                <p class="calc-note">Środek obniżający temperaturę — 1200 kg CO₂eq/t.</p>
+            </div>
+
+            <div class="mma-subhead">Odległości transportu A2 [km] — wartości domyślne, edytowalne</div>
+
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dBitumen" style="margin-bottom:0;">Bitumen → wytwórnia [km]</label>
+                    <input type="number" id="dBitumen" class="mma-input-sm" value="150" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dAgg" style="margin-bottom:0;">Kruszywa → wytwórnia [km]</label>
+                    <input type="number" id="dAgg" class="mma-input-sm" value="50" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dFiller" style="margin-bottom:0;">Filler → wytwórnia [km]</label>
+                    <input type="number" id="dFiller" class="mma-input-sm" value="80" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dRA" style="margin-bottom:0;">RA → wytwórnia [km]</label>
+                    <input type="number" id="dRA" class="mma-input-sm" value="30" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dFiber" style="margin-bottom:0;">Włókno celulozowe → wytwórnia [km]</label>
+                    <input type="number" id="dFiber" class="mma-input-sm" value="200" min="0" step="5">
+                </div>
+            </div>
+            <div class="mma-field">
+                <div class="mma-comp-grid">
+                    <label class="calc-label" for="dAddWma" style="margin-bottom:0;">Dodatek WMA → wytwórnia [km]</label>
+                    <input type="number" id="dAddWma" class="mma-input-sm" value="300" min="0" step="5">
+                </div>
+            </div>
+        </div>
+
+        <div class="mma-warn ok" id="mmaSumWarn">Suma składników: 1000 kg/t — zgodna z jednostką deklarowaną.</div>
+        <p class="calc-note" style="margin-top:.6rem;">
+            EF transportu drogowego (mix flot EURO5/6 PL): 0,100 kg CO₂eq/(t·km). EF energii elektrycznej:
+            poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh; zużycie 2,5 kWh/t MMA → 1,50 kg CO₂e/t MMA (stała składowa A3).
+        </p>
+    </div>
+
+    <!-- ============================================================
+         02 — WYNIKI
+         ============================================================ -->
+    <div id="wyniki" class="card card-lg section-gap fade-in">
+        <div class="section-num">02 — Wyniki — GWP A1-A3</div>
+        <div class="card-title">Oszacowanie GWP cyklu wytworzenia mieszanki [kg CO₂eq / t MMA]</div>
+
+        <div style="margin:1.25rem 0 .25rem;">
+            <div class="calc-result-label">GWP A1-A3 — łącznie</div>
+            <div class="mma-result-hero"><span id="mmaTotal">74,2</span> <small>kg CO₂eq / t MMA</small></div>
+            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="mmaTotalNote">Preset: AC 16 W (wiążąca) · HMA · olej opałowy · 160°C</div>
+        </div>
+
+        <div class="mma-mod-grid">
+            <div class="mma-mod-box">
+                <div class="mma-mod-name">A1 — surowce</div>
+                <div class="mma-mod-val"><span id="mmaA1">42,7</span> <span style="font-size:.65rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
+                <div class="mma-mod-share"><span id="mmaA1pct">57,5</span>% udziału</div>
+            </div>
+            <div class="mma-mod-box">
+                <div class="mma-mod-name">A2 — transport</div>
+                <div class="mma-mod-val"><span id="mmaA2">5,9</span> <span style="font-size:.65rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
+                <div class="mma-mod-share"><span id="mmaA2pct">7,9</span>% udziału</div>
+            </div>
+            <div class="mma-mod-box">
+                <div class="mma-mod-name">A3 — produkcja w wytwórni</div>
+                <div class="mma-mod-val"><span id="mmaA3">25,6</span> <span style="font-size:.65rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
+                <div class="mma-mod-share"><span id="mmaA3pct">34,5</span>% udziału</div>
+            </div>
+        </div>
+
+        <div class="mma-chart-wrap">
+            <div class="mma-chart-label">Rozbicie GWP A1-A3 na moduły [kg CO₂eq/t]</div>
+            <div class="mma-chart-canvas"><canvas id="mmaModChart"></canvas></div>
+        </div>
+
+        <div class="mma-bench" id="mmaBench">GWP w przedziale referencyjnym dla kategorii AC (~50–112 kg CO₂eq/t).</div>
+
+        <div style="margin-top:1.5rem;">
+            <div class="card-title" style="font-size:1rem;margin-bottom:.65rem;">Rozbicie modułu A1 wg składników</div>
+            <div style="overflow-x:auto;">
+                <table class="polca-table">
+                    <thead>
+                        <tr>
+                            <th>Składnik</th>
+                            <th>Masa [kg/t]</th>
+                            <th>GWP jedn. [kg CO₂eq/t]</th>
+                            <th>Emisja [kg CO₂eq/t]</th>
+                            <th>Udział w A1 [%]</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mmaA1Table"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="calc-divider" style="margin:1.5rem 0;"></div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
+            <button id="mmaExportCsv" class="calc-export-btn" type="button" style="width:auto;">Kopiuj CSV</button>
+            <button id="mmaExportJson" class="calc-export-btn" type="button" style="width:auto;">Kopiuj JSON</button>
+        </div>
+        <p class="calc-note" style="margin-top:1rem;">
+            Wartości w notacji polskiej (przecinek dziesiętny). Wynik orientacyjny — dla deklaracji EPD
+            stosuj dane specyficzne producenta zweryfikowane zgodnie z procedurą AVS 3+ programu EPD Polska.
+        </p>
+    </div>
+
+    <!-- ============================================================
+         03 — METODYKA I OGRANICZENIA
+         ============================================================ -->
+    <div id="metodyka" class="card card-lg section-gap fade-in">
+        <div class="section-num">03 — Metodyka i ograniczenia</div>
+        <div class="card-title">Podstawy obliczeniowe, źródła danych i zakres oszacowania</div>
+        <div class="prose">
+            <p>
+                Kalkulator stosuje wartości domyślne (default data) wg datasetu
+                <strong>POLCA-MMA-LCI-DEFAULTS-2026</strong> i komplementarnych zasad kategorii wyrobu
+                <strong>c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT</strong>, zgodnych z EN 15804+A2:2019.
+                Jednostka deklarowana to 1 tona (1000 kg) gotowej mieszanki mineralno-asfaltowej na
+                wyjściu z wytwórni. Obliczenia obejmują moduły A1 (pozyskanie i przetwarzanie surowców),
+                A2 (transport surowców do wytwórni) i A3 (produkcja mieszanki).
+            </p>
+            <p>
+                <strong>Bitumen drogowy — 530 kg CO₂eq/t</strong> (Eurobitume LCA 4.0, 2025); PMB
+                modyfikowany — 560 kg CO₂eq/t. Wartość ta wzrosła z ok. 216 kg CO₂eq/t w poprzednim
+                modelu (Eurobitume LCI 3.1) do 530 kg CO₂eq/t w wersji LCA 4.0 — głównie wskutek
+                przejścia z charakteryzacji AR5 na AR6 oraz uwzględnienia emisji metanu z wydobycia ropy
+                naftowej. Bitumen odpowiada zwykle za ponad 90% emisji modułu A1 w typowych mieszankach.
+            </p>
+            <p>
+                <strong>Energia elektryczna — poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh</strong>
+                (zob. <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">MET-001 poLCA-EN-PL 2024</a>);
+                założone zużycie 2,5 kWh/t MMA → stała składowa 1,50 kg CO₂e/t MMA w module A3. Paliwo
+                wytwórni (olej opałowy lub gaz ziemny) modelowane jest wg sprawności suszenia i podgrzewu
+                kruszywa, z korektą +5% zużycia paliwa na każde 10°C ponad temperaturę bazową (160°C dla
+                HMA, 130°C dla WMA). Transport drogowy — EF domyślny PL (mix flot EURO5/6) 0,100 kg
+                CO₂eq/(t·km).
+            </p>
+            <p>
+                <strong>Granulat asfaltowy RA — cut-off</strong> w module A1 (GWP = 0) zgodnie z
+                EN 15804+A2:2019 §6.3.6 oraz NAPA EPD PCR for Asphalt Mixtures v2.0:2022. Dla RA liczony
+                jest wyłącznie transport (A2) i nakład energetyczny na podgrzanie (A3). Pełna metodyka
+                kategorii wraz z formułą cyrkularności (CFF), modelem alokacji energii w wytwórni i
+                hierarchią jakości danych: <a href="c-pcr/mma.html">c-PCR-MMA — reguły EPD dla MMA →</a>.
+            </p>
+            <p style="background:var(--accent-warm-subtle);border:1px solid var(--accent-warm-border);border-radius:var(--radius-sm);padding:.85rem 1rem;color:var(--text-body);">
+                <strong>Disclaimer.</strong> To oszacowanie pre-qualify służy do planowania i wstępnej
+                oceny śladu węglowego mieszanki. Nie zastępuje pełnej deklaracji EPD — ta wymaga danych
+                specyficznych producenta (zużycia mediów, struktury dostaw, mixu paliwowego wytwórni) i
+                weryfikacji niezależnej w trybie AVS 3+. Kontakt w sprawie pełnego EPD:
+                <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>.
+            </p>
+        </div>
+    </div>
+
+    <div class="section-gap fade-in">
+        <div class="section-num">Powiązane dokumenty</div>
+        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <a href="c-pcr/mma.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag metodyka">c-PCR</span>
+                        <span class="blog-tag">EN 15804+A2</span>
+                        <span class="blog-date">v1.0-DRAFT · 2026</span>
+                    </div>
+                    <div class="blog-card-title">c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">streszczenie + PDF</span>
+                    </div>
+                </div>
+            </a>
+            <a href="blog-mma-rap.html" class="blog-card">
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span class="blog-tag dane">Dane</span>
+                        <span class="blog-tag metodyka">Metodyka</span>
+                        <span class="blog-date">1 lutego 2026</span>
+                    </div>
+                    <div class="blog-card-title">Mieszanki mineralno-asfaltowe i granulat asfaltowy (RAP) w LCA — cut-off, alokacja, scenariusze</div>
+                    <div class="blog-card-footer">
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-time">artykuł</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="c-pcr/">c-PCR</a></li>
+                <li><a href="analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="datasety.html">Baza Datasetów</a></li>
+                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="kalkulator-mma.html">Kalkulator MMA</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="o-polca/index.html">O poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/kalkulator-mma.js?v=1.0"></script>
+<script src="js/nav-mobile.js"></script>
+</body>
+</html>
