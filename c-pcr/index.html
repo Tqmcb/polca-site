@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c-PCR — komplementarne reguły kategorii wyrobów | poLCA</title>
+    <meta name="description" content="Hub reguł kategorii wyrobów (c-PCR) programu EPD Polska: beton (c-PCR-BET v1.3 — zatwierdzony), mieszanki mineralno-asfaltowe (c-PCR-MMA v1.0-DRAFT — konsultacja publiczna), kruszywa (planowany), cement i wapno (referencyjny). Każdy c-PCR zgodny z EN 15804+A2:2019 i odpowiednią normą EN.">
+    <link rel="canonical" href="https://polca.org.pl/c-pcr/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="c-PCR — komplementarne reguły kategorii wyrobów | poLCA">
+    <meta property="og:description" content="Hub reguł kategorii wyrobów programu EPD Polska: beton (zatwierdzony), MMA (konsultacja publiczna), kruszywa (planowany), cement (referencyjny).">
+    <meta property="og:url" content="https://polca.org.pl/c-pcr/">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="c-PCR — komplementarne reguły kategorii wyrobów | poLCA">
+    <meta name="twitter:description" content="Hub reguł kategorii wyrobów programu EPD Polska: beton, MMA, kruszywa, cement.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "c-PCR — komplementarne reguły kategorii wyrobów programu EPD Polska",
+      "description": "Hub komplementarnych reguł kategorii wyrobów (c-PCR) programu EPD Polska, uzupełniających PCR Operatora Programu (EN 15804+A2:2019) o wymagania sektorowe: beton (c-PCR-BET v1.3), mieszanki mineralno-asfaltowe (c-PCR-MMA v1.0-DRAFT), kruszywa (planowany), cement i wapno (referencyjny).",
+      "url": "https://polca.org.pl/c-pcr/",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "c-PCR-BET-EPD-PL:2026 v1.3 — Beton i elementy betonowe",
+          "creativeWorkStatus": "Published",
+          "datePublished": "2026-05-10",
+          "about": "EN 206:2013+A2:2021, EN 16757:2022"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT — Mieszanki mineralno-asfaltowe",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "creativeWorkStatus": "Draft",
+          "about": "EN 13108-1 do EN 13108-9; NAPA EPD PCR for Asphalt Mixtures v2.0:2022"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "c-PCR-AGG — Kruszywa (planowany)",
+          "creativeWorkStatus": "Draft",
+          "about": "EN 12620:2013+A1, EN 13242:2013"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "c-PCR-001 cement i wapno (referencyjny)",
+          "creativeWorkStatus": "Published",
+          "about": "ECO Platform PCR-001, EN 16908:2017"
+        }
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #wstep,#cpcr-lista,#powiazania{scroll-margin-top:76px}
+        .met-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1.25rem}
+        .met-card{padding:1.5rem 1.6rem;border:1px solid var(--border);border-radius:12px;background:var(--bg);position:relative;transition:border-color .15s ease, box-shadow .15s ease}
+        .met-card:hover{border-color:#B9D8C2;box-shadow:0 2px 8px rgba(15,23,42,0.04)}
+        .met-card-published{border-color:#B9D8C2;background:#F4FAF6}
+        .met-card-published:hover{border-color:#84BD96}
+        .met-card-consult{border-color:#D6C58A;background:#FFFCF2}
+        .met-card-consult:hover{border-color:#C9B65E}
+        .met-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+        .met-card-id{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;letter-spacing:.04em;color:var(--accent);text-transform:uppercase}
+        .met-status{font-family:'IBM Plex Mono',monospace;font-size:.65rem;font-weight:700;padding:.25rem .6rem;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+        .met-status-published{background:#0B5D33;color:#fff}
+        .met-status-consult{background:#8B6E1F;color:#fff}
+        .met-status-planned{background:var(--paper-warm);color:var(--text-secondary);border:1px solid var(--border)}
+        .met-status-ref{background:var(--accent-subtle);color:var(--accent);border:1px solid var(--accent-subtle)}
+        .met-card-title{font-size:1.18rem;font-weight:700;color:var(--text-primary);margin:.55rem 0 .65rem;font-family:'Inter Tight',sans-serif;line-height:1.35}
+        .met-card-desc{font-size:.85rem;color:var(--text-secondary);line-height:1.6;margin:0 0 .9rem}
+        .met-card-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem .9rem;margin:.85rem 0;padding:.7rem .85rem;background:var(--paper-warm);border-radius:8px;font-size:.74rem}
+        .met-meta-row{display:flex;gap:.4rem;color:var(--text-secondary);line-height:1.5}
+        .met-meta-label{font-weight:600;color:var(--text-tertiary);min-width:64px}
+        .met-meta-value{font-family:'IBM Plex Mono',monospace;color:var(--text-primary)}
+        .met-key{font-size:.82rem;color:var(--text-body);line-height:1.6;margin:.85rem 0;padding:.7rem .85rem;border-left:3px solid var(--accent);background:var(--bg-subtle);border-radius:0 6px 6px 0}
+        .met-key-label{font-size:.65rem;font-weight:700;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:.3rem}
+        .met-card-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+        .met-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;border:1px solid var(--border);transition:all .15s ease}
+        .met-btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .met-btn-primary:hover{background:#0d4a23;border-color:#0d4a23}
+        .met-btn-secondary{background:var(--bg);color:var(--text-primary)}
+        .met-btn-secondary:hover{background:var(--paper-warm);border-color:var(--text-tertiary)}
+        .met-btn-disabled{background:var(--paper-warm);color:var(--text-tertiary);border-color:var(--border);cursor:not-allowed;pointer-events:none}
+        .met-tags{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.7rem}
+        .met-tag{font-family:'IBM Plex Mono',monospace;font-size:.65rem;padding:.18rem .5rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em}
+        .met-tag-accent{background:var(--accent-subtle);color:var(--accent)}
+        .powiazania-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;margin-top:1rem}
+        .powiazania-item{padding:.7rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:.78rem;color:var(--text-primary);line-height:1.5}
+        .powiazania-item a{color:var(--accent);text-decoration:none}
+        .powiazania-item a:hover{text-decoration:underline}
+        .powiazania-item .pr-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;display:block;margin-bottom:.2rem}
+        .breadcrumbs{font-size:.74rem;color:var(--text-tertiary);margin:.5rem 0 0;font-family:'IBM Plex Mono',monospace}
+        .breadcrumbs a{color:var(--text-secondary);text-decoration:none}
+        .breadcrumbs a:hover{color:var(--accent);text-decoration:underline}
+        .breadcrumbs .sep{margin:0 .35rem;color:var(--text-tertiary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-card-meta,.powiazania-grid{grid-template-columns:1fr}.met-card{padding:1.2rem 1.25rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+                <a href="../index.html">poLCA</a>
+                <span class="sep">›</span>
+                <span>c-PCR</span>
+            </nav>
+            <div class="section-num" style="margin-top:.85rem;">Reguły kategorii wyrobów</div>
+            <h1 class="page-title">c-PCR — komplementarne reguły kategorii wyrobów</h1>
+            <p class="page-subtitle">
+                Komplementarne reguły kategorii wyrobów (c-PCR) uzupełniają PCR Operatora Programu
+                EPD Polska — bazujący na EN 15804+A2:2019 — o wymagania specyficzne dla sektorów.
+                Każdy c-PCR jest zgodny z odpowiednimi normami EN (EN 206 dla betonu, EN 13108
+                dla MMA, EN 12620 dla kruszyw) i — w przypadku braku europejskiego c-PCR — z
+                porównywalnymi schematami (np. NAPA EPD PCR for Asphalt Mixtures dla MMA).
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EN 15804+A2</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 14025 / 14040/44</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EF 3.1 / JRC</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">EPD Polska / EPD+</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Reguły kategorii wyrobów c-PCR programu EPD Polska" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#wstep" class="tool-nav-pill">01 — Czym jest c-PCR</a>
+        <a href="#cpcr-lista" class="tool-nav-pill">02 — Lista c-PCR</a>
+        <a href="#powiazania" class="tool-nav-pill">03 — Powiązane dokumenty</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — WSTĘP
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="wstep" class="card card-lg section-gap fade-in" aria-label="Czym jest c-PCR">
+        <div class="section-num">01 — Czym jest c-PCR</div>
+        <div class="card-title">Komplementarne reguły kategorii w hierarchii dokumentów programu</div>
+        <p class="card-text" style="max-width:880px;">
+            W programie EPD Polska (operator: Multicert Sp. z o.o.) dokumenty metodyczne są
+            uporządkowane hierarchicznie: norma <strong>EN 15804+A2:2019+A1:2021</strong> definiuje
+            ogólne zasady dla wszystkich wyrobów budowlanych; <strong>PCR Operatora Programu</strong>
+            dodaje wymagania programowe (model AVS 3+, weryfikacja wg ISO/IEC 17029); a
+            <strong>komplementarne reguły kategorii (c-PCR)</strong> precyzują wymagania specyficzne
+            dla danej grupy wyrobów — jednostkę deklarowaną, granice systemu, scenariusze referencyjne,
+            datasety i benchmarki.
+        </p>
+        <p class="card-text" style="max-width:880px;margin-top:.8rem;">
+            Każdy c-PCR jest zharmonizowany z odpowiednią normą produktową europejską (np.
+            EN 206:2013+A2:2021 i EN 16757:2022 dla betonu, seria EN 13108-1 do EN 13108-9 dla
+            mieszanek mineralno-asfaltowych, EN 12620:2013+A1 i EN 13242:2013 dla kruszyw). Gdy
+            europejskiego c-PCR dla danego sektora jeszcze nie ma — co dotyczy m.in. MMA i kruszyw —
+            program stosuje porównywalny schemat (comparable scheme wg EN 15804+A2:2019 §5.5), np.
+            <strong>NAPA EPD PCR for Asphalt Mixtures v2.0:2022</strong> jako benchmark referencyjny
+            dla MMA, lub analogię do <strong>EN 16908:2017</strong> i ECO Platform PCR-001 dla cementu.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — LISTA c-PCR
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="cpcr-lista" class="card card-lg section-gap fade-in" aria-label="Lista reguł kategorii c-PCR">
+        <div class="section-num">02 — Lista c-PCR</div>
+        <div class="card-title">Reguły kategorii programu EPD Polska — cztery sektory</div>
+        <p class="card-text" style="max-width:880px;">
+            Cztery sektory w obecnym wydaniu programu: beton (zatwierdzony), mieszanki
+            mineralno-asfaltowe (projekt do konsultacji publicznej), kruszywa (planowany) oraz
+            cement i wapno (dokument referencyjny ECO Platform). Status, normy, kluczowe parametry
+            i odnośniki do pełnych dokumentów znajdują się w kartach poniżej.
+        </p>
+
+        <div class="met-grid">
+
+            <!-- ───── c-PCR-BET ───── -->
+            <article class="met-card met-card-published">
+                <div class="met-card-head">
+                    <span class="met-card-id">c-PCR-BET-EPD-PL:2026 · v1.3</span>
+                    <span class="met-status met-status-published">Zatwierdzone 2026-05-10</span>
+                </div>
+                <h2 class="met-card-title">Beton i elementy betonowe — beton towarowy, prefabrykaty, mieszanki cementu z dodatkami</h2>
+                <p class="met-card-desc">
+                    Reguła kategorii dla betonu towarowego, prefabrykatów betonowych i mieszanek
+                    cementu z dodatkami. Zatwierdzona przez Multicert 10 maja 2026 r. Definiuje
+                    jednostkę deklarowaną, granice A1-A3 (+ opcje), klasyfikację emisyjności wg
+                    pasm GCCA Low Carbon Ratings oraz wskaźnik energii elektrycznej poLCA-EN-PL-2024
+                    (Poziom 1 / Poziom 2 / Poziom 3) zgodny z §6.3.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">v1.3</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">zatwierdzona 2026-05-10</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 206:2013+A2:2021</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 16757:2022</span></div>
+                </div>
+                <div class="met-key">
+                    <span class="met-key-label">Kluczowe parametry</span>
+                    Wskaźnik energii elektrycznej w cyklu życia (§6.3): Poziom 1 = 0,599 ·
+                    Poziom 2 = 0,808 · Poziom 3 = 0,041 kg CO₂e/kWh. Klasyfikacja emisyjności betonu
+                    w pasmach AA–E względem benchmarku sektorowego (model GCCA). Moduły A1-A3
+                    obowiązkowe, A4-A5 i C1-C4 oraz D opcjonalne.
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag met-tag-accent">zatwierdzona</span>
+                    <span class="met-tag">EN 15804+A2</span>
+                    <span class="met-tag">EN 206</span>
+                    <span class="met-tag">EN 16757</span>
+                    <span class="met-tag">GCCA bands</span>
+                    <span class="met-tag">poLCA-EN-PL-2024</span>
+                </div>
+                <div class="met-card-actions">
+                    <span class="met-btn met-btn-disabled">PDF w przygotowaniu</span>
+                    <a href="../metodyki/MET-001-poLCA-EN-PL-2024.html" class="met-btn met-btn-secondary">MET-001 — wskaźnik energii →</a>
+                    <a href="../metodyki/MET-002-energia.html" class="met-btn met-btn-secondary">MET-002 — wyłączenie KOBiZE →</a>
+                </div>
+            </article>
+
+            <!-- ───── c-PCR-MMA ───── -->
+            <article class="met-card met-card-consult">
+                <div class="met-card-head">
+                    <span class="met-card-id">c-PCR-MMA-EPD-Polska-2026 · v1.0-DRAFT</span>
+                    <span class="met-status met-status-consult">Konsultacja publiczna do 30.06.2026</span>
+                </div>
+                <h2 class="met-card-title">Mieszanki mineralno-asfaltowe (MMA) — betony asfaltowe AC, SMA, asfalty porowate PA, asfalt lany MA, BBTM</h2>
+                <p class="met-card-desc">
+                    Projekt komplementarnych zasad kategorii wyrobu dla mieszanek mineralno-asfaltowych
+                    wg serii EN 13108-1 do EN 13108-9, uzupełniający PCR Operatora Programu. Brak
+                    europejskiego c-PCR dla MMA — dokument korzysta z benchmarku NAPA EPD PCR for
+                    Asphalt Mixtures v2.0:2022 (CEN/TC 227 draft w opracowaniu). Konsultacja publiczna
+                    do 30 czerwca 2026 r. — uwagi: <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a>.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Wersja</span><span class="met-meta-value">v1.0-DRAFT</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">konsultacja do 30.06.2026</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 13108-1 … EN 13108-9</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Benchmark</span><span class="met-meta-value">NAPA EPD PCR v2.0:2022</span></div>
+                </div>
+                <div class="met-key">
+                    <span class="met-key-label">Kluczowe parametry</span>
+                    Moduły A1-A3 obowiązkowe + opcjonalne C1-C4 i D (recykling RA wg CFF). Granulat
+                    asfaltowy (RA) traktowany jako odpad o zerowym obciążeniu w module A1 (cut-off
+                    EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022 §6.2). Klasyfikacja wytwórni:
+                    cykliczne (batch) / ciągłe (drum) / mobilne. Scenariusze HMA / WMA. Ścieżka
+                    uproszczona dla MSP (EPD sektorowe i grupowe). Benchmarki GWP: AC 0% RA = 72,
+                    SMA = 78, PA = 65, MA = 85 kg CO₂-eq/t.
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag met-tag-accent">konsultacja publiczna</span>
+                    <span class="met-tag">EN 15804+A2</span>
+                    <span class="met-tag">EN 13108</span>
+                    <span class="met-tag">NAPA EPD PCR v2.0</span>
+                    <span class="met-tag">RA cut-off</span>
+                    <span class="met-tag">HMA / WMA</span>
+                    <span class="met-tag">CFF moduł D</span>
+                </div>
+                <div class="met-card-actions">
+                    <a href="mma.html" class="met-btn met-btn-primary">Streszczenie HTML →</a>
+                    <a href="c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf" class="met-btn met-btn-secondary">Pełny dokument — PDF (2,2 MB)</a>
+                    <a href="Raport-LCI-MMA-Polska-EN15804A2.pdf" class="met-btn met-btn-secondary">Raport LCI MMA — PDF</a>
+                </div>
+            </article>
+
+            <!-- ───── c-PCR-AGG ───── -->
+            <article class="met-card">
+                <div class="met-card-head">
+                    <span class="met-card-id">c-PCR-AGG (planowany)</span>
+                    <span class="met-status met-status-planned">Planowany — Q3 2026</span>
+                </div>
+                <h2 class="met-card-title">Kruszywa naturalne i sztuczne — kruszywa łamane, żwiry, kruszywa do mieszanek niezwiązanych</h2>
+                <p class="met-card-desc">
+                    Reguła kategorii dla kruszyw łamanych (granit, bazalt, wapień, dolomit), kruszyw
+                    naturalnych (piasek, żwir) i kruszyw do mieszanek niezwiązanych. W toku opracowania —
+                    planowana publikacja Q3 2026. Obejmie bilanse energetyczne EBLCI z rozróżnieniem
+                    kruszyw łamanych i naturalnych oraz krajowe wskaźniki górnictwa skalnego.
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">w toku</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Publikacja</span><span class="met-meta-value">Q3 2026</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 12620:2013+A1</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 13242:2013</span></div>
+                </div>
+                <div class="met-key">
+                    <span class="met-key-label">Kluczowe parametry (planowane)</span>
+                    Rozróżnienie kruszyw łamanych (granit, bazalt, wapień, dolomit) vs naturalnych
+                    (piasek, żwir). Bilanse energetyczne EBLCI dla wydobycia, kruszenia i sortowania.
+                    W nieobecności europejskiego c-PCR — analogia do EN 16908:2017 zgodnie z
+                    EN 15804+A2:2019 §6.3.5.1.
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag">planowany</span>
+                    <span class="met-tag">EN 15804+A2</span>
+                    <span class="met-tag">EN 12620</span>
+                    <span class="met-tag">EN 13242</span>
+                    <span class="met-tag">EBLCI</span>
+                </div>
+                <div class="met-card-actions">
+                    <span class="met-btn met-btn-disabled">PDF — wkrótce</span>
+                    <a href="../podstawy-normatywne.html#mapa-normatywna" class="met-btn met-btn-secondary">Podstawy normatywne →</a>
+                </div>
+            </article>
+
+            <!-- ───── c-PCR-001 cement/wapno ───── -->
+            <article class="met-card">
+                <div class="met-card-head">
+                    <span class="met-card-id">c-PCR-001 cement i wapno (referencyjny)</span>
+                    <span class="met-status met-status-ref">ECO Platform PCR-001</span>
+                </div>
+                <h2 class="met-card-title">Cement i wapno — dokument referencyjny ECO Platform PCR-001 i EN 16908:2017</h2>
+                <p class="met-card-desc">
+                    Referencyjny dokument PCR dla cementu i wapna — ECO Platform PCR-001 w połączeniu
+                    z EN 16908:2017 (cement i wapno budowlane — EPD). Wykorzystywany jako podstawa
+                    metodyczna dla datasetów cementu w bazie poLCA, m.in. zasad alokacji klinkier–cement
+                    i skalowania klasowego (CEM 32,5 / 42,5 / 52,5).
+                </p>
+                <div class="met-card-meta">
+                    <div class="met-meta-row"><span class="met-meta-label">Status</span><span class="met-meta-value">referencyjny</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Źródło</span><span class="met-meta-value">ECO Platform PCR-001</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Norma</span><span class="met-meta-value">EN 16908:2017</span></div>
+                    <div class="met-meta-row"><span class="met-meta-label">Datasety PL</span><span class="met-meta-value">11 datasetów cementu</span></div>
+                </div>
+                <div class="met-key">
+                    <span class="met-key-label">Kluczowe parametry</span>
+                    Alokacja klinkier–cement, skalowanie klasowe wytrzymałości (32,5 / 42,5 / 52,5).
+                    Datasety cementu PL: 11 datasetów (CEM I, CEM II, CEM III, CEM IV) dostępnych w
+                    katalogu datasetów poLCA.
+                </div>
+                <div class="met-tags">
+                    <span class="met-tag">referencyjny</span>
+                    <span class="met-tag">EN 16908</span>
+                    <span class="met-tag">ECO Platform PCR-001</span>
+                    <span class="met-tag">CEM I–IV</span>
+                </div>
+                <div class="met-card-actions">
+                    <a href="../datasety.html" class="met-btn met-btn-secondary">Datasety cementu →</a>
+                    <a href="../podstawy-normatywne.html#mapa-normatywna" class="met-btn met-btn-secondary">Podstawy normatywne →</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — POWIĄZANE DOKUMENTY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="powiazania" class="card card-lg section-gap fade-in" aria-label="Powiązane dokumenty">
+        <div class="section-num">03 — Powiązane dokumenty</div>
+        <div class="card-title">Metodyki, datasety i podstawy normatywne związane z c-PCR</div>
+        <p class="card-text" style="max-width:880px;">
+            Reguły kategorii odwołują się do dokumentów metodycznych MET-XXX (zwłaszcza wskaźnika
+            energii elektrycznej), katalogu datasetów oraz mapy normatywnej programu. Poniżej
+            najważniejsze punkty wejścia.
+        </p>
+
+        <div class="powiazania-grid">
+            <div class="powiazania-item">
+                <span class="pr-num">MET-001:2026</span>
+                <a href="../metodyki/MET-001-poLCA-EN-PL-2024.html">Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)</a> — 0,599 kg CO₂e/kWh, well-to-meter, EF 3.1.
+            </div>
+            <div class="powiazania-item">
+                <span class="pr-num">MET-002:2026</span>
+                <a href="../metodyki/MET-002-energia.html">Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych</a> — peer-reviewable methodology paper.
+            </div>
+            <div class="powiazania-item">
+                <span class="pr-num">Hub metodyk</span>
+                <a href="../metodyki/">Metodyki poLCA</a> — dokumenty referencyjne PDF/A z DOI, semver i changelog.
+            </div>
+            <div class="powiazania-item">
+                <span class="pr-num">Datasety</span>
+                <a href="../datasety.html">Katalog datasetów LCI</a> — zestawy danych dla wyrobów budowlanych, w tym cement i MMA.
+            </div>
+            <div class="powiazania-item">
+                <span class="pr-num">Podstawy normatywne</span>
+                <a href="../podstawy-normatywne.html#mapa-normatywna">Mapa normatywna programu</a> — odniesienia do norm EN, ISO i schematów comparable (NAPA, ECO Platform).
+            </div>
+            <div class="powiazania-item">
+                <span class="pr-num">Pobierz</span>
+                <a href="../pobierz.html#cpcr">Centrum pobierania — reguły c-PCR</a> — pliki PDF c-PCR oraz datasety.
+            </div>
+        </div>
+
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Polityka aktualizacji reguł c-PCR — siedem procedur PR-01 do PR-07, zobacz
+            <a href="../podstawy-normatywne.html#procedury">Podstawy normatywne · procedury jakości</a>.
+            Konsultacja publiczna projektu c-PCR-MMA v1.0-DRAFT trwa do 30 czerwca 2026 r. — uwagi:
+            <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="index.html">c-PCR</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../o-polca/index.html">O poLCA</a></li>
+                <li><a href="../o-polca/cytowanie.html">Jak cytować poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>

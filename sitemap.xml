@@ -68,9 +68,33 @@
   </url>
   <url>
     <loc>https://polca.org.pl/metodyki/</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/c-pcr/</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/c-pcr/mma.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/c-pcr/c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/c-pcr/Raport-LCI-MMA-Polska-EN15804A2.pdf</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://polca.org.pl/pobierz.html</loc>

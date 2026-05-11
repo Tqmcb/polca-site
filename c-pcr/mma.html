@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych | poLCA</title>
+    <meta name="description" content="c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT — komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych wg EN 13108. Streszczenie: granice systemu A1-A3+C+D, wskaźniki surowców (bitumen Eurobitume LCI v4.0, kruszywa, RA cut-off), wytwórnie PL, hierarchia danych, benchmarki GWP. Projekt do konsultacji publicznej (Multicert / EPD Polska).">
+    <link rel="canonical" href="https://polca.org.pl/c-pcr/mma.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych | poLCA">
+    <meta property="og:description" content="Komplementarne zasady kategorii wyrobu dla MMA wg EN 13108 — projekt do konsultacji publicznej. Granice A1-A3+C+D, bitumen Eurobitume LCI v4.0, RA cut-off, benchmarki GWP.">
+    <meta property="og:url" content="https://polca.org.pl/c-pcr/mma.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych | poLCA">
+    <meta name="twitter:description" content="Komplementarne zasady kategorii wyrobu dla MMA wg EN 13108 — projekt do konsultacji publicznej (Multicert / EPD Polska).">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta name="citation_title" content="c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT — Komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych">
+    <meta name="citation_author" content="Multicert Sp. z o.o.">
+    <meta name="citation_publication_date" content="2026">
+    <meta name="citation_publisher" content="Program EPD Polska">
+    <meta name="citation_doi" content="10.xxxx/polca.cpcr.mma.2026.v1">
+    <meta name="citation_language" content="pl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TechArticle"],
+      "headline": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT — Komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych",
+      "alternativeHeadline": "c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych",
+      "description": "Streszczenie komplementarnych zasad kategorii wyrobu (c-PCR) programu EPD Polska dla mieszanek mineralno-asfaltowych (MMA) wg serii EN 13108-1 do EN 13108-9. Dokument w wersji v1.0-DRAFT — projekt do konsultacji publicznej do 30 czerwca 2026 r. Brak europejskiego c-PCR dla MMA; benchmark referencyjny: NAPA EPD PCR for Asphalt Mixtures v2.0:2022. Obejmuje granice systemu (A1-A3 obowiązkowe + opcjonalne C1-C4 i D), wskaźniki emisji surowców (bitumen Eurobitume LCI v4.0, kruszywa, granulat asfaltowy RA jako cut-off), klasyfikację wytwórni MMA (cykliczne/ciągłe/mobilne), hierarchię i jakość danych (DQR) oraz benchmarki GWP i klasyfikację ECV.",
+      "url": "https://polca.org.pl/c-pcr/mma.html",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.xxxx/polca.cpcr.mma.2026.v1"
+      },
+      "datePublished": "2026",
+      "dateModified": "2026-05-11",
+      "inLanguage": "pl-PL",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creativeWorkStatus": "Draft",
+      "keywords": "c-PCR, MMA, mieszanki mineralno-asfaltowe, EPD, LCA, EN 15804+A2, EN 13108, NAPA EPD PCR, bitumen, Eurobitume LCI v4.0, granulat asfaltowy, RA, cut-off, HMA, WMA, CFF, moduł D, benchmark GWP, ECV, EF 3.1, Multicert, EPD Polska",
+      "about": [
+        {"@type": "Thing", "name": "Life Cycle Assessment"},
+        {"@type": "Thing", "name": "Environmental Product Declaration"},
+        {"@type": "Thing", "name": "Asphalt mixtures"},
+        {"@type": "Thing", "name": "Reclaimed asphalt"},
+        {"@type": "Thing", "name": "Bitumen"}
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://multicert.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Mydlarska 47",
+          "postalCode": "04-690",
+          "addressLocality": "Warszawa",
+          "addressCountry": "PL"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Program EPD Polska",
+        "url": "https://www.epd.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "poLCA c-PCR Series",
+        "url": "https://polca.org.pl/c-pcr/"
+      },
+      "citation": [
+        "EN 15804:2012+A2:2019+A1:2021",
+        "EN 13108-1 do EN 13108-9",
+        "EN 13108-8 (granulat asfaltowy RA)",
+        "ISO 14025:2006",
+        "ISO 21930:2017",
+        "ISO 14040:2006",
+        "ISO 14044:2006",
+        "Eurobitume LCI v4.0 (2025)",
+        "NAPA EPD PCR for Asphalt Mixtures v2.0 (2022)",
+        "JRC EF 3.1 method (2022)",
+        "Rec. (UE) 2021/2279",
+        "Rozp. (UE) 2024/3110 (CPR)"
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #sec-1,#sec-2,#sec-3,#sec-4,#sec-5,#sec-6,#sec-7,#sec-8,#sec-9{scroll-margin-top:76px}
+        .met-doc-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin:1rem 0 0;padding:.85rem 1rem;background:var(--paper-warm);border:1px solid var(--border);border-radius:8px}
+        .met-doc-meta-item{font-size:.74rem;line-height:1.5}
+        .met-doc-meta-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);font-weight:700;display:block;margin-bottom:.15rem}
+        .met-doc-meta-value{color:var(--text-primary);font-weight:600}
+        .met-h3{font-family:'Inter Tight',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:1.4rem 0 .55rem;line-height:1.35}
+        .met-h3 .met-h3-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:700;margin-right:.4rem}
+        .met-text{font-size:.92rem;line-height:1.7;color:var(--text-body);margin:0 0 .85rem;max-width:880px}
+        .met-text strong{color:var(--text-primary);font-weight:600}
+        .met-abstract{padding:1.1rem 1.2rem;background:var(--bg-subtle);border-left:3px solid var(--accent);border-radius:6px;margin-top:1rem}
+        .met-abstract p{margin:0 0 .7rem;font-size:.9rem;line-height:1.7;color:var(--text-body)}
+        .met-abstract p:last-child{margin-bottom:0}
+        .met-keywords{font-size:.78rem;color:var(--text-secondary);margin-top:.85rem;font-family:'IBM Plex Mono',monospace;line-height:1.6}
+        .met-keywords-label{font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem}
+        .draft-banner{padding:.85rem 1.1rem;background:#FFFCF2;border:1px solid #D6C58A;border-left:4px solid #8B6E1F;border-radius:8px;margin:1rem 0;font-size:.86rem;line-height:1.6;color:#5A4A14}
+        .draft-banner strong{color:#3F340D}
+        .polca-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:1rem 0}
+        .polca-table thead th{background:var(--paper-warm);padding:.7rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .polca-table tbody td{padding:.65rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .polca-table tbody tr:last-child td{border-bottom:none}
+        .polca-table tbody tr:hover td{background:rgba(11,93,51,0.02)}
+        .polca-table .num,.polca-table .mono{font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+        .polca-table .right{text-align:right}
+        .polca-table .total td{background:var(--bg-subtle);font-weight:700;color:var(--text-primary)}
+        .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;margin:1rem 0}
+        .table-scroll .polca-table{margin:0;min-width:640px}
+        .table-caption{font-size:.78rem;color:var(--text-tertiary);font-style:italic;margin:.5rem 0 .85rem;line-height:1.5}
+        .point-card{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);margin:.75rem 0}
+        .point-card-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+        .point-card-title{font-size:.98rem;font-weight:700;color:var(--text-primary);margin:.25rem 0 .55rem;font-family:'Inter Tight',sans-serif;line-height:1.35}
+        .point-card-body{font-size:.86rem;color:var(--text-body);line-height:1.65;margin:0}
+        .point-card-body p{margin:0 0 .55rem}
+        .point-card-body p:last-child{margin-bottom:0}
+        .point-card-body ul{margin:.4rem 0 .55rem;padding-left:1.2rem;font-size:.85rem;line-height:1.6;color:var(--text-secondary)}
+        .point-card-body ul li{margin-bottom:.2rem}
+        .citation-block{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);margin:.75rem 0}
+        .citation-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:700;display:block;margin-bottom:.4rem}
+        .citation-text{font-size:.86rem;line-height:1.65;color:var(--text-body);margin:0}
+        .citation-bibtex{font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.6;color:var(--text-body);background:var(--paper-warm);padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);white-space:pre;overflow-x:auto;margin:.5rem 0 0}
+        .ref-list{list-style:none;padding:0;margin:1rem 0 0}
+        .ref-list li{display:grid;grid-template-columns:42px 1fr;gap:.6rem;padding:.55rem .7rem;border-bottom:1px solid var(--border-light);font-size:.82rem;line-height:1.55;color:var(--text-body)}
+        .ref-list li:last-child{border-bottom:none}
+        .ref-list .ref-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-tertiary);font-weight:700}
+        .ref-list a{color:var(--accent);text-decoration:none}
+        .ref-list a:hover{text-decoration:underline}
+        .doc-pill{font-size:.62rem;font-family:'IBM Plex Mono',monospace;padding:.18rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.04em;display:inline-block}
+        .doc-pill.accent{background:var(--accent-subtle);color:var(--accent)}
+        .doc-pill.warn{background:#FFF8DC;color:#8B6E1F}
+        .pdf-cta{display:flex;align-items:center;gap:.8rem;padding:.95rem 1.15rem;border:1px solid #B9D8C2;background:#F4FAF6;border-radius:10px;margin:1.1rem 0;flex-wrap:wrap}
+        .pdf-cta-icon{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:700;color:#fff;background:#0B5D33;padding:.4rem .6rem;border-radius:5px;letter-spacing:.04em}
+        .pdf-cta-body{flex:1;min-width:220px;font-size:.86rem;line-height:1.5;color:var(--text-body)}
+        .pdf-cta-body strong{color:var(--text-primary)}
+        .pdf-cta a.met-btn{margin:0}
+        .met-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;border:1px solid var(--border);transition:all .15s ease}
+        .met-btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .met-btn-primary:hover{background:#0d4a23;border-color:#0d4a23}
+        .met-btn-secondary{background:var(--bg);color:var(--text-primary)}
+        .met-btn-secondary:hover{background:var(--paper-warm);border-color:var(--text-tertiary)}
+        .breadcrumbs{font-size:.74rem;color:var(--text-tertiary);margin:.5rem 0 0;font-family:'IBM Plex Mono',monospace}
+        .breadcrumbs a{color:var(--text-secondary);text-decoration:none}
+        .breadcrumbs a:hover{color:var(--accent);text-decoration:underline}
+        .breadcrumbs .sep{margin:0 .35rem;color:var(--text-tertiary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-doc-meta{grid-template-columns:1fr 1fr}.ref-list li{grid-template-columns:32px 1fr;gap:.4rem}}
+        @media(max-width:600px){.polca-table{font-size:.76rem}.polca-table thead th,.polca-table tbody td{padding:.5rem .55rem}.met-doc-meta{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO + DOC METADATA
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+                <a href="../index.html">poLCA</a>
+                <span class="sep">›</span>
+                <a href="index.html">c-PCR</a>
+                <span class="sep">›</span>
+                <span>c-PCR-MMA v1.0-DRAFT</span>
+            </nav>
+            <div class="section-num" style="margin-top:.85rem;">c-PCR-MMA-EPD-Polska-2026 — projekt do konsultacji</div>
+            <h1 class="page-title">c-PCR-MMA — reguły EPD dla mieszanek mineralno-asfaltowych</h1>
+            <p class="page-subtitle">
+                Komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych (MMA)
+                wg serii EN 13108 — projekt do konsultacji publicznej (Multicert / Program EPD Polska).
+                Uzupełnienie do PCR Operatora Programu, bazującego na <strong>EN 15804+A2:2019</strong>.
+                Niniejsza strona to streszczenie z kluczowymi tabelami; pełny dokument dostępny jako PDF.
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span class="doc-pill warn">v1.0-DRAFT</span>
+                <span class="doc-pill">EN 15804+A2</span>
+                <span class="doc-pill">EN 13108-1 … EN 13108-9</span>
+                <span class="doc-pill">NAPA EPD PCR v2.0:2022</span>
+                <span class="doc-pill">EF 3.1 / JRC</span>
+                <span class="doc-pill accent">konsultacja publiczna do 30.06.2026</span>
+                <span class="doc-pill accent">DOI: 10.xxxx/polca.cpcr.mma.2026.v1</span>
+            </div>
+            <div class="met-doc-meta">
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wersja</span>
+                    <span class="met-doc-meta-value">v1.0-DRAFT — marzec 2026</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Operator / autor</span>
+                    <span class="met-doc-meta-value">Multicert Sp. z o.o.</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Program</span>
+                    <span class="met-doc-meta-value">EPD Polska / EPD+</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Konsultacja do</span>
+                    <span class="met-doc-meta-value">30.06.2026 · epd@epd.org.pl</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Licencja</span>
+                    <span class="met-doc-meta-value">CC BY 4.0</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">DOI</span>
+                    <span class="met-doc-meta-value">10.xxxx/polca.cpcr.mma.2026.v1</span>
+                </div>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Reguły kategorii EPD dla mieszanek mineralno-asfaltowych" loading="lazy" style="width:100%;height:240px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="tool-nav section-gap">
+        <a href="#sec-1" class="tool-nav-pill">01 — Status i zakres</a>
+        <a href="#sec-2" class="tool-nav-pill">02 — Granice systemu</a>
+        <a href="#sec-3" class="tool-nav-pill">03 — Wskaźniki surowców (A1)</a>
+        <a href="#sec-4" class="tool-nav-pill">04 — Wytwórnie MMA w PL</a>
+        <a href="#sec-5" class="tool-nav-pill">05 — RA — cyrkularność</a>
+        <a href="#sec-6" class="tool-nav-pill">06 — Hierarchia danych</a>
+        <a href="#sec-7" class="tool-nav-pill">07 — Wskaźniki środowiskowe</a>
+        <a href="#sec-8" class="tool-nav-pill">08 — Cytowanie</a>
+        <a href="#sec-9" class="tool-nav-pill">09 — Powiązane dokumenty</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — STATUS I ZAKRES
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-1" class="card card-lg section-gap fade-in" aria-label="Status i zakres">
+        <div class="section-num">01 — Status i zakres</div>
+        <div class="card-title">Projekt do konsultacji publicznej, PCR bazowy i benchmark referencyjny</div>
+
+        <div class="draft-banner">
+            <strong>Konsultacja publiczna.</strong> Niniejszy dokument jest projektem w wersji
+            v1.0-DRAFT (status: projekt do konsultacji). Uwagi i komentarze prosimy kierować na
+            adres <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a> w terminie do 30 czerwca 2026 r.
+            Po zakończeniu konsultacji zostanie wydana wersja finalna v1.0.
+        </div>
+
+        <p class="met-text">
+            <strong>c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT</strong> określa komplementarne zasady
+            kategorii wyrobu (c-PCR) dla przygotowania deklaracji środowiskowych (EPD) typu III
+            dla <strong>mieszanek mineralno-asfaltowych (MMA)</strong> przeznaczonych do budowy
+            dróg w Polsce. Dokument stanowi uzupełnienie do <strong>PCR Operatora Programu EPD
+            Polska</strong>, który bazuje na normie <strong>EN 15804+A2:2019</strong>, i precyzuje
+            wymagania specyficzne dla sektora mieszanek asfaltowych. Jednostka deklarowana to
+            <strong>1 tona (1000 kg) gotowej mieszanki mineralno-asfaltowej</strong> na wyjściu z
+            wytwórni, w stanie do transportu na budowę.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.1</span>Zasięg techniczny</h3>
+        <p class="met-text">
+            c-PCR obejmuje mieszanki mineralno-asfaltowe zgodne z normami serii <strong>EN 13108-1
+            do EN 13108-9</strong>, w tym: betony asfaltowe (AC) o granulacji ciągłej, mieszanki
+            mastyksowo-grysowe (SMA — Stone Mastic Asphalt), asfalty porowate (PA — Porous Asphalt),
+            asfalty lane (MA — Mastic Asphalt), mieszanki cienkowarstwowe (BBTM), a także rozróżnienie
+            technologiczne: mieszanki konwencjonalne na gorąco (HMA — Hot Mix Asphalt, &gt; 140°C)
+            i mieszanki na ciepło (WMA — Warm Mix Asphalt, 100–140°C). Wymagania szczegółowe dla
+            granulatu asfaltowego (RA) odwołują się do EN 13108-8.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.2</span>Benchmark referencyjny — brak europejskiego c-PCR</h3>
+        <p class="met-text">
+            Na poziomie europejskim nie istnieje obecnie zatwierdzony c-PCR dla mieszanek
+            mineralno-asfaltowych (prace CEN/TC 227 nad odpowiednim dokumentem są w toku). Zgodnie
+            z EN 15804+A2:2019 §5.5, w nieobecności europejskiego c-PCR program stosuje porównywalny
+            schemat (comparable scheme). Dla MMA dokumentem referencyjnym jest <strong>NAPA EPD PCR
+            for Asphalt Mixtures v2.0:2022</strong> (National Asphalt Pavement Association), w
+            szczególności w zakresie traktowania granulatu asfaltowego RA jako materiału z odzysku
+            o zerowym obciążeniu w module A1 (§6.2 NAPA PCR). c-PCR-MMA jest przy tym w pełni zgodny
+            z EN 15804+A2:2019, ISO 14025:2006 i ISO 21930:2017.
+        </p>
+
+        <div class="pdf-cta">
+            <span class="pdf-cta-icon">PDF</span>
+            <div class="pdf-cta-body">
+                <strong>Pełny dokument c-PCR-MMA v1.0-DRAFT</strong> — kompletny tekst normatywny:
+                granice systemu, moduły A1-A3 + C + D, model alokacji energii w wytwórni (Załącznik F),
+                formuła CFF (Załącznik G), wskaźniki materiałowe (Załącznik C), wymagania weryfikacji,
+                wytyczne dla zamówień publicznych, ścieżka uproszczona dla MSP. Ok. 2,2 MB.
+            </div>
+            <a href="c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf" class="met-btn met-btn-primary">Pobierz PDF (2,2 MB)</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — GRANICE SYSTEMU
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-2" class="card card-lg section-gap fade-in" aria-label="Granice systemu">
+        <div class="section-num">02 — Granice systemu (moduły)</div>
+        <div class="card-title">Moduły informacyjne EN 15804+A2 dla MMA — A1-A3 obowiązkowe, C i D opcjonalne</div>
+
+        <p class="met-text">
+            Rdzeniem zakresu porównywalności dla polskiego rynku MMA są moduły <strong>A1, A2 i
+            A3</strong> (surowce, transport surowców, produkcja w wytwórni) — obowiązkowe w każdej
+            deklaracji EPD dla MMA. Etap użytkowania B1-B7 nie jest uwzględniany (mieszanka MMA jest
+            półproduktem; trwałość nawierzchni zależy od konstrukcji warstw, podłoża i ruchu, nie
+            wyłącznie od właściwości mieszanki — uzasadnienie w §5.2 dokumentu). Moduły końca życia
+            C1-C4 oraz moduł D (korzyści poza granicami systemu — recykling RA) mogą być deklarowane
+            dobrowolnie (MND — Module Not Declared) i wykorzystują jeden krajowy scenariusz referencyjny.
+        </p>
+
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Moduł</th><th>Nazwa</th><th>Status</th><th>Zakres — co obejmuje</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="mono">A1</td><td>Surowce i materiały wejściowe</td><td>obowiązkowy</td><td>Wydobycie i przetwarzanie składników mieszanki: produkcja bitumu drogowego / PmB (Eurobitume LCI v4.0), wydobycie i kruszenie kruszyw, produkcja wypełniacza (filler wapienny), włókna celulozowego (stabilizator SMA), dodatków i domieszek (środki adhezyjne, wosk WMA), wraz z produkcją energii zużytej w tych procesach. Granulat asfaltowy (RA) — cut-off (obciążenie alokowane do produktu pierwotnego).</td></tr>
+                <tr><td class="mono">A2</td><td>Transport surowców do wytwórni</td><td>obowiązkowy</td><td>Transport wszystkich składników od miejsca wydobycia / produkcji do wytwórni MMA. Domyślne odległości referencyjne dla rynku polskiego: bitumen (cysterna) — rafineria Płock / Gdańsk; kruszywo (wywrotka) — kamieniołom; filler wapienny — zakład mielenia; granulat asfaltowy RA — miejsce rozbiórki nawierzchni.</td></tr>
+                <tr><td class="mono">A3</td><td>Produkcja mieszanki w wytwórni</td><td>obowiązkowy</td><td>Procesy w wytwórni MMA: suszenie i podgrzewanie kruszywa, podgrzewanie bitumu, mieszanie, transport wewnętrzny (ładowarki, przenośniki), zużycie energii elektrycznej. Model hybrydowy A3: Domyślny (klasy wytwórni) — Zweryfikowany — Audytowany (min. 12 miesięcy danych pierwotnych). Uwzględnia różnice technologii (HMA vs WMA), paliwa (gaz ziemny / olej opałowy) i temperatury produkcji.</td></tr>
+                <tr><td class="mono">A4–A5</td><td>Transport na budowę, montaż</td><td>opcjonalny (MND)</td><td>Transport gotowej MMA na budowę i wbudowanie. Scenariusz referencyjny A4: 50 km, wywrotka 20–40 t EURO 5/6, ładowność 85%. Obowiązkowe wyłącznie w EPD projektowej.</td></tr>
+                <tr><td class="mono">C1</td><td>Frezowanie nawierzchni</td><td>opcjonalny (MND)</td><td>Demontaż nawierzchni asfaltowej — energia frezarki drogowej (paliwo: olej napędowy). Scenariusz referencyjny PL: ok. 0,08 MJ/kg; GWP ok. 5,93 kg CO₂-eq/t (= 80 MJ/t × wskaźnik emisji oleju napędowego KOBiZE).</td></tr>
+                <tr><td class="mono">C2</td><td>Transport do przetwarzania</td><td>opcjonalny (MND)</td><td>Transport destruktu asfaltowego do wytwórni lub składowiska. Scenariusz referencyjny PL: 30 km; GWP ok. 2,10 kg CO₂-eq/t.</td></tr>
+                <tr><td class="mono">C3</td><td>Przetwarzanie odpadu</td><td>opcjonalny (MND)</td><td>Przetwarzanie destruktu: 80% — ponowne użycie jako granulat asfaltowy RA w nowych mieszankach; 20% — recykling do innych zastosowań (kruszywo do podbudowy). Scenariusz referencyjny PL.</td></tr>
+                <tr><td class="mono">C4</td><td>Składowanie</td><td>opcjonalny (MND)</td><td>Składowanie destruktu asfaltowego. Scenariusz referencyjny PL: 0% (cały destrukt poddawany recyklingowi).</td></tr>
+                <tr><td class="mono">D</td><td>Korzyści poza granicami systemu</td><td>opcjonalny</td><td>Korzyści z recyklingu materiału po etapie użytkowania, obliczane wg formuły CFF (Circular Footprint Formula, EN 15804+A2:2019, Załącznik D). Parametry referencyjne PL: A = 0,5; R₂ = 0,80; Q<sub>sout</sub>/Q<sub>sin</sub> = 0,9; GWP przetwarzania RA E<sub>recycled</sub> = 6,8 kg CO₂-eq/t. Przykładowy wynik (1 t MMA, RA = 0%): D ≈ −8,72 kg CO₂-eq/t (uniknięte emisje).</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 2.1 — Moduły informacyjne dla MMA wg EN 15804+A2:2019. Wartości scenariuszy referencyjnych za §9.2–§9.3 dokumentu c-PCR-MMA. Pełne formuły CFF i parametry — Załącznik G dokumentu (PDF).</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — WSKAŹNIKI EMISJI SUROWCÓW (A1)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-3" class="card card-lg section-gap fade-in" aria-label="Wskaźniki emisji surowców">
+        <div class="section-num">03 — Wskaźniki emisji surowców (moduł A1)</div>
+        <div class="card-title">Bitumen, kruszywa mineralne, pozostałe składniki — datasety referencyjne</div>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.1</span>Bitumen drogowy</h3>
+        <p class="met-text">
+            Kluczowym parametrem wpływającym na emisyjność MMA jest wskaźnik GWP bitumu. c-PCR-MMA
+            przyjmuje dane z najnowszego zbioru branżowego <strong>Eurobitume LCI v4.0 [2025]</strong>
+            (European Bitumen Association; próba 32 rafinerie europejskie, lata 2020–2023, alokacja
+            ekonomiczna dla koproduktów rafineryjnych). Dla bitumu modyfikowanego polimerami (PMB)
+            wartość jest wyższa i przyjmowana z odpowiedniego zbioru danych lub od dostawcy.
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Rodzaj lepiszcza</th><th class="right">GWP-total (A1-A3)<br>[kg CO₂-eq / t]</th><th>Źródło / uwagi</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Bitumen drogowy (klasy 20/30 … 160/220, PN-EN 12591)</td><td class="num right">530 (mediana; zakres 470–590)</td><td>Eurobitume LCI v4.0 [2025] — wartość domyślna przyjęta w c-PCR (mediana; średnia ważona produkcją 527)</td></tr>
+                <tr><td>Bitumen modyfikowany polimerami (PMB / PmB, PN-EN 14023)</td><td class="num right">&gt; 530 — z danych dostawcy</td><td>Eurobitume LCI v4.0 + dodatkowy wpływ produkcji polimeru (np. SBS); wartość domyślna PMB nie jest ustalona — producent przyjmuje dane dostawcy lub uznanej bazy LCI</td></tr>
+                <tr><td>Bitumen — wartość historyczna (Eurobitume LCI 3.x, AR5)</td><td class="num right">niższa — nieaktualna</td><td>Wzrost GWP z LCI 3.x do LCA/LCI 4.0 wynika z przejścia AR5→AR6, uwzględnienia emisji metanu z wydobycia ropy i rozszerzenia granic systemu. Użytkownicy porównujący z wcześniejszymi EPD powinni uwzględnić tę różnicę.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 3.1 — Wskaźniki GWP lepiszczy asfaltowych. Wartość 530 kg CO₂-eq/t to mediana z Eurobitume LCI v4.0 [2025] przyjęta w c-PCR-MMA (§9.3.4). Dla wartości historycznych LCI 3.x i wartości dla PMB — szczegóły w pełnym PDF dokumentu.</p>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.2</span>Kruszywa mineralne i wypełniacz</h3>
+        <p class="met-text">
+            Dla kruszyw mineralnych c-PCR-MMA wskazuje datasety referencyjne; producent stosuje
+            preferencyjnie dane krajowe (EPD producentów kruszyw, wskaźniki górnictwa skalnego PL),
+            a w razie ich braku — uznane bazy LCI (ecoinvent, opracowania Gruber et al.). Wartość
+            domyślna kruszywa pierwotnego przyjęta dla obliczeń modułu D wynosi <strong>5,59 kg
+            CO₂-eq/t</strong> (Tabela C.1 dokumentu).
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Rodzaj kruszywa / wypełniacza</th><th>Dataset referencyjny</th><th>Uwagi</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Kruszywo bazaltowe (łamane)</td><td>ITB EPD producenta krajowego</td><td>Dane krajowe PL preferowane</td></tr>
+                <tr><td>Kruszywo granitowe (łamane)</td><td>ecoinvent, Gruber et al.</td><td>Proxy gdy brak EPD krajowego</td></tr>
+                <tr><td>Kruszywo wapienne (łamane)</td><td>Gruber et al.</td><td>Proxy gdy brak EPD krajowego</td></tr>
+                <tr><td>Kruszywo naturalne (piasek, żwir)</td><td>KOBiZE / GUS — wskaźniki wydobycia piasku PL; Gruber et al., ecoinvent</td><td>Dane krajowe PL</td></tr>
+                <tr><td>Kruszywo — średnia ważona PL (mix bazalt + granit + wapień)</td><td>Szacunek regionalny</td><td>Wartość domyślna kruszywa pierwotnego dla modułu D: 5,59 kg CO₂-eq/t</td></tr>
+                <tr><td>Wypełniacz (mączka wapienna, filler)</td><td>EPD producenta / KOBiZE — wskaźniki produkcji wapna PL</td><td>Udział masowy typowo 3–8%</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 3.2 — Datasety referencyjne kruszyw i wypełniacza wg Tablicy 1 dokumentu c-PCR-MMA. Wartości liczbowe wskaźników poszczególnych kruszyw — w pełnym PDF dokumentu (Załącznik C) oraz w Raporcie LCI MMA. <strong>Uwaga:</strong> w skonwertowanej wersji tekstowej Raportu LCI część wartości liczbowych jest nieczytelna (artefakt konwersji); wiążące są wartości z PDF.</p>
+
+        <h3 class="met-h3"><span class="met-h3-num">3.3</span>Pozostałe składniki</h3>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Składnik</th><th>Traktowanie w bilansie</th><th>Dataset / uwagi</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Włókno celulozowe (stabilizator SMA)</td><td>uwzględnione w A1, jeśli stosowane</td><td>ecoinvent / dane producenta — dokumentacja w raporcie bazowym (mieszanki SMA / BBTM)</td></tr>
+                <tr><td>Granulat asfaltowy RA (reclaimed asphalt)</td><td>cut-off w A1 — obciążenie = 0</td><td>Emisje produkcji pierwotnego bitumu w RA alokowane do produktu pierwotnego; jedyne obciążenie RA: transport (A2) i ewentualne dodatkowe podgrzewanie (A3). Cut-off wg EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022 §6.2.</td></tr>
+                <tr><td>Dodatek WMA chemiczny (np. wosk syntetyczny typu Sasobit)</td><td>uwzględniony w A1, jeśli stosowany</td><td>Szacunek (środki chemiczne) lub dane dostawcy — udział masowy poniżej 1%, lecz uwzględnić zgodnie z kryteriami cut-off §5.5</td></tr>
+                <tr><td>Środki adhezyjne (aminy)</td><td>uwzględnione w A1, jeśli stosowane</td><td>Udział masowy typowo 0,2–0,5%, lecz wpływ w kategorii toksyczności może przekraczać 1% — uwzględnić</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 3.3 — Pozostałe składniki mieszanki MMA i ich traktowanie w bilansie LCI. Kryteria odcięcia (cut-off) i lista składników obowiązkowo uwzględnianych — §5.5 dokumentu c-PCR-MMA.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — WYTWÓRNIE MMA W POLSCE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-4" class="card card-lg section-gap fade-in" aria-label="Wytwórnie MMA w Polsce">
+        <div class="section-num">04 — Wytwórnie MMA w Polsce</div>
+        <div class="card-title">Klasyfikacja wytwórni, mix paliwowy i model hybrydowy modułu A3</div>
+
+        <p class="met-text">
+            Moduł A3 jest szczególnie ważny dla ujawniania różnic w technologii produkcji, paliwie,
+            temperaturze wytwarzania i udziale granulatu asfaltowego RA. c-PCR-MMA wprowadza
+            <strong>model hybrydowy A3: Domyślny — Zweryfikowany — Audytowany</strong>. Poziom
+            A3-Domyślny opiera się na klasach wytwórni (typ, paliwo, technologia, udział RA, wiek);
+            poziomy A3-Zweryfikowany i A3-Audytowany wymagają danych pierwotnych zakładowych z minimum
+            12 kolejnych miesięcy produkcji (DQR ≤ 2,0 dla danych pierwotnych A3).
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">4.1</span>Rynek wytwórni MMA w Polsce</h3>
+        <p class="met-text">
+            Wg danych branżowych (Ammann, PSAW / PSWNA) w Polsce funkcjonuje rzędu kilkuset wytwórni
+            MMA, z czego zdecydowana większość to wytwórnie cykliczne (batch plant) — dominujący typ,
+            charakteryzujący się precyzyjnym dozowaniem składników i elastycznością produkcji różnych
+            receptur. Mniejszość stanowią wytwórnie ciągłe (drum-mix plant), stosowane głównie do
+            produkcji masowej jednorodnych mieszanek, oraz wytwórnie mobilne (przewoźne, kontenerowe)
+            eksploatowane na placach budów.
+        </p>
+        <p class="table-caption" style="margin-top:0;">Uwaga: dokładna liczba wytwórni oraz udziały typów (batch / drum / mobilna) i mix paliwowy podane są w Raporcie LCI MMA. W skonwertowanej wersji tekstowej Raportu te wartości liczbowe są nieczytelne (artefakt konwersji) — wiążące są wartości z PDF Raportu LCI.</p>
+
+        <h3 class="met-h3"><span class="met-h3-num">4.2</span>Mix paliwowy i parametry techniczne</h3>
+        <p class="met-text">
+            Suszenie i podgrzewanie kruszywa zasilane jest paliwem: <strong>olej opałowy lekki</strong>
+            (dominujący, szczególnie w starszych instalacjach), <strong>gaz ziemny</strong> (rosnący
+            udział, niższe emisje CO₂ i NOₓ) oraz marginalnie inne paliwa (LPG, biomasa). Korekta
+            temperatury: ok. +1% zużycia paliwa na każde °C powyżej temperatury referencyjnej
+            (Schönauer & Gruber). Mieszanki na ciepło (WMA, ok. 120–145°C) zużywają mniej paliwa niż
+            konwencjonalne (HMA, ok. 155–185°C). Zużycie energii elektrycznej wytwórni — wg modelu
+            energetycznego z Załącznika F dokumentu (wartość referencyjna za Schönauer & Gruber).
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Typ wytwórni</th><th>Paliwo główne</th><th>Klasa A3-Domyślny</th><th class="right">A3 GWP — HMA, RA=0%<br>[kg CO₂-eq / t MMA]*</th><th class="right">A3 GWP — WMA, RA=0%<br>[kg CO₂-eq / t MMA]*</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>cykliczna (batch)</td><td>gaz ziemny</td><td class="mono">B-G</td><td class="num right">22</td><td class="num right">19</td></tr>
+                <tr><td>cykliczna (batch)</td><td>olej opałowy</td><td class="mono">B-O</td><td class="num right">28</td><td class="num right">24</td></tr>
+                <tr><td>ciągła (drum-mix)</td><td>gaz ziemny</td><td class="mono">D-G</td><td class="num right">19</td><td class="num right">16</td></tr>
+                <tr><td>ciągła (drum-mix)</td><td>olej opałowy</td><td class="mono">D-O</td><td class="num right">25</td><td class="num right">21</td></tr>
+                <tr><td>mobilna</td><td>olej opałowy</td><td class="mono">M-O</td><td class="num right">32</td><td class="num right">27</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 4.1 — Orientacyjne wartości A3-Domyślny wg klas wytwórni (Załącznik B.2 dokumentu c-PCR-MMA). * Wartości mają charakter orientacyjny i zostaną ustalone ostatecznie na podstawie danych sektorowych zebranych w ramach konsultacji branżowych (IBDiM, reprezentatywna próba producentów). Wytwórnie mobilne zasilane z agregatu prądotwórczego stosują wskaźnik energii elektrycznej z generatora diesel (wartość domyślna 0,80 kg CO₂-eq/kWh), nie z krajowego miksu.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — RA — METODOLOGIA CYRKULARNOŚCI
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-5" class="card card-lg section-gap fade-in" aria-label="Granulat asfaltowy — metodologia cyrkularności">
+        <div class="section-num">05 — RA (granulat asfaltowy) — metodologia cyrkularności</div>
+        <div class="card-title">Cut-off w module A1, wskaźniki R₁ i R₂ oraz scenariusze udziału RA</div>
+
+        <div class="point-card">
+            <span class="point-card-num">Zasada cut-off</span>
+            <div class="point-card-title">RA jako odpad o zerowym obciążeniu w module A1</div>
+            <div class="point-card-body">
+                <p>
+                    Granulat asfaltowy (reclaimed asphalt, RA) traktowany jest jako <strong>odpad o
+                    zerowym obciążeniu środowiskowym w module A1</strong>, zgodnie z zasadą cut-off
+                    EN 15804+A2:2019 §6.3.6 oraz NAPA EPD PCR for Asphalt Mixtures v2.0:2022 §6.2.
+                    Emisje związane z pierwotną produkcją asfaltu zawartego w RA są alokowane do
+                    pierwotnego produktu (poprzedniej nawierzchni). Jedynym obciążeniem RA w systemie
+                    produktu MMA jest transport (moduł A2) i ewentualne dodatkowe podgrzewanie pryzmy
+                    RA (moduł A3).
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <span class="point-card-num">R₁ vs R₂</span>
+            <div class="point-card-title">Dwa odrębne wskaźniki recyklingu w formule CFF</div>
+            <div class="point-card-body">
+                <p>
+                    Formuła CFF (EN 15804+A2:2019, Załącznik D) operuje dwoma wskaźnikami dotyczącymi
+                    różnych stron bilansu materiałowego:
+                </p>
+                <ul>
+                    <li><strong>R₁ — recykling na wejściu (input):</strong> udział RA w recepturze
+                    mieszanki. Wpływa na obciążenia modułów A1-A3. Specyficzny dla producenta. Dla
+                    RA nieznanego pochodzenia przyjmuje się R₁ = 0.</li>
+                    <li><strong>R₂ — recykling na wyjściu (output):</strong> frakcja destruktu
+                    asfaltowego ponownie wykorzystywana jako RA po końcu życia nawierzchni. Wpływa na
+                    korzyści modułu D. Parametr scenariusza EOL — wartość referencyjna PL: R₂ = 0,80.</li>
+                </ul>
+                <p>
+                    Przykład: mieszanka MMA z 25% RA ma R₁ = 0,25 (na wejściu), ale R₂ = 0,80 (na
+                    wyjściu, niezależnie od R₁).
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <span class="point-card-num">Scenariusze RA</span>
+            <div class="point-card-title">Udział granulatu asfaltowego i jego wpływ na GWP</div>
+            <div class="point-card-body">
+                <p>
+                    Benchmarki sektorowe i wartości A3-Domyślny są podane dla różnych udziałów RA —
+                    typowo scenariusze <strong>0% / 20% / 40%</strong> (a dla SMA m.in. 15%). Wzrost
+                    udziału RA obniża GWP zarówno modułu A1 (mniej pierwotnego bitumu i kruszywa), jak
+                    i — wg orientacyjnych wartości — modułu A3. Przykładowy wynik modułu D dla 1 tony
+                    MMA o składzie 95% kruszywa + 5% asfaltu (RA = 0% na wejściu): D ≈ <strong>−8,72
+                    kg CO₂-eq/t MMA</strong> (znak ujemny = uniknięte emisje), przy parametrach CFF
+                    A = 0,5; R₂ = 0,80; Q<sub>sout</sub>/Q<sub>sin</sub> = 0,9; E<sub>recycled</sub> =
+                    6,8 kg CO₂-eq/t; E<sub>virgin</sub> kruszywo 5,59 i bitumen 530 kg CO₂-eq/t.
+                </p>
+            </div>
+        </div>
+        <p class="table-caption">Pełne wzory CFF, parametry referencyjne, przykłady obliczeń oraz uzasadnienie wartości (m.in. R₂ = 0,80 z danych GDDKiA 2023, Q<sub>sout</sub>/Q<sub>sin</sub> = 0,9 z badań IBDiM 2024) — §9.2–§9.3 i Załącznik G dokumentu c-PCR-MMA (PDF).</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — HIERARCHIA I JAKOŚĆ DANYCH
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-6" class="card card-lg section-gap fade-in" aria-label="Hierarchia i jakość danych">
+        <div class="section-num">06 — Hierarchia i jakość danych</div>
+        <div class="card-title">Pięć poziomów źródeł danych i wskaźnik jakości DQR (macierz pedigree)</div>
+
+        <p class="met-text">
+            c-PCR-MMA definiuje pięciopoziomową hierarchię źródeł danych: dane pierwotne zakładowe
+            (foreground) na szczycie, następnie dane sektorowe / branżowe, oficjalne parametry
+            krajowe, wskaźniki domyślne z pakietu referencyjnego, a w ostateczności dane proxy. Dla
+            modułu A3 na poziomach Zweryfikowany / Audytowany dane pierwotne są obowiązkowe (min. 12
+            kolejnych miesięcy). Jakość danych ocenia się wskaźnikiem <strong>DQR (Data Quality
+            Rating)</strong> wg EN 15804+A2:2019 §6.3.7 — czterech kryteriów reprezentatywności
+            (skala 1–5; wymagany minimalny DQR dla danych pierwotnych A3: ≤ 2,0).
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th class="right">Poziom</th><th>Rodzaj danych</th><th>Status w c-PCR</th><th>Przykład zastosowania</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="num right">1</td><td>Dane pierwotne zakładowe (foreground)</td><td>obowiązkowe dla A3-Zweryfikowany / A3-Audytowany</td><td>Paliwa, energia, produkcja, woda, odpady, emisje — min. 12 kolejnych miesięcy</td></tr>
+                <tr><td class="num right">2</td><td>Dane sektorowe / branżowe</td><td>preferowane dla A1 i wybranych procesów</td><td>Lepiszcza (Eurobitume LCI v4.0), dodatki, procesy referencyjne, dane branżowe PL</td></tr>
+                <tr><td class="num right">3</td><td>Oficjalne parametry krajowe</td><td>obowiązkowe dla warunków polskich gdy istnieją</td><td>Energia elektryczna, wybrane wskaźniki krajowe — KOBiZE, GUS, URE</td></tr>
+                <tr><td class="num right">4</td><td>Wskaźniki domyślne z pakietu referencyjnego</td><td>dopuszczone dla A2, A4, C, D, A3-Domyślny</td><td>Wartości referencyjne dla klas wytwórni (Załącznik B i C)</td></tr>
+                <tr><td class="num right">5</td><td>Dane proxy</td><td>wyjątkowo, z uzasadnieniem</td><td>Brakujący wskaźnik dla procesu pomocniczego — dokumentacja w raporcie</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 6.1 — Hierarchia źródeł danych wg Tablicy 10 dokumentu c-PCR-MMA. Kryteria DQR: TeR (reprezentatywność technologiczna), GR (geograficzna), TiR (czasowa — dane tła ≤ 10 lat, dane pierwotne A3 ≤ 5 lat), P (precyzja). Macierz pedigree Weidema. Charakteryzacja wpływu: metoda EF 3.1 (Rec. UE 2021/2279).</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         07 — WSKAŹNIKI ŚRODOWISKOWE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-7" class="card card-lg section-gap fade-in" aria-label="Wskaźniki środowiskowe">
+        <div class="section-num">07 — Wskaźniki środowiskowe (EN 15804+A2)</div>
+        <div class="card-title">Komplet wskaźników, GWP jako wskaźnik kluczowy i benchmarki sektorowe</div>
+
+        <p class="met-text">
+            Wskaźniki środowiskowe deklaruje się zgodnie z EN 15804+A2:2019 (Tablica 10): wskaźniki
+            wpływu (GWP-total, GWP-fossil, GWP-biogenic, GWP-luluc, ODP, AP, EP-freshwater /
+            EP-marine / EP-terrestrial, POCP, ADPE, ADPF, WDP), wskaźniki zasobów (PERE, PERM, PERT,
+            PENRE, PENRM, PENRT, SM, RSF, NRSF, FW), wskaźniki odpadów (HWD, NHWD, RWD) i przepływy
+            wyjściowe (CRU, MFR, MER, EEE, EET). Charakteryzacja: metoda <strong>EF 3.1</strong>
+            (Environmental Footprint 3.1, JRC), z GWP wg IPCC AR6. Dla MMA zalecane jest dodatkowo
+            deklarowanie wskaźnika PM (emisje pyłów — istotny ze względu na suszarkę bębnową) oraz —
+            przy stosowaniu dodatków chemicznych — ETP-fw i HTP-c / HTP-nc.
+        </p>
+        <p class="met-text">
+            <strong>Wskaźnikiem kluczowym dla MMA</strong> w pierwszym okresie wdrażania CPR (UE)
+            2024/3110 jest <strong>GWP-total [kg CO₂-eq / t MMA]</strong> dla modułów A1-A3 — podstawa
+            porównywalności między wytwórniami i technologiami oraz kryterium środowiskowe w zamówieniach
+            publicznych. Klasyfikacja efektywności środowiskowej (ECV — Environmental Claim Verification)
+            obejmuje pięć kategorii A–E określonych jako procent benchmarku sektorowego (model wzorowany
+            na pasmach GCCA dla betonu); oznaczenia anglojęzyczne ("Low Carbon Asphalt Mix" — kat. A;
+            "Reduced Carbon Asphalt Mix" — kat. B) wymagają zawsze pełnego oświadczenia ECV z wartością
+            liczbową GWP i odniesieniem do benchmarku (zgodnie z EN ISO 14021).
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Typ MMA</th><th class="right">Benchmark GWP-total (A1-A3)<br>[kg CO₂-eq / t]</th><th>Uwagi</th><th class="right">Pkt GPP — kat. A (&lt; 70% benchmarku)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>AC 0% RA</td><td class="num right">72</td><td>Beton asfaltowy standardowy</td><td class="num right">10</td></tr>
+                <tr><td>AC 20% RA</td><td class="num right">65</td><td>Z 20% destruktu (RA)</td><td class="num right">10</td></tr>
+                <tr><td>AC 40% RA</td><td class="num right">58</td><td>Z 40% destruktu (RA)</td><td class="num right">10</td></tr>
+                <tr><td>SMA 0% RA</td><td class="num right">78</td><td>Mieszanka mastyksowo-grysowa</td><td class="num right">10</td></tr>
+                <tr><td>SMA 15% RA</td><td class="num right">72</td><td>Z 15% destruktu (RA)</td><td class="num right">10</td></tr>
+                <tr><td>BBTM</td><td class="num right">68</td><td>Mieszanka cienkowarstwowa</td><td class="num right">10</td></tr>
+                <tr><td>PA</td><td class="num right">65</td><td>Asfalt porowaty</td><td class="num right">10</td></tr>
+                <tr><td>MA</td><td class="num right">85</td><td>Asfalt lany</td><td class="num right">10</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 7.1 — Wartości benchmarkowe GWP-total (A1-A3) dla typowych mieszanek MMA wg §12.2 dokumentu c-PCR-MMA (zaktualizowane w 2025 r. po publikacji Eurobitume LCA/LCI 4.0; poprzednie benchmarki oparte na LCI 3.1 są nieaktualne). Progi ECV: kat. A &lt; 70% benchmarku (orientacyjnie Top 20% wg EPA/FHWA), kat. B 70–85%, kat. C 85–100%, kat. D 100–120%, kat. E &gt; 120%. Pełne tablice progów bezwzględnych — §12.3 dokumentu (PDF).</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         08 — CYTOWANIE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-8" class="card card-lg section-gap fade-in" aria-label="Cytowanie">
+        <div class="section-num">08 — Cytowanie</div>
+        <div class="card-title">Jak cytować c-PCR-MMA — APA, BibTeX, DOI</div>
+
+        <div class="citation-block">
+            <span class="citation-label">Cytowanie (APA 7)</span>
+            <p class="citation-text">
+                Multicert Sp. z o.o. (2026). <em>c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT —
+                Komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych</em>.
+                Program EPD Polska. https://polca.org.pl/c-pcr/mma
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">BibTeX</span>
+            <div class="citation-bibtex">@techreport{multicert2026cpcrmma,
+  author      = {{Multicert Sp. z o.o.}},
+  title       = {{c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT --- Komplementarne zasady kategorii wyrobu dla mieszanek mineralno-asfaltowych}},
+  institution = {Program EPD Polska},
+  year        = {2026},
+  type        = {Komplementarne reguly kategorii wyrobu (c-PCR), projekt do konsultacji},
+  doi         = {10.xxxx/polca.cpcr.mma.2026.v1},
+  url         = {https://polca.org.pl/c-pcr/mma}
+}</div>
+        </div>
+
+        <p class="met-text" style="margin-top:1rem;font-size:.82rem;color:var(--text-tertiary);">
+            DOI: <span class="mono">10.xxxx/polca.cpcr.mma.2026.v1</span> (placeholder — rejestracja
+            w DataCite planowana po wydaniu wersji finalnej v1.0). Licencja: CC BY 4.0. Pełne wzorce
+            cytowań programu poLCA (APA 7, ISO 690, RIS) — zobacz <a href="../o-polca/cytowanie.html">Jak cytować poLCA</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         09 — POWIĄZANE DOKUMENTY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-9" class="card card-lg section-gap fade-in" aria-label="Powiązane dokumenty i bibliografia">
+        <div class="section-num">09 — Powiązane dokumenty</div>
+        <div class="card-title">Inne c-PCR, metodyki, datasety i podstawy normatywne</div>
+
+        <ul class="ref-list">
+            <li>
+                <span class="ref-num">[1]</span>
+                <span><strong>Pełny dokument c-PCR-MMA v1.0-DRAFT</strong> (PDF, ok. 2,2 MB) — kompletny tekst normatywny z załącznikami. <a href="c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf">c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[2]</span>
+                <span><strong>Raport LCI MMA Polska (EN 15804+A2)</strong> — dataset z danymi domyślnymi MMA: wskaźniki surowców A1, transport A2, energia i emisje A3, wyniki GWP A1-A3 dla 11 mieszanek. <a href="Raport-LCI-MMA-Polska-EN15804A2.pdf">Raport-LCI-MMA-Polska-EN15804A2.pdf</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[3]</span>
+                <span><strong>c-PCR-BET-EPD-PL:2026 v1.3</strong> — komplementarne reguły kategorii dla betonu (zatwierdzone 2026-05-10). <a href="index.html">Hub c-PCR</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[4]</span>
+                <span><strong>MET-001:2026</strong> — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1), 0,599 kg CO₂e/kWh, well-to-meter, EF 3.1. <a href="../metodyki/MET-001-poLCA-EN-PL-2024.html">metodyki/MET-001-poLCA-EN-PL-2024.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[5]</span>
+                <span><strong>MET-002:2026</strong> — Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych (peer-reviewable methodology paper). <a href="../metodyki/MET-002-energia.html">metodyki/MET-002-energia.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[6]</span>
+                <span><strong>Katalog datasetów poLCA</strong> — zestawy danych LCI dla wyrobów budowlanych. <a href="../datasety.html">datasety.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[7]</span>
+                <span><strong>Podstawy normatywne poLCA</strong> — mapa normatywna programu, odniesienia do norm EN / ISO i schematów comparable (NAPA, ECO Platform). <a href="../podstawy-normatywne.html#mapa-normatywna">podstawy-normatywne.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[8]</span>
+                <span>NAPA — <em>EPD PCR for Asphalt Mixtures, v2.0</em> (2022). National Asphalt Pavement Association (cytowany jako benchmark referencyjny — brak europejskiego c-PCR dla MMA).</span>
+            </li>
+            <li>
+                <span class="ref-num">[9]</span>
+                <span>Eurobitume — <em>Life-Cycle Inventory (LCI) v4.0</em> (2025). European Bitumen Association (dataset referencyjny dla bitumu drogowego — GWP-total A1-A3 = 530 kg CO₂-eq/t, mediana).</span>
+            </li>
+            <li>
+                <span class="ref-num">[10]</span>
+                <span>EN 15804:2012+A2:2019+A1:2021 · seria EN 13108-1 do EN 13108-9 · EN 13108-8 (granulat asfaltowy RA) · ISO 14025:2006 · ISO 21930:2017 · ISO 14040/14044:2006 · Rec. (UE) 2021/2279 (EF 3.1) · Rozp. (UE) 2024/3110 (CPR).</span>
+            </li>
+        </ul>
+
+        <p class="met-text" style="margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Konsultacja publiczna projektu c-PCR-MMA v1.0-DRAFT trwa do 30 czerwca 2026 r. — uwagi:
+            <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a>. Polityka aktualizacji reguł c-PCR —
+            zobacz <a href="../podstawy-normatywne.html#procedury">Podstawy normatywne · procedury jakości</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="index.html">c-PCR</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../o-polca/index.html">O poLCA</a></li>
+                <li><a href="../o-polca/cytowanie.html">Jak cytować poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>
