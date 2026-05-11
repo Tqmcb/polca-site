@@ -1267,7 +1267,7 @@
                 transport: 'Transport',
                 cement: 'Cement i spoiwa',
                 aggregates: 'Kruszywa',
-                bitumen: 'Asfalt i emulsje',
+                bitumen: 'Asfalt, MMA i emulsje',
                 additives: 'Wypełniacze, RAP i dodatki',
                 regulatory: 'Regulacyjne CBAM',
                 other: 'Pozostałe wartości'
@@ -1277,7 +1277,7 @@
                 transport: 'Wartości przeliczeniowe dla tkm i scenariuszy dostaw.',
                 cement: 'Wartości dla cementów i spoiw stosowanych w betonie, prefabrykatach i zaprawach.',
                 aggregates: 'Wartości dla kruszyw stosowanych w MMA, betonie i robotach drogowych.',
-                bitumen: 'Wartości dla lepiszczy asfaltowych, emulsji i warstw sczepnych.',
+                bitumen: 'Wartości dla lepiszczy asfaltowych, mieszanek mineralno-asfaltowych, emulsji i warstw sczepnych.',
                 additives: 'Wartości dla materiałów pomocniczych, wypełniaczy i materiałów z recyklingu.',
                 regulatory: 'Wartości kontrolne regulacyjne. Nie zastępują GWP produktu w EPD.',
                 other: 'Rekordy, które nie należą do głównych grup materiałowych.'
@@ -1296,7 +1296,7 @@
                 if (item.category === 'transport' || role.includes('transport')) return 'transport';
                 if (role.includes('cement') || role.includes('spoiwo')) return 'cement';
                 if (role.includes('kruszywo')) return 'aggregates';
-                if (role.includes('lepiszcze') || role.includes('emulsja') || role.includes('warstwa sczepna')) return 'bitumen';
+                if (role.includes('lepiszcze') || role.includes('emulsja') || role.includes('warstwa sczepna') || role.includes('mieszanka mineralno-asfaltowa') || role.includes('mma')) return 'bitumen';
                 if (role.includes('wypełniacz') || role.includes('destrukt') || role.includes('recykling') || role.includes('dodatek')) return 'additives';
                 return 'other';
             };
@@ -1409,8 +1409,8 @@
                         <div style="font-size:.75rem;color:var(--text-tertiary);margin-top:.5rem;">${item.module_default}</div>
                     </div>
                     <div>
-                        <div style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:700;color:var(--text-primary);">${item.gwp_total_kg_co2e}</div>
-                        <div style="font-size:.75rem;color:var(--text-tertiary);">kg CO₂e / ${item.unit}</div>
+                        <div style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:700;color:var(--text-primary);">${(item.gwp_total_kg_co2e === null || item.gwp_total_kg_co2e === undefined) ? 'zob. mieszanki' : item.gwp_total_kg_co2e}</div>
+                        <div style="font-size:.75rem;color:var(--text-tertiary);">${(item.gwp_total_kg_co2e === null || item.gwp_total_kg_co2e === undefined) ? 'zestaw danych domyślnych' : 'kg CO₂e / ' + item.unit}</div>
                     </div>
                     <div>
                         <span class="badge">${statusLabels[item.status] || item.status}</span>

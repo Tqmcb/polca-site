@@ -2,9 +2,9 @@
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
     "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
-    "version": "2026.4-aggregates",
+    "version": "2026.6-mma",
     "status": "published_defaults",
-    "published_at": "2026-05-03",
+    "published_at": "2026-05-11",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
       "EN 15804+A2",
@@ -1176,6 +1176,291 @@
         "mma"
       ],
       "material_role": "destrukt asfaltowy / recykling",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-MMA-LCI-DEFAULTS-2026",
+      "name": "Mieszanki mineralno-asfaltowe — dataset danych domyślnych LCI (poLCA 2026)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": null,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wytwarzanie mieszanek mineralno-asfaltowych w wytwórni cyklicznej lub ciągłej; technologia na gorąco (HMA) i na ciepło (WMA), z opcjonalnym udziałem granulatu asfaltowego (RA).",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_url": "https://polca.org.pl/c-pcr/mma.html",
+      "scope": "A1-A3 (cradle-to-gate) dla mieszanek mineralno-asfaltowych. Surowce A1, transport A2, energia procesu i energia elektryczna A3.",
+      "methodology_note": "Zestaw kontrolowanych wartości domyślnych LCI dla MMA: lepiszcze (Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t, PMB 560), kruszywa 3,20-5,50 kg CO2e/t, wypełniacz 5,50, włókno 800, dodatki WMA 1200, granulat RA z zasadą cut-off (0 w A1). Transport A2: EF 0,100 kg CO2e/(t·km). Energia A3: paliwo procesowe + 2,5 kWh/t energii elektrycznej. Wskaźnik energii elektrycznej zsynchronizowany z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 z roboczego Raportu LCI).",
+      "limitations": "Nie zastępuje danych konkretnej wytwórni, recepty mieszanki, dostawcy lepiszcza ani zweryfikowanego wskaźnika energii. Wartości domyślne służą do wstępnej kwalifikacji i raportów wewnętrznych; finalna EPD wymaga danych producenta dla składników kluczowych.",
+      "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji modułu A1 typowej MMA; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza, dane recepturowe wytwórni i rzeczywisty transport A2.",
+      "source_trace": [
+        {
+          "name": "Raport LCI MMA Polska EN 15804+A2",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "roboczy inwentarz LCI dla MMA w Polsce",
+          "type": "methodology_source"
+        },
+        {
+          "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "reguły kategorii produktu dla MMA",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "Eurobitume LCA 4.0 (2025)",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
+          "type": "methodology_source"
+        },
+        {
+          "name": "poLCA-EN-PL-2024 v9.1",
+          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja z ekosystemem poLCA",
+          "type": "polca_model"
+        },
+        {
+          "name": "NAPA EPD PCR for Asphalt Mixtures v2.0:2022",
+          "url": "https://www.asphaltpavement.org/expertise/sustainability/epd-program",
+          "role": "zasada cut-off dla granulatu asfaltowego RA",
+          "type": "product_category_rules"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
+      "open_data_note": "Zestaw kontrolowanych wartości domyślnych POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "evidence_level": "industry_average",
+      "source_policy": {
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset domyślny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty, danych energetycznych lub dokumentów dostawców dla konkretnej mieszanki.",
+        "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
+      },
+      "selection_mode": "default",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę, dostawców i transport. System dobiera kontrolowany dataset domyślny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta lub EPD.",
+      "product_groups": [
+        "mma",
+        "roboty-drogowe"
+      ],
+      "material_role": "mieszanka mineralno-asfaltowa",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-MMA-AC11S-2026",
+      "name": "Mieszanka mineralno-asfaltowa AC 11 S — dataset normatywny LCI (poLCA 2026)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 112.17,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wytwarzanie mieszanki AC 11 S w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 165°C.",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_url": "https://polca.org.pl/c-pcr/mma.html",
+      "scope": "A1-A3 dla mieszanki AC 11 S (EN 13108-1, warstwa ścieralna). A1=82.14, A2=6.65, A3=23.38 kg CO2e/t (A3 zsynchronizowane z poLCA 0,599 kg CO2e/kWh).",
+      "methodology_note": "Wartości domyślne LCI dla recepty referencyjnej mieszanki AC 11 S: zawartość lepiszcza ok. 15.0% m/m (Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t), kruszywa wg POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. GWP A1-A3 = 112.17 kg CO2e/t. Moduł A3 i suma A1-A3 zsynchronizowane z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715).",
+      "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii.",
+      "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza i dane recepturowe wytwórni.",
+      "source_trace": [
+        {
+          "name": "Raport LCI MMA Polska EN 15804+A2",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "roboczy inwentarz LCI dla MMA",
+          "type": "methodology_source"
+        },
+        {
+          "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "reguły kategorii produktu dla MMA",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "Eurobitume LCA 4.0 (2025)",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
+          "type": "methodology_source"
+        },
+        {
+          "name": "poLCA-EN-PL-2024 v9.1",
+          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "type": "polca_model"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
+      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "evidence_level": "industry_average",
+      "source_policy": {
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki.",
+        "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
+      },
+      "selection_mode": "default",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
+      "product_groups": [
+        "mma",
+        "roboty-drogowe"
+      ],
+      "material_role": "mieszanka mineralno-asfaltowa",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-MMA-AC16W-2026",
+      "name": "Mieszanka mineralno-asfaltowa AC 16 W — dataset normatywny LCI (poLCA 2026)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 74.14,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wytwarzanie mieszanki AC 16 W w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 160°C.",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_url": "https://polca.org.pl/c-pcr/mma.html",
+      "scope": "A1-A3 dla mieszanki AC 16 W (EN 13108-1, warstwa wiążąca). A1=45.34, A2=5.95, A3=22.85 kg CO2e/t (A3 zsynchronizowane z poLCA 0,599 kg CO2e/kWh).",
+      "methodology_note": "Wartości domyślne LCI dla recepty referencyjnej mieszanki AC 16 W: zawartość lepiszcza ok. 8.0% m/m (Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t), kruszywa wg POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. GWP A1-A3 = 74.14 kg CO2e/t. Moduł A3 i suma A1-A3 zsynchronizowane z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715).",
+      "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii.",
+      "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza i dane recepturowe wytwórni.",
+      "source_trace": [
+        {
+          "name": "Raport LCI MMA Polska EN 15804+A2",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "roboczy inwentarz LCI dla MMA",
+          "type": "methodology_source"
+        },
+        {
+          "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "reguły kategorii produktu dla MMA",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "Eurobitume LCA 4.0 (2025)",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
+          "type": "methodology_source"
+        },
+        {
+          "name": "poLCA-EN-PL-2024 v9.1",
+          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "type": "polca_model"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
+      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "evidence_level": "industry_average",
+      "source_policy": {
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki.",
+        "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
+      },
+      "selection_mode": "default",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
+      "product_groups": [
+        "mma",
+        "roboty-drogowe"
+      ],
+      "material_role": "mieszanka mineralno-asfaltowa",
+      "record_use_status": "ready_to_use_default_dataset"
+    },
+    {
+      "code": "POLCA-MMA-SMA11S-2026",
+      "name": "Mieszanka mineralno-asfaltowa SMA 11 S — dataset normatywny LCI (poLCA 2026)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 120.17,
+      "year": 2026,
+      "geography": "PL",
+      "technology": "Wytwarzanie mieszanki SMA 11 S w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 170°C.",
+      "data_quality": "industry",
+      "status": "published_sector_dataset",
+      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_url": "https://polca.org.pl/c-pcr/mma.html",
+      "scope": "A1-A3 dla mieszanki SMA 11 S (EN 13108-5, warstwa ścieralna). A1=89.47, A2=6.79, A3=23.91 kg CO2e/t (A3 zsynchronizowane z poLCA 0,599 kg CO2e/kWh).",
+      "methodology_note": "Wartości domyślne LCI dla recepty referencyjnej mieszanki SMA 11 S: zawartość lepiszcza ok. 14.0% m/m (Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t), kruszywa wg POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. GWP A1-A3 = 120.17 kg CO2e/t. Moduł A3 i suma A1-A3 zsynchronizowane z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715).",
+      "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii.",
+      "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_plus_preparation"
+      ],
+      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza i dane recepturowe wytwórni.",
+      "source_trace": [
+        {
+          "name": "Raport LCI MMA Polska EN 15804+A2",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "roboczy inwentarz LCI dla MMA",
+          "type": "methodology_source"
+        },
+        {
+          "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT",
+          "url": "https://polca.org.pl/c-pcr/mma.html",
+          "role": "reguły kategorii produktu dla MMA",
+          "type": "product_category_rules"
+        },
+        {
+          "name": "Eurobitume LCA 4.0 (2025)",
+          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
+          "type": "methodology_source"
+        },
+        {
+          "name": "poLCA-EN-PL-2024 v9.1",
+          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "type": "polca_model"
+        }
+      ],
+      "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
+      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "evidence_level": "industry_average",
+      "source_policy": {
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki.",
+        "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
+      },
+      "selection_mode": "default",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
+      "product_groups": [
+        "mma",
+        "roboty-drogowe"
+      ],
+      "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "ready_to_use_default_dataset"
     },
     {
@@ -3055,8 +3340,8 @@
   ],
   "meta": {
     "registry_code": "POLCA-REF-MMA-2026-MVP",
-    "version": "2026.5-regulatory-layer",
-    "updated_at": "2026-05-03",
+    "version": "2026.6-mma",
+    "updated_at": "2026-05-11",
     "status": "published_defaults",
     "methodology_note": "Publiczny katalog gotowych datasetów referencyjnych POLCA. Dane dostawcy i zweryfikowane EPD mają pierwszeństwo dla składników kluczowych. Wartość domyślna jest kontrolowanym rekordem zastępczym przy braku danych producenta.",
     "evidence_levels": {
