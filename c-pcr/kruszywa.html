@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c-PCR-AGG — reguły EPD dla kruszyw budowlanych | poLCA</title>
+    <meta name="description" content="c-PCR-AGG-EPD-Polska v0.9-DRAFT — komplementarne zasady kategorii wyrobu dla kruszyw budowlanych wg EN 12620 / EN 13242 / EN 13043. Streszczenie: zakres (naturalne, łamane, recyklingowe RC, żużle), granice systemu A1-A3, wskaźniki GWP kruszyw (łamane twarde 5,5 / bazalt 3,99 / granit 4,50 / wapień 3,20 / naturalne 1,80 / RC), energia kruszenia (poLCA-EN-PL 0,599), cyrkularność RC + moduł D, hierarchia danych. Projekt do konsultacji publicznej (Multicert / EPD Polska).">
+    <link rel="canonical" href="https://polca.org.pl/c-pcr/kruszywa.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="c-PCR-AGG — reguły EPD dla kruszyw budowlanych | poLCA">
+    <meta property="og:description" content="Komplementarne zasady kategorii wyrobu dla kruszyw budowlanych wg EN 12620 / EN 13242 / EN 13043 — projekt do konsultacji publicznej. Granice A1-A3, wskaźniki GWP kruszyw, cyrkularność RC, moduł D.">
+    <meta property="og:url" content="https://polca.org.pl/c-pcr/kruszywa.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-industry.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="c-PCR-AGG — reguły EPD dla kruszyw budowlanych | poLCA">
+    <meta name="twitter:description" content="Komplementarne zasady kategorii wyrobu dla kruszyw budowlanych wg EN 12620 / EN 13242 / EN 13043 — projekt do konsultacji publicznej (Multicert / EPD Polska).">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-industry.jpg">
+    <meta name="citation_title" content="c-PCR-AGG-EPD-Polska v0.9-DRAFT — Komplementarne zasady kategorii wyrobu dla kruszyw budowlanych">
+    <meta name="citation_author" content="Multicert Sp. z o.o.">
+    <meta name="citation_publication_date" content="2026">
+    <meta name="citation_publisher" content="Program EPD Polska">
+    <meta name="citation_doi" content="10.xxxx/polca.cpcr.agg.2026.v09">
+    <meta name="citation_language" content="pl">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["TechArticle"],
+      "headline": "c-PCR-AGG-EPD-Polska v0.9-DRAFT — Komplementarne zasady kategorii wyrobu dla kruszyw budowlanych",
+      "alternativeHeadline": "c-PCR-AGG — reguły EPD dla kruszyw budowlanych",
+      "description": "Streszczenie komplementarnych zasad kategorii wyrobu (c-PCR) programu EPD Polska dla kruszyw budowlanych — naturalnych (piasek, żwir), łamanych (bazalt, granit, wapień, dolomit i inne skały lite), recyklingowych (RC z rozbiórki betonu i nawierzchni) oraz żużli. Dokument w wersji v0.9-DRAFT — projekt do konsultacji publicznej. Brak zatwierdzonego europejskiego c-PCR dla kruszyw; benchmark referencyjny: EPD International PCR 369 'Construction Aggregates' (UNCPC 1532) oraz opracowania UEPG/MIRO. Obejmuje granice systemu (A1-A3 obowiązkowe + opcjonalne A4-A5, C i D — kluczowy dla kruszyw recyklingowych RC), wskaźniki emisji A1 kruszyw, energię kruszenia i przesiewania (moduł A3), zasady cyrkularności RC (cut-off vs system expansion), hierarchię i jakość danych (DQR) oraz komplet wskaźników środowiskowych EN 15804+A2:2019.",
+      "url": "https://polca.org.pl/c-pcr/kruszywa.html",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "DOI",
+        "value": "10.xxxx/polca.cpcr.agg.2026.v09"
+      },
+      "datePublished": "2026",
+      "dateModified": "2026-05-11",
+      "inLanguage": "pl-PL",
+      "isAccessibleForFree": true,
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "creativeWorkStatus": "Draft",
+      "keywords": "c-PCR, kruszywa, kruszywa budowlane, EPD, LCA, EN 15804+A2, EN 12620, EN 13242, EN 13043, kruszywo łamane, kruszywo naturalne, kruszywo recyklingowe, RC, żużel, EPD International PCR 369, UEPG, MIRO, cut-off, system expansion, moduł D, cyrkularność, poLCA-EN-PL-2024, EF 3.1, Multicert, EPD Polska",
+      "about": [
+        {"@type": "Thing", "name": "Life Cycle Assessment"},
+        {"@type": "Thing", "name": "Environmental Product Declaration"},
+        {"@type": "Thing", "name": "Construction aggregates"},
+        {"@type": "Thing", "name": "Recycled aggregates"},
+        {"@type": "Thing", "name": "Crushed rock"}
+      ],
+      "author": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://multicert.pl",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Mydlarska 47",
+          "postalCode": "04-690",
+          "addressLocality": "Warszawa",
+          "addressCountry": "PL"
+        }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Program EPD Polska",
+        "url": "https://www.epd.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      },
+      "isPartOf": {
+        "@type": "Periodical",
+        "name": "poLCA c-PCR Series",
+        "url": "https://polca.org.pl/c-pcr/"
+      },
+      "citation": [
+        "EN 15804:2012+A2:2019+A1:2021",
+        "EN 12620:2013+A1:2008 (kruszywa do betonu)",
+        "EN 13242:2013 (kruszywa do mieszanek niezwiązanych i związanych spoiwem hydraulicznym)",
+        "EN 13043:2004 (kruszywa do mieszanek mineralno-asfaltowych)",
+        "ISO 14025:2006",
+        "ISO 21930:2017",
+        "ISO 14040:2006",
+        "ISO 14044:2006",
+        "EPD International PCR 369 — Construction Aggregates (2021)",
+        "UEPG / MIRO — LCA of Aggregates",
+        "JRC EF 3.1 method (2022)",
+        "Rec. (UE) 2021/2279",
+        "Rozp. (UE) 2024/3110 (CPR)",
+        "Rozp. (UE) 2024/1781 (ESPR)"
+      ]
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #sec-1,#sec-2,#sec-3,#sec-4,#sec-5,#sec-6,#sec-7,#sec-8,#sec-9{scroll-margin-top:76px}
+        .met-doc-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem;margin:1rem 0 0;padding:.85rem 1rem;background:var(--paper-warm);border:1px solid var(--border);border-radius:8px}
+        .met-doc-meta-item{font-size:.74rem;line-height:1.5}
+        .met-doc-meta-label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);font-weight:700;display:block;margin-bottom:.15rem}
+        .met-doc-meta-value{color:var(--text-primary);font-weight:600}
+        .met-h3{font-family:'Inter Tight',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text-primary);margin:1.4rem 0 .55rem;line-height:1.35}
+        .met-h3 .met-h3-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--accent);font-weight:700;margin-right:.4rem}
+        .met-text{font-size:.92rem;line-height:1.7;color:var(--text-body);margin:0 0 .85rem;max-width:880px}
+        .met-text strong{color:var(--text-primary);font-weight:600}
+        .met-abstract{padding:1.1rem 1.2rem;background:var(--bg-subtle);border-left:3px solid var(--accent);border-radius:6px;margin-top:1rem}
+        .met-abstract p{margin:0 0 .7rem;font-size:.9rem;line-height:1.7;color:var(--text-body)}
+        .met-abstract p:last-child{margin-bottom:0}
+        .met-keywords{font-size:.78rem;color:var(--text-secondary);margin-top:.85rem;font-family:'IBM Plex Mono',monospace;line-height:1.6}
+        .met-keywords-label{font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem}
+        .draft-banner{padding:.85rem 1.1rem;background:#FFFCF2;border:1px solid #D6C58A;border-left:4px solid #8B6E1F;border-radius:8px;margin:1rem 0;font-size:.86rem;line-height:1.6;color:#5A4A14}
+        .draft-banner strong{color:#3F340D}
+        .polca-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:1rem 0}
+        .polca-table thead th{background:var(--paper-warm);padding:.7rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .polca-table tbody td{padding:.65rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .polca-table tbody tr:last-child td{border-bottom:none}
+        .polca-table tbody tr:hover td{background:rgba(11,93,51,0.02)}
+        .polca-table .num,.polca-table .mono{font-family:'IBM Plex Mono',monospace;font-size:.78rem}
+        .polca-table .right{text-align:right}
+        .polca-table .total td{background:var(--bg-subtle);font-weight:700;color:var(--text-primary)}
+        .table-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border);border-radius:8px;margin:1rem 0}
+        .table-scroll .polca-table{margin:0;min-width:640px}
+        .table-caption{font-size:.78rem;color:var(--text-tertiary);font-style:italic;margin:.5rem 0 .85rem;line-height:1.5}
+        .point-card{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);margin:.75rem 0}
+        .point-card-num{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--accent);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+        .point-card-title{font-size:.98rem;font-weight:700;color:var(--text-primary);margin:.25rem 0 .55rem;font-family:'Inter Tight',sans-serif;line-height:1.35}
+        .point-card-body{font-size:.86rem;color:var(--text-body);line-height:1.65;margin:0}
+        .point-card-body p{margin:0 0 .55rem}
+        .point-card-body p:last-child{margin-bottom:0}
+        .point-card-body ul{margin:.4rem 0 .55rem;padding-left:1.2rem;font-size:.85rem;line-height:1.6;color:var(--text-secondary)}
+        .point-card-body ul li{margin-bottom:.2rem}
+        .citation-block{padding:1rem 1.15rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);margin:.75rem 0}
+        .citation-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-tertiary);font-family:'IBM Plex Mono',monospace;font-weight:700;display:block;margin-bottom:.4rem}
+        .citation-text{font-size:.86rem;line-height:1.65;color:var(--text-body);margin:0}
+        .citation-bibtex{font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.6;color:var(--text-body);background:var(--paper-warm);padding:.85rem 1rem;border-radius:6px;border:1px solid var(--border);white-space:pre;overflow-x:auto;margin:.5rem 0 0}
+        .ref-list{list-style:none;padding:0;margin:1rem 0 0}
+        .ref-list li{display:grid;grid-template-columns:42px 1fr;gap:.6rem;padding:.55rem .7rem;border-bottom:1px solid var(--border-light);font-size:.82rem;line-height:1.55;color:var(--text-body)}
+        .ref-list li:last-child{border-bottom:none}
+        .ref-list .ref-num{font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:var(--text-tertiary);font-weight:700}
+        .ref-list a{color:var(--accent);text-decoration:none}
+        .ref-list a:hover{text-decoration:underline}
+        .doc-pill{font-size:.62rem;font-family:'IBM Plex Mono',monospace;padding:.18rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.04em;display:inline-block}
+        .doc-pill.accent{background:var(--accent-subtle);color:var(--accent)}
+        .doc-pill.warn{background:#FFF8DC;color:#8B6E1F}
+        .pdf-cta{display:flex;align-items:center;gap:.8rem;padding:.95rem 1.15rem;border:1px solid #B9D8C2;background:#F4FAF6;border-radius:10px;margin:1.1rem 0;flex-wrap:wrap}
+        .pdf-cta-icon{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:700;color:#fff;background:#0B5D33;padding:.4rem .6rem;border-radius:5px;letter-spacing:.04em}
+        .pdf-cta-body{flex:1;min-width:220px;font-size:.86rem;line-height:1.5;color:var(--text-body)}
+        .pdf-cta-body strong{color:var(--text-primary)}
+        .pdf-cta a.met-btn{margin:0}
+        .met-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:6px;font-size:.78rem;font-weight:600;text-decoration:none;border:1px solid var(--border);transition:all .15s ease}
+        .met-btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+        .met-btn-primary:hover{background:#0d4a23;border-color:#0d4a23}
+        .met-btn-secondary{background:var(--bg);color:var(--text-primary)}
+        .met-btn-secondary:hover{background:var(--paper-warm);border-color:var(--text-tertiary)}
+        .met-btn-disabled{background:var(--paper-warm);color:var(--text-tertiary);border-color:var(--border);cursor:not-allowed}
+        .breadcrumbs{font-size:.74rem;color:var(--text-tertiary);margin:.5rem 0 0;font-family:'IBM Plex Mono',monospace}
+        .breadcrumbs a{color:var(--text-secondary);text-decoration:none}
+        .breadcrumbs a:hover{color:var(--accent);text-decoration:underline}
+        .breadcrumbs .sep{margin:0 .35rem;color:var(--text-tertiary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.met-doc-meta{grid-template-columns:1fr 1fr}.ref-list li{grid-template-columns:32px 1fr;gap:.4rem}}
+        @media(max-width:600px){.polca-table{font-size:.76rem}.polca-table thead th,.polca-table tbody td{padding:.5rem .55rem}.met-doc-meta{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO + DOC METADATA
+         ═══════════════════════════════════════════════════════════ -->
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji">
+                <a href="../index.html">poLCA</a>
+                <span class="sep">›</span>
+                <a href="index.html">c-PCR</a>
+                <span class="sep">›</span>
+                <span>c-PCR-AGG v0.9-DRAFT</span>
+            </nav>
+            <div class="section-num" style="margin-top:.85rem;">c-PCR-AGG-EPD-Polska — projekt do konsultacji</div>
+            <h1 class="page-title">c-PCR-AGG — reguły EPD dla kruszyw budowlanych</h1>
+            <p class="page-subtitle">
+                Komplementarne zasady kategorii wyrobu dla kruszyw naturalnych, łamanych i recyklingowych
+                wg <strong>EN 12620 / EN 13242 / EN 13043</strong> — projekt do konsultacji
+                (Multicert / Program EPD Polska). Uzupełnienie do PCR Operatora Programu, bazującego na
+                <strong>EN 15804+A2:2019</strong>. Niniejsza strona to streszczenie z kluczowymi tabelami;
+                pełny dokument w przygotowaniu.
+            </p>
+            <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
+                <span class="doc-pill warn">v0.9-DRAFT</span>
+                <span class="doc-pill">EN 15804+A2</span>
+                <span class="doc-pill">EN 12620 / EN 13242 / EN 13043</span>
+                <span class="doc-pill">EPD Int. PCR 369</span>
+                <span class="doc-pill">EF 3.1 / JRC</span>
+                <span class="doc-pill accent">konsultacja publiczna — uwagi: epd@epd.org.pl</span>
+                <span class="doc-pill accent">DOI: 10.xxxx/polca.cpcr.agg.2026.v09</span>
+            </div>
+            <div class="met-doc-meta">
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Wersja</span>
+                    <span class="met-doc-meta-value">v0.9-DRAFT — maj 2026</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Operator / autor</span>
+                    <span class="met-doc-meta-value">Multicert Sp. z o.o.</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Program</span>
+                    <span class="met-doc-meta-value">EPD Polska / EPD+</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Konsultacja</span>
+                    <span class="met-doc-meta-value">epd@epd.org.pl</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">Licencja</span>
+                    <span class="met-doc-meta-value">CC BY 4.0</span>
+                </div>
+                <div class="met-doc-meta-item">
+                    <span class="met-doc-meta-label">DOI</span>
+                    <span class="met-doc-meta-value">10.xxxx/polca.cpcr.agg.2026.v09</span>
+                </div>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-industry.jpg" alt="Reguły kategorii EPD dla kruszyw budowlanych — kopalnia kruszywa" loading="lazy" style="width:100%;height:240px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="tool-nav section-gap">
+        <a href="#sec-1" class="tool-nav-pill">01 — Status i zakres</a>
+        <a href="#sec-2" class="tool-nav-pill">02 — Granice systemu (A1-A3)</a>
+        <a href="#sec-3" class="tool-nav-pill">03 — Wskaźniki GWP kruszyw</a>
+        <a href="#sec-4" class="tool-nav-pill">04 — Energia i emisje (A3)</a>
+        <a href="#sec-5" class="tool-nav-pill">05 — Cyrkularność: kruszywo RC</a>
+        <a href="#sec-6" class="tool-nav-pill">06 — Hierarchia danych</a>
+        <a href="#sec-7" class="tool-nav-pill">07 — Wskaźniki środowiskowe</a>
+        <a href="#sec-8" class="tool-nav-pill">08 — Cytowanie</a>
+        <a href="#sec-9" class="tool-nav-pill">09 — Powiązane dokumenty</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — STATUS I ZAKRES
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-1" class="card card-lg section-gap fade-in" aria-label="Status i zakres">
+        <div class="section-num">01 — Status i zakres</div>
+        <div class="card-title">Projekt do konsultacji publicznej, PCR bazowy i benchmark referencyjny</div>
+
+        <div class="draft-banner">
+            <strong>Konsultacja publiczna.</strong> Niniejszy dokument jest projektem w wersji
+            <strong>v0.9-DRAFT</strong> (status: projekt do konsultacji publicznej). Uwagi i komentarze
+            prosimy kierować na adres <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a>. Po zakończeniu
+            konsultacji zostanie wydana wersja finalna v1.0. Trzeci sektor priorytetowy poLCA — po
+            betonie (c-PCR-BET v1.3, zatwierdzony) i mieszankach mineralno-asfaltowych (c-PCR-MMA v1.0-DRAFT).
+        </div>
+
+        <p class="met-text">
+            <strong>c-PCR-AGG-EPD-Polska v0.9-DRAFT</strong> określa komplementarne zasady kategorii
+            wyrobu (c-PCR) dla przygotowania deklaracji środowiskowych (EPD) typu III dla
+            <strong>kruszyw budowlanych</strong> produkowanych i stosowanych w Polsce. Dokument stanowi
+            uzupełnienie do <strong>PCR Operatora Programu EPD Polska</strong>, który bazuje na normie
+            <strong>EN 15804+A2:2019</strong>, i precyzuje wymagania specyficzne dla sektora kruszyw.
+            Jednostka deklarowana to <strong>1 tona (1000 kg, masa w stanie suchym) gotowego kruszywa</strong>
+            na wyjściu z zakładu przeróbczego, w stanie do transportu.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.1</span>Zasięg techniczny</h3>
+        <p class="met-text">
+            c-PCR obejmuje kruszywa zgodne z normami: <strong>EN 12620:2013+A1:2008</strong> (kruszywa
+            do betonu), <strong>EN 13242:2013</strong> (kruszywa do niezwiązanych i związanych spoiwem
+            hydraulicznym mieszanek stosowanych w obiektach budowlanych i budownictwie drogowym) oraz
+            <strong>EN 13043:2004</strong> (kruszywa do mieszanek mineralno-asfaltowych i powierzchniowych
+            utrwaleń dróg, lotnisk i innych powierzchni przeznaczonych do ruchu). Zakres obejmuje typy:
+        </p>
+        <ul style="font-size:.9rem;line-height:1.7;color:var(--text-body);max-width:880px;padding-left:1.3rem;margin:0 0 .85rem;">
+            <li><strong>Kruszywa naturalne</strong> — piasek, żwir, pospółka pozyskiwane ze złóż lądowych i wodnych (czerpanie, refulacja);</li>
+            <li><strong>Kruszywa łamane</strong> — z przeróbki skał litych: skały magmowe i metamorficzne twarde (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) oraz skały węglanowe (wapień, dolomit);</li>
+            <li><strong>Kruszywa recyklingowe (RC)</strong> — z przetwarzania destruktu betonowego, gruzu budowlanego i destruktu nawierzchni drogowych (wg EN 12620 do określonego udziału w betonie; wg EN 13242 do mieszanek niezwiązanych);</li>
+            <li><strong>Kruszywa z żużli</strong> — żużel wielkopiecowy chłodzony powietrzem, żużel stalowniczy (BOF/EAF) — produkty uboczne hutnictwa żelaza i stali.</li>
+        </ul>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.2</span>Benchmark referencyjny — brak zatwierdzonego europejskiego c-PCR</h3>
+        <p class="met-text">
+            Na poziomie europejskim nie istnieje obecnie zatwierdzony c-PCR dla kruszyw budowlanych
+            zgodny z EN 15804+A2 dla wszystkich typów objętych niniejszym dokumentem. Zgodnie z
+            EN 15804+A2:2019 §5.5, w nieobecności europejskiego c-PCR program stosuje porównywalny
+            schemat (comparable scheme). Dla kruszyw dokumentem referencyjnym (benchmarkiem) jest
+            <strong>EPD International PCR 369 "Construction Aggregates: Natural Aggregate, Crushed
+            Concrete, and Iron/Steel Furnace Slag"</strong> (UNCPC 1532) — w szczególności w zakresie
+            jednostki deklarowanej (1 t w stanie suchym), zakresu modułów A1-A3 oraz reguł odcięcia
+            (cut-off), a także opracowania <strong>UEPG / MIRO — LCA of Aggregates</strong> (europejskie
+            stowarzyszenie producentów kruszyw). c-PCR-AGG jest przy tym w pełni zgodny z EN 15804+A2:2019,
+            ISO 14025:2006 i ISO 21930:2017. Dokumenty PCR 369 i UEPG/MIRO są cytowane jako benchmark —
+            ich treść nie jest przejmowana.
+        </p>
+
+        <h3 class="met-h3"><span class="met-h3-num">1.3</span>Datasety referencyjne kruszyw</h3>
+        <p class="met-text">
+            W ramach pakietu poLCA dostępne są <strong>4 datasety referencyjne POLCA-AGG-PL</strong>
+            (wydanie 2026.4-aggregates, EN 15804+A2): kruszywo łamane twarde, kruszywo dolomitowe,
+            kruszywo wapienne oraz kruszywo naturalne (piasek i żwir). Datasety zawierają kontrolowane
+            wartości grupowe (conservative defaults) do stosowania przy braku EPD kopalni lub
+            zweryfikowanych danych zakładowych — wartości i metadane w katalogu datasetów.
+        </p>
+        <div class="pdf-cta">
+            <span class="pdf-cta-icon">DATA</span>
+            <div class="pdf-cta-body">
+                <strong>Datasety kruszyw — JSON-LD</strong> — 4 zestawy POLCA-AGG-PL (łamane twarde,
+                dolomit, wapień, naturalne) z pełnymi metadanymi, hierarchią źródeł i zasadami stosowania.
+            </div>
+            <a href="../datasety.html" class="met-btn met-btn-primary">Datasety kruszyw — pobierz JSON-LD →</a>
+        </div>
+        <div class="pdf-cta" style="margin-top:1rem;">
+            <span class="pdf-cta-icon">CALC</span>
+            <div class="pdf-cta-body">
+                <strong>Kalkulator pre-qualify dla kruszyw</strong> — interaktywne oszacowanie GWP A1-A3
+                [kg CO₂eq/t kruszywa] na podstawie rodzaju skały, technologii przeróbki, płukania i transportu.
+                To oszacowanie pre-qualify — nie zastępuje pełnego EPD weryfikowanego (AVS 3+).
+            </div>
+            <a href="../kalkulator-kruszywa.html" class="met-btn met-btn-primary">Kalkulator pre-qualify dla kruszyw →</a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — GRANICE SYSTEMU
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-2" class="card card-lg section-gap fade-in" aria-label="Granice systemu">
+        <div class="section-num">02 — Granice systemu (moduły A1-A3)</div>
+        <div class="card-title">Moduły informacyjne EN 15804+A2 dla kruszyw — A1-A3 obowiązkowe, A4-A5, C i D opcjonalne</div>
+
+        <p class="met-text">
+            Rdzeniem zakresu porównywalności dla polskiego rynku kruszyw są moduły <strong>A1, A2 i A3</strong>
+            (wydobycie surowca, transport wewnątrzzakładowy, przeróbka) — obowiązkowe w każdej deklaracji
+            EPD dla kruszywa. Etap użytkowania B1-B7 nie jest uwzględniany (kruszywo jest składnikiem
+            masowym wyrobów budowlanych — betonu, mieszanek niezwiązanych, MMA — a nie wyrobem finalnym).
+            Moduły transportu na budowę i wbudowania A4-A5, moduły końca życia C1-C4 oraz moduł D (korzyści
+            poza granicami systemu — recykling) mogą być deklarowane dobrowolnie (MND — Module Not Declared)
+            i wykorzystują krajowe scenariusze referencyjne. <strong>Dla kruszyw recyklingowych RC moduł D
+            jest kluczowy</strong> — odzwierciedla kredyt za uniknięcie wydobycia kruszywa pierwotnego.
+        </p>
+
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Moduł</th><th>Nazwa</th><th>Status</th><th>Zakres — co obejmuje</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="mono">A1</td><td>Pozyskanie surowca</td><td>obowiązkowy</td><td>Wydobycie surowca skalnego ze złoża: dla skał litych — zdejmowanie nadkładu, urabianie (w tym materiały wybuchowe), załadunek urobku; dla kruszyw naturalnych — czerpanie piasku/żwiru ze złóż lądowych lub wodnych (refulacja, pogłębiarki). Obejmuje produkcję energii i materiałów zużytych w tych procesach. Kruszywo recyklingowe RC: cut-off — obciążenie A1 = 0 (alokowane do produktu pierwotnego, z którego pochodzi destrukt).</td></tr>
+                <tr><td class="mono">A2</td><td>Transport surowca do zakładu</td><td>obowiązkowy</td><td>Transport surowca skalnego lub urobku z miejsca wydobycia do zakładu przeróbczego — zazwyczaj wewnątrzzakładowy i krótki (wozidła technologiczne, przenośniki taśmowe). Dla RC: transport destruktu z miejsca rozbiórki / frezowania do zakładu przeróbczego.</td></tr>
+                <tr><td class="mono">A3</td><td>Przeróbka w zakładzie</td><td>obowiązkowy</td><td>Procesy w zakładzie przeróbczym: kruszenie (dla skał litych — kruszarki szczękowe, stożkowe, udarowe), przesiewanie i klasyfikacja na frakcje, płukanie (dla niektórych frakcji — usunięcie pyłów, części organicznych), opcjonalne suszenie, magazynowanie i załadunek. Obejmuje zużycie energii elektrycznej, paliwa maszyn mobilnych (ładowarki, koparki, kruszarki mobilne) i wody (płukanie).</td></tr>
+                <tr><td class="mono">A4–A5</td><td>Transport na budowę, wbudowanie</td><td>opcjonalny (MND)</td><td>Transport gotowego kruszywa do wytwórni betonu / MMA lub na budowę i jego wbudowanie. Scenariusz referencyjny A4: krajowy scenariusz transportowy poLCA (wywrotka, ładowność 85%). Obowiązkowe wyłącznie w EPD projektowej.</td></tr>
+                <tr><td class="mono">B1–B7</td><td>Etap użytkowania</td><td>MND</td><td>Nie uwzględniany — kruszywo jest składnikiem masowym wyrobu budowlanego, nie wyrobem finalnym; trwałość konstrukcji zależy od projektu warstw, podłoża i ruchu.</td></tr>
+                <tr><td class="mono">C1–C4</td><td>Koniec życia</td><td>opcjonalny (MND)</td><td>Demontaż / frezowanie konstrukcji zawierającej kruszywo, transport destruktu, przetwarzanie i ewentualne składowanie. Krajowy scenariusz referencyjny poLCA.</td></tr>
+                <tr><td class="mono">D</td><td>Korzyści poza granicami systemu</td><td>opcjonalny — kluczowy dla RC</td><td>Korzyści z recyklingu materiału po etapie użytkowania. Dla kruszyw recyklingowych RC: kredyt za uniknięcie wydobycia i przeróbki kruszywa pierwotnego (wartość unikniętej produkcji ≈ wskaźnik kruszywa pierwotnego pomniejszony o wskaźnik przeróbki RC), obliczany wg formuły CFF (Circular Footprint Formula, EN 15804+A2:2019, Załącznik D). Dla kruszyw z żużli — kredyt zależny od metody alokacji (cut-off / system expansion) zgodnie z zasadami programu.</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 2.1 — Moduły informacyjne dla kruszyw budowlanych wg EN 15804+A2:2019. Granica systemu modułów obowiązkowych: cradle-to-gate (A1-A3). Wartości scenariuszy referencyjnych A4-A5, C i D — w pełnym dokumencie c-PCR-AGG (w przygotowaniu). Benchmark zakresu modułów: EPD International PCR 369 §6.2.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — WSKAŹNIKI GWP KRUSZYW
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-3" class="card card-lg section-gap fade-in" aria-label="Wskaźniki GWP kruszyw">
+        <div class="section-num">03 — Wskaźniki GWP kruszyw (moduł A1)</div>
+        <div class="card-title">Wartości grupowe POLCA (conservative defaults) i wskaźniki dla konkretnych rodzajów skały</div>
+
+        <p class="met-text">
+            Kluczowym parametrem wpływającym na emisyjność kruszywa jest energochłonność procesu A1-A3 —
+            zależna przede wszystkim od <strong>twardości skały</strong> (kruszywa twarde — bazalt, granit,
+            kwarcyt — wymagają więcej energii kruszenia niż kruszywa węglanowe), płukania, frakcji,
+            organizacji zakładu oraz wieku i sprawności instalacji. Kruszywa naturalne (piasek, żwir)
+            mają najniższy ślad, ponieważ nie wymagają kruszenia skały litej. c-PCR-AGG udostępnia dwie
+            kategorie wskaźników: <strong>kontrolowane wartości grupowe POLCA</strong> (conservative
+            defaults — stosowane domyślnie przy braku EPD kopalni; odpowiadają ok. 90. percentylowi
+            rozkładu) oraz <strong>wskaźniki dla konkretnego rodzaju skały</strong> (z EPD producentów
+            i opracowań branżowych — stosowane, gdy producent dysponuje danymi dla rzeczywiście użytego
+            kruszywa).
+        </p>
+
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Rodzaj kruszywa</th><th class="right">GWP-total (A1 lub A1-A3)<br>[kg CO₂-eq / t]</th><th>Źródło</th><th>Typ wartości</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Kruszywo łamane twarde (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) — wartość grupowa</td><td class="num right">5,5</td><td>POLCA-AGG-PL-CRUSHED-DEFAULT-2026 (wartość grupowa, moduł A1)</td><td>conservative default (≈90. percentyl)</td></tr>
+                <tr><td>Kruszywo dolomitowe — wartość grupowa</td><td class="num right">4,5</td><td>POLCA-AGG-PL-DOLOMITE-DEFAULT-2026 (moduł A1)</td><td>conservative default</td></tr>
+                <tr><td>Kruszywo wapienne — wartość grupowa</td><td class="num right">4,0</td><td>POLCA-AGG-PL-LIMESTONE-DEFAULT-2026 (moduł A1; benchmark ITB-EPD 707 Trzuskawica S.A.: 3,27 kg CO₂-eq/t A1-A3)</td><td>conservative default</td></tr>
+                <tr><td>Kruszywo naturalne — piasek, żwir, pospółka — wartość grupowa</td><td class="num right">3,5</td><td>POLCA-AGG-PL-NATURAL-DEFAULT-2026 (moduł A1)</td><td>conservative default</td></tr>
+                <tr><td>Kruszywo bazaltowe łamane</td><td class="num right">3,99</td><td>ITB EPD 706/2024 (Trzuskawica S.A.)</td><td>konkretne EPD</td></tr>
+                <tr><td>Kruszywo granitowe łamane</td><td class="num right">4,50</td><td>ecoinvent 3.10; Gruber et al. 2023</td><td>dane branżowe</td></tr>
+                <tr><td>Kruszywo wapienne łamane</td><td class="num right">3,20</td><td>Gruber et al. 2023</td><td>dane branżowe</td></tr>
+                <tr><td>Kruszywo naturalne (piasek, żwir)</td><td class="num right">1,80</td><td>Gruber et al. 2023; ecoinvent 3.10</td><td>dane branżowe</td></tr>
+                <tr><td>Kruszywo — średnia ważona PL (mix bazalt + granit + wapień)</td><td class="num right">3,80</td><td>szacunek regionalny</td><td>mix regionalny</td></tr>
+                <tr><td>Filler wapienny (mączka)</td><td class="num right">5,50</td><td>ecoinvent 3.10</td><td>dane branżowe</td></tr>
+                <tr><td>Kruszywo recyklingowe RC (z destruktu betonowego / nawierzchni)</td><td class="num right">wartości w przygotowaniu (rząd ~2–3; zależne od metody i transportu)</td><td>EN 12620 / EN 13242 + zasady cyrkularności (cut-off / system expansion)</td><td>cut-off / system expansion</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 3.1 — Wskaźniki GWP kruszyw. Wartości grupowe POLCA pochodzą z datasetów POLCA-AGG-PL (wydanie 2026.4-aggregates, moduł A1) i są kontrolowanymi wartościami do stosowania przy braku EPD kopalni lub zweryfikowanych danych zakładowych — wartości konkretnych kopalni (np. ITB-EPD Trzuskawica S.A.) zastępują rekord POLCA. Wskaźniki dla konkretnych rodzajów skały (bazalt 3,99 / granit 4,50 / wapień 3,20 / naturalne 1,80) pochodzą z EPD producentów i opracowań branżowych (Gruber et al. 2023; ecoinvent 3.10) — stosowane, gdy producent dysponuje danymi dla rzeczywiście użytego kruszywa. Różnice wynikają z energochłonności kruszenia (twardość skały), płukania, frakcji i organizacji zakładu.</p>
+
+        <div class="point-card">
+            <span class="point-card-num">Zasada doboru</span>
+            <div class="point-card-title">Domyślnie conservative default POLCA, opcjonalnie konkretny rodzaj skały</div>
+            <div class="point-card-body">
+                <p>
+                    W obliczeniach EPD i w kalkulatorze pre-qualify obie kategorie wskaźników są dostępne:
+                    <strong>domyślnie</strong> stosuje się kontrolowaną wartość grupową POLCA dla
+                    odpowiedniej grupy kruszyw (łamane twarde / dolomit / wapień / naturalne);
+                    <strong>opcjonalnie</strong> — wskaźnik dla konkretnego rodzaju skały lub EPD kopalni,
+                    jeśli producent dysponuje danymi dla rzeczywiście użytego kruszywa. Użytkownik nie
+                    wybiera niższego wskaźnika bez dowodu. Dla wyników audytowych (AVS 3+) pierwszeństwo
+                    mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — ENERGIA I EMISJE (A3)
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-4" class="card card-lg section-gap fade-in" aria-label="Energia i emisje w module A3">
+        <div class="section-num">04 — Energia i emisje (moduł A3)</div>
+        <div class="card-title">Kruszenie, przesiewanie, płukanie — energia elektryczna, paliwa maszyn, materiały wybuchowe</div>
+
+        <p class="met-text">
+            Moduł A3 (przeróbka w zakładzie) jest szczególnie ważny dla ujawniania różnic między
+            kruszywami: twardość skały determinuje energochłonność kruszenia, płukanie wybranych frakcji
+            dodaje zużycie energii i wody, a wiek i sprawność instalacji wpływają na jednostkowe zużycie.
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th>Pozycja</th><th>Charakterystyka / wartość referencyjna</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Energia elektryczna kruszenia i przesiewania</td><td>Zależna od twardości skały i frakcji — orientacyjnie ok. <strong>2–8 kWh/t</strong> (skały twarde — bazalt, granit, kwarcyt — bliżej górnej granicy; skały węglanowe i naturalne — niżej). Obejmuje kruszarki stacjonarne, przesiewacze, przenośniki.</td></tr>
+                <tr><td>Wskaźnik emisyjności energii elektrycznej PL</td><td><strong>poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh</strong> (well-to-meter, EF 3.1) — stosowany jednolicie w całym pakiecie poLCA dla zgodności (cross-compliance) z c-PCR-BET i c-PCR-MMA. <strong>Nie</strong> stosuje się wskaźników KOBiZE w LCA EPD wyrobów budowlanych (uzasadnienie: MET-002). Wyjątek: instalacje zasilane z agregatu prądotwórczego (kruszarki mobilne bez przyłącza) — wskaźnik energii z generatora diesel (wartość domyślna 0,80 kg CO₂e/kWh).</td></tr>
+                <tr><td>Paliwo maszyn mobilnych</td><td>Olej napędowy — koparki, ładowarki, wozidła technologiczne, kruszarki i przesiewacze mobilne. Zużycie zależne od organizacji zakładu i odległości transportu wewnątrzzakładowego.</td></tr>
+                <tr><td>Materiały wybuchowe (skały lite)</td><td>Emisje z produkcji środków strzałowych (np. ANFO, emulsje) i z detonacji — uwzględniane w module A1/A3 dla kruszyw łamanych ze skał litych. Nie dotyczy kruszyw naturalnych ani RC.</td></tr>
+                <tr><td>Płukanie</td><td>Dodatkowa energia elektryczna (pompy, hydrocyklony, prasy filtracyjne) oraz zużycie wody — istotne dla wskaźnika <strong>WDP</strong> (Water Deprivation Potential) wg EN 15804+A2. Stosowane głównie dla frakcji drobnych i kruszyw naturalnych z domieszką pyłów / części organicznych.</td></tr>
+                <tr><td>Suszenie (opcjonalne)</td><td>Energia cieplna (paliwo) — stosowane wyjątkowo, gdy kruszywo ma być dostarczone w stanie suchym (np. do niektórych zastosowań w MMA).</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 4.1 — Pozycje energetyczne i emisyjne modułu A3 dla kruszyw. Wartości orientacyjne — wiążące wskaźniki dla klas zakładów zostaną ustalone na podstawie danych sektorowych zebranych w konsultacji branżowej (PZPK — Polski Związek Producentów Kruszyw, kopalnie). Wskaźnik energii elektrycznej PL: zob. MET-001 (poLCA-EN-PL-2024 v9.1).</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — CYRKULARNOŚĆ: KRUSZYWO RECYKLINGOWE RC
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-5" class="card card-lg section-gap fade-in" aria-label="Cyrkularność — kruszywo recyklingowe">
+        <div class="section-num">05 — Cyrkularność: kruszywo recyklingowe (RC)</div>
+        <div class="card-title">Cut-off w module A1, moduł D i zgodność z EN 12620 / EN 13242 oraz ESPR/DPP</div>
+
+        <div class="point-card">
+            <span class="point-card-num">Zasada cut-off</span>
+            <div class="point-card-title">RC z destruktu jako odpad o zerowym obciążeniu w module A1</div>
+            <div class="point-card-body">
+                <p>
+                    Kruszywo recyklingowe (RC) z rozbiórki betonu, gruzu budowlanego lub destruktu
+                    nawierzchni traktowane jest jako <strong>odpad o zerowym obciążeniu środowiskowym
+                    w module A1</strong>, zgodnie z zasadą cut-off EN 15804+A2:2019 §6.3.6.2. Emisje
+                    pierwotnej produkcji materiału (betonu, kruszywa, lepiszcza) zawartego w destrukcie
+                    są alokowane do pierwotnego produktu. Jedynym obciążeniem RC w systemie produktu
+                    jest transport destruktu (moduł A2) i przeróbka — kruszenie, przesiewanie, usuwanie
+                    zanieczyszczeń (moduł A3).
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <span class="point-card-num">Cut-off vs system expansion</span>
+            <div class="point-card-title">Dwa podejścia do alokacji obciążeń materiału z odzysku</div>
+            <div class="point-card-body">
+                <p>
+                    EN 15804+A2 dopuszcza dwa podejścia do materiałów z odzysku:
+                </p>
+                <ul>
+                    <li><strong>Cut-off (zalecane jako domyślne):</strong> RC z odpadu wchodzi do systemu
+                    z obciążeniem A1 = 0; obciążone tylko transportem (A2) i przeróbką (A3). Kredyt za
+                    uniknięcie wydobycia kruszywa pierwotnego ujmowany jest w module D.</li>
+                    <li><strong>System expansion / rozszerzenie granic:</strong> część emisji procesu
+                    rozbiórki / produkcji pierwotnego materiału alokowana proporcjonalnie między produkt
+                    pierwotny a RC, z odpowiednią korektą w module D — stosowane wyłącznie, gdy program
+                    tak stanowi i dane to umożliwiają.</li>
+                </ul>
+                <p>
+                    Wybór metody musi być jednoznacznie udokumentowany w EPD i spójny dla całej deklaracji.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <span class="point-card-num">Moduł D dla RC</span>
+            <div class="point-card-title">Kredyt za uniknięcie wydobycia kruszywa pierwotnego</div>
+            <div class="point-card-body">
+                <p>
+                    Moduł D jest <strong>kluczowy dla kruszyw recyklingowych RC</strong> — odzwierciedla
+                    korzyść z zastąpienia kruszywa pierwotnego: uniknięte zostają emisje wydobycia
+                    surowca skalnego i jego przeróbki. Wartość unikniętej produkcji ≈ wskaźnik kruszywa
+                    pierwotnego (np. 3,5–5,5 kg CO₂-eq/t wg wartości grupowych POLCA) pomniejszony o
+                    wskaźnik przeróbki samego RC, obliczana wg formuły CFF (EN 15804+A2:2019, Załącznik D)
+                    z krajowymi parametrami referencyjnymi (A, R₂, Q<sub>sout</sub>/Q<sub>sin</sub>).
+                    Znak ujemny w module D = uniknięte emisje.
+                </p>
+            </div>
+        </div>
+
+        <div class="point-card">
+            <span class="point-card-num">Zgodność produktowa i regulacyjna</span>
+            <div class="point-card-title">EN 12620 / EN 13242 oraz ESPR (Reg. 2024/1781) i DPP</div>
+            <div class="point-card-body">
+                <p>
+                    Kruszywo recyklingowe musi spełniać wymagania normy produktowej dla zamierzonego
+                    zastosowania: <strong>EN 12620</strong> dopuszcza kruszywa z recyklingu do betonu do
+                    określonego udziału (kategorie wg klas zanieczyszczeń); <strong>EN 13242</strong> —
+                    do mieszanek niezwiązanych i związanych spoiwem hydraulicznym (np. podbudowy).
+                    Deklaracja środowiskowa kruszywa zazębia się z <strong>ESPR — Rozporządzeniem (UE)
+                    2024/1781</strong> (ekoprojekt dla zrównoważonych produktów) i z <strong>cyfrowym
+                    paszportem produktu (DPP)</strong>: zawartość materiału z recyklingu, ślad węglowy
+                    i informacje o trwałości będą elementami DPP. EPD kruszywa stanowi spójne źródło
+                    danych środowiskowych dla DPP oraz dla deklaracji właściwości użytkowych wg
+                    CPR (UE) 2024/3110.
+                </p>
+            </div>
+        </div>
+        <p class="table-caption">Pełne wzory CFF, parametry referencyjne dla RC i przykłady obliczeń modułu D — w pełnym dokumencie c-PCR-AGG (w przygotowaniu). Wartości wskaźników RC podane w Tabeli 3.1 jako "w przygotowaniu" do czasu zebrania danych sektorowych.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — HIERARCHIA I JAKOŚĆ DANYCH
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-6" class="card card-lg section-gap fade-in" aria-label="Hierarchia i jakość danych">
+        <div class="section-num">06 — Hierarchia i jakość danych</div>
+        <div class="card-title">Trzy poziomy źródeł danych i wskaźnik jakości DQR (macierz pedigree Weidema)</div>
+
+        <p class="met-text">
+            c-PCR-AGG definiuje hierarchię źródeł danych: dane pierwotne kopalni / zakładu (foreground)
+            na szczycie, następnie dane branżowe, a w ostateczności dane generyczne z karą za jakość
+            (DQR penalty). Kruszywo jest składnikiem masowym wyrobów budowlanych — dla wyników
+            audytowych (AVS 3+) pierwszeństwo mają zawsze EPD kopalni i rzeczywisty transport A2. Jakość
+            danych ocenia się wskaźnikiem <strong>DQR (Data Quality Rating)</strong> wg EN 15804+A2:2019
+            §6.3.7 — macierz pedigree Weidema (kryteria: TeR — reprezentatywność technologiczna,
+            GR — geograficzna, TiR — czasowa, P — precyzja, M — kompletność / metodologia; skala 1–5).
+        </p>
+        <div class="table-scroll">
+        <table class="polca-table">
+            <thead>
+                <tr><th class="right">Poziom</th><th>Rodzaj danych</th><th>Status w c-PCR</th><th>Przykład</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="num right">1</td><td>Dane pierwotne kopalni / zakładu (foreground)</td><td>preferowane; obowiązkowe dla wyników audytowych</td><td>EPD konkretnej kopalni, zweryfikowane dane energii, paliw, wody, materiałów wybuchowych, transportu A2 — np. ITB-EPD producenta kruszyw</td></tr>
+                <tr><td class="num right">2</td><td>Dane branżowe / sektorowe</td><td>dopuszczone dla A1 i procesów referencyjnych</td><td>UEPG / MIRO — LCA of Aggregates; PZPK — Polski Związek Producentów Kruszyw; opracowania Gruber et al.</td></tr>
+                <tr><td class="num right">3</td><td>Dane generyczne / conservative defaults POLCA</td><td>dopuszczone z karą DQR; domyślne przy braku danych dostawcy</td><td>ecoinvent 3.10; wartości grupowe POLCA-AGG-PL (łamane twarde 5,5 / dolomit 4,5 / wapień 4,0 / naturalne 3,5 kg CO₂-eq/t — moduł A1)</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p class="table-caption">Tabela 6.1 — Hierarchia źródeł danych dla kruszyw. Kryteria DQR: macierz pedigree Weidema (TeR, GR, TiR, P, M). Charakteryzacja wpływu: metoda EF 3.1 (Rec. UE 2021/2279), GWP wg IPCC AR6. Audytor sprawdza: rodzaj skały, frakcję d/D, technologię przeróbki, płukanie/suszenie, materiały wybuchowe, wilgotność i transport A2.</p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         07 — WSKAŹNIKI ŚRODOWISKOWE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-7" class="card card-lg section-gap fade-in" aria-label="Wskaźniki środowiskowe">
+        <div class="section-num">07 — Wskaźniki środowiskowe (EN 15804+A2)</div>
+        <div class="card-title">Komplet wskaźników, GWP-total jako wskaźnik kluczowy i WDP dla kruszyw płukanych</div>
+
+        <p class="met-text">
+            Wskaźniki środowiskowe deklaruje się zgodnie z EN 15804+A2:2019 §6.3.5 (Tablica 5): ponad
+            16 wskaźników wpływu (GWP-total, GWP-fossil, GWP-biogenic, GWP-luluc, ODP, AP, EP-freshwater /
+            EP-marine / EP-terrestrial, POCP, ADPE, ADPF, <strong>WDP</strong>), wskaźniki zasobów (PERE,
+            PERM, PERT, PENRE, PENRM, PENRT, SM, RSF, NRSF, FW), wskaźniki odpadów (HWD, NHWD, RWD) oraz
+            przepływy wyjściowe (CRU, MFR, MER, EEE, EET). Charakteryzacja: metoda <strong>EF 3.1</strong>
+            (Environmental Footprint 3.1, JRC), GWP wg IPCC AR6.
+        </p>
+        <p class="met-text">
+            <strong>Wskaźnikiem kluczowym dla kruszyw</strong> w pierwszym okresie wdrażania CPR (UE)
+            2024/3110 jest <strong>GWP-total [kg CO₂-eq / t kruszywa]</strong> dla modułów A1-A3 —
+            podstawa porównywalności między rodzajami kruszyw, technologiami przeróbki i zakładami oraz
+            kryterium środowiskowe w zamówieniach publicznych. Dla kruszyw <strong>płukanych</strong>
+            (frakcje drobne, kruszywa naturalne z domieszką pyłów) istotny jest dodatkowo wskaźnik
+            <strong>WDP — Water Deprivation Potential</strong>; dla kruszyw z żużli — wskaźniki zasobów
+            wtórnych (SM — wykorzystany materiał wtórny). Klasyfikacja efektywności środowiskowej kruszyw
+            (jeśli wprowadzona) bazuje na procencie benchmarku sektorowego, analogicznie do pasm
+            stosowanych dla betonu i MMA — szczegóły w pełnym dokumencie.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         08 — CYTOWANIE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-8" class="card card-lg section-gap fade-in" aria-label="Cytowanie">
+        <div class="section-num">08 — Cytowanie</div>
+        <div class="card-title">Jak cytować c-PCR-AGG — APA, BibTeX, DOI</div>
+
+        <div class="citation-block">
+            <span class="citation-label">Cytowanie (APA 7)</span>
+            <p class="citation-text">
+                Multicert Sp. z o.o. (2026). <em>c-PCR-AGG-EPD-Polska v0.9-DRAFT — Komplementarne
+                zasady kategorii wyrobu dla kruszyw budowlanych</em>. Program EPD Polska.
+                https://polca.org.pl/c-pcr/kruszywa
+            </p>
+        </div>
+
+        <div class="citation-block">
+            <span class="citation-label">BibTeX</span>
+            <div class="citation-bibtex">@techreport{multicert2026cpcragg,
+  author      = {{Multicert Sp. z o.o.}},
+  title       = {{c-PCR-AGG-EPD-Polska v0.9-DRAFT --- Komplementarne zasady kategorii wyrobu dla kruszyw budowlanych}},
+  institution = {Program EPD Polska},
+  year        = {2026},
+  type        = {Komplementarne reguly kategorii wyrobu (c-PCR), projekt do konsultacji},
+  doi         = {10.xxxx/polca.cpcr.agg.2026.v09},
+  url         = {https://polca.org.pl/c-pcr/kruszywa}
+}</div>
+        </div>
+
+        <p class="met-text" style="margin-top:1rem;font-size:.82rem;color:var(--text-tertiary);">
+            DOI: <span class="mono">10.xxxx/polca.cpcr.agg.2026.v09</span> (placeholder — rejestracja
+            w DataCite planowana po wydaniu wersji finalnej v1.0). Licencja: CC BY 4.0. Pełne wzorce
+            cytowań programu poLCA (APA 7, ISO 690, RIS) — zobacz <a href="../o-polca/cytowanie.html">Jak cytować poLCA</a>.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         09 — POWIĄZANE DOKUMENTY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="sec-9" class="card card-lg section-gap fade-in" aria-label="Powiązane dokumenty i bibliografia">
+        <div class="section-num">09 — Powiązane dokumenty</div>
+        <div class="card-title">Inne c-PCR, metodyki, datasety i podstawy normatywne</div>
+
+        <ul class="ref-list">
+            <li>
+                <span class="ref-num">[1]</span>
+                <span><strong>Pełny dokument c-PCR-AGG v0.9-DRAFT</strong> (PDF) — kompletny tekst normatywny z załącznikami. <span class="doc-pill">w przygotowaniu</span></span>
+            </li>
+            <li>
+                <span class="ref-num">[2]</span>
+                <span><strong>c-PCR-BET-EPD-PL:2026 v1.3</strong> — komplementarne reguły kategorii dla betonu (zatwierdzone). Kruszywa są składnikiem masowym betonu. <a href="index.html">Hub c-PCR</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[3]</span>
+                <span><strong>c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT</strong> — komplementarne reguły kategorii dla mieszanek mineralno-asfaltowych (konsultacja publiczna). Kruszywa są składnikiem MMA. <a href="mma.html">Streszczenie HTML</a> · <a href="c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf">PDF</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[4]</span>
+                <span><strong>MET-001:2026</strong> — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1), 0,599 kg CO₂e/kWh, well-to-meter, EF 3.1. <a href="../metodyki/MET-001-poLCA-EN-PL-2024.html">metodyki/MET-001-poLCA-EN-PL-2024.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[5]</span>
+                <span><strong>MET-002:2026</strong> — Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych (peer-reviewable methodology paper). <a href="../metodyki/MET-002-energia.html">metodyki/MET-002-energia.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[6]</span>
+                <span><strong>Datasety kruszyw poLCA</strong> — 4 zestawy POLCA-AGG-PL (łamane twarde, dolomit, wapień, naturalne; wydanie 2026.4-aggregates) w katalogu datasetów. <a href="../datasety.html">datasety.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[7]</span>
+                <span><strong>Kalkulator pre-qualify dla kruszyw</strong> — interaktywne oszacowanie GWP A1-A3 [kg CO₂eq/t kruszywa]. <a href="../kalkulator-kruszywa.html">kalkulator-kruszywa.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[8]</span>
+                <span><strong>Podstawy normatywne poLCA</strong> — mapa normatywna programu, odniesienia do norm EN / ISO i schematów comparable. <a href="../podstawy-normatywne.html#mapa-normatywna">podstawy-normatywne.html</a></span>
+            </li>
+            <li>
+                <span class="ref-num">[9]</span>
+                <span>EPD International — <em>PCR 369: Construction Aggregates: Natural Aggregate, Crushed Concrete, and Iron/Steel Furnace Slag</em> (UNCPC 1532). Cytowany jako benchmark referencyjny — brak zatwierdzonego europejskiego c-PCR dla kruszyw zgodnego z EN 15804+A2; treść nie jest przejmowana.</span>
+            </li>
+            <li>
+                <span class="ref-num">[10]</span>
+                <span>UEPG / MIRO — <em>LCA of Aggregates</em> (europejskie stowarzyszenie producentów kruszyw) · Gruber et al. (2023), wskaźniki LCA kruszyw · ITB-EPD 706/2024 i 707 (Trzuskawica S.A.) · ecoinvent 3.10.</span>
+            </li>
+            <li>
+                <span class="ref-num">[11]</span>
+                <span>EN 15804:2012+A2:2019+A1:2021 · EN 12620:2013+A1:2008 (kruszywa do betonu) · EN 13242:2013 (kruszywa do mieszanek niezwiązanych) · EN 13043:2004 (kruszywa do MMA) · ISO 14025:2006 · ISO 21930:2017 · ISO 14040/14044:2006 · Rec. (UE) 2021/2279 (EF 3.1) · Rozp. (UE) 2024/3110 (CPR) · Rozp. (UE) 2024/1781 (ESPR).</span>
+            </li>
+        </ul>
+
+        <p class="met-text" style="margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Konsultacja publiczna projektu c-PCR-AGG v0.9-DRAFT — uwagi:
+            <a href="mailto:epd@epd.org.pl">epd@epd.org.pl</a>. Polityka aktualizacji reguł c-PCR —
+            zobacz <a href="../podstawy-normatywne.html#procedury">Podstawy normatywne · procedury jakości</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="index.html">c-PCR</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../o-polca/index.html">O poLCA</a></li>
+                <li><a href="../o-polca/cytowanie.html">Jak cytować poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>

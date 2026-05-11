@@ -91,6 +91,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://polca.org.pl/c-pcr/kruszywa.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://polca.org.pl/c-pcr/c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
