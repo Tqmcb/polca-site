@@ -73,7 +73,7 @@
             {
               "@type": "Question",
               "name": "Co to jest metoda lokalizacyjna w LCA?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Metoda lokalizacyjna (location-based) to podejście do rozliczania emisji z energii elektrycznej oparte na fizycznym miksie krajowej sieci energetycznej. W Polsce oznacza to wskaźnik KOBiZE — ok. 597 kg CO₂/MWh dla danych za 2023 rok. EN 15804+A2 wymaga stosowania tej metody dla energii elektrycznej z sieci."}
+              "acceptedAnswer": {"@type": "Answer", "text": "Metoda lokalizacyjna (location-based) to podejście do rozliczania emisji z energii elektrycznej oparte na fizycznym miksie krajowej sieci energetycznej. W Polsce oznacza to wskaźnik poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh (599 kg CO₂e/MWh, well-to-meter, oparty na danych KOBiZE end-user = 553 kg CO₂/MWh za 2024). EN 15804+A2 wymaga stosowania tej metody dla energii elektrycznej z sieci."}
             },
             {
               "@type": "Question",
@@ -189,14 +189,14 @@
     <!-- Key stats -->
     <div class="key-stat-row section-gap fade-in">
         <div class="key-stat">
-            <div class="key-stat-number">597</div>
-            <div class="key-stat-unit">kg CO&#8322;/MWh</div>
-            <div class="key-stat-label">Wska&#378;nik KOBiZE (dane za 2023)<br>u&#380;ywany w ka&#380;dym polskim EPD</div>
+            <div class="key-stat-number">599</div>
+            <div class="key-stat-unit">kg CO&#8322;e/MWh</div>
+            <div class="key-stat-label">Wska&#378;nik poLCA-EN-PL-2024 v9.1<br>(location-based, Poziom&nbsp;1) w ka&#380;dym polskim EPD</div>
         </div>
         <div class="key-stat">
-            <div class="key-stat-number muted">~40</div>
-            <div class="key-stat-unit">kg CO&#8322;/MWh</div>
-            <div class="key-stat-label">&#346;lad w&#281;glowy cyklu &#380;ycia paneli PV<br>(produkcja + transport + monta&#380;)</div>
+            <div class="key-stat-number muted">41</div>
+            <div class="key-stat-unit">kg CO&#8322;e/MWh</div>
+            <div class="key-stat-label">PV on-site (Poziom&nbsp;3 wg c-PCR-BET v1.3)<br>= 0,041 kg CO&#8322;e/kWh</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number accent">0</div>
@@ -240,8 +240,7 @@
             <p class="callout-body">
                 <strong>Metoda lokalizacyjna (location-based)</strong> &#8212; wska&#378;nik emisji dla energii
                 elektrycznej oparty na &#347;rednim miksie wytwarzania w danym kraju lub regionie,
-                niezale&#380;nie od um&#243;w handlowych producenta. W Polsce: wska&#378;nik KOBiZE,
-                publikowany corocznie (597&nbsp;kg&nbsp;CO&#8322;/MWh dla 2023&nbsp;r.).
+                niezale&#380;nie od um&#243;w handlowych producenta. W Polsce: wska&#378;nik poLCA-EN-PL-2024 v9.1 = 0,599&nbsp;kg&nbsp;CO&#8322;e/kWh (Poziom&nbsp;1 wg c-PCR-BET v1.3 §6.3.1; well-to-meter, oparty na danych KOBiZE end-user 553&nbsp;kg&nbsp;CO&#8322;/MWh).
             </p>
         </div>
 
@@ -339,8 +338,8 @@
                 <tbody>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">EPD (EN 15804+A2)</td>
-                        <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (KOBiZE)</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 597 kg/MWh</td>
+                        <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (poLCA-EN-PL-2024)</td>
+                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 0,599 kg CO&#8322;e/kWh</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">GHG Protocol Scope 2 market-based</td>
@@ -349,8 +348,8 @@
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">GHG Protocol Scope 2 location-based</td>
-                        <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (KOBiZE)</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 597 kg/MWh</td>
+                        <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (poLCA-EN-PL-2024)</td>
+                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 0,599 kg CO&#8322;e/kWh</td>
                     </tr>
                     <tr>
                         <td style="padding:0.55rem 0.75rem;">CSRD / ESRS E1 (obowi&#261;zkowe od 2025)</td>
@@ -375,10 +374,10 @@
         </p>
         <ul>
             <li><strong>Redukcja zu&#380;ycia energii</strong> &#8212; ka&#380;da zaoszcz&#281;dzona kWh to
-            597&nbsp;g CO&#8322; mniej w wyniku EPD (przy polskim miksie 2023).</li>
+            ok. 0,56&nbsp;kg CO&#8322;e mniej w wyniku EPD na 1&nbsp;kWh (Poziom&nbsp;3 PV on-site vs Poziom&nbsp;1: 0,599 &minus; 0,041).</li>
             <li><strong>Zmiana nosi&#263;nika energii</strong> &#8212; prze&#322;&#261;czenie z pr&#261;du sieciowego
             na gaz ziemny dla proces&#243;w cieplnych mo&#380;e by&#263; korzystne przy wysokim
-            wska&#378;niku KOBiZE.</li>
+            wska&#378;niku poLCA-EN-PL-2024 (Poziom&nbsp;1).</li>
             <li><strong>Surowce z recyklingu</strong> &#8212; w bud. materiałach (stal, kruszywo,
             papa) zamiana surowca pierwotnego na wtórny redukuje GWP w A1&ndash;A3 znacznie
             mocniej ni&#380; zmiana energetyki.</li>
@@ -436,8 +435,8 @@
                 <div class="faq-a">
                     Metoda lokalizacyjna (<em>location-based</em>) polega na u&#380;yciu &#347;redniego
                     wska&#378;nika emisji dla krajowej sieci energetycznej &#8212; niezale&#380;nie od um&#243;w
-                    handlowych producenta. W Polsce to wska&#378;nik KOBiZE:
-                    597&nbsp;kg&nbsp;CO&#8322;/MWh dla danych za 2023&nbsp;r.
+                    handlowych producenta. W Polsce to wska&#378;nik poLCA-EN-PL-2024 v9.1:
+                    0,599&nbsp;kg&nbsp;CO&#8322;e/kWh (Poziom&nbsp;1, location-based; well-to-meter, oparty na danych KOBiZE end-user 553&nbsp;kg&nbsp;CO&#8322;/MWh za 2024).
                 </div>
             </div>
 
@@ -480,7 +479,7 @@
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
             <strong>&#378;r&#243;d&#322;a:</strong>
             EN&nbsp;15804+A2:2019/A1:2021, §6.4.3 (metoda lokalizacyjna dla energii z sieci);
-            KOBiZE (2024), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322; dla energii elektrycznej&#8221;, dane za 2023;
+            Multicert Sp. z o.o. (2026), MET-001:2026 &#8212; poLCA-EN-PL-2024 v9.1 = 0,599 kg CO&#8322;e/kWh; Multicert Sp. z o.o. (2026), MET-002:2026 &#8212; wy&#322;&#261;czenie wska&#378;nik&#243;w KOBiZE z LCA EPD; c-PCR-BET-EPD-PL:2026 v1.3 §6.3 &#8212; 3-poziomowa hierarchia wska&#378;nika energii (Poziom&nbsp;1: 0,599; Poziom&nbsp;2 AIB residual: 0,808; Poziom&nbsp;3 PV on-site: 0,041); KOBiZE (2025), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;&#8221; za rok 2024 (end-user: 553 kg CO&#8322;/MWh);
             GHG Protocol, &#8222;Scope 2 Accounting Guidance&#8221; (2015);
             AIB (2025), &#8222;European Residual Mixes 2023&#8221;;
             IBU PCR Part A: Computation Rules, v2.0 (2023);
