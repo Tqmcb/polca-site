@@ -80,7 +80,13 @@
   </url>
   <url>
     <loc>https://polca.org.pl/o-polca/cytowanie.html</loc>
-    <lastmod>2026-05-10</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://polca.org.pl/o-polca/dla-prasy.html</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
