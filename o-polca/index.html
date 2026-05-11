@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O programie poLCA | Polska Baza Danych LCA</title>
+    <meta name="description" content="O programie poLCA — governance, operator, dokumenty i procedury jakości. Operator: Multicert Sp. z o.o. (program EPD Polska). Komitet Techniczny, system AVS 3+, procedury PR-01 do PR-07, kontakt.">
+    <link rel="canonical" href="https://polca.org.pl/o-polca/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="O programie poLCA — governance, operator, kontakt">
+    <meta property="og:description" content="Governance i operator poLCA: Multicert Sp. z o.o., program EPD Polska, Komitet Techniczny, system AVS 3+, procedury jakości PR-01..07.">
+    <meta property="og:url" content="https://polca.org.pl/o-polca/index.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O programie poLCA — governance, operator, kontakt">
+    <meta name="twitter:description" content="Governance i operator poLCA: Multicert Sp. z o.o., program EPD Polska, Komitet Techniczny, procedury PR-01..07.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "O programie poLCA",
+      "description": "O programie poLCA — governance, operator, dokumenty i procedury jakości. Operator: Multicert Sp. z o.o. (program EPD Polska); Komitet Techniczny Programu EPD Polska; system weryfikacji AVS 3+; procedury jakości PR-01 do PR-07.",
+      "url": "https://polca.org.pl/o-polca/index.html",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "about": {
+        "@type": "Dataset",
+        "name": "poLCA — Polska Baza Danych LCA dla wyrobów budowlanych",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "ul. Mydlarska 47",
+          "postalCode": "04-690",
+          "addressLocality": "Warszawa",
+          "addressCountry": "PL"
+        },
+        "email": "info@epd.org.pl"
+      }
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #o-polca,#governance,#zasoby,#procedury,#kontakt{scroll-margin-top:76px}
+        .res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem;margin-top:1rem}
+        .res-card{display:block;padding:1rem 1.1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);text-decoration:none;transition:border-color .15s ease,transform .15s ease}
+        .res-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .res-card-name{font-size:.92rem;font-weight:700;color:var(--text-primary);font-family:'Inter Tight',sans-serif;margin-bottom:.25rem}
+        .res-card-desc{font-size:.78rem;color:var(--text-secondary);line-height:1.5}
+        .res-card-arrow{margin-top:.55rem;font-size:.72rem;font-family:'IBM Plex Mono',monospace;color:var(--accent);letter-spacing:.02em}
+        .gov-list{list-style:none;padding:0;margin:1rem 0 0}
+        .gov-list li{padding:.7rem .9rem;border-left:3px solid var(--accent);background:var(--bg-subtle);border-radius:0 6px 6px 0;margin-bottom:.55rem;font-size:.86rem;color:var(--text-secondary);line-height:1.6}
+        .gov-list li strong{color:var(--text-primary)}
+        .pr-list{list-style:none;padding:0;margin:1rem 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.55rem}
+        .pr-list li{display:flex;gap:.7rem;align-items:flex-start;padding:.6rem .85rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);font-size:.82rem;color:var(--text-body);line-height:1.5}
+        .pr-list .pr-code{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;color:var(--accent);background:var(--accent-subtle);padding:.15rem .45rem;border-radius:4px;letter-spacing:.02em;white-space:nowrap}
+        .contact-block{font-size:.88rem;color:var(--text-secondary);line-height:1.9;margin-top:1rem}
+        .contact-block strong{color:var(--text-primary)}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji" style="font-size:.75rem;color:var(--text-tertiary);margin-bottom:.65rem;">
+                <a href="../index.html" style="color:var(--text-secondary);text-decoration:none;">poLCA</a>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>O poLCA</span>
+            </nav>
+            <div class="section-num">O poLCA</div>
+            <h1 class="page-title">O programie poLCA — governance, operator, kontakt</h1>
+            <p class="page-subtitle">
+                poLCA to polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych,
+                prowadzona przez <strong>Multicert Sp. z o.o.</strong> w ramach programu
+                <strong>EPD Polska</strong>. Na tej stronie: czym jest poLCA, kto za nią odpowiada,
+                gdzie znaleźć dokumenty metodyczne i datasety, jakie procedury jakości obowiązują
+                oraz jak się skontaktować.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ISO 14040/14044</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EN 15804+A2</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EF 3.1</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">CPR 2024/3110</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">Operator: Multicert · EPD Polska</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Program poLCA — governance i operator" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#czym-jest" class="tool-nav-pill">01 — Czym jest poLCA</a>
+        <a href="#governance" class="tool-nav-pill">02 — Operator i governance</a>
+        <a href="#zasoby" class="tool-nav-pill">03 — Dokumenty i zasoby</a>
+        <a href="#procedury" class="tool-nav-pill">04 — Procedury jakości</a>
+        <a href="#kontakt" class="tool-nav-pill">05 — Kontakt</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — CZYM JEST poLCA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="czym-jest" class="card card-lg section-gap fade-in" aria-label="Czym jest poLCA">
+        <div class="section-num">01 — Czym jest poLCA</div>
+        <div class="card-title">Polska baza danych LCA dla wyrobów budowlanych</div>
+        <p class="card-text" style="max-width:880px;">
+            poLCA to polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych —
+            zbiór danych specyficznych dla polskich warunków produkcji, energii i transportu.
+            Operatorem bazy jest <strong>Multicert Sp. z o.o.</strong>, prowadzący program
+            <strong>EPD Polska</strong>. Każdy dataset przechodzi siedmiowarstwową walidację, w której
+            dane producenta są weryfikowane krzyżowo m.in. z rejestrami <strong>E-PRTR</strong>
+            i <strong>EU ETS</strong>, a wyniki konfrontowane z literaturą branżową i bazami referencyjnymi.
+            Faza I bazy (rok 2026) obejmuje trzy grupy wyrobów o najwyższej intensywności emisyjnej:
+            <strong>beton towarowy</strong>, <strong>mieszanki mineralno-asfaltowe (MMA)</strong>
+            oraz <strong>kruszywa</strong>. Metodyka i format danych są zgodne z normami
+            <strong>ISO 14040 / ISO 14044</strong>, <strong>EN 15804+A2</strong>, zestawem
+            wskaźników środowiskowych <strong>EF 3.1</strong> oraz wymaganiami rozporządzenia
+            <strong>CPR 2024/3110</strong> dotyczącego deklaracji środowiskowych wyrobów budowlanych.
+        </p>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — OPERATOR I GOVERNANCE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="governance" class="card card-lg section-gap fade-in" aria-label="Operator i governance">
+        <div class="section-num">02 — Operator i governance</div>
+        <div class="card-title">Kto prowadzi poLCA i jak podejmowane są decyzje</div>
+        <p class="card-text" style="max-width:880px;">
+            poLCA działa w strukturze programu EPD Polska. Za nadzór merytoryczny nad bazą — w tym
+            zatwierdzanie reguł kategorii wyrobu (c-PCR), dokumentów metodycznych MET-XXX oraz
+            datasetów — odpowiada Komitet Techniczny Programu. Weryfikację danych prowadzą
+            akredytowani weryfikatorzy w systemie AVS 3+.
+        </p>
+        <ul class="gov-list">
+            <li><strong>Operator:</strong> Multicert Sp. z o.o. — ul. Mydlarska 47, 04-690 Warszawa</li>
+            <li><strong>Program:</strong> EPD Polska — <a href="https://www.epd.org.pl" target="_blank" rel="noopener">www.epd.org.pl</a></li>
+            <li><strong>Komitet Techniczny Programu EPD Polska</strong> — odpowiedzialny za zatwierdzanie reguł c-PCR, dokumentów metodycznych MET-XXX oraz datasetów wchodzących do bazy</li>
+            <li><strong>Weryfikacja:</strong> system AVS 3+ — niezależni, akredytowani weryfikatorzy przeprowadzają walidację danych i deklaracji</li>
+        </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — DOKUMENTY I ZASOBY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="zasoby" class="card card-lg section-gap fade-in" aria-label="Dokumenty i zasoby">
+        <div class="section-num">03 — Dokumenty i zasoby</div>
+        <div class="card-title">Gdzie znaleźć metodyki, datasety i materiały do pobrania</div>
+        <p class="card-text" style="max-width:880px;">
+            Wszystkie dokumenty referencyjne, datasety oraz materiały informacyjne poLCA są dostępne
+            publicznie. Poniżej najważniejsze punkty wejścia.
+        </p>
+        <div class="res-grid">
+            <a href="../metodyki/" class="res-card">
+                <div class="res-card-name">Metodyki</div>
+                <div class="res-card-desc">Dokumenty metodyczne MET-XXX. MET-001 i MET-002 zatwierdzone.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+            <a href="../datasety.html" class="res-card">
+                <div class="res-card-name">Datasety</div>
+                <div class="res-card-desc">Katalog datasetów LCI — 32 zestawy danych dla wyrobów budowlanych.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+            <a href="../pobierz.html" class="res-card">
+                <div class="res-card-name">Pobierz</div>
+                <div class="res-card-desc">Centrum pobierania — pliki danych, PDF-y metodyk i materiały.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+            <a href="../podstawy-normatywne.html" class="res-card">
+                <div class="res-card-name">Podstawy normatywne</div>
+                <div class="res-card-desc">Mapa 32 komponentów bazy i 7 procedur jakości z odniesieniami do norm.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+            <a href="cytowanie.html" class="res-card">
+                <div class="res-card-name">Jak cytować</div>
+                <div class="res-card-desc">Wzorce cytowań APA 7, ISO 690, BibTeX, RIS oraz status DOI.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+            <a href="dla-prasy.html" class="res-card">
+                <div class="res-card-name">Dla prasy</div>
+                <div class="res-card-desc">Press kit poLCA — kluczowe liczby, gotowe cytaty, materiały do pobrania.</div>
+                <div class="res-card-arrow">Przejdź →</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — PROCEDURY JAKOŚCI
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="procedury" class="card card-lg section-gap fade-in" aria-label="Procedury jakości">
+        <div class="section-num">04 — Procedury jakości</div>
+        <div class="card-title">Siedem procedur PR-01 do PR-07</div>
+        <p class="card-text" style="max-width:880px;">
+            W całym programie poLCA obowiązuje siedem procedur jakości. Każda ma przypisaną podstawę
+            normatywną i tryb postępowania — pełny opis w sekcji
+            <a href="../podstawy-normatywne.html#procedury">Procedury jakości</a> na stronie Podstawy normatywne.
+        </p>
+        <ul class="pr-list">
+            <li><span class="pr-code">PR-01</span><span>Review datasetu — przegląd i akceptacja zestawu danych przed wejściem do bazy.</span></li>
+            <li><span class="pr-code">PR-02</span><span>Aktualizacja wskaźnika — zmiana wartości wskaźnika wraz z uzasadnieniem i wersjonowaniem.</span></li>
+            <li><span class="pr-code">PR-03</span><span>Korekta błędu (errata) — formalne sprostowanie wykrytej nieprawidłowości w danych lub dokumencie.</span></li>
+            <li><span class="pr-code">PR-04</span><span>Wersjonowanie / changelog — śledzenie wersji datasetów i dokumentów oraz rejestr zmian.</span></li>
+            <li><span class="pr-code">PR-05</span><span>Conflict of interest — zarządzanie konfliktem interesów po stronie zespołu, ekspertów i weryfikatorów.</span></li>
+            <li><span class="pr-code">PR-06</span><span>Data quality assessment — ocena jakości danych w warstwach walidacji i klasyfikacja niepewności.</span></li>
+            <li><span class="pr-code">PR-07</span><span>Walidacja regulacyjna — sprawdzenie zgodności z EN 15804+A2, ISO 14044 i CPR 2024/3110.</span></li>
+        </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — KONTAKT
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="kontakt" class="card card-lg section-gap fade-in" aria-label="Kontakt">
+        <div class="section-num">05 — Kontakt</div>
+        <div class="card-title">Jak się skontaktować z programem poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            W sprawach dotyczących bazy poLCA, dokumentów metodycznych, datasetów oraz współpracy
+            z programem EPD Polska prosimy o kontakt mailowy.
+        </p>
+        <div class="contact-block">
+            <strong>E-mail:</strong> <a href="mailto:info@epd.org.pl">info@epd.org.pl</a><br>
+            <strong>Operator:</strong> Multicert Sp. z o.o. — ul. Mydlarska 47, 04-690 Warszawa<br>
+            <strong>Serwisy:</strong> <a href="https://www.polca.org.pl" target="_blank" rel="noopener">www.polca.org.pl</a> · <a href="https://www.epd.org.pl" target="_blank" rel="noopener">www.epd.org.pl</a>
+        </div>
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Uwaga: nie udostępniamy mapy dojazdu do biura — zespół poLCA i EPD Polska pracuje
+            w trybie wyjazdowym u producentów. Wszystkie sprawy prowadzimy zdalnie lub w siedzibie klienta.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="index.html">O poLCA</a></li>
+                <li><a href="cytowanie.html">Cytowanie</a></li>
+                <li><a href="dla-prasy.html">Dla prasy</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>
