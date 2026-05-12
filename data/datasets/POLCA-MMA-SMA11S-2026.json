@@ -1,0 +1,70 @@
+{
+  "code": "POLCA-MMA-SMA11S-2026",
+  "name": "Mieszanka mineralno-asfaltowa SMA 11 S — dataset normatywny LCI (poLCA 2026)",
+  "category": "materiał",
+  "module_default": "A1-A3",
+  "unit": "t",
+  "gwp_total_kg_co2e": 120.17,
+  "year": 2026,
+  "geography": "PL",
+  "technology": "Wytwarzanie mieszanki SMA 11 S w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 170°C.",
+  "data_quality": "industry",
+  "status": "published_sector_dataset",
+  "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+  "source_url": "https://polca.org.pl/c-pcr/mma.html",
+  "scope": "A1-A3 dla mieszanki SMA 11 S (EN 13108-5, warstwa ścieralna). A1=89.47, A2=6.79, A3=23.91 kg CO2e/t (A3 zsynchronizowane z poLCA 0,599 kg CO2e/kWh).",
+  "methodology_note": "Wartości domyślne LCI dla recepty referencyjnej mieszanki SMA 11 S: zawartość lepiszcza ok. 14.0% m/m (Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t), kruszywa wg POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. GWP A1-A3 = 120.17 kg CO2e/t. Moduł A3 i suma A1-A3 zsynchronizowane z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715).",
+  "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii.",
+  "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
+  "publication_status": "published_sector_dataset",
+  "review_required": false,
+  "use_allowed_for": [
+    "screening",
+    "internal_report",
+    "epd_plus_preparation"
+  ],
+  "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza i dane recepturowe wytwórni.",
+  "source_trace": [
+    {
+      "name": "Raport LCI MMA Polska EN 15804+A2",
+      "url": "https://polca.org.pl/c-pcr/mma.html",
+      "role": "roboczy inwentarz LCI dla MMA",
+      "type": "methodology_source"
+    },
+    {
+      "name": "c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT",
+      "url": "https://polca.org.pl/c-pcr/mma.html",
+      "role": "reguły kategorii produktu dla MMA",
+      "type": "product_category_rules"
+    },
+    {
+      "name": "Eurobitume LCA 4.0 (2025)",
+      "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+      "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
+      "type": "methodology_source"
+    },
+    {
+      "name": "poLCA-EN-PL-2024 v9.1",
+      "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+      "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+      "type": "polca_model"
+    }
+  ],
+  "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
+  "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+  "evidence_level": "industry_average",
+  "source_policy": {
+    "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
+    "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki.",
+    "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
+  },
+  "selection_mode": "default",
+  "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+  "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
+  "product_groups": [
+    "mma",
+    "roboty-drogowe"
+  ],
+  "material_role": "mieszanka mineralno-asfaltowa",
+  "record_use_status": "ready_to_use_default_dataset"
+}
