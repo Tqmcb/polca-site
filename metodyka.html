@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodyka i Jakość Danych — poLCA</title>
-    <meta name="description" content="Kontrolowany system jakości danych LCA: reguły programu, dane branżowe i publiczne, model obliczeń, audyt oraz pełna trasowalność źródeł.">
+    <title>Metodyka poLCA — kiedy czytać, jak weryfikować dane LCA</title>
+    <meta name="description" content="Metodyka poLCA dla EPD i audytu: hierarchia danych, granice systemu, EN 15804+A2, walidacja, źródła i zasady użycia wskaźników GWP.">
     <link rel="canonical" href="https://polca.org.pl/metodyka.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Metodyka i Jakość Danych — poLCA">
-    <meta property="og:description" content="Metodyka jakości danych LCA: reguły programu, źródła branżowe, model obliczeń i kontrola audytowa.">
+    <meta property="og:title" content="Metodyka poLCA — kiedy czytać, jak weryfikować dane LCA">
+    <meta property="og:description" content="Hierarchia danych, granice systemu, EN 15804+A2, walidacja, źródła i zasady użycia wskaźników GWP.">
     <meta property="og:url" content="https://polca.org.pl/metodyka.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Metodyka i Jakość Danych — poLCA">
-    <meta name="twitter:description" content="Metodyka jakości danych LCA: reguły programu, źródła branżowe, model obliczeń i kontrola audytowa.">
+    <meta name="twitter:title" content="Metodyka poLCA — kiedy czytać, jak weryfikować dane LCA">
+    <meta name="twitter:description" content="Hierarchia danych, granice systemu, EN 15804+A2, walidacja, źródła i zasady użycia wskaźników GWP.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,12 +78,14 @@
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
         <div>
             <div class="section-num">Metodyka POLCA</div>
-            <h1 class="page-title">Metodyka i Jakość</h1>
+            <h1 class="page-title">Metodyka: czy dane można obronić w EPD albo raporcie?</h1>
             <p class="page-subtitle">
-                Skąd wiemy, że nasze dane są wiarygodne? Każda wartość w bazie poLCA ma przypisaną regułę programu,
-                źródło danych, granicę systemu, model obliczeniowy, ocenę jakości oraz wymagania audytowe.
+                Ta strona jest dla osób, które muszą uzasadnić źródła, granice systemu i jakość danych.
+                Jeśli szukasz tylko liczby do obliczeń, zacznij od Wskaźników albo Kalkulatorów.
             </p>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="datasety.html#referencyjne-szczegoly" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Szukam wskaźnika</a>
+                <a href="narzedzia.html#materialy" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Liczę budynek</a>
                 <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">ISO 14044:2006</span>
                 <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">ISO 14025:2006</span>
                 <span style="font-size: 0.65rem; font-family: 'IBM Plex Mono', monospace; padding: 0.2rem 0.55rem; background: var(--paper-warm); color: var(--text-secondary); border-radius: 4px; letter-spacing: 0.02em;">EN 15804+A2</span>
@@ -96,6 +98,34 @@
             <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
         </div>
     </div>
+
+    <section class="quick-start fade-in" aria-labelledby="metodyka-start-title">
+        <div class="quick-start-head">
+            <div class="section-num">Najpierw decyzja</div>
+            <h2 id="metodyka-start-title" class="quick-start-title">Czy naprawdę potrzebujesz metodyki?</h2>
+            <p class="quick-start-text">Metodyka jest ważna dla audytu i EPD, ale nie powinna blokować osoby, która chce tylko znaleźć wskaźnik albo policzyć wariant budynku.</p>
+        </div>
+        <div class="quick-start-grid">
+            <a href="datasety.html#referencyjne-szczegoly" class="quick-card">
+                <span class="quick-card-kicker">Nie</span>
+                <strong>Szukam liczby GWP</strong>
+                <span>Przejdź do katalogu wskaźników i filtruj po materiale, wyrobie albo źródle danych.</span>
+                <span class="quick-card-arrow">Do wskaźników →</span>
+            </a>
+            <a href="narzedzia.html#materialy" class="quick-card">
+                <span class="quick-card-kicker">Nie</span>
+                <strong>Liczymy budynek lub wariant materiałowy</strong>
+                <span>Użyj kalkulatorów do szybkiego porównania materiałów, transportu i wstępnych scenariuszy.</span>
+                <span class="quick-card-arrow">Do kalkulatorów →</span>
+            </a>
+            <a href="#wartosci-domyslne" class="quick-card">
+                <span class="quick-card-kicker">Tak</span>
+                <strong>Robię EPD, audyt albo raport</strong>
+                <span>Czytaj hierarchię danych, walidację, granice systemu i zasady zastępowania defaultów.</span>
+                <span class="quick-card-arrow">Czytaj metodykę →</span>
+            </a>
+        </div>
+    </section>
 
     <div class="tool-nav section-gap">
         <a href="#moduly" class="tool-nav-pill">00 — Zakres i porównywalność</a>

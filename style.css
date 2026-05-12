@@ -1387,6 +1387,12 @@ a:hover { color: var(--accent-light); }
         padding: 1.5rem 1rem;
     }
 }
+
+@media (max-width: 900px) {
+    .quick-start-grid {
+        grid-template-columns: 1fr;
+    }
+}
 .mt-1 { margin-top: 0.75rem; }
 .mt-2 { margin-top: 1.25rem; }
 .mt-3 { margin-top: 2rem; }
@@ -4869,6 +4875,84 @@ canvas {
     transition: background 0.15s;
 }
 .btn-primary:hover { background: var(--accent-light); color: white !important; }
+
+/* --- QUICK START PATHS --- */
+.quick-start {
+    margin: 0 0 1.75rem;
+}
+.quick-start-head {
+    max-width: 780px;
+    margin-bottom: 0.9rem;
+}
+.quick-start-title {
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.3rem;
+}
+.quick-start-text {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+.quick-start-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+.quick-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    min-height: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--paper-card);
+    color: var(--text-body);
+    text-decoration: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.quick-card:hover {
+    border-color: var(--accent-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+    color: var(--text-body);
+}
+.quick-card-kicker {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.quick-card strong {
+    display: block;
+    font-family: 'Inter Tight', 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: var(--text-primary);
+}
+.quick-card span:not(.quick-card-kicker):not(.quick-card-arrow) {
+    display: block;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+.quick-card-arrow {
+    margin-top: auto;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+@media (max-width: 900px) {
+    .quick-start-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* --- FOOTER --- */
 .site-footer {

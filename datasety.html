@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POLCA — baza LCI dla wyrobów budowlanych CPR 2024</title>
-    <meta name="description" content="Polska baza LCI dla wyrobów budowlanych: inwentaryzacja cyklu życia, źródła, jakość danych, wartości domyślne i wynikowe wskaźniki LCIA zgodne z EN 15804+A2.">
+    <title>Wskaźniki GWP dla betonu, MMA i budynków — poLCA</title>
+    <meta name="description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, mieszanek MMA, kruszyw oraz obliczeń śladu węglowego budynku zgodnych z EN 15804+A2.">
     <link rel="canonical" href="https://polca.org.pl/datasety.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="POLCA — baza LCI dla wyrobów budowlanych CPR 2024">
-    <meta property="og:description" content="Mapa rodzin CPR 2024, baza LCI, źródła, jakość danych, wartości domyślne i wynikowe wskaźniki LCIA.">
+    <meta property="og:title" content="Wskaźniki GWP dla betonu, MMA i budynków — poLCA">
+    <meta property="og:description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, mieszanek MMA, kruszyw oraz obliczeń śladu węglowego budynku.">
     <meta property="og:url" content="https://polca.org.pl/datasety.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="POLCA — baza LCI dla wyrobów budowlanych CPR 2024">
-    <meta name="twitter:description" content="Baza LCI dla polskich wyrobów budowlanych: CPR 2024, datasety, źródła, jakość danych i wskaźniki LCIA.">
+    <meta name="twitter:title" content="Wskaźniki GWP dla betonu, MMA i budynków — poLCA">
+    <meta name="twitter:description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, MMA, kruszyw i obliczeń śladu budynku.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-data.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,39 +69,16 @@
 <div class="polca-page">
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">01 — Publiczna baza danych GWP</div>
-            <h1 class="page-title">POLCA — publiczna baza danych GWP dla wyrobów budowlanych</h1>
+            <div class="section-num">Wskaźniki GWP i LCA</div>
+            <h1 class="page-title">Wskaźniki do betonu, MMA i śladu węglowego budynku</h1>
             <p class="page-subtitle">
-                POLCA publikuje kontrolowane wartości GWP, zakresy stosowania, moduły EN 15804,
-                źródła i zasady aktualizacji dla najczęściej stosowanych materiałów budowlanych w Polsce.
+                Zacznij od katalogu GWP, jeśli potrzebujesz liczby do obliczeń. Profile wyrobów i źródła są
+                niżej, gdy wynik ma trafić do EPD, raportu albo weryfikacji.
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;">
-                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Katalog GWP</a>
-                <a href="#profile-gwp" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Profile GWP</a>
-                <a href="#mma-przyklad-klienta" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Przykład MMA</a>
-                <a href="#zrodla-danych" data-polca-goto="sources" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Źródła</a>
-            </div>
-            <p style="font-size:.82rem;color:var(--text-secondary);line-height:1.6;margin-top:1rem;max-width:620px;">
-                Baza porządkuje dane referencyjne i wartości domyślne tak, aby każda opublikowana wartość miała
-                jasno opisane pochodzenie, jednostkę, granicę systemu, zastosowanie oraz ograniczenia.
-            </p>
-            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin-top:1rem;max-width:620px;">
-                <a href="#profile-gwp" data-polca-goto="profiles" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
-                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Profile GWP</strong>
-                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">MMA, beton i kruszywa w osobnych profilach</span>
-                </a>
-                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
-                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Wartości GWP</strong>
-                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">jedno miejsce z rekordami i metadanymi</span>
-                </a>
-                <a href="#zrodla-danych" data-polca-goto="sources" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
-                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Źródła</strong>
-                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">rejestr źródeł i podstawa wartości</span>
-                </a>
-                <a href="#integracja" data-polca-goto="integration" style="display:block;padding:.78rem;border:1px solid var(--border);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
-                    <strong style="display:block;font-family:'Inter Tight',sans-serif;font-size:.95rem;color:var(--text-primary);">Pliki</strong>
-                    <span style="display:block;font-size:.72rem;color:var(--text-secondary);line-height:1.35;margin-top:.2rem;">JSON, CSV i zasady aktualizacji</span>
-                </a>
+                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Otwórz katalog GWP</a>
+                <a href="#profile-gwp" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Profile wyrobów</a>
+                <a href="#integracja" data-polca-goto="integration" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Pobierz pliki</a>
             </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
@@ -109,6 +86,34 @@
             <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
         </div>
     </div>
+
+    <section class="quick-start fade-in" aria-labelledby="datasety-start-title">
+        <div class="quick-start-head">
+            <div class="section-num">Wybierz najkrótszą drogę</div>
+            <h2 id="datasety-start-title" class="quick-start-title">Czego szukasz?</h2>
+            <p class="quick-start-text">Katalog jest wspólny, ale inna osoba szuka wskaźnika do betonu, inna do MMA, a inna pliku do własnego arkusza.</p>
+        </div>
+        <div class="quick-start-grid">
+            <a href="#referencyjne-szczegoly" data-polca-goto="datasets" class="quick-card">
+                <span class="quick-card-kicker">Beton i budynek</span>
+                <strong>Potrzebuję liczby GWP do obliczeń</strong>
+                <span>Wejdź w katalog i filtruj po grupie wyrobu, materiale albo nazwie, np. cement, kruszywo, beton, energia.</span>
+                <span class="quick-card-arrow">Otwórz katalog →</span>
+            </a>
+            <a href="#profile-gwp" data-polca-goto="profiles" class="quick-card">
+                <span class="quick-card-kicker">Producent</span>
+                <strong>Chcę zrozumieć, co wpływa na wynik produktu</strong>
+                <span>Profile pokazują receptę, moduły A1-A3, hotspoty i miejsca, gdzie dane producenta zastępują default.</span>
+                <span class="quick-card-arrow">Zobacz profile →</span>
+            </a>
+            <a href="#integracja" data-polca-goto="integration" class="quick-card">
+                <span class="quick-card-kicker">Pliki i integracja</span>
+                <strong>Potrzebuję JSON, CSV albo zasad aktualizacji</strong>
+                <span>Tu są paczki danych, wersje i informacje potrzebne do arkusza, kalkulatora albo własnego systemu.</span>
+                <span class="quick-card-arrow">Przejdź do plików →</span>
+            </a>
+        </div>
+    </section>
 
     <nav class="polca-module-tabs fade-in" id="moduly-polca" aria-label="Obszary katalogu danych POLCA">
         <button type="button" class="polca-module-tab is-active" data-polca-tab="datasets">Katalog GWP<span>wartości i filtry</span></button>

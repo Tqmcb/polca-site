@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Narzędzia LCA — poLCA</title>
-    <meta name="description" content="Praktyczne narzędzia dla specjalistów LCA, ESG i certyfikacji budynków. Przelicznik jednostek, kalkulator transportu A4, porównywarka materiałów, polskie wskaźniki emisji GHG.">
+    <title>Kalkulatory śladu węglowego budynku i materiałów — poLCA</title>
+    <meta name="description" content="Kalkulatory i przeliczniki poLCA: ślad węglowy materiałów budowlanych, transport A4, MMA, kruszywa oraz wskaźniki emisji do analiz LCA.">
     <link rel="canonical" href="https://polca.org.pl/narzedzia.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Narzędzia LCA — poLCA">
-    <meta property="og:description" content="Przelicznik jednostek, kalkulator transportu A4, porównywarka materiałów budowlanych i polskie wskaźniki emisji. Narzędzia dla specjalistów LCA i ESG.">
+    <meta property="og:title" content="Kalkulatory śladu węglowego budynku i materiałów — poLCA">
+    <meta property="og:description" content="Ślad węglowy materiałów budowlanych, transport A4, MMA, kruszywa oraz wskaźniki emisji do analiz LCA.">
     <meta property="og:url" content="https://polca.org.pl/narzedzia.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Narzędzia LCA — poLCA">
-    <meta name="twitter:description" content="Przelicznik jednostek, kalkulator transportu A4, porównywarka materiałów budowlanych i polskie wskaźniki emisji.">
+    <meta name="twitter:title" content="Kalkulatory śladu węglowego budynku i materiałów — poLCA">
+    <meta name="twitter:description" content="Ślad węglowy materiałów budowlanych, transport A4, MMA, kruszywa oraz wskaźniki emisji do analiz LCA.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <script type="application/ld+json">
     {
@@ -23,9 +23,9 @@
       "@graph": [
         {
           "@type": "WebPage",
-          "name": "Narzędzia LCA — poLCA",
+          "name": "Kalkulatory śladu węglowego budynku i materiałów — poLCA",
           "url": "https://polca.org.pl/narzedzia.html",
-          "description": "Praktyczne narzędzia dla specjalistów LCA, ESG i certyfikacji budynków.",
+          "description": "Kalkulatory i przeliczniki poLCA do śladu węglowego materiałów budowlanych, transportu A4, MMA, kruszyw i analiz LCA.",
           "isPartOf": {"@id": "https://polca.org.pl/#website"},
           "publisher": {"@id": "https://polca.org.pl/#organization"}
         }
@@ -71,18 +71,51 @@
 
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">Narzędzia analityczne</div>
-            <h1 class="page-title">Narzędzia LCA</h1>
+            <div class="section-num">Kalkulatory i przeliczniki</div>
+            <h1 class="page-title">Policz ślad węglowy materiałów, transportu albo wyrobu</h1>
             <p class="page-subtitle">
-                Praktyczne kalkulatory i dane referencyjne dla specjalistów LCA, ESG
-                i certyfikacji budynków. Polskie wskaźniki emisji, transport, materiały.
+                Wybierz szybki kalkulator do koncepcji budynku albo narzędzie specjalne dla MMA i kruszyw.
+                Wyniki traktuj jako wstępne, a do EPD użyj pełnej metodyki i danych producenta.
             </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <a href="#materialy" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Materiały budowlane</a>
+                <a href="#transport" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Transport A4</a>
+                <a href="kalkulator-mma.html" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">MMA</a>
+            </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
             <img src="images/strip-laboratory.jpg" alt="Centrum monitoringu i analizy danych" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.05) contrast(1.02);">
             <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
         </div>
     </div>
+
+    <section class="quick-start fade-in" aria-labelledby="narzedzia-start-title">
+        <div class="quick-start-head">
+            <div class="section-num">Najczęstsze zadania</div>
+            <h2 id="narzedzia-start-title" class="quick-start-title">Co chcesz policzyć?</h2>
+            <p class="quick-start-text">Nie zaczynaj od tabeli, jeśli masz konkretny problem. Wybierz zadanie, a dopiero potem dobieraj wskaźnik i szczegóły.</p>
+        </div>
+        <div class="quick-start-grid">
+            <a href="#materialy" class="quick-card">
+                <span class="quick-card-kicker">Budynek</span>
+                <strong>Porównuję materiały w projekcie</strong>
+                <span>Szybkie porównanie GWP materiałów budowlanych do koncepcji, kosztorysu albo rozmowy z projektantem.</span>
+                <span class="quick-card-arrow">Przejdź do materiałów →</span>
+            </a>
+            <a href="#transport" class="quick-card">
+                <span class="quick-card-kicker">Moduł A4</span>
+                <strong>Liczymy dowóz materiału na budowę</strong>
+                <span>Wpisz dystans, masę i środek transportu, żeby oszacować emisję transportu do placu budowy.</span>
+                <span class="quick-card-arrow">Otwórz transport →</span>
+            </a>
+            <a href="#kalkulatory-specjalne" class="quick-card">
+                <span class="quick-card-kicker">Producent</span>
+                <strong>MMA albo kruszywa wymagają osobnego kalkulatora</strong>
+                <span>Dla receptur i danych zakładowych lepsze są narzędzia dedykowane z rozbiciem A1-A3.</span>
+                <span class="quick-card-arrow">Zobacz kalkulatory specjalne →</span>
+            </a>
+        </div>
+    </section>
 
     <!-- Quick Navigation -->
     <div class="tool-nav section-gap fade-in">
@@ -96,7 +129,7 @@
     </div>
 
     <!-- Karta — Kalkulator MMA pre-qualify -->
-    <a href="kalkulator-mma.html" class="card card-lg section-gap fade-in" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:space-between;text-decoration:none;color:inherit;">
+    <a id="kalkulatory-specjalne" href="kalkulator-mma.html" class="card card-lg section-gap fade-in" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:space-between;text-decoration:none;color:inherit;">
         <div style="flex:1;min-width:260px;">
             <div class="section-num">Kalkulator dedykowany</div>
             <div class="card-title" style="margin-bottom:.4rem;">Kalkulator MMA pre-qualify — GWP A1-A3 dla mieszanek mineralno-asfaltowych</div>
