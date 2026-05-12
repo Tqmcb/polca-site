@@ -374,10 +374,16 @@
         <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
             <button id="mmaExportCsv" class="calc-export-btn" type="button" style="width:auto;">Kopiuj CSV</button>
             <button id="mmaExportJson" class="calc-export-btn" type="button" style="width:auto;">Kopiuj JSON</button>
+            <button id="mmaExportXml" class="calc-export-btn" type="button" style="width:auto;">Eksport ILCD+EPD XML</button>
         </div>
         <p class="calc-note" style="margin-top:1rem;">
             Wartości w notacji polskiej (przecinek dziesiętny). Wynik orientacyjny — dla deklaracji EPD
             stosuj dane specyficzne producenta zweryfikowane zgodnie z procedurą AVS 3+ programu EPD Polska.
+            Eksport ILCD+EPD XML to uproszczona struktura zgodna z formatem ILCD / EN 15804+A2 — gotowa do
+            importu do oprogramowania LCA (OpenLCA, SimaPro) lub jako wsad do Digital Product Passport.
+            To nie jest zweryfikowany EPD — pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+.
+            Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob.
+            <a href="o-polca/gotowosc-dpp.html">gotowość poLCA do DPP</a>.
         </p>
     </div>
 
@@ -425,6 +431,14 @@
                 specyficznych producenta (zużycia mediów, struktury dostaw, mixu paliwowego wytwórni) i
                 weryfikacji niezależnej w trybie AVS 3+. Kontakt w sprawie pełnego EPD:
                 <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>.
+            </p>
+            <p>
+                <strong>Eksport ILCD+EPD XML.</strong> Wynik kalkulacji można pobrać jako uproszczoną
+                strukturę XML zgodną z formatem ILCD / EN 15804+A2 (moduły A1, A2, A3, A1-A3 jako GWP-total) —
+                gotową do importu do oprogramowania LCA (OpenLCA, SimaPro, GaBi) lub jako wsad do
+                Digital Product Passport wyrobu budowlanego. To nie jest zweryfikowany EPD — pełny EPD
+                wymaga danych zakładowych i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x
+                (publikacja 2026) — zob. <a href="o-polca/gotowosc-dpp.html">gotowość poLCA do DPP</a>.
             </p>
         </div>
     </div>

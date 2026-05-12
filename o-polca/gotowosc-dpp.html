@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotowość poLCA do Digital Product Passport (DPP) | poLCA</title>
+    <meta name="description" content="Format danych poLCA a architektura Digital Product Passport (DPP) wg ESPR (Reg. 2024/1781) i CPR (Reg. 2024/3110). Datasety LCI, EPD i kalkulatory pre-qualify zasilające przyszłe paszporty wyrobów budowlanych. Standardy EN 1821x, EN 18222/18223, CIRPASS-2 Core Ontology, ILCD+EPD XML, ISO 22057, OPC UA.">
+    <link rel="canonical" href="https://polca.org.pl/o-polca/gotowosc-dpp.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gotowość poLCA do Digital Product Passport (DPP)">
+    <meta property="og:description" content="Format danych poLCA jest zgodny z architekturą DPP wg ESPR i CPR. Datasety LCI, EPD i kalkulatory pre-qualify zasilają przyszłe paszporty produktów budowlanych.">
+    <meta property="og:url" content="https://polca.org.pl/o-polca/gotowosc-dpp.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gotowość poLCA do Digital Product Passport (DPP)">
+    <meta name="twitter:description" content="Format danych poLCA a architektura DPP wg ESPR (Reg. 2024/1781) i CPR (Reg. 2024/3110).">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="stylesheet" href="../style.css?v=10.0">
+    <link rel="stylesheet" href="../style-interactive.css?v=1.1">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Gotowość poLCA do Digital Product Passport (DPP)",
+      "description": "Format danych poLCA a architektura Digital Product Passport (DPP) wg ESPR (Reg. (UE) 2024/1781) i CPR (Reg. (UE) 2024/3110). Standardy formatu danych DPP, gotowość poLCA i roadmap zgodności 2026-2030.",
+      "url": "https://polca.org.pl/o-polca/gotowosc-dpp.html",
+      "inLanguage": "pl-PL",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+      }
+    }
+    </script>
+    <style>
+        html{scroll-padding-top:76px}
+        #dpp-co-to,#dpp-standardy,#dpp-zawartosc,#dpp-format,#dpp-roadmap,#dpp-powiazane{scroll-margin-top:76px}
+        .dpp-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:1rem}
+        .dpp-table thead th{background:var(--paper-warm);padding:.65rem .8rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);font-weight:700;border-bottom:2px solid var(--ink);vertical-align:bottom}
+        .dpp-table tbody td{padding:.7rem .8rem;border-bottom:1px solid var(--border-light);color:var(--text-body);vertical-align:top;line-height:1.55}
+        .dpp-table tbody tr:last-child td{border-bottom:none}
+        .dpp-table tbody td strong{color:var(--text-primary)}
+        .dpp-table code{font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:var(--text-secondary)}
+        .dpp-status{display:inline-block;padding:.18rem .5rem;border-radius:4px;font-family:'IBM Plex Mono',monospace;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+        .dpp-status.ok{background:#0B5D33;color:#fff}
+        .dpp-status.partial{background:#FFF8DC;color:#8B6E1F;border:1px solid #D6C58A}
+        .dpp-status.planned{background:var(--paper-warm);color:var(--text-tertiary);border:1px solid var(--border)}
+        .dpp-status.inprogress{background:var(--accent-subtle);color:var(--accent);border:1px solid var(--accent-subtle)}
+        .dpp-list{list-style:disc;padding-left:1.4rem;line-height:1.85;color:var(--text-body);font-size:.88rem;max-width:880px;margin-top:1rem}
+        .dpp-list li{margin-bottom:.4rem}
+        .dpp-list li strong{color:var(--text-primary)}
+        .dpp-roadmap-list{list-style:none;padding:0;margin:1rem 0 0}
+        .dpp-roadmap-list li{display:grid;grid-template-columns:160px 1fr;gap:1rem;align-items:start;padding:.7rem .9rem;border-left:3px solid var(--accent);background:var(--bg-subtle);border-radius:0 6px 6px 0;margin-bottom:.55rem;font-size:.86rem;color:var(--text-secondary);line-height:1.6}
+        .dpp-roadmap-list .dpp-phase{font-family:'IBM Plex Mono',monospace;font-size:.74rem;font-weight:700;color:var(--accent);letter-spacing:.02em}
+        .doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.85rem;margin-top:1rem}
+        .doc-card{display:block;padding:1rem 1.1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);text-decoration:none;transition:border-color .15s ease,transform .15s ease}
+        .doc-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .doc-card-name{font-size:.92rem;font-weight:700;color:var(--text-primary);font-family:'Inter Tight',sans-serif;margin-bottom:.25rem}
+        .doc-card-desc{font-size:.78rem;color:var(--text-secondary);line-height:1.5}
+        .doc-card-arrow{margin-top:.55rem;font-size:.72rem;font-family:'IBM Plex Mono',monospace;color:var(--accent);letter-spacing:.02em}
+        @media(max-width:900px){html,body{overflow-x:hidden!important}.polca-content,.polca-page{width:100%!important;max-width:100%!important;overflow-x:hidden!important}.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{display:none}.dpp-table{font-size:.74rem}.dpp-table thead th,.dpp-table tbody td{padding:.55rem}.dpp-roadmap-list li{grid-template-columns:1fr;gap:.3rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="../index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="../index.html">Dashboard</a>
+            <a href="../analiza.html">Analiza Sektorowa</a>
+            <a href="../metodyka.html">Metodyka</a>
+            <a href="../datasety.html">Datasety</a>
+            <a href="../narzedzia.html">Narzędzia</a>
+            <a href="../podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="../pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="../blog.html" class="btn-ghost">Blog</a>
+            <a href="../datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:1.75rem;align-items:center;padding:1.75rem 0 1.5rem;">
+        <div>
+            <nav class="breadcrumbs" aria-label="Ścieżka nawigacji" style="font-size:.75rem;color:var(--text-tertiary);margin-bottom:.65rem;">
+                <a href="../index.html" style="color:var(--text-secondary);text-decoration:none;">poLCA</a>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>O poLCA</span>
+                <span class="sep" style="margin:0 .35rem;">›</span>
+                <span>Gotowość DPP</span>
+            </nav>
+            <div class="section-num">O poLCA</div>
+            <h1 class="page-title">Gotowość poLCA do Digital Product Passport (DPP)</h1>
+            <p class="page-subtitle">
+                Format danych poLCA jest zgodny z architekturą <strong>DPP</strong> wg
+                <strong>ESPR</strong> (Reg. (UE) 2024/1781) i <strong>CPR</strong> (Reg. (UE) 2024/3110).
+                Datasety LCI, EPD i kalkulatory pre-qualify zasilają przyszłe paszporty
+                produktów budowlanych.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ESPR 2024/1781</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">CPR 2024/3110</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">EN 1821x</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;letter-spacing:.02em;">ILCD+EPD XML</span>
+                <span style="font-size:.65rem;font-family:'IBM Plex Mono',monospace;padding:.2rem .55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;letter-spacing:.02em;">CIRPASS-2 · ISO 22057</span>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="../images/strip-laboratory.jpg" alt="Gotowość poLCA do Digital Product Passport" loading="lazy" style="width:100%;height:180px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.02) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <div class="tool-nav section-gap">
+        <a href="#dpp-co-to" class="tool-nav-pill">01 — Czym jest DPP</a>
+        <a href="#dpp-standardy" class="tool-nav-pill">02 — Standardy formatu danych</a>
+        <a href="#dpp-zawartosc" class="tool-nav-pill">03 — Zawartość DPP wyrobu</a>
+        <a href="#dpp-format" class="tool-nav-pill">04 — Format danych poLCA</a>
+        <a href="#dpp-roadmap" class="tool-nav-pill">05 — Roadmap zgodności</a>
+        <a href="#dpp-powiazane" class="tool-nav-pill">06 — Powiązane dokumenty</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         01 — CZYM JEST DPP I KIEDY OBOWIĄZUJE
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-co-to" class="card card-lg section-gap fade-in" aria-label="Czym jest DPP i kiedy obowiązuje">
+        <div class="section-num">01 — Co to jest DPP i kiedy obowiązuje</div>
+        <div class="card-title">Digital Product Passport — cyfrowy paszport produktu</div>
+        <p class="card-text" style="max-width:880px;">
+            Digital Product Passport (DPP) to cyfrowy paszport produktu wymagany horyzontalnie przez
+            rozporządzenie <strong>ESPR</strong> (Reg. (UE) 2024/1781 — Ecodesign for Sustainable
+            Products Regulation) oraz — w odniesieniu do wyrobów budowlanych — przez rozporządzenie
+            <strong>CPR</strong> (Reg. (UE) 2024/3110). DPP gromadzi w jednym, maszynowo czytelnym
+            rekordzie dane o cyklu życia, składzie, charakterystyce środowiskowej i potencjale obiegu
+            zamkniętego produktu.
+        </p>
+        <ul class="dpp-list">
+            <li>Centralny rejestr DPP UE staje się operacyjny od <strong>19 lipca 2026</strong>.</li>
+            <li>Wymagania DPP dla wyrobów budowlanych zostaną wprowadzone przez akty delegowane do CPR — przewidywane na lata <strong>2029–2030</strong>. Plan prac ESPR 2025–2030 priorytetyzuje najpierw inne grupy produktów: stal (2026), tekstylia (2027), meble (2028) — wyroby budowlane są procedowane osobno, przez ścieżkę CPR.</li>
+            <li>Model architektury: <strong>zdecentralizowany</strong> — dane przechowuje producent, rejestr UE trzyma wskaźniki (unikalny identyfikator produktu → adres URL); nośnik danych (data carrier): kod QR, Data Matrix, RFID lub NFC.</li>
+        </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         02 — STANDARDY FORMATU DANYCH DPP
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-standardy" class="card card-lg section-gap fade-in" aria-label="Standardy formatu danych DPP">
+        <div class="section-num">02 — Standardy formatu danych DPP</div>
+        <div class="card-title">Normy i specyfikacje opisujące format danych DPP</div>
+        <p class="card-text" style="max-width:880px;">
+            Format danych DPP jest definiowany przez serię norm europejskich i specyfikacji
+            referencyjnych. Poniżej zestawienie najważniejszych pozycji wraz z ich statusem.
+        </p>
+        <table class="dpp-table">
+            <thead>
+                <tr>
+                    <th>Standard</th>
+                    <th>Co definiuje</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>CEN/CENELEC JTC 24 — seria EN 1821x</strong> (8 norm)</td>
+                    <td>Architektura DPP</td>
+                    <td>Public enquiry — połowa 2025; publikacja jako EN przewidywana w 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>EN 18222 + EN 18223</strong></td>
+                    <td>API (RESTful) + JSON-LD + interoperacyjność (bezpieczeństwo, prawa dostępu, integralność danych)</td>
+                    <td>W toku</td>
+                </tr>
+                <tr>
+                    <td><strong>CIRPASS-2 EU DPP Core Ontology</strong></td>
+                    <td>Semantyczny model danych — de-facto interoperability reference dla pilotów (tekstylia, elektronika, opony, budownictwo)</td>
+                    <td>Wydany — marzec 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>OPC UA</strong> (liaison JTC 24 ↔ OPC Foundation)</td>
+                    <td>System-agnostic data model</td>
+                    <td>W toku</td>
+                </tr>
+                <tr>
+                    <td><strong>ILCD+EPD XML</strong></td>
+                    <td>Format cyfrowych EPD — aligned to EN 15804+A2 / ISO 21930</td>
+                    <td>Obowiązujący (EPD International — upgrade portalu)</td>
+                </tr>
+                <tr>
+                    <td><strong>ISO 22057</strong></td>
+                    <td>Mapowanie EPD do BIM (Building Information Modeling)</td>
+                    <td>Obowiązujący</td>
+                </tr>
+                <tr>
+                    <td><strong>Mapowanie słowników: ECLASS, GS1, ISO, UNSPSC</strong></td>
+                    <td>Identyfikacja produktów</td>
+                    <td>W EN 18222</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         03 — CO DPP WYROBU BUDOWLANEGO ZAWIERA
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-zawartosc" class="card card-lg section-gap fade-in" aria-label="Zawartość DPP wyrobu budowlanego">
+        <div class="section-num">03 — Co DPP wyrobu budowlanego zawiera</div>
+        <div class="card-title">Zakres danych w paszporcie wyrobu budowlanego</div>
+        <p class="card-text" style="max-width:880px;">
+            DPP wyrobu budowlanego rozszerza zakres deklaracji środowiskowej (EPD) o dane, których
+            EPD samodzielnie nie pokrywa.
+        </p>
+        <ul class="dpp-list">
+            <li><strong>EPD wyrobu</strong> — w formacie ILCD+EPD XML, zgodnie z EN 15804+A2 (16+ wskaźników środowiskowych).</li>
+            <li><strong>Dane spoza zakresu EPD</strong> — udział zawartości z recyklingu (% recycled content), potencjał ponownego użycia i recyklingu (reuse / recycling potential), oznakowanie CE, DoP/DoPC (Declaration of Performance / Declaration of Conformity), substancje wzbudzające obawy (substances of concern), wytyczne dotyczące fazy końca życia (end-of-life guidance).</li>
+            <li><strong>Maszynowa czytelność i kompatybilność</strong> — machine-readable, kompatybilny z BIM (ISO 22057) oraz zgodny z ESPR.</li>
+        </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         04 — FORMAT DANYCH poLCA — GOTOWOŚĆ
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-format" class="card card-lg section-gap fade-in" aria-label="Format danych poLCA — gotowość">
+        <div class="section-num">04 — Format danych poLCA — gotowość</div>
+        <div class="card-title">Element DPP → format docelowy → status poLCA</div>
+        <p class="card-text" style="max-width:880px;">
+            Poniższe zestawienie pokazuje, w jakim stopniu obecny format danych poLCA jest gotowy
+            do zasilania przyszłych paszportów produktów budowlanych.
+        </p>
+        <table class="dpp-table">
+            <thead>
+                <tr>
+                    <th>Element DPP</th>
+                    <th>Format docelowy</th>
+                    <th>poLCA — status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Dataset LCI</strong></td>
+                    <td>JSON-LD ILCD-compatible</td>
+                    <td><span class="dpp-status ok">gotowe</span> &nbsp;32+ datasetów w <a href="../datasety.html">/datasety.html</a>, eksport JSON-LD / CSV</td>
+                </tr>
+                <tr>
+                    <td><strong>EPD wyrobu</strong></td>
+                    <td>ILCD+EPD XML (EN 15804+A2)</td>
+                    <td><span class="dpp-status partial">częściowo</span> &nbsp;eksport deklarowany; w przygotowaniu pełny ILCD+EPD XML</td>
+                </tr>
+                <tr>
+                    <td><strong>Mapowanie BIM</strong></td>
+                    <td>ISO 22057</td>
+                    <td><span class="dpp-status planned">planowane</span> &nbsp;roadmap 2026–2027</td>
+                </tr>
+                <tr>
+                    <td><strong>API wymiany danych</strong></td>
+                    <td>RESTful + JSON-LD (EN 18222 / 18223)</td>
+                    <td><span class="dpp-status inprogress">w toku</span> &nbsp;architektura zgodna; synchronizacja z EN 1821x po publikacji w 2026</td>
+                </tr>
+                <tr>
+                    <td><strong>CIRPASS-2 Core Ontology</strong></td>
+                    <td>Semantyczny model danych</td>
+                    <td><span class="dpp-status planned">planowane</span> &nbsp;mapowanie planowane</td>
+                </tr>
+                <tr>
+                    <td><strong>Kalkulatory pre-qualify (beton / MMA / kruszywa)</strong></td>
+                    <td>Eksport ILCD+EPD XML</td>
+                    <td><span class="dpp-status partial">w przygotowaniu</span> &nbsp;obecnie CSV / JSON</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         05 — ROADMAP ZGODNOŚCI poLCA Z DPP
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-roadmap" class="card card-lg section-gap fade-in" aria-label="Roadmap zgodności poLCA z DPP">
+        <div class="section-num">05 — Roadmap zgodności poLCA z DPP</div>
+        <div class="card-title">Plan dochodzenia do pełnej zgodności 2026–2030</div>
+        <ul class="dpp-roadmap-list">
+            <li>
+                <span class="dpp-phase">2026 Q2–Q3</span>
+                <span>Eksport ILCD+EPD XML z kalkulatorów pre-qualify i datasetów.</span>
+            </li>
+            <li>
+                <span class="dpp-phase">2026 Q4</span>
+                <span>Mapowanie do CIRPASS-2 Core Ontology.</span>
+            </li>
+            <li>
+                <span class="dpp-phase">2027</span>
+                <span>API zgodne z EN 18222 / 18223 (po publikacji norm); mapowanie ISO 22057 do BIM.</span>
+            </li>
+            <li>
+                <span class="dpp-phase">2029–2030</span>
+                <span>Pełna integracja z DPP wyrobów budowlanych (po opublikowaniu aktów delegowanych do CPR).</span>
+            </li>
+        </ul>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         06 — POWIĄZANE DOKUMENTY
+         ═══════════════════════════════════════════════════════════ -->
+    <section id="dpp-powiazane" class="card card-lg section-gap fade-in" aria-label="Powiązane dokumenty">
+        <div class="section-num">06 — Powiązane dokumenty</div>
+        <div class="card-title">Dokumenty i akty prawne związane z gotowością DPP</div>
+        <div class="doc-grid">
+            <a href="../podstawy-normatywne.html" class="doc-card">
+                <div class="doc-card-name">Podstawy normatywne</div>
+                <div class="doc-card-desc">Mapa komponentów bazy oraz procedury jakości z odniesieniami do norm.</div>
+                <div class="doc-card-arrow">Przejdź →</div>
+            </a>
+            <a href="../metodyki/MET-001-poLCA-EN-PL-2024.html" class="doc-card">
+                <div class="doc-card-name">MET-001</div>
+                <div class="doc-card-desc">Wskaźnik emisyjności energii elektrycznej PL — pełna metodyka.</div>
+                <div class="doc-card-arrow">Przejdź →</div>
+            </a>
+            <a href="../c-pcr/" class="doc-card">
+                <div class="doc-card-name">c-PCR (beton / MMA / kruszywa)</div>
+                <div class="doc-card-desc">Reguły kategorii wyrobów budowlanych.</div>
+                <div class="doc-card-arrow">Przejdź →</div>
+            </a>
+            <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj" target="_blank" rel="noopener" class="doc-card">
+                <div class="doc-card-name">ESPR — Reg. (UE) 2024/1781</div>
+                <div class="doc-card-desc">Ecodesign for Sustainable Products Regulation — horyzontalna podstawa DPP.</div>
+                <div class="doc-card-arrow">EUR-Lex →</div>
+            </a>
+            <a href="https://eur-lex.europa.eu/eli/reg/2024/3110/oj" target="_blank" rel="noopener" class="doc-card">
+                <div class="doc-card-name">CPR — Reg. (UE) 2024/3110</div>
+                <div class="doc-card-desc">Rozporządzenie o wyrobach budowlanych — ścieżka DPP dla budownictwa.</div>
+                <div class="doc-card-arrow">EUR-Lex →</div>
+            </a>
+        </div>
+        <p class="card-text" style="max-width:880px;margin-top:1.25rem;font-size:.82rem;color:var(--text-tertiary);">
+            Zob. również: <a href="cytowanie.html">jak cytować poLCA</a> ·
+            <a href="dla-prasy.html">press kit poLCA</a> ·
+            <a href="index.html">o programie poLCA</a>.
+        </p>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="../index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="../metodyka.html">Metodyka</a></li>
+                <li><a href="../analiza.html">Analiza Sektorowa</a></li>
+                <li><a href="../datasety.html">Datasety</a></li>
+                <li><a href="../podstawy-normatywne.html">Podstawy normatywne</a></li>
+                <li><a href="../metodyki/">Metodyki</a></li>
+                <li><a href="../pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="../narzedzia.html">Narzędzia</a></li>
+                <li><a href="index.html">O poLCA</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li><a href="cytowanie.html">Cytowanie</a></li>
+                <li><a href="gotowosc-dpp.html">Gotowość DPP</a></li>
+                <li><a href="dla-prasy.html">Dla prasy</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="../sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+<script src="../js/sidebar.js?v=5.1"></script>
+<script src="../js/animations.js?v=5.1"></script>
+<script src="../js/effects.js?v=5.1"></script>
+<script src="../js/search.js?v=5.1"></script>
+<script src="../js/nav-mobile.js"></script>
+<script src="../js/interactive.js?v=1.0"></script>
+</body>
+</html>
