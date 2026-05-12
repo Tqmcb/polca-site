@@ -535,6 +535,60 @@
             font-size: 0.88rem;
             line-height: 1.6;
         }
+        .trust-panel {
+            margin: 0 0 2.5rem;
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            background: linear-gradient(180deg, var(--bg), var(--bg-subtle));
+        }
+        .trust-panel-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .trust-panel h2 {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.2;
+            color: var(--text);
+            margin: 0.25rem 0 0;
+        }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.85rem;
+        }
+        .trust-item {
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            background: var(--bg);
+        }
+        .trust-item strong {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+        .trust-item p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+        .trust-formula {
+            margin-top: 0.9rem;
+            padding: 0.8rem 1rem;
+            border-radius: var(--r);
+            background: #111318;
+            color: rgba(255,255,255,0.78);
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.76rem;
+            line-height: 1.55;
+        }
 
         /* === SECTION HEADERS === */
         .section-header {
@@ -974,6 +1028,8 @@
             .hero h1 { font-size: 2.1rem; }
             .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .user-path-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr; }
+            .trust-panel-head { flex-direction: column; }
             .blog-grid { grid-template-columns: 1fr; max-width: 480px; }
             .nav-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -1131,6 +1187,36 @@
         </div>
         <div class="user-path-note">
             Prosta zasada: jeśli szukasz liczby do obliczeń, zacznij od wskaźników. Jeśli wynik ma trafić do EPD, raportu lub przetargu, sprawdź też metodykę.
+        </div>
+    </section>
+
+    <section class="trust-panel fade-in" aria-labelledby="trust-title">
+        <div class="trust-panel-head">
+            <div>
+                <div class="section-label">Żeby nikt nie musiał wierzyć na słowo</div>
+                <h2 id="trust-title">poLCA pokazuje nie tylko wynik, ale też status, źródła i ograniczenia.</h2>
+            </div>
+            <a href="wiarygodnosc.html" class="section-link">Jak bronić danych
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <strong>To nie jest czarna skrzynka</strong>
+                <p>Każdy rekord powinien mieć jednostkę, granicę systemu, status publikacji, źródło i zasadę, kiedy zastąpić go EPD albo danymi producenta.</p>
+            </div>
+            <div class="trust-item">
+                <strong>0,599 ma rozkład składowych</strong>
+                <p>Wskaźnik energii PL jest opisany jako model well-to-meter, a nie jako „oficjalny wskaźnik państwowy”. To uczciwsze i bezpieczniejsze.</p>
+            </div>
+            <div class="trust-item">
+                <strong>Default nie wygrywa z audytem</strong>
+                <p>Dane zakładowe, aktualna EPD dostawcy i dokumenty transportowe mają pierwszeństwo przed wartością referencyjną poLCA.</p>
+            </div>
+        </div>
+        <div class="trust-formula">
+            poLCA-EN-PL-2024 = 0,528 + 0,057 + 0,008 + 0,006 = 0,599 kg CO2e/kWh<br>
+            operacyjna energia + WTT_CH4 + WTT paliw + WTT OZE; pełny opis: MET-001 i MET-002.
         </div>
     </section>
 
@@ -1383,6 +1469,7 @@
             <div class="footer-col-title">Nawigacja</div>
             <ul class="footer-links">
                 <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="wiarygodnosc.html">Wiarygodność</a></li>
                 <li><a href="c-pcr/">c-PCR</a></li>
                 <li><a href="analiza.html">Dlaczego poLCA?</a></li>
                 <li><a href="datasety.html">Wskaźniki</a></li>

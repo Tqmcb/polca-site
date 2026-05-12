@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiarygodność danych poLCA — status, ograniczenia, obrona 0,599</title>
+    <meta name="description" content="Jak czytać dane poLCA: status publikacji, ograniczenia, hierarchia źródeł, zasada zastępowania defaultów i obrona wskaźnika 0,599 kg CO2e/kWh.">
+    <link rel="canonical" href="https://polca.org.pl/wiarygodnosc.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wiarygodność danych poLCA">
+    <meta property="og:description" content="Status, ograniczenia, hierarchia źródeł i obrona wskaźnika 0,599 kg CO2e/kWh.">
+    <meta property="og:url" content="https://polca.org.pl/wiarygodnosc.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <style>
+        html{scroll-padding-top:76px}
+        #co-to-jest,#energia-0599,#hierarchia,#ograniczenia,#jak-odpowiadac{scroll-margin-top:76px}
+        .trust-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
+        .trust-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1rem 0 1.5rem}
+        .trust-box{padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+        .trust-box strong{display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.35rem}
+        .trust-box p{margin:0;color:var(--text-secondary);font-size:.8rem;line-height:1.55}
+        .answer-box{padding:1rem;border-left:3px solid var(--accent);border-radius:8px;background:var(--bg-subtle);color:var(--text-secondary);font-size:.86rem;line-height:1.7}
+        .formula-box{padding:1rem;border-radius:8px;background:#111318;color:rgba(255,255,255,.82);font-family:'IBM Plex Mono',monospace;font-size:.78rem;line-height:1.65;overflow-x:auto}
+        .status-table{width:100%;border-collapse:collapse;font-size:.84rem}
+        .status-table th{text-align:left;padding:.7rem;border-bottom:2px solid var(--border);color:var(--text-primary);background:var(--bg-subtle)}
+        .status-table td{padding:.7rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top}
+        .status-table strong{color:var(--text-primary)}
+        .check-list{display:grid;gap:.55rem;padding-left:1.1rem;color:var(--text-secondary);font-size:.86rem;line-height:1.65}
+        .check-list li::marker{color:var(--accent)}
+        @media(max-width:900px){.trust-hero,.trust-summary{grid-template-columns:1fr}.trust-hero>div:last-child{order:-1}.status-table{min-width:720px}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Start</a>
+            <a href="analiza.html">Dlaczego poLCA?</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="datasety.html">Wskaźniki</a>
+            <a href="narzedzia.html">Kalkulatory</a>
+            <a href="podstawy-normatywne.html">Normy</a>
+            <a href="pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+    <section class="trust-hero fade-in">
+        <div>
+            <div class="section-num">Wiarygodność i status danych</div>
+            <h1 class="page-title">Jak bronić danych poLCA, zanim ktoś zapyta „kto to wymyślił?”</h1>
+            <p class="page-subtitle">
+                Najsilniejsza obrona to transparentność: poLCA pokazuje status rekordu, źródła, granicę systemu,
+                ograniczenia i zasadę, kiedy wartość referencyjna musi zostać zastąpiona danymi producenta.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <a href="#energia-0599" class="btn-primary">Obrona 0,599</a>
+                <a href="#ograniczenia" class="btn-ghost" style="border:1px solid var(--border);">Ograniczenia</a>
+                <a href="metodyki/MET-001-poLCA-EN-PL-2024.html" class="btn-ghost" style="border:1px solid var(--border);">MET-001</a>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-data.jpg" alt="Kontrola danych i analiza wykresów" loading="lazy" style="width:100%;height:260px;object-fit:cover;display:block;border-radius:12px;">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none;"></div>
+        </div>
+    </section>
+
+    <div class="trust-summary fade-in">
+        <div class="trust-box">
+            <strong>Nie trzeba udawać bazy komercyjnej</strong>
+            <p>poLCA jest publiczną, wersjonowaną bazą referencyjną i metodyką krajową. Nie kopiuje ecoinvent i nie publikuje zamkniętych inwentarzy bez licencji.</p>
+        </div>
+        <div class="trust-box">
+            <strong>Nie każda liczba ma ten sam status</strong>
+            <p>Inaczej traktuje się EPD producenta, dane zakładowe, dane sektorowe, publiczny default i wynik roboczy. Status musi być widoczny.</p>
+        </div>
+        <div class="trust-box">
+            <strong>Default to początek, nie koniec audytu</strong>
+            <p>Wartości poLCA pomagają policzyć wariant i ustalić punkt odniesienia, ale hotspoty muszą być zastępowane mocniejszymi danymi.</p>
+        </div>
+    </div>
+
+    <section id="co-to-jest" class="card card-lg section-gap fade-in">
+        <div class="section-num">01 — Status</div>
+        <div class="card-title">Czym poLCA jest, a czym nie jest</div>
+        <div class="answer-box">
+            Krótka odpowiedź: poLCA nie mówi „uwierz nam”. poLCA mówi: tu jest wartość, jej zakres,
+            źródło, wersja, ograniczenie i reguła zastąpienia. Jeżeli masz EPD konkretnego dostawcy,
+            dane zakładowe lub dokumenty transportowe, one mają pierwszeństwo przed wartością domyślną.
+        </div>
+        <div style="overflow-x:auto;margin-top:1rem;">
+            <table class="status-table">
+                <thead>
+                    <tr>
+                        <th>Poziom danych</th>
+                        <th>Kiedy używać</th>
+                        <th>Ryzyko</th>
+                        <th>Jak obronić</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EPD produktu / dane zakładowe</strong></td>
+                        <td>Dla konkretnego producenta, dostawcy, zakładu lub deklaracji EPD.</td>
+                        <td>Niskie, jeżeli zakres i data są zgodne z analizą.</td>
+                        <td>Dokument EPD, faktury, WZ/CMR, energia, paliwa, recepta, okres danych.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dane sektorowe / branżowe</strong></td>
+                        <td>Gdy brak danych producenta, ale dostępny jest model reprezentatywny dla rynku.</td>
+                        <td>Średnie: trzeba pilnować technologii, regionu i roku danych.</td>
+                        <td>Opis zakresu, źródła, granicy systemu i test wrażliwości.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wartość referencyjna poLCA</strong></td>
+                        <td>Do wstępnych obliczeń, benchmarku, kontroli rzędu wielkości i braku lepszego źródła.</td>
+                        <td>Nie wolno udawać danych konkretnego producenta.</td>
+                        <td>Pokazać status rekordu, ograniczenia i zasadę zastąpienia mocniejszym źródłem.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wynik roboczy</strong></td>
+                        <td>Do rozmowy technicznej, pre-qualify i wskazania braków danych.</td>
+                        <td>Wysokie, jeśli ktoś użyje jako pełne EPD.</td>
+                        <td>Oznaczyć jako robocze, podać braki i nie używać jako deklaracji produktu.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="energia-0599" class="card card-lg section-gap fade-in">
+        <div class="section-num">02 — Wskaźnik energii</div>
+        <div class="card-title">Jak bronić 0,599 kg CO2e/kWh</div>
+        <p class="card-text">
+            Wartość 0,599 kg CO2e/kWh nie jest przedstawiana jako „oficjalny wskaźnik państwowy”.
+            To model LCA typu well-to-meter dla przepływu „energia elektryczna z sieci PL”, przygotowany
+            do obliczeń LCA/EPD, gdzie wymagane są gazy cieplarniane w CO2e i ujęcie cyklu życia.
+        </p>
+        <div class="formula-box">
+            poLCA-EN-PL-2024 = EF_oper + WTT_CH4 + WTT_fuels + WTT_OZE<br>
+            poLCA-EN-PL-2024 = 0,528 + 0,057 + 0,008 + 0,006 = 0,599 kg CO2e/kWh
+        </div>
+        <div class="trust-summary" style="margin-bottom:0;">
+            <div class="trust-box">
+                <strong>Co mówić</strong>
+                <p>To pełniejszy wskaźnik LCA niż sam CO2 z produkcji energii, bo obejmuje upstream paliw i przelicza gazy do CO2e.</p>
+            </div>
+            <div class="trust-box">
+                <strong>Czego nie mówić</strong>
+                <p>Nie mówić, że to urzędowy wskaźnik państwowy albo że zawsze zastępuje dane kontraktowe energii.</p>
+            </div>
+            <div class="trust-box">
+                <strong>Gdzie jest dokumentacja</strong>
+                <p>Pełna obrona jest w MET-001 i MET-002; katalog danych pokazuje rekord i status publikacji.</p>
+            </div>
+        </div>
+        <p class="card-text" style="margin-top:1rem;">
+            Dokumenty: <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">MET-001 — poLCA-EN-PL-2024</a>,
+            <a href="metodyki/MET-002-energia.html">MET-002 — dlaczego KOBiZE nie jest pełnym wskaźnikiem LCA</a>,
+            <a href="data/datasets/POLCA-EN-PL-LCA-2024.json">rekord JSON datasetu</a>.
+        </p>
+    </section>
+
+    <section id="hierarchia" class="card card-lg section-gap fade-in">
+        <div class="section-num">03 — Hierarchia</div>
+        <div class="card-title">Reguła, która chroni wiarygodność</div>
+        <div class="answer-box">
+            Najważniejsze zdanie do powtarzania: wartość poLCA jest wartością referencyjną do czasu,
+            aż użytkownik ma mocniejsze dane. EPD dostawcy, dane producenta i dokumenty transportowe
+            wygrywają z defaultem, szczególnie w hotspotach wyniku.
+        </div>
+        <div class="trust-summary">
+            <div class="trust-box">
+                <strong>Beton</strong>
+                <p>Cement zwykle dominuje wynik. Dla EPD lub audytu EPD konkretnego cementu ma pierwszeństwo przed wartością referencyjną.</p>
+            </div>
+            <div class="trust-box">
+                <strong>MMA</strong>
+                <p>Lepiszcze jest hotspotem. EPD asfaltu, recepta, RA/RAP i rzeczywisty transport są ważniejsze niż średni default.</p>
+            </div>
+            <div class="trust-box">
+                <strong>Budynek</strong>
+                <p>Wskaźniki służą do wariantów i kontroli. Do finalnego raportu trzeba opisać źródła, moduły i brakujące dane.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ograniczenia" class="card card-lg section-gap fade-in">
+        <div class="section-num">04 — Ograniczenia</div>
+        <div class="card-title">Co trzeba mówić wprost</div>
+        <ul class="check-list" style="margin-top:.5rem;">
+            <li>poLCA nie jest zamiennikiem zweryfikowanej EPD konkretnego produktu.</li>
+            <li>poLCA nie jest urzędową bazą państwową ani zamkniętą komercyjną bazą LCI.</li>
+            <li>Nie każdy rekord ma ten sam status; część danych jest referencyjna, sektorowa albo robocza.</li>
+            <li>Dla wyników formalnych trzeba podać wersję rekordu, datę, granicę systemu, moduły EN 15804 i źródła.</li>
+            <li>Dane licencjonowane mogą wspierać model, ale poLCA nie publikuje zamkniętych inwentarzy pochodnych bez uprawnień.</li>
+        </ul>
+    </section>
+
+    <section id="jak-odpowiadac" class="card card-lg section-gap fade-in">
+        <div class="section-num">05 — Odpowiedź na krytykę</div>
+        <div class="card-title">Jednozdaniowa odpowiedź, gdy ktoś kwestionuje bazę</div>
+        <div class="answer-box">
+            „To nie jest samodzielna deklaracja producenta ani zamiennik EPD. To publiczna, wersjonowana
+            baza referencyjna z jawnie opisanym zakresem, źródłami i ograniczeniami; dla danych kluczowych
+            zawsze pierwszeństwo mają EPD dostawcy, dane zakładowe i dokumenty audytowe.”
+        </div>
+    </section>
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="wiarygodnosc.html">Wiarygodność</a></li>
+                <li><a href="datasety.html">Wskaźniki</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
+                <li><a href="pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="metodyki/">Metodyki</a></li>
+                <li><a href="c-pcr/">c-PCR</a></li>
+                <li><a href="podstawy-normatywne.html">Normy</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+
+<script src="js/nav-mobile.js"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+</body>
+</html>
