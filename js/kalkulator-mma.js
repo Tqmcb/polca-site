@@ -375,6 +375,79 @@
         copyText(JSON.stringify(obj, null, 2), el('mmaExportJson'), 'Kopiuj JSON');
     }
 
+    function xmlEsc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function downloadFile(text, filename, mime) {
+        try {
+            var blob = new Blob([text], { type: mime || 'application/xml;charset=utf-8' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url; a.download = filename;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            return true;
+        } catch (e) { return false; }
+    }
+
+    function exportIlcdEpdXml() {
+        var p = buildPayload(), r = p.r;
+        var presetName = presetSel.value;
+        var pLabel = PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura';
+        var tech = r.tech || 'HMA';
+        var fuel = r.fuel === 'gaz' ? 'gaz ziemny' : 'olej opałowy';
+        var name = 'Mieszanka mineralno-asfaltowa (MMA) — ' + pLabel + ' [' + tech + ']';
+        var ts = new Date().toISOString();
+        var x = [];
+        x.push('<?xml version="1.0" encoding="UTF-8"?>');
+        x.push('<ilcd:processDataSet xmlns:ilcd="http://lca.jrc.it/ILCD/Process" version="1.1">');
+        x.push('  <!-- poLCA pre-qualify estimate — NOT a verified EPD. ILCD+EPD-compatible structure (simplified). -->');
+        x.push('  <!-- Pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob. /o-polca/gotowosc-dpp.html -->');
+        x.push('  <processInformation>');
+        x.push('    <dataSetInformation>');
+        x.push('      <name>' + xmlEsc(name) + '</name>');
+        x.push('      <classification>Wyroby budowlane / Mieszanki mineralno-asfaltowe (EN 13108)</classification>');
+        x.push('    </dataSetInformation>');
+        x.push('    <quantitativeReference>');
+        x.push('      <referenceFlow>1 t MMA (1000 kg, na wyjściu z wytwórni)</referenceFlow>');
+        x.push('    </quantitativeReference>');
+        x.push('    <geography><locationOfOperationSupplyOrProduction location="PL"/></geography>');
+        x.push('    <technology>' + xmlEsc('Technologia: ' + tech + '; temperatura produkcji ' + r.temp + ' °C; paliwo wytwórni: ' + fuel) + '</technology>');
+        x.push('  </processInformation>');
+        x.push('  <modellingAndValidation>');
+        x.push('    <complianceDeclarations>');
+        x.push('      <compliance>EN 15804+A2:2019; c-PCR-MMA-EPD-Polska; ISO 14040/14044</compliance>');
+        x.push('    </complianceDeclarations>');
+        x.push('    <dataSourcesTreatmentAndRepresentativeness>');
+        x.push('      <dataSource>POLCA-MMA-LCI-DEFAULTS-2026; poLCA-EN-PL-2024 v9.1 (0.599 kg CO2e/kWh); Eurobitume LCA 4.0 (2025)</dataSource>');
+        x.push('    </dataSourcesTreatmentAndRepresentativeness>');
+        x.push('  </modellingAndValidation>');
+        x.push('  <exchanges>');
+        x.push('    <!-- moduły EN 15804: A1, A2, A3 (GWP-total, kg CO2 eq / 1 t MMA) -->');
+        x.push('    <exchange module="A1"><meanAmount>' + num6(r.a1) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('    <exchange module="A2"><meanAmount>' + num6(r.a2) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('    <exchange module="A3"><meanAmount>' + num6(r.a3) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('    <exchange module="A1-A3"><meanAmount>' + num6(r.total) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('  </exchanges>');
+        x.push('  <administrativeInformation>');
+        x.push('    <publicationAndOwnership>');
+        x.push('      <referenceToOwnershipOfDataSet>Multicert Sp. z o.o. / EPD Polska</referenceToOwnershipOfDataSet>');
+        x.push('      <dataSetVersion>poLCA-pre-qualify-2026.1</dataSetVersion>');
+        x.push('      <generatedAt>' + xmlEsc(ts) + '</generatedAt>');
+        x.push('    </publicationAndOwnership>');
+        x.push('  </administrativeInformation>');
+        x.push('</ilcd:processDataSet>');
+        var xml = x.join('\n');
+        var btn = el('mmaExportXml');
+        if (downloadFile(xml, 'polca-mma-pre-qualify.xml', 'application/xml;charset=utf-8')) {
+            var lbl = 'Eksport ILCD+EPD XML';
+            btn.textContent = 'Pobrano XML';
+            setTimeout(function () { btn.textContent = lbl; }, 2000);
+        } else {
+            copyText(xml, btn, 'Eksport ILCD+EPD XML');
+        }
+    }
+
     /* ---- Listenery ---- */
     presetSel.addEventListener('change', function () { loadPreset(presetSel.value); render(); });
 
@@ -397,9 +470,10 @@
         });
     });
 
-    var btnCsv = el('mmaExportCsv'), btnJson = el('mmaExportJson');
+    var btnCsv = el('mmaExportCsv'), btnJson = el('mmaExportJson'), btnXml = el('mmaExportXml');
     if (btnCsv) btnCsv.addEventListener('click', exportCsv);
     if (btnJson) btnJson.addEventListener('click', exportJson);
+    if (btnXml) btnXml.addEventListener('click', exportIlcdEpdXml);
 
     /* ---- Init ---- */
     function init() { initChart(); loadPreset(presetSel.value); render(); }

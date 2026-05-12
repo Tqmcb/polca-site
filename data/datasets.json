@@ -16,7 +16,14 @@
     "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
     "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne.",
+    "dpp_readiness": {
+      "format": "JSON-LD ILCD-compatible",
+      "export_formats": ["JSON-LD", "ILCD+EPD XML", "CSV"],
+      "standards_alignment": ["EN 15804+A2:2019", "ISO 21930:2017", "ILCD format"],
+      "future_compliance": "CEN/CENELEC EN 18222/EN 18223 (DPP API, expected 2026); CIRPASS-2 EU DPP Core Ontology; ISO 22057 (BIM mapping)",
+      "note": "Datasety poLCA są gotowe do importu do Digital Product Passport wyrobów budowlanych zgodnie z ESPR (Reg. UE 2024/1781) i CPR (Reg. UE 2024/3110). Zob. /o-polca/gotowosc-dpp.html"
+    }
   },
   "datasets": [
     {

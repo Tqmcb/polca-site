@@ -456,6 +456,86 @@
         copyText(JSON.stringify(obj, null, 2), el('aggExportJson'), 'Kopiuj JSON');
     }
 
+    function xmlEsc(s) {
+        return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+    function downloadFile(text, filename, mime) {
+        try {
+            var blob = new Blob([text], { type: mime || 'application/xml;charset=utf-8' });
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url; a.download = filename;
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+            return true;
+        } catch (e) { return false; }
+    }
+
+    function exportIlcdEpdXml() {
+        var r = compute();
+        var c = r.comp || {};
+        var a2 = (typeof c.transport === 'number') ? c.transport : 0;
+        var a1a3 = r.total;
+        var a13 = a1a3 - a2; // A1+A3 łącznie (pozyskanie + przeróbka, bez transportu wewnętrznego)
+        var label = r.mode === 'simple' ? (r.simpleLabel || 'kruszywo') : (r.rockLabel || 'kruszywo');
+        var name = 'Kruszywo budowlane — ' + label + (r.mode === 'simple' ? ' (tryb uproszczony)' : ' (tryb zaawansowany)');
+        var tech = r.mode === 'simple'
+            ? 'Wartość referencyjna GWP A1-A3 wg datasetów POLCA-AGG-PL'
+            : ('Pozyskanie i przeróbka: energia kruszenia ' + num6(r.energy) + ' kWh/t; olej napędowy ' + num6(r.diesel) + ' L/t; materiały wybuchowe ' + num6(r.explosive) + ' kg/t; płukanie: ' + (r.washOn ? 'tak' : 'nie') + '; transport wewnętrzny ' + num6(r.a2km) + ' km' + (r.rcPct > 0 ? '; frakcja recyklingowa RC ' + num6(r.rcPct) + '%' : ''));
+        var ts = new Date().toISOString();
+        var x = [];
+        x.push('<?xml version="1.0" encoding="UTF-8"?>');
+        x.push('<ilcd:processDataSet xmlns:ilcd="http://lca.jrc.it/ILCD/Process" version="1.1">');
+        x.push('  <!-- poLCA pre-qualify estimate — NOT a verified EPD. ILCD+EPD-compatible structure (simplified). -->');
+        x.push('  <!-- Pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob. /o-polca/gotowosc-dpp.html -->');
+        x.push('  <processInformation>');
+        x.push('    <dataSetInformation>');
+        x.push('      <name>' + xmlEsc(name) + '</name>');
+        x.push('      <classification>Wyroby budowlane / Kruszywa (EN 12620, EN 13242)</classification>');
+        x.push('    </dataSetInformation>');
+        x.push('    <quantitativeReference>');
+        x.push('      <referenceFlow>1 t kruszywa (na bramie kopalni / zakładu przeróbki)</referenceFlow>');
+        x.push('    </quantitativeReference>');
+        x.push('    <geography><locationOfOperationSupplyOrProduction location="PL"/></geography>');
+        x.push('    <technology>' + xmlEsc(tech) + '</technology>');
+        x.push('  </processInformation>');
+        x.push('  <modellingAndValidation>');
+        x.push('    <complianceDeclarations>');
+        x.push('      <compliance>EN 15804+A2:2019; c-PCR-AGG-EPD-Polska; ISO 14040/14044</compliance>');
+        x.push('    </complianceDeclarations>');
+        x.push('    <dataSourcesTreatmentAndRepresentativeness>');
+        x.push('      <dataSource>POLCA-AGG-LCI-DEFAULTS-2026; poLCA-EN-PL-2024 v9.1 (0.599 kg CO2e/kWh); KOBiZE 2024 (olej napędowy 3.17 kg CO2e/L)</dataSource>');
+        x.push('    </dataSourcesTreatmentAndRepresentativeness>');
+        x.push('  </modellingAndValidation>');
+        x.push('  <exchanges>');
+        x.push('    <!-- moduły EN 15804: A1+A3 (pozyskanie + przeróbka), A2 (transport wewnętrzny), A1-A3 GWP-total, kg CO2 eq / 1 t kruszywa -->');
+        x.push('    <exchange module="A1-A3-acquisition-processing"><meanAmount>' + num6(a13) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('    <exchange module="A2"><meanAmount>' + num6(a2) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        x.push('    <exchange module="A1-A3"><meanAmount>' + num6(a1a3) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        if (r.a4 > 0) {
+            x.push('    <!-- A4 transport na budowę — raportowane osobno, poza A1-A3 -->');
+            x.push('    <exchange module="A4"><meanAmount>' + num6(r.a4) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
+        }
+        x.push('  </exchanges>');
+        x.push('  <administrativeInformation>');
+        x.push('    <publicationAndOwnership>');
+        x.push('      <referenceToOwnershipOfDataSet>Multicert Sp. z o.o. / EPD Polska</referenceToOwnershipOfDataSet>');
+        x.push('      <dataSetVersion>poLCA-pre-qualify-2026.1</dataSetVersion>');
+        x.push('      <generatedAt>' + xmlEsc(ts) + '</generatedAt>');
+        x.push('    </publicationAndOwnership>');
+        x.push('  </administrativeInformation>');
+        x.push('</ilcd:processDataSet>');
+        var xml = x.join('\n');
+        var btn = el('aggExportXml');
+        if (downloadFile(xml, 'polca-kruszywa-pre-qualify.xml', 'application/xml;charset=utf-8')) {
+            var lbl = 'Eksport ILCD+EPD XML';
+            btn.textContent = 'Pobrano XML';
+            setTimeout(function () { btn.textContent = lbl; }, 2000);
+        } else {
+            copyText(xml, btn, 'Eksport ILCD+EPD XML');
+        }
+    }
+
     /* ---- Przełączanie trybu ---- */
     function applyMode() {
         var mode = radioVal('aggMode') || 'simple';
@@ -490,9 +570,10 @@
         i.addEventListener('change', render);
     });
 
-    var btnCsv = el('aggExportCsv'), btnJson = el('aggExportJson');
+    var btnCsv = el('aggExportCsv'), btnJson = el('aggExportJson'), btnXml = el('aggExportXml');
     if (btnCsv) btnCsv.addEventListener('click', exportCsv);
     if (btnJson) btnJson.addEventListener('click', exportJson);
+    if (btnXml) btnXml.addEventListener('click', exportIlcdEpdXml);
 
     /* ---- Init ---- */
     function init() {
