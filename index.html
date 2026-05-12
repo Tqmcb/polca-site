@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>poLCA — wskaźniki LCA i GWP dla wyrobów budowlanych</title>
-    <meta name="description" content="Znajdź polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD zgodnych z EN 15804+A2.">
+    <title>poLCA — polskie wskaźniki LCA, które da się obronić</title>
+    <meta name="description" content="Publiczna, wersjonowana baza wskaźników LCA i GWP dla betonu, MMA, budynków i EPD zgodnych z EN 15804+A2. Wynik, źródło, status i ograniczenia w jednym miejscu.">
     <link rel="canonical" href="https://polca.org.pl/">
 
     <!-- OpenGraph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="poLCA — wskaźniki LCA i GWP dla budownictwa">
-    <meta property="og:description" content="Polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD zgodnych z EN 15804+A2.">
+    <meta property="og:title" content="poLCA — polskie wskaźniki LCA, które da się obronić">
+    <meta property="og:description" content="Publiczna, wersjonowana baza wskaźników LCA i GWP dla betonu, MMA, budynków i EPD zgodnych z EN 15804+A2.">
     <meta property="og:url" content="https://polca.org.pl/">
-    <meta property="og:image" content="https://polca.org.pl/images/hero-main.jpg">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-cement.jpg">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="poLCA — wskaźniki LCA i GWP dla budownictwa">
-    <meta name="twitter:description" content="Polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD.">
-    <meta name="twitter:image" content="https://polca.org.pl/images/hero-main.jpg">
+    <meta name="twitter:title" content="poLCA — polskie wskaźniki LCA, które da się obronić">
+    <meta name="twitter:description" content="Publiczna, wersjonowana baza wskaźników LCA i GWP dla betonu, MMA, budynków i EPD.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-cement.jpg">
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
@@ -250,14 +250,17 @@
 
         /* === HERO === */
         .hero {
-            padding: 4rem 0 2rem;
+            padding: 3.25rem 0 2.5rem;
             position: relative;
         }
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+            gap: 2.75rem;
             align-items: center;
+        }
+        .hero-copy {
+            max-width: 610px;
         }
         .hero-tag {
             display: inline-block;
@@ -274,9 +277,9 @@
         }
         .hero h1 {
             font-family: 'Inter Tight', 'Inter', sans-serif;
-            font-size: 2.75rem;
+            font-size: 3.1rem;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.04;
             letter-spacing: -0.035em;
             color: var(--text);
             margin-bottom: 1.25rem;
@@ -288,10 +291,10 @@
             background-clip: text;
         }
         .hero-desc {
-            font-size: 1.05rem;
+            font-size: 1.07rem;
             color: var(--text-muted);
             line-height: 1.75;
-            max-width: 520px;
+            max-width: 560px;
             margin-bottom: 2rem;
         }
         .hero-cta {
@@ -340,20 +343,46 @@
             background: var(--accent-sub);
             transform: translateY(-1px);
         }
+        .hero-assurance {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem 0.85rem;
+            align-items: center;
+            margin-top: 1rem;
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+        .hero-assurance a {
+            font-weight: 700;
+            color: var(--text);
+            border-bottom: 1px solid var(--accent-bdr);
+        }
+        .hero-assurance span::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-right: 0.55rem;
+            transform: translateY(-1px);
+        }
 
         /* Hero image */
         .hero-visual {
             position: relative;
             border-radius: var(--r-lg);
             overflow: hidden;
+            box-shadow: var(--shadow-lg);
         }
         .hero-visual img {
             width: 100%;
-            height: 340px;
+            height: 430px;
             object-fit: cover;
             display: block;
             border-radius: var(--r-lg);
-            filter: saturate(1.05) contrast(1.02);
+            filter: saturate(1.02) contrast(1.02);
         }
         .hero-visual::after {
             content: '';
@@ -365,8 +394,8 @@
         }
         .hero-visual-badge {
             position: absolute;
-            bottom: 1rem;
-            left: 1rem;
+            top: 1rem;
+            right: 1rem;
             background: rgba(17,19,24,0.85);
             backdrop-filter: blur(8px);
             color: white;
@@ -389,6 +418,146 @@
         @keyframes pulse-dot {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.4; }
+        }
+
+        .data-card {
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            padding: 1rem;
+            border: 1px solid rgba(255,255,255,0.65);
+            border-radius: var(--r);
+            background: rgba(255,255,255,0.94);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 14px 38px rgba(0,0,0,0.18);
+        }
+        .data-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .data-card-top span:last-child {
+            color: var(--accent);
+        }
+        .data-metric {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.8rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .data-metric strong {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 2.65rem;
+            line-height: 0.9;
+            color: var(--text);
+            letter-spacing: 0;
+        }
+        .data-metric span {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            line-height: 1.35;
+            padding-bottom: 0.1rem;
+        }
+        .component-bars {
+            display: grid;
+            gap: 0.48rem;
+            margin-top: 0.8rem;
+        }
+        .component-bar {
+            display: grid;
+            grid-template-columns: 8.6rem minmax(80px, 1fr) 3.1rem;
+            gap: 0.55rem;
+            align-items: center;
+            font-size: 0.72rem;
+            color: var(--text-muted);
+        }
+        .component-bar span:first-child {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .bar-track {
+            height: 7px;
+            border-radius: 999px;
+            background: var(--bg-warm);
+            overflow: hidden;
+        }
+        .bar-track i {
+            display: block;
+            width: var(--bar);
+            height: 100%;
+            border-radius: inherit;
+            background: var(--accent);
+        }
+        .component-bar:nth-child(2) .bar-track i { background: #C4721A; }
+        .component-bar:nth-child(3) .bar-track i { background: #4A7C59; }
+        .component-bar:nth-child(4) .bar-track i { background: #6B4C8B; }
+        .component-bar b {
+            font-family: 'IBM Plex Mono', monospace;
+            color: var(--text);
+            font-size: 0.72rem;
+            text-align: right;
+        }
+        .data-lineage {
+            margin-top: 0.85rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            line-height: 1.45;
+        }
+        .proof-ribbon {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin-top: 1.6rem;
+        }
+        .proof-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.55rem 0.7rem;
+            align-items: start;
+            padding: 0.95rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            background: var(--bg);
+            color: var(--text-body);
+            transition: border-color 0.2s, box-shadow 0.3s, transform 0.3s var(--ease-out);
+        }
+        .proof-item:hover {
+            border-color: var(--accent-bdr);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-2px);
+            color: var(--text-body);
+        }
+        .proof-mark {
+            grid-row: span 2;
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--accent);
+            background: var(--accent-sub);
+            border-radius: 4px;
+            padding: 0.15rem 0.35rem;
+        }
+        .proof-item strong {
+            color: var(--text);
+            font-size: 0.88rem;
+            line-height: 1.25;
+        }
+        .proof-item small {
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            line-height: 1.45;
         }
 
         /* Hero stats */
@@ -1021,11 +1190,17 @@
             color: rgba(255,255,255,0.3);
         }
 
+        @media (max-width: 1100px) {
+            .polca-topnav { display: none; }
+            .nav-hamburger { display: flex; }
+        }
+
         /* === RESPONSIVE === */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .hero-visual { order: -1; }
-            .hero h1 { font-size: 2.1rem; }
+            .hero-visual { order: 0; }
+            .hero h1 { font-size: 2.35rem; }
+            .proof-ribbon { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
             .user-path-grid { grid-template-columns: 1fr; }
             .trust-grid { grid-template-columns: 1fr; }
@@ -1043,16 +1218,39 @@
             .nav-grid { grid-template-columns: 1fr; padding: 1.25rem; }
             .contact-grid { grid-template-columns: 1fr; }
             .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-            .hero h1 { font-size: 1.75rem; }
+            .hero { padding-top: 2.25rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-desc { font-size: 0.98rem; }
             .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-visual {
+                overflow: visible;
+                box-shadow: none;
+            }
             .hero-visual img { height: 220px; }
+            .data-card {
+                position: relative;
+                left: auto;
+                right: auto;
+                bottom: auto;
+                margin-top: 0.75rem;
+                box-shadow: var(--shadow-md);
+            }
+            .data-metric strong { font-size: 2.2rem; }
+            .component-bar {
+                grid-template-columns: 1fr 4.4rem;
+                gap: 0.35rem 0.55rem;
+            }
+            .component-bar span:first-child {
+                grid-column: 1 / -1;
+            }
+            .proof-ribbon { grid-template-columns: 1fr; }
             .user-paths { padding: 2.25rem 0; }
             .user-paths-head h2 { font-size: 1.35rem; }
             .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
 
         /* Mobile nav overlay */
-        @media (max-width: 600px) {
+        @media (max-width: 1100px) {
             .polca-topbar.nav-open .polca-topnav {
                 display: flex;
                 flex-direction: column;
@@ -1091,10 +1289,11 @@
         <a href="index.html" class="site-logo">poLCA</a>
         <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html" class="active">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
             <a href="datasety.html">Wskaźniki</a>
             <a href="narzedzia.html">Kalkulatory</a>
+            <a href="wiarygodnosc.html">Wiarygodność</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="analiza.html">Dlaczego?</a>
             <a href="podstawy-normatywne.html">Normy</a>
             <a href="pobierz.html">Pobierz</a>
             <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
@@ -1118,27 +1317,87 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-grid">
-            <div>
-                <div class="hero-tag fade-in">Wskaźniki LCA dla budownictwa</div>
-                <h1 class="fade-in fade-in-delay-1">Znajdź wskaźnik do obliczeń <span class="hero-accent">śladu węglowego</span></h1>
+            <div class="hero-copy">
+                <div class="hero-tag fade-in">Publiczna baza referencyjna · EN 15804+A2</div>
+                <h1 class="fade-in fade-in-delay-1">Polskie wskaźniki LCA, które <span class="hero-accent">da się obronić</span></h1>
                 <p class="hero-desc fade-in fade-in-delay-2">
-                    Wybierz ścieżkę: dane do produkcji betonu, MMA i EPD albo szybkie wskaźniki do śladu węglowego budynku. Metodyka i źródła są niżej, gdy potrzebujesz raportu, audytu lub weryfikacji.
+                    Dla betonu, MMA, śladu węglowego budynku i EPD. poLCA prowadzi od liczby do źródła: dataset, moduł, granica systemu, wersja, status i reguła, kiedy zastąpić wartość danymi producenta.
                 </p>
                 <div class="hero-cta fade-in fade-in-delay-3">
                     <a href="datasety.html#referencyjne-szczegoly" class="cta-primary">
                         Szukam wskaźnika
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="narzedzia.html#materialy" class="cta-outline">Liczę ślad budynku</a>
+                    <a href="wiarygodnosc.html" class="cta-outline">Sprawdzam wiarygodność</a>
+                </div>
+                <div class="hero-assurance fade-in fade-in-delay-4">
+                    <a href="narzedzia.html#materialy">Liczę ślad budynku</a>
+                    <span>wartości domyślne mają jawny status i ograniczenia</span>
                 </div>
             </div>
             <div class="hero-visual fade-in fade-in-delay-2">
-                <img src="images/hero-main.jpg" alt="Panele fotowoltaiczne — symbol zrównoważonej energii w polskim przemyśle" width="540" height="340" loading="eager">
+                <img src="images/strip-cement.jpg" alt="Prace przy betonie — kontekst wyrobów budowlanych i wskaźników LCA" width="540" height="430" loading="eager">
                 <div class="hero-visual-badge">
                     <span class="badge-dot"></span>
-                    EN 15804+A2 · ISO 14044
+                    EN 15804+A2 · CPR 2024
+                </div>
+                <div class="data-card" aria-label="Rozbicie wskaźnika energii elektrycznej poLCA">
+                    <div class="data-card-top">
+                        <span>Wskaźnik kontrolny</span>
+                        <span>v2026.6</span>
+                    </div>
+                    <div class="data-metric">
+                        <strong>0,599</strong>
+                        <span>kg CO₂e/kWh<br>energia PL · full LCA</span>
+                    </div>
+                    <div class="component-bars">
+                        <div class="component-bar" style="--bar: 88%;">
+                            <span>operacyjna energia</span>
+                            <div class="bar-track"><i></i></div>
+                            <b>0,528</b>
+                        </div>
+                        <div class="component-bar" style="--bar: 10%;">
+                            <span>WTT_CH₄</span>
+                            <div class="bar-track"><i></i></div>
+                            <b>0,057</b>
+                        </div>
+                        <div class="component-bar" style="--bar: 2%;">
+                            <span>WTT paliw</span>
+                            <div class="bar-track"><i></i></div>
+                            <b>0,008</b>
+                        </div>
+                        <div class="component-bar" style="--bar: 1%;">
+                            <span>WTT OZE</span>
+                            <div class="bar-track"><i></i></div>
+                            <b>0,006</b>
+                        </div>
+                    </div>
+                    <div class="data-lineage">Ścieżka źródłowa: KOBiZE · IPCC AR6 · EN 15804+A2 · dataset JSON</div>
                 </div>
             </div>
+        </div>
+
+        <div class="proof-ribbon fade-in fade-in-delay-4" aria-label="Dowody wiarygodności poLCA">
+            <a href="datasety.html#referencyjne-szczegoly" class="proof-item">
+                <span class="proof-mark">01</span>
+                <strong>36 datasetów</strong>
+                <small>wersja 2026.6-mma, pliki JSON i CSV</small>
+            </a>
+            <a href="metodyka.html" class="proof-item">
+                <span class="proof-mark">02</span>
+                <strong>Granice i moduły</strong>
+                <small>EN 15804+A2, ISO 14040/14044</small>
+            </a>
+            <a href="wiarygodnosc.html" class="proof-item">
+                <span class="proof-mark">03</span>
+                <strong>Reguła zastąpienia</strong>
+                <small>EPD i dane zakładowe mają pierwszeństwo</small>
+            </a>
+            <a href="pobierz.html#datasety" class="proof-item">
+                <span class="proof-mark">04</span>
+                <strong>Dane do pobrania</strong>
+                <small>bez czarnej skrzynki i bez ręcznego przepisywania</small>
+            </a>
         </div>
 
     </section>
@@ -1222,19 +1481,19 @@
 
     <div class="hero-stats credibility-stats fade-in">
         <div class="hero-stat">
-            <div class="hero-stat-num">599 kg</div>
-            <div class="hero-stat-label">CO₂e/MWh — miks PL</div>
-            <div class="hero-stat-sub">poLCA-EN-PL 2024 · full LCA</div>
+            <div class="hero-stat-num">0,599</div>
+            <div class="hero-stat-label">kg CO₂e/kWh — energia PL</div>
+            <div class="hero-stat-sub">pełny opis w MET-001 i MET-002</div>
         </div>
         <div class="hero-stat">
-            <div class="hero-stat-num">+185%</div>
-            <div class="hero-stat-label">odchylenie vs. EU avg</div>
-            <div class="hero-stat-sub">poLCA 599 vs Ember 210</div>
+            <div class="hero-stat-num">36</div>
+            <div class="hero-stat-label">datasetów referencyjnych</div>
+            <div class="hero-stat-sub">wersja 2026.6-mma</div>
         </div>
         <div class="hero-stat">
-            <div class="hero-stat-num">7</div>
-            <div class="hero-stat-label">warstw walidacji</div>
-            <div class="hero-stat-sub">ISO 14044 · E-PRTR · EU ETS</div>
+            <div class="hero-stat-num">JSON</div>
+            <div class="hero-stat-label">źródła do sprawdzenia</div>
+            <div class="hero-stat-sub">pobranie i integracja bez przepisywania</div>
         </div>
         <div class="hero-stat">
             <div class="hero-stat-num">EN 15804</div>
