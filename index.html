@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>poLCA — Polska Baza Danych LCA dla wyrobów budowlanych</title>
-    <meta name="description" content="Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.">
+    <title>poLCA — wskaźniki LCA i GWP dla wyrobów budowlanych</title>
+    <meta name="description" content="Znajdź polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD zgodnych z EN 15804+A2.">
     <link rel="canonical" href="https://polca.org.pl/">
 
     <!-- OpenGraph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="poLCA — Polska Baza Danych LCA">
-    <meta property="og:description" content="Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach produkcji. Siedmiowarstwowa walidacja z krzyżową weryfikacją E-PRTR i EU ETS.">
+    <meta property="og:title" content="poLCA — wskaźniki LCA i GWP dla budownictwa">
+    <meta property="og:description" content="Polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD zgodnych z EN 15804+A2.">
     <meta property="og:url" content="https://polca.org.pl/">
     <meta property="og:image" content="https://polca.org.pl/images/hero-main.jpg">
     <meta property="og:locale" content="pl_PL">
@@ -18,8 +18,8 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="poLCA — Polska Baza Danych LCA">
-    <meta name="twitter:description" content="Inwentaryzacja cyklu życia wyrobów budowlanych oparta na polskich warunkach produkcji.">
+    <meta name="twitter:title" content="poLCA — wskaźniki LCA i GWP dla budownictwa">
+    <meta name="twitter:description" content="Polskie wskaźniki LCA i GWP do obliczeń śladu węglowego budynku, produkcji betonu, MMA i EPD.">
     <meta name="twitter:image" content="https://polca.org.pl/images/hero-main.jpg">
 
     <!-- JSON-LD -->
@@ -156,13 +156,13 @@
             box-shadow: 0 1px 8px rgba(0,0,0,0.04);
         }
         .header-inner {
-            max-width: var(--max);
+            max-width: 1180px;
             margin: 0 auto;
             padding: 0 2rem;
             width: 100%;
             display: flex;
             align-items: center;
-            gap: 2.5rem;
+            gap: 1.25rem;
         }
         .site-logo {
             font-family: 'IBM Plex Mono', monospace;
@@ -179,13 +179,16 @@
             align-items: center;
             gap: 0.25rem;
             flex: 1;
+            min-width: 0;
+            justify-content: center;
         }
         .polca-topnav a {
-            padding: 0.35rem 0.75rem;
+            padding: 0.35rem 0.55rem;
             border-radius: 6px;
-            font-size: 0.875rem;
+            font-size: 0.82rem;
             font-weight: 500;
             color: var(--text-muted);
+            white-space: nowrap;
             transition: color 0.2s, background 0.2s;
         }
         .polca-topnav a:hover, .polca-topnav a.active {
@@ -247,7 +250,7 @@
 
         /* === HERO === */
         .hero {
-            padding: 4rem 0 3.5rem;
+            padding: 4rem 0 2rem;
             position: relative;
         }
         .hero-grid {
@@ -424,12 +427,113 @@
             color: var(--text-faint);
             margin-top: 0.15rem;
         }
+        .credibility-stats {
+            margin-top: 0;
+            padding: 2.25rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
 
-        /* === SECTION DIVIDER === */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
+        /* === USER PATHS === */
+        .user-paths {
+            padding: 1rem 0 3rem;
+        }
+        .user-paths-head {
+            max-width: 720px;
+            margin-bottom: 1.5rem;
+        }
+        .user-paths-head h2 {
+            font-family: 'Inter Tight', 'Inter', sans-serif;
+            font-size: 1.65rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.025em;
+            line-height: 1.2;
+            margin-bottom: 0.55rem;
+        }
+        .user-paths-head p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+        }
+        .user-path-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        .user-path-card {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1.4rem;
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            background: var(--bg);
+            color: var(--text-body);
+            transition: border-color 0.2s, box-shadow 0.3s, transform 0.3s var(--ease-out);
+        }
+        .user-path-card:hover {
+            border-color: var(--accent-bdr);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+            color: var(--text-body);
+        }
+        .user-path-kicker {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+        .user-path-card strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--text);
+            line-height: 1.3;
+        }
+        .user-path-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
             margin: 0;
+        }
+        .user-path-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            margin: 0.15rem 0 0;
+            padding: 0;
+            color: var(--text-body);
+            font-size: 0.84rem;
+            line-height: 1.5;
+        }
+        .user-path-list li::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-right: 0.5rem;
+            transform: translateY(-1px);
+        }
+        .user-path-arrow {
+            margin-top: auto;
+            padding-top: 0.35rem;
+            color: var(--accent);
+            font-size: 0.86rem;
+            font-weight: 600;
+        }
+        .user-path-note {
+            margin-top: 1.1rem;
+            padding: 0.85rem 1rem;
+            border-left: 3px solid var(--accent);
+            background: var(--bg-subtle);
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.6;
         }
 
         /* === SECTION HEADERS === */
@@ -869,6 +973,7 @@
             .hero-visual { order: -1; }
             .hero h1 { font-size: 2.1rem; }
             .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+            .user-path-grid { grid-template-columns: 1fr; }
             .blog-grid { grid-template-columns: 1fr; max-width: 480px; }
             .nav-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -885,6 +990,8 @@
             .hero h1 { font-size: 1.75rem; }
             .hero-stats { grid-template-columns: repeat(2, 1fr); }
             .hero-visual img { height: 220px; }
+            .user-paths { padding: 2.25rem 0; }
+            .user-paths-head h2 { font-size: 1.35rem; }
             .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
 
@@ -927,12 +1034,12 @@
     <div class="header-inner">
         <a href="index.html" class="site-logo">poLCA</a>
         <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html" class="active">Dashboard</a>
-            <a href="analiza.html">Analiza Sektorowa</a>
+            <a href="index.html" class="active">Start</a>
+            <a href="analiza.html">Dlaczego poLCA?</a>
             <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Datasety</a>
-            <a href="narzedzia.html">Narzędzia</a>
-            <a href="podstawy-normatywne.html">Podstawy normatywne</a>
+            <a href="datasety.html">Wskaźniki</a>
+            <a href="narzedzia.html">Kalkulatory</a>
+            <a href="podstawy-normatywne.html">Normy</a>
             <a href="pobierz.html">Pobierz</a>
             <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
@@ -956,17 +1063,17 @@
     <section class="hero">
         <div class="hero-grid">
             <div>
-                <div class="hero-tag fade-in">Polska Baza Danych LCI · w budowie</div>
-                <h1 class="fade-in fade-in-delay-1">Dane środowiskowe<br>dla <span class="hero-accent">polskiego przemysłu</span></h1>
+                <div class="hero-tag fade-in">Wskaźniki LCA dla budownictwa</div>
+                <h1 class="fade-in fade-in-delay-1">Znajdź wskaźnik do obliczeń <span class="hero-accent">śladu węglowego</span></h1>
                 <p class="hero-desc fade-in fade-in-delay-2">
-                    Ile CO₂ naprawdę generuje polska cementownia, huta czy betoniarnia? Dotychczas nie było skąd tego wiarygodnie sprawdzić — europejskie bazy uśredniają dane z kilkudziesięciu krajów. poLCA to pierwsza baza danych środowiskowych oparta na rzeczywistych polskich warunkach produkcji.
+                    Wybierz ścieżkę: dane do produkcji betonu, MMA i EPD albo szybkie wskaźniki do śladu węglowego budynku. Metodyka i źródła są niżej, gdy potrzebujesz raportu, audytu lub weryfikacji.
                 </p>
                 <div class="hero-cta fade-in fade-in-delay-3">
-                    <a href="analiza.html" class="cta-primary">
-                        Dlaczego to ważne
+                    <a href="datasety.html#referencyjne-szczegoly" class="cta-primary">
+                        Szukam wskaźnika
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="metodyka.html" class="cta-outline">Metodyka</a>
+                    <a href="narzedzia.html#materialy" class="cta-outline">Liczę ślad budynku</a>
                 </div>
             </div>
             <div class="hero-visual fade-in fade-in-delay-2">
@@ -978,38 +1085,84 @@
             </div>
         </div>
 
-        <div class="hero-stats fade-in fade-in-delay-4">
-            <div class="hero-stat">
-                <div class="hero-stat-num">599 kg</div>
-                <div class="hero-stat-label">CO₂e/MWh — miks PL</div>
-                <div class="hero-stat-sub">poLCA-EN-PL 2024 · full LCA</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">+185%</div>
-                <div class="hero-stat-label">odchylenie vs. EU avg</div>
-                <div class="hero-stat-sub">poLCA 599 vs Ember 210</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">7</div>
-                <div class="hero-stat-label">warstw walidacji</div>
-                <div class="hero-stat-sub">ISO 14044 · E-PRTR · EU ETS</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-num">EN 15804</div>
-                <div class="hero-stat-label">Zgodność z normą</div>
-                <div class="hero-stat-sub">+A2:2019</div>
-            </div>
+    </section>
+
+    <!-- USER PATHS -->
+    <section class="user-paths fade-in" aria-labelledby="start-title">
+        <div class="user-paths-head">
+            <div class="section-label">Od czego zacząć?</div>
+            <h2 id="start-title">Nie musisz czytać całej metodyki, żeby znaleźć właściwy wskaźnik.</h2>
+            <p>Najpierw wybierz przypadek użycia. Szczegóły normowe, źródła i walidacja są dostępne dalej dla raportu, EPD albo kontroli jakości danych.</p>
+        </div>
+        <div class="user-path-grid">
+            <a href="datasety.html#referencyjne-szczegoly" class="user-path-card">
+                <span class="user-path-kicker">Produkcja betonu</span>
+                <strong>Potrzebuję wskaźników do receptury lub zakładu</strong>
+                <p>Zacznij od katalogu danych, a potem zastąp wartości domyślne danymi dostawcy lub produkcji.</p>
+                <ul class="user-path-list">
+                    <li>cement, kruszywa, dodatki</li>
+                    <li>energia, paliwa, transport</li>
+                    <li>GWP dla A1-A3 i danych referencyjnych</li>
+                </ul>
+                <span class="user-path-arrow">Przejdź do wskaźników →</span>
+            </a>
+            <a href="narzedzia.html#materialy" class="user-path-card">
+                <span class="user-path-kicker">Ślad budynku</span>
+                <strong>Liczymy materiały do koncepcji, kosztorysu albo LCA budynku</strong>
+                <p>Użyj porównań materiałowych i przeliczników, żeby szybko sprawdzić wpływ betonu, stali, asfaltu lub transportu.</p>
+                <ul class="user-path-list">
+                    <li>porównanie GWP materiałów</li>
+                    <li>transport A4 i szybkie przeliczenia</li>
+                    <li>wartości do wstępnych analiz projektowych</li>
+                </ul>
+                <span class="user-path-arrow">Otwórz kalkulatory →</span>
+            </a>
+            <a href="metodyka.html" class="user-path-card">
+                <span class="user-path-kicker">EPD i audyt</span>
+                <strong>Muszę obronić źródła, granice systemu i jakość danych</strong>
+                <p>Tu jest część dla weryfikatora, konsultanta LCA i osoby przygotowującej dokumentację zgodną z EN 15804+A2.</p>
+                <ul class="user-path-list">
+                    <li>źródła danych i walidacja</li>
+                    <li>zgodność z ISO 14044 i EN 15804</li>
+                    <li>zasady użycia w raportach</li>
+                </ul>
+                <span class="user-path-arrow">Sprawdź metodykę →</span>
+            </a>
+        </div>
+        <div class="user-path-note">
+            Prosta zasada: jeśli szukasz liczby do obliczeń, zacznij od wskaźników. Jeśli wynik ma trafić do EPD, raportu lub przetargu, sprawdź też metodykę.
         </div>
     </section>
 
-    <div class="section-divider"></div>
+    <div class="hero-stats credibility-stats fade-in">
+        <div class="hero-stat">
+            <div class="hero-stat-num">599 kg</div>
+            <div class="hero-stat-label">CO₂e/MWh — miks PL</div>
+            <div class="hero-stat-sub">poLCA-EN-PL 2024 · full LCA</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-num">+185%</div>
+            <div class="hero-stat-label">odchylenie vs. EU avg</div>
+            <div class="hero-stat-sub">poLCA 599 vs Ember 210</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-num">7</div>
+            <div class="hero-stat-label">warstw walidacji</div>
+            <div class="hero-stat-sub">ISO 14044 · E-PRTR · EU ETS</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-num">EN 15804</div>
+            <div class="hero-stat-label">Zgodność z normą</div>
+            <div class="hero-stat-sub">+A2:2019</div>
+        </div>
+    </div>
 
     <!-- BLOG SECTION -->
     <section>
         <div class="section-header fade-in">
             <div>
-                <div class="section-label">Wiedza i komentarze</div>
-                <div class="section-title">Najnowsze z bloga</div>
+                <div class="section-label">Dla dociekliwych</div>
+                <div class="section-title">Wyjaśnienia i tło</div>
             </div>
             <a href="blog.html" class="section-link">Wszystkie artykuły
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -1073,36 +1226,36 @@
 
     <!-- NAVIGATION CARDS -->
     <div class="nav-grid fade-in">
-        <a href="metodyka.html" class="nav-card">
+        <a href="datasety.html#referencyjne-szczegoly" class="nav-card">
             <div class="nav-card-icon green">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <div class="nav-card-name">Wskaźniki</div>
+            <div class="nav-card-desc">Katalog wartości GWP: energia, cement, kruszywa, transport, asfalt i MMA.</div>
+            <div class="nav-card-arrow">Przejdź →</div>
+        </a>
+        <a href="narzedzia.html" class="nav-card">
+            <div class="nav-card-icon orange">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
+            </div>
+            <div class="nav-card-name">Kalkulatory</div>
+            <div class="nav-card-desc">Materiał, transport A4, przeliczniki i szybkie porównania do analiz budynku.</div>
+            <div class="nav-card-arrow">Przejdź →</div>
+        </a>
+        <a href="metodyka.html" class="nav-card">
+            <div class="nav-card-icon blue">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
             </div>
             <div class="nav-card-name">Metodyka</div>
-            <div class="nav-card-desc">Siedmiowarstwowy system walidacji zgodny z ISO 14044 i EN 15804+A2.</div>
+            <div class="nav-card-desc">Źródła, granice systemu i jakość danych do raportów, EPD i weryfikacji.</div>
             <div class="nav-card-arrow">Przejdź →</div>
         </a>
-        <a href="analiza.html" class="nav-card">
-            <div class="nav-card-icon orange">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            </div>
-            <div class="nav-card-name">Analiza Sektorowa</div>
-            <div class="nav-card-desc">Mapa zniekształceń — które branże tracą na uśrednianiu danych EU.</div>
-            <div class="nav-card-arrow">Przejdź →</div>
-        </a>
-        <a href="kalkulator.html" class="nav-card">
-            <div class="nav-card-icon blue">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="10" y2="10"/><line x1="14" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="10" y2="14"/><line x1="14" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/></svg>
-            </div>
-            <div class="nav-card-name">Kalkulator Emisji</div>
-            <div class="nav-card-desc">Szacowanie CO₂ w oparciu o polskie wskaźniki KOBiZE 2024.</div>
-            <div class="nav-card-arrow">Przejdź →</div>
-        </a>
-        <a href="datasety.html" class="nav-card">
+        <a href="pobierz.html" class="nav-card">
             <div class="nav-card-icon purple">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
             </div>
-            <div class="nav-card-name">Baza Datasetów</div>
-            <div class="nav-card-desc">Zbiory LCI, źródła danych, eksport ILCD+EPD, EcoSpold v2, CSV.</div>
+            <div class="nav-card-name">Pobierz dane</div>
+            <div class="nav-card-desc">Pliki JSON, CSV i paczki do integracji z kalkulatorami lub własnym raportem.</div>
             <div class="nav-card-arrow">Przejdź →</div>
         </a>
     </div>
@@ -1231,9 +1384,9 @@
             <ul class="footer-links">
                 <li><a href="metodyka.html">Metodyka</a></li>
                 <li><a href="c-pcr/">c-PCR</a></li>
-                <li><a href="analiza.html">Analiza Sektorowa</a></li>
-                <li><a href="datasety.html">Baza Datasetów</a></li>
-                <li><a href="kalkulator.html">Kalkulator Emisji</a></li>
+                <li><a href="analiza.html">Dlaczego poLCA?</a></li>
+                <li><a href="datasety.html">Wskaźniki</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
                 <li><a href="kalkulator-mma.html">Kalkulator MMA</a></li>
                 <li><a href="kalkulator-kruszywa.html">Kalkulator kruszyw</a></li>
                 <li><a href="blog.html">Blog</a></li>
@@ -1242,7 +1395,7 @@
         <div>
             <div class="footer-col-title">Zasoby</div>
             <ul class="footer-links">
-                <li><a href="narzedzia.html">Narzędzia</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
                 <li><a href="o-polca/index.html">O poLCA</a></li>
                 <li><a href="o-polca/gotowosc-dpp.html">Gotowość DPP</a></li>
                 <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
