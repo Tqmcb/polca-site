@@ -55,7 +55,8 @@
     metaEl.innerHTML =
       '<span>Operator: ' + esc(m.operator) + '</span>' +
       '<span>Program: ' + esc(m.program) + '</span>' +
-      '<span>Data wydania: ' + esc(m.issued) + '</span>';
+      '<span>Data wydania: ' + esc(m.issued) + '</span>' +
+      (m.machine_schema_version ? '<span>Schemat danych: ' + esc(m.machine_schema_version) + '</span>' : '');
   }
 
   function heroStat(num, unit, label, color) {

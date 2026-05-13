@@ -10,7 +10,7 @@
       "name": "Energia elektryczna, Polska",
       "value": 0.599,
       "unit": "kg CO2e/kWh",
-      "module": "A3",
+      "module": "A3/A5/B6/C3/D",
       "status": "model POLCA",
       "use_for": [
         "MMA",

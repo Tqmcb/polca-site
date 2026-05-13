@@ -1,6 +1,7 @@
 {
   "meta": {
-    "version": "v16",
+    "version": "v9.1",
+    "machine_schema_version": "v16",
     "code": "poLCA-EN-PL-2024",
     "issued": "2026-04-04",
     "status": "Wersja konsultacyjna — do weryfikacji zewnętrznej",
@@ -13,7 +14,15 @@
     "year": 2024,
     "year_prev": 2023,
     "value_prev": 0.642,
-    "change_pct": -6.7
+    "change_pct": -6.7,
+    "indicator_type": "electricity emission factor",
+    "system_boundary": "well-to-meter",
+    "modelling": "location-based",
+    "gwp_fossil_kg_co2e_per_kwh": 0.599,
+    "gwp_biogenic_net_kg_co2e_per_kwh": 0,
+    "gwp_luluc_kg_co2e_per_kwh": 0.001,
+    "gwp_total_info_kg_co2e_per_kwh": 0.6,
+    "en15804_module_rule": "Wskaźnik nie jest samodzielnym wynikiem A1-A3 produktu. W obliczeniach EN 15804+A2 przypisuje się go do modułu, w którym energia elektryczna jest zużywana, np. A3, A5, B6, C3 albo D."
   },
   "sections": [
     {
@@ -503,7 +512,7 @@
       "headers": ["Pole metadanych", "Wartość"],
       "rows": [
         ["Dataset name", "Electricity, at consumer, Poland, 2024"],
-        ["UUID", "poLCA-EN-PL-2024-v16"],
+        ["UUID", "poLCA-EN-PL-2024-v9.1"],
         ["Classification", "ILCD: Energy carriers and technologies / Electricity"],
         ["Reference flow", "1 kWh electricity, at consumer, PL"],
         ["Location", "PL (Poland)"],
@@ -513,7 +522,8 @@
         ["Impact category", "GWP-fossil (climate change); GWP100, IPCC AR6 / EF 3.1"],
         ["Result", "0,599 kg CO₂e/kWh"],
         ["Data owner", "Multicert Sp. z o.o., Operator EPD Polska"],
-        ["Version", "v16"],
+        ["Version", "v9.1"],
+        ["Machine schema version", "v16"],
         ["Publication date", "2026-04-04"],
         ["Status", "Wersja konsultacyjna — do weryfikacji zewnętrznej"]
       ]
