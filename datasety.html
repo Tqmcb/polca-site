@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wskaźniki GWP dla betonu, MMA i budynków — poLCA</title>
-    <meta name="description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, mieszanek MMA, kruszyw oraz obliczeń śladu węglowego budynku zgodnych z EN 15804+A2.">
+    <title>Katalog wskaźników LCA i GWP — poLCA</title>
+    <meta name="description" content="Publiczny katalog wskaźników LCA i GWP dla betonu, MMA, kruszyw, energii, paliw i transportu zgodny z EN 15804+A2.">
     <link rel="canonical" href="https://polca.org.pl/datasety.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Wskaźniki GWP dla betonu, MMA i budynków — poLCA">
-    <meta property="og:description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, mieszanek MMA, kruszyw oraz obliczeń śladu węglowego budynku.">
+    <meta property="og:title" content="Katalog wskaźników LCA i GWP — poLCA">
+    <meta property="og:description" content="Publiczny katalog wskaźników LCA i GWP dla betonu, MMA, kruszyw, energii, paliw i transportu.">
     <meta property="og:url" content="https://polca.org.pl/datasety.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wskaźniki GWP dla betonu, MMA i budynków — poLCA">
-    <meta name="twitter:description" content="Polskie wskaźniki GWP i LCA do produkcji betonu, MMA, kruszyw i obliczeń śladu budynku.">
+    <meta name="twitter:title" content="Katalog wskaźników LCA i GWP — poLCA">
+    <meta name="twitter:description" content="Publiczny katalog wskaźników LCA i GWP dla betonu, MMA, kruszyw, energii, paliw i transportu.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-data.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,12 +30,14 @@
         .polca-module-tab.is-active{background:#102A43;color:#fff;border-color:#102A43}
         .polca-module-tab.is-active span{color:rgba(255,255,255,.72)}
         .polca-module-panel[hidden]{display:none!important}
+        .polca-module-panel[data-polca-active="true"]{opacity:1;transform:none}
         .polca-hotspot-button{width:100%;min-height:78px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text-primary);font:inherit;text-align:left;padding:.85rem;cursor:pointer;display:grid;gap:.28rem}
         .polca-hotspot-button strong{font-size:.84rem;color:var(--text-primary)}
         .polca-hotspot-button span{font-size:.7rem;color:var(--text-secondary);line-height:1.35}
         .polca-hotspot-button.is-active{background:#102A43;border-color:#102A43}
         .polca-hotspot-button.is-active strong,.polca-hotspot-button.is-active span{color:#fff}
         .polca-hotspot-rank{display:inline-flex;align-items:center;width:max-content;padding:.2rem .42rem;border-radius:999px;background:#9B1C1C;color:#fff;font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+        #moduly-polca,.polca-module-panel{scroll-margin-top:calc(var(--topbar-height) + 16px)}
         @media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}#polca-reference-datasets article{grid-template-columns:1fr!important}.polca-evidence-grid,.polca-filter-grid,.polca-module-tabs,.polca-dataset-groups,.polca-default-head,.polca-default-row,.polca-ready-head,.polca-ready-row,.polca-hotspot-layout{grid-template-columns:1fr!important}.polca-default-head div:nth-child(n+2),.polca-ready-head div:nth-child(n+2){display:none}}
     </style>
 </head>
@@ -46,12 +48,13 @@
         <a href="index.html" class="site-logo">poLCA</a>
         <nav class="polca-topnav" aria-label="Nawigacja główna">
             <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
             <a href="datasety.html" class="active">Wskaźniki</a>
             <a href="narzedzia.html">Kalkulatory</a>
+            <a href="wiarygodnosc.html">Zasady użycia</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="analiza.html">Dlaczego?</a>
             <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
+            <a href="pobierz.html">Pliki</a>
             <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
         </nav>
         <div class="header-actions">
@@ -69,16 +72,16 @@
 <div class="polca-page">
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">Wskaźniki GWP i LCA</div>
-            <h1 class="page-title">Wskaźniki do betonu, MMA i śladu węglowego budynku</h1>
+            <div class="section-num">Katalog danych</div>
+            <h1 class="page-title">Katalog wskaźników LCA i GWP</h1>
             <p class="page-subtitle">
-                Zacznij od katalogu GWP, jeśli potrzebujesz liczby do obliczeń. Profile wyrobów i źródła są
-                niżej, gdy wynik ma trafić do EPD, raportu albo weryfikacji.
+                Publiczne dane referencyjne dla betonu, MMA, kruszyw, energii, paliw i transportu. Rekordy
+                obejmują wartość GWP, jednostkę, moduł EN 15804+A2, status danych oraz odwołania źródłowe.
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;">
-                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Otwórz katalog GWP</a>
+                <a href="#referencyjne-szczegoly" data-polca-goto="datasets" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Katalog GWP</a>
                 <a href="#profile-gwp" data-polca-goto="profiles" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Profile wyrobów</a>
-                <a href="#integracja" data-polca-goto="integration" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Pobierz pliki</a>
+                <a href="#integracja" data-polca-goto="integration" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Pliki danych</a>
             </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
@@ -89,28 +92,28 @@
 
     <section class="quick-start fade-in" aria-labelledby="datasety-start-title">
         <div class="quick-start-head">
-            <div class="section-num">Wybierz najkrótszą drogę</div>
-            <h2 id="datasety-start-title" class="quick-start-title">Czego szukasz?</h2>
-            <p class="quick-start-text">Katalog jest wspólny, ale inna osoba szuka wskaźnika do betonu, inna do MMA, a inna pliku do własnego arkusza.</p>
+            <div class="section-num">Zakres katalogu</div>
+            <h2 id="datasety-start-title" class="quick-start-title">Główne obszary danych</h2>
+            <p class="quick-start-text">Katalog łączy wartości referencyjne, profile wyrobów oraz pliki techniczne do integracji z arkuszami i kalkulatorami.</p>
         </div>
         <div class="quick-start-grid">
             <a href="#referencyjne-szczegoly" data-polca-goto="datasets" class="quick-card">
-                <span class="quick-card-kicker">Beton i budynek</span>
-                <strong>Potrzebuję liczby GWP do obliczeń</strong>
-                <span>Wejdź w katalog i filtruj po grupie wyrobu, materiale albo nazwie, np. cement, kruszywo, beton, energia.</span>
-                <span class="quick-card-arrow">Otwórz katalog →</span>
+                <span class="quick-card-kicker">Katalog GWP</span>
+                <strong>Wartości referencyjne do obliczeń</strong>
+                <span>Filtrowanie po zastosowaniu, materiale, typie danych, nazwie i kodzie datasetu.</span>
+                <span class="quick-card-arrow">Katalog →</span>
             </a>
             <a href="#profile-gwp" data-polca-goto="profiles" class="quick-card">
-                <span class="quick-card-kicker">Producent</span>
-                <strong>Chcę zrozumieć, co wpływa na wynik produktu</strong>
-                <span>Profile pokazują receptę, moduły A1-A3, hotspoty i miejsca, gdzie dane producenta zastępują default.</span>
-                <span class="quick-card-arrow">Zobacz profile →</span>
+                <span class="quick-card-kicker">Profile wyrobów</span>
+                <strong>Struktura procesu i składników</strong>
+                <span>Receptury, moduły A1-A3, hotspoty oraz zasady zastępowania wartości referencyjnych danymi producenta.</span>
+                <span class="quick-card-arrow">Profile →</span>
             </a>
             <a href="#integracja" data-polca-goto="integration" class="quick-card">
                 <span class="quick-card-kicker">Pliki i integracja</span>
-                <strong>Potrzebuję JSON, CSV albo zasad aktualizacji</strong>
-                <span>Tu są paczki danych, wersje i informacje potrzebne do arkusza, kalkulatora albo własnego systemu.</span>
-                <span class="quick-card-arrow">Przejdź do plików →</span>
+                <strong>Formaty danych i wersje</strong>
+                <span>Paczki JSON, CSV, polityka aktualizacji i informacje potrzebne do systemów obliczeniowych.</span>
+                <span class="quick-card-arrow">Pliki →</span>
             </a>
         </div>
     </section>
@@ -423,7 +426,7 @@
                                 <div style="font-size:.7rem;color:var(--text-tertiary);font-weight:800;text-transform:uppercase;letter-spacing:.03em;">Jakość danych</div>
                                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.65rem;">
                                     <button type="button" class="polca-hotspot-button" data-polca-aggregate="epd"><strong>EPD kopalni</strong><span>kiedy zastępuje POLCA</span></button>
-                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="rules"><strong>Zasada danych</strong><span>co sprawdza audytor</span></button>
+                                    <button type="button" class="polca-hotspot-button" data-polca-aggregate="rules"><strong>Zasada danych</strong><span>zakres weryfikacji</span></button>
                                 </div>
                             </div>
                         </div>
@@ -438,15 +441,15 @@
     <div class="card card-lg section-gap fade-in polca-module-panel" id="referencyjne-szczegoly" data-polca-panel="datasets" data-polca-active="true">
         <div class="section-num">01 — Katalog wartości</div>
         <div class="card-title">Katalog GWP POLCA</div>
-        <p class="card-text" style="max-width: 820px;">Najpierw wybierz wyrób albo materiał. Wyniki są pogrupowane według rzeczywistych kategorii użycia: energia, transport, cement, kruszywa, asfalt i dodatki.</p>
+        <p class="card-text" style="max-width: 820px;">Wyniki są pogrupowane według kategorii użycia: energia, transport, cement, kruszywa, asfalt i dodatki. Filtry zawężają katalog według wyrobu, materiału, typu danych oraz frazy tekstowej.</p>
         <p style="font-size:.75rem;color:var(--text-secondary);line-height:1.55;margin:.75rem 0 0;max-width:760px;">
             Wartości regulacyjne CBAM są dostępne po wybraniu typu danych „Regulacyjne CBAM”. Nie są częścią głównego katalogu GWP produktu.
         </p>
         <div style="display:grid;gap:.8rem;margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
                 <div>
-                    <h3 style="font-size:.95rem;color:var(--text-primary);margin:0 0 .3rem;">Znajdź wartość GWP</h3>
-                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin:0;max-width:620px;">Najkrótsza ścieżka: wybierz wyrób, potem materiał. Wyszukiwarka działa po nazwie, kodzie i zakresie zastosowania.</p>
+                    <h3 style="font-size:.95rem;color:var(--text-primary);margin:0 0 .3rem;">Filtry katalogu GWP</h3>
+                    <p style="font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin:0;max-width:620px;">Filtrowanie działa po zastosowaniu, materiale, typie danych, nazwie datasetu, kodzie i zakresie stosowania.</p>
                 </div>
                 <span id="polca-filter-count" style="display:inline-flex;align-items:center;min-height:30px;padding:.35rem .65rem;border-radius:7px;background:#102A43;color:#fff;font-size:.72rem;font-weight:800;">Ładowanie</span>
             </div>
@@ -488,8 +491,8 @@
         <div id="polca-group-pills" style="display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;" aria-label="Szybkie filtrowanie według kategorii"></div>
         <div id="polca-reference-datasets" style="display:grid;gap:.85rem;margin-top:1rem;"></div>
         <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 0;">
-            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Pobierz JSON</a>
-            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Pobierz CSV</a>
+            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Datasety JSON</a>
+            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Datasety CSV</a>
             <a href="data/sources.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Źródła JSON</a>
         </div>
 
@@ -499,8 +502,8 @@
         <div class="section-num">Obszar — Źródła</div>
         <div class="card-title">Podstawa danych</div>
         <p class="card-text" style="max-width: 820px;">
-            Źródła są pokazane w kartach datasetów i w rejestrze technicznym. Strona nie wymaga czytania całej metodyki:
-            użytkownik widzi wartość i krótkie uzasadnienie, a audytor ma dostęp do pełnej ścieżki źródłowej.
+            Źródła są pokazane w kartach datasetów i w rejestrze technicznym. Karta rekordu zawiera wartość,
+            krótkie uzasadnienie i identyfikację źródeł, a rejestr zachowuje pełną ścieżkę źródłową.
         </p>
         <details style="margin-top:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden;" open>
             <summary style="cursor:pointer;padding:1rem;background:var(--bg-subtle);font-size:.86rem;font-weight:800;color:var(--text-primary);">Rejestr źródeł</summary>
@@ -537,9 +540,9 @@
 
     <div class="card section-gap fade-in" style="background: var(--ink-dark); color: rgba(255,255,255,0.9); text-align: center; padding: 2.5rem 2rem;">
         <div class="section-num" style="color: rgba(255,255,255,0.4);">07 — Dostęp</div>
-        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem;">Datasety dostępne — pobierz JSON-LD lub CSV</h2>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem;">Datasety dostępne w formatach JSON-LD i CSV</h2>
         <p style="font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; line-height: 1.7; max-width: 580px; margin-left: auto; margin-right: auto;">
-            Pełny katalog 32 datasetów LCI (cement, kruszywa, MMA, energia, paliwa, transport oraz wartości
+            Pełny katalog 36 datasetów LCI (cement, kruszywa, MMA, energia, paliwa, transport oraz wartości
             kontrolne CBAM) jest opublikowany. Każdy rekord ma pojedynczy plik JSON-LD ze źródłami,
             granicą systemu i polityką zastępowania danymi producenta. Datasety są eksportowalne w formatach
             JSON-LD (ILCD-compatible), ILCD+EPD XML i CSV — gotowe do importu do oprogramowania LCA i
@@ -634,6 +637,16 @@
             .replace(/\bdefault\b/gi, 'wartość domyślna')
             .replace(/reference value/gi, 'wartość referencyjna');
     }
+    function scrollPolcaCurrentHashIntoView() {
+        if (!window.location.hash) return;
+        const target = document.getElementById(window.location.hash.slice(1));
+        const fallback = document.getElementById('moduly-polca');
+        const element = target || fallback;
+        if (!element || element.hidden) return;
+        const topbarHeight = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--topbar-height')) || 58;
+        const targetTop = element.getBoundingClientRect().top + window.pageYOffset - topbarHeight - 16;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'auto' });
+    }
     function initPolcaModuleTabs() {
         const tabs = Array.from(document.querySelectorAll('[data-polca-tab]'));
         const panels = Array.from(document.querySelectorAll('[data-polca-panel]'));
@@ -660,6 +673,7 @@
                 const active = panel.dataset.polcaPanel === name;
                 panel.hidden = !active;
                 panel.dataset.polcaActive = active ? 'true' : 'false';
+                if (active) panel.classList.add('visible');
             });
             tabs.forEach((tab) => {
                 const active = tab.dataset.polcaTab === name;
@@ -694,6 +708,10 @@
             activate(hashMap[window.location.hash] || 'datasets', false);
         });
         activate(hashMap[window.location.hash] || 'datasets', false);
+        if (window.location.hash) {
+            window.requestAnimationFrame(() => window.setTimeout(scrollPolcaCurrentHashIntoView, 120));
+            window.addEventListener('load', () => window.setTimeout(scrollPolcaCurrentHashIntoView, 120), { once: true });
+        }
     }
     async function loadCprProductFamilies() {
         const target = document.getElementById('polca-cpr-families');
@@ -1061,7 +1079,7 @@
                 module: 'A1',
                 standards: 'EN 12620, EN 13043, EN 13242, EPD Polska cPCR Kruszywa Budowlane, EN 15804+A2',
                 impact: 'Rodzaj skały decyduje o energochłonności kruszenia i przesiewania. Dlatego POLCA rozdziela kruszywa twarde, wapienne, dolomitowe i naturalne.',
-                use_rule: 'System dobiera dataset po rodzaju kruszywa. Użytkownik nie wybiera niższej wartości ręcznie; EPD kopalni albo dane zakładowe zastępują wartość POLCA.',
+                use_rule: 'Dataset jest dobierany według rodzaju kruszywa. Niższa wartość wymaga EPD kopalni albo udokumentowanych danych zakładowych zastępujących wartość POLCA.',
                 values: [
                     { name: 'Kruszywo łamane twarde', value: '5,5 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt; A1 bez transportu.' },
                     { name: 'Kruszywo wapienne', value: '4,0 kg CO2e/t', status: 'wartość grupowa POLCA', basis: 'Benchmark: ITB-EPD 707 Trzuskawica A1-A3 = 3,27 kg CO2e/t; POLCA pozostaje wartością grupową.' },
@@ -1075,7 +1093,7 @@
                 module: 'A1',
                 standards: 'EN 12620, EN 13043, EN 13242, ISO 14044',
                 impact: 'Etap wydobycia obejmuje urabianie, zdejmowanie nadkładu, pracę maszyn, paliwa i materiały pomocnicze. Dla kruszyw z różnych kopalni może to dawać istotne różnice.',
-                use_rule: 'Przy danych kopalni wymagaj okresu danych, zużycia paliw, energii, wolumenu produkcji i alokacji na kruszywo lub frakcję.',
+                use_rule: 'Dane kopalni wymagają okresu danych, zużycia paliw, energii, wolumenu produkcji i alokacji na kruszywo lub frakcję.',
                 values: [
                     { name: 'Dane kopalni', value: 'pierwszeństwo', status: 'dane pierwotne', basis: 'Faktury paliw, liczniki, produkcja roczna, alokacja i dokumentacja procesu.' },
                     { name: 'Wartość grupowa POLCA', value: 'A1', status: 'gdy brak danych', basis: 'Stosowana tylko z oznaczeniem jakości danych i możliwością zastąpienia przez EPD/dane zakładowe.' }
@@ -1439,8 +1457,10 @@
             });
             renderGroupPills();
             renderDatasets();
+            window.setTimeout(scrollPolcaCurrentHashIntoView, 80);
         } catch (error) {
             target.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">Nie udało się załadować publicznego katalogu danych. Brak lub błąd pliku data/datasets.json.</div>';
+            window.setTimeout(scrollPolcaCurrentHashIntoView, 80);
         }
     }
     async function loadPolcaMaterialTaxonomy() {
