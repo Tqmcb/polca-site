@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://polca.org.pl/slad-budynku.html</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://polca.org.pl/datasety.html</loc>
     <lastmod>2026-05-03</lastmod>
     <changefreq>monthly</changefreq>

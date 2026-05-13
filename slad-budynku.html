@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ślad węglowy budynku — osobna warstwa obliczeń — poLCA</title>
+    <meta name="description" content="Zasady rozdzielenia katalogu wskaźników materiałowych poLCA od obliczeń śladu węglowego całego budynku. Wynik budynku wymaga ilości, modułów i scenariuszy.">
+    <link rel="canonical" href="https://polca.org.pl/slad-budynku.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ślad węglowy budynku — osobna warstwa obliczeń — poLCA">
+    <meta property="og:description" content="Wskaźnik materiału nie jest wynikiem budynku. Wynik obiektu powstaje dopiero z ilości, modułów EN 15804 i scenariuszy.">
+    <meta property="og:url" content="https://polca.org.pl/slad-budynku.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ślad węglowy budynku — osobna warstwa obliczeń — poLCA">
+    <meta name="twitter:description" content="Zasady rozdzielenia danych materiałowych od wyniku całego budynku.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <style>
+        .scope-table{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+        .scope-card{border:1px solid var(--border);border-radius:10px;background:var(--paper-card);padding:1rem}
+        .scope-card strong{display:block;font-size:1rem;color:var(--text-primary);margin:.2rem 0 .45rem}
+        .scope-card ul{margin:.65rem 0 0;padding-left:1.1rem;color:var(--text-secondary);font-size:.82rem;line-height:1.65}
+        .process-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.75rem}
+        .process-step{border:1px solid var(--border);border-radius:10px;background:var(--bg-subtle);padding:.85rem}
+        .process-step span{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:800;color:var(--accent);letter-spacing:.04em}
+        .process-step strong{display:block;font-size:.9rem;color:var(--text-primary);line-height:1.25;margin:.35rem 0}
+        .process-step p{font-size:.76rem;color:var(--text-secondary);line-height:1.5;margin:0}
+        .metric-grid-small{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+        .metric-box{border:1px solid var(--border);border-radius:10px;background:var(--paper-card);padding:1rem}
+        .metric-box strong{display:block;font-family:'Inter Tight',sans-serif;font-size:1.15rem;color:var(--text-primary);margin-bottom:.25rem}
+        .metric-box span{display:block;font-size:.78rem;color:var(--text-secondary);line-height:1.5}
+        @media(max-width:900px){.page-hero,.scope-table,.process-grid,.metric-grid-small{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="datasety.html">Wskaźniki</a>
+            <a href="narzedzia.html">Kalkulatory</a>
+            <a href="slad-budynku.html" class="active">Analiza budynku</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="pobierz.html">Pliki</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
+        <div>
+            <div class="section-num">Osobna warstwa obliczeń</div>
+            <h1 class="page-title">Ślad węglowy budynku nie jest pojedynczym wskaźnikiem materiału</h1>
+            <p class="page-subtitle">
+                Katalog poLCA dostarcza wskaźniki dla wyrobów, materiałów, energii, paliw i transportu.
+                Wynik budynku powstaje dopiero po przypisaniu ilości, modułów EN 15804, scenariuszy i granic obiektu.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <a href="#proces" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Proces obliczeń</a>
+                <a href="datasety.html#referencyjne-szczegoly" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Katalog wskaźników</a>
+                <a href="narzedzia.html" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Kalkulatory</a>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-laboratory.jpg" alt="Analiza danych i modelowanie wariantów" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.05) contrast(1.02);">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
+        </div>
+    </div>
+
+    <section class="card card-lg section-gap fade-in">
+        <div class="section-num">Rozdzielenie poziomów</div>
+        <div class="card-title">Wyrób, materiał i budynek muszą być raportowane osobno</div>
+        <p class="card-text" style="max-width:860px;">
+            Dane materiałowe są wejściem do obliczeń budynku, ale nie są wynikiem budynku. Taka separacja
+            ogranicza ryzyko błędnej interpretacji, szczególnie gdy jedna osoba szuka wskaźnika do produkcji
+            betonu, a inna przygotowuje bilans całego obiektu.
+        </p>
+        <div class="scope-table" style="margin-top:1rem;">
+            <article class="scope-card">
+                <div class="section-num">Poziom danych</div>
+                <strong>Katalog wskaźników poLCA</strong>
+                <p class="card-text">Rekord dotyczy wyrobu, materiału, energii, paliwa albo transportu.</p>
+                <ul>
+                    <li>jednostka: kg, t, kWh, tkm albo m³</li>
+                    <li>moduł: np. A1-A3, A4, B6</li>
+                    <li>źródło: EPD, dane publiczne, model poLCA albo wartość referencyjna</li>
+                    <li>zastosowanie: składnik receptury, proces albo transport</li>
+                </ul>
+            </article>
+            <article class="scope-card">
+                <div class="section-num">Poziom obiektu</div>
+                <strong>Ślad węglowy budynku</strong>
+                <p class="card-text">Wynik obejmuje ilości materiałów i scenariusze dla całego obiektu.</p>
+                <ul>
+                    <li>jednostka: kg CO₂e/m², kg CO₂e/rok albo wynik całkowity</li>
+                    <li>zakres: konstrukcja, przegrody, instalacje, plac budowy, eksploatacja</li>
+                    <li>scenariusze: transport, straty, wymiany, energia użytkowania, koniec życia</li>
+                    <li>raport: suma modułów oraz oddzielne wyniki częściowe</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <section id="proces" class="card card-lg section-gap fade-in">
+        <div class="section-num">Proces</div>
+        <div class="card-title">Minimalna ścieżka obliczeń budynku</div>
+        <p class="card-text" style="max-width:860px;">
+            Wynik budynku powinien powstawać z uporządkowanego modelu ilościowego, a nie z ręcznego wyboru
+            najniższych wskaźników. Każdy krok zachowuje źródło danych i zakres modułów.
+        </p>
+        <div class="process-grid" style="margin-top:1rem;">
+            <div class="process-step">
+                <span>01</span>
+                <strong>Granica obiektu</strong>
+                <p>Powierzchnia odniesienia, typ budynku, zakres elementów i etap projektu.</p>
+            </div>
+            <div class="process-step">
+                <span>02</span>
+                <strong>Ilości materiałów</strong>
+                <p>Przedmiar, BIM, kosztorys albo zestawienie elementów konstrukcyjnych.</p>
+            </div>
+            <div class="process-step">
+                <span>03</span>
+                <strong>Dobór danych</strong>
+                <p>EPD producenta, dataset poLCA albo wartość referencyjna z oznaczeniem jakości.</p>
+            </div>
+            <div class="process-step">
+                <span>04</span>
+                <strong>Moduły i scenariusze</strong>
+                <p>A1-A5, B, C i D rozdzielone, bez mieszania produkcji z użytkowaniem.</p>
+            </div>
+            <div class="process-step">
+                <span>05</span>
+                <strong>Wynik i kontrola</strong>
+                <p>Raport całkowity, wynik na m² i lista największych źródeł wpływu.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="card card-lg section-gap fade-in">
+        <div class="section-num">Jednostki wyniku</div>
+        <div class="card-title">Jak nie mieszać wartości</div>
+        <div class="metric-grid-small" style="margin-top:1rem;">
+            <div class="metric-box">
+                <strong>kg CO₂e/t</strong>
+                <span>Wskaźnik materiału lub wyrobu. Przykład: cement, kruszywo, MMA, beton.</span>
+            </div>
+            <div class="metric-box">
+                <strong>kg CO₂e/kWh</strong>
+                <span>Wskaźnik energii. Może działać w module A3 lub B6, ale musi być opisany kontekstem zużycia.</span>
+            </div>
+            <div class="metric-box">
+                <strong>kg CO₂e/m²</strong>
+                <span>Wynik budynku albo części budynku. Wymaga ilości, zakresu obiektu i scenariuszy.</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="card card-lg section-gap fade-in" style="background:var(--ink-dark);color:rgba(255,255,255,.9);text-align:center;">
+        <div class="section-num" style="color:rgba(255,255,255,.45);">Zasada raportowania</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;color:#fff;margin-bottom:.75rem;">Wskaźnik materiału jest wejściem. Wynik budynku jest obliczeniem.</h2>
+        <p style="max-width:720px;margin:0 auto 1.2rem;color:rgba(255,255,255,.68);font-size:.88rem;line-height:1.7;">
+            W raportach należy pokazywać oddzielnie: źródła datasetów, ilości materiałów, moduły EN 15804,
+            scenariusze i wynik końcowy. Dzięki temu wynik można sprawdzić, porównać i aktualizować bez
+            utraty ścieżki źródłowej.
+        </p>
+        <div style="display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;">
+            <a href="datasety.html#referencyjne-szczegoly" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:#fff;color:#102A43;text-decoration:none;font-size:.84rem;font-weight:800;">Katalog danych</a>
+            <a href="metodyka.html" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;text-decoration:none;font-size:.84rem;font-weight:800;">Metodyka</a>
+        </div>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="datasety.html">Katalog danych</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
+                <li><a href="slad-budynku.html">Analiza budynku</a></li>
+                <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="wiarygodnosc.html">Zasady użycia</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="pobierz.html">Pliki danych</a></li>
+                <li><a href="o-polca/index.html">O poLCA</a></li>
+                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+
+<script src="js/sidebar.js?v=5.1"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+<script src="js/nav-mobile.js"></script>
+</body>
+</html>
