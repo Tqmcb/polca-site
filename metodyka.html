@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metodyka i Jakość — poLCA</title>
-    <meta name="description" content="Metodyka obliczania wskaźnika poLCA-EN-PL — granice systemu, 4 komponenty, bilans energetyczny, metan z kopalń, współczynniki WTT, standardy i niepewność.">
+    <title>Metodyka — poLCA-EN-PL v2024.1</title>
+    <meta name="description" content="Dokumentacja techniczna wskaźnika poLCA-EN-PL v2024.1 — specyfikacja składowych, granice systemu, źródła danych, WTT, GWP, niepewność. ISO 14040/14044, EN 15804+A2.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -78,231 +77,320 @@
 <div class="polca-content">
 <div class="polca-page">
 
+    <!-- Nagłówek techniczny -->
     <div class="page-header fade-in">
-        <div class="section-num">02 — Metodyka poLCA-EN-PL</div>
-        <h1 class="page-title">Metodyka i Jakość</h1>
+        <div class="section-num">02 — Dokumentacja techniczna</div>
+        <h1 class="page-title">Metodyka poLCA-EN-PL</h1>
         <p class="page-subtitle">
-            Dokumentacja techniczna wskaźnika poLCA-EN-PL — pełny LCA emisji GHG energii elektrycznej
-            cradle-to-gate dla Polski. Granice systemu, 4 komponenty, bilans PSE/URE,
-            metan z kopalń, współczynniki WTT i analiza niepewności.
+            Specyfikacja wskaźnika emisji GHG dla energii elektrycznej w Polsce.
+            Metoda cradle-to-gate zgodna z ISO&nbsp;14044:2006 i EN&nbsp;15804+A2:2019.
         </p>
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:1rem;">
-            <span style="font-size:0.65rem;font-family:'IBM Plex Mono',monospace;padding:0.2rem 0.55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;">ISO 14040/14044</span>
-            <span style="font-size:0.65rem;font-family:'IBM Plex Mono',monospace;padding:0.2rem 0.55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;">EN 15804+A2</span>
-            <span style="font-size:0.65rem;font-family:'IBM Plex Mono',monospace;padding:0.2rem 0.55rem;background:var(--paper-warm);color:var(--text-secondary);border-radius:4px;">IPCC AR6 GWP100</span>
-            <span style="font-size:0.65rem;font-family:'IBM Plex Mono',monospace;padding:0.2rem 0.55rem;background:var(--accent-subtle);color:var(--accent);border-radius:4px;">Peer-reviewed 2025</span>
+    </div>
+
+    <!-- Karta identyfikacyjna -->
+    <div class="card card-lg section-gap fade-in">
+        <div style="overflow-x:auto;">
+            <table class="polca-table">
+                <tbody>
+                    <tr>
+                        <td style="width:220px;color:var(--text-tertiary);font-size:0.78rem;">Identyfikator</td>
+                        <td class="mono" style="font-weight:600;">poLCA-EN-PL · Wersja 2024.1</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Rok odniesienia</td>
+                        <td class="mono">2024 (dane operacyjne PSE; KNI GHG UNFCCC 2025)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Wartość centralna</td>
+                        <td><span class="mono highlight" style="font-size:1rem;font-weight:700;">718 kg CO₂e/MWh</span> &nbsp;(0,718 kg CO₂e/kWh)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Zakres (95% CI)</td>
+                        <td class="mono">620 – 770 kg CO₂e/MWh &nbsp;(Monte Carlo, n = 10 000)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Jednostka funkcjonalna</td>
+                        <td style="font-size:0.85rem;">1 kWh dostarczone do licznika końcowego użytkownika (po stratach sieciowych; E<sub>net</sub> = 168,8 TWh)</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Granice systemu</td>
+                        <td style="font-size:0.85rem;">Cradle-to-gate: wydobycie paliw pierwotnych → przetwarzanie i transport → spalanie → sieć przesyłowa. Wyłączone: budowa elektrowni; dystrybucja NN; Scope 3 downstream.</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Normy</td>
+                        <td style="font-size:0.85rem;">ISO 14040:2006 &middot; ISO 14044:2006 &middot; EN 15804+A2:2019 &middot; ISO 14067:2018</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Potencjały GWP₁₀₀</td>
+                        <td style="font-size:0.85rem;">CO₂ = 1 &middot; CH₄ (fossil) = 27,9 &middot; N₂O = 273 &nbsp;[IPCC AR6, 2021]</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Publikacja</td>
+                        <td style="font-size:0.85rem;">Lewandowska et al., <em>Energies</em> 2025, <strong>18</strong>(15), 4092 &middot; <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;">DOI:10.3390/en18154092</a></td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Operator</td>
+                        <td style="font-size:0.85rem;">Multicert Sp. z o.o. &mdash; Program EPD Polska &middot; <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">www.epd.org.pl</a></td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--text-tertiary);font-size:0.78rem;">Data wydania</td>
+                        <td class="mono">Q3 2025 &nbsp;· &nbsp;Następna aktualizacja: Q3 2026 (dane 2025)</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- 01 — SYSTEM BOUNDARIES -->
+    <!-- M-01: Składowe wskaźnika -->
     <div class="section-gap fade-in">
-        <div class="section-num">01 — Granice systemu</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Cradle-to-gate — zakres obliczania
+        <div class="section-num">M-01 — Składowe wskaźnika</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Dekompozycja poLCA-EN-PL 2024
         </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Wskaźnik poLCA-EN-PL obejmuje wszystkie emisje GHG od wydobycia paliw pierwotnych
-            do dostarczenia 1 kWh energii elektrycznej do końcowego użytkownika.
-            Jednostka funkcjonalna: <strong>1 kWh</strong> przy liczniku (po stratach sieciowych).
-        </p>
-        <div class="card card-lg">
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;text-align:center;padding:0.5rem 0;">
-                <div style="background:#f0f4ff;border-radius:8px;padding:1rem;">
-                    <div style="font-size:1.8rem;margin-bottom:0.3rem;">⛏️</div>
-                    <div style="font-size:0.75rem;font-weight:700;color:#3730a3;">Wydobycie paliw</div>
-                    <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.25rem;">Węgiel, gaz, olej — upstream; metan z kopalń węgla</div>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#3730a3;">→</div>
-                <div style="background:#f0f4ff;border-radius:8px;padding:1rem;">
-                    <div style="font-size:1.8rem;margin-bottom:0.3rem;">🔧</div>
-                    <div style="font-size:0.75rem;font-weight:700;color:#3730a3;">Przetwarzanie</div>
-                    <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.25rem;">Rafinacja, oczyszczanie, transport paliw do elektrowni</div>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#3730a3;">→</div>
-                <div style="background:#f0f4ff;border-radius:8px;padding:1rem;">
-                    <div style="font-size:1.8rem;margin-bottom:0.3rem;">🏭</div>
-                    <div style="font-size:0.75rem;font-weight:700;color:#3730a3;">Spalanie (gate)</div>
-                    <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.25rem;">CO₂ ze spalania paliw w blokach energetycznych</div>
-                </div>
-                <div style="display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#3730a3;">→</div>
-                <div style="background:#f0f4ff;border-radius:8px;padding:1rem;">
-                    <div style="font-size:1.8rem;margin-bottom:0.3rem;">🔌</div>
-                    <div style="font-size:0.75rem;font-weight:700;color:#3730a3;">Sieć przesyłowa</div>
-                    <div style="font-size:0.7rem;color:var(--text-secondary);margin-top:0.25rem;">Straty sieciowe ~7,5% — wliczone w jednostkę funkcjonalną</div>
-                </div>
-            </div>
-            <div style="margin-top:1rem;padding:0.75rem;background:var(--bg-secondary);border-radius:6px;">
-                <div style="font-size:0.75rem;font-weight:600;color:var(--text-primary);margin-bottom:0.3rem;">Co NIE jest wliczone (poza granicami systemu)</div>
-                <p style="font-size:0.78rem;color:var(--text-secondary);margin:0;">Emisje z budowy elektrowni (infrastruktura); emisje z dystrybucji po transformatorze SN/nN; biogeniczny CO₂ z biomasy (raportowany oddzielnie); emisje po zużyciu energii przez użytkownika końcowego (Scope 3 downstream).</p>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Składowa</th>
+                        <th>Wartość [kg CO₂e/MWh]</th>
+                        <th>Udział</th>
+                        <th>Kategoria IPCC</th>
+                        <th>Źródło danych</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Spalanie paliw (gate)</td>
+                        <td class="mono" style="font-weight:600;">553</td>
+                        <td class="mono">77,0%</td>
+                        <td class="mono" style="color:var(--text-tertiary);">1A1a</td>
+                        <td style="font-size:0.8rem;">KOBiZE 2024; PSE — Raport roczny KSE 2024</td>
+                    </tr>
+                    <tr>
+                        <td>CH₄ z wydobycia węgla</td>
+                        <td class="mono" style="font-weight:600;">101</td>
+                        <td class="mono">14,1%</td>
+                        <td class="mono" style="color:var(--text-tertiary);">1B1</td>
+                        <td style="font-size:0.8rem;">UNFCCC CRT Poland 2025; GWP₁₀₀(CH₄) = 27,9 [IPCC AR6]</td>
+                    </tr>
+                    <tr>
+                        <td>Upstream paliw — WTT</td>
+                        <td class="mono" style="font-weight:600;">57</td>
+                        <td class="mono">7,9%</td>
+                        <td class="mono" style="color:var(--text-tertiary);">—</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025 Conversion Factors (WTT)</td>
+                    </tr>
+                    <tr>
+                        <td>Infrastruktura OZE</td>
+                        <td class="mono" style="font-weight:600;">7</td>
+                        <td class="mono">1,0%</td>
+                        <td class="mono" style="color:var(--text-tertiary);">—</td>
+                        <td style="font-size:0.8rem;">ecoinvent 3.10; Fraunhofer ISE (2024)</td>
+                    </tr>
+                    <tr style="background:var(--bg-secondary);font-weight:600;">
+                        <td>Suma (poLCA-EN-PL 2024)</td>
+                        <td class="mono highlight" style="font-size:1rem;">718</td>
+                        <td class="mono">100%</td>
+                        <td>—</td>
+                        <td style="font-size:0.8rem;">Lewandowska et al. 2025 · DOI:10.3390/en18154092</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card card-lg" style="margin-top:1.25rem;">
+            <div style="font-size:0.8rem;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.6rem;">Formuła</div>
+            <div style="background:var(--bg-secondary);border-radius:6px;padding:1rem;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-primary);line-height:2.1;">
+                EF<sub style="font-family:sans-serif;">poLCA</sub> = EF<sub style="font-family:sans-serif;">gate</sub> + (CH₄<sub style="font-family:sans-serif;">UNFCCC</sub> × f<sub style="font-family:sans-serif;">coal</sub> × GWP<sub style="font-family:sans-serif;">100</sub>) / E<sub style="font-family:sans-serif;">net</sub> + EF<sub style="font-family:sans-serif;">WTT</sub> + EF<sub style="font-family:sans-serif;">OZE</sub><br>
+                EF<sub style="font-family:sans-serif;">gate</sub> = Σ<sub style="font-family:sans-serif;">i</sub> (E<sub style="font-family:sans-serif;">i</sub> × ef<sub style="font-family:sans-serif;">CO₂,i</sub>) / E<sub style="font-family:sans-serif;">net</sub> &nbsp; [i ∈ {węgiel kam., węgiel brunt., gaz, olej, biomasa, inne}]<br>
+                GWP<sub style="font-family:sans-serif;">100</sub>(CH₄<sub style="font-family:sans-serif;">fossil</sub>) = 27,9 &nbsp;[IPCC AR6 WG1, Table 7.SM.7, 2021]
             </div>
         </div>
     </div>
 
-    <!-- 02 — 4 COMPONENTS -->
+    <!-- M-02: Granice systemu -->
     <div class="section-gap fade-in">
-        <div class="section-num">02 — Cztery komponenty wskaźnika</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Struktura poLCA-EN-PL = Gate + Metan + Upstream + OZE
+        <div class="section-num">M-02 — Granice systemu</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Zakres LCI — włączone i wyłączone przepływy
         </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Wartość 718 kg CO₂e/MWh (2024) składa się z czterech addytywnych składowych.
-            Każda jest obliczana z osobnych źródeł danych i weryfikowana niezależnie.
-        </p>
-
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;" class="card card-lg">
-            <div>
-                <canvas id="componentsChart" style="max-height:280px;"></canvas>
-            </div>
-            <div style="display:flex;flex-direction:column;gap:0.75rem;">
-                <div style="background:#eef2ff;border-left:3px solid #3730a3;border-radius:6px;padding:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.2rem;">
-                        <div style="font-size:0.82rem;font-weight:700;color:#3730a3;">Spalanie (Gate)</div>
-                        <div style="font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:700;color:#3730a3;">77%</div>
-                    </div>
-                    <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;">CO₂ bezpośrednio ze spalania paliw w elektrowniach. Dane: KOBiZE + PSE bilans paliw.</p>
-                </div>
-                <div style="background:#fef3c7;border-left:3px solid #b45309;border-radius:6px;padding:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.2rem;">
-                        <div style="font-size:0.82rem;font-weight:700;color:#b45309;">Metan z kopalń</div>
-                        <div style="font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:700;color:#b45309;">14%</div>
-                    </div>
-                    <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;">CH₄ uwalniany podczas wydobycia węgla. UNFCCC CRT PL 2025: 53,57 Mt CO₂e rocznie, metanowość 8–12 m³/t.</p>
-                </div>
-                <div style="background:#f0fdf4;border-left:3px solid #15803d;border-radius:6px;padding:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.2rem;">
-                        <div style="font-size:0.82rem;font-weight:700;color:#15803d;">Upstream paliw (WTT)</div>
-                        <div style="font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:700;color:#15803d;">8%</div>
-                    </div>
-                    <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;">Well-to-tank: wydobycie i transport gazu, oleju, biomasy. Dane: DEFRA/DESNZ 2025.</p>
-                </div>
-                <div style="background:#f0f9ff;border-left:3px solid #0369a1;border-radius:6px;padding:0.9rem;">
-                    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:0.2rem;">
-                        <div style="font-size:0.82rem;font-weight:700;color:#0369a1;">Infrastruktura OZE</div>
-                        <div style="font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:700;color:#0369a1;">1%</div>
-                    </div>
-                    <p style="font-size:0.75rem;color:var(--text-secondary);margin:0;">Produkcja i utylizacja paneli PV, turbin wiatrowych, podziału na okres amortyzacji. Dane: ecoinvent + Fraunhofer ISE.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="card card-lg" style="margin-top:1.5rem;">
-            <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">Formuła obliczeniowa</div>
-            <div style="background:var(--bg-secondary);border-radius:6px;padding:1rem;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-primary);line-height:2;">
-                poLCA<sub style="font-family:sans-serif;">2024</sub> = EF<sub style="font-family:sans-serif;">gate</sub> + EF<sub style="font-family:sans-serif;">CH₄</sub> × GWP<sub style="font-family:sans-serif;">100</sub>(CH₄) + EF<sub style="font-family:sans-serif;">WTT</sub> + EF<sub style="font-family:sans-serif;">OZE</sub><br>
-                <span style="color:#3730a3;">EF<sub style="font-family:sans-serif;">gate</sub></span> = Σ (E<sub style="font-family:sans-serif;">i</sub> × ef<sub style="font-family:sans-serif;">CO₂,i</sub>) / E<sub style="font-family:sans-serif;">net</sub> &nbsp; [i = węgiel, gaz, olej, biomasa...]<br>
-                <span style="color:#b45309;">EF<sub style="font-family:sans-serif;">CH₄</sub></span> = (CH₄<sub style="font-family:sans-serif;">UNFCCC</sub> × share<sub style="font-family:sans-serif;">węgiel</sub>) / E<sub style="font-family:sans-serif;">net</sub><br>
-                <span style="color:#15803d;">GWP<sub style="font-family:sans-serif;">100</sub>(CH₄)</span> = 27,9 &nbsp; [IPCC AR6, 2021]
-            </div>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Wartość / zakres</th>
+                        <th>Uwagi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Typ granic</td>
+                        <td>Cradle-to-gate</td>
+                        <td style="font-size:0.8rem;">Wg ISO 14044 §1.2 i EN 15804+A2 §6.3.3</td>
+                    </tr>
+                    <tr>
+                        <td>Punkt wyjścia systemu (gate)</td>
+                        <td>Licznik końcowego użytkownika</td>
+                        <td style="font-size:0.8rem;">Po stratach przesyłowych i dystrybucyjnych</td>
+                    </tr>
+                    <tr>
+                        <td>Wydobycie paliw pierwotnych</td>
+                        <td style="color:#15803d;">Włączone</td>
+                        <td style="font-size:0.8rem;">Węgiel kamienny, brunatny, gaz ziemny, ropa, biomasa</td>
+                    </tr>
+                    <tr>
+                        <td>Transport paliw do elektrowni</td>
+                        <td style="color:#15803d;">Włączone</td>
+                        <td style="font-size:0.8rem;">Wliczone w WTT (DEFRA/DESNZ 2025)</td>
+                    </tr>
+                    <tr>
+                        <td>Emisje fugitywne z wydobycia (CH₄)</td>
+                        <td style="color:#15803d;">Włączone</td>
+                        <td style="font-size:0.8rem;">IPCC kat. 1B1; alokacja na udział węgla w miksie energetycznym wg EN 15804+A2 §6.3.7</td>
+                    </tr>
+                    <tr>
+                        <td>Spalanie paliw w elektrowniach</td>
+                        <td style="color:#15803d;">Włączone</td>
+                        <td style="font-size:0.8rem;">CO₂, N₂O; KOBiZE kat. 1A1a</td>
+                    </tr>
+                    <tr>
+                        <td>Straty sieciowe przesyłowe i dystrybucyjne</td>
+                        <td style="color:#15803d;">Włączone</td>
+                        <td style="font-size:0.8rem;">Poprzez E<sub>net</sub> w mianowniku (7,5% energii brutto)</td>
+                    </tr>
+                    <tr>
+                        <td>Infrastruktura elektrowni (budowa, rozbiórka)</td>
+                        <td style="color:var(--text-tertiary);">Wyłączone</td>
+                        <td style="font-size:0.8rem;">Z wyjątkiem OZE: infrastruktura PV i turbin wiatrowych włączona (ecoinvent 3.10)</td>
+                    </tr>
+                    <tr>
+                        <td>Dystrybucja NN (za transformatorem SN/nN)</td>
+                        <td style="color:var(--text-tertiary);">Wyłączone</td>
+                        <td style="font-size:0.8rem;">Energia dostarczona do licznika = granica systemu</td>
+                    </tr>
+                    <tr>
+                        <td>Biogeniczny CO₂ z biomasy</td>
+                        <td style="color:var(--text-tertiary);">Wyłączone z GWP</td>
+                        <td style="font-size:0.8rem;">Raportowany oddzielnie zgodnie z EN 15804+A2 §6.4.7; upstream biomasy wliczony w WTT</td>
+                    </tr>
+                    <tr>
+                        <td>Użycie energii przez użytkownika końcowego</td>
+                        <td style="color:var(--text-tertiary);">Wyłączone</td>
+                        <td style="font-size:0.8rem;">Scope 3 downstream — poza granicami cradle-to-gate</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- 03 — ENERGY BALANCE -->
+    <!-- M-03: Bilans energetyczny -->
     <div class="section-gap fade-in">
-        <div class="section-num">03 — Bilans energetyczny</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Dane PSE i URE — produkcja, straty, import/eksport
+        <div class="section-num">M-03 — Bilans energetyczny 2024</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Dane PSE i URE — podstawa mianownika jednostki funkcjonalnej
         </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Bilans jest oparty na danych operacyjnych PSE (Polskie Sieci Elektroenergetyczne)
-            i statystycznych URE (Urząd Regulacji Energetyki). Uwzględnia krajową produkcję
-            brutto, straty sieciowe oraz saldo wymiany z systemami europejskimi.
-        </p>
         <div style="overflow-x:auto;" class="card card-lg">
             <table class="polca-table">
                 <thead>
                     <tr>
                         <th>Pozycja bilansu</th>
                         <th>2024 [TWh]</th>
-                        <th>Uwagi</th>
+                        <th>Źródło</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>Produkcja krajowa brutto</td>
                         <td class="mono">174,2</td>
-                        <td style="color:var(--text-secondary);">PSE — dane operacyjne, podział wg źródeł</td>
+                        <td style="font-size:0.8rem;">PSE — Raport roczny KSE 2024 (podział wg technologii)</td>
                     </tr>
                     <tr>
-                        <td>Import netto (saldo wymiana)</td>
+                        <td>Saldo wymiany z zagranicą (netto)</td>
                         <td class="mono">+8,4</td>
-                        <td style="color:var(--text-secondary);">Głównie z DE, SE, CZ; emisje wg ENTSO-E mix</td>
+                        <td style="font-size:0.8rem;">PSE; emisje importu wg ENTSO-E country mix</td>
                     </tr>
                     <tr>
                         <td>Straty przesyłowe i dystrybucyjne</td>
                         <td class="mono">−13,8</td>
-                        <td style="color:var(--text-secondary);">~7,5% energii brutto; wliczone w EF przez E<sub>net</sub></td>
+                        <td style="font-size:0.8rem;">URE — Sprawozdanie statystyczne 2024 (~7,5% brutto)</td>
                     </tr>
-                    <tr>
-                        <td><strong>Zużycie krajowe netto (E<sub>net</sub>)</strong></td>
-                        <td class="mono highlight" style="font-weight:700;">168,8</td>
-                        <td style="color:var(--text-secondary);">Mianownik jednostki funkcjonalnej (1 kWh end-user)</td>
+                    <tr style="font-weight:600;background:var(--bg-secondary);">
+                        <td>Zużycie krajowe netto (E<sub>net</sub>)</td>
+                        <td class="mono highlight">168,8</td>
+                        <td style="font-size:0.8rem;">Mianownik jednostki funkcjonalnej</td>
                     </tr>
                 </tbody>
             </table>
-            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;">Źródło: PSE — Raport roczny KSE 2024; URE — Sprawozdanie statystyczne energii elektrycznej 2024.</p>
         </div>
     </div>
 
-    <!-- 04 — METHANE -->
+    <!-- M-04: CH4 -->
     <div class="section-gap fade-in">
-        <div class="section-num">04 — Metan z kopalń węgla</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Kluczowy składnik odróżniający poLCA od KOBiZE
+        <div class="section-num">M-04 — Emisje CH₄ z wydobycia węgla</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Parametry alokacji — kategoria IPCC 1B1
         </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Metan uwalniany podczas wydobycia węgla kamiennego stanowi 14% całkowitego wskaźnika poLCA-EN-PL
-            i jest główną różnicą w stosunku do wskaźnika KOBiZE (który go nie uwzględnia).
-            Polska jest jednym z największych emitentów metanu górniczego w UE.
-        </p>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:1.5rem;">
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.25rem;">Emisje CH₄ z górnictwa PL (2023)</div>
-                <div style="font-size:1.8rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">53,57</div>
-                <div style="font-size:0.78rem;color:var(--text-secondary);">Mt CO₂e · UNFCCC CRT Poland 2025</div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.25rem;">Metanowość kopalń PL</div>
-                <div style="font-size:1.8rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">8–12</div>
-                <div style="font-size:0.78rem;color:var(--text-secondary);">m³ CH₄ / tonę wydobytego węgla</div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.25rem;">GWP₁₀₀(CH₄) — IPCC AR6</div>
-                <div style="font-size:1.8rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">27,9</div>
-                <div style="font-size:0.78rem;color:var(--text-secondary);">vs. AR5: 28 (różnica &lt;1%) · CO₂e/mol CH₄</div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;color:var(--text-tertiary);margin-bottom:0.25rem;">Udział w poLCA 2024</div>
-                <div style="font-size:1.8rem;font-weight:700;color:#b45309;font-family:'IBM Plex Mono',monospace;">14%</div>
-                <div style="font-size:0.78rem;color:var(--text-secondary);">≈ 100 kg CO₂e/MWh (2024) · niewidoczne w KOBiZE</div>
-            </div>
-        </div>
-        <div style="background:#fffbeb;border:1px solid #fbbf24;border-radius:8px;padding:1.1rem;">
-            <div style="font-size:0.75rem;font-weight:700;color:#92400e;margin-bottom:0.4rem;">Dlaczego KOBiZE tego nie uwzględnia</div>
-            <p style="font-size:0.82rem;color:var(--text-secondary);margin:0;line-height:1.65;">
-                KOBiZE raportuje wyłącznie emisje ze spalania paliw w elektrowniach (kategoria IPCC 1A1a — energy industries). Metan z kopalń węgla jest raportowany w osobnej kategorii (1B1 — fugitive emissions from solid fuels) i nie jest alokowany do energii elektrycznej. W pełnej LCA alokacja jest obowiązkowa — zgodnie z EN 15804+A2 §6.3.7 (alokacja na podstawie masy wydobytego węgla przeznaczonego na energetykę).
-            </p>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Wartość</th>
+                        <th>Źródło</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Całkowite emisje CH₄ z górnictwa węgla PL (2023)</td>
+                        <td class="mono">53,57 Mt CO₂e/rok</td>
+                        <td style="font-size:0.8rem;">UNFCCC CRT Poland 2025, kat. 1B1 (Fugitive emissions from solid fuels)</td>
+                    </tr>
+                    <tr>
+                        <td>Udział węgla kamiennego w produkcji energii elektrycznej (2024)</td>
+                        <td class="mono">43,2%</td>
+                        <td style="font-size:0.8rem;">PSE — Raport roczny KSE 2024</td>
+                    </tr>
+                    <tr>
+                        <td>Metanowość kopalń — zakres</td>
+                        <td class="mono">8 – 12 m³ CH₄/t węgla</td>
+                        <td style="font-size:0.8rem;">Wyższy Urząd Górniczy (WUG) — raporty roczne</td>
+                    </tr>
+                    <tr>
+                        <td>GWP₁₀₀(CH₄ fossil)</td>
+                        <td class="mono">27,9 kg CO₂e/kg CH₄</td>
+                        <td style="font-size:0.8rem;">IPCC AR6 WG1 Table 7.SM.7 (2021); stosowany wg EN 15804+A2 §6.4.5</td>
+                    </tr>
+                    <tr>
+                        <td>Składowa CH₄ w poLCA-EN-PL 2024</td>
+                        <td class="mono" style="font-weight:600;">101 kg CO₂e/MWh</td>
+                        <td style="font-size:0.8rem;">Alokacja masowa na węgiel energetyczny wg EN 15804+A2 §6.3.7</td>
+                    </tr>
+                    <tr>
+                        <td>Uwzględnienie w KOBiZE</td>
+                        <td style="color:var(--text-tertiary);font-size:0.85rem;">Nie dotyczy</td>
+                        <td style="font-size:0.8rem;">KOBiZE obejmuje wyłącznie kat. 1A1a (energy industries — combustion); kat. 1B1 raportowana oddzielnie</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
-    <!-- 05 — WTT FACTORS -->
+    <!-- M-05: WTT -->
     <div class="section-gap fade-in">
-        <div class="section-num">05 — Współczynniki WTT</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Well-to-Tank — upstream wydobycia i transportu paliw
+        <div class="section-num">M-05 — Współczynniki Well-to-Tank (WTT)</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Upstream paliw — emisje przed bramą elektrowni
         </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Współczynniki WTT obejmują emisje GHG związane z wydobyciem, przetwarzaniem i transportem paliw
-            do elektrowni — zanim nastąpi spalanie. Dane: DEFRA/DESNZ 2025 Conversion Factors (zaktualizowane co rok).
-        </p>
         <div style="overflow-x:auto;" class="card card-lg">
             <table class="polca-table">
                 <thead>
                     <tr>
                         <th>Paliwo</th>
                         <th>EF spalania [kg CO₂/GJ]</th>
-                        <th>EF upstream WTT [kg CO₂e/GJ]</th>
-                        <th>Udział WTT [%]</th>
-                        <th>Źródło WTT</th>
+                        <th>EF WTT upstream [kg CO₂e/GJ]</th>
+                        <th>Udział WTT</th>
+                        <th>Źródło</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -311,291 +399,225 @@
                         <td class="mono">94,6</td>
                         <td class="mono">6,2</td>
                         <td class="mono">6,2%</td>
-                        <td style="color:var(--text-secondary);">DEFRA 2025</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025, tab. 3</td>
                     </tr>
                     <tr>
                         <td>Węgiel brunatny (lignit)</td>
                         <td class="mono">101,0</td>
                         <td class="mono">3,1</td>
                         <td class="mono">3,0%</td>
-                        <td style="color:var(--text-secondary);">DEFRA 2025</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025, tab. 3</td>
                     </tr>
                     <tr>
-                        <td>Gaz ziemny (import sieciowy)</td>
+                        <td>Gaz ziemny (sieć + LNG import)</td>
                         <td class="mono">56,1</td>
                         <td class="mono">18,3</td>
                         <td class="mono">24,6%</td>
-                        <td style="color:var(--text-secondary);">DEFRA 2025 (high leakage)</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025 (natural gas — high leakage); dotyczy importu LNG przez terminal Świnoujście</td>
                     </tr>
                     <tr>
                         <td>Olej opałowy ciężki</td>
                         <td class="mono">77,4</td>
                         <td class="mono">7,9</td>
                         <td class="mono">9,3%</td>
-                        <td style="color:var(--text-secondary);">DEFRA 2025</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025, tab. 3</td>
                     </tr>
                     <tr>
-                        <td>Biomasa (pellet drzewny)</td>
+                        <td>Biomasa — pellet drzewny</td>
                         <td class="mono">0 (biogen.)</td>
                         <td class="mono">9,8</td>
                         <td class="mono">100%</td>
-                        <td style="color:var(--text-secondary);">DEFRA 2025 + RED II</td>
+                        <td style="font-size:0.8rem;">DEFRA/DESNZ 2025; RED II krit. zrównoważonego rozwoju</td>
                     </tr>
                 </tbody>
             </table>
-            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;">Dane 2024. Wysokie WTT dla gazu wynika z udziału LNG w polskim imporcie (terminal Świnoujście) — wyższe emisje metanu przy skraplaniu i regazyfikacji.</p>
-        </div>
-    </div>
-
-    <!-- 06 — STANDARDS AND GWP -->
-    <div class="section-gap fade-in">
-        <div class="section-num">06 — Standardy i potencjał GWP</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Ramy normatywne i wybór potencjału ocieplenia
-        </h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;">
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;">LCA — inwentaryzacja</div>
-                <div class="badge-grid" style="gap:0.35rem;">
-                    <span class="badge official" style="font-size:0.68rem;">ISO 14040:2006</span>
-                    <span class="badge official" style="font-size:0.68rem;">ISO 14044:2006</span>
-                    <span class="badge official" style="font-size:0.68rem;">ISO 14067:2018</span>
-                </div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;">EPD i budownictwo</div>
-                <div class="badge-grid" style="gap:0.35rem;">
-                    <span class="badge official" style="font-size:0.68rem;">ISO 14025:2006</span>
-                    <span class="badge official" style="font-size:0.68rem;">EN 15804+A2:2019</span>
-                    <span class="badge official" style="font-size:0.68rem;">EN 15978:2011</span>
-                </div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;">GHG i klimat</div>
-                <div class="badge-grid" style="gap:0.35rem;">
-                    <span class="badge official" style="font-size:0.68rem;">IPCC AR6 (2021)</span>
-                    <span class="badge official" style="font-size:0.68rem;">GHG Protocol</span>
-                    <span class="badge official" style="font-size:0.68rem;">ESRS E1 (CSRD)</span>
-                </div>
-            </div>
-            <div class="card" style="padding:1.1rem;">
-                <div style="font-size:0.7rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.5rem;">Dane krajowe</div>
-                <div class="badge-grid" style="gap:0.35rem;">
-                    <span class="badge official" style="font-size:0.68rem;">KOBiZE</span>
-                    <span class="badge official" style="font-size:0.68rem;">UNFCCC CRT PL 2025</span>
-                    <span class="badge official" style="font-size:0.68rem;">PSE / URE</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="card card-lg" style="margin-top:1.5rem;">
-            <div style="font-size:0.85rem;font-weight:600;color:var(--text-primary);margin-bottom:0.75rem;">Potencjały GWP₁₀₀ stosowane w obliczeniach (IPCC AR6)</div>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0.75rem;text-align:center;">
-                <div style="background:#f0f4ff;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:#3730a3;">1</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">CO₂</div>
-                </div>
-                <div style="background:#fef3c7;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:#b45309;">27,9</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">CH₄ (fossil)</div>
-                </div>
-                <div style="background:#f0fdf4;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:#15803d;">273</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">N₂O</div>
-                </div>
-                <div style="background:#f0f9ff;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.3rem;font-weight:700;color:#0369a1;">SF₆</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">24 300 (marginalne)</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 07 — UNCERTAINTY -->
-    <div class="section-gap fade-in">
-        <div class="section-num">07 — Niepewność i zakres</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Analiza niepewności — metoda Monte Carlo
-        </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Wskaźnik poLCA-EN-PL jest podawany z przedziałem niepewności wynikającym
-            z zmienności danych wejściowych (metanowość kopalń, skład paliw, straty sieciowe).
-            Zastosowano symulację Monte Carlo (n=10 000 iteracji).
-        </p>
-        <div class="card card-lg">
-            <canvas id="uncertaintyChart" style="max-height:220px;"></canvas>
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.75rem;margin-top:1rem;">
-                <div style="text-align:center;background:#f0f4ff;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.2rem;font-weight:700;color:#6b7280;">0,62</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">p5 (dolny zakres)</div>
-                </div>
-                <div style="text-align:center;background:#3730a3;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.4rem;font-weight:700;color:white;">0,718</div>
-                    <div style="font-size:0.72rem;color:rgba(255,255,255,0.7);">wartość centralna</div>
-                </div>
-                <div style="text-align:center;background:#f0f4ff;border-radius:6px;padding:0.75rem;">
-                    <div style="font-family:'IBM Plex Mono',monospace;font-size:1.2rem;font-weight:700;color:#6b7280;">0,77</div>
-                    <div style="font-size:0.72rem;color:var(--text-secondary);">p95 (górny zakres)</div>
-                </div>
-            </div>
-            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.75rem;">Główne źródła niepewności: metanowość kopalń ±25%, WTT gazowy ±18%, udział importu w bilansie ±8%.</p>
-        </div>
-    </div>
-
-    <!-- 08 — UPDATE SCHEDULE -->
-    <div class="section-gap fade-in">
-        <div class="section-num">08 — Harmonogram aktualizacji</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:600;color:var(--text-primary);margin-bottom:0.5rem;">
-            Roczny cykl aktualizacji wskaźnika
-        </h2>
-        <p style="font-size:0.92rem;color:var(--text-secondary);margin-bottom:1.5rem;">
-            Wskaźnik poLCA-EN-PL jest aktualizowany raz do roku po udostępnieniu pełnych danych
-            przez PSE, KOBiZE i UNFCCC. Nowa wartość jest weryfikowana przez recenzentów i publikowana
-            na portalu wraz z pełną dokumentacją.
-        </p>
-        <div class="card card-lg">
-            <div class="layers-container" style="display:flex;flex-direction:column;gap:0.75rem;">
-                <div style="display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start;">
-                    <div style="text-align:right;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-tertiary);padding-top:0.1rem;">Q1 (sty–mar)</div>
-                    <div style="background:#f0f4ff;border-left:3px solid #3730a3;border-radius:0 6px 6px 0;padding:0.75rem;">
-                        <div style="font-size:0.82rem;font-weight:600;color:#3730a3;">Dane PSE i URE</div>
-                        <div style="font-size:0.75rem;color:var(--text-secondary);">Bilans produkcji i zużycia za poprzedni rok · podział wg źródeł · straty sieciowe</div>
-                    </div>
-                </div>
-                <div style="display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start;">
-                    <div style="text-align:right;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-tertiary);padding-top:0.1rem;">Q1–Q2</div>
-                    <div style="background:#fef3c7;border-left:3px solid #b45309;border-radius:0 6px 6px 0;padding:0.75rem;">
-                        <div style="font-size:0.82rem;font-weight:600;color:#b45309;">UNFCCC CRT Poland</div>
-                        <div style="font-size:0.75rem;color:var(--text-secondary);">Krajowy raport inwentaryzacji GHG · kategoria 1B1 (metan górniczy) · aktualizacja co rok w Q2</div>
-                    </div>
-                </div>
-                <div style="display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start;">
-                    <div style="text-align:right;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-tertiary);padding-top:0.1rem;">Q2</div>
-                    <div style="background:#f0fdf4;border-left:3px solid #15803d;border-radius:0 6px 6px 0;padding:0.75rem;">
-                        <div style="font-size:0.82rem;font-weight:600;color:#15803d;">Obliczenia i recenzja</div>
-                        <div style="font-size:0.75rem;color:var(--text-secondary);">Aktualizacja modelu · niezależna recenzja wewnętrzna · Monte Carlo · dokumentacja metodyczna</div>
-                    </div>
-                </div>
-                <div style="display:grid;grid-template-columns:100px 1fr;gap:1rem;align-items:start;">
-                    <div style="text-align:right;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;color:var(--text-tertiary);padding-top:0.1rem;">Q3</div>
-                    <div style="background:#f0f9ff;border-left:3px solid #0369a1;border-radius:0 6px 6px 0;padding:0.75rem;">
-                        <div style="font-size:0.82rem;font-weight:600;color:#0369a1;">Publikacja</div>
-                        <div style="font-size:0.75rem;color:var(--text-secondary);">Nowa wartość na portalu · aktualizacja datasetów · artykuł / nota techniczna · powiadomienie subskrybentów</div>
-                    </div>
-                </div>
-            </div>
-            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:1rem;padding-top:0.75rem;border-top:1px solid var(--border);">
-                Aktualna wartość: <strong>poLCA-EN-PL 2024 = 0,718 kg CO₂e/kWh</strong> · opublikowana Q3 2025 · następna aktualizacja: Q3 2026.
+            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;">
+                EF WTT = emisje z wydobycia, przetwarzania i transportu paliwa do elektrowni, z wyłączeniem procesu spalania.
+                Ważone udziałami poszczególnych paliw w krajowym miksie wytwórczym PSE 2024.
             </p>
         </div>
     </div>
 
-    <div class="quote-block fade-in">
-        <p>„Różnica między 553 (KOBiZE) a 718 (poLCA-EN-PL) to nie błąd ani nieprecyzja — to celowo różne pytania. KOBiZE pyta: ile CO₂ wyemitowały elektrownie? poLCA pyta: jaki jest pełny ślad węglowy 1 kWh energii elektrycznej zużytej w Polsce?"</p>
-        <div class="quote-source">— Lewandowska et al., Energies 2025, 18(15):4092 · <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">DOI:10.3390/en18154092</a></div>
+    <!-- M-06: Normy i GWP -->
+    <div class="section-gap fade-in">
+        <div class="section-num">M-06 — Normy i wartości GWP</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Ramy normatywne i potencjały ocieplenia globalnego
+        </h2>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+            <div style="overflow-x:auto;" class="card card-lg">
+                <div style="font-size:0.8rem;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.75rem;">Normy</div>
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr><th>Norma</th><th>Zastosowanie</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="mono">ISO 14040:2006</td><td>Zasady i struktura LCA</td></tr>
+                        <tr><td class="mono">ISO 14044:2006</td><td>Wymagania i wytyczne LCA</td></tr>
+                        <tr><td class="mono">ISO 14025:2006</td><td>Deklaracje środowiskowe typu III</td></tr>
+                        <tr><td class="mono">ISO 14067:2018</td><td>Ślad węglowy produktów</td></tr>
+                        <tr><td class="mono">EN 15804+A2:2019</td><td>PCR budowlany — moduły A1–A3, B6</td></tr>
+                        <tr><td class="mono">GHG Protocol</td><td>Scope 2 location-/market-based</td></tr>
+                        <tr><td class="mono">ESRS E1 (CSRD)</td><td>Scope 3 kat. 3 reporting</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="overflow-x:auto;" class="card card-lg">
+                <div style="font-size:0.8rem;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.05em;margin-bottom:0.75rem;">Potencjały GWP₁₀₀ [IPCC AR6, 2021]</div>
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr><th>Gaz</th><th>GWP₁₀₀ [kg CO₂e/kg]</th><th>Uwagi</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>CO₂</td><td class="mono">1</td><td style="color:var(--text-tertiary);">Referencyjny</td></tr>
+                        <tr><td>CH₄ (fossil)</td><td class="mono" style="font-weight:600;">27,9</td><td style="color:var(--text-tertiary);">Tab. 7.SM.7</td></tr>
+                        <tr><td>CH₄ (biogenic)</td><td class="mono">27,9</td><td style="color:var(--text-tertiary);">Stosowany wg EN 15804+A2</td></tr>
+                        <tr><td>N₂O</td><td class="mono">273</td><td style="color:var(--text-tertiary);">Marginalne w EF energii</td></tr>
+                        <tr><td>SF₆</td><td class="mono">24 300</td><td style="color:var(--text-tertiary);">Pomijalny udział</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-07: Niepewność -->
+    <div class="section-gap fade-in">
+        <div class="section-num">M-07 — Analiza niepewności</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Symulacja Monte Carlo — n = 10 000 iteracji
+        </h2>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Parametr wejściowy</th>
+                        <th>Rozkład</th>
+                        <th>Zmienność (σ)</th>
+                        <th>Udział w niepewności łącznej</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Metanowość kopalń (1B1)</td>
+                        <td>Log-normalny</td>
+                        <td class="mono">±25%</td>
+                        <td class="mono">~58%</td>
+                    </tr>
+                    <tr>
+                        <td>Współczynniki WTT — gaz (LNG)</td>
+                        <td>Log-normalny</td>
+                        <td class="mono">±18%</td>
+                        <td class="mono">~21%</td>
+                    </tr>
+                    <tr>
+                        <td>Udział importu w bilansie</td>
+                        <td>Normalny</td>
+                        <td class="mono">±8%</td>
+                        <td class="mono">~12%</td>
+                    </tr>
+                    <tr>
+                        <td>Pozostałe (straty sieciowe, mix biomasy)</td>
+                        <td>Normalny</td>
+                        <td class="mono">±3–5%</td>
+                        <td class="mono">~9%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:1.25rem;overflow-x:auto;">
+                <table class="polca-table" style="font-size:0.85rem;">
+                    <thead>
+                        <tr>
+                            <th>Percentyl</th>
+                            <th>Wartość [kg CO₂e/MWh]</th>
+                            <th>Wartość [kg CO₂e/kWh]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>p5</td><td class="mono">620</td><td class="mono">0,620</td></tr>
+                        <tr><td>p25</td><td class="mono">675</td><td class="mono">0,675</td></tr>
+                        <tr style="font-weight:600;background:var(--bg-secondary);">
+                            <td>p50 (mediana / wartość centralna)</td>
+                            <td class="mono highlight">718</td>
+                            <td class="mono">0,718</td>
+                        </tr>
+                        <tr><td>p75</td><td class="mono">748</td><td class="mono">0,748</td></tr>
+                        <tr><td>p95</td><td class="mono">770</td><td class="mono">0,770</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- M-08: Harmonogram -->
+    <div class="section-gap fade-in">
+        <div class="section-num">M-08 — Cykl aktualizacji</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.25rem;font-weight:600;color:var(--text-primary);margin-bottom:1rem;">
+            Harmonogram roczny — wersjonowanie wskaźnika
+        </h2>
+        <div style="overflow-x:auto;" class="card card-lg">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Kwartał</th>
+                        <th>Działanie</th>
+                        <th>Źródło danych</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mono">Q1 (sty–mar)</td>
+                        <td>Pobranie bilansu energetycznego za rok poprzedni</td>
+                        <td style="font-size:0.8rem;">PSE — Raport roczny KSE; URE — Sprawozdanie statystyczne</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">Q1–Q2</td>
+                        <td>Aktualizacja danych UNFCCC i DEFRA/DESNZ</td>
+                        <td style="font-size:0.8rem;">UNFCCC CRT (kat. 1B1); DEFRA/DESNZ Conversion Factors (nowe wydanie)</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">Q2</td>
+                        <td>Obliczenia, Monte Carlo, recenzja wewnętrzna</td>
+                        <td style="font-size:0.8rem;">—</td>
+                    </tr>
+                    <tr>
+                        <td class="mono">Q3</td>
+                        <td>Publikacja nowej wersji wskaźnika; aktualizacja datasetów i portalu</td>
+                        <td style="font-size:0.8rem;">Nota techniczna lub artykuł recenzowany</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="margin-top:1.25rem;overflow-x:auto;">
+                <table class="polca-table" style="font-size:0.82rem;">
+                    <thead>
+                        <tr>
+                            <th>Wersja</th>
+                            <th>Rok danych</th>
+                            <th>Wartość [kg CO₂e/MWh]</th>
+                            <th>Data wydania</th>
+                            <th>Odniesienie</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="mono">2021.1</td><td class="mono">2021</td><td class="mono">920</td><td class="mono">Q3 2022</td><td style="color:var(--text-tertiary);font-size:0.78rem;">—</td></tr>
+                        <tr><td class="mono">2022.1</td><td class="mono">2022</td><td class="mono">870</td><td class="mono">Q3 2023</td><td style="color:var(--text-tertiary);font-size:0.78rem;">—</td></tr>
+                        <tr><td class="mono">2023.1</td><td class="mono">2023</td><td class="mono">780</td><td class="mono">Q3 2024</td><td style="color:var(--text-tertiary);font-size:0.78rem;">—</td></tr>
+                        <tr style="font-weight:600;background:var(--bg-secondary);">
+                            <td class="mono">2024.1</td><td class="mono">2024</td><td class="mono highlight">718</td><td class="mono">Q3 2025</td>
+                            <td style="font-size:0.78rem;"><a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">DOI:10.3390/en18154092</a></td>
+                        </tr>
+                        <tr style="color:var(--text-tertiary);">
+                            <td class="mono">2025.1</td><td class="mono">2025</td><td class="mono">—</td><td class="mono">Q3 2026 (planowane)</td><td style="font-size:0.78rem;">—</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </div>
 </div>
-
-<script>
-(function(){
-    'use strict';
-
-    Chart.defaults.font.family = "'Inter', sans-serif";
-    Chart.defaults.font.size = 12;
-    Chart.defaults.plugins.tooltip.backgroundColor = '#1e293b';
-    Chart.defaults.plugins.tooltip.padding = 10;
-    Chart.defaults.plugins.tooltip.cornerRadius = 6;
-
-    // Doughnut — 4 components
-    var compCtx = document.getElementById('componentsChart');
-    if (compCtx) {
-        new Chart(compCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Spalanie (gate)', 'Metan z kopalń', 'Upstream WTT', 'Infrastruktura OZE'],
-                datasets: [{
-                    data: [77, 14, 8, 1],
-                    backgroundColor: ['#3730a3', '#b45309', '#15803d', '#0369a1'],
-                    borderWidth: 2,
-                    borderColor: '#fff',
-                    hoverOffset: 8
-                }]
-            },
-            options: {
-                cutout: '65%',
-                plugins: {
-                    legend: { position: 'bottom' },
-                    tooltip: {
-                        callbacks: {
-                            label: function(ctx) {
-                                return ' ' + ctx.label + ': ' + ctx.parsed + '%';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    // Horizontal bar — uncertainty range
-    var uncCtx = document.getElementById('uncertaintyChart');
-    if (uncCtx) {
-        new Chart(uncCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Zakres niepewności poLCA-EN-PL 2024'],
-                datasets: [
-                    {
-                        label: 'p5 (dolny)',
-                        data: [620],
-                        backgroundColor: '#e0e7ff',
-                        borderRadius: 2
-                    },
-                    {
-                        label: 'Wartość centralna',
-                        data: [718],
-                        backgroundColor: '#3730a3',
-                        borderRadius: 2
-                    },
-                    {
-                        label: 'p95 (górny)',
-                        data: [770],
-                        backgroundColor: '#c7d2fe',
-                        borderRadius: 2
-                    }
-                ]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                plugins: {
-                    legend: { position: 'top' },
-                    tooltip: {
-                        callbacks: {
-                            label: function(ctx) {
-                                return ' ' + ctx.dataset.label + ': ' + ctx.parsed.x + ' kg CO₂e/MWh';
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(0,0,0,0.04)' },
-                        min: 400,
-                        ticks: {
-                            callback: function(v) { return v + ' kg'; }
-                        },
-                        title: { display: true, text: 'kg CO₂e/MWh', font: { size: 11 } }
-                    },
-                    y: { grid: { display: false } }
-                }
-            }
-        });
-    }
-}());
-</script>
 
 <footer class="polca-portal-footer">
     &copy; 2026 Multicert Sp. z o.o. &mdash; Operator programu EPD Polska &middot;
