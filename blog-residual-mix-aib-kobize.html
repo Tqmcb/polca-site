@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog</title>
-    <meta name="description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Kiedy stosować który i dlaczego mylenie ich to poważny błąd metodyczny.">
+    <meta name="description" content="KOBiZE 553 kg CO₂/MWh, AIB Residual Mix 808 kg CO₂/MWh — oba wskaźniki poprawne, ale mierzą co innego. Dla EPD (EN 15804+A2) i LCA cradle-to-gate stosuj poLCA-EN-PL 718 kg CO₂e/MWh.">
     <link rel="canonical" href="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog">
-    <meta property="og:description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Kiedy stosować który w LCA, EPD i raportowaniu Scope 2.">
+    <meta property="og:description" content="KOBiZE 553, AIB 808, poLCA-EN-PL 718 kg CO₂(e)/MWh — który wskaźnik do EPD, LCA i CSRD Scope 2 i 3? Pełna analiza mechanizmu Gwarancji Pochodzenia i residual mix dla Polski 2024.">
     <meta property="og:url" content="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -22,7 +22,7 @@
     <meta property="article:tag" content="Gwarancje Pochodzenia">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej">
-    <meta name="twitter:description" content="597 kg CO₂/MWh od KOBiZE, ponad 700 kg z AIB — oba poprawne, ale mierzą co innego. Kiedy stosować który w LCA i Scope 2.">
+    <meta name="twitter:description" content="KOBiZE 553, AIB 808, poLCA-EN-PL 718 kg CO₂(e)/MWh. EPD/LCA → poLCA-EN-PL. Scope 2 LB → KOBiZE. Scope 2 MB → AIB.">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,7 +31,7 @@
           "@type": "BlogPosting",
           "@id": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
           "headline": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich",
-          "description": "597 kg CO₂/MWh od KOBiZE, ponad 700 kg z raportu AIB — oba wskaźniki są poprawne, ale mierzą co innego. Mylenie ich to jeden z częstszych błędów metodycznych w raportowaniu emisji Scope 2 i deklaracjach EPD.",
+          "description": "KOBiZE, AIB Residual Mix i poLCA-EN-PL — trzy wskaźniki emisji energii elektrycznej dla Polski. Który stosować do EPD (EN 15804+A2), LCA, CSRD Scope 2 i Scope 3 kat. 3?",
           "url": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
           "datePublished": "2026-02-18",
           "dateModified": "2026-02-18",
@@ -166,16 +166,30 @@
                 Residual mix, AIB i KOBiZE &#8212; trzy wska&#378;niki emisji dla energii elektrycznej i kiedy stosowa&#263; ka&#380;dy z nich
             </h1>
             <p class="blog-post-lead">
-                597&nbsp;kg&nbsp;CO&#8322;/MWh od KOBiZE, ponad 700&nbsp;kg z raportu AIB &#8212; oba wska&#378;niki s&#261;
-                poprawne, ale mierz&#261; co innego. Mylenie ich to jeden z cz&#281;stszych b&#322;&#281;d&#243;w metodycznych
-                w raportowaniu emisji Scope&nbsp;2 i deklaracjach EPD.
+                KOBiZE, AIB Residual Mix, poLCA-EN-PL &#8212; ka&#380;dy wska&#378;nik jest poprawny, ale mierzy co innego.
+                Mylenie ich to jeden z cz&#281;stszych b&#322;&#281;d&#243;w metodycznych
+                w raportowaniu emisji Scope&nbsp;2, deklaracjach EPD i raportowaniu CSRD.
             </p>
+        </div>
+
+        <div style="background:#f0f4ff;border:1px solid #c7d2fe;border-radius:8px;padding:1rem 1.25rem;margin-bottom:1.5rem;font-size:0.85rem;color:var(--text-secondary);line-height:1.65;">
+            <strong style="color:#3730a3;">Aktualizacja — warto&#347;ci za 2024 r.:</strong>
+            KOBiZE = <strong>553 kg CO&#8322;/MWh</strong> (&#8595; ze 597 w 2023) &middot;
+            AIB Residual Mix = <strong>808 kg CO&#8322;/MWh</strong> (&#8593; z 788 w 2023) &middot;
+            poLCA-EN-PL (pe&#322;ny LCA cradle-to-gate) = <strong>718 kg CO&#8322;e/MWh</strong>.
+            Artyku&#322; poni&#380;ej opiera si&#281; na danych za 2023. Aktualne warto&#347;ci i metodyka →
+            <a href="metodyka.html" style="color:#3730a3;">Specyfikacja metodyki</a> ·
+            <a href="analiza.html" style="color:#3730a3;">Analiza por&#243;wnawcza</a>.
         </div>
     </div>
 
     <!-- Porównanie trzech wskaźników -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
-        <div class="card-title">Wska&#378;niki emisji dla energii elektrycznej w Polsce (dane za 2023)</div>
+        <div class="card-title">Wska&#378;niki emisji energii elektrycznej w Polsce — dane historyczne 2023</div>
+        <p style="font-size:0.78rem;color:var(--text-secondary);margin-bottom:0.75rem;">
+            Warto&#347;ci za 2024 r.: KOBiZE 553 &middot; AIB 808 &middot; poLCA-EN-PL 718 kg CO&#8322;(e)/MWh.
+            Pe&#322;na tabela por&#243;wnawcza → <a href="analiza.html" style="color:var(--accent);">Analiza Sektorowa</a>.
+        </p>
         <div class="comp-bar-group" style="margin-top: 1rem;">
             <div class="comp-bar-label">KOBiZE &mdash; &#347;redni krajowy miks (<em>location-based</em>)</div>
             <div class="comp-bar-track">
@@ -249,10 +263,12 @@
             podzielona przez ca&#322;kowit&#261; produkcj&#281; energii elektrycznej netto.
         </p>
         <p>
-            W LCA i EPD (zgodnie z EN&nbsp;15804+A2) to w&#322;a&#347;nie ten wska&#378;nik ma zastosowanie &#8212;
-            jest podstaw&#261; metody lokalizacyjnej zalecanej przez norm&#281;. Za ka&#380;dym razem, gdy w modelu
-            LCA wyst&#281;puje zu&#380;ycie energii elektrycznej z sieci przez polskiego producenta,
-            nale&#380;y u&#380;y&#263; warto&#347;ci KOBiZE dla odpowiedniego roku referencyjnego.
+            KOBiZE jest w&#322;a&#347;ciwym wska&#378;nikiem dla <strong>Scope&nbsp;2 location-based</strong> (GHG Protocol, ESRS&nbsp;E1-6).
+            Natomiast w EPD (EN&nbsp;15804+A2) i pe&#322;nych analizach LCA norma wymaga zakresu
+            <em>cradle-to-gate</em> &#8212; kt&#243;ry obejmuje r&#243;wnie&#380; upstream paliw, metan z kopal&#324; w&#281;gla
+            i emisje z infrastruktury OZE. Dla Polski wska&#378;nikiem cradle-to-gate jest <strong>poLCA-EN-PL</strong>
+            (2024: 718&nbsp;kg&nbsp;CO&#8322;e/MWh). KOBiZE (553&nbsp;kg&nbsp;CO&#8322;/MWh) nie pokrywa tych sk&#322;adowych
+            i nie jest wystarczaj&#261;cy jako jedyna podstawa dla modu&#322;&#243;w A1&#8211;A3 i B6 w EPD.
         </p>
 
         <h2>Mechanizm residual mix i rola AIB</h2>
@@ -310,9 +326,9 @@
                 </thead>
                 <tbody>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">LCA / EPD (EN&nbsp;15804+A2)</td>
-                        <td style="padding: 0.6rem 0.75rem;"><strong>KOBiZE</strong> &mdash; &#347;redni miks lokalizacyjny</td>
-                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">EN&nbsp;15804+A2 §6.4.3 &mdash; metoda lokalizacyjna</td>
+                        <td style="padding: 0.6rem 0.75rem;">LCA / EPD (EN&nbsp;15804+A2) &#8212; modu&#322;y A1&ndash;A3, B6</td>
+                        <td style="padding: 0.6rem 0.75rem;"><strong>poLCA-EN-PL</strong> &#8212; cradle-to-gate (718&nbsp;kg&nbsp;CO&#8322;e/MWh)</td>
+                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">EN&nbsp;15804+A2; ISO&nbsp;14040/14044 &#8212; zakres cradle-to-gate</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
                         <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope&nbsp;2 &mdash; location-based</td>
@@ -377,23 +393,29 @@
             s&#261; samo w sobie poprawne.
         </p>
 
-        <h2>Implikacje dla poLCA i EPD</h2>
+        <h2>Implikacje dla poLCA, EPD i CSRD</h2>
         <p>
-            Baza poLCA opiera si&#281; wy&#322;&#261;cznie na metodzie lokalizacyjnej i stosuje wska&#378;niki
-            KOBiZE w&#322;a&#347;ciwe dla roku referencyjnego ka&#380;dego datasetu. Jest to zgodne
-            z wymaganiami EN&nbsp;15804+A2 i zapewnia sp&#243;jno&#347;&#263; mi&#281;dzy polskimi EPD.
+            Wskaźnik <strong>poLCA-EN-PL</strong> stosowany jest w obliczeniach LCA i EPD jako warto&#347;&#263;
+            cradle-to-gate (2024: 718&nbsp;kg&nbsp;CO&#8322;e/MWh). Obejmuje KOBiZE jako sk&#322;adow&#261; spalania (553&nbsp;kg),
+            a tak&#380;e metan z kopal&#324; w&#281;gla, upstream paliw i emisje z infrastruktury OZE.
+            Zosta&#322; opublikowany w recenzowanym artykule naukowym:
+            <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer">Lewandowska et al., <em>Energies</em> 2025, 18(15):4092</a>.
         </p>
         <p>
-            Wska&#378;nik AIB residual mix nie jest stosowany w modelach LCI poLCA &mdash; ale ma
-            bezpo&#347;rednie znaczenie dla raportowania korporacyjnego Scope&nbsp;2 przez firmy
-            b&#281;d&#261;ce naszymi u&#380;ytkownikami. Je&#380;eli producent opracowuje EPD i jednocze&#347;nie
-            raportuje emisje korporacyjne (np. w ramach CSRD), powinien &#347;wiadomie stosowa&#263;
-            oba wska&#378;niki &#8212; w odpowiednich kontekstach &#8212; i dokumentowa&#263; t&#281; r&#243;&#380;nic&#281;
-            w metodyce.
+            Wska&#378;nik AIB residual mix (808&nbsp;kg&nbsp;CO&#8322;/MWh w 2024) ma bezpo&#347;rednie znaczenie
+            dla raportowania Scope&nbsp;2 market-based (ESRS&nbsp;E1-6) przez firmy bez zakupu GO.
+            Je&#380;eli producent opracowuje EPD i jednocze&#347;nie raportuje emisje korporacyjne
+            w ramach CSRD, stosuje trzy r&#243;&#380;ne wska&#378;niki w trzech r&#243;&#380;nych kontekstach &#8212;
+            i dokumentuje to w metodyce:
         </p>
+        <ul style="font-size:0.9rem;line-height:1.75;margin:0.5rem 0 1rem 1.5rem;color:var(--text-secondary);">
+            <li>EPD / LCA (EN&nbsp;15804+A2): <strong>poLCA-EN-PL 718</strong> kg&nbsp;CO&#8322;e/MWh</li>
+            <li>CSRD Scope&nbsp;2 location-based: <strong>KOBiZE 553</strong> kg&nbsp;CO&#8322;/MWh</li>
+            <li>CSRD Scope&nbsp;2 market-based (bez GO): <strong>AIB 808</strong> kg&nbsp;CO&#8322;/MWh</li>
+        </ul>
         <p>
-            Pr&#243;ba &#8222;spójno&#347;ci&#8221; przez u&#380;ywanie jednego wska&#378;nika we wszystkich
-            raportach r&#243;wnocze&#347;nie skutkuje b&#322;&#281;dem w przynajmniej jednym z nich.
+            Pr&#243;ba uproszczenia przez u&#380;ycie jednego wska&#378;nika we wszystkich kontekstach
+            skutkuje b&#322;&#281;dem metodycznym w przynajmniej jednym z nich.
         </p>
 
         <hr class="blog-post-divider">

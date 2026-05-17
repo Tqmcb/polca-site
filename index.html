@@ -3,8 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — poLCA</title>
-    <meta name="description" content="Polska baza danych LCA — wskaźnik emisji energii elektrycznej poLCA-EN-PL (0,718 kg CO₂e/kWh w 2024). Kalkulator, metodyka cradle-to-gate, datasety ILCD+EPD.">
+    <title>Wskaźnik emisji energii elektrycznej LCA dla EPD w Polsce — poLCA-EN-PL 2024</title>
+    <meta name="description" content="poLCA-EN-PL: wskaźnik LCA energii elektrycznej dla EPD i LCA w Polsce (2024: 0,718 kg CO₂e/kWh, cradle-to-gate). Zgodny z EN 15804+A2, ISO 14044. Peer-review DOI:10.3390/en18154092.">
+    <link rel="canonical" href="https://polca.org.pl/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wskaźnik emisji energii elektrycznej LCA dla EPD w Polsce — poLCA-EN-PL 2024">
+    <meta property="og:description" content="Jedyny polski wskaźnik emisji energii elektrycznej cradle-to-gate. 2024: 0,718 kg CO₂e/kWh. Zgodny z EN 15804+A2, ISO 14044, CSRD Scope 3. Peer-review: Energies 2025, DOI:10.3390/en18154092.">
+    <meta property="og:url" content="https://polca.org.pl/">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wskaźnik emisji energii elektrycznej LCA Polska — poLCA-EN-PL 2024">
+    <meta name="twitter:description" content="0,718 kg CO₂e/kWh (2024), cradle-to-gate, EN 15804+A2, ISO 14044. Peer-review: Energies 2025.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://polca.org.pl/#website",
+          "url": "https://polca.org.pl/",
+          "name": "poLCA — Polska Baza Danych LCA",
+          "description": "Wskaźnik emisji LCA energii elektrycznej dla EPD, LCA i CSRD w Polsce. Zgodny z EN 15804+A2, ISO 14044.",
+          "inLanguage": "pl-PL",
+          "publisher": { "@id": "https://polca.org.pl/#org" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://polca.org.pl/#org",
+          "name": "Multicert Sp. z o.o.",
+          "url": "https://polca.org.pl/",
+          "sameAs": ["https://www.epd.org.pl"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Mydlarska 47",
+            "addressLocality": "Warszawa",
+            "postalCode": "04-690",
+            "addressCountry": "PL"
+          },
+          "contactPoint": { "@type": "ContactPoint", "email": "info@epd.org.pl", "contactType": "customer service" }
+        },
+        {
+          "@type": "Dataset",
+          "@id": "https://polca.org.pl/datasety.html#polca-en-pl",
+          "name": "poLCA-EN-PL 2024.1 — Wskaźnik emisji energii elektrycznej LCA, Polska",
+          "description": "Wskaźnik LCA emisji GHG dla energii elektrycznej dostarczonej do użytkownika końcowego w Polsce. Zakres: cradle-to-gate. Wartość 2024: 718 kg CO₂e/MWh (0,718 kg CO₂e/kWh). Cztery składowe: spalanie gate 553, CH₄ wydobycie 101, upstream WTT 57, OZE infra 7.",
+          "url": "https://polca.org.pl/datasety.html",
+          "version": "2024.1",
+          "datePublished": "2025-07-01",
+          "inLanguage": "pl-PL",
+          "creator": { "@id": "https://polca.org.pl/#org" },
+          "isBasedOn": {
+            "@type": "ScholarlyArticle",
+            "name": "Lewandowska et al., Energies 2025, 18(15), 4092",
+            "url": "https://doi.org/10.3390/en18154092",
+            "identifier": "DOI:10.3390/en18154092"
+          },
+          "keywords": ["LCA","EPD","EN 15804+A2","wskaźnik emisji energii elektrycznej","Polska","KOBiZE","CSRD","GHG Protocol","cradle-to-gate"],
+          "measurementTechnique": "ISO 14040:2006; ISO 14044:2006; EN 15804:2012+A2:2019",
+          "spatialCoverage": "Poland",
+          "temporalCoverage": "2024"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://polca.org.pl/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Jaki wskaźnik emisji energii elektrycznej stosować w EPD (EN 15804+A2) dla wyrobów produkowanych w Polsce?",
+              "acceptedAnswer": { "@type": "Answer", "text": "W deklaracjach EPD i analizach LCA zgodnych z EN 15804+A2 należy stosować wskaźnik cradle-to-gate. Dla Polski wynosi on 0,718 kg CO₂e/kWh (poLCA-EN-PL 2024.1). Wskaźnik KOBiZE (0,553 kg CO₂/kWh) obejmuje wyłącznie spalanie gate i jest niewystarczający dla pełnego LCA." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czym różni się wskaźnik poLCA-EN-PL od wskaźnika KOBiZE dla energii elektrycznej?",
+              "acceptedAnswer": { "@type": "Answer", "text": "KOBiZE podaje wskaźnik gate dla CO₂ ze spalania paliw w elektrowniach (2024: 553 kg CO₂/MWh). poLCA-EN-PL dodaje: metan z kopalń węgla +14% (101 kg CO₂e), upstream paliw +8% (57 kg CO₂e) i infrastrukturę OZE +1% (7 kg CO₂e). Łącznie 718 kg CO₂e/MWh — o 30% więcej niż KOBiZE." }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy wskaźnik poLCA-EN-PL jest zwalidowany i zgodny z normami ISO 14044 i EN 15804+A2?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Tak. poLCA-EN-PL jest zgodny z ISO 14040/14044, EN 15804+A2:2019 i ISO 14067:2018. Wartości zostały opublikowane w recenzowanym artykule naukowym: Lewandowska et al., Energies 2025, 18(15):4092 (DOI:10.3390/en18154092)." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jakie były historyczne wartości wskaźnika emisji energii elektrycznej w Polsce (LCA)?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Seria poLCA-EN-PL: 2021 = 920 kg CO₂e/MWh, 2022 = 870, 2023 = 780, 2024 = 718. Redukcja o 22% w trzech latach wynika ze wzrostu udziału OZE z 16% do 28% produkcji krajowej." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jakiego wskaźnika używać do raportowania CSRD Scope 3 kategoria 3 dla energii elektrycznej?",
+              "acceptedAnswer": { "@type": "Answer", "text": "CSRD Scope 3 kat. 3 (upstream energii): poLCA-EN-PL 718 kg CO₂e/MWh. Scope 2 location-based (ESRS E1-6): KOBiZE 553 kg CO₂/MWh. Scope 2 market-based (bez GO): AIB Residual Mix 808 kg CO₂/MWh." }
+            },
+            {
+              "@type": "Question",
+              "name": "Jak cytować wskaźnik poLCA-EN-PL w dokumentacji EPD lub raporcie LCA?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Zalecany zapis: \"Energia elektryczna — sieć polska (2024): 0,718 kg CO₂e/kWh (poLCA-EN-PL 2024.1; Lewandowska et al., Energies 2025, 18(15):4092; DOI:10.3390/en18154092)\". Dataset dostępny w formatach ILCD+EPD i EcoSpold v2." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -80,15 +178,15 @@
         <div class="hero-image-bg" style="background-image: url('images/hero-main.jpg');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <div class="hero-overline">Polska Baza Danych LCA</div>
-            <h1 class="hero-title">Wskaźniki emisji<br>oparte na polskich danych</h1>
+            <div class="hero-overline">Polska Baza Danych LCA — polca.org.pl</div>
+            <h1 class="hero-title">Wskaźnik emisji energii<br>elektrycznej dla EPD w Polsce</h1>
             <p class="hero-desc">
-                Pełnocyklowe wskaźniki emisyjności energii elektrycznej i procesów produkcyjnych
-                — obliczone dla polskich warunków, zgodne z ISO&nbsp;14044 i EN&nbsp;15804+A2.
+                poLCA-EN-PL 2024: <strong style="color:#4ade80;">0,718 kg CO₂e/kWh</strong> — zakres cradle-to-gate,
+                zgodny z EN&nbsp;15804+A2 i ISO&nbsp;14044. Jedyna polska wartość obejmująca metan z kopalń węgla i upstream paliw.
             </p>
             <div class="hero-actions">
-                <a href="blog-en-pl-2024.html" class="hero-btn-primary">poLCA-EN-PL 2024 &rarr;</a>
-                <a href="metodyka.html" class="hero-btn-outline">Metodyka</a>
+                <a href="metodyka.html" class="hero-btn-primary">Specyfikacja metodyki &rarr;</a>
+                <a href="datasety.html" class="hero-btn-outline">Pobierz dataset</a>
             </div>
         </div>
     </div>
@@ -113,6 +211,65 @@
             <div class="metric-label">kg CO&#8322;/MWh AIB Residual Mix<br>market-based Scope&nbsp;2</div>
             <div class="metric-tag blue">2024 &#8593;</div>
         </div>
+    </div>
+
+    <!-- QUICK REFERENCE — practitioner table -->
+    <div class="card card-lg section-gap fade-in">
+        <div class="section-num">Szybkie odwołanie — który wskaźnik do jakiego zastosowania</div>
+        <div style="overflow-x:auto;">
+            <table class="polca-table">
+                <thead>
+                    <tr>
+                        <th>Zastosowanie</th>
+                        <th>Właściwy wskaźnik</th>
+                        <th>Wartość 2024</th>
+                        <th>Podstawa normatywna</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EPD wyrobu (moduły A1–A3, B6)</strong></td>
+                        <td><strong style="color:#3730a3;">poLCA-EN-PL</strong></td>
+                        <td class="mono highlight">0,718 kg CO&#8322;e/kWh</td>
+                        <td>EN 15804+A2:2019; ISO 14040/14044</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pełna analiza LCA wyrobu lub budynku</strong></td>
+                        <td><strong style="color:#3730a3;">poLCA-EN-PL</strong></td>
+                        <td class="mono highlight">0,718 kg CO&#8322;e/kWh</td>
+                        <td>ISO 14040/14044; ISO 14067:2018</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CSRD Scope 3 kat. 3 — upstream energii</strong></td>
+                        <td><strong style="color:#3730a3;">poLCA-EN-PL</strong></td>
+                        <td class="mono highlight">0,718 kg CO&#8322;e/kWh</td>
+                        <td>ESRS E1; GHG Protocol Scope 3</td>
+                    </tr>
+                    <tr>
+                        <td>Raportowanie Scope 2 location-based (CSRD)</td>
+                        <td>KOBiZE</td>
+                        <td class="mono">0,553 kg CO&#8322;/kWh</td>
+                        <td>ESRS E1-6 §44(a); GHG Protocol Scope 2 LB</td>
+                    </tr>
+                    <tr>
+                        <td>Raportowanie Scope 2 market-based (bez GO)</td>
+                        <td>AIB Residual Mix</td>
+                        <td class="mono">0,808 kg CO&#8322;/kWh</td>
+                        <td>ESRS E1-6 §44(b); GHG Protocol Scope 2 MB</td>
+                    </tr>
+                    <tr style="background:var(--bg-secondary);">
+                        <td style="color:var(--text-tertiary);">Audyt energetyczny budynku</td>
+                        <td style="color:var(--text-tertiary);">MKi&#346; (NCR)</td>
+                        <td class="mono" style="color:var(--text-tertiary);">0,617 kg CO&#8322;/kWh</td>
+                        <td style="color:var(--text-tertiary);">Rozporz&#261;dzenie krajowe — nie dotyczy EPD</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.75rem;">
+            Warto&#347;ci za rok referencyjny 2024. Aktualizacja corocznie (Q3). Pełna seria historyczna 2021–2024 →
+            <a href="datasety.html" style="color:var(--accent);">Datasety</a>.
+        </p>
     </div>
 
     <!-- Feature Cards -->
@@ -164,6 +321,43 @@
             <p>KOBiZE publikuje wskaźnik obejmujący wyłącznie bezpośrednie emisje CO&#8322; ze spalania paliw (<em>gate</em>). Norma ISO&nbsp;14044 i standardy EPD wymagają jednak uwzględnienia pełnego łańcucha dostaw. poLCA-EN-PL dokłada do wskaźnika gate: metan fugitywny z polskich kopalń węgla kamiennego (14%), upstream pozostałych paliw — gaz, olej, biomasa (8%) oraz cykl życia infrastruktury OZE (1%). Łączna różnica wynosi ok. 30% względem KOBiZE.</p>
             <p style="margin-top: 1rem; font-style: italic; color: var(--text-secondary); font-size: 0.88rem;">Niezależna walidacja: <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer">Lewandowska et al., <em>Energies</em> 2025, 18(15):4092</a> potwierdziła wartość 0,788&nbsp;kg&nbsp;CO&#8322;/kWh za rok 2023 (różnica 1% wobec naszego 0,780).</p>
         </div>
+    </div>
+
+    <!-- Citation Guide -->
+    <div class="card card-lg fade-in" style="border-left:4px solid #3730a3;">
+        <div class="section-num">Jak cytować w dokumentacji EPD i raporcie LCA</div>
+        <div class="card-title">Zalecany format cytowania poLCA-EN-PL</div>
+        <div style="background:var(--bg-secondary);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;line-height:1.8;color:var(--text-primary);">
+            Energia elektryczna — sie&#263; polska (2024):<br>
+            <strong>0,718 kg CO&#8322;e/kWh</strong><br>
+            &#346;r&#243;d&#322;o: poLCA-EN-PL 2024.1;<br>
+            Lewandowska et al., <em>Energies</em> 2025, 18(15):4092<br>
+            DOI: <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">10.3390/en18154092</a>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="polca-table" style="font-size:0.82rem;">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Warto&#347;&#263;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Warto&#347;&#263; centralna</td><td class="mono">718 kg CO&#8322;e/MWh &nbsp;/&nbsp; 0,718 kg CO&#8322;e/kWh</td></tr>
+                    <tr><td>Zakres niepewno&#347;ci (95% CI)</td><td class="mono">620 – 770 kg CO&#8322;e/MWh</td></tr>
+                    <tr><td>Identyfikator wersji</td><td class="mono">poLCA-EN-PL · Wersja 2024.1</td></tr>
+                    <tr><td>Rok referencyjny</td><td class="mono">2024</td></tr>
+                    <tr><td>Granica systemu</td><td>Cradle-to-gate (spalanie + CH&#8324; wydobycie + upstream + OZE infra)</td></tr>
+                    <tr><td>Publikacja</td><td><a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer">Lewandowska et al., <em>Energies</em> 2025, 18(15):4092</a></td></tr>
+                    <tr><td>Format pliku</td><td>ILCD+EPD · EcoSpold v2 · CSV/XLSX · JSON</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.75rem;">
+            Przy deklaracji EPD zgodnej z EN 15804+A2 poda&#263; warto&#347;&#263; 0,718 kg CO&#8322;e/kWh dla modu&#322;&#243;w A1–A3 i B6.
+            Dla analiz obejmuj&#261;cych lata 2021–2024 u&#380;y&#263; serii historycznej z zak&#322;adki
+            <a href="datasety.html" style="color:var(--accent);">Datasety</a>.
+        </p>
     </div>
 
     <!-- Main content: Comparison + Quote -->
@@ -290,13 +484,17 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-label">Architektura techniczna</div>
-            <div class="card-title">Nowoczesna infrastruktura danych</div>
+            <div class="card-label">Jak pobrać dataset</div>
+            <div class="card-title">Eksport do oprogramowania LCA</div>
             <p class="card-text">
-                Struktura grafowa, format JSON-LD, interfejs API (REST + GraphQL),
-                aktualizacja kaskadowa, natywna parametryzacja, pełna trasowalność.
-                Eksport: ILCD+EPD, EcoSpold v2, CSV/XLSX.
+                Dataset poLCA-EN-PL dostępny w formatach ILCD+EPD, EcoSpold v2 (OpenLCA, SimaPro, GaBi),
+                CSV/XLSX oraz JSON. Seria historyczna 2021–2024 z dekompozycją na 4 składowe.
             </p>
+            <div style="margin-top:0.75rem;">
+                <a href="datasety.html" style="font-size:0.82rem;color:var(--accent);font-weight:500;text-decoration:none;">
+                    Baza Datasetów &rarr;
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -344,6 +542,94 @@
                     <span style="font-size:0.75rem;color:#15803d;font-weight:600;">Blog poLCA →</span>
                 </div>
             </a>
+        </div>
+    </div>
+
+    <!-- FAQ section -->
+    <div class="section-gap fade-in" style="padding:0 var(--page-px,2rem) 2rem;">
+        <div class="section-num">Najcz&#281;&#347;ciej zadawane pytania</div>
+        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.4rem;font-weight:600;color:var(--text-primary);margin-bottom:1.5rem;">
+            FAQ — wskaźnik emisji energii elektrycznej dla EPD i LCA w Polsce
+        </h2>
+
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Jaki wska&#378;nik emisji energii elektrycznej stosowa&#263; w EPD (EN 15804+A2) dla wyrob&#243;w produkowanych w Polsce?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    W deklaracjach EPD i analizach LCA zgodnych z EN 15804+A2 nale&#380;y stosowa&#263; wska&#378;nik <strong>cradle-to-gate</strong>.
+                    Dla Polski wynosi on <strong>0,718 kg CO&#8322;e/kWh</strong> (poLCA-EN-PL 2024.1). Wska&#378;nik KOBiZE (0,553 kg CO&#8322;/kWh)
+                    obejmuje wy&#322;&#261;cznie spalanie gate i jest niewystarczaj&#261;cy dla pe&#322;nego LCA — brakuje w nim metanu z kopal&#324; w&#281;gla,
+                    upstreamu paliw kopalnych i emisji z infrastruktury OZE.
+                </p>
+            </div>
+
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Czym r&#243;&#380;ni si&#281; poLCA-EN-PL od wska&#378;nika KOBiZE?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    KOBiZE podaje wska&#378;nik gate dla CO&#8322; ze spalania paliw w elektrowniach (2024: 553 kg CO&#8322;/MWh).
+                    poLCA-EN-PL dodaje trzy sk&#322;adowe: metan fugitywny z kopal&#324; w&#281;gla (+14%, 101 kg CO&#8322;e/MWh),
+                    upstream paliw kopalnych — WTT (+8%, 57 kg CO&#8322;e/MWh) oraz emisje z infrastruktury OZE (+1%, 7 kg CO&#8322;e/MWh).
+                    Suma: 718 kg CO&#8322;e/MWh — o <strong>30% wi&#281;cej</strong> ni&#380; KOBiZE. R&#243;&#380;nica ta bezpo&#347;rednio przek&#322;ada si&#281; na wyniki GWP w EPD.
+                </p>
+            </div>
+
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Czy poLCA-EN-PL jest zwalidowany i zgodny z ISO 14044?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    Tak. Wska&#378;nik jest zgodny z ISO 14040/14044, EN 15804+A2:2019 i ISO 14067:2018.
+                    Metodyka i warto&#347;ci zosta&#322;y opublikowane w recenzowanym artykule naukowym:
+                    <a href="https://doi.org/10.3390/en18154092" target="_blank" rel="noopener noreferrer" style="color:#3730a3;">Lewandowska et al., <em>Energies</em> 2025, 18(15):4092</a>.
+                    Niezale&#380;na walidacja potwierdzi&#322;a warto&#347;&#263; 0,788 kg CO&#8322;e/kWh za rok 2023 (r&#243;&#380;nica &lt;1% wobec warto&#347;ci poLCA 0,780).
+                </p>
+            </div>
+
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Jakie by&#322;y historyczne warto&#347;ci wska&#378;nika emisji energii elektrycznej w Polsce?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    Seria historyczna poLCA-EN-PL: 2021 = 920 kg CO&#8322;e/MWh, 2022 = 870, 2023 = 780, 2024 = 718.
+                    Redukcja o 22% w trzech latach — efekt wzrostu udzia&#322;u OZE z 16% do 28% w produkcji krajowej.
+                    Dane z pe&#322;n&#261; dekompozycj&#261; na 4 sk&#322;adowe dost&#281;pne w formacie CSV/XLSX →
+                    <a href="datasety.html" style="color:var(--accent);">Baza Datasetów</a>.
+                </p>
+            </div>
+
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Jakiego wska&#378;nika u&#380;ywa&#263; do raportowania CSRD Scope 3 kategoria 3?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    CSRD Scope 3 kat. 3 (dzia&#322;ania energetyczne i upstream paliw): <strong>poLCA-EN-PL 718 kg CO&#8322;e/MWh</strong>.
+                    Scope 2 location-based (ESRS E1-6 §44a): <strong>KOBiZE 553 kg CO&#8322;/MWh</strong>.
+                    Scope 2 market-based bez GO (ESRS E1-6 §44b): <strong>AIB Residual Mix 808 kg CO&#8322;/MWh</strong>.
+                    ESRS E1-6 wymaga ujawnienia obu warto&#347;ci Scope 2 r&#243;wnocze&#347;nie. Szczeg&#243;&#322;y →
+                    <a href="analiza.html#csrd" style="color:var(--accent);">Analiza CSRD</a>.
+                </p>
+            </div>
+
+            <div class="card card-lg" style="padding:1.25rem 1.5rem;">
+                <div style="font-size:0.78rem;font-weight:700;color:#3730a3;text-transform:uppercase;letter-spacing:.04em;margin-bottom:0.5rem;">
+                    Jak cytowa&#263; poLCA-EN-PL w dokumentacji EPD lub raporcie?
+                </div>
+                <p style="font-size:0.88rem;color:var(--text-secondary);margin:0;line-height:1.7;">
+                    Zalecany zapis w dokumentacji LCA/EPD:<br>
+                    <span style="font-family:'IBM Plex Mono',monospace;font-size:0.82rem;background:var(--bg-secondary);padding:0.15rem 0.4rem;border-radius:3px;">
+                        Energia elektryczna — sie&#263; polska (2024): 0,718 kg CO&#8322;e/kWh
+                        (poLCA-EN-PL 2024.1; Lewandowska et al., Energies 2025, 18(15):4092; DOI:10.3390/en18154092)
+                    </span><br>
+                    <span style="display:block;margin-top:0.5rem;">
+                        Dataset dost&#281;pny w formatach ILCD+EPD i EcoSpold v2 →
+                        <a href="datasety.html#kontakt" style="color:var(--accent);">Pobierz dataset</a>.
+                    </span>
+                </p>
+            </div>
         </div>
     </div>
 
