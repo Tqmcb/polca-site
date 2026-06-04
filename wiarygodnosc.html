@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiarygodność danych poLCA — status, ograniczenia, obrona 0,599</title>
-    <meta name="description" content="Jak czytać dane poLCA: status publikacji, ograniczenia, hierarchia źródeł, zasada zastępowania defaultów i obrona wskaźnika 0,599 kg CO2e/kWh.">
+    <title>Wiarygodność i status danych poLCA — EN 15804+A2, ISO 14044</title>
+    <meta name="description" content="Jak czytać dane poLCA: status publikacji rekordu, hierarchia źródeł, granica systemu, zasada zastępowania wartości domyślnych oraz konstrukcja wskaźnika 0,599 kg CO₂e/kWh.">
     <link rel="canonical" href="https://polca.org.pl/wiarygodnosc.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Wiarygodność danych poLCA">
-    <meta property="og:description" content="Status, ograniczenia, hierarchia źródeł i obrona wskaźnika 0,599 kg CO2e/kWh.">
+    <meta property="og:title" content="Wiarygodność i status danych poLCA">
+    <meta property="og:description" content="Status publikacji rekordu, hierarchia źródeł, granica systemu i konstrukcja wskaźnika 0,599 kg CO₂e/kWh.">
     <meta property="og:url" content="https://polca.org.pl/wiarygodnosc.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
@@ -21,7 +21,7 @@
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>
         html{scroll-padding-top:76px}
-        #co-to-jest,#energia-0599,#hierarchia,#ograniczenia,#jak-odpowiadac{scroll-margin-top:76px}
+        #co-to-jest,#energia-0599,#hierarchia,#ograniczenia,#status-podsumowanie{scroll-margin-top:76px}
         .trust-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
         .trust-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;margin:1rem 0 1.5rem}
         .trust-box{padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
@@ -71,13 +71,14 @@
     <section class="trust-hero fade-in">
         <div>
             <div class="section-num">Wiarygodność i status danych</div>
-            <h1 class="page-title">Jak bronić danych poLCA, zanim ktoś zapyta „kto to wymyślił?”</h1>
+            <h1 class="page-title">Status, źródła i granice stosowania danych poLCA</h1>
             <p class="page-subtitle">
-                Najsilniejsza obrona to transparentność: poLCA pokazuje status rekordu, źródła, granicę systemu,
-                ograniczenia i zasadę, kiedy wartość referencyjna musi zostać zastąpiona danymi producenta.
+                Każdy rekord poLCA podaje status publikacji, źródła, granicę systemu, ograniczenia oraz regułę,
+                zgodnie z którą wartość referencyjna ustępuje danym producenta. Pełna transparentność rekordu
+                jest podstawą jego stosowania w obliczeniach LCA i deklaracjach EPD.
             </p>
             <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
-                <a href="#energia-0599" class="btn-primary">Obrona 0,599</a>
+                <a href="#energia-0599" class="btn-primary">Wskaźnik 0,599</a>
                 <a href="#ograniczenia" class="btn-ghost" style="border:1px solid var(--border);">Ograniczenia</a>
                 <a href="metodyki/MET-001-poLCA-EN-PL-2024.html" class="btn-ghost" style="border:1px solid var(--border);">MET-001</a>
             </div>
@@ -90,16 +91,16 @@
 
     <div class="trust-summary fade-in">
         <div class="trust-box">
-            <strong>Nie trzeba udawać bazy komercyjnej</strong>
-            <p>poLCA jest publiczną, wersjonowaną bazą referencyjną i metodyką krajową. Nie kopiuje ecoinvent i nie publikuje zamkniętych inwentarzy bez licencji.</p>
+            <strong>Publiczna baza referencyjna</strong>
+            <p>poLCA jest publiczną, wersjonowaną bazą referencyjną i metodyką krajową. Nie powiela bazy ecoinvent i nie publikuje zamkniętych inwentarzy bez licencji.</p>
         </div>
         <div class="trust-box">
-            <strong>Nie każda liczba ma ten sam status</strong>
-            <p>Inaczej traktuje się EPD producenta, dane zakładowe, dane sektorowe, publiczny default i wynik roboczy. Status musi być widoczny.</p>
+            <strong>Każdy rekord ma określony status</strong>
+            <p>Inaczej traktowane są EPD producenta, dane zakładowe, dane sektorowe, wartość domyślna i wynik roboczy. Status rekordu jest zawsze widoczny.</p>
         </div>
         <div class="trust-box">
-            <strong>Default to początek, nie koniec audytu</strong>
-            <p>Wartości poLCA pomagają policzyć wariant i ustalić punkt odniesienia, ale hotspoty muszą być zastępowane mocniejszymi danymi.</p>
+            <strong>Wartość domyślna to punkt odniesienia</strong>
+            <p>Wartości poLCA służą do policzenia wariantu i ustalenia poziomu odniesienia. W punktach dominujących wynik (hotspotach) zastępuje się je mocniejszymi danymi.</p>
         </div>
     </div>
 
@@ -107,9 +108,9 @@
         <div class="section-num">01 — Status</div>
         <div class="card-title">Czym poLCA jest, a czym nie jest</div>
         <div class="answer-box">
-            Krótka odpowiedź: poLCA nie mówi „uwierz nam”. poLCA mówi: tu jest wartość, jej zakres,
-            źródło, wersja, ograniczenie i reguła zastąpienia. Jeżeli masz EPD konkretnego dostawcy,
-            dane zakładowe lub dokumenty transportowe, one mają pierwszeństwo przed wartością domyślną.
+            Każdy rekord poLCA podaje wartość, jej zakres, źródło, wersję, ograniczenie oraz regułę
+            zastąpienia. EPD konkretnego dostawcy, dane zakładowe oraz dokumenty transportowe mają
+            pierwszeństwo przed wartością domyślną.
         </div>
         <div style="overflow-x:auto;margin-top:1rem;">
             <table class="status-table">
@@ -118,7 +119,7 @@
                         <th>Poziom danych</th>
                         <th>Kiedy używać</th>
                         <th>Ryzyko</th>
-                        <th>Jak obronić</th>
+                        <th>Wymagana dokumentacja</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -131,20 +132,20 @@
                     <tr>
                         <td><strong>Dane sektorowe / branżowe</strong></td>
                         <td>Gdy brak danych producenta, ale dostępny jest model reprezentatywny dla rynku.</td>
-                        <td>Średnie: trzeba pilnować technologii, regionu i roku danych.</td>
+                        <td>Średnie: należy kontrolować technologię, region i rok danych.</td>
                         <td>Opis zakresu, źródła, granicy systemu i test wrażliwości.</td>
                     </tr>
                     <tr>
                         <td><strong>Wartość referencyjna poLCA</strong></td>
                         <td>Do wstępnych obliczeń, benchmarku, kontroli rzędu wielkości i braku lepszego źródła.</td>
-                        <td>Nie wolno udawać danych konkretnego producenta.</td>
-                        <td>Pokazać status rekordu, ograniczenia i zasadę zastąpienia mocniejszym źródłem.</td>
+                        <td>Nie zastępuje danych konkretnego producenta.</td>
+                        <td>Podanie statusu rekordu, ograniczeń oraz zasady zastąpienia mocniejszym źródłem.</td>
                     </tr>
                     <tr>
                         <td><strong>Wynik roboczy</strong></td>
-                        <td>Do rozmowy technicznej, pre-qualify i wskazania braków danych.</td>
-                        <td>Wysokie, jeśli ktoś użyje jako pełne EPD.</td>
-                        <td>Oznaczyć jako robocze, podać braki i nie używać jako deklaracji produktu.</td>
+                        <td>Do rozmowy technicznej, wstępnej kwalifikacji danych i wskazania braków.</td>
+                        <td>Wysokie przy zastosowaniu jako pełne EPD.</td>
+                        <td>Oznaczenie jako wynik roboczy, wskazanie braków danych; nie stosuje się jako deklaracji produktu.</td>
                     </tr>
                 </tbody>
             </table>
@@ -153,11 +154,11 @@
 
     <section id="energia-0599" class="card card-lg section-gap fade-in">
         <div class="section-num">02 — Wskaźnik energii</div>
-        <div class="card-title">Jak bronić 0,599 kg CO2e/kWh</div>
+        <div class="card-title">Wskaźnik 0,599 kg CO₂e/kWh — zakres i konstrukcja</div>
         <p class="card-text">
-            Wartość 0,599 kg CO2e/kWh nie jest przedstawiana jako „oficjalny wskaźnik państwowy”.
-            To model LCA typu well-to-meter dla przepływu „energia elektryczna z sieci PL”, przygotowany
-            do obliczeń LCA/EPD, gdzie wymagane są gazy cieplarniane w CO2e i ujęcie cyklu życia.
+            Wartość 0,599 kg CO₂e/kWh jest modelem LCA typu well-to-meter dla przepływu „energia
+            elektryczna z sieci PL”, przygotowanym do obliczeń LCA/EPD, w których wymagane są gazy
+            cieplarniane w jednostce CO₂e oraz ujęcie cyklu życia. Nie jest urzędowym wskaźnikiem państwowym.
         </p>
         <div class="formula-box">
             poLCA-EN-PL-2024 = EF_oper + WTT_CH4 + WTT_fuels + WTT_OZE<br>
@@ -165,16 +166,16 @@
         </div>
         <div class="trust-summary" style="margin-bottom:0;">
             <div class="trust-box">
-                <strong>Co mówić</strong>
-                <p>To pełniejszy wskaźnik LCA niż sam CO2 z produkcji energii, bo obejmuje upstream paliw i przelicza gazy do CO2e.</p>
+                <strong>Zakres wskaźnika</strong>
+                <p>Obejmuje łańcuch dostaw paliw oraz przelicza gazy cieplarniane na CO₂e, więc jest pełniejszy niż sama emisja z produkcji energii.</p>
             </div>
             <div class="trust-box">
-                <strong>Czego nie mówić</strong>
-                <p>Nie mówić, że to urzędowy wskaźnik państwowy albo że zawsze zastępuje dane kontraktowe energii.</p>
+                <strong>Czego nie obejmuje</strong>
+                <p>Nie jest urzędowym wskaźnikiem państwowym i nie zastępuje danych kontraktowych dla energii, np. gwarancji pochodzenia.</p>
             </div>
             <div class="trust-box">
-                <strong>Gdzie jest dokumentacja</strong>
-                <p>Pełna obrona jest w MET-001 i MET-002; katalog danych pokazuje rekord i status publikacji.</p>
+                <strong>Dokumentacja</strong>
+                <p>Pełne wyprowadzenie wskaźnika zawierają MET-001 i MET-002; katalog danych podaje rekord oraz status publikacji.</p>
             </div>
         </div>
         <p class="card-text" style="margin-top:1rem;">
@@ -186,11 +187,11 @@
 
     <section id="hierarchia" class="card card-lg section-gap fade-in">
         <div class="section-num">03 — Hierarchia</div>
-        <div class="card-title">Reguła, która chroni wiarygodność</div>
+        <div class="card-title">Hierarchia źródeł i zasada zastąpienia</div>
         <div class="answer-box">
-            Najważniejsze zdanie do powtarzania: wartość poLCA jest wartością referencyjną do czasu,
-            aż użytkownik ma mocniejsze dane. EPD dostawcy, dane producenta i dokumenty transportowe
-            wygrywają z defaultem, szczególnie w hotspotach wyniku.
+            Wartość poLCA pozostaje wartością referencyjną do czasu, aż dostępne są mocniejsze dane.
+            EPD dostawcy, dane producenta oraz dokumenty transportowe mają pierwszeństwo przed wartością
+            domyślną, szczególnie w punktach dominujących wynik (hotspotach).
         </div>
         <div class="trust-summary">
             <div class="trust-box">
@@ -199,7 +200,7 @@
             </div>
             <div class="trust-box">
                 <strong>MMA</strong>
-                <p>Lepiszcze jest hotspotem. EPD asfaltu, recepta, RA/RAP i rzeczywisty transport są ważniejsze niż średni default.</p>
+                <p>Lepiszcze dominuje wynik. EPD asfaltu, recepta, RA/RAP oraz rzeczywisty transport mają pierwszeństwo przed średnią wartością domyślną.</p>
             </div>
             <div class="trust-box">
                 <strong>Budynek</strong>
@@ -210,7 +211,7 @@
 
     <section id="ograniczenia" class="card card-lg section-gap fade-in">
         <div class="section-num">04 — Ograniczenia</div>
-        <div class="card-title">Co trzeba mówić wprost</div>
+        <div class="card-title">Ograniczenia stosowania</div>
         <ul class="check-list" style="margin-top:.5rem;">
             <li>poLCA nie jest zamiennikiem zweryfikowanej EPD konkretnego produktu.</li>
             <li>poLCA nie jest urzędową bazą państwową ani zamkniętą komercyjną bazą LCI.</li>
@@ -220,13 +221,13 @@
         </ul>
     </section>
 
-    <section id="jak-odpowiadac" class="card card-lg section-gap fade-in">
-        <div class="section-num">05 — Odpowiedź na krytykę</div>
-        <div class="card-title">Jednozdaniowa odpowiedź, gdy ktoś kwestionuje bazę</div>
+    <section id="status-podsumowanie" class="card card-lg section-gap fade-in">
+        <div class="section-num">05 — Podsumowanie statusu</div>
+        <div class="card-title">Status danych poLCA w jednym zdaniu</div>
         <div class="answer-box">
-            „To nie jest samodzielna deklaracja producenta ani zamiennik EPD. To publiczna, wersjonowana
-            baza referencyjna z jawnie opisanym zakresem, źródłami i ograniczeniami; dla danych kluczowych
-            zawsze pierwszeństwo mają EPD dostawcy, dane zakładowe i dokumenty audytowe.”
+            poLCA jest publiczną, wersjonowaną bazą referencyjną z jawnie opisanym zakresem, źródłami
+            i ograniczeniami. Nie jest samodzielną deklaracją producenta ani zamiennikiem EPD; dla danych
+            kluczowych pierwszeństwo mają EPD dostawcy, dane zakładowe oraz dokumenty audytowe.
         </div>
     </section>
 </div>
