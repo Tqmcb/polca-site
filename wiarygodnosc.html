@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiarygodność i status danych poLCA — EN 15804+A2, ISO 14044</title>
-    <meta name="description" content="Jak czytać dane poLCA: status publikacji rekordu, hierarchia źródeł, granica systemu, zasada zastępowania wartości domyślnych oraz konstrukcja wskaźnika 0,599 kg CO₂e/kWh.">
+    <title>Wiarygodność i metodyka danych poLCA — EN 15804+A2, ISO 14044</title>
+    <meta name="description" content="Dane poLCA mają jawne, weryfikowalne pochodzenie i podstawę normatywną (EN 15804+A2, ISO 14044): wersjonowana metodyka, hierarchia jakości danych, pełny model wskaźnika energii 0,599 kg CO₂e/kWh.">
     <link rel="canonical" href="https://polca.org.pl/wiarygodnosc.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Wiarygodność i status danych poLCA">
-    <meta property="og:description" content="Status publikacji rekordu, hierarchia źródeł, granica systemu i konstrukcja wskaźnika 0,599 kg CO₂e/kWh.">
+    <meta property="og:title" content="Wiarygodność i metodyka danych poLCA">
+    <meta property="og:description" content="Jawne pochodzenie danych, podstawa normatywna EN 15804+A2 i ISO 14044, wersjonowana metodyka i pełny model wskaźnika 0,599 kg CO₂e/kWh.">
     <meta property="og:url" content="https://polca.org.pl/wiarygodnosc.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
@@ -70,16 +70,17 @@
 <div class="polca-page">
     <section class="trust-hero fade-in">
         <div>
-            <div class="section-num">Wiarygodność i status danych</div>
-            <h1 class="page-title">Status, źródła i granice stosowania danych poLCA</h1>
+            <div class="section-num">Wiarygodność i metodyka danych</div>
+            <h1 class="page-title">Dane poLCA mają jawne pochodzenie i podstawę normatywną</h1>
             <p class="page-subtitle">
-                Każdy rekord poLCA podaje status publikacji, źródła, granicę systemu, ograniczenia oraz regułę,
-                zgodnie z którą wartość referencyjna ustępuje danym producenta. Pełna transparentność rekordu
-                jest podstawą jego stosowania w obliczeniach LCA i deklaracjach EPD.
+                poLCA udostępnia wskaźniki LCA dla rynku polskiego zgodnie z EN 15804+A2 i ISO 14044.
+                Pochodzenie, granica systemu, wersja i jakość danych każdego rekordu są jawne i recenzowalne.
+                W obliczeniach LCA i deklaracjach EPD pierwszeństwo mają dane pierwotne producenta — zgodnie
+                z hierarchią jakości danych przyjętą w normie.
             </p>
             <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
                 <a href="#energia-0599" class="btn-primary">Wskaźnik 0,599</a>
-                <a href="#ograniczenia" class="btn-ghost" style="border:1px solid var(--border);">Ograniczenia</a>
+                <a href="#ograniczenia" class="btn-ghost" style="border:1px solid var(--border);">Zakres stosowania</a>
                 <a href="metodyki/MET-001-poLCA-EN-PL-2024.html" class="btn-ghost" style="border:1px solid var(--border);">MET-001</a>
             </div>
         </div>
@@ -91,26 +92,26 @@
 
     <div class="trust-summary fade-in">
         <div class="trust-box">
-            <strong>Publiczna baza referencyjna</strong>
-            <p>poLCA jest publiczną, wersjonowaną bazą referencyjną i metodyką krajową. Nie powiela bazy ecoinvent i nie publikuje zamkniętych inwentarzy bez licencji.</p>
+            <strong>Publiczna, wersjonowana metodyka krajowa</strong>
+            <p>poLCA jest publiczną, wersjonowaną i recenzowalną bazą referencyjną oraz metodyką krajową, prowadzoną przez Multicert jako operatora programu EPD Polska.</p>
         </div>
         <div class="trust-box">
-            <strong>Każdy rekord ma określony status</strong>
-            <p>Inaczej traktowane są EPD producenta, dane zakładowe, dane sektorowe, wartość domyślna i wynik roboczy. Status rekordu jest zawsze widoczny.</p>
+            <strong>Jawne pochodzenie każdego rekordu</strong>
+            <p>Każdy rekord deklaruje źródło, wersję, granicę systemu oraz poziom jakości danych (DQR). Pochodzenie wskaźnika jest weryfikowalne na podstawie udokumentowanej metodyki.</p>
         </div>
         <div class="trust-box">
-            <strong>Wartość domyślna to punkt odniesienia</strong>
-            <p>Wartości poLCA służą do policzenia wariantu i ustalenia poziomu odniesienia. W punktach dominujących wynik (hotspotach) zastępuje się je mocniejszymi danymi.</p>
+            <strong>Pierwszeństwo danych pierwotnych</strong>
+            <p>Dane pierwotne producenta mają pierwszeństwo przed wartością domyślną. To zasada jakości danych zgodna z EN 15804+A2, a nie ograniczenie bazy.</p>
         </div>
     </div>
 
     <section id="co-to-jest" class="card card-lg section-gap fade-in">
-        <div class="section-num">01 — Status</div>
-        <div class="card-title">Czym poLCA jest, a czym nie jest</div>
+        <div class="section-num">01 — Poziomy jakości danych</div>
+        <div class="card-title">Każdy rekord deklaruje swój poziom jakości</div>
         <div class="answer-box">
-            Każdy rekord poLCA podaje wartość, jej zakres, źródło, wersję, ograniczenie oraz regułę
-            zastąpienia. EPD konkretnego dostawcy, dane zakładowe oraz dokumenty transportowe mają
-            pierwszeństwo przed wartością domyślną.
+            poLCA porządkuje dane według poziomu jakości — od zweryfikowanej EPD i danych zakładowych,
+            przez dane sektorowe, po wartość referencyjną. Każdy rekord podaje wartość, zakres, źródło
+            i wersję, a w obliczeniach pierwszeństwo mają dane pierwotne producenta.
         </div>
         <div style="overflow-x:auto;margin-top:1rem;">
             <table class="status-table">
@@ -156,9 +157,10 @@
         <div class="section-num">02 — Wskaźnik energii</div>
         <div class="card-title">Wskaźnik 0,599 kg CO₂e/kWh — zakres i konstrukcja</div>
         <p class="card-text">
-            Wartość 0,599 kg CO₂e/kWh jest modelem LCA typu well-to-meter dla przepływu „energia
-            elektryczna z sieci PL”, przygotowanym do obliczeń LCA/EPD, w których wymagane są gazy
-            cieplarniane w jednostce CO₂e oraz ujęcie cyklu życia. Nie jest urzędowym wskaźnikiem państwowym.
+            Wartość 0,599 kg CO₂e/kWh to pełny model LCA typu well-to-meter dla przepływu „energia
+            elektryczna z sieci PL”. Ujmuje cały łańcuch dostaw paliw i przelicza wszystkie gazy cieplarniane
+            na CO₂e, zgodnie z wymaganiami obliczeń LCA/EPD. W odróżnieniu od krajowej inwentaryzacji emisji
+            jest wskaźnikiem cyklu życia, gotowym do zastosowania w deklaracjach EPD.
         </p>
         <div class="formula-box">
             poLCA-EN-PL-2024 = EF_oper + WTT_CH4 + WTT_fuels + WTT_OZE<br>
@@ -170,8 +172,8 @@
                 <p>Obejmuje łańcuch dostaw paliw oraz przelicza gazy cieplarniane na CO₂e, więc jest pełniejszy niż sama emisja z produkcji energii.</p>
             </div>
             <div class="trust-box">
-                <strong>Czego nie obejmuje</strong>
-                <p>Nie jest urzędowym wskaźnikiem państwowym i nie zastępuje danych kontraktowych dla energii, np. gwarancji pochodzenia.</p>
+                <strong>Granica modelu</strong>
+                <p>Wskaźnik opisuje średnią sieć location-based. Przy energii kontraktowej z gwarancją pochodzenia stosuje się wskaźnik market-based, opisany w MET-001.</p>
             </div>
             <div class="trust-box">
                 <strong>Dokumentacja</strong>
@@ -187,11 +189,12 @@
 
     <section id="hierarchia" class="card card-lg section-gap fade-in">
         <div class="section-num">03 — Hierarchia</div>
-        <div class="card-title">Hierarchia źródeł i zasada zastąpienia</div>
+        <div class="card-title">Hierarchia jakości danych</div>
         <div class="answer-box">
-            Wartość poLCA pozostaje wartością referencyjną do czasu, aż dostępne są mocniejsze dane.
-            EPD dostawcy, dane producenta oraz dokumenty transportowe mają pierwszeństwo przed wartością
-            domyślną, szczególnie w punktach dominujących wynik (hotspotach).
+            Zgodnie z hierarchią jakości danych EN 15804+A2 pierwszeństwo mają dane pierwotne producenta:
+            EPD dostawcy, dane zakładowe oraz dokumenty transportowe, szczególnie w punktach dominujących
+            wynik (hotspotach). poLCA wskazuje, gdzie wartość referencyjna wystarcza, a gdzie wymagane są
+            dane zakładowe.
         </div>
         <div class="trust-summary">
             <div class="trust-box">
@@ -210,24 +213,25 @@
     </section>
 
     <section id="ograniczenia" class="card card-lg section-gap fade-in">
-        <div class="section-num">04 — Ograniczenia</div>
-        <div class="card-title">Ograniczenia stosowania</div>
+        <div class="section-num">04 — Zakres stosowania</div>
+        <div class="card-title">Gdzie stosuje się dane poLCA</div>
         <ul class="check-list" style="margin-top:.5rem;">
-            <li>poLCA nie jest zamiennikiem zweryfikowanej EPD konkretnego produktu.</li>
-            <li>poLCA nie jest urzędową bazą państwową ani zamkniętą komercyjną bazą LCI.</li>
-            <li>Nie każdy rekord ma ten sam status; część danych jest referencyjna, sektorowa albo robocza.</li>
-            <li>Dla wyników formalnych trzeba podać wersję rekordu, datę, granicę systemu, moduły EN 15804 i źródła.</li>
-            <li>Dane licencjonowane mogą wspierać model, ale poLCA nie publikuje zamkniętych inwentarzy pochodnych bez uprawnień.</li>
+            <li>Do obliczeń wstępnych, wariantów projektowych, benchmarku i kontroli rzędu wielkości.</li>
+            <li>Jako wartość domyślna tam, gdzie producent nie dysponuje danymi pierwotnymi.</li>
+            <li>Do deklaracji EPD konkretnego wyrobu pierwszeństwo mają dane zakładowe i zweryfikowana EPD.</li>
+            <li>Każdy rekord podaje wersję, datę, granicę systemu, moduły EN 15804 i źródła — gotowe do wyników formalnych.</li>
+            <li>Dane licencjonowane wspierają model; zamknięte inwentarze udostępniane są w zakresie posiadanych uprawnień.</li>
         </ul>
     </section>
 
     <section id="status-podsumowanie" class="card card-lg section-gap fade-in">
-        <div class="section-num">05 — Podsumowanie statusu</div>
-        <div class="card-title">Status danych poLCA w jednym zdaniu</div>
+        <div class="section-num">05 — Podstawa wiarygodności</div>
+        <div class="card-title">Na czym opiera się wiarygodność poLCA</div>
         <div class="answer-box">
-            poLCA jest publiczną, wersjonowaną bazą referencyjną z jawnie opisanym zakresem, źródłami
-            i ograniczeniami. Nie jest samodzielną deklaracją producenta ani zamiennikiem EPD; dla danych
-            kluczowych pierwszeństwo mają EPD dostawcy, dane zakładowe oraz dokumenty audytowe.
+            Wiarygodność poLCA opiera się na jawnej, wersjonowanej metodyce, podstawie normatywnej
+            (EN 15804+A2, ISO 14044) oraz recenzowalnych dokumentach metodycznych MET-001 i MET-002.
+            Pochodzenie każdego wskaźnika jest weryfikowalne, a w obliczeniach pierwszeństwo mają dane
+            pierwotne producenta.
         </div>
     </section>
 </div>
