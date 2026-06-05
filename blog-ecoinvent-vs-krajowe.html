@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA — poLCA Blog</title>
-    <meta name="description" content="Ecoinvent to największa na świecie baza danych LCI — ale jej globalne uśrednienia mogą być źródłem błędów w polskich EPD. Kiedy dataset 'PL' z ecoinvent wystarczy, a kiedy potrzebne są dane krajowe lub branżowe.">
+    <meta name="description" content="Ecoinvent to największa na świecie baza danych LCI — ale jej globalne uśrednienia mogą być źródłem błędów w polskich EPD. Kiedy zbiór danych 'PL' z ecoinvent wystarczy, a kiedy potrzebne są dane krajowe lub branżowe.">
     <link rel="canonical" href="https://polca.org.pl/blog-ecoinvent-vs-krajowe.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA — poLCA Blog">
-    <meta property="og:description" content="Ecoinvent ma zestawy danych dla Polski — ale mogą być nieaktualne lub niedokładne. Kiedy dataset 'PL' wystarczy, a kiedy konieczne są dane z KOBiZE, EPD Polska lub pomiarów własnych.">
+    <meta property="og:description" content="Ecoinvent ma zestawy danych dla Polski — ale mogą być nieaktualne lub niedokładne. Kiedy zbiór danych 'PL' wystarczy, a kiedy konieczne są dane z KOBiZE, EPD Polska lub pomiarów własnych.">
     <meta property="og:url" content="https://polca.org.pl/blog-ecoinvent-vs-krajowe.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -148,7 +148,7 @@
             </h1>
             <p class="blog-post-lead">
                 Ecoinvent to standard bran&#380;y. Ale &#8222;standard&#8221; nie znaczy &#8222;zawsze poprawny&#8221;.
-                W polskich EPD i LCA budynk&#243;w kilka kluczowych dataset&#243;w z ecoinvent
+                W polskich EPD i LCA budynk&#243;w kilka kluczowych zbiorów danych z ecoinvent
                 mo&#380;e prowadzi&#263; do systematycznego b&#322;&#281;du &#8212; i mo&#380;liwo&#347;&#263; weryfikacji tego
                 b&#322;&#281;du jest teraz lepsza ni&#380; kiedykolwiek.
             </p>
@@ -170,13 +170,13 @@
     <div class="key-stat-row section-gap fade-in">
         <div class="key-stat">
             <div class="key-stat-number">18 000+</div>
-            <div class="key-stat-unit">dataset&#243;w</div>
+            <div class="key-stat-unit">zbiorów danych</div>
             <div class="key-stat-label">Ecoinvent v3.10 (2023)<br>pokrycie proces&#243;w globalnych</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number accent">2×</div>
             <div class="key-stat-unit">r&#243;&#380;nica</div>
-            <div class="key-stat-label">Emisyjno&#347;&#263; polskiej sieci vs EU<br>nie zawsze odzwierciedlona w starszych PL-dataset</div>
+            <div class="key-stat-label">Emisyjno&#347;&#263; polskiej sieci vs EU<br>nie zawsze odzwierciedlona w starszych PL-zbiór danych</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number muted">5</div>
@@ -201,7 +201,7 @@
         </p>
 
         <div class="callout callout-definition">
-            <div class="callout-label">Typy dataset&#243;w w ecoinvent</div>
+            <div class="callout-label">Typy zbiorów danych w ecoinvent</div>
             <p class="callout-body">
                 <strong>Cutoff</strong> &#8212; domy&#347;lny system alokacji; materia&#322;y z recyklingu
                 wchodz&#261; bezobci&#261;&#380;eniowo (metoda cut-off). <strong>System Expansion (APOS)</strong>
@@ -223,7 +223,7 @@
                 <div class="process-step-content">
                     <div class="process-step-title">Energia elektryczna &#8212; najwa&#380;niejszy przypadek</div>
                     <div class="process-step-text">
-                        Wska&#378;nik emisji ecoinvent dla polskiej sieci (dataset
+                        Wska&#378;nik emisji ecoinvent dla polskiej sieci (zbiór danych
                         <code>electricity production, Poland</code>) mo&#380;e r&#243;&#380;ni&#263; si&#281;
                         od bie&#380;&#261;cego wska&#378;nika KOBiZE ze wzgl&#281;du na opó&#378;nienie aktualizacji
                         i inn&#261; metodologi&#281; (ecoinvent uwzgl&#281;dnia pe&#322;ny LCI paliw,
@@ -259,10 +259,10 @@
                         Dla polskiego betonu: wskaźnik klinkier/cement,
                         miks paliw do pieca i wska&#378;nik energii elektrycznej r&#243;&#380;ni&#261; si&#281;
                         od europejskiej &#347;redniej (patrz: artyku&#322; o polskim cemencie).
-                        Je&#380;eli producent dysponuje EPD specific &#8212; nale&#380;y j&#261; zastosowa&#263;.
+                        Je&#380;eli producent dysponuje EPD dla konkretnego wyrobu &#8212; nale&#380;y j&#261; zastosowa&#263;.
                         Je&#380;eli nie &#8212; nale&#380;y skonstruowa&#263; w&#322;asny model LCI na bazie
                         danych krajowych, a nie u&#380;ywa&#263; bezpo&#347;rednio ecoinvent dla EU.
-                        <strong>Werdykt: u&#380;yj EPD specific dostawcy; je&#380;eli brak &#8212; model krajowy, nie ecoinvent EU.</strong>
+                        <strong>Werdykt: u&#380;yj EPD dla konkretnego wyrobu dostawcy; je&#380;eli brak &#8212; model krajowy, nie ecoinvent EU.</strong>
                     </div>
                 </div>
             </div>
@@ -277,7 +277,7 @@
                         GWP stali EAF (~400&ndash;600 kg CO&#8322;/t) jest znacznie ni&#380;sze ni&#380; BF-BOF
                         (~1700&ndash;2000 kg CO&#8322;/t) &#8212; r&#243;&#380;nica ma ogromne znaczenie dla LCA budynku
                         z du&#380;ym udzia&#322;em stali.
-                        <strong>Werdykt: weryfikuj &#378;r&#243;d&#322;o stali; u&#380;yj EPD producenta lub dataset EAF PL.</strong>
+                        <strong>Werdykt: weryfikuj &#378;r&#243;d&#322;o stali; u&#380;yj EPD producenta lub zbiór danych EAF PL.</strong>
                     </div>
                 </div>
             </div>
@@ -285,7 +285,7 @@
 
         <h2>Kiedy ecoinvent jest wystarczaj&#261;cy?</h2>
         <p>
-            Nie ka&#380;dy dataset ecoinvent wymaga wymiany na dane krajowe.
+            Nie ka&#380;dy zbiór danych ecoinvent wymaga wymiany na dane krajowe.
             Ecoinvent pozostaje najlepsz&#261; dost&#281;pn&#261; opcj&#261; dla:
         </p>
         <ul>
@@ -297,7 +297,7 @@
             <li><strong>Procesy chemiczne i pomocnicze</strong> &#8212; produkcja &#347;rodk&#243;w chemicznych,
             smarów, olejów u&#380;ywanych w procesie produkcji. Brak polskich danych branżowych.</li>
             <li><strong>Procesy o niskim udziale w GWP</strong> &#8212; je&#380;eli dany proces contributes
-            poni&#380;ej 1&ndash;2% do GWP ca&#322;kowitego, dok&#322;adno&#347;&#263; datasetu ma marginalne znaczenie.</li>
+            poni&#380;ej 1&ndash;2% do GWP ca&#322;kowitego, dok&#322;adno&#347;&#263; zbioru danych ma marginalne znaczenie.</li>
         </ul>
 
         <div class="callout callout-tip">
@@ -317,13 +317,13 @@
         </p>
         <ul>
             <li><strong>Lista danych wt&#243;rnych</strong> &#8212; dla ka&#380;dego istotnego procesu: baza danych,
-            nazwa datasetu, wersja, rok referencyjny, kraj/region.</li>
-            <li><strong>Uzasadnienie wyboru</strong> &#8212; dlaczego ten dataset jest najbardziej
+            nazwa zbioru danych, wersja, rok referencyjny, kraj/region.</li>
+            <li><strong>Uzasadnienie wyboru</strong> &#8212; dlaczego ten zbiór danych jest najbardziej
             reprezentatywny dla badanego systemu (geograficznie, czasowo, technologicznie).</li>
-            <li><strong>Wyniki analizy wra&#380;liwo&#347;ci</strong> &#8212; dla dataset&#243;w, gdzie istnieje
+            <li><strong>Wyniki analizy wra&#380;liwo&#347;ci</strong> &#8212; dla zbiorów danych, gdzie istnieje
             alternatywa (ecoinvent vs. krajowy): por&#243;wnanie wynik&#243;w przy obydwu opcjach.</li>
             <li><strong>Potwierdzenie weryfikatora</strong> &#8212; przy EPD weryfikator sprawdzi
-            zgodno&#347;&#263; wyboru dataset&#243;w z PCR i ISO&nbsp;14044.</li>
+            zgodno&#347;&#263; wyboru zbiorów danych z PCR i ISO&nbsp;14044.</li>
         </ul>
 
         <!-- Comparison table -->
@@ -385,8 +385,8 @@
             <li>Transport drogowy w Polsce z aktualn&#261; flot&#261; TIR i emisyjno&#347;ci&#261; diesel.</li>
         </ul>
         <p>
-            Przejrzyj dost&#281;pne datasety w sekcji
-            <a href="datasety.html">Baza Dataset&#243;w</a> &#8212; i por&#243;wnaj z danymi ecoinvent
+            Przejrzyj dost&#281;pne zbiór danychy w sekcji
+            <a href="datasety.html">Baza Zbiorów danych</a> &#8212; i por&#243;wnaj z danymi ecoinvent
             dla swoich kluczowych proces&#243;w.
         </p>
 
@@ -430,7 +430,7 @@
                     Tak &#8212; i jest to zalecane podej&#347;cie. Dla energii elektrycznej z sieci
                     stosuj wska&#378;nik KOBiZE. Dla innych proces&#243;w t&#322;a &#8212; ecoinvent lub inne
                     &#378;r&#243;d&#322;a krajowe/bran&#380;owe. W raporcie LCA dokumentujesz ka&#380;de &#378;r&#243;d&#322;o danych
-                    oddzielnie. Mieszanie jest metodycznie poprawne, je&#380;eli ka&#380;dy dataset
+                    oddzielnie. Mieszanie jest metodycznie poprawne, je&#380;eli ka&#380;dy zbiór danych
                     jest najlepszym dost&#281;pnym dla danego procesu.
                 </div>
             </div>
