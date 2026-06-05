@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.4-aggregates",
     "status": "published_defaults",
     "published_at": "2026-05-03",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
   },
   "dataset": {
     "code": "POLCA-EN-PL-LCA-2024",
@@ -38,7 +38,7 @@
     "publication_status": "published_polca_model",
     "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
     "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-    "scope": "Referencyjny wskaźnik POLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy. Nie jest samodzielnym wynikiem A1-A3 produktu; przypisuje się go do modułu EN 15804+A2, w którym energia jest zużywana.",
+    "scope": "Referencyjny wskaźnik poLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy. Nie jest samodzielnym wynikiem A1-A3 produktu; przypisuje się go do modułu EN 15804+A2, w którym energia jest zużywana.",
     "methodology_note": "Wynik 0,599 kg CO2e/kWh powstaje z sumy: EF_oper 0,528, WTT_CH4 0,057, WTT_fuels 0,008 i WTT_OZE 0,006 kg CO2e/kWh. Dane wejściowe pochodzą z KOBiZE, PSE, WUG, GUS i EEA; przeliczenie CO2e bazuje na IPCC AR6/EF 3.1 oraz JEC WTT v5. Jest to model jawny, przeznaczony do konsultacji i walidacji zewnętrznej.",
     "limitations": "Nie jest oficjalnym wskaźnikiem państwowym. Element WTT_OZE opiera się na wartości referencyjnej z bazy licencjonowanej, dlatego publikowany jest wynik i metodyka, a nie pełny zamknięty inwentarz. Finalna EPD wymaga potwierdzenia aktualnego roku danych i zasad energii kontraktowej.",
     "preferred_replacement": "Zweryfikowane dane dostawcy energii albo aktualizacja roczna po publikacji KOBiZE/PSE/WUG/GUS.",

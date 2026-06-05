@@ -392,7 +392,7 @@
          ═══════════════════════════════════════════════════════════ -->
     <section id="sec-3" class="card card-lg section-gap fade-in" aria-label="Wskaźniki GWP kruszyw">
         <div class="section-num">03 — Wskaźniki GWP kruszyw (moduł A1)</div>
-        <div class="card-title">Wartości grupowe POLCA (conservative defaults) i wskaźniki dla konkretnych rodzajów skały</div>
+        <div class="card-title">Wartości grupowe poLCA (conservative defaults) i wskaźniki dla konkretnych rodzajów skały</div>
 
         <p class="met-text">
             Kluczowym parametrem wpływającym na emisyjność kruszywa jest energochłonność procesu A1-A3 —
@@ -400,7 +400,7 @@
             kwarcyt — wymagają więcej energii kruszenia niż kruszywa węglanowe), płukania, frakcji,
             organizacji zakładu oraz wieku i sprawności instalacji. Kruszywa naturalne (piasek, żwir)
             mają najniższy ślad, ponieważ nie wymagają kruszenia skały litej. c-PCR-AGG udostępnia dwie
-            kategorie wskaźników: <strong>kontrolowane wartości grupowe POLCA</strong> (conservative
+            kategorie wskaźników: <strong>kontrolowane wartości grupowe poLCA</strong> (conservative
             defaults — stosowane domyślnie przy braku EPD kopalni; odpowiadają ok. 90. percentylowi
             rozkładu) oraz <strong>wskaźniki dla konkretnego rodzaju skały</strong> (z EPD producentów
             i opracowań branżowych — stosowane, gdy producent dysponuje danymi dla rzeczywiście użytego
@@ -427,15 +427,15 @@
             </tbody>
         </table>
         </div>
-        <p class="table-caption">Tabela 3.1 — Wskaźniki GWP kruszyw. Wartości grupowe POLCA pochodzą z datasetów POLCA-AGG-PL (wydanie 2026.4-aggregates, moduł A1) i są kontrolowanymi wartościami do stosowania przy braku EPD kopalni lub zweryfikowanych danych zakładowych — wartości konkretnych kopalni (np. ITB-EPD Trzuskawica S.A.) zastępują rekord POLCA. Wskaźniki dla konkretnych rodzajów skały (bazalt 3,99 / granit 4,50 / wapień 3,20 / naturalne 1,80) pochodzą z EPD producentów i opracowań branżowych (Gruber et al. 2023; ecoinvent 3.10) — stosowane, gdy producent dysponuje danymi dla rzeczywiście użytego kruszywa. Różnice wynikają z energochłonności kruszenia (twardość skały), płukania, frakcji i organizacji zakładu.</p>
+        <p class="table-caption">Tabela 3.1 — Wskaźniki GWP kruszyw. Wartości grupowe poLCA pochodzą z datasetów POLCA-AGG-PL (wydanie 2026.4-aggregates, moduł A1) i są kontrolowanymi wartościami do stosowania przy braku EPD kopalni lub zweryfikowanych danych zakładowych — wartości konkretnych kopalni (np. ITB-EPD Trzuskawica S.A.) zastępują rekord poLCA. Wskaźniki dla konkretnych rodzajów skały (bazalt 3,99 / granit 4,50 / wapień 3,20 / naturalne 1,80) pochodzą z EPD producentów i opracowań branżowych (Gruber et al. 2023; ecoinvent 3.10) — stosowane, gdy producent dysponuje danymi dla rzeczywiście użytego kruszywa. Różnice wynikają z energochłonności kruszenia (twardość skały), płukania, frakcji i organizacji zakładu.</p>
 
         <div class="point-card">
             <span class="point-card-num">Zasada doboru</span>
-            <div class="point-card-title">Domyślnie conservative default POLCA, opcjonalnie konkretny rodzaj skały</div>
+            <div class="point-card-title">Domyślnie conservative default poLCA, opcjonalnie konkretny rodzaj skały</div>
             <div class="point-card-body">
                 <p>
                     W obliczeniach EPD i w kalkulatorze pre-qualify obie kategorie wskaźników są dostępne:
-                    <strong>domyślnie</strong> stosuje się kontrolowaną wartość grupową POLCA dla
+                    <strong>domyślnie</strong> stosuje się kontrolowaną wartość grupową poLCA dla
                     odpowiedniej grupy kruszyw (łamane twarde / dolomit / wapień / naturalne);
                     <strong>opcjonalnie</strong> — wskaźnik dla konkretnego rodzaju skały lub EPD kopalni,
                     jeśli producent dysponuje danymi dla rzeczywiście użytego kruszywa. Użytkownik nie
@@ -529,7 +529,7 @@
                     Moduł D jest <strong>kluczowy dla kruszyw recyklingowych RC</strong> — odzwierciedla
                     korzyść z zastąpienia kruszywa pierwotnego: uniknięte zostają emisje wydobycia
                     surowca skalnego i jego przeróbki. Wartość unikniętej produkcji ≈ wskaźnik kruszywa
-                    pierwotnego (np. 3,5–5,5 kg CO₂-eq/t wg wartości grupowych POLCA) pomniejszony o
+                    pierwotnego (np. 3,5–5,5 kg CO₂-eq/t wg wartości grupowych poLCA) pomniejszony o
                     wskaźnik przeróbki samego RC, obliczana wg formuły CFF (EN 15804+A2:2019, Załącznik D)
                     z krajowymi parametrami referencyjnymi (A, R₂, Q<sub>sout</sub>/Q<sub>sin</sub>).
                     Znak ujemny w module D = uniknięte emisje.
@@ -582,7 +582,7 @@
             <tbody>
                 <tr><td class="num right">1</td><td>Dane pierwotne kopalni / zakładu (foreground)</td><td>preferowane; obowiązkowe dla wyników audytowych</td><td>EPD konkretnej kopalni, zweryfikowane dane energii, paliw, wody, materiałów wybuchowych, transportu A2 — np. ITB-EPD producenta kruszyw</td></tr>
                 <tr><td class="num right">2</td><td>Dane branżowe / sektorowe</td><td>dopuszczone dla A1 i procesów referencyjnych</td><td>UEPG / MIRO — LCA of Aggregates; PZPK — Polski Związek Producentów Kruszyw; opracowania Gruber et al.</td></tr>
-                <tr><td class="num right">3</td><td>Dane generyczne / conservative defaults POLCA</td><td>dopuszczone z karą DQR; domyślne przy braku danych dostawcy</td><td>ecoinvent 3.10; wartości grupowe POLCA-AGG-PL (łamane twarde 5,5 / dolomit 4,5 / wapień 4,0 / naturalne 3,5 kg CO₂-eq/t — moduł A1)</td></tr>
+                <tr><td class="num right">3</td><td>Dane generyczne / conservative defaults poLCA</td><td>dopuszczone z karą DQR; domyślne przy braku danych dostawcy</td><td>ecoinvent 3.10; wartości grupowe POLCA-AGG-PL (łamane twarde 5,5 / dolomit 4,5 / wapień 4,0 / naturalne 3,5 kg CO₂-eq/t — moduł A1)</td></tr>
             </tbody>
         </table>
         </div>

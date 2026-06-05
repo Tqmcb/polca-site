@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "POLCA LCI data update and versioning policy",
+    "title": "poLCA LCI data update and versioning policy",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "purpose": "Zasady aktualizacji, wersjonowania i audytowalności bazy LCI/LCIA POLCA."
+    "purpose": "Zasady aktualizacji, wersjonowania i audytowalności bazy LCI/LCIA poLCA."
   },
-  "principle": "POLCA powinna działać jak kontrolowana baza referencyjna, a nie edytowalna tabela. Każdy rekord LCI/LCIA ma wersję, źródło, datę sprawdzenia, termin następnego przeglądu, status, zakres modułu i historię zmian. Wyniki ocen środowiskowych muszą zapisywać snapshot wersji danych użytej w obliczeniu.",
+  "principle": "poLCA powinna działać jak kontrolowana baza referencyjna, a nie edytowalna tabela. Każdy rekord LCI/LCIA ma wersję, źródło, datę sprawdzenia, termin następnego przeglądu, status, zakres modułu i historię zmian. Wyniki ocen środowiskowych muszą zapisywać snapshot wersji danych użytej w obliczeniu.",
   "regulatory_patterns": [
     {
       "name": "CPR 2024/3110 i Digital Product Passport",
@@ -68,7 +68,7 @@
     {
       "code": "annual",
       "name": "Przegląd roczny",
-      "applies_to": ["datasets POLCA", "wartości domyślne", "dane sektorowe", "źródła publiczne"],
+      "applies_to": ["datasets poLCA", "wartości domyślne", "dane sektorowe", "źródła publiczne"],
       "rule": "Raz w roku wykonaj pełny przegląd źródeł, zmian normatywnych, cPCR, danych branżowych i jakości datasetów."
     },
     {
@@ -105,7 +105,7 @@
     {
       "step": 3,
       "name": "Normalizacja LCI",
-      "output": "Jednostka, moduł, geografia, rok, metoda i przepływy LCI przeliczone do formatu POLCA."
+      "output": "Jednostka, moduł, geografia, rok, metoda i przepływy LCI przeliczone do formatu poLCA."
     },
     {
       "step": 4,
@@ -131,5 +131,5 @@
     "deprecated",
     "withdrawn"
   ],
-  "audit_rule": "Audytor musi móc odtwórczo sprawdzić, która wersja danych, źródła i metody została użyta w konkretnym wyniku. Dlatego POLCA nie usuwa starych wersji, tylko je archiwizuje i oznacza statusem superseded albo withdrawn."
+  "audit_rule": "Audytor musi móc odtwórczo sprawdzić, która wersja danych, źródła i metody została użyta w konkretnym wyniku. Dlatego poLCA nie usuwa starych wersji, tylko je archiwizuje i oznacza statusem superseded albo withdrawn."
 }

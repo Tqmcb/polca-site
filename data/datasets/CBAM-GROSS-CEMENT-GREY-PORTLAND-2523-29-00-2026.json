@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.4-aggregates",
     "status": "published_defaults",
     "published_at": "2026-05-03",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
   },
   "dataset": {
     "code": "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
@@ -105,7 +105,7 @@
           "role": "wartość domyślna CBAM dla okresu definitywnego"
         }
       ],
-      "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+      "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
       "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
       "audit_checks": [
         "kod CN",

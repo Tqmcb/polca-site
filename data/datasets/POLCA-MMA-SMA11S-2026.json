@@ -51,7 +51,7 @@
     }
   ],
   "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-  "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+  "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
   "evidence_level": "industry_average",
   "source_policy": {
     "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",

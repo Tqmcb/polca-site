@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.6-mma",
     "status": "published_defaults",
     "published_at": "2026-05-11",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
   },
   "dataset": {
     "code": "POLCA-MMA-LCI-DEFAULTS-2026",
@@ -101,7 +101,7 @@
       }
     ],
     "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-    "open_data_note": "Zestaw kontrolowanych wartości domyślnych POLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji, gdy brak danych producenta.",
+    "open_data_note": "Zestaw kontrolowanych wartości domyślnych poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji, gdy brak danych producenta.",
     "evidence_level": "industry_average",
     "source_policy": {
       "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset domyślny POLCA-MMA > proxy sektorowe",
@@ -121,17 +121,17 @@
         { "code": "AGG-GRANITE", "name": "Kruszywo granitowe łamane", "value_kg_co2e_per_t": 4.50, "source": "Ecoinvent 3.10, Gruber et al. (2023)" },
         { "code": "AGG-LIMESTONE", "name": "Kruszywo wapienne łamane", "value_kg_co2e_per_t": 3.20, "source": "Gruber et al. (2023)" },
         { "code": "AGG-NATURAL", "name": "Kruszywo naturalne (piasek, żwir)", "value_kg_co2e_per_t": 1.80, "source": "Gruber et al. (2023), Ecoinvent 3.10" },
-        { "code": "AGG-PL-WEIGHTED", "name": "Kruszywo — średnia ważona PL (mix bazalt+granit+wapień)", "value_kg_co2e_per_t": 3.80, "source": "szacunek regionalny POLCA" },
+        { "code": "AGG-PL-WEIGHTED", "name": "Kruszywo — średnia ważona PL (mix bazalt+granit+wapień)", "value_kg_co2e_per_t": 3.80, "source": "szacunek regionalny poLCA" },
         { "code": "FILLER-LIMESTONE", "name": "Wypełniacz wapienny", "value_kg_co2e_per_t": 5.50, "source": "Ecoinvent 3.10" },
         { "code": "FIBER-CELLULOSE", "name": "Włókno celulozowe (stabilizator SMA)", "value_kg_co2e_per_t": 800, "source": "Ecoinvent 3.10" },
         { "code": "RA-GRANULATE", "name": "Granulat asfaltowy RA", "value_kg_co2e_per_t": 0, "source": "EN 15804+A2 §6.3.6 zasada cut-off; NAPA EPD PCR v2.0:2022", "note": "Obciążenie środowiskowe RA tylko w transporcie A2 (30 km) i podgrzewaniu w A3; brak obciążenia w A1." },
-        { "code": "WMA-ADDITIVE", "name": "Dodatek WMA chemiczny (np. Sasobit)", "value_kg_co2e_per_t": 1200, "source": "szacunek POLCA dla środków chemicznych" }
+        { "code": "WMA-ADDITIVE", "name": "Dodatek WMA chemiczny (np. Sasobit)", "value_kg_co2e_per_t": 1200, "source": "szacunek poLCA dla środków chemicznych" }
       ],
       "transport_A2": {
         "emission_factors_kg_co2e_per_tkm": [
           { "code": "TRUCK-16-32T-EURO6", "name": "Ciężarówka 16-32 t, EURO6", "value": 0.096, "source": "Ecoinvent 3.10" },
           { "code": "TRUCK-16-32T-EURO5", "name": "Ciężarówka 16-32 t, EURO5", "value": 0.110, "source": "Ecoinvent 3.10" },
-          { "code": "TRUCK-PL-AVG", "name": "Ciężarówka — średnia PL (mix EURO5/6)", "value": 0.100, "source": "wartość domyślna POLCA dla PL" }
+          { "code": "TRUCK-PL-AVG", "name": "Ciężarówka — średnia PL (mix EURO5/6)", "value": 0.100, "source": "wartość domyślna poLCA dla PL" }
         ],
         "default_distances_km": {
           "bitumen_cysterna": 150,

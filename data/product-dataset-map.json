@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "POLCA product-to-dataset map",
+    "title": "poLCA product-to-dataset map",
     "version": "2026.5-aggregate-layer",
-    "purpose": "Mapa pokazuje, które wspólne datasety POLCA mogą być stosowane w poszczególnych grupach wyrobów. Dataset jest utrzymywany raz, a karta wyrobu określa zastosowanie, moduł i wymagane dane aktywności.",
+    "purpose": "Mapa pokazuje, które wspólne datasety poLCA mogą być stosowane w poszczególnych grupach wyrobów. Dataset jest utrzymywany raz, a karta wyrobu określa zastosowanie, moduł i wymagane dane aktywności.",
     "rule": "Nie kopiować wskaźników do każdego wyrobu. Produkt używa wspólnych rekordów przez identyfikator datasetu, a wynik zapisuje wersję datasetu i jakość danych."
   },
   "shared_datasets": [
@@ -19,7 +19,7 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu CEM IV albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+      "replacement_rule": "EPD konkretnego cementu CEM IV albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
     },
     {
       "code": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
@@ -34,7 +34,7 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
     },
     {
       "code": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
@@ -49,7 +49,7 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
     },
     {
       "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -64,7 +64,7 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną POLCA."
+      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
     },
     {
       "code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
@@ -78,7 +78,7 @@
       "not_used_by_default": [
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD kopalni albo zweryfikowane dane kopalni dla właściwej skały i frakcji zastępują wartość POLCA."
+      "replacement_rule": "EPD kopalni albo zweryfikowane dane kopalni dla właściwej skały i frakcji zastępują wartość poLCA."
     },
     {
       "code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
@@ -92,7 +92,7 @@
       "not_used_by_default": [
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD kopalni wapienia albo dane zakładowe zastępują wartość POLCA."
+      "replacement_rule": "EPD kopalni wapienia albo dane zakładowe zastępują wartość poLCA."
     },
     {
       "code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
@@ -106,7 +106,7 @@
       "not_used_by_default": [
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD kopalni dolomitu albo dane zakładowe zastępują wartość POLCA."
+      "replacement_rule": "EPD kopalni dolomitu albo dane zakładowe zastępują wartość poLCA."
     },
     {
       "code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
@@ -120,7 +120,7 @@
       "not_used_by_default": [
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD kopalni, dane płukania/sortowania i transportu zastępują wartość POLCA."
+      "replacement_rule": "EPD kopalni, dane płukania/sortowania i transportu zastępują wartość poLCA."
     },
     {
       "code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
@@ -134,7 +134,7 @@
       "not_used_by_default": [
         "concrete"
       ],
-      "replacement_rule": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy zastępuje wartość POLCA."
+      "replacement_rule": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy zastępuje wartość poLCA."
     },
     {
       "code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
@@ -146,7 +146,7 @@
         "concrete",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia zastępują wartość POLCA."
+      "replacement_rule": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia zastępują wartość poLCA."
     },
     {
       "code": "POLCA-EN-PL-LCA-2024",
@@ -159,7 +159,7 @@
         "road_works"
       ],
       "not_used_by_default": [],
-      "replacement_rule": "Zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej mogą zastąpić rekord POLCA zgodnie z metodyką."
+      "replacement_rule": "Zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej mogą zastąpić rekord poLCA zgodnie z metodyką."
     },
     {
       "code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",

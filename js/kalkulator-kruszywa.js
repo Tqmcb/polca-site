@@ -3,7 +3,7 @@
  * Wersja 1.0
  *
  * Oszacowanie GWP A1-A3 [kg CO2eq / t kruszywa] zgodne z c-PCR-AGG-EPD-Polska v0.9-DRAFT,
- * EN 12620 / EN 13242 i EN 15804+A2. Wartości domyślne: datasety POLCA-AGG-PL-*.
+ * EN 12620 / EN 13242 i EN 15804+A2. Wartości domyślne: zbiory danych POLCA-AGG-PL-*.
  * Energia elektryczna: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (cross-compliance).
  * Olej napędowy: 3,17 kg CO2e/L (KOBiZE 2024). Materiały wybuchowe: ~0,5 kg CO2e/kg.
  *
@@ -35,7 +35,7 @@
 
     /* ---- Etykiety i benchmarki dla trybu uproszczonego ---- */
     var SIMPLE_LABELS = {
-        '5.50': 'kruszywo łamane twarde (conservative default POLCA)',
+        '5.50': 'kruszywo łamane twarde (konserwatywna wartość domyślna poLCA)',
         '3.99': 'kruszywo bazaltowe łamane (ITB EPD 706/2024 Trzuskawica)',
         '4.50': 'kruszywo granitowe łamane lub dolomitowe',
         '3.20': 'kruszywo wapienne łamane (Gruber et al. 2023)',
@@ -208,11 +208,11 @@
 
     /* ---- Benchmark ---- */
     function benchmark(r) {
-        // Conservative defaults POLCA per kategoria
+        // Konserwatywne wartości domyślne poLCA per kategoria
         var ref;
         if (r.mode === 'simple') {
             var v = r.ref;
-            if (v >= 5.0) ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default POLCA 5,5)' };
+            if (v >= 5.0) ref = { v: 5.5, cat: 'kruszyw łamanych twardych (konserwatywna wartość domyślna poLCA 5,5)' };
             else if (v <= 2.0) ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
             else if (v <= 3.4) ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
             else ref = { v: 3.8, cat: 'kruszyw — średnia ważona PL (~3,8)' };
@@ -220,7 +220,7 @@
             if (r.isRC) ref = { v: GWP_RC, cat: 'kruszyw recyklingowych RC (~2,5)' };
             else if (r.rock === 'natural') ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
             else if (r.rock === 'soft') ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
-            else ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default POLCA 5,5)' };
+            else ref = { v: 5.5, cat: 'kruszyw łamanych twardych (konserwatywna wartość domyślna poLCA 5,5)' };
         }
         var t = r.total;
         var diff = t - ref.v;
@@ -229,7 +229,7 @@
         if (Math.abs(diff) < 0.05) dir = 'na poziomie';
         else if (diff < 0) dir = 'niżej (o ' + fmt(rel, 0) + '%) niż';
         else dir = 'wyżej (o ' + fmt(rel, 0) + '%) niż';
-        return 'GWP ' + fmt(t, 2) + ' kg CO₂eq/t — to ' + dir + ' conservative default POLCA dla ' + ref.cat + '.';
+        return 'GWP ' + fmt(t, 2) + ' kg CO₂eq/t — to ' + dir + ' konserwatywna wartość domyślna poLCA dla ' + ref.cat + '.';
     }
 
     /* ---- Render ---- */
@@ -324,7 +324,7 @@
         } else {
             inputWarn.className = 'agg-warn ok';
             inputWarn.textContent = r.mode === 'simple'
-                ? 'Tryb uproszczony — wynik to wartość referencyjna GWP A1-A3 wg datasetów POLCA-AGG-PL.'
+                ? 'Tryb uproszczony — wynik to wartość referencyjna GWP A1-A3 wg zbiorów danych POLCA-AGG-PL.'
                 : 'Parametry w dopuszczalnych zakresach.';
         }
 
@@ -480,7 +480,7 @@
         var label = r.mode === 'simple' ? (r.simpleLabel || 'kruszywo') : (r.rockLabel || 'kruszywo');
         var name = 'Kruszywo budowlane — ' + label + (r.mode === 'simple' ? ' (tryb uproszczony)' : ' (tryb zaawansowany)');
         var tech = r.mode === 'simple'
-            ? 'Wartość referencyjna GWP A1-A3 wg datasetów POLCA-AGG-PL'
+            ? 'Wartość referencyjna GWP A1-A3 wg zbiorów danych POLCA-AGG-PL'
             : ('Pozyskanie i przeróbka: energia kruszenia ' + num6(r.energy) + ' kWh/t; olej napędowy ' + num6(r.diesel) + ' L/t; materiały wybuchowe ' + num6(r.explosive) + ' kg/t; płukanie: ' + (r.washOn ? 'tak' : 'nie') + '; transport wewnętrzny ' + num6(r.a2km) + ' km' + (r.rcPct > 0 ? '; frakcja recyklingowa RC ' + num6(r.rcPct) + '%' : ''));
         var ts = new Date().toISOString();
         var x = [];
