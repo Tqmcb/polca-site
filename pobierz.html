@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pobierz — metodyki, zbiór danychy, c-PCR, tabele referencyjne — poLCA</title>
-    <meta name="description" content="Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, zbiór danychy JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.">
+    <title>Pobierz — metodyki, zbiory danych, c-PCR, tabele referencyjne — poLCA</title>
+    <meta name="description" content="Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, zbiory danych JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.">
     <link rel="canonical" href="https://polca.org.pl/pobierz.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Pobierz — centrum dokumentów poLCA">
-    <meta property="og:description" content="Wszystkie pobieralne dokumenty programu poLCA: metodyki PDF/A z DOI, zbiór danychy, c-PCR i tabele referencyjne.">
+    <meta property="og:description" content="Wszystkie pobieralne dokumenty programu poLCA: metodyki PDF/A z DOI, zbiory danych, c-PCR i tabele referencyjne.">
     <meta property="og:url" content="https://polca.org.pl/pobierz.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Pobierz — centrum dokumentów poLCA">
-    <meta name="twitter:description" content="Metodyki, zbiór danychy, c-PCR i tabele referencyjne — wszystko w jednym miejscu.">
+    <meta name="twitter:description" content="Metodyki, zbiory danych, c-PCR i tabele referencyjne — wszystko w jednym miejscu.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
       "@context": "https://schema.org",
       "@type": "ItemList",
       "name": "Pobierz — centrum dokumentów poLCA",
-      "description": "Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, zbiór danychy JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.",
+      "description": "Centrum pobierania poLCA: metodyki PDF/A z DOI, briefingi onepager, datasety JSON-LD/CSV/XLSX, reguły kategorii c-PCR oraz tabele referencyjne.",
       "url": "https://polca.org.pl/pobierz.html",
       "inLanguage": "pl-PL",
       "itemListElement": [
@@ -92,7 +92,7 @@
     </script>
     <style>
         html{scroll-padding-top:76px}
-        #metodyki,#onepagery,#zbiór danychy,#zbiór danychy-pliki,#cpcr,#tabele{scroll-margin-top:76px}
+        #metodyki,#onepagery,#datasety,#datasety-pliki,#cpcr,#tabele{scroll-margin-top:76px}
         .dl-section-title{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-secondary);margin:0 0 .65rem;padding-bottom:.3rem;border-bottom:1px solid var(--border)}
         .dl-list{display:grid;grid-template-columns:1fr;gap:.7rem;margin-top:1rem}
         .dl-row{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:.85rem 1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);transition:border-color .15s ease, box-shadow .15s ease}
@@ -157,7 +157,7 @@
             <h1 class="page-title">Centrum dokumentów poLCA</h1>
             <p class="page-subtitle">
                 Wszystkie pobieralne zasoby programu poLCA w jednym miejscu — metodyki w formacie
-                PDF/A z DOI, briefingi onepager, zbiór danychy JSON-LD/CSV/XLSX, reguły kategorii c-PCR
+                PDF/A z DOI, briefingi onepager, zbiory danych JSON-LD/CSV/XLSX, reguły kategorii c-PCR
                 oraz tabele referencyjne. Każdy plik z opisem, rozmiarem, datą publikacji i wersją.
             </p>
             <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
@@ -176,7 +176,7 @@
     <div class="tool-nav section-gap">
         <a href="#metodyki" class="tool-nav-pill">01 — Metodyki (PDF/A)</a>
         <a href="#onepagery" class="tool-nav-pill">02 — Onepagery</a>
-        <a href="#zbiór danychy-pliki" class="tool-nav-pill">03 — Zbiory danych (JSON-LD/CSV)</a>
+        <a href="#datasety-pliki" class="tool-nav-pill">03 — Zbiory danych (JSON-LD/CSV)</a>
         <a href="#cpcr" class="tool-nav-pill">04 — Reguły c-PCR</a>
         <a href="#tabele" class="tool-nav-pill">05 — Tabele referencyjne</a>
     </div>
@@ -273,14 +273,14 @@
     </section>
 
     <!-- ═══════════════════════════════════════════════════════════
-         03 — ZBIORY DANYCH
+         03 — DATASETY
          ═══════════════════════════════════════════════════════════ -->
-    <div id="zbiór danychy" aria-hidden="true"></div>
-    <section id="zbiór danychy-pliki" class="card card-lg section-gap fade-in" aria-label="Zbiory danych i pliki danych">
+    <div id="datasety" aria-hidden="true"></div>
+    <section id="datasety-pliki" class="card card-lg section-gap fade-in" aria-label="Datasety i pliki danych">
         <div class="section-num">03 — Zbiory danych (JSON-LD / CSV / XLSX)</div>
         <div class="card-title">Pliki danych programu poLCA</div>
         <p class="card-text" style="max-width:880px;">
-            Wszystkie zbiór danychy poLCA są publikowane w formacie JSON-LD (zgodnym z schema.org/Zbiór danych),
+            Wszystkie zbiory danych poLCA są publikowane w formacie JSON-LD (zgodnym z schema.org/Zbiór danych),
             CSV (do analiz) oraz XLSX (gdzie zasadne). Pełny katalog zbiorów danych z metadanymi —
             zobacz <a href="datasety.html">stronę Zbiory danych</a>.
         </p>
@@ -361,11 +361,11 @@
             <div class="dl-row">
                 <div class="dl-icon json">JSON</div>
                 <div class="dl-body">
-                    <p class="dl-name"><a href="data/product-zbiór danych-map.json">product-zbiór danych-map.json</a></p>
+                    <p class="dl-name"><a href="data/product-dataset-map.json">product-dataset-map.json</a></p>
                     <p class="dl-desc">Mapowanie produktów do zbiorów danych — wskazuje który zbiór danych poLCA stosować dla danego wyrobu.</p>
                     <div class="dl-meta"><span>2026-05-03</span><span>JSON</span></div>
                 </div>
-                <a href="data/product-zbiór danych-map.json" class="dl-action">Pobierz</a>
+                <a href="data/product-dataset-map.json" class="dl-action">Pobierz</a>
             </div>
         </div>
 
