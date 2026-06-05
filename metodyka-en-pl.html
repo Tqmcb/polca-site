@@ -3,175 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>poLCA-EN-PL-2024 — Dokumentacja metodologiczna — poLCA</title>
-    <meta name="description" content="Pełna dokumentacja metodologiczna wskaźnika emisyjności energii elektrycznej w Polsce (poLCA-EN-PL-2024 v9.1): 0,599 kg CO₂e/kWh. Tok obliczeniowy, źródła danych, analiza niepewności.">
-    <link rel="canonical" href="https://polca.org.pl/metodyka-en-pl.html">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="poLCA-EN-PL-2024 — Dokumentacja metodologiczna">
-    <meta property="og:description" content="Pełna metodologia wskaźnika GWP polskiej energii elektrycznej: 0,599 kg CO₂e/kWh. Tok obliczeniowy, parametry, analiza niepewności i wrażliwości.">
-    <meta property="og:url" content="https://polca.org.pl/metodyka-en-pl.html">
-    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
-    <meta property="og:locale" content="pl_PL">
-    <meta property="og:image" content="https://polca.org.pl/images/blog-en-pl-2024.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="poLCA-EN-PL-2024 — Dokumentacja metodologiczna — 0,599 kg CO₂e/kWh">
-    <meta name="twitter:description" content="Pełny tok obliczeniowy wskaźnika emisyjności energii elektrycznej w Polsce dla LCA/EPD.">
-    <meta name="twitter:image" content="https://polca.org.pl/images/blog-en-pl-2024.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "TechArticle",
-      "headline": "poLCA-EN-PL-2024 — Dokumentacja metodologiczna wskaźnika emisyjności energii elektrycznej",
-      "description": "Pełna metodologia wskaźnika GWP polskiego miksu energetycznego do stosowania w LCA/EPD. Wersja v9.1, 0,599 kg CO₂e/kWh.",
-      "url": "https://polca.org.pl/metodyka-en-pl.html",
-      "datePublished": "2026-04-04",
-      "inLanguage": "pl-PL",
-      "author": { "@type": "Organization", "name": "Multicert Sp. z o.o.", "url": "https://polca.org.pl" },
-      "publisher": { "@type": "Organization", "name": "EPD Polska", "url": "https://www.epd.org.pl" }
-    }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=10.1">
-    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <title>poLCA-EN-PL-2024 — metodologia przeniesiona do MET-001 — poLCA</title>
+    <meta name="description" content="Pełna metodologia wskaźnika emisyjności energii elektrycznej w Polsce (poLCA-EN-PL-2024, 0,599 kg CO₂e/kWh) znajduje się w dokumencie MET-001.">
+    <link rel="canonical" href="https://polca.org.pl/metodyki/MET-001-poLCA-EN-PL-2024.html">
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; url=metodyki/MET-001-poLCA-EN-PL-2024.html">
+    <style>
+        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:38rem;margin:18vh auto;padding:0 1.5rem;color:#1a1d22;line-height:1.6}
+        a{color:#0b6b3a;font-weight:600}
+    </style>
 </head>
 <body>
-
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html" class="active">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-            </a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
-
-    <!-- BACK LINK -->
-    <a href="metodyka.html" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:1.5rem;margin-top:1rem;" class="fade-in">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-        Metodyka
-    </a>
-
-    <!-- HERO — wypełniany z JSON przez JS -->
-    <div id="doc-hero" class="doc-hero fade-in">
-        <div class="doc-hero-label">Dokument metodologiczny</div>
-        <div class="doc-hero-code" id="hero-code">Ładowanie…</div>
-        <div id="hero-status" class="doc-hero-status"></div>
-        <div class="doc-hero-stats" id="hero-stats"></div>
-        <div class="doc-hero-meta" id="hero-meta"></div>
-    </div>
-
-    <!-- NAWIGACJA KOTWICOWA — generowana z JSON przez JS -->
-    <div id="doc-nav" class="tool-nav section-gap fade-in" role="navigation" aria-label="Spis treści dokumentu"></div>
-
-    <!-- TREŚĆ DOKUMENTU — renderowana z JSON przez JS -->
-    <div id="doc-content" class="fade-in">
-        <div style="padding:3rem 0;text-align:center;color:var(--text-tertiary);font-size:0.875rem;">
-            Ładowanie dokumentu…
-        </div>
-    </div>
-
-    <!-- FORMULARZ KOMENTARZY — statyczny HTML -->
-    <section id="komentarze" class="section-gap fade-in" style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);">
-        <div class="section-num">Uwagi i komentarze</div>
-        <h2 style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:700;color:var(--ink);margin:0.5rem 0 0.5rem;">Masz uwagi do metodologii lub obliczeń?</h2>
-        <p style="font-size:0.875rem;color:var(--text-secondary);margin:0 0 0.25rem 0;max-width:600px;">Wyślij je do zespołu poLCA. Każda uwaga weryfikacyjna jest analizowana przed wydaniem kolejnej wersji wskaźnika.</p>
-        <p style="font-size:0.78rem;color:var(--text-tertiary);margin:0 0 1.5rem 0;">Uwagi mogą dotyczyć metodologii, źródeł danych, toku obliczeniowego lub wyników.</p>
-
-        <div class="comment-form-wrap" style="max-width:620px;">
-            <form id="comment-form" novalidate>
-                <label for="cf-name">Imię i organizacja <span style="color:var(--text-tertiary);font-weight:400">(opcjonalne)</span></label>
-                <input type="text" id="cf-name" name="name" placeholder="np. Jan Kowalski, Politechnika Warszawska">
-
-                <label for="cf-email">Adres e-mail <span style="color:var(--accent)">*</span></label>
-                <input type="email" id="cf-email" name="email" placeholder="adres@organizacja.pl" required>
-
-                <label for="cf-section">Sekcja której dotyczy uwaga</label>
-                <select id="cf-section" name="section">
-                    <option value="">— wybierz sekcję —</option>
-                    <!-- opcje generowane przez JS z JSON -->
-                </select>
-
-                <label for="cf-message">Treść uwagi <span style="color:var(--accent)">*</span></label>
-                <textarea id="cf-message" name="message" rows="5" placeholder="Opisz uwagę możliwie precyzyjnie — np. wskaż numer równania, tabelę lub parametr." required></textarea>
-
-                <div id="cf-error" class="comment-error-msg" hidden></div>
-                <button type="submit" class="comment-submit-btn" id="cf-submit">
-                    Wyślij uwagę
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </button>
-            </form>
-            <div id="cf-success" class="comment-success-msg" hidden>
-                Dziękujemy za przesłanie uwagi. Odpiszemy na podany adres e-mail. Twoje uwagi pomogą ulepszyć kolejną wersję wskaźnika poLCA-EN-PL.
-            </div>
-        </div>
-    </section>
-
-</div>
-</div>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Nawigacja</div>
-            <ul class="footer-links">
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="analiza.html">Dlaczego poLCA?</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="kalkulator.html">Kalkulatory</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Zasoby</div>
-            <ul class="footer-links">
-                <li><a href="narzedzia.html">Kalkulatory</a></li>
-                <li><a href="o-polca/index.html">O poLCA</a></li>
-                <li><a href="metodyka-en-pl.html">poLCA-EN-PL Metodologia</a></li>
-                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA · polca.org.pl</span>
-    </div>
-</footer>
-
-<script src="js/nav-mobile.js"></script>
-<script src="js/animations.js"></script>
-<script src="js/metodyka-en-pl.js"></script>
+    <p>Pełna metodologia wskaźnika <strong>poLCA-EN-PL-2024</strong> (0,599 kg CO₂e/kWh) znajduje się teraz w dokumencie referencyjnym <strong>MET-001</strong>.</p>
+    <p><a href="metodyki/MET-001-poLCA-EN-PL-2024.html">Przejdź do MET-001 — poLCA-EN-PL-2024 →</a></p>
+    <script>location.replace("metodyki/MET-001-poLCA-EN-PL-2024.html");</script>
 </body>
 </html>
