@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "POLCA material taxonomy for asphalt mixtures",
+    "title": "poLCA material taxonomy for asphalt mixtures",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "note": "Taksonomia materiałów służy do automatycznego przypisania pozycji recepty lub dostawcy do kontrolowanego datasetu POLCA. Wartości grupowe mają status wartości domyślnych do czasu uzyskania EPD dostawcy albo danych konkretnej kopalni lub zakładu.",
+    "note": "Taksonomia materiałów służy do automatycznego przypisania pozycji recepty lub dostawcy do kontrolowanego datasetu poLCA. Wartości grupowe mają status wartości domyślnych do czasu uzyskania EPD dostawcy albo danych konkretnej kopalni lub zakładu.",
     "background": {
       "plain_language": "Wartości w katalogu materiałów nie stanowią niezależnych danych urzędowych. Są to kontrolowane wartości startowe opracowane na podstawie dostępnych źródeł publicznych i branżowych oraz modelu EPD MMA. Ich celem jest jednolite mapowanie materiałów w sytuacji braku EPD dostawcy lub danych kopalni.",
       "source_layers": [
@@ -29,7 +29,7 @@
         },
         {
           "layer": "Model EPD MMA i raport tła obliczeniowego",
-          "role": "spójne mapowanie materiałów w POLCA oraz zachowanie zgodności z logiką modułów A1-D"
+          "role": "spójne mapowanie materiałów w poLCA oraz zachowanie zgodności z logiką modułów A1-D"
         },
         {
           "layer": "Dane klienta i audyt na miejscu",
@@ -117,7 +117,7 @@
       "preferred_order": [
         "EPD konkretnego dostawcy i zakładu",
         "EPD stowarzyszeniowa/sektorowa zgodna produktowo i geograficznie",
-        "kontrolowana wartość domyślna POLCA",
+        "kontrolowana wartość domyślna poLCA",
         "wartość wymagająca danych źródłowych"
       ],
       "warning": "Kruszywa są podobne funkcjonalnie, ale nie identyczne środowiskowo. Różnice wynikają z rodzaju skały, sposóbu wydobycia, kruszenia, płukania, energii, wilgotności oraz transportu."
@@ -129,7 +129,7 @@
       "label": "Kruszywa łamane twarde / magmowe i metamorficzne",
       "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
       "controlled_default_kg_co2e_per_t": 5.5,
-      "source_basis": "Pakiet danych obliczeniowych EPD / background report: ÖKOBAUDAT 2024 + MPA UK Sector EPD; zakres do potwierdzenia w konsultacjach POLCA.",
+      "source_basis": "Pakiet danych obliczeniowych EPD / background report: ÖKOBAUDAT 2024 + MPA UK Sector EPD; zakres do potwierdzenia w konsultacjach poLCA.",
       "audit_focus": "rodzaj skały, frakcja, energia kruszenia, płukanie/suszenie, lokalizacja kopalni, transport A2",
       "status": "group_proxy_to_validate",
       "materials": [
@@ -245,7 +245,7 @@
       "label": "Kruszywa naturalne",
       "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
       "controlled_default_kg_co2e_per_t": 3.5,
-      "source_basis": "Kontrolowana wartość domyślna POLCA dla kruszyw naturalnych; transport oraz ewentualne płukanie i sortowanie należy modelować oddzielnie.",
+      "source_basis": "Kontrolowana wartość domyślna poLCA dla kruszyw naturalnych; transport oraz ewentualne płukanie i sortowanie należy modelować oddzielnie.",
       "audit_focus": "źródło złoża, płukanie, sortowanie, frakcja, wilgotność, transport A2",
       "status": "group_proxy_to_validate",
       "materials": [
@@ -254,7 +254,7 @@
           "label": "Piasek",
           "default_kg_co2e_per_t": 3.5,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
           "data_character": "kruszywo naturalne; prostszy proces pozyskania/sortowania niż kruszywa łamane",
           "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
         },
@@ -263,7 +263,7 @@
           "label": "Żwir",
           "default_kg_co2e_per_t": 3.5,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
           "data_character": "kruszywo naturalne; proces pozyskania/sortowania bez typowej energochłonności kruszenia skały",
           "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
         },
@@ -272,7 +272,7 @@
           "label": "Pospółka / mieszanka piaskowo-żwirowa",
           "default_kg_co2e_per_t": 3.5,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
           "data_character": "mieszanka piaskowo-żwirowa; wartość grupowa dla kruszyw naturalnych",
           "required_validation": "potwierdzić skład, płukanie, sortowanie, wilgotność, frakcję i transport"
         },
@@ -281,13 +281,13 @@
           "label": "Grys z otoczaków / kruszywo naturalne łamane",
           "default_kg_co2e_per_t": 4,
           "note": "wymaga decyzji, czy traktować jako naturalne czy łamane",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
           "data_character": "kruszywo naturalne poddane kruszeniu; wymaga decyzji klasyfikacyjnej na podstawie technologii",
           "required_validation": "potwierdzić, czy dominują procesy sortowania/płukania czy kruszenia; potwierdzić dane kopalni"
         }
       ],
       "background_note": "Wartość grupowa dla kruszyw naturalnych wynika z prostszego procesu pozyskania/sortowania względem kruszyw łamanych. Do potwierdzenia: płukanie, sortowanie, frakcja, wilgotność i transport.",
-      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna POLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
     },
     {
       "code": "aggregate_secondary_recycled",

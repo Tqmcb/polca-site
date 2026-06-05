@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Matryca źródeł danych POLCA dla bazy LCI i obliczeń LCIA wyrobów budowlanych",
+    "title": "Matryca źródeł danych poLCA dla bazy LCI i obliczeń LCIA wyrobów budowlanych",
     "updated_at": "2026-05-03",
     "status": "draft_consultation",
-    "rule": "POLCA jest kontrolowaną bazą LCI z warstwą obliczeń LCIA. Użytkownik podaje dane aktywności i dowody, ale nie wybiera dowolnie wskaźnika emisyjnego. Dataset LCI i wynik LCIA narzuca system zgodnie z hierarchią: EPD/dane pierwotne, dataset POLCA, dane sektorowe, konserwatywna wartość domyślna.",
+    "rule": "poLCA jest kontrolowaną bazą LCI z warstwą obliczeń LCIA. Użytkownik podaje dane aktywności i dowody, ale nie wybiera dowolnie wskaźnika emisyjnego. Dataset LCI i wynik LCIA narzuca system zgodnie z hierarchią: EPD/dane pierwotne, dataset poLCA, dane sektorowe, konserwatywna wartość domyślna.",
     "selection_policy": {
       "controlled_catalog": true,
       "purpose": "porównywalność danych LCI i wyników LCIA, brak dowolnego wybierania niższych wskaźników i jednolite zasady dla zielonych przetargów oraz audytu EPD",
@@ -77,7 +77,7 @@
         {
           "name": "CPR 2024/3110",
           "scope": "Harmonizowane zasady wprowadzania wyrobów budowlanych do obrotu, wspólny język techniczny, deklaracje, wymagania środowiskowe i cyfrowe.",
-          "use_when": "Do układania danych POLCA tak, aby były gotowe pod przyszłe wymagania środowiskowe, paszport produktu i ocenę zgodności wyrobów budowlanych.",
+          "use_when": "Do układania danych poLCA tak, aby były gotowe pod przyszłe wymagania środowiskowe, paszport produktu i ocenę zgodności wyrobów budowlanych.",
           "audit_check": "Kontrola obejmuje: system zachowuje spójne dane wyrobu, producenta, deklaracji, właściwości użytkowych i środowiskowych.",
           "limitation": "Szczegółowe wymagania środowiskowe będą doprecyzowywane w specyfikacjach, aktach i cPCR dla rodzin wyrobów.",
           "free_status": "public_regulation",
@@ -158,7 +158,7 @@
           "scope": "Polski kontekst branży kruszyw, producentów, lokalizacji, typów kopalin i praktyk sektora.",
           "use_when": "Do opisu rynku i kwalifikacji typów kruszyw, zwłaszcza gdy dataset wymaga przypisania do polskich realiów wydobycia.",
           "audit_check": "Kontrola obejmuje: dane nie są traktowane jako wskaźnik LCA bez dodatkowego modelu energii, procesu i transportu.",
-          "limitation": "Źródło branżowe i opisowe; wskaźnik emisyjny wymaga EPD, danych zakładowych albo modelu POLCA.",
+          "limitation": "Źródło branżowe i opisowe; wskaźnik emisyjny wymaga EPD, danych zakładowych albo modelu poLCA.",
           "free_status": "public_sector_source",
           "url": "https://www.kruszpol.pl/"
         },
@@ -175,7 +175,7 @@
           "name": "JEC Well-to-Tank v5",
           "scope": "Emisje poprzedzające spalanie paliw: wydobycie, przetwarzanie i dostarczenie paliw przed spalaniem.",
           "use_when": "Do dopełnienia spalania paliw o emisje powstające wcześniej w łańcuchu dostaw w modelach LCA paliw i energii.",
-          "audit_check": "Kontrola obejmuje: zgodność paliwa, roku i granicy systemu z obliczeniem POLCA.",
+          "audit_check": "Kontrola obejmuje: zgodność paliwa, roku i granicy systemu z obliczeniem poLCA.",
           "limitation": "Nie zastąpi faktur ani składu paliwa klienta; jest źródłem współczynników dla wcześniejszych etapów łańcucha dostaw paliw.",
           "free_status": "public_report",
           "url": "https://publications.jrc.ec.europa.eu/"
@@ -211,7 +211,7 @@
           "scope": "Publiczny rejestr deklaracji środowiskowych typu III dla wyrobów budowlanych prowadzony przez ITB, zgodny z PN-EN ISO 14025 i PN-EN 15804+A2.",
           "use_when": "Jako źródło danych producentów dla polskich i europejskich wyrobów budowlanych, zwłaszcza gdy EPD dotyczy materiału użytego w recepcie albo porównywalnej kategorii wyrobu.",
           "audit_check": "Kontrola obejmuje: numer ITB-EPD, producenta, wyrób, zakład, jednostkę deklarowaną, moduły, datę ważności, wersję EN 15804, weryfikatora i link do PDF.",
-          "limitation": "Dane z ITB-EPD są bezpośrednie tylko dla deklarowanego produktu. Dla wartości domyślnej POLCA mogą być użyte dopiero po normalizacji i filtracji porównywalnych EPD.",
+          "limitation": "Dane z ITB-EPD są bezpośrednie tylko dla deklarowanego produktu. Dla wartości domyślnej poLCA mogą być użyte dopiero po normalizacji i filtracji porównywalnych EPD.",
           "free_status": "verified_epd_register",
           "url": "https://www.itb.pl/itb-epds/?lang=en"
         },
@@ -308,16 +308,16 @@
     },
     {
       "code": "public_default_databases",
-      "label": "Publiczne bazy do wartości domyślnych POLCA",
+      "label": "Publiczne bazy do wartości domyślnych poLCA",
       "priority": 5,
-      "description": "Publiczne lub bezpłatne bazy wykorzystywane do budowy polskich datasetów LCI i wartości domyślnych LCIA po filtracji, normalizacji i uzasadnieniu. Nie są kopiowane bezpośrednio jako dane POLCA; pełnią rolę źródeł, benchmarków i wzorców konserwatywnego modelu.",
+      "description": "Publiczne lub bezpłatne bazy wykorzystywane do budowy polskich datasetów LCI i wartości domyślnych LCIA po filtracji, normalizacji i uzasadnieniu. Nie są kopiowane bezpośrednio jako dane poLCA; pełnią rolę źródeł, benchmarków i wzorców konserwatywnego modelu.",
       "sources": [
         {
           "name": "ÖKOBAUDAT",
           "scope": "Niemiecka publiczna baza danych LCA dla budownictwa, w tym rekordy EN 15804+A2, EPD i dane generyczne.",
           "use_when": "Jako wysokiej jakości punkt startowy dla procesów budowlanych, materiałów, transportu, energii i końca życia, gdy brak polskiego datasetu lub EPD dostawcy.",
           "audit_check": "Kontrola obejmuje: wersję bazy, EN 15804+A2, jednostkę, moduły, geografię, typ rekordu oraz czy dane są generyczne czy EPD.",
-          "limitation": "Baza jest projektowana do LCA budynków, nie do samodzielnego zastępowania danych konkretnego produktu. Dane niemieckie wymagają oceny geograficznej przed użyciem jako wartość domyślna POLCA.",
+          "limitation": "Baza jest projektowana do LCA budynków, nie do samodzielnego zastępowania danych konkretnego produktu. Dane niemieckie wymagają oceny geograficznej przed użyciem jako wartość domyślna poLCA.",
           "free_status": "public_database",
           "url": "https://www.oekobaudat.de/en/database/database-search.html"
         },
@@ -326,7 +326,7 @@
           "scope": "Szwedzka publiczna baza klimatyczna dla deklaracji klimatycznych budynków: A1-A3, A4, A5, energia, paliwa i współczynniki konwersji.",
           "use_when": "Jako wzorzec metodyczny dla konserwatywnych wartości domyślnych oraz jako benchmark dla materiałów budowlanych, energii i transportu.",
           "audit_check": "Kontrola obejmuje: używana jest wartość typowa czy konserwatywna, moduł A1-A3/A4/A5, rok wersji i zgodność z EN 15804.",
-          "limitation": "Dane reprezentują warunki szwedzkie. W POLCA pełnią rolę benchmarku albo źródła pomocniczego, nie bezpośredniego polskiego wskaźnika.",
+          "limitation": "Dane reprezentują warunki szwedzkie. W poLCA pełnią rolę benchmarku albo źródła pomocniczego, nie bezpośredniego polskiego wskaźnika.",
           "free_status": "public_generic_database",
           "url": "https://www.boverket.se/en/start/laws-and-regulations/climate-declaration/climate-database/"
         },
@@ -344,7 +344,7 @@
           "scope": "Francuska baza FDES i PEP dla budownictwa oraz RE2020, z dostępem cyfrowym do informacji deklaracyjnych, jednostek funkcjonalnych i wskaźników środowiskowych.",
           "use_when": "Jako źródło porównawcze EPD/FDES dla wyrobów budowlanych i punkt kontroli zakresu danych dla podobnych produktów.",
           "audit_check": "Kontrola obejmuje: status deklaracji, jednostkę, moduły, wersję normy, datę ważności i warunki dostępu do webservice.",
-          "limitation": "Dane są francuskie i programowe; w POLCA pełnią rolę benchmarku albo źródła pomocniczego, nie automatycznego polskiego zamiennika.",
+          "limitation": "Dane są francuskie i programowe; w poLCA pełnią rolę benchmarku albo źródła pomocniczego, nie automatycznego polskiego zamiennika.",
           "free_status": "public_epd_database",
           "url": "https://www.inies.fr/en/"
         },
@@ -389,7 +389,7 @@
           "scope": "Austriacka baza jakościowo kontrolowanych danych ekologicznych i produktowych dla materiałów budowlanych.",
           "use_when": "Jako punkt porównawczy dla EPD, wartości referencyjnych OI3 i parametrów materiałowych w regionie DACH.",
           "audit_check": "Kontrola obejmuje typ rekordu: EPD, wartość referencyjna albo dane producenta, oraz warunki pobrania i użycia.",
-          "limitation": "Baza nie jest polska; do wartości domyślnych POLCA wymaga adaptacji i oznaczenia jakości danych.",
+          "limitation": "Baza nie jest polska; do wartości domyślnych poLCA wymaga adaptacji i oznaczenia jakości danych.",
           "free_status": "public_database",
           "url": "https://www.baubook.info/en/baubook/product-search"
         },
@@ -398,7 +398,7 @@
           "scope": "Wartości domyślne dla towarów CBAM, w tym cementu, klinkieru i cementów hydraulicznych. Dla okresu definitywnego wartości są publikowane w Excelu informacyjnym, a wartości prawnie wiążące określa rozporządzenie wykonawcze.",
           "use_when": "Jako konserwatywny punkt kontrolny brutto przy braku danych rzeczywistych producenta albo EPD produktu.",
           "audit_check": "Kontrola obejmuje: kod CN, kraj pochodzenia, rok stosowania, direct/indirect, total emissions, narzut oraz zgodność z aktualnym aktem wykonawczym.",
-          "limitation": "To nie jest EPD produktu i nie zastępuje danych producenta. W POLCA służy jako publiczny rekord kontrolny wartości domyślnej.",
+          "limitation": "To nie jest EPD produktu i nie zastępuje danych producenta. W poLCA służy jako publiczny rekord kontrolny wartości domyślnej.",
           "free_status": "public_regulation",
           "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en"
         }
@@ -408,14 +408,14 @@
       "code": "restricted_reference",
       "label": "Bazy licencjonowane / tylko referencyjne",
       "priority": 6,
-      "description": "Mogą być użyte do kontroli lub opracowania wartości referencyjnych, ale nie wolno publikować zamkniętego inwentarza jako otwartej bazy POLCA.",
+      "description": "Mogą być użyte do kontroli lub opracowania wartości referencyjnych, ale nie wolno publikować zamkniętego inwentarza jako otwartej bazy poLCA.",
       "sources": [
         {
           "name": "ecoinvent 3.12",
           "scope": "Szczegółowe inwentarze LCI dla procesów, infrastruktury i energii.",
           "use_when": "Jako referencyjny punkt kontroli lub element modelu, gdy licencja na to pozwala.",
           "audit_check": "Kontrola obejmuje: licencje, wersje, proces i zakres publikacji wynikow.",
-          "limitation": "Nie jest darmową bazą; POLCA nie publikuje pełnych inwentarzy pochodnych bez uprawnień.",
+          "limitation": "Nie jest darmową bazą; poLCA nie publikuje pełnych inwentarzy pochodnych bez uprawnień.",
           "free_status": "restricted_license",
           "url": "https://ecoinvent.org/"
         }
@@ -425,13 +425,13 @@
       "code": "data_structure_patterns",
       "label": "Wzorce struktur i formatów danych",
       "priority": 7,
-      "description": "Źródła nie są kopiowane jako własne wskaźniki POLCA. Służą jako wzorce struktury danych, kontroli jakości, atrybucji i interoperacyjności.",
+      "description": "Źródła nie są kopiowane jako własne wskaźniki poLCA. Służą jako wzorce struktury danych, kontroli jakości, atrybucji i interoperacyjności.",
       "sources": [
         {
           "name": "GCCA EPD Tool",
           "scope": "Branżowy model deklaracji dla kruszyw, klinkieru, cementu, betonu i prefabrykatów.",
           "use_when": "Do projektowania struktury pakietów obliczeniowych dla cementu, betonu i kruszyw oraz rozdzielenia A1-A3 od pełnych scenariuszy EPD.",
-          "audit_check": "Kontrola obejmuje: POLCA nie przenosi zamkniętych współczynników bez uprawnień; wykorzystuj wyłącznie jawne informacje o strukturze, zakresie i przepływie danych.",
+          "audit_check": "Kontrola obejmuje: poLCA nie przenosi zamkniętych współczynników bez uprawnień; wykorzystuj wyłącznie jawne informacje o strukturze, zakresie i przepływie danych.",
           "limitation": "To wzorzec struktury procesu, a nie publiczna baza współczynników dla rynku polskiego.",
           "free_status": "tool_reference",
           "url": "https://gccaepd.org/tool"
@@ -439,8 +439,8 @@
         {
           "name": "openEPD",
           "scope": "Otwarty format cyfrowych EPD z identyfikatorami organizacji, zakładów, weryfikatorów, PCR, wersji, niepewności i właściwości funkcjonalnych.",
-          "use_when": "Do oceny zgodności struktury danych POLCA z zewnętrznymi bazami EPD i formatami projektowymi.",
-          "audit_check": "Kontrola obejmuje: każdy rekord POLCA ma identyfikator, wersję, źródło, PCR/cPCR, jednostkę, zakres modułu, jakość danych i link do cytowania.",
+          "use_when": "Do oceny zgodności struktury danych poLCA z zewnętrznymi bazami EPD i formatami projektowymi.",
+          "audit_check": "Kontrola obejmuje: każdy rekord poLCA ma identyfikator, wersję, źródło, PCR/cPCR, jednostkę, zakres modułu, jakość danych i link do cytowania.",
           "limitation": "openEPD opisuje format wymiany danych; nie jest źródłem wartości emisyjnych.",
           "free_status": "open_format",
           "url": "https://www.open-epd-forum.org/"
@@ -449,7 +449,7 @@
           "name": "Building Transparency EC3",
           "scope": "Baza EPD i format danych dla danych EPD, PCR, projektów i integracji.",
           "use_when": "Jako wzorzec atrybucji, linkowania do źródeł, statusów jakości EPD i kontroli danych importowanych.",
-          "audit_check": "Jeżeli POLCA korzysta z danych EC3, zachować wymagane linki i atrybucję oraz nie traktować rekordów z błędami/ostrzeżeniami jako danych bezwarunkowo używalnych.",
+          "audit_check": "Jeżeli poLCA korzysta z danych EC3, zachować wymagane linki i atrybucję oraz nie traktować rekordów z błędami/ostrzeżeniami jako danych bezwarunkowo używalnych.",
           "limitation": "Dane EC3 mają własne zasady dostępu, atrybucji i jakości; nie zastępują danych polskiego dostawcy ani EPD Polska.",
           "free_status": "public_api_with_rules",
           "url": "https://docs.buildingtransparency.org/ec3"

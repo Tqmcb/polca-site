@@ -181,7 +181,7 @@
                 <div class="agg-field agg-field-full">
                     <label class="calc-label" for="aggSimpleType">Typ kruszywa</label>
                     <select id="aggSimpleType" class="calc-select">
-                        <option value="5.50" selected>Kruszywo łamane twarde — conservative default POLCA (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) — 5,50 kg CO₂eq/t</option>
+                        <option value="5.50" selected>Kruszywo łamane twarde — conservative default poLCA (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) — 5,50 kg CO₂eq/t</option>
                         <option value="3.99">Kruszywo bazaltowe łamane (ITB EPD 706/2024 Trzuskawica) — 3,99 kg CO₂eq/t</option>
                         <option value="4.50">Kruszywo granitowe łamane (Ecoinvent 3.10 / Gruber et al. 2023) — 4,50 kg CO₂eq/t</option>
                         <option value="3.20">Kruszywo wapienne łamane (Gruber et al. 2023) — 3,20 kg CO₂eq/t</option>
@@ -191,7 +191,7 @@
                         <option value="5.50">Filler wapienny — mączka (Ecoinvent 3.10) — 5,50 kg CO₂eq/t</option>
                         <option value="2.50">Kruszywo recyklingowe RC — z rozbiórki betonu, cut-off (A1=0 z odpadu, obciążenie transport + przeróbka) — 2,50 kg CO₂eq/t</option>
                     </select>
-                    <p class="calc-note">Wartości referencyjne GWP A1-A3 [kg CO₂eq/t kruszywa na bramie kopalni / zakładu przeróbki]. Conservative default POLCA dla kruszyw łamanych twardych = 5,5 kg CO₂eq/t przy braku EPD kopalni lub danych zakładowych.</p>
+                    <p class="calc-note">Wartości referencyjne GWP A1-A3 [kg CO₂eq/t kruszywa na bramie kopalni / zakładu przeróbki]. Conservative default poLCA dla kruszyw łamanych twardych = 5,5 kg CO₂eq/t przy braku EPD kopalni lub danych zakładowych.</p>
                 </div>
 
                 <div class="agg-field">
@@ -300,7 +300,7 @@
         <div style="margin:1.25rem 0 .25rem;">
             <div class="calc-result-label">GWP A1-A3 — łącznie</div>
             <div class="agg-result-hero"><span id="aggTotal">5,50</span> <small>kg CO₂eq / t kruszywa</small></div>
-            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · kruszywo łamane twarde (conservative default POLCA)</div>
+            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · kruszywo łamane twarde (conservative default poLCA)</div>
             <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.2rem;display:none;" id="aggA4Note"></div>
         </div>
 
@@ -394,7 +394,7 @@
             </p>
             <p>
                 <strong>Tryb uproszczony</strong> zwraca wartość referencyjną GWP A1-A3 wybranego typu
-                kruszywa. Conservative default POLCA dla kruszyw łamanych twardych = <strong>5,5 kg
+                kruszywa. Conservative default poLCA dla kruszyw łamanych twardych = <strong>5,5 kg
                 CO₂eq/t</strong>; punkty kontrolne to m.in. ITB EPD 706/2024 Trzuskawica dla kruszywa
                 bazaltowego (3,99 kg CO₂eq/t) i Gruber et al. 2023 / Ecoinvent 3.10 dla kruszyw
                 granitowego (4,50), wapiennego (3,20) i naturalnego (1,80). Średnia ważona PL (mix
@@ -414,7 +414,7 @@
                 ~0,5 kg CO₂e/kg. Przykładowo: skała twarda lita — 6&nbsp;kWh/t&nbsp;×&nbsp;0,599 = 3,59
                 + 0,4&nbsp;L&nbsp;×&nbsp;3,17 = 1,27 + 0,1&nbsp;kg&nbsp;×&nbsp;0,5 = 0,05
                 + 2&nbsp;km&nbsp;×&nbsp;0,100 = 0,20 → ~5,1 kg CO₂e/t (zbliżone do conservative default
-                POLCA 5,5). Kruszywo naturalne — 1&nbsp;kWh/t&nbsp;×&nbsp;0,599 = 0,60
+                poLCA 5,5). Kruszywo naturalne — 1&nbsp;kWh/t&nbsp;×&nbsp;0,599 = 0,60
                 + 0,3&nbsp;L&nbsp;×&nbsp;3,17 = 0,95 + 0&nbsp;wybuchowe + 0,2&nbsp;transport → ~1,75
                 (zbliżone do 1,80).
             </p>

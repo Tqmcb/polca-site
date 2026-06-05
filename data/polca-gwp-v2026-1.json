@@ -2,7 +2,7 @@
   "version": "POLCA-GWP-2026.2",
   "published_at": "2026-05-03",
   "scope": "Gotowe wartości GWP do stosowania jako dane referencyjne przy braku danych producenta lub EPD dostawcy.",
-  "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością POLCA.",
+  "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
     {
       "id": "POLCA-GWP-EN-PL-LCA-2024",
@@ -11,7 +11,7 @@
       "value": 0.599,
       "unit": "kg CO2e/kWh",
       "module": "A3/A5/B6/C3/D",
-      "status": "model POLCA",
+      "status": "model poLCA",
       "use_for": [
         "MMA",
         "beton",
@@ -44,7 +44,7 @@
       "value": 2,
       "unit": "kg CO2e/m3",
       "module": "A3",
-      "status": "wartość domyślna POLCA",
+      "status": "wartość domyślna poLCA",
       "use_for": [
         "MMA",
         "beton",
@@ -61,7 +61,7 @@
       "value": 3.2,
       "unit": "kg CO2e/l",
       "module": "A3/A5/C1",
-      "status": "wartość domyślna POLCA",
+      "status": "wartość domyślna poLCA",
       "use_for": [
         "sprzęt",
         "transport pomocniczy",
@@ -78,7 +78,7 @@
       "value": 0.095,
       "unit": "kg CO2e/tkm",
       "module": "A2/A4/C2",
-      "status": "wartość domyślna POLCA",
+      "status": "wartość domyślna poLCA",
       "use_for": [
         "MMA",
         "beton",
@@ -96,7 +96,7 @@
       "value": 450,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "wartość sektorowa POLCA",
+      "status": "wartość sektorowa poLCA",
       "use_for": [
         "MMA",
         "emulsje asfaltowe",
@@ -112,7 +112,7 @@
       "value": 5.5,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "wartość grupowa POLCA",
+      "status": "wartość grupowa poLCA",
       "use_for": [
         "MMA",
         "beton",
@@ -129,14 +129,14 @@
       "value": 4,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "wartość grupowa POLCA",
+      "status": "wartość grupowa poLCA",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "benchmark ITB-EPD 707 Trzuskawica A1-A3 = 3.27 kg CO2e/t, EPD kruszyw, POLCA",
+      "basis": "benchmark ITB-EPD 707 Trzuskawica A1-A3 = 3.27 kg CO2e/t, EPD kruszyw, poLCA",
       "replace_with": "EPD kopalni lub dane zakładowe"
     },
     {
@@ -146,14 +146,14 @@
       "value": 4.5,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "wartość grupowa POLCA",
+      "status": "wartość grupowa poLCA",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "EPD kruszyw, ÖKOBAUDAT, POLCA, dane geologiczne",
+      "basis": "EPD kruszyw, ÖKOBAUDAT, poLCA, dane geologiczne",
       "replace_with": "EPD kopalni lub dane zakładowe"
     },
     {
@@ -163,14 +163,14 @@
       "value": 3.5,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "wartość domyślna POLCA",
+      "status": "wartość domyślna poLCA",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "EPD kruszyw naturalnych, ÖKOBAUDAT, POLCA",
+      "basis": "EPD kruszyw naturalnych, ÖKOBAUDAT, poLCA",
       "replace_with": "EPD kopalni, dane płukania/sortowania i transportu"
     },
     {
@@ -180,7 +180,7 @@
       "value": 30,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "status": "konserwatywna wartość POLCA",
+      "status": "konserwatywna wartość poLCA",
       "use_for": [
         "MMA"
       ],
@@ -194,7 +194,7 @@
       "value": 3,
       "unit": "kg CO2e/t",
       "module": "A1/A3",
-      "status": "wartość procesowa POLCA",
+      "status": "wartość procesowa poLCA",
       "use_for": [
         "MMA",
         "roboty drogowe"
@@ -209,13 +209,13 @@
       "value": 0.45,
       "unit": "kg CO2e/kg",
       "module": "A5",
-      "status": "wartość sektorowa POLCA",
+      "status": "wartość sektorowa poLCA",
       "use_for": [
         "emulsje asfaltowe",
         "MMA",
         "roboty drogowe"
       ],
-      "basis": "model referencyjny POLCA, lepiszcze i scenariusz wbudowania",
+      "basis": "model referencyjny poLCA, lepiszcze i scenariusz wbudowania",
       "replace_with": "EPD producenta emulsji, zawartość lepiszcza, emulgator, dodatki, energia"
     },
     {
@@ -225,7 +225,7 @@
       "value": 883,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -242,7 +242,7 @@
       "value": 856,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -259,7 +259,7 @@
       "value": 836,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -276,7 +276,7 @@
       "value": 816,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -293,7 +293,7 @@
       "value": 762,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -310,7 +310,7 @@
       "value": 637,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -327,7 +327,7 @@
       "value": 703,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -344,7 +344,7 @@
       "value": 556,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -361,7 +361,7 @@
       "value": 374,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -378,7 +378,7 @@
       "value": 228,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD PL",
+      "status": "wartość referencyjna poLCA z EPD PL",
       "use_for": [
         "beton",
         "prefabrykaty",
@@ -395,7 +395,7 @@
       "value": 397,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna POLCA z EPD SPC/ITB 2025",
+      "status": "wartość referencyjna poLCA z EPD SPC/ITB 2025",
       "use_for": [
         "beton",
         "prefabrykaty",

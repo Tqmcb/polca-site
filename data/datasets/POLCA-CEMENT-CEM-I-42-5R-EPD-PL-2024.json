@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.4-aggregates",
     "status": "published_defaults",
     "published_at": "2026-05-03",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
   },
   "dataset": {
     "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -43,7 +43,7 @@
       "internal_report",
       "epd_preparation"
     ],
-    "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+    "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
     "source_trace": [
       {
         "name": "EPD Górażdże/Holcim PL 2024",
@@ -59,15 +59,15 @@
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+    "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
     "evidence_level": "sector_proxy",
     "source_policy": {
-      "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+      "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
       "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
       "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
     },
     "selection_mode": "mandatory_default_when_no_supplier_epd",
-    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
     "default_methodology": {
       "declared_value": "856 kg CO2e/t",
       "module": "A1-A3",

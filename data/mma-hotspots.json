@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "POLCA MMA kluczowe źródło wpływu database",
+    "title": "poLCA MMA kluczowe źródło wpływu database",
     "version": "2026.1-start",
     "status": "startowy zakres publiczny",
-    "principle": "Publiczna baza pokazuje wynikowe wartości POLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
+    "principle": "Publiczna baza pokazuje wynikowe wartości poLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
   },
   "kluczowe źródło wpływus": [
     {
@@ -11,12 +11,12 @@
       "title": "Lepiszcze asfaltowe",
       "module": "A1",
       "impact": "Najczęściej największe źródło wpływu GWP w recepcie MMA mimo niskiego udziału masowego.",
-      "use_rule": "Stosuj wartość POLCA tylko przy braku EPD producenta asfaltu lub zweryfikowanego wskaźnika dostawcy. Dla PMB, asfaltów specjalnych i dodatków wymagaj danych producenta.",
+      "use_rule": "Stosuj wartość poLCA tylko przy braku EPD producenta asfaltu lub zweryfikowanego wskaźnika dostawcy. Dla PMB, asfaltów specjalnych i dodatków wymagaj danych producenta.",
       "values": [
         {
           "name": "Asfalt drogowy / lepiszcze asfaltowe",
           "value": "450 kg CO2e/t",
-          "status": "wartość sektorowa POLCA",
+          "status": "wartość sektorowa poLCA",
           "basis": "Eurobitume LCA 4.0, background branżowy dla bitumu; transport do wytwórni liczony oddzielnie."
         },
         {
@@ -32,24 +32,24 @@
       "title": "Kruszywa",
       "module": "A1 + A2 oddzielnie",
       "impact": "Wysoki udział masowy, ale niski wskaźnik jednostkowy. Transport z kopalni często decyduje o różnicach między receptami.",
-      "use_rule": "Dla obliczeń używaj rodzaju skały i lokalizacji kopalni. EPD kopalni lub dane zakładowe zastępują wartość POLCA.",
+      "use_rule": "Dla obliczeń używaj rodzaju skały i lokalizacji kopalni. EPD kopalni lub dane zakładowe zastępują wartość poLCA.",
       "values": [
         {
           "name": "Kruszywo łamane twarde",
           "value": "5,0-6,0 kg CO2e/t",
-          "status": "wartość grupowa POLCA",
-          "basis": "Model referencyjny POLCA dla MMA, publiczne i sektorowe EPD kruszyw, ÖKOBAUDAT, literatura LCA kruszenia i przesiewania."
+          "status": "wartość grupowa poLCA",
+          "basis": "Model referencyjny poLCA dla MMA, publiczne i sektorowe EPD kruszyw, ÖKOBAUDAT, literatura LCA kruszenia i przesiewania."
         },
         {
           "name": "Kruszywo wapienne / dolomitowe",
           "value": "4,0-4,5 kg CO2e/t",
-          "status": "wartość grupowa POLCA",
-          "basis": "Benchmark: ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych A1-A3 = 3,27 kg CO2e/t; wartość POLCA pozostaje konserwatywna dla braku danych konkretnej kopalni."
+          "status": "wartość grupowa poLCA",
+          "basis": "Benchmark: ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych A1-A3 = 3,27 kg CO2e/t; wartość poLCA pozostaje konserwatywna dla braku danych konkretnej kopalni."
         },
         {
           "name": "Piasek / żwir",
           "value": "3,5 kg CO2e/t",
-          "status": "wartość domyślna POLCA",
+          "status": "wartość domyślna poLCA",
           "basis": "Niższa energochłonność niż kruszywa łamane; wymaga potwierdzenia płukania, sortowania, wilgotności i transportu."
         }
       ]
@@ -64,7 +64,7 @@
         {
           "name": "Wypełniacz wapienny do MMA",
           "value": "30 kg CO2e/t",
-          "status": "konserwatywna wartość POLCA",
+          "status": "konserwatywna wartość poLCA",
           "basis": "Benchmarki EPD dla mielonego węglanu wapnia, ÖKOBAUDAT i model referencyjny MMA; wartość obejmuje mielenie/suszenie, transport liczony oddzielnie."
         }
       ]
@@ -79,7 +79,7 @@
         {
           "name": "Przygotowanie RAP do ponownego użycia",
           "value": "3 kg CO2e/t",
-          "status": "wartość procesowa POLCA",
+          "status": "wartość procesowa poLCA",
           "basis": "Model referencyjny MMA; wartość startowa do zastąpienia danymi zakładu, gdy RAP ma istotny udział."
         }
       ]
@@ -94,7 +94,7 @@
         {
           "name": "Transport drogowy, zestaw 40 t",
           "value": "0,095 kg CO2e/tkm",
-          "status": "wartość domyślna POLCA",
+          "status": "wartość domyślna poLCA",
           "basis": "Publiczne bazy LCA/transportu i EMEP/EEA; w projekcie preferowane są dane floty, trasy i rzeczywiste obciążenie."
         }
       ]
@@ -104,7 +104,7 @@
       "title": "Gaz, paliwa i energia",
       "module": "A3",
       "impact": "Drugie główne źródło wpływu GWP w MMA: suszenie kruszywa, temperatura produkcji, wilgotność i sprawność palnika.",
-      "use_rule": "Zużycie energii i paliw powinno pochodzić z faktur, liczników albo alokacji rocznej na produkcję. Wartości POLCA są wskaźnikami do przeliczenia aktywności.",
+      "use_rule": "Zużycie energii i paliw powinno pochodzić z faktur, liczników albo alokacji rocznej na produkcję. Wartości poLCA są wskaźnikami do przeliczenia aktywności.",
       "values": [
         {
           "name": "Energia elektryczna PL",
@@ -115,13 +115,13 @@
         {
           "name": "Gaz ziemny",
           "value": "2,0 kg CO2e/m3",
-          "status": "wartość domyślna POLCA",
+          "status": "wartość domyślna poLCA",
           "basis": "Wartość przeliczeniowa do A3; zużycie gazu musi pochodzić z danych zakładu."
         },
         {
           "name": "Olej napędowy",
           "value": "3,2 kg CO2e/l",
-          "status": "wartość domyślna POLCA",
+          "status": "wartość domyślna poLCA",
           "basis": "Spalanie i upstream paliwa; stosować dla sprzętu, procesów pomocniczych i scenariuszy."
         }
       ]
@@ -137,7 +137,7 @@
           "name": "AC — beton asfaltowy",
           "value": "wynik z recepty",
           "status": "benchmark modelowy, nie dataset EPD",
-          "basis": "Najpierw skład mieszanki i dane wytwórni; POLCA uzupełnia brakujące tło dla lepiszcza, kruszyw, energii i transportu."
+          "basis": "Najpierw skład mieszanki i dane wytwórni; poLCA uzupełnia brakujące tło dla lepiszcza, kruszyw, energii i transportu."
         },
         {
           "name": "SMA / BBTM / PA",
@@ -152,11 +152,11 @@
       "title": "Zasada stosowania danych zagregowanych",
       "module": "reguła jakości danych",
       "impact": "Dane zagregowane zapewniają porównywalność i start obliczeń, ale nie powinny ukrywać braku danych producenta.",
-      "use_rule": "Kolejność stosowania: EPD/dane producenta > dane zakładu > dataset POLCA > konserwatywna wartość domyślna. Należy zachować wersję datasetu i jakość danych.",
+      "use_rule": "Kolejność stosowania: EPD/dane producenta > dane zakładu > dataset poLCA > konserwatywna wartość domyślna. Należy zachować wersję datasetu i jakość danych.",
       "values": [
         {
           "name": "Screening / oferta / pre-audyt",
-          "value": "dopuszczalne wartości POLCA",
+          "value": "dopuszczalne wartości poLCA",
           "status": "wynik roboczy",
           "basis": "Pozwala szybko policzyć emisję i wskazać główne źródła wpływu do poprawy."
         },

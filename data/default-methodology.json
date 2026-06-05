@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Metodyka wartości domyślnych POLCA dla MMA",
+    "title": "Metodyka wartości domyślnych poLCA dla MMA",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "principle": "Wartości domyślne POLCA są kontrolowanymi wartościami referencyjnymi do zastosowania wtedy, gdy brak danych pierwotnych, EPD dostawcy albo danych zakładowych zgodnych z zakresem obliczenia."
+    "principle": "Wartości domyślne poLCA są kontrolowanymi wartościami referencyjnymi do zastosowania wtedy, gdy brak danych pierwotnych, EPD dostawcy albo danych zakładowych zgodnych z zakresem obliczenia."
   },
   "methodology_framework": {
     "inspiration": "Podejście wzorowane na logice CBAM: najpierw definiuje się wyrób, ścieżkę produkcji, granice systemu, emisje bezpośrednie, emisje pośrednie i prekursory, a dopiero potem dopuszcza wartość domyślną, jeżeli brak danych rzeczywistych.",
@@ -80,7 +80,7 @@
       "1. Zweryfikowana EPD konkretnego dostawcy lub wyrobu",
       "2. Dane pierwotne klienta potwierdzone dokumentami i audytem",
       "3. Dane sektorowe lub publiczne o zgodnej granicy systemu",
-      "4. Kontrolowana wartość domyślna POLCA z oceną jakości danych"
+      "4. Kontrolowana wartość domyślna poLCA z oceną jakości danych"
     ],
     "derivation_steps": [
       "Zdefiniować wyrób, jednostkę deklarowaną i zakres obliczenia EN 15804+A2.",
@@ -176,10 +176,10 @@
         {
           "name": "Model EPD+ MMA / raport tła obliczeniowego",
           "url": "https://polca.org.pl/datasety.html",
-          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
         }
       ],
-      "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+      "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
       "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
       "audit_checks": [
         "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",

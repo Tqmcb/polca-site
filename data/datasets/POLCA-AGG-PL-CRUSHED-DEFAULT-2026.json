@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.4-aggregates",
     "status": "published_defaults",
     "published_at": "2026-05-03",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
   },
   "dataset": {
     "code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
@@ -30,10 +30,10 @@
     "technology": "Wydobycie, kruszenie i przesiewanie twardych skał magmowych lub metamorficznych przed transportem",
     "data_quality": "industry",
     "status": "published_sector_dataset",
-    "source_name": "POLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
+    "source_name": "poLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
     "source_url": "https://polca.org.pl/metodyka.html",
     "scope": "A1 produkcji kruszywa twardego. Transport z kopalni do wytwórni lub betoniarni jest odrębnym rekordem A2.",
-    "methodology_note": "Dataset obejmuje kruszywa łamane twarde, np. bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit i kwarcyt. Wartość 5,5 kg CO2e/t jest kontrolowaną wartością grupową POLCA dla braku EPD kopalni lub danych zakładowych. Różnice między skałami wynikają głównie z energochłonności kruszenia, przesiewania, płukania, frakcji i organizacji zakładu.",
+    "methodology_note": "Dataset obejmuje kruszywa łamane twarde, np. bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit i kwarcyt. Wartość 5,5 kg CO2e/t jest kontrolowaną wartością grupową poLCA dla braku EPD kopalni lub danych zakładowych. Różnice między skałami wynikają głównie z energochłonności kruszenia, przesiewania, płukania, frakcji i organizacji zakładu.",
     "limitations": "Nie zastępuje danych konkretnej kopalni. Nie rozróżnia dokładnej frakcji, zużycia energii, materiałów wybuchowych, płukania, wilgotności ani transportu A2.",
     "preferred_replacement": "EPD konkretnej kopalni, zweryfikowane dane energii i paliw kopalni albo dataset dla właściwej skały i frakcji.",
     "publication_status": "published_sector_dataset",
@@ -77,10 +77,10 @@
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość grupowa POLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+    "open_data_note": "Wartość grupowa poLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
     "evidence_level": "sector_proxy",
     "source_policy": {
-      "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+      "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
       "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
       "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
     },

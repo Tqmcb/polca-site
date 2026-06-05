@@ -1,11 +1,11 @@
 {
   "meta": {
-    "title": "POLCA policy for using existing EPD data",
+    "title": "poLCA policy for using existing EPD data",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "purpose": "Zasady wykorzystywania istniejących deklaracji EPD jako źródła danych dla POLCA, ocen środowiskowych."
+    "purpose": "Zasady wykorzystywania istniejących deklaracji EPD jako źródła danych dla poLCA, ocen środowiskowych."
   },
-  "principle": "Istniejące, zweryfikowane EPD są kluczowym źródłem danych dla POLCA. EPD konkretnego dostawcy może zasilać wynik klienta, jeżeli odpowiada rzeczywiście użytemu produktowi, jednostce, modułom, geografii i wersji EN 15804/cPCR. EPD innych producentów mogą służyć jako benchmark, statystyka kategorii albo źródło do wyprowadzenia wartości domyślnej, ale nie mogą automatycznie zastąpić danych dostawcy bez uzasadnienia.",
+  "principle": "Istniejące, zweryfikowane EPD są kluczowym źródłem danych dla poLCA. EPD konkretnego dostawcy może zasilać wynik klienta, jeżeli odpowiada rzeczywiście użytemu produktowi, jednostce, modułom, geografii i wersji EN 15804/cPCR. EPD innych producentów mogą służyć jako benchmark, statystyka kategorii albo źródło do wyprowadzenia wartości domyślnej, ale nie mogą automatycznie zastąpić danych dostawcy bez uzasadnienia.",
   "source_registers": [
     {
       "name": "EPD Polska / EPDportal.org",
@@ -43,7 +43,7 @@
       "name": "EPD sektorowa lub stowarzyszeniowa",
       "priority": 3,
       "allowed_use": "Dane sektorowe, benchmark albo tymczasowa wartość domyślna, jeżeli zakres technologii i geografii jest adekwatny.",
-      "audit_requirement": "Wymagane sprawdzenie, czy EPD reprezentuje sektor, technologię, geografię i typ produktu zgodny z użyciem w POLCA."
+      "audit_requirement": "Wymagane sprawdzenie, czy EPD reprezentuje sektor, technologię, geografię i typ produktu zgodny z użyciem w poLCA."
     },
     {
       "code": "non_comparable_epd_reference",
@@ -94,7 +94,7 @@
     "Jeżeli wynik pochodzi z publicznej bazy EPD przez format danych, zachowaj wymagania atrybucji i warunki korzystania z danej bazy."
   ],
   "default_value_method": {
-    "rule": "Wartości domyślne POLCA mogą być wyprowadzane z istniejących EPD tylko po filtracji porównywalnych deklaracji.",
+    "rule": "Wartości domyślne poLCA mogą być wyprowadzane z istniejących EPD tylko po filtracji porównywalnych deklaracji.",
     "minimum_filter": [
       "ta sama rodzina wyrobu",
       "ta sama albo kompatybilna jednostka deklarowana",

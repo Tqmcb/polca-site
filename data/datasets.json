@@ -1,7 +1,7 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "POLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
     "version": "2026.6-mma",
     "status": "published_defaults",
     "published_at": "2026-05-11",
@@ -13,10 +13,10 @@
       "ISO 14025",
       "CPR 2024/3110 readiness"
     ],
-    "use_rule": "Dane referencyjne POLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
+    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety POLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord POLCA dla składników kluczowych, gdy są dostępne.",
+    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne.",
     "dpp_readiness": {
       "format": "JSON-LD ILCD-compatible",
       "export_formats": [
@@ -69,7 +69,7 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Dane publiczne KOBiZE; publikacja POLCA nie zastępuje oryginalnego dokumentu źródłowego.",
+      "open_data_note": "Dane publiczne KOBiZE; publikacja poLCA nie zastępuje oryginalnego dokumentu źródłowego.",
       "evidence_level": "official_public",
       "source_policy": {},
       "selection_mode": "mandatory_reference_input",
@@ -103,7 +103,7 @@
       "publication_status": "published_polca_model",
       "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
       "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-      "scope": "Referencyjny wskaźnik POLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy. Nie jest samodzielnym wynikiem A1-A3 produktu; przypisuje się go do modułu EN 15804+A2, w którym energia jest zużywana.",
+      "scope": "Referencyjny wskaźnik poLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy. Nie jest samodzielnym wynikiem A1-A3 produktu; przypisuje się go do modułu EN 15804+A2, w którym energia jest zużywana.",
       "methodology_note": "Wynik 0,599 kg CO2e/kWh powstaje z sumy: EF_oper 0,528, WTT_CH4 0,057, WTT_fuels 0,008 i WTT_OZE 0,006 kg CO2e/kWh. Dane wejściowe pochodzą z KOBiZE, PSE, WUG, GUS i EEA; przeliczenie CO2e bazuje na IPCC AR6/EF 3.1 oraz JEC WTT v5. Jest to model jawny, przeznaczony do konsultacji i walidacji zewnętrznej.",
       "limitations": "Nie jest oficjalnym wskaźnikiem państwowym. Element WTT_OZE opiera się na wartości referencyjnej z bazy licencjonowanej, dlatego publikowany jest wynik i metodyka, a nie pełny zamknięty inwentarz. Finalna EPD wymaga potwierdzenia aktualnego roku danych i zasad energii kontraktowej.",
       "preferred_replacement": "Zweryfikowane dane dostawcy energii albo aktualizacja roczna po publikacji KOBiZE/PSE/WUG/GUS.",
@@ -230,7 +230,7 @@
       "technology": "Spalanie oleju napędowego w maszynach i transporcie pomocniczym",
       "data_quality": "industry",
       "status": "published_polca_default",
-      "source_name": "POLCA 2026, wartość domyślna dla oleju napędowego",
+      "source_name": "poLCA 2026, wartość domyślna dla oleju napędowego",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "Współczynnik dla litra oleju napędowego stosowany w scenariuszach wbudowania, frezowania lub przetwarzania RAP.",
       "methodology_note": "Zbiór danych służy do scenariuszy, w których znane jest zużycie paliwa na 1 t albo na operację technologiczną. W EPD jako lepsze źródło stosuje się dane ze zużycia sprzętu lub potwierdzony wskaźnik paliwowy dla istotnego udziału w wyniku.",
@@ -268,7 +268,7 @@
       "open_data_note": "Wartość domyślna/zastępcza. Nie reprezentuje danych konkretnego dostawcy; służy do jednolitych zasad liczenia, gdy brak lepszego źródła.",
       "evidence_level": "conservative_default",
       "source_policy": {
-        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy POLCA",
+        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy poLCA",
         "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
         "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
       },
@@ -295,7 +295,7 @@
       "technology": "Spalanie gazu ziemnego w źródle ciepła wytwórni",
       "data_quality": "industry",
       "status": "published_polca_default",
-      "source_name": "POLCA 2026, wartość domyślna dla gazu ziemnego",
+      "source_name": "poLCA 2026, wartość domyślna dla gazu ziemnego",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "Współczynnik dla m3 gazu ziemnego zużytego w produkcji MMA, suszeniu kruszywa lub podgrzewaniu procesu.",
       "methodology_note": "Zbiór danych jest kontrolowaną wartością domyślną dla gazu ziemnego, stosowaną gdy producent zna zużycie gazu, ale nie posiada zweryfikowanego współczynnika dostawcy. Zużycie gazu pochodzi z faktur, liczników albo rocznej alokacji na wolumen produkcji.",
@@ -333,7 +333,7 @@
       "open_data_note": "Wartość domyślna/zastępcza. Nie reprezentuje danych konkretnego dostawcy; służy do jednolitych zasad liczenia, gdy brak lepszego źródła.",
       "evidence_level": "conservative_default",
       "source_policy": {
-        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy POLCA",
+        "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy poLCA",
         "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
         "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
       },
@@ -362,7 +362,7 @@
       "status": "published_polca_default",
       "source_name": "ÖKOBAUDAT / EMEP-EEA jako publiczne punkty odniesienia dla transportu",
       "source_url": "https://www.oekobaudat.de/",
-      "scope": "Współczynnik dla transportu liczony jako tkm. POLCA może przeliczyć masę ładunku i odległość z lokalizacji dostawcy oraz wytwórni.",
+      "scope": "Współczynnik dla transportu liczony jako tkm. poLCA może przeliczyć masę ładunku i odległość z lokalizacji dostawcy oraz wytwórni.",
       "methodology_note": "Transport jest liczony jako tkm z masy ładunku i odległości. Publiczne bazy służą jako punkt odniesienia, ale dla klienta preferowane są dane floty, trasy, ładowności i puste przebiegi.",
       "limitations": "Nie rozróżnia normy EURO, spalania konkretnej floty, pustych przebiegów ani rodzaju drogi. Dla finalnej EPD wymaga potwierdzenia założeń transportowych.",
       "preferred_replacement": "Dane floty, dokumenty WZ/CMR, potwierdzona trasa i rzeczywiste spalanie.",
@@ -419,10 +419,10 @@
       "technology": "Wydobycie, kruszenie i przesiewanie twardych skał magmowych lub metamorficznych przed transportem",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
+      "source_name": "poLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "A1 produkcji kruszywa twardego. Transport z kopalni do wytwórni lub betoniarni jest odrębnym rekordem A2.",
-      "methodology_note": "Zbiór danych obejmuje kruszywa łamane twarde, np. bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit i kwarcyt. Wartość 5,5 kg CO2e/t jest kontrolowaną wartością grupową POLCA dla braku EPD kopalni lub danych zakładowych. Różnice między skałami wynikają głównie z energochłonności kruszenia, przesiewania, płukania, frakcji i organizacji zakładu.",
+      "methodology_note": "Zbiór danych obejmuje kruszywa łamane twarde, np. bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit i kwarcyt. Wartość 5,5 kg CO2e/t jest kontrolowaną wartością grupową poLCA dla braku EPD kopalni lub danych zakładowych. Różnice między skałami wynikają głównie z energochłonności kruszenia, przesiewania, płukania, frakcji i organizacji zakładu.",
       "limitations": "Nie zastępuje danych konkretnej kopalni. Nie rozróżnia dokładnej frakcji, zużycia energii, materiałów wybuchowych, płukania, wilgotności ani transportu A2.",
       "preferred_replacement": "EPD konkretnej kopalni, zweryfikowane dane energii i paliw kopalni albo zbiór danych dla właściwej skały i frakcji.",
       "publication_status": "published_sector_dataset",
@@ -466,10 +466,10 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość grupowa POLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "open_data_note": "Wartość grupowa poLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
         "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
         "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
       },
@@ -539,10 +539,10 @@
       "technology": "Wydobycie, kruszenie i przesiewanie kruszywa wapiennego przed transportem",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość grupowa dla kruszyw wapiennych",
+      "source_name": "poLCA 2026, wartość grupowa dla kruszyw wapiennych",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "A1 produkcji kruszywa wapiennego. Transport z kopalni do zakładu klienta jest liczony oddzielnie w A2.",
-      "methodology_note": "Zbiór danych oparto na koszyku źródeł dla kruszyw węglanowych. Kluczowym punktem kontrolnym jest ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych: 1 t, A1-A3, GWP total 3,27 kg CO2e/t. POLCA stosuje 4,0 kg CO2e/t jako wartość grupową, aby uwzględnić różnice kopalni, frakcji, płukania i przeróbki przy braku danych konkretnego dostawcy.",
+      "methodology_note": "Zbiór danych oparto na koszyku źródeł dla kruszyw węglanowych. Kluczowym punktem kontrolnym jest ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych: 1 t, A1-A3, GWP total 3,27 kg CO2e/t. poLCA stosuje 4,0 kg CO2e/t jako wartość grupową, aby uwzględnić różnice kopalni, frakcji, płukania i przeróbki przy braku danych konkretnego dostawcy.",
       "limitations": "Nie zastępuje EPD Trzuskawica ani EPD innej konkretnej kopalni. Nie obejmuje transportu A2 do wytwórni/betoniarni.",
       "preferred_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
       "publication_status": "published_sector_dataset",
@@ -586,10 +586,10 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość grupowa POLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "open_data_note": "Wartość grupowa poLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
         "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
         "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
       },
@@ -628,7 +628,7 @@
             "role": "kontrola rzędu wielkości LCA"
           }
         ],
-        "rationale": "Wapień ma zwykle niższą energochłonność kruszenia niż skały bardzo twarde, ale wynik zależy od zakładu i frakcji. Wartość POLCA jest wartością grupową, nie wynikiem konkretnej kopalni.",
+        "rationale": "Wapień ma zwykle niższą energochłonność kruszenia niż skały bardzo twarde, ale wynik zależy od zakładu i frakcji. Wartość poLCA jest wartością grupową, nie wynikiem konkretnej kopalni.",
         "required_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
         "audit_checks": [
           "kopalnia",
@@ -659,7 +659,7 @@
       "technology": "Wydobycie, kruszenie i przesiewanie kruszywa dolomitowego przed transportem",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość grupowa dla kruszyw dolomitowych",
+      "source_name": "poLCA 2026, wartość grupowa dla kruszyw dolomitowych",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "A1 produkcji kruszywa dolomitowego. Transport do zakładu klienta jest liczony oddzielnie w A2.",
       "methodology_note": "Zbiór danych służy do mapowania kruszyw dolomitowych, gdy brak EPD kopalni lub danych zakładowych. Wartość 4,5 kg CO2e/t rozdziela dolomit od wapienia i twardych skał magmowych, zachowując konserwatywny charakter dla braku danych dostawcy.",
@@ -706,10 +706,10 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość grupowa POLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "open_data_note": "Wartość grupowa poLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
         "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
         "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
       },
@@ -779,7 +779,7 @@
       "technology": "Pozyskanie, sortowanie i ewentualne płukanie kruszywa naturalnego przed transportem",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość grupowa dla kruszyw naturalnych",
+      "source_name": "poLCA 2026, wartość grupowa dla kruszyw naturalnych",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "A1 produkcji kruszywa naturalnego. Transport do wytwórni, betoniarni lub budowy jest odrębnym rekordem A2/A4.",
       "methodology_note": "Zbiór danych obejmuje piasek, żwir i pospółkę, gdy brak danych konkretnego źródła. Kruszywa naturalne zwykle wymagają mniej energochłonnego kruszenia niż kruszywa łamane, ale wynik zależy od płukania, sortowania, wilgotności i lokalizacji złoża.",
@@ -826,10 +826,10 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość grupowa POLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+      "open_data_note": "Wartość grupowa poLCA. Nie reprezentuje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset POLCA > wartość grupowa POLCA",
+        "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
         "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
         "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
       },
@@ -924,7 +924,7 @@
       "open_data_note": "Wartość domyślna/zastępcza. Nie reprezentuje danych konkretnego dostawcy; służy do jednolitych zasad liczenia, gdy brak lepszego źródła.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD dostawcy > Eurobitume background > konserwatywny proxy POLCA",
+        "priority": "EPD dostawcy > Eurobitume background > konserwatywny proxy poLCA",
         "when_allowed": "Brak EPD dostawcy lub brak danych konkretnej rafinerii; wynik oznaczony jako dane branżowe/proxy.",
         "auditor_note": "Sprawdzić typ lepiszcza, producenta, lokalizację dostawy, dokument dostawcy i wpływ lepiszcza na kluczowe źródła wpływu."
       },
@@ -975,7 +975,7 @@
       "technology": "Emulsja asfaltowa stosowana jako warstwa sczepna",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
+      "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "Współczynnik dla kg emulsji stosowanej w scenariuszu wbudowania A5.",
       "methodology_note": "Zbiór danych jest kontrolowaną wartością domyślną dla scenariuszy wbudowania, gdy znana jest ilość emulsji na 1 t mieszanki lub na powierzchnię. Dla istotnego udziału emulsji pierwszeństwo mają dane producenta.",
@@ -991,7 +991,7 @@
       "quality_rule": "Rekord otrzymuje status pozycji istotnej dla jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
       "source_trace": [
         {
-          "name": "POLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
+          "name": "poLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
           "url": "https://polca.org.pl/metodyka.html",
           "role": "source"
         }
@@ -1022,10 +1022,10 @@
       "technology": "Produkcja wypełniacza wapiennego przed transportem",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
+      "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "A1 produkcji wypełniacza. Transport do wytwórni liczyć oddzielnie.",
-      "methodology_note": "Zbiór danych jest wartością domyślną dla wypełniacza wapiennego w mieszankach mineralno-asfaltowych. Dla finalnej EPD preferowane są dane dostawcy, szczególnie gdy wypełniacz ma nietypowy udział lub pochodzi z procesu o innej energochłonności. Podstawa wartości domyślnej: Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+      "methodology_note": "Zbiór danych jest wartością domyślną dla wypełniacza wapiennego w mieszankach mineralno-asfaltowych. Dla finalnej EPD preferowane są dane dostawcy, szczególnie gdy wypełniacz ma nietypowy udział lub pochodzi z procesu o innej energochłonności. Podstawa wartości domyślnej: Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
       "limitations": "Nie rozróżnia technologii mielenia, suszenia, pochodzenia surowca ani transportu.",
       "preferred_replacement": "EPD dostawcy wypełniacza lub zweryfikowane dane procesu.",
       "publication_status": "published_sector_dataset",
@@ -1058,7 +1058,7 @@
         {
           "name": "Model EPD MMA / background report",
           "url": "https://polca.org.pl/datasety.html",
-          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t",
+          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t",
           "type": "methodology_source"
         }
       ],
@@ -1066,7 +1066,7 @@
       "open_data_note": "Wartość domyślna/zastępcza. Nie reprezentuje danych konkretnego dostawcy; służy do jednolitych zasad liczenia, gdy brak lepszego źródła.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "dane kopalni lub EPD > regionalny dataset POLCA > proxy publiczne",
+        "priority": "dane kopalni lub EPD > regionalny dataset poLCA > proxy publiczne",
         "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
         "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
       },
@@ -1102,10 +1102,10 @@
           {
             "name": "Model EPD MMA / background report",
             "url": "https://polca.org.pl/datasety.html",
-            "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość POLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+            "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
           }
         ],
-        "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. POLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+        "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
         "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
         "audit_checks": [
           "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",
@@ -1132,7 +1132,7 @@
       "technology": "Kruszenie, przesiewanie i przygotowanie RAP",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "POLCA 2026, wartość sektorowa dla przetwarzania RAP",
+      "source_name": "poLCA 2026, wartość sektorowa dla przetwarzania RAP",
       "source_url": "https://polca.org.pl/metodyka.html",
       "scope": "Przygotowanie RAP do wykorzystania w mieszance. Moduł zależy od granicy systemu i zasad c-PCR/wytycznych EPD Polska.",
       "methodology_note": "Zbiór danych służy do modelowania dodatkowego procesu przygotowania destruktu asfaltowego. W EPD rekord pokazuje status RAP jako materiału wtórnego oraz zasady alokacji i modułu D. Podstawa wartości domyślnej: RAP wymaga oddzielnej oceny statusu odpadu/produktu i zasad modułu D.",
@@ -1158,7 +1158,7 @@
       "open_data_note": "Wartość domyślna/zastępcza. Nie reprezentuje danych konkretnego dostawcy; służy do jednolitych zasad liczenia, gdy brak lepszego źródła.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "dane kopalni lub EPD > regionalny dataset POLCA > proxy publiczne",
+        "priority": "dane kopalni lub EPD > regionalny dataset poLCA > proxy publiczne",
         "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
         "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
       },
@@ -1256,7 +1256,7 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Zestaw kontrolowanych wartości domyślnych POLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Zestaw kontrolowanych wartości domyślnych poLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset domyślny POLCA-MMA > proxy sektorowe",
@@ -1325,7 +1325,7 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
@@ -1395,7 +1395,7 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
@@ -1465,7 +1465,7 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna POLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie reprezentuje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
@@ -1507,7 +1507,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Górażdże/Holcim PL 2024",
@@ -1523,15 +1523,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "883 kg CO2e/t",
         "module": "A1-A3",
@@ -1600,7 +1600,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Górażdże/Holcim PL 2024",
@@ -1616,15 +1616,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "856 kg CO2e/t",
         "module": "A1-A3",
@@ -1693,7 +1693,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Ożarów/Dyckerhoff PL 2024",
@@ -1709,15 +1709,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "836 kg CO2e/t",
         "module": "A1-A3",
@@ -1786,7 +1786,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Ożarów PL 2024",
@@ -1802,15 +1802,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "816 kg CO2e/t",
         "module": "A1-A3",
@@ -1879,7 +1879,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Górażdże PL 2024",
@@ -1895,15 +1895,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "762 kg CO2e/t",
         "module": "A1-A3",
@@ -1972,7 +1972,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Holcim PL 2024",
@@ -1988,15 +1988,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "637 kg CO2e/t",
         "module": "A1-A3",
@@ -2065,7 +2065,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Ożarów PL 2024",
@@ -2081,15 +2081,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "703 kg CO2e/t",
         "module": "A1-A3",
@@ -2158,7 +2158,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Ożarów PL 2024",
@@ -2174,15 +2174,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "556 kg CO2e/t",
         "module": "A1-A3",
@@ -2251,7 +2251,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Dyckerhoff PL 2024",
@@ -2267,15 +2267,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "374 kg CO2e/t",
         "module": "A1-A3",
@@ -2344,7 +2344,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
           "name": "EPD Dyckerhoff PL 2024",
@@ -2360,15 +2360,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD PL > sektorowy kontekst SPC/EY",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna POLCA dla typu CEM.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
       "default_methodology": {
         "declared_value": "228 kg CO2e/t",
         "module": "A1-A3",
@@ -2427,7 +2427,7 @@
       "source_name": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
       "scope": "Wartość A1-A3 dla 1 t cementu CEM IV produkowanego w Polsce, przed transportem do zakładu klienta. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Zbiór danych oparto na zweryfikowanej EPD Typu III Stowarzyszenia Producentów Cementu / ITB z 2025 r. EPD podaje ślad węglowy CEM IV równy 0,397 t CO2/t dla A1-A3. W tej samej tabeli podano także wartość globalnego ocieplenia brutto 510 kg CO2e/t jako informację kontrolną; główna wartość POLCA stosuje ślad węglowy wskazany w EPD.",
+      "methodology_note": "Zbiór danych oparto na zweryfikowanej EPD Typu III Stowarzyszenia Producentów Cementu / ITB z 2025 r. EPD podaje ślad węglowy CEM IV równy 0,397 t CO2/t dla A1-A3. W tej samej tabeli podano także wartość globalnego ocieplenia brutto 510 kg CO2e/t jako informację kontrolną; główna wartość poLCA stosuje ślad węglowy wskazany w EPD.",
       "limitations": "Jest to średnia krajowa dla CEM IV, a nie EPD konkretnego cementu ani konkretnej cementowni. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani wpływu konkretnej recepty betonu.",
       "preferred_replacement": "EPD konkretnego cementu CEM IV, wskaźnik dostawcy albo zweryfikowane dane cementowni dla użytego cementu.",
       "publication_status": "published_reference_dataset",
@@ -2437,7 +2437,7 @@
         "internal_report",
         "epd_preparation"
       ],
-      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu CEM IV, EPD dostawcy ma pierwszeństwo przed średnią krajową POLCA.",
+      "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu CEM IV, EPD dostawcy ma pierwszeństwo przed średnią krajową poLCA.",
       "source_trace": [
         {
           "name": "EPD SPC/ITB 2025 — Cementy CEM I-CEM V produkowane w Polsce",
@@ -2453,15 +2453,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/metodyka.html",
-      "open_data_note": "Wartość referencyjna POLCA na podstawie zweryfikowanej EPD sektorowej SPC/ITB. Dla konkretnego dostawcy pierwszeństwo ma EPD tego cementu albo potwierdzony wskaźnik dostawcy.",
+      "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanej EPD sektorowej SPC/ITB. Dla konkretnego dostawcy pierwszeństwo ma EPD tego cementu albo potwierdzony wskaźnik dostawcy.",
       "evidence_level": "sector_proxy",
       "source_policy": {
-        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość POLCA z EPD SPC/ITB 2025",
+        "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD SPC/ITB 2025",
         "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego CEM IV; wynik oznaczony jako wartość referencyjna średnia krajowa.",
         "auditor_note": "Sprawdzić typ CEM IV, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
       "selection_mode": "mandatory_default_when_no_supplier_epd",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy dla CEM IV, stosowana jest wartość referencyjna POLCA dla średniego CEM IV produkowanego w Polsce.",
+      "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy dla CEM IV, stosowana jest wartość referencyjna poLCA dla średniego CEM IV produkowanego w Polsce.",
       "default_methodology": {
         "declared_value": "397 kg CO2e/t; wartość brutto w tabeli EPD: 510 kg CO2e/t",
         "module": "A1-A3",
@@ -2587,7 +2587,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -2694,7 +2694,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -2801,7 +2801,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -2908,7 +2908,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -3015,7 +3015,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -3122,7 +3122,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -3229,7 +3229,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -3336,7 +3336,7 @@
             "role": "wartość domyślna CBAM dla okresu definitywnego"
           }
         ],
-        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W POLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
+        "rationale": "Podejście CBAM wymusza konserwatywną wartość domyślną, gdy brak wiarygodnych danych rzeczywistych. W poLCA ten rekord jest kontrolą jakości danych, a nie zamiennikiem danych produktu.",
         "required_replacement": "dane rzeczywiste producenta, EPD cementu albo zweryfikowane dane instalacji",
         "audit_checks": [
           "kod CN",
@@ -3362,15 +3362,15 @@
     "version": "2026.6-mma",
     "updated_at": "2026-05-11",
     "status": "published_defaults",
-    "methodology_note": "Publiczny katalog gotowych datasetów referencyjnych POLCA. Dane dostawcy i zweryfikowane EPD mają pierwszeństwo dla składników kluczowych. Wartość domyślna jest kontrolowanym rekordem zastępczym przy braku danych producenta.",
+    "methodology_note": "Publiczny katalog gotowych datasetów referencyjnych poLCA. Dane dostawcy i zweryfikowane EPD mają pierwszeństwo dla składników kluczowych. Wartość domyślna jest kontrolowanym rekordem zastępczym przy braku danych producenta.",
     "evidence_levels": {
       "official_public": "Dane opublikowane przez instytucję publiczną; zwykle surowy wskaźnik lub parametr wejściowy.",
-      "polca_model": "Wskaźnik obliczony modelem POLCA z publicznych źródeł i jawnych przeliczników.",
-      "sector_proxy": "Dane sektorowe POLCA stosowane przy braku danych dostawcy.",
-      "conservative_default": "Kontrolowana wartość domyślna POLCA stosowana przy braku danych producenta; dla składników kluczowych wymaga potwierdzenia producenta, EPD albo dokumentu klienta."
+      "polca_model": "Wskaźnik obliczony modelem poLCA z publicznych źródeł i jawnych przeliczników.",
+      "sector_proxy": "Dane sektorowe poLCA stosowane przy braku danych dostawcy.",
+      "conservative_default": "Kontrolowana wartość domyślna poLCA stosowana przy braku danych producenta; dla składników kluczowych wymaga potwierdzenia producenta, EPD albo dokumentu klienta."
     },
     "calculation_policy": {
-      "principle": "Wskaźniki emisyjne są narzucane przez kontrolowany katalog POLCA, a nie wybierane dowolnie przez użytkownika.",
+      "principle": "Wskaźniki emisyjne są narzucane przez kontrolowany katalog poLCA, a nie wybierane dowolnie przez użytkownika.",
       "user_can_choose": [
         "rzeczywisty dostawca",
         "lokalizacja dostawcy",
@@ -3386,9 +3386,9 @@
       ],
       "hierarchy": [
         "1. Zweryfikowane dane pierwotne lub EPD konkretnego dostawcy",
-        "2. Obowiązkowy dataset POLCA dla danej kategorii i geografii",
-        "3. Publiczny/backgroundowy dataset sektorowy wskazany przez POLCA",
-        "4. Kontrolowana wartość domyślna POLCA z jawną oceną jakości danych"
+        "2. Obowiązkowy dataset poLCA dla danej kategorii i geografii",
+        "3. Publiczny/backgroundowy dataset sektorowy wskazany przez poLCA",
+        "4. Kontrolowana wartość domyślna poLCA z jawną oceną jakości danych"
       ],
       "effect": "Dzięki temu wszyscy klienci liczą według tych samych zasad; różnice wynikają z realnych danych aktywności, dostawców i transportu, a nie z arbitralnego wyboru korzystniejszego wskaźnika."
     }

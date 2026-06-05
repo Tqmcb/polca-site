@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "POLCA LCI/LCIA calculation data contract",
+    "title": "poLCA LCI/LCIA calculation data contract",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "purpose": "Ujednolicony kontrakt danych LCI/LCIA POLCA dla mieszanek mineralno-asfaltowych, betonu i kolejnych wyrobów budowlanych."
+    "purpose": "Ujednolicony kontrakt danych LCI/LCIA poLCA dla mieszanek mineralno-asfaltowych, betonu i kolejnych wyrobów budowlanych."
   },
-  "principle": "POLCA nie jest listą luźnych wskaźników emisji. Rdzeniem POLCA jest baza LCI, czyli kontrolowana inwentaryzacja przepływów: surowców, energii, paliw, transportu, odpadów i emisji. Warstwa LCIA przelicza LCI na wskaźniki środowiskowe, np. GWP. Aplikacja publikuje pakiet danych obliczeniowych: przepływy LCI, wynik LCIA, zakres modułu, źródło, cytowanie, jakość danych, ograniczenia i regułę zastąpienia.",
-  "controlled_default_rule": "Wartości domyślne POLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników. Dane kluczowe dla wyniku pochodzą od producentów, dostawców, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+  "principle": "poLCA nie jest listą luźnych wskaźników emisji. Rdzeniem poLCA jest baza LCI, czyli kontrolowana inwentaryzacja przepływów: surowców, energii, paliw, transportu, odpadów i emisji. Warstwa LCIA przelicza LCI na wskaźniki środowiskowe, np. GWP. Aplikacja publikuje pakiet danych obliczeniowych: przepływy LCI, wynik LCIA, zakres modułu, źródło, cytowanie, jakość danych, ograniczenia i regułę zastąpienia.",
+  "controlled_default_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników. Dane kluczowe dla wyniku pochodzą od producentów, dostawców, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
   "data_layers": [
     {
       "code": "LCI",
@@ -20,7 +20,7 @@
     },
     {
       "code": "calculation_package",
-      "name": "Pakiet obliczeniowy POLCA",
+      "name": "Pakiet obliczeniowy poLCA",
       "role": "Warstwa aplikacyjna: zestaw LCI, wyników LCIA, źródeł, cytowań, jakości danych i flag audytowych gotowy dla OCL, raportu tła i EPD+."
     }
   ],
@@ -63,7 +63,7 @@
         "jawne pola niepewności, specyficzności i właściwości funkcjonalnych produktu",
         "linkowanie do źródła i atrybucja przy użyciu danych z zewnętrznej bazy"
       ],
-      "do_not_copy": "Dane EC3 wymagają właściwej atrybucji i kontroli uprawnień; w POLCA traktować je jako źródło odniesienia albo integrację, nie jako własną bazę bez zasad."
+      "do_not_copy": "Dane EC3 wymagają właściwej atrybucji i kontroli uprawnień; w poLCA traktować je jako źródło odniesienia albo integrację, nie jako własną bazę bez zasad."
     },
     {
       "name": "SCA / Athena Ready Mixed Concrete LCA Calculator",
@@ -144,7 +144,7 @@
     }
   ],
   "public_default_database_method": {
-    "purpose": "Budowa polskich datasetów LCI i wynikowych wartości domyślnych LCIA POLCA z publicznych baz i EPD wtedy, gdy brak danych pierwotnych lub EPD dostawcy.",
+    "purpose": "Budowa polskich datasetów LCI i wynikowych wartości domyślnych LCIA poLCA z publicznych baz i EPD wtedy, gdy brak danych pierwotnych lub EPD dostawcy.",
     "candidate_sources": [
       "ÖKOBAUDAT",
       "Boverket Klimatdatabas",
@@ -159,12 +159,12 @@
     "normalisation_rules": [
       "używaj tylko rekordów z jawną jednostką, modułem, datą, geografią i źródłem",
       "nie mieszaj EN 15804+A1 i EN 15804+A2 w jednym wskaźniku",
-      "normalizuj przepływy LCI i wynik LCIA do jednostki deklarowanej POLCA, np. 1 t albo 1 m3",
+      "normalizuj przepływy LCI i wynik LCIA do jednostki deklarowanej poLCA, np. 1 t albo 1 m3",
       "oddziel A1-A3 od modułów scenariuszowych A4, A5, C i D",
       "jeżeli rekord jest zagregowaną EPD i nie ujawnia energii lub transportu, nie koryguj go sztucznie do Polski; traktuj jako benchmark",
-      "jeżeli proces tła ma rozdzielne dane energii, paliwa albo transportu, przelicz te elementy przez polskie czynniki POLCA/KOBiZE/PSE"
+      "jeżeli proces tła ma rozdzielne dane energii, paliwa albo transportu, przelicz te elementy przez polskie czynniki poLCA/KOBiZE/PSE"
     ],
-    "default_value_rule": "Wartość domyślna LCIA POLCA wynika z jawnego datasetu LCI albo z porównywalnych EPD. EPD bez pełnego LCI działa jako benchmark kategorii, a nie jako dowolny zamiennik danych dostawcy. Wartość domyślna jest konserwatywna: stosuje medianę z porównywalnych rekordów powiększoną o jawny narzut albo percentyl 75, o ile cPCR lub metodyka programu nie narzuca innej reguły.",
+    "default_value_rule": "Wartość domyślna LCIA poLCA wynika z jawnego datasetu LCI albo z porównywalnych EPD. EPD bez pełnego LCI działa jako benchmark kategorii, a nie jako dowolny zamiennik danych dostawcy. Wartość domyślna jest konserwatywna: stosuje medianę z porównywalnych rekordów powiększoną o jawny narzut albo percentyl 75, o ile cPCR lub metodyka programu nie narzuca innej reguły.",
     "precedent": [
       "Boverket stosuje konserwatywne dane generyczne dla produktów budowlanych, około 25% powyżej średniej, aby zachęcać do użycia danych specyficznych.",
       "NMD Category 3 stosuje generyczne dane dla braku danych produktowych oraz narzut 30% w systemie holenderskim."
@@ -180,12 +180,12 @@
     {
       "step": 2,
       "name": "Mapowanie składników",
-      "rule": "Przypisz każdy składnik recepty do material_role i product_group w POLCA, np. bitum drogowy, kruszywo łamane, kruszywo naturalne, filler wapienny, cement, energia, paliwo."
+      "rule": "Przypisz każdy składnik recepty do material_role i product_group w poLCA, np. bitum drogowy, kruszywo łamane, kruszywo naturalne, filler wapienny, cement, energia, paliwo."
     },
     {
       "step": 3,
       "name": "Dobór źródła",
-      "rule": "Zastosuj hierarchię: EPD/dane pierwotne dostawcy > dataset POLCA dla kategorii i geografii > dane sektorowe/publiczne > konserwatywna wartość domyślna."
+      "rule": "Zastosuj hierarchię: EPD/dane pierwotne dostawcy > dataset poLCA dla kategorii i geografii > dane sektorowe/publiczne > konserwatywna wartość domyślna."
     },
     {
       "step": 4,

@@ -35,7 +35,7 @@
 
     /* ---- Etykiety i benchmarki dla trybu uproszczonego ---- */
     var SIMPLE_LABELS = {
-        '5.50': 'kruszywo łamane twarde (conservative default POLCA)',
+        '5.50': 'kruszywo łamane twarde (conservative default poLCA)',
         '3.99': 'kruszywo bazaltowe łamane (ITB EPD 706/2024 Trzuskawica)',
         '4.50': 'kruszywo granitowe łamane lub dolomitowe',
         '3.20': 'kruszywo wapienne łamane (Gruber et al. 2023)',
@@ -208,11 +208,11 @@
 
     /* ---- Benchmark ---- */
     function benchmark(r) {
-        // Conservative defaults POLCA per kategoria
+        // Conservative defaults poLCA per kategoria
         var ref;
         if (r.mode === 'simple') {
             var v = r.ref;
-            if (v >= 5.0) ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default POLCA 5,5)' };
+            if (v >= 5.0) ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default poLCA 5,5)' };
             else if (v <= 2.0) ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
             else if (v <= 3.4) ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
             else ref = { v: 3.8, cat: 'kruszyw — średnia ważona PL (~3,8)' };
@@ -220,7 +220,7 @@
             if (r.isRC) ref = { v: GWP_RC, cat: 'kruszyw recyklingowych RC (~2,5)' };
             else if (r.rock === 'natural') ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
             else if (r.rock === 'soft') ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
-            else ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default POLCA 5,5)' };
+            else ref = { v: 5.5, cat: 'kruszyw łamanych twardych (conservative default poLCA 5,5)' };
         }
         var t = r.total;
         var diff = t - ref.v;
@@ -229,7 +229,7 @@
         if (Math.abs(diff) < 0.05) dir = 'na poziomie';
         else if (diff < 0) dir = 'niżej (o ' + fmt(rel, 0) + '%) niż';
         else dir = 'wyżej (o ' + fmt(rel, 0) + '%) niż';
-        return 'GWP ' + fmt(t, 2) + ' kg CO₂eq/t — to ' + dir + ' conservative default POLCA dla ' + ref.cat + '.';
+        return 'GWP ' + fmt(t, 2) + ' kg CO₂eq/t — to ' + dir + ' conservative default poLCA dla ' + ref.cat + '.';
     }
 
     /* ---- Render ---- */
