@@ -3,7 +3,7 @@
  * Wersja 1.0
  *
  * Oszacowanie GWP A1-A3 [kg CO2eq / t MMA] zgodne z c-PCR-MMA-EPD-Polska-2026
- * v1.0-DRAFT i EN 15804+A2. Wartości domyślne: dataset POLCA-MMA-LCI-DEFAULTS-2026.
+ * v1.0-DRAFT i EN 15804+A2. Wartości domyślne: zbiór danych POLCA-MMA-LCI-DEFAULTS-2026.
  * Energia elektryczna: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh.
  * Bitumen: Eurobitume LCA 4.0 (2025).
  *

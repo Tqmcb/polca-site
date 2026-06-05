@@ -100,7 +100,7 @@
             <a href="#referencyjne-szczegoly" data-polca-goto="datasets" class="quick-card">
                 <span class="quick-card-kicker">Katalog GWP</span>
                 <strong>Wartości referencyjne do obliczeń</strong>
-                <span>Filtrowanie po zastosowaniu, materiale, typie danych, nazwie i kodzie datasetu.</span>
+                <span>Filtrowanie po zastosowaniu, materiale, typie danych, nazwie i kodzie zbioru danych.</span>
                 <span class="quick-card-arrow">Katalog →</span>
             </a>
             <a href="#profile-gwp" data-polca-goto="profiles" class="quick-card">
@@ -502,8 +502,8 @@
         <div id="polca-group-pills" style="display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 0;" aria-label="Szybkie filtrowanie według kategorii"></div>
         <div id="polca-reference-datasets" style="display:grid;gap:.85rem;margin-top:1rem;"></div>
         <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 0;">
-            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Datasety JSON</a>
-            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Datasety CSV</a>
+            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Zbiory danych JSON</a>
+            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Zbiory danych CSV</a>
             <a href="data/sources.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Źródła JSON</a>
         </div>
 
@@ -513,7 +513,7 @@
         <div class="section-num">Obszar — Źródła</div>
         <div class="card-title">Podstawa danych</div>
         <p class="card-text" style="max-width: 820px;">
-            Źródła są pokazane w kartach datasetów i w rejestrze technicznym. Karta rekordu zawiera wartość,
+            Źródła są pokazane w kartach zbiorów danych i w rejestrze technicznym. Karta rekordu zawiera wartość,
             krótkie uzasadnienie i identyfikację źródeł, a rejestr zachowuje pełną ścieżkę źródłową.
         </p>
         <details style="margin-top:1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg);overflow:hidden;" open>
@@ -534,8 +534,8 @@
             Zob. <a href="o-polca/gotowosc-dpp.html">gotowość poLCA do DPP</a>.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;">
-            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Datasety JSON</a>
-            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Datasety CSV</a>
+            <a href="data/datasets.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.84rem;font-weight:700;">Zbiory danych JSON</a>
+            <a href="data/datasets.csv" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Zbiory danych CSV</a>
             <a href="data/mma-client-example.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Przykład MMA JSON</a>
             <a href="data/update-policy.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Polityka aktualizacji</a>
             <a href="data/epd-source-policy.json" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem 1rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.84rem;font-weight:700;">Polityka EPD</a>
@@ -551,11 +551,11 @@
 
     <div class="card section-gap fade-in" style="background: var(--ink-dark); color: rgba(255,255,255,0.9); text-align: center; padding: 2.5rem 2rem;">
         <div class="section-num" style="color: rgba(255,255,255,0.4);">07 — Dostęp</div>
-        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem;">Datasety dostępne w formatach JSON-LD i CSV</h2>
+        <h2 style="font-family: 'Inter Tight', sans-serif; font-size: 1.35rem; font-weight: 600; color: #fff; margin-bottom: 0.75rem;">Zbiory danych dostępne w formatach JSON-LD i CSV</h2>
         <p style="font-size: 0.88rem; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; line-height: 1.7; max-width: 580px; margin-left: auto; margin-right: auto;">
-            Pełny katalog 36 datasetów LCI (cement, kruszywa, MMA, energia, paliwa, transport oraz wartości
+            Pełny katalog 36 zbiorów danych LCI (cement, kruszywa, MMA, energia, paliwa, transport oraz wartości
             kontrolne CBAM) jest opublikowany. Każdy rekord ma pojedynczy plik JSON-LD ze źródłami,
-            granicą systemu i polityką zastępowania danymi producenta. Datasety są eksportowalne w formatach
+            granicą systemu i polityką zastępowania danymi producenta. Zbiory danych są eksportowalne w formatach
             JSON-LD (ILCD-compatible), ILCD+EPD XML i CSV — gotowe do importu do oprogramowania LCA i
             Digital Product Passport. Zob. <a href="o-polca/gotowosc-dpp.html" style="color:#fff;">gotowość poLCA do DPP</a>.
         </p>
@@ -868,7 +868,7 @@
                 title: 'Zasada stosowania danych zagregowanych',
                 module: 'reguła jakości danych',
                 impact: 'Dane zagregowane zapewniają porównywalność i start obliczeń, ale nie ukrywają braku danych producenta.',
-                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > dataset poLCA > konserwatywna wartość domyślna.',
+                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > zbiór danych poLCA > konserwatywna wartość domyślna.',
                 values: [
                     { name: 'Screening / oferta / pre-audyt', value: 'dopuszczalne wartości poLCA', status: 'wynik roboczy', basis: 'Szybkie wskazanie głównych źródeł wpływu do poprawy.' },
                     { name: 'Weryfikacja danych', value: 'wymagana trasowalność', status: 'do potwierdzenia danymi', basis: 'Składniki kluczowe muszą mieć EPD, faktury, lokalizacje albo dokumenty potwierdzające.' }
@@ -924,7 +924,7 @@
                 </div>
                 <p style="font-size:.74rem;color:var(--text-tertiary);line-height:1.5;margin:.85rem 0 0;">
                     Publicznie pokazujemy wartość wynikową i krótką podstawę. Pełne źródła, wersje EPD,
-                    kryteria porównywalności i ograniczenia są przechowywane w kartach datasetów oraz JSON.
+                    kryteria porównywalności i ograniczenia są przechowywane w kartach zbiorów danych oraz JSON.
                 </p>
             `;
         };
@@ -957,7 +957,7 @@
                 module: 'A1 + A2 oddzielnie',
                 standards: 'EN 12620, EN 1008, EN 206, PN-B-06265',
                 impact: 'Kruszywa mają duży udział masowy. Ich A1 jest zwykle niższe niż cementu, ale transport i dobór frakcji mogą istotnie zmieniać wynik.',
-                use_rule: 'Stosuj kartę datasetu dla konkretnego rodzaju kruszywa i licz transport oddzielnie z lokalizacji dostawcy. EPD kopalni albo dane zakładowe zastępują wartość poLCA.',
+                use_rule: 'Stosuj kartę zbioru danych dla konkretnego rodzaju kruszywa i licz transport oddzielnie z lokalizacji dostawcy. EPD kopalni albo dane zakładowe zastępują wartość poLCA.',
                 values: [
                     { name: 'Kruszywo łamane / naturalne', value: '3,5-5,5 kg CO2e/t', status: 'wartości poLCA', basis: 'EPD kruszyw, dane geologiczne PIG-PIB/MIDAS, publiczne bazy LCA/EPD.' },
                     { name: 'Woda zarobowa', value: 'zwykle mały udział GWP', status: 'kontrola kompletności', basis: 'EN 1008 i dane zakładu; nie pomijać bez uzasadnienia.' }
@@ -969,10 +969,10 @@
                 module: 'A1',
                 standards: 'EN 450-1, EN 15167-1, EN 13263-1, EN 206',
                 impact: 'Dodatki mineralne mogą obniżać udział klinkieru, ale wymagają jasnej alokacji, statusu materiału i danych źródłowych.',
-                use_rule: 'Popiół lotny, żużel mielony i pył krzemionkowy powinny mieć EPD, dane dostawcy albo opisany dataset sektorowy. Nie stosować jednej wartości dla wszystkich dodatków.',
+                use_rule: 'Popiół lotny, żużel mielony i pył krzemionkowy powinny mieć EPD, dane dostawcy albo opisany zbiór danych sektorowy. Nie stosować jednej wartości dla wszystkich dodatków.',
                 values: [
-                    { name: 'Popiół lotny', value: 'wg danych dostawcy', status: 'oddzielny dataset', basis: 'EN 450-1; wymagane zasady alokacji i status materiału.' },
-                    { name: 'Żużel mielony GGBS', value: 'wg danych dostawcy', status: 'oddzielny dataset', basis: 'EN 15167-1; wynik zależy od mielenia, suszenia, transportu i alokacji.' }
+                    { name: 'Popiół lotny', value: 'wg danych dostawcy', status: 'oddzielny zbiór danych', basis: 'EN 450-1; wymagane zasady alokacji i status materiału.' },
+                    { name: 'Żużel mielony GGBS', value: 'wg danych dostawcy', status: 'oddzielny zbiór danych', basis: 'EN 15167-1; wynik zależy od mielenia, suszenia, transportu i alokacji.' }
                 ]
             },
             {
@@ -1029,7 +1029,7 @@
                 module: 'reguła jakości danych',
                 standards: 'EN 206, EN 15804+A2, ISO 14040/14044',
                 impact: 'Cement, dodatki mineralne, główne surowce, transport i energia są składnikami kluczowymi dla jakości wyniku.',
-                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > dataset poLCA > konserwatywna wartość domyślna z oznaczoną jakością.',
+                use_rule: 'Kolejność: EPD/dane producenta > dane zakładu > zbiór danych poLCA > konserwatywna wartość domyślna z oznaczoną jakością.',
                 values: [
                     { name: 'Dane producenta', value: 'pierwszeństwo', status: 'dla składników kluczowych', basis: 'EPD cementu, dane kopalni, faktury energii, dokumenty transportowe.' },
                     { name: 'Wartość domyślna', value: 'tylko z oznaczeniem', status: 'kontrola jakości', basis: 'Stosowana, gdy brak danych producenta; musi mieć zakres, źródło i ograniczenia.' }
@@ -1154,7 +1154,7 @@
                 impact: 'Kruszywa wtórne mogą obniżać zużycie surowców pierwotnych, ale wymagają jasnego statusu odpadu/produktu, alokacji i rozliczenia modułu D.',
                 use_rule: 'Nie wolno mieszać kruszywa recyklingowego z pierwotnym bez śladu audytowego. Należy wskazać proces przygotowania, zanieczyszczenia i status prawny materiału.',
                 values: [
-                    { name: 'Kruszywo z recyklingu betonu', value: 'wymaga danych procesu', status: 'oddzielny dataset', basis: 'Kruszenie, sortowanie, usuwanie zanieczyszczeń i transport.' },
+                    { name: 'Kruszywo z recyklingu betonu', value: 'wymaga danych procesu', status: 'oddzielny zbiór danych', basis: 'Kruszenie, sortowanie, usuwanie zanieczyszczeń i transport.' },
                     { name: 'RAP / destrukt asfaltowy', value: 'oddzielne zasady', status: 'MMA', basis: 'Wymaga zasad alokacji, statusu materiału i modułu D według właściwego cPCR.' }
                 ]
             },
