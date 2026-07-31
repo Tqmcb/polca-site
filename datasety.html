@@ -1301,6 +1301,19 @@
                     </div>
                 `;
             };
+            const cyclLabels = { quarterly: 'co kwartał', annual: 'co rok' };
+            const dzisiaj = new Date().toISOString().slice(0, 10);
+            const renderPrzeglad = (item) => {
+                if (!item.last_reviewed_at) return '';
+                const poTerminie = item.next_review_due && item.next_review_due < dzisiaj;
+                return `
+                    <div style="margin-top:.5rem;padding-top:.5rem;border-top:1px solid var(--border);font-size:.7rem;line-height:1.5;color:var(--text-tertiary);">
+                        <span style="font-weight:800;text-transform:uppercase;letter-spacing:.02em;">Przegląd</span><br>
+                        ostatni: ${item.last_reviewed_at}<br>
+                        <span style="${poTerminie ? 'color:#E65100;font-weight:700;' : ''}">następny: ${item.next_review_due}</span>
+                        ${item.review_cycle ? `<br><span style="opacity:.8;">${cyclLabels[item.review_cycle] || item.review_cycle}</span>` : ''}
+                    </div>`;
+            };
             const displayGroupOrder = ['energy', 'transport', 'cement', 'aggregates', 'bitumen', 'additives', 'regulatory', 'other'];
             const displayGroupLabels = {
                 energy: 'Energia i paliwa',
@@ -1455,6 +1468,7 @@
                     <div>
                         <span class="badge">${statusLabels[item.status] || item.status}</span>
                         <div style="font-size:.75rem;color:var(--text-tertiary);line-height:1.45;margin-top:.5rem;">${item.year}<br>${item.geography}<br>${publicationLabels[item.publication_status] || publicationLabels[item.data_quality] || item.publication_status || item.data_quality}</div>
+                        ${renderPrzeglad(item)}
                         <a href="data/datasets/${item.code}.json" style="display:inline-flex;margin-top:.55rem;color:var(--accent);font-size:.75rem;font-weight:700;text-decoration:none;">JSON →</a>
                         <a href="o-polca/gotowosc-dpp.html" title="ILCD+EPD XML — eksport on-the-fly z JSON-LD; zob. gotowość poLCA do DPP" style="display:inline-flex;margin-top:.35rem;color:var(--text-tertiary);font-size:.72rem;font-weight:600;text-decoration:none;">ILCD+EPD XML →</a>
                     </div>
