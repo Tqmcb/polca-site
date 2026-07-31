@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.1",
+    "version": "2026.2",
     "updated_at": "2026-07-31",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -10,6 +10,12 @@
     "archive_rule": "poLCA nie usuwa poprzednich wersji. Wersje zastąpione otrzymują status superseded i pozostają dostępne do celów kontrolnych."
   },
   "kategorie": [
+    {
+      "code": "przeglad_okresowy",
+      "name": "Przegląd okresowy źródeł",
+      "opis": "Planowe sprawdzenie, czy źródła rekordów opublikowały nowe wydania. Kończy się protokołem z wynikiem dla każdego sprawdzonego źródła, także gdy żadne nie uległo zmianie.",
+      "cykl": "quarterly"
+    },
     {
       "code": "przeglad_metody",
       "name": "Przegląd metody głównej",
@@ -48,6 +54,43 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-07-31",
+      "kategoria": "przeglad_okresowy",
+      "status": "zakonczony",
+      "dotyczy": "Rekordy o cyklu kwartalnym: energia elektryczna, paliwa, transport",
+      "tytul": "Przegląd kwartalny źródeł — III kwartał 2026",
+      "opis": "Sprawdzono, czy źródła rekordów o cyklu kwartalnym opublikowały nowe wydania od poprzedniego przeglądu. Cztery źródła pozostają w wersjach dotychczas stosowanych. Jedno źródło opublikowało nowe wydanie: Association of Issuing Bodies udostępniło European Residual Mix za rok 2025 w dniu 28 maja 2026. Wartość rezydualna dla Polski w tym wydaniu wynosi 726,96 g CO₂/kWh wobec 808 g stosowanych na podstawie danych za rok 2024. Udział źródeł odnawialnych w polskim miksie rezydualnym wzrósł z 0,093 do 0,187.",
+      "podstawa": "Polityka aktualizacji poLCA — przegląd kwartalny źródeł szybkozmiennych",
+      "sprawdzone_zrodla": [
+        {
+          "zrodlo": "KOBiZE — wskaźniki emisyjności dla energii elektrycznej",
+          "wersja": "dane za 2024, publikacja grudzień 2025",
+          "wynik": "bez zmian; kolejne wydanie spodziewane w grudniu 2026"
+        },
+        {
+          "zrodlo": "ÖKOBAUDAT",
+          "wersja": "2024-II, aktualizacja bazy generycznej 2 października 2024",
+          "wynik": "bez zmian"
+        },
+        {
+          "zrodlo": "EMEP/EEA Air Pollutant Emission Inventory Guidebook",
+          "wersja": "edycja 2023",
+          "wynik": "bez zmian; brak nowszej edycji"
+        },
+        {
+          "zrodlo": "JEC Well-to-Tank / ecoinvent",
+          "wersja": "JEC WTT v5; ecoinvent 3.12",
+          "wynik": "bez zmian; brak wydania v6 i 3.13"
+        },
+        {
+          "zrodlo": "AIB — European Residual Mix",
+          "wersja": "wydanie 2025, opublikowane 28 maja 2026",
+          "wynik": "nowe wydanie; wartość dla Polski 726,96 g CO₂/kWh wobec 808 g z danych za 2024"
+        }
+      ],
+      "skutek_dla_deklaracji": "Rekordy o cyklu kwartalnym zachowują dotychczasowe wartości. Aktualizacja wartości rezydualnej dotyczy Poziomu 2 hierarchii wskaźnika energii, stosowanego wyłącznie przez producentów rozliczających energię gwarancjami pochodzenia. Deklaracje oparte na Poziomie 1 pozostają bez zmian."
+    },
     {
       "data": "2026-07",
       "kategoria": "przeglad_metody",

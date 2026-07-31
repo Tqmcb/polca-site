@@ -40,9 +40,14 @@
         .rej-desc{margin:0;color:var(--text-secondary);font-size:.86rem;line-height:1.65}
         .rej-meta{margin:.6rem 0 0;padding:.6rem .8rem;border-radius:6px;background:var(--bg-subtle);font-size:.78rem;line-height:1.6;color:var(--text-secondary)}
         .rej-meta strong{color:var(--text-primary)}
+        .rej-zrodla{width:100%;border-collapse:collapse;margin:.7rem 0 0;font-size:.76rem}
+        .rej-zrodla caption{text-align:left;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text-tertiary);padding-bottom:.4rem}
+        .rej-zrodla th{text-align:left;padding:.4rem .55rem;background:var(--bg-subtle);border-bottom:1px solid var(--border);color:var(--text-primary);font-weight:700}
+        .rej-zrodla td{padding:.45rem .55rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top;line-height:1.5}
+        .rej-zrodla td.rej-zmiana{color:#E65100;font-weight:600}
         .rej-status{display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:600;color:#E65100}
         .rej-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#E65100}
-        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-hero>div:last-child{order:-1}.rej-entry{grid-template-columns:1fr;gap:.5rem}}
+        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-hero>div:last-child{order:-1}.rej-entry{grid-template-columns:1fr;gap:.5rem}.rej-zrodla{display:block;overflow-x:auto;white-space:nowrap}.rej-zrodla td,.rej-zrodla th{white-space:normal;min-width:9rem}}
     </style>
 </head>
 <body>
@@ -243,6 +248,18 @@
                     <h3 class="rej-title">${esc(w.tytul)}</h3>
                     <p class="rej-scope">${esc(w.dotyczy)}</p>
                     <p class="rej-desc">${esc(w.opis)}</p>
+                    ${Array.isArray(w.sprawdzone_zrodla) ? `
+                    <table class="rej-zrodla">
+                        <caption>Protokół przeglądu — sprawdzone źródła</caption>
+                        <thead><tr><th>Źródło</th><th>Sprawdzona wersja</th><th>Wynik</th></tr></thead>
+                        <tbody>${w.sprawdzone_zrodla.map((z) => `
+                            <tr>
+                                <td>${esc(z.zrodlo)}</td>
+                                <td>${esc(z.wersja)}</td>
+                                <td${/^bez zmian/.test(z.wynik) ? '' : ' class="rej-zmiana"'}>${esc(z.wynik)}</td>
+                            </tr>`).join('')}
+                        </tbody>
+                    </table>` : ''}
                     ${w.podstawa ? `<p class="rej-meta"><strong>Podstawa:</strong> ${esc(w.podstawa)}</p>` : ''}
                     ${w.skutek_dla_deklaracji ? `<p class="rej-meta"><strong>Skutek dla deklaracji:</strong> ${esc(w.skutek_dla_deklaracji)}</p>` : ''}
                     ${w.link ? `<p style="margin:.6rem 0 0;font-size:.8rem;"><a href="${esc(w.link)}" target="_blank" rel="noopener" style="color:var(--accent);">${esc(w.link)}</a></p>` : ''}
