@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku — poLCA Blog</title>
+    <meta name="description" content="Jedna kopalnia wydobywa węgiel energetyczny i koksowy, ale metan uchodzi ze złoża wspólnie. EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2 określają, jak podzielić tę emisję między produkty — i dlaczego przy dużej różnicy cen alokacja masowa nie wystarcza.">
+    <link rel="canonical" href="https://polca.org.pl/blog-alokacja-metan-kopalniany.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku">
+    <meta property="og:description" content="Węgiel energetyczny i koksowy pochodzą z tych samych złóż, a metan uchodzi wspólnie. Reguły alokacji EN 15804+A2 i ISO 14044 decydują, ile z tej emisji obciąża energię elektryczną.">
+    <meta property="og:url" content="https://polca.org.pl/blog-alokacja-metan-kopalniany.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-alokacja-metan-kopalniany.jpg">
+    <meta property="article:published_time" content="2026-07-31T00:00:00+02:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka LCA">
+    <meta property="article:tag" content="metan kopalniany">
+    <meta property="article:tag" content="alokacja">
+    <meta property="article:tag" content="EN 15804+A2">
+    <meta property="article:tag" content="ISO 14044">
+    <meta property="article:tag" content="węgiel koksowy">
+    <meta property="article:tag" content="energia elektryczna">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku">
+    <meta name="twitter:description" content="Węgiel energetyczny i koksowy z tych samych złóż, metan uchodzi wspólnie. Reguły alokacji EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-alokacja-metan-kopalniany.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-alokacja-metan-kopalniany.html",
+          "headline": "Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku",
+          "description": "Jedna kopalnia wydobywa węgiel energetyczny i koksowy, ale metan uchodzi ze złoża wspólnie. EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2 określają, jak podzielić tę emisję między produkty, a przy dużej różnicy wartości ekonomicznej alokacja masowa przestaje wystarczać.",
+          "url": "https://polca.org.pl/blog-alokacja-metan-kopalniany.html",
+          "datePublished": "2026-07-31",
+          "dateModified": "2026-07-31",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["metan kopalniany", "alokacja", "EN 15804+A2", "ISO 14044", "węgiel koksowy", "węgiel energetyczny", "LCA", "energia elektryczna", "GWP", "IPCC AR6"],
+          "about": [
+            {"@type": "Thing", "name": "Metan kopalniany (CMM)"},
+            {"@type": "Thing", "name": "Alokacja w analizie cyklu życia"},
+            {"@type": "Thing", "name": "EN 15804+A2"},
+            {"@type": "Thing", "name": "Węgiel koksowy"}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Metan kopalniany w śladzie węglowym energii"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Start</a>
+            <a href="analiza.html">Dlaczego poLCA?</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="datasety.html">Wskaźniki</a>
+            <a href="narzedzia.html">Kalkulatory</a>
+            <a href="podstawy-normatywne.html">Normy</a>
+            <a href="pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <div class="post-accent-bar"></div>
+
+    <div style="width:100%;height:420px;overflow:hidden;margin-bottom:0;">
+        <img src="images/blog-alokacja-metan-kopalniany.jpg"
+             alt="Hałda węgla i przenośnik taśmowy zakładu przeróbczego" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+    </div>
+
+    <div class="fade-in">
+        <a href="blog.html" class="blog-back-link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Wróć do bloga
+        </a>
+
+        <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
+            <a href="index.html">poLCA</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <a href="blog.html">Blog</a>
+            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-current">Metan kopalniany i alokacja</span>
+        </nav>
+
+        <div class="blog-post-header">
+            <div class="blog-post-meta">
+                <span class="blog-tag metodyka">Metodyka</span>
+                <span class="blog-tag">Normy</span>
+                <span class="blog-date">31 lipca 2026</span>
+                <span class="blog-read-time">&#183; 7 min czytania</span>
+            </div>
+            <h1 class="blog-post-title">
+                Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku
+            </h1>
+            <p class="blog-post-lead">
+                Kopalnia wydobywa z jednego złoża węgiel energetyczny i węgiel koksowy, a metan uchodzi
+                z górotworu wspólnie dla obu. Pytanie, na które musi odpowiedzieć każda analiza cyklu życia
+                energii elektrycznej, nie brzmi więc „ile metanu emitują kopalnie”, tylko „ile z tej emisji
+                obciąża prąd, a ile stal”. Odpowiedzi nie ustala się uznaniowo — dają ją reguły alokacji
+                z ISO 14044 i EN 15804+A2.
+            </p>
+        </div>
+    </div>
+
+    <div class="blog-post-body section-gap fade-in post-chapters">
+
+        <h2>Dlaczego metan kopalniany w ogóle liczy się w bilansie energii</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Kluczowa liczba</div>
+            Współczynnik ocieplenia globalnego metanu pochodzenia kopalnego w horyzoncie 100 lat
+            wynosi <strong>29,8 kg CO₂e/kg</strong> wg IPCC AR6 (WG1, tabela 7.15).<br>
+            Ta sama masa metanu waży w bilansie prawie trzydzieści razy więcej niż dwutlenek węgla.
+        </div>
+
+        <p>
+            Ślad węglowy energii elektrycznej ze spalania węgla nie kończy się na kominie elektrowni.
+            Granica systemu w pełnej analizie cyklu życia obejmuje także wydobycie paliwa, a przy węglu
+            kamiennym najistotniejszym składnikiem tego etapu jest metan uwalniany z górotworu podczas
+            eksploatacji złoża — w literaturze branżowej opisywany jako <em>coal mine methane</em>.
+        </p>
+
+        <p>
+            Skala zjawiska zależy od metanowości konkretnego złoża i sposobu zagospodarowania ujętego
+            gazu. Część metanu jest wychwytywana przez systemy odmetanowania i wykorzystywana energetycznie
+            lub spalana w pochodniach, część uchodzi z powietrzem wentylacyjnym w stężeniach zbyt niskich,
+            by dało się je łatwo zagospodarować. W Polsce dane o metanowości poszczególnych zakładów
+            górniczych publikuje corocznie Wyższy Urząd Górniczy w sprawozdaniach o stanie bezpieczeństwa
+            w górnictwie, w podziale na kopalnie.
+        </p>
+
+        <h2>Jedno złoże, dwa produkty o różnym przeznaczeniu</h2>
+
+        <p>
+            Tu zaczyna się właściwy problem metodyczny. Polskie kopalnie węgla kamiennego wydobywają dwa
+            zasadniczo różne produkty. Węgiel energetyczny trafia do elektrowni i ciepłowni. Węgiel koksowy
+            trafia do koksowni, a stamtąd do wielkich pieców — jest surowcem hutniczym, nie paliwem
+            energetycznym, i figuruje na unijnej liście surowców krytycznych.
+        </p>
+
+        <p>
+            Metan nie odróżnia jednak przeznaczenia urobku. Uchodzi ze złoża w trakcie eksploatacji, zanim
+            ktokolwiek zdecyduje, do której gałęzi przemysłu pojedzie wydobyty węgiel. Powstaje sytuacja
+            podręcznikowa dla analizy cyklu życia: jeden proces, jedna emisja, dwa wyroby o odmiennych
+            rynkach zbytu.
+        </p>
+
+        <p>
+            Konsekwencja jest praktyczna i policzalna. Jeżeli kopalnia o wysokiej metanowości wydobywa
+            przede wszystkim węgiel koksowy, a jej emisję przypiszemy w całości energii elektrycznej,
+            wskaźnik dla sieci zostanie zawyżony o wielkość, która w rzeczywistości obciąża produkcję stali.
+            Zależność działa też w drugą stronę — pominięcie metanu z kopalń dostarczających węgiel do
+            elektrowni zaniża wynik.
+        </p>
+
+        <h2>Co mówią normy</h2>
+
+        <p>
+            ISO 14044:2006 w §4.3.4.2 porządkuje postępowanie w trzech krokach. Najpierw należy alokacji
+            unikać — przez podział procesu na podprocesy albo rozszerzenie granic systemu. Gdy to niemożliwe,
+            emisje dzieli się według zależności fizycznej między produktami. Dopiero gdy zależności fizycznej
+            nie da się sensownie ustalić, stosuje się inne relacje, w tym wartość ekonomiczną.
+        </p>
+
+        <p>
+            EN 15804+A2:2019 uszczegóławia tę regułę dla wyrobów budowlanych w §6.4.3.2. Norma wskazuje
+            wprost, że przy współproduktach o istotnie różnej wartości rynkowej podział według masy
+            zniekształca obraz, i wyznacza próg: gdy różnica wartości ekonomicznej współproduktów
+            przekracza 25%, alokację prowadzi się według wartości, a nie według masy.
+        </p>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Co z tego wynika</div>
+            Węgiel koksowy jest trwale i wyraźnie droższy od energetycznego — różnica cen jest
+            wielokrotnie większa niż próg 25%. Przy takiej rozpiętości norma nie zostawia analitykowi
+            wyboru między alokacją masową a ekonomiczną.
+        </div>
+
+        <h2>Dlaczego to nie jest szczegół dla specjalistów</h2>
+
+        <p>
+            Wybór klucza alokacji nie jest kwestią preferencji autora analizy. Jest decyzją metodyczną,
+            która musi zostać udokumentowana, uzasadniona i poddana weryfikacji — EN 15804+A2 wymaga
+            opisania zastosowanych reguł alokacji w dokumentacji deklaracji, a ISO 14044 nakazuje wykazanie
+            wrażliwości wyniku na przyjęte założenia.
+        </p>
+
+        <p>
+            Dla odbiorcy wskaźnika oznacza to prosty test jakości. Jeżeli dokumentacja podaje wartość
+            składnika metanowego bez wyjaśnienia, jak podzielono emisję między węgiel energetyczny
+            i koksowy, to nie wiadomo, co ta liczba właściwie mierzy. Sama liczba nie wystarcza —
+            potrzebny jest opis granicy, klucza podziału i danych, na których go oparto.
+        </p>
+
+        <h2>Jak to zweryfikować w praktyce</h2>
+
+        <p>
+            Rachunek daje się odtworzyć z danych publicznych. Metanowość poszczególnych kopalń i stopień
+            zagospodarowania ujętego gazu wynikają ze sprawozdań Wyższego Urzędu Górniczego. Strukturę
+            produkcji w podziale na węgiel energetyczny i koksowy przedsiębiorstwa górnicze notowane
+            na giełdzie ujawniają w raportach rocznych, w podziale na poszczególne zakłady. Ceny obu
+            sortymentów publikuje Agencja Rozwoju Przemysłu w comiesięcznych indeksach rynku węgla.
+        </p>
+
+        <p>
+            Zestawienie tych trzech źródeł pozwala sprawdzić, czy przyjęty w danym wskaźniku klucz alokacji
+            odpowiada rzeczywistej strukturze wydobycia — a to jest dokładnie ten rodzaj kontroli, którego
+            weryfikator deklaracji środowiskowej ma prawo oczekiwać.
+        </p>
+
+        <div class="answer-box" style="margin-top:1.5rem;">
+            Metodyka wskaźnika emisyjności energii elektrycznej stosowanego w poLCA, wraz z opisem
+            składników i granicy systemu, jest opublikowana jako dokument
+            <a href="metodyki/MET-001-poLCA-EN-PL-2024.html" style="color:var(--accent);font-weight:600;">MET-001</a>
+            z identyfikatorem DOI. Terminy przeglądów okresowych i zapis zmian metodycznych prowadzimy
+            w <a href="rejestr-zmian.html" style="color:var(--accent);font-weight:600;">rejestrze przeglądów i zmian</a>.
+        </div>
+
+    </div>
+
+    <section class="section-gap fade-in">
+        <div class="section-num">Powiązane artykuły</div>
+        <div class="blog-grid" style="margin-top:1rem;">
+            <a href="blog-en-pl-2024.html" class="blog-card">
+                <div class="blog-card-img-placeholder" style="padding:0;overflow:hidden;">
+                    <img src="images/blog-en-pl-2024.jpg" alt="Infrastruktura elektroenergetyczna" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta"><span class="blog-tag metodyka">Metodyka</span></div>
+                    <div class="blog-card-title">poLCA-EN-PL-2024 — wskaźnik emisyjności energii elektrycznej</div>
+                </div>
+            </a>
+            <a href="blog-residual-mix-aib-kobize.html" class="blog-card">
+                <div class="blog-card-img-placeholder" style="padding:0;overflow:hidden;">
+                    <img src="images/blog-residual-mix-aib-kobize.jpg" alt="Elektrownia z wieżami chłodniczymi" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta"><span class="blog-tag metodyka">Metodyka</span></div>
+                    <div class="blog-card-title">Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej</div>
+                </div>
+            </a>
+            <a href="blog-iso-14044-proximity.html" class="blog-card">
+                <div class="blog-card-img-placeholder" style="padding:0;overflow:hidden;">
+                    <img src="images/blog-iso-14044-proximity.jpg" alt="Dokumentacja normatywna" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta"><span class="blog-tag metodyka">Metodyka</span></div>
+                    <div class="blog-card-title">ISO 14044 i zasada bliskości danych w analizie cyklu życia</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="wiarygodnosc.html">Wiarygodność</a></li>
+                <li><a href="datasety.html">Wskaźniki</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
+                <li><a href="pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="rejestr-zmian.html">Rejestr zmian</a></li>
+                <li><a href="metodyki/">Metodyki</a></li>
+                <li><a href="c-pcr/">c-PCR</a></li>
+                <li><a href="podstawy-normatywne.html">Normy</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+
+<script src="js/nav-mobile.js"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+</body>
+</html>
