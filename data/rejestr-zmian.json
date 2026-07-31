@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
+    "version": "2026.1",
+    "updated_at": "2026-07-31",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
+    "policy_url": "data/update-policy.json",
+    "validity_rule": "Nowa wersja zbioru danych nie zmienia deklaracji już wydanych. Wynik obliczenia zapisuje wersję danych użytą w dniu weryfikacji i zachowuje ją przez cały okres ważności deklaracji.",
+    "archive_rule": "poLCA nie usuwa poprzednich wersji. Wersje zastąpione otrzymują status superseded i pozostają dostępne do celów kontrolnych."
+  },
+  "kategorie": [
+    {
+      "code": "przeglad_metody",
+      "name": "Przegląd metody głównej",
+      "opis": "Przegląd granic systemu, alokacji, reguł wartości domyślnych lub metody LCIA. Tworzy nową wersję major i nie nadpisuje wyników historycznych.",
+      "cykl": "major_method_review"
+    },
+    {
+      "code": "aktualizacja_danych",
+      "name": "Aktualizacja danych",
+      "opis": "Nowy rocznik danych źródłowych lub nowa wersja bazy referencyjnej w tej samej metodzie. Zwiększa wersję minor.",
+      "cykl": "annual"
+    },
+    {
+      "code": "nowe_dane",
+      "name": "Nowe zbiory danych",
+      "opis": "Publikacja zbiorów, które wcześniej nie były wystawione.",
+      "cykl": "event_driven"
+    },
+    {
+      "code": "doprecyzowanie",
+      "name": "Doprecyzowanie metodyczne",
+      "opis": "Uściślenie zasady stosowania, cytowania lub opisu bez wpływu na wartość liczbową. Zwiększa wersję patch.",
+      "cykl": "event_driven"
+    },
+    {
+      "code": "publikacja",
+      "name": "Publikacja dokumentu",
+      "opis": "Wydanie lub rejestracja dokumentu metodycznego, c-PCR albo identyfikatora trwałego.",
+      "cykl": "event_driven"
+    },
+    {
+      "code": "format",
+      "name": "Format i interoperacyjność",
+      "opis": "Zmiany formatu wymiany danych, eksportu i zgodności z systemami zewnętrznymi.",
+      "cykl": "event_driven"
+    }
+  ],
+  "wpisy": [
+    {
+      "data": "2026-07",
+      "kategoria": "przeglad_metody",
+      "status": "w_toku",
+      "dotyczy": "poLCA-EN-PL-2024 v9.1 — wskaźnik emisyjności energii elektrycznej",
+      "tytul": "Przegląd okresowy wskaźnika energii elektrycznej",
+      "opis": "Trwa przegląd okresowy modelu wskaźnika. Zakres przeglądu obejmuje granicę alokacji emisji metanu kopalnianego pomiędzy węgiel energetyczny i koksowy oraz symetrię ujęcia energii importowanej. Wynik zostanie opublikowany jako wersja v9.2 po weryfikacji niezależnej według ISO 14071:2024.",
+      "podstawa": "EN 15804+A2:2019 §6.4.3.2 (reguły alokacji); polityka aktualizacji poLCA — przegląd metody głównej",
+      "skutek_dla_deklaracji": "Deklaracje wydane na wersji v9.1 zachowują ważność przez cały zadeklarowany okres. Wersja wskaźnika użyta w obliczeniu jest zapisywana w dokumencie i nie zmienia się po aktualizacji bazy."
+    },
+    {
+      "data": "2026-07-24",
+      "kategoria": "publikacja",
+      "status": "zakonczony",
+      "dotyczy": "MET-001 — metodyka poLCA-EN-PL-2024 v9.1",
+      "tytul": "Rejestracja identyfikatora trwałego DOI",
+      "opis": "Dokument metodyczny MET-001 został zarejestrowany w repozytorium Zenodo (CERN) na licencji CC BY 4.0 i otrzymał identyfikator trwały DOI 10.5281/zenodo.21520374. Metodyka jest cytowalna w publikacjach i dokumentacji weryfikacyjnej.",
+      "podstawa": "ILCD — wymóg trwałego identyfikatora zbioru danych i dokumentacji",
+      "link": "https://doi.org/10.5281/zenodo.21520374"
+    },
+    {
+      "data": "2026-06-05",
+      "kategoria": "doprecyzowanie",
+      "status": "zakonczony",
+      "dotyczy": "Katalog zbiorów danych — opisy i nazewnictwo",
+      "tytul": "Ujednolicenie języka opisów zbiorów danych",
+      "opis": "Przegląd redakcyjny opisów, zakresów stosowania i ograniczeń we wszystkich zbiorach katalogu. Zmiana dotyczy warstwy opisowej rekordów. Wartości liczbowe, źródła i granice systemu pozostały bez zmian.",
+      "podstawa": "Polityka aktualizacji poLCA — zmiana patch bez wpływu na wynik"
+    },
+    {
+      "data": "2026-05-13",
+      "kategoria": "doprecyzowanie",
+      "status": "zakonczony",
+      "dotyczy": "poLCA-EN-PL-2024 — zasady stosowania",
+      "tytul": "Doprecyzowanie zasad stosowania wskaźnika energii",
+      "opis": "Uściślenie, w których modułach i przy jakiej hierarchii danych stosuje się trzy poziomy wskaźnika energii: location-based, market-based oraz energia z instalacji własnej.",
+      "podstawa": "c-PCR-BET-EPD-PL:2026 §6.3; EN 15804+A2:2019 §6.3.8"
+    },
+    {
+      "data": "2026-05-12",
+      "kategoria": "format",
+      "status": "zakonczony",
+      "dotyczy": "Katalog zbiorów danych — eksport",
+      "tytul": "Eksport ILCD+EPD XML i deklaracja gotowości DPP",
+      "opis": "Zbiory danych udostępnione w formatach JSON-LD, ILCD+EPD XML i CSV, z deklaracją zgodności formatu na potrzeby cyfrowego paszportu produktu.",
+      "podstawa": "ESPR Reg. (UE) 2024/1781; CPR Reg. (UE) 2024/3110; format ILCD"
+    },
+    {
+      "data": "2026-05-11",
+      "kategoria": "nowe_dane",
+      "status": "zakonczony",
+      "dotyczy": "Sektor mieszanek mineralno-asfaltowych i kruszyw",
+      "tytul": "Zbiór POLCA-MMA-LCI-DEFAULTS-2026 oraz dokumenty c-PCR",
+      "opis": "Publikacja zbioru wartości domyślnych dla mieszanek mineralno-asfaltowych wraz z jedenastoma mieszankami normatywnymi, a także dokumentów c-PCR-MMA v1.0-DRAFT i c-PCR-AGG v0.9-DRAFT. Domknięcie trzech sektorów priorytetowych: beton towarowy, mieszanki mineralno-asfaltowe, kruszywa.",
+      "podstawa": "EN 13108; EN 12620; EN 13242; EN 15804+A2:2019"
+    },
+    {
+      "data": "2026-05-10",
+      "kategoria": "publikacja",
+      "status": "zakonczony",
+      "dotyczy": "MET-001 v9.1 oraz MET-002",
+      "tytul": "Publikacja metodyki wskaźnika energii i dokumentu MET-002",
+      "opis": "Wydanie dokumentu metodycznego poLCA-EN-PL-2024 v9.1 wraz z pełnym modelem wskaźnika oraz dokumentu MET-002 opisującego zakres stosowania krajowej inwentaryzacji emisji w obliczeniach cyklu życia.",
+      "podstawa": "ISO 14044:2006 §4.2.3.7; EN 15804+A2:2019 §6.3.8; EF 3.1"
+    },
+    {
+      "data": "2026-05-10",
+      "kategoria": "nowe_dane",
+      "status": "zakonczony",
+      "dotyczy": "Katalog zbiorów danych",
+      "tytul": "Publikacja katalogu zbiorów LCI",
+      "opis": "Wystawienie zbiorów danych inwentaryzacyjnych wraz z filtrami kategorii, źródłami, granicami systemu i poziomem jakości danych dla każdego rekordu.",
+      "podstawa": "ILCD; openEPD — wymogi metadanych rekordu"
+    },
+    {
+      "data": "2026-04-04",
+      "kategoria": "format",
+      "status": "zakonczony",
+      "dotyczy": "poLCA-EN-PL-2024",
+      "tytul": "Udostępnienie dokumentu metodycznego w formacie maszynowym",
+      "opis": "Pełna treść dokumentu metodycznego wskaźnika energii udostępniona w formacie JSON na potrzeby systemów obliczeniowych i kontroli odtwarzalności.",
+      "podstawa": "Polityka aktualizacji poLCA — audytowalność"
+    }
+  ]
+}
