@@ -63,19 +63,19 @@
       "code": "quarterly",
       "name": "Przegląd kwartalny",
       "applies_to": ["energia elektryczna", "paliwa", "transport", "kursy i przeliczniki operacyjne"],
-      "rule": "Co kwartał sprawdź, czy źródło publiczne, krajowy wskaźnik, regulacja albo baza referencyjna opublikowały nową wersję."
+      "rule": "Co kwartał sprawdzane jest, czy źródło publiczne, krajowy wskaźnik, regulacja albo baza referencyjna opublikowały nową wersję."
     },
     {
       "code": "annual",
       "name": "Przegląd roczny",
-      "applies_to": ["datasets poLCA", "wartości domyślne", "dane sektorowe", "źródła publiczne"],
-      "rule": "Raz w roku wykonaj pełny przegląd źródeł, zmian normatywnych, cPCR, danych branżowych i jakości datasetów."
+      "applies_to": ["zbiory danych poLCA", "wartości domyślne", "dane sektorowe", "źródła publiczne"],
+      "rule": "Raz w roku wykonywany jest pełny przegląd źródeł, zmian normatywnych, dokumentów c-PCR, danych branżowych i jakości zbiorów danych."
     },
     {
       "code": "event_driven",
       "name": "Aktualizacja zdarzeniowa",
       "applies_to": ["nowa EPD dostawcy", "zmiana cPCR", "nowa norma", "wykryty błąd", "zmiana źródła danych"],
-      "rule": "Aktualizuj natychmiast, gdy zmiana wpływa na hotspot, zgodność audytową albo wynik istotnego wyrobu."
+      "rule": "Aktualizacja następuje niezwłocznie, gdy zmiana wpływa na hotspot, zgodność audytową albo wynik istotnego wyrobu."
     },
     {
       "code": "major_method_review",

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestr przeglądów i zmian bazy poLCA — wersjonowanie danych LCA</title>
+    <meta name="description" content="Publiczny rejestr przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Cykle przeglądu, zasady wersjonowania oraz skutek zmiany wersji dla wydanych deklaracji EPD.">
+    <link rel="canonical" href="https://polca.org.pl/rejestr-zmian.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rejestr przeglądów i zmian bazy poLCA">
+    <meta property="og:description" content="Kiedy dane poLCA są przeglądane, co zmienia numer wersji i co zmiana oznacza dla deklaracji już wydanych.">
+    <meta property="og:url" content="https://polca.org.pl/rejestr-zmian.html">
+    <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.0">
+    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
+    <style>
+        html{scroll-padding-top:76px}
+        #cykle,#wersje,#skutek,#rejestr{scroll-margin-top:76px}
+        .rej-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
+        .rej-cycles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
+        .rej-cycle{padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+        .rej-cycle strong{display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.3rem}
+        .rej-cycle p{margin:0;color:var(--text-secondary);font-size:.8rem;line-height:1.55}
+        .rej-cycle .rej-applies{margin-top:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-secondary);opacity:.8}
+        .answer-box{padding:1rem;border-left:3px solid var(--accent);border-radius:8px;background:var(--bg-subtle);color:var(--text-secondary);font-size:.86rem;line-height:1.7}
+        .rej-entry{display:grid;grid-template-columns:9rem 1fr;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid var(--border)}
+        .rej-entry:last-child{border-bottom:0}
+        .rej-date{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--text-primary);font-weight:600}
+        .rej-tag{display:inline-block;margin-top:.4rem;padding:.16rem .5rem;border-radius:4px;font-size:.68rem;font-weight:600;letter-spacing:.02em;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary)}
+        .rej-tag.przeglad_metody{background:#FFF8E1;border-color:#FFB74D;color:#E65100}
+        .rej-tag.nowe_dane{background:#E8F5E9;border-color:#81C784;color:#2E7D32}
+        .rej-title{font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:600;color:var(--text-primary);margin:0 0 .35rem}
+        .rej-scope{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-secondary);margin:0 0 .5rem}
+        .rej-desc{margin:0;color:var(--text-secondary);font-size:.86rem;line-height:1.65}
+        .rej-meta{margin:.6rem 0 0;padding:.6rem .8rem;border-radius:6px;background:var(--bg-subtle);font-size:.78rem;line-height:1.6;color:var(--text-secondary)}
+        .rej-meta strong{color:var(--text-primary)}
+        .rej-status{display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:600;color:#E65100}
+        .rej-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#E65100}
+        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-hero>div:last-child{order:-1}.rej-entry{grid-template-columns:1fr;gap:.5rem}}
+    </style>
+</head>
+<body>
+
+<header class="polca-topbar">
+    <div class="header-inner">
+        <a href="index.html" class="site-logo">poLCA</a>
+        <nav class="polca-topnav" aria-label="Nawigacja główna">
+            <a href="index.html">Start</a>
+            <a href="analiza.html">Dlaczego poLCA?</a>
+            <a href="metodyka.html">Metodyka</a>
+            <a href="datasety.html">Wskaźniki</a>
+            <a href="narzedzia.html">Kalkulatory</a>
+            <a href="podstawy-normatywne.html">Normy</a>
+            <a href="pobierz.html">Pobierz</a>
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+        </nav>
+        <div class="header-actions">
+            <a href="blog.html" class="btn-ghost">Blog</a>
+            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
+            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+    </div>
+</header>
+
+<div class="polca-content">
+<div class="polca-page">
+
+    <section class="rej-hero fade-in">
+        <div>
+            <div class="section-num">Rejestr przeglądów i zmian</div>
+            <h1 class="page-title">Kiedy dane poLCA są przeglądane i co zmienia numer wersji</h1>
+            <p class="page-subtitle">
+                Baza referencyjna podlega przeglądom okresowym według ustalonych cykli. Rejestr
+                zawiera zapis przeglądów, aktualizacji danych i zmian metodycznych wraz z podstawą
+                normatywną każdej decyzji. Wersje zastąpione pozostają dostępne do celów kontrolnych.
+            </p>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
+                <a href="#rejestr" class="btn-primary">Rejestr wpisów</a>
+                <a href="#skutek" class="btn-ghost" style="border:1px solid var(--border);">Skutek dla deklaracji</a>
+                <a href="data/rejestr-zmian.json" class="btn-ghost" style="border:1px solid var(--border);">Rejestr w JSON</a>
+            </div>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;position:relative;">
+            <img src="images/strip-data.jpg" alt="Kontrola danych i analiza wykresów" loading="lazy" style="width:100%;height:260px;object-fit:cover;display:block;border-radius:12px;">
+            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none;"></div>
+        </div>
+    </section>
+
+    <section class="card section-gap fade-in" id="cykle" aria-labelledby="cykle-title">
+        <h2 id="cykle-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Cykle przeglądu</h2>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.7;margin:0;">
+            Terminy przeglądu są ustalone z góry w polityce aktualizacji bazy. Dane szybkozmienne,
+            takie jak energia, paliwa i transport, są przeglądane częściej niż wartości materiałowe.
+            Przegląd jest procedurą planową, a nie reakcją na zdarzenie jednostkowe.
+        </p>
+        <div class="rej-cycles" id="cykle-lista">
+            <p style="color:var(--text-secondary);font-size:.84rem;margin:0;">Wczytywanie cykli przeglądu…</p>
+        </div>
+        <p style="margin:1rem 0 0;font-size:.8rem;color:var(--text-secondary);">
+            Pełna polityka aktualizacji i wersjonowania: <a href="data/update-policy.json" style="color:var(--accent);">update-policy.json</a>
+        </p>
+    </section>
+
+    <section class="card section-gap fade-in" id="wersje" aria-labelledby="wersje-title">
+        <h2 id="wersje-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Co oznacza numer wersji</h2>
+        <div class="rej-cycles" id="wersje-lista">
+            <p style="color:var(--text-secondary);font-size:.84rem;margin:0;">Wczytywanie zasad wersjonowania…</p>
+        </div>
+    </section>
+
+    <section class="card section-gap fade-in" id="skutek" aria-labelledby="skutek-title" style="border-left:3px solid var(--accent);">
+        <h2 id="skutek-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Skutek zmiany wersji dla deklaracji już wydanych</h2>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.7;">
+            Deklaracja środowiskowa opiera się na danych obowiązujących w dniu weryfikacji i zachowuje
+            ważność przez zadeklarowany okres. Nowa wersja zbioru danych nie zmienia dokumentów już
+            wydanych. Każde obliczenie zapisuje wersję danych, źródło i wartość użytą w tym obliczeniu,
+            dzięki czemu wynik pozostaje odtwarzalny niezależnie od późniejszych aktualizacji bazy.
+        </p>
+        <div class="answer-box">
+            Aktualizacja bazy referencyjnej jest elementem nadzoru nad danymi, a nie korektą wydanych
+            deklaracji. Ta sama zasada obowiązuje w krajowej inwentaryzacji emisji, gdzie szeregi czasowe
+            są przeliczane po każdej zmianie metody, oraz w międzynarodowych bazach LCI, gdzie kolejne
+            wydania zmieniają wartości bez naruszenia dokumentów wystawionych na wydaniach wcześniejszych.
+        </div>
+        <p style="color:var(--text-secondary);font-size:.84rem;line-height:1.7;margin:1rem 0 0;">
+            Podstawa: ISO 14025:2006 — okres ważności deklaracji; EN 15804+A2:2019 — wymóg dokumentowania
+            źródeł i wersji danych; polityka aktualizacji poLCA — zasada archiwizacji wersji zastąpionych.
+        </p>
+    </section>
+
+    <section class="card section-gap fade-in" id="rejestr" aria-labelledby="rejestr-title">
+        <h2 id="rejestr-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.25rem;">Rejestr wpisów</h2>
+        <p id="rejestr-meta" style="color:var(--text-secondary);font-size:.8rem;margin:0 0 1rem;"></p>
+        <div id="rejestr-lista">
+            <p style="color:var(--text-secondary);font-size:.84rem;">Wczytywanie rejestru…</p>
+        </div>
+    </section>
+
+</div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div>
+            <a href="index.html" class="footer-logo">poLCA</a>
+            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
+            <p class="footer-addr">
+                ul. Mydlarska 47, 04-690 Warszawa<br>
+                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
+                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
+            </p>
+        </div>
+        <div>
+            <div class="footer-col-title">Nawigacja</div>
+            <ul class="footer-links">
+                <li><a href="metodyka.html">Metodyka</a></li>
+                <li><a href="wiarygodnosc.html">Wiarygodność</a></li>
+                <li><a href="datasety.html">Wskaźniki</a></li>
+                <li><a href="narzedzia.html">Kalkulatory</a></li>
+                <li><a href="pobierz.html">Pobierz</a></li>
+            </ul>
+        </div>
+        <div>
+            <div class="footer-col-title">Zasoby</div>
+            <ul class="footer-links">
+                <li><a href="rejestr-zmian.html">Rejestr zmian</a></li>
+                <li><a href="metodyki/">Metodyki</a></li>
+                <li><a href="c-pcr/">c-PCR</a></li>
+                <li><a href="podstawy-normatywne.html">Normy</a></li>
+                <li><a href="sitemap.xml">Mapa strony</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
+        <span>poLCA · polca.org.pl</span>
+    </div>
+</footer>
+
+<script>
+(async function () {
+    const bledy = (el, tekst) => {
+        el.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">' + tekst + '</div>';
+    };
+    const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+    const listaCykli = document.getElementById('cykle-lista');
+    const listaWersji = document.getElementById('wersje-lista');
+    const listaWpisow = document.getElementById('rejestr-lista');
+    const metaWpisow = document.getElementById('rejestr-meta');
+
+    try {
+        const [rejestrRes, politykaRes] = await Promise.all([
+            fetch('data/rejestr-zmian.json'),
+            fetch('data/update-policy.json')
+        ]);
+        if (!rejestrRes.ok) throw new Error('rejestr');
+        const rejestr = await rejestrRes.json();
+        const polityka = politykaRes.ok ? await politykaRes.json() : null;
+        const kategorie = Object.fromEntries((rejestr.kategorie || []).map((k) => [k.code, k]));
+
+        if (polityka && polityka.review_cycles) {
+            listaCykli.innerHTML = polityka.review_cycles.map((c) => `
+                <div class="rej-cycle">
+                    <strong>${esc(c.name)}</strong>
+                    <p>${esc(c.rule)}</p>
+                    <div class="rej-applies">${(c.applies_to || []).map(esc).join(' · ')}</div>
+                </div>`).join('');
+        } else {
+            bledy(listaCykli, 'Nie udało się wczytać polityki aktualizacji. Brak lub błąd pliku data/update-policy.json.');
+        }
+
+        if (polityka && polityka.versioning_rules) {
+            listaWersji.innerHTML = polityka.versioning_rules.slice(0, 3).map((r) => `
+                <div class="rej-cycle"><p>${esc(r)}</p></div>`).join('');
+        } else {
+            listaWersji.innerHTML = '';
+        }
+
+        metaWpisow.textContent = 'Rejestr w wersji ' + (rejestr.meta?.version || '—') +
+            ', zaktualizowany ' + (rejestr.meta?.updated_at || '—') + '. Wpisów: ' + (rejestr.wpisy || []).length + '.';
+
+        listaWpisow.innerHTML = (rejestr.wpisy || []).map((w) => {
+            const kat = kategorie[w.kategoria] || {name: w.kategoria};
+            return `
+            <article class="rej-entry">
+                <div>
+                    <div class="rej-date">${esc(w.data)}</div>
+                    <span class="rej-tag ${esc(w.kategoria)}">${esc(kat.name)}</span>
+                    ${w.status === 'w_toku' ? '<div style="margin-top:.45rem;"><span class="rej-status">w toku</span></div>' : ''}
+                </div>
+                <div>
+                    <h3 class="rej-title">${esc(w.tytul)}</h3>
+                    <p class="rej-scope">${esc(w.dotyczy)}</p>
+                    <p class="rej-desc">${esc(w.opis)}</p>
+                    ${w.podstawa ? `<p class="rej-meta"><strong>Podstawa:</strong> ${esc(w.podstawa)}</p>` : ''}
+                    ${w.skutek_dla_deklaracji ? `<p class="rej-meta"><strong>Skutek dla deklaracji:</strong> ${esc(w.skutek_dla_deklaracji)}</p>` : ''}
+                    ${w.link ? `<p style="margin:.6rem 0 0;font-size:.8rem;"><a href="${esc(w.link)}" target="_blank" rel="noopener" style="color:var(--accent);">${esc(w.link)}</a></p>` : ''}
+                </div>
+            </article>`;
+        }).join('');
+    } catch (e) {
+        bledy(listaWpisow, 'Nie udało się wczytać rejestru zmian. Brak lub błąd pliku data/rejestr-zmian.json.');
+    }
+})();
+</script>
+<script src="js/nav-mobile.js"></script>
+<script src="js/animations.js?v=5.1"></script>
+<script src="js/effects.js?v=5.1"></script>
+<script src="js/search.js?v=5.1"></script>
+</body>
+</html>

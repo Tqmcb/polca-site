@@ -1502,6 +1502,17 @@
         </div>
     </div>
 
+    <!-- STATUS NADZORU NAD DANYMI -->
+    <a href="rejestr-zmian.html" class="fade-in" id="status-nadzoru" style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.25rem;padding:.9rem 1.15rem;border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:8px;background:var(--bg-subtle);text-decoration:none;">
+        <span style="color:var(--text-secondary);font-size:.85rem;line-height:1.6;">
+            <strong style="color:var(--text-primary);font-weight:600;">Nadzór nad danymi:</strong>
+            <span id="status-nadzoru-tresc">baza podlega przeglądom okresowym według ustalonych cykli, a każda zmiana jest zapisywana w publicznym rejestrze.</span>
+        </span>
+        <span style="display:inline-flex;align-items:center;gap:.35rem;color:var(--accent);font-size:.83rem;font-weight:600;white-space:nowrap;">Rejestr przeglądów i zmian
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+    </a>
+
     <!-- BLOG SECTION -->
     <section>
         <div class="section-header fade-in">
@@ -1756,6 +1767,21 @@
 </footer>
 
 <!-- Scripts -->
+<script>
+// Pasek nadzoru: ostatni wpis z rejestru przeglądów. Bez rejestru pasek zachowuje treść statyczną.
+(async function () {
+    'use strict';
+    try {
+        const res = await fetch('data/rejestr-zmian.json');
+        if (!res.ok) return;
+        const wpis = (await res.json()).wpisy?.[0];
+        if (!wpis) return;
+        const cel = document.getElementById('status-nadzoru-tresc');
+        if (cel) cel.textContent = wpis.data + ' — ' + wpis.tytul.charAt(0).toLowerCase() + wpis.tytul.slice(1) +
+            (wpis.status === 'w_toku' ? ' (w toku).' : '.');
+    } catch (e) { /* pasek zostaje w wersji statycznej */ }
+})();
+</script>
 <script src="js/nav-mobile.js"></script>
 <script src="js/animations.js"></script>
 <script src="js/effects.js"></script>
