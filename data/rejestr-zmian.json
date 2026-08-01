@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.2",
-    "updated_at": "2026-07-31",
+    "version": "2026.3",
+    "updated_at": "2026-08-01",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
     "policy_url": "data/update-policy.json",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-08-01",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "Poziom 2 hierarchii wskaźnika energii elektrycznej (market-based)",
+      "tytul": "Przyjęcie wydania AIB European Residual Mix 2025",
+      "opis": "W następstwie przeglądu kwartalnego przyjęto wartość rezydualną z wydania AIB za rok 2025: 0,727 kg CO₂/kWh dla Polski, w miejsce 0,808 kg z wydania za rok 2024. Obie wartości pochodzą z tej samej kolumny arkusza obliczeniowego AIB, są więc bezpośrednio porównywalne. Spadek wynika ze wzrostu udziału źródeł odnawialnych w polskim miksie rezydualnym z 0,093 do 0,187. Zaktualizowano strony opisujące stan obowiązujący: mapę podstaw normatywnych, opis metodyki wartości domyślnych oraz parametry c-PCR. Dokumenty datowane — MET-001 z identyfikatorem DOI, dokument metodyczny w formacie JSON, materiały dla producentów i wpisy blogowe — zachowują treść z dnia publikacji; wpis blogowy opisujący hierarchię otrzymał notę aktualizacyjną odsyłającą do niniejszego rejestru.",
+      "podstawa": "ISO 14067:2018 §6.4.9.4 lit. (c); GHG Protocol Scope 2 — podejście market-based; polityka aktualizacji poLCA — zmiana minor w tej samej metodzie",
+      "link": "https://www.aib-net.org/facts/european-residual-mix/2025",
+      "skutek_dla_deklaracji": "Zmiana dotyczy wyłącznie producentów rozliczających energię elektryczną gwarancjami pochodzenia i raportujących Poziom 2. Wartość jest niższa od poprzedniej, więc wyniki liczone na nowym wydaniu są korzystniejsze. Deklaracje wydane wcześniej zachowują ważność wraz z wersją danych zapisaną w dokumencie. Deklaracje oparte na Poziomie 1, czyli zdecydowana większość, pozostają bez zmian."
+    },
     {
       "data": "2026-07-31",
       "kategoria": "przeglad_okresowy",
