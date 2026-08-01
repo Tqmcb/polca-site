@@ -21,7 +21,11 @@
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>
         html{scroll-padding-top:76px}
-        #co-to-jest,#energia-0599,#hierarchia,#ograniczenia,#co-zmienia-wynik,#status-podsumowanie{scroll-margin-top:76px}
+        #co-to-jest,#energia-0599,#hierarchia,#ograniczenia,#ktory-poziom,#co-zmienia-wynik,#status-podsumowanie{scroll-margin-top:76px}
+        .poziom-krok{display:grid;grid-template-columns:2.25rem 1fr;gap:.9rem;align-items:start;margin-top:1rem;padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
+        .poziom-krok strong{color:var(--text-primary);font-size:.9rem}
+        .poziom-krok p{margin:.45rem 0 0;color:var(--text-secondary);font-size:.84rem;line-height:1.65}
+        .poziom-num{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:50%;background:var(--bg-subtle);border:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:.9rem;font-weight:700;color:var(--text-primary)}
         .status-table .mono{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--text-primary)}
         @media(max-width:760px){#co-zmienia-wynik>div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important}}
         .trust-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
@@ -226,8 +230,67 @@
         </ul>
     </section>
 
+    <section id="ktory-poziom" class="card card-lg section-gap fade-in">
+        <div class="section-num">05 — Wybór wskaźnika energii</div>
+        <div class="card-title">Który poziom wskaźnika zastosować</div>
+        <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.7;max-width:820px;">
+            Hierarchia z c-PCR-BET §6.3 podaje trzy wartości. Wybór między nimi nie jest kwestią
+            preferencji — zależy od tego, jak zakład rozlicza energię elektryczną. Poniższa kolejność
+            pytań prowadzi do właściwego poziomu.
+        </p>
+
+        <div class="poziom-krok">
+            <div class="poziom-num">1</div>
+            <div>
+                <strong>Czy zakład ma własną instalację odnawialną zasilającą produkcję?</strong>
+                <p>Energia zużyta bezpośrednio z instalacji własnej, bez wprowadzenia do sieci, jest
+                rozliczana według <strong>Poziomu 3 (0,041 kg CO₂e/kWh)</strong>. Dotyczy wyłącznie tej
+                części zużycia, która pochodzi z instalacji własnej. Pozostała energia przechodzi do pytania 2.</p>
+            </div>
+        </div>
+
+        <div class="poziom-krok">
+            <div class="poziom-num">2</div>
+            <div>
+                <strong>Czy zakład kupuje gwarancje pochodzenia dla energii z sieci?</strong>
+                <p><strong>Nie</strong> — zastosowanie ma <strong>Poziom 1 (0,599 kg CO₂e/kWh)</strong>,
+                czyli średni miks krajowy w pełnym cyklu życia. To sytuacja zdecydowanej większości zakładów
+                i wartość domyślna programu.</p>
+                <p><strong>Tak</strong> — energia objęta gwarancjami jest rozliczana według wartości
+                wynikającej z tych gwarancji, a <strong>cała pozostała energia</strong> z sieci według
+                <strong>Poziomu 2 (0,727 kg CO₂/kWh)</strong>.</p>
+            </div>
+        </div>
+
+        <div class="answer-box" style="margin-top:1rem;">
+            <strong style="color:var(--text-primary);">Najczęstsze nieporozumienie.</strong>
+            Poziom 2 jest <strong>wyższy</strong> od Poziomu 1, a nie niższy. Wartość rezydualna opisuje
+            energię pozostałą w sieci po odjęciu tej, którą ktoś już rozliczył gwarancjami pochodzenia —
+            a więc bardziej emisyjną od średniej. Zakup gwarancji nie obniża zatem automatycznie wyniku
+            deklaracji: obniża emisję przypisaną części zużycia objętej gwarancjami i jednocześnie
+            podnosi wskaźnik dla reszty. Mechanizm ten zapobiega dwukrotnemu zaliczeniu tej samej
+            energii odnawialnej przez dwa różne podmioty.
+        </div>
+
+        <div class="poziom-krok" style="border-color:var(--accent);">
+            <div class="poziom-num" style="background:var(--accent);color:#fff;">3</div>
+            <div>
+                <strong>Niezależnie od wyboru: wartość według Poziomu 1 podaje się zawsze.</strong>
+                <p>Deklaracja stosująca Poziom 2 lub 3 wykazuje równolegle wynik według Poziomu 1 jako
+                odniesienie porównawcze. Bez tego wyniki dwóch zakładów przestają być porównywalne,
+                czego wymaga zasada porównywalności deklaracji z ISO 14025 i EN 15804+A2.</p>
+            </div>
+        </div>
+
+        <p style="color:var(--text-secondary);font-size:.8rem;line-height:1.6;margin:1rem 0 0;">
+            Podstawa: c-PCR-BET-EPD-PL:2026 §6.3; ISO 14067:2018 §6.4.9.4 lit. (c); GHG Protocol Scope 2 Guidance —
+            rozdzielenie podejścia location-based i market-based. Aktualnie obowiązujące wartości i historia ich
+            zmian: <a href="rejestr-zmian.html" style="color:var(--accent);font-weight:600;">rejestr przeglądów i zmian</a>.
+        </p>
+    </section>
+
     <section id="co-zmienia-wynik" class="card card-lg section-gap fade-in">
-        <div class="section-num">05 — Wpływ danych na wynik</div>
+        <div class="section-num">06 — Wpływ danych na wynik</div>
         <div class="card-title">Co naprawdę zmienia wynik deklaracji</div>
         <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.7;max-width:820px;">
             Wskaźniki referencyjne bywają traktowane jako główna dźwignia wyniku środowiskowego wyrobu.
@@ -277,7 +340,7 @@
     </section>
 
     <section id="status-podsumowanie" class="card card-lg section-gap fade-in">
-        <div class="section-num">06 — Podstawa wiarygodności</div>
+        <div class="section-num">07 — Podstawa wiarygodności</div>
         <div class="card-title">Na czym opiera się wiarygodność poLCA</div>
         <div class="answer-box">
             poLCA opiera się na jednej, wersjonowanej metodyce i podstawie normatywnej EN 15804+A2
