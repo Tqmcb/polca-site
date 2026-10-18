@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.6-mma",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-11",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,12 +11,13 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "POLCA-MMA-LCI-DEFAULTS-2026",
@@ -36,7 +37,7 @@
     "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "scope": "A1-A3",
-    "methodology_note": "Dataset zbiera kontrolowane wartości domyślne LCI dla cyklu cradle-to-gate (A1-A3) mieszanek mineralno-asfaltowych w Polsce. Surowce A1: lepiszcze asfaltowe (Eurobitume LCA 4.0 (2025), AR6 IPCC), kruszywa łamane i naturalne, wypełniacz wapienny, włókno stabilizujące, dodatki WMA oraz granulat asfaltowy RA z zasadą cut-off. Transport A2: średni zestaw ciężarowy EURO5/6 z domyślnymi odległościami dla każdego strumienia. Energia A3: paliwo do suszenia i podgrzewania kruszywa (olej opałowy lub gaz ziemny) oraz energia elektryczna wytwórni. Wskaźnik energii elektrycznej został zsynchronizowany z modelem poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh i z c-PCR-BET v1.3 §6.3, a nie z surowym wskaźnikiem KOBiZE 0,715 kg CO2e/kWh użytym w roboczym Raporcie LCI.",
+    "methodology_note": "Dataset zbiera kontrolowane wartości domyślne LCI dla cyklu cradle-to-gate (A1-A3) mieszanek mineralno-asfaltowych w Polsce. Surowce A1: lepiszcze asfaltowe (Eurobitume LCA 4.0 (2025), AR6 IPCC), kruszywa łamane i naturalne, wypełniacz wapienny, włókno stabilizujące, dodatki WMA oraz granulat asfaltowy RA z zasadą cut-off. Transport A2: średni zestaw ciężarowy EURO5/6 z domyślnymi odległościami dla każdego strumienia. Energia A3: paliwo do suszenia i podgrzewania kruszywa (olej opałowy lub gaz ziemny) oraz energia elektryczna wytwórni. Wskaźnik energii elektrycznej został zsynchronizowany z modelem poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh i z c-PCR-BET v1.3 §6.3, a nie z roboczym założeniem 0,715 kg CO2e/kWh użytym w Raporcie LCI; przypisanie tego założenia do KOBiZE nie zostało tu potwierdzone.",
     "limitations": "Nie zastępuje danych konkretnej wytwórni, recepty mieszanki, dostawcy lepiszcza ani zweryfikowanego wskaźnika energii. Wartości domyślne są konserwatywne i służą do wstępnej kwalifikacji (pre-qualify) oraz raportów wewnętrznych; finalna EPD wymaga danych producenta dla składników kluczowych — lepiszcza, kruszyw, paliw, energii i transportu.",
     "preferred_replacement": "Recepta mieszanki i bilans masowy producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
     "publication_status": "published_sector_dataset",
@@ -111,30 +112,118 @@
       "when_allowed": "Brak recepty, danych energetycznych lub dokumentów dostawców dla konkretnej mieszanki; wynik oznaczony jako wartość branżowa/domyślna do wstępnej kwalifikacji.",
       "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ i pochodzenie lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i rzeczywiste odległości transportu A2."
     },
-    "selection_mode": "default",
-    "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę, dostawców i transport. System dobiera kontrolowany dataset domyślny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta lub EPD.",
+    "selection_mode": "context_specific_assessment",
+    "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "calculation_components": {
       "raw_materials_A1": [
-        { "code": "BITUMEN-35-50", "name": "Bitumen drogowy 35/50", "value_kg_co2e_per_t": 530, "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC" },
-        { "code": "BITUMEN-50-70", "name": "Bitumen drogowy 50/70", "value_kg_co2e_per_t": 530, "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC" },
-        { "code": "BITUMEN-70-100", "name": "Bitumen drogowy 70/100", "value_kg_co2e_per_t": 530, "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC" },
-        { "code": "BITUMEN-PMB", "name": "Bitumen modyfikowany polimerami PMB", "value_kg_co2e_per_t": 560, "source": "Eurobitume LCA 4.0 (2025) + polimer" },
-        { "code": "BITUMEN-LCI-3-1-DEPRECATED", "name": "Bitumen — historyczna wartość LCI 3.1", "value_kg_co2e_per_t": 216, "source": "Eurobitume LCI 3.1 (2012, AR5)", "status": "deprecated", "note": "Wartość historyczna; nie stosować w nowych obliczeniach — zastąpiona przez Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t." },
-        { "code": "AGG-BASALT", "name": "Kruszywo bazaltowe łamane", "value_kg_co2e_per_t": 3.99, "source": "ITB-EPD 706/2024, Trzuskawica S.A." },
-        { "code": "AGG-GRANITE", "name": "Kruszywo granitowe łamane", "value_kg_co2e_per_t": 4.50, "source": "Ecoinvent 3.10, Gruber et al. (2023)" },
-        { "code": "AGG-LIMESTONE", "name": "Kruszywo wapienne łamane", "value_kg_co2e_per_t": 3.20, "source": "Gruber et al. (2023)" },
-        { "code": "AGG-NATURAL", "name": "Kruszywo naturalne (piasek, żwir)", "value_kg_co2e_per_t": 1.80, "source": "Gruber et al. (2023), Ecoinvent 3.10" },
-        { "code": "AGG-PL-WEIGHTED", "name": "Kruszywo — średnia ważona PL (mix bazalt+granit+wapień)", "value_kg_co2e_per_t": 3.80, "source": "szacunek regionalny poLCA" },
-        { "code": "FILLER-LIMESTONE", "name": "Wypełniacz wapienny", "value_kg_co2e_per_t": 5.50, "source": "Ecoinvent 3.10" },
-        { "code": "FIBER-CELLULOSE", "name": "Włókno celulozowe (stabilizator SMA)", "value_kg_co2e_per_t": 800, "source": "Ecoinvent 3.10" },
-        { "code": "RA-GRANULATE", "name": "Granulat asfaltowy RA", "value_kg_co2e_per_t": 0, "source": "EN 15804+A2 §6.3.6 zasada cut-off; NAPA EPD PCR v2.0:2022", "note": "Obciążenie środowiskowe RA tylko w transporcie A2 (30 km) i podgrzewaniu w A3; brak obciążenia w A1." },
-        { "code": "WMA-ADDITIVE", "name": "Dodatek WMA chemiczny (np. Sasobit)", "value_kg_co2e_per_t": 1200, "source": "szacunek poLCA dla środków chemicznych" }
+        {
+          "code": "BITUMEN-35-50",
+          "name": "Bitumen drogowy 35/50",
+          "value_kg_co2e_per_t": 530,
+          "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC"
+        },
+        {
+          "code": "BITUMEN-50-70",
+          "name": "Bitumen drogowy 50/70",
+          "value_kg_co2e_per_t": 530,
+          "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC"
+        },
+        {
+          "code": "BITUMEN-70-100",
+          "name": "Bitumen drogowy 70/100",
+          "value_kg_co2e_per_t": 530,
+          "source": "Eurobitume LCA 4.0 (2025), AR6 IPCC"
+        },
+        {
+          "code": "BITUMEN-PMB",
+          "name": "Bitumen modyfikowany polimerami PMB",
+          "value_kg_co2e_per_t": 560,
+          "source": "Eurobitume LCA 4.0 (2025) + polimer"
+        },
+        {
+          "code": "BITUMEN-LCI-3-1-DEPRECATED",
+          "name": "Bitumen — historyczna wartość LCI 3.1",
+          "value_kg_co2e_per_t": 216,
+          "source": "Eurobitume LCI 3.1 (2012, AR5)",
+          "status": "deprecated",
+          "note": "Wartość historyczna; nie stosować w nowych obliczeniach — zastąpiona przez Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t."
+        },
+        {
+          "code": "AGG-BASALT",
+          "name": "Kruszywo bazaltowe łamane",
+          "value_kg_co2e_per_t": 3.99,
+          "source": "ITB-EPD 706/2024, Trzuskawica S.A."
+        },
+        {
+          "code": "AGG-GRANITE",
+          "name": "Kruszywo granitowe łamane",
+          "value_kg_co2e_per_t": 4.5,
+          "source": "Ecoinvent 3.10, Gruber et al. (2023)"
+        },
+        {
+          "code": "AGG-LIMESTONE",
+          "name": "Kruszywo wapienne łamane",
+          "value_kg_co2e_per_t": 3.2,
+          "source": "Gruber et al. (2023)"
+        },
+        {
+          "code": "AGG-NATURAL",
+          "name": "Kruszywo naturalne (piasek, żwir)",
+          "value_kg_co2e_per_t": 1.8,
+          "source": "Gruber et al. (2023), Ecoinvent 3.10"
+        },
+        {
+          "code": "AGG-PL-WEIGHTED",
+          "name": "Kruszywo — średnia ważona PL (mix bazalt+granit+wapień)",
+          "value_kg_co2e_per_t": 3.8,
+          "source": "szacunek regionalny poLCA"
+        },
+        {
+          "code": "FILLER-LIMESTONE",
+          "name": "Wypełniacz wapienny",
+          "value_kg_co2e_per_t": 5.5,
+          "source": "Ecoinvent 3.10"
+        },
+        {
+          "code": "FIBER-CELLULOSE",
+          "name": "Włókno celulozowe (stabilizator SMA)",
+          "value_kg_co2e_per_t": 800,
+          "source": "Ecoinvent 3.10"
+        },
+        {
+          "code": "RA-GRANULATE",
+          "name": "Granulat asfaltowy RA",
+          "value_kg_co2e_per_t": 0,
+          "source": "EN 15804+A2 §6.3.6 zasada cut-off; NAPA EPD PCR v2.0:2022",
+          "note": "Obciążenie środowiskowe RA tylko w transporcie A2 (30 km) i podgrzewaniu w A3; brak obciążenia w A1."
+        },
+        {
+          "code": "WMA-ADDITIVE",
+          "name": "Dodatek WMA chemiczny (np. Sasobit)",
+          "value_kg_co2e_per_t": 1200,
+          "source": "szacunek poLCA dla środków chemicznych"
+        }
       ],
       "transport_A2": {
         "emission_factors_kg_co2e_per_tkm": [
-          { "code": "TRUCK-16-32T-EURO6", "name": "Ciężarówka 16-32 t, EURO6", "value": 0.096, "source": "Ecoinvent 3.10" },
-          { "code": "TRUCK-16-32T-EURO5", "name": "Ciężarówka 16-32 t, EURO5", "value": 0.110, "source": "Ecoinvent 3.10" },
-          { "code": "TRUCK-PL-AVG", "name": "Ciężarówka — średnia PL (mix EURO5/6)", "value": 0.100, "source": "wartość domyślna poLCA dla PL" }
+          {
+            "code": "TRUCK-16-32T-EURO6",
+            "name": "Ciężarówka 16-32 t, EURO6",
+            "value": 0.096,
+            "source": "Ecoinvent 3.10"
+          },
+          {
+            "code": "TRUCK-16-32T-EURO5",
+            "name": "Ciężarówka 16-32 t, EURO5",
+            "value": 0.11,
+            "source": "Ecoinvent 3.10"
+          },
+          {
+            "code": "TRUCK-PL-AVG",
+            "name": "Ciężarówka — średnia PL (mix EURO5/6)",
+            "value": 0.1,
+            "source": "wartość domyślna poLCA dla PL"
+          }
         ],
         "default_distances_km": {
           "bitumen_cysterna": 150,
@@ -148,19 +237,49 @@
       },
       "energy_A3": {
         "fuel_consumption": [
-          { "tech": "HMA", "fuel": "olej opałowy lekki", "rate": "9.0 L/t", "process_temp_c": "155-185", "co2_from_fuel_kg_per_t": 24.1 },
-          { "tech": "HMA", "fuel": "gaz ziemny", "rate": "7.5 L_eq/t", "process_temp_c": "155-185", "co2_from_fuel_kg_per_t": 17.0 },
-          { "tech": "WMA", "fuel": "olej opałowy lekki", "rate": "6.5 L/t", "process_temp_c": "120-145", "co2_from_fuel_kg_per_t": 17.4 },
-          { "tech": "WMA", "fuel": "gaz ziemny", "rate": "5.5 L_eq/t", "process_temp_c": "120-145", "co2_from_fuel_kg_per_t": 12.5 },
-          { "tech": "HMA", "fuel": "średnia ważona PL", "rate": "9.0 L/t", "process_temp_c": "160", "co2_from_fuel_kg_per_t": 22.3 }
+          {
+            "tech": "HMA",
+            "fuel": "olej opałowy lekki",
+            "rate": "9.0 L/t",
+            "process_temp_c": "155-185",
+            "co2_from_fuel_kg_per_t": 24.1
+          },
+          {
+            "tech": "HMA",
+            "fuel": "gaz ziemny",
+            "rate": "7.5 L_eq/t",
+            "process_temp_c": "155-185",
+            "co2_from_fuel_kg_per_t": 17.0
+          },
+          {
+            "tech": "WMA",
+            "fuel": "olej opałowy lekki",
+            "rate": "6.5 L/t",
+            "process_temp_c": "120-145",
+            "co2_from_fuel_kg_per_t": 17.4
+          },
+          {
+            "tech": "WMA",
+            "fuel": "gaz ziemny",
+            "rate": "5.5 L_eq/t",
+            "process_temp_c": "120-145",
+            "co2_from_fuel_kg_per_t": 12.5
+          },
+          {
+            "tech": "HMA",
+            "fuel": "średnia ważona PL",
+            "rate": "9.0 L/t",
+            "process_temp_c": "160",
+            "co2_from_fuel_kg_per_t": 22.3
+          }
         ],
         "temperature_correction": "+5% zużycia paliwa na każde 10°C powyżej 160°C (Schönauer & Gruber 2024).",
         "electricity": {
           "consumption_kwh_per_t": 2.5,
           "emission_factor_kg_co2e_per_kwh": 0.599,
           "emission_factor_source": "poLCA-EN-PL-2024 v9.1 (full LCA location-based)",
-          "co2e_from_electricity_kg_per_t": 1.50,
-          "note": "Wskaźnik 0,599 kg CO2e/kWh zsynchronizowany z modelem poLCA i c-PCR-BET v1.3 §6.3 — NIE 0,715 kg CO2e/kWh (KOBiZE 2023) użyty w roboczym Raporcie LCI; roboczy raport dawał 1,79 kg CO2e/t, wartość zsynchronizowana to 1,50 kg CO2e/t.",
+          "co2e_from_electricity_kg_per_t": 1.5,
+          "note": "Wskaźnik 0,599 kg CO2e/kWh zsynchronizowany z modelem poLCA i c-PCR-BET v1.3 §6.3 — NIE 0,715 kg CO2e/kWh (robocze przypisanie do KOBiZE 2023 bez potwierdzonego źródła) użyty w roboczym Raporcie LCI; roboczy raport dawał 1,79 kg CO2e/t, wartość zsynchronizowana to 1,50 kg CO2e/t.",
           "source_consumption": "Schönauer & Gruber (2024)"
         }
       },
@@ -182,14 +301,20 @@
       "P": 2,
       "M": 2,
       "DQR": 1.8,
-      "interpretation": "Bardzo dobra jakość danych dla zestawu domyślnego: TeR=2 (zweryfikowane dane branżowe), GR=1 (Polska), TiR=2 (2025-2026), P=2 (wartości domyślne), M=2 (modelowanie spójne z EN 15804+A2)."
+      "interpretation": "Historyczna ocena autora: TeR=2 (dane branżowe), GR=1 (Polska), TiR=2 (2025-2026), P=2 (wartości domyślne), M=2 (założenia modelu z odniesieniem do EN 15804+A2). Ocena nie jest potwierdzeniem zgodności ani zewnętrznej weryfikacji.",
+      "assessment_status": "historical_author_assessment"
     },
-    "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+    "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
     "product_groups": [
       "mma",
       "roboty-drogowe"
     ],
     "material_role": "mieszanka mineralno-asfaltowa",
-    "record_use_status": "ready_to_use_default_dataset"
-  }
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters",
+    "model_variant_status": "historical_assumptions_not_synchronised_catalogue"
+  },
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

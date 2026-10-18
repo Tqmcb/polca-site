@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.4-aggregates",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-03",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,12 +11,13 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -31,16 +32,16 @@
     "review_cycle": "annual",
     "geography": "PL",
     "technology": "cement portlandzki zgodny z EN 197-1",
-    "data_quality": "producer_epd_reference",
-    "status": "published_reference_dataset",
+    "data_quality": "historical_sector_proxy",
+    "status": "historical_reference",
     "source_name": "EPD Górażdże/Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
     "source_url": "https://www.epd.org.pl/",
     "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-    "methodology_note": "Dataset cementu oparto na polskich EPD producentów cementu 2023-2024. Dane sektorowe SPC/EY 2024 dla CO2 netto na typ cementu służą jako kontrola rzędu wielkości i uzasadnienie zależności od udziału klinkieru, ale nie zastępują pełnego wskaźnika GWP A1-A3 z EPD.",
+    "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
     "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
     "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-    "publication_status": "published_reference_dataset",
-    "review_required": false,
+    "publication_status": "historical_reference",
+    "review_required": true,
     "use_allowed_for": [
       "screening",
       "internal_report",
@@ -51,8 +52,8 @@
       {
         "name": "EPD Górażdże/Holcim PL 2024",
         "url": "https://www.epd.org.pl/",
-        "role": "źródło wartości GWP A1-A3 dla cementu",
-        "type": "verified_epd_reference"
+        "role": "historyczne wskazanie źródła; brak identyfikatora deklaracji i tabeli",
+        "type": "unresolved_epd_reference"
       },
       {
         "name": "Stowarzyszenie Producentów Cementu / EY 2024",
@@ -62,15 +63,15 @@
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość referencyjna poLCA na podstawie zweryfikowanych EPD producentów. Bezpośrednie zastosowanie EPD dotyczy wyłącznie deklarowanego cementu i producenta; dla innych dostaw rekord ma status wartości referencyjnej.",
+    "open_data_note": "Historyczna wartość referencyjna z niepełnym śladem źródłowym. Nazwy producentów i adresy zachowano jako wskazania z wcześniejszego rekordu.",
     "evidence_level": "sector_proxy",
     "source_policy": {
-      "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD PL > sektorowy kontekst SPC/EY",
-      "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego cementu; wynik oznaczony jako wartość referencyjna.",
+      "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
+      "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
       "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
     },
-    "selection_mode": "mandatory_default_when_no_supplier_epd",
-    "user_choice_policy": "Użytkownik wskazuje rzeczywisty typ cementu i dostawcę. Jeżeli brak danych dostawcy, stosowana jest odpowiadająca wartość referencyjna poLCA dla typu CEM.",
+    "selection_mode": "context_specific_assessment",
+    "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
       "declared_value": "856 kg CO2e/t",
       "module": "A1-A3",
@@ -86,7 +87,7 @@
         {
           "name": "EPD Górażdże/Holcim PL 2024",
           "url": "https://www.epd.org.pl/",
-          "role": "wartość GWP A1-A3 cementu"
+          "role": "historyczne wskazanie źródła; identyfikacja EPD wymaga uzupełnienia"
         },
         {
           "name": "Stowarzyszenie Producentów Cementu / EY 2024",
@@ -112,6 +113,12 @@
       "ogolne-epd"
     ],
     "material_role": "cement",
-    "record_use_status": "ready_to_use_reference_dataset"
-  }
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters",
+    "provenance_status": "incomplete_epd_identification",
+    "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+  },
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

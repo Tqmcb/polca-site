@@ -4,133 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator emisji energii CO₂ — poLCA</title>
-    <meta name="description" content="Oblicz orientacyjne emisje CO₂ z procesu energetycznego w oparciu o polskie wskaźniki emisji KOBiZE 2024. Gaz ziemny, olej opałowy, węgiel kamienny, biomasa, energia elektryczna.">
+    <meta name="description" content="Przelicz zużycie energii na wynik przy wybranym współczynniku. Historyczny profil prądu 2024: GWP-fossil 599 kg CO₂e/MWh; paliwa: CO₂ kopalny ze spalania.">
     <link rel="canonical" href="https://polca.org.pl/kalkulator.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kalkulator Emisji CO₂ — poLCA">
-    <meta property="og:description" content="Orientacyjne oszacowanie emisji CO₂ z procesu energetycznego. Polskie wskaźniki emisji KOBiZE 2024 dla gazu, oleju, węgla, biomasy i prądu.">
+    <meta property="og:description" content="Przelicz zużycie energii na wynik przy wybranym współczynniku. Historyczny profil prądu 2024: GWP-fossil 599 kg CO₂e/MWh; paliwa: CO₂ kopalny ze spalania.">
     <meta property="og:url" content="https://polca.org.pl/kalkulator.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-energy.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kalkulator Emisji CO₂ — poLCA">
-    <meta name="twitter:description" content="Oblicz emisje CO₂ z procesu energetycznego. Polskie wskaźniki KOBiZE 2024.">
+    <meta name="twitter:description" content="Przelicz zużycie energii na wynik przy wybranym współczynniku. Historyczny profil prądu 2024: GWP-fossil 599 kg CO₂e/MWh; paliwa: CO₂ kopalny ze spalania.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-energy.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <link rel="stylesheet" href="style-interactive.css?v=1.1">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>@media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}</style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy portal-tool">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html" class="is-active">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main"><nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Kalkulator energii</span></nav><div class="polca-page">
+    <div class="page-hero fade-in">
+        <div class="section-num">Kalkulator · historyczne założenia</div>
+        <h1 class="page-title">Kalkulator energii</h1>
+        <p class="page-subtitle">Wprowadź zużycie energii i wybierz współczynnik. Zakres wyniku zależy od źródła: profil prądu obejmuje kopalną część wpływu w cyklu życia, a warianty paliw — kopalny CO₂ ze spalania.</p>
     </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
-    <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
-        <div>
-            <div class="section-num">Narzędzie</div>
-            <h1 class="page-title">Kalkulator emisji energii elektrycznej</h1>
-            <p class="page-subtitle">
-                Szacowanie emisji CO₂ z procesu energetycznego w oparciu o wskaźniki poLCA.
-                Porównanie danych polskich z uśrednionymi danymi europejskimi.
-            </p>
-        </div>
-        <div style="border-radius:12px;overflow:hidden;position:relative;">
-            <img src="images/strip-energy.jpg" alt="Infrastruktura energetyczna" loading="lazy" style="width:100%;height:280px;object-fit:cover;display:block;border-radius:12px;filter:saturate(1.05) contrast(1.02);">
-            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
-        </div>
+    <div class="tool-nav section-gap">
+        <a class="tool-nav-pill" href="narzedzia.html">Wszystkie kalkulatory</a>
+        <a class="tool-nav-pill" href="kalkulator-mma.html">Mieszanki mineralno-asfaltowe</a>
+        <a class="tool-nav-pill" href="kalkulator-kruszywa.html">Kruszywa</a>
+        <a class="tool-nav-pill" href="energia-polska-2025-v3.html">Model energii 2025</a>
     </div>
-
-    <div class="card card-accent-orange section-gap fade-in" style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;">
-        <div style="flex:1;min-width:240px;">
-            <strong>Szukasz kalkulatora EPD dla mieszanek mineralno-asfaltowych?</strong>
-            <span style="color:var(--text-secondary);"> Oszacuj GWP A1-A3 [kg CO₂eq/t MMA] z receptury — zgodne z c-PCR-MMA v1.0-DRAFT i EN 15804+A2.</span>
-        </div>
-        <a href="kalkulator-mma.html" class="btn-primary" style="white-space:nowrap;">Kalkulator MMA pre-qualify →</a>
-    </div>
-
-    <div class="card card-accent-orange section-gap fade-in" style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;">
-        <div style="flex:1;min-width:240px;">
-            <strong>Szukasz kalkulatora dla kruszyw budowlanych?</strong>
-            <span style="color:var(--text-secondary);"> Oszacuj GWP A1-A3 [kg CO₂eq/t kruszywa] z typu kruszywa lub parametrów zakładu — zgodne z c-PCR-AGG v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2.</span>
-        </div>
-        <a href="kalkulator-kruszywa.html" class="btn-primary" style="white-space:nowrap;">Kalkulator kruszyw pre-qualify →</a>
-    </div>
-
     <div class="card card-lg section-gap fade-in">
         <div class="calc-grid">
             <div class="calc-group">
-                <div>
-                    <label class="calc-label" for="energyInput">Zużycie energii [MWh]</label>
-                    <input type="number" id="energyInput" class="calc-input" value="100" min="0" step="10">
-                </div>
-                <div>
-                    <label class="calc-label" for="sourceSelect">Źródło energii</label>
-                    <select id="sourceSelect" class="calc-select">
-                        <option value="599">Miks elektr. PL (599 kg CO₂e/MWh, poLCA-EN-PL 2024)</option>
-                        <option value="202">Gaz ziemny (202 kg CO₂/MWh)</option>
-                        <option value="279">Olej opałowy (279 kg CO₂/MWh)</option>
-                        <option value="344">Węgiel kamienny (344 kg CO₂/MWh)</option>
-                        <option value="0">Biomasa (0 kg CO₂/MWh)</option>
-                    </select>
-                </div>
-                <p class="calc-note">
-                    Dla miksu elektrycznego stosujemy wskaźnik poLCA-EN-PL 2024 (full LCA, kg CO₂e/MWh):
-                    emisje operacyjne + WTT_CH₄ z kopalń + WTT_fuels (JEC WTT v5) + WTT_OZE (ecoinvent 3.12).
-                    Dla pozostałych paliw — KOBiZE 2024 (direct CO₂).
-                </p>
+                <div><label class="calc-label" for="energyInput">Zużycie energii [MWh]</label>
+                <input type="number" id="energyInput" required aria-describedby="energyInputWarn" class="calc-input" value="100" min="0" step="10"></div>
+                <div><label class="calc-label" for="sourceSelect">Współczynnik i zakres</label>
+                <select id="sourceSelect" class="calc-select">
+                    <option value="599" data-scope="fossil-lca">Prąd PL 2024 — 599 kg CO₂e/MWh (GWP-fossil)</option>
+                    <option value="202">Gaz ziemny — 202 kg CO₂/MWh (spalanie)</option>
+                    <option value="279">Olej opałowy — 279 kg CO₂/MWh (spalanie)</option>
+                    <option value="344">Węgiel kamienny — 344 kg CO₂/MWh (spalanie)</option>
+                    <option value="0">Biomasa — 0 kg kopalnego CO₂/MWh (założenie)</option>
+                </select></div>
+                <p class="calc-note">MWh (megawatogodzina) oznacza ilość energii. Dla paliw przyjęto historyczne współczynniki kalkulatora, bez przeliczenia sprawności urządzenia i bez dostaw paliwa. Zero dla biomasy dotyczy wyłącznie przyjętej emisji kopalnego CO₂; spalanie emituje także CO₂ biogeniczny.</p>
             </div>
-            <div class="card calc-result-block">
-                <div>
-                    <div class="calc-result-label">Emisja CO₂ — wybrane źródło</div>
-                    <div class="calc-result-value">
-                        <span id="resultMain">59 700</span> <small>kg CO₂</small>
-                    </div>
-                </div>
-                <div class="calc-divider"></div>
-                <div>
-                    <div class="calc-result-label">Emisja CO₂ — średnia EU (~210 kg/MWh)</div>
-                    <div class="calc-result-value secondary">
-                        <span id="resultEU">21 000</span> <small>kg CO₂</small>
-                    </div>
-                </div>
-                <div class="calc-diff" id="calcDiff">
-                    Różnica: +185% przy zastosowaniu danych polskich
-                </div>
-                <div class="calc-chart-wrap">
-                    <div class="calc-chart-label">Porównanie wizualne [kg CO₂]</div>
-                    <div class="calc-chart-canvas-wrap">
-                        <canvas id="calcCompChart"></canvas>
-                    </div>
-                </div>
+            <div class="card calc-result-block" aria-live="polite">
+                <div class="calc-result-label">Wynik dla wybranego zakresu</div>
+                <div class="calc-result-value"><span id="resultMain">59 900</span> <small id="resultUnit">kg CO₂e</small></div>
+                <p class="calc-note" id="energyInputWarn" role="alert" hidden></p>
+                <p class="calc-note" id="resultScope">Historyczny profil poLCA-EN-PL-2024 v9.1, część kopalna cyklu życia</p>
                 <div style="display:flex;gap:0.5rem;margin-top:1rem;">
                     <button id="matExportCsv" class="calc-export-btn" type="button">Kopiuj CSV</button>
                     <button id="matExportJson" class="calc-export-json" type="button">Kopiuj JSON</button>
@@ -138,213 +64,25 @@
             </div>
         </div>
     </div>
-
     <div class="card card-lg section-gap fade-in">
-        <div class="card-title">Polskie wskaźniki emisji — tabela referencyjna</div>
-        <p class="card-text" style="margin-bottom: 1rem;">Wartości na 1 GJ energii. Miks elektr. PL — poLCA-EN-PL 2024 (full LCA, CO₂e). Pozostałe paliwa — KOBiZE 2024 (direct CO₂).</p>
-        <div style="overflow-x: auto;">
-            <table class="polca-table">
-                <thead>
-                    <tr>
-                        <th>Wskaźnik</th>
-                        <th>Miks elektr. PL</th>
-                        <th>Gaz ziemny</th>
-                        <th>Olej opałowy</th>
-                        <th>Węgiel kamienny</th>
-                        <th>Biomasa</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CO₂(e) [kg/GJ]</td>
-                        <td class="mono highlight">166,4 **</td>
-                        <td class="mono">56,1</td>
-                        <td class="mono">77,4</td>
-                        <td class="mono">95,5</td>
-                        <td class="mono">0,0 *</td>
-                    </tr>
-                    <tr>
-                        <td>SO₂ [g/GJ]</td>
-                        <td class="mono">125,2</td>
-                        <td class="mono">0,5</td>
-                        <td class="mono">140,6</td>
-                        <td class="mono">210,0</td>
-                        <td class="mono">11,0</td>
-                    </tr>
-                    <tr>
-                        <td>NO<sub>x</sub> [g/GJ]</td>
-                        <td class="mono">145,3</td>
-                        <td class="mono">46,0</td>
-                        <td class="mono">55,0</td>
-                        <td class="mono">160,0</td>
-                        <td class="mono">85,0</td>
-                    </tr>
-                    <tr>
-                        <td>Pył całkowity [g/GJ]</td>
-                        <td class="mono">5,3</td>
-                        <td class="mono">0,1</td>
-                        <td class="mono">1,5</td>
-                        <td class="mono">12,0</td>
-                        <td class="mono">30,0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            ** Miks elektr. PL: poLCA-EN-PL 2024 (full LCA) = 166,4 kg CO₂e/GJ (599 kg CO₂e/MWh).
-            Składowe: EF_oper 0,528 + WTT_CH₄ 0,057 + WTT_fuels 0,008 + WTT_OZE 0,006 = 0,599 kg CO₂e/kWh.
-            * Biomasa raportowana jako neutralna węglowo w cyklu krótkim (konwencja EU ETS).
-            Źródła: <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">poLCA-EN-PL-2024 v9.1 — pełna metodyka (MET-001)</a> (Multicert, luty 2026); KOBiZE 2024; IPCC AR6 / EF 3.1 (CH₄ fossil = 29,8).
-        </p>
+        <div class="card-title">Dwa różne zakresy danych o prądzie za 2024 r.</div>
+        <div style="overflow-x:auto;"><table class="polca-table">
+            <thead><tr><th>Źródło i rok danych</th><th>Wartość</th><th>Zakres</th></tr></thead>
+            <tbody>
+                <tr><td><a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a></td><td class="mono">599 kg CO₂e/MWh</td><td>GWP-fossil — wpływ na klimat związany z węglem kopalnym. Historyczny profil modelowy używany w tym kalkulatorze.</td></tr>
+                <tr><td><a href="https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf">KOBiZE — dane 2024, publikacja z grudnia 2025</a></td><td class="mono">553 kg CO₂/MWh</td><td>CO₂ dla energii u odbiorcy końcowego, tabela 2 publikacji. Inny zakres niż wskaźnik cyklu życia.</td></tr>
+            </tbody>
+        </table></div>
+        <p class="calc-note">CO₂e oznacza ekwiwalent dwutlenku węgla, który uwzględnia wpływ różnych gazów. Dane mają różne granice i nie tworzą rankingu emisyjności. Profil 2025 jest odrębnym wydaniem z własnym zakresem i statusem.</p>
     </div>
-
-    <!-- Sekcja 03 — Wskaźniki emisji -->
     <div class="card card-lg section-gap fade-in">
-        <div class="section-num">02 — Wskaźniki emisji w kontekście LCA</div>
-        <div class="card-title">Dlaczego wskaźniki emisji mają kluczowe znaczenie</div>
-        <div class="prose">
-            <p>Wskaźnik emisji CO₂e dla energii elektrycznej to najważniejszy pojedynczy parametr wpływający na wynik LCA większości wyrobów budowlanych. W typowej analizie cyklu życia betonu lub stali, moduł energetyczny odpowiada za 30–60% całkowitego wyniku GWP. Różnica między polskim wskaźnikiem w ujęciu pełnego cyklu życia (599 kg CO₂e/MWh — poLCA-EN-PL 2024) a średnią EU w ujęciu direct (~210 kg CO₂/MWh, Ember 2025) oznacza, że każdy MWh energii zużyty w polskim procesie produkcyjnym generuje wielokrotnie większy wpływ niż sugerują dane generyczne.</p>
-            <p>Wskaźniki prezentowane w poLCA pochodzą z oficjalnych publikacji <strong>KOBiZE</strong> (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) i są aktualizowane corocznie. Obejmują nie tylko CO₂, ale pełen zakres emisji zanieczyszczeń do powietrza — SO₂, NOₓ, pył — wymaganych przez EN 15804+A2 dla wskaźników wpływu środowiskowego.</p>
-        </div>
+        <div class="card-title">Jak wykorzystać wynik</div>
+        <p class="card-text">Wynik to zużycie energii pomnożone przez wybrany współczynnik. Pliki CSV i JSON zawierają również jednostkę i zakres. Przy przygotowaniu oceny cyklu życia dobierz rok, granice systemu i rodzaj wskaźnika do badanego wyrobu oraz zasad programu deklaracji środowiskowych.</p>
+        <p class="card-text"><a href="metodyki/MET-001-poLCA-EN-PL-2024.html">Dokumentacja historycznego profilu 2024</a> · <a href="energia-polska-2025-v3.html">Wydanie energii 2025 i jego status</a></p>
     </div>
+</div></main>
 
-    <div class="card card-lg fade-in">
-        <div class="card-title">Porównanie źródeł wskaźników emisji</div>
-        <div style="overflow-x: auto;">
-            <table class="polca-table">
-                <thead>
-                    <tr>
-                        <th>Parametr</th>
-                        <th>poLCA</th>
-                        <th>ecoinvent 3.10</th>
-                        <th>Różnica</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="font-weight: 600;">CO₂e miks elektr. (full LCA)</td>
-                        <td class="mono highlight">599 kg/MWh</td>
-                        <td class="mono">~210 kg/MWh (EU avg, direct)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+185%</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: 600;">Ciepło systemowe</td>
-                        <td class="mono">~380 kg CO₂/MWh</td>
-                        <td class="mono">~220 kg CO₂/MWh (EU)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+73%</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: 600;">Transport drogowy</td>
-                        <td class="mono">Flota PL (~12 lat)</td>
-                        <td class="mono">Flota EU (~8 lat)</td>
-                        <td class="mono" style="color: var(--func-red); font-weight: 600;">+15–25%</td>
-                    </tr>
-                    <tr>
-                        <td style="font-weight: 600;">Paliwa alternatywne w cemencie</td>
-                        <td class="mono" style="color: var(--func-green);">70–80%</td>
-                        <td class="mono">56% (EU avg)</td>
-                        <td class="mono" style="color: var(--func-green); font-weight: 600;">−12–18%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.5rem; font-style: italic;">
-            Wartości orientacyjne. Rzeczywista różnica zależy od konkretnego procesu i roku odniesienia.
-        </p>
-    </div>
-
-    <div class="card card-accent-orange fade-in" style="margin-top: 1.5rem;">
-        <div class="card-title">Znaczenie praktyczne</div>
-        <p class="card-text">
-            Producent korzystający z danych poLCA widzi precyzyjnie, że jego przewaga leży
-            w nowoczesności procesu, a obciążenie wynika z miksu energetycznego — co wskazuje
-            konkretną ścieżkę dekarbonizacji: zmiana źródła energii, nie zmiana technologii procesowej.
-            Bazy globalne nie dostarczają tej informacji — uśrednienie zamazuje strukturę wyniku
-            i prowadzi do błędnych decyzji inwestycyjnych.
-        </p>
-    </div>
-
-    <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
-        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="blog-en-pl-2024.html" class="blog-card">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag dane">Dane</span>
-                        <span class="blog-tag metodyka">Metodyka</span>
-                        <span class="blog-date">18 lutego 2026</span>
-                    </div>
-                    <div class="blog-card-title">poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                        <span class="blog-read-time">7 min czytania</span>
-                    </div>
-                </div>
-            </a>
-            <a href="blog-emisje-polska-vs-eu.html" class="blog-card">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag">Dane</span>
-                        <span class="blog-tag metodyka">Metodyka</span>
-                        <span class="blog-date">14 lutego 2026</span>
-                    </div>
-                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-                        <span class="blog-read-time">8 min czytania</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-</div>
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Nawigacja</div>
-            <ul class="footer-links">
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="c-pcr/">c-PCR</a></li>
-                <li><a href="analiza.html">Dlaczego poLCA?</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="kalkulator.html">Kalkulatory</a></li>
-                <li><a href="kalkulator-mma.html">Kalkulator MMA</a></li>
-                <li><a href="kalkulator-kruszywa.html">Kalkulator kruszyw</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Zasoby</div>
-            <ul class="footer-links">
-                <li><a href="narzedzia.html">Kalkulatory</a></li>
-                <li><a href="o-polca/index.html">O poLCA</a></li>
-                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA · polca.org.pl</span>
-    </div>
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-<script src="js/calculator.js?v=8.0"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<script src="js/calculator.js?v=20261019"></script>
+    <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

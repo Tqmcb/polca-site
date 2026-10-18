@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator pre-qualify EPD dla kruszyw | poLCA</title>
-    <meta name="description" content="Oszacuj GWP A1-A3 [kg CO2eq/t kruszywa] na podstawie parametrów zakładu lub typu kruszywa. Kalkulator pre-qualify zgodny z c-PCR-AGG-EPD-Polska v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2.">
+    <title>Kalkulator dla kruszyw | poLCA</title>
+    <meta name="description" content="Kalkulator kruszyw. Orientacyjne oszacowanie wpływu na klimat z historycznego zestawu założeń poLCA; obliczenia scenariuszy i eksport danych.">
     <link rel="canonical" href="https://polca.org.pl/kalkulator-kruszywa.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Kalkulator pre-qualify EPD dla kruszyw | poLCA">
-    <meta property="og:description" content="Oszacuj GWP A1-A3 dla kruszyw budowlanych — z typu kruszywa (tryb uproszczony) lub parametrów zakładu (energia kruszenia, paliwo maszyn, materiały wybuchowe, płukanie, % RC, transport A2). Zgodne z c-PCR-AGG v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2.">
+    <meta property="og:title" content="Kalkulator dla kruszyw | poLCA">
+    <meta property="og:description" content="Kalkulator kruszyw. Orientacyjne oszacowanie wpływu na klimat z historycznego zestawu założeń poLCA; obliczenia scenariuszy i eksport danych.">
     <meta property="og:url" content="https://polca.org.pl/kalkulator-kruszywa.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kalkulator pre-qualify EPD dla kruszyw | poLCA">
-    <meta name="twitter:description" content="Oszacuj GWP A1-A3 dla kruszyw budowlanych — z typu kruszywa lub parametrów zakładu. Zgodne z c-PCR-AGG v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2.">
+    <meta name="twitter:title" content="Kalkulator dla kruszyw | poLCA">
+    <meta name="twitter:description" content="Kalkulator kruszyw. Orientacyjne oszacowanie wpływu na klimat z historycznego zestawu założeń poLCA; obliczenia scenariuszy i eksport danych.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <script type="application/ld+json">
     {
@@ -23,29 +23,26 @@
       "@graph": [
         {
           "@type": "WebApplication",
-          "name": "Kalkulator pre-qualify EPD dla kruszyw",
+          "name": "Kalkulator dla kruszyw",
           "url": "https://polca.org.pl/kalkulator-kruszywa.html",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "Web",
           "offers": {"@type": "Offer", "price": "0", "priceCurrency": "PLN"},
-          "description": "Oszacowanie GWP A1-A3 dla kruszyw budowlanych na podstawie typu kruszywa lub parametrów zakładu (energia kruszenia, paliwo maszyn, materiały wybuchowe, płukanie, % RC, transport wewnętrzny A2), zgodne z c-PCR-AGG-EPD-Polska v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2.",
+          "description": "Kalkulator kruszyw. Orientacyjne oszacowanie wpływu na klimat z historycznego zestawu założeń poLCA; obliczenia scenariuszy i eksport danych.",
           "isPartOf": {"@id": "https://polca.org.pl/#website"},
           "publisher": {"@id": "https://polca.org.pl/#organization"}
         },
         {
           "@type": "WebPage",
-          "name": "Kalkulator pre-qualify EPD dla kruszyw — poLCA",
+          "name": "Kalkulator dla kruszyw — poLCA",
           "url": "https://polca.org.pl/kalkulator-kruszywa.html",
-          "description": "Kalkulator pre-qualify GWP A1-A3 dla kruszyw budowlanych (kruszywa łamane, naturalne, recyklingowe RC).",
+          "description": "Kalkulator kruszyw. Orientacyjne oszacowanie wpływu na klimat z historycznego zestawu założeń poLCA; obliczenia scenariuszy i eksport danych.",
           "isPartOf": {"@id": "https://polca.org.pl/#website"},
           "publisher": {"@id": "https://polca.org.pl/#organization"}
         }
       ]
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <link rel="stylesheet" href="style-interactive.css?v=1.1">
@@ -93,51 +90,23 @@
         .agg-range-row input[type=range]{flex:1;accent-color:var(--accent);}
         .agg-range-val{font-family:'IBM Plex Mono',monospace;font-size:.92rem;color:var(--accent);min-width:42px;text-align:right;font-weight:600;}
     </style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy portal-tool">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html" class="active">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html" class="is-active">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Kalkulator dla kruszyw budowlanych</span></nav><div class="polca-page">
 
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">Narzędzie · pre-qualify EPD</div>
-            <h1 class="page-title">Kalkulator pre-qualify EPD dla kruszyw budowlanych</h1>
-            <p class="page-subtitle">
-                Oszacuj GWP A1-A3 [kg CO₂eq/t kruszywa] na podstawie parametrów zakładu. Zgodne z
-                c-PCR-AGG-EPD-Polska v0.9-DRAFT, EN 12620 / EN 13242 i EN 15804+A2. To oszacowanie
-                pre-qualify — nie zastępuje pełnego EPD weryfikowanego przez akredytowanego weryfikatora.
-            </p>
+            <div class="section-num">Narzędzie · analiza scenariuszy</div>
+            <h1 class="page-title">Kalkulator dla kruszyw budowlanych</h1>
+            <p class="page-subtitle">Oszacuj wpływ produkcji kruszyw na klimat na podstawie typu kruszywa lub parametrów procesu. Kalkulator korzysta z historycznych założeń. Możesz zmieniać parametry i sprawdzać ich wpływ na wynik w kg CO₂e (ekwiwalentu dwutlenku węgla) na tonę.</p>
             <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;">
-                <span class="doc-pill">EN 15804+A2</span>
-                <span class="doc-pill">EN 12620 / EN 13242</span>
-                <span class="doc-pill">c-PCR-AGG v0.9-DRAFT</span>
-                <span class="doc-pill">poLCA-EN-PL-2024 v9.1 · 0,599</span>
-                <span class="doc-pill warn">pre-qualify — nie pełne EPD</span>
+                <span class="doc-pill">1 t produktu</span>
+                <span class="doc-pill">kruszywa budowlane</span>
+                <span class="doc-pill">historyczny zestaw założeń</span>
+                <span class="doc-pill">energia 2024 · GWP-fossil 0,599 kg CO₂e/kWh</span>
+                <span class="doc-pill warn">oszacowanie orientacyjne</span>
             </div>
         </div>
         <div style="border-radius:12px;overflow:hidden;position:relative;">
@@ -160,12 +129,7 @@
     <div id="parametry" class="card card-lg section-gap fade-in">
         <div class="section-num">01 — Parametry kruszywa</div>
         <div class="card-title">Tryb obliczeniowy, typ kruszywa lub parametry zakładu — na 1 tonę gotowego kruszywa</div>
-        <p class="card-text" style="margin-bottom:1.5rem;">
-            Wybierz tryb uproszczony (typ kruszywa → wartość referencyjna GWP A1-A3 wg datasetów
-            POLCA-AGG-PL) albo tryb zaawansowany (parametry zakładu: energia kruszenia, paliwo maszyn,
-            materiały wybuchowe, płukanie, % RC, transport wewnętrzny A2). Wyniki obliczane są w czasie
-            rzeczywistym z wykorzystaniem wartości domyślnych wg c-PCR-AGG-EPD-Polska v0.9-DRAFT.
-        </p>
+        <p class="card-text" style="margin-bottom:1.5rem;">Tryb uproszczony zwraca wybraną historyczną wartość kalkulatora. Tryb zaawansowany sumuje wkłady energii, paliwa, materiałów wybuchowych, płukania i transportu oraz miesza je z wariantem recyklingowym RC. Transport do budowy jest pokazywany osobno.</p>
 
         <div class="agg-field agg-field-full" style="margin-bottom:1.25rem;">
             <label class="calc-label">Tryb kalkulatora</label>
@@ -181,29 +145,29 @@
                 <div class="agg-field agg-field-full">
                     <label class="calc-label" for="aggSimpleType">Typ kruszywa</label>
                     <select id="aggSimpleType" class="calc-select">
-                        <option value="5.50" selected>Kruszywo łamane twarde — conservative default poLCA (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) — 5,50 kg CO₂eq/t</option>
-                        <option value="3.99">Kruszywo bazaltowe łamane (ITB EPD 706/2024 Trzuskawica) — 3,99 kg CO₂eq/t</option>
-                        <option value="4.50">Kruszywo granitowe łamane (Ecoinvent 3.10 / Gruber et al. 2023) — 4,50 kg CO₂eq/t</option>
-                        <option value="3.20">Kruszywo wapienne łamane (Gruber et al. 2023) — 3,20 kg CO₂eq/t</option>
+                        <option value="5.50" selected>Kruszywo łamane twarde — wariant historyczny poLCA (bazalt, gabro, granit, melafir, porfir, diabaz, amfibolit, kwarcyt) — 5,50 kg CO₂eq/t</option>
+                        <option value="3.99">Kruszywo bazaltowe łamane — wariant historyczny — 3,99 kg CO₂eq/t</option>
+                        <option value="4.50">Kruszywo granitowe łamane — wariant historyczny — 4,50 kg CO₂eq/t</option>
+                        <option value="3.20">Kruszywo wapienne łamane — wariant historyczny — 3,20 kg CO₂eq/t</option>
                         <option value="4.50">Kruszywo dolomitowe (POLCA-AGG-PL-DOLOMITE-DEFAULT-2026) — 4,50 kg CO₂eq/t</option>
-                        <option value="1.80">Kruszywo naturalne — piasek, żwir (Gruber et al. 2023 / Ecoinvent 3.10) — 1,80 kg CO₂eq/t</option>
-                        <option value="3.80">Kruszywo — średnia ważona PL (mix bazalt + granit + wapień) — 3,80 kg CO₂eq/t</option>
-                        <option value="5.50">Filler wapienny — mączka (Ecoinvent 3.10) — 5,50 kg CO₂eq/t</option>
+                        <option value="1.80">Kruszywo naturalne — piasek, żwir — wariant historyczny — 1,80 kg CO₂eq/t</option>
+                        <option value="3.80">Kruszywo — wariant mieszany kalkulatora — 3,80 kg CO₂eq/t</option>
+                        <option value="5.50">Filler wapienny — mączka — wariant historyczny — 5,50 kg CO₂eq/t</option>
                         <option value="2.50">Kruszywo recyklingowe RC — z rozbiórki betonu, cut-off (A1=0 z odpadu, obciążenie transport + przeróbka) — 2,50 kg CO₂eq/t</option>
                     </select>
-                    <p class="calc-note">Wartości referencyjne GWP A1-A3 [kg CO₂eq/t kruszywa na bramie kopalni / zakładu przeróbki]. Conservative default poLCA dla kruszyw łamanych twardych = 5,5 kg CO₂eq/t przy braku EPD kopalni lub danych zakładowych.</p>
+                    <p class="calc-note">Historyczne warianty obliczeniowe w kg CO₂e/t. Wartość 5,50 jest jednym z założeń kalkulatora. Wybór wariantu powinien odpowiadać badanemu wyrobowi; sama nazwa materiału nie potwierdza jego reprezentatywności.</p>
                 </div>
 
                 <div class="agg-field">
                     <label class="calc-label" for="aggSimpleA4">Transport A4 do budowy [km] — opcjonalny</label>
-                    <input type="number" id="aggSimpleA4" class="agg-input-sm" value="0" min="0" max="500" step="5">
-                    <p class="calc-note">Dolicza moduł A4 (transport z bramy kopalni do placu budowy). EF transportu drogowego (mix flot EURO5/6 PL): 0,100 kg CO₂eq/(t·km). Pozostaw 0, aby raportować wyłącznie A1-A3.</p>
+                    <input type="number" required aria-describedby="aggInputWarn" id="aggSimpleA4" class="agg-input-sm" value="0" min="0" max="500" step="5">
+                    <p class="calc-note">Dolicza moduł A4 (transport z bramy kopalni do placu budowy). EF transportu drogowego (historyczny wariant drogowy): 0,100 kg CO₂eq/(t·km). Pozostaw 0, aby raportować wyłącznie A1-A3.</p>
                 </div>
                 <div class="agg-field">
                     <label class="calc-label" for="aggSimpleEf">EF transportu A4 [kg CO₂eq/(t·km)]</label>
                     <select id="aggSimpleEf" class="calc-select">
-                        <option value="0.100" selected>0,100 — mix flot EURO5/6 PL (domyślny)</option>
-                        <option value="0.031">0,031 — TIR &gt; 32 t (DEFRA/BEIS 2024)</option>
+                        <option value="0.100" selected>0,100 — historyczny wariant drogowy (domyślny)</option>
+                        <option value="0.031">0,031 — TIR &gt; 32 t (wariant historyczny)</option>
                         <option value="0.049">0,049 — samochód 16–32 t</option>
                         <option value="0.082">0,082 — samochód 7,5–16 t</option>
                     </select>
@@ -222,7 +186,7 @@
                         <option value="natural">Kruszywo naturalne — piasek, żwir (kopalina luźna)</option>
                         <option value="rc">Kruszywo recyklingowe RC — z rozbiórki betonu (odpad, A1 = 0)</option>
                     </select>
-                    <p class="calc-note">Wybór typu ustawia wartości domyślne parametrów zakładu (energia kruszenia, paliwo maszyn, materiały wybuchowe). Materiały wybuchowe doliczane są tylko dla skał litych. Dla RC surowiec ma zerowe obciążenie A1 (cut-off), liczy się przeróbka i transport.</p>
+                    <p class="calc-note">Wybór typu ustawia wartości domyślne parametrów zakładu (energia kruszenia, paliwo maszyn, materiały wybuchowe). Materiały wybuchowe doliczane są tylko dla skał litych. Wybór RC ustawia udział recyklingu 100% i stały wariant 2,50 kg CO₂e/t.</p>
                 </div>
 
                 <div class="agg-subhead">Parametry produkcji [na 1 tonę kruszywa]</div>
@@ -230,21 +194,21 @@
                 <div class="agg-field">
                     <div class="agg-comp-grid">
                         <label class="calc-label" for="aggEnergy" style="margin-bottom:0;">Energia el. kruszenia / przesiewania [kWh/t]</label>
-                        <input type="number" id="aggEnergy" class="agg-input-sm" value="6" min="0" max="15" step="0.1">
+                        <input type="number" required aria-describedby="aggInputWarn" id="aggEnergy" class="agg-input-sm" value="6" min="0" max="15" step="0.1">
                     </div>
-                    <p class="calc-note">Domyślnie: twarde 6, wapień 3, naturalne 1, RC 4 kWh/t. Wskaźnik energii el.: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh (stały).</p>
+                    <p class="calc-note">Domyślnie: twarde 6, wapień 3, naturalne 1, wariant RC 4 kWh/t (parametr używany tylko przy udziale RC poniżej 100%). Wskaźnik energii el.: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh (stały).</p>
                 </div>
                 <div class="agg-field">
                     <div class="agg-comp-grid">
                         <label class="calc-label" for="aggDiesel" style="margin-bottom:0;">Olej napędowy maszyn — koparki, ładowarki [L/t]</label>
-                        <input type="number" id="aggDiesel" class="agg-input-sm" value="0.4" min="0" max="2" step="0.05">
+                        <input type="number" required aria-describedby="aggInputWarn" id="aggDiesel" class="agg-input-sm" value="0.4" min="0" max="2" step="0.05">
                     </div>
-                    <p class="calc-note">Domyślnie 0,3–0,5 L/t. EF oleju napędowego: 3,17 kg CO₂e/L (KOBiZE 2024).</p>
+                    <p class="calc-note">Domyślnie 0,3–0,5 L/t. W kalkulatorze zachowano historyczne założenie 3,17 kg CO₂e/L oleju napędowego. Jest to odrębny zestaw współczynników: katalogowe 3,2 kg CO₂e/L nie zastąpiło tej wartości w obliczeniach.</p>
                 </div>
                 <div class="agg-field">
                     <div class="agg-comp-grid">
                         <label class="calc-label" for="aggExplosive" style="margin-bottom:0;">Materiały wybuchowe — tylko skała lita [kg/t]</label>
-                        <input type="number" id="aggExplosive" class="agg-input-sm" value="0.1" min="0" max="1" step="0.01">
+                        <input type="number" required aria-describedby="aggInputWarn" id="aggExplosive" class="agg-input-sm" value="0.1" min="0" max="1" step="0.01">
                     </div>
                     <p class="calc-note">Domyślnie 0,1 kg/t. EF materiałów wybuchowych (ANFO / emulsja): ~0,5 kg CO₂e/kg. Dla kruszyw naturalnych i RC: 0.</p>
                 </div>
@@ -252,14 +216,14 @@
                     <label class="calc-label">Płukanie kruszywa</label>
                     <div class="agg-radio-row" id="aggWash">
                         <label><input type="radio" name="aggWash" value="no" checked> Nie</label>
-                        <label><input type="radio" name="aggWash" value="yes"> Tak (+0,5 kWh/t · zużycie wody → WDP)</label>
+                        <label><input type="radio" name="aggWash" value="yes"> Tak (+0,5 kWh/t frakcji pierwotnej)</label>
                     </div>
-                    <p class="calc-note">Płukanie dolicza +0,5 kWh/t energii elektrycznej (≈ 0,30 kg CO₂e/t) oraz zużycie wody raportowane w module WDP — nie wpływa bezpośrednio na GWP.</p>
+                    <p class="calc-note">Płukanie dodaje 0,5 kWh/t frakcji pierwotnej, czyli 0,2995 kg CO₂e/t przed uwzględnieniem udziału tej frakcji. Kalkulator nie oblicza zużycia wody.</p>
                 </div>
                 <div class="agg-field">
                     <div class="agg-comp-grid">
                         <label class="calc-label" for="aggA2km" style="margin-bottom:0;">Transport wewnętrzny A2 [km]</label>
-                        <input type="number" id="aggA2km" class="agg-input-sm" value="2" min="0" max="50" step="0.5">
+                        <input type="number" required aria-describedby="aggInputWarn" id="aggA2km" class="agg-input-sm" value="2" min="0" max="50" step="0.5">
                     </div>
                     <p class="calc-note">Domyślnie 2 km (przewóz w obrębie zakładu / do magazynu wyrobu). EF: 0,100 kg CO₂eq/(t·km).</p>
                 </div>
@@ -274,33 +238,29 @@
                 <div class="agg-field">
                     <div class="agg-comp-grid">
                         <label class="calc-label" for="aggA4km" style="margin-bottom:0;">Transport A4 do budowy [km] — opcjonalny</label>
-                        <input type="number" id="aggA4km" class="agg-input-sm" value="0" min="0" max="500" step="5">
+                        <input type="number" required aria-describedby="aggInputWarn" id="aggA4km" class="agg-input-sm" value="0" min="0" max="500" step="5">
                     </div>
                     <p class="calc-note">Dolicza moduł A4 (poza A1-A3). EF: 0,100 kg CO₂eq/(t·km).</p>
                 </div>
             </div>
         </div>
 
-        <div class="agg-warn ok" id="aggInputWarn">Parametry w dopuszczalnych zakresach.</div>
-        <p class="calc-note" style="margin-top:.6rem;">
-            EF transportu drogowego (mix flot EURO5/6 PL): 0,100 kg CO₂eq/(t·km). EF energii elektrycznej:
-            poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh. EF oleju napędowego: 3,17 kg CO₂e/L (KOBiZE 2024).
-            EF materiałów wybuchowych: ~0,5 kg CO₂e/kg. Kruszywo to składnik masowy — dla wyników audytowych
-            pierwszeństwo mają EPD kopalni i dane zakładowe.
-        </p>
+        <p class="calc-note" id="aggRcScope" aria-live="polite"></p>
+        <div class="agg-warn ok" id="aggInputWarn" role="alert">Parametry w dopuszczalnych zakresach.</div>
+        <p class="calc-note" style="margin-top:.6rem;">Stałe historycznego zestawu: energia 0,599 kg CO₂e/kWh (GWP-fossil, poLCA-EN-PL-2024 v9.1), olej napędowy 3,17 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,100 kg CO₂e/(t·km). Zakresy tych założeń są opisane poniżej.</p>
     </div>
 
     <!-- ============================================================
          02 — WYNIKI
          ============================================================ -->
     <div id="wyniki" class="card card-lg section-gap fade-in">
-        <div class="section-num">02 — Wyniki — GWP A1-A3</div>
-        <div class="card-title">Oszacowanie GWP cyklu wytworzenia kruszywa [kg CO₂eq / t kruszywa]</div>
+        <div class="section-num">02 — Wynik orientacyjny A1-A3</div>
+        <div class="card-title">Orientacyjny wpływ produkcji kruszywa na klimat [kg CO₂eq / t kruszywa]</div>
 
         <div style="margin:1.25rem 0 .25rem;">
-            <div class="calc-result-label">GWP A1-A3 — łącznie</div>
+            <div class="calc-result-label">Oszacowanie A1-A3 — łącznie</div>
             <div class="agg-result-hero"><span id="aggTotal">5,50</span> <small>kg CO₂eq / t kruszywa</small></div>
-            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · kruszywo łamane twarde (conservative default poLCA)</div>
+            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · kruszywo łamane twarde (wariant historyczny poLCA)</div>
             <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.2rem;display:none;" id="aggA4Note"></div>
         </div>
 
@@ -333,11 +293,11 @@
         </div>
 
         <div class="agg-chart-wrap">
-            <div class="agg-chart-label">Rozbicie GWP A1-A3 na komponenty obliczeniowe [kg CO₂eq/t]</div>
+            <div class="agg-chart-label">Ważone wkłady do oszacowania A1-A3 [kg CO₂eq/t]</div>
             <div class="agg-chart-canvas"><canvas id="aggModChart"></canvas></div>
         </div>
 
-        <div class="agg-bench" id="aggBench">GWP w przedziale referencyjnym dla kategorii.</div>
+        <div class="agg-bench" id="aggBench">Wynik według historycznych założeń kalkulatora.</div>
 
         <div style="margin-top:1.5rem;">
             <div class="card-title" style="font-size:1rem;margin-bottom:.65rem;">Rozbicie wyniku wg komponentów obliczeniowych</div>
@@ -346,10 +306,10 @@
                     <thead>
                         <tr>
                             <th>Komponent</th>
-                            <th>Parametr</th>
-                            <th>EF / wartość jedn.</th>
-                            <th>Emisja [kg CO₂eq/t]</th>
-                            <th>Udział [%]</th>
+                            <th>Udział masowy</th>
+                            <th>Wkład przed ważeniem [kg CO₂e/t]</th>
+                            <th>Ważony wkład [kg CO₂e/t]</th>
+                            <th>Udział w wyniku [%]</th>
                         </tr>
                     </thead>
                     <tbody id="aggCompTable"></tbody>
@@ -361,88 +321,23 @@
         <div style="display:flex;gap:.6rem;flex-wrap:wrap;">
             <button id="aggExportCsv" class="calc-export-btn" type="button" style="width:auto;">Kopiuj CSV</button>
             <button id="aggExportJson" class="calc-export-btn" type="button" style="width:auto;">Kopiuj JSON</button>
-            <button id="aggExportXml" class="calc-export-btn" type="button" style="width:auto;">Eksport ILCD+EPD XML</button>
+            <button id="aggExportXml" class="calc-export-btn" type="button" style="width:auto;">Pobierz XML poLCA</button>
         </div>
-        <p class="calc-note" style="margin-top:1rem;">
-            Wartości w notacji polskiej (przecinek dziesiętny). Wynik orientacyjny — dla deklaracji EPD
-            stosuj dane specyficzne producenta (rzeczywiste zużycie energii, paliwa, materiałów wybuchowych,
-            transport) zweryfikowane zgodnie z procedurą AVS 3+ programu EPD Polska.
-            Eksport ILCD+EPD XML to uproszczona struktura zgodna z formatem ILCD / EN 15804+A2 — gotowa do
-            importu do oprogramowania LCA (OpenLCA, SimaPro) lub jako wsad do Digital Product Passport.
-            To nie jest zweryfikowany EPD — pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+.
-            Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob.
-            <a href="o-polca/gotowosc-dpp.html">gotowość poLCA do DPP</a>.
-        </p>
+        <p class="calc-note" style="margin-top:1rem;">CSV (tabela tekstowa), JSON (dane strukturalne) i XML (dokument strukturalny) zapisują wynik oraz założenia w formacie własnym poLCA. Integracja z innym programem wymaga dostosowania tego formatu. Przed użyciem wyniku w deklaracji środowiskowej produktu (EPD) jej autor i weryfikator powinni ocenić dane oraz metodę.</p>
     </div>
 
     <!-- ============================================================
          03 — METODYKA I OGRANICZENIA
          ============================================================ -->
     <div id="metodyka" class="card card-lg section-gap fade-in">
-        <div class="section-num">03 — Metodyka i ograniczenia</div>
-        <div class="card-title">Podstawy obliczeniowe, źródła danych i zakres oszacowania</div>
-        <div class="prose">
-            <p>
-                Kalkulator stosuje wartości domyślne (default data) wg datasetów
-                <strong>POLCA-AGG-PL-*</strong> (kruszywo łamane twarde, wapienne, dolomitowe, naturalne)
-                i komplementarnych zasad kategorii wyrobu <strong>c-PCR-AGG-EPD-Polska v0.9-DRAFT</strong>,
-                zgodnych z EN 15804+A2:2019, EN 12620:2013+A1 (kruszywa do betonu) i EN 13242:2013
-                (kruszywa do mieszanek niezwiązanych). Jednostka deklarowana to 1 tona gotowego kruszywa
-                na bramie kopalni / zakładu przeróbki. Obliczenia obejmują moduły A1 (pozyskanie i
-                przetwarzanie surowca), A2 (transport wewnętrzny) i opcjonalny A3 (płukanie); moduł A4
-                (transport do budowy) jest doliczany opcjonalnie i raportowany osobno.
-            </p>
-            <p>
-                <strong>Tryb uproszczony</strong> zwraca wartość referencyjną GWP A1-A3 wybranego typu
-                kruszywa. Conservative default poLCA dla kruszyw łamanych twardych = <strong>5,5 kg
-                CO₂eq/t</strong>; punkty kontrolne to m.in. ITB EPD 706/2024 Trzuskawica dla kruszywa
-                bazaltowego (3,99 kg CO₂eq/t) i Gruber et al. 2023 / Ecoinvent 3.10 dla kruszyw
-                granitowego (4,50), wapiennego (3,20) i naturalnego (1,80). Średnia ważona PL (mix
-                bazalt + granit + wapień) = 3,80 kg CO₂eq/t. Kruszywo recyklingowe RC z rozbiórki betonu —
-                ~2,50 kg CO₂eq/t (cut-off: surowiec odpadowy o zerowym obciążeniu A1, liczone transport
-                i przeróbka).
-            </p>
-            <p>
-                <strong>Tryb zaawansowany</strong> wylicza GWP A1-A3 z parametrów zakładu:
-                energia&nbsp;el.&nbsp;kruszenia&nbsp;×&nbsp;0,599 + paliwo&nbsp;maszyn&nbsp;×&nbsp;3,17
-                + materiały&nbsp;wybuchowe&nbsp;×&nbsp;0,5&nbsp;(tylko skała lita)
-                + płukanie&nbsp;0,5&nbsp;kWh/t&nbsp;×&nbsp;0,599&nbsp;(opcjonalnie)
-                + transport&nbsp;A2&nbsp;×&nbsp;0,100. Energia elektryczna —
-                <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">poLCA-EN-PL-2024 v9.1 = 0,599 kg
-                CO₂e/kWh</a> (cross-compliance z kalkulatorami betonu i MMA). Olej napędowy —
-                <strong>3,17 kg CO₂e/L</strong> (KOBiZE 2024). Materiały wybuchowe (ANFO / emulsje) —
-                ~0,5 kg CO₂e/kg. Przykładowo: skała twarda lita — 6&nbsp;kWh/t&nbsp;×&nbsp;0,599 = 3,59
-                + 0,4&nbsp;L&nbsp;×&nbsp;3,17 = 1,27 + 0,1&nbsp;kg&nbsp;×&nbsp;0,5 = 0,05
-                + 2&nbsp;km&nbsp;×&nbsp;0,100 = 0,20 → ~5,1 kg CO₂e/t (zbliżone do conservative default
-                poLCA 5,5). Kruszywo naturalne — 1&nbsp;kWh/t&nbsp;×&nbsp;0,599 = 0,60
-                + 0,3&nbsp;L&nbsp;×&nbsp;3,17 = 0,95 + 0&nbsp;wybuchowe + 0,2&nbsp;transport → ~1,75
-                (zbliżone do 1,80).
-            </p>
-            <p>
-                <strong>Kruszywo recyklingowe RC — cut-off.</strong> Surowiec (odpad budowlany z
-                rozbiórki) wchodzi do systemu z zerowym obciążeniem środowiskowym w module A1 zgodnie z
-                EN 15804+A2:2019 §6.3.6 i EN 12620:2013+A1; liczona jest wyłącznie przeróbka (kruszenie,
-                separacja, ewentualne płukanie) i transport. Przy mieszanej zawartości RC wynik
-                interpoluje się liniowo między wartością frakcji pierwotnej a ~2,50 kg CO₂eq/t dla
-                frakcji RC. Pełna metodyka kategorii wraz z bilansami energetycznymi górnictwa skalnego:
-                <a href="c-pcr/">c-PCR — reguły kategorii wyrobów →</a>.
-            </p>
-            <p style="background:var(--accent-warm-subtle);border:1px solid var(--accent-warm-border);border-radius:var(--radius-sm);padding:.85rem 1rem;color:var(--text-body);">
-                <strong>Disclaimer.</strong> To oszacowanie pre-qualify służy do planowania i wstępnej
-                oceny śladu węglowego kruszywa. Pełne EPD wymaga danych zakładowych (rzeczywiste zużycie
-                energii, paliwa, materiałów wybuchowych, transport) i weryfikacji w trybie AVS 3+ —
-                kontakt: <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>. Kruszywo to składnik
-                masowy — dla wyników audytowych pierwszeństwo mają EPD kopalni.
-            </p>
-            <p>
-                <strong>Eksport ILCD+EPD XML.</strong> Wynik kalkulacji można pobrać jako uproszczoną
-                strukturę XML zgodną z formatem ILCD / EN 15804+A2 (moduły A1+A3 pozyskania i przeróbki,
-                A2 transportu wewnętrznego, A1-A3 jako GWP-total, opcjonalnie A4) — gotową do importu do
-                oprogramowania LCA (OpenLCA, SimaPro, GaBi) lub jako wsad do Digital Product Passport
-                wyrobu budowlanego. To nie jest zweryfikowany EPD — pełny EPD wymaga danych zakładowych
-                i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob.
-                <a href="o-polca/gotowosc-dpp.html">gotowość poLCA do DPP</a>.
-            </p>
+        <div class="section-num">03 — Założenia i zakres</div>
+        <div class="card-title">Co liczy ten kalkulator</div>
+        <div class="prose"><p>Tryb uproszczony zwraca wybrany wariant historyczny. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,599 + olej napędowy × 3,17 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,100. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
+            <p>Energia korzysta z kopalnej części wpływu na klimat <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>. Pozostałe stałe są historycznymi założeniami kalkulatora. Nie są automatycznie zastępowane współczynnikami z innych wydań katalogu. Opcja płukania dodaje 0,5 kWh/t frakcji pierwotnej.</p>
+            <p>Frakcja recyklingowa (RC) ma stałą wartość 2,50 kg CO₂e/t. Wynik = baza × (1 − udział RC) + 2,50 × udział RC. Przy RC = 100% wynik wynosi 2,50, a pola dotyczące procesu frakcji pierwotnej są wyłączone. Przy niższym udziale RC znów wpływają na wynik. Wykres, tabela i eksport pokazują wkłady po uwzględnieniu udziałów.</p>
+            <p>Transport do budowy (A4) jest liczony oddzielnie: odległość × współczynnik transportu. Tryb zaawansowany przyjmuje 0,100 kg CO₂e/(t·km), a uproszczony pozwala wybrać historyczny wariant współczynnika.</p>
+            <p>Wynik jest orientacyjną sumą współczynników o różnych założeniach, wyrażoną w kg CO₂e/t. Oznaczenia A1–A3 opisują przyjęte etapy produkcji. Pełna deklaracja środowiskowa produktu wymaga ustalenia metody oceny, źródeł, granic systemu i wskaźników zgodnie z zasadami wybranego programu.</p>
+            <p>CSV (tabela tekstowa), JSON (dane strukturalne) i XML (dokument strukturalny) zapisują wynik oraz założenia w formacie własnym poLCA. Integracja z innym programem wymaga dostosowania tego formatu. Przed użyciem wyniku w deklaracji środowiskowej produktu (EPD) jej autor i weryfikator powinni ocenić dane oraz metodę.</p>
         </div>
     </div>
 
@@ -458,7 +353,7 @@
                     </div>
                     <div class="blog-card-title">c-PCR — komplementarne reguły kategorii wyrobów (beton, MMA, kruszywa, cement)</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">hub reguł kategorii</span>
                     </div>
                 </div>
@@ -467,12 +362,12 @@
                 <div class="blog-card-body">
                     <div class="blog-card-meta">
                         <span class="blog-tag dane">Narzędzie</span>
-                        <span class="blog-tag metodyka">pre-qualify EPD</span>
+                        <span class="blog-tag metodyka">analiza scenariuszy</span>
                         <span class="blog-date">2026</span>
                     </div>
-                    <div class="blog-card-title">Kalkulator pre-qualify EPD dla mieszanek mineralno-asfaltowych (MMA)</div>
+                    <div class="blog-card-title">Kalkulator dla mieszanek mineralno-asfaltowych (MMA)</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">kalkulator</span>
                     </div>
                 </div>
@@ -480,53 +375,9 @@
         </div>
     </div>
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Nawigacja</div>
-            <ul class="footer-links">
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="c-pcr/">c-PCR</a></li>
-                <li><a href="analiza.html">Dlaczego poLCA?</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="kalkulator.html">Kalkulatory</a></li>
-                <li><a href="kalkulator-mma.html">Kalkulator MMA</a></li>
-                <li><a href="kalkulator-kruszywa.html">Kalkulator kruszyw</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Zasoby</div>
-            <ul class="footer-links">
-                <li><a href="narzedzia.html">Kalkulatory</a></li>
-                <li><a href="o-polca/index.html">O poLCA</a></li>
-                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA · polca.org.pl</span>
-    </div>
-</footer>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-<script src="js/kalkulator-kruszywa.js?v=1.0"></script>
-<script src="js/nav-mobile.js"></script>
-</body>
+<script src="js/kalkulator-kruszywa.js?v=20261019"></script>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

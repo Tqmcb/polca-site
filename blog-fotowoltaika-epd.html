@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — poLCA Blog</title>
-    <meta name="description" content="Inwestycja w fotowoltaikę na dachu hali produkcyjnej kosztuje setki tysięcy złotych. Deklaracja środowiskowa EPD — bez zmian. Dlaczego i kiedy OZE faktycznie obniża wynik LCA.">
+    <title>Fotowoltaika w EPD — przepływy energii i dokumentacja — poLCA</title>
+    <meta name="description" content="Jak odróżnić własną energię fotowoltaiczną od poboru z sieci i udokumentować jej wykorzystanie. Korekta wcześniejszego twierdzenia o obowiązkowym miksie krajowym w każdej EPD.">
     <link rel="canonical" href="https://polca.org.pl/blog-fotowoltaika-epd.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — poLCA Blog">
-    <meta property="og:description" content="Inwestycja w fotowoltaikę na dachu hali produkcyjnej kosztuje setki tysięcy złotych. Deklaracja środowiskowa EPD — bez zmian. Dlaczego i kiedy OZE faktycznie obniża wynik LCA.">
+    <meta property="og:title" content="Fotowoltaika w EPD — przepływy energii i dokumentacja">
+    <meta property="og:description" content="Jak odróżnić własną energię fotowoltaiczną od poboru z sieci i udokumentować jej wykorzystanie. Korekta wcześniejszego twierdzenia o obowiązkowym miksie krajowym w każdej EPD.">
     <meta property="og:url" content="https://polca.org.pl/blog-fotowoltaika-epd.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -22,139 +22,118 @@
     <meta property="article:tag" content="location-based">
     <meta property="article:tag" content="Gwarancje Pochodzenia">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło">
-    <meta name="twitter:description" content="Fotowoltaika w zakładzie nie zmienia wyniku EPD — chyba że spełnisz jeden konkretny warunek. Wyjaśniamy mechanizm i co zrobić.">
+    <meta name="twitter:title" content="Fotowoltaika w EPD — przepływy energii i dokumentacja">
+    <meta name="twitter:description" content="Jak odróżnić własną energię fotowoltaiczną od poboru z sieci i udokumentować jej wykorzystanie. Korekta wcześniejszego twierdzenia o obowiązkowym miksie krajowym w każdej EPD.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-fotowoltaika-epd.jpg">
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-fotowoltaika-epd.html",
+      "headline": "Fotowoltaika w EPD — przepływy energii i dokumentacja",
+      "description": "Jak odróżnić własną energię fotowoltaiczną od poboru z sieci i udokumentować jej wykorzystanie. Korekta wcześniejszego twierdzenia o obowiązkowym miksie krajowym w każdej EPD.",
+      "url": "https://polca.org.pl/blog-fotowoltaika-epd.html",
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "fotowoltaika EPD",
+        "OZE LCA",
+        "EN 15804 energia",
+        "location-based",
+        "market-based",
+        "Gwarancje Pochodzenia",
+        "KOBiZE",
+        "wskaźnik emisji"
+      ],
+      "about": [
         {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-fotowoltaika-epd.html",
-          "headline": "Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — oto dlaczego",
-          "description": "Inwestycja w fotowoltaikę na dachu hali produkcyjnej kosztuje setki tysięcy złotych. Deklaracja środowiskowa EPD pozostaje bez zmian. Dlaczego metoda lokalizacyjna EN 15804 ignoruje własną instalację OZE i kiedy OZE faktycznie obniża wynik LCA.",
-          "url": "https://polca.org.pl/blog-fotowoltaika-epd.html",
-          "datePublished": "2026-02-18",
-          "dateModified": "2026-02-18",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA — Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["fotowoltaika EPD", "OZE LCA", "EN 15804 energia", "location-based", "market-based", "Gwarancje Pochodzenia", "KOBiZE", "wskaźnik emisji"],
-          "about": [
-            {"@type": "Thing", "name": "Fotowoltaika w LCA"},
-            {"@type": "Thing", "name": "EN 15804+A2 metoda lokalizacyjna"},
-            {"@type": "Thing", "name": "Gwarancje Pochodzenia (GO)"},
-            {"@type": "Thing", "name": "Deklaracja Środowiskowa Produktu (EPD)"}
-          ]
+          "@type": "Thing",
+          "name": "Fotowoltaika w LCA"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Czy fotowoltaika na zakładzie obniża wynik EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Nie — przy standardowej metodzie lokalizacyjnej wymaganej przez EN 15804+A2. Własna instalacja OZE zmienia wynik EPD tylko wtedy, gdy energia jest produkowana i zużywana w granicach systemu (np. prąd z PV bezpośrednio zasila linię produkcyjną bez wtłaczania do sieci) lub gdy producent posiada Gwarancje Pochodzenia i stosuje metodę rynkową zgodnie z wymaganiami PCR."}
-            },
-            {
-              "@type": "Question",
-              "name": "Co to jest metoda lokalizacyjna w LCA?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Metoda lokalizacyjna (location-based) to podejście do rozliczania emisji z energii elektrycznej oparte na fizycznym miksie krajowej sieci energetycznej. W Polsce oznacza to wskaźnik poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh (599 kg CO₂e/MWh, well-to-meter, oparty na danych KOBiZE end-user = 553 kg CO₂/MWh za 2024). EN 15804+A2 wymaga stosowania tej metody dla energii elektrycznej z sieci."}
-            },
-            {
-              "@type": "Question",
-              "name": "Kiedy OZE faktycznie zmienia wynik EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "OZE obniża wynik EPD w trzech przypadkach: (1) energia jest wytwarzana i zużywana bezpośrednio w granicach systemu (np. PV on-site bez sieci), (2) producent stosuje metodę rynkową dopuszczoną przez PCR i posiada ważne Gwarancje Pochodzenia na całą zużytą energię, (3) norma lub PCR explicite pozwala na uwzględnienie energii odnawialnej jako wkładu technicznego."}
-            },
-            {
-              "@type": "Question",
-              "name": "Czym różni się metoda lokalizacyjna od rynkowej w EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Metoda lokalizacyjna (wymagana przez EN 15804+A2) używa wskaźnika emisji dla całej sieci krajowej — niezależnie od tego, czy producent kupił zieloną energię. Metoda rynkowa (stosowana w GHG Protocol Scope 2) pozwala uwzględnić certyfikaty GO i wykazać niższe emisje, ale wymaga faktycznego nabycia Gwarancji Pochodzenia."}
-            },
-            {
-              "@type": "Question",
-              "name": "Co to są Gwarancje Pochodzenia (GO)?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Gwarancje Pochodzenia (GO, ang. Guarantees of Origin) to certyfikaty elektroniczne potwierdzające, że określona ilość energii elektrycznej pochodzi ze źródeł odnawialnych. 1 GO = 1 MWh energii z OZE. Są wydawane przez krajowych operatorów (w Polsce URE) i handlowane na europejskim rynku koordynowanym przez AIB."}
-            }
-          ]
+          "@type": "Thing",
+          "name": "EN 15804+A2 metoda lokalizacyjna"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło"}
-          ]
+          "@type": "Thing",
+          "name": "Gwarancje Pochodzenia (GO)"
+        },
+        {
+          "@type": "Thing",
+          "name": "Deklaracja Środowiskowa Produktu (EPD)"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło"
         }
       ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  ]
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
+<meta name="metadata_revision" content="2026-10-18">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Fotowoltaika w EPD — przepływy energii i dokumentacja</span></nav><div class="polca-page">
 
     <div style="width:100%;height:420px;overflow:hidden;margin-bottom:0;">
-        <img src="images/blog-fotowoltaika-epd.jpg"
-             alt="Panele fotowoltaiczne na dachu przemysłowym" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+        <img src="images/blog-fotowoltaika-epd.jpg" alt="Panele fotowoltaiczne na dachu przemysłowym" style="width:100%;height:100%;object-fit:cover;" loading="eager">
     </div>
 
     <div class="fade-in">
         <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Wr&#243;&#263; do bloga
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Wróć do bloga
         </a>
 
         <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
             <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <span class="breadcrumbs-current">Fotowoltaika a EPD</span>
         </nav>
 
@@ -163,28 +142,22 @@
                 <span class="blog-tag metodyka">Metodyka</span>
                 <span class="blog-tag">EPD</span>
                 <span class="blog-date">18 lutego 2026</span>
-                <span class="blog-read-time">&#183; 10 min czytania</span>
+                <span class="blog-read-time">· 10 min czytania</span>
             </div>
-            <h1 class="blog-post-title">
-                Zainstalowa&#322;e&#347; panele s&#322;oneczne w zak&#322;adzie.<br>Twoje EPD si&#281; nie zmieni&#322;o &#8212; oto dlaczego
-            </h1>
-            <p class="blog-post-lead">
-                Inwestycja w fotowoltaik&#281; na dachu hali produkcyjnej kosztuje setki tysi&#281;cy z&#322;otych
-                i realnie obni&#380;a rachunek za pr&#261;d. Deklaracja &#347;rodowiskowa EPD &#8212; bez zmian.
-                Wi&#281;kszo&#347;&#263; producent&#243;w nie wie dlaczego. Norma EN&nbsp;15804+A2 ma w tej kwestii
-                precyzyjn&#261; i nieoczywist&#261; odpowied&#378;.
-            </p>
+            <h1 class="blog-post-title">Fotowoltaika w EPD — przepływy energii i dokumentacja</h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dokument historyczny: model energii za 2024 r. Wartość 0,599 kg CO₂e/kWh oznacza składnik kopalny (GWP-fossil), nie GWP-total. Dawna hierarchia trzech poziomów nie jest uniwersalną instrukcją doboru energii do deklaracji środowiskowej. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
+            <p class="blog-post-lead">Wpływ własnej fotowoltaiki na wynik zależy od zużycia energii w zakładzie, oddania do sieci i praw do jej atrybutów. Sam zakup paneli nie określa wyniku, lecz nie jest też podstawą do jego automatycznego pozostawienia bez zmian.</p>
         </div>
     </div>
 
     <!-- TL;DR -->
     <div class="tldr-box fade-in">
-        <div class="tldr-box-label">TL;DR &mdash; skr&#243;t dla zabieganych</div>
+        <div class="tldr-box-label">TL;DR — skrót dla zabieganych</div>
         <ul>
-            <li>EN&nbsp;15804+A2 wymaga metody lokalizacyjnej: wska&#378;nik emisji dla energii pochodzi z krajowej sieci (KOBiZE), nie z Twojej instalacji.</li>
-            <li>W&#322;asna fotowoltaika zmienia wynik EPD <strong>tylko</strong> gdy energia jest zu&#380;ywana bezpo&#347;rednio z instalacji bez wt&#322;aczania do sieci &#8212; lub gdy posiadasz GO i Tw&#243;j PCR na to pozwala.</li>
-            <li>W raportowaniu korporacyjnym Scope&nbsp;2 (CSRD, GHG Protocol) zasady s&#261; inne: GO dzia&#322;a&#261; i obni&#380;aj&#261; wykazywane emisje.</li>
-            <li>Efektywnym sposobem na ni&#380;sze EPD jest redukcja zu&#380;ycia energii, nie tylko zmiana jej &#378;r&#243;d&#322;a.</li>
+            <li>Własne wytwarzanie, pobór z sieci i prawa do atrybutów energii wymagają odrębnego udokumentowania. Nie obowiązuje prosta reguła „zawsze miks krajowy”.</li>
+            <li>Własna fotowoltaika zmienia wynik EPD <strong>tylko</strong> gdy energia jest zużywana bezpośrednio z instalacji bez wtłaczania do sieci — lub gdy posiadasz GO i Twój PCR na to pozwala.</li>
+            <li>W raportowaniu korporacyjnym Scope 2 (CSRD, GHG Protocol) zasady są inne: GO działaą i obniżają wykazywane emisje.</li>
+            <li>Efektywnym sposobem na niższe EPD jest redukcja zużycia energii, nie tylko zmiana jej źródła.</li>
         </ul>
     </div>
 
@@ -192,104 +165,78 @@
     <div class="key-stat-row section-gap fade-in">
         <div class="key-stat">
             <div class="key-stat-number">599</div>
-            <div class="key-stat-unit">kg CO&#8322;e/MWh</div>
-            <div class="key-stat-label">Wska&#378;nik poLCA-EN-PL-2024 v9.1<br>(location-based, Poziom&nbsp;1) w ka&#380;dym polskim EPD</div>
+            <div class="key-stat-unit">kg CO₂e/MWh</div>
+            <div class="key-stat-label">Historyczny GWP-fossil<br>model 2024 v9.1</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number muted">41</div>
-            <div class="key-stat-unit">kg CO&#8322;e/MWh</div>
-            <div class="key-stat-label">PV on-site (Poziom&nbsp;3 wg c-PCR-BET v1.3)<br>= 0,041 kg CO&#8322;e/kWh</div>
+            <div class="key-stat-unit">kg CO₂e/MWh</div>
+            <div class="key-stat-label">PV on-site (Poziom 3 wg c-PCR-BET v1.3)<br>= 0,041 kg CO₂e/kWh</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number accent">0</div>
-            <div class="key-stat-unit">kg CO&#8322;/MWh</div>
-            <div class="key-stat-label">Wska&#378;nik przy zakupie GO OZE<br>(metoda rynkowa, je&#347;li PCR dopuszcza)</div>
+            <div class="key-stat-unit">kg CO₂/MWh</div>
+            <div class="key-stat-label">Sama gwarancja pochodzenia<br>nie daje zerowego wyniku cyklu życia</div>
         </div>
     </div>
 
     <div class="blog-post-body section-gap fade-in">
 
-        <h2>Scenariusz, kt&#243;ry powtarza si&#281; w bran&#380;y</h2>
+        <h2>Scenariusz, który powtarza się w branży</h2>
         <p>
-            Dyrektor ds. zrównowa&#380;onego rozwoju wraca z zarz&#261;du z jasnym mandatem:
-            instalujemy fotowoltaik&#281;, redukujemy &#347;lad w&#281;glowy, poprawiamy EPD.
-            Instalacja 500&nbsp;kWp wyrasta na dachu hali. Rachunki za pr&#261;d spadaj&#261;.
-            Rok p&#243;&#378;niej audytor LCA dostarcza aktualizacj&#281; EPD &#8212; wynik GWP
-            niezmieniony. Pytanie: czy audytor si&#281; pomyli&#322;?
+            Dyrektor ds. zrównoważonego rozwoju wraca z zarządu z jasnym mandatem:
+            instalujemy fotowoltaikę, redukujemy ślad węglowy, poprawiamy EPD.
+            Instalacja 500 kWp wyrasta na dachu hali. Rachunki za prąd spadają.
+            Rok później audytor LCA dostarcza aktualizację EPD — wynik GWP
+            niezmieniony. Pytanie: czy audytor się pomylił?
         </p>
-        <p>
-            Nie. Audytor zastosowa&#322; normę. I tu zaczyna si&#281; rozmowa, kt&#243;ra
-            w polskiej bran&#380;y budowlanej toczy si&#281; coraz cz&#281;&#347;ciej.
-        </p>
+        <p>Sam niezmieniony wynik nie wyjaśnia, czy energię zamodelowano prawidłowo. Trzeba sprawdzić przepływy, dokumentację i reguły zastosowane w obliczeniu.</p>
 
-        <h2>Jak norma EN&nbsp;15804+A2 traktuje energi&#281; elektryczn&#261;</h2>
-        <p>
-            EN&nbsp;15804+A2 §6.4.3 jest jednoznaczna: do modelowania energii elektrycznej
-            z sieci nale&#380;y stosowa&#263; <strong>metod&#281; lokalizacyjn&#261;</strong>
-            (<em>location-based</em>). Oznacza to u&#380;ycie krajowego &#347;redniego wska&#378;nika
-            emisji &#8212; w Polsce publikowanego przez KOBiZE.
-        </p>
-        <p>
-            Ten wska&#378;nik reprezentuje fizyczny miks sieci energetycznej: udzia&#322; w&#281;gla,
-            gazu, j&#261;dra, OZE w krajowej produkcji pr&#261;du. Jest niezale&#380;ny od tego,
-            czy producent podpisa&#322; umow&#281; na zielon&#261; energi&#281;, zainstalowa&#322; panele PV,
-            czy kupi&#322; certyfikaty GO. Dla celu EPD liczy si&#281; to, jaki pr&#261;d faktycznie
-            p&#322;ynie w krajowej sieci.
-        </p>
+        <h2>Jak norma EN 15804+A2 traktuje energię elektryczną</h2>
+        <p>Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p>
+        <p>Średni miks sieci i dane konkretnej dostawy opisują różne sytuacje. Własna instalacja wymaga rozliczenia energii wytworzonej, zużytej w zakładzie i oddanej do sieci oraz sprawdzenia, komu przypisano atrybuty energii.</p>
 
         <div class="callout callout-definition">
             <div class="callout-label">Definicja</div>
-            <p class="callout-body">
-                <strong>Metoda lokalizacyjna (location-based)</strong> &#8212; wska&#378;nik emisji dla energii
-                elektrycznej oparty na &#347;rednim miksie wytwarzania w danym kraju lub regionie,
-                niezale&#380;nie od um&#243;w handlowych producenta. W Polsce: wska&#378;nik poLCA-EN-PL-2024 v9.1 = 0,599&nbsp;kg&nbsp;CO&#8322;e/kWh (Poziom&nbsp;1 wg c-PCR-BET v1.3 §6.3.1; well-to-meter, oparty na danych KOBiZE end-user 553&nbsp;kg&nbsp;CO&#8322;/MWh).
-            </p>
+            <p class="callout-body">Metoda lokalizacyjna odwołuje się do przeciętnego miksu energii. Historyczne poLCA 2024 v9.1 podaje GWP-fossil 0,599 kg CO₂e/kWh. Nie jest to automatyczny wybór dla każdej dostawy lub instalacji.</p>
         </div>
 
-        <h2>Dlaczego w&#322;asna fotowoltaika nic nie zmienia &#8212; technicznie</h2>
+        <h2>Dlaczego własna fotowoltaika nic nie zmienia — technicznie</h2>
         <p>
-            Kiedy instalacja PV wt&#322;acza energi&#281; do sieci, a zak&#322;ad jednocze&#347;nie pobiera
-            pr&#261;d z sieci, z punktu widzenia LCA zachodz&#261; dwie oddzielne transakcje:
+            Kiedy instalacja PV wtłacza energię do sieci, a zakład jednocześnie pobiera
+            prąd z sieci, z punktu widzenia LCA zachodzą dwie oddzielne transakcje:
         </p>
         <ul>
-            <li><strong>Eksport do sieci</strong> &#8212; energia odnawialna wchodzi do krajowego
-            miksu i jest modelowana jako unikni&#281;ta emisja (modu&#322;&nbsp;D) lub przychód
-            &#347;rodowiskowy, ale <em>poza granicami systemu</em> produktu.</li>
-            <li><strong>Pob&#243;r z sieci</strong> &#8212; zak&#322;ad pobiera pr&#261;d ze &#347;redniego miksu
-            krajowego i stosuje wska&#378;nik KOBiZE. To nie jest ten sam pr&#261;d, kt&#243;ry
-            wyprodukowa&#322;y Twoje panele.</li>
+            <li><strong>Eksport do sieci</strong> — energia odnawialna wchodzi do krajowego
+            miksu i jest modelowana jako uniknięta emisja (moduł D) lub przychód
+            środowiskowy, ale <em>poza granicami systemu</em> produktu.</li>
+            <li><strong>Pobór z sieci:</strong> wymaga dobrania danych dostawy lub miksu do zasad właściwych dla procesu; nie oznacza automatycznego użycia KOBiZE.</li>
         </ul>
         <p>
-            Siec elektroenergetyczna to nie rura, kt&#243;r&#261; p&#322;ynie Tw&#243;j konkretny elektron.
-            To wsp&#243;lna pula, do kt&#243;rej wp&#322;ywa pr&#261;d z tysi&#281;cy &#378;r&#243;de&#322; i z kt&#243;rej
-            pobieramy &#347;redni&#261; mieszanin&#281;. Metoda lokalizacyjna modeluje t&#281; realn&#261;
-            fizyk&#281; systemu.
+            Siec elektroenergetyczna to nie rura, którą płynie Twój konkretny elektron.
+            To wspólna pula, do której wpływa prąd z tysięcy źródeł i z której
+            pobieramy średnią mieszaninę. Metoda lokalizacyjna modeluje tę realną
+            fizykę systemu.
         </p>
 
         <div class="callout callout-warning">
-            <div class="callout-label">Cz&#281;sty b&#322;&#281;d metodyczny</div>
+            <div class="callout-label">Częsty błęd metodyczny</div>
             <p class="callout-body">
-                U&#380;ycie wska&#378;nika emisji 0&nbsp;kg&nbsp;CO&#8322;/MWh dla energii pobieranej z sieci
-                przez zak&#322;ad z fotowoltaik&#261; (bez GO, bez wydzielenia bezpo&#347;redniego zu&#380;ycia)
-                jest niezgodne z EN&nbsp;15804+A2. Prowadzi do systematycznego zani&#380;enia
-                wska&#378;nika GWP w EPD i mo&#380;e by&#263; zakwestionowane przez jednostk&#281; certyfikuj&#261;c&#261;.
+                Użycie wskaźnika emisji 0 kg CO₂/MWh dla energii pobieranej z sieci
+                przez zakład z fotowoltaiką (bez GO, bez wydzielenia bezpośredniego zużycia)
+                jest niezgodne z EN 15804+A2. Prowadzi do systematycznego zaniżenia
+                wskaźnika GWP w EPD i może być zakwestionowane przez jednostkę certyfikującą.
             </p>
         </div>
 
-        <h2>Trzy przypadki, w kt&#243;rych OZE faktycznie zmienia wynik EPD</h2>
+        <h2>Trzy przypadki, w których OZE faktycznie zmienia wynik EPD</h2>
 
         <div class="process-steps">
             <div class="process-step">
                 <div class="process-step-num">1</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">Energia zu&#380;ywana bezpo&#347;rednio z instalacji (off-grid lub direct use)</div>
-                    <div class="process-step-text">
-                        Je&#380;eli linia produkcyjna jest zasilana wy&#322;&#261;cznie z instalacji PV
-                        bez po&#322;&#261;czenia z siec&#261; (lub przy wyra&#378;nym technicznym rozdzieleniu
-                        przep&#322;yw&#243;w), ta energia jest modelowana ze swoim rzeczywistym
-                        wska&#378;nikiem emisji (~40&nbsp;kg&nbsp;CO&#8322;/MWh w cyklu &#380;ycia paneli).
-                        W praktyce dotyczy to g&#322;&#243;wnie izolowanych obiekt&#243;w.
-                    </div>
+                    <div class="process-step-title">Energia zużywana bezpośrednio z instalacji (off-grid lub direct use)</div>
+                    <div class="process-step-text">Energię z własnej instalacji należy rozliczyć według rzeczywistych przepływów i praw do atrybutów. Połączenie zakładu z siecią nie wyklucza samo w sobie ujęcia energii zużytej z własnej fotowoltaiki. Wynik cyklu życia instalacji nie jest zerowy.</div>
                 </div>
             </div>
             <div class="process-step">
@@ -297,24 +244,24 @@
                 <div class="process-step-content">
                     <div class="process-step-title">Metoda rynkowa dopuszczona przez PCR + posiadanie GO</div>
                     <div class="process-step-text">
-                        Niekt&#243;re PCR (Product Category Rules) &#8212; np. IBU PCR Part&nbsp;A v2.0
-                        &#8212; dopuszczaj&#261; metod&#281; rynkow&#261; jako opcj&#281;. W&#243;wczas producent
-                        z Gwarancjami Pochodzenia mo&#380;e zadeklarowa&#263; ni&#380;szy wska&#378;nik.
-                        Wymaga to jednak udokumentowania GO na ca&#322;e zu&#380;ycie energii
-                        w roku referencyjnym oraz wyra&#378;nej adnotacji w EPD.
+                        Niektóre PCR (Product Category Rules) — np. IBU PCR Part A v2.0
+                        — dopuszczają metodę rynkową jako opcję. Wówczas producent
+                        z Gwarancjami Pochodzenia może zadeklarować niższy wskaźnik.
+                        Wymaga to jednak udokumentowania GO na całe zużycie energii
+                        w roku referencyjnym oraz wyraźnej adnotacji w EPD.
                     </div>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-step-num">3</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">Przysz&#322;e rewizje normy &#8212; co si&#281; zmienia</div>
+                    <div class="process-step-title">Przyszłe rewizje normy — co się zmienia</div>
                     <div class="process-step-text">
-                        Trwaj&#261; prace nad kolejn&#261; nowelizacj&#261; EN&nbsp;15804. Jedna z dyskutowanych
-                        zmian to obowi&#261;zkowe raportowanie r&#243;wnoleg&#322;e metody lokalizacyjnej
-                        i rynkowej. Je&#380;eli ta zmiana wejdzie w &#380;ycie, producenci z GO
-                        b&#281;d&#261; mogli pokazywa&#263; oba wyniki &#8212; co realnie zmieni warto&#347;&#263;
-                        marketingow&#261; inwestycji w OZE.
+                        Trwają prace nad kolejną nowelizacją EN 15804. Jedna z dyskutowanych
+                        zmian to obowiązkowe raportowanie równoległe metody lokalizacyjnej
+                        i rynkowej. Jeżeli ta zmiana wejdzie w życie, producenci z GO
+                        będą mogli pokazywać oba wyniki — co realnie zmieni wartość
+                        marketingową inwestycji w OZE.
                     </div>
                 </div>
             </div>
@@ -322,13 +269,13 @@
 
         <h2>EPD vs. CSRD: inne zasady, ta sama firma</h2>
         <p>
-            To jest moment, w kt&#243;rym wielu mened&#380;er&#243;w traci orientacj&#281;. Ten sam zak&#322;ad,
-            ta sama inwestycja w fotowoltaik&#281;, ten sam rok &#8212; a wynik emisji
-            mo&#380;e by&#263; &#8222;zielony&#8221; w jednym raporcie i szary w drugim.
+            To jest moment, w którym wielu menedżerów traci orientację. Ten sam zakład,
+            ta sama inwestycja w fotowoltaikę, ten sam rok — a wynik emisji
+            może być „zielony” w jednym raporcie i szary w drugim.
         </p>
 
         <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
-            <div class="card-title" style="font-size:0.9rem;">Por&#243;wnanie: ta sama instalacja PV w r&#243;&#380;nych raportach</div>
+            <div class="card-title" style="font-size:0.9rem;">Porównanie: ta sama instalacja PV w różnych raportach</div>
             <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.75rem; line-height:1.6;">
                 <thead>
                     <tr style="border-bottom:2px solid var(--border);">
@@ -341,136 +288,114 @@
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">EPD (EN 15804+A2)</td>
                         <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (poLCA-EN-PL-2024)</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 0,599 kg CO&#8322;e/kWh</td>
+                        <td style="padding:0.55rem 0.75rem;">Do ustalenia na podstawie przepływów i dokumentów; 0,599 to historyczny GWP-fossil</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">GHG Protocol Scope 2 market-based</td>
                         <td style="padding:0.55rem 0.75rem;">Rynkowa (GO)</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>0 kg/MWh</strong> &#8212; emisje znikaj&#261;</td>
+                        <td style="padding:0.55rem 0.75rem;"><strong>0 kg/MWh</strong> — emisje znikają</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">GHG Protocol Scope 2 location-based</td>
                         <td style="padding:0.55rem 0.75rem;">Lokalizacyjna (poLCA-EN-PL-2024)</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>Bez zmian</strong> &#8212; 0,599 kg CO&#8322;e/kWh</td>
+                        <td style="padding:0.55rem 0.75rem;">Do ustalenia na podstawie przepływów i dokumentów; 0,599 to historyczny GWP-fossil</td>
                     </tr>
                     <tr>
-                        <td style="padding:0.55rem 0.75rem;">CSRD / ESRS E1 (obowi&#261;zkowe od 2025)</td>
-                        <td style="padding:0.55rem 0.75rem;">Oba wymagane &#8212; location i market</td>
-                        <td style="padding:0.55rem 0.75rem;"><strong>R&#243;&#380;ny</strong> &#8212; w zale&#380;no&#347;ci od metody</td>
+                        <td style="padding:0.55rem 0.75rem;">CSRD / ESRS E1 (obowiązkowe od 2025)</td>
+                        <td style="padding:0.55rem 0.75rem;">Oba wymagane — location i market</td>
+                        <td style="padding:0.55rem 0.75rem;"><strong>Różny</strong> — w zależności od metody</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <p>
-            Dyrektywna CSRD (ESRS E1) od 2025&nbsp;r. wymaga prezentacji emisji Scope&nbsp;2
-            ob&#322;&#261;cznie metod&#261; lokalizacyjn&#261; i rynkow&#261;. Dla producenta z GO inwestycja
-            w fotowoltaik&#281; b&#281;dzie widoczna w raporcie korporacyjnym. W EPD produktu &#8212;
-            nadal nie, chyba &#380;e PCR si&#281; zmieni.
+            Dyrektywna CSRD (ESRS E1) od 2025 r. wymaga prezentacji emisji Scope 2
+            obłącznie metodą lokalizacyjną i rynkową. Dla producenta z GO inwestycja
+            w fotowoltaikę będzie widoczna w raporcie korporacyjnym. W EPD produktu —
+            nadal nie, chyba że PCR się zmieni.
         </p>
 
-        <h2>Co faktycznie obni&#380;a wynik GWP w EPD?</h2>
+        <h2>Co faktycznie obniża wynik GWP w EPD?</h2>
         <p>
-            Je&#380;eli celem jest EPD z ni&#380;szym GWP, najefektywniejsze dzia&#322;ania
-            to te wewn&#261;trz granic systemu:
+            Jeżeli celem jest EPD z niższym GWP, najefektywniejsze działania
+            to te wewnątrz granic systemu:
         </p>
         <ul>
-            <li><strong>Redukcja zu&#380;ycia energii</strong> &#8212; ka&#380;da zaoszcz&#281;dzona kWh to
-            ok. 0,56&nbsp;kg CO&#8322;e mniej w wyniku EPD na 1&nbsp;kWh (Poziom&nbsp;3 PV on-site vs Poziom&nbsp;1: 0,599 &minus; 0,041).</li>
-            <li><strong>Zmiana nosi&#263;nika energii</strong> &#8212; prze&#322;&#261;czenie z pr&#261;du sieciowego
-            na gaz ziemny dla proces&#243;w cieplnych mo&#380;e by&#263; korzystne przy wysokim
-            wska&#378;niku poLCA-EN-PL-2024 (Poziom&nbsp;1).</li>
-            <li><strong>Surowce z recyklingu</strong> &#8212; w bud. materiałach (stal, kruszywo,
-            papa) zamiana surowca pierwotnego na wtórny redukuje GWP w A1&ndash;A3 znacznie
-            mocniej ni&#380; zmiana energetyki.</li>
-            <li><strong>Optymalizacja procesu klinkieryzacji</strong> (cement) &#8212; redukcja
-            wsp&#243;&#322;czynnika klinkier/cement o 5&nbsp;p.p. obni&#380;a GWP bardziej
-            ni&#380; instalacja przeci&#281;tnego systemu PV na zak&#322;adzie.</li>
+            <li><strong>Redukcja zużycia energii:</strong> wpływ oblicza się przy użyciu wskaźnika właściwego dla oszczędzonej energii. Nie jest nim automatycznie różnica między miksem sieci i fotowoltaiką.</li>
+            <li><strong>Zmiana nosićnika energii</strong> — przełączenie z prądu sieciowego
+            na gaz ziemny dla procesów cieplnych może być korzystne przy wysokim
+            wskaźniku poLCA-EN-PL-2024 (Poziom 1).</li>
+            <li><strong>Surowce z recyklingu</strong> — w bud. materiałach (stal, kruszywo,
+            papa) zamiana surowca pierwotnego na wtórny redukuje GWP w A1–A3 znacznie
+            mocniej niż zmiana energetyki.</li>
+            <li><strong>Optymalizacja procesu klinkieryzacji</strong> (cement) — redukcja
+            współczynnika klinkier/cement o 5 p.p. obniża GWP bardziej
+            niż instalacja przeciętnego systemu PV na zakładzie.</li>
         </ul>
 
         <div class="callout callout-tip">
             <div class="callout-label">Wskazówka praktyczna</div>
             <p class="callout-body">
                 Przed zleceniem aktualizacji EPD po inwestycji w OZE zapytaj audytora LCA:
-                <em>&#8222;Jak modelujesz energi&#281; z naszej instalacji PV wzgl&#281;dem sieci?
-                Czy Tw&#243;j PCR dopuszcza metod&#281; rynkow&#261;?&#8221;</em> Je&#380;eli audytor nie zna
-                r&#243;&#380;nicy mi&#281;dzy location-based a market-based w kontek&#347;cie EN&nbsp;15804 &#8212;
-                zmie&#324; audytora. W razie w&#261;tpliwo&#347;ci skonsultuj si&#281; z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD&nbsp;Polska</a>.
+                <em>„Jak modelujesz energię z naszej instalacji PV względem sieci?
+                Czy Twój PCR dopuszcza metodę rynkową?”</em> Jeżeli audytor nie zna
+                różnicy między location-based a market-based w kontekście EN 15804 —
+                zmień audytora. W razie wątpliwości skonsultuj się z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD Polska</a>.
             </p>
         </div>
 
         <h2>Podsumowanie: kiedy OZE ma sens strategicznie</h2>
+        <p>Wpływ własnej fotowoltaiki na wynik zależy od zużycia energii w zakładzie, oddania do sieci i praw do jej atrybutów. Sam zakup paneli nie określa wyniku, lecz nie jest też podstawą do jego automatycznego pozostawienia bez zmian.</p>
         <p>
-            Inwestycja w fotowoltaik&#281; jest uzasadniona ekonomicznie i &#347;rodowiskowo.
-            Redukuje realne emisje z sieci energetycznej, obni&#380;a koszty operacyjne
-            i &#8212; przy zakupie GO &#8212; znacz&#261;co poprawia wynik Scope&nbsp;2 market-based
-            w raportach CSRD i CDP.
+            W EPD produktu (EN 15804+A2 bez specjalnych klauzul PCR) wynik pozostaje
+            niezmieniony. To nie wada normy — to jej spójność: EPD ma porównywać
+            produkty na tych samych zasadach, niezależnie od tego, czy producent
+            podpisał umowę na zielony prąd.
         </p>
         <p>
-            W EPD produktu (EN&nbsp;15804+A2 bez specjalnych klauzul PCR) wynik pozostaje
-            niezmieniony. To nie wada normy &#8212; to jej spójno&#347;&#263;: EPD ma porównywa&#263;
-            produkty na tych samych zasadach, niezale&#380;nie od tego, czy producent
-            podpisa&#322; umow&#281; na zielony pr&#261;d.
-        </p>
-        <p>
-            Rozumiej&#261;c t&#281; r&#243;&#380;nic&#281;, mo&#380;esz &#347;wiadomie alokowa&#263; bud&#380;et na dzia&#322;ania,
-            kt&#243;re realnie poprawiaj&#261; konkretny wska&#378;nik &#8212; zamiast inwestowa&#263;
-            i by&#263; zaskoczonym brakiem zmiany w audycie.
+            Rozumiejąc tę różnicę, możesz świadomie alokować budżet na działania,
+            które realnie poprawiają konkretny wskaźnik — zamiast inwestować
+            i być zaskoczonym brakiem zmiany w audycie.
         </p>
 
         <!-- FAQ -->
         <div class="faq-section">
-            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+            <div class="faq-section-title">Najczęściej zadawane pytania</div>
 
             <div class="faq-item">
-                <div class="faq-q">Czy fotowoltaika na zak&#322;adzie obni&#380;a wynik EPD?</div>
-                <div class="faq-a">
-                    Nie &#8212; przy standardowej metodzie lokalizacyjnej wymaganej przez EN&nbsp;15804+A2.
-                    W&#322;asna instalacja OZE zmienia wynik EPD tylko wtedy, gdy energia jest
-                    produkowana i zu&#380;ywana bezpo&#347;rednio bez wt&#322;aczania do sieci, lub gdy
-                    producent posiada Gwarancje Pochodzenia i PCR to explicite dopuszcza.
-                </div>
+                <div class="faq-q">Czy fotowoltaika na zakładzie obniża wynik EPD?</div>
+                <div class="faq-a">Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q">Co to jest metoda lokalizacyjna w LCA?</div>
-                <div class="faq-a">
-                    Metoda lokalizacyjna (<em>location-based</em>) polega na u&#380;yciu &#347;redniego
-                    wska&#378;nika emisji dla krajowej sieci energetycznej &#8212; niezale&#380;nie od um&#243;w
-                    handlowych producenta. W Polsce to wska&#378;nik poLCA-EN-PL-2024 v9.1:
-                    0,599&nbsp;kg&nbsp;CO&#8322;e/kWh (Poziom&nbsp;1, location-based; well-to-meter, oparty na danych KOBiZE end-user 553&nbsp;kg&nbsp;CO&#8322;/MWh za 2024).
-                </div>
+                <div class="faq-a">Metoda lokalizacyjna odwołuje się do przeciętnego miksu. W artykule przywołano historyczny GWP-fossil 0,599 kg CO₂e/kWh modelu 2024. Dobór do deklaracji zależy od zastosowania i dokumentacji.</div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q">Kiedy OZE faktycznie zmienia wynik EPD?</div>
                 <div class="faq-a">
-                    W trzech przypadkach: energia zu&#380;ywana bezpo&#347;rednio z izolowanej
+                    W trzech przypadkach: energia zużywana bezpośrednio z izolowanej
                     instalacji (off-grid), stosowanie metody rynkowej dopuszczonej przez PCR
-                    z pe&#322;n&#261; dokumentacj&#261; GO, lub w przysz&#322;o&#347;ci po zmianach normy
-                    umo&#380;liwiaj&#261;cych r&#243;wnoleg&#322;e raportowanie.
+                    z pełną dokumentacją GO, lub w przyszłości po zmianach normy
+                    umożliwiających równoległe raportowanie.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Czym r&#243;&#380;ni si&#281; metoda lokalizacyjna od rynkowej w EPD?</div>
-                <div class="faq-a">
-                    Metoda lokalizacyjna (wymagana w EN&nbsp;15804+A2) u&#380;ywa wska&#378;nika
-                    dla ca&#322;ej sieci krajowej &#8212; niezale&#380;nie od zakupionych certyfikat&#243;w.
-                    Metoda rynkowa (stosowana w GHG Protocol Scope&nbsp;2) pozwala uwzgl&#281;dni&#263;
-                    Gwarancje Pochodzenia i wykazywa&#263; ni&#380;sze emisje. Oba podej&#347;cia s&#261; poprawne
-                    &#8212; w swoich kontekstach.
-                </div>
+                <div class="faq-q">Czym różni się metoda lokalizacyjna od rynkowej w EPD?</div>
+                <div class="faq-a">Sposób modelowania energii w deklaracji produktu i w sprawozdawczości organizacji trzeba rozpatrywać osobno. Nie należy przenosić reguł z jednego zastosowania na drugie. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Co to s&#261; Gwarancje Pochodzenia (GO)?</div>
+                <div class="faq-q">Co to są Gwarancje Pochodzenia (GO)?</div>
                 <div class="faq-a">
-                    Gwarancje Pochodzenia to certyfikaty elektroniczne potwierdzaj&#261;ce,
-                    &#380;e okre&#347;lona ilo&#347;&#263; energii pochodzi ze &#378;r&#243;de&#322; odnawialnych.
-                    1&nbsp;GO = 1&nbsp;MWh energii z OZE. W Polsce wydaje je URE.
-                    S&#261; przedmiotem obrotu na europejskim rynku koordynowanym przez AIB.
-                    Sama taryfa &#8222;eko&#8221; bez fizycznego GO nie jest dowodem zakupu
+                    Gwarancje Pochodzenia to certyfikaty elektroniczne potwierdzające,
+                    że określona ilość energii pochodzi ze źródeł odnawialnych.
+                    1 GO = 1 MWh energii z OZE. W Polsce wydaje je URE.
+                    Są przedmiotem obrotu na europejskim rynku koordynowanym przez AIB.
+                    Sama taryfa „eko” bez fizycznego GO nie jest dowodem zakupu
                     energii odnawialnej w rozumieniu GHG Protocol.
                 </div>
             </div>
@@ -479,20 +404,20 @@
         <hr class="blog-post-divider">
 
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>&#378;r&#243;d&#322;a:</strong>
-            EN&nbsp;15804+A2:2019/A1:2021, §6.4.3 (metoda lokalizacyjna dla energii z sieci);
-            Multicert Sp. z o.o. (2026), MET-001:2026 &#8212; poLCA-EN-PL-2024 v9.1 = 0,599 kg CO&#8322;e/kWh; Multicert Sp. z o.o. (2026), MET-002:2026 &#8212; wy&#322;&#261;czenie wska&#378;nik&#243;w KOBiZE z LCA EPD; c-PCR-BET-EPD-PL:2026 v1.3 §6.3 &#8212; 3-poziomowa hierarchia wska&#378;nika energii (Poziom&nbsp;1: 0,599; Poziom&nbsp;2 AIB residual: 0,808; Poziom&nbsp;3 PV on-site: 0,041); KOBiZE (2025), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;&#8221; za rok 2024 (end-user: 553 kg CO&#8322;/MWh);
-            GHG Protocol, &#8222;Scope 2 Accounting Guidance&#8221; (2015);
-            AIB (2025), &#8222;European Residual Mixes 2023&#8221;;
+            <strong>źródła:</strong>
+            EN 15804+A2:2019/A1:2021, §6.4.3 (metoda lokalizacyjna dla energii z sieci);
+            Multicert Sp. z o.o. (2026), MET-001:2026 — poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh; Multicert Sp. z o.o. (2026), MET-002:2026 — wyłączenie wskaźników KOBiZE z LCA EPD; c-PCR-BET-EPD-PL:2026 v1.3 §6.3 — 3-poziomowa hierarchia wskaźnika energii (Poziom 1: 0,599; Poziom 2 AIB residual: 0,808; Poziom 3 PV on-site: 0,041); KOBiZE (2025), „Wskaźniki emisyjności CO₂” za rok 2024 (end-user: 553 kg CO₂/MWh);
+            GHG Protocol, „Scope 2 Accounting Guidance” (2015);
+            AIB (2025), „European Residual Mixes 2023”;
             IBU PCR Part A: Computation Rules, v2.0 (2023);
-            Rozporz&#261;dzenie (UE) 2018/2001 (RED&nbsp;II), art.&nbsp;19 &mdash; Gwarancje Pochodzenia;
-            ESRS E1 (CSRD, 2023), wymagania raportowania Scope&nbsp;2.
-        </p>
+            Rozporządzenie (UE) 2018/2001 (RED II), art. 19 — Gwarancje Pochodzenia;
+            ESRS E1 (CSRD, 2023), wymagania raportowania Scope 2.
+         <span class="legacy-citation-note">MET-002 przywołano pod tytułem wydania historycznego; <a href="/metodyki/MET-002-energia.html">zob. korektę HTML</a>. Określenie „3-poziomowa hierarchia” opisuje wcześniejsze ujęcie.</span></p>
     </div>
 
     <!-- Related posts -->
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-residual-mix-aib-kobize.html" class="blog-card">
                 <div class="blog-card-body">
@@ -501,9 +426,9 @@
                         <span class="blog-tag">Dane</span>
                         <span class="blog-date">18 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">Residual mix, AIB i KOBiZE &#8212; trzy wska&#378;niki emisji dla energii elektrycznej i kiedy stosowa&#263; ka&#380;dy z nich</div>
+                    <div class="blog-card-title">Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -515,9 +440,9 @@
                         <span class="blog-tag metodyka">Metodyka</span>
                         <span class="blog-date">14 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
+                    <div class="blog-card-title">Dlaczego polskie wskaźniki emisji CO₂ różnią się od europejskich — i co to oznacza dla LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">8 min czytania</span>
                     </div>
                 </div>
@@ -526,47 +451,7 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

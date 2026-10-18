@@ -3,7 +3,7 @@
     "title": "poLCA material taxonomy for asphalt mixtures",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "note": "Taksonomia materiałów służy do automatycznego przypisania pozycji recepty lub dostawcy do kontrolowanego datasetu poLCA. Wartości grupowe mają status wartości domyślnych do czasu uzyskania EPD dostawcy albo danych konkretnej kopalni lub zakładu.",
+    "note": "Projekt taksonomii do wspomagania przypisania materiałów do kategorii. Dobór konkretnego zbioru wymaga oceny zakresu i reprezentatywności; automatyczny dobór nie jest wdrożoną funkcją tego katalogu.",
     "background": {
       "plain_language": "Wartości w katalogu materiałów nie stanowią niezależnych danych urzędowych. Są to kontrolowane wartości startowe opracowane na podstawie dostępnych źródeł publicznych i branżowych oraz modelu EPD MMA. Ich celem jest jednolite mapowanie materiałów w sytuacji braku EPD dostawcy lub danych kopalni.",
       "source_layers": [
@@ -121,7 +121,9 @@
         "wartość wymagająca danych źródłowych"
       ],
       "warning": "Kruszywa są podobne funkcjonalnie, ale nie identyczne środowiskowo. Różnice wynikają z rodzaju skały, sposóbu wydobycia, kruszenia, płukania, energii, wilgotności oraz transportu."
-    }
+    },
+    "document_status": "technical_draft",
+    "implementation_status": "proposed_mapping_not_automatic_selection"
   },
   "groups": [
     {
@@ -347,5 +349,7 @@
       "background_note": "Materiały wtórne zależą od statusu odpadu lub produktu, punktu End-of-Waste, procesu przetwarzania i zasad alokacji EN 15804+A2/cPCR. Dla części pozycji wymagane jest odrębne potwierdzenie metodyczne przed przypisaniem stałego wskaźnika.",
       "group_source_provenance": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
     }
-  ]
+  ],
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

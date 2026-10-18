@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-10-18.1",
+  "record": {
+    "id": "POLCA-MMA-LCI-DEFAULTS-2026",
+    "title": "Parametry do obliczeń mieszanek asfaltowych",
+    "kind": "dataset",
+    "category_id": "mma",
+    "category_label": "Mieszanki mineralno-asfaltowe",
+    "year": 2026,
+    "year_type": "publication",
+    "status_id": "parameters",
+    "status_label": "Zestaw parametrów",
+    "description": "Zestaw założeń o surowcach, transporcie i energii procesu. Nie ma jednego łącznego wyniku.",
+    "href": "/dane/polca-mma-lci-defaults-2026.html",
+    "unit": "1 t mieszanki",
+    "boundary": "A1-A3",
+    "indicator_label": null,
+    "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+    "source_url": "https://polca.org.pl/c-pcr/mma.html",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-MMA-LCI-DEFAULTS-2026.json"
+      },
+      {
+        "label": "Parametry i założenia — JSON",
+        "format": "JSON",
+        "href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json"
+      }
+    ],
+    "methodology_href": "/c-pcr/mma.html",
+    "related_ids": [
+      "tool-mma",
+      "POLCA-MMA-AC11S-2026",
+      "POLCA-MMA-AC16W-2026",
+      "POLCA-MMA-SMA11S-2026"
+    ],
+    "keywords": [
+      "POLCA-MMA-LCI-DEFAULTS-2026",
+      "MMA",
+      "parametry",
+      "receptura"
+    ],
+    "record_type": "parameters",
+    "geography": "PL",
+    "reference_unit": "t",
+    "source_record_href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json"
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

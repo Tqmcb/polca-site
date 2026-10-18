@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.4-aggregates",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-03",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,12 +11,13 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "KOBIZE-EN-PL-ENDUSER-2024",
@@ -36,9 +37,9 @@
     "source_name": "KOBiZE, wskaźniki emisyjności dla energii elektrycznej za 2024 rok",
     "source_url": "https://www.kobize.pl/",
     "scope": "Oficjalny wskaźnik KOBiZE dla energii elektrycznej dostarczonej do odbiorcy końcowego. To jest wskaźnik CO2 ze spalania, nie pełny wskaźnik LCA CO2e.",
-    "methodology_note": "Stosowany jako publiczne wejście kontrolne i punkt odniesienia. Nie zawiera emisji upstream paliw, metanu z górnictwa ani infrastruktury OZE, dlatego dla obliczeń LCA/EPD rekomendowany jest model POLCA-EN-PL-LCA-2024.",
+    "methodology_note": "Oficjalny wskaźnik CO2 jako wejście kontrolne i punkt odniesienia. Nie obejmuje pełnego cyklu życia; nie należy automatycznie zastępować nim wskaźnika LCA ani uznawać innego modelu za obowiązkowy.",
     "limitations": "Zakres CO2 only / end-user; nie jest pełnym GWP-fossil w cyklu życia. Rekord ma inną granicę systemu niż wynik 0,599 kg CO2e/kWh.",
-    "preferred_replacement": "POLCA-EN-PL-LCA-2024 dla obliczeń LCA/EPD albo zweryfikowany wskaźnik energii kontraktowej zgodny z metodyką programu.",
+    "preferred_replacement": "Dane energii dobrane do zastosowania i wymagań programu. POLCA-EN-PL-LCA-2024 jest odrębnym modelem historycznym o innym zakresie.",
     "publication_status": "official_input",
     "review_required": false,
     "use_allowed_for": [
@@ -59,8 +60,8 @@
     "open_data_note": "Dane publiczne KOBiZE; publikacja poLCA nie zastępuje oryginalnego dokumentu źródłowego.",
     "evidence_level": "official_public",
     "source_policy": {},
-    "selection_mode": "mandatory_reference_input",
-    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "selection_mode": "context_specific_assessment",
+    "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "product_groups": [
       "mma",
       "beton",
@@ -68,6 +69,15 @@
       "ogolne-epd"
     ],
     "material_role": "energia elektryczna",
-    "record_use_status": "ready_to_use_default_dataset"
-  }
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters",
+    "indicator_type": "direct_CO2",
+    "indicator_unit": "kg CO2/kWh",
+    "legacy_field_semantics": {
+      "gwp_total_kg_co2e": "Historyczny klucz zawiera CO2 dla odbiorcy końcowego, nie GWP-total. Liczbę zachowano dla zgodności odczytu."
+    }
+  },
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

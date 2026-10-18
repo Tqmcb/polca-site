@@ -3,7 +3,9 @@
     "title": "poLCA policy for using existing EPD data",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "purpose": "Zasady wykorzystywania istniejących deklaracji EPD jako źródła danych dla poLCA, ocen środowiskowych."
+    "purpose": "Zasady wykorzystywania istniejących deklaracji EPD jako źródła danych dla poLCA, ocen środowiskowych.",
+    "document_status": "technical_draft",
+    "implementation_note": "Projekt zasad oceny źródeł. Nie potwierdza, że wszystkie historyczne rekordy spełniają opisane wymagania identyfikacji."
   },
   "principle": "Istniejące, zweryfikowane EPD są kluczowym źródłem danych dla poLCA. EPD konkretnego dostawcy może zasilać wynik klienta, jeżeli odpowiada rzeczywiście użytemu produktowi, jednostce, modułom, geografii i wersji EN 15804/cPCR. EPD innych producentów mogą służyć jako benchmark, statystyka kategorii albo źródło do wyprowadzenia wartości domyślnej, ale nie mogą automatycznie zastąpić danych dostawcy bez uzasadnienia.",
   "source_registers": [
@@ -114,5 +116,7 @@
     "use_in_polca": "Zweryfikowany benchmark producenta dla kruszyw wapiennych; bezpośrednie użycie tylko dla zadeklarowanego produktu i zakładu, a jako wartość domyślna wyłącznie po włączeniu do koszyka porównywalnych EPD.",
     "source_url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf"
   },
-  "audit_rule": "Audytor musi widzieć nie tylko końcowy wskaźnik, ale też listę EPD źródłowych, kryteria porównywalności, zakres modułów, jednostki, daty ważności i powód użycia EPD jako danych bezpośrednich albo benchmarku."
+  "audit_rule": "Audytor musi widzieć nie tylko końcowy wskaźnik, ale też listę EPD źródłowych, kryteria porównywalności, zakres modułów, jednostki, daty ważności i powód użycia EPD jako danych bezpośrednich albo benchmarku.",
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

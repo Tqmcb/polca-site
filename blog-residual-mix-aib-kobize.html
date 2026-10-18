@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog</title>
-    <meta name="description" content="0,599 kg CO₂e/kWh wg poLCA-EN-PL-2024 (Poziom 1, location-based), 0,808 kg z AIB residual mix (Poziom 2), 0,041 kg dla PV on-site (Poziom 3) — trzy poziomy wskaźnika wg c-PCR-BET v1.3 §6.3. Kiedy stosować który i dlaczego mylenie ich to poważny błąd metodyczny.">
+    <meta name="description" content="Historyczne zestawienie modelu poLCA 2024, miksu rezydualnego i fotowoltaiki. Dobór danych zależy od zastosowania i dokumentacji dostawy; dawne trzy poziomy nie są uniwersalną hierarchią.">
     <link rel="canonical" href="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej — poLCA Blog">
-    <meta property="og:description" content="0,599 kg CO₂e/kWh (poLCA-EN-PL-2024, Poziom 1), 0,808 kg (AIB residual mix, Poziom 2), 0,041 kg (PV on-site, Poziom 3) — 3-poziomowa hierarchia wskaźnika energii wg c-PCR-BET v1.3. Kiedy stosować który w LCA, EPD i raportowaniu Scope 2.">
+    <meta property="og:description" content="Historyczne zestawienie modelu poLCA 2024, miksu rezydualnego i fotowoltaiki. Dobór danych zależy od zastosowania i dokumentacji dostawy; dawne trzy poziomy nie są uniwersalną hierarchią.">
     <meta property="og:url" content="https://polca.org.pl/blog-residual-mix-aib-kobize.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -24,114 +24,125 @@
     <meta property="article:tag" content="Gwarancje Pochodzenia">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej">
-    <meta name="twitter:description" content="0,599 kg CO₂e/kWh (poLCA-EN-PL-2024, Poziom 1), 0,808 (AIB residual mix), 0,041 (PV on-site) — 3-poziomowa hierarchia wskaźnika wg c-PCR-BET v1.3.">
+    <meta name="twitter:description" content="Historyczne zestawienie modelu poLCA 2024, miksu rezydualnego i fotowoltaiki. Dobór danych zależy od zastosowania i dokumentacji dostawy; dawne trzy poziomy nie są uniwersalną hierarchią.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-residual-mix-aib-kobize.jpg">
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
+      "headline": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich",
+      "description": "Historyczne zestawienie modelu poLCA 2024, miksu rezydualnego i fotowoltaiki. Dobór danych zależy od zastosowania i dokumentacji dostawy; dawne trzy poziomy nie są uniwersalną hierarchią.",
+      "url": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "residual mix",
+        "AIB",
+        "KOBiZE",
+        "Scope 2",
+        "Gwarancje Pochodzenia",
+        "emisje CO2",
+        "energia elektryczna",
+        "EPD",
+        "LCA",
+        "GHG Protocol"
+      ],
+      "about": [
         {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
-          "headline": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich",
-          "description": "0,599 kg CO₂e/kWh wg poLCA-EN-PL-2024 (Poziom 1, location-based), 0,808 kg z AIB residual mix (Poziom 2), 0,041 kg dla PV on-site (Poziom 3) — trzy poziomy wskaźnika energii wg c-PCR-BET v1.3 §6.3. Mylenie ich to jeden z częstszych błędów metodycznych w raportowaniu emisji Scope 2 i deklaracjach EPD.",
-          "url": "https://polca.org.pl/blog-residual-mix-aib-kobize.html",
-          "datePublished": "2026-02-18",
-          "dateModified": "2026-02-18",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA — Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://polca.org.pl/favicon.svg"
-            }
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["residual mix", "AIB", "KOBiZE", "Scope 2", "Gwarancje Pochodzenia", "emisje CO2", "energia elektryczna", "EPD", "LCA", "GHG Protocol"],
-          "about": [
-            {"@type": "Thing", "name": "Residual mix energii elektrycznej"},
-            {"@type": "Thing", "name": "Association of Issuing Bodies (AIB)"},
-            {"@type": "Thing", "name": "KOBiZE"},
-            {"@type": "Thing", "name": "Raportowanie emisji Scope 2"},
-            {"@type": "Thing", "name": "Gwarancje Pochodzenia (GO)"}
-          ]
+          "@type": "Thing",
+          "name": "Residual mix energii elektrycznej"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej"}
-          ]
+          "@type": "Thing",
+          "name": "Association of Issuing Bodies (AIB)"
+        },
+        {
+          "@type": "Thing",
+          "name": "KOBiZE"
+        },
+        {
+          "@type": "Thing",
+          "name": "Raportowanie emisji Scope 2"
+        },
+        {
+          "@type": "Thing",
+          "name": "Gwarancje Pochodzenia (GO)"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej"
         }
       ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  ]
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
+<meta name="metadata_revision" content="2026-10-18">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich</span></nav><div class="polca-page">
 
     <div class="post-accent-bar"></div>
 
     <div style="width:100%;height:420px;overflow:hidden;margin-bottom:0;">
-        <img src="images/blog-residual-mix-aib-kobize.jpg"
-             alt="Elektrownia z wieżami chłodniczymi" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+        <img src="images/blog-residual-mix-aib-kobize.jpg" alt="Elektrownia z wieżami chłodniczymi" style="width:100%;height:100%;object-fit:cover;" loading="eager">
     </div>
 
     <div class="fade-in">
         <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Wr&#243;&#263; do bloga
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Wróć do bloga
         </a>
 
         <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
             <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <span class="breadcrumbs-current">Residual mix, AIB i KOBiZE</span>
         </nav>
 
@@ -140,31 +151,27 @@
                 <span class="blog-tag metodyka">Metodyka</span>
                 <span class="blog-tag">Dane</span>
                 <span class="blog-date">18 lutego 2026</span>
-                <span class="blog-read-time">&#183; 9 min czytania</span>
+                <span class="blog-read-time">· 9 min czytania</span>
             </div>
             <h1 class="blog-post-title">
-                Residual mix, AIB i KOBiZE &#8212; trzy wska&#378;niki emisji dla energii elektrycznej i kiedy stosowa&#263; ka&#380;dy z nich
+                Residual mix, AIB i KOBiZE — trzy wskaźniki emisji dla energii elektrycznej i kiedy stosować każdy z nich
             </h1>
-            <p class="blog-post-lead">
-                0,599&nbsp;kg&nbsp;CO&#8322;e/kWh wg poLCA-EN-PL-2024 (location-based, Poziom&nbsp;1), 0,808&nbsp;kg z residual mix AIB
-                (market-based, Poziom&nbsp;2), 0,041&nbsp;kg dla PV on-site (Poziom&nbsp;3) &#8212; trzy poziomy wska&#378;nika energii
-                wg c-PCR-BET&nbsp;v1.3&nbsp;§6.3. Wszystkie poprawne, ale mierz&#261; co innego &#8212; mylenie ich to jeden
-                z cz&#281;stszych b&#322;&#281;d&#243;w metodycznych w raportowaniu emisji Scope&nbsp;2 i deklaracjach EPD.
-            </p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dokument historyczny: model energii za 2024 r. Wartość 0,599 kg CO₂e/kWh oznacza składnik kopalny (GWP-fossil), nie GWP-total. Dawna hierarchia trzech poziomów nie jest uniwersalną instrukcją doboru energii do deklaracji środowiskowej. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
+            <p class="blog-post-lead">Artykuł zestawia historyczne założenia: 0,599 kg CO₂e/kWh dla składnika kopalnego modelu poLCA 2024, 0,808 dla ówczesnego wariantu rezydualnego i 0,041 dla wariantu fotowoltaiki. Te liczby nie tworzą uniwersalnej hierarchii wyboru energii. Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p>
             <div style="margin-top:1.25rem;padding:.9rem 1.1rem;border:1px solid var(--border);border-left:3px solid #E65100;border-radius:8px;background:var(--bg-subtle);font-size:.84rem;line-height:1.65;color:var(--text-secondary);">
                 <strong style="color:var(--text-primary);">Aktualizacja wartości po publikacji wpisu.</strong>
                 Tekst opisuje stan na luty 2026 i podaje wartość rezydualną z wydania AIB za rok 2024.
                 W dniu 28 maja 2026 AIB opublikowało wydanie za rok 2025, w którym wartość dla Polski
-                wynosi <strong>0,727&nbsp;kg&nbsp;CO&#8322;/kWh</strong> wobec 0,808 z poprzedniego wydania.
+                wynosi <strong>0,727 kg CO₂/kWh</strong> wobec 0,808 z poprzedniego wydania.
                 Zasada wyboru poziomu opisana w tekście pozostaje bez zmian.
-                Zob. <a href="rejestr-zmian.html" style="color:var(--accent);font-weight:600;">rejestr przegl&#261;d&#243;w i zmian</a>.
+                Zob. <a href="rejestr-zmian.html" style="color:var(--accent);font-weight:600;">rejestr przeglądów i zmian</a>.
             </div>
         </div>
     </div>
 
     <!-- Porównanie trzech poziomów wskaźnika energii — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
-        <div class="card-title">3-poziomowa hierarchia wska&#378;nika energii elektrycznej w Polsce (c-PCR-BET v1.3 §6.3, dane za 2024)</div>
+        <div class="card-title">3-poziomowa hierarchia wskaźnika energii elektrycznej w Polsce (c-PCR-BET v1.3 §6.3, dane za 2024)</div>
         <div class="vcol-chart" style="height: 260px;">
             <div class="vcol-group">
                 <div class="vcol-value">0,599</div>
@@ -180,152 +187,113 @@
             </div>
         </div>
         <div class="vcol-labels">
-            <div class="vcol-label">Poziom 1 &#8212; poLCA-EN-PL-2024<br><span style="color: var(--text-light);">location-based (domy&#347;lny)</span></div>
-            <div class="vcol-label">Poziom 2 &#8212; AIB residual mix<br><span style="color: var(--text-light);">market-based, bez GO</span></div>
-            <div class="vcol-label">Poziom 3 &#8212; PV on-site<br><span style="color: var(--text-light);">w&#322;asna instalacja</span></div>
+            <div class="vcol-label">Model 2024 v9.1<br>historyczny GWP-fossil</div>
+            <div class="vcol-label">Historyczny wariant rezydualny</div>
+            <div class="vcol-label">Historyczny wariant fotowoltaiki</div>
         </div>
-        <p class="comp-note" style="text-align: center; margin-top: 0.75rem;">
-            kg CO&#8322;e/kWh &middot; &#378;r&#243;d&#322;a: poLCA-EN-PL-2024 v9.1 (MET-001:2026, well-to-meter, EF&nbsp;3.1, IPCC AR6);
-            AIB &#8222;European Residual Mixes 2024&#8221;; &#214;KOBAUDAT 2024 PV. Hierarchia wg c-PCR-BET-EPD-PL:2026 v1.3 §6.3.1.
-            Wska&#378;nik bazowy KOBiZE (sama emisja spalania, end-user) za 2024 = 553&nbsp;kg&nbsp;CO&#8322;/MWh i stanowi 88% warto&#347;ci poLCA.
-        </p>
+        <p class="comp-note" style="text-align: center; margin-top: 0.75rem;">Historyczne wartości: poLCA-EN-PL-2024 v9.1 0,599 kg CO₂e/kWh (GWP-fossil), wariant rezydualny 0,808 i fotowoltaika 0,041. Źródła podano w artykule. Dawny podział na poziomy nie określa uniwersalnego pierwszeństwa danych.</p>
     </div>
 
     <div class="blog-post-body section-gap fade-in post-chapters">
 
-        <h2>Sk&#261;d bior&#261; si&#281; dwa r&#243;&#380;ne wska&#378;niki dla tego samego kraju?</h2>
+        <h2>Skąd biorą się dwa różne wskaźniki dla tego samego kraju?</h2>
 
         <div class="margin-note">
-            <div class="margin-note-label">Kluczowe rozr&#243;&#380;nienie</div>
+            <div class="margin-note-label">Kluczowe rozróżnienie</div>
             KOBiZE = fizyczny miks sieci.<br>
-            AIB residual mix = miks po &#8222;wyj&#281;ciu&#8221; OZE rozliczonego certyfikatami GO.<br>
-            Oba wska&#378;niki mierz&#261; t&#281; sam&#261; energi&#281; &#8212; innymi metodami.
+            AIB residual mix = miks po „wyjęciu” OZE rozliczonego certyfikatami GO.<br>
+            Oba wskaźniki mierzą tę samą energię — innymi metodami.
         </div>
 
         <p>
-            W Polsce w 2023 roku w&#281;giel odpowiada&#322; za ok. 60% produkcji energii elektrycznej.
-            Jednocze&#347;nie dynamicznie ro&#347;nie udzia&#322; OZE &#8212; farmy wiatrowe i fotowoltaika wytwarza&#322;y
-            &#322;&#261;cznie ju&#380; ok. 20% energii. Na potrzeby raportowania emisji te same kilowatogodziny
-            mog&#261; by&#263; liczone na dwa fundamentalnie r&#243;&#380;ne sposoby:
+            W Polsce w 2023 roku węgiel odpowiadał za ok. 60% produkcji energii elektrycznej.
+            Jednocześnie dynamicznie rośnie udział OZE — farmy wiatrowe i fotowoltaika wytwarzały
+            łącznie już ok. 20% energii. Na potrzeby raportowania emisji te same kilowatogodziny
+            mogą być liczone na dwa fundamentalnie różne sposoby:
         </p>
         <ul>
             <li>
-                <strong>Metoda lokalizacyjna (location-based)</strong> &#8212; patrzymy na fizyczny miks sieci
-                energetycznej. Ka&#380;da zu&#380;yta kWh niesie ze sob&#261; emisje proporcjonalne do &#347;redniego
-                koszyka wytwarzania w danym kraju. To jest w&#322;a&#347;nie wska&#378;nik KOBiZE.
+                <strong>Metoda lokalizacyjna (location-based)</strong> — patrzymy na fizyczny miks sieci
+                energetycznej. Każda zużyta kWh niesie ze sobą emisje proporcjonalne do średniego
+                koszyka wytwarzania w danym kraju. To jest właśnie wskaźnik KOBiZE.
             </li>
-            <li>
-                <strong>Metoda rynkowa (market-based)</strong> &#8212; patrzymy na to, co kupujemy
-                <em>na rynku certyfikat&#243;w</em>. Je&#380;eli firma kupi&#322;a Gwarancje Pochodzenia (GO) z elektrowni
-                wiatrowej, mo&#380;e zadeklarowa&#263; 0&nbsp;kg&nbsp;CO&#8322;/MWh. Je&#380;eli nie kupi&#322;a &#380;adnych certyfikat&#243;w,
-                stosuje wska&#378;nik AIB residual mix &#8212; kt&#243;ry jest wy&#380;szy ni&#380; &#347;rednia.
-            </li>
+            <li><strong>Metoda rynkowa:</strong> uwzględnia dokumenty dostawy i przypisanie atrybutów energii. Sama gwarancja pochodzenia nie oznacza zerowego wyniku w całym cyklu życia. Miks rezydualny nie musi być w każdym kraju wyższy od średniego miksu.</li>
         </ul>
         <p>
-            Oba podej&#347;cia s&#261; prawid&#322;owe w swoich kontekstach. Problem pojawia si&#281;, gdy stosuje si&#281;
+            Oba podejścia są prawidłowe w swoich kontekstach. Problem pojawia się, gdy stosuje się
             je zamiennie albo nieadekwatnie do metody raportowania.
         </p>
 
-        <h2>Co dok&#322;adnie mierzy KOBiZE</h2>
+        <h2>Co dokładnie mierzy KOBiZE</h2>
         <p>
-            Krajowy O&#347;rodek Bilansowania i Zarz&#261;dzania Emisjami (KOBiZE), dzia&#322;aj&#261;cy w strukturach
-            Instytutu Ochrony &#346;rodowiska &mdash; Pa&#324;stwowego Instytutu Badawczego, publikuje corocznie
-            oficjalny wska&#378;nik emisyjno&#347;ci CO&#8322; dla energii elektrycznej w Polsce.
+            Krajowy Ośrodek Bilansowania i Zarządzania Emisjami (KOBiZE), działający w strukturach
+            Instytutu Ochrony Środowiska — Państwowego Instytutu Badawczego, publikuje corocznie
+            oficjalny wskaźnik emisyjności CO₂ dla energii elektrycznej w Polsce.
         </p>
         <p>
-            Wska&#378;nik ten jest <strong>&#347;redni&#261; wa&#380;on&#261; emisji ze wszystkich &#378;r&#243;de&#322; wytwarzania</strong>
-            pod&#322;&#261;czonych do Krajowego Systemu Elektroenergetycznego: w&#281;gla kamiennego, w&#281;gla br&#261;zowego,
-            gazu, OZE, kogeneracji. Liczy si&#281; tu fizyczne spalanie paliw i zwi&#261;zana z nim emisja CO&#8322;,
-            podzielona przez ca&#322;kowit&#261; produkcj&#281; energii elektrycznej netto.
+            Wskaźnik ten jest <strong>średnią ważoną emisji ze wszystkich źródeł wytwarzania</strong>
+            podłączonych do Krajowego Systemu Elektroenergetycznego: węgla kamiennego, węgla brązowego,
+            gazu, OZE, kogeneracji. Liczy się tu fizyczne spalanie paliw i związana z nim emisja CO₂,
+            podzielona przez całkowitą produkcję energii elektrycznej netto.
         </p>
-        <p>
-            Wska&#378;nik KOBiZE jest <strong>fundamentem</strong> metody lokalizacyjnej, ale nie jest stosowany
-            w LCA bezpo&#347;rednio: obejmuje wy&#322;&#261;cznie emisj&#281; spalania (gate), bez upstream paliw (well-to-tank),
-            bez CH&#8324; i N&#8322;O oraz bez infrastruktury wytwarzania &#8212; co nie spe&#322;nia wymaga&#324; EN&nbsp;15804+A2 i metody EF&nbsp;3.1.
-            Z tego powodu c-PCR-BET&nbsp;v1.3&nbsp;§6.3.4 oraz dokument metodyczny
-            <a href="metodyki/MET-002-energia.html">MET-002:2026</a> wymagaj&#261;, by w LCA stosowa&#263;
-            pe&#322;ny wska&#378;nik <strong>poLCA-EN-PL-2024 = 0,599&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> (Poziom&nbsp;1, location-based,
-            well-to-meter), w kt&#243;rym dane KOBiZE end-user (553&nbsp;kg&nbsp;CO&#8322;/MWh za 2024) stanowi&#261; 88% warto&#347;ci.
-            Pe&#322;na metodyka tego wska&#378;nika: <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">MET-001:2026 (poLCA-EN-PL-2024 v9.1)</a>.
-        </p>
+        <p>Wskaźnik KOBiZE dla odbiorcy końcowego za 2024 r. wynosi 0,553 kg CO₂/kWh. Opisuje CO₂, a nie kompletny wynik oceny cyklu życia. Historyczny model poLCA-EN-PL-2024 v9.1 podaje 0,599 kg CO₂e/kWh dla składnika kopalnego (GWP-fossil). Wartości mają różny zakres. Dane KOBiZE mogą zasilać część modelu, lecz nie potwierdzają same zgodności całego zbioru. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p>
 
         <h2>Mechanizm residual mix i rola AIB</h2>
-        <p>
-            AIB (Association of Issuing Bodies) to europejska organizacja koordynuj&#261;ca system
-            Gwarancji Pochodzenia (GO) mi&#281;dzy krajami cz&#322;onkowskimi. Raz w roku AIB publikuje
-            raport &#8222;European Residual Mixes&#8221; zawieraj&#261;cy wska&#378;niki emisji dla poszczeg&#243;lnych
-            kraj&#243;w na u&#380;ytek <strong>rynkowej metody Scope&nbsp;2</strong>.
-        </p>
-        <p>
-            Mechanizm dzia&#322;a nast&#281;puj&#261;co. Kiedy elektrownia wiatrowa produkuje energi&#281;, mo&#380;e
-            r&#243;wnocze&#347;nie wysta&#263; Gwarancje Pochodzenia. Firma kupuj&#261;ca te GO ma prawo
-            zadeklarowa&#263;, &#380;e zu&#380;y&#322;a &#8222;zielon&#261; energi&#281;&#8221; i rozliczy&#263; j&#261; ze wska&#378;nikiem 0&nbsp;kg CO&#8322;/MWh.
-            Ale ta energia musi sk&#261;d&#347; &#8222;wyj&#347;&#263;&#8221; z puli og&#243;lnej &#8212; i tu w&#322;a&#347;nie pojawia si&#281; residual mix.
-        </p>
+        <p>Przy każdym użyciu raportu AIB lub KOBiZE należy odczytać rok danych i datę publikacji z konkretnego wydania. Dawne stwierdzenie, że w całym 2026 r. dostępne są wyłącznie dane rezydualne za 2023 r., nie jest aktualną informacją o dostępności.</p>
+        <p>Gwarancje pochodzenia dokumentują atrybuty energii. Ich wykorzystanie wymaga spełnienia odpowiednich kryteriów i wykluczenia podwójnego przypisania. Sam zakup gwarancji nie nadaje energii zerowego wyniku w całym cyklu życia.</p>
 
         <div class="pull-quote-lg">
-            <p>Residual mix to resztkowy miks energetyczny &#8212; pula energii, kt&#243;ra zostaje po &#8222;wyj&#281;ciu&#8221; wszystkich MWh rozliczonych certyfikatami GO. Poniewa&#380; GO dotycz&#261; g&#322;&#243;wnie OZE, residual mix jest zawsze bardziej emisyjny ni&#380; &#347;redni miks krajowy.</p>
-            <cite>AIB, European Residual Mixes &#8212; definicja operacyjna</cite>
+            <p>Miks rezydualny opisuje energię po odjęciu atrybutów przypisanych odbiorcom. Jego emisyjności względem średniego miksu nie należy przyjmować z góry.</p>
+            <cite>AIB, European Residual Mixes — definicja operacyjna</cite>
         </div>
 
         <p>
-            Dla Polski jest to efekt szczeg&#243;lnie wyra&#378;ny. Polscy wytwórcy OZE aktywnie
-            uczestnicz&#261; w rynku GO, eksportuj&#261;c certyfikaty m.in. do Europy Zachodniej.
-            Oznacza to, &#380;e krajowe farmy wiatrowe i fotowoltaika s&#261; &#8222;przypisane&#8221;
-            zagranicznym nabywcom GO &#8212; a polskim odbiorcom bez certyfikat&#243;w
-            pozostaje miks mocno zdominowany przez w&#281;giel.
+            Dla Polski jest to efekt szczególnie wyraźny. Polscy wytwórcy OZE aktywnie
+            uczestniczą w rynku GO, eksportując certyfikaty m.in. do Europy Zachodniej.
+            Oznacza to, że krajowe farmy wiatrowe i fotowoltaika są „przypisane”
+            zagranicznym nabywcom GO — a polskim odbiorcom bez certyfikatów
+            pozostaje miks mocno zdominowany przez węgiel.
         </p>
 
-        <h2>Liczby: jak bardzo si&#281; r&#243;&#380;ni&#261;?</h2>
-        <p>
-            poLCA-EN-PL-2024 (location-based, Poziom&nbsp;1, dane za 2024): <strong>0,599&nbsp;kg&nbsp;CO&#8322;e/kWh</strong>
-            (z czego sam wska&#378;nik spalania KOBiZE end-user = 553&nbsp;kg&nbsp;CO&#8322;/MWh, czyli 88% warto&#347;ci).<br>
-            AIB residual mix dla Polski (market-based, Poziom&nbsp;2, dane za 2024):
-            <strong>0,808&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> &mdash; r&#243;&#380;nica rz&#281;du 35% wzgl&#281;dem Poziomu&nbsp;1.
-        </p>
-        <p>
-            To nie jest marginalny rozjazd. Dla firmy raportuj&#261;cej Scope&nbsp;2 metod&#261; rynkow&#261;
-            (bez GO) u&#380;ycie wska&#378;nika KOBiZE zamiast AIB residual mix
-            <strong>systematycznie zani&#380;a deklarowane emisje o oko&#322;o pi&#261;t&#261; cz&#281;&#347;&#263;</strong>.
-            Odwrotnie: dla LCA/EPD u&#380;ycie residual mix AIB tam, gdzie norma wymaga
-            metody lokalizacyjnej, <em>zawy&#380;a</em> wynik i wprowadza niesp&#243;jno&#347;&#263; metodyczn&#261;.
-        </p>
+        <h2>Liczby: jak bardzo się różnią?</h2>
+        <p>Historyczne zestawienie zawierało 0,599 kg CO₂e/kWh dla modelu 2024 i 0,808 dla wariantu rezydualnego. Nie są to dwa poziomy jednej skali jakości. Składnik operacyjny 0,528 stanowi około 88% sumy modelu 2024; surowy wskaźnik KOBiZE 0,553 nie jest tą składową.</p>
+        <p>Różnica między przywołanymi liczbami nie wyznacza poprawnego sposobu modelowania. Dla deklaracji produktu trzeba najpierw ustalić zakres procesu oraz dokumentację energii. Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p>
 
         <!-- Tabela: kiedy co stosować -->
-        <h2>Kiedy stosowa&#263; kt&#243;ry wska&#378;nik?</h2>
+        <h2>Kiedy stosować który wskaźnik?</h2>
 
         <div class="card card-lg" style="max-width: none; margin: 1.5rem 0 2rem;">
             <table style="width:100%; border-collapse:collapse; font-size:0.875rem; line-height:1.6;">
                 <thead>
                     <tr style="border-bottom: 2px solid var(--border);">
                         <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Kontekst raportowania</th>
-                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">W&#322;a&#347;ciwy wska&#378;nik</th>
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Właściwy wskaźnik</th>
                         <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Podstawa</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">LCA / EPD wyrob&#243;w betonowych (EN&nbsp;15804+A2)</td>
-                        <td style="padding: 0.6rem 0.75rem;"><strong>poLCA-EN-PL-2024</strong> = 0,599 kg CO&#8322;e/kWh &mdash; Poziom&nbsp;1 (location-based, well-to-meter)</td>
-                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">c-PCR-BET v1.3 §6.3.1; EN&nbsp;15804+A2 §6.4.3; MET-001/MET-002</td>
+                        <td style="padding: 0.6rem 0.75rem;">LCA / EPD wyrobów betonowych (EN 15804+A2)</td>
+                        <td style="padding: 0.6rem 0.75rem;">Dobór zbioru do procesu i dokumentów dostawy; model 2024 jest historycznym wariantem</td>
+                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);"><a href="/jak-korzystac.html">Zasady doboru danych</a></td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope&nbsp;2 &mdash; location-based</td>
-                        <td style="padding: 0.6rem 0.75rem;"><strong>KOBiZE</strong> end-user (553 kg CO&#8322;/MWh za 2024) &mdash; &#347;redni miks lokalizacyjny</td>
+                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope 2 — location-based</td>
+                        <td style="padding: 0.6rem 0.75rem;"><strong>KOBiZE</strong> end-user (553 kg CO₂/MWh za 2024) — średni miks lokalizacyjny</td>
                         <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">GHG Protocol Scope 2 Guidance (2015)</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope&nbsp;2 &mdash; market-based, bez GO / PPA</td>
+                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope 2 — market-based, bez GO / PPA</td>
                         <td style="padding: 0.6rem 0.75rem;"><strong>AIB residual mix</strong></td>
                         <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">GHG Protocol Scope 2 Guidance (2015), AIB ERM</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope&nbsp;2 &mdash; market-based, z GO OZE</td>
-                        <td style="padding: 0.6rem 0.75rem;"><strong>0 kg CO&#8322;/MWh</strong> (dostawca z GO)</td>
-                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">Wsp&#243;&#322;czynnik emisji dostawcy z GO</td>
+                        <td style="padding: 0.6rem 0.75rem;">GHG Protocol Scope 2 — market-based, z GO OZE</td>
+                        <td style="padding: 0.6rem 0.75rem;"><strong>0 kg CO₂/MWh</strong> (dostawca z GO)</td>
+                        <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">Współczynnik emisji dostawcy z GO</td>
                     </tr>
                     <tr>
-                        <td style="padding: 0.6rem 0.75rem;">EPD z opcj&#261; market-based (niektóre PCR)</td>
+                        <td style="padding: 0.6rem 0.75rem;">EPD z opcją market-based (niektóre PCR)</td>
                         <td style="padding: 0.6rem 0.75rem;"><strong>AIB residual mix</strong> lub wsp. dostawcy z GO</td>
                         <td style="padding: 0.6rem 0.75rem; color:var(--text-tertiary);">PCR specificzne, np. IBU PCR Part A v2.0</td>
                     </tr>
@@ -333,99 +301,87 @@
             </table>
         </div>
 
-        <h2>Praktyczna pu&#322;apka: &#8222;zielona energia&#8221; bez GO</h2>
+        <h2>Praktyczna pułapka: „zielona energia” bez GO</h2>
         <p>
-            Coraz wi&#281;cej polskich firm deklaruje, &#380;e kupuje energi&#281; ze &#378;r&#243;de&#322; odnawialnych,
-            poniewa&#380; dostawca pr&#261;du umie&#347;ci&#322; tak&#261; informacj&#281; w ofercie. Tymczasem sam fakt
+            Coraz więcej polskich firm deklaruje, że kupuje energię ze źródeł odnawialnych,
+            ponieważ dostawca prądu umieścił taką informację w ofercie. Tymczasem sam fakt
             zakupu energii od dostawcy OZE <strong>nie wystarczy</strong> do zastosowania
-            wska&#378;nika 0&nbsp;kg&nbsp;CO&#8322;/MWh w raportowaniu Scope&nbsp;2 market-based.
+            wskaźnika 0 kg CO₂/MWh w raportowaniu Scope 2 market-based.
         </p>
         <p>
             Zgodnie z GHG Protocol, metoda rynkowa wymaga potwierdzenia transferu
-            <em>atrybutu &#347;rodowiskowego</em> &#8212; czyli faktycznego przekazania Gwarancji
-            Pochodzenia na nabywc&#281;. Je&#380;eli GO s&#261; sprzedawane oddzielnie przez dostawc&#281;
-            (co jest standardem rynkowym), firma kupuj&#261;ca &#8222;zielon&#261;&#8221; taryf&#281; bez GO
-            wci&#261;&#380; musi zastosowa&#263; AIB residual mix &mdash; a nie 0 ani &#347;redni&#261; KOBiZE.
+            <em>atrybutu środowiskowego</em> — czyli faktycznego przekazania Gwarancji
+            Pochodzenia na nabywcę. Jeżeli GO są sprzedawane oddzielnie przez dostawcę
+            (co jest standardem rynkowym), firma kupująca „zieloną” taryfę bez GO
+            wciąż musi zastosować AIB residual mix — a nie 0 ani średnią KOBiZE.
         </p>
 
         <div class="quote-block" style="max-width: none; margin: 2rem 0;">
             <p>
-                Taryfa &#8222;eko&#8221; bez certyfikat&#243;w GO to nie zielona energia w rozumieniu GHG
-                Protocol. W raportowaniu market-based Scope&nbsp;2 stosujemy residual mix AIB,
-                kt&#243;ry dla Polski jest <em>wy&#380;szy</em> ni&#380; &#347;rednia KOBiZE &#8212; bo OZE zosta&#322;y
-                ju&#380; &#8222;zabrane&#8221; przez tych, kt&#243;rzy faktycznie kupili GO.
+                Taryfa „eko” bez certyfikatów GO to nie zielona energia w rozumieniu GHG
+                Protocol. W raportowaniu market-based Scope 2 stosujemy residual mix AIB,
+                który dla Polski jest <em>wyższy</em> niż średnia KOBiZE — bo OZE zostały
+                już „zabrane” przez tych, którzy faktycznie kupili GO.
             </p>
         </div>
 
-        <h2>Op&#243;&#378;nienie danych AIB i problem aktualno&#347;ci</h2>
+        <h2>Opóźnienie danych AIB i problem aktualności</h2>
+        <p>Przy każdym użyciu raportu AIB lub KOBiZE należy odczytać rok danych i datę publikacji z konkretnego wydania. Dawne stwierdzenie, że w całym 2026 r. dostępne są wyłącznie dane rezydualne za 2023 r., nie jest aktualną informacją o dostępności.</p>
         <p>
-            AIB publikuje raport European Residual Mixes z op&#243;&#378;nieniem oko&#322;o 12 miesi&#281;cy
-            od ko&#324;ca roku referencyjnego. W praktyce oznacza to, &#380;e w 2026 roku
-            dysponujemy rezydualnym miksem dla danych za 2023&nbsp;r. (opublikowanym w 2025).
-            KOBiZE tak&#380;e publikuje z op&#243;&#378;nieniem, ale obydwa &#378;r&#243;d&#322;a s&#261; bie&#380;&#261;co aktualizowane.
-        </p>
-        <p>
-            W raportach korporacyjnych (np. GRI, CSRD, CDP) nale&#380;y konsekwentnie stosowa&#263;
-            dane za rok referencyjny raportu lub &#8212; je&#380;eli nie s&#261; dost&#281;pne &#8212; dane za
-            ostatni opublikowany rok z wyra&#378;nym przypisem. Mieszanie lat referencyjnych
-            dla KOBiZE i AIB jest b&#322;&#281;dem metodycznym, nawet je&#380;eli oba wska&#378;niki
-            s&#261; samo w sobie poprawne.
+            W raportach korporacyjnych (np. GRI, CSRD, CDP) należy konsekwentnie stosować
+            dane za rok referencyjny raportu lub — jeżeli nie są dostępne — dane za
+            ostatni opublikowany rok z wyraźnym przypisem. Mieszanie lat referencyjnych
+            dla KOBiZE i AIB jest błędem metodycznym, nawet jeżeli oba wskaźniki
+            są samo w sobie poprawne.
         </p>
 
-        <h2>Implikacje dla poLCA i EPD &#8212; 3-poziomowa hierarchia</h2>
+        <h2>Implikacje dla poLCA i EPD — 3-poziomowa hierarchia</h2>
         <p>
-            Baza poLCA i c-PCR-BET-EPD-PL:2026 v1.3 §6.3 wprowadzaj&#261; <strong>3-poziomow&#261; hierarchi&#281;</strong>
-            wska&#378;nika energii elektrycznej dla EPD wyrob&#243;w betonowych:
+            Baza poLCA i c-PCR-BET-EPD-PL:2026 v1.3 §6.3 wprowadzają <strong>3-poziomową hierarchię</strong>
+            wskaźnika energii elektrycznej dla EPD wyrobów betonowych:
         </p>
         <ul>
-            <li><strong>Poziom 1 (domy&#347;lny) &#8212; location-based:</strong> wska&#378;nik poLCA-EN-PL-2024 v9.1 =
-                <strong>0,599&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> (well-to-meter, EF&nbsp;3.1, IPCC AR6; KOBiZE end-user jako filar 88%).
-                Stosowany zawsze, gdy producent nie udokumentuje inaczej.</li>
-            <li><strong>Poziom 2 &#8212; market-based (residual mix AIB):</strong>
-                <strong>0,808&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> &#8212; dopuszczalny tylko przy r&#243;wnoczesnym raportowaniu Poziomu&nbsp;1 jako referencji
+            <li>Historyczne założenie modelu 2024: 0,599 kg CO₂e/kWh dla składnika kopalnego. Nie jest automatycznym wyborem dla każdego procesu.</li>
+            <li><strong>Poziom 2 — market-based (residual mix AIB):</strong>
+                <strong>0,808 kg CO₂e/kWh</strong> — dopuszczalny tylko przy równoczesnym raportowaniu Poziomu 1 jako referencji
                 (c-PCR-BET v1.3 §6.3.3; Dyr. (UE) 2018/2001 art. 19).</li>
-            <li><strong>Poziom 3 &#8212; PV on-site:</strong> <strong>0,041&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> &#8212; wy&#322;&#261;cznie dla udokumentowanej
-                w&#322;asnej instalacji fotowoltaicznej (c-PCR-BET v1.3 §6.3.1 Poziom&nbsp;3; &#214;KOBAUDAT 2024 PV).</li>
+            <li><strong>Poziom 3 — PV on-site:</strong> <strong>0,041 kg CO₂e/kWh</strong> — wyłącznie dla udokumentowanej
+                własnej instalacji fotowoltaicznej (c-PCR-BET v1.3 §6.3.1 Poziom 3; ÖKOBAUDAT 2024 PV).</li>
         </ul>
+        <p>Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p>
         <p>
-            Hierarchia ta jest zgodna z wymaganiami EN&nbsp;15804+A2 i ISO&nbsp;14067:2018 §6.4.9.4 i zapewnia sp&#243;jno&#347;&#263;
-            mi&#281;dzy polskimi EPD oraz mi&#281;dzy baz&#261; poLCA a generatorem EPD betonu epdbeton.pl. Pe&#322;ne uzasadnienie:
-            <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">MET-001:2026</a> (wska&#378;nik) i
-            <a href="metodyki/MET-002-energia.html">MET-002:2026</a> (dlaczego nie KOBiZE bezpo&#347;rednio).
+            Wskaźnik AIB residual mix nie jest stosowany w modelach LCI poLCA — ale ma
+            bezpośrednie znaczenie dla raportowania korporacyjnego Scope 2 przez firmy
+            będące naszymi użytkownikami. Jeżeli producent opracowuje EPD i jednocześnie
+            raportuje emisje korporacyjne (np. w ramach CSRD), powinien świadomie stosować
+            oba wskaźniki — w odpowiednich kontekstach — i dokumentować tę różnicę
+            w metodyce. Wytyczne w tym zakresie udostępnia
+            <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">program EPD Polska</a>.
         </p>
         <p>
-            Wska&#378;nik AIB residual mix nie jest stosowany w modelach LCI poLCA &mdash; ale ma
-            bezpo&#347;rednie znaczenie dla raportowania korporacyjnego Scope&nbsp;2 przez firmy
-            b&#281;d&#261;ce naszymi u&#380;ytkownikami. Je&#380;eli producent opracowuje EPD i jednocze&#347;nie
-            raportuje emisje korporacyjne (np. w ramach CSRD), powinien &#347;wiadomie stosowa&#263;
-            oba wska&#378;niki &#8212; w odpowiednich kontekstach &#8212; i dokumentowa&#263; t&#281; r&#243;&#380;nic&#281;
-            w metodyce. Wytyczne w tym zakresie udost&#281;pnia
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">program EPD&nbsp;Polska</a>.
-        </p>
-        <p>
-            Pr&#243;ba &#8222;spójno&#347;ci&#8221; przez u&#380;ywanie jednego wska&#378;nika we wszystkich
-            raportach r&#243;wnocze&#347;nie skutkuje b&#322;&#281;dem w przynajmniej jednym z nich.
+            Próba „spójności” przez używanie jednego wskaźnika we wszystkich
+            raportach równocześnie skutkuje błędem w przynajmniej jednym z nich.
         </p>
 
         <hr class="blog-post-divider">
 
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>&#378;r&#243;d&#322;a:</strong>
-            Multicert Sp. z o.o. (2026), MET-001:2026 &#8212; wska&#378;nik emisyjno&#347;ci energii elektrycznej PL (poLCA-EN-PL-2024 v9.1) = 0,599&nbsp;kg&nbsp;CO&#8322;e/kWh;
-            Multicert Sp. z o.o. (2026), MET-002:2026 &#8212; wy&#322;&#261;czenie wska&#378;nik&#243;w KOBiZE z LCA EPD wyrob&#243;w budowlanych;
-            c-PCR-BET-EPD-PL:2026 v1.3 §6.3 &mdash; 3-poziomowa hierarchia wska&#378;nika energii;
-            KOBiZE (2025), &#8222;Wska&#378;niki emisyjno&#347;ci CO&#8322;&#8221; za rok 2024 (end-user: 553&nbsp;kg&nbsp;CO&#8322;/MWh);
-            AIB (2025), &#8222;European Residual Mixes 2024&#8221; (PL: 0,808&nbsp;kg&nbsp;CO&#8322;e/kWh);
-            GHG Protocol, &#8222;Scope 2 Accounting Guidance&#8221; (2015);
-            EN&nbsp;15804+A2:2019/A1:2021, §6.4.3; ISO&nbsp;14067:2018, §6.4.9.4;
-            Rozporz&#261;dzenie (UE) 2018/2001 (RED&nbsp;II), art. 19 &mdash; Gwarancje Pochodzenia.
-        </p>
+            <strong>źródła:</strong>
+            Multicert Sp. z o.o. (2026), MET-001:2026 — wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1) = 0,599 kg CO₂e/kWh;
+            Multicert Sp. z o.o. (2026), MET-002:2026 — wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych;
+            c-PCR-BET-EPD-PL:2026 v1.3 §6.3 — 3-poziomowa hierarchia wskaźnika energii;
+            KOBiZE (2025), „Wskaźniki emisyjności CO₂” za rok 2024 (end-user: 553 kg CO₂/MWh);
+            AIB (2025), „European Residual Mixes 2024” (PL: 0,808 kg CO₂e/kWh);
+            GHG Protocol, „Scope 2 Accounting Guidance” (2015);
+            EN 15804+A2:2019/A1:2021, §6.4.3; ISO 14067:2018, §6.4.9.4;
+            Rozporządzenie (UE) 2018/2001 (RED II), art. 19 — Gwarancje Pochodzenia.
+         <span class="legacy-citation-note">MET-002 przywołano pod tytułem wydania historycznego; <a href="/metodyki/MET-002-energia.html">zob. korektę HTML</a>. Określenie „3-poziomowa hierarchia” opisuje wcześniejsze ujęcie.</span></p>
 
     </div>
 
     <!-- Related posts -->
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-emisje-polska-vs-eu.html" class="blog-card">
                 <div class="blog-card-body">
@@ -434,9 +390,9 @@
                         <span class="blog-tag metodyka">Metodyka</span>
                         <span class="blog-date">14 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
+                    <div class="blog-card-title">Dlaczego polskie wskaźniki emisji CO₂ różnią się od europejskich — i co to oznacza dla LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">8 min czytania</span>
                     </div>
                 </div>
@@ -447,9 +403,9 @@
                         <span class="blog-tag rynek">Rynek</span>
                         <span class="blog-date">2 grudnia 2025</span>
                     </div>
-                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych &#8212; kiedy u&#347;rednianie szkodzi dok&#322;adno&#347;ci LCA</div>
+                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -458,47 +414,7 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

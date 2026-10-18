@@ -5,7 +5,7 @@ Zasady projektu dla Claude Code. Czytaj przed każdą zmianą.
 ## Projekt
 
 Statyczna strona HTML polskiej bazy danych LCA: **polca.org.pl**
-Brak systemu budowania (no npm, no bundler). Czyste pliki HTML/CSS/JS.
+Brak npm i bundlera. Czyste pliki HTML/CSS/JS; katalog i strony przewodników generują dwa skrypty Pythona opisane w README.md.
 
 ## Git i branche
 
@@ -47,10 +47,10 @@ Wybieraj obrazy tematycznie odpowiednie — np. artykuł o asfalcie = asfalt, ni
 
 ## CSS
 
-- Plik: `style.css` (v5.0.0)
-- Używaj istniejących zmiennych CSS (`--accent-*`, `--ink-*`, `--paper-*`, etc.)
+- Wspólny interfejs: `assets/portal.css`, zmienne `--portal-*`
+- Starsze strony zachowują `style.css` i własne style sekcji; wspólna nawigacja jest nadpisana przez styl portalu
 - Nazwy klas: BEM-like, lowercase kebab-case
-- Fonty: Inter Tight (nagłówki), Inter (treść), IBM Plex Mono (dane/kod)
+- Font portalu: Source Sans 3, pliki i licencja lokalnie w `assets/fonts/`
 
 ## JavaScript
 

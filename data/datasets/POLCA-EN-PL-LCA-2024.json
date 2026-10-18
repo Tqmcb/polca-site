@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.4-aggregates",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-03",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,16 +11,17 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "POLCA-EN-PL-LCA-2024",
-    "name": "Energia elektryczna - Polska, poLCA full LCA location-based",
+    "name": "Energia elektryczna — Polska, historyczny model poLCA GWP-fossil",
     "category": "electricity",
     "module_default": "A3/A5/B6/C3/D",
     "unit": "kWh",
@@ -34,14 +35,14 @@
     "next_review_due": "2026-10-31",
     "review_cycle": "quarterly",
     "geography": "PL",
-    "technology": "Polski miks energii elektrycznej dla odbiorcy końcowego, CO2e full LCA",
+    "technology": "Historyczny model fizycznego miksu energii dostarczonej do odbiorcy końcowego",
     "data_quality": "polca_model",
     "evidence_level": "polca_model",
     "status": "published_polca_model",
     "publication_status": "published_polca_model",
     "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
     "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-    "scope": "Referencyjny wskaźnik poLCA do obliczeń LCA/EPD dla zużycia energii elektrycznej w Polsce, gdy nie ma zweryfikowanego wskaźnika specyficznego dla dostawcy lub umowy. Nie jest samodzielnym wynikiem A1-A3 produktu; przypisuje się go do modułu EN 15804+A2, w którym energia jest zużywana.",
+    "scope": "Historyczny model fizycznego miksu energii dostarczonej w Polsce. Dobór danych energii zależy od zastosowania i zasad programu; model nie stanowi automatycznej wartości domyślnej. Nie jest samodzielnym wynikiem A1-A3 produktu.",
     "methodology_note": "Wynik 0,599 kg CO2e/kWh powstaje z sumy: EF_oper 0,528, WTT_CH4 0,057, WTT_fuels 0,008 i WTT_OZE 0,006 kg CO2e/kWh. Dane wejściowe pochodzą z KOBiZE, PSE, WUG, GUS i EEA; przeliczenie CO2e bazuje na IPCC AR6/EF 3.1 oraz JEC WTT v5. Jest to model jawny, przeznaczony do konsultacji i walidacji zewnętrznej.",
     "limitations": "Nie jest oficjalnym wskaźnikiem państwowym. Element WTT_OZE opiera się na wartości referencyjnej z bazy licencjonowanej, dlatego publikowany jest wynik i metodyka, a nie pełny zamknięty inwentarz. Finalna EPD wymaga potwierdzenia aktualnego roku danych i zasad energii kontraktowej.",
     "preferred_replacement": "Zweryfikowane dane dostawcy energii albo aktualizacja roczna po publikacji KOBiZE/PSE/WUG/GUS.",
@@ -136,7 +137,7 @@
     "methodology_url": "https://polca.org.pl/metodyka-en-pl.html",
     "machine_methodology": "https://polca.org.pl/data/polca-en-pl-2024.json",
     "open_data_note": "Dane publiczne: KOBiZE, PSE, WUG, GUS, EEA, IPCC/JEC. Uwaga: ecoinvent nie jest darmowa baza; w publicznym katalogu pokazujemy tylko wynik referencyjny i status ograniczenia.",
-    "review_required": false,
+    "review_required": true,
     "use_allowed_for": [
       "screening",
       "internal_report",
@@ -145,8 +146,8 @@
     ],
     "quality_rule": "Dane pierwotne/EPD dostawcy mają pierwszeństwo. Dane domyślne mają jawny status jakości i wskazują lepsze źródło dla kluczowych źródeł wyniku.",
     "source_policy": {},
-    "selection_mode": "mandatory_polca_model",
-    "user_choice_policy": "Użytkownik nie wybiera wskaźnika ręcznie. System dobiera ten rekord automatycznie na podstawie materiału, geografii, roku, dostępności EPD/danych pierwotnych oraz statusu jakości danych.",
+    "selection_mode": "context_specific_assessment",
+    "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "product_groups": [
       "mma",
       "beton",
@@ -154,6 +155,16 @@
       "ogolne-epd"
     ],
     "material_role": "energia elektryczna",
-    "record_use_status": "ready_to_use_default_dataset"
-  }
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters",
+    "indicator_type": "GWP-fossil",
+    "indicator_unit": "kg CO2e/kWh",
+    "legacy_field_semantics": {
+      "gwp_total_kg_co2e": "Historyczny klucz powiela GWP-fossil. Informacyjny GWP-total zapisano osobno w gwp_total_info_kg_co2e. Liczby zachowano dla zgodności odczytu."
+    },
+    "review_status": "external_review_not_documented"
+  },
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

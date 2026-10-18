@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku — poLCA</title>
-    <meta name="description" content="Diagram hot-spotów wytwórni betonu, wpływ polskiego miksu energetycznego na GWP, różnica między danymi generycznymi a poLCA. Interaktywna analiza z wartością poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh.">
+    <meta name="description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
     <link rel="canonical" href="https://polca.org.pl/blog-beton-emisje-kalkulator.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku">
-    <meta property="og:description" content="Diagram hot-spotów wytwórni betonu, wpływ polskiego miksu energetycznego na GWP, różnica między danymi generycznymi a poLCA. Wartość poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh.">
+    <meta property="og:description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
     <meta property="og:url" content="https://polca.org.pl/blog-beton-emisje-kalkulator.html">
     <meta property="og:image" content="https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg">
     <meta property="og:image:width" content="1200">
@@ -17,67 +17,55 @@
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jak liczyć emisje CO₂ dla betonu w Polsce?">
-    <meta name="twitter:description" content="Hot-spoty wytwórni betonu, wpływ polskiego miksu energetycznego, wartość poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh.">
+    <meta name="twitter:description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku",
-      "description": "Diagram hot-spotów wytwórni betonu, wpływ polskiego miksu energetycznego na GWP, różnica między danymi generycznymi a poLCA. Interaktywna analiza z wartością poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh.",
-      "image": "https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg",
-      "datePublished": "2026-02-24T00:00:00+01:00",
-      "dateModified": "2026-02-24T00:00:00+01:00",
-      "author": {
-        "@type": "Organization",
-        "name": "Multicert Sp. z o.o.",
-        "url": "https://polca.org.pl"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Multicert Sp. z o.o.",
-        "logo": { "@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg" }
-      },
-      "mainEntityOfPage": { "@type": "WebPage", "@id": "https://polca.org.pl/blog-beton-emisje-kalkulator.html" },
-      "keywords": ["beton", "LCA", "emisje CO2", "GWP", "wytwórnia betonu", "KOBiZE", "poLCA", "EPD"],
-      "articleSection": "Dane"
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku",
+  "description": "Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.",
+  "image": "https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg",
+  "datePublished": "2026-02-24T00:00:00+01:00",
+  "dateModified": "2026-02-24T00:00:00+01:00",
+  "author": {
+    "@type": "Organization",
+    "name": "Multicert Sp. z o.o.",
+    "url": "https://polca.org.pl"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Multicert Sp. z o.o.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://polca.org.pl/favicon.svg"
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://polca.org.pl/blog-beton-emisje-kalkulator.html",
+    "description": "Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników."
+  },
+  "keywords": [
+    "beton",
+    "LCA",
+    "emisje CO2",
+    "GWP",
+    "wytwórnia betonu",
+    "KOBiZE",
+    "poLCA",
+    "EPD"
+  ],
+  "articleSection": "Dane"
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <link rel="stylesheet" href="style-interactive.css?v=1.1">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<meta name="metadata_revision" content="2026-10-18">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy portal-tool">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html" class="is-active">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku</span></nav><div class="polca-page">
 
     <!-- Breadcrumb -->
     <nav class="blog-breadcrumb fade-in" aria-label="Ścieżka nawigacji">
@@ -90,9 +78,7 @@
 
     <!-- Hero posta -->
     <div class="blog-post-hero fade-in">
-        <img src="images/blog-beton-emisje-kalkulator.jpg"
-             alt="Robotnicy wyrównujący świeżo wylany beton"
-             class="blog-post-hero-img">
+        <img src="images/blog-beton-emisje-kalkulator.jpg" alt="Robotnicy wyrównujący świeżo wylany beton" class="blog-post-hero-img">
         <div class="blog-post-hero-overlay"></div>
         <div class="blog-post-hero-content">
             <div class="blog-card-meta" style="margin-bottom:0.75rem;">
@@ -102,6 +88,7 @@
                 <span class="blog-read-time">11 min czytania</span>
             </div>
             <h1 class="blog-post-title">Jak liczyć emisje CO₂ dla betonu w Polsce?<br>Wytwórnia krok po kroku</h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
             <p class="blog-post-lead">
                 Diagram hot-spotów, wpływ polskiego miksu energetycznego, różnica między
                 danymi generycznymi a poLCA. Konkretne liczby, interaktywna analiza.
@@ -150,65 +137,65 @@
             </div>
 
             <div class="hotspot-diagram" role="img" aria-label="Schemat wytwórni betonu z punktami emisyjnymi">
-                <svg class="hotspot-svg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="900" height="420" fill="#0f1a17" rx="12"/>
-                    <rect x="0" y="360" width="900" height="60" fill="#0a1510"/>
-                    <line x1="0" y1="360" x2="900" y2="360" stroke="#1a3028" stroke-width="1.5"/>
+                <svg class="hotspot-svg" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect width="900" height="420" fill="#0f1a17" rx="12"></rect>
+                    <rect x="0" y="360" width="900" height="60" fill="#0a1510"></rect>
+                    <line x1="0" y1="360" x2="900" y2="360" stroke="#1a3028" stroke-width="1.5"></line>
                     <!-- Silos cementu -->
-                    <rect x="60" y="140" width="90" height="200" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"/>
-                    <ellipse cx="105" cy="140" rx="45" ry="14" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"/>
-                    <ellipse cx="105" cy="340" rx="45" ry="10" fill="#0c1e17"/>
+                    <rect x="60" y="140" width="90" height="200" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"></rect>
+                    <ellipse cx="105" cy="140" rx="45" ry="14" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"></ellipse>
+                    <ellipse cx="105" cy="340" rx="45" ry="10" fill="#0c1e17"></ellipse>
                     <text x="105" y="248" text-anchor="middle" fill="#4a9a7a" font-size="11" font-family="IBM Plex Mono,monospace">SILOS</text>
                     <text x="105" y="262" text-anchor="middle" fill="#4a9a7a" font-size="11" font-family="IBM Plex Mono,monospace">CEMENTU</text>
-                    <line x1="150" y1="300" x2="230" y2="300" stroke="#1d4535" stroke-width="8" stroke-linecap="round"/>
-                    <line x1="150" y1="300" x2="230" y2="300" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+                    <line x1="150" y1="300" x2="230" y2="300" stroke="#1d4535" stroke-width="8" stroke-linecap="round"></line>
+                    <line x1="150" y1="300" x2="230" y2="300" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"></line>
                     <!-- Węzeł betoniarski -->
-                    <rect x="230" y="180" width="180" height="160" fill="#112820" stroke="#1d4535" stroke-width="2" rx="6"/>
-                    <rect x="250" y="160" width="140" height="30" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5" rx="3"/>
-                    <rect x="250" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
-                    <rect x="310" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
-                    <rect x="350" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"/>
+                    <rect x="230" y="180" width="180" height="160" fill="#112820" stroke="#1d4535" stroke-width="2" rx="6"></rect>
+                    <rect x="250" y="160" width="140" height="30" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5" rx="3"></rect>
+                    <rect x="250" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
+                    <rect x="310" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
+                    <rect x="350" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
                     <text x="320" y="264" text-anchor="middle" fill="#4a9a7a" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="500">WĘZEŁ</text>
                     <text x="320" y="280" text-anchor="middle" fill="#4a9a7a" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="500">BETONIARSKI</text>
-                    <ellipse cx="320" cy="320" rx="35" ry="18" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1.5"/>
+                    <ellipse cx="320" cy="320" rx="35" ry="18" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1.5"></ellipse>
                     <text x="320" y="325" text-anchor="middle" fill="#0DBF9F" font-size="9" font-family="IBM Plex Mono,monospace">⟳ MIESZALNIK</text>
                     <!-- Silos kruszywa -->
-                    <rect x="460" y="200" width="80" height="140" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"/>
-                    <polygon points="460,200 540,200 520,160 480,160" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"/>
-                    <line x1="460" y1="280" x2="410" y2="280" stroke="#1d4535" stroke-width="6" stroke-linecap="round"/>
-                    <line x1="460" y1="280" x2="410" y2="280" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"/>
+                    <rect x="460" y="200" width="80" height="140" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"></rect>
+                    <polygon points="460,200 540,200 520,160 480,160" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"></polygon>
+                    <line x1="460" y1="280" x2="410" y2="280" stroke="#1d4535" stroke-width="6" stroke-linecap="round"></line>
+                    <line x1="460" y1="280" x2="410" y2="280" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"></line>
                     <text x="500" y="278" text-anchor="middle" fill="#4a9a7a" font-size="10" font-family="IBM Plex Mono,monospace">KRUSZYWO</text>
                     <!-- Zbiornik wody -->
-                    <ellipse cx="570" cy="290" rx="36" ry="50" fill="#0d1e2b" stroke="#1a3050" stroke-width="1.5"/>
-                    <ellipse cx="570" cy="245" rx="36" ry="14" fill="#142438" stroke="#1a3050" stroke-width="1.5"/>
-                    <line x1="534" y1="290" x2="460" y2="290" stroke="#1a3050" stroke-width="5" stroke-linecap="round"/>
+                    <ellipse cx="570" cy="290" rx="36" ry="50" fill="#0d1e2b" stroke="#1a3050" stroke-width="1.5"></ellipse>
+                    <ellipse cx="570" cy="245" rx="36" ry="14" fill="#142438" stroke="#1a3050" stroke-width="1.5"></ellipse>
+                    <line x1="534" y1="290" x2="460" y2="290" stroke="#1a3050" stroke-width="5" stroke-linecap="round"></line>
                     <text x="570" y="298" text-anchor="middle" fill="#3a7ab0" font-size="9" font-family="IBM Plex Mono,monospace">WODA</text>
                     <!-- Kocioł -->
-                    <rect x="660" y="220" width="80" height="120" fill="#1e1208" stroke="#3d2408" stroke-width="1.5" rx="4"/>
-                    <rect x="675" y="200" width="50" height="28" fill="#2a1a0c" stroke="#3d2408" stroke-width="1.5" rx="3"/>
-                    <rect x="700" y="100" width="22" height="110" fill="#1a1208" stroke="#3d2408" stroke-width="1.5" rx="3"/>
-                    <ellipse cx="711" cy="88" rx="12" ry="16" fill="none" stroke="#4a3020" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"/>
-                    <ellipse cx="711" cy="66" rx="18" ry="14" fill="none" stroke="#4a3020" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+                    <rect x="660" y="220" width="80" height="120" fill="#1e1208" stroke="#3d2408" stroke-width="1.5" rx="4"></rect>
+                    <rect x="675" y="200" width="50" height="28" fill="#2a1a0c" stroke="#3d2408" stroke-width="1.5" rx="3"></rect>
+                    <rect x="700" y="100" width="22" height="110" fill="#1a1208" stroke="#3d2408" stroke-width="1.5" rx="3"></rect>
+                    <ellipse cx="711" cy="88" rx="12" ry="16" fill="none" stroke="#4a3020" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"></ellipse>
+                    <ellipse cx="711" cy="66" rx="18" ry="14" fill="none" stroke="#4a3020" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"></ellipse>
                     <text x="700" y="278" text-anchor="middle" fill="#8a5a30" font-size="9" font-family="IBM Plex Mono,monospace">KOCIOŁ</text>
                     <text x="700" y="291" text-anchor="middle" fill="#8a5a30" font-size="9" font-family="IBM Plex Mono,monospace">GRZEWCZY</text>
                     <!-- Betoniarka -->
-                    <rect x="160" y="340" width="110" height="22" fill="#1a3c2d" stroke="#1d4535" stroke-width="1" rx="2"/>
-                    <circle cx="180" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"/>
-                    <circle cx="250" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"/>
-                    <ellipse cx="215" cy="335" rx="40" ry="20" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1" opacity="0.6"/>
+                    <rect x="160" y="340" width="110" height="22" fill="#1a3c2d" stroke="#1d4535" stroke-width="1" rx="2"></rect>
+                    <circle cx="180" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"></circle>
+                    <circle cx="250" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"></circle>
+                    <ellipse cx="215" cy="335" rx="40" ry="20" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1" opacity="0.6"></ellipse>
                     <text x="215" y="338" text-anchor="middle" fill="#0DBF9F" font-size="8" font-family="IBM Plex Mono,monospace">AUTOBETONOMIESZARKA</text>
                     <!-- Sieć el. -->
-                    <line x1="740" y1="200" x2="740" y2="120" stroke="#2d4a2a" stroke-width="1.5"/>
-                    <line x1="740" y1="120" x2="820" y2="120" stroke="#2d4a2a" stroke-width="1.5"/>
-                    <line x1="820" y1="120" x2="820" y2="180" stroke="#2d4a2a" stroke-width="1.5"/>
-                    <circle cx="740" cy="120" r="4" fill="#2e9e5a" opacity="0.6"/>
-                    <circle cx="820" cy="120" r="4" fill="#2e9e5a" opacity="0.6"/>
+                    <line x1="740" y1="200" x2="740" y2="120" stroke="#2d4a2a" stroke-width="1.5"></line>
+                    <line x1="740" y1="120" x2="820" y2="120" stroke="#2d4a2a" stroke-width="1.5"></line>
+                    <line x1="820" y1="120" x2="820" y2="180" stroke="#2d4a2a" stroke-width="1.5"></line>
+                    <circle cx="740" cy="120" r="4" fill="#2e9e5a" opacity="0.6"></circle>
+                    <circle cx="820" cy="120" r="4" fill="#2e9e5a" opacity="0.6"></circle>
                     <text x="780" y="115" text-anchor="middle" fill="#2e9e5a" font-size="9" font-family="IBM Plex Mono,monospace">SIEĆ EL.</text>
-                    <rect x="795" y="180" width="50" height="60" fill="#0d1a0d" stroke="#2d4a2a" stroke-width="1.5" rx="3"/>
+                    <rect x="795" y="180" width="50" height="60" fill="#0d1a0d" stroke="#2d4a2a" stroke-width="1.5" rx="3"></rect>
                     <text x="820" y="216" text-anchor="middle" fill="#2e9e5a" font-size="9" font-family="IBM Plex Mono,monospace">TRAFO</text>
                     <!-- Droga -->
-                    <rect x="0" y="358" width="900" height="6" fill="#151f1a"/>
-                    <line x1="0" y1="361" x2="900" y2="361" stroke="#1d3028" stroke-width="1" stroke-dasharray="20 12"/>
+                    <rect x="0" y="358" width="900" height="6" fill="#151f1a"></rect>
+                    <line x1="0" y1="361" x2="900" y2="361" stroke="#1d3028" stroke-width="1" stroke-dasharray="20 12"></line>
                     <!-- Etykiety % -->
                     <text x="105" y="128" text-anchor="middle" fill="#0DBF9F" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="600">74% GWP</text>
                     <text x="711" y="58" text-anchor="middle" fill="#D97706" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="600">13% GWP</text>
@@ -216,40 +203,22 @@
                 </svg>
 
                 <!-- Hotspoty -->
-                <button class="hotspot hotspot-critical" style="top:26%;left:10.5%"
-                    data-title="Cement (klinkier) — Hotspot #1"
-                    data-value="74% udziału w GWP betonu"
-                    data-desc="Produkcja klinkieru wymaga wypalania wapienia w ~1450°C. Polska: 70–80% paliw alternatywnych (vs EU 56%) — rzeczywisty ślad węglowy jest niższy niż w danych generycznych.">
+                <button class="hotspot hotspot-critical" style="top:26%;left:10.5%" data-title="Cement (klinkier) — Hotspot #1" data-value="74% udziału w GWP betonu" data-desc="Produkcja klinkieru wymaga wypalania wapienia w ~1450°C. Polska: 70–80% paliw alternatywnych (vs EU 56%) — rzeczywisty ślad węglowy jest niższy niż w danych generycznych.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
-                <button class="hotspot hotspot-medium" style="top:38%;left:34%"
-                    data-title="Energia elektryczna (A3)"
-                    data-value="13% udziału w GWP"
-                    data-desc="Mieszalnik i systemy sterowania pobierają energię z sieci PL (poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh, Poziom 1 wg c-PCR-BET v1.3 §6.3). Z dowodem zakupu energii z OZE (Gwarancja Pochodzenia) ten udział spada do ~3%.">
+                <button class="hotspot hotspot-medium" style="top:38%;left:34%" data-title="Energia elektryczna (A3)" data-value="13% udziału w GWP" data-desc="Historyczny przykład: energia z modelem 2024 v9.1, GWP-fossil 0,599 kg CO₂e/kWh. Dokumenty dostawy i własna generacja wymagają odrębnej oceny; nie ustalają automatycznie udziału 3%.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
-                <button class="hotspot hotspot-warm" style="top:50%;left:76%"
-                    data-title="Kocioł grzewczy (gaz / olej)"
-                    data-value="~5% udziału w GWP"
-                    data-desc="Ogrzewanie wody zarobowej i suszarnie kruszywa zimą. Gaz ziemny: 56,1 kg CO₂/GJ. Olej opałowy: 77,4 kg CO₂/GJ.">
+                <button class="hotspot hotspot-warm" style="top:50%;left:76%" data-title="Kocioł grzewczy (gaz / olej)" data-value="~5% udziału w GWP" data-desc="Ogrzewanie wody zarobowej i suszarnie kruszywa zimą. Gaz ziemny: 56,1 kg CO₂/GJ. Olej opałowy: 77,4 kg CO₂/GJ.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
-                <button class="hotspot hotspot-low" style="top:62%;left:26%"
-                    data-title="Transport surowców (A2)"
-                    data-value="7% udziału w GWP"
-                    data-desc="Dowozy cementu (~80 km) i kruszywa (~35 km). Kalkulator modułu A4 poLCA przelicza emisje wg euro-klasy floty i rodzaju drogi.">
+                <button class="hotspot hotspot-low" style="top:62%;left:26%" data-title="Transport surowców (A2)" data-value="7% udziału w GWP" data-desc="Dowozy cementu (~80 km) i kruszywa (~35 km). Kalkulator modułu A4 poLCA przelicza emisje wg euro-klasy floty i rodzaju drogi.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
-                <button class="hotspot hotspot-low" style="top:54%;left:62%"
-                    data-title="Woda procesowa"
-                    data-value="2% udziału w GWP"
-                    data-desc="Woda na mieszanie betonu i pielęgnację. Emisje z uzdatniania i pompowania. Kategoria wskaźnikowa EN 15804: Freshwater use (FW).">
+                <button class="hotspot hotspot-low" style="top:54%;left:62%" data-title="Woda procesowa" data-value="2% udziału w GWP" data-desc="Woda na mieszanie betonu i pielęgnację. Emisje z uzdatniania i pompowania. Kategoria wskaźnikowa EN 15804: Freshwater use (FW).">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
-                <button class="hotspot hotspot-medium" style="top:20%;left:88%"
-                    data-title="Miks energetyczny PL — kluczowa różnica"
-                    data-value="599 kg CO₂e/MWh vs ~210 EU"
-                    data-desc="To największa pojedyncza różnica między danymi poLCA a Ecoinvent. Polska sieć jest 2× bardziej emisyjna niż średnia EU. Bez korekty, GWP betonu jest zaniżone o ok. 18%.">
+                <button class="hotspot hotspot-medium" style="top:20%;left:88%" data-title="Miks energetyczny PL — kluczowa różnica" data-value="2024 v9.1: GWP-fossil 599 kg CO₂e/MWh" data-desc="599 kg CO₂e/MWh i około 210 kg CO₂/MWh mają różne granice. Nie wyznaczają procentu niedoszacowania śladu betonu.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
             </div>
@@ -273,7 +242,7 @@
 
             <h2 id="hot-spot-energia">Hot-spot nr 2: energia elektryczna w węźle (13% GWP)</h2>
             <p>Mieszalnik betonomieszarni, podajniki ślimakowe, systemy ważące i sterowanie — wszystko to pobiera energię elektryczną. W typowej wytwórni betonu towarowego zużycie energii elektrycznej wynosi 3–6 kWh/m³ betonu.</p>
-            <p>Przy polskim wskaźniku <strong>poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh</strong> (599 kg CO₂e/MWh, Poziom 1 location-based wg c-PCR-BET v1.3 §6.3; wobec ~210 kg dla średniej EU), każda MWh zużytej energii generuje niemal trzykrotnie więcej emisji niż wynikałoby z danych generycznych. Dla wytwórni produkującej 50 000 m³/rok oznacza to różnicę rzędu <strong>150–250 t CO₂e/rok</strong> w porównaniu z wynikiem opartym na Ecoinvent EU.</p>
+            <p>W historycznym przykładzie zastosowano 0,599 kg CO₂e/kWh, czyli składnik kopalny modelu energii 2024 v9.1. Przywołane wcześniej około 210 kg CO₂/MWh dla UE dotyczyło emisji bezpośrednich. Porównanie tych liczb nie dowodzi ani wielokrotności śladu, ani wielkości niedoszacowania wyniku betonu.</p>
 
             <div class="post-callout post-callout-accent">
                 <strong>Ważne:</strong> Jeśli wytwórnia posiada Gwarancje Pochodzenia (GO) lub własną instalację OZE, udział energii elektrycznej w GWP spada z ~13% do ok. 3%. Wymaga to jednak odpowiedniej dokumentacji w raporcie LCA — sama faktura za prąd z OZE nie wystarczy bez potwierdzenia atrybutu środowiskowego.
@@ -383,7 +352,7 @@
                 <span><code>m<sub>cem</sub></code> — masa cementu [kg/m³] · typowo 300–380 kg</span>
                 <span><code>EF<sub>klinkier</sub></code> — wskaźnik emisji klinkieru PL [kg CO₂e/kg] · poLCA: 0,825</span>
                 <span><code>E<sub>el</sub></code> — energia elektryczna [kWh/m³] · typowo 4–6</span>
-                <span><code>0,599</code> — wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 [kg CO₂e/kWh, Poziom 1 wg c-PCR-BET v1.3]</span>
+                <span><code>0,599</code> — wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 [kg CO₂e/kWh, historyczny GWP-fossil]</span>
                 <span><code>d</code> — dystans transportu [km]</span>
                 <span><code>0,0561</code> — wskaźnik gazu ziemnego [kg CO₂/MJ]</span>
             </div>
@@ -401,12 +370,12 @@
                 <li><strong>Klinkier to dominanta</strong> — optymalizacja receptury (zmniejszenie wskaźnika w/c, stosowanie cementów z dodatkami CEM II/B, CEM III) ma największy efekt na GWP.</li>
                 <li><strong>Energia elektryczna ma znaczenie</strong> — w Polsce dwukrotnie większe niż wynikałoby z danych generycznych. Gwarancje Pochodzenia to skuteczny instrument redukcji GWP w EPD.</li>
                 <li><strong>Transport jest drugorzędny</strong> — nawet podwojenie odległości dostaw zmienia GWP o &lt;5%. Nie jest priorytetem optymalizacyjnym.</li>
-                <li><strong>Dane generyczne zaniżają wynik</strong> — każde EPD dla polskiego betonu oparte na Ecoinvent EU jest niezgodne z zasadą proximity ISO 14044 i może nie spełniać wymagań audytu w ramach CPR 2024/3110.</li>
+                <li><strong>Sprawdź reprezentatywność danych:</strong> pochodzenie z bazy europejskiej nie jest samo dowodem niezgodności. Trzeba ocenić proces, technologię, rok i granice.</li>
             </ol>
 
             <p style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.85rem;color:var(--text-secondary);">
                 <strong>Źródła:</strong> Multicert Sp. z o.o. (2026), MET-001:2026 — poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh · Multicert Sp. z o.o. (2026), MET-002:2026 — wyłączenie wskaźników KOBiZE z LCA EPD · c-PCR-BET-EPD-PL:2026 v1.3 §6.3 — 3-poziomowa hierarchia wskaźnika energii · KOBiZE (2025), „Wskaźniki emisyjności CO₂" za 2024 (end-user: 553 kg CO₂/MWh) · EN 15804+A2:2019 · ISO 14044:2006 · Ecoinvent 3.10 · dane własne poLCA dla klinkieru PL.
-            </p>
+             <span class="legacy-citation-note">MET-002 przywołano pod tytułem wydania historycznego; <a href="/metodyki/MET-002-energia.html">zob. korektę HTML</a>. Określenie „3-poziomowa hierarchia” opisuje wcześniejsze ujęcie.</span></p>
         </div>
 
     </article>
@@ -428,15 +397,15 @@
             <div class="sidebar-card-title">Narzędzia poLCA</div>
             <div class="sidebar-links">
                 <a href="kalkulator.html" class="sidebar-link">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="16" y2="14"/></svg>
+                    <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="8" y1="10" x2="16" y2="10"></line><line x1="8" y1="14" x2="16" y2="14"></line></svg>
                     Kalkulator emisji CO₂
                 </a>
                 <a href="narzedzia.html" class="sidebar-link">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/></svg>
+                    <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line></svg>
                     Kalkulator modułu A4
                 </a>
                 <a href="datasety.html" class="sidebar-link">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
                     Zbiór danych: poLCA-BET-C30
                 </a>
             </div>
@@ -444,7 +413,7 @@
         <div class="sidebar-card sidebar-card-accent">
             <div class="sidebar-card-title">Kluczowy wskaźnik</div>
             <div class="sidebar-stat">599 <span>kg CO₂e/MWh</span></div>
-            <div class="sidebar-stat-label">poLCA-EN-PL-2024 v9.1<br>vs ~210 kg średnia EU</div>
+            <div class="sidebar-stat-label">poLCA-EN-PL-2024 v9.1<br>historyczny GWP-fossil</div>
         </div>
     </aside>
     </div><!-- /.blog-post-layout -->
@@ -456,7 +425,7 @@
                 <div class="section-num">Czytaj dalej</div>
                 <h2 class="section-title-md">Powiązane artykuły</h2>
             </div>
-            <a href="blog.html" class="section-header-link">Wszystkie artykuły &rarr;</a>
+            <a href="blog.html" class="section-header-link">Wszystkie artykuły →</a>
         </div>
         <div class="blog-grid">
             <a href="blog-cement-polska.html" class="blog-card">
@@ -502,49 +471,9 @@
     </div>
 
 </div><!-- /.polca-page -->
-</div><!-- /.polca-content -->
-
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
+</main><!-- /.polca-content -->
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/nav-mobile.js"></script>
 <script src="js/interactive.js?v=1.0"></script>
 <script>
 (function() {
@@ -591,5 +520,5 @@
     else initPostCharts();
 })();
 </script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

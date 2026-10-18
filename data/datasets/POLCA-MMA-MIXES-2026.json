@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.6-mma",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-11",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,17 +11,18 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "collection": {
     "code": "POLCA-MMA-MIXES-2026",
-    "name": "Mieszanki mineralno-asfaltowe — datasety normatywne LCI (poLCA 2026)",
-    "description": "Jedenaście mieszanek normatywnych MMA (AC, SMA, BBTM, PA, MA oraz warianty WMA i z granulatem asfaltowym RA) z GWP A1-A3 dla recept referencyjnych. Moduł A3 i suma A1-A3 zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh.",
+    "name": "Mieszanki mineralno-asfaltowe — modele referencyjne (poLCA 2026)",
+    "description": "Jedenaście referencyjnych mieszanek MMA (AC, SMA, BBTM, PA, MA oraz warianty WMA i z granulatem asfaltowym RA) z GWP A1-A3 dla recept referencyjnych. Moduł A3 i suma A1-A3 zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh.",
     "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
     "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
     "scope": "A1-A3",
@@ -31,12 +32,13 @@
     "last_reviewed_at": "2026-05-11",
     "next_review_due": "2027-05-11",
     "review_cycle": "annual",
-    "count": 11
+    "count": 11,
+    "data_level": "reference_recipes_and_aggregated_results"
   },
   "datasets": [
     {
       "code": "POLCA-MMA-AC11S-2026",
-      "name": "Mieszanka mineralno-asfaltowa AC 11 S — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa AC 11 S — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -59,10 +61,10 @@
         "A2": 6.65,
         "A3": 23.38,
         "A1_A3": 112.17,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej AC 11 S (EN 13108-1, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 112.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 11 S (EN 13108-1, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 112.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -112,15 +114,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -129,19 +131,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-AC16W-2026",
-      "name": "Mieszanka mineralno-asfaltowa AC 16 W — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa AC 16 W — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -164,10 +169,10 @@
         "A2": 5.95,
         "A3": 22.85,
         "A1_A3": 74.14,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej AC 16 W (EN 13108-1, warstwa wiążąca, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 8.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 74.14 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 16 W (EN 13108-1, warstwa wiążąca, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 8.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 74.14 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -217,15 +222,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -234,19 +239,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-AC22P-2026",
-      "name": "Mieszanka mineralno-asfaltowa AC 22 P — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa AC 22 P — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -269,10 +277,10 @@
         "A2": 5.49,
         "A3": 22.85,
         "A1_A3": 49.83,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej AC 22 P (EN 13108-1, podbudowa, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 3.5% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 49.83 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 22 P (EN 13108-1, podbudowa, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 3.5% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 49.83 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -322,15 +330,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -339,19 +347,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-SMA11S-2026",
-      "name": "Mieszanka mineralno-asfaltowa SMA 11 S — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa SMA 11 S — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -374,10 +385,10 @@
         "A2": 6.79,
         "A3": 23.91,
         "A1_A3": 120.17,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej SMA 11 S (EN 13108-5, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 14.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 120.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki SMA 11 S (EN 13108-5, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 14.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 120.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -427,15 +438,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -444,19 +455,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-SMA16S-2026",
-      "name": "Mieszanka mineralno-asfaltowa SMA 16 S — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa SMA 16 S — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -479,10 +493,10 @@
         "A2": 6.89,
         "A3": 23.91,
         "A1_A3": 125.85,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej SMA 16 S (EN 13108-5, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 125.85 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki SMA 16 S (EN 13108-5, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 125.85 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -532,15 +546,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -549,19 +563,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-BBTM11A-2026",
-      "name": "Mieszanka mineralno-asfaltowa BBTM 11 A — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa BBTM 11 A — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -584,10 +601,10 @@
         "A2": 7.08,
         "A3": 23.91,
         "A1_A3": 140.17,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej BBTM 11 A (EN 13108-2, cienka warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 19.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 140.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki BBTM 11 A (EN 13108-2, cienka warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 19.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 140.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -637,15 +654,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -654,19 +671,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-PA11-2026",
-      "name": "Mieszanka mineralno-asfaltowa PA 11 — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa PA 11 — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -689,10 +709,10 @@
         "A2": 6.65,
         "A3": 24.45,
         "A1_A3": 118.21,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej PA 11 (EN 13108-7, warstwa ścieralna porowata, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 118.21 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki PA 11 (EN 13108-7, warstwa ścieralna porowata, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 118.21 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -742,15 +762,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -759,19 +779,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-MA11-2026",
-      "name": "Mieszanka mineralno-asfaltowa MA 11 — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa MA 11 — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -794,10 +817,10 @@
         "A2": 8.1,
         "A3": 30.32,
         "A1_A3": 173.61,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej MA 11 (EN 13108-6, warstwa ścieralna (asfalt lany), technologia na gorąco — asfalt lany (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 25.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 173.61 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki MA 11 (EN 13108-6, warstwa ścieralna (asfalt lany), technologia na gorąco — asfalt lany (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 25.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 173.61 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -847,15 +870,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -864,19 +887,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-AC16W-WMA-2026",
-      "name": "Mieszanka mineralno-asfaltowa AC 16 W-WMA — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa AC 16 W-WMA — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -899,10 +925,10 @@
         "A2": 6.1,
         "A3": 16.98,
         "A1_A3": 75.12,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej AC 16 W-WMA (EN 13108-1, warstwa wiążąca, technologia na ciepło (WMA)). Receptura referencyjna: zawartość lepiszcza ok. 7.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 75.12 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 16 W-WMA (EN 13108-1, warstwa wiążąca, technologia na ciepło (WMA)). Receptura referencyjna: zawartość lepiszcza ok. 7.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 75.12 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -952,15 +978,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -969,19 +995,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-AC16W-RA30-2026",
-      "name": "Mieszanka mineralno-asfaltowa AC 16 W-RA30 — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa AC 16 W-RA30 — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -1004,10 +1033,10 @@
         "A2": 5.07,
         "A3": 24.47,
         "A1_A3": 61.28,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej AC 16 W-RA30 (EN 13108-1, warstwa wiążąca, technologia na gorąco z 30% granulatu asfaltowego (HMA+RA)). Receptura referencyjna: zawartość lepiszcza ok. 5.6% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 61.28 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 16 W-RA30 (EN 13108-1, warstwa wiążąca, technologia na gorąco z 30% granulatu asfaltowego (HMA+RA)). Receptura referencyjna: zawartość lepiszcza ok. 5.6% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 61.28 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -1057,15 +1086,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -1074,19 +1103,22 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     },
     {
       "code": "POLCA-MMA-SMA11S-WMA-2026",
-      "name": "Mieszanka mineralno-asfaltowa SMA 11 S-WMA — dataset normatywny LCI (poLCA 2026)",
+      "name": "Mieszanka mineralno-asfaltowa SMA 11 S-WMA — model referencyjny (poLCA 2026)",
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
@@ -1109,10 +1141,10 @@
         "A2": 6.99,
         "A3": 16.98,
         "A1_A3": 122.62,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(KOBiZE 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(KOBiZE) − 0,29 kg CO2e/t.",
+        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
         "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
       },
-      "methodology_note": "Rekord przedstawia kontrolowane wartości domyślne LCI dla mieszanki normatywnej SMA 11 S-WMA (EN 13108-5, warstwa ścieralna, technologia na ciepło (WMA)). Receptura referencyjna: zawartość lepiszcza ok. 13.5% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 122.62 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (a nie KOBiZE 0,715 użytym w roboczym Raporcie LCI). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki SMA 11 S-WMA (EN 13108-5, warstwa ścieralna, technologia na ciepło (WMA)). Receptura referencyjna: zawartość lepiszcza ok. 13.5% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 122.62 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -1162,15 +1194,15 @@
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Kontrolowana wartość normatywna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
       "evidence_level": "industry_average",
       "source_policy": {
-        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > dataset normatywny POLCA-MMA > proxy sektorowe",
-        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość normatywna/domyślna.",
+        "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
+        "when_allowed": "Brak recepty lub dokumentów dostawców dla konkretnej dostawy mieszanki; wynik oznaczony jako wartość referencyjna.",
         "auditor_note": "Sprawdzić receptę i bilans masowy mieszanki, typ lepiszcza, EPD kruszyw, mix paliwowy i temperaturę procesu, udział RA, zużycie energii elektrycznej i odległości transportu A2."
       },
-      "selection_mode": "default",
-      "user_choice_policy": "Użytkownik wskazuje rzeczywistą mieszankę, recepturę i dostawców. System dobiera kontrolowany dataset normatywny; użytkownik nie wybiera niższego wskaźnika bez dowodu producenta.",
+      "selection_mode": "context_specific_assessment",
+      "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
       "data_quality_rating": {
         "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
@@ -1179,15 +1211,20 @@
         "TiR": 2,
         "P": 2,
         "M": 2,
-        "DQR": 1.8
+        "DQR": 1.8,
+        "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (NIE KOBiZE 0,715). RA cut-off zgodnie z EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022.",
+      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
       ],
       "material_role": "mieszanka mineralno-asfaltowa",
-      "record_use_status": "ready_to_use_default_dataset"
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     }
-  ]
+  ],
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

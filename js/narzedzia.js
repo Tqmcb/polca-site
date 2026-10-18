@@ -18,6 +18,31 @@
 
     function $(id) { return document.getElementById(id); }
 
+    function nonnegative(id, label, errors) {
+        var input = $(id), raw = input.value.trim();
+        var value = raw === '' ? NaN : Number(raw);
+        var valid = Number.isFinite(value) && value >= 0;
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': wpisz skończoną liczbę nieujemną; puste pole nie oznacza zera');
+        return value;
+    }
+    function choice(id, allowed, label, errors) {
+        var input = $(id), valid = allowed.indexOf(input.value) !== -1;
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': wybierz pozycję z listy');
+        return input.value;
+    }
+    function showError(id, errors, resultIds) {
+        var warning = $(id);
+        warning.textContent = errors.length ? 'Popraw dane: ' + errors.join('; ') + '. Obliczenie jest wstrzymane.' : '';
+        warning.hidden = !errors.length;
+        if (errors.length) resultIds.forEach(function (resultId) { $(resultId).textContent = '—'; });
+        return errors.length > 0;
+    }
+    function finiteResults(values, errors) {
+        if (!values.every(Number.isFinite)) errors.push('Wartości są zbyt duże do obliczenia skończonego wyniku');
+    }
+
     // ================================================================
     // 01 — UNIT CONVERTER
     // ================================================================
@@ -45,9 +70,13 @@
     };
 
     function convertEnergy() {
-        var val = parseFloat($('convEnergyVal').value) || 0;
-        var from = $('convEnergyFrom').value;
+        var errors = [];
+        var val = nonnegative('convEnergyVal', 'Ilość energii', errors);
+        var from = choice('convEnergyFrom', Object.keys(energyFactors), 'Jednostka energii', errors);
+        if (showError('convEnergyError', errors, ['convEnergyResults'])) return;
         var kWh = val * energyFactors[from];
+        finiteResults(Object.keys(energyFactors).map(function (unit) { return kWh / energyFactors[unit]; }), errors);
+        if (showError('convEnergyError', errors, ['convEnergyResults'])) return;
 
         var html = '';
         var units = Object.keys(energyFactors);
@@ -65,9 +94,13 @@
     }
 
     function convertMass() {
-        var val = parseFloat($('convMassVal').value) || 0;
-        var from = $('convMassFrom').value;
+        var errors = [];
+        var val = nonnegative('convMassVal', 'Masa', errors);
+        var from = choice('convMassFrom', Object.keys(massFactors), 'Jednostka masy', errors);
+        if (showError('convMassError', errors, ['convMassResults'])) return;
         var kg = val * massFactors[from];
+        finiteResults(Object.keys(massFactors).map(function (unit) { return kg / massFactors[unit]; }), errors);
+        if (showError('convMassError', errors, ['convMassResults'])) return;
 
         var html = '';
         var units = Object.keys(massFactors);
@@ -86,10 +119,14 @@
     }
 
     function convertFuel() {
-        var val = parseFloat($('convFuelVal').value) || 0;
-        var from = $('convFuelFrom').value;
+        var errors = [];
+        var val = nonnegative('convFuelVal', 'Ilość paliwa', errors);
+        var from = choice('convFuelFrom', Object.keys(fuelData), 'Rodzaj paliwa', errors);
+        if (showError('convFuelError', errors, ['convFuelResults'])) return;
         var data = fuelData[from];
         var kWh = val * data.kWh;
+        finiteResults([kWh, kWh / 1000, kWh / 277.778, kWh * 3.6], errors);
+        if (showError('convFuelError', errors, ['convFuelResults'])) return;
 
         var html = '<div class="tool-conv-item">' +
             '<span class="tool-conv-val">' + fmt(kWh) + '</span>' +
@@ -124,15 +161,19 @@
     // 02 — TRANSPORT CALCULATOR
     // ================================================================
     function calcTransport() {
-        var distance = parseFloat($('transDistance').value) || 0;
-        var mass = parseFloat($('transMass').value) || 0;
-        var factor = parseFloat($('transMode').value) || 0;
-        var returnFactor = parseFloat($('transReturn').value) || 1;
+        var errors = [];
+        var distance = nonnegative('transDistance', 'Odległość [km]', errors);
+        var mass = nonnegative('transMass', 'Masa [t]', errors);
+        var factor = Number(choice('transMode', ['0.031', '0.049', '0.082', '0.146', '0.009', '0.025', '0.005'], 'Środek transportu', errors));
+        var returnFactor = Number(choice('transReturn', ['1', '1.5', '2'], 'Przebieg powrotny', errors));
+        if (showError('transInputWarn', errors, ['transResult', 'transPerTon', 'transPerTkm'])) return;
 
         var total = distance * mass * factor * returnFactor;
         var perTon = mass > 0 ? total / mass : 0;
         var perTkm = distance > 0 && mass > 0 ? total / (distance * mass) : 0;
 
+        finiteResults([total, perTon, perTkm], errors);
+        if (showError('transInputWarn', errors, ['transResult', 'transPerTon', 'transPerTkm'])) return;
         $('transResult').textContent = fmt(total, 1);
         $('transPerTon').textContent = fmt(perTon, 2);
         $('transPerTkm').textContent = fmt(perTkm, 3);
@@ -219,42 +260,11 @@
             return;
         }
 
-        // Sort by GWP descending
-        selected.sort(function (a, b) { return b.gwp - a.gwp; });
-
-        var maxAbs = 0;
-        for (var i = 0; i < selected.length; i++) {
-            if (Math.abs(selected[i].gwp) > maxAbs) maxAbs = Math.abs(selected[i].gwp);
-        }
-
-        var html = '';
-        for (var i = 0; i < selected.length; i++) {
-            var m = selected[i];
-            var pct = Math.abs(m.gwp) / maxAbs * 100;
-            var isNeg = m.gwp < 0;
-            var barClass = isNeg ? 'material-bar-neg' : 'material-bar-pos';
-
-            html += '<div class="material-bar-row">' +
-                '<div class="material-bar-label">' +
-                '<span class="material-bar-name">' + m.name + '</span>' +
-                '<span class="material-bar-unit">' + m.unit + '</span>' +
-                '</div>' +
-                '<div class="material-bar-track">' +
-                '<div class="material-bar ' + barClass + '" style="width: ' + pct + '%;">' +
-                '<span class="material-bar-val">' + fmt(m.gwp, 0) + '</span>' +
-                '</div>' +
-                '</div>' +
-                '</div>';
-        }
-        container.innerHTML = html;
-
-        // Trigger animation
-        requestAnimationFrame(function () {
-            var bars = container.querySelectorAll('.material-bar');
-            for (var i = 0; i < bars.length; i++) {
-                bars[i].style.opacity = '1';
-            }
+        var html = '<table class="polca-table"><thead><tr><th>Materiał</th><th>Wartość historyczna</th><th>Jednostka</th></tr></thead><tbody>';
+        selected.forEach(function (m) {
+            html += '<tr><td>' + m.name + '</td><td class="mono">' + fmt(m.gwp, 0) + '</td><td>' + m.unit + '</td></tr>';
         });
+        container.innerHTML = html + '</tbody></table><p class="calc-note">Wartości mają różne jednostki odniesienia i założenia. Porównanie wyrobów wymaga tej samej funkcji, granic cyklu życia i metody oceny. Ujemna wartość dla drewna obejmuje założenie o węglu biogenicznym w etapie produkcji.</p>';
     }
 
     // ================================================================
@@ -262,13 +272,12 @@
     // ================================================================
     var emissionFactors = [
         // Energia
-        { name: 'Miks elektryczny PL',               value: '597',       unit: 'kg CO\u2082/MWh',   source: 'KOBiZE 2024',     cat: 'energia' },
-        { name: 'Miks elektryczny PL (pe\u0142ne LCA)',   value: '718',       unit: 'g CO\u2082e/kWh',   source: 'poLCA-EN-PL 2024', cat: 'energia' },
+        { name: 'Miks elektryczny PL — CO₂ u odbiorcy, dane 2024', value: '553',       unit: 'kg CO\u2082/MWh',   source: 'KOBiZE, publikacja XII 2025, dane 2024', cat: 'energia' },
+        { name: 'Miks elektryczny PL — GWP-fossil, profil 2024', value: '599',       unit: 'g CO\u2082e/kWh',   source: 'poLCA-EN-PL-2024 v9.1, profil historyczny', cat: 'energia' },
         { name: 'Ciep\u0142o systemowe PL (\u015brednia)',      value: '~380',      unit: 'kg CO\u2082/MWh',   source: 'URE 2024',        cat: 'energia' },
         { name: 'Fotowoltaika (PL, krzemowa)',        value: '50\u201370',     unit: 'g CO\u2082e/kWh',   source: 'poLCA 2024',      cat: 'energia' },
         { name: 'Energia wiatrowa (onshore PL)',      value: '10\u201315',     unit: 'g CO\u2082e/kWh',   source: 'IPCC 2014',       cat: 'energia' },
         { name: '\u015arednia EU (miks elektr.)',           value: '~210',      unit: 'kg CO\u2082/MWh',   source: 'Ember 2025 (dane 2024)',        cat: 'energia' },
-        { name: 'Residual mix PL (AIB)',              value: '~788',      unit: 'g CO\u2082e/kWh',   source: 'AIB 2023',        cat: 'energia' },
 
         // Paliwa
         { name: 'Gaz ziemny',                        value: '56,1',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
@@ -282,14 +291,14 @@
         { name: 'Biomasa (pelet drzewny)',            value: '0 *',       unit: 'kg CO\u2082/GJ',    source: 'EU ETS konwencja', cat: 'paliwa' },
 
         // Transport
-        { name: 'TIR > 32 t (pe\u0142ny)',                 value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Samoch\u00f3d 16\u201332 t',                    value: '0,049',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Samoch\u00f3d 7,5\u201316 t',                   value: '0,082',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Samoch\u00f3d < 7,5 t',                   value: '0,146',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Kolej elektryczna',                 value: '0,009',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Kolej spalinowa',                   value: '0,025',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Barka \u015br\u00f3dl\u0105dowa',                   value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
-        { name: 'Statek morski (bulk)',               value: '0,005',     unit: 'kg CO\u2082e/tkm',  source: 'DEFRA 2024',      cat: 'transport' },
+        { name: 'TIR > 32 t (pe\u0142ny)',                 value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Samoch\u00f3d 16\u201332 t',                    value: '0,049',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Samoch\u00f3d 7,5\u201316 t',                   value: '0,082',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Samoch\u00f3d < 7,5 t',                   value: '0,146',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Kolej elektryczna',                 value: '0,009',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Kolej spalinowa',                   value: '0,025',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Barka \u015br\u00f3dl\u0105dowa',                   value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Statek morski (bulk)',               value: '0,005',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
 
         // Materiały budowlane
         { name: 'Cement CEM I 42.5',                 value: '~800',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
@@ -347,13 +356,14 @@
                 f.source.toLowerCase().indexOf(search) === -1 &&
                 f.unit.toLowerCase().indexOf(search) === -1) continue;
 
+            var sourceLabel = (f.name.indexOf('Miks elektryczny PL') === 0 || f.source === 'Założenie historyczne kalkulatora') ? f.source : 'Zestaw historyczny; przypisanie: ' + f.source;
             var isHighlight = f.cat === 'energia' && f.name.indexOf('Miks elektryczny PL') === 0 && f.name.indexOf('LCA') === -1;
 
             html += '<tr>' +
                 '<td style="font-weight: 500;">' + f.name + '</td>' +
                 '<td class="mono' + (isHighlight ? ' highlight' : '') + '">' + f.value + '</td>' +
                 '<td class="mono" style="font-size: 0.75rem; color: var(--text-secondary);">' + f.unit + '</td>' +
-                '<td style="font-size: 0.78rem; color: var(--text-tertiary);">' + f.source + '</td>' +
+                '<td style="font-size: 0.78rem; color: var(--text-tertiary);">' + sourceLabel + '</td>' +
                 '</tr>';
             count++;
         }

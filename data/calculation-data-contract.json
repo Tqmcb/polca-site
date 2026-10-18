@@ -3,10 +3,12 @@
     "title": "poLCA LCI/LCIA calculation data contract",
     "version": "2026.1-draft",
     "updated_at": "2026-05-03",
-    "purpose": "Ujednolicony kontrakt danych LCI/LCIA poLCA dla mieszanek mineralno-asfaltowych, betonu i kolejnych wyrobów budowlanych."
+    "purpose": "Ujednolicony kontrakt danych LCI/LCIA poLCA dla mieszanek mineralno-asfaltowych, betonu i kolejnych wyrobów budowlanych.",
+    "document_status": "technical_draft",
+    "implementation_status": "proposed_not_implemented_contract"
   },
-  "principle": "poLCA nie jest listą luźnych wskaźników emisji. Rdzeniem poLCA jest baza LCI, czyli kontrolowana inwentaryzacja przepływów: surowców, energii, paliw, transportu, odpadów i emisji. Warstwa LCIA przelicza LCI na wskaźniki środowiskowe, np. GWP. Aplikacja publikuje pakiet danych obliczeniowych: przepływy LCI, wynik LCIA, zakres modułu, źródło, cytowanie, jakość danych, ograniczenia i regułę zastąpienia.",
-  "controlled_default_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników. Dane kluczowe dla wyniku pochodzą od producentów, dostawców, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+  "principle": "Projekt kontraktu rozdziela inwentarz przepływów LCI, wyniki oceny wpływu LCIA oraz pakiet obliczeniowy. Opisuje docelowe pola i reguły; obecny katalog zawiera przede wszystkim wskaźniki, parametry i metadane, a nie pełne inwentarze wszystkich procesów.",
+  "controlled_default_rule": "Dobór wartości referencyjnej wymaga uzasadnienia reprezentatywności i zakresu. Ten projekt nie ustanawia obowiązku użycia poLCA ani automatycznej kwalifikacji danych do EPD.",
   "data_layers": [
     {
       "code": "LCI",
@@ -21,7 +23,7 @@
     {
       "code": "calculation_package",
       "name": "Pakiet obliczeniowy poLCA",
-      "role": "Warstwa aplikacyjna: zestaw LCI, wyników LCIA, źródeł, cytowań, jakości danych i flag audytowych gotowy dla OCL, raportu tła i EPD+."
+      "role": "Projektowana warstwa aplikacyjna łącząca dane, wyniki, źródła i ocenę jakości. Integracja z OCL, raportem tła lub EPD+ wymaga odrębnego wdrożenia i sprawdzenia."
     }
   ],
   "update_policy_ref": "data/update-policy.json",
@@ -33,7 +35,7 @@
     "citation": "Każdy rekord musi zapisać EPD ID, operatora programu, producenta, nazwę produktu, moduł, jednostkę, rok, link i tekst cytowania."
   },
   "update_policy_summary": {
-    "rule": "Każdy rekord LCI/LCIA ma wersję, status, źródło, datę ostatniego przeglądu, termin następnego przeglądu i changelog. Wyniki klienta zapisują snapshot wersji danych użytych w obliczeniu.",
+    "rule": "Założenie projektowe: rekord powinien mieć wersję, status, źródło i historię zmian, a wynik obliczenia powinien utrwalać użyte wersje. Ten plik nie potwierdza wdrożenia mechanizmu.",
     "cycles": {
       "quarterly": "energia, paliwa, transport i źródła operacyjne",
       "annual": "wartości domyślne, dane sektorowe, publiczne bazy i pełny przegląd jakości",
@@ -93,53 +95,174 @@
       "code": "mma",
       "name": "Mieszanki mineralno-asfaltowe",
       "declared_unit": "1 t mieszanki",
-      "core_modules": ["A1", "A2", "A3"],
-      "scenario_modules": ["A4", "A5", "C", "D"]
+      "core_modules": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "scenario_modules": [
+        "A4",
+        "A5",
+        "C",
+        "D"
+      ]
     },
     {
       "code": "concrete",
       "name": "Beton",
       "declared_unit": "1 m3 betonu albo 1 t betonu, zgodnie z cPCR/programem",
-      "core_modules": ["A1", "A2", "A3"],
-      "scenario_modules": ["A4", "A5", "C", "D"]
+      "core_modules": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "scenario_modules": [
+        "A4",
+        "A5",
+        "C",
+        "D"
+      ]
     }
   ],
   "input_context": {
-    "product": ["product_family", "declared_unit", "recipe_id", "production_site"],
-    "recipe": ["component_name", "material_role", "mass_per_declared_unit", "supplier_name", "supplier_location", "supplier_epd_id"],
-    "production": ["energy_kwh", "fuel_type", "fuel_quantity", "annual_volume", "allocation_method"],
-    "transport": ["origin", "destination", "distance_km", "vehicle_type", "load_factor", "mass"],
-    "evidence": ["epd_file_or_url", "invoice", "wz_cmr", "meter_reading", "audit_note"]
+    "product": [
+      "product_family",
+      "declared_unit",
+      "recipe_id",
+      "production_site"
+    ],
+    "recipe": [
+      "component_name",
+      "material_role",
+      "mass_per_declared_unit",
+      "supplier_name",
+      "supplier_location",
+      "supplier_epd_id"
+    ],
+    "production": [
+      "energy_kwh",
+      "fuel_type",
+      "fuel_quantity",
+      "annual_volume",
+      "allocation_method"
+    ],
+    "transport": [
+      "origin",
+      "destination",
+      "distance_km",
+      "vehicle_type",
+      "load_factor",
+      "mass"
+    ],
+    "evidence": [
+      "epd_file_or_url",
+      "invoice",
+      "wz_cmr",
+      "meter_reading",
+      "audit_note"
+    ]
   },
   "epd_input_context": {
-    "supplier_epd": ["epd_id", "programme_operator", "manufacturer", "product_name", "production_site", "declared_unit", "module_scope", "valid_until", "document_url_or_file"],
-    "benchmark_epd_set": ["category", "inclusion_criteria", "excluded_records", "sample_size", "median", "p75", "min", "max", "citation_list"],
-    "citation": ["epd_title", "source_url", "publication_year", "module", "indicator", "unit", "citation_text"]
+    "supplier_epd": [
+      "epd_id",
+      "programme_operator",
+      "manufacturer",
+      "product_name",
+      "production_site",
+      "declared_unit",
+      "module_scope",
+      "valid_until",
+      "document_url_or_file"
+    ],
+    "benchmark_epd_set": [
+      "category",
+      "inclusion_criteria",
+      "excluded_records",
+      "sample_size",
+      "median",
+      "p75",
+      "min",
+      "max",
+      "citation_list"
+    ],
+    "citation": [
+      "epd_title",
+      "source_url",
+      "publication_year",
+      "module",
+      "indicator",
+      "unit",
+      "citation_text"
+    ]
   },
   "application_data_requirements": [
     {
       "area": "produkt_i_recepta",
-      "fields": ["product_family", "cpcr_reference", "declared_unit", "recipe_id", "component_name", "material_role", "quantity_per_declared_unit", "unit"],
+      "fields": [
+        "product_family",
+        "cpcr_reference",
+        "declared_unit",
+        "recipe_id",
+        "component_name",
+        "material_role",
+        "quantity_per_declared_unit",
+        "unit"
+      ],
       "reason": "Aplikacja musi jednoznacznie powiązać receptę z właściwą rodziną wyrobu, zakresem modułów i jednostką deklarowaną."
     },
     {
       "area": "dostawca_i_lokalizacja",
-      "fields": ["supplier_name", "supplier_site_id", "supplier_address", "supplier_coordinates", "production_site_id", "production_site_coordinates"],
+      "fields": [
+        "supplier_name",
+        "supplier_site_id",
+        "supplier_address",
+        "supplier_coordinates",
+        "production_site_id",
+        "production_site_coordinates"
+      ],
       "reason": "Lokalizacja pozwala automatycznie liczyć transport i odróżnić EPD konkretnego dostawcy od wartości sektorowej."
     },
     {
       "area": "źródło_danych",
-      "fields": ["source_type", "source_name", "source_url", "publication_year", "valid_until", "program_operator", "pcr_or_cpcr", "module_scope"],
+      "fields": [
+        "source_type",
+        "source_name",
+        "source_url",
+        "publication_year",
+        "valid_until",
+        "program_operator",
+        "pcr_or_cpcr",
+        "module_scope"
+      ],
       "reason": "Każda wartość musi mieć źródło, zakres, datę i regułę cytowania, aby audytor mógł prześledzić wynik."
     },
     {
       "area": "jakość_i_audyt",
-      "fields": ["data_quality", "quality_score", "primary_data_share", "hotspot_flag", "audit_required", "limitations", "preferred_replacement"],
+      "fields": [
+        "data_quality",
+        "quality_score",
+        "primary_data_share",
+        "hotspot_flag",
+        "audit_required",
+        "limitations",
+        "preferred_replacement"
+      ],
       "reason": "System jawnie pokazuje, kiedy wynik opiera się na danych domyślnych lub sektorowych w istotnym hotspocie."
     },
     {
       "area": "wynik_i_eksport",
-      "fields": ["module", "lci_flows", "lcia_method", "indicator", "quantity", "factor", "result", "unit", "citation_text", "export_format"],
+      "fields": [
+        "module",
+        "lci_flows",
+        "lcia_method",
+        "indicator",
+        "quantity",
+        "factor",
+        "result",
+        "unit",
+        "citation_text",
+        "export_format"
+      ],
       "reason": "Ten sam pakiet musi zasilać OCL, raport tła, EPD+ i integracje API bez ręcznego przepisywania danych."
     }
   ],
@@ -185,12 +308,12 @@
     {
       "step": 3,
       "name": "Dobór źródła",
-      "rule": "Zastosuj hierarchię: EPD/dane pierwotne dostawcy > dataset poLCA dla kategorii i geografii > dane sektorowe/publiczne > konserwatywna wartość domyślna."
+      "rule": "Oceń dostępne dane dostawcy, poLCA i innych źródeł pod względem zakresu, reprezentatywności i zasad programu; uzasadnij wybór bez automatycznego pierwszeństwa poLCA."
     },
     {
       "step": 4,
       "name": "Przeliczenie na rynek polski",
-      "rule": "Dostosuj energię, paliwa, transport, geografię, rok danych i jednostki. Nie zmieniaj wartości EPD dostawcy bez jawnej reguły korekty."
+      "rule": "Oceń możliwość dostosowania do rynku polskiego. Modyfikuj wyłącznie rozdzielne elementy zgodnie z udokumentowaną metodą; zagregowanej EPD nie przeliczaj przez prostą zamianę współczynnika energii."
     },
     {
       "step": 5,
@@ -200,11 +323,11 @@
     {
       "step": 6,
       "name": "Pakiet LCI/LCIA",
-      "rule": "Zwróć tabelę A1-A3 oraz wymagane scenariusze: przepływy LCI, wynik LCIA, jednostkę, moduł, źródło, cytowanie, jakość danych, ograniczenia i regułę zastąpienia."
+      "rule": "Docelowo zwracaj tabelę A1-A3 oraz właściwe scenariusze z jednostką, modułem i źródłami; przepływy LCI tylko wtedy, gdy są rzeczywiście dostępne i można je udostępnić."
     }
   ],
   "epd_citation_rules": [
-    "EPD można użyć automatycznie tylko wtedy, gdy odpowiada właściwemu produktowi, jednostce, modułowi, geografii, okresowi ważności i wersji EN 15804/cPCR.",
+    "Użycie EPD wymaga oceny produktu, jednostki, modułu, geografii, ważności oraz wersji EN 15804/cPCR; sam rekord nie potwierdza automatycznej kwalifikacji.",
     "EPD innego producenta lub innej technologii może być cytowana jako benchmark, ale nie jako zamiennik danych dostawcy bez uzasadnienia.",
     "Każdy rekord użyty w pakiecie obliczeniowym musi zwracać source_name, source_url, publication_year, data_quality, limitations i preferred_replacement."
   ],
@@ -227,5 +350,7 @@
     "audit_required",
     "limitations",
     "preferred_replacement"
-  ]
+  ],
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

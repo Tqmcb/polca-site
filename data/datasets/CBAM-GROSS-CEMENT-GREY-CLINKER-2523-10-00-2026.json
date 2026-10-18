@@ -1,9 +1,9 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA gotowe datasety LCI/LCIA dla wyrobów budowlanych",
+    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
     "version": "2026.4-aggregates",
-    "status": "published_defaults",
+    "status": "legacy_metadata",
     "published_at": "2026-05-03",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
@@ -11,12 +11,13 @@
       "ISO 14040",
       "ISO 14044",
       "ISO 14025",
-      "CPR 2024/3110 readiness"
+      "CPR 2024/3110 — historyczne odniesienie"
     ],
-    "use_rule": "Dane referencyjne poLCA stosuje się, gdy brak EPD dostawcy albo zweryfikowanych danych pierwotnych dla konkretnego procesu. Dane transportowe i moduły scenariuszowe są osobnymi rekordami według cPCR/wytycznych EPD Polska lub zasad programu EPD, jeżeli dataset materiałowy nie wskazuje inaczej.",
-    "default_value_rule": "Wartości domyślne poLCA są kontrolowanymi wartościami do stosowania przy braku danych producenta. Użytkownik nie wybiera własnych współczynników ani alternatywnych baz dla obniżenia wyniku.",
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
-    "ready_dataset_rule": "Plik publikuje gotowe datasety poLCA do stosowania w obliczeniach. Dane producenta, EPD albo zweryfikowane dane klienta zastępują rekord poLCA dla składników kluczowych, gdy są dostępne."
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026",
@@ -69,8 +70,8 @@
       "when_allowed": "Brak danych rzeczywistych albo potrzeba kontroli konserwatywnej dla cementu/klinkieru.",
       "auditor_note": "Sprawdzić CN, kraj pochodzenia, rok wartości, direct/indirect, narzut i to, czy wartość nie została użyta jako EPD produktu."
     },
-    "selection_mode": "mandatory_default_when_no_supplier_data",
-    "user_choice_policy": "Użytkownik nie wybiera niższego wskaźnika. Rekord CBAM brutto jest stosowany tylko jako kontrolna wartość domyślna, gdy brak danych producenta lub EPD.",
+    "selection_mode": "context_specific_assessment",
+    "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
       "declared_value": "1551 kg CO2e/t",
       "module": "CBAM direct+indirect 2026",
@@ -126,6 +127,10 @@
       "beton"
     ],
     "material_role": "wartość kontrolna CBAM",
-    "record_use_status": "ready_to_use_control_dataset"
-  }
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters"
+  },
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

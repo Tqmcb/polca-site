@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-10-18.1",
+  "record": {
+    "id": "KOBIZE-EN-PL-ENDUSER-2024",
+    "title": "KOBiZE — energia elektryczna 2024",
+    "kind": "dataset",
+    "category_id": "energia",
+    "category_label": "Energia",
+    "year": 2024,
+    "year_type": "reference",
+    "status_id": "official_reference",
+    "status_label": "Wskaźnik źródłowy",
+    "description": "Wskaźnik CO₂ dla odbiorcy końcowego. Obejmuje inny zakres niż profil cyklu życia energii.",
+    "href": "/dane/kobize-en-pl-enduser-2024.html",
+    "unit": "kg CO₂/kWh",
+    "boundary": "CO₂ ze spalania, energia dla odbiorcy końcowego",
+    "indicator_label": "Emisja CO₂",
+    "source_name": "KOBiZE, wskaźniki emisyjności dla energii elektrycznej za 2024 rok",
+    "source_url": "https://www.kobize.pl/",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/KOBIZE-EN-PL-ENDUSER-2024.json"
+      }
+    ],
+    "methodology_href": "/metodyka.html",
+    "related_ids": [
+      "POLCA-EN-PL-LCA-2024",
+      "PL2025_PHYSICAL_DELIVERED_v3_REVIEW"
+    ],
+    "keywords": [
+      "KOBIZE-EN-PL-ENDUSER-2024",
+      "prąd",
+      "KOBiZE",
+      "CO2",
+      "odbiorca końcowy",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "kWh",
+    "source_record_href": "/data/datasets/KOBIZE-EN-PL-ENDUSER-2024.json",
+    "value": 0.553
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

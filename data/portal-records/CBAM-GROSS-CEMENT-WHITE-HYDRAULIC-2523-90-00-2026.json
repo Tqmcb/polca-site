@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-10-18.1",
+  "record": {
+    "id": "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
+    "title": "CBAM brutto 2026 — cement hydrauliczny biały",
+    "kind": "dataset",
+    "category_id": "cbam",
+    "category_label": "Wartości kontrolne CBAM",
+    "year": 2026,
+    "year_type": "application",
+    "status_id": "control",
+    "status_label": "Wartość kontrolna",
+    "description": "Wartość kontrolna emisji w mechanizmie CBAM; zakres odrębny od deklaracji środowiskowej wyrobu.",
+    "href": "/dane/cbam-gross-cement-white-hydraulic-2523-90-00-2026.html",
+    "unit": "kg CO₂e/t",
+    "boundary": "Emisje bezpośrednie i pośrednie oraz narzut zapisany w rekordzie",
+    "indicator_label": "Emisje — wartość kontrolna CBAM",
+    "source_name": "Komisja Europejska — źródło wskazane w rekordzie CBAM",
+    "source_url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026.json"
+      }
+    ],
+    "methodology_href": "/metodyka-defaults-ue.html",
+    "related_ids": [],
+    "keywords": [
+      "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
+      "CBAM",
+      "cement",
+      "klinkier",
+      "wartość kontrolna"
+    ],
+    "record_type": "indicator_value",
+    "geography": "Other Countries and Territories",
+    "reference_unit": "t",
+    "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026.json",
+    "value": 1639
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}
