@@ -1,0 +1,38 @@
+﻿code;name_pl;value_per_kWh;impact_unit;denominator_unit;value_status
+GWP-total;Potencjał globalnego ocieplenia — łącznie;0.6545962001772594;kg CO2 eq;kWh;calculated_under_declared_proxies
+GWP-fossil;Potencjał globalnego ocieplenia — pochodzenie kopalne;0.6524693816688696;kg CO2 eq;kWh;calculated_under_declared_proxies
+GWP-biogenic;Potencjał globalnego ocieplenia — pochodzenie biogeniczne;0.002012170832554849;kg CO2 eq;kWh;calculated_under_declared_proxies
+GWP-luluc;Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany;0.00011464767583492303;kg CO2 eq;kWh;calculated_under_declared_proxies
+ODP;Potencjał zubożenia warstwy ozonowej;4.4683909529806324E-9;kg CFC11 eq;kWh;calculated_under_declared_proxies
+AP;Potencjał zakwaszenia;0.0009635501180479726;mol H+ eq;kWh;calculated_under_declared_proxies
+EP-fw;Potencjał eutrofizacji wód słodkich;0.00006240565169117334;kg P eq;kWh;calculated_under_declared_proxies
+EP-mar;Potencjał eutrofizacji morskiej;0.00020364382143954495;kg N eq;kWh;calculated_under_declared_proxies
+EP-ter;Potencjał eutrofizacji lądowej;0.0022814199283507355;mol N eq;kWh;calculated_under_declared_proxies
+POCP;Potencjał powstawania ozonu przygruntowego;0.0007105986860592888;kg NMVOC eq;kWh;calculated_under_declared_proxies
+ADP-mm;Potencjał wyczerpywania zasobów abiotycznych — minerały i metale;7.904295206004479E-7;kg Sb eq;kWh;calculated_under_declared_proxies
+ADP-fossil;Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne;7.259304774300022;MJ (net calorific);kWh;calculated_under_declared_proxies
+WDP;Potencjał pozbawienia wody;0.021263256550724946;m3 world eq;kWh;calculated_under_declared_proxies
+PM;Potencjalna zachorowalność związana z pyłem;4.670072343389661E-9;disease incidence;kWh;calculated_under_declared_proxies
+IRP;Potencjalny wpływ promieniowania jonizującego na zdrowie;0.007020692701114533;kBq U235 eq;kWh;calculated_under_declared_proxies
+ETP-fw;Potencjał ekotoksyczności wód słodkich;1.9813174116184724;CTUe;kWh;calculated_under_declared_proxies
+HTP-c;Potencjał toksyczności dla ludzi — skutki rakotwórcze;3.337010621198044E-10;CTUh;kWh;calculated_under_declared_proxies
+HTP-nc;Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze;9.056521562120994E-9;CTUh;kWh;calculated_under_declared_proxies
+SQP;Potencjalny wpływ użytkowania gruntów na jakość gleby;3.2901789232243983;dimensionless (pt);kWh;calculated_under_declared_proxies
+PERE;Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;1.928357387578882;MJ;kWh;calculated_under_declared_proxies
+PERM;Odnawialne zasoby energii pierwotnej użyte jako surowce;0.0;MJ;kWh;calculated_under_declared_proxies
+PERT;Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej;1.928357387578882;MJ;kWh;calculated_under_declared_proxies
+PENRE;Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;7.276944683514176;MJ;kWh;calculated_under_declared_proxies
+PENRM;Nieodnawialne zasoby energii pierwotnej użyte jako surowce;0.0;MJ;kWh;calculated_under_declared_proxies
+PENRT;Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej;7.276944683514176;MJ;kWh;calculated_under_declared_proxies
+SM;Wykorzystanie materiałów wtórnych;0.001971760884788581;kg;kWh;calculated_under_declared_proxies
+RSF;Wykorzystanie odnawialnych paliw wtórnych;0.002631610259398641;MJ;kWh;calculated_under_declared_proxies
+NRSF;Wykorzystanie nieodnawialnych paliw wtórnych;0.0;MJ;kWh;calculated_under_declared_proxies
+FW;Zużycie netto zasobów wody słodkiej;0.002049222559565193;m3;kWh;calculated_under_declared_proxies
+HWD;Odpady niebezpieczne poddane unieszkodliwianiu;0.11628379581598872;kg;kWh;calculated_under_declared_proxies
+NHWD;Odpady inne niż niebezpieczne poddane unieszkodliwianiu;1.844385837897511;kg;kWh;calculated_under_declared_proxies
+RWD;Odpady promieniotwórcze poddane unieszkodliwianiu;0.00029887706208419593;kg;kWh;calculated_under_declared_proxies
+CRU;Komponenty przeznaczone do ponownego użycia;0.0;kg;kWh;calculated_under_declared_proxies
+MFR;Materiały przeznaczone do recyklingu;0.000009661219693421478;kg;kWh;calculated_under_declared_proxies
+MER;Materiały przeznaczone do odzysku energii;0.0;kg;kWh;calculated_under_declared_proxies
+EEE;Eksportowana energia elektryczna;0.0010206518459577089;MJ;kWh;calculated_under_declared_proxies
+EET;Eksportowana energia cieplna;0.004666347956648456;MJ;kWh;calculated_under_declared_proxies

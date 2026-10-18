@@ -1,0 +1,28 @@
+{
+  "package_version": "2026-10-18.1",
+  "model_id": "PL2025_PHYSICAL_DELIVERED_v3_REVIEW",
+  "scope": "export_integrity_and_linear_scaling_only",
+  "scope_pl": "Zgodność eksportu z wybranym profilem, jednostek, sum składowych i przykładu 10 kWh. Kontrole nie stanowią zewnętrznej recenzji eksperckiej ani kwalifikacji do wydawania deklaracji.",
+  "result": "PASS",
+  "source_profile": "selected_2025_v3",
+  "indicator_count": 37,
+  "checks_passed": 389,
+  "checks_failed": 0,
+  "all_37_values_and_units_match_frozen_source": true,
+  "json_csv_roundtrip": true,
+  "example_37_values_and_units_checked": true,
+  "climate_and_primary_energy_sums_checked": true,
+  "sum_absolute_tolerance_per_kWh": "1e-15",
+  "sum_absolute_tolerance_for_10_kWh": "1e-14",
+  "sum_tolerance_reason_pl": "Dopuszczalna różnica sumowania liczb zapisanych z precyzją źródłową; żadnej wartości źródłowej nie skorygowano.",
+  "production_approved": false,
+  "formal_EN15804_qualification": false,
+  "human_verification_recorded": false,
+  "is_default": false,
+  "external_expert_review": "NOT_PERFORMED",
+  "full_graph_recalculated_for_this_export": false,
+  "source_fingerprints": {
+    "source_profile_file": "profiles-37.json",
+    "source_profile_sha256": "ad8706c1575e71612d548c1672dc2917250f700d9b275719aa5af798aeda7951"
+  }
+}

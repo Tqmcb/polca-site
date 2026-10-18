@@ -1,0 +1,352 @@
+{
+  "schema_version": "1.0",
+  "package_version": "2026-10-18.1",
+  "model_id": "PL2025_PHYSICAL_DELIVERED_v3_REVIEW",
+  "variant": "selected_2025_v3",
+  "title_pl": "Polska 2025 — fizyczny krajowy profil dostarczonej energii elektrycznej, v3",
+  "author": "Multicert Sp. z o.o.",
+  "country": "PL",
+  "reference_year": 2025,
+  "functional_unit": {
+    "quantity": 1,
+    "unit": "kWh",
+    "description_pl": "1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce; średnia roczna 2025 przy krajowej strukturze napięć."
+  },
+  "electricity_mix_type": "physical_national",
+  "voltage_scope": "national_aggregate_not_voltage_specific",
+  "is_default": false,
+  "stage_assignment": "Wkład energii przypisać do etapu, w którym jest zużywana. Nie powielać wkładu tych samych kWh w kilku etapach.",
+  "method": {
+    "documentation": "METODA-I-ZMIANY.txt",
+    "description_pl": "Wybrany profil v3 ze wspólną rewizją wody, nadkładu i technologii chlorowo-alkalicznych oraz zachowaną jawną konwencją węgla biogenicznego."
+  },
+  "status": {
+    "state": "integration_and_method_review",
+    "description_pl": "Do integracji, prób obliczeń i recenzji zastosowania.",
+    "production_approved": false,
+    "formal_EN15804_qualification": false,
+    "human_verification_recorded": false,
+    "is_default": false,
+    "external_expert_review": "NOT_PERFORMED",
+    "internal_checks_are_external_expert_review": false
+  },
+  "intended_use": "calculator_integration_testing_and_method_review",
+  "restrictions_pl": [
+    "Przed użyciem w wydawanej deklaracji środowiskowej produktu (EPD) ocenić metodę, reprezentatywność, granice i zasady właściwego programu.",
+    "Fizyczny miks krajowy nie jest miksem rezydualnym, kontraktowym ani profilem określonego napięcia.",
+    "Rok odniesienia 2025 nie oznacza, że wszystkie dane tła i technologie pochodzą z 2025 r.; część pozostaje historyczna lub zastępcza.",
+    "Wyniki opisują wkład energii, a nie cały moduł cyklu życia ani kompletny wyrób.",
+    "Zera wynikają z przyjętych granic i konwencji; nie potwierdzają pomiarowo braku danego przepływu w Polsce.",
+    "Kontrole wewnętrzne nie są zewnętrzną recenzją ekspercką ani weryfikacją deklaracji przez człowieka."
+  ],
+  "source_attribution": "Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026",
+  "terms_url": "WARUNKI-WYKORZYSTANIA.txt",
+  "documentation": [
+    "START.txt",
+    "METODA-I-ZMIANY.txt",
+    "WARUNKI-WYKORZYSTANIA.txt"
+  ],
+  "provenance": {
+    "source_profile_file": "profiles-37.json",
+    "source_profile_sha256": "ad8706c1575e71612d548c1672dc2917250f700d9b275719aa5af798aeda7951",
+    "selected_profile": "selected_2025_v3"
+  },
+  "indicators": [
+    {
+      "code": "GWP-total",
+      "name_pl": "Potencjał globalnego ocieplenia — łącznie",
+      "value_per_kWh": 0.6545962001772594,
+      "impact_unit": "kg CO2 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-fossil",
+      "name_pl": "Potencjał globalnego ocieplenia — pochodzenie kopalne",
+      "value_per_kWh": 0.6524693816688696,
+      "impact_unit": "kg CO2 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-biogenic",
+      "name_pl": "Potencjał globalnego ocieplenia — pochodzenie biogeniczne",
+      "value_per_kWh": 0.002012170832554849,
+      "impact_unit": "kg CO2 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-luluc",
+      "name_pl": "Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany",
+      "value_per_kWh": 0.00011464767583492303,
+      "impact_unit": "kg CO2 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ODP",
+      "name_pl": "Potencjał zubożenia warstwy ozonowej",
+      "value_per_kWh": 4.4683909529806324E-9,
+      "impact_unit": "kg CFC11 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "AP",
+      "name_pl": "Potencjał zakwaszenia",
+      "value_per_kWh": 0.0009635501180479726,
+      "impact_unit": "mol H+ eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-fw",
+      "name_pl": "Potencjał eutrofizacji wód słodkich",
+      "value_per_kWh": 0.00006240565169117334,
+      "impact_unit": "kg P eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-mar",
+      "name_pl": "Potencjał eutrofizacji morskiej",
+      "value_per_kWh": 0.00020364382143954495,
+      "impact_unit": "kg N eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-ter",
+      "name_pl": "Potencjał eutrofizacji lądowej",
+      "value_per_kWh": 0.0022814199283507355,
+      "impact_unit": "mol N eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "POCP",
+      "name_pl": "Potencjał powstawania ozonu przygruntowego",
+      "value_per_kWh": 0.0007105986860592888,
+      "impact_unit": "kg NMVOC eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ADP-mm",
+      "name_pl": "Potencjał wyczerpywania zasobów abiotycznych — minerały i metale",
+      "value_per_kWh": 7.904295206004479E-7,
+      "impact_unit": "kg Sb eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ADP-fossil",
+      "name_pl": "Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne",
+      "value_per_kWh": 7.259304774300022,
+      "impact_unit": "MJ (net calorific)",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "WDP",
+      "name_pl": "Potencjał pozbawienia wody",
+      "value_per_kWh": 0.021263256550724946,
+      "impact_unit": "m3 world eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PM",
+      "name_pl": "Potencjalna zachorowalność związana z pyłem",
+      "value_per_kWh": 4.670072343389661E-9,
+      "impact_unit": "disease incidence",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "IRP",
+      "name_pl": "Potencjalny wpływ promieniowania jonizującego na zdrowie",
+      "value_per_kWh": 0.007020692701114533,
+      "impact_unit": "kBq U235 eq",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ETP-fw",
+      "name_pl": "Potencjał ekotoksyczności wód słodkich",
+      "value_per_kWh": 1.9813174116184724,
+      "impact_unit": "CTUe",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HTP-c",
+      "name_pl": "Potencjał toksyczności dla ludzi — skutki rakotwórcze",
+      "value_per_kWh": 3.337010621198044E-10,
+      "impact_unit": "CTUh",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HTP-nc",
+      "name_pl": "Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze",
+      "value_per_kWh": 9.056521562120994E-9,
+      "impact_unit": "CTUh",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "SQP",
+      "name_pl": "Potencjalny wpływ użytkowania gruntów na jakość gleby",
+      "value_per_kWh": 3.2901789232243983,
+      "impact_unit": "dimensionless (pt)",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PERE",
+      "name_pl": "Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce",
+      "value_per_kWh": 1.928357387578882,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PERM",
+      "name_pl": "Odnawialne zasoby energii pierwotnej użyte jako surowce",
+      "value_per_kWh": 0.0,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PERT",
+      "name_pl": "Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej",
+      "value_per_kWh": 1.928357387578882,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PENRE",
+      "name_pl": "Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce",
+      "value_per_kWh": 7.276944683514176,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PENRM",
+      "name_pl": "Nieodnawialne zasoby energii pierwotnej użyte jako surowce",
+      "value_per_kWh": 0.0,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PENRT",
+      "name_pl": "Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej",
+      "value_per_kWh": 7.276944683514176,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "SM",
+      "name_pl": "Wykorzystanie materiałów wtórnych",
+      "value_per_kWh": 0.001971760884788581,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "RSF",
+      "name_pl": "Wykorzystanie odnawialnych paliw wtórnych",
+      "value_per_kWh": 0.002631610259398641,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "NRSF",
+      "name_pl": "Wykorzystanie nieodnawialnych paliw wtórnych",
+      "value_per_kWh": 0.0,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "FW",
+      "name_pl": "Zużycie netto zasobów wody słodkiej",
+      "value_per_kWh": 0.002049222559565193,
+      "impact_unit": "m3",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HWD",
+      "name_pl": "Odpady niebezpieczne poddane unieszkodliwianiu",
+      "value_per_kWh": 0.11628379581598872,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "NHWD",
+      "name_pl": "Odpady inne niż niebezpieczne poddane unieszkodliwianiu",
+      "value_per_kWh": 1.844385837897511,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "RWD",
+      "name_pl": "Odpady promieniotwórcze poddane unieszkodliwianiu",
+      "value_per_kWh": 0.00029887706208419593,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "CRU",
+      "name_pl": "Komponenty przeznaczone do ponownego użycia",
+      "value_per_kWh": 0.0,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "MFR",
+      "name_pl": "Materiały przeznaczone do recyklingu",
+      "value_per_kWh": 0.000009661219693421478,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "MER",
+      "name_pl": "Materiały przeznaczone do odzysku energii",
+      "value_per_kWh": 0.0,
+      "impact_unit": "kg",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EEE",
+      "name_pl": "Eksportowana energia elektryczna",
+      "value_per_kWh": 0.0010206518459577089,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EET",
+      "name_pl": "Eksportowana energia cieplna",
+      "value_per_kWh": 0.004666347956648456,
+      "impact_unit": "MJ",
+      "denominator_unit": "kWh",
+      "value_status": "calculated_under_declared_proxies"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+POLSKA 2025: 37 WSKAŹNIKÓW ENERGII DO INTEGRACJI I RECENZJI
+
+Model: PL2025_PHYSICAL_DELIVERED_v3_REVIEW
+Profil: selected_2025_v3
+Wydanie pakietu: 2026-10-18.1
+Opracowanie: Multicert Sp. z o.o.
+
+Pakiet zawiera 37 zagregowanych wyników na 1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce, jako średnią roczną 2025. Jest przeznaczony do integracji, prób obliczeń i recenzji zastosowania. Nie zawiera pełnego grafu obliczeniowego ani źródłowych baz danych.
+
+STATUS
+production_approved=false: brak zatwierdzenia do wydawania deklaracji.
+formal_EN15804_qualification=false: brak formalnej kwalifikacji do EN 15804.
+human_verification_recorded=false: brak zarejestrowanej weryfikacji przez człowieka.
+is_default=false: profil nie jest wyborem domyślnym.
+Kontrole wewnętrzne nie są zewnętrzną recenzją ekspercką.
+
+PLIKI
+
+- profil-37.json: pełne nazwy, dokładne wartości, jednostki, zakres i status wybranego profilu.
+- wskazniki-37.csv: te same 37 wyników; separator średnik, separator dziesiętny kropka, kodowanie UTF-8 z BOM (znacznikiem kodowania).
+- przyklad-10-kWh.json: hipotetyczny wkład 10 kWh w module C3, poza kontrolą właściciela deklaracji środowiskowej produktu (EPD).
+- kontrola-eksportu.json: zakres i wynik kontroli zgodności eksportu oraz liniowego przeliczenia przykładu.
+- METODA-I-ZMIANY.txt: opis metody, zmian i ograniczeń.
+- WARUNKI-WYKORZYSTANIA.txt: warunki wykorzystania i informacje o źródle tła.
+
+ODCZYT I PRZELICZENIE
+Każdy wskaźnik identyfikuje code; pełna nazwa polska jest w name_pl. Wartość value_per_kWh ma jednostkę impact_unit na kWh. Mapować po kodach i jednostkach, nie po kolejności wierszy. Przykład przelicza każdy z 37 wyników przez dokładne mnożenie przez 10. Wynik value_for_10_kWh ma jednostkę impact_unit i nie jest odnoszony do masy, objętości ani sztuki wyrobu.
+
+Przykład: 10 kWh × 0,6545962001772594 kg ekwiwalentu CO₂/kWh = 6,545962001772594 kg ekwiwalentu CO₂. To wyłącznie wkład energii w hipotetycznym C3. Pakiet nie przypisuje 10 kWh do rzeczywistego wyrobu i nie określa całego modułu C3.
+
+Całkowity potencjał globalnego ocieplenia (GWP-total) obejmuje składniki kopalne (GWP-fossil), biogeniczne (GWP-biogenic) i związane z użytkowaniem gruntów oraz jego zmianami (GWP-luluc). Nie dodawać ponownie składników do sumy. Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej (PERT) i nieodnawialnych zasobów energii pierwotnej (PENRT) również obejmuje odpowiednie części. Nie sumować różnych kategorii oddziaływania.
+
+ZAKRES
+Profil przedstawia fizyczny miks krajowy przy krajowej strukturze napięć. Nie jest miksem rezydualnym, kontraktowym ani profilem określonego napięcia. Rok 2025 nie oznacza, że wszystkie dane tła pochodzą z 2025 r. Przydatność do określonego zastosowania wymaga oceny metody, reprezentatywności i zasad właściwego programu. Sam import danych ani poprawny rachunek nie stanowią takiej kwalifikacji.
+
+ŹRÓDŁO TŁA I WARUNKI
+Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026
+Warunki wykorzystania: WARUNKI-WYKORZYSTANIA.txt.
+Metoda i ograniczenia: METODA-I-ZMIANY.txt.
