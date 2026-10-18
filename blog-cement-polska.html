@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Polski cement a średnia europejska — gdzie jesteśmy naprawdę — poLCA Blog</title>
-    <meta name="description" content="GWP polskiego cementu CEM I to ok. 820–900 kg CO₂/t — powyżej średniej europejskiej. Główne przyczyny: wyższy wskaźnik klinkier/cement i węglowy miks energetyczny. Analiza danych EPD.">
+    <meta name="description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <link rel="canonical" href="https://polca.org.pl/blog-cement-polska.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Polski cement a średnia europejska — gdzie jesteśmy naprawdę — poLCA Blog">
-    <meta property="og:description" content="GWP polskiego cementu CEM I to ok. 820–900 kg CO₂/t — powyżej średniej europejskiej. Wyższy wskaźnik klinkier/cement i węglowy miks energetyczny. Analiza EPD.">
+    <meta property="og:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <meta property="og:url" content="https://polca.org.pl/blog-cement-polska.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -23,158 +23,120 @@
     <meta property="article:tag" content="LCA budynku">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Polski cement a średnia europejska — gdzie jesteśmy naprawdę">
-    <meta name="twitter:description" content="GWP polskiego cementu CEM I: ok. 820–900 kg CO₂/t wobec średniej EU ~750–800 kg. Wyższy klinkier i węglowy miks energetyczny — analiza danych EPD.">
+    <meta name="twitter:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-cement-polska.jpg">
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-cement-polska.html",
+      "headline": "Polski cement a średnia europejska — gdzie jesteśmy naprawdę",
+      "description": "Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.",
+      "url": "https://polca.org.pl/blog-cement-polska.html",
+      "datePublished": "2025-11-14",
+      "dateModified": "2025-11-14",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "cement EPD",
+        "GWP cement",
+        "klinkier",
+        "wskaźnik klinkier/cement",
+        "LCA cement",
+        "emisje CO2 cement",
+        "CEM I",
+        "CEM II",
+        "polska produkcja cementu"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-cement-polska.html",
-          "headline": "Polski cement a średnia europejska — gdzie jesteśmy naprawdę",
-          "description": "GWP polskiego cementu CEM I wynosi ok. 820–900 kg CO₂/t i jest wyższy od średniej europejskiej. Kluczowe czynniki: wskaźnik klinkier/cement powyżej średniej EU, węglowy miks energetyczny dla ciepła technologicznego i wysoka emisyjność sieci energetycznej. Analiza danych z polskich i europejskich EPD.",
-          "url": "https://polca.org.pl/blog-cement-polska.html",
-          "datePublished": "2025-11-14",
-          "dateModified": "2025-11-14",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA — Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["cement EPD", "GWP cement", "klinkier", "wskaźnik klinkier/cement", "LCA cement", "emisje CO2 cement", "CEM I", "CEM II", "polska produkcja cementu"]
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "Polski cement a średnia europejska"}
-          ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Ile wynosi GWP polskiego cementu CEM I?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Na podstawie EPD rejestrowanych w programie EPD Polska, GWP modułów A1–A3 dla CEM I wynosi ok. 820–900 kg CO₂ eq./t. Dokładna wartość zależy od instalacji, roku referencyjnego i miks surowców."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Jaki cement ma najniższy ślad węglowy?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Najniższy GWP spośród standardowych klas mają cementy hutnicze CEM III/A i CEM III/B (ok. 300–450 kg CO₂/t) z wysokim udziałem żużla wielkopiecowego (GGBS). Dobre wyniki mają też CEM II/B-S (cement portlandzki z żużlem): ok. 580–650 kg."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czy można użyć zachodnieuropejskiej EPD dla cementu w polskim LCA budynku?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Nie — jest to niezgodne z zasadą proximity ISO 14044 i wymaganiami EN 15804+A2. Zachodnieuropejska EPD cementu używa innego wskaźnika emisji dla energii elektrycznej i innego miks paliw, co prowadzi do zaniżenia GWP w polskich warunkach."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czym jest CBAM i jak wpłynie na import cementu do Polski?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "CBAM (Carbon Border Adjustment Mechanism) to opłata graniczna UE na importowane towary o wysokiej intensywności węglowej (w tym cement). Od 2026 r. importerzy cementu spoza UE będą musieli kupować certyfikaty odpowiadające emisjom CO₂ zawartym w imporcie."
-              }
-            }
-          ]
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Polski cement a średnia europejska"
         }
       ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  ]
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Polski cement a średnia europejska — gdzie jesteśmy naprawdę</span></nav><div class="polca-page">
 
     <div class="post-dark-hero" style="background-image: linear-gradient(rgba(8,8,12,0.38), rgba(8,8,12,0.55)), url('images/blog-cement-polska.jpg'); background-size: cover; background-position: center;">
         <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Wr&#243;&#263; do bloga
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Wróć do bloga
         </a>
 
         <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
             <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
-            <span class="breadcrumbs-current">Polski cement a europejska &#347;rednia</span>
+            <span class="breadcrumbs-sep">›</span>
+            <span class="breadcrumbs-current">Polski cement a europejska średnia</span>
         </nav>
 
         <div class="blog-post-header">
             <div class="blog-post-meta">
                 <span class="blog-tag dane">Dane</span>
                 <span class="blog-date">14 listopada 2025</span>
-                <span class="blog-read-time">&#183; 9 min czytania</span>
+                <span class="blog-read-time">· 9 min czytania</span>
             </div>
             <h1 class="blog-post-title">
-                Polski cement a &#347;rednia europejska &#8212;<br>gdzie jeste&#347;my naprawd&#281;
+                Polski cement a średnia europejska —<br>gdzie jesteśmy naprawdę
             </h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
             <p class="blog-post-lead">
-                GWP polskiego cementu portlandzkiego CEM&nbsp;I wynosi ok.&nbsp;820&ndash;900&nbsp;kg&nbsp;CO&#8322;/t.
-                Europejska &#347;rednia dla tej samej klasy to ok.&nbsp;750&ndash;820&nbsp;kg.
-                R&#243;&#380;nica wydaje si&#281; niewielka &#8212; ale przy betonowaniu jednego pi&#281;tra biurowca
-                oznacza dziesi&#261;tki ton CO&#8322; ekwiwalentnego. Co j&#261; generuje i co mo&#380;na z tym zrobi&#263;.
+                GWP polskiego cementu portlandzkiego CEM I wynosi ok. 820–900 kg CO₂/t.
+                Europejska średnia dla tej samej klasy to ok. 750–820 kg.
+                Różnica wydaje się niewielka — ale przy betonowaniu jednego piętra biurowca
+                oznacza dziesiątki ton CO₂ ekwiwalentnego. Co ją generuje i co można z tym zrobić.
             </p>
         </div>
     </div>
 
     <!-- Comparison chart — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
-        <div class="card-title">GWP cementu A1&ndash;A3 &#8212; Polska vs. Europa (kg CO&#8322; eq./t)</div>
+        <div class="card-title">GWP cementu A1–A3 — Polska vs. Europa (kg CO₂ eq./t)</div>
         <div class="vcol-chart">
             <div class="vcol-group">
                 <div class="vcol-value">~780</div>
@@ -194,43 +156,43 @@
             </div>
         </div>
         <div class="vcol-labels">
-            <div class="vcol-label">CEM&nbsp;I EU<br><span style="color: var(--text-light);">&#347;r. europejska</span></div>
-            <div class="vcol-label">CEM&nbsp;I PL<br><span style="color: var(--text-light);">polska EPD</span></div>
-            <div class="vcol-label">CEM&nbsp;II/B-S<br><span style="color: var(--text-light);">z &#380;u&#380;lem</span></div>
-            <div class="vcol-label">CEM&nbsp;III/A<br><span style="color: var(--text-light);">hutniczy</span></div>
+            <div class="vcol-label">CEM I EU<br><span style="color: var(--text-light);">śr. europejska</span></div>
+            <div class="vcol-label">CEM I PL<br><span style="color: var(--text-light);">polska EPD</span></div>
+            <div class="vcol-label">CEM II/B-S<br><span style="color: var(--text-light);">z żużlem</span></div>
+            <div class="vcol-label">CEM III/A<br><span style="color: var(--text-light);">hutniczy</span></div>
         </div>
         <p class="comp-note">
-            &#378;r&#243;d&#322;o: EPD Polska (2023&ndash;2025); CEMBUREAU Industry EPD (2023); warto&#347;ci przybli&#380;one &mdash; zale&#380;ne od instalacji.
+            źródło: EPD Polska (2023–2025); CEMBUREAU Industry EPD (2023); wartości przybliżone — zależne od instalacji.
         </p>
     </div>
 
     <div class="blog-post-body section-gap fade-in">
 
-        <h2>Sk&#261;d bierze si&#281; wy&#380;szy GWP polskiego cementu?</h2>
+        <h2>Skąd bierze się wyższy GWP polskiego cementu?</h2>
         <p>
-            Emisje CO&#8322; z produkcji cementu dziel&#261; si&#281; na dwa &#378;r&#243;d&#322;a:
+            Emisje CO₂ z produkcji cementu dzielą się na dwa źródła:
         </p>
         <ul>
-            <li><strong>Emisje procesowe (~60% GWP)</strong> &#8212; wydzielanie CO&#8322; z kalcynacji wapienia
-            (CaCO&#8322; &rarr; CaO + CO&#8322;). To reakcja nieodwracalna, niezale&#380;na od &#378;r&#243;d&#322;a energii.
-            Wielko&#347;&#263; emisji zale&#380;y wy&#322;&#261;cznie od ilo&#347;ci wyprodukowanego klinkieru.</li>
-            <li><strong>Emisje energetyczne (~40% GWP)</strong> &#8212; spalanie paliw do ogrzewania
-            pieca (ok. 3&ndash;4&nbsp;GJ/t klinkieru) i energia elektryczna do przemia&#322;u i transportu.</li>
+            <li><strong>Emisje procesowe (~60% GWP)</strong> — wydzielanie CO₂ z kalcynacji wapienia
+            (CaCO₂ → CaO + CO₂). To reakcja nieodwracalna, niezależna od źródła energii.
+            Wielkość emisji zależy wyłącznie od ilości wyprodukowanego klinkieru.</li>
+            <li><strong>Emisje energetyczne (~40% GWP)</strong> — spalanie paliw do ogrzewania
+            pieca (ok. 3–4 GJ/t klinkieru) i energia elektryczna do przemiału i transportu.</li>
         </ul>
         <p>
-            Polska wypad&#322;a gorzej od europejskiej &#347;redniej w obu kategoriach:
+            Polska wypadła gorzej od europejskiej średniej w obu kategoriach:
         </p>
 
-        <h2>Wska&#378;nik klinkier/cement: g&#322;&#243;wny driver GWP</h2>
+        <h2>Wskaźnik klinkier/cement: główny driver GWP</h2>
         <p>
-            Najwa&#380;niejszy parametr: jaka cz&#281;&#347;&#263; gotowego cementu to klinkier.
-            Ka&#380;da tona klinkieru to ok.&nbsp;820&ndash;840&nbsp;kg&nbsp;CO&#8322; z samej kalcynacji.
-            Zast&#261;pienie cz&#281;&#347;ci klinkieru &#380;u&#380;lem wielkopiecowym (GGBS) lub popio&#322;em lotnym
-            proporcjonalnie obni&#380;a emisje.
+            Najważniejszy parametr: jaka część gotowego cementu to klinkier.
+            Każda tona klinkieru to ok. 820–840 kg CO₂ z samej kalcynacji.
+            Zastąpienie części klinkieru żużlem wielkopiecowym (GGBS) lub popiołem lotnym
+            proporcjonalnie obniża emisje.
         </p>
 
         <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
-            <div class="card-title" style="font-size:0.9rem;">Wska&#378;nik klinkier/cement w wybranych krajach (2023)</div>
+            <div class="card-title" style="font-size:0.9rem;">Wskaźnik klinkier/cement w wybranych krajach (2023)</div>
             <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.75rem; line-height:1.6;">
                 <thead>
                     <tr style="border-bottom:2px solid var(--border);">
@@ -241,164 +203,159 @@
                 </thead>
                 <tbody>
                     <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:0.55rem 0.75rem;">&#346;rednia EU</td>
+                        <td style="padding:0.55rem 0.75rem;">Średnia EU</td>
                         <td style="padding:0.55rem 0.75rem; text-align:right;">~74%</td>
-                        <td style="padding:0.55rem 0.75rem;">Wysoki udzia&#322; CEM&nbsp;II z popio&#322;em i &#380;u&#380;lem</td>
+                        <td style="padding:0.55rem 0.75rem;">Wysoki udział CEM II z popiołem i żużlem</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">Polska</td>
                         <td style="padding:0.55rem 0.75rem; text-align:right; color: var(--accent);">~80%</td>
-                        <td style="padding:0.55rem 0.75rem;">Dominacja CEM&nbsp;I i CEM&nbsp;II/A</td>
+                        <td style="padding:0.55rem 0.75rem;">Dominacja CEM I i CEM II/A</td>
                     </tr>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem;">Niemcy</td>
                         <td style="padding:0.55rem 0.75rem; text-align:right;">~72%</td>
-                        <td style="padding:0.55rem 0.75rem;">Silny rynek CEM&nbsp;III (&#380;u&#380;el z hut)</td>
+                        <td style="padding:0.55rem 0.75rem;">Silny rynek CEM III (żużel z hut)</td>
                     </tr>
                     <tr>
                         <td style="padding:0.55rem 0.75rem;">Holandia / Belgia</td>
-                        <td style="padding:0.55rem 0.75rem; text-align:right;">~62&ndash;65%</td>
-                        <td style="padding:0.55rem 0.75rem;">Bardzo wysoki udzia&#322; CEM&nbsp;III/A i III/B</td>
+                        <td style="padding:0.55rem 0.75rem; text-align:right;">~62–65%</td>
+                        <td style="padding:0.55rem 0.75rem;">Bardzo wysoki udział CEM III/A i III/B</td>
                     </tr>
                 </tbody>
             </table>
-            <p class="comp-note">&#378;r&#243;d&#322;o: CEMBUREAU, Cement Industry: The Facts 2024; dane szacunkowe.</p>
+            <p class="comp-note">źródło: CEMBUREAU, Cement Industry: The Facts 2024; dane szacunkowe.</p>
         </div>
 
         <div class="callout callout-definition">
-            <div class="callout-label">Dlaczego Polska ma wy&#380;szy wska&#378;nik klinkieru?</div>
+            <div class="callout-label">Dlaczego Polska ma wyższy wskaźnik klinkieru?</div>
             <p class="callout-body">
-                Polska dysponuje mniejsz&#261; baz&#261; &#380;u&#380;la wielkopiecowego ni&#380; Niemcy czy Belgia
-                (relatywnie mniej aktywnych wielkich piec&#243;w stalowych). Popio&#322;y lotne z w&#281;gla
-                &#8212; historycznie powszechny substytut &#8212; s&#261; stopniowo wycofywane wraz z odchodzeniem
-                od w&#281;gla w energetyce. To strukturalne ograniczenie, kt&#243;re mo&#380;na cz&#281;&#347;ciowo
-                kompensowa&#263; importem GGBS lub kalcynowanymi glinami.
+                Polska dysponuje mniejszą bazą żużla wielkopiecowego niż Niemcy czy Belgia
+                (relatywnie mniej aktywnych wielkich pieców stalowych). Popioły lotne z węgla
+                — historycznie powszechny substytut — są stopniowo wycofywane wraz z odchodzeniem
+                od węgla w energetyce. To strukturalne ograniczenie, które można częściowo
+                kompensować importem GGBS lub kalcynowanymi glinami.
             </p>
         </div>
 
-        <h2>Miks paliw do pieca: drugie &#378;r&#243;d&#322;o r&#243;&#380;nicy</h2>
+        <h2>Miks paliw do pieca: drugie źródło różnicy</h2>
         <p>
-            Polska produkcja klinkieru opiera si&#281; w du&#380;ej mierze na w&#281;glu i koksie
-            jako g&#322;&#243;wnych paliwach do pieca. Zachodnieuropejskie cementownie cz&#281;&#347;ciej
-            stosuj&#261; paliwa alternatywne (SRF &#8212; <em>Solid Recovered Fuel</em>):
-            zast&#281;puj&#261; one paliwa kopalne i obni&#380;aj&#261; emisje energetyczne bez zmiany
-            jako&#347;ci klinkieru.
+            Polska produkcja klinkieru opiera się w dużej mierze na węglu i koksie
+            jako głównych paliwach do pieca. Zachodnieuropejskie cementownie częściej
+            stosują paliwa alternatywne (SRF — <em>Solid Recovered Fuel</em>):
+            zastępują one paliwa kopalne i obniżają emisje energetyczne bez zmiany
+            jakości klinkieru.
         </p>
 
         <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
-            <div class="card-title" style="font-size:0.9rem;">Udzia&#322; paliw alternatywnych (AF) w polskich vs. zachodnioeuropejskich cementowniach</div>
+            <div class="card-title" style="font-size:0.9rem;">Udział paliw alternatywnych (AF) w polskich vs. zachodnioeuropejskich cementowniach</div>
             <div class="comp-bar-group" style="margin-top: 1rem;">
-                <div class="comp-bar-label">&#346;rednia EU (2023)</div>
+                <div class="comp-bar-label">Średnia EU (2023)</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 57%;">ok. 57% ciep&#322;a z AF</div>
+                    <div class="comp-bar-fill gray" style="width: 57%;">ok. 57% ciepła z AF</div>
                 </div>
             </div>
             <div class="comp-bar-group">
-                <div class="comp-bar-label">Polska (2023, &#347;rednia)</div>
+                <div class="comp-bar-label">Polska (2023, średnia)</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill green" style="width: 42%;">ok. 40&ndash;45% ciep&#322;a z AF</div>
+                    <div class="comp-bar-fill green" style="width: 42%;">ok. 40–45% ciepła z AF</div>
                 </div>
             </div>
-            <p class="comp-note">&#378;r&#243;d&#322;o: CEMBUREAU; dane szacunkowe; udzia&#322; zmienia si&#281; w zale&#380;no&#347;ci od instalacji.</p>
+            <p class="comp-note">źródło: CEMBUREAU; dane szacunkowe; udział zmienia się w zależności od instalacji.</p>
         </div>
 
         <h2>Trzeci czynnik: energia elektryczna z sieci</h2>
         <p>
-            Przemia&#322; cementu zu&#380;ywa ok.&nbsp;90&ndash;110&nbsp;kWh energii elektrycznej na ton&#281; cementu.
-            Przy polskim wska&#378;niku poLCA-EN-PL-2024 v9.1 (0,599&nbsp;kg&nbsp;CO&#8322;e/kWh, Poziom&nbsp;1 wg c-PCR-BET v1.3 §6.3) oznacza to
-            ok.&nbsp;54&ndash;66&nbsp;kg&nbsp;CO&#8322;e/t &#8212; wyra&#378;nie wi&#281;cej ni&#380; dla cementowni
-            zasilanej z sieci z du&#380;ym udzia&#322;em OZE (np. Skandynawia: ~30&nbsp;kg&nbsp;CO&#8322;e/t
-            przy wska&#378;niku ok. 70&nbsp;kg&nbsp;CO&#8322;e/MWh).
+            Przemiał cementu zużywa ok. 90–110 kWh energii elektrycznej na tonę cementu.
+            Przy polskim wskaźniku poLCA-EN-PL-2024 v9.1 (0,599 kg CO₂e/kWh, Poziom 1 wg c-PCR-BET v1.3 §6.3) oznacza to
+            ok. 54–66 kg CO₂e/t — wyraźnie więcej niż dla cementowni
+            zasilanej z sieci z dużym udziałem OZE (np. Skandynawia: ~30 kg CO₂e/t
+            przy wskaźniku ok. 70 kg CO₂e/MWh).
         </p>
         <p>
-            R&#243;&#380;nica ta (ok.&nbsp;25&ndash;35&nbsp;kg&nbsp;CO&#8322;/t) mo&#380;e si&#281; zmniejsza&#263;
-            w miar&#281; transformacji polskiej energetyki, bez jakichkolwiek zmian
+            Różnica ta (ok. 25–35 kg CO₂/t) może się zmniejszać
+            w miarę transformacji polskiej energetyki, bez jakichkolwiek zmian
             w samym procesie cementowym.
         </p>
 
         <div class="callout callout-tip">
-            <div class="callout-label">Wnioski dla projektant&#243;w i zamawiaj&#261;cych</div>
+            <div class="callout-label">Wnioski dla projektantów i zamawiających</div>
             <p class="callout-body">
-                Przy wyborze cementu do betonu konstrukcyjnego: CEM&nbsp;II/B-S lub CEM&nbsp;III/A
-                obni&#380;a GWP o 25&ndash;55% wobec CEM&nbsp;I przy zachowaniu klas wytrzyma&#322;o&#347;ci
-                32,5&nbsp;R i 42,5&nbsp;N. Norma EN&nbsp;206:2013+A2:2021 (beton) i EN&nbsp;197-5 (CEM&nbsp;VI)
-                rozszerzaj&#261; mo&#380;liwo&#347;ci stosowania cement&#243;w mieszanych. Zam&#243;wienie specyfikacji
-                z wymaganiem EPD daje dost&#281;p do por&#243;wnania mi&#281;dzy dostawcami.
-                Polskie EPD dla cement&#243;w mo&#380;na znale&#378;&#263; w rejestrze <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD&nbsp;Polska</a>.
+                Przy wyborze cementu do betonu konstrukcyjnego: CEM II/B-S lub CEM III/A
+                obniża GWP o 25–55% wobec CEM I przy zachowaniu klas wytrzymałości
+                32,5 R i 42,5 N. Norma EN 206:2013+A2:2021 (beton) i EN 197-5 (CEM VI)
+                rozszerzają możliwości stosowania cementów mieszanych. Zamówienie specyfikacji
+                z wymaganiem EPD daje dostęp do porównania między dostawcami.
+                Polskie EPD dla cementów można znaleźć w rejestrze <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD Polska</a>.
             </p>
         </div>
 
-        <h2>Jak du&#380;o to oznacza w skali budynku?</h2>
+        <h2>Jak dużo to oznacza w skali budynku?</h2>
         <p>
-            Beton odpowiada za ok.&nbsp;40&ndash;60% emisji GWP w module A1&ndash;A3 typowego budynku
-            mieszkalnego lub biurowego w Polsce. Cement to ok.&nbsp;80% &#347;ladu w&#281;glowego betonu.
+            Beton odpowiada za ok. 40–60% emisji GWP w module A1–A3 typowego budynku
+            mieszkalnego lub biurowego w Polsce. Cement to ok. 80% śladu węglowego betonu.
         </p>
         <p>
-            Dla budynku zu&#380;ywaj&#261;cego 300&nbsp;t cementu (ok. 1500&nbsp;m&#179; betonu C25/30):
-            zamiana CEM&nbsp;I na CEM&nbsp;II/B-S oznacza redukcj&#281; GWP o ok.&nbsp;72&nbsp;t&nbsp;CO&#8322; eq.
-            (240&nbsp;kg/t &#215; 300&nbsp;t). To wi&#281;cej ni&#380; roczny &#347;lad w&#281;glowy statystycznego
-            Polaka &#215; 10.
+            Dla budynku zużywającego 300 t cementu (ok. 1500 m³ betonu C25/30):
+            zamiana CEM I na CEM II/B-S oznacza redukcję GWP o ok. 72 t CO₂ eq.
+            (240 kg/t × 300 t). To więcej niż roczny ślad węglowy statystycznego
+            Polaka × 10.
         </p>
 
-        <h2>Perspektywa: gdzie b&#281;dzie polski cement za 10 lat?</h2>
+        <h2>Perspektywa: gdzie będzie polski cement za 10 lat?</h2>
         <p>
-            Polska bran&#380;a cementowa zobowi&#261;za&#322;a si&#281; do neutralno&#347;ci klimatycznej do 2050&nbsp;r.
-            (Cement2050). G&#322;&#243;wne dzia&#322;ania:
+            Polska branża cementowa zobowiązała się do neutralności klimatycznej do 2050 r.
+            (Cement2050). Główne działania:
         </p>
         <ul>
-            <li>Dalsze zwi&#281;kszanie udzia&#322;u paliw alternatywnych do ok.&nbsp;80&ndash;90% ciep&#322;a.</li>
-            <li>Wprowadzanie cementu CEM&nbsp;VI (EN&nbsp;197-5) z kalcynowanymi glinami jako suplementem.</li>
-            <li>Instalacje wychwytu CO&#8322; (CCS/CCU) &mdash; pierwsze europejskie instalacje planowane na 2030&nbsp;r.</li>
-            <li>Elektryfikacja przemia&#322;u i dekarbonizacja sieci energetycznej.</li>
+            <li>Dalsze zwiększanie udziału paliw alternatywnych do ok. 80–90% ciepła.</li>
+            <li>Wprowadzanie cementu CEM VI (EN 197-5) z kalcynowanymi glinami jako suplementem.</li>
+            <li>Instalacje wychwytu dwutlenku węgla: wpływ należy oceniać dla konkretnej technologii i harmonogramu projektu; dawna zbiorcza zapowiedź pierwszych instalacji na 2030 r. nie jest aktualnym opisem rynku.</li>
+            <li>Elektryfikacja przemiału i dekarbonizacja sieci energetycznej.</li>
         </ul>
         <p>
-            Mapa drogowa jest realistyczna, ale wymaga inwestycji kapita&#322;owych i wsparcia
-            regulacyjnego (ETS, CBAM). Do 2030&nbsp;r. oczekuje si&#281; redukcji GWP CEM&nbsp;I
-            o ok.&nbsp;10&ndash;15% wzgl&#281;dem poziomu 2023.
+            Mapa drogowa jest realistyczna, ale wymaga inwestycji kapitałowych i wsparcia
+            regulacyjnego (ETS, CBAM). Do 2030 r. oczekuje się redukcji GWP CEM I
+            o ok. 10–15% względem poziomu 2023.
         </p>
 
         <!-- FAQ -->
         <div class="faq-section">
-            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+            <div class="faq-section-title">Najczęściej zadawane pytania</div>
 
             <div class="faq-item">
-                <div class="faq-q">Ile wynosi GWP polskiego cementu CEM&nbsp;I?</div>
+                <div class="faq-q">Ile wynosi GWP polskiego cementu CEM I?</div>
                 <div class="faq-a">
                     Na podstawie EPD rejestrowanych w programie EPD Polska,
-                    GWP modu&#322;&#243;w A1&ndash;A3 dla CEM&nbsp;I wynosi ok.&nbsp;820&ndash;900&nbsp;kg&nbsp;CO&#8322;&nbsp;eq./t.
-                    Dok&#322;adna warto&#347;&#263; zale&#380;y od instalacji, roku referencyjnego i miks
-                    surowc&#243;w. Nale&#380;y zawsze si&#281;gn&#261;&#263; do EPD dla konkretnego wyrobu konkretnego dostawcy.
+                    GWP modułów A1–A3 dla CEM I wynosi ok. 820–900 kg CO₂ eq./t.
+                    Dokładna wartość zależy od instalacji, roku referencyjnego i miks
+                    surowców. Należy zawsze sięgnąć do EPD dla konkretnego wyrobu konkretnego dostawcy.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Jaki cement ma najni&#380;szy &#347;lad w&#281;glowy?</div>
+                <div class="faq-q">Jaki cement ma najniższy ślad węglowy?</div>
                 <div class="faq-a">
-                    Najni&#380;szy GWP spo&#347;r&#243;d standardowych klas mają cementy hutnicze CEM&nbsp;III/A i CEM&nbsp;III/B
-                    (ok.&nbsp;300&ndash;450&nbsp;kg&nbsp;CO&#8322;/t) z wysokim udzia&#322;em &#380;u&#380;la wielkopiecowego (GGBS).
-                    Dobre wyniki maj&#261; te&#380; CEM&nbsp;II/B-S (cement portlandzki z &#380;u&#380;lem): ok.&nbsp;580&ndash;650&nbsp;kg.
-                    Cementy z kalcynowanymi glinami (CEM&nbsp;VI) mog&#261; osi&#261;gn&#261;&#263; podobne poziomy.
+                    Najniższy GWP spośród standardowych klas mają cementy hutnicze CEM III/A i CEM III/B
+                    (ok. 300–450 kg CO₂/t) z wysokim udziałem żużla wielkopiecowego (GGBS).
+                    Dobre wyniki mają też CEM II/B-S (cement portlandzki z żużlem): ok. 580–650 kg.
+                    Cementy z kalcynowanymi glinami (CEM VI) mogą osiągnąć podobne poziomy.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Czy mo&#380;na u&#380;y&#263; zachodnieuropejskiej EPD dla cementu w polskim LCA budynku?</div>
-                <div class="faq-a">
-                    Nie &mdash; jest to niezgodne z zasad&#261; proxy ISO&nbsp;14044 i wymaganiami EN&nbsp;15804+A2.
-                    Zachodnieuropejska EPD cementu u&#380;ywa innego wska&#378;nika emisji dla energii elektrycznej
-                    i innego miks paliw, co prowadzi do zani&#380;enia GWP w polskich warunkach.
-                    Nale&#380;y stosowa&#263; EPD konkretnego polskiego dostawcy lub dane z polskiej bazy branżowej.
-                </div>
+                <div class="faq-q">Czy można użyć zachodnieuropejskiej EPD dla cementu w polskim LCA budynku?</div>
+                <div class="faq-a">Deklaracja musi opisywać wyrób i dostawę, które ma reprezentować. Sam kraj wydania dokumentu nie rozstrzyga przydatności; należy sprawdzić produkt, technologię, zakład, rok, granice oraz wymagania programu.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Czym jest CBAM i jak wp&#322;ynie na import cementu do Polski?</div>
+                <div class="faq-q">Czym jest CBAM i jak wpłynie na import cementu do Polski?</div>
                 <div class="faq-a">
-                    CBAM (Carbon Border Adjustment Mechanism) to op&#322;ata graniczna UE
-                    na importowane towary o wysokiej intensywno&#347;ci w&#281;glowej (w tym cement).
-                    Od 2026&nbsp;r. importerzy cementu spoza UE b&#281;d&#261; musieli kupowa&#263; certyfikaty
-                    odpowiadaj&#261;ce emisjom CO&#8322; zawartym w imporcie. Dla polskich producent&#243;w
-                    oznacza to pewn&#261; ochron&#281; przed tanim importem z kraj&#243;w bez ceny w&#281;gla.
+                    CBAM (Carbon Border Adjustment Mechanism) to opłata graniczna UE
+                    na importowane towary o wysokiej intensywności węglowej (w tym cement).
+                    Od 2026 r. importerzy cementu spoza UE będą musieli kupować certyfikaty
+                    odpowiadające emisjom CO₂ zawartym w imporcie. Dla polskich producentów
+                    oznacza to pewną ochronę przed tanim importem z krajów bez ceny węgla.
                 </div>
             </div>
         </div>
@@ -406,20 +363,20 @@
         <hr class="blog-post-divider">
 
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>&#378;r&#243;d&#322;a:</strong>
-            EPD Polska / Multicert (2023&ndash;2025), rejestr EPD dla cementu;
-            CEMBUREAU (2024), &bdquo;Cement Industry: The Facts 2024&rdquo;;
-            CEMBUREAU (2023), &bdquo;Industry Average EPD for Cement&rdquo;;
-            KOBiZE (2024), Wska&#378;niki emisyjno&#347;ci CO&#8322; dla energii elektrycznej, dane za 2023;
-            EN&nbsp;197-1:2011 i EN&nbsp;197-5:2021, klasyfikacja cementu;
-            Stowarzyszenie Producent&#243;w Cementu (SPC), Raport roczny 2023;
+            <strong>źródła:</strong>
+            EPD Polska / Multicert (2023–2025), rejestr EPD dla cementu;
+            CEMBUREAU (2024), „Cement Industry: The Facts 2024”;
+            CEMBUREAU (2023), „Industry Average EPD for Cement”;
+            KOBiZE (2024), Wskaźniki emisyjności CO₂ dla energii elektrycznej, dane za 2023;
+            EN 197-1:2011 i EN 197-5:2021, klasyfikacja cementu;
+            Stowarzyszenie Producentów Cementu (SPC), Raport roczny 2023;
             Cement2050 Roadmap, European Cement Association (2020).
         </p>
     </div>
 
     <!-- Related posts -->
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card">
                 <div class="blog-card-body">
@@ -427,9 +384,9 @@
                         <span class="blog-tag rynek">Rynek</span>
                         <span class="blog-date">2 grudnia 2025</span>
                     </div>
-                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych &#8212; kiedy u&#347;rednianie szkodzi dok&#322;adno&#347;ci LCA</div>
+                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -441,9 +398,9 @@
                         <span class="blog-tag metodyka">Metodyka</span>
                         <span class="blog-date">14 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
+                    <div class="blog-card-title">Dlaczego polskie wskaźniki emisji CO₂ różnią się od europejskich — i co to oznacza dla LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">8 min czytania</span>
                     </div>
                 </div>
@@ -452,47 +409,7 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

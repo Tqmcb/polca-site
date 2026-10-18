@@ -1,18 +1,4 @@
-/**
- * poLCA — Kalkulator pre-qualify EPD dla mieszanek mineralno-asfaltowych (MMA)
- * Wersja 1.0
- *
- * Oszacowanie GWP A1-A3 [kg CO2eq / t MMA] zgodne z c-PCR-MMA-EPD-Polska-2026
- * v1.0-DRAFT i EN 15804+A2. Wartości domyślne: zbiór danych POLCA-MMA-LCI-DEFAULTS-2026.
- * Energia elektryczna: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh.
- * Bitumen: Eurobitume LCA 4.0 (2025).
- *
- * Wzór:
- *   A1 = SUM(masa_skladnika_kg/t * GWP_skladnika_kg/t / 1000)   [dla RA: GWP = 0]
- *   A2 = SUM(masa_skladnika_t/t * odleglosc_km * 0.100)
- *   A3 = emisja_paliwa(technologia, paliwo, temp) + 1.50        [energia el. = 1,50 stała]
- *   GWP_A1-A3 = A1 + A2 + A3
- */
+/** poLCA — kalkulator MMA. Historyczne założenia obliczeniowe, eksport własny poLCA 2.0. */
 (function () {
     'use strict';
 
@@ -25,8 +11,8 @@
         addWma: 1200          // dodatek WMA chemiczny
         /* bitumen i kruszywo grube — z dropdownów */
     };
-    var EF_TRANSPORT = 0.100; // kg CO2eq / (t·km) — mix flot EURO5/6 PL
-    var EL_A3 = 1.50;         // kg CO2e / t MMA — 2,5 kWh/t × 0,599 kg/kWh
+    var EF_TRANSPORT = 0.100; // kg CO2eq / (t·km) — historyczne założenie kalkulatora
+    var EL_A3 = 1.50;         // kg CO2e / t MMA — historyczna stała, zaokrąglona z 2,5 × 0,599
     var FUEL_BASE = {         // emisja paliwa w temp. bazowej [kg CO2 / t MMA]
         'HMA-olej': 24.1, 'HMA-gaz': 17.0,
         'WMA-olej': 17.4, 'WMA-gaz': 12.5
@@ -34,7 +20,7 @@
     var TEMP_REF = { HMA: 160, WMA: 130 }; // temperatura bazowa
     var TEMP_STEP_PCT = 0.05;              // +5% paliwa na każde 10°C powyżej bazowej
 
-    /* ---- Presety receptur normatywnych (na 1 t = 1000 kg MMA) ---- */
+    /* ---- Przykładowe receptury (na 1 t = 1000 kg MMA) ---- */
     var PRESETS = {
         ac11s:    { label: 'AC 11 S (ścieralna)',  norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 165, bitType: '530', aggType: '3.80', aggC: 670, aggF: 130, filler: 50, bitumen: 150, ra: 0,   fiber: 0, addWma: 0 },
         ac16w:    { label: 'AC 16 W (wiążąca)',     norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 160, bitType: '530', aggType: '3.80', aggC: 555, aggF: 320, filler: 50, bitumen: 75,  ra: 0,   fiber: 0, addWma: 0 },
@@ -68,7 +54,7 @@
         a1Table = el('mmaA1Table'), benchBox = el('mmaBench');
 
     /* ---- Pomocnicze ---- */
-    function num(input) { var v = parseFloat(input.value); return isNaN(v) ? 0 : v; }
+    function num(input) { return input.value.trim() === '' ? NaN : Number(input.value); }
     function fmt(n, d) {
         if (d === undefined) d = 2;
         return Number(n).toLocaleString('pl-PL', { minimumFractionDigits: d, maximumFractionDigits: d });
@@ -107,20 +93,56 @@
         dAddWma.value = DIST_DEFAULT.addWma;
     }
 
-    /* ---- Benchmark kategorii ---- */
-    function benchmarkFor(name) {
-        if (/^sma|^ma11/.test(name)) return { lo: 110, hi: 175, cat: 'SMA / MA (~110–175 kg CO₂eq/t)' };
-        if (/^bbtm|^pa11/.test(name)) return { lo: 110, hi: 145, cat: 'BBTM / PA (~110–145 kg CO₂eq/t)' };
-        return { lo: 45, hi: 115, cat: 'AC — betony asfaltowe (~45–115 kg CO₂eq/t)' };
+    function checkNumber(input, label, min, max, errors) {
+        var raw = input.value.trim();
+        var value = raw === '' ? NaN : Number(raw);
+        var valid = Number.isFinite(value) && value >= min && (max === null || value <= max);
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': ' + (max === null ? 'wpisz skończoną liczbę nie mniejszą niż ' + min : 'wpisz liczbę od ' + min + ' do ' + max));
+        return value;
+    }
+    function checkChoice(input, choices, label, errors) {
+        var valid = choices.indexOf(input.value) !== -1;
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': wybierz pozycję z listy');
+    }
+    function inputErrors() {
+        var errors = [];
+        checkNumber(tempInput, 'Temperatura [°C]', 80, 280, errors);
+        var masses = [[fAggC, 'Kruszywo grube'], [fAggF, 'Kruszywo drobne'], [fFiller, 'Wypełniacz'], [fBitumen, 'Lepiszcze'], [fRA, 'Granulat asfaltowy'], [fFiber, 'Włókno'], [fAddWma, 'Dodatek WMA']];
+        var totalMass = 0;
+        masses.forEach(function (entry) { totalMass += checkNumber(entry[0], entry[1] + ' [kg/t]', 0, 1020, errors); });
+        [[dBitumen, 'Transport lepiszcza'], [dAgg, 'Transport kruszywa'], [dFiller, 'Transport wypełniacza'], [dRA, 'Transport granulatu'], [dFiber, 'Transport włókna'], [dAddWma, 'Transport dodatku']].forEach(function (entry) { checkNumber(entry[0], entry[1] + ' [km]', 0, null, errors); });
+        checkChoice(presetSel, Object.keys(PRESETS).concat(['custom']), 'Receptura', errors);
+        checkChoice(bitTypeSel, ['530', '560'], 'Lepiszcze', errors);
+        checkChoice(aggTypeSel, ['3.99', '4.50', '3.20', '3.80'], 'Kruszywo grube', errors);
+        if (['HMA', 'WMA', 'HMA+RA'].indexOf(radioVal('mmaTech')) < 0) errors.push('Wybierz technologię produkcji');
+        if (['olej', 'gaz'].indexOf(radioVal('mmaFuel')) < 0) errors.push('Wybierz paliwo wytwórni');
+        if (!errors.length && (totalMass < 980 || totalMass > 1020)) errors.push('Suma składników: ' + fmt(totalMass, 0) + ' kg/t — odbiega od 1000 kg/t. Dopuszczalna suma w kalkulatorze wynosi 980–1020 kg/t (±2%)');
+        return errors;
+    }
+    function setValidation(errors) {
+        ['mmaExportCsv', 'mmaExportJson', 'mmaExportXml'].forEach(function (id) { el(id).disabled = errors.length > 0; });
+        if (!errors.length) return;
+        sumWarn.className = 'mma-warn bad';
+        sumWarn.textContent = 'Popraw dane: ' + errors.join('; ') + '. Obliczenie i eksport są wstrzymane.';
+        [outTotal, outA1, outA2, outA3, outA1pct, outA2pct, outA3pct].forEach(function (node) { node.textContent = '—'; });
+        outTotalNote.textContent = 'Brak wyniku dla niepoprawnych lub niekompletnych danych.';
+        a1Table.textContent = '';
+        benchBox.textContent = '';
+        if (modChart) { modChart.data.datasets[0].data = []; modChart.update(); }
     }
 
     /* ---- Obliczenia ---- */
     function compute() {
-        var tech = radioVal('mmaTech') || 'HMA';
-        var fuel = radioVal('mmaFuel') || 'olej';
+        var errors = inputErrors();
+        setValidation(errors);
+        if (errors.length) return null;
+        var tech = radioVal('mmaTech');
+        var fuel = radioVal('mmaFuel');
         var temp = num(tempInput);
-        var gwpBit = parseFloat(bitTypeSel.value) || 530;
-        var gwpAggC = parseFloat(aggTypeSel.value) || 3.80;
+        var gwpBit = Number(bitTypeSel.value);
+        var gwpAggC = Number(aggTypeSel.value);
 
         var m = {
             aggC:   num(fAggC),
@@ -145,7 +167,7 @@
             { key: 'bitumen', name: 'Bitumen',                 mass: m.bitumen, gwp: gwpBit },
             { key: 'aggC',    name: 'Kruszywo grube łamane',   mass: m.aggC,    gwp: gwpAggC },
             { key: 'aggF',    name: 'Kruszywo drobne (piasek/żwir)', mass: m.aggF, gwp: GWP.aggFine },
-            { key: 'filler',  name: 'Filler wapienny',         mass: m.filler,  gwp: GWP.filler },
+            { key: 'filler',  name: 'Wypełniacz wapienny',         mass: m.filler,  gwp: GWP.filler },
             { key: 'fiber',   name: 'Włókno celulozowe',       mass: m.fiber,   gwp: GWP.fiber },
             { key: 'addWma',  name: 'Dodatek WMA chemiczny',   mass: m.addWma,  gwp: GWP.addWma },
             { key: 'ra',      name: 'Granulat asfaltowy RA (cut-off)', mass: m.ra, gwp: GWP.ra }
@@ -171,6 +193,7 @@
         var a3 = fuelEm + EL_A3;
 
         var total = a1 + a2 + a3;
+        if (![a1, a2, a3, total].every(Number.isFinite)) { setValidation(['Dane są zbyt duże do obliczenia skończonego wyniku']); return null; }
         var sumMass = m.aggC + m.aggF + m.filler + m.bitumen + m.ra + m.fiber + m.addWma;
 
         return {
@@ -227,6 +250,7 @@
     /* ---- Render wyników ---- */
     function render() {
         var r = compute();
+        if (!r) return null;
         var t = r.total > 0 ? r.total : 1;
 
         outTotal.textContent = fmt(r.total, 2);
@@ -261,17 +285,7 @@
             '<td class="mono highlight">' + fmt(r.a1, 2) + '</td><td class="mono">100,0</td></tr>';
         a1Table.innerHTML = rows;
 
-        /* benchmark */
-        var bm = benchmarkFor(presetName);
-        var msg;
-        if (r.total < bm.lo) {
-            msg = 'GWP ' + fmt(r.total, 1) + ' kg CO₂eq/t — poniżej dolnej granicy przedziału referencyjnego ' + bm.cat + '.';
-        } else if (r.total > bm.hi) {
-            msg = 'GWP ' + fmt(r.total, 1) + ' kg CO₂eq/t — powyżej górnej granicy przedziału referencyjnego ' + bm.cat + ' (sprawdź zawartość lepiszcza i temperaturę).';
-        } else {
-            msg = 'GWP ' + fmt(r.total, 1) + ' kg CO₂eq/t — w przedziale referencyjnym dla ' + bm.cat + '.';
-        }
-        benchBox.textContent = msg;
+        benchBox.textContent = 'Oszacowanie według historycznego zestawu założeń kalkulatora MMA. Energia: poLCA-EN-PL-2024 v9.1 (GWP-fossil). Pozostałe składniki mają własne założenia — wynik służy do analizy scenariuszy.';
 
         /* walidacja sumy składników */
         var dev = Math.abs(r.sumMass - 1000) / 1000 * 100;
@@ -290,6 +304,7 @@
     /* ---- Eksport ---- */
     function buildPayload() {
         var r = compute();
+        if (!r) return null;
         var t = r.total > 0 ? r.total : 1;
         return { r: r, share: { a1: r.a1 / t * 100, a2: r.a2 / t * 100, a3: r.a3 / t * 100 } };
     }
@@ -303,20 +318,22 @@
             var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); done();
         }
     }
-    function num6(n) { return (Math.round(n * 1e6) / 1e6); }
+    function num6(n) { return Math.abs(n) > Number.MAX_VALUE / 1e6 ? n : Math.round(n * 1e6) / 1e6; }
 
     function exportCsv() {
-        var p = buildPayload(), r = p.r;
+        var p = buildPayload();
+        if (!p) return;
+        var r = p.r;
         var presetName = presetSel.value;
         var pLabel = PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura';
         var lines = [];
-        lines.push('Kalkulator pre-qualify EPD dla MMA — poLCA;c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT;EN 15804+A2');
+        lines.push('Kalkulator MMA — poLCA;Własny format poLCA 2.0;Historyczny zestaw założeń kalkulatora');
         lines.push('Preset;' + pLabel);
         lines.push('Technologia;' + r.tech);
         lines.push('Paliwo wytwórni;' + (r.fuel === 'gaz' ? 'gaz ziemny' : 'olej opałowy'));
         lines.push('Temperatura produkcji [°C];' + r.temp);
         lines.push('');
-        lines.push('Składnik;Masa [kg/t];GWP jedn. [kg CO2eq/t];Emisja A1 [kg CO2eq/t]');
+        lines.push('Składnik;Masa [kg/t];Wskaźnik jedn. [kg CO2eq/t];Emisja A1 [kg CO2eq/t]');
         r.a1items.forEach(function (it) {
             lines.push('"' + it.name + '";' + num6(it.mass) + ';' + (it.key === 'ra' ? 0 : num6(it.gwp)) + ';' + num6(it.em));
         });
@@ -326,20 +343,23 @@
         lines.push('A1 — surowce;' + num6(r.a1) + ';' + num6(p.share.a1));
         lines.push('A2 — transport;' + num6(r.a2) + ';' + num6(p.share.a2));
         lines.push('A3 — produkcja (paliwo ' + num6(r.fuelEm) + ' + energia el. ' + num6(r.el) + ');' + num6(r.a3) + ';' + num6(p.share.a3));
-        lines.push('GWP A1-A3 — łącznie;' + num6(r.total) + ';100');
+        lines.push('Oszacowanie A1-A3 — łącznie;' + num6(r.total) + ';100');
         lines.push('');
-        lines.push('Uwaga;Oszacowanie pre-qualify — nie zastępuje pełnego EPD weryfikowanego (AVS 3+). Energia el. = poLCA-EN-PL-2024 v9.1 0,599 kg CO2e/kWh. Bitumen = Eurobitume LCA 4.0 (2025).');
+        lines.push('Zakres;Historyczny zestaw MMA 2026.1. Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Suma orientacyjnych współczynników o różnych zakresach; zastosowanie w EPD wymaga odrębnej oceny danych i metody.');
         copyText(lines.join('\n'), el('mmaExportCsv'), 'Kopiuj CSV');
     }
 
-    function exportJson() {
-        var p = buildPayload(), r = p.r;
+    function calculationData() {
+        var p = buildPayload();
+        if (!p) return;
+        var r = p.r;
         var presetName = presetSel.value;
         var obj = {
-            tool: 'poLCA — Kalkulator pre-qualify EPD dla MMA',
-            standard: 'EN 15804+A2',
-            pcr: 'c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT',
-            note: 'Oszacowanie pre-qualify — nie zastępuje pełnego EPD weryfikowanego (AVS 3+).',
+            tool: 'poLCA — Kalkulator MMA',
+            schema: 'polca-mma-calculation/2.0',
+            assumptions_version: 'historyczny zestaw MMA 2026.1; energia 2024 v9.1',
+            indicator: 'Orientacyjne oszacowanie klimatyczne z historycznych współczynników o różnych zakresach',
+            note: 'Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Wynik służy do analizy scenariuszy. Zastosowanie w deklaracji EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
             preset: PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura',
             declared_unit: '1 t (1000 kg) MMA',
             inputs: {
@@ -363,7 +383,7 @@
                 A2_transport: num6(r.a2),
                 A3_production: num6(r.a3),
                 A3_breakdown: { fuel: num6(r.fuelEm), electricity: num6(r.el) },
-                GWP_A1_A3_total: num6(r.total),
+                climate_estimate_A1_A3: num6(r.total),
                 shares_pct: { A1: num6(p.share.a1), A2: num6(p.share.a2), A3: num6(p.share.a3) },
                 A1_components: r.a1items.map(function (it) {
                     return { component: it.name, mass_kg_per_t: num6(it.mass), gwp_kg_per_t: it.key === 'ra' ? 0 : num6(it.gwp), emission_kg_CO2eq_per_t: num6(it.em) };
@@ -372,8 +392,10 @@
             },
             timestamp: new Date().toISOString()
         };
-        copyText(JSON.stringify(obj, null, 2), el('mmaExportJson'), 'Kopiuj JSON');
+        return obj;
     }
+
+    function exportJson() { var data = calculationData(); if (data) copyText(JSON.stringify(data, null, 2), el('mmaExportJson'), 'Kopiuj JSON'); }
 
     function xmlEsc(s) {
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -390,62 +412,26 @@
         } catch (e) { return false; }
     }
 
-    function exportIlcdEpdXml() {
-        var p = buildPayload(), r = p.r;
-        var presetName = presetSel.value;
-        var pLabel = PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura';
-        var tech = r.tech || 'HMA';
-        var fuel = r.fuel === 'gaz' ? 'gaz ziemny' : 'olej opałowy';
-        var name = 'Mieszanka mineralno-asfaltowa (MMA) — ' + pLabel + ' [' + tech + ']';
-        var ts = new Date().toISOString();
-        var x = [];
-        x.push('<?xml version="1.0" encoding="UTF-8"?>');
-        x.push('<ilcd:processDataSet xmlns:ilcd="http://lca.jrc.it/ILCD/Process" version="1.1">');
-        x.push('  <!-- poLCA pre-qualify estimate — NOT a verified EPD. ILCD+EPD-compatible structure (simplified). -->');
-        x.push('  <!-- Pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob. /o-polca/gotowosc-dpp.html -->');
-        x.push('  <processInformation>');
-        x.push('    <dataSetInformation>');
-        x.push('      <name>' + xmlEsc(name) + '</name>');
-        x.push('      <classification>Wyroby budowlane / Mieszanki mineralno-asfaltowe (EN 13108)</classification>');
-        x.push('    </dataSetInformation>');
-        x.push('    <quantitativeReference>');
-        x.push('      <referenceFlow>1 t MMA (1000 kg, na wyjściu z wytwórni)</referenceFlow>');
-        x.push('    </quantitativeReference>');
-        x.push('    <geography><locationOfOperationSupplyOrProduction location="PL"/></geography>');
-        x.push('    <technology>' + xmlEsc('Technologia: ' + tech + '; temperatura produkcji ' + r.temp + ' °C; paliwo wytwórni: ' + fuel) + '</technology>');
-        x.push('  </processInformation>');
-        x.push('  <modellingAndValidation>');
-        x.push('    <complianceDeclarations>');
-        x.push('      <compliance>EN 15804+A2:2019; c-PCR-MMA-EPD-Polska; ISO 14040/14044</compliance>');
-        x.push('    </complianceDeclarations>');
-        x.push('    <dataSourcesTreatmentAndRepresentativeness>');
-        x.push('      <dataSource>POLCA-MMA-LCI-DEFAULTS-2026; poLCA-EN-PL-2024 v9.1 (0.599 kg CO2e/kWh); Eurobitume LCA 4.0 (2025)</dataSource>');
-        x.push('    </dataSourcesTreatmentAndRepresentativeness>');
-        x.push('  </modellingAndValidation>');
-        x.push('  <exchanges>');
-        x.push('    <!-- moduły EN 15804: A1, A2, A3 (GWP-total, kg CO2 eq / 1 t MMA) -->');
-        x.push('    <exchange module="A1"><meanAmount>' + num6(r.a1) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('    <exchange module="A2"><meanAmount>' + num6(r.a2) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('    <exchange module="A3"><meanAmount>' + num6(r.a3) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('    <exchange module="A1-A3"><meanAmount>' + num6(r.total) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('  </exchanges>');
-        x.push('  <administrativeInformation>');
-        x.push('    <publicationAndOwnership>');
-        x.push('      <referenceToOwnershipOfDataSet>Multicert Sp. z o.o. / EPD Polska</referenceToOwnershipOfDataSet>');
-        x.push('      <dataSetVersion>poLCA-pre-qualify-2026.1</dataSetVersion>');
-        x.push('      <generatedAt>' + xmlEsc(ts) + '</generatedAt>');
-        x.push('    </publicationAndOwnership>');
-        x.push('  </administrativeInformation>');
-        x.push('</ilcd:processDataSet>');
-        var xml = x.join('\n');
+    function exportPolcaXml() {
+        var data = calculationData();
+        if (!data) return;
+        var r = data.results_kg_CO2eq_per_t;
+        var xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+            '<polcaCalculation schema="polca-mma-calculation/2.0">\n' +
+            '  <name>' + xmlEsc(data.tool) + '</name>\n' +
+            '  <unit>kg CO2e/t MMA</unit>\n' +
+            '  <scope>' + xmlEsc(data.indicator) + '</scope>\n' +
+            '  <estimate stage="A1">' + r.A1_raw_materials + '</estimate>\n' +
+            '  <estimate stage="A2">' + r.A2_transport + '</estimate>\n' +
+            '  <estimate stage="A3">' + r.A3_production + '</estimate>\n' +
+            '  <estimate stage="A1-A3">' + r.climate_estimate_A1_A3 + '</estimate>\n' +
+            '  <calculationData encoding="application/json">' + xmlEsc(JSON.stringify(data)) + '</calculationData>\n' +
+            '</polcaCalculation>';
         var btn = el('mmaExportXml');
-        if (downloadFile(xml, 'polca-mma-pre-qualify.xml', 'application/xml;charset=utf-8')) {
-            var lbl = 'Eksport ILCD+EPD XML';
+        if (downloadFile(xml, 'polca-mma-obliczenie.xml', 'application/xml;charset=utf-8')) {
             btn.textContent = 'Pobrano XML';
-            setTimeout(function () { btn.textContent = lbl; }, 2000);
-        } else {
-            copyText(xml, btn, 'Eksport ILCD+EPD XML');
-        }
+            setTimeout(function () { btn.textContent = 'Pobierz XML poLCA'; }, 2000);
+        } else { copyText(xml, btn, 'Pobierz XML poLCA'); }
     }
 
     /* ---- Listenery ---- */
@@ -473,7 +459,7 @@
     var btnCsv = el('mmaExportCsv'), btnJson = el('mmaExportJson'), btnXml = el('mmaExportXml');
     if (btnCsv) btnCsv.addEventListener('click', exportCsv);
     if (btnJson) btnJson.addEventListener('click', exportJson);
-    if (btnXml) btnXml.addEventListener('click', exportIlcdEpdXml);
+    if (btnXml) btnXml.addEventListener('click', exportPolcaXml);
 
     /* ---- Init ---- */
     function init() { initChart(); loadPreset(presetSel.value); render(); }

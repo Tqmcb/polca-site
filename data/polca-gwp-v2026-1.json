@@ -1,7 +1,7 @@
 {
   "version": "POLCA-GWP-2026.2",
   "published_at": "2026-05-03",
-  "scope": "Gotowe wartości GWP do stosowania jako dane referencyjne przy braku danych producenta lub EPD dostawcy.",
+  "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
     {
@@ -11,7 +11,7 @@
       "value": 0.599,
       "unit": "kg CO2e/kWh",
       "module": "A3/A5/B6/C3/D",
-      "status": "model poLCA",
+      "status": "historyczny model poLCA",
       "use_for": [
         "MMA",
         "beton",
@@ -20,7 +20,11 @@
         "roboty drogowe"
       ],
       "basis": "KOBiZE, PSE, GUS, WUG, EEA, IPCC/JEC, model POLCA-EN-PL",
-      "replace_with": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej"
+      "replace_with": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej",
+      "indicator_type": "GWP-fossil",
+      "legacy_field_semantics": {
+        "value": "GWP-fossil, czyli składnik kopalny; nie GWP-total."
+      }
     },
     {
       "id": "KOBIZE-EN-PL-ENDUSER-2024",
@@ -35,7 +39,11 @@
         "porównanie"
       ],
       "basis": "KOBiZE, wskaźniki emisyjności energii elektrycznej za 2024",
-      "replace_with": "POLCA-GWP-EN-PL-LCA-2024 dla pełnego modelu LCA"
+      "replace_with": "POLCA-GWP-EN-PL-LCA-2024 jest odrębnym historycznym modelem o innym zakresie. Dobór danych wymaga oceny konkretnego zastosowania.",
+      "indicator_type": "direct_CO2",
+      "legacy_field_semantics": {
+        "value": "CO2 dla odbiorcy końcowego; nie pełny GWP cyklu życia."
+      }
     },
     {
       "id": "POLCA-GWP-NATURAL-GAS-2026",
@@ -541,5 +549,7 @@
       "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 30 00; wartość 2026 obejmuje direct + indirect + narzut.",
       "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
     }
-  ]
+  ],
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

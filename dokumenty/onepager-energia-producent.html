@@ -299,11 +299,11 @@
     color: #9CA3AF;
   }
 </style>
-</head>
-<body>
-<div class="page">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="page" id="main">
 
-  <!-- HEADER -->
+  <nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Wskaźnik energii elektrycznej w EPD: zakres danych i wybór modelu</span></nav><!-- HEADER -->
   <div class="header">
     <div>
       <div class="brand">po<span class="accent">LCA</span></div>
@@ -311,58 +311,42 @@
     </div>
     <div class="meta">
       <div class="doc-id">MET-002 onepager</div>
-      <div>2026-05-10 &middot; v1.0</div>
+      <div>2026-05-10 · v1.0</div>
     </div>
   </div>
 
   <!-- TITLE -->
-  <h1 class="title">Wskaźnik energii elektrycznej w EPD: <span class="em">dlaczego poLCA, nie KOBiZE</span></h1>
+  <h1 class="title">Wskaźnik energii elektrycznej w EPD: <span class="em">zakres danych i wybór modelu</span></h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dokument historyczny: model energii za 2024 r. Wartość 0,599 kg CO₂e/kWh oznacza składnik kopalny (GWP-fossil), nie GWP-total. Dawna hierarchia trzech poziomów nie jest uniwersalną instrukcją doboru energii do deklaracji środowiskowej. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
 
   <!-- LEAD -->
-  <div class="lead">
-    Twój EPD pod programem EPD Polska musi używać wskaźnika <strong>poLCA-EN-PL-2024 = 0,599 kg CO&#8322;e/kWh</strong>, nie KOBiZE = 0,553. Oto dlaczego &mdash; w 5 punktach.
-  </div>
+  <div class="lead">Wskaźnik KOBiZE dla odbiorcy końcowego za 2024 r. wynosi 0,553 kg CO₂/kWh. Opisuje CO₂, a nie kompletny wynik oceny cyklu życia. Historyczny model poLCA-EN-PL-2024 v9.1 podaje 0,599 kg CO₂e/kWh dla składnika kopalnego (GWP-fossil). Wartości mają różny zakres.</div>
 
   <!-- 5 POINTS -->
   <div class="points">
     <div class="point">
       <div class="num">1</div>
-      <div class="body">
-        <strong>KOBiZE = inwentaryzacja krajowa, nie LCA.</strong>
-        <span>KOBiZE raportuje emisje dla UNFCCC i EU ETS &mdash; to inny mandat niż LCA wyrobu. Twój EPD musi spełnić wymagania EN 15804+A2, nie raportowania krajowego.</span>
-      </div>
+      <div class="body"><strong>Sprawdź zakres źródła.</strong><span>Wskaźnik CO₂ KOBiZE opisuje część emisji. Nie zastępuje sam pełnego modelu cyklu życia energii.</span></div>
     </div>
 
     <div class="point">
       <div class="num">2</div>
-      <div class="body">
-        <strong>Brakuje 12% emisji.</strong>
-        <span>KOBiZE nie obejmuje metanu z polskich kopalń węgla (10%), upstream paliw (1%) ani infrastruktury OZE (1%). poLCA dolicza te 12% &mdash; dlatego 0,599 zamiast 0,553.</span>
-      </div>
+      <div class="body"><strong>Nie porównuj samych liczb.</strong><span>Składnik operacyjny dawnego modelu to 0,528 kg CO₂e/kWh, około 88% sumy 0,599. Nie jest równy wskaźnikowi KOBiZE 0,553.</span></div>
     </div>
 
     <div class="point">
       <div class="num">3</div>
-      <div class="body">
-        <strong>Tylko CO&#8322;, nie CO&#8322;e.</strong>
-        <span>KOBiZE liczy CO&#8322;. EN 15804+A2 wymaga CO&#8322;e (CO&#8322; + CH&#8324; + N&#8322;O w równoważniku). Twój EPD bez CH&#8324; = niezgodny.</span>
-      </div>
+      <div class="body"><strong>Rozróżnij rodzaj wskaźnika.</strong><span>CO₂, składnik kopalny GWP-fossil i łączny GWP-total nie są zamiennymi nazwami. Podaj jednostkę i granice danych.</span></div>
     </div>
 
     <div class="point">
       <div class="num">4</div>
-      <div class="body">
-        <strong>Brak EF 3.1 &mdash; wymóg UE od 2024-09-01.</strong>
-        <span>EPD International (Environdec) i wszystkie programy EPD w Europie wymagają characterization factors wg EF 3.1 (JRC 2022). KOBiZE używa starszych metodyk.</span>
-      </div>
+      <div class="body"><strong>Sprawdź metodę oceny wpływu.</strong><span>Wersję metody i wymagania programu należy sprawdzić dla danego zastosowania. Nie ma tu podstawy do wcześniejszej deklaracji powszechnego terminu UE.</span></div>
     </div>
 
     <div class="point">
       <div class="num">5</div>
-      <div class="body">
-        <strong>Audit trail AVS 3+.</strong>
-        <span>Akredytowany weryfikator EPD pod programem EPD Polska stwierdzi niezgodność krytyczną jeśli EPD używa KOBiZE jako primary wskaźnika energii. EPD nie zostanie zatwierdzone.</span>
-      </div>
+      <div class="body"><strong>Udokumentuj dobór.</strong><span>Źródła, przekształcenia i zastosowanie podlegają ocenie w ramach konkretnej deklaracji. Nazwa bazy nie przesądza wyniku weryfikacji.</span></div>
     </div>
 
     <div class="point" style="visibility:hidden">
@@ -385,22 +369,22 @@
       <tbody>
         <tr>
           <td>KOBiZE Tab.2 (end-user)</td>
-          <td class="value">0,553 kg CO&#8322;/kWh</td>
-          <td class="status-bad">NIEZGODNE &mdash; odrzucenie EPD</td>
+          <td class="value">0,553 kg CO₂/kWh</td>
+          <td class="status-bad">CO₂; zakres wymaga uzupełnienia</td>
         </tr>
         <tr class="default-row">
-          <td><strong>poLCA-EN-PL-2024 (default)</strong></td>
-          <td class="value strong">0,599 kg CO&#8322;e/kWh</td>
-          <td class="status-good">DOMYŚLNE <span class="check">&#10003;</span></td>
+          <td><strong>poLCA-EN-PL-2024 v9.1</strong><br>historyczny GWP-fossil</td>
+          <td class="value strong">0,599 kg CO₂e/kWh</td>
+          <td class="status-good">Wersja historyczna</td>
         </tr>
         <tr>
-          <td>AIB residual mix (jeśli masz GO)</td>
-          <td class="value">0,808 kg CO&#8322;e/kWh</td>
-          <td class="status-neutral">Market-based, opcjonalne</td>
+          <td>Historyczny wariant rezydualny</td>
+          <td class="value">0,808 kg CO₂e/kWh</td>
+          <td class="status-neutral">Dobór według zastosowania</td>
         </tr>
         <tr>
           <td>PV on-site (twoja instalacja)</td>
-          <td class="value">0,041 kg CO&#8322;e/kWh</td>
+          <td class="value">0,041 kg CO₂e/kWh</td>
           <td class="status-neutral">Tylko udokumentowane</td>
         </tr>
       </tbody>
@@ -409,26 +393,26 @@
 
   <!-- ACTION BOX -->
   <div class="action">
-    <h3>Co masz zrobić &mdash; w kalkulatorze EPD Polska wybierz:</h3>
+    <h3>Przed użyciem danych</h3>
     <ol>
-      <li><strong>Domyślnie:</strong> <code>poLCA-EN-PL-2024 (0,599)</code> &mdash; Poziom 1</li>
-      <li><strong>Tylko jeśli masz gwarancje pochodzenia (GO):</strong> dodatkowo Poziom 2 <code>(0,808)</code></li>
-      <li><strong>Tylko jeśli masz własną PV:</strong> Poziom 3 <code>(0,041)</code></li>
+      <li>Ustal rok, zakres procesu i rodzaj potrzebnego wskaźnika.</li>
+      <li>Sprawdź dokumenty dostawy energii, gwarancje pochodzenia i sposób przypisania ich atrybutów.</li>
+      <li>Oddziel energię wytworzoną, zużytą w zakładzie i oddaną do sieci. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</li>
     </ol>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
     <div class="row">
-      <span>Pełna metodyka: <a href="https://polca.org.pl/metodyki/MET-002-energia">polca.org.pl/metodyki/MET-002-energia</a></span>
-      <span class="mono">c-PCR-BET-EPD-PL:2026 v1.3 &sect;6.3</span>
+      <span>Pełna metodyka: <a href="https://polca.org.pl/metodyki/MET-002-energia.html">polca.org.pl/metodyki/MET-002-energia</a></span>
+      <span class="mono">c-PCR-BET-EPD-PL:2026 v1.3 §6.3</span>
     </div>
     <div class="row">
-      <span>Operator programu: Multicert Sp. z o.o. &middot; <a href="mailto:info@epd.org.pl">info@epd.org.pl</a> &middot; <a href="https://www.polca.org.pl">www.polca.org.pl</a></span>
-      <span class="copy">&copy; 2026 Multicert &middot; v1.0 &middot; Aktualizacja roczna po publikacji KOBiZE Q2</span>
+      <span>Operator programu: Multicert Sp. z o.o. · <a href="mailto:info@epd.org.pl">info@epd.org.pl</a> · <a href="https://www.polca.org.pl">www.polca.org.pl</a></span>
+      <span class="copy">© 2026 Multicert · v1.0 · Aktualizacja roczna po publikacji KOBiZE Q2</span>
     </div>
   </div>
 
-</div>
-</body>
+</main>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

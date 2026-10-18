@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI — poLCA Blog</title>
-    <meta name="description" content="ISO 14044 definiuje hierarchię jakości danych LCI: geograficzną, czasową i technologiczną reprezentatywność. Kiedy dane generyczne są wystarczające, a kiedy konieczne są dane krajowe lub branżowe.">
+    <meta name="description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <link rel="canonical" href="https://polca.org.pl/blog-iso-14044-proximity.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI — poLCA Blog">
-    <meta property="og:description" content="ISO 14044 definiuje hierarchię jakości danych LCI: geograficzną, czasową i technologiczną reprezentatywność. Kiedy dane generyczne wystarczą, a kiedy potrzebne są dane krajowe.">
+    <meta property="og:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <meta property="og:url" content="https://polca.org.pl/blog-iso-14044-proximity.html">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
@@ -22,151 +22,129 @@
     <meta property="article:tag" content="reprezentatywność">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI">
-    <meta name="twitter:description" content="ISO 14044 definiuje hierarchię jakości danych LCI. Kiedy dane generyczne wystarczą, a kiedy potrzebne są dane krajowe lub branżowe.">
+    <meta name="twitter:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-iso-14044-proximity.jpg">
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-iso-14044-proximity.html",
+      "headline": "Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI",
+      "description": "Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.",
+      "url": "https://polca.org.pl/blog-iso-14044-proximity.html",
+      "datePublished": "2025-10-28",
+      "dateModified": "2025-10-28",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA — Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "ISO 14044",
+        "LCI",
+        "jakość danych LCA",
+        "reprezentatywność geograficzna",
+        "proxy data",
+        "dane pierwotne",
+        "dane wtórne",
+        "ecoinvent"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-iso-14044-proximity.html",
-          "headline": "Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI",
-          "description": "ISO 14044 definiuje wymagania jakości danych LCI przez pryzmat trzech wymiarów reprezentatywności: geograficznej, czasowej i technologicznej. Zasada proximity — czyli doboru danych możliwie bliskich badanemu systemowi — to fundament rzetelnego LCA, często ignorowany przy korzystaniu z generycznych baz danych.",
-          "url": "https://polca.org.pl/blog-iso-14044-proximity.html",
-          "datePublished": "2025-10-28",
-          "dateModified": "2025-10-28",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA — Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["ISO 14044", "LCI", "jakość danych LCA", "reprezentatywność geograficzna", "proxy data", "dane pierwotne", "dane wtórne", "ecoinvent"]
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Czym jest zasada proximity w ISO 14044?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Zasada proximity (bliskości) w ISO 14044 oznacza, że dane LCI powinny być jak najbliższe badanemu systemowi pod względem geograficznym, czasowym i technologicznym. Im mniejsza odległość między danymi a rzeczywistym systemem, tym wyższa jakość analizy LCA."}
-            },
-            {
-              "@type": "Question",
-              "name": "Jakie są trzy wymiary reprezentatywności danych LCI?",
-              "acceptedAnswer": {"@type": "Answer", "text": "ISO 14044 §4.7.3.1 definiuje trzy wymiary: (1) reprezentatywność geograficzna — czy dane pochodzą z tego samego regionu co badany system; (2) reprezentatywność czasowa — czy dane są aktualne i dotyczą właściwego okresu; (3) reprezentatywność technologiczna — czy dane opisują tę samą technologię produkcji co badany system."}
-            },
-            {
-              "@type": "Question",
-              "name": "Kiedy wolno używać danych proxy (zastępczych)?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Dane proxy są dopuszczalne gdy: (1) dane pierwotne lub branżowe są niedostępne lub nieopłacalne do pozyskania, (2) udokumentowano dlaczego proxy jest reprezentatywny, (3) wykonano analizę wrażliwości pokazującą, że wybór proxy nie zmienia wniosków badania. Proxy powinno być jak najbliższe technologicznie i geograficznie badanemu procesowi."}
-            }
-          ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "Zasada proximity w ISO 14044"}
-          ]
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Zasada proximity w ISO 14044"
         }
       ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  ]
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
+<meta name="metadata_revision" content="2026-10-18">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Zasada proximity w ISO 14044 — co norma mówi o wyborze danych LCI</span></nav><div class="polca-page">
 
     <div style="width:100%;height:420px;overflow:hidden;margin-bottom:0;">
-        <img src="images/blog-iso-14044-proximity.jpg"
-             alt="Lupa na dokumentach analitycznych" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+        <img src="images/blog-iso-14044-proximity.jpg" alt="Lupa na dokumentach analitycznych" style="width:100%;height:100%;object-fit:cover;" loading="eager">
     </div>
 
     <div class="fade-in">
         <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Wr&#243;&#263; do bloga
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Wróć do bloga
         </a>
 
         <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
             <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <span class="breadcrumbs-current">Zasada proximity w ISO 14044</span>
         </nav>
 
         <div class="blog-post-header">
             <div class="blog-post-meta">
                 <span class="blog-tag metodyka">Metodyka</span>
-                <span class="blog-date">28 pa&#378;dziernika 2025</span>
-                <span class="blog-read-time">&#183; 8 min czytania</span>
+                <span class="blog-date">28 października 2025</span>
+                <span class="blog-read-time">· 8 min czytania</span>
             </div>
             <h1 class="blog-post-title">
-                Zasada proximity w ISO&nbsp;14044 &#8212;<br>co norma m&#243;wi o wyborze danych LCI
+                Zasada proximity w ISO 14044 —<br>co norma mówi o wyborze danych LCI
             </h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
             <p class="blog-post-lead">
-                ISO&nbsp;14044 nie mówi wprost &#8222;u&#380;yj danych krajowych&#8221;. M&#243;wi co&#347; precyzyjniejszego:
-                dane inwentaryzacyjne powinny by&#263; reprezentatywne dla badanego systemu.
-                Co to oznacza w praktyce i dlaczego europejska &#347;rednia dla cementu
-                mo&#380;e by&#263; b&#322;&#281;dem metodycznym w polskim EPD.
+                ISO 14044 nie mówi wprost „użyj danych krajowych”. Mówi coś precyzyjniejszego:
+                dane inwentaryzacyjne powinny być reprezentatywne dla badanego systemu.
+                Co to oznacza w praktyce i dlaczego europejska średnia dla cementu
+                może być błędem metodycznym w polskim EPD.
             </p>
         </div>
     </div>
 
     <!-- TL;DR -->
     <div class="tldr-box fade-in">
-        <div class="tldr-box-label">TL;DR &mdash; skr&#243;t dla zabieganych</div>
+        <div class="tldr-box-label">TL;DR — skrót dla zabieganych</div>
         <ul>
-            <li>ISO&nbsp;14044 wymaga, by dane LCI by&#322;y <strong>reprezentatywne</strong> pod trzema wzgl&#281;dami: geograficznym, czasowym i technologicznym.</li>
-            <li>&#8222;Proximity&#8221; to nieformalna nazwa zasady, &#380;e im bli&#380;ej danych do rzeczywistego systemu, tym wy&#380;sza jako&#347;&#263; LCA &#8212; norma tego wymaga, nawet je&#347;li nie u&#380;ywa tego s&#322;owa.</li>
-            <li>Dane generyczne (ecoinvent, bazy europejskie) s&#261; dopuszczalne dla proces&#243;w t&#322;a &#8212; dla proces&#243;w pierwszego planu wymagane s&#261; dane pierwotne lub bran&#380;owe.</li>
-            <li>Stosowanie europejskiej &#347;redniej dla polskiej energii elektrycznej lub cementu, gdy dost&#281;pne s&#261; dane krajowe, jest niezgodne z wymaganiami jako&#347;ci danych ISO&nbsp;14044 i EN&nbsp;15804+A2.</li>
+            <li>ISO 14044 wymaga, by dane LCI były <strong>reprezentatywne</strong> pod trzema względami: geograficznym, czasowym i technologicznym.</li>
+            <li>„Proximity” to nieformalna nazwa zasady, że im bliżej danych do rzeczywistego systemu, tym wyższa jakość LCA — norma tego wymaga, nawet jeśli nie używa tego słowa.</li>
+            <li>Dane generyczne (ecoinvent, bazy europejskie) są dopuszczalne dla procesów tła — dla procesów pierwszego planu wymagane są dane pierwotne lub branżowe.</li>
+            <li>Dostępność danych krajowych nie rozstrzyga automatycznie wyboru. Należy porównać ich reprezentatywność, granice, kompletność i dokumentację z innymi dostępnymi danymi.</li>
         </ul>
     </div>
 
@@ -175,100 +153,100 @@
         <div class="key-stat">
             <div class="key-stat-number">3</div>
             <div class="key-stat-unit">wymiary</div>
-            <div class="key-stat-label">Reprezentatywno&#347;&#263; danych LCI wg ISO&nbsp;14044:<br>geograficzna, czasowa, technologiczna</div>
+            <div class="key-stat-label">Reprezentatywność danych LCI wg ISO 14044:<br>geograficzna, czasowa, technologiczna</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number muted">5</div>
             <div class="key-stat-unit">lat</div>
-            <div class="key-stat-label">Maksymalny wiek danych pierwotnych<br>akceptowany w wi&#281;kszo&#347;ci PCR</div>
+            <div class="key-stat-label">Maksymalny wiek danych pierwotnych<br>akceptowany w większości PCR</div>
         </div>
         <div class="key-stat">
-            <div class="key-stat-number accent">2×</div>
-            <div class="key-stat-unit">r&#243;&#380;nica</div>
-            <div class="key-stat-label">Emisyjno&#347;&#263; polskiej sieci vs. &#347;rednioeuropejskiej<br>(599 vs. ~210 kg CO&#8322;e/MWh, poLCA-EN-PL-2024)</div>
+            <div class="key-stat-number accent">Różne</div>
+            <div class="key-stat-unit">zakresy</div>
+            <div class="key-stat-label">599 kg CO₂e/MWh i około 210 kg CO₂/MWh<br>opisują różne granice; nie stanowią rankingu</div>
         </div>
     </div>
 
     <div class="blog-post-body section-gap fade-in">
 
-        <h2>Sk&#261;d pochodzi poj&#281;cie &#8222;proximity&#8221; w LCA?</h2>
+        <h2>Skąd pochodzi pojęcie „proximity” w LCA?</h2>
         <p>
-            Termin <em>proximity principle</em> nie wyst&#281;puje wprost w tek&#347;cie ISO&nbsp;14044.
-            Pochodzi z praktyki LCA i literatury akademickiej jako skrót my&#347;lowy dla wymagania
-            sekcji 4.7.3.1 normy dotycz&#261;cego jako&#347;ci danych. Norma stanowi,
-            &#380;e dane inwentaryzacyjne powinny <strong>odzwierciedla&#263; w&#322;a&#347;ciwo&#347;ci technologiczne,
+            Termin <em>proximity principle</em> nie występuje wprost w tekście ISO 14044.
+            Pochodzi z praktyki LCA i literatury akademickiej jako skrót myślowy dla wymagania
+            sekcji 4.7.3.1 normy dotyczącego jakości danych. Norma stanowi,
+            że dane inwentaryzacyjne powinny <strong>odzwierciedlać właściwości technologiczne,
             geograficzne i czasowe</strong> badanego systemu.
         </p>
         <p>
-            W praktyce zasada ta rozstrzyga kluczowe pytanie ka&#380;dego LCA:
-            czy wolno mi u&#380;y&#263; danych z globalnej bazy generycznej,
-            czy musz&#281; pozyska&#263; dane specyficzne dla mojego kraju, bran&#380;y, instalacji?
+            W praktyce zasada ta rozstrzyga kluczowe pytanie każdego LCA:
+            czy wolno mi użyć danych z globalnej bazy generycznej,
+            czy muszę pozyskać dane specyficzne dla mojego kraju, branży, instalacji?
         </p>
 
         <div class="callout callout-definition">
             <div class="callout-label">Definicja normatywna</div>
             <p class="callout-body">
-                <strong>ISO&nbsp;14044:2006, §4.7.3.1:</strong> &bdquo;Dane powinny by&#263;
-                reprezentatywne dla definiowanych procesów jednostkowych obj&#281;tych granicami systemu.
-                Nale&#380;y udokumentowa&#263; czas&#261; reprezentatywno&#347;&#263; danych,
-                geograficzn&#261; reprezentatywno&#347;&#263; danych oraz technologiczn&#261;
-                reprezentatywno&#347;&#263; danych.&ldquo;
+                <strong>ISO 14044:2006, §4.7.3.1:</strong> „Dane powinny być
+                reprezentatywne dla definiowanych procesów jednostkowych objętych granicami systemu.
+                Należy udokumentować czasą reprezentatywność danych,
+                geograficzną reprezentatywność danych oraz technologiczną
+                reprezentatywność danych.“
             </p>
         </div>
 
-        <h2>Trzy wymiary reprezentatywno&#347;ci danych</h2>
+        <h2>Trzy wymiary reprezentatywności danych</h2>
 
         <div class="process-steps">
             <div class="process-step">
                 <div class="process-step-num">1</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">Reprezentatywno&#347;&#263; geograficzna</div>
+                    <div class="process-step-title">Reprezentatywność geograficzna</div>
                     <div class="process-step-text">
-                        Dane powinny pochodzi&#263; z tego samego kraju lub regionu co badany system.
+                        Dane powinny pochodzić z tego samego kraju lub regionu co badany system.
                         Dla polskiego producenta cementu: dane o emisjach z klinkieryzacji
-                        powinny odzwierciedla&#263; polskie surowce (sk&#322;ad margli i wapieni),
-                        polski miks paliw do pieca cementowego, polsk&#261; sie&#263; energetyczn&#261;.
-                        U&#380;ycie &#345;redniej europejskiej oznacza systematyczne przesuniecie wyniku
-                        &#8212; w przypadku Polski zwykle zani&#380;one GWP (europejska sie&#263; emituje ok. 2&times; mniej ni&#380; polska).
+                        powinny odzwierciedlać polskie surowce (skład margli i wapieni),
+                        polski miks paliw do pieca cementowego, polską sieć energetyczną.
+                        Użycie řredniej europejskiej oznacza systematyczne przesuniecie wyniku
+                        — w przypadku Polski zwykle zaniżone GWP (europejska sieć emituje ok. 2× mniej niż polska).
                     </div>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-step-num">2</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">Reprezentatywno&#347;&#263; czasowa</div>
+                    <div class="process-step-title">Reprezentatywność czasowa</div>
                     <div class="process-step-text">
-                        Dane powinny pochodzi&#263; z okresu odpowiadaj&#261;cego rokowi referencyjnemu EPD.
-                        Wska&#378;nik KOBiZE jest publikowany corocznie &#8212; u&#380;ycie wska&#378;nika sprzed 5&nbsp;lat
-                        dla aktualnej EPD jest b&#322;&#281;dem. Podobnie: dane o emisjach z produkcji stali
-                        sprzed 2015&nbsp;r. mog&#261; nie uwzgl&#281;dnia&#263; zmian technologicznych w piecach elektrycznych.
-                        Wi&#281;kszo&#347;&#263; PCR wymaga, by dane pierwotne pochodzi&#322;y z ostatnich 5&nbsp;lat.
+                        Dane powinny pochodzić z okresu odpowiadającego rokowi referencyjnemu EPD.
+                        Wskaźnik KOBiZE jest publikowany corocznie — użycie wskaźnika sprzed 5 lat
+                        dla aktualnej EPD jest błędem. Podobnie: dane o emisjach z produkcji stali
+                        sprzed 2015 r. mogą nie uwzględniać zmian technologicznych w piecach elektrycznych.
+                        Większość PCR wymaga, by dane pierwotne pochodziły z ostatnich 5 lat.
                     </div>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-step-num">3</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">Reprezentatywno&#347;&#263; technologiczna</div>
+                    <div class="process-step-title">Reprezentatywność technologiczna</div>
                     <div class="process-step-text">
-                        Dane powinny opisywa&#263; t&#281; sam&#261; technologi&#281; produkcji co badany system.
-                        Producent asfaltobetonu z nowoczesn&#261; suszarni&#261; kontraprzep&#322;ywow&#261;
-                        nie mo&#380;e u&#380;y&#263; danych dla starszych technologii wspó&#322;pr&#261;dowych.
-                        Producent stali z pieca elektrycznego &#8212; nie mo&#380;e stosowa&#263; &#347;redniej
-                        w&#322;&#261;czaj&#261;cej piece martenowskie. Technologia bezpo&#347;rednio determinuje
-                        wielko&#347;&#263; emisji i zu&#380;ycie energii.
+                        Dane powinny opisywać tę samą technologię produkcji co badany system.
+                        Producent asfaltobetonu z nowoczesną suszarnią kontraprzepływową
+                        nie może użyć danych dla starszych technologii współprądowych.
+                        Producent stali z pieca elektrycznego — nie może stosować średniej
+                        włączającej piece martenowskie. Technologia bezpośrednio determinuje
+                        wielkość emisji i zużycie energii.
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2>Hierarchia danych w LCA: co jest &#8222;pierwszy plan&#8221;, co &#8222;t&#322;o&#8221;</h2>
+        <h2>Hierarchia danych w LCA: co jest „pierwszy plan”, co „tło”</h2>
         <p>
-            ISO&nbsp;14044 i praktyka LCA dziel&#261; procesy na dwie kategorie z r&#243;&#380;nymi wymaganiami:
+            ISO 14044 i praktyka LCA dzielą procesy na dwie kategorie z różnymi wymaganiami:
         </p>
 
         <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
-            <div class="card-title" style="font-size:0.9rem;">Procesy pierwszego planu vs. t&#322;a</div>
+            <div class="card-title" style="font-size:0.9rem;">Procesy pierwszego planu vs. tła</div>
             <table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.75rem; line-height:1.6;">
                 <thead>
                     <tr style="border-bottom:2px solid var(--border);">
@@ -280,136 +258,118 @@
                 <tbody>
                     <tr style="border-bottom:1px solid var(--border);">
                         <td style="padding:0.55rem 0.75rem; font-weight:600;">Foreground<br>(pierwszy plan)</td>
-                        <td style="padding:0.55rem 0.75rem;">Procesy, na kt&#243;re producent ma bezpo&#347;redni wp&#322;yw: w&#322;asna produkcja, transport wewn&#281;trzny, instalacje na budowie</td>
+                        <td style="padding:0.55rem 0.75rem;">Procesy, na które producent ma bezpośredni wpływ: własna produkcja, transport wewnętrzny, instalacje na budowie</td>
                         <td style="padding:0.55rem 0.75rem; color:var(--func-green);">Dane pierwotne (pomiary, faktury, bilanse)</td>
                     </tr>
                     <tr>
-                        <td style="padding:0.55rem 0.75rem; font-weight:600;">Background<br>(t&#322;o)</td>
-                        <td style="padding:0.55rem 0.75rem;">Procesy poza kontrol&#261; producenta: wydobycie surowc&#243;w, produkcja energii w sieci, transport zewn&#281;trzny</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Dane wt&#243;rne (bazy: ecoinvent, poLCA) &mdash; z zachowaniem proximity</td>
+                        <td style="padding:0.55rem 0.75rem; font-weight:600;">Background<br>(tło)</td>
+                        <td style="padding:0.55rem 0.75rem;">Procesy poza kontrolą producenta: wydobycie surowców, produkcja energii w sieci, transport zewnętrzny</td>
+                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Dane wtórne (bazy: ecoinvent, poLCA) — z zachowaniem proximity</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <p>
-            Dla proces&#243;w t&#322;a dane generyczne s&#261; akceptowalne &mdash; ale zasada proximity
-            nadal obowi&#261;zuje. Oznacza to: dla energii elektrycznej w Polsce
-            nale&#380;y stosowa&#263; wska&#378;nik KOBiZE (specyficzny dla Polski),
-            nie &#347;redni&#261; europejsk&#261; z ecoinvent (cho&#263; oba s&#261; danymi wt&#243;rnymi).
-        </p>
+        <p>Dla procesów tła należy ocenić zakres, jednostkę, reprezentatywność i dokumentację dostępnych danych. KOBiZE może dostarczać część danych emisyjnych, lecz samo CO₂ nie zastępuje pełnego zbioru cyklu życia energii. Krajowe pochodzenie źródła nie przesądza automatycznie o jego wyborze.</p>
 
         <div class="callout callout-warning">
-            <div class="callout-label">Cz&#281;sty b&#322;&#281;d w polskich EPD</div>
-            <p class="callout-body">
-                U&#380;ycie wska&#378;nika emisji dla &#347;redniej europejskiej sieci energetycznej
-                zamiast KOBiZE w polskiej EPD zani&#380;a wynik GWP o ok. 50%. Taki wynik
-                nie jest reprezentatywny geograficznie, co stanowi naruszenie §4.7.3.1 ISO&nbsp;14044
-                i mo&#380;e by&#263; podstaw&#261; do odrzucenia EPD przez weryfikatora lub zamawiaj&#261;cego.
-            </p>
+            <div class="callout-label">Korekta wcześniejszego porównania</div>
+            <p class="callout-body">Wcześniejsze twierdzenie o zaniżeniu GWP o ok. 50% oraz automatycznym naruszeniu §4.7.3.1 ISO 14044 zostało wycofane. Zestawienie wskaźników o różnych granicach nie uzasadnia takiego wniosku ani odrzucenia EPD. Najpierw trzeba sprawdzić zakres porównywanych danych.</p>
         </div>
 
-        <h2>Dane proxy: kiedy s&#261; dopuszczalne?</h2>
+        <h2>Dane proxy: kiedy są dopuszczalne?</h2>
         <p>
-            Sytuacje, gdy idealne dane (specyficzne, aktualne, o w&#322;a&#347;ciwej technologii)
-            nie s&#261; dost&#281;pne, s&#261; w LCA normalne. Norma dopuszcza stosowanie danych proxy
-            (zast&#281;pczych), pod warunkami:
+            Sytuacje, gdy idealne dane (specyficzne, aktualne, o właściwej technologii)
+            nie są dostępne, są w LCA normalne. Norma dopuszcza stosowanie danych proxy
+            (zastępczych), pod warunkami:
         </p>
         <ul>
-            <li><strong>Uzasadnienie wyboru</strong> &#8212; nale&#380;y udokumentowa&#263;, dlaczego
-            konkretne proxy jest najlepsz&#261; dost&#281;pn&#261; alternatyw&#261; i jak blisko
+            <li><strong>Uzasadnienie wyboru</strong> — należy udokumentować, dlaczego
+            konkretne proxy jest najlepszą dostępną alternatywą i jak blisko
             odpowiada rzeczywistemu procesowi.</li>
-            <li><strong>Analiza wra&#380;liwo&#347;ci</strong> &#8212; nale&#380;y pokaza&#263;, &#380;e wybór proxy
-            nie zmienia istotnie wynik&#243;w lub wniosk&#243;w. Je&#380;eli zmienia &mdash; konieczne
-            s&#261; lepsze dane.</li>
-            <li><strong>Opis niepewno&#347;ci</strong> &#8212; ISO&nbsp;14044 §4.7.3 wymaga oceny
-            jako&#347;ci danych; stosowanie proxy bez dokumentacji niepewno&#347;ci
-            jest niezgodne z norm&#261;.</li>
+            <li><strong>Analiza wrażliwości</strong> — należy pokazać, że wybór proxy
+            nie zmienia istotnie wyników lub wniosków. Jeżeli zmienia — konieczne
+            są lepsze dane.</li>
+            <li><strong>Opis niepewności</strong> — ISO 14044 §4.7.3 wymaga oceny
+            jakości danych; stosowanie proxy bez dokumentacji niepewności
+            jest niezgodne z normą.</li>
         </ul>
 
-        <h2>Proximity w kontekście EN&nbsp;15804+A2 i EPD</h2>
+        <h2>Proximity w kontekście EN 15804+A2 i EPD</h2>
         <p>
-            EN&nbsp;15804+A2 precyzuje wymagania ISO&nbsp;14044 dla kontekstu wyrob&#243;w budowlanych.
+            EN 15804+A2 precyzuje wymagania ISO 14044 dla kontekstu wyrobów budowlanych.
             Kilka kluczowych zapisów:
         </p>
         <ul>
-            <li>Dane pierwotne dla proces&#243;w pierwszego planu: wymagane z co najmniej jednego roku
-            produkcji w okresie ostatnich 5&nbsp;lat (&sect;6.3.5).</li>
-            <li>Wska&#378;nik emisji dla energii elektrycznej: musi by&#263; wska&#378;nikiem krajowym
-            opartym na metodzie lokalizacyjnej &mdash; nie mo&#380;na stosowa&#263; &#347;redniej europejskiej (&sect;6.4.3).</li>
-            <li>Jako&#347;&#263; danych wt&#243;rnych: nale&#380;y stosowa&#263; dane &#8222;odpowiednie dla geografii
-            badanego systemu&#8221;, preferencja dla danych krajowych nad globalnymi (&sect;6.3.6).</li>
+            <li>Dane pierwotne dla procesów pierwszego planu: wymagane z co najmniej jednego roku
+            produkcji w okresie ostatnich 5 lat (§6.3.5).</li>
+            <li>Wskaźnik energii dobiera się do zastosowania, kontroli nad procesem i dokumentacji dostawy. Historyczne odwołanie do §6.4.3 nie uzasadnia uniwersalnego nakazu fizycznego miksu krajowego.</li>
+            <li>Jakość danych wtórnych: należy stosować dane „odpowiednie dla geografii
+            badanego systemu”, preferencja dla danych krajowych nad globalnymi (§6.3.6).</li>
         </ul>
 
         <div class="callout callout-tip">
             <div class="callout-label">Zasada praktyczna</div>
-            <p class="callout-body">
-                Hierarchia wyboru danych dla polskiej EPD:
-                <strong>(1)</strong> w&#322;asne dane pomiarowe (foreground) &rarr;
-                <strong>(2)</strong> polskie dane bran&#380;owe (<a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD&nbsp;Polska</a>, KOBiZE) &rarr;
-                <strong>(3)</strong> dane europejskie dla danego kraju PL w ecoinvent &rarr;
-                <strong>(4)</strong> &#347;rednia europejska lub globalna z udokumentowanym uzasadnieniem i analiz&#261; wra&#380;liwo&#347;ci.
-                Ka&#380;de przej&#347;cie o poziom ni&#380;ej wymaga udokumentowania powodu.
-            </p>
+            <p class="callout-body">Źródła do rozważenia w ocenie danych: <strong>(1)</strong> własne pomiary; <strong>(2)</strong> dane branżowe, w tym <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">EPD Polska</a> i źródła KOBiZE; <strong>(3)</strong> dane tła dla Polski, np. ecoinvent; <strong>(4)</strong> inne reprezentatywne dane europejskie lub globalne. To nie jest stała hierarchia. Wybór wymaga uzasadnienia zakresu, reprezentatywności oraz ograniczeń źródła.</p>
         </div>
 
-        <h2>Dlaczego to ma znaczenie dla polskich producent&#243;w?</h2>
+        <h2>Dlaczego to ma znaczenie dla polskich producentów?</h2>
         <p>
-            Polska ma jeden z wy&#380;szych wska&#378;nik&#243;w emisji energii elektrycznej w Europie.
-            Oznacza to, &#380;e polskie EPD oparte na krajowych danych b&#281;d&#261; wykazywa&#263; wy&#380;sze GWP
-            ni&#380; por&#243;wnywalne EPD europejskie &#8212; nawet przy tej samej efektywno&#347;ci produkcji.
+            Polska ma jeden z wyższych wskaźników emisji energii elektrycznej w Europie.
+            Oznacza to, że polskie EPD oparte na krajowych danych będą wykazywać wyższe GWP
+            niż porównywalne EPD europejskie — nawet przy tej samej efektywności produkcji.
         </p>
         <p>
-            To tworzy pozorn&#261; pokus&#281;: u&#380;y&#263; europejskiej &#347;redniej, &#380;eby poprawi&#263; wynik.
-            Ale jest to b&#322;&#261;d metodyczny, kt&#243;ry dewaluuje EPD i mo&#380;e by&#263; zakwestionowany
-            przez weryfikatora, zamawiaj&#261;cego lub program EPD.
-            Rzetelna EPD oparta na danych krajowych jest wiarygodna &mdash;
-            i lepiej pozycjonuje producenta w d&#322;ugim terminie, gdy unijny miks energetyczny b&#281;dzie si&#281; zieleni&#322;.
+            To tworzy pozorną pokusę: użyć europejskiej średniej, żeby poprawić wynik.
+            Ale jest to błąd metodyczny, który dewaluuje EPD i może być zakwestionowany
+            przez weryfikatora, zamawiającego lub program EPD.
+            Rzetelna EPD oparta na danych krajowych jest wiarygodna —
+            i lepiej pozycjonuje producenta w długim terminie, gdy unijny miks energetyczny będzie się zielenił.
         </p>
 
         <!-- FAQ -->
         <div class="faq-section">
-            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+            <div class="faq-section-title">Najczęściej zadawane pytania</div>
 
             <div class="faq-item">
-                <div class="faq-q">Czym jest zasada proximity w ISO&nbsp;14044?</div>
+                <div class="faq-q">Czym jest zasada proximity w ISO 14044?</div>
                 <div class="faq-a">
-                    Zasada proximity (bliskiego&#347;ci danych) oznacza, &#380;e dane LCI powinny by&#263;
-                    jak najbli&#380;sze badanemu systemowi pod wzgl&#281;dem geograficznym, czasowym
-                    i technologicznym. Im mniejsza odleg&#322;o&#347;&#263; mi&#281;dzy danymi a rzeczywistym
-                    procesem, tym wy&#380;sza jako&#347;&#263; LCA.
+                    Zasada proximity (bliskiegości danych) oznacza, że dane LCI powinny być
+                    jak najbliższe badanemu systemowi pod względem geograficznym, czasowym
+                    i technologicznym. Im mniejsza odległość między danymi a rzeczywistym
+                    procesem, tym wyższa jakość LCA.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Jakie s&#261; trzy wymiary reprezentatywno&#347;ci danych LCI?</div>
+                <div class="faq-q">Jakie są trzy wymiary reprezentatywności danych LCI?</div>
                 <div class="faq-a">
-                    ISO&nbsp;14044 §4.7.3.1 definiuje trzy wymiary:
-                    (1) reprezentatywno&#347;&#263; geograficzna &#8212; czy dane pochodz&#261; z tego samego regionu;
-                    (2) reprezentatywno&#347;&#263; czasowa &#8212; czy dane s&#261; aktualne;
-                    (3) reprezentatywno&#347;&#263; technologiczna &#8212; czy dane opisuj&#261; t&#281; sam&#261; technologi&#281;.
+                    ISO 14044 §4.7.3.1 definiuje trzy wymiary:
+                    (1) reprezentatywność geograficzna — czy dane pochodzą z tego samego regionu;
+                    (2) reprezentatywność czasowa — czy dane są aktualne;
+                    (3) reprezentatywność technologiczna — czy dane opisują tę samą technologię.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Kiedy wolno u&#380;ywa&#263; danych proxy?</div>
+                <div class="faq-q">Kiedy wolno używać danych proxy?</div>
                 <div class="faq-a">
-                    Dane proxy s&#261; dopuszczalne gdy idealne dane s&#261; niedost&#281;pne lub niemo&#380;liwe
+                    Dane proxy są dopuszczalne gdy idealne dane są niedostępne lub niemożliwe
                     do pozyskania. Wymagane jest: dokumentacja wyboru proxy,
-                    analiza wra&#380;liwo&#347;ci pokazuj&#261;ca wp&#322;yw na wyniki, opis niepewno&#347;ci danych.
-                    Proxy powinno by&#263; mo&#380;liwie bliskie technologicznie i geograficznie.
+                    analiza wrażliwości pokazująca wpływ na wyniki, opis niepewności danych.
+                    Proxy powinno być możliwie bliskie technologicznie i geograficznie.
                 </div>
             </div>
 
             <div class="faq-item">
                 <div class="faq-q">Czy ecoinvent ma dane dla Polski?</div>
                 <div class="faq-a">
-                    Tak &#8212; ecoinvent zawiera zestawy danych z przyrostkiem <code>PL</code>
-                    (np. dla energii elektrycznej, transportu, niekt&#243;rych materia&#322;&#243;w).
-                    Jednak dane te mog&#261; by&#263; starsze ni&#380; krajowe publikacje KOBiZE lub
-                    nie odzwierciedla&#263; aktualnych zmian w polskim miksie energetycznym.
-                    W przypadku energii elektrycznej nale&#380;y por&#243;wna&#263; wska&#378;nik ecoinvent
-                    z aktualnym wska&#378;nikiem KOBiZE i u&#380;y&#263; bardziej aktualnego.
+                    Tak — ecoinvent zawiera zestawy danych z przyrostkiem <code>PL</code>
+                    (np. dla energii elektrycznej, transportu, niektórych materiałów).
+                    Jednak dane te mogą być starsze niż krajowe publikacje KOBiZE lub
+                    nie odzwierciedlać aktualnych zmian w polskim miksie energetycznym.
+                    W przypadku energii elektrycznej należy porównać wskaźnik ecoinvent
+                    z aktualnym wskaźnikiem KOBiZE i użyć bardziej aktualnego.
                 </div>
             </div>
         </div>
@@ -417,32 +377,32 @@
         <hr class="blog-post-divider">
 
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>&#378;r&#243;d&#322;a:</strong>
-            ISO&nbsp;14044:2006, §4.7.3 Wymagania dotycz&#261;ce jako&#347;ci danych;
-            EN&nbsp;15804+A2:2019/A1:2021, §6.3.5, §6.3.6, §6.4.3;
-            KOBiZE (2024), Wska&#378;niki emisyjno&#347;ci CO&#8322; dla energii elektrycznej, dane za 2023;
+            <strong>źródła:</strong>
+            ISO 14044:2006, §4.7.3 Wymagania dotyczące jakości danych;
+            EN 15804+A2:2019/A1:2021, §6.3.5, §6.3.6, §6.4.3;
+            KOBiZE (2024), Wskaźniki emisyjności CO₂ dla energii elektrycznej, dane za 2023;
             ecoinvent v3.10 (2023), dokumentacja zestawu danych <em>electricity production, Poland</em>;
-            Hauschild M.Z. i in. (2018), &bdquo;Life Cycle Assessment: Theory and Practice&rdquo;, Springer;
-            Finnveden G. i in. (2009), &bdquo;Recent developments in Life Cycle Assessment&rdquo;, Journal of Environmental Management 91(1).
+            Hauschild M.Z. i in. (2018), „Life Cycle Assessment: Theory and Practice”, Springer;
+            Finnveden G. i in. (2009), „Recent developments in Life Cycle Assessment”, Journal of Environmental Management 91(1).
         </p>
     </div>
 
     <!-- Tool CTA -->
     <div class="card card-accent-blue fade-in" style="margin-top: 1.5rem;">
-        <div class="card-title">Narz&#281;dzia LCA poLCA</div>
+        <div class="card-title">Narzędzia LCA poLCA</div>
         <p class="card-text" style="margin-bottom: 0.75rem;">
-            Tabela polskich wska&#378;nik&#243;w emisji i przeliczniki jednostek &#8212; pomocne przy
+            Tabela polskich wskaźników emisji i przeliczniki jednostek — pomocne przy
             stosowaniu zasady proximity i doborze danych LCI.
         </p>
         <a href="narzedzia.html" style="display:inline-flex;align-items:center;gap:0.35rem;font-size:0.82rem;font-weight:600;color:var(--func-blue);text-decoration:none;">
-            Przejd&#378; do narz&#281;dzi
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Przejdź do narzędzi
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
     </div>
 
     <!-- Related posts -->
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card">
                 <div class="blog-card-body">
@@ -450,9 +410,9 @@
                         <span class="blog-tag rynek">Rynek</span>
                         <span class="blog-date">2 grudnia 2025</span>
                     </div>
-                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych &#8212; kiedy u&#347;rednianie szkodzi dok&#322;adno&#347;ci LCA</div>
+                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -464,9 +424,9 @@
                         <span class="blog-tag metodyka">Metodyka</span>
                         <span class="blog-date">14 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">Dlaczego polskie wska&#378;niki emisji CO&#8322; r&#243;&#380;ni&#261; si&#281; od europejskich &#8212; i co to oznacza dla LCA</div>
+                    <div class="blog-card-title">Dlaczego polskie wskaźniki emisji CO₂ różnią się od europejskich — i co to oznacza dla LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">8 min czytania</span>
                     </div>
                 </div>
@@ -475,47 +435,7 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

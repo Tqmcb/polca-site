@@ -1,29 +1,14 @@
-/**
- * poLCA — Kalkulator pre-qualify EPD dla kruszyw budowlanych
- * Wersja 1.0
- *
- * Oszacowanie GWP A1-A3 [kg CO2eq / t kruszywa] zgodne z c-PCR-AGG-EPD-Polska v0.9-DRAFT,
- * EN 12620 / EN 13242 i EN 15804+A2. Wartości domyślne: zbiory danych POLCA-AGG-PL-*.
- * Energia elektryczna: poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (cross-compliance).
- * Olej napędowy: 3,17 kg CO2e/L (KOBiZE 2024). Materiały wybuchowe: ~0,5 kg CO2e/kg.
- *
- * Tryb uproszczony: typ kruszywa -> wartość referencyjna GWP A1-A3 (+ opcjonalny A4).
- * Tryb zaawansowany (parametry zakładu):
- *   base = energia_kruszenia * 0.599 + paliwo * 3.17 + (wybuchowe * 0.5 jeśli skała lita)
- *        + (0.5 kWh/t * 0.599 jeśli płukanie) + transport_A2 * 0.100
- *   GWP_A1-A3 = base * (1 - rc%/100) + 2.50 * (rc%/100)         [dla rock='rc': base bez surowca]
- *   (+ opcjonalny A4 = transport_A4 * 0.100, raportowany osobno)
- */
+/** poLCA — kalkulator kruszyw. Historyczny zestaw założeń; eksport własny poLCA 2.0. */
 (function () {
     'use strict';
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
     var EF_EL = 0.599;          // kg CO2e / kWh — poLCA-EN-PL-2024 v9.1
-    var EF_DIESEL = 3.17;       // kg CO2e / L — KOBiZE 2024
+    var EF_DIESEL = 3.17;       // kg CO2e / L — historyczne założenie kalkulatora
     var EF_EXPLOSIVE = 0.5;     // kg CO2e / kg materiału wybuchowego (ANFO / emulsja)
-    var EF_TRANSPORT = 0.100;   // kg CO2e / (t·km) — mix flot EURO5/6 PL
+    var EF_TRANSPORT = 0.100;   // kg CO2e / (t·km) — historyczne założenie kalkulatora
     var WASH_KWH = 0.5;         // dodatkowe kWh/t przy płukaniu
-    var GWP_RC = 2.50;          // GWP A1-A3 frakcji recyklingowej RC [kg CO2eq/t]
+    var GWP_RC = 2.50;          // Oszacowanie A1-A3 frakcji recyklingowej RC [kg CO2eq/t]
 
     /* ---- Domyślne parametry zakładu wg typu skały ---- */
     var ROCK_DEFAULTS = {
@@ -31,17 +16,6 @@
         soft:    { energy: 3, diesel: 0.4, explosive: 0.1, lita: true,  rcPct: 0,   label: 'skała lita miękka (wapień)' },
         natural: { energy: 1, diesel: 0.3, explosive: 0,   lita: false, rcPct: 0,   label: 'kruszywo naturalne (piasek, żwir)' },
         rc:      { energy: 4, diesel: 0.4, explosive: 0,   lita: false, rcPct: 100, label: 'kruszywo recyklingowe RC' }
-    };
-
-    /* ---- Etykiety i benchmarki dla trybu uproszczonego ---- */
-    var SIMPLE_LABELS = {
-        '5.50': 'kruszywo łamane twarde (konserwatywna wartość domyślna poLCA)',
-        '3.99': 'kruszywo bazaltowe łamane (ITB EPD 706/2024 Trzuskawica)',
-        '4.50': 'kruszywo granitowe łamane lub dolomitowe',
-        '3.20': 'kruszywo wapienne łamane (Gruber et al. 2023)',
-        '1.80': 'kruszywo naturalne — piasek, żwir',
-        '3.80': 'kruszywo — średnia ważona PL (mix bazalt + granit + wapień)',
-        '2.50': 'kruszywo recyklingowe RC (cut-off)'
     };
 
     /* ---- Uchwyty DOM ---- */
@@ -63,12 +37,12 @@
         compTable = el('aggCompTable'), benchBox = el('aggBench');
 
     /* ---- Pomocnicze ---- */
-    function num(input) { var v = parseFloat(input.value); return isNaN(v) ? 0 : v; }
+    function num(input) { return input.value.trim() === '' ? NaN : Number(input.value); }
     function fmt(n, d) {
         if (d === undefined) d = 2;
         return Number(n).toLocaleString('pl-PL', { minimumFractionDigits: d, maximumFractionDigits: d });
     }
-    function num6(n) { return (Math.round(n * 1e6) / 1e6); }
+    function num6(n) { return Math.abs(n) > Number.MAX_VALUE / 1e6 ? n : Math.round(n * 1e6) / 1e6; }
     function radioVal(name) {
         var r = document.querySelector('input[name="' + name + '"]:checked');
         return r ? r.value : null;
@@ -92,14 +66,86 @@
         aA2.value = 2;
     }
 
+    function syncPrimaryInputs() {
+        var fixed = radioVal('aggMode') === 'advanced' && clamp(num(aRc), 0, 100) === 100;
+        [aEnergy, aDiesel, aA2].forEach(function (input) { input.disabled = fixed; });
+        var rock = ROCK_DEFAULTS[aRock.value] || ROCK_DEFAULTS.hard;
+        aExpl.disabled = fixed || !rock.lita;
+        document.querySelectorAll('input[name="aggWash"]').forEach(function (input) { input.disabled = fixed; });
+        var note = el('aggRcScope');
+        if (note) note.hidden = radioVal('aggMode') !== 'advanced';
+        if (note) note.textContent = fixed
+            ? 'RC = 100%: stały wariant 2,50 kg CO₂e/t. Energia, paliwo, materiały wybuchowe, płukanie i transport wewnętrzny nie zmieniają tego wyniku. Transport do budowy A4 jest liczony osobno.'
+            : 'Parametry procesu dotyczą 1 t frakcji pierwotnej. Jej wkład jest mnożony przez udział (100% − RC). Wkład RC wynosi 2,50 kg CO₂e/t × udział RC.';
+    }
+    function contributions(r) {
+        if (r.mode === 'simple') return { reference: r.ref };
+        var share = 1 - r.rcPct / 100;
+        return { energy: r.comp.energy * share, diesel: r.comp.diesel * share,
+            explosive: r.comp.explosive * share, transport: r.comp.transport * share,
+            wash: r.comp.wash * share, recycled: GWP_RC * r.rcPct / 100 };
+    }
+
+    function checkNumber(input, label, min, max, errors) {
+        var raw = input.value.trim();
+        var value = raw === '' ? NaN : Number(raw);
+        var valid = Number.isFinite(value) && value >= min && (max === null || value <= max);
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': ' + (max === null ? 'wpisz skończoną liczbę nie mniejszą niż ' + min : 'wpisz liczbę od ' + min + ' do ' + max));
+        return value;
+    }
+    function checkChoice(input, choices, label, errors) {
+        var valid = choices.indexOf(input.value) !== -1;
+        input.setAttribute('aria-invalid', String(!valid));
+        if (!valid) errors.push(label + ': wybierz pozycję z listy');
+    }
+    function inputErrors() {
+        var errors = [];
+        var mode = radioVal('aggMode');
+        if (['simple', 'advanced'].indexOf(mode) < 0) return ['Wybierz tryb obliczeń'];
+        [sType, sA4, sEf, aRock, aEnergy, aDiesel, aExpl, aA2, aRc, aA4].forEach(function (input) { input.setAttribute('aria-invalid', 'false'); });
+        if (mode === 'simple') {
+            checkChoice(sType, ['5.50', '3.99', '4.50', '3.20', '1.80', '3.80', '2.50'], 'Typ kruszywa', errors);
+            checkChoice(sEf, ['0.100', '0.031', '0.049', '0.082'], 'Współczynnik transportu', errors);
+            checkNumber(sA4, 'Transport A4 [km]', 0, 500, errors);
+        } else {
+            checkChoice(aRock, Object.keys(ROCK_DEFAULTS), 'Typ skały', errors);
+            var rc = checkNumber(aRc, 'Udział RC [%]', 0, 100, errors);
+            checkNumber(aA4, 'Transport A4 [km]', 0, 500, errors);
+            if (rc !== 100) {
+                checkNumber(aEnergy, 'Energia [kWh/t]', 0, 15, errors);
+                checkNumber(aDiesel, 'Olej napędowy [L/t]', 0, 2, errors);
+                checkNumber(aA2, 'Transport wewnętrzny [km]', 0, 50, errors);
+                if (ROCK_DEFAULTS[aRock.value] && ROCK_DEFAULTS[aRock.value].lita) checkNumber(aExpl, 'Materiały wybuchowe [kg/t]', 0, 1, errors);
+                if (['yes', 'no'].indexOf(radioVal('aggWash')) < 0) errors.push('Wybierz wariant płukania');
+            }
+        }
+        return errors;
+    }
+    function setValidation(errors) {
+        ['aggExportCsv', 'aggExportJson', 'aggExportXml'].forEach(function (id) { el(id).disabled = errors.length > 0; });
+        if (!errors.length) return;
+        inputWarn.className = 'agg-warn bad';
+        inputWarn.textContent = 'Popraw dane: ' + errors.join('; ') + '. Obliczenie i eksport są wstrzymane.';
+        [outTotal, outCEnergy, outCDiesel, outCExpl, outCTrans, outCWash, outCEnergyPct, outCDieselPct, outCExplPct, outCTransPct, outCWashPct].forEach(function (node) { node.textContent = '—'; });
+        outTotalNote.textContent = 'Brak wyniku dla niepoprawnych lub niekompletnych danych.';
+        outA4Note.textContent = ''; outA4Note.style.display = 'none';
+        compTable.textContent = ''; benchBox.textContent = '';
+        if (modChart) { modChart.data.datasets[0].data = []; modChart.update(); }
+    }
+
     /* ---- Obliczenia ---- */
     function compute() {
-        var mode = radioVal('aggMode') || 'simple';
+        syncPrimaryInputs();
+        var errors = inputErrors();
+        setValidation(errors);
+        if (errors.length) return null;
+        var mode = radioVal('aggMode');
 
         if (mode === 'simple') {
-            var ref = parseFloat(sType.value) || 0;
-            var a4km = clamp(num(sA4), 0, 500);
-            var a4ef = parseFloat(sEf.value) || EF_TRANSPORT;
+            var ref = Number(sType.value);
+            var a4km = num(sA4);
+            var a4ef = Number(sEf.value);
             var a4 = a4km * a4ef;
             // W trybie uproszczonym całość A1-A3 traktujemy jako "surowiec + przeróbka"
             // bez rozbicia parametrycznego; transport A2 wewnętrzny zawarty w wartości referencyjnej.
@@ -118,13 +164,14 @@
         var isLita = rd.lita;
         var isRC = (rock === 'rc');
 
-        var energy = clamp(num(aEnergy), 0, 15);
-        var diesel = clamp(num(aDiesel), 0, 2);
-        var explosive = isLita ? clamp(num(aExpl), 0, 1) : 0;
-        var washOn = (radioVal('aggWash') === 'yes');
-        var a2km = clamp(num(aA2), 0, 50);
-        var rcPct = clamp(num(aRc), 0, 100);
-        var a4km = clamp(num(aA4), 0, 500);
+        var rcPct = num(aRc);
+        var fixed = rcPct === 100;
+        var energy = fixed ? 0 : num(aEnergy);
+        var diesel = fixed ? 0 : num(aDiesel);
+        var explosive = !fixed && isLita ? num(aExpl) : 0;
+        var washOn = !fixed && radioVal('aggWash') === 'yes';
+        var a2km = fixed ? 0 : num(aA2);
+        var a4km = num(aA4);
 
         var cEnergy = energy * EF_EL;
         var cDiesel = diesel * EF_DIESEL;
@@ -191,51 +238,24 @@
     }
     function updateChart(r) {
         if (!modChart) return;
-        var c = r.comp;
-        if (r.mode === 'simple') {
-            modChart.data.labels = ['Wartość\nreferencyjna A1-A3'];
-            modChart.data.datasets[0].data = [r.ref];
-            modChart.data.datasets[0].backgroundColor = ['rgba(155,59,59,0.78)'];
-            modChart.data.datasets[0].borderColor = ['#9B3B3B'];
-        } else {
-            modChart.data.labels = ['Energia\nkruszenia', 'Paliwo\nmaszyn', 'Materiały\nwybuchowe', 'Transport\nA2', 'Płukanie'];
-            modChart.data.datasets[0].data = [c.energy, c.diesel, c.explosive, c.transport, c.wash];
-            modChart.data.datasets[0].backgroundColor = ['rgba(30,58,138,0.78)', 'rgba(196,114,26,0.78)', 'rgba(155,59,59,0.78)', 'rgba(11,93,51,0.72)', 'rgba(99,102,241,0.68)'];
-            modChart.data.datasets[0].borderColor = ['#1E3A8A', '#C4721A', '#9B3B3B', '#0B5D33', '#6366F1'];
-        }
+        var c = contributions(r);
+        var labels = r.mode === 'simple' ? ['Wartość historyczna A1-A3'] : ['Energia', 'Paliwo', 'Wybuchowe', 'Transport A2', 'Płukanie', 'Frakcja RC'];
+        modChart.data.labels = labels;
+        modChart.data.datasets[0].data = Object.keys(c).map(function (k) { return c[k]; });
+        modChart.data.datasets[0].backgroundColor = ['#1E3A8A', '#C4721A', '#9B3B3B', '#0B5D33', '#6366F1', '#64748B'];
+        modChart.data.datasets[0].borderColor = ['#1E3A8A', '#C4721A', '#9B3B3B', '#0B5D33', '#6366F1', '#64748B'];
         modChart.update();
     }
-
-    /* ---- Benchmark ---- */
     function benchmark(r) {
-        // Konserwatywne wartości domyślne poLCA per kategoria
-        var ref;
-        if (r.mode === 'simple') {
-            var v = r.ref;
-            if (v >= 5.0) ref = { v: 5.5, cat: 'kruszyw łamanych twardych (konserwatywna wartość domyślna poLCA 5,5)' };
-            else if (v <= 2.0) ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
-            else if (v <= 3.4) ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
-            else ref = { v: 3.8, cat: 'kruszyw — średnia ważona PL (~3,8)' };
-        } else {
-            if (r.isRC) ref = { v: GWP_RC, cat: 'kruszyw recyklingowych RC (~2,5)' };
-            else if (r.rock === 'natural') ref = { v: 1.8, cat: 'kruszyw naturalnych (default ~1,8)' };
-            else if (r.rock === 'soft') ref = { v: 3.2, cat: 'kruszyw wapiennych (default ~3,2)' };
-            else ref = { v: 5.5, cat: 'kruszyw łamanych twardych (konserwatywna wartość domyślna poLCA 5,5)' };
-        }
-        var t = r.total;
-        var diff = t - ref.v;
-        var rel = ref.v > 0 ? Math.abs(diff) / ref.v * 100 : 0;
-        var dir;
-        if (Math.abs(diff) < 0.05) dir = 'na poziomie';
-        else if (diff < 0) dir = 'niżej (o ' + fmt(rel, 0) + '%) niż';
-        else dir = 'wyżej (o ' + fmt(rel, 0) + '%) niż';
-        return 'GWP ' + fmt(t, 2) + ' kg CO₂eq/t — to ' + dir + ' konserwatywna wartość domyślna poLCA dla ' + ref.cat + '.';
+        return 'Historyczne założenia kalkulatora kruszyw. Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Pozostałe składniki mają własne założenia. Wynik służy do analizy scenariuszy.';
     }
 
     /* ---- Render ---- */
     function render() {
+        syncPrimaryInputs();
         var r = compute();
-        var c = r.comp;
+        if (!r) return null;
+        var c = contributions(r);
 
         outTotal.textContent = fmt(r.total, 2);
 
@@ -244,12 +264,12 @@
             outTotalNote.textContent = 'Tryb uproszczony · ' + r.simpleLabel;
         } else {
             var rcTxt = r.rcPct > 0 ? ' · ' + fmt(r.rcPct, 0) + '% frakcji RC' : '';
-            var washTxt = r.washOn ? ' · płukanie' : '';
+            var washTxt = r.washOn && r.rcPct < 100 ? ' · płukanie frakcji pierwotnej' : '';
             outTotalNote.textContent = 'Tryb zaawansowany · ' + r.rockLabel + rcTxt + washTxt;
         }
         if (r.a4 > 0) {
             outA4Note.style.display = 'block';
-            outA4Note.textContent = '+ moduł A4 (transport do budowy) = ' + fmt(r.a4, 2) + ' kg CO₂eq/t · razem A1-A4 ≈ ' + fmt(r.total + r.a4, 2) + ' kg CO₂eq/t (A4 raportowane osobno).';
+            outA4Note.textContent = '+ moduł A4 (transport do budowy) = ' + fmt(r.a4, 2) + ' kg CO₂eq/t · oszacowanie z A4 ≈ ' + fmt(r.total + r.a4, 2) + ' kg CO₂eq/t (A4 raportowane osobno).';
         } else {
             outA4Note.style.display = 'none';
             outA4Note.textContent = '';
@@ -267,8 +287,8 @@
             outCTrans.textContent = '—'; outCTransPct.textContent = '—';
             outCWash.textContent = '—'; outCWashPct.textContent = '—';
         } else {
-            // udziały liczone względem base (bez RC blendingu) — bardziej czytelne
-            var denom = r.base > 0 ? r.base : 1;
+            // Wkłady ważone udziałem frakcji pierwotnej; udział RC pokazują tabela i wykres.
+            var denom = r.total > 0 ? r.total : 1;
             setMod(outCEnergy, outCEnergyPct, c.energy, denom);
             setMod(outCDiesel, outCDieselPct, c.diesel, denom);
             setMod(outCExpl, outCExplPct, c.explosive, denom);
@@ -276,57 +296,24 @@
             setMod(outCWash, outCWashPct, c.wash, denom);
         }
 
-        // tabela
         var rows = '';
-        if (r.mode === 'simple') {
-            var optType = sType.options[sType.selectedIndex];
-            rows += '<tr><td>Wartość referencyjna A1-A3</td><td class="mono">' + (optType ? optType.text.split(' — ')[0] : '') + '</td><td class="mono">' + fmt(r.ref, 2) + ' kg CO₂eq/t</td><td class="mono highlight">' + fmt(r.ref, 2) + '</td><td class="mono">100,0</td></tr>';
-            if (r.a4 > 0) {
-                rows += '<tr><td>Transport A4 do budowy (poza A1-A3)</td><td class="mono">' + fmt(r.a4km, 0) + ' km</td><td class="mono">' + fmt(r.a4ef, 3) + ' kg/(t·km)</td><td class="mono highlight">' + fmt(r.a4, 2) + '</td><td class="mono">—</td></tr>';
-            }
-        } else {
-            var dn = r.base > 0 ? r.base : 1;
-            var items = [
-                { n: 'Energia el. kruszenia / przesiewania', p: fmt(r.energy, r.energy % 1 === 0 ? 0 : 1) + ' kWh/t', ef: '0,599 kg/kWh', em: c.energy },
-                { n: 'Olej napędowy maszyn (koparki, ładowarki)', p: fmt(r.diesel, 2) + ' L/t', ef: '3,17 kg/L', em: c.diesel },
-                { n: 'Materiały wybuchowe' + (r.isLita ? '' : ' (n/d — nie skała lita)'), p: fmt(r.explosive, 2) + ' kg/t', ef: '0,5 kg/kg', em: c.explosive },
-                { n: 'Płukanie kruszywa' + (r.washOn ? '' : ' (wyłączone)'), p: r.washOn ? '+0,5 kWh/t' : '0', ef: '0,599 kg/kWh', em: c.wash },
-                { n: 'Transport wewnętrzny A2', p: fmt(r.a2km, r.a2km % 1 === 0 ? 0 : 1) + ' km', ef: '0,100 kg/(t·km)', em: c.transport }
-            ];
-            items.forEach(function (it) {
-                rows += '<tr><td>' + it.n + '</td><td class="mono">' + it.p + '</td><td class="mono">' + it.ef + '</td><td class="mono highlight">' + fmt(it.em, 3) + '</td><td class="mono">' + fmt(it.em / dn * 100, 1) + '</td></tr>';
-            });
-            rows += '<tr style="font-weight:600;background:rgba(30,58,138,0.03);"><td>Suma komponentów (frakcja pierwotna)</td><td class="mono">—</td><td class="mono">—</td><td class="mono highlight">' + fmt(r.base, 2) + '</td><td class="mono">100,0</td></tr>';
-            if (r.rcPct > 0) {
-                rows += '<tr><td>Frakcja recyklingowa RC (' + fmt(r.rcPct, 0) + '%)</td><td class="mono">' + fmt(r.rcPct, 0) + '%</td><td class="mono">' + fmt(GWP_RC, 2) + ' kg CO₂eq/t</td><td class="mono highlight">' + fmt(GWP_RC * (r.rcPct / 100), 2) + '</td><td class="mono">—</td></tr>';
-                rows += '<tr style="font-weight:600;background:rgba(155,59,59,0.04);"><td>GWP A1-A3 — wynik mieszany</td><td class="mono">—</td><td class="mono">—</td><td class="mono highlight">' + fmt(r.total, 2) + '</td><td class="mono">—</td></tr>';
-            }
-            if (r.a4 > 0) {
-                rows += '<tr><td>Transport A4 do budowy (poza A1-A3)</td><td class="mono">' + fmt(r.a4km, 0) + ' km</td><td class="mono">0,100 kg/(t·km)</td><td class="mono highlight">' + fmt(r.a4, 2) + '</td><td class="mono">—</td></tr>';
-            }
-        }
+        var names = { reference: 'Wartość historyczna wybranego wariantu', energy: 'Energia kruszenia', diesel: 'Paliwo maszyn', explosive: 'Materiały wybuchowe', transport: 'Transport wewnętrzny', wash: 'Płukanie', recycled: 'Frakcja recyklingowa RC' };
+        Object.keys(c).forEach(function (key) {
+            if (r.mode === 'advanced' && r.rcPct === 100 && key !== 'recycled') return;
+            var share = r.mode === 'simple' ? 1 : (key === 'recycled' ? r.rcPct / 100 : 1 - r.rcPct / 100);
+            rows += '<tr><td>' + names[key] + '</td><td class="mono">' + fmt(share * 100, 0) + '% masy</td><td class="mono">' +
+                (share > 0 ? fmt(c[key] / share, 3) : '—') + '</td><td class="mono highlight">' + fmt(c[key], 3) + '</td><td class="mono">' + (r.total > 0 ? fmt(c[key] / r.total * 100, 1) : '0,0') + '</td></tr>';
+        });
+        rows += '<tr><td>Oszacowanie A1-A3 — suma wkładów</td><td>—</td><td>—</td><td class="mono highlight">' + fmt(r.total, 2) + '</td><td>100,0</td></tr>';
+        if (r.a4 > 0) rows += '<tr><td>Transport do budowy A4 — osobno</td><td>' + fmt(r.a4km, 0) + ' km</td><td>' + fmt(r.mode === 'simple' ? r.a4ef : EF_TRANSPORT, 3) + ' kg/(t·km)</td><td class="mono">' + fmt(r.a4, 2) + '</td><td>—</td></tr>';
         compTable.innerHTML = rows;
 
         benchBox.textContent = benchmark(r);
 
-        // walidacja zakresów (tryb zaawansowany)
-        var probs = [];
-        if (r.mode === 'advanced') {
-            if (num(aEnergy) < 0 || num(aEnergy) > 15) probs.push('energia kruszenia poza zakresem 0–15 kWh/t');
-            if (num(aDiesel) < 0 || num(aDiesel) > 2) probs.push('olej napędowy poza zakresem 0–2 L/t');
-            if (r.isLita && (num(aExpl) < 0 || num(aExpl) > 1)) probs.push('materiały wybuchowe poza zakresem 0–1 kg/t');
-            if (num(aA2) < 0 || num(aA2) > 50) probs.push('transport A2 poza zakresem 0–50 km');
-        }
-        if (num(r.mode === 'simple' ? sA4 : aA4) < 0 || num(r.mode === 'simple' ? sA4 : aA4) > 500) probs.push('transport A4 poza zakresem 0–500 km');
-        if (probs.length) {
-            inputWarn.className = 'agg-warn bad';
-            inputWarn.textContent = 'Uwaga: ' + probs.join('; ') + ' — wartości zostały ograniczone do dopuszczalnego zakresu w obliczeniach.';
-        } else {
-            inputWarn.className = 'agg-warn ok';
-            inputWarn.textContent = r.mode === 'simple'
-                ? 'Tryb uproszczony — wynik to wartość referencyjna GWP A1-A3 wg zbiorów danych POLCA-AGG-PL.'
-                : 'Parametry w dopuszczalnych zakresach.';
-        }
+        inputWarn.className = 'agg-warn ok';
+        inputWarn.textContent = r.mode === 'simple'
+            ? 'Tryb uproszczony — wybrana historyczna wartość kalkulatora kruszyw.'
+            : (r.rcPct === 100 ? 'RC = 100% — stały wariant 2,50 kg CO₂e/t. Parametry frakcji pierwotnej są wyłączone.' : 'Parametry frakcji pierwotnej w zakresach kalkulatora.');
 
         updateChart(r);
         return r;
@@ -344,117 +331,52 @@
         }
     }
 
-    function exportCsv() {
+    function calculationData() {
         var r = compute();
-        var lines = [];
-        lines.push('Kalkulator pre-qualify EPD dla kruszyw — poLCA;c-PCR-AGG-EPD-Polska v0.9-DRAFT;EN 12620 / EN 13242;EN 15804+A2');
-        lines.push('Jednostka deklarowana;1 t kruszywa na bramie kopalni / zakładu przeróbki');
-        lines.push('Tryb;' + (r.mode === 'simple' ? 'uproszczony' : 'zaawansowany'));
-        if (r.mode === 'simple') {
-            lines.push('Typ kruszywa;' + r.simpleLabel);
-            lines.push('GWP A1-A3 referencyjne [kg CO2eq/t];' + num6(r.ref));
-            if (r.a4 > 0) {
-                lines.push('Transport A4 do budowy [km];' + num6(r.a4km));
-                lines.push('EF transportu A4 [kg CO2eq/(t·km)];' + num6(r.a4ef));
-                lines.push('Emisja A4 [kg CO2eq/t];' + num6(r.a4));
-            }
-        } else {
-            lines.push('Typ skały / surowca;' + r.rockLabel);
-            lines.push('Energia el. kruszenia [kWh/t];' + num6(r.energy));
-            lines.push('Olej napędowy maszyn [L/t];' + num6(r.diesel));
-            lines.push('Materiały wybuchowe [kg/t];' + num6(r.explosive));
-            lines.push('Płukanie;' + (r.washOn ? 'tak (+0,5 kWh/t)' : 'nie'));
-            lines.push('Transport wewnętrzny A2 [km];' + num6(r.a2km));
-            lines.push('Zawartość frakcji RC [%];' + num6(r.rcPct));
-            lines.push('Transport A4 do budowy [km];' + num6(r.a4km));
-            lines.push('');
-            lines.push('Komponent;Emisja [kg CO2eq/t];Udział w sumie komponentów [%]');
-            var dn = r.base > 0 ? r.base : 1;
-            var c = r.comp;
-            lines.push('Energia kruszenia (' + num6(r.energy) + ' kWh/t × 0,599);' + num6(c.energy) + ';' + num6(c.energy / dn * 100));
-            lines.push('Paliwo maszyn (' + num6(r.diesel) + ' L/t × 3,17);' + num6(c.diesel) + ';' + num6(c.diesel / dn * 100));
-            lines.push('Materiały wybuchowe (' + num6(r.explosive) + ' kg/t × 0,5);' + num6(c.explosive) + ';' + num6(c.explosive / dn * 100));
-            lines.push('Transport A2 (' + num6(r.a2km) + ' km × 0,100);' + num6(c.transport) + ';' + num6(c.transport / dn * 100));
-            lines.push('Płukanie (' + (r.washOn ? '+0,5 kWh/t × 0,599' : '0') + ');' + num6(c.wash) + ';' + num6(c.wash / dn * 100));
-            lines.push('Suma komponentów (frakcja pierwotna);' + num6(r.base) + ';100');
-            if (r.rcPct > 0) {
-                lines.push('Frakcja RC (' + num6(r.rcPct) + '% × 2,50);' + num6(GWP_RC * (r.rcPct / 100)) + ';');
-            }
-            if (r.a4 > 0) lines.push('Transport A4 do budowy;' + num6(r.a4) + ';');
-        }
-        lines.push('');
-        lines.push('GWP A1-A3 — łącznie [kg CO2eq/t];' + num6(r.total) + ';');
-        if (r.a4 > 0) lines.push('GWP A1-A4 — łącznie (A4 raportowane osobno) [kg CO2eq/t];' + num6(r.total + r.a4) + ';');
-        lines.push('');
-        lines.push('Uwaga;Oszacowanie pre-qualify — nie zastępuje pełnego EPD weryfikowanego (AVS 3+). Energia el. = poLCA-EN-PL-2024 v9.1 0,599 kg CO2e/kWh. Olej napędowy = 3,17 kg CO2e/L (KOBiZE 2024). Materiały wybuchowe = ~0,5 kg CO2e/kg. Kruszywo to składnik masowy — pierwszeństwo mają EPD kopalni.');
+        if (!r) return null;
+        var fixed = r.mode === 'advanced' && r.rcPct === 100;
+        var data = {
+            schema: 'polca-aggregate-calculation/2.0', tool: 'poLCA — Kalkulator kruszyw',
+            assumptions_version: 'historyczny zestaw kruszyw 2026.1; energia 2024 v9.1',
+            indicator: 'Orientacyjne oszacowanie klimatyczne z historycznych współczynników o różnych zakresach',
+            note: 'Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Zastosowanie w EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
+            reference_unit: '1 t kruszywa', mode: r.mode,
+            fixed_recycled_variant: fixed,
+            factors: { electricity_fossil_kg_CO2e_per_kWh: EF_EL, diesel_kg_CO2e_per_L: EF_DIESEL,
+                explosive_kg_CO2e_per_kg: EF_EXPLOSIVE, transport_kg_CO2e_per_t_km: EF_TRANSPORT,
+                washing_extra_kWh_per_t: WASH_KWH, recycled_variant_kg_CO2e_per_t: GWP_RC },
+            inputs: r.mode === 'simple'
+                ? { aggregate_variant: r.simpleLabel, reference_estimate_kg_CO2e_per_t: r.ref, transport_A4_km: r.a4km, transport_A4_factor: r.a4ef }
+                : { rock: r.rock, primary_fraction: 1 - r.rcPct / 100, recycled_fraction_pct: r.rcPct,
+                    primary_process: fixed ? null : { electricity_kWh_per_t: r.energy, diesel_L_per_t: r.diesel,
+                        explosive_kg_per_t: r.explosive, washing: r.washOn, internal_transport_km: r.a2km },
+                    transport_A4_km: r.a4km },
+            results_kg_CO2e_per_t: { weighted_contributions: contributions(r),
+                climate_estimate_A1_A3: num6(r.total), A4_transport: num6(r.a4),
+                climate_estimate_with_A4: num6(r.total + r.a4) },
+            timestamp: new Date().toISOString()
+        };
+        return data;
+    }
+    function exportCsv() {
+        var data = calculationData();
+        if (!data) return;
+        var r = data.results_kg_CO2e_per_t;
+        var quote = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
+        var lines = ['Kalkulator kruszyw poLCA;Własny format 2.0;Historyczne założenia kalkulatora',
+            'Zakres;' + quote(data.indicator), 'Tryb;' + data.mode,
+            'Stały wariant RC 100%;' + data.fixed_recycled_variant,
+            'Dane zastosowane;' + quote(JSON.stringify(data.inputs)),
+            'Współczynniki;' + quote(JSON.stringify(data.factors)),
+            'Składnik;Ważony wkład [kg CO2e/t]'];
+        Object.keys(r.weighted_contributions).forEach(function (k) { lines.push(k + ';' + num6(r.weighted_contributions[k])); });
+        lines.push('Oszacowanie A1-A3;' + r.climate_estimate_A1_A3);
+        lines.push('Transport A4 osobno;' + r.A4_transport);
+        lines.push('Oszacowanie z A4;' + r.climate_estimate_with_A4);
+        lines.push('Uwaga;' + quote(data.note));
         copyText(lines.join('\n'), el('aggExportCsv'), 'Kopiuj CSV');
     }
-
-    function exportJson() {
-        var r = compute();
-        var c = r.comp;
-        var obj = {
-            tool: 'poLCA — Kalkulator pre-qualify EPD dla kruszyw',
-            standard: ['EN 15804+A2', 'EN 12620', 'EN 13242'],
-            pcr: 'c-PCR-AGG-EPD-Polska v0.9-DRAFT',
-            note: 'Oszacowanie pre-qualify — nie zastępuje pełnego EPD weryfikowanego (AVS 3+). Kruszywo to składnik masowy — pierwszeństwo mają EPD kopalni.',
-            declared_unit: '1 t kruszywa na bramie kopalni / zakładu przeróbki',
-            mode: r.mode,
-            factors: {
-                electricity_factor_kg_per_kWh: EF_EL,
-                diesel_factor_kg_per_L: EF_DIESEL,
-                explosive_factor_kg_per_kg: EF_EXPLOSIVE,
-                ef_transport_kg_per_t_km: EF_TRANSPORT,
-                wash_extra_kWh_per_t: WASH_KWH,
-                rc_fraction_GWP_kg_per_t: GWP_RC,
-                electricity_source: 'poLCA-EN-PL-2024 v9.1',
-                diesel_source: 'KOBiZE 2024'
-            }
-        };
-        if (r.mode === 'simple') {
-            obj.inputs = {
-                aggregate_type: r.simpleLabel,
-                reference_GWP_A1_A3_kg_per_t: num6(r.ref),
-                transport_A4_km: num6(r.a4km),
-                transport_A4_ef_kg_per_t_km: num6(r.a4ef)
-            };
-            obj.results_kg_CO2eq_per_t = {
-                GWP_A1_A3_total: num6(r.total),
-                A4_transport_to_site: num6(r.a4),
-                GWP_A1_A4_total: num6(r.total + r.a4)
-            };
-        } else {
-            obj.inputs = {
-                rock_type: r.rock,
-                rock_label: r.rockLabel,
-                is_solid_rock: r.isLita,
-                is_recycled: r.isRC,
-                crushing_electricity_kWh_per_t: num6(r.energy),
-                machinery_diesel_L_per_t: num6(r.diesel),
-                explosives_kg_per_t: num6(r.explosive),
-                washing: r.washOn,
-                internal_transport_A2_km: num6(r.a2km),
-                rc_fraction_pct: num6(r.rcPct),
-                transport_A4_km: num6(r.a4km)
-            };
-            obj.results_kg_CO2eq_per_t = {
-                components: {
-                    crushing_energy: num6(c.energy),
-                    machinery_fuel: num6(c.diesel),
-                    explosives: num6(c.explosive),
-                    transport_A2: num6(c.transport),
-                    washing: num6(c.wash)
-                },
-                primary_fraction_base: num6(r.base),
-                rc_fraction_contribution: num6(GWP_RC * (r.rcPct / 100)),
-                GWP_A1_A3_total: num6(r.total),
-                A4_transport_to_site: num6(r.a4),
-                GWP_A1_A4_total: num6(r.total + r.a4)
-            };
-        }
-        obj.timestamp = new Date().toISOString();
-        copyText(JSON.stringify(obj, null, 2), el('aggExportJson'), 'Kopiuj JSON');
-    }
+    function exportJson() { var data = calculationData(); if (data) copyText(JSON.stringify(data, null, 2), el('aggExportJson'), 'Kopiuj JSON'); }
 
     function xmlEsc(s) {
         return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -471,74 +393,29 @@
         } catch (e) { return false; }
     }
 
-    function exportIlcdEpdXml() {
-        var r = compute();
-        var c = r.comp || {};
-        var a2 = (typeof c.transport === 'number') ? c.transport : 0;
-        var a1a3 = r.total;
-        var a13 = a1a3 - a2; // A1+A3 łącznie (pozyskanie + przeróbka, bez transportu wewnętrznego)
-        var label = r.mode === 'simple' ? (r.simpleLabel || 'kruszywo') : (r.rockLabel || 'kruszywo');
-        var name = 'Kruszywo budowlane — ' + label + (r.mode === 'simple' ? ' (tryb uproszczony)' : ' (tryb zaawansowany)');
-        var tech = r.mode === 'simple'
-            ? 'Wartość referencyjna GWP A1-A3 wg zbiorów danych POLCA-AGG-PL'
-            : ('Pozyskanie i przeróbka: energia kruszenia ' + num6(r.energy) + ' kWh/t; olej napędowy ' + num6(r.diesel) + ' L/t; materiały wybuchowe ' + num6(r.explosive) + ' kg/t; płukanie: ' + (r.washOn ? 'tak' : 'nie') + '; transport wewnętrzny ' + num6(r.a2km) + ' km' + (r.rcPct > 0 ? '; frakcja recyklingowa RC ' + num6(r.rcPct) + '%' : ''));
-        var ts = new Date().toISOString();
-        var x = [];
-        x.push('<?xml version="1.0" encoding="UTF-8"?>');
-        x.push('<ilcd:processDataSet xmlns:ilcd="http://lca.jrc.it/ILCD/Process" version="1.1">');
-        x.push('  <!-- poLCA pre-qualify estimate — NOT a verified EPD. ILCD+EPD-compatible structure (simplified). -->');
-        x.push('  <!-- Pełny EPD wymaga danych zakładowych i weryfikacji AVS 3+. Format DPP wg CEN/CENELEC EN 1821x (publikacja 2026) — zob. /o-polca/gotowosc-dpp.html -->');
-        x.push('  <processInformation>');
-        x.push('    <dataSetInformation>');
-        x.push('      <name>' + xmlEsc(name) + '</name>');
-        x.push('      <classification>Wyroby budowlane / Kruszywa (EN 12620, EN 13242)</classification>');
-        x.push('    </dataSetInformation>');
-        x.push('    <quantitativeReference>');
-        x.push('      <referenceFlow>1 t kruszywa (na bramie kopalni / zakładu przeróbki)</referenceFlow>');
-        x.push('    </quantitativeReference>');
-        x.push('    <geography><locationOfOperationSupplyOrProduction location="PL"/></geography>');
-        x.push('    <technology>' + xmlEsc(tech) + '</technology>');
-        x.push('  </processInformation>');
-        x.push('  <modellingAndValidation>');
-        x.push('    <complianceDeclarations>');
-        x.push('      <compliance>EN 15804+A2:2019; c-PCR-AGG-EPD-Polska; ISO 14040/14044</compliance>');
-        x.push('    </complianceDeclarations>');
-        x.push('    <dataSourcesTreatmentAndRepresentativeness>');
-        x.push('      <dataSource>POLCA-AGG-LCI-DEFAULTS-2026; poLCA-EN-PL-2024 v9.1 (0.599 kg CO2e/kWh); KOBiZE 2024 (olej napędowy 3.17 kg CO2e/L)</dataSource>');
-        x.push('    </dataSourcesTreatmentAndRepresentativeness>');
-        x.push('  </modellingAndValidation>');
-        x.push('  <exchanges>');
-        x.push('    <!-- moduły EN 15804: A1+A3 (pozyskanie + przeróbka), A2 (transport wewnętrzny), A1-A3 GWP-total, kg CO2 eq / 1 t kruszywa -->');
-        x.push('    <exchange module="A1-A3-acquisition-processing"><meanAmount>' + num6(a13) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('    <exchange module="A2"><meanAmount>' + num6(a2) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        x.push('    <exchange module="A1-A3"><meanAmount>' + num6(a1a3) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        if (r.a4 > 0) {
-            x.push('    <!-- A4 transport na budowę — raportowane osobno, poza A1-A3 -->');
-            x.push('    <exchange module="A4"><meanAmount>' + num6(r.a4) + '</meanAmount><unit>kg CO2 eq</unit></exchange>');
-        }
-        x.push('  </exchanges>');
-        x.push('  <administrativeInformation>');
-        x.push('    <publicationAndOwnership>');
-        x.push('      <referenceToOwnershipOfDataSet>Multicert Sp. z o.o. / EPD Polska</referenceToOwnershipOfDataSet>');
-        x.push('      <dataSetVersion>poLCA-pre-qualify-2026.1</dataSetVersion>');
-        x.push('      <generatedAt>' + xmlEsc(ts) + '</generatedAt>');
-        x.push('    </publicationAndOwnership>');
-        x.push('  </administrativeInformation>');
-        x.push('</ilcd:processDataSet>');
-        var xml = x.join('\n');
+    function exportPolcaXml() {
+        var data = calculationData();
+        if (!data) return;
+        var r = data.results_kg_CO2e_per_t;
+        var xml = '<?xml version="1.0" encoding="UTF-8"?>\n' +
+            '<polcaCalculation schema="polca-aggregate-calculation/2.0">\n' +
+            '  <name>' + xmlEsc(data.tool) + '</name>\n' +
+            '  <unit>kg CO2e/t kruszywa</unit>\n' +
+            '  <scope>' + xmlEsc(data.indicator) + '</scope>\n' +
+            '  <estimate stage="A1-A3">' + r.climate_estimate_A1_A3 + '</estimate>\n' +
+            '  <estimate stage="A4">' + r.A4_transport + '</estimate>\n' +
+            '  <calculationData encoding="application/json">' + xmlEsc(JSON.stringify(data)) + '</calculationData>\n' +
+            '</polcaCalculation>';
         var btn = el('aggExportXml');
-        if (downloadFile(xml, 'polca-kruszywa-pre-qualify.xml', 'application/xml;charset=utf-8')) {
-            var lbl = 'Eksport ILCD+EPD XML';
+        if (downloadFile(xml, 'polca-kruszywa-obliczenie.xml', 'application/xml;charset=utf-8')) {
             btn.textContent = 'Pobrano XML';
-            setTimeout(function () { btn.textContent = lbl; }, 2000);
-        } else {
-            copyText(xml, btn, 'Eksport ILCD+EPD XML');
-        }
+            setTimeout(function () { btn.textContent = 'Pobierz XML poLCA'; }, 2000);
+        } else { copyText(xml, btn, 'Pobierz XML poLCA'); }
     }
 
     /* ---- Przełączanie trybu ---- */
     function applyMode() {
-        var mode = radioVal('aggMode') || 'simple';
+        var mode = radioVal('aggMode');
         if (mode === 'simple') {
             paneSimple.classList.add('active');
             paneAdvanced.classList.remove('active');
@@ -573,7 +450,7 @@
     var btnCsv = el('aggExportCsv'), btnJson = el('aggExportJson'), btnXml = el('aggExportXml');
     if (btnCsv) btnCsv.addEventListener('click', exportCsv);
     if (btnJson) btnJson.addEventListener('click', exportJson);
-    if (btnXml) btnXml.addEventListener('click', exportIlcdEpdXml);
+    if (btnXml) btnXml.addEventListener('click', exportPolcaXml);
 
     /* ---- Init ---- */
     function init() {

@@ -1,215 +1,77 @@
-/**
- * poLCA Calculator v8.0
- */
-(function() {
+/** poLCA — kalkulator energii, zestaw historyczny 2024. */
+(function () {
     'use strict';
-
     var energyInput = document.getElementById('energyInput');
     var sourceSelect = document.getElementById('sourceSelect');
-    var resultMain = document.getElementById('resultMain');
-    var resultEU = document.getElementById('resultEU');
-    var calcDiff = document.getElementById('calcDiff');
-    var FACTOR_EU = 210;
-
     if (!energyInput || !sourceSelect) return;
-
-    /* ---- Comparison chart ---- */
-    var compChart = null;
-
-    function initCompChart() {
-        var canvas = document.getElementById('calcCompChart');
-        if (!canvas || !window.Chart) return;
-        var ctx = canvas.getContext('2d');
-        compChart = new window.Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Wybrane źródło (PL)', 'Średnia EU (~210 kg/MWh)'],
-                datasets: [{
-                    data: [0, 0],
-                    backgroundColor: ['rgba(30,58,138,0.75)', 'rgba(107,114,128,0.35)'],
-                    borderColor:     ['#1E3A8A', '#6B7280'],
-                    borderWidth: 2,
-                    borderRadius: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                animation: { duration: 400, easing: 'easeOutQuart' },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#111318',
-                        borderColor: '#1E3A8A',
-                        borderWidth: 1,
-                        titleColor: '#fff',
-                        bodyColor: 'rgba(255,255,255,0.7)',
-                        padding: 10,
-                        callbacks: {
-                            label: function(c) {
-                                return ' ' + Math.round(c.raw).toLocaleString('pl-PL') + ' kg CO₂';
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: { font: { family: "'Inter', sans-serif", size: 11 }, color: '#6B7280' }
-                    },
-                    y: {
-                        beginAtZero: true,
-                        grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: {
-                            font: { family: "'IBM Plex Mono', monospace", size: 10 },
-                            color: '#9CA3AF',
-                            callback: function(v) { return v.toLocaleString('pl-PL') + ' kg'; }
-                        }
-                    }
-                }
-            }
-        });
-    }
-
-    function updateCompChart(main, eu, factor) {
-        if (!compChart) return;
-        /* kolor słupka zależy od tego, czy PL wyższe czy niższe od EU */
-        var isPLHigher = main > eu;
-        compChart.data.datasets[0].backgroundColor = isPLHigher
-            ? 'rgba(196,114,26,0.75)'
-            : 'rgba(30,58,138,0.75)';
-        compChart.data.datasets[0].borderColor = isPLHigher ? '#C4721A' : '#1E3A8A';
-        compChart.data.datasets[0].data = [main, eu];
-        compChart.update();
-    }
-
-    function formatNumber(n) {
-        return Math.round(n).toLocaleString('pl-PL');
-    }
-
-    function getSourceLabel() {
-        var opt = sourceSelect.options[sourceSelect.selectedIndex];
-        return opt ? opt.text.split(' (')[0] : 'Wybrane źródło';
-    }
-
-    function calculate() {
-        var energy = parseFloat(energyInput.value) || 0;
-        var factor = parseFloat(sourceSelect.value) || 0;
-        var emissionMain = energy * factor;
-        var emissionEU   = energy * FACTOR_EU;
-
-        resultMain.textContent = formatNumber(emissionMain);
-        resultEU.textContent   = formatNumber(emissionEU);
-        updateCompChart(emissionMain, emissionEU, factor);
-
-        if (emissionEU > 0 && factor > 0) {
-            var diff = ((emissionMain - emissionEU) / emissionEU) * 100;
-            if (diff > 0) {
-                calcDiff.textContent = 'Różnica: +' + Math.round(diff) + '% przy zastosowaniu danych polskich';
-                calcDiff.style.color = '#C4721A';
-            } else if (diff < 0) {
-                calcDiff.textContent = 'Różnica: ' + Math.round(diff) + '% względem średniej europejskiej';
-                calcDiff.style.color = '#1E3A8A';
-            } else {
-                calcDiff.textContent = 'Wartości zbieżne ze średnią europejską';
-                calcDiff.style.color = '#757575';
-            }
-        } else {
-            calcDiff.textContent = '—';
-            calcDiff.style.color = '#757575';
+    function invalid(message) {
+        document.getElementById('energyInputWarn').textContent = message;
+        document.getElementById('energyInputWarn').hidden = !message;
+        energyInput.setAttribute('aria-invalid', String(!!message));
+        ['matExportCsv', 'matExportJson'].forEach(function (id) { document.getElementById(id).disabled = !!message; });
+        if (message) {
+            document.getElementById('resultMain').textContent = '—';
+            document.getElementById('resultUnit').textContent = '';
+            document.getElementById('resultScope').textContent = 'Popraw dane, aby obliczyć i wyeksportować wynik.';
         }
+        return null;
     }
-
-    /* ---- CSV export ---- */
+    function payload() {
+        var raw = energyInput.value.trim();
+        var energy = raw === '' ? NaN : Number(raw);
+        if (raw === '' || !Number.isFinite(energy) || energy < 0) return invalid('Zużycie energii: wpisz liczbę nieujemną w MWh. Puste pole nie oznacza zera.');
+        if (['599', '202', '279', '344', '0'].indexOf(sourceSelect.value) < 0) return invalid('Wybierz źródło energii z listy.');
+        var option = sourceSelect.options[sourceSelect.selectedIndex];
+        var factor = Number(sourceSelect.value);
+        if (!Number.isFinite(energy * factor)) return invalid('Zużycie energii jest zbyt duże do obliczenia skończonego wyniku. Zmniejsz wartość.');
+        invalid('');
+        var electricity = option.getAttribute('data-scope') === 'fossil-lca';
+        return {
+            schema: 'polca-energy-calculation/2.0',
+            source: option.text,
+            energy_MWh: energy,
+            factor_kg_per_MWh: factor,
+            result_kg: energy * factor,
+            unit: electricity ? 'kg CO2e' : 'kg CO2',
+            indicator: electricity ? 'GWP-fossil' : 'direct fossil CO2',
+            scope: electricity ? 'Historyczny profil poLCA-EN-PL-2024 v9.1, część kopalna cyklu życia' : 'Historyczne założenie kalkulatora: CO2 kopalny ze spalania, bez dostaw paliwa',
+            reference: electricity ? 'data/polca-en-pl-2024.json' : 'Założenia kalkulatora paliw; wartości nie zastępują danych paliwa i instalacji',
+            timestamp: new Date().toISOString()
+        };
+    }
+    function calculate() {
+        var r = payload();
+        if (!r) return;
+        document.getElementById('resultMain').textContent = Math.round(r.result_kg).toLocaleString('pl-PL');
+        document.getElementById('resultUnit').textContent = r.unit.replace('2', '₂');
+        document.getElementById('resultScope').textContent = r.scope;
+    }
+    function copy(text, btn, label) {
+        function fallback() {
+            var ta = document.createElement('textarea'); ta.value = text;
+            document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+        }
+        function done() { btn.textContent = 'Skopiowano'; setTimeout(function () { btn.textContent = label; }, 2000); }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(done, function () { fallback(); done(); });
+        } else { fallback(); done(); }
+    }
     var csvBtn = document.getElementById('matExportCsv');
-    if (csvBtn) {
-        csvBtn.addEventListener('click', function() {
-            var energy = parseFloat(energyInput.value) || 0;
-            var factor = parseFloat(sourceSelect.value) || 0;
-            var main = energy * factor;
-            var eu   = energy * FACTOR_EU;
-            var csv = [
-                'Źródło;Zużycie [MWh];Emisja PL [kg CO₂];Emisja EU avg [kg CO₂];Różnica [%];Źródło danych',
-                [
-                    '"' + getSourceLabel() + '"',
-                    energy,
-                    Math.round(main),
-                    Math.round(eu),
-                    (factor > 0 && eu > 0 ? Math.round((main-eu)/eu*100) : 0),
-                    '"poLCA v7.6 / KOBiZE 2024"'
-                ].join(';')
-            ].join('\n');
-            try {
-                navigator.clipboard.writeText(csv).then(function() {
-                    csvBtn.textContent = 'Skopiowano!';
-                    setTimeout(function() { csvBtn.textContent = 'Kopiuj CSV'; }, 2000);
-                });
-            } catch(e) {
-                var ta = document.createElement('textarea');
-                ta.value = csv;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                csvBtn.textContent = 'Skopiowano!';
-                setTimeout(function() { csvBtn.textContent = 'Kopiuj CSV'; }, 2000);
-            }
-        });
-    }
-
-    /* ---- JSON export ---- */
+    csvBtn.addEventListener('click', function () {
+        var r = payload();
+        if (!r) return;
+        var quote = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
+        var csv = 'Źródło;Energia [MWh];Wskaźnik [kg/MWh];Wynik [kg];Jednostka;Rodzaj wskaźnika;Zakres\n' +
+            [r.source, r.energy_MWh, r.factor_kg_per_MWh, r.result_kg, r.unit, r.indicator, r.scope].map(quote).join(';');
+        copy(csv, csvBtn, 'Kopiuj CSV');
+    });
     var jsonBtn = document.getElementById('matExportJson');
-    if (jsonBtn) {
-        jsonBtn.addEventListener('click', function() {
-            var energy = parseFloat(energyInput.value) || 0;
-            var factor = parseFloat(sourceSelect.value) || 0;
-            var main = energy * factor;
-            var eu   = energy * FACTOR_EU;
-            var obj = {
-                source: getSourceLabel(),
-                energy_MWh: energy,
-                factor_kg_per_MWh: factor,
-                emission_PL_kg_CO2: Math.round(main),
-                emission_EU_avg_kg_CO2: Math.round(eu),
-                deviation_pct: factor > 0 && eu > 0 ? Math.round((main-eu)/eu*100) : null,
-                reference: 'poLCA v7.6 / KOBiZE 2024',
-                norm: 'EN 15804+A2',
-                timestamp: new Date().toISOString()
-            };
-            var json = JSON.stringify(obj, null, 2);
-            try {
-                navigator.clipboard.writeText(json).then(function() {
-                    jsonBtn.textContent = 'Skopiowano!';
-                    setTimeout(function() { jsonBtn.textContent = 'Kopiuj JSON'; }, 2000);
-                });
-            } catch(e) {
-                var ta = document.createElement('textarea');
-                ta.value = json;
-                document.body.appendChild(ta);
-                ta.select();
-                document.execCommand('copy');
-                document.body.removeChild(ta);
-                jsonBtn.textContent = 'Skopiowano!';
-                setTimeout(function() { jsonBtn.textContent = 'Kopiuj JSON'; }, 2000);
-            }
-        });
-    }
-
+    jsonBtn.addEventListener('click', function () { var data = payload(); if (data) copy(JSON.stringify(data, null, 2), jsonBtn, 'Kopiuj JSON'); });
     energyInput.addEventListener('input', calculate);
     sourceSelect.addEventListener('change', calculate);
-
-    /* init chart after DOM ready */
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() { initCompChart(); calculate(); });
-    } else {
-        initCompChart();
-        calculate();
-    }
+    calculate();
 })();
 
-/* =========================================================
-   KALKULATOR MATERIAŁÓW BUDOWLANYCH
-   ========================================================= */
 (function () {
     'use strict';
 
@@ -273,10 +135,20 @@
         return (n < 0 ? '−' : '') + Math.abs(Math.round(n)).toLocaleString('pl-PL');
     }
 
+    function materialQuantity(m) {
+        var raw = matQty.value.trim();
+        var qty = raw === '' ? NaN : Number(raw);
+        var valid = !!m && Number.isFinite(qty) && qty >= 0 && Number.isFinite(qty * m.gwp);
+        matQty.setAttribute('aria-invalid', String(!valid));
+        matQty.setCustomValidity(valid ? '' : 'Wpisz skończoną, nieujemną ilość materiału.');
+        if (matExport) matExport.disabled = !valid;
+        if (!valid) { matResult.textContent = '—'; matRef.textContent = 'Wpisz poprawną ilość materiału i wybierz materiał.'; }
+        return valid ? qty : null;
+    }
     function calcMat() {
         var m = getCurrent();
-        if (!m) return;
-        var qty = parseFloat(matQty.value) || 0;
+        var qty = materialQuantity(m);
+        if (qty === null) return;
         var total = m.gwp * qty;
         var stats = catStats(m.cat);
 
@@ -304,8 +176,8 @@
     if (matExport) {
         matExport.addEventListener('click', function() {
             var m = getCurrent();
-            if (!m) return;
-            var qty = parseFloat(matQty.value) || 0;
+            var qty = materialQuantity(m);
+            if (qty === null) return;
             var total = m.gwp * qty;
             var csv = [
                 'Materiał;GWP [kg CO₂e/' + m.unit + '];Ilość [' + m.unit + '];GWP łączny [kg CO₂e];Kategoria;Źródło',
@@ -315,7 +187,7 @@
                     qty,
                     Math.round(total),
                     '"' + m.cat + '"',
-                    '"poLCA v7.6 / EN 15804+A2"'
+                    '"Historyczne wartości orientacyjne kalkulatora poLCA"'
                 ].join(';')
             ].join('\n');
             try {

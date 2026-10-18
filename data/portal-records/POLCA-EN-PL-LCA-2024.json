@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-10-18.1",
+  "record": {
+    "id": "POLCA-EN-PL-LCA-2024",
+    "title": "Energia elektryczna — Polska 2024",
+    "kind": "dataset",
+    "category_id": "energia",
+    "category_label": "Energia",
+    "year": 2024,
+    "year_type": "reference",
+    "status_id": "earlier_model",
+    "status_label": "Model 2024",
+    "description": "Wcześniejszy model energii, nadal używany w opublikowanych kalkulatorach. Podana wartość dotyczy składnika kopalnego.",
+    "href": "/dane/polca-en-pl-lca-2024.html",
+    "unit": "kg CO₂e/kWh",
+    "boundary": "Cykl życia dostarczonej energii; składnik kopalny",
+    "indicator_label": "GWP — składnik kopalny",
+    "source_name": "poLCA-EN-PL-2024 (KOBiZE + PSE + WUG + GUS + EEA + IPCC/JEC)",
+    "source_url": "https://polca.org.pl/data/polca-en-pl-2024.json",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-EN-PL-LCA-2024.json"
+      }
+    ],
+    "methodology_href": "/metodyki/MET-001-poLCA-EN-PL-2024.html",
+    "related_ids": [
+      "PL2025_PHYSICAL_DELIVERED_v3_REVIEW",
+      "KOBIZE-EN-PL-ENDUSER-2024",
+      "tool-energia"
+    ],
+    "keywords": [
+      "POLCA-EN-PL-LCA-2024",
+      "prąd",
+      "2024",
+      "0,599",
+      "GWP-fossil",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "kWh",
+    "source_record_href": "/data/datasets/POLCA-EN-PL-LCA-2024.json",
+    "value": 0.599
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.3",
-    "updated_at": "2026-08-01",
+    "version": "2026.4",
+    "updated_at": "2026-10-19",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
     "policy_url": "data/update-policy.json",
-    "validity_rule": "Nowa wersja zbioru danych nie zmienia deklaracji już wydanych. Wynik obliczenia zapisuje wersję danych użytą w dniu weryfikacji i zachowuje ją przez cały okres ważności deklaracji.",
+    "validity_rule": "Nowa publikacja danych nie przelicza automatycznie wydanych deklaracji. Potrzebę ich aktualizacji ocenia się według zasad programu i znaczenia zmiany. Zachowuje się identyfikację danych wykorzystanych w danej deklaracji.",
     "archive_rule": "poLCA nie usuwa poprzednich wersji. Wersje zastąpione otrzymują status superseded i pozostają dostępne do celów kontrolnych."
   },
   "kategorie": [
@@ -55,6 +55,17 @@
   ],
   "wpisy": [
     {
+      "data": "2026-10-19",
+      "kategoria": "format",
+      "status": "zakonczony",
+      "dotyczy": "Portal, katalog, instrukcje doboru danych i kalkulatory",
+      "tytul": "Nowy katalog i przewodnik zastosowania danych",
+      "opis": "Wprowadzono wspólną nawigację, wyszukiwarkę, karty danych z jednostką, rokiem, źródłem i statusem oraz instrukcje doboru danych do wyrobu, budynku i procesu. Dodano porównanie zakresów KOBiZE, ecoinvent i poLCA oraz przelicznik 37 wskaźników energii Polska 2025. Skorygowano niepotwierdzone deklaracje gotowości formatów i uniwersalnego doboru danych w starszych opisach. W narzędziach rozdzielono CO₂ od GWP-fossil, poprawiono walidację danych wejściowych, obsługę udziału kruszywa z recyklingu i opis własnych eksportów. Pakiet źródłowy energii 2025 v3 zachowuje wartości, wersję i status.",
+      "podstawa": "Opublikowane rekordy i dokumentacja poszczególnych wersji; opis metody i warunki wykorzystania w kartach danych.",
+      "link": "/jak-korzystac.html",
+      "skutek_dla_deklaracji": "Przebudowa portalu nie stanowi formalnego przyjęcia danych do programu deklaracji. Dobór zbioru do zastosowania i jego status są opisane przy wersji."
+    },
+    {
       "data": "2026-08-01",
       "kategoria": "aktualizacja_danych",
       "status": "zakonczony",
@@ -63,7 +74,8 @@
       "opis": "W następstwie przeglądu kwartalnego przyjęto wartość rezydualną z wydania AIB za rok 2025: 0,727 kg CO₂/kWh dla Polski, w miejsce 0,808 kg z wydania za rok 2024. Obie wartości pochodzą z tej samej kolumny arkusza obliczeniowego AIB, są więc bezpośrednio porównywalne. Spadek wynika ze wzrostu udziału źródeł odnawialnych w polskim miksie rezydualnym z 0,093 do 0,187. Zaktualizowano strony opisujące stan obowiązujący: mapę podstaw normatywnych, opis metodyki wartości domyślnych oraz parametry c-PCR. Dokumenty datowane — MET-001 z identyfikatorem DOI, dokument metodyczny w formacie JSON, materiały dla producentów i wpisy blogowe — zachowują treść z dnia publikacji; wpis blogowy opisujący hierarchię otrzymał notę aktualizacyjną odsyłającą do niniejszego rejestru.",
       "podstawa": "ISO 14067:2018 §6.4.9.4 lit. (c); GHG Protocol Scope 2 — podejście market-based; polityka aktualizacji poLCA — zmiana minor w tej samej metodzie",
       "link": "https://www.aib-net.org/facts/european-residual-mix/2025",
-      "skutek_dla_deklaracji": "Zmiana dotyczy wyłącznie producentów rozliczających energię elektryczną gwarancjami pochodzenia i raportujących Poziom 2. Wartość jest niższa od poprzedniej, więc wyniki liczone na nowym wydaniu są korzystniejsze. Deklaracje wydane wcześniej zachowują ważność wraz z wersją danych zapisaną w dokumencie. Deklaracje oparte na Poziomie 1, czyli zdecydowana większość, pozostają bez zmian."
+      "skutek_dla_deklaracji": "Opis skutków skorygowano: dawne określenia Poziom 1 i Poziom 2 nie ustanawiają uniwersalnej hierarchii energii. Przydatność danych rezydualnych zależy od zastosowania i dokumentacji dostawy. Samo opublikowanie nowej wartości nie rozstrzyga ważności istniejącej deklaracji ani obowiązku jej przeliczenia. Aktualne wskazówki: /jak-korzystac.html.",
+      "metadata_revision": "2026-10-18"
     },
     {
       "data": "2026-07-31",
@@ -100,7 +112,8 @@
           "wynik": "nowe wydanie; wartość dla Polski 726,96 g CO₂/kWh wobec 808 g z danych za 2024"
         }
       ],
-      "skutek_dla_deklaracji": "Rekordy o cyklu kwartalnym zachowują dotychczasowe wartości. Aktualizacja wartości rezydualnej dotyczy Poziomu 2 hierarchii wskaźnika energii, stosowanego wyłącznie przez producentów rozliczających energię gwarancjami pochodzenia. Deklaracje oparte na Poziomie 1 pozostają bez zmian."
+      "skutek_dla_deklaracji": "Opis skutków skorygowano: dawne określenia Poziom 1 i Poziom 2 nie ustanawiają uniwersalnej hierarchii energii. Przydatność danych rezydualnych zależy od zastosowania i dokumentacji dostawy. Samo opublikowanie nowej wartości nie rozstrzyga ważności istniejącej deklaracji ani obowiązku jej przeliczenia. Aktualne wskazówki: /jak-korzystac.html.",
+      "metadata_revision": "2026-10-18"
     },
     {
       "data": "2026-07",
@@ -137,17 +150,19 @@
       "status": "zakonczony",
       "dotyczy": "poLCA-EN-PL-2024 — zasady stosowania",
       "tytul": "Doprecyzowanie zasad stosowania wskaźnika energii",
-      "opis": "Uściślenie, w których modułach i przy jakiej hierarchii danych stosuje się trzy poziomy wskaźnika energii: location-based, market-based oraz energia z instalacji własnej.",
-      "podstawa": "c-PCR-BET-EPD-PL:2026 §6.3; EN 15804+A2:2019 §6.3.8"
+      "opis": "Historyczny wpis opisywał trzy poziomy wskaźnika energii: location-based, market-based oraz energię z instalacji własnej. Ten schemat nie jest aktualną uniwersalną hierarchią. Właściwe dane dobiera się do zastosowania; wskazówki: /jak-korzystac.html.",
+      "podstawa": "c-PCR-BET-EPD-PL:2026 §6.3; EN 15804+A2:2019 §6.3.8",
+      "metadata_revision": "2026-10-18"
     },
     {
       "data": "2026-05-12",
       "kategoria": "format",
-      "status": "zakonczony",
+      "status": "skorygowany",
       "dotyczy": "Katalog zbiorów danych — eksport",
-      "tytul": "Eksport ILCD+EPD XML i deklaracja gotowości DPP",
-      "opis": "Zbiory danych udostępnione w formatach JSON-LD, ILCD+EPD XML i CSV, z deklaracją zgodności formatu na potrzeby cyfrowego paszportu produktu.",
-      "podstawa": "ESPR Reg. (UE) 2024/1781; CPR Reg. (UE) 2024/3110; format ILCD"
+      "tytul": "Korekta wcześniejszej deklaracji eksportu ILCD+EPD i gotowości DPP",
+      "opis": "Wcześniejszy wpis deklarował udostępnienie JSON-LD i ILCD+EPD oraz gotowość do paszportu cyfrowego. Tę deklarację skorygowano: udostępnione pliki stosują własny JSON/CSV; brak zwalidowanego eksportu ILCD+EPD i wdrożonego paszportu cyfrowego. Datę wpisu zachowano jako ślad historii.",
+      "podstawa": "ESPR Reg. (UE) 2024/1781; CPR Reg. (UE) 2024/3110; format ILCD",
+      "metadata_revision": "2026-10-18"
     },
     {
       "data": "2026-05-11",
@@ -185,5 +200,7 @@
       "opis": "Pełna treść dokumentu metodycznego wskaźnika energii udostępniona w formacie JSON na potrzeby systemów obliczeniowych i kontroli odtwarzalności.",
       "podstawa": "Polityka aktualizacji poLCA — audytowalność"
     }
-  ]
+  ],
+  "metadata_revision": "2026-10-18",
+  "current_catalog_url": "/data/portal-catalog.json"
 }

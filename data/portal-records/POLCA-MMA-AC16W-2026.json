@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-10-18.1",
+  "record": {
+    "id": "POLCA-MMA-AC16W-2026",
+    "title": "Mieszanka AC 16 W",
+    "kind": "dataset",
+    "category_id": "mma",
+    "category_label": "Mieszanki mineralno-asfaltowe",
+    "year": 2026,
+    "year_type": "publication",
+    "status_id": "default",
+    "status_label": "Wartość przyjęta w modelu",
+    "description": "Wynik przykładowej receptury mieszanki, obejmujący surowce, transport i wytwarzanie (A1–A3).",
+    "href": "/dane/polca-mma-ac16w-2026.html",
+    "unit": "kg CO₂e/t",
+    "boundary": "A1-A3",
+    "indicator_label": "Wpływ na klimat (GWP)",
+    "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+    "source_url": "https://polca.org.pl/c-pcr/mma.html",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-MMA-AC16W-2026.json"
+      }
+    ],
+    "methodology_href": "/c-pcr/mma.html",
+    "related_ids": [
+      "POLCA-MMA-LCI-DEFAULTS-2026",
+      "tool-mma"
+    ],
+    "keywords": [
+      "POLCA-MMA-AC16W-2026",
+      "MMA",
+      "asfalt",
+      "receptura",
+      "A1-A3",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "t",
+    "source_record_href": "/data/datasets/POLCA-MMA-AC16W-2026.json",
+    "value": 74.14
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

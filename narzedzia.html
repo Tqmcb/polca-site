@@ -32,42 +32,15 @@
       ]
     }
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>@media(max-width:900px){.page-hero{grid-template-columns:1fr!important}.page-hero>div:last-child{order:-1}}</style>
-</head>
-<body>
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy portal-tool">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html" class="active">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html" class="is-active">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Kalkulatory materiałów, transportu i wyrobów</span></nav><div class="polca-page">
 
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
@@ -100,7 +73,7 @@
             <a href="#materialy" class="quick-card">
                 <span class="quick-card-kicker">Materiały</span>
                 <strong>Porównanie wariantów materiałowych</strong>
-                <span>Szybkie porównanie GWP materiałów budowlanych do koncepcji, kosztorysu albo dokumentacji projektowej.</span>
+                <span>Historyczne wartości orientacyjne dla materiałów budowlanych, z jednostkami i zakresem.</span>
                 <span class="quick-card-arrow">Materiały →</span>
             </a>
             <a href="#transport" class="quick-card">
@@ -138,32 +111,31 @@
 
     <!-- Karta — Kalkulator MMA do wstępnej kwalifikacji -->
     <a id="kalkulatory-specjalne" href="kalkulator-mma.html" class="card card-lg section-gap fade-in" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:space-between;text-decoration:none;color:inherit;">
-        <div style="flex:1;min-width:260px;">
+        <div style="flex:1 1 260px;min-width:0;">
             <div class="section-num">Kalkulator dedykowany</div>
-            <div class="card-title" style="margin-bottom:.4rem;">Kalkulator MMA do wstępnej kwalifikacji — GWP A1-A3 dla mieszanek mineralno-asfaltowych</div>
+            <div class="card-title" style="margin-bottom:.4rem;">Kalkulator MMA — oszacowanie produkcji A1-A3 dla mieszanek mineralno-asfaltowych</div>
             <p class="card-text" style="margin-bottom:0;">
                 Wpisz recepturę (kruszywa, bitumen, filler, granulat RA, dodatki, technologia HMA/WMA,
-                temperatura, transport) i otrzymaj oszacowanie GWP A1-A3 [kg CO₂eq/t MMA] z rozbiciem
-                na moduły, wykresem i eksportem CSV/JSON. Zgodne z c-PCR-MMA v1.0-DRAFT i EN 15804+A2.
+                temperatura, transport) i otrzymaj orientacyjne oszacowanie A1-A3 [kg CO₂eq/t MMA] z rozbiciem
+                na moduły, wykresem i eksportem CSV/JSON. Historyczny zestaw założeń kalkulatora.
             </p>
         </div>
-        <span class="btn-primary" style="white-space:nowrap;">Otwórz kalkulator MMA →</span>
+        <span class="btn-primary" style="white-space:normal;">Otwórz kalkulator MMA →</span>
     </a>
 
     <!-- Karta — Kalkulator kruszyw do wstępnej kwalifikacji -->
     <a href="kalkulator-kruszywa.html" class="card card-lg section-gap fade-in" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;justify-content:space-between;text-decoration:none;color:inherit;">
-        <div style="flex:1;min-width:260px;">
+        <div style="flex:1 1 260px;min-width:0;">
             <div class="section-num">Kalkulator dedykowany</div>
-            <div class="card-title" style="margin-bottom:.4rem;">Kalkulator kruszyw do wstępnej kwalifikacji — GWP A1-A3 dla kruszyw budowlanych</div>
+            <div class="card-title" style="margin-bottom:.4rem;">Kalkulator kruszyw — oszacowanie produkcji A1-A3 dla kruszyw budowlanych</div>
             <p class="card-text" style="margin-bottom:0;">
                 Wybierz typ kruszywa (tryb uproszczony → wartość referencyjna) albo wpisz parametry
                 zakładu (energia kruszenia, paliwo maszyn, materiały wybuchowe, płukanie, % RC, transport
-                wewnętrzny A2) i otrzymaj oszacowanie GWP A1-A3 [kg CO₂eq/t kruszywa] z rozbiciem na
-                komponenty, wykresem i eksportem CSV/JSON. Zgodne z c-PCR-AGG v0.9-DRAFT, EN 12620 /
-                EN 13242 i EN 15804+A2.
+                wewnętrzny A2) i otrzymaj orientacyjne oszacowanie A1-A3 [kg CO₂eq/t kruszywa] z rozbiciem na
+                komponenty, wykresem i eksportem CSV/JSON. Historyczny zestaw założeń kalkulatora.
             </p>
         </div>
-        <span class="btn-primary" style="white-space:nowrap;">Otwórz kalkulator kruszyw →</span>
+        <span class="btn-primary" style="white-space:normal;">Otwórz kalkulator kruszyw →</span>
     </a>
 
     <!-- ============================================================
@@ -176,20 +148,14 @@
             Szybka konwersja jednostek stosowanych w analizach LCA, raportowaniu ESG
             i deklaracjach EPD. Wyniki aktualizowane w czasie rzeczywistym.
         </p>
-        <p class="card-text" style="margin-bottom: 1.5rem;">
-            Przelicznik stosuje standardowe współczynniki konwersji zgodne z normą ISO 13600.
-            Wartość opałowa (LHV) dla paliw przyjmowana jest według danych GUS i KOBiZE
-            dla polskiej struktury dostaw. Wyniki mają charakter orientacyjny — dla obliczeń
-            formalnych stosuj wartości zadeklarowane przez dostawcę paliwa lub operatora sieci
-            i weryfikowane zgodnie z procedurami ISO 14064-1 / GHG Protocol.
-        </p>
+        <p class="card-text" style="margin-bottom: 1.5rem;">Przelicznik energii i masy stosuje relacje między jednostkami. Przeliczenie paliwa na energię korzysta z historycznych założeń: gaz 10,55 kWh/Nm³; węgiel 6322 kWh/t; olej napędowy 10,0 kWh/L; benzyna 8,89 kWh/L; gaz płynny 6,67 kWh/L; pellet 4800 kWh/t. Wartość opałowa konkretnej dostawy może być inna.</p>
 
         <div class="tool-converter-grid">
             <!-- Energy -->
             <div class="tool-converter-block">
                 <div class="tool-converter-label">Energia</div>
                 <div class="tool-converter-row">
-                    <input type="number" id="convEnergyVal" class="calc-input" value="1" min="0" step="any">
+                    <input type="number" id="convEnergyVal" required aria-describedby="convEnergyError" class="calc-input" value="1" min="0" step="any">
                     <select id="convEnergyFrom" class="calc-select">
                         <option value="kWh">kWh</option>
                         <option value="MWh" selected>MWh</option>
@@ -198,6 +164,7 @@
                         <option value="kcal">kcal</option>
                     </select>
                 </div>
+                <p class="calc-note" id="convEnergyError" role="alert" hidden></p>
                 <div class="tool-converter-results" id="convEnergyResults"></div>
             </div>
 
@@ -205,13 +172,14 @@
             <div class="tool-converter-block">
                 <div class="tool-converter-label">Masa</div>
                 <div class="tool-converter-row">
-                    <input type="number" id="convMassVal" class="calc-input" value="1" min="0" step="any">
+                    <input type="number" id="convMassVal" required aria-describedby="convMassError" class="calc-input" value="1" min="0" step="any">
                     <select id="convMassFrom" class="calc-select">
                         <option value="g">g</option>
                         <option value="kg" selected>kg</option>
                         <option value="t">t (Mg)</option>
                     </select>
                 </div>
+                <p class="calc-note" id="convMassError" role="alert" hidden></p>
                 <div class="tool-converter-results" id="convMassResults"></div>
             </div>
 
@@ -219,7 +187,7 @@
             <div class="tool-converter-block">
                 <div class="tool-converter-label">Paliwo → energia</div>
                 <div class="tool-converter-row">
-                    <input type="number" id="convFuelVal" class="calc-input" value="1" min="0" step="any">
+                    <input type="number" id="convFuelVal" required aria-describedby="convFuelError" class="calc-input" value="1" min="0" step="any">
                     <select id="convFuelFrom" class="calc-select">
                         <option value="gas_nm3">Nm³ gazu ziemnego</option>
                         <option value="coal_t">t węgla kamiennego</option>
@@ -229,6 +197,7 @@
                         <option value="pellet_t">t pelletu drzewnego</option>
                     </select>
                 </div>
+                <p class="calc-note" id="convFuelError" role="alert" hidden></p>
                 <div class="tool-converter-results" id="convFuelResults"></div>
             </div>
         </div>
@@ -238,30 +207,24 @@
          TOOL 02 — Transport Calculator (Module A4)
          ============================================================ -->
     <div id="transport" class="card card-lg section-gap fade-in">
-        <div class="section-num">03 — Moduł A4 wg EN 15804</div>
+        <div class="section-num">03 — Transport do budowy — A4</div>
         <div class="card-title">Kalkulator emisji z transportu</div>
         <p class="card-text">
-            Oblicz emisje CO₂ z transportu materiałów budowlanych. Moduł A4 wg EN 15804+A2
+            Oblicz emisje CO₂ z transportu materiałów budowlanych. Transport do budowy — A4+A2
             obejmuje transport z bramy zakładu do placu budowy.
         </p>
-        <p class="card-text" style="margin-bottom: 1.25rem;">
-            Wskaźniki emisji dla poszczególnych środków transportu pochodzą z bazy DEFRA/BEIS 2024
-            i odnoszą się do tonokiromeltra (tkm) przy założeniu standardowego wskaźnika
-            załadunku floty. Opcja pustego przebiegu powrotnego uwzględnia konwencję EN 15804+A2,
-            która zaleca przyjęcie 50% odległości jako domyślny powrót bez ładunku (ekwiwalent
-            faktycznego zużycia paliwa). Wskaźniki dla polskiej floty drogowej mogą być wyższe
-            o 15–25% od wartości DEFRA z uwagi na średni wiek taboru (~12 lat).
-        </p>
+        <p class="card-text" style="margin-bottom: 1.25rem;">Wynik = odległość × masa × wybrany współczynnik × mnożnik powrotu. Współczynniki transportu są historycznymi założeniami tego narzędzia, w kg CO₂e na tonokilometr (tkm). Opcje powrotu to scenariusze użytkownika; nie stanowią uniwersalnego wymagania normy.</p>
 
+        <p class="calc-note" id="transInputWarn" role="alert" hidden></p>
         <div class="calc-grid">
             <div class="calc-group">
                 <div>
                     <label class="calc-label" for="transDistance">Dystans [km]</label>
-                    <input type="number" id="transDistance" class="calc-input" value="100" min="0" step="10">
+                    <input type="number" id="transDistance" required aria-describedby="transInputWarn" class="calc-input" value="100" min="0" step="10">
                 </div>
                 <div>
                     <label class="calc-label" for="transMass">Masa ładunku [t]</label>
-                    <input type="number" id="transMass" class="calc-input" value="24" min="0" step="1">
+                    <input type="number" id="transMass" required aria-describedby="transInputWarn" class="calc-input" value="24" min="0" step="1">
                 </div>
                 <div>
                     <label class="calc-label" for="transMode">Środek transportu</label>
@@ -280,19 +243,15 @@
                     <label class="calc-label" for="transReturn">Pusty przebieg powrotny</label>
                     <select id="transReturn" class="calc-select">
                         <option value="1">Nie uwzględniaj</option>
-                        <option value="1.5" selected>50% (standard A4)</option>
+                        <option value="1.5" selected>50% (scenariusz × 1,5)</option>
                         <option value="2">100% (pełny powrót)</option>
                     </select>
                 </div>
-                <p class="calc-note">
-                    Wskaźniki emisji wg DEFRA/BEIS 2024. Dla transportu drogowego w Polsce
-                    uwzględnij średni wiek floty (~12 lat) — wartości mogą być wyższe o 15–25%
-                    od europejskiej średniej.
-                </p>
+                <p class="calc-note">Wartości są orientacyjne. Dobierz współczynnik do pojazdu, ładowności, paliwa i założenia o powrocie. Kalkulator nie aktualizuje współczynników z zewnętrznej bazy.</p>
             </div>
             <div class="card calc-result-block">
                 <div>
-                    <div class="calc-result-label">Emisja CO₂ — transport całkowity</div>
+                    <div class="calc-result-label">Oszacowanie CO₂e — transport całkowity</div>
                     <div class="calc-result-value">
                         <span id="transResult">111,6</span> <small>kg CO₂e</small>
                     </div>
@@ -319,24 +278,13 @@
          ============================================================ -->
     <div id="materialy" class="card card-lg section-gap fade-in">
         <div class="section-num">04 — GWP materiałów budowlanych</div>
-        <div class="card-title">Porównywarka materiałów budowlanych</div>
-        <p class="card-text">
-            Porównaj potencjał globalnego ocieplenia (GWP) materiałów budowlanych
-            w modułach A1–A3 na podstawie polskich danych EPD i poLCA.
-            Zaznacz materiały do porównania.
-        </p>
-        <p class="card-text" style="margin-bottom: 1.25rem;">
-            Wskaźniki GWP wyrażone są jako ekwiwalent CO₂ (kg CO₂e) zgodnie
-            z charakteryzacją IPCC AR5 (horyzont 100 lat). Wartości dotyczą modułu
-            A1–A3 (wydobycie surowców, transport do zakładu, produkcja) bez uwzględnienia
-            faz użytkowania i końca życia (moduły B i C). Ujemne wartości GWP materiałów
-            drzewnych wynikają z wiązania biogenicznego CO₂ raportowanego zgodnie
-            z EN 15804+A2 i PEFCR for Construction Products.
-        </p>
+        <div class="card-title">Zestawienie materiałów budowlanych</div>
+        <p class="card-text">Wybierz materiały, aby wyświetlić historyczne wartości orientacyjne kalkulatora. Zwróć uwagę na jednostkę: tona i metr sześcienny opisują różne ilości materiału.</p>
+        <p class="card-text" style="margin-bottom: 1.25rem;">GWP oznacza potencjał tworzenia efektu cieplarnianego. Ta tabela zachowuje historyczne wartości A1–A3 dla etapu produkcji. Różne wyroby mogą mieć inne metody i założenia dotyczące węgla biogenicznego. Porównanie wymaga tej samej funkcji, jednostki i granic cyklu życia.</p>
 
         <div class="material-select-grid" id="materialSelect"></div>
 
-        <div class="material-chart" id="materialChart">
+        <div class="material-chart" id="materialChart" tabindex="0" role="region" aria-label="Zestawienie materiałów — tabela przewijana">
             <!-- Fallback statyczny: tabela GWP materiałów (zastępowana przez JS) -->
             <noscript>
                 <table class="polca-table">
@@ -370,11 +318,7 @@
             </noscript>
         </div>
 
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 1rem; font-style: italic;">
-            Wartości orientacyjne GWP (A1–A3) na podstawie polskich EPD i danych poLCA.
-            Rzeczywiste wartości zależą od producenta, lokalizacji zakładu i roku produkcji.
-            Ujemne wartości oznaczają pochłanianie CO₂ (biogenic carbon storage).
-        </p>
+        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 1rem; font-style: italic;">Historyczne wartości służą do wstępnego rozeznania. Wartość ujemna dla drewna obejmuje przyjęte magazynowanie węgla biogenicznego na etapie produkcji; nie opisuje całego cyklu życia.</p>
     </div>
 
     <!-- ============================================================
@@ -382,20 +326,11 @@
          ============================================================ -->
     <div id="wskazniki" class="card card-lg fade-in">
         <div class="section-num">05 — Polskie wskaźniki emisji</div>
-        <div class="card-title">Tabela wskaźników emisji GHG</div>
-        <p class="card-text">
-            Kompilacja polskich wskaźników emisji gazów cieplarnianych
-            z oficjalnych źródeł. Filtruj po kategorii lub szukaj po nazwie.
-        </p>
-        <p class="card-text" style="margin-bottom: 1rem;">
-            Wskaźniki emisji wyrażone są jako ekwiwalent CO₂ (CO₂e) z uwzględnieniem
-            potencjału globalnego ocieplenia GWP100 zgodnie z IPCC AR5. Wskaźniki emisji
-            dla energii elektrycznej dotyczą średniego miksu krajowego (location-based)
-            zgodnie z metodyką GHG Protocol Scope 2. Wartości publikowane przez KOBiZE
-            aktualizowane są corocznie w ramach Krajowego Raportu Inwentaryzacji Emisji.
-            Do raportowania zgodnego z CSRD/ESRS E1 stosuj wskaźniki market-based
-            z certyfikatami gwarancji pochodzenia (GoO/PMOZE-A) lub residual mix AIB.
-        </p>
+        <div class="card-title">Tabela wskaźników i założeń</div>
+        <p class="card-text">Przegląd wskaźników i historycznych założeń kalkulatora. Filtruj po kategorii albo wyszukuj nazwę. Każdy wiersz ma własną jednostkę i zakres.</p>
+        <p class="card-text" style="margin-bottom: 1rem;">Dla energii za 2024 r. rozróżniamy 553 kg CO₂/MWh u odbiorcy końcowego według <a href="https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf">KOBiZE (publikacja z grudnia 2025, tabela 2)</a> oraz 599 kg CO₂e/MWh dla kopalnej części wpływu w cyklu życia według <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>. To różne zakresy. Pozostałe wiersze zachowują historyczne przypisania źródeł i wymagają sprawdzenia konkretnego dokumentu przed zastosowaniem.</p>
+
+        <p class="calc-note">Miks rezydualny to odrębny rodzaj danych. Wybierz właściwy rocznik publikacji AIB (Association of Issuing Bodies — stowarzyszenia jednostek wydających gwarancje pochodzenia) i sprawdź zakres wskaźnika. <a href="porownanie-baz.html">Porównanie źródeł i rodzajów miksu</a> pomaga w doborze; ta tabela nie podaje wartości zastępczej dla miksu rezydualnego.</p>
 
         <div class="tool-search-bar">
             <input type="text" id="emissionSearch" class="calc-input" placeholder="Szukaj wskaźnika..." style="font-family: inherit; font-size: 0.86rem;">
@@ -416,7 +351,7 @@
                         <th>Źródło / materiał</th>
                         <th>Wskaźnik emisji</th>
                         <th>Jednostka</th>
-                        <th>Źródło danych</th>
+                        <th>Źródło lub historyczne przypisanie</th>
                     </tr>
                 </thead>
                 <tbody id="emissionTableBody">
@@ -425,26 +360,17 @@
         </div>
         <div class="tool-table-count" id="tableCount"></div>
 
-        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem; font-style: italic;">
-            Źródła: KOBiZE 2024, GUS 2024, IPCC 2006/2019, DEFRA/BEIS 2024, EPD Polska.
-            * Biomasa raportowana jako neutralna węglowo w cyklu krótkim (konwencja EU ETS).
-            Wartości orientacyjne — do dokładnych obliczeń użyj danych z certyfikowanych EPD.
-        </p>
+        <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem; font-style: italic;">CO₂ oznacza dwutlenek węgla; CO₂e — ekwiwalent uwzględniający wpływ różnych gazów. Wartość zero dla biomasy dotyczy przyjętej emisji kopalnego CO₂, a nie całej emisji ze spalania. Kolumna źródła rozróżnia sprawdzony profil energii od historycznych przypisań pozostałych pozycji.</p>
     </div>
 
     <!-- Info card -->
     <div class="card card-accent-orange fade-in" style="margin-top: 1.5rem;">
         <div class="card-title">Zastrzeżenie metodologiczne</div>
-        <p class="card-text">
-            Narzędzia prezentowane na tej stronie mają charakter orientacyjny i edukacyjny.
-            Do sporządzania deklaracji środowiskowych produktu (EPD) i oficjalnych raportów ESG
-            wymagane jest stosowanie certyfikowanych baz danych i weryfikacji przez akredytowane jednostki.
-            Wartości wskaźników emisji podlegają corocznej aktualizacji — zawsze sprawdzaj aktualność danych.
-        </p>
+        <p class="card-text">Narzędzia służą do wstępnych obliczeń i analizy scenariuszy. Przy sporządzaniu deklaracji środowiskowej produktu (EPD) jej autor i weryfikator oceniają przydatność danych do konkretnego wyrobu, roku i zakresu. Status poszczególnych wydań znajdziesz w katalogu danych.</p>
     </div>
 
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-epd-czym-sa.html" class="blog-card">
                 <div class="blog-card-body">
@@ -452,9 +378,9 @@
                         <span class="blog-tag">LCA / EPD</span>
                         <span class="blog-date">20 stycznia 2026</span>
                     </div>
-                    <div class="blog-card-title">EPD &#8212; czym s&#261; Deklaracje &#346;rodowiskowe Produktu i jak si&#281; je sporz&#261;dza</div>
+                    <div class="blog-card-title">EPD — czym są Deklaracje Środowiskowe Produktu i jak się je sporządza</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -463,11 +389,11 @@
                 <div class="blog-card-body">
                     <div class="blog-card-meta">
                         <span class="blog-tag metodyka">Metodyka</span>
-                        <span class="blog-date">28 pa&#378;dziernika 2025</span>
+                        <span class="blog-date">28 października 2025</span>
                     </div>
-                    <div class="blog-card-title">Zasada proximity w ISO 14044 &#8212; dlaczego dane krajowe s&#261; lepsze ni&#380; globalne</div>
+                    <div class="blog-card-title">Zasada proximity w ISO 14044 — dlaczego dane krajowe są lepsze niż globalne</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">8 min czytania</span>
                     </div>
                 </div>
@@ -476,52 +402,8 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Nawigacja</div>
-            <ul class="footer-links">
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="c-pcr/">c-PCR</a></li>
-                <li><a href="analiza.html">Dlaczego poLCA?</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="kalkulator.html">Kalkulatory</a></li>
-                <li><a href="kalkulator-mma.html">Kalkulator MMA</a></li>
-                <li><a href="kalkulator-kruszywa.html">Kalkulator kruszyw</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Zasoby</div>
-            <ul class="footer-links">
-                <li><a href="narzedzia.html">Kalkulatory</a></li>
-                <li><a href="o-polca/index.html">O poLCA</a></li>
-                <li><a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>© 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA · polca.org.pl</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-<script src="js/narzedzia.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<script src="js/narzedzia.js?v=20261019"></script>
+    <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

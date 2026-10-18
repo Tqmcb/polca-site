@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polska stal z EAF a europejska &#347;rednia &#8212; dlaczego wyb&#243;r wska&#378;nika LCI zmienia wynik EPD o ponad 100% &#8212; poLCA Blog</title>
-    <meta name="description" content="Polska produkcja stali jest zdominowana przez piece elektryczne &#322;ukowe (EAF). Wska&#378;nik GWP polskiej stali EAF wynosi ok. 0,58 kg CO&#8322;e/kg &#8212; ponad trzy razy mniej ni&#380; europejska &#347;rednia w ecoinvent. Analiza danych i konsekwencje dla EPD.">
+    <title>Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych — poLCA Blog</title>
+    <meta name="description" content="Historyczne przykłady 0,58 i 1,78 kg CO₂e/kg dla różnych scenariuszy stali. Ich porównanie wymaga sprawdzenia technologii, granic i reprezentatywności; nie dowodzi błędu całej bazy danych.">
     <link rel="canonical" href="https://polca.org.pl/blog-stal-lca-eaf.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Polska stal z EAF a europejska &#347;rednia &#8212; wyb&#243;r wska&#378;nika LCI a wynik EPD">
-    <meta property="og:description" content="0,58 kg CO&#8322;e/kg dla polskiej stali EAF vs. 1,78 kg CO&#8322;e/kg w ecoinvent Europa. Stosowanie generycznych danych mo&#380;e zawy&#380;y&#263; GWP produktu stalowego o ponad 200%.">
+    <meta property="og:title" content="Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych">
+    <meta property="og:description" content="Historyczne przykłady 0,58 i 1,78 kg CO₂e/kg dla różnych scenariuszy stali. Ich porównanie wymaga sprawdzenia technologii, granic i reprezentatywności; nie dowodzi błędu całej bazy danych.">
     <meta property="og:url" content="https://polca.org.pl/blog-stal-lca-eaf.html">
-    <meta property="og:site_name" content="poLCA &#8212; Polska Baza Danych LCA">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta property="og:image" content="https://polca.org.pl/images/blog-stal-lca-eaf.jpg">
     <meta property="article:published_time" content="2026-02-20T00:00:00+01:00">
-    <meta property="article:author" content="poLCA &#8212; Polska Baza Danych LCA">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
     <meta property="article:section" content="Dane">
     <meta property="article:tag" content="stal">
     <meta property="article:tag" content="EAF">
@@ -23,146 +23,143 @@
     <meta property="article:tag" content="LCI">
     <meta property="article:tag" content="GWP">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Polska stal EAF w LCA &#8212; 0,58 vs. 1,78 kg CO&#8322;e/kg">
-    <meta name="twitter:description" content="Polski sektor stalowy jest zdominowany przez EAF. U&#380;ywanie europejskiej &#347;redniej z ecoinvent zawy&#380;a GWP o ponad 200%. Analiza danych dla EPD.">
+    <meta name="twitter:title" content="Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych">
+    <meta name="twitter:description" content="Historyczne przykłady 0,58 i 1,78 kg CO₂e/kg dla różnych scenariuszy stali. Ich porównanie wymaga sprawdzenia technologii, granic i reprezentatywności; nie dowodzi błędu całej bazy danych.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-stal-lca-eaf.jpg">
-    <script type="application/ld+json">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-stal-lca-eaf.html",
+      "headline": "Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych",
+      "description": "Historyczne przykłady 0,58 i 1,78 kg CO₂e/kg dla różnych scenariuszy stali. Ich porównanie wymaga sprawdzenia technologii, granic i reprezentatywności; nie dowodzi błędu całej bazy danych.",
+      "url": "https://polca.org.pl/blog-stal-lca-eaf.html",
+      "datePublished": "2026-02-20",
+      "dateModified": "2026-05-10",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA &#8212; Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "stal",
+        "EAF",
+        "BF-BOF",
+        "LCA",
+        "EPD",
+        "GWP",
+        "LCI",
+        "ecoinvent",
+        "Eurofer",
+        "piece elektryczne &#322;ukowe",
+        "dekarbonizacja stali"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
         {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-stal-lca-eaf.html",
-          "headline": "Polska stal z EAF a europejska &#347;rednia &#8212; dlaczego wyb&#243;r wska&#378;nika LCI zmienia wynik EPD o ponad 100%",
-          "description": "Polska produkcja stali jest zdominowana przez piece elektryczne &#322;ukowe (EAF), kt&#243;re generuj&#261; ok. 0,58 kg CO&#8322;e/kg &#8212; ponad trzy razy mniej ni&#380; &#347;wiatowa &#347;rednia BF-BOF. Stosowanie generycznego datasetu ecoinvent dla polskich produkt&#243;w stalowych systematycznie zawy&#380;a wyniki GWP. Analiza struktury produkcji, sk&#322;adowych wska&#378;nika i zalece&#324; dla LCA i EPD.",
-          "url": "https://polca.org.pl/blog-stal-lca-eaf.html",
-          "datePublished": "2026-02-20",
-          "dateModified": "2026-05-10",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA &#8212; Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://polca.org.pl/favicon.svg"
-            }
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["stal", "EAF", "BF-BOF", "LCA", "EPD", "GWP", "LCI", "ecoinvent", "Eurofer", "piece elektryczne &#322;ukowe", "dekarbonizacja stali"]
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
         },
         {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "Polska stal z EAF a europejska &#347;rednia &#8212; wyb&#243;r wska&#378;nika LCI a wynik EPD"}
-          ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
         },
         {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Sk&#261;d pochodzi wska&#378;nik 0,58 kg CO&#8322;e/kg dla polskiej stali EAF?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Wska&#378;nik poLCA dla stali walcowanej na gor&#261;co z EAF (pr&#281;t zbrojeniowy BSt500S, walc&#243;wka) wyznaczono na podstawie danych bran&#380;owych polskich hut EAF, wska&#378;nika energetycznego poLCA-EN-PL-2024 (0,599 kg CO&#8322;e/kWh), wsp&#243;&#322;czynnik&#243;w GWP IPCC AR6 oraz bilans&#243;w materia&#322;owych dla wsadu z&#322;omowego. Sk&#322;adowe: z&#322;om i upstream 0,13 kg, energia elektryczna 0,22 kg, emisje bezpo&#347;rednie procesu 0,13 kg, walcownia i wyko&#324;czenie 0,10 kg."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czy EAF jest zawsze ekologiczniejszy ni&#380; BF-BOF?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "W kategorii GWP &#8212; tak, przy zak&#322;adaniu dominuj&#261;cego udzia&#322;u z&#322;omu w EAF (&#8250;85%). EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy &#380;elaza koksem), kt&#243;re stanowi&#261; ok. 65% &#347;ladu BF-BOF. Jednak wynik EAF silnie zale&#380;y od mieszanki energetycznej: ten sam piec w Polsce emituje ok. 0,22 t CO&#8322;e/t z energii elektrycznej, podczas gdy w Norwegii (praktycznie 100% hydro) jedynie ok. 0,04 t CO&#8322;e/t."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Kiedy stosowa&#263; dane poLCA, a kiedy ecoinvent lub Eurofer?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Dane poLCA nale&#380;y stosowa&#263;, gdy &#378;r&#243;d&#322;em stali jest polska huta EAF i cel badania LCA wymaga danych reprezentatywnych dla polskich warunk&#243;w produkcji. Dane Eurofer s&#261; w&#322;a&#347;ciwe dla por&#243;wna&#324; sektorowych na poziomie europejskim lub gdy huta jest zlokalizowana w Europie Zachodniej. Ecoinvent (global lub RER) stosuje si&#281; jako dane posi&#322;kowe, gdy brak danych pierwotnych lub krajowych &#8212; ale zawsze z udokumentowan&#261; &#347;wiadomo&#347;ci&#261; ogranicze&#324; takiego wyb&#243;ru."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Czy wszystkie polskie huty stosuj&#261; EAF?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Nie. Ok. 68% polskiej produkcji stali surowej pochodzi z EAF. Pozosta&#322;e ok. 32% to produkcja z wielkich piec&#243;w (BF) i konwertor&#243;w tlenowych (BOF) &#8212; g&#322;&#243;wnie stale p&#322;askie (blachy, ta&#347;my) do zastosowa&#324; motoryzacyjnych i przemys&#322;owych. Wyb&#243;r w&#322;a&#347;ciwego wska&#378;nika LCI musi uwzgl&#281;dnia&#263; faktyczn&#261; technologi&#281; produkcji u dostawcy."
-              }
-            }
-          ]
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Polska stal z EAF a europejska &#347;rednia &#8212; wyb&#243;r wska&#378;nika LCI a wynik EPD"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Sk&#261;d pochodzi wska&#378;nik 0,58 kg CO&#8322;e/kg dla polskiej stali EAF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Wska&#378;nik poLCA dla stali walcowanej na gor&#261;co z EAF (pr&#281;t zbrojeniowy BSt500S, walc&#243;wka) wyznaczono na podstawie danych bran&#380;owych polskich hut EAF, wska&#378;nika energetycznego poLCA-EN-PL-2024 (0,599 kg CO&#8322;e/kWh), wsp&#243;&#322;czynnik&#243;w GWP IPCC AR6 oraz bilans&#243;w materia&#322;owych dla wsadu z&#322;omowego. Sk&#322;adowe: z&#322;om i upstream 0,13 kg, energia elektryczna 0,22 kg, emisje bezpo&#347;rednie procesu 0,13 kg, walcownia i wyko&#324;czenie 0,10 kg."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy EAF jest zawsze ekologiczniejszy ni&#380; BF-BOF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Historyczny przykład zakłada dominujący udział złomu w EAF (>85%). Nie uzasadnia to przewagi dla każdej instalacji lub dostawy. EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy &#380;elaza koksem), kt&#243;re stanowi&#261; ok. 65% &#347;ladu BF-BOF. Jednak wynik EAF silnie zale&#380;y od mieszanki energetycznej: ten sam piec w Polsce emituje ok. 0,22 t CO&#8322;e/t z energii elektrycznej, podczas gdy w Norwegii (praktycznie 100% hydro) jedynie ok. 0,04 t CO&#8322;e/t."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kiedy stosowa&#263; dane poLCA, a kiedy ecoinvent lub Eurofer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dobór danych poLCA, ecoinvent, Eurofer lub danych producenta wymaga oceny technologii, produktu, granic, roku i reprezentatywności. Sam kraj pochodzenia nie nadaje jednej bazie pierwszeństwa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy wszystkie polskie huty stosuj&#261; EAF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie. Ok. 68% polskiej produkcji stali surowej pochodzi z EAF. Pozosta&#322;e ok. 32% to produkcja z wielkich piec&#243;w (BF) i konwertor&#243;w tlenowych (BOF) &#8212; g&#322;&#243;wnie stale p&#322;askie (blachy, ta&#347;my) do zastosowa&#324; motoryzacyjnych i przemys&#322;owych. Wyb&#243;r w&#322;a&#347;ciwego wska&#378;nika LCI musi uwzgl&#281;dnia&#263; faktyczn&#261; technologi&#281; produkcji u dostawcy."
+          }
         }
       ]
     }
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  ]
+}</script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.0">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-</head>
-<body>
+<meta name="metadata_revision" content="2026-10-18">
+<link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head>
+<body class="portal portal-legacy">
 
-<header class="polca-topbar">
-    <div class="header-inner">
-        <a href="index.html" class="site-logo">poLCA</a>
-        <nav class="polca-topnav" aria-label="Nawigacja główna">
-            <a href="index.html">Start</a>
-            <a href="analiza.html">Dlaczego poLCA?</a>
-            <a href="metodyka.html">Metodyka</a>
-            <a href="datasety.html">Wskaźniki</a>
-            <a href="narzedzia.html">Kalkulatory</a>
-            <a href="podstawy-normatywne.html">Normy</a>
-            <a href="pobierz.html">Pobierz</a>
-            <a href="https://www.epd.org.pl" target="_blank" rel="noopener">EPD Polska <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-left:2px;opacity:0.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg></a>
-        </nav>
-        <div class="header-actions">
-            <a href="blog.html" class="btn-ghost">Blog</a>
-            <a href="datasety.html#kontakt" class="btn-primary">Kontakt</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Otwórz menu" aria-expanded="false">
-            <svg class="hamburger-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-            <svg class="hamburger-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-        </button>
-    </div>
-</header>
-
-<div class="polca-content">
-<div class="polca-page">
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/datasety.html">Dane</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/jak-korzystac.html">Jak korzystać</a><a href="/metodyka.html">Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych</span></nav><div class="polca-page">
 
     <div class="post-accent-bar"></div>
 
     <div style="width:100%;height:420px;overflow:hidden;margin-bottom:0;">
-        <img src="images/blog-stal-lca-eaf.jpg"
-             alt="Wnętrze stalowni elektrycznej — produkcja stali EAF" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+        <img src="images/blog-stal-lca-eaf.jpg" alt="Wnętrze stalowni elektrycznej — produkcja stali EAF" style="width:100%;height:100%;object-fit:cover;" loading="eager">
     </div>
 
     <div class="fade-in">
         <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Wr&#243;&#263; do bloga
+            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Wróć do bloga
         </a>
 
         <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
             <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
+            <span class="breadcrumbs-sep">›</span>
             <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">&#8250;</span>
-            <span class="breadcrumbs-current">Polska stal z EAF a europejska &#347;rednia</span>
+            <span class="breadcrumbs-sep">›</span>
+            <span class="breadcrumbs-current">Polska stal z EAF a europejska średnia</span>
         </nav>
 
         <div class="blog-post-header">
@@ -170,29 +167,22 @@
                 <span class="blog-tag dane">Dane</span>
                 <span class="blog-tag metodyka">Metodyka</span>
                 <span class="blog-date">20 lutego 2026</span>
-                <span class="blog-read-time">&#183; 8 min czytania</span>
+                <span class="blog-read-time">· 8 min czytania</span>
             </div>
-            <h1 class="blog-post-title">
-                Polska stal z EAF a europejska &#347;rednia &#8212; dlaczego wyb&#243;r wska&#378;nika LCI zmienia wynik EPD o ponad 100%
-            </h1>
-            <p class="blog-post-lead">
-                Polska produkcja stali jest zdominowana przez piece elektryczne &#322;ukowe (EAF) zasilane z&#322;omem.
-                Wska&#378;nik GWP (A1&ndash;A3) polskiej stali walcowanej z EAF wynosi ok. <strong>0,58&nbsp;kg&nbsp;CO&#8322;e/kg</strong>
-                &#8212; ponad trzy razy mniej ni&#380; wa&#380;ona &#347;rednia europejska w ecoinvent. Stosowanie generycznych
-                danych&#160;globalnych lub europejskich do polskich produkt&#243;w stalowych systematycznie zawy&#380;a
-                wyniki LCA i prowadzi do nierzetelnych por&#243;wna&#324; w EPD.
-            </p>
+            <h1 class="blog-post-title">Stal EAF i BF-BOF — zakres historycznych przykładów i dobór danych</h1>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
+            <p class="blog-post-lead">Artykuł zachowuje historyczny przykład stali z pieca elektrycznego łukowego (EAF): <strong>0,58 kg CO₂e/kg</strong> w granicach A1–A3. Zestawiono go z innym scenariuszem opisanym w dalszej części. Porównanie wymaga sprawdzenia technologii, granic i reprezentatywności; sam iloraz nie dowodzi systematycznego błędu danych europejskich lub globalnych.</p>
         </div>
     </div>
 
     <!-- TL;DR -->
     <div class="tldr-box fade-in">
-        <div class="tldr-box-label">TL;DR &#8212; skr&#243;t dla zabieganych</div>
+        <div class="tldr-box-label">TL;DR — skrót dla zabieganych</div>
         <ul>
-            <li>Ok. <strong>68%</strong> polskiej produkcji stali surowej pochodzi z EAF &#8212; piece elektryczne &#322;ukowe z&#322;omowe</li>
-            <li>Wska&#378;nik GWP (A1&ndash;A3) polskiej stali EAF: <strong>0,58&nbsp;kg&nbsp;CO&#8322;e/kg</strong>; ecoinvent&nbsp;3.10 Europa: <strong>1,78&nbsp;kg&nbsp;CO&#8322;e/kg</strong></li>
-            <li>R&#243;&#380;nica wynosi <strong>+207%</strong> &#8212; stosowanie danych generycznych mo&#380;e ponad trzykrotnie zawy&#380;y&#263; GWP w EPD</li>
-            <li>Wynik EAF silnie zale&#380;y od mieszanki energetycznej: polska sie&#263; (0,599&nbsp;kg&nbsp;CO&#8322;e/kWh) to g&#322;&#243;wna sk&#322;adowa wska&#378;nika</li>
+            <li>Ok. <strong>68%</strong> polskiej produkcji stali surowej pochodzi z EAF — piece elektryczne łukowe złomowe</li>
+            <li>Wskaźnik GWP (A1–A3) polskiej stali EAF: <strong>0,58 kg CO₂e/kg</strong>; ecoinvent 3.10 Europa: <strong>1,78 kg CO₂e/kg</strong></li>
+            <li>W historycznym zestawieniu zapisano różnicę <strong>+207%</strong>. To porównanie przyjętych scenariuszy, nie miara błędu bazy ani dokładności danych poLCA.</li>
+            <li>Wynik EAF silnie zależy od mieszanki energetycznej: polska sieć (0,599 kg CO₂e/kWh) to główna składowa wskaźnika</li>
         </ul>
     </div>
 
@@ -200,24 +190,24 @@
     <div class="key-stat-row section-gap fade-in">
         <div class="key-stat">
             <div class="key-stat-number accent">0,58</div>
-            <div class="key-stat-unit">kg CO&#8322;e/kg</div>
+            <div class="key-stat-unit">kg CO₂e/kg</div>
             <div class="key-stat-label">Polska stal EAF (poLCA)</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number muted">1,78</div>
-            <div class="key-stat-unit">kg CO&#8322;e/kg</div>
-            <div class="key-stat-label">ecoinvent&nbsp;3.10 Europa</div>
+            <div class="key-stat-unit">kg CO₂e/kg</div>
+            <div class="key-stat-label">ecoinvent 3.10 Europa</div>
         </div>
         <div class="key-stat">
             <div class="key-stat-number" style="color: var(--func-amber);">~68%</div>
-            <div class="key-stat-unit">udzia&#322; EAF</div>
+            <div class="key-stat-unit">udział EAF</div>
             <div class="key-stat-label">w polskiej produkcji stali</div>
         </div>
     </div>
 
     <!-- Porównanie GWP — vertical columns -->
     <div class="card card-lg section-gap fade-in" style="max-width: 760px;">
-        <div class="card-title">Por&#243;wnanie wska&#378;nik&#243;w GWP (A1&ndash;A3) dla stali &#8212; kg CO&#8322;e/kg</div>
+        <div class="card-title">Porównanie wskaźników GWP (A1–A3) dla stali — kg CO₂e/kg</div>
         <div class="vcol-chart" style="height: 240px;">
             <div class="vcol-group">
                 <div class="vcol-value">0,48</div>
@@ -245,95 +235,95 @@
             <div class="vcol-label">PL EAF<br><span style="color: var(--text-light);">poLCA</span></div>
             <div class="vcol-label">EU BF-BOF<br><span style="color: var(--text-light);">Eurofer</span></div>
             <div class="vcol-label">ecoinvent<br><span style="color: var(--text-light);">RER</span></div>
-            <div class="vcol-label">&#346;wiat<br><span style="color: var(--text-light);">Worldsteel</span></div>
+            <div class="vcol-label">Świat<br><span style="color: var(--text-light);">Worldsteel</span></div>
         </div>
         <p class="comp-note">
-            Zakres: A1&ndash;A3 (cradle-to-gate), GWP100, kg CO&#8322;e/kg stali walcowanej.
-            S&#322;upki znormalizowane wzgl&#281;dem &#347;redniej worldsteel = 100%.
-            &#378;r&#243;d&#322;a: poLCA (Multicert 2026), Eurofer Industry Report 2023, ecoinvent 3.10, Worldsteel (2023).
+            Zakres: A1–A3 (cradle-to-gate), GWP100, kg CO₂e/kg stali walcowanej.
+            Słupki znormalizowane względem średniej worldsteel = 100%.
+            źródła: poLCA (Multicert 2026), Eurofer Industry Report 2023, ecoinvent 3.10, Worldsteel (2023).
         </p>
     </div>
 
     <div class="blog-post-body section-gap fade-in post-chapters">
 
-        <h2>Dwie &#347;cie&#380;ki produkcji stali i ich emiso-r&#243;&#380;norodno&#347;&#263;</h2>
+        <h2>Dwie ścieżki produkcji stali i ich emiso-różnorodność</h2>
 
         <div class="margin-note">
-            <div class="margin-note-label">Kluczowa r&#243;&#380;nica</div>
-            BF-BOF: ruda &#380;elaza + koks &#8594; &#380;elazo surowe &#8594; stal.<br>
-            Emisje w&#281;gla z koksu: <strong>&#8764;1,6&ndash;2,0&nbsp;t CO&#8322;e/t stali</strong>.<br><br>
-            EAF: z&#322;om stalowy + energia el. &#8594; stal.<br>
-            Emisje g&#322;&#243;wnie z energii: <strong>&#8764;0,3&ndash;0,7&nbsp;t CO&#8322;e/t stali</strong>.
+            <div class="margin-note-label">Kluczowa różnica</div>
+            BF-BOF: ruda żelaza + koks → żelazo surowe → stal.<br>
+            Emisje węgla z koksu: <strong>∼1,6–2,0 t CO₂e/t stali</strong>.<br><br>
+            EAF: złom stalowy + energia el. → stal.<br>
+            Emisje głównie z energii: <strong>∼0,3–0,7 t CO₂e/t stali</strong>.
         </div>
 
         <p>
-            Stal wytwarza si&#281; na &#347;wiecie dwiema dominuj&#261;cymi drogami technologicznymi,
-            kt&#243;re r&#243;&#380;ni&#261; si&#281; zasadniczo profilem emisyjnym:
+            Stal wytwarza się na świecie dwiema dominującymi drogami technologicznymi,
+            które różnią się zasadniczo profilem emisyjnym:
         </p>
 
         <div class="process-steps">
             <div class="process-step">
                 <div class="process-step-num">1</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">BF-BOF &#8212; wielki piec + konwertor tlenowy</div>
+                    <div class="process-step-title">BF-BOF — wielki piec + konwertor tlenowy</div>
                     <div class="process-step-text">
-                        Tradycyjna droga oparta na rudzie &#380;elaza redukowanej koksem w wielkim piecu.
-                        Koks pe&#322;ni rol&#281; zar&#243;wno reduktora chemicznego, jak i paliwa.
-                        Reakcje procesowe (Fe&#8322;O&#8323; + CO &#8594; Fe + CO&#8322;) generuj&#261; emisje
-                        wed&#322;ug stechiometrii &#8212; ka&#380;da tona klinkieru &#380;elaza wi&#261;&#380;e si&#281;
-                        z emisj&#261; ok. 500&ndash;550&nbsp;kg CO&#8322;. Po dodaniu upstream koksu, gazu
-                        wielkopiecowego i konwertora tlenowego, &#347;lad GWP wynosi 1,7&ndash;2,1&nbsp;t&nbsp;CO&#8322;e/t stali.
+                        Tradycyjna droga oparta na rudzie żelaza redukowanej koksem w wielkim piecu.
+                        Koks pełni rolę zarówno reduktora chemicznego, jak i paliwa.
+                        Reakcje procesowe (Fe₂O₃ + CO → Fe + CO₂) generują emisje
+                        według stechiometrii — każda tona klinkieru żelaza wiąże się
+                        z emisją ok. 500–550 kg CO₂. Po dodaniu upstream koksu, gazu
+                        wielkopiecowego i konwertora tlenowego, ślad GWP wynosi 1,7–2,1 t CO₂e/t stali.
                     </div>
                 </div>
             </div>
             <div class="process-step">
                 <div class="process-step-num">2</div>
                 <div class="process-step-content">
-                    <div class="process-step-title">EAF &#8212; piec elektryczny &#322;ukowy</div>
+                    <div class="process-step-title">EAF — piec elektryczny łukowy</div>
                     <div class="process-step-text">
-                        W EAF wsadem jest g&#322;&#243;wnie z&#322;om stalowy (&#8250;85% wsadu w typowych hutach d&#322;ugich),
-                        a energia do przetopienia pochodzi z &#322;uku elektrycznego. Brak reakcji karbochemicznych
-                        eliminuje g&#322;&#243;wne &#378;r&#243;d&#322;o emisji CO&#8322;. Kluczowe &#378;r&#243;d&#322;o to zu&#380;ycie
-                        energii elektrycznej: przy polskim miksie (0,599&nbsp;kg&nbsp;CO&#8322;e/kWh) i zu&#380;yciu
-                        360&nbsp;kWh/t daje to 0,22&nbsp;t&nbsp;CO&#8322;e/t &#8212; g&#322;&#243;wn&#261;, ale nie jedyn&#261; sk&#322;adow&#261;.
+                        W EAF wsadem jest głównie złom stalowy (›85% wsadu w typowych hutach długich),
+                        a energia do przetopienia pochodzi z łuku elektrycznego. Brak reakcji karbochemicznych
+                        eliminuje główne źródło emisji CO₂. Kluczowe źródło to zużycie
+                        energii elektrycznej: przy polskim miksie (0,599 kg CO₂e/kWh) i zużyciu
+                        360 kWh/t daje to 0,22 t CO₂e/t — główną, ale nie jedyną składową.
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2>Polska produkcja stali &#8212; dominacja EAF i kluczowi producenci</h2>
+        <h2>Polska produkcja stali — dominacja EAF i kluczowi producenci</h2>
 
         <p>
-            Polska jest jednym z czo&#322;owych kraj&#243;w europejskich pod k&#261;tem udzia&#322;u EAF w produkcji stali.
-            Ok. <strong>68% krajowej produkcji stali surowej</strong> pochodzi z piec&#243;w elektrycznych &#322;ukowych,
-            podczas gdy europejska &#347;rednia wynosi ok. 45&ndash;47% (dane Eurofer 2023).
-            Wynika to ze struktury historycznej &#8212; po transformacji lat 90. znaczna cz&#281;&#347;&#263;
-            wielkich piec&#243;w zosta&#322;a zamkni&#281;ta, a nowe inwestycje kierowano w EAF
-            dla pr&#281;t&#243;w zbrojeniowych i kszta&#322;townik&#243;w na rynek budowlany.
+            Polska jest jednym z czołowych krajów europejskich pod kątem udziału EAF w produkcji stali.
+            Ok. <strong>68% krajowej produkcji stali surowej</strong> pochodzi z pieców elektrycznych łukowych,
+            podczas gdy europejska średnia wynosi ok. 45–47% (dane Eurofer 2023).
+            Wynika to ze struktury historycznej — po transformacji lat 90. znaczna część
+            wielkich pieców została zamknięta, a nowe inwestycje kierowano w EAF
+            dla prętów zbrojeniowych i kształtowników na rynek budowlany.
         </p>
 
         <p>
-            Polska produkuje g&#322;&#243;wnie <strong>stale d&#322;ugie</strong> (pr&#281;ty, walc&#243;wka, kszta&#322;towniki, rury)
-            z EAF z&#322;omowego. Najwa&#380;niejsi producenci:
+            Polska produkuje głównie <strong>stale długie</strong> (pręty, walcówka, kształtowniki, rury)
+            z EAF złomowego. Najważniejsi producenci:
         </p>
 
         <ul>
             <li>
-                <strong>CMC Poland (Zawiercie)</strong> &#8212; jeden z najwi&#281;kszych zak&#322;ad&#243;w EAF w Polsce;
-                produkuje pr&#281;ty zbrojeniowe (BSt500S) i walc&#243;wk&#281; na rynek krajowy i eksport;
-                ok. 2,5&nbsp;mln&nbsp;t/rok mocy produkcyjnej.
+                <strong>CMC Poland (Zawiercie)</strong> — jeden z największych zakładów EAF w Polsce;
+                produkuje pręty zbrojeniowe (BSt500S) i walcówkę na rynek krajowy i eksport;
+                ok. 2,5 mln t/rok mocy produkcyjnej.
             </li>
             <li>
-                <strong>Celsa Huta Ostrowiec</strong> &#8212; EAF, specjalizacja w pr&#281;tach zbrojeniowych
-                i kszta&#322;townikach dla budownictwa; znacz&#261;cy dostawca dla polskich projekt&#243;w infrastrukturalnych.
+                <strong>Celsa Huta Ostrowiec</strong> — EAF, specjalizacja w prętach zbrojeniowych
+                i kształtownikach dla budownictwa; znaczący dostawca dla polskich projektów infrastrukturalnych.
             </li>
             <li>
-                <strong>Huta &#321;ab&#281;dy (Gliwice)</strong> &#8212; EAF, produkcja kszta&#322;townik&#243;w walcowanych na gor&#261;co
+                <strong>Huta Łabędy (Gliwice)</strong> — EAF, produkcja kształtowników walcowanych na gorąco
                 (IPE, HEB) i szyn tramwajowych; znana z profili konstrukcyjnych.
             </li>
             <li>
-                <strong>ArcelorMittal Poland</strong> &#8212; posiada zar&#243;wno instalacje EAF, jak i historyczne
-                wielkie piece; produkuje stale p&#322;askie i d&#322;ugie; dominuj&#261;cy dostawca dla motoryzacji.
+                <strong>ArcelorMittal Poland</strong> — posiada zarówno instalacje EAF, jak i historyczne
+                wielkie piece; produkuje stale płaskie i długie; dominujący dostawca dla motoryzacji.
             </li>
         </ul>
 
@@ -343,9 +333,9 @@
                 <thead>
                     <tr style="border-bottom: 2px solid var(--border);">
                         <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Region / kraj</th>
-                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Udzia&#322; EAF</th>
-                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Udzia&#322; BF-BOF</th>
-                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">G&#322;&#243;wne produkty EAF</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Udział EAF</th>
+                        <th style="text-align:right; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Udział BF-BOF</th>
+                        <th style="text-align:left; padding: 0.55rem 0.75rem; color:var(--text-secondary); font-weight:600;">Główne produkty EAF</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -353,28 +343,28 @@
                         <td style="padding: 0.6rem 0.75rem; font-weight: 600;">Polska</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right; color: var(--func-green); font-weight: 600;">~68%</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~32%</td>
-                        <td style="padding: 0.6rem 0.75rem;">pr&#281;t zbrojeniowy, walc&#243;wka, kszta&#322;towniki</td>
+                        <td style="padding: 0.6rem 0.75rem;">pręt zbrojeniowy, walcówka, kształtowniki</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">Unia Europejska &#8212; &#347;rednia</td>
+                        <td style="padding: 0.6rem 0.75rem;">Unia Europejska — średnia</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~46%</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~54%</td>
-                        <td style="padding: 0.6rem 0.75rem;">stale d&#322;ugie i p&#322;askie</td>
+                        <td style="padding: 0.6rem 0.75rem;">stale długie i płaskie</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
                         <td style="padding: 0.6rem 0.75rem;">Niemcy</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~30%</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~70%</td>
-                        <td style="padding: 0.6rem 0.75rem;">stale p&#322;askie, specjalne</td>
+                        <td style="padding: 0.6rem 0.75rem;">stale płaskie, specjalne</td>
                     </tr>
                     <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">W&#322;ochy</td>
+                        <td style="padding: 0.6rem 0.75rem;">Włochy</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right; color: var(--func-green);">~77%</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~23%</td>
-                        <td style="padding: 0.6rem 0.75rem;">pr&#281;t, walc&#243;wka, profile</td>
+                        <td style="padding: 0.6rem 0.75rem;">pręt, walcówka, profile</td>
                     </tr>
                     <tr style="border-bottom: 2px solid var(--border);">
-                        <td style="padding: 0.6rem 0.75rem;">&#346;wiat (globalnie)</td>
+                        <td style="padding: 0.6rem 0.75rem;">Świat (globalnie)</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~29%</td>
                         <td style="padding: 0.6rem 0.75rem; text-align:right;">~71%</td>
                         <td style="padding: 0.6rem 0.75rem;">mix (zdominowany przez Chiny: BF-BOF)</td>
@@ -382,161 +372,148 @@
                 </tbody>
             </table>
             <p class="comp-note">
-                &#378;r&#243;d&#322;a: Eurofer Annual Report 2023; Worldsteel Association &#8211; Steel Statistical Yearbook 2023;
-                szacunki poLCA dla Polski na podstawie danych GUS i Polskiej Unii Dystrybutor&#243;w Stali 2024.
+                źródła: Eurofer Annual Report 2023; Worldsteel Association – Steel Statistical Yearbook 2023;
+                szacunki poLCA dla Polski na podstawie danych GUS i Polskiej Unii Dystrybutorów Stali 2024.
             </p>
         </div>
 
         <h2>Dlaczego polska energia elektryczna ma kluczowe znaczenie dla EAF</h2>
 
         <p>
-            Piec elektryczny &#322;ukowy zu&#380;ywa typowo <strong>340&ndash;380&nbsp;kWh energii elektrycznej
-            na ton&#281; ciek&#322;ej stali</strong> (po uwzgl&#281;dnieniu start&#243;w, prze&#322;adunk&#243;w i proces&#243;w
-            pomocniczych). W odniesieniu do finalnego produktu &#8212; walc&#243;wki lub pr&#281;ta &#8212;
-            z uwzgl&#281;dnieniem strat w walcowni, zu&#380;ycie wzrasta do ok. 360&nbsp;kWh/t.
+            Piec elektryczny łukowy zużywa typowo <strong>340–380 kWh energii elektrycznej
+            na tonę ciekłej stali</strong> (po uwzględnieniu startów, przeładunków i procesów
+            pomocniczych). W odniesieniu do finalnego produktu — walcówki lub pręta —
+            z uwzględnieniem strat w walcowni, zużycie wzrasta do ok. 360 kWh/t.
         </p>
 
         <p>
-            Przy wska&#378;niku poLCA-EN-PL-2024 = <strong>0,599&nbsp;kg&nbsp;CO&#8322;e/kWh</strong> daje to:
+            Przy wskaźniku poLCA-EN-PL-2024 = <strong>0,599 kg CO₂e/kWh</strong> daje to:
         </p>
 
         <div class="card card-lg" style="max-width: 700px; margin: 1.25rem 0 2rem;">
-            <div class="card-title">Sk&#322;adowe wskaźnika GWP (A1&ndash;A3) polskiej stali EAF</div>
+            <div class="card-title">Składowe wskaźnika GWP (A1–A3) polskiej stali EAF</div>
             <div class="comp-bar-group" style="margin-top: 1rem;">
-                <div class="comp-bar-label">Energia elektryczna &#8212; 360 kWh/t &#215; 0,599 kg CO&#8322;e/kWh</div>
+                <div class="comp-bar-label">Energia elektryczna — 360 kWh/t × 0,599 kg CO₂e/kWh</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 38%;">0,22 kg CO&#8322;e/kg</div>
+                    <div class="comp-bar-fill gray" style="width: 38%;">0,22 kg CO₂e/kg</div>
                 </div>
             </div>
             <div class="comp-bar-group">
-                <div class="comp-bar-label">Emisje bezpo&#347;rednie procesu &#8212; elektrody grafitowe, gaz, topniki</div>
+                <div class="comp-bar-label">Emisje bezpośrednie procesu — elektrody grafitowe, gaz, topniki</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 22%;">0,13 kg CO&#8322;e/kg</div>
+                    <div class="comp-bar-fill gray" style="width: 22%;">0,13 kg CO₂e/kg</div>
                 </div>
             </div>
             <div class="comp-bar-group">
-                <div class="comp-bar-label">Z&#322;om &#8212; upstream: zbi&#243;rka, transport, obr&#243;bka wst&#281;pna</div>
+                <div class="comp-bar-label">Złom — upstream: zbiórka, transport, obróbka wstępna</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 22%;">0,13 kg CO&#8322;e/kg</div>
+                    <div class="comp-bar-fill gray" style="width: 22%;">0,13 kg CO₂e/kg</div>
                 </div>
             </div>
             <div class="comp-bar-group">
-                <div class="comp-bar-label">Walcownia, wyko&#324;czenie, us&#322;ugi pomocnicze</div>
+                <div class="comp-bar-label">Walcownia, wykończenie, usługi pomocnicze</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill gray" style="width: 17%;">0,10 kg CO&#8322;e/kg</div>
+                    <div class="comp-bar-fill gray" style="width: 17%;">0,10 kg CO₂e/kg</div>
                 </div>
             </div>
             <div class="comp-bar-group">
-                <div class="comp-bar-label" style="font-weight: 600;">&#321;&#261;cznie A1&ndash;A3</div>
+                <div class="comp-bar-label" style="font-weight: 600;">Łącznie A1–A3</div>
                 <div class="comp-bar-track">
-                    <div class="comp-bar-fill green" style="width: 100%; font-weight: 600;">0,58 kg CO&#8322;e/kg</div>
+                    <div class="comp-bar-fill green" style="width: 100%; font-weight: 600;">0,58 kg CO₂e/kg</div>
                 </div>
             </div>
             <p class="comp-note">
-                Zakres: A1 (surowce i z&#322;om) + A2 (transport do huty) + A3 (produkcja stali, walcowanie).
-                GWP100 wg IPCC AR6. Energia elektryczna wg wska&#378;nika poLCA-EN-PL-2024.
+                Zakres: A1 (surowce i złom) + A2 (transport do huty) + A3 (produkcja stali, walcowanie).
+                GWP100 wg IPCC AR6. Energia elektryczna wg wskaźnika poLCA-EN-PL-2024.
             </p>
         </div>
 
         <div class="pull-quote-lg">
-            <p>Energia elektryczna stanowi <strong>38% &#347;ladu GWP</strong> polskiej stali EAF.
-            To oznacza, &#380;e ka&#380;da aktualizacja wska&#378;nika emisyjno&#347;ci sieci (poLCA-EN-PL)
-            bezpo&#347;rednio przek&#322;ada si&#281; na wyniki LCA produkt&#243;w stalowych &#8212;
-            i jest dodatkowym argumentem za stosowaniem danych krajowych zamiast globalnych.</p>
-            <cite>Obliczenia poLCA; wska&#378;nik energii: poLCA-EN-PL-2024 = 0,599 kg CO&#8322;e/kWh</cite>
+            <p>W historycznym przykładzie energia elektryczna stanowi <strong>38% śladu GWP</strong>. Zmiana przyjętych danych energii zmieniłaby wynik tego modelu; nie przesądza to o właściwym źródle danych dla konkretnego wyrobu stalowego.</p>
+            <cite>Obliczenia poLCA; wskaźnik energii: poLCA-EN-PL-2024 = 0,599 kg CO₂e/kWh</cite>
         </div>
 
         <p>
-            Dla por&#243;wnania: ta sama huta EAF dzia&#322;aj&#261;ca w kraju z czyst&#261; siatk&#261; energetyczn&#261;
-            osi&#261;ga&#322;aby znacznie ni&#380;sze wyniki. Przy norweskiej sieci (praktycznie 100% hydro,
-            ok. 0,011&nbsp;kg&nbsp;CO&#8322;e/kWh) sk&#322;adowa energetyczna spad&#322;aby do zaledwie
-            0,004&nbsp;kg&nbsp;CO&#8322;e/kg &#8212; a ca&#322;kowity &#347;lad A1&ndash;A3 wynosi&#322;by ok.
-            0,25&nbsp;kg&nbsp;CO&#8322;e/kg. Polska EAF jest wi&#281;c w po&#322;owie drogi mi&#281;dzy zachodnioeuropejsk&#261;
-            stron&#261; EAF a europ&#261; BF-BOF &#8212; co stanowi solidn&#261; przewag&#281; nad &#347;redni&#261; ecoinvent.
+            Dla porównania: ta sama huta EAF działająca w kraju z czystą siatką energetyczną
+            osiągałaby znacznie niższe wyniki. Przy norweskiej sieci (praktycznie 100% hydro,
+            ok. 0,011 kg CO₂e/kWh) składowa energetyczna spadłaby do zaledwie
+            0,004 kg CO₂e/kg — a całkowity ślad A1–A3 wynosiłby ok.
+            0,25 kg CO₂e/kg. To scenariusz ilustracyjny; nie stanowi dowodu przewagi wszystkich polskich dostaw nad innymi danymi stali.
         </p>
 
-        <h2>Jak dobiera&#263; dane LCI dla stali w EPD</h2>
+        <h2>Jak dobierać dane LCI dla stali w EPD</h2>
 
         <div class="callout callout-tip">
             <div class="callout-label">Zalecenie praktyczne</div>
             <p class="callout-body">
-                <strong>Krok 1 &#8212; ustal &#378;r&#243;d&#322;o stali:</strong> Czy produkt stalowy pochodzi z polskiej
-                huty EAF czy BF-BOF? Huty EAF produkuj&#261; g&#322;&#243;wnie stale d&#322;ugie (pr&#281;ty, walc&#243;wka, kszta&#322;towniki),
-                BF-BOF &#8212; stale p&#322;askie (blachy, ta&#347;my hot-rolled, cold-rolled).<br><br>
-                <strong>Krok 2 &#8212; wybierz dane LCI:</strong> Dla polskiej huty EAF stosuj zbiór danych
-                poLCA lub dane pierwotne huty. Dla BF-BOF lub importowanej stali zachodnioeuropejskiej
-                &#8212; zbiór danych Eurofer lub ecoinvent z poprawnym modelem geograficznym.<br><br>
-                <strong>Krok 3 &#8212; udokumentuj wyb&#243;r:</strong> ISO 14044 §4.2.3.6 wymaga uzasadnienia
-                reprezentatywno&#347;ci danych. Opis wybranego zbioru danych, jego rok referencyjny i zakres
-                geograficzny powinny pojawi&#263; si&#281; w raporcie LCA i EPD. Szczeg&#243;&#322;y dotycz&#261;ce
-                wymaga&#324; dokumentacyjnych mo&#380;na uzgodni&#263; z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD&nbsp;Polska</a>.
+                <strong>Krok 1 — ustal źródło stali:</strong> Czy produkt stalowy pochodzi z polskiej
+                huty EAF czy BF-BOF? Huty EAF produkują głównie stale długie (pręty, walcówka, kształtowniki),
+                BF-BOF — stale płaskie (blachy, taśmy hot-rolled, cold-rolled).<br><br>
+                <strong>Krok 2 — wybierz dane LCI:</strong> Oceń dane producenta oraz dostępne zbiory poLCA, Eurofer i ecoinvent pod względem produktu, technologii, granic i reprezentatywności. Sam kraj pochodzenia nie rozstrzyga wyboru.<br><br>
+                <strong>Krok 3 — udokumentuj wybór:</strong> ISO 14044 §4.2.3.6 wymaga uzasadnienia
+                reprezentatywności danych. Opis wybranego zbioru danych, jego rok referencyjny i zakres
+                geograficzny powinny pojawić się w raporcie LCA i EPD. Szczegóły dotyczące
+                wymagań dokumentacyjnych można uzgodnić z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD Polska</a>.
             </p>
         </div>
 
-        <h2>Konsekwencje dla EPD polskich produkt&#243;w budowlanych</h2>
+        <h2>Konsekwencje dla EPD polskich produktów budowlanych</h2>
 
         <p>
-            Stal jest sk&#322;adnikiem wielu wyrob&#243;w budowlanych, dla kt&#243;rych powstaj&#261; EPD w Polsce:
-            prefabrykat&#243;w &#380;elbetowych, element&#243;w stalowych, zbrojenia do betonu towarowego,
-            system&#243;w mocowa&#324; czy profili. W ka&#380;dym z tych przypadk&#243;w wska&#378;nik GWP stali
-            wej&#347;ciowej ma bezpo&#347;redni wp&#322;yw na wynik deklaracji.
+            Stal jest składnikiem wielu wyrobów budowlanych, dla których powstają EPD w Polsce:
+            prefabrykatów żelbetowych, elementów stalowych, zbrojenia do betonu towarowego,
+            systemów mocowań czy profili. W każdym z tych przypadków wskaźnik GWP stali
+            wejściowej ma bezpośredni wpływ na wynik deklaracji.
         </p>
 
         <p>
-            Przy typowym udziale stali w prefabrykacie &#380;elbetowym na poziomie
-            80&ndash;120&nbsp;kg/m&#179;, r&#243;&#380;nica mi&#281;dzy wskaźnikiem 0,58 i 1,78&nbsp;kg&nbsp;CO&#8322;e/kg
-            przek&#322;ada si&#281; na <strong>96&ndash;144&nbsp;kg&nbsp;CO&#8322;e/m&#179; prefabrykatu</strong>.
-            W kontekście &#380;e &#347;redni ca&#322;kowity GWP prefabrykatu &#380;elbetowego wynosi
-            200&ndash;350&nbsp;kg&nbsp;CO&#8322;e/m&#179;, ta r&#243;&#380;nica jest krytyczna dla wiarygodno&#347;ci EPD.
+            Przy typowym udziale stali w prefabrykacie żelbetowym na poziomie
+            80–120 kg/m³, różnica między wskaźnikiem 0,58 i 1,78 kg CO₂e/kg
+            przekłada się na <strong>96–144 kg CO₂e/m³ prefabrykatu</strong>.
+            W kontekście że średni całkowity GWP prefabrykatu żelbetowego wynosi
+            200–350 kg CO₂e/m³, ta różnica jest krytyczna dla wiarygodności EPD.
         </p>
 
         <!-- FAQ -->
         <div class="faq-section section-gap">
-            <div class="faq-section-title">Najcz&#281;&#347;ciej zadawane pytania</div>
+            <div class="faq-section-title">Najczęściej zadawane pytania</div>
 
             <div class="faq-item">
-                <div class="faq-q">Sk&#261;d pochodzi wska&#378;nik 0,58&nbsp;kg&nbsp;CO&#8322;e/kg dla polskiej stali EAF?</div>
+                <div class="faq-q">Skąd pochodzi wskaźnik 0,58 kg CO₂e/kg dla polskiej stali EAF?</div>
                 <div class="faq-a">
-                    Wska&#378;nik poLCA dla walcowanej stali d&#322;ugiej z EAF (pr&#281;t BSt500S, walc&#243;wka) wyznaczono
-                    na podstawie danych bran&#380;owych polskich hut EAF, wska&#378;nika energetycznego
-                    poLCA-EN-PL-2024 (0,599&nbsp;kg&nbsp;CO&#8322;e/kWh), wsp&#243;&#322;czynnik&#243;w GWP IPCC AR6 oraz bilans&#243;w
-                    materia&#322;owych dla wsadu z&#322;omowego. Sk&#322;adowe: energia elektryczna 0,22&nbsp;kg,
-                    emisje bezpo&#347;rednie procesu 0,13&nbsp;kg, upstream z&#322;omu 0,13&nbsp;kg, walcownia 0,10&nbsp;kg.
+                    Wskaźnik poLCA dla walcowanej stali długiej z EAF (pręt BSt500S, walcówka) wyznaczono
+                    na podstawie danych branżowych polskich hut EAF, wskaźnika energetycznego
+                    poLCA-EN-PL-2024 (0,599 kg CO₂e/kWh), współczynników GWP IPCC AR6 oraz bilansów
+                    materiałowych dla wsadu złomowego. Składowe: energia elektryczna 0,22 kg,
+                    emisje bezpośrednie procesu 0,13 kg, upstream złomu 0,13 kg, walcownia 0,10 kg.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Czy EAF jest zawsze ekologiczniejszy ni&#380; BF-BOF?</div>
+                <div class="faq-q">Czy EAF jest zawsze ekologiczniejszy niż BF-BOF?</div>
                 <div class="faq-a">
-                    W kategorii GWP &#8212; tak, przy dominuj&#261;cym udziale z&#322;omu w EAF (&gt;85% wsadu).
-                    EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy &#380;elaza koksem),
-                    kt&#243;re stanowi&#261; ok. 65% &#347;ladu BF-BOF. Jednak wynik EAF silnie zale&#380;y od mieszanki
-                    energetycznej: polska sie&#263; (0,599&nbsp;kg&nbsp;CO&#8322;e/kWh) generuje wy&#380;sz&#261; sk&#322;adow&#261; ni&#380;
-                    zachodnia Europa. Dla innych kategorii wp&#322;ywu (AP, EP, ADPF) wyniki mog&#261; si&#281; r&#243;&#380;ni&#263;
-                    &#8212; EAF zu&#380;ywa wi&#281;cej energii ze &#378;r&#243;de&#322; pierwotnych, je&#347;li sie&#263; nie jest odnawialna.
+                    Historyczny przykład zakłada dominujący udział złomu w EAF (&gt;85% wsadu). Nie uzasadnia to przewagi dla każdej instalacji lub dostawy.
+                    EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy żelaza koksem),
+                    które stanowią ok. 65% śladu BF-BOF. Jednak wynik EAF silnie zależy od mieszanki
+                    energetycznej: polska sieć (0,599 kg CO₂e/kWh) generuje wyższą składową niż
+                    zachodnia Europa. Dla innych kategorii wpływu (AP, EP, ADPF) wyniki mogą się różnić
+                    — EAF zużywa więcej energii ze źródeł pierwotnych, jeśli sieć nie jest odnawialna.
                 </div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Kiedy stosowa&#263; dane poLCA, a kiedy ecoinvent lub Eurofer?</div>
-                <div class="faq-a">
-                    Dane poLCA nale&#380;y stosowa&#263;, gdy &#378;r&#243;d&#322;em stali jest polska huta EAF i cel badania
-                    wymaga danych reprezentatywnych dla polskich warunk&#243;w (EPD PEP, programy oparte
-                    o ISO 14025 z preferencj&#261; danych krajowych). Dane Eurofer Industry Report
-                    s&#261; w&#322;a&#347;ciwe dla por&#243;wna&#324; sektorowych lub gdy huta jest zlokalizowana
-                    w Europie Zachodniej. Ecoinvent stosuje si&#281; jako dane pomocnicze, gdy brak
-                    danych pierwotnych lub krajowych &#8212; zawsze z udokumentowanym uzasadnieniem.
-                </div>
+                <div class="faq-q">Kiedy stosować dane poLCA, a kiedy ecoinvent lub Eurofer?</div>
+                <div class="faq-a">Dobór danych poLCA, ecoinvent, Eurofer lub danych producenta wymaga oceny technologii, produktu, granic, roku i reprezentatywności. Sam kraj pochodzenia nie nadaje jednej bazie pierwszeństwa. Historyczne odniesienie do ISO 14025 nie stanowi podstawy takiego automatycznego doboru.</div>
             </div>
 
             <div class="faq-item">
-                <div class="faq-q">Czy wszystkie polskie huty stosuj&#261; EAF?</div>
+                <div class="faq-q">Czy wszystkie polskie huty stosują EAF?</div>
                 <div class="faq-a">
-                    Nie. Ok. 68% polskiej produkcji stali surowej pochodzi z EAF. Pozosta&#322;e ok. 32%
-                    to produkcja z wielkich piec&#243;w i konwertor&#243;w tlenowych &#8212; g&#322;&#243;wnie stale p&#322;askie
-                    (blachy, ta&#347;my) do zastosowa&#324; motoryzacyjnych i przemys&#322;owych.
-                    Wyb&#243;r w&#322;a&#347;ciwego wska&#378;nika LCI musi uwzgl&#281;dnia&#263; faktyczn&#261; technologi&#281;
-                    produkcji u dostawcy &#8212; informacja ta powinna wynika&#263; z karty wyrobu lub deklaracji huty.
+                    Nie. Ok. 68% polskiej produkcji stali surowej pochodzi z EAF. Pozostałe ok. 32%
+                    to produkcja z wielkich pieców i konwertorów tlenowych — głównie stale płaskie
+                    (blachy, taśmy) do zastosowań motoryzacyjnych i przemysłowych.
+                    Wybór właściwego wskaźnika LCI musi uwzględniać faktyczną technologię
+                    produkcji u dostawcy — informacja ta powinna wynikać z karty wyrobu lub deklaracji huty.
                 </div>
             </div>
 
@@ -545,21 +522,21 @@
         <hr class="blog-post-divider">
 
         <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>&#378;r&#243;d&#322;a:</strong>
-            Multicert Sp. z o.o. (2026), &#8222;poLCA &#8212; Wskaźnik GWP dla polskiej stali walcowanej z EAF&#8221;, luty 2026;
-            Eurofer (2023), &#8222;European Steel Industry &#8212; LCI Data Report 2023&#8221;;
-            Worldsteel Association (2023), &#8222;Steel Statistical Yearbook 2023&#8221;;
-            ecoinvent v3.10 (2024), zbiór danych &#8222;steel, low-alloyed &#123;RER&#125;&#8221;;
-            Polska Unia Dystrybutor&#243;w Stali (2024), dane o strukturze produkcji krajowej;
-            IPCC (2021), AR6 WG1 / EF 3.1 &#8212; GWP100: CH&#8324; fossil = 29,8, N&#8322;O = 273;
-            poLCA-EN-PL-2024 (Multicert 2026) &#8212; 0,599 kg CO&#8322;e/kWh.
+            <strong>źródła:</strong>
+            Multicert Sp. z o.o. (2026), „poLCA — Wskaźnik GWP dla polskiej stali walcowanej z EAF”, luty 2026;
+            Eurofer (2023), „European Steel Industry — LCI Data Report 2023”;
+            Worldsteel Association (2023), „Steel Statistical Yearbook 2023”;
+            ecoinvent v3.10 (2024), zbiór danych „steel, low-alloyed {RER}”;
+            Polska Unia Dystrybutorów Stali (2024), dane o strukturze produkcji krajowej;
+            IPCC (2021), AR6 WG1 / EF 3.1 — GWP100: CH₄ fossil = 29,8, N₂O = 273;
+            poLCA-EN-PL-2024 (Multicert 2026) — 0,599 kg CO₂e/kWh.
         </p>
 
     </div>
 
     <!-- Related posts -->
     <div class="section-gap fade-in">
-        <div class="section-num">Powi&#261;zane artyku&#322;y</div>
+        <div class="section-num">Powiązane artykuły</div>
         <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
             <a href="blog-ecoinvent-vs-krajowe.html" class="blog-card">
                 <div class="blog-card-body">
@@ -567,9 +544,9 @@
                         <span class="blog-tag rynek">Rynek</span>
                         <span class="blog-date">2 grudnia 2025</span>
                     </div>
-                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych &#8212; kiedy u&#347;rednianie szkodzi dok&#322;adno&#347;ci LCA</div>
+                    <div class="blog-card-title">Ecoinvent a krajowe bazy danych — kiedy uśrednianie szkodzi dokładności LCA</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">9 min czytania</span>
                     </div>
                 </div>
@@ -581,9 +558,9 @@
                         <span class="blog-tag metodyka">Metodyka</span>
                         <span class="blog-date">18 lutego 2026</span>
                     </div>
-                    <div class="blog-card-title">poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia</div>
+                    <div class="blog-card-title">poLCA-EN-PL 2024 — emisyjność energii elektrycznej w Polsce w pełnym cyklu życia</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
                         <span class="blog-read-time">7 min czytania</span>
                     </div>
                 </div>
@@ -592,47 +569,7 @@
     </div>
 
 </div>
-</div>
+</main>
 
-<footer class="site-footer">
-    <div class="footer-inner">
-        <div>
-            <a href="index.html" class="footer-logo">poLCA</a>
-            <p class="footer-desc">Polska baza danych inwentaryzacji cyklu życia (LCI) dla wyrobów budowlanych. Dane specyficzne dla polskich warunków produkcji, zgodne z EN 15804+A2 i ISO 14044.</p>
-            <p class="footer-addr">
-                ul. Mydlarska 47, 04-690 Warszawa<br>
-                <a href="mailto:info@epd.org.pl" style="color:rgba(255,255,255,0.6)">info@epd.org.pl</a>
-                · <a href="https://www.epd.org.pl" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6)">www.epd.org.pl</a>
-            </p>
-        </div>
-        <div>
-            <div class="footer-col-title">Operator</div>
-            <ul class="footer-links">
-                <li><a href="#">Multicert Sp. z o.o.</a></li>
-                <li><a href="metodyka.html">Metodyka</a></li>
-                <li><a href="datasety.html">Wskaźniki</a></li>
-                <li><a href="blog.html">Blog</a></li>
-            </ul>
-        </div>
-        <div>
-            <div class="footer-col-title">Architektura techniczna</div>
-            <ul class="footer-links">
-                <li><a href="#">Struktura grafowa, JSON-LD</a></li>
-                <li><a href="#">API REST + GraphQL</a></li>
-                <li><a href="#">Eksport ILCD+EPD</a></li>
-                <li><a href="sitemap.xml">Mapa strony</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <span>&copy; 2026 Multicert Sp. z o.o. — Operator programu EPD Polska</span>
-        <span>poLCA v10.1</span>
-    </div>
-</footer>
-<script src="js/sidebar.js?v=5.1"></script>
-<script src="js/animations.js?v=5.1"></script>
-<script src="js/effects.js?v=5.1"></script>
-<script src="js/search.js?v=5.1"></script>
-    <script src="js/nav-mobile.js"></script>
-</body>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>
