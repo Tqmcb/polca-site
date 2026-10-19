@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Dane środowiskowe dla Polski",
-    "lead": "Wskaźniki energii, materiałów, paliw i transportu z rokiem danych, zakresem i źródłem. Wybierz dane do wyrobu, budynku albo pojedynczego procesu.",
+    "title": "Dane i metody dla Twojego wyrobu",
+    "lead": "Wybierz rodzaj wyrobu. Sprawdź dostępne dane środowiskowe, zasady obliczeń i kalkulatory.",
     "tasks": [
       {
         "title": "Znajdź dane",
@@ -23,6 +23,23 @@
       "title": "Jak korzystać z portalu",
       "lead": "Wybierz cel obliczenia, znajdź dane i sprawdź ich zastosowanie.",
       "sections": [
+        {
+          "id": "wybor-wyrobu",
+          "title": "Zacznij od rodzaju wyrobu",
+          "paragraphs": [
+            "Wybierz rodzinę wyrobu, aby zobaczyć dostępne dane, dokumenty metodyczne i narzędzia. Energia, paliwa i transport są zebrane osobno jako dane wspólne."
+          ],
+          "links": [
+            {
+              "label": "Wybierz rodzinę wyrobu",
+              "href": "/wyroby.html"
+            },
+            {
+              "label": "Energia, paliwa i transport",
+              "href": "/dane-wspolne.html"
+            }
+          ]
+        },
         {
           "title": "1. Ustal, co liczysz",
           "paragraphs": [
@@ -98,6 +115,23 @@
       "title": "Metody i źródła",
       "lead": "Dokumentacja każdego zbioru: granice, źródła, wersja, status i ograniczenia. Wybierz zbiór, aby przejść do opisu.",
       "sections": [
+        {
+          "id": "metody-wyrobu",
+          "title": "Zasady obliczeń dla Twojego wyrobu",
+          "paragraphs": [
+            "Dobierz dokumenty PCR i c-PCR do rodzaju wyrobu i zasad programu deklaracji. Katalog rozdziela dokumenty wydane, projekty oraz dane pomocnicze."
+          ],
+          "links": [
+            {
+              "label": "Dokumenty PCR i c-PCR według wyrobu",
+              "href": "/c-pcr/"
+            },
+            {
+              "label": "Rodziny wyrobów",
+              "href": "/wyroby.html"
+            }
+          ]
+        },
         {
           "title": "Energia elektryczna",
           "paragraphs": [

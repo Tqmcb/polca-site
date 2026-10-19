@@ -144,6 +144,20 @@ def build_catalog() -> dict:
     datasets = [build_energy_record(editorial)]
     datasets += [build_legacy_record(item, editorial) for item in legacy]
     resources = [build_resource(item, editorial) for item in editorial['resources']]
+    mapping = read_json('data/cpr-mapping.json')
+    families = {f['id'] for f in read_json('data/cpr-families.json')['families']}
+    record_ids = {r['id'] for r in datasets + resources}
+    if set(mapping['records']) - record_ids:
+        raise ValueError('Unknown record in CPR mapping')
+    for item in datasets + resources:
+        ids = mapping['records'].get(item['id'], item.get('cpr_family_ids', []))
+        if set(ids) - families:
+            raise ValueError('Unknown CPR family')
+        item['cpr_family_ids'] = ids
+        item['cpr_related'] = mapping.get('related', {}).get(item['id'], [])
+        item['cpr_scope_note'] = mapping.get('scope_notes', {}).get(item['id'])
+        if any(x['family_id'] not in families for x in item['cpr_related']):
+            raise ValueError('Unknown related CPR family')
     collections = []
     for raw in editorial['collections']:
         item = dict(raw)

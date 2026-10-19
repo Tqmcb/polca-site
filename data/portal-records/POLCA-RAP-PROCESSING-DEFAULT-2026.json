@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-RAP-PROCESSING-DEFAULT-2026",
     "title": "Przygotowanie granulatu asfaltowego",
@@ -46,7 +46,16 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-RAP-PROCESSING-DEFAULT-2026.json",
-    "value": 3
+    "value": 3,
+    "cpr_family_ids": [],
+    "cpr_related": [
+      {
+        "family_id": 23,
+        "role": "process_for_product",
+        "note": "Obciążenie przetworzenia destruktu do receptury MMA; nie pełny profil wyrobu ani deklaracja statusu odpadu."
+      }
+    ],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "counts": {
     "data_positions": 37,
     "parameter_sets": 1,
     "control_references": 8,
-    "resources": 61,
+    "resources": 97,
     "collections": 3
   },
   "datasets": [
@@ -104,7 +104,10 @@
       "indicator_count": 37,
       "source_record_href": "/data/energia-pl-2025-v3/profil-37.json",
       "geography": "PL",
-      "is_default": false
+      "is_default": false,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "KOBIZE-EN-PL-ENDUSER-2024",
@@ -153,7 +156,10 @@
       "geography": "PL",
       "reference_unit": "kWh",
       "source_record_href": "/data/datasets/KOBIZE-EN-PL-ENDUSER-2024.json",
-      "value": 0.553
+      "value": 0.553,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-EN-PL-LCA-2024",
@@ -203,7 +209,10 @@
       "geography": "PL",
       "reference_unit": "kWh",
       "source_record_href": "/data/datasets/POLCA-EN-PL-LCA-2024.json",
-      "value": 0.599
+      "value": 0.599,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-FUEL-DIESEL-DEFAULT-2026",
@@ -247,7 +256,10 @@
       "geography": "PL",
       "reference_unit": "l",
       "source_record_href": "/data/datasets/POLCA-FUEL-DIESEL-DEFAULT-2026.json",
-      "value": 3.2
+      "value": 3.2,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
@@ -291,7 +303,10 @@
       "geography": "PL",
       "reference_unit": "m3",
       "source_record_href": "/data/datasets/POLCA-FUEL-NATURAL-GAS-DEFAULT-2026.json",
-      "value": 2
+      "value": 2,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-TRUCK-40T-DEFAULT-2026",
@@ -337,7 +352,10 @@
       "geography": "PL/EU",
       "reference_unit": "tkm",
       "source_record_href": "/data/datasets/POLCA-TRUCK-40T-DEFAULT-2026.json",
-      "value": 0.095
+      "value": 0.095,
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
@@ -384,7 +402,23 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-CRUSHED-DEFAULT-2026.json",
-      "value": 5.5
+      "value": 5.5,
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "input_to_product",
+          "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+        },
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
@@ -431,7 +465,23 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-LIMESTONE-DEFAULT-2026.json",
-      "value": 4
+      "value": 4,
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "input_to_product",
+          "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+        },
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
@@ -478,7 +528,23 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-DOLOMITE-DEFAULT-2026.json",
-      "value": 4.5
+      "value": 4.5,
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "input_to_product",
+          "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+        },
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
@@ -525,7 +591,23 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-NATURAL-DEFAULT-2026.json",
-      "value": 3.5
+      "value": 3.5,
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "input_to_product",
+          "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+        },
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
@@ -571,7 +653,12 @@
       "geography": "PL/EU",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-BITUMEN-ROAD-DEFAULT-2026.json",
-      "value": 450
+      "value": 450,
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-EMULSION-TACK-COAT-DEFAULT-2026",
@@ -617,7 +704,12 @@
       "geography": "PL/EU",
       "reference_unit": "kg",
       "source_record_href": "/data/datasets/POLCA-EMULSION-TACK-COAT-DEFAULT-2026.json",
-      "value": 0.45
+      "value": 0.45,
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
@@ -663,7 +755,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-FILLER-LIMESTONE-DEFAULT-2026.json",
-      "value": 30
+      "value": 30,
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "input_to_product",
+          "note": "Wypełniacz do receptury mieszanki asfaltowej."
+        }
+      ],
+      "cpr_scope_note": "Jeżeli jest kruszywem wypełniającym do MMA, a nie innym proszkiem mineralnym o innym zamierzonym zastosowaniu."
     },
     {
       "id": "POLCA-RAP-PROCESSING-DEFAULT-2026",
@@ -710,7 +813,16 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-RAP-PROCESSING-DEFAULT-2026.json",
-      "value": 3
+      "value": 3,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "process_for_product",
+          "note": "Obciążenie przetworzenia destruktu do receptury MMA; nie pełny profil wyrobu ani deklaracja statusu odpadu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-MMA-LCI-DEFAULTS-2026",
@@ -760,7 +872,16 @@
       "record_type": "parameters",
       "geography": "PL",
       "reference_unit": "t",
-      "source_record_href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json"
+      "source_record_href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json",
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 23,
+          "role": "parameters_for_product",
+          "note": "Zbiór założeń do obliczeń mieszanek; nie kolejny samodzielny wynik."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-MMA-AC11S-2026",
@@ -809,7 +930,12 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-MMA-AC11S-2026.json",
-      "value": 112.17
+      "value": 112.17,
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-MMA-AC16W-2026",
@@ -858,7 +984,12 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-MMA-AC16W-2026.json",
-      "value": 74.14
+      "value": 74.14,
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-MMA-SMA11S-2026",
@@ -907,7 +1038,12 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-MMA-SMA11S-2026.json",
-      "value": 120.17
+      "value": 120.17,
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024",
@@ -952,7 +1088,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024.json",
-      "value": 883
+      "value": 883,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -997,7 +1144,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024.json",
-      "value": 856
+      "value": 856,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024",
@@ -1042,7 +1200,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024.json",
-      "value": 836
+      "value": 836,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024",
@@ -1087,7 +1256,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024.json",
-      "value": 816
+      "value": 816,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024",
@@ -1132,7 +1312,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024.json",
-      "value": 762
+      "value": 762,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
@@ -1177,7 +1368,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024.json",
-      "value": 637
+      "value": 637,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024",
@@ -1222,7 +1424,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024.json",
-      "value": 703
+      "value": 703,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024",
@@ -1267,7 +1480,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024.json",
-      "value": 556
+      "value": 556,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
@@ -1312,7 +1536,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024.json",
-      "value": 374
+      "value": 374,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024",
@@ -1357,7 +1592,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024.json",
-      "value": 228
+      "value": 228,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
@@ -1402,7 +1648,18 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025.json",
-      "value": 397
+      "value": 397,
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026",
@@ -1444,7 +1701,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026.json",
-      "value": 308
+      "value": 308,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026",
@@ -1486,7 +1752,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026.json",
-      "value": 1507
+      "value": 1507,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026",
@@ -1528,7 +1803,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026.json",
-      "value": 1551
+      "value": 1551,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026",
@@ -1570,7 +1854,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026.json",
-      "value": 1595
+      "value": 1595,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
@@ -1612,7 +1905,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026.json",
-      "value": 1584
+      "value": 1584,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
@@ -1654,7 +1956,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026.json",
-      "value": 1639
+      "value": 1639,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026",
@@ -1696,7 +2007,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026.json",
-      "value": 1507
+      "value": 1507,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026",
@@ -1738,7 +2058,16 @@
       "geography": "Other Countries and Territories",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026.json",
-      "value": 2233
+      "value": 2233,
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 15,
+          "role": "context_only",
+          "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     }
   ],
   "resources": [
@@ -1773,7 +2102,10 @@
         "środowiskowy",
         "37 wskaźników",
         "obliczenia"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-energia",
@@ -1804,7 +2136,10 @@
         "paliwo",
         "MWh",
         "emisje"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-mma",
@@ -1837,7 +2172,12 @@
         "receptura",
         "asfalt",
         "RAP"
-      ]
+      ],
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-kruszywa",
@@ -1867,7 +2207,12 @@
         "kopalnia",
         "recykling",
         "A4"
-      ]
+      ],
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-transport",
@@ -1896,7 +2241,10 @@
         "tkm",
         "ciężarówka",
         "kolej"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-przelicznik",
@@ -1928,7 +2276,10 @@
         "kg",
         "t",
         "wartość opałowa"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-materialy",
@@ -1958,7 +2309,10 @@
         "stal",
         "drewno",
         "izolacja"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "tool-wskazniki",
@@ -1987,7 +2341,10 @@
         "paliwa",
         "energia",
         "tabela"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-use",
@@ -2011,11 +2368,15 @@
       "methodology_href": null,
       "related_ids": [],
       "keywords": [
+        "Zasady obliczeń dla Twojego wyrobu Dobierz dokumenty PCR i c-PCR do rodzaju wyrobu i zasad programu deklaracji. Katalog rozdziela dokumenty wydane, projekty oraz dane pomocnicze. ",
         "Energia elektryczna Aktualny profil publiczny: Polska 2025 v3, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW. Kontrola techniczna obliczeń i pakietu jest zakończona; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody. Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane. ",
         "Katalog materiałów, paliw i transportu Każda pozycja katalogu ma rok danych, jednostkę, rodzaj wskaźnika, poziom dowodu źródła i wersję. Rekordy bez pełnego śladu do konkretnej deklaracji producenta są oznaczone jako wartości zastępcze lub referencyjne. Aktualny indeks to plik portal-catalog.json. ",
         "Kalkulatory Kalkulatory energii, mieszanek asfaltowych i kruszyw używa własnej, datowanej tabeli współczynników, pokazywanej i eksportowanej razem z wynikiem. Kalkulatory służą do wstępnych oszacowań. Rodzaj wskaźnika i zakres obliczenia są opisane przy wyniku. ",
         "Normy, dokumenty programowe i rejestr zmian Normy odniesienia i ich wydania wskazuje strona Podstawy normatywne. Projekty dokumentów programowych dla mieszanek mineralno-asfaltowych i kruszyw mają status projektu z datą w nagłówku. Zmiany danych są odnotowane w rejestrze zmian. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-quality",
@@ -2043,7 +2404,10 @@
         "Źródła i poziom dowodu Polityka źródeł określa, co trzeba podać, aby rekord powołał się na deklarację środowiskową wyrobu (EPD) producenta: numer deklaracji, produkt, zakład i tabelę. Rekordy bez tych danych są oznaczone jako wartości zastępcze lub referencyjne. Współczynniki kalkulatorów bez identyfikatora tabeli źródłowej są podpisane jako założenia kalkulatora. ",
         "Kontrola plików Pakiet energii 2025 ma manifest z sumami kontrolnymi plików oraz plik kontroli eksportu z wynikiem przeliczenia przykładu. Zmiany wartości w katalogu są odnotowane w rejestrze zmian z datą i wersją. ",
         "Ocena do zastosowania O przydatności zbioru do deklaracji decyduje ocena metody, reprezentatywności i zasad właściwego programu. Drogę od danych do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR) opisuje osobna strona. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-index",
@@ -2069,7 +2433,10 @@
       "keywords": [
         "Dokumenty metodyczne",
         "metody"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-energy-2024",
@@ -2105,7 +2472,10 @@
       "keywords": [
         "MET-001 — model energii 2024",
         "energia"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-energy-use",
@@ -2144,11 +2514,14 @@
       "keywords": [
         "MET-002 — wybór danych energii",
         "energia"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-rules",
-      "title": "Reguły kategorii wyrobów",
+      "title": "Zasady obliczeń dla wyrobów — PCR i c-PCR",
       "kind": "method",
       "category_id": "metody",
       "category_label": "Metody i źródła",
@@ -2156,7 +2529,7 @@
       "year_type": null,
       "status_id": "document",
       "status_label": "Dokument metodyczny",
-      "description": "Dokumenty dla mieszanek asfaltowych i kruszyw.",
+      "description": "Wydane dokumenty branżowe, reguły podstawowe, projekty i status dokumentów poLCA.",
       "href": "/c-pcr/index.html",
       "unit": null,
       "boundary": null,
@@ -2168,13 +2541,23 @@
       "methodology_href": null,
       "related_ids": [],
       "keywords": [
-        "Reguły kategorii wyrobów",
-        "metody"
-      ]
+        "c-PCR",
+        "PCR",
+        "CPR",
+        "metody",
+        "wyroby",
+        "EN 15804",
+        "EN 16908",
+        "EN 16757",
+        "CEN/TS 18301"
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-mma",
-      "title": "Reguły dla mieszanek asfaltowych",
+      "title": "Mieszanki mineralno-asfaltowe — zasady obliczeń i projekt poLCA",
       "kind": "method",
       "category_id": "mma",
       "category_label": "Mieszanki mineralno-asfaltowe",
@@ -2182,7 +2565,7 @@
       "year_type": "publication",
       "status_id": "draft",
       "status_label": "Projekt dokumentu",
-      "description": "Projekt reguł kategorii wyrobu dla mieszanek mineralno-asfaltowych.",
+      "description": "Dokumenty branżowe, status historycznego projektu poLCA i odnośniki do danych.",
       "href": "/c-pcr/mma.html",
       "unit": null,
       "boundary": null,
@@ -2212,11 +2595,16 @@
       "keywords": [
         "Reguły dla mieszanek asfaltowych",
         "mma"
-      ]
+      ],
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-kruszywa",
-      "title": "Reguły dla kruszyw",
+      "title": "Kruszywa — zasady obliczeń i projekt poLCA",
       "kind": "method",
       "category_id": "kruszywa",
       "category_label": "Kruszywa",
@@ -2224,7 +2612,7 @@
       "year_type": "publication",
       "status_id": "draft",
       "status_label": "Projekt dokumentu",
-      "description": "Projekt reguł kategorii wyrobu dla kruszyw budowlanych.",
+      "description": "Dokumenty branżowe, status historycznego projektu poLCA i odnośniki do danych.",
       "href": "/c-pcr/kruszywa.html",
       "unit": null,
       "boundary": null,
@@ -2240,7 +2628,12 @@
       "keywords": [
         "Reguły dla kruszyw",
         "kruszywa"
-      ]
+      ],
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-defaults",
@@ -2267,7 +2660,10 @@
         "Reguła doboru Gdy rekord nie ma danych konkretnego zakładu, katalog podaje wartość zastępczą: sektorową, referencyjną albo domyślną. Każda jest podpisana poziomem dowodu i źródłem według polityki źródeł. Wartości zastępcze są propozycją danych do obliczeń, nie receptą ani wymogiem. ",
         "Co daje zastąpienie własnymi danymi Dane zakładu zwiększają reprezentatywność wyniku dla konkretnego produktu. Kierunek zmiany wyniku zależy od rzeczywistych zużyć i źródeł energii. ",
         "Wcześniejsze porównania regulacyjne Porównania z systemami wartości domyślnych w innych regulacjach, publikowane wcześniej na tej stronie, są analizą datowaną. Nie są interpretacją prawa ani podstawą do stosowania narzutów w deklaracjach. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-standards",
@@ -2294,7 +2690,10 @@
         "Normy odniesienia EN 15804:2012+A2:2019/AC:2021: zasady deklaracji środowiskowych wyrobów budowlanych, w tym zestaw wskaźników i moduły cyklu życia. AC:2021 jest sprostowaniem, nie dodatkiem. EN 15941:2024: jakość i dobór danych, w tym załącznik E o danych energii elektrycznej. Teksty są dostępne w katalogu wydawcy. ",
         "Jak portal odnosi się do norm Nazwy i jednostki wskaźników w profilu energii 2025 odpowiadają zestawowi z EN 15804. Dobór profilu energii do modułu deklaracji opiera się na załączniku E do EN 15941 i jest opisany w dokumencie metody profilu. Oznaczenie zbioru jako zgodnego z normą wymaga oceny metody, reprezentatywności i zasad programu. Status każdego zbioru jest w jego karcie. ",
         "Wcześniejsze dokumenty Starsze dokumenty metodyczne mogą używać innych oznaczeń wydań norm. Przy pobraniu starszego pliku zamieszczono odnośnik do objaśnień i korekt. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-building",
@@ -2320,7 +2719,10 @@
       "keywords": [
         "Dane wyrobu a analiza budynku",
         "instrukcje"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-citation",
@@ -2347,7 +2749,10 @@
         "Wzór cytowania Multicert, poLCA: [nazwa zbioru], wersja [wersja], model [identyfikator], wydanie [data], polca.org.pl, [adres pliku]. Przykład: Multicert, poLCA: Polska 2025, 37 wskaźników energii, profil selected_2025_v3, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW, wydanie pakietu 2026-10-18.1, polca.org.pl/data/energia-pl-2025-v3/profil-37.json. ",
         "Wymagany cytat źródła tła Przy użyciu profilu energii 2025 obowiązuje cytat: „Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026”. Dane tła są zmodyfikowane i tak oznaczone; BAFU (szwajcarski Federalny Urząd ds. Środowiska) nie poświadcza modyfikacji ani ich użycia. Szczegóły podają warunki wykorzystania. ",
         "DOI i dokumenty Identyfikator DOI (Digital Object Identifier) podajemy tylko przy dokumencie, który ma go nadanego; identyfikator jest zapisany w treści dokumentu. Dokumenty bez DOI cytuj przez adres i datę. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "method-dpp",
@@ -2375,7 +2780,10 @@
         "Budowa plików Pakiet energii 2025 udostępnia własne pliki JSON i CSV. Wskaźnik identyfikuje pole code, wartość ma jednostkę w polu impact_unit. CSV: separator średnik, kropka dziesiętna, kodowanie UTF-8 z BOM (znacznikiem kodowania). Przy imporcie do programu LCA (oceny cyklu życia) mapuj po kodach i jednostkach, nie po kolejności wierszy; pakiet energii opisuje to w pliku START.txt. ",
         "Eksport z kalkulatorów Przelicznik energii 2025 zapisuje wynik w JSON i CSV, razem z jednostkami, wersją modelu i statusem danych. Starszy kalkulator energii udostępnia CSV i JSON. Kalkulatory mieszanek asfaltowych i kruszyw oferują dodatkowo XML poLCA — własny format z numerem wersji i użytymi współczynnikami. Dostępne formaty są oznaczone przy wyniku. Wynik starszych kalkulatorów jest orientacyjny. ",
         "Zakres integracji Portal jest statyczny: pliki pobiera się bezpośrednio, bez API. Pliki nie są w formatach ILCD (International Reference Life Cycle Data System), EcoSpold ani JSON-LD, więc import wymaga własnego mapowania. Cyfrowy paszport produktu (DPP) i walidowany eksport ILCD są opisane w dokumentacji projektowej jako planowane, bez terminów. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-alokacja-metan-kopalniany",
@@ -2402,7 +2810,10 @@
         "Metan kopalniany i alokacja emisji",
         "alokacja metan kopalniany"
       ],
-      "published_at": "2026-07-31"
+      "published_at": "2026-07-31",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-aluminium-epd",
@@ -2429,7 +2840,10 @@
         "Aluminium pierwotne i recyklingowe",
         "aluminium epd"
       ],
-      "published_at": "2026-02-23T00:00:00+01:00"
+      "published_at": "2026-02-23T00:00:00+01:00",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-beton-emisje-kalkulator",
@@ -2456,7 +2870,16 @@
         "Obliczanie emisji wytwórni betonu",
         "beton emisje kalkulator"
       ],
-      "published_at": "2026-02-24T00:00:00+01:00"
+      "published_at": "2026-02-24T00:00:00+01:00",
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "input_to_product",
+          "note": "Poradnik o betonie może wspierać analizę prefabrykatu, ale beton towarowy nie jest przez to rodziną 01."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "article-beton-lcz",
@@ -2483,7 +2906,21 @@
         "Beton komórkowy i beton zwykły",
         "beton lcz"
       ],
-      "published_at": "2026-02-23T00:00:00+01:00"
+      "published_at": "2026-02-23T00:00:00+01:00",
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 1,
+          "role": "editorial_context",
+          "note": "Tylko prefabrykowane elementy z autoklawizowanego betonu komórkowego o właściwym zakresie."
+        },
+        {
+          "family_id": 17,
+          "role": "editorial_context",
+          "note": "Tylko elementy murowe z betonu komórkowego; wybór zależy od konkretnego wyrobu i zastosowania."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "article-cement-polska",
@@ -2510,7 +2947,12 @@
         "Dane sektora cementowego",
         "cement polska"
       ],
-      "published_at": "2025-11-14"
+      "published_at": "2025-11-14",
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-cpr-2024",
@@ -2537,7 +2979,10 @@
         "Artykuł o rozporządzeniu dotyczącym wyrobów budowlanych",
         "cpr 2024"
       ],
-      "published_at": "2026-02-05"
+      "published_at": "2026-02-05",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-ecoinvent-vs-krajowe",
@@ -2564,7 +3009,10 @@
         "Dane krajowe i bazy międzynarodowe",
         "ecoinvent vs krajowe"
       ],
-      "published_at": "2025-12-02"
+      "published_at": "2025-12-02",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-emisje-polska-vs-eu",
@@ -2591,7 +3039,10 @@
         "Polskie i europejskie wskaźniki energii",
         "emisje polska vs eu"
       ],
-      "published_at": "2026-02-14"
+      "published_at": "2026-02-14",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-en-pl-2024",
@@ -2618,7 +3069,10 @@
         "Wcześniejszy opis modelu energii 2024",
         "en pl 2024"
       ],
-      "published_at": "2026-02-18"
+      "published_at": "2026-02-18",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-en15804-a3-avs3plus",
@@ -2645,7 +3099,10 @@
         "Archiwalny artykuł o zmianach norm i weryfikacji",
         "en15804 a3 avs3plus"
       ],
-      "published_at": "2026-03-10"
+      "published_at": "2026-03-10",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-epd-czym-sa",
@@ -2672,7 +3129,10 @@
         "Deklaracje środowiskowe wyrobów",
         "epd czym sa"
       ],
-      "published_at": "2026-01-20"
+      "published_at": "2026-01-20",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-fotowoltaika-epd",
@@ -2699,7 +3159,10 @@
         "Fotowoltaika w danych zakładu",
         "fotowoltaika epd"
       ],
-      "published_at": "2026-02-18"
+      "published_at": "2026-02-18",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-iso-14044-proximity",
@@ -2726,7 +3189,10 @@
         "Dobór geograficzny danych do obliczeń",
         "iso 14044 proximity"
       ],
-      "published_at": "2025-10-28"
+      "published_at": "2025-10-28",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-mma-rap",
@@ -2753,7 +3219,12 @@
         "Granulat asfaltowy w obliczeniach",
         "mma rap"
       ],
-      "published_at": "2026-01-10"
+      "published_at": "2026-01-10",
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-residual-mix-aib-kobize",
@@ -2780,7 +3251,10 @@
         "Miks rezydualny i wskaźniki KOBiZE",
         "residual mix aib kobize"
       ],
-      "published_at": "2026-02-18"
+      "published_at": "2026-02-18",
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "article-stal-lca-eaf",
@@ -2807,7 +3281,21 @@
         "Dane produkcji stali w piecu elektrycznym",
         "stal lca eaf"
       ],
-      "published_at": "2026-02-20"
+      "published_at": "2026-02-20",
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 16,
+          "role": "editorial_context",
+          "note": "Część o prętach zbrojeniowych; wartości historyczne, nie zbiór LCA."
+        },
+        {
+          "family_id": 20,
+          "role": "editorial_context",
+          "note": "Część o kształtownikach konstrukcyjnych; sama technologia EAF/BF-BOF nie wyznacza rodziny."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "page-analiza",
@@ -2834,7 +3322,10 @@
         "Jak czytać analizy Analiza opisuje stan danych na datę w nagłówku i powołuje się na wersję katalogu z tego czasu. Przed użyciem liczby sprawdź bieżący rekord w katalogu, bo wartości i statusy mogły się zmienić. ",
         "Opracowania Dostępne opracowania sektorowe i artykuły z danymi liczbowymi. ",
         "Zakres i ograniczenia Analizy zestawiają wskaźniki o różnych granicach i źródłach. Wniosek o przewadze produktu lub kraju wymaga sprawdzenia zakresu każdej liczby. Rodzaj wskaźnika (CO₂ bezpośrednie, GWP-fossil, wynik orientacyjny) jest podany przy wartości. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "page-sektor-cement",
@@ -2859,7 +3350,12 @@
       "related_ids": [],
       "keywords": [
         "Wcześniejszy opis sektora cementowego"
-      ]
+      ],
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "page-sektor-stal",
@@ -2884,7 +3380,16 @@
       "related_ids": [],
       "keywords": [
         "Wcześniejszy opis sektora stalowego"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [
+        {
+          "family_id": 20,
+          "role": "editorial_context",
+          "note": "Wyłącznie kontekst materiału po określeniu wyrobu konstrukcyjnego; kęsy/blachy nie mają automatycznego przypisania."
+        }
+      ],
+      "cpr_scope_note": null
     },
     {
       "id": "page-o-polca-index",
@@ -2912,7 +3417,10 @@
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "page-o-polca-dla-prasy",
@@ -2939,7 +3447,10 @@
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
         "Fakty do przytoczenia Katalog: 37 pozycji danych, wersja 2026-10-18.1. Profil energii Polska 2025 v3: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-18.1; kontrola techniczna zakończona, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "page-rejestr-zmian",
@@ -2964,7 +3475,10 @@
       "related_ids": [],
       "keywords": [
         "Rejestr zmian"
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-jak-korzystac",
@@ -2988,11 +3502,15 @@
       "methodology_href": null,
       "related_ids": [],
       "keywords": [
+        "Zacznij od rodzaju wyrobu Wybierz rodzinę wyrobu, aby zobaczyć dostępne dane, dokumenty metodyczne i narzędzia. Energia, paliwa i transport są zebrane osobno jako dane wspólne. ",
         "1. Ustal, co liczysz Trzy typowe przypadki: wyrób (energia i materiały zużyte w produkcji), budynek (materiały, budowa, eksploatacja i koniec życia) oraz pojedynczy proces, na przykład zużycie energii w jednym etapie. Od przypadku zależy, czy wystarczy wpływ na klimat, czy potrzebny jest pełny zestaw wskaźników. ",
         "2. Wybierz dane W katalogu wpisz nazwę materiału, wskaźnik albo rok, albo filtruj po kategorii i statusie. Dla energii elektrycznej wybierz rok odniesienia i typ miksu. Aktualny profil publiczny to miks fizyczny Polska 2025 na 1 kWh dostarczonej energii. ",
         "3. Sprawdź dopasowanie Karta podaje jednostkę, granice, rodzaj wskaźnika i status przy wersji. Zwróć uwagę, czy wartość to samo CO₂ bezpośrednie, składnik kopalny GWP-fossil czy pełny GWP-total (potencjał globalnego ocieplenia). Energia uwzględniona już w danych materiału nie jest doliczana drugi raz. ",
         "4. Użyj danych Pobierz plik danych i pomnóż wielkość zużycia przez odpowiedni wskaźnik. Możesz także skorzystać z kalkulatorów — ich wyniki pokazują przyjęte dane i zakres obliczenia. Przed wykorzystaniem w deklaracji środowiskowej wyrobu (EPD) sprawdź zasady doboru profilu i status konkretnej wersji. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-slad-weglowy-czy-srodowiskowy",
@@ -3020,7 +3538,10 @@
         "Ocena środowiskowa: pełny profil Ocena cyklu życia (LCA) według EN 15804 obejmuje oprócz klimatu m.in. zakwaszenie, eutrofizację, zubożenie warstwy ozonowej, zużycie wody i zasobów oraz wyniki dotyczące energii pierwotnej, materiałów wtórnych i odpadów. Każdy wskaźnik ma własną jednostkę. Różnych wskaźników nie dodaje się do jednej sumy; wynik jest profilem, nie jedną liczbą. Profil energii 2025 podaje 37 takich wskaźników na 1 kWh. ",
         "Nazwa „ślad środowiskowy” a metoda PEF W Unii Europejskiej „ślad środowiskowy” oznacza także formalną metodę PEF — śladu środowiskowego produktu Komisji Europejskiej, z własnymi regułami i zestawem wskaźników. Profil 37 wskaźników według EN 15804 nie jest wynikiem PEF. Przy porównaniach podawaj metodę, wydanie i zestaw współczynników. ",
         "Jak dobrać wskaźniki Do analizy wpływu na klimat wybierz GWP z określonym zakresem. Do deklaracji środowiskowej wyrobu (EPD) potrzebny jest pełny zestaw wskaźników wymagany przez program. Metodę dobiera się przed obliczeniem; 37 wskaźników profilu można mapować do własnego narzędzia po kodach i jednostkach. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-zastosowanie-danych",
@@ -3048,7 +3569,10 @@
         "Budynek Wynik budynku składa się z materiałów, budowy, eksploatacji i końca życia. Energia eksploatacyjna to zużycie w kWh pomnożone przez wskaźnik dla przyjętego roku. Dla wieloletniej eksploatacji scenariusz przyszłego miksu zależy od przyjętej metody oceny; rok odniesienia 2025 nie opisuje automatycznie 50 lat użytkowania. ",
         "Pojedynczy proces Dla jednego etapu, na przykład przetwarzania odpadu w module C3, wkład energii to kWh pomnożone przez każdy z 37 wskaźników. Pakiet energii zawiera gotowy przykład dla 10 kWh i plik kontroli przeliczenia. Wynik przypisz do etapu, w którym energia jest zużywana; nie powielaj tych samych kWh w kilku etapach. ",
         "Deklaracja EPD i ocena CPR W deklaracji środowiskowej wyrobu (EPD) dane energii są jednym z wejść; dobór profilu do modułu zależy od tego, czy proces jest pod kontrolą producenta, zgodnie z EN 15941. W ocenach wymaganych przez rozporządzenie o wyrobach budowlanych (CPR) dane są wejściem do oceny określonego wyrobu według właściwej specyfikacji. Warunki i kolejne kroki podaje osobna strona. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-pytania",
@@ -3084,7 +3608,10 @@
         "Jak wybrać dane, gdy nie mam deklaracji producenta? Wybierz zbiór odpowiadający materiałowi, technologii, krajowi, rokowi i granicom obliczenia. Sprawdź, czy jest to średnia branżowa, wartość referencyjna czy dane zastępcze. Zanotuj wybór i uzasadnienie. W formalnej deklaracji znaczenie ma także hierarchia danych przyjęta w programie i regułach kategorii wyrobu. ",
         "Czy mogę przenieść dane do własnego programu? Tak, w zakresie dopuszczonym warunkami wykorzystania. Dopasuj kody wskaźników, jednostki, metodę, zakres i wersję. Sprawdź przeliczenie na prostym przykładzie. Odczyt pliku JSON lub CSV nie potwierdza jeszcze poprawnej interpretacji wyniku przez program. ",
         "Czy zero w tabeli oznacza brak oddziaływania? Zero trzeba odczytać zgodnie z dokumentacją zbioru. Może wynikać z granic lub przyjętej konwencji modelu; nie jest automatycznie wynikiem pomiaru ani dowodem, że rzeczywisty proces nie oddziałuje na środowisko. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-porownanie-baz",
@@ -3114,7 +3641,10 @@
         "Skąd różnice Wskaźnik CO₂ ze spalania i wpływ na klimat w całym cyklu życia opisują różne granice. Ocena cyklu życia uwzględnia także łańcuchy paliw, infrastrukturę i inne gazy cieplarniane. Sposób uwzględnienia strat sieciowych trzeba sprawdzić w każdym zbiorze osobno. Miks rezydualny opisuje energię po rozliczeniu przypisanych odbiorcom atrybutów, m.in. gwarancji pochodzenia; nie jest fizycznym średnim miksem w sieci. ",
         "Porównanie z ecoinvent Dla ecoinvent 3.12 wskazano konkretne rekordy rynku energii dla Polski oraz ich lata i modele systemowe. Porównanie wyników wymaga uzgodnienia rodzaju miksu, napięcia, granic, metody oceny i jej wersji. Licencja użytkownika może umożliwiać taki eksport z programu obliczeniowego. Do czasu wykonania tej kontroli zestawienie opisuje dokumentację i zakresy danych. ",
         "Jak użyć zestawienia Jeżeli potrzebujesz polskiego profilu energii 2025, otwórz model v3 i sprawdź zasady doboru miksu. Do obliczeń emisji CO₂ w granicach publikacji KOBiZE wybierz odpowiedni wskaźnik KOBiZE. Jeżeli budujesz cały model procesów, potrzebujesz również danych tła — publiczny profil poLCA udostępnia zagregowane wyniki energii. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "guide-zastosowanie-epd-cpr",
@@ -3144,7 +3674,10 @@
         "Status profilu 2025 v3 Model opracowano jako dane wejściowe do oceny cyklu życia wyrobów i budynków. Kontrola techniczna obliczeń i pakietu jest zakończona. Formalne przyjęcie wersji v3 do określonego zastosowania w programie EPD pozostaje otwarte. Dokumentacja przedstawia podstawy oceny alokacji, przyjętej konwencji węgla biogenicznego i istotnych danych zastępczych. Zakres dopuszczonego użycia wymaga rozstrzygnięcia w programie deklaracji. ",
         "CPR: energia jako dane wejściowe oceny wyrobu Rozporządzenie (UE) 2024/3110 w art. 15 określa deklarowanie właściwości zgodnie z odpowiednią zharmonizowaną specyfikacją techniczną lub europejskim dokumentem oceny. Właściwości środowiskowe oblicza się przy użyciu bezpłatnego oprogramowania Komisji; jego aktualizacje stają się obowiązkowe po roku od publikacji. Przepisy przejściowe w art. 95 wiążą stosowanie nowego systemu z odpowiednimi specyfikacjami dla wyrobów. Dla konkretnego wyrobu trzeba ustalić właściwą ścieżkę i obowiązujące wymagania. Profil energii może być składnikiem danych do takiej oceny, jeżeli spełnia wymagania właściwej specyfikacji i systemu obliczeniowego. Przyjęcie przez program EPD nie stanowi samo w sobie potwierdzenia zgodności wyrobu z CPR. W praktyce potrzebne jest sprawdzenie zarówno doboru danych, jak i ich prawidłowego wykorzystania w wymaganym oprogramowaniu. ",
         "Pliki JSON i CSV Pakiet v3 zawiera JSON (strukturalny zapis danych) i CSV (tabelę tekstową): 37 wskaźników z kodami, jednostkami i oznaczeniem wersji. Po przeniesieniu do programu sprawdź każdy kod i jednostkę oraz wynik dla 1 kWh, czyli 3,6 MJ energii elektrycznej. Sumy wpływu na klimat i ich składników nie dodaje się ponownie. Pliki korzystają z własnego schematu poLCA; import do innego formatu wymaga mapowania. "
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-1",
@@ -3169,7 +3702,10 @@
       "related_ids": [],
       "keywords": [
         "Do analizy klimatycznej wybierz wskaźnik (GWP, potencjał globalnego ocieplenia) z określonym zakresem. Do deklaracji środowiskowej wyrobu (EPD) potrzebny jest pełny zestaw wskaźników wymagany przez program. Profil energii 2025 podaje 37 wskaźników; możesz użyć tylko GWP-total albo całego zestawu."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-2",
@@ -3194,7 +3730,10 @@
       "related_ids": [],
       "keywords": [
         "Nie. EPD to deklaracja środowiskowa konkretnego wyrobu, wydana w programie po weryfikacji. Dane poLCA są wejściem do takiego obliczenia: wskaźniki energii, materiałów, paliw i transportu z opisem metody i statusem przy wersji."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-3",
@@ -3219,7 +3758,10 @@
       "related_ids": [],
       "keywords": [
         "Tak, jako składników obliczenia: materiały z ich danych, energia eksploatacyjna jako kWh pomnożone przez wskaźnik dla przyjętego roku. Dla wieloletniej eksploatacji scenariusz przyszłego miksu zależy od metody oceny; rok 2025 nie opisuje automatycznie całego okresu użytkowania."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-4",
@@ -3244,7 +3786,10 @@
       "related_ids": [],
       "keywords": [
         "Pomnóż liczbę kWh przez wskaźnik na 1 kWh. Przelicznik energii 2025 wykonuje to działanie dla wszystkich 37 wskaźników i pozwala pobrać wynik z jednostkami. Wynik opisuje wkład energii; jednostkę wyrobu oraz etap cyklu życia przypisz w swoim modelu."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-5",
@@ -3269,7 +3814,10 @@
       "related_ids": [],
       "keywords": [
         "KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) publikuje wskaźniki emisji o granicach opisanych w publikacji, na przykład CO₂ dla odbiorcy końcowego; nie są to 37 wskaźników cyklu życia. ecoinvent zawiera dane dla Polski i pełne procesowe tło do modelowania. poLCA rozwija udokumentowane profile dla Polski z rozróżnieniem rocznika, typu miksu, napięcia i statusu. Liczby z różnych źródeł porównuj po zakresie i rodzaju wskaźnika."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-6",
@@ -3294,7 +3842,10 @@
       "related_ids": [],
       "keywords": [
         "Tylko energię zużywaną w procesie, który modelujesz. Jeżeli dane materiału już obejmują energię jego produkcji, nie doliczaj jej drugi raz. Wkład energii przypisz do etapu, w którym jest zużywana."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-7",
@@ -3319,7 +3870,10 @@
       "related_ids": [],
       "keywords": [
         "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v3 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-8",
@@ -3344,7 +3898,10 @@
       "related_ids": [],
       "keywords": [
         "Warunki wykorzystania są przypisane do zbioru lub dokumentu. Pakiet energii 2025 zawiera 37 zagregowanych wyników, przykład obliczenia, opis metody oraz pliki kontrolne. Pełna baza procesów tła pozostaje poza publicznym pakietem. Szczegóły licencji i wymagane oznaczenie źródła podano w warunkach wykorzystania."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-9",
@@ -3369,7 +3926,10 @@
       "related_ids": [],
       "keywords": [
         "Nie. Rok modelu określa okres, który model ma przedstawiać. Źródła dotyczące miksu, emisji i procesów tła mogą pochodzić z różnych lat. Dokumentacja energii 2025 rozdziela aktualizowane parametry od historycznych danych tła i opisuje ich reprezentatywność."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-10",
@@ -3394,7 +3954,10 @@
       "related_ids": [],
       "keywords": [
         "Wybierz zbiór odpowiadający materiałowi, technologii, krajowi, rokowi i granicom obliczenia. Sprawdź, czy jest to średnia branżowa, wartość referencyjna czy dane zastępcze. Zanotuj wybór i uzasadnienie. W formalnej deklaracji znaczenie ma także hierarchia danych przyjęta w programie i regułach kategorii wyrobu."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-11",
@@ -3419,7 +3982,10 @@
       "related_ids": [],
       "keywords": [
         "Tak, w zakresie dopuszczonym warunkami wykorzystania. Dopasuj kody wskaźników, jednostki, metodę, zakres i wersję. Sprawdź przeliczenie na prostym przykładzie. Odczyt pliku JSON lub CSV nie potwierdza jeszcze poprawnej interpretacji wyniku przez program."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
     },
     {
       "id": "faq-12",
@@ -3444,7 +4010,1368 @@
       "related_ids": [],
       "keywords": [
         "Zero trzeba odczytać zgodnie z dokumentacją zbioru. Może wynikać z granic lub przyjętej konwencji modelu; nie jest automatycznie wynikiem pomiaru ani dowodem, że rzeczywisty proces nie oddziałuje na środowisko."
-      ]
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-01",
+      "title": "Prefabrykaty betonowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 1 z załącznika VII CPR.",
+      "href": "/wyroby/01.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "beton",
+        "prefabrykaty",
+        "beton lekki",
+        "beton autoklawizowany",
+        "beton napowietrzony",
+        "prefabrykat",
+        "elementy betonowe",
+        "beton komórkowy",
+        "WYROBY PREFABRYKOWANE Z BETONU ZWYKŁEGO/LEKKIEGO/AUTOKLAWIZOWANEGO NAPOWIETRZONEGO.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        1
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-02",
+      "title": "Drzwi, okna i bramy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 2 z załącznika VII CPR.",
+      "href": "/wyroby/02.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "drzwi",
+        "okna",
+        "okiennice",
+        "bramy",
+        "okucia budowlane",
+        "DRZWI, OKNA, OKIENNICE, BRAMY I POWIĄZANE Z NIMI OKUCIA BUDOWLANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        2
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-03",
+      "title": "Membrany i izolacje przeciwwodne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 3 z załącznika VII CPR.",
+      "href": "/wyroby/03.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "membrany",
+        "membrany płynne",
+        "izolacja przeciwwodna",
+        "izolacja przeciwwilgociowa",
+        "para wodna",
+        "MEMBRANY, W TYM STOSOWANE W POSTACI PŁYNNEJ I ZESTAWY (IZOLUJĄCE PRZED WODĄ LUB PARĄ WODNĄ).",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        3
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-04",
+      "title": "Izolacja cieplna — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 4 z załącznika VII CPR.",
+      "href": "/wyroby/04.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "termoizolacja",
+        "materiały termoizolacyjne",
+        "zestawy izolacyjne",
+        "systemy izolacyjne",
+        "ocieplenie",
+        "styropian",
+        "wełna mineralna",
+        "izolacja termiczna",
+        "MATERIAŁY TERMOIZOLACYJNE ZŁOŻONE ZESTAWY/SYSTEMY IZOLACYJNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        4
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-05",
+      "title": "Łożyska i trzpienie konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 5 z załącznika VII CPR.",
+      "href": "/wyroby/05.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "łożyska konstrukcyjne",
+        "trzpienie",
+        "złącza konstrukcyjne",
+        "ŁOŻYSKA KONSTRUKCYJNE TRZPIENIE DO ZŁĄCZY KONSTRUKCYJNYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        5
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-06",
+      "title": "Kominy i przewody kominowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 6 z załącznika VII CPR.",
+      "href": "/wyroby/06.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "kominy",
+        "przewody kominowe",
+        "wyroby kominowe",
+        "KOMINY, PRZEWODY KOMINOWE I WYROBY SPECJALNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        6
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-07",
+      "title": "Wyroby gipsowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 7 z załącznika VII CPR.",
+      "href": "/wyroby/07.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "gips",
+        "wyroby gipsowe",
+        "WYROBY GIPSOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        7
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-08",
+      "title": "Geowłókniny i geomembrany — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 8 z załącznika VII CPR.",
+      "href": "/wyroby/08.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "geowłókniny",
+        "geomembrany",
+        "geosyntetyki",
+        "geowłóknina",
+        "geosiatka",
+        "GEOWŁÓKNINY, GEOMEMBRANY I WYROBY ZWIĄZANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        8
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-09",
+      "title": "Ściany osłonowe i oszklenie — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 9 z załącznika VII CPR.",
+      "href": "/wyroby/09.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "ściany osłonowe",
+        "okładziny ścian zewnętrznych",
+        "oszklenie",
+        "spoiwo konstrukcyjne",
+        "ŚCIANY OSŁONOWE/OKŁADZINY ŚCIAN ZEWNĘTRZNYCH/OSZKLENIE ZE SPOIWEM KONSTRUKCYJNYM.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        9
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-10",
+      "title": "Urządzenia gaśnicze i sygnalizacja pożaru — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 10 z załącznika VII CPR.",
+      "href": "/wyroby/10.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "urządzenia gaśnicze",
+        "wykrywanie pożaru",
+        "sygnalizacja pożaru",
+        "kontrola dymu",
+        "tłumienie wybuchu",
+        "STAŁE URZĄDZENIA GAŚNICZE (WYROBY DO WYKRYWANIA I SYGNALIZACJI POŻARU, STAŁE URZĄDZENIA GAŚNICZE, WYROBY DO KONTROLI ROZPRZESTRZENIANIA OGNIA I DYMU ORAZ DO TŁUMIENIA WYBUCHU).",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        10
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-11",
+      "title": "Urządzenia sanitarne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 11 z załącznika VII CPR.",
+      "href": "/wyroby/11.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "urządzenia sanitarne",
+        "sanitariaty",
+        "URZĄDZENIA SANITARNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        11
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-12",
+      "title": "Bezpieczeństwo i wyposażenie dróg — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 12 z załącznika VII CPR.",
+      "href": "/wyroby/12.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "bezpieczeństwo ruchu drogowego",
+        "wyposażenie dróg",
+        "urządzenia drogowe",
+        "URZĄDZENIA BEZPIECZEŃSTWA RUCHU DROGOWEGO: WYPOSAŻENIE DRÓG.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        12
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-13",
+      "title": "Drewno konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 13 z załącznika VII CPR.",
+      "href": "/wyroby/13.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "drewno",
+        "drewniane elementy konstrukcyjne",
+        "konstrukcyjne wyroby drewniane",
+        "wyroby pomocnicze",
+        "drewno konstrukcyjne",
+        "KONSTRUKCYJNE WYROBY/ELEMENTY DREWNIANE I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        13
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-14",
+      "title": "Płyty i elementy drewnopochodne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 14 z załącznika VII CPR.",
+      "href": "/wyroby/14.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "płyty drewnopochodne",
+        "elementy drewnopochodne",
+        "drewno",
+        "OSB",
+        "płyta drewnopochodna",
+        "PŁYTY I ELEMENTY DREWNOPOCHODNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        14
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-15",
+      "title": "Cement, wapno i spoiwa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 15 z załącznika VII CPR.",
+      "href": "/wyroby/15.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "cement",
+        "cementy",
+        "wapno budowlane",
+        "spoiwa hydrauliczne",
+        "CEMENTY, WAPNA BUDOWLANE I INNE SPOIWA HYDRAULICZNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        15
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-16",
+      "title": "Stal zbrojeniowa i sprężająca — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 16 z załącznika VII CPR.",
+      "href": "/wyroby/16.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "stal zbrojeniowa",
+        "stal sprężająca",
+        "zbrojenie betonu",
+        "zakotwienia",
+        "cięgna",
+        "pręty",
+        "pręty zbrojeniowe",
+        "STAL ZBROJENIOWA I SPRĘŻAJĄCA DO BETONU (I WYROBY POMOCNICZE) ZESTAWY ZAKOTWIEŃ I CIĘGIEN.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        16
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-17",
+      "title": "Elementy murowe i zaprawy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 17 z załącznika VII CPR.",
+      "href": "/wyroby/17.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "wyroby murarskie",
+        "elementy murowe",
+        "zaprawy",
+        "murowanie",
+        "cegła",
+        "pustak",
+        "bloczek",
+        "beton komórkowy",
+        "zaprawa",
+        "WYROBY MURARSKIE I WYROBY POKREWNE ELEMENTY MUROWE, ZAPRAWY I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        17
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-18",
+      "title": "Usuwanie i oczyszczanie ścieków — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 18 z załącznika VII CPR.",
+      "href": "/wyroby/18.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "ścieki",
+        "usuwanie ścieków",
+        "oczyszczanie ścieków",
+        "WYROBY DO USUWANIA I OCZYSZCZANIA ŚCIEKÓW.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        18
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-19",
+      "title": "Podłogi i posadzki — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 19 z załącznika VII CPR.",
+      "href": "/wyroby/19.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "podłogi",
+        "posadzki",
+        "wyroby podłogowe",
+        "wyroby posadzkowe",
+        "WYROBY PODŁOGOWE I POSADZKOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        19
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-20",
+      "title": "Metalowe wyroby konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 20 z załącznika VII CPR.",
+      "href": "/wyroby/20.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "metal",
+        "wyroby metalowe",
+        "konstrukcje metalowe",
+        "wyroby pomocnicze",
+        "stal",
+        "aluminium",
+        "konstrukcje stalowe",
+        "kształtowniki",
+        "KONSTRUKCYJNE WYROBY METALOWE I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        20
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-21",
+      "title": "Wykończenie ścian i sufitów — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 21 z załącznika VII CPR.",
+      "href": "/wyroby/21.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "wykończenie ścian",
+        "ściany wewnętrzne",
+        "ściany zewnętrzne",
+        "sufity",
+        "ściany działowe",
+        "WYKOŃCZENIE ŚCIAN WEWNĘTRZNYCH, ZEWNĘTRZNYCH I SUFITÓW. ZESTAWY WYROBÓW DO WYKONYWANIA ŚCIAN DZIAŁOWYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        21
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-22",
+      "title": "Dachy, świetliki i okna dachowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 22 z załącznika VII CPR.",
+      "href": "/wyroby/22.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "pokrycia dachowe",
+        "świetliki",
+        "okna dachowe",
+        "zestawy dachowe",
+        "wyroby dachowe",
+        "POKRYCIA DACHOWE, ŚWIETLIKI, OKNA DACHOWE I WYROBY POMOCNICZE, ZESTAWY DACHOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        22
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-23",
+      "title": "Mieszanki asfaltowe i wyroby drogowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 23 z załącznika VII CPR.",
+      "href": "/wyroby/23.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "drogi",
+        "budowa dróg",
+        "wyroby drogowe",
+        "nawierzchnie",
+        "asfalt",
+        "asfaltowe",
+        "mieszanki mineralno-asfaltowe",
+        "MMA",
+        "lepiszcze",
+        "emulsja asfaltowa",
+        "AC",
+        "SMA",
+        "WYROBY DO BUDOWY DRÓG.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        23
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-24",
+      "title": "Kruszywa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 24 z załącznika VII CPR.",
+      "href": "/wyroby/24.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "kruszywo",
+        "kruszywa",
+        "piasek",
+        "żwir",
+        "kruszywa łamane",
+        "wypełniacz",
+        "KRUSZYWA.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        24
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-25",
+      "title": "Kleje budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 25 z załącznika VII CPR.",
+      "href": "/wyroby/25.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "klej",
+        "kleje",
+        "kleje budowlane",
+        "KLEJE BUDOWLANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        25
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-26",
+      "title": "Wyroby do betonu, zaprawy i zaczynu — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 26 z załącznika VII CPR.",
+      "href": "/wyroby/26.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "beton",
+        "zaprawa",
+        "zaczyn",
+        "wyroby związane z betonem",
+        "WYROBY ZWIĄZANE Z BETONEM, ZAPRAWĄ I ZACZYNEM.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        26
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-27",
+      "title": "Ogrzewanie pomieszczeń — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 27 z załącznika VII CPR.",
+      "href": "/wyroby/27.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "ogrzewanie",
+        "urządzenia grzewcze",
+        "ogrzewanie pomieszczeń",
+        "URZĄDZENIA DO OGRZEWANIA POMIESZCZEŃ.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        27
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-28",
+      "title": "Rury i zbiorniki — poza wodą pitną — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 28 z załącznika VII CPR.",
+      "href": "/wyroby/28.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "rury",
+        "zbiorniki",
+        "wyroby pomocnicze",
+        "bez kontaktu z wodą do spożycia",
+        "RURY, ZBIORNIKI I WYROBY POMOCNICZE NIESTYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        28
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-29",
+      "title": "Wyroby do kontaktu z wodą pitną — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 29 z załącznika VII CPR.",
+      "href": "/wyroby/29.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "woda pitna",
+        "woda do spożycia",
+        "kontakt z wodą",
+        "wyroby stykające się z wodą",
+        "WYROBY BUDOWLANE STYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        29
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-30",
+      "title": "Szkło budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 30 z załącznika VII CPR.",
+      "href": "/wyroby/30.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "szkło płaskie",
+        "szkło profilowane",
+        "bloki szklane",
+        "wyroby szklane",
+        "WYROBY ZE SZKŁA PŁASKIEGO, PROFILOWANEGO I BLOKÓW SZKLANYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        30
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-31",
+      "title": "Kable zasilające, sterujące i komunikacyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 31 z załącznika VII CPR.",
+      "href": "/wyroby/31.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "kable",
+        "kable zasilania",
+        "kable sterujące",
+        "kable komunikacyjne",
+        "kabel",
+        "przewody elektryczne",
+        "KABLE ZASILANIA, STERUJĄCE I KOMUNIKACYJNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        31
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-32",
+      "title": "Uszczelnianie złączy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 32 z załącznika VII CPR.",
+      "href": "/wyroby/32.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "uszczelnianie",
+        "uszczelniacze",
+        "złącza",
+        "WYROBY DO USZCZELNIANIA ZŁĄCZY.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        32
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-33",
+      "title": "Mocowania i łączniki — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 33 z załącznika VII CPR.",
+      "href": "/wyroby/33.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "mocowania",
+        "łączniki",
+        "zamocowania",
+        "MOCOWANIA/ŁĄCZNIKI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        33
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-34",
+      "title": "Zestawy i komponenty budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 34 z załącznika VII CPR.",
+      "href": "/wyroby/34.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "zestawy budowlane",
+        "komponenty budowlane",
+        "prefabrykaty",
+        "ZESTAWY BUDOWLANE, KOMPONENTY BUDOWLANE, PREFABRYKATY.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        34
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-35",
+      "title": "Bierna ochrona przeciwpożarowa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 35 z załącznika VII CPR.",
+      "href": "/wyroby/35.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "zatrzymywanie ognia",
+        "uszczelnienia przeciwpożarowe",
+        "ochrona ogniowa",
+        "hamowanie palności",
+        "WYROBY DO ZATRZYMYWANIA OGNIA, USZCZELNIAJĄCE I OCHRONY OGNIOWEJ WYROBY HAMUJĄCE PALNOŚĆ.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        35
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
+    {
+      "id": "family-36",
+      "title": "Drabiny mocowane na stałe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "category_label": "Jak korzystać",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 36 z załącznika VII CPR.",
+      "href": "/wyroby/36.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": null,
+      "related_ids": [],
+      "keywords": [
+        "drabiny",
+        "drabiny stałe",
+        "drabiny mocowane na stałe",
+        "DRABINY MOCOWANE NA STAŁE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        36
+      ],
+      "cpr_related": [],
+      "cpr_scope_note": null
     }
   ],
   "collections": [

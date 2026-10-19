@@ -16,7 +16,9 @@ python3 -B -m unittest discover -s tests -p 'test_*.py' -v
 python3 -m http.server 8768
 ```
 
-Opcja `--migrate-shell` skryptu `build-portal.py` odświeża wspólną nawigację i stopkę zachowanych starszych stron. Ich treść merytoryczna pozostaje w HTML. Zmianę układu należy obejrzeć w przeglądarce na telefonie i komputerze.
+Skrypt `build-portal.py` synchronizuje nawigację i stopkę wszystkich stron. Opcja `--migrate-shell` służy do pierwszego dostosowania starszego dokumentu HTML do interfejsu portalu; zwykła przebudowa jej nie wymaga. Zmianę układu należy obejrzeć w przeglądarce na telefonie i komputerze.
+
+Podział według wyrobu: `data/cpr-families.json` zachowuje urzędowe nazwy 36 rodzin z załącznika VII CPR oraz osobne krótkie etykiety i słowa do wyszukiwania. `data/cpr-mapping.json` rozdziela bezpośrednie przypisanie danych od składników, parametrów i kontekstu. Energia, paliwa, transport oraz kontrolne dane CBAM nie są przypisywane jako dane gotowego wyrobu. `data/product-methods.json` podaje dokumenty metodyczne, źródła, zakresy i statusy. Generowanie stron rodzin i działu c-PCR obsługuje `scripts/cpr_portal.py`.
 
 Testy sprawdzają spójność katalogu, lokalne odnośniki, jednostki, podstawowe elementy nawigacji oraz zachowanie opublikowanego pakietu energii 2025. Zmiana opisu portalu nie zmienia wersji ani statusu źródłowego modelu.
 

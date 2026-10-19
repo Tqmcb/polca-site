@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "KOBIZE-EN-PL-ENDUSER-2024",
     "title": "KOBiZE — energia elektryczna 2024",
@@ -48,7 +48,10 @@
     "geography": "PL",
     "reference_unit": "kWh",
     "source_record_href": "/data/datasets/KOBIZE-EN-PL-ENDUSER-2024.json",
-    "value": 0.553
+    "value": 0.553,
+    "cpr_family_ids": [],
+    "cpr_related": [],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

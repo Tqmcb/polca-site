@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
     "title": "Kruszywo naturalne: piasek i żwir",
@@ -46,7 +46,23 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-AGG-PL-NATURAL-DEFAULT-2026.json",
-    "value": 3.5
+    "value": 3.5,
+    "cpr_family_ids": [
+      24
+    ],
+    "cpr_related": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+      },
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+      }
+    ],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

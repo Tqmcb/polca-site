@@ -1,0 +1,93 @@
+{
+  "checked_on": "2026-10-19",
+  "scope": "Katalog dokumentów i ich zakresów; wskazanie dokumentu nie potwierdza zgodności danych ani kalkulatora.",
+  "documents": [
+    {
+      "id": "en15804",
+      "designation": "EN 15804:2012+A2:2019/AC:2021",
+      "title_pl": "Podstawowe zasady kategorii wyrobów budowlanych dla deklaracji środowiskowych",
+      "url": "https://knowledge.bsigroup.com/products/sustainability-of-construction-works-environmental-product-declarations-core-rules-for-the-product-category-of-construction-products-2",
+      "status_label": "Wydana norma europejska",
+      "status": "published",
+      "role": "core_pcr",
+      "family_ids": [],
+      "scope_note": "Reguły podstawowe deklaracji środowiskowych EPD dla wyrobów i usług budowlanych."
+    },
+    {
+      "id": "en15941",
+      "designation": "EN 15941:2024",
+      "title_pl": "Jakość danych do oceny środowiskowej wyrobów i obiektów budowlanych — wybór i wykorzystanie danych",
+      "url": "https://knowledge.bsigroup.com/products/sustainability-of-construction-works-data-quality-for-environmental-assessment-of-products-and-construction-work-selection-and-use-of-data",
+      "status_label": "Wydana norma europejska",
+      "status": "published",
+      "role": "data_quality",
+      "family_ids": [],
+      "scope_note": "Wybór danych i ocena ich jakości. Dokument wspólny dla różnych branż."
+    },
+    {
+      "id": "en16908",
+      "designation": "EN 16908:2017+A1:2022",
+      "title_pl": "Cement i wapno budowlane — deklaracje środowiskowe — zasady uzupełniające EN 15804",
+      "url": "https://sklep.pkn.pl/pn-en-16908-a1-2022-08e.html",
+      "status_label": "Wydana norma europejska",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        15
+      ],
+      "scope_note": "Dotyczy cementu i wapna budowlanego. Zakresu nie należy rozszerzać automatycznie na wszystkie inne spoiwa rodziny 15."
+    },
+    {
+      "id": "en16757",
+      "designation": "EN 16757:2022",
+      "title_pl": "Beton i elementy betonowe — zasady kategorii wyrobów dla deklaracji środowiskowych",
+      "url": "https://sklep.pkn.pl/normy/pn-en-16757-2023-04e.html",
+      "status_label": "Wydana norma europejska",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        1
+      ],
+      "scope_note": "Dla betonu i elementów betonowych objętych zakresem normy. Wyłącza beton komórkowy autoklawizowany i beton związany żywicą; obejmuje tylko część rodziny 1."
+    },
+    {
+      "id": "ts18301",
+      "designation": "CEN/TS 18301:2026",
+      "title_pl": "Materiały drogowe — reguły uzupełniające EN 15804 dla mieszanek mineralno-asfaltowych",
+      "url": "https://knowledge.bsigroup.com/products/road-materials-environmental-product-declarations-product-category-rules-complementary-to-en-15804-for-bituminous-mixtures",
+      "status_label": "Wydana specyfikacja techniczna",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        23
+      ],
+      "scope_note": "Dla mieszanek mineralno-asfaltowych objętych odpowiednimi częściami EN 13108. Nie jest regułą dla wszystkich wyrobów drogowych ani samych lepiszczy."
+    },
+    {
+      "id": "tr18114",
+      "designation": "CEN/TR 18114:2024",
+      "title_pl": "Asfalty i lepiszcza asfaltowe — przegląd informacji środowiskowych",
+      "url": "https://knowledge.bsigroup.com/products/bitumens-and-bituminous-binders-sustainability-review-on-how-to-address-environmental-information",
+      "status_label": "Wydany raport techniczny — dokument pomocniczy",
+      "status": "published",
+      "role": "technical_review",
+      "family_ids": [
+        23
+      ],
+      "scope_note": "Pomocniczy przegląd informacji środowiskowych o asfaltach i lepiszczach. Nie jest dokumentem c-PCR."
+    },
+    {
+      "id": "pren17662",
+      "designation": "prEN 17662:2021",
+      "title_pl": "Projekt zasad dla konstrukcyjnych wyrobów ze stali, żelaza i aluminium",
+      "url": "https://www.dinmedia.de/en/draft-standard/din-en-17662/335185221",
+      "status_label": "Projekt normy — dokument niewydany jako EN",
+      "status": "draft",
+      "role": "complementary_pcr",
+      "family_ids": [
+        20
+      ],
+      "scope_note": "Projekt dotyczący konstrukcyjnych wyrobów metalowych. Nie jest przedstawiany jako wydana norma ani jako reguła dla stali zbrojeniowej."
+    }
+  ]
+}

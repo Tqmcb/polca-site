@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026",
     "title": "CBAM brutto 2026 — cement portlandzki biały",
@@ -41,7 +41,16 @@
     "geography": "Other Countries and Territories",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026.json",
-    "value": 1595
+    "value": 1595,
+    "cpr_family_ids": [],
+    "cpr_related": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

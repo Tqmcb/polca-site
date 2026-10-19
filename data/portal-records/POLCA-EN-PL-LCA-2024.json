@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-EN-PL-LCA-2024",
     "title": "Energia elektryczna — Polska 2024",
@@ -49,7 +49,10 @@
     "geography": "PL",
     "reference_unit": "kWh",
     "source_record_href": "/data/datasets/POLCA-EN-PL-LCA-2024.json",
-    "value": 0.599
+    "value": 0.599,
+    "cpr_family_ids": [],
+    "cpr_related": [],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

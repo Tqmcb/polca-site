@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -811,6 +811,7 @@
       "description": "Dokumentacja każdego zbioru: granice, źródła, wersja, status i ograniczenia. Wybierz zbiór, aby przejść do opisu.",
       "href": "/metodyka.html",
       "keywords": [
+        "Zasady obliczeń dla Twojego wyrobu Dobierz dokumenty PCR i c-PCR do rodzaju wyrobu i zasad programu deklaracji. Katalog rozdziela dokumenty wydane, projekty oraz dane pomocnicze. ",
         "Energia elektryczna Aktualny profil publiczny: Polska 2025 v3, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW. Kontrola techniczna obliczeń i pakietu jest zakończona; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody. Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane. ",
         "Katalog materiałów, paliw i transportu Każda pozycja katalogu ma rok danych, jednostkę, rodzaj wskaźnika, poziom dowodu źródła i wersję. Rekordy bez pełnego śladu do konkretnej deklaracji producenta są oznaczone jako wartości zastępcze lub referencyjne. Aktualny indeks to plik portal-catalog.json. ",
         "Kalkulatory Kalkulatory energii, mieszanek asfaltowych i kruszyw używa własnej, datowanej tabeli współczynników, pokazywanej i eksportowanej razem z wynikiem. Kalkulatory służą do wstępnych oszacowań. Rodzaj wskaźnika i zakres obliczenia są opisane przy wyniku. ",
@@ -900,28 +901,35 @@
     },
     {
       "id": "method-rules",
-      "title": "Reguły kategorii wyrobów",
+      "title": "Zasady obliczeń dla wyrobów — PCR i c-PCR",
       "kind": "method",
       "category_id": "metody",
       "year": null,
       "year_type": null,
       "status_id": "document",
-      "description": "Dokumenty dla mieszanek asfaltowych i kruszyw.",
+      "description": "Wydane dokumenty branżowe, reguły podstawowe, projekty i status dokumentów poLCA.",
       "href": "/c-pcr/index.html",
       "keywords": [
-        "Reguły kategorii wyrobów",
-        "metody"
+        "c-PCR",
+        "PCR",
+        "CPR",
+        "metody",
+        "wyroby",
+        "EN 15804",
+        "EN 16908",
+        "EN 16757",
+        "CEN/TS 18301"
       ]
     },
     {
       "id": "method-mma",
-      "title": "Reguły dla mieszanek asfaltowych",
+      "title": "Mieszanki mineralno-asfaltowe — zasady obliczeń i projekt poLCA",
       "kind": "method",
       "category_id": "mma",
       "year": 2026,
       "year_type": "publication",
       "status_id": "draft",
-      "description": "Projekt reguł kategorii wyrobu dla mieszanek mineralno-asfaltowych.",
+      "description": "Dokumenty branżowe, status historycznego projektu poLCA i odnośniki do danych.",
       "href": "/c-pcr/mma.html",
       "keywords": [
         "Reguły dla mieszanek asfaltowych",
@@ -944,13 +952,13 @@
     },
     {
       "id": "method-kruszywa",
-      "title": "Reguły dla kruszyw",
+      "title": "Kruszywa — zasady obliczeń i projekt poLCA",
       "kind": "method",
       "category_id": "kruszywa",
       "year": 2026,
       "year_type": "publication",
       "status_id": "draft",
-      "description": "Projekt reguł kategorii wyrobu dla kruszyw budowlanych.",
+      "description": "Dokumenty branżowe, status historycznego projektu poLCA i odnośniki do danych.",
       "href": "/c-pcr/kruszywa.html",
       "keywords": [
         "Reguły dla kruszyw",
@@ -1398,6 +1406,7 @@
       "title": "Jak korzystać z portalu",
       "description": "Wybierz cel obliczenia, znajdź dane i sprawdź ich zastosowanie.",
       "keywords": [
+        "Zacznij od rodzaju wyrobu Wybierz rodzinę wyrobu, aby zobaczyć dostępne dane, dokumenty metodyczne i narzędzia. Energia, paliwa i transport są zebrane osobno jako dane wspólne. ",
         "1. Ustal, co liczysz Trzy typowe przypadki: wyrób (energia i materiały zużyte w produkcji), budynek (materiały, budowa, eksploatacja i koniec życia) oraz pojedynczy proces, na przykład zużycie energii w jednym etapie. Od przypadku zależy, czy wystarczy wpływ na klimat, czy potrzebny jest pełny zestaw wskaźników. ",
         "2. Wybierz dane W katalogu wpisz nazwę materiału, wskaźnik albo rok, albo filtruj po kategorii i statusie. Dla energii elektrycznej wybierz rok odniesienia i typ miksu. Aktualny profil publiczny to miks fizyczny Polska 2025 na 1 kWh dostarczonej energii. ",
         "3. Sprawdź dopasowanie Karta podaje jednostkę, granice, rodzaj wskaźnika i status przy wersji. Zwróć uwagę, czy wartość to samo CO₂ bezpośrednie, składnik kopalny GWP-fossil czy pełny GWP-total (potencjał globalnego ocieplenia). Energia uwzględniona już w danych materiału nie jest doliczana drugi raz. ",
@@ -1667,6 +1676,896 @@
       "href": "/pytania.html#pytanie-12",
       "keywords": [
         "Zero trzeba odczytać zgodnie z dokumentacją zbioru. Może wynikać z granic lub przyjętej konwencji modelu; nie jest automatycznie wynikiem pomiaru ani dowodem, że rzeczywisty proces nie oddziałuje na środowisko."
+      ]
+    },
+    {
+      "id": "family-01",
+      "title": "Prefabrykaty betonowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 1 z załącznika VII CPR.",
+      "href": "/wyroby/01.html",
+      "keywords": [
+        "beton",
+        "prefabrykaty",
+        "beton lekki",
+        "beton autoklawizowany",
+        "beton napowietrzony",
+        "prefabrykat",
+        "elementy betonowe",
+        "beton komórkowy",
+        "WYROBY PREFABRYKOWANE Z BETONU ZWYKŁEGO/LEKKIEGO/AUTOKLAWIZOWANEGO NAPOWIETRZONEGO.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        1
+      ]
+    },
+    {
+      "id": "family-02",
+      "title": "Drzwi, okna i bramy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 2 z załącznika VII CPR.",
+      "href": "/wyroby/02.html",
+      "keywords": [
+        "drzwi",
+        "okna",
+        "okiennice",
+        "bramy",
+        "okucia budowlane",
+        "DRZWI, OKNA, OKIENNICE, BRAMY I POWIĄZANE Z NIMI OKUCIA BUDOWLANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        2
+      ]
+    },
+    {
+      "id": "family-03",
+      "title": "Membrany i izolacje przeciwwodne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 3 z załącznika VII CPR.",
+      "href": "/wyroby/03.html",
+      "keywords": [
+        "membrany",
+        "membrany płynne",
+        "izolacja przeciwwodna",
+        "izolacja przeciwwilgociowa",
+        "para wodna",
+        "MEMBRANY, W TYM STOSOWANE W POSTACI PŁYNNEJ I ZESTAWY (IZOLUJĄCE PRZED WODĄ LUB PARĄ WODNĄ).",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        3
+      ]
+    },
+    {
+      "id": "family-04",
+      "title": "Izolacja cieplna — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 4 z załącznika VII CPR.",
+      "href": "/wyroby/04.html",
+      "keywords": [
+        "termoizolacja",
+        "materiały termoizolacyjne",
+        "zestawy izolacyjne",
+        "systemy izolacyjne",
+        "ocieplenie",
+        "styropian",
+        "wełna mineralna",
+        "izolacja termiczna",
+        "MATERIAŁY TERMOIZOLACYJNE ZŁOŻONE ZESTAWY/SYSTEMY IZOLACYJNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        4
+      ]
+    },
+    {
+      "id": "family-05",
+      "title": "Łożyska i trzpienie konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 5 z załącznika VII CPR.",
+      "href": "/wyroby/05.html",
+      "keywords": [
+        "łożyska konstrukcyjne",
+        "trzpienie",
+        "złącza konstrukcyjne",
+        "ŁOŻYSKA KONSTRUKCYJNE TRZPIENIE DO ZŁĄCZY KONSTRUKCYJNYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        5
+      ]
+    },
+    {
+      "id": "family-06",
+      "title": "Kominy i przewody kominowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 6 z załącznika VII CPR.",
+      "href": "/wyroby/06.html",
+      "keywords": [
+        "kominy",
+        "przewody kominowe",
+        "wyroby kominowe",
+        "KOMINY, PRZEWODY KOMINOWE I WYROBY SPECJALNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        6
+      ]
+    },
+    {
+      "id": "family-07",
+      "title": "Wyroby gipsowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 7 z załącznika VII CPR.",
+      "href": "/wyroby/07.html",
+      "keywords": [
+        "gips",
+        "wyroby gipsowe",
+        "WYROBY GIPSOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        7
+      ]
+    },
+    {
+      "id": "family-08",
+      "title": "Geowłókniny i geomembrany — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 8 z załącznika VII CPR.",
+      "href": "/wyroby/08.html",
+      "keywords": [
+        "geowłókniny",
+        "geomembrany",
+        "geosyntetyki",
+        "geowłóknina",
+        "geosiatka",
+        "GEOWŁÓKNINY, GEOMEMBRANY I WYROBY ZWIĄZANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        8
+      ]
+    },
+    {
+      "id": "family-09",
+      "title": "Ściany osłonowe i oszklenie — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 9 z załącznika VII CPR.",
+      "href": "/wyroby/09.html",
+      "keywords": [
+        "ściany osłonowe",
+        "okładziny ścian zewnętrznych",
+        "oszklenie",
+        "spoiwo konstrukcyjne",
+        "ŚCIANY OSŁONOWE/OKŁADZINY ŚCIAN ZEWNĘTRZNYCH/OSZKLENIE ZE SPOIWEM KONSTRUKCYJNYM.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        9
+      ]
+    },
+    {
+      "id": "family-10",
+      "title": "Urządzenia gaśnicze i sygnalizacja pożaru — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 10 z załącznika VII CPR.",
+      "href": "/wyroby/10.html",
+      "keywords": [
+        "urządzenia gaśnicze",
+        "wykrywanie pożaru",
+        "sygnalizacja pożaru",
+        "kontrola dymu",
+        "tłumienie wybuchu",
+        "STAŁE URZĄDZENIA GAŚNICZE (WYROBY DO WYKRYWANIA I SYGNALIZACJI POŻARU, STAŁE URZĄDZENIA GAŚNICZE, WYROBY DO KONTROLI ROZPRZESTRZENIANIA OGNIA I DYMU ORAZ DO TŁUMIENIA WYBUCHU).",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        10
+      ]
+    },
+    {
+      "id": "family-11",
+      "title": "Urządzenia sanitarne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 11 z załącznika VII CPR.",
+      "href": "/wyroby/11.html",
+      "keywords": [
+        "urządzenia sanitarne",
+        "sanitariaty",
+        "URZĄDZENIA SANITARNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        11
+      ]
+    },
+    {
+      "id": "family-12",
+      "title": "Bezpieczeństwo i wyposażenie dróg — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 12 z załącznika VII CPR.",
+      "href": "/wyroby/12.html",
+      "keywords": [
+        "bezpieczeństwo ruchu drogowego",
+        "wyposażenie dróg",
+        "urządzenia drogowe",
+        "URZĄDZENIA BEZPIECZEŃSTWA RUCHU DROGOWEGO: WYPOSAŻENIE DRÓG.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        12
+      ]
+    },
+    {
+      "id": "family-13",
+      "title": "Drewno konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 13 z załącznika VII CPR.",
+      "href": "/wyroby/13.html",
+      "keywords": [
+        "drewno",
+        "drewniane elementy konstrukcyjne",
+        "konstrukcyjne wyroby drewniane",
+        "wyroby pomocnicze",
+        "drewno konstrukcyjne",
+        "KONSTRUKCYJNE WYROBY/ELEMENTY DREWNIANE I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        13
+      ]
+    },
+    {
+      "id": "family-14",
+      "title": "Płyty i elementy drewnopochodne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 14 z załącznika VII CPR.",
+      "href": "/wyroby/14.html",
+      "keywords": [
+        "płyty drewnopochodne",
+        "elementy drewnopochodne",
+        "drewno",
+        "OSB",
+        "płyta drewnopochodna",
+        "PŁYTY I ELEMENTY DREWNOPOCHODNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        14
+      ]
+    },
+    {
+      "id": "family-15",
+      "title": "Cement, wapno i spoiwa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 15 z załącznika VII CPR.",
+      "href": "/wyroby/15.html",
+      "keywords": [
+        "cement",
+        "cementy",
+        "wapno budowlane",
+        "spoiwa hydrauliczne",
+        "CEMENTY, WAPNA BUDOWLANE I INNE SPOIWA HYDRAULICZNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        15
+      ]
+    },
+    {
+      "id": "family-16",
+      "title": "Stal zbrojeniowa i sprężająca — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 16 z załącznika VII CPR.",
+      "href": "/wyroby/16.html",
+      "keywords": [
+        "stal zbrojeniowa",
+        "stal sprężająca",
+        "zbrojenie betonu",
+        "zakotwienia",
+        "cięgna",
+        "pręty",
+        "pręty zbrojeniowe",
+        "STAL ZBROJENIOWA I SPRĘŻAJĄCA DO BETONU (I WYROBY POMOCNICZE) ZESTAWY ZAKOTWIEŃ I CIĘGIEN.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        16
+      ]
+    },
+    {
+      "id": "family-17",
+      "title": "Elementy murowe i zaprawy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 17 z załącznika VII CPR.",
+      "href": "/wyroby/17.html",
+      "keywords": [
+        "wyroby murarskie",
+        "elementy murowe",
+        "zaprawy",
+        "murowanie",
+        "cegła",
+        "pustak",
+        "bloczek",
+        "beton komórkowy",
+        "zaprawa",
+        "WYROBY MURARSKIE I WYROBY POKREWNE ELEMENTY MUROWE, ZAPRAWY I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        17
+      ]
+    },
+    {
+      "id": "family-18",
+      "title": "Usuwanie i oczyszczanie ścieków — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 18 z załącznika VII CPR.",
+      "href": "/wyroby/18.html",
+      "keywords": [
+        "ścieki",
+        "usuwanie ścieków",
+        "oczyszczanie ścieków",
+        "WYROBY DO USUWANIA I OCZYSZCZANIA ŚCIEKÓW.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        18
+      ]
+    },
+    {
+      "id": "family-19",
+      "title": "Podłogi i posadzki — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 19 z załącznika VII CPR.",
+      "href": "/wyroby/19.html",
+      "keywords": [
+        "podłogi",
+        "posadzki",
+        "wyroby podłogowe",
+        "wyroby posadzkowe",
+        "WYROBY PODŁOGOWE I POSADZKOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        19
+      ]
+    },
+    {
+      "id": "family-20",
+      "title": "Metalowe wyroby konstrukcyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 20 z załącznika VII CPR.",
+      "href": "/wyroby/20.html",
+      "keywords": [
+        "metal",
+        "wyroby metalowe",
+        "konstrukcje metalowe",
+        "wyroby pomocnicze",
+        "stal",
+        "aluminium",
+        "konstrukcje stalowe",
+        "kształtowniki",
+        "KONSTRUKCYJNE WYROBY METALOWE I WYROBY POMOCNICZE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        20
+      ]
+    },
+    {
+      "id": "family-21",
+      "title": "Wykończenie ścian i sufitów — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 21 z załącznika VII CPR.",
+      "href": "/wyroby/21.html",
+      "keywords": [
+        "wykończenie ścian",
+        "ściany wewnętrzne",
+        "ściany zewnętrzne",
+        "sufity",
+        "ściany działowe",
+        "WYKOŃCZENIE ŚCIAN WEWNĘTRZNYCH, ZEWNĘTRZNYCH I SUFITÓW. ZESTAWY WYROBÓW DO WYKONYWANIA ŚCIAN DZIAŁOWYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        21
+      ]
+    },
+    {
+      "id": "family-22",
+      "title": "Dachy, świetliki i okna dachowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 22 z załącznika VII CPR.",
+      "href": "/wyroby/22.html",
+      "keywords": [
+        "pokrycia dachowe",
+        "świetliki",
+        "okna dachowe",
+        "zestawy dachowe",
+        "wyroby dachowe",
+        "POKRYCIA DACHOWE, ŚWIETLIKI, OKNA DACHOWE I WYROBY POMOCNICZE, ZESTAWY DACHOWE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        22
+      ]
+    },
+    {
+      "id": "family-23",
+      "title": "Mieszanki asfaltowe i wyroby drogowe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 23 z załącznika VII CPR.",
+      "href": "/wyroby/23.html",
+      "keywords": [
+        "drogi",
+        "budowa dróg",
+        "wyroby drogowe",
+        "nawierzchnie",
+        "asfalt",
+        "asfaltowe",
+        "mieszanki mineralno-asfaltowe",
+        "MMA",
+        "lepiszcze",
+        "emulsja asfaltowa",
+        "AC",
+        "SMA",
+        "WYROBY DO BUDOWY DRÓG.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        23
+      ]
+    },
+    {
+      "id": "family-24",
+      "title": "Kruszywa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 24 z załącznika VII CPR.",
+      "href": "/wyroby/24.html",
+      "keywords": [
+        "kruszywo",
+        "kruszywa",
+        "piasek",
+        "żwir",
+        "kruszywa łamane",
+        "wypełniacz",
+        "KRUSZYWA.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        24
+      ]
+    },
+    {
+      "id": "family-25",
+      "title": "Kleje budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 25 z załącznika VII CPR.",
+      "href": "/wyroby/25.html",
+      "keywords": [
+        "klej",
+        "kleje",
+        "kleje budowlane",
+        "KLEJE BUDOWLANE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        25
+      ]
+    },
+    {
+      "id": "family-26",
+      "title": "Wyroby do betonu, zaprawy i zaczynu — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 26 z załącznika VII CPR.",
+      "href": "/wyroby/26.html",
+      "keywords": [
+        "beton",
+        "zaprawa",
+        "zaczyn",
+        "wyroby związane z betonem",
+        "WYROBY ZWIĄZANE Z BETONEM, ZAPRAWĄ I ZACZYNEM.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        26
+      ]
+    },
+    {
+      "id": "family-27",
+      "title": "Ogrzewanie pomieszczeń — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 27 z załącznika VII CPR.",
+      "href": "/wyroby/27.html",
+      "keywords": [
+        "ogrzewanie",
+        "urządzenia grzewcze",
+        "ogrzewanie pomieszczeń",
+        "URZĄDZENIA DO OGRZEWANIA POMIESZCZEŃ.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        27
+      ]
+    },
+    {
+      "id": "family-28",
+      "title": "Rury i zbiorniki — poza wodą pitną — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 28 z załącznika VII CPR.",
+      "href": "/wyroby/28.html",
+      "keywords": [
+        "rury",
+        "zbiorniki",
+        "wyroby pomocnicze",
+        "bez kontaktu z wodą do spożycia",
+        "RURY, ZBIORNIKI I WYROBY POMOCNICZE NIESTYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        28
+      ]
+    },
+    {
+      "id": "family-29",
+      "title": "Wyroby do kontaktu z wodą pitną — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 29 z załącznika VII CPR.",
+      "href": "/wyroby/29.html",
+      "keywords": [
+        "woda pitna",
+        "woda do spożycia",
+        "kontakt z wodą",
+        "wyroby stykające się z wodą",
+        "WYROBY BUDOWLANE STYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        29
+      ]
+    },
+    {
+      "id": "family-30",
+      "title": "Szkło budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 30 z załącznika VII CPR.",
+      "href": "/wyroby/30.html",
+      "keywords": [
+        "szkło płaskie",
+        "szkło profilowane",
+        "bloki szklane",
+        "wyroby szklane",
+        "WYROBY ZE SZKŁA PŁASKIEGO, PROFILOWANEGO I BLOKÓW SZKLANYCH.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        30
+      ]
+    },
+    {
+      "id": "family-31",
+      "title": "Kable zasilające, sterujące i komunikacyjne — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 31 z załącznika VII CPR.",
+      "href": "/wyroby/31.html",
+      "keywords": [
+        "kable",
+        "kable zasilania",
+        "kable sterujące",
+        "kable komunikacyjne",
+        "kabel",
+        "przewody elektryczne",
+        "KABLE ZASILANIA, STERUJĄCE I KOMUNIKACYJNE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        31
+      ]
+    },
+    {
+      "id": "family-32",
+      "title": "Uszczelnianie złączy — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 32 z załącznika VII CPR.",
+      "href": "/wyroby/32.html",
+      "keywords": [
+        "uszczelnianie",
+        "uszczelniacze",
+        "złącza",
+        "WYROBY DO USZCZELNIANIA ZŁĄCZY.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        32
+      ]
+    },
+    {
+      "id": "family-33",
+      "title": "Mocowania i łączniki — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 33 z załącznika VII CPR.",
+      "href": "/wyroby/33.html",
+      "keywords": [
+        "mocowania",
+        "łączniki",
+        "zamocowania",
+        "MOCOWANIA/ŁĄCZNIKI.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        33
+      ]
+    },
+    {
+      "id": "family-34",
+      "title": "Zestawy i komponenty budowlane — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 34 z załącznika VII CPR.",
+      "href": "/wyroby/34.html",
+      "keywords": [
+        "zestawy budowlane",
+        "komponenty budowlane",
+        "prefabrykaty",
+        "ZESTAWY BUDOWLANE, KOMPONENTY BUDOWLANE, PREFABRYKATY.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        34
+      ]
+    },
+    {
+      "id": "family-35",
+      "title": "Bierna ochrona przeciwpożarowa — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 35 z załącznika VII CPR.",
+      "href": "/wyroby/35.html",
+      "keywords": [
+        "zatrzymywanie ognia",
+        "uszczelnienia przeciwpożarowe",
+        "ochrona ogniowa",
+        "hamowanie palności",
+        "WYROBY DO ZATRZYMYWANIA OGNIA, USZCZELNIAJĄCE I OCHRONY OGNIOWEJ WYROBY HAMUJĄCE PALNOŚĆ.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        35
+      ]
+    },
+    {
+      "id": "family-36",
+      "title": "Drabiny mocowane na stałe — dane i dokumenty",
+      "kind": "method",
+      "category_id": "instrukcje",
+      "year": null,
+      "year_type": null,
+      "status_id": "guide",
+      "description": "Dostępne dane, dokumenty metodyczne i narzędzia dla rodziny 36 z załącznika VII CPR.",
+      "href": "/wyroby/36.html",
+      "keywords": [
+        "drabiny",
+        "drabiny stałe",
+        "drabiny mocowane na stałe",
+        "DRABINY MOCOWANE NA STAŁE.",
+        "CPR",
+        "c-PCR",
+        "zasady obliczeń"
+      ],
+      "cpr_family_ids": [
+        36
       ]
     }
   ],

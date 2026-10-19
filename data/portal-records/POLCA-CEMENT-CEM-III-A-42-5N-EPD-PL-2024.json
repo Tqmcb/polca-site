@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
     "title": "Cement CEM III/A 42,5N",
@@ -44,7 +44,18 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024.json",
-    "value": 374
+    "value": 374,
+    "cpr_family_ids": [
+      15
+    ],
+    "cpr_related": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }
