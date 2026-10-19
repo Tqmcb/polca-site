@@ -88,6 +88,59 @@
         20
       ],
       "scope_note": "Projekt dotyczący konstrukcyjnych wyrobów metalowych. Nie jest przedstawiany jako wydana norma ani jako reguła dla stali zbrojeniowej."
+    },
+    {
+      "id": "pren18189",
+      "designation": "prEN 18189",
+      "title_pl": "Świetliki dachowe i wyłazy dachowe — deklaracje środowiskowe — zasady uzupełniające EN 15804",
+      "url": "https://www.evs.ee/en/pren-18189",
+      "status_label": "Projekt normy europejskiej",
+      "status": "draft",
+      "role": "complementary_pcr",
+      "family_ids": [
+        22
+      ],
+      "scope_note": "Projekt dla świetlików dachowych i wyłazów dachowych, pojedynczych i ciągłych, z podstawą lub bez niej, przeznaczonych do montażu na podstawach w dachach płaskich i o małym nachyleniu."
+    },
+    {
+      "id": "pren18192",
+      "designation": "prEN 18192",
+      "title_pl": "Wyroby do murów — deklaracje środowiskowe elementów murowych — zasady uzupełniające EN 15804",
+      "url": "https://www.evs.ee/en/pren-18192",
+      "status_label": "Projekt normy europejskiej",
+      "status": "draft",
+      "role": "complementary_pcr",
+      "family_ids": [
+        17
+      ],
+      "scope_note": "Projekt dla elementów murowych oraz ceramicznych wyrobów budowlanych wytwarzanych z tych samych surowców i w tych samych procesach co ceramiczne elementy murowe."
+    },
+    {
+      "id": "pren18232",
+      "designation": "prEN 18232",
+      "title_pl": "Kominy — deklaracje środowiskowe — zasady kategorii wyrobów do kominów",
+      "url": "https://www.evs.ee/en/pren-18232",
+      "status_label": "Projekt normy europejskiej",
+      "status": "draft",
+      "role": "complementary_pcr",
+      "family_ids": [
+        6
+      ],
+      "scope_note": "Projekt dla kominów systemowych, łączników i kominów indywidualnych z przewodami z metalu, ceramiki, betonu lub tworzyw sztucznych. Obejmuje elementy przewodów i kształtki oraz odpowiednie komponenty, m.in. izolację, nasady i akcesoria."
+    },
+    {
+      "id": "pren16908",
+      "designation": "prEN 16908",
+      "title_pl": "Cement, wapno budowlane i inne spoiwa hydrauliczne — deklaracje środowiskowe — zasady uzupełniające EN 15804",
+      "url": "https://www.evs.ee/en/pren-16908",
+      "status_label": "Projekt rewizji normy",
+      "status": "draft",
+      "role": "complementary_pcr",
+      "family_ids": [
+        15
+      ],
+      "scope_note": "Projekt rewizji EN 16908 dla cementu, wapna budowlanego i wskazanych w projekcie spoiw hydraulicznych, w tym cementu murarskiego i hydraulicznych spoiw drogowych. Dotyczy przede wszystkim deklaracji od kołyski do bramy zakładu."
     }
-  ]
+  ],
+  "drafts_intro": "Projekty norm pokazują proponowane zasady uzupełniające, które mogą się zmienić przed publikacją. Dokument właściwy dla konkretnej EPD (deklaracji środowiskowej wyrobu) dobiera się zgodnie z zasadami programu, w którym deklaracja jest rejestrowana."
 }
