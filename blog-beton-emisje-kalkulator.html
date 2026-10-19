@@ -62,8 +62,8 @@
     <link rel="stylesheet" href="style-interactive.css?v=1.1">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
 <meta name="metadata_revision" content="2026-10-18">
-<link rel="stylesheet" href="/assets/portal.css?v=20261019cpr"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
-<body class="portal portal-legacy portal-tool">
+<link rel="stylesheet" href="/assets/portal.css?v=20261019visual"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
+<body class="portal portal-legacy portal-tool portal-article">
 <a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html" >Wyroby</a><a href="/datasety.html" >Dane</a><a href="/kalkulatory.html" class="is-active" >Kalkulatory</a><a href="/jak-korzystac.html" >Jak korzystać</a><a href="/metodyka.html" >Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header><main class="polca-content" id="main">
 <nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku</span></nav><div class="polca-page">
 
@@ -87,7 +87,7 @@
                 <span class="blog-date">24 lutego 2026</span>
                 <span class="blog-read-time">11 min czytania</span>
             </div>
-            <h1 class="blog-post-title">Jak liczyć emisje CO₂ dla betonu w Polsce?<br>Wytwórnia krok po kroku</h1>
+            <h1 class="blog-post-title">Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku</h1>
 <aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v3.html">Energia Polska 2025 v3</a>.</p></aside>
             <p class="blog-post-lead">
                 Diagram hot-spotów, wpływ polskiego miksu energetycznego, różnica między
@@ -254,7 +254,7 @@
 
         <!-- Tabela transportu -->
         <div class="card fade-in" style="margin:1.5rem 0;">
-            <table class="polca-table">
+            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 1, przewijana poziomo"><table class="polca-table">
                 <thead>
                     <tr>
                         <th>Surowiec</th>
@@ -294,7 +294,7 @@
                         <td class="mono">&lt;1%</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
             <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;">Wskaźniki emisji transportu wg EN 16258:2012, euro VI. Kalkulator modułu A4 dostępny w narzędziach poLCA.</p>
         </div>
 
@@ -305,7 +305,7 @@
                 <h2 class="ix-section-title">Podział GWP betonu C30/37</h2>
                 <p class="ix-section-sub">Udział procentowy procesów · dane poLCA-EN-PL-2024 v9.1 (0,599 kg CO₂e/kWh)</p>
             </div>
-            <div class="charts-row" style="grid-template-columns:1fr 1fr;">
+            <div class="charts-row">
                 <div class="chart-card">
                     <div class="chart-card-header">
                         <div class="chart-card-title">Struktura GWP — donut</div>
@@ -490,7 +490,7 @@
                 datasets: [{ data: [74, 13, 7, 4, 2, 0], backgroundColor: ['#0DBF9F','#2d7dd2','#6B7280','#7c4dcc','#D97706','#34d399'], borderColor: '#f9f8f5', borderWidth: 3, hoverOffset: 10 }]
             },
             options: { responsive: true, maintainAspectRatio: false, cutout: '65%',
-                plugins: { legend: { position: 'right', labels: { color: '#555566', font: { family: "'Inter',sans-serif", size: 11 }, padding: 12, boxWidth: 10, usePointStyle: true } },
+                plugins: { legend: { position: 'right', labels: { color: '#555566', font: { family: "'Source Sans 3',sans-serif", size: 12 }, padding: 12, boxWidth: 10, usePointStyle: true } },
                 tooltip: { backgroundColor: '#071714', borderColor: accent, borderWidth: 1, titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', padding: 10,
                     callbacks: { label: function(c) { return ' ' + c.raw + '% GWP'; } } } },
                 animation: { animateRotate: true, duration: 900, easing: 'easeOutQuart' }
@@ -501,7 +501,7 @@
         if (c) new window.Chart(c.getContext('2d'), {
             type: 'bar',
             data: {
-                labels: ['Dane generyczne\n(Ecoinvent EU)', 'Dane poLCA-EN-PL-2024\n(0,599 kg CO₂e/kWh)'],
+                labels: [['Dane generyczne', '(Ecoinvent EU)'], ['Dane poLCA-EN-PL-2024', '(0,599 kg CO₂e/kWh)']],
                 datasets: [{ label: 'GWP [kg CO₂e/m³]', data: [236, 278],
                     backgroundColor: ['rgba(107,114,128,0.25)', accent],
                     borderColor: ['#6B7280', accent], borderWidth: 2, borderRadius: 8 }]
@@ -510,8 +510,8 @@
                 plugins: { legend: { display: false },
                     tooltip: { backgroundColor: '#071714', borderColor: accent, borderWidth: 1, titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', padding: 10,
                         callbacks: { label: function(c) { return ' ' + c.raw + ' kg CO₂e/m³'; }, afterLabel: function(c) { return c.dataIndex === 1 ? '+18% vs dane generyczne' : 'Podstawa porównania'; } } } },
-                scales: { x: { beginAtZero: true, max: 340, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6B7280', font: { family: "'IBM Plex Mono',monospace", size: 11 }, callback: function(v) { return v + ' kg'; } } },
-                    y: { grid: { display: false }, ticks: { color: '#6B7280', font: { family: "'IBM Plex Mono',monospace", size: 11 } } } },
+                scales: { x: { beginAtZero: true, max: 340, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6B7280', font: { family: "'Source Sans 3',sans-serif", size: 12 }, callback: function(v) { return v + ' kg'; } } },
+                    y: { grid: { display: false }, ticks: { color: '#6B7280', font: { family: "'Source Sans 3',sans-serif", size: 12 } } } },
                 animation: { duration: 900, easing: 'easeOutQuart' }
             }
         });

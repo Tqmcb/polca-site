@@ -31,7 +31,7 @@ def build(api):
         if not items:
             return '<p>W tym katalogu nie wskazano jeszcze branżowego dokumentu c-PCR dla tej rodziny. Dobierz go do konkretnego wyrobu i zasad programu deklaracji.</p>'
         return '<ul class="product-methods">' + ''.join(
-            f'<li><h3>{a(m["designation"],m["url"])}</h3><p>{e(m["title_pl"])}</p><p class="product-meta">{e(m["status_label"])}</p><p>{e(m["scope_note"])}</p>' + (links([{'label':f['label']+' (rodzina '+str(f['id'])+')','href':family_url(f['id'])} for f in families if f['id'] in m['family_ids']]) if show_families else '') + '</li>' for m in items) + '</ul>'
+            f'<li><h3>{a(m["designation"],m["url"])}</h3><p>{e(m["title_pl"])}</p><p class="product-meta">{e(m["status_label"])}</p><p>{e(m["scope_note"])}</p>' + (links([{'label':f['label']+' (rodzina '+str(f['id'])+')','href':family_url(f['id'])} for f in families if f['id'] in m['family_ids']], 'product-method-families') if show_families else '') + '</li>' for m in items) + '</ul>'
 
     def common():
         return '<section class="portal-section product-common"><h2>Energia, paliwa i transport</h2><p>Dane pomocnicze do procesów w różnych branżach. Wybór zależy od granic obliczenia i przyjętej metody.</p>' + links([

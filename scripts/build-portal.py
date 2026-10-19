@@ -28,7 +28,7 @@ def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False):
  mainhead='' if home else crumb(title,parent)+f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>'
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261019cpr"><script src="/js/portal.js?v=20261019cpr" defer></script></head><body class="portal">{header(path)}<main id="main" class="portal-main portal-shell" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261019visual"><script src="/js/portal.js?v=20261019cpr" defer></script></head><body class="portal">{header(path)}<main id="main" class="portal-main portal-shell" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
@@ -106,9 +106,9 @@ def migrate_shell():
   for el in head.xpath('./link[contains(@href,"fonts.googleapis") or contains(@href,"fonts.gstatic") or contains(@href,"/assets/portal.css")]'):head.remove(el)
   for el in head.xpath('.//html'):
    if el.getparent() is not None:el.getparent().remove(el)
-  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261019cpr'))
+  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261019visual'))
   head.append(etree.Element('script',src='/js/portal.js?v=20261019cpr',defer='defer'))
-  body.set('class','portal portal-legacy'+(' portal-tool' if group(rel)=='tools' else ''))
+  body.set('class','portal portal-legacy'+(' portal-tool' if group(rel)=='tools' else '')+(' portal-article' if rel.startswith('blog-') else ''))
   nodes=html.fragments_fromstring(header(rel))
   for i,n in enumerate(nodes):body.insert(i,n)
   main=body.xpath('.//main')
@@ -132,7 +132,7 @@ def sync_shell():
   if not re.search(r'<link[^>]+rel=[\"\'](?:shortcut )?icon[\"\']',text):text=text.replace('</head>','<link rel="icon" href="/favicon.svg" type="image/svg+xml"></head>')
   text=re.sub(r'<header class="portal-header">.*?</header>',lambda m:header(rel).split('</a>',1)[1],text,flags=re.S)
   text=re.sub(r'<footer class="portal-footer">.*?</footer>',lambda m:footer(),text,flags=re.S)
-  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261019cpr',text)
+  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261019visual',text)
   text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261019cpr',text)
   p.write_text(text)
 
