@@ -40,19 +40,8 @@ def build(api):
             {'label':'Transport','href':'/datasety.html?category=transport'},
         ], 'product-inline-links') + '</section>'
 
-    # One clear starting point. Detailed guides remain available in the navigation.
-    picks = [next(f for f in families if f['id'] == n) for n in [15, 24, 23, 1, 16, 20]]
-    home = '<section class="product-home"><h1>Dane i metody dla Twojego wyrobu</h1><p class="portal-lead">Wybierz rodzaj wyrobu. Sprawdź dostępne dane środowiskowe, zasady obliczeń i kalkulatory.</p><form class="portal-search" action="/wyroby.html" role="search"><label for="product-home-query">Jaki wyrób Cię interesuje?</label><div class="portal-search-control"><input id="product-home-query" type="search" name="q" placeholder="Np. cement, asfalt, okna"><button type="submit">Znajdź wyrób</button></div></form></section>'
-    home += '<section class="portal-section"><div class="portal-sectionhead"><h2>Wybierz wyrób</h2>' + a('Wszystkie 36 rodzin wyrobów', '/wyroby.html') + '</div><div class="product-picks">' + ''.join(
-        f'<a href="{family_url(f["id"])}"><strong>{e(f["label"])}</strong><span>{"Dane i metody" if associated(f,"dataset") else ("Metody i objaśnienia" if rules(f) else "Artykuły i objaśnienia")}</span></a>' for f in picks) + '</div></section>'
-    home += common()
-    home += '<section class="portal-section product-help"><h2>Potrzebujesz wskazówki?</h2>' + links([
-        {'label':'Ślad węglowy czy ocena środowiskowa?','href':'/slad-weglowy-czy-srodowiskowy.html'},
-        {'label':'Jak wykorzystać dane dla wyrobu lub budynku?','href':'/zastosowanie-danych.html'},
-        {'label':'Jak dobrać dane do EPD i CPR?','href':'/zastosowanie-epd-cpr.html'},
-        {'label':'Szukaj we wszystkich danych i dokumentach','href':'/szukaj.html'},
-    ]) + '</section>'
-    page('index.html','Dane i metody dla Twojego wyrobu','Znajdź dane środowiskowe, zasady obliczeń i kalkulatory dla wyrobów budowlanych.',home,home=True)
+    from home_portal import build as build_home
+    build_home(api, families)
 
     intro = '<p class="product-intro">Podział obejmuje 36 rodzin z <a href="' + source_url + '">załącznika VII do CPR — rozporządzenia o wyrobach budowlanych (UE) 2024/3110</a>. Przy każdej rodzinie widać, jakie materiały zawiera portal.</p>'
     form = '<form id="family-search" class="portal-search" action="/wyroby.html" role="search"><label for="family-query">Nazwa wyrobu lub numer rodziny</label><div class="portal-search-control"><input id="family-query" type="search" name="q" placeholder="Np. kruszywo, drzwi, 24"><button type="submit">Szukaj</button></div><label class="product-checkbox"><input type="checkbox" name="available" value="1"> Tylko rodziny z materiałami w poLCA</label></form><p id="family-count" role="status" aria-live="polite">Rodziny wyrobów: 36 z 36</p>'
