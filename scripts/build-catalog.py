@@ -9,8 +9,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'data/portal-catalog.json'
 EDITORIAL = ROOT / 'data/portal-editorial.json'
-ENERGY_FILE = 'data/energia-pl-2025-v3/profil-37.json'
-ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v3_REVIEW'
+ENERGY_FILE = 'data/energia-pl-2025-v4/profil-37.json'
+ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v4'
 
 
 def read_json(path: str | Path):
@@ -91,36 +91,36 @@ def build_energy_record(editorial: dict) -> dict:
     profile = read_json(ENERGY_FILE)
     if profile['model_id'] != ENERGY_ID:
         raise ValueError('Unexpected 2025 energy model')
-    if profile['status']['state'] != 'integration_and_method_review' or profile['is_default']:
+    if profile['status']['state'] != 'technical_review_complete' or profile['is_default']:
         raise ValueError('2025 energy publication status needs a manual catalog review')
     indicators = profile['indicators']
     total = next(item for item in indicators if item['code'] == 'GWP-total')
     note = editorial['energy_2025']
     files = [
-        download('Cały pakiet ZIP', 'data/energia-pl-2025-v3/Polska-energia-2025-v3-do-recenzji.zip'),
+        download('Cały pakiet ZIP', 'data/energia-pl-2025-v4/Polska-energia-2025-v4.zip'),
         download('37 wskaźników — JSON', ENERGY_FILE),
-        download('37 wskaźników — CSV', 'data/energia-pl-2025-v3/wskazniki-37.csv'),
-        download('Opis pakietu', 'data/energia-pl-2025-v3/START.txt'),
-        download('Metoda i zmiany', 'data/energia-pl-2025-v3/METODA-I-ZMIANY.txt'),
-        download('Warunki wykorzystania', 'data/energia-pl-2025-v3/WARUNKI-WYKORZYSTANIA.txt'),
-        download('Przykład dla 10 kWh', 'data/energia-pl-2025-v3/przyklad-10-kWh.json'),
-        download('Kontrola eksportu', 'data/energia-pl-2025-v3/kontrola-eksportu.json'),
-        download('Spis plików i sum kontrolnych', 'data/energia-pl-2025-v3/manifest.json'),
+        download('37 wskaźników — CSV', 'data/energia-pl-2025-v4/wskazniki-37.csv'),
+        download('Opis pakietu', 'data/energia-pl-2025-v4/START.txt'),
+        download('Metoda i zmiany', 'data/energia-pl-2025-v4/METODA-I-ZMIANY.txt'),
+        download('Warunki wykorzystania', 'data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt'),
+        download('Przykład dla 10 kWh', 'data/energia-pl-2025-v4/przyklad-10-kWh.json'),
+        download('Kontrola eksportu', 'data/energia-pl-2025-v4/kontrola-eksportu.json'),
+        download('Spis plików i sum kontrolnych', 'data/energia-pl-2025-v4/manifest.json'),
     ]
     return base_record(
         id=ENERGY_ID, title=note['title'], kind='dataset',
         category_id='energia', category_label=editorial['categories']['energia'],
         year=profile['reference_year'], year_type='reference',
         status_id='review', status_label=editorial['statuses']['review'],
-        description=note['description'], href='/energia-polska-2025-v3.html',
+        description=note['description'], href='/energia-polska-2025-v4.html',
         downloads=files, record_type='indicator_profile',
         unit='kg CO₂e/kWh', reference_unit=profile['functional_unit']['unit'],
         boundary=note['boundary'], indicator_label='GWP-total — wpływ na klimat',
         value=total['value_per_kWh'], indicator_count=len(indicators),
-        source_name='poLCA — model Polska 2025 v3',
-        source_url='/data/energia-pl-2025-v3/METODA-I-ZMIANY.txt',
+        source_name='poLCA — model Polska 2025 v4',
+        source_url='/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt',
         source_record_href='/' + ENERGY_FILE,
-        methodology_href='/energia-polska-2025-v3.html#metoda',
+        methodology_href='/energia-polska-2025-v4.html#metoda',
         related_ids=['POLCA-EN-PL-LCA-2024', 'KOBIZE-EN-PL-ENDUSER-2024'],
         keywords=['prąd', 'energia elektryczna', '2025', '37 wskaźników', 'miks fizyczny', 'woda', 'odpady', 'ślad węglowy', 'ślad środowiskowy', 'wyrób', 'produkt', 'budynek'],
         geography=profile['country'], is_default=False,

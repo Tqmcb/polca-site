@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('build_catalog', ROOT / 'scripts/build-catalog.py')
 BUILDER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(BUILDER)
-ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v3_REVIEW'
+ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v4'
 ENERGY_HASHES = {
     'Polska-energia-2025-v3-do-recenzji.zip': 'df4adf267fa0e8266aacaa279f5b7becbe6744ef5941f263a82335c31f4e3558',
     'przyklad-10-kWh.json': '368986391b5909145a7a93042dfe50f1d7d73227d62e6ef85e29536c586b99d9',
@@ -118,17 +118,42 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(fossil['value'], Decimal('0.599'))
         self.assertIn('kopalny', fossil['indicator_label'])
         self.assertEqual(fossil['status_id'], 'earlier_model')
-        self.assertEqual(current['value'], Decimal('0.6545962001772594'))
+        self.assertEqual(current['value'], Decimal('0.6445397488349277'))
         self.assertEqual(current['indicator_count'], 37)
         self.assertEqual(current['status_id'], 'review')
         self.assertFalse(current['is_default'])
-        profile = read('data/energia-pl-2025-v3/profil-37.json')
+        profile = read('data/energia-pl-2025-v4/profil-37.json')
         total = next(x for x in profile['indicators'] if x['code'] == 'GWP-total')
         self.assertEqual(current['value'], total['value_per_kWh'])
         self.assertEqual(current['reference_unit'], profile['functional_unit']['unit'])
         self.assertEqual(current['year'], profile['reference_year'])
 
-    def test_2025_publication_bytes_unchanged(self):
+    def test_current_profile_keeps_technical_and_formal_status_separate(self):
+        profile = read('data/energia-pl-2025-v4/profil-37.json')
+        self.assertEqual(profile['model_id'], ENERGY_ID)
+        self.assertEqual(profile['variant'], 'selected')
+        self.assertEqual(profile['package_version'], '2026-10-19.1')
+        self.assertEqual(self.catalog['catalog_version'], profile['package_version'])
+        status = profile['status']
+        self.assertEqual(status['state'], 'technical_review_complete')
+        self.assertTrue(status['computation_complete'])
+        self.assertTrue(status['internal_technical_review_completed'])
+        for field in ('production_approved', 'formal_EN15804_qualification',
+                      'human_verification_recorded', 'operator_decision_signed',
+                      'internal_checks_are_external_expert_review'):
+            self.assertFalse(status[field], field)
+        self.assertEqual(status['external_expert_review'], 'NOT_PERFORMED')
+        current = self.datasets[ENERGY_ID]
+        self.assertEqual(current['href'], '/energia-polska-2025-v4.html')
+        self.assertEqual(current['source_record_href'], '/data/energia-pl-2025-v4/profil-37.json')
+        self.assertTrue(all(x['href'].startswith('/data/energia-pl-2025-v4/')
+                            for x in current['downloads']))
+        self.assertEqual(len(profile['indicators']), 37)
+        self.assertEqual(len({x['code'] for x in profile['indicators']}), 37)
+        self.assertEqual(profile['quality_assessment']['assessed_data_units'], 60)
+        self.assertEqual(profile['quality_assessment']['source_processes'], 49)
+
+    def test_archived_v3_publication_bytes_unchanged(self):
         folder = ROOT / 'data/energia-pl-2025-v3'
         self.assertEqual(set(x.name for x in folder.iterdir() if x.is_file()), set(ENERGY_HASHES))
         for name, expected in ENERGY_HASHES.items():

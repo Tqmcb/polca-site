@@ -1,0 +1,300 @@
+{
+  "schema_version": "1.0",
+  "package_version": "2026-10-19.1",
+  "synthetic_example": true,
+  "model_id": "PL2025_PHYSICAL_DELIVERED_v4",
+  "variant": "selected",
+  "electricity_quantity_kWh": 10,
+  "module": "C3",
+  "scenario_pl": "Hipotetyczne zużycie 10 kWh w krajowym przetwarzaniu odpadu w module C3, poza kontrolą właściciela deklaracji środowiskowej produktu (EPD).",
+  "outside_epd_owner_control": true,
+  "real_product_assigned": false,
+  "product_unit": null,
+  "product_quantity": null,
+  "scope": "electricity_contribution_only",
+  "scope_pl": "Wyłącznie wkład 10 kWh energii. Bez przypisania zużycia do rzeczywistego wyrobu lub zakładu; nie jest to wynik całego modułu C3 ani całego wyrobu.",
+  "production_approved": false,
+  "formal_EN15804_qualification": false,
+  "human_verification_recorded": false,
+  "is_default": false,
+  "source_profile": "profil-37.json",
+  "calculation_pl": "Dla każdego wskaźnika: value_for_10_kWh = 10 kWh × value_per_kWh. Wynik ma jednostkę impact_unit, bez mianownika jednostki wyrobu.",
+  "results": [
+    {
+      "code": "GWP-total",
+      "name_pl": "Potencjał globalnego ocieplenia — łącznie",
+      "value_for_10_kWh": 6.4453974883492770,
+      "impact_unit": "kg CO2 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-fossil",
+      "name_pl": "Potencjał globalnego ocieplenia — pochodzenie kopalne",
+      "value_for_10_kWh": 6.4241562138550210,
+      "impact_unit": "kg CO2 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-biogenic",
+      "name_pl": "Potencjał globalnego ocieplenia — pochodzenie biogeniczne",
+      "value_for_10_kWh": 0.020097565684240340,
+      "impact_unit": "kg CO2 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "GWP-luluc",
+      "name_pl": "Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany",
+      "value_for_10_kWh": 0.00114370881001514420,
+      "impact_unit": "kg CO2 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ODP",
+      "name_pl": "Potencjał zubożenia warstwy ozonowej",
+      "value_for_10_kWh": 4.01051872660805850E-8,
+      "impact_unit": "kg CFC11 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "AP",
+      "name_pl": "Potencjał zakwaszenia",
+      "value_for_10_kWh": 0.0107929231986896630,
+      "impact_unit": "mol H+ eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-fw",
+      "name_pl": "Potencjał eutrofizacji wód słodkich",
+      "value_for_10_kWh": 0.00062064399245881210,
+      "impact_unit": "kg P eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-mar",
+      "name_pl": "Potencjał eutrofizacji morskiej",
+      "value_for_10_kWh": 0.00218906316656713490,
+      "impact_unit": "kg N eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EP-ter",
+      "name_pl": "Potencjał eutrofizacji lądowej",
+      "value_for_10_kWh": 0.024472510459681920,
+      "impact_unit": "mol N eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "POCP",
+      "name_pl": "Potencjał powstawania ozonu przygruntowego",
+      "value_for_10_kWh": 0.0075991006136400190,
+      "impact_unit": "kg NMVOC eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ADP-mm",
+      "name_pl": "Potencjał wyczerpywania zasobów abiotycznych — minerały i metale",
+      "value_for_10_kWh": 0.0000079005739878340770,
+      "impact_unit": "kg Sb eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ADP-fossil",
+      "name_pl": "Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne",
+      "value_for_10_kWh": 71.713247521019040,
+      "impact_unit": "MJ (net calorific)",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "WDP",
+      "name_pl": "Potencjał pozbawienia wody",
+      "value_for_10_kWh": 0.211221012132040420,
+      "impact_unit": "m3 world eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PM",
+      "name_pl": "Potencjalna zachorowalność związana z pyłem",
+      "value_for_10_kWh": 4.7334189964812320E-8,
+      "impact_unit": "disease incidence",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "IRP",
+      "name_pl": "Potencjalny wpływ promieniowania jonizującego na zdrowie",
+      "value_for_10_kWh": 0.068110616006444420,
+      "impact_unit": "kBq U235 eq",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "ETP-fw",
+      "name_pl": "Potencjał ekotoksyczności wód słodkich",
+      "value_for_10_kWh": 19.6434381051957980,
+      "impact_unit": "CTUe",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HTP-c",
+      "name_pl": "Potencjał toksyczności dla ludzi — skutki rakotwórcze",
+      "value_for_10_kWh": 3.2332465439015230E-9,
+      "impact_unit": "CTUh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HTP-nc",
+      "name_pl": "Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze",
+      "value_for_10_kWh": 7.8122719768314570E-8,
+      "impact_unit": "CTUh",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "SQP",
+      "name_pl": "Potencjalny wpływ użytkowania gruntów na jakość gleby",
+      "value_for_10_kWh": 32.782001704619840,
+      "impact_unit": "dimensionless (pt)",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PERE",
+      "name_pl": "Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce",
+      "value_for_10_kWh": 19.2656842447538070,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PERM",
+      "name_pl": "Odnawialne zasoby energii pierwotnej użyte jako surowce",
+      "value_for_10_kWh": 0.0,
+      "impact_unit": "MJ",
+      "value_status": "zero_under_declared_boundaries_and_conventions"
+    },
+    {
+      "code": "PERT",
+      "name_pl": "Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej",
+      "value_for_10_kWh": 19.2656842447538050,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PENRE",
+      "name_pl": "Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce",
+      "value_for_10_kWh": 71.8896345436950,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "PENRM",
+      "name_pl": "Nieodnawialne zasoby energii pierwotnej użyte jako surowce",
+      "value_for_10_kWh": 0.0,
+      "impact_unit": "MJ",
+      "value_status": "zero_under_declared_boundaries_and_conventions"
+    },
+    {
+      "code": "PENRT",
+      "name_pl": "Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej",
+      "value_for_10_kWh": 71.8896345436950,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "SM",
+      "name_pl": "Wykorzystanie materiałów wtórnych",
+      "value_for_10_kWh": 0.0196413850121480560,
+      "impact_unit": "kg",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "RSF",
+      "name_pl": "Wykorzystanie odnawialnych paliw wtórnych",
+      "value_for_10_kWh": 0.026093105238947950,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "NRSF",
+      "name_pl": "Wykorzystanie nieodnawialnych paliw wtórnych",
+      "value_for_10_kWh": 0.0,
+      "impact_unit": "MJ",
+      "value_status": "zero_under_declared_boundaries_and_conventions"
+    },
+    {
+      "code": "FW",
+      "name_pl": "Zużycie netto zasobów wody słodkiej",
+      "value_for_10_kWh": 0.0204591759230127960,
+      "impact_unit": "m3",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "HWD",
+      "name_pl": "Odpady niebezpieczne poddane unieszkodliwianiu",
+      "value_for_10_kWh": 1.15219905499813520,
+      "impact_unit": "kg",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "NHWD",
+      "name_pl": "Odpady inne niż niebezpieczne poddane unieszkodliwianiu",
+      "value_for_10_kWh": 18.3497658086673270,
+      "impact_unit": "kg",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "RWD",
+      "name_pl": "Odpady promieniotwórcze poddane unieszkodliwianiu",
+      "value_for_10_kWh": 0.0029267300394621480,
+      "impact_unit": "kg",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "CRU",
+      "name_pl": "Komponenty przeznaczone do ponownego użycia",
+      "value_for_10_kWh": 0.0,
+      "impact_unit": "kg",
+      "value_status": "zero_under_declared_boundaries_and_conventions"
+    },
+    {
+      "code": "MFR",
+      "name_pl": "Materiały przeznaczone do recyklingu",
+      "value_for_10_kWh": 0.00009650486727617990,
+      "impact_unit": "kg",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "MER",
+      "name_pl": "Materiały przeznaczone do odzysku energii",
+      "value_for_10_kWh": 0.0,
+      "impact_unit": "kg",
+      "value_status": "zero_under_declared_boundaries_and_conventions"
+    },
+    {
+      "code": "EEE",
+      "name_pl": "Eksportowana energia elektryczna",
+      "value_for_10_kWh": 0.0102074330168724240,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    },
+    {
+      "code": "EET",
+      "name_pl": "Eksportowana energia cieplna",
+      "value_for_10_kWh": 0.046683289163725960,
+      "impact_unit": "MJ",
+      "value_status": "calculated_under_declared_proxies"
+    }
+  ],
+  "status": {
+    "state": "technical_review_complete",
+    "description_pl": "Wybrany profil v4 po odbiorze technicznym obliczeń i wewnętrznej recenzji kodu oraz metody. Kwalifikacja do konkretnego zastosowania pozostaje odrębna.",
+    "computation_complete": true,
+    "internal_technical_review_completed": true,
+    "production_approved": false,
+    "formal_EN15804_qualification": false,
+    "human_verification_recorded": false,
+    "is_default": false,
+    "external_expert_review": "NOT_PERFORMED",
+    "internal_checks_are_external_expert_review": false,
+    "operator_decision_signed": false
+  },
+  "source_attribution": "Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026",
+  "terms_url": "WARUNKI-WYKORZYSTANIA.txt",
+  "source_profile_sha256": "1824b471d3a25543d9ea3a6140ceb23fefffe6573e4a35ffb5d03a2f212a21f1",
+  "arithmetic": "decimal_from_published_source_numbers"
+}

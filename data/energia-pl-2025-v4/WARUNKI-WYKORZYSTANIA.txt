@@ -1,0 +1,12 @@
+WARUNKI WYKORZYSTANIA
+
+Opracowanie profilu: Multicert Sp. z o.o., PL2025_PHYSICAL_DELIVERED_v4, selected. Dane wynikowe stanowią opracowanie zmodyfikowanego modelu; nie są oryginalnymi zbiorami BAFU ani deklaracją poparcia przez BAFU.
+
+Wskazanie źródła tła: „Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026”. Jest to baza inwentarza cyklu życia szwajcarskiej administracji federalnej. Opis modyfikacji i ograniczeń towarzyszy profilowi w METODA-I-ZMIANY.txt.
+
+Warunki dostawcy z 23.06.2026: https://nexus.openlca.org/ws/files/40247
+Warunki dopuszczają wykorzystanie danych do analiz i w kalkulatorach, z podaniem źródła. Ograniczają sprzedaż i rozpowszechnianie niezmienionych danych samodzielnie lub jako części innej bazy. Udostępniane dane zmodyfikowane wymagają dokumentacji zmian, wyraźnego oznaczenia i warunków zasadniczo równoważnych warunkom dostawcy. Raporty autorów podlegają osobnym prawom.
+
+Multicert udostępnia niniejsze opracowanie danych na warunkach zasadniczo równoważnych wskazanym warunkom BAFU, z zachowaniem źródła, opisu zmian i oznaczeń wersji. Przy dalszych modyfikacjach zachować dokumentację zmian i odpowiadające im warunki. Pełny tekst dostawcy jest dostępny pod powyższym adresem. Nie nadajemy jednej nieograniczonej licencji całej bazie ani raportom źródłowym.
+
+Warunki korzystania z danych nie stanowią potwierdzenia ich przydatności do konkretnej deklaracji. Kwalifikacja metody i zastosowania pozostaje odrębna. Aktualny status profilu: production_approved=false, formal_EN15804_qualification=false.

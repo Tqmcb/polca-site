@@ -67,8 +67,8 @@
               "href": "/datasety.html"
             },
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             }
           ]
         },
@@ -135,17 +135,17 @@
         {
           "title": "Energia elektryczna",
           "paragraphs": [
-            "Aktualny profil publiczny: Polska 2025 v3, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW. Kontrola techniczna obliczeń i pakietu jest zakończona; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody.",
+            "Aktualny profil publiczny: Polska 2025 v4, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v4. Odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody są zakończone; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody.",
             "Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane."
           ],
           "links": [
             {
-              "label": "Karta: Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Karta: Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "METODA-I-ZMIANY.txt",
-              "href": "/data/energia-pl-2025-v3/METODA-I-ZMIANY.txt"
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             },
             {
               "label": "Starsze dokumenty metodyczne",
@@ -227,16 +227,16 @@
         {
           "title": "Status przy wersji",
           "paragraphs": [
-            "Każdy zbiór ma własne pola statusu, czytelne w pliku i na karcie. Dla profilu energii 2025 v3: kontrola techniczna zakończona, formalne przyjęcie do programu otwarte, zewnętrzna recenzja ekspercka niewykonana. Status zmienia się tylko przez nowe wydanie z wpisem w rejestrze zmian."
+            "Każdy zbiór ma własne pola statusu, czytelne w pliku i na karcie. Dla profilu energii 2025 v4: odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody zakończone, formalne przyjęcie do programu otwarte, zewnętrzna recenzja ekspercka niewykonana. Status zmienia się tylko przez nowe wydanie z wpisem w rejestrze zmian."
           ],
           "links": [
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "profil-37.json",
-              "href": "/data/energia-pl-2025-v3/profil-37.json"
+              "href": "/data/energia-pl-2025-v4/profil-37.json"
             },
             {
               "label": "Rejestr zmian",
@@ -268,11 +268,11 @@
           "links": [
             {
               "label": "manifest.json",
-              "href": "/data/energia-pl-2025-v3/manifest.json"
+              "href": "/data/energia-pl-2025-v4/manifest.json"
             },
             {
               "label": "kontrola-eksportu.json",
-              "href": "/data/energia-pl-2025-v3/kontrola-eksportu.json"
+              "href": "/data/energia-pl-2025-v4/kontrola-eksportu.json"
             }
           ]
         },
@@ -302,7 +302,7 @@
         {
           "title": "Co zawiera",
           "paragraphs": [
-            "Katalog ma 37 pozycji danych w wersji 2026-10-18.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v3 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe.",
+            "Katalog ma 37 pozycji danych w wersji 2026-10-19.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe.",
             "Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie."
           ],
           "links": [
@@ -311,8 +311,8 @@
               "href": "/datasety.html"
             },
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "Narzędzia",
@@ -356,7 +356,7 @@
           "links": [
             {
               "label": "Warunki wykorzystania profilu 2025",
-              "href": "/data/energia-pl-2025-v3/WARUNKI-WYKORZYSTANIA.txt"
+              "href": "/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt"
             },
             {
               "label": "Centrum pobierania",
@@ -391,7 +391,7 @@
             },
             {
               "label": "Pakiet energii 2025 (ZIP)",
-              "href": "/data/energia-pl-2025-v3/Polska-energia-2025-v3-do-recenzji.zip"
+              "href": "/data/energia-pl-2025-v4/Polska-energia-2025-v4.zip"
             }
           ]
         },
@@ -403,7 +403,7 @@
           "links": [
             {
               "label": "Instrukcja odczytu (START.txt)",
-              "href": "/data/energia-pl-2025-v3/START.txt"
+              "href": "/data/energia-pl-2025-v4/START.txt"
             }
           ]
         },
@@ -446,12 +446,12 @@
           "title": "Wzór cytowania",
           "paragraphs": [
             "Multicert, poLCA: [nazwa zbioru], wersja [wersja], model [identyfikator], wydanie [data], polca.org.pl, [adres pliku].",
-            "Przykład: Multicert, poLCA: Polska 2025, 37 wskaźników energii, profil selected_2025_v3, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW, wydanie pakietu 2026-10-18.1, polca.org.pl/data/energia-pl-2025-v3/profil-37.json."
+            "Przykład: Multicert, poLCA: Polska 2025, 37 wskaźników energii, profil selected, model PL2025_PHYSICAL_DELIVERED_v4, wydanie pakietu 2026-10-19.1, polca.org.pl/data/energia-pl-2025-v4/profil-37.json."
           ],
           "links": [
             {
               "label": "profil-37.json",
-              "href": "/data/energia-pl-2025-v3/profil-37.json"
+              "href": "/data/energia-pl-2025-v4/profil-37.json"
             },
             {
               "label": "Indeks katalogu",
@@ -467,7 +467,7 @@
           "links": [
             {
               "label": "WARUNKI-WYKORZYSTANIA.txt",
-              "href": "/data/energia-pl-2025-v3/WARUNKI-WYKORZYSTANIA.txt"
+              "href": "/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt"
             }
           ]
         },
@@ -509,17 +509,17 @@
         {
           "title": "Fakty do przytoczenia",
           "paragraphs": [
-            "Katalog: 37 pozycji danych, wersja 2026-10-18.1. Profil energii Polska 2025 v3: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-18.1; kontrola techniczna zakończona, formalne przyjęcie do programu otwarte.",
+            "Katalog: 37 pozycji danych, wersja 2026-10-19.1. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte.",
             "Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026)."
           ],
           "links": [
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "METODA-I-ZMIANY.txt",
-              "href": "/data/energia-pl-2025-v3/METODA-I-ZMIANY.txt"
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             }
           ]
         },
@@ -576,12 +576,12 @@
           ],
           "links": [
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "METODA-I-ZMIANY.txt",
-              "href": "/data/energia-pl-2025-v3/METODA-I-ZMIANY.txt"
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             },
             {
               "label": "Zastosowanie w EPD i CPR",
@@ -739,12 +739,12 @@
           ],
           "links": [
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "37 wskaźników (CSV)",
-              "href": "/data/energia-pl-2025-v3/wskazniki-37.csv"
+              "href": "/data/energia-pl-2025-v4/wskazniki-37.csv"
             }
           ],
           "id": "srodowisko"
@@ -777,7 +777,7 @@
             },
             {
               "label": "Instrukcja odczytu (START.txt)",
-              "href": "/data/energia-pl-2025-v3/START.txt"
+              "href": "/data/energia-pl-2025-v4/START.txt"
             }
           ]
         }
@@ -800,8 +800,8 @@
               "href": "/zastosowanie-epd-cpr.html"
             },
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "Oblicz wkład energii — profil 2025",
@@ -835,11 +835,11 @@
           "links": [
             {
               "label": "Przykład dla 10 kWh (JSON)",
-              "href": "/data/energia-pl-2025-v3/przyklad-10-kWh.json"
+              "href": "/data/energia-pl-2025-v4/przyklad-10-kWh.json"
             },
             {
               "label": "kontrola-eksportu.json",
-              "href": "/data/energia-pl-2025-v3/kontrola-eksportu.json"
+              "href": "/data/energia-pl-2025-v4/kontrola-eksportu.json"
             }
           ],
           "id": "proces"
@@ -856,7 +856,7 @@
             },
             {
               "label": "METODA-I-ZMIANY.txt",
-              "href": "/data/energia-pl-2025-v3/METODA-I-ZMIANY.txt"
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             }
           ],
           "id": "deklaracja"
@@ -923,7 +923,7 @@
           "links": [
             {
               "label": "Przykład dla 10 kWh (JSON)",
-              "href": "/data/energia-pl-2025-v3/przyklad-10-kWh.json"
+              "href": "/data/energia-pl-2025-v4/przyklad-10-kWh.json"
             },
             {
               "label": "Oblicz wkład energii — profil 2025",
@@ -961,7 +961,7 @@
         {
           "title": "Czy mogę wykorzystać dane w EPD lub ocenie CPR?",
           "paragraphs": [
-            "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v3 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji."
+            "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v4 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji."
           ],
           "links": [
             {
@@ -969,8 +969,8 @@
               "href": "/zastosowanie-epd-cpr.html"
             },
             {
-              "label": "Energia Polska 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Energia Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             }
           ],
           "id": "pytanie-7"
@@ -983,7 +983,7 @@
           "links": [
             {
               "label": "Warunki wykorzystania profilu 2025",
-              "href": "/data/energia-pl-2025-v3/WARUNKI-WYKORZYSTANIA.txt"
+              "href": "/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt"
             },
             {
               "label": "Centrum pobierania",
@@ -1000,7 +1000,7 @@
           "links": [
             {
               "label": "Zakres aktualizacji i jakość danych 2025",
-              "href": "/energia-polska-2025-v3.html#jakosc"
+              "href": "/energia-polska-2025-v4.html#jakosc"
             }
           ],
           "id": "pytanie-9"
@@ -1043,7 +1043,7 @@
           "links": [
             {
               "label": "Tabela i metoda profilu 2025",
-              "href": "/energia-polska-2025-v3.html#wyniki"
+              "href": "/energia-polska-2025-v4.html#wyniki"
             }
           ],
           "id": "pytanie-12"
@@ -1071,7 +1071,7 @@
             "rows": [
               [
                 "KOBiZE — energia u odbiorcy końcowego",
-                "Wskaźnik emisji CO₂ uwzględniający zużycie własne i straty; bez pełnych łańcuchów paliw i infrastruktury",
+                "Wskaźnik emisji CO₂ dla odbiorców końcowych, z uwzględnieniem strat i różnic bilansowych; bez pełnych łańcuchów paliw i infrastruktury",
                 "2024; publikacja 2025",
                 "Obliczenia emisji CO₂ w granicach publikacji; źródło kontroli danych o emisjach"
               ],
@@ -1082,7 +1082,7 @@
                 "Budowa modeli oceny cyklu życia i obliczanie wyników w programie LCA"
               ],
               [
-                "poLCA — profil energii 2025 v3",
+                "poLCA — profil energii 2025 v4",
                 "37 wskaźników na 1 kWh fizycznie dostarczonej energii; wyniki, metryka i dokumentacja",
                 "2025 dla aktualizowanych danych; lata procesów tła podano w dokumentacji",
                 "Wkład energii w ocenę wyrobu lub budynku, po doborze profilu do zastosowania"
@@ -1141,8 +1141,8 @@
             ],
             "rows": [
               [
-                "0,6546 kg CO₂e/kWh",
-                "poLCA v3",
+                "0,644540 kg CO₂e/kWh",
+                "poLCA v4",
                 "GWP-total — całkowity wpływ na klimat w modelu cyklu życia",
                 "fizyczny 2025, 1 kWh dostarczona"
               ],
@@ -1170,8 +1170,8 @@
               "href": "https://www.aib-net.org/facts/european-residual-mix"
             },
             {
-              "label": "poLCA — profil źródłowy 2025 v3",
-              "href": "/data/energia-pl-2025-v3/profil-37.json"
+              "label": "poLCA — profil źródłowy 2025 v4",
+              "href": "/data/energia-pl-2025-v4/profil-37.json"
             }
           ]
         },
@@ -1204,12 +1204,12 @@
           "id": "jak-uzyc",
           "title": "Jak użyć zestawienia",
           "paragraphs": [
-            "Jeżeli potrzebujesz polskiego profilu energii 2025, otwórz model v3 i sprawdź zasady doboru miksu. Do obliczeń emisji CO₂ w granicach publikacji KOBiZE wybierz odpowiedni wskaźnik KOBiZE. Jeżeli budujesz cały model procesów, potrzebujesz również danych tła — publiczny profil poLCA udostępnia zagregowane wyniki energii."
+            "Jeżeli potrzebujesz polskiego profilu energii 2025, otwórz model v4 i sprawdź zasady doboru miksu. Do obliczeń emisji CO₂ w granicach publikacji KOBiZE wybierz odpowiedni wskaźnik KOBiZE. Jeżeli budujesz cały model procesów, potrzebujesz również danych tła — publiczny profil poLCA udostępnia zagregowane wyniki energii."
           ],
           "links": [
             {
-              "label": "Dane energii 2025 v3: zastosowanie",
-              "href": "/energia-polska-2025-v3.html#zastosowanie"
+              "label": "Dane energii 2025 v4: zastosowanie",
+              "href": "/energia-polska-2025-v4.html#zastosowanie"
             },
             {
               "label": "Jak korzystać z danych poLCA",
@@ -1260,7 +1260,7 @@
             "rows": [
               [
                 "Procesy poza kontrolą deklarującego w modułach A4–C4 i D, w Polsce",
-                "Miks konsumpcyjny właściwy dla miejsca procesu; poLCA 2025 v3 opisuje polski profil fizyczny",
+                "Miks konsumpcyjny właściwy dla miejsca procesu; poLCA 2025 v4 opisuje polski profil fizyczny",
                 "E.2.6"
               ],
               [
@@ -1291,20 +1291,20 @@
           "id": "profil-rezydualny",
           "title": "Miks fizyczny a rezydualny",
           "paragraphs": [
-            "Publiczny pakiet poLCA 2025 v3 przedstawia miks fizyczny. Jeżeli do obliczenia zakładu potrzebny jest miks rezydualny lub profil dostawcy, dobierz odrębny zbiór dla właściwego roku i napięcia. Sama gwarancja pochodzenia nie jest profilem środowiskowym i nie oznacza zerowego wpływu w cyklu życia. Potrzebne są dane odpowiedniej technologii, z uwzględnieniem infrastruktury i właściwych strat."
+            "Publiczny pakiet poLCA 2025 v4 przedstawia miks fizyczny. Jeżeli do obliczenia zakładu potrzebny jest miks rezydualny lub profil dostawcy, dobierz odrębny zbiór dla właściwego roku i napięcia. Sama gwarancja pochodzenia nie jest profilem środowiskowym i nie oznacza zerowego wpływu w cyklu życia. Potrzebne są dane odpowiedniej technologii, z uwzględnieniem infrastruktury i właściwych strat."
           ],
           "links": []
         },
         {
-          "id": "status-v3",
-          "title": "Status profilu 2025 v3",
+          "id": "status-v4",
+          "title": "Status profilu 2025 v4",
           "paragraphs": [
-            "Model opracowano jako dane wejściowe do oceny cyklu życia wyrobów i budynków. Kontrola techniczna obliczeń i pakietu jest zakończona. Formalne przyjęcie wersji v3 do określonego zastosowania w programie EPD pozostaje otwarte. Dokumentacja przedstawia podstawy oceny alokacji, przyjętej konwencji węgla biogenicznego i istotnych danych zastępczych. Zakres dopuszczonego użycia wymaga rozstrzygnięcia w programie deklaracji."
+            "Model opracowano jako dane wejściowe do oceny cyklu życia wyrobów i budynków. Odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody są zakończone. Formalne przyjęcie wersji v4 do określonego zastosowania w programie EPD pozostaje otwarte. Dokumentacja przedstawia podstawy oceny alokacji, przyjętej konwencji węgla biogenicznego i istotnych danych zastępczych. Zakres dopuszczonego użycia wymaga rozstrzygnięcia w programie deklaracji."
           ],
           "links": [
             {
-              "label": "Dane energii 2025 v3: zastosowanie",
-              "href": "/energia-polska-2025-v3.html#zastosowanie"
+              "label": "Dane energii 2025 v4: zastosowanie",
+              "href": "/energia-polska-2025-v4.html#zastosowanie"
             },
             {
               "label": "Metodyka",
@@ -1330,12 +1330,12 @@
           "id": "pliki",
           "title": "Pliki JSON i CSV",
           "paragraphs": [
-            "Pakiet v3 zawiera JSON (strukturalny zapis danych) i CSV (tabelę tekstową): 37 wskaźników z kodami, jednostkami i oznaczeniem wersji. Po przeniesieniu do programu sprawdź każdy kod i jednostkę oraz wynik dla 1 kWh, czyli 3,6 MJ energii elektrycznej. Sumy wpływu na klimat i ich składników nie dodaje się ponownie. Pliki korzystają z własnego schematu poLCA; import do innego formatu wymaga mapowania."
+            "Pakiet v4 zawiera JSON (strukturalny zapis danych) i CSV (tabelę tekstową): 37 wskaźników z kodami, jednostkami i oznaczeniem wersji. Po przeniesieniu do programu sprawdź każdy kod i jednostkę oraz wynik dla 1 kWh, czyli 3,6 MJ energii elektrycznej. Sumy wpływu na klimat i ich składników nie dodaje się ponownie. Pliki korzystają z własnego schematu poLCA; import do innego formatu wymaga mapowania."
           ],
           "links": [
             {
-              "label": "Dane energii 2025 v3",
-              "href": "/energia-polska-2025-v3.html"
+              "label": "Dane energii 2025 v4",
+              "href": "/energia-polska-2025-v4.html"
             },
             {
               "label": "EN 15804:2012+A2:2019/AC:2021 (EVS)",

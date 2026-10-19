@@ -1,0 +1,39 @@
+{
+  "package_version": "2026-10-19.1",
+  "model_id": "PL2025_PHYSICAL_DELIVERED_v4",
+  "scope": "export_integrity_and_linear_scaling_only",
+  "scope_pl": "Zgodność eksportu z zamrożonym profilem v4, jednostek, statusów, sum składowych i przykładu 10 kWh. Kontrola eksportu nie jest zewnętrzną recenzją ekspercką ani kwalifikacją do wydawania deklaracji.",
+  "result": "PASS",
+  "source_profile": "selected",
+  "indicator_count": 37,
+  "checks_passed": 465,
+  "checks_failed": 0,
+  "all_37_values_and_units_match_frozen_source": true,
+  "json_csv_roundtrip": true,
+  "example_37_values_and_units_checked": true,
+  "example_decimal_exact": true,
+  "historical_indicator_names_and_units_retained": true,
+  "zero_values_explicitly_marked": [
+    "PERM",
+    "PENRM",
+    "NRSF",
+    "CRU",
+    "MER"
+  ],
+  "climate_and_primary_energy_sums_checked": true,
+  "sum_absolute_tolerance_per_kWh": "1e-15",
+  "sum_absolute_tolerance_for_10_kWh": "1e-14",
+  "sum_tolerance_reason_pl": "Dopuszczalna różnica sumowania liczb zapisanych z precyzją źródłową; żadnej wartości źródłowej nie skorygowano.",
+  "production_approved": false,
+  "formal_EN15804_qualification": false,
+  "human_verification_recorded": false,
+  "is_default": false,
+  "external_expert_review": "NOT_PERFORMED",
+  "full_graph_recalculated_for_this_export": false,
+  "source_fingerprints": {
+    "release.json": "d23975edbd9e7b11be4c0187c038021766860f1294a0a99d08e4bc176e6792f7",
+    "STATUS.json": "ef1ccf859951fc86c88ec7b955f5a90c7e8f565a875d15498c8efa5d870353a2",
+    "profiles-37.json": "406fc596b789139e1a9215cedd538b2c05da3ca3417ff2ca781fdd7f1864a1b1",
+    "quality-assessment.json": "74f5bc1c1722000ab1c0659e51f03e3aabbf3ea40aafda7477f59f3b22084435"
+  }
+}

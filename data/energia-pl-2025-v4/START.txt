@@ -1,0 +1,41 @@
+POLSKA 2025: 37 WSKAŹNIKÓW ENERGII ELEKTRYCZNEJ, WYDANIE V4
+
+Model: PL2025_PHYSICAL_DELIVERED_v4
+Profil: selected
+Wydanie pakietu: 2026-10-19.1
+Opracowanie: Multicert Sp. z o.o.
+Karta: https://polca.org.pl/energia-polska-2025-v4.html
+Katalog plików: https://polca.org.pl/data/energia-pl-2025-v4/
+Archiwum: Polska-energia-2025-v4.zip
+
+Pakiet zawiera 37 zagregowanych wyników na 1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce, jako średnią roczną 2025. Jest przeznaczony do integracji w obliczeniach cyklu życia wyrobów i procesów oraz do oceny zastosowania. Nie zawiera pełnego grafu obliczeniowego, źródłowych baz danych ani wariantów wrażliwości.
+
+STATUS
+Obliczenia, pakiet wyników i ocena jakości danych przeszły odbiór techniczny 19.10.2026. Profil nie jest wyborem domyślnym żadnego programu deklaracji środowiskowych. Zastosowanie w wydawanej deklaracji wymaga kwalifikacji według zasad właściwego programu, dla tej wersji i zakresu.
+
+PLIKI
+Układ pakietu jest taki sam jak w wydaniu v3.
+
+- profil-37.json: pełne nazwy, dokładne wartości, jednostki, zakres i status wybranego profilu.
+- wskazniki-37.csv: te same 37 wyników; separator średnik, separator dziesiętny kropka, kodowanie UTF-8 z BOM (znacznikiem kodowania).
+- przyklad-10-kWh.json: hipotetyczny wkład 10 kWh w module C3, poza kontrolą właściciela deklaracji środowiskowej wyrobu (EPD).
+- kontrola-eksportu.json: zakres i wynik kontroli zgodności eksportu oraz liniowego przeliczenia przykładu.
+- METODA-I-ZMIANY.txt: opis metody, zmian względem v3 i ograniczeń.
+- WARUNKI-WYKORZYSTANIA.txt: warunki wykorzystania i informacje o źródle tła.
+- START.txt: niniejsza instrukcja.
+- manifest.json: lista plików, ich rozmiary i sumy kontrolne SHA-256.
+
+ODCZYT I PRZELICZENIE
+Każdy wskaźnik identyfikuje pole code; pełna nazwa polska jest w polu name_pl. Wartość value_per_kWh ma jednostkę impact_unit na kWh. Mapować po kodach i jednostkach, nie po kolejności wierszy. Zużycie energii przypisane do jednostki wyrobu mnoży się osobno przez każdy z 37 wskaźników. Straty sieciowe i łańcuchy dostaw paliw są już ujęte w profilu; nie dolicza się ich drugi raz. Wartości zerowe mają znaczenie modelowe, nie pomiarowe.
+
+Przykład: 10 kWh × 0,6445397488349277 kg CO₂ równ./kWh = 6,445397488349277 kg CO₂ równ. Przykład przelicza każdy z 37 wyników przez dokładne mnożenie przez 10; wynik value_for_10_kWh ma jednostkę impact_unit i nie jest odnoszony do masy, objętości ani sztuki wyrobu. To wyłącznie wkład energii w hipotetycznym module C3. Pakiet nie przypisuje 10 kWh do rzeczywistego wyrobu i nie określa całego modułu C3.
+
+Całkowity potencjał globalnego ocieplenia (GWP-total) obejmuje składniki kopalny (GWP-fossil), biogeniczny (GWP-biogenic) i związany z użytkowaniem gruntów oraz jego zmianą (GWP-luluc). Nie dodawać ponownie składników do sumy. Całkowite wykorzystanie odnawialnych (PERT) i nieodnawialnych (PENRT) zasobów energii pierwotnej również obejmuje odpowiednie części. Nie sumować różnych kategorii oddziaływania.
+
+ZASTOSOWANIE
+Profil przedstawia fizyczny miks krajowy przy krajowej strukturze napięć. Nie jest miksem rezydualnym, kontraktowym ani profilem określonego napięcia. Według załącznika E do EN 15941:2024 miks konsumpcyjny jest właściwy dla etapów poza bezpośrednią kontrolą właściciela deklaracji, na przykład w module C3 przetwarzania odpadu w Polsce (E.2.6). Dla energii kupowanej przez konkretny zakład stosuje się E.2.2 łącznie z podejściem regionalnym i zasadami programu z E.2.1.4. Jeżeli program uwzględnia instrumenty umowne, dobiera się udokumentowane dane dostawcy, własnego wytwarzania lub miksu rezydualnego. Jeżeli program przyjmuje podejście fizyczne, dobiera się odpowiedni profil fizyczny lub konsumpcyjny. Brak profilu rezydualnego w tym pakiecie nie uprawnia do odstąpienia od zasad programu. Użytkownik ustala rzeczywistą kontrolę procesu i zużycie energii na jednostkę wyrobu. Rok 2025 nie oznacza, że wszystkie dane tła pochodzą z 2025 r.; zakres aktualizacji i ograniczenia opisuje METODA-I-ZMIANY.txt.
+
+ŹRÓDŁO TŁA I WARUNKI
+Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026. Model opracowany i zmodyfikowany przez Multicert; nie stanowi oryginalnego zbioru ani potwierdzenia ze strony dostawcy bazy.
+Warunki wykorzystania: WARUNKI-WYKORZYSTANIA.txt.
+Metoda i ograniczenia: METODA-I-ZMIANY.txt.

@@ -32,12 +32,12 @@
     });
     result = {
       schema_version: '1.0', calculation: 'electricity_contribution_only',
-      source_profile_url: 'https://polca.org.pl/data/energia-pl-2025-v3/profil-37.json',
+      source_profile_url: 'https://polca.org.pl/data/energia-pl-2025-v4/profil-37.json',
       model_id: profile.model_id, variant: profile.variant, package_version: profile.package_version,
       reference_year: profile.reference_year, electricity_mix_type: profile.electricity_mix_type,
       voltage_scope: profile.voltage_scope, status: profile.status,
       source_attribution: profile.source_attribution,
-      terms_url: 'https://polca.org.pl/data/energia-pl-2025-v3/WARUNKI-WYKORZYSTANIA.txt',
+      terms_url: 'https://polca.org.pl/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt',
       quantity: {value: amount, unit: unit.value, equivalent_kWh: kWh},
       scope_pl: 'Wyłącznie wkład podanej ilości energii; bez przypisania do rzeczywistego wyrobu, modułu lub jednostki wyrobu.',
       indicators: indicators

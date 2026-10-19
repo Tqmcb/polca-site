@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-19-cpr",
+  "catalog_version": "2026-10-19.1",
   "record": {
     "id": "POLCA-EN-PL-LCA-2024",
     "title": "Energia elektryczna — Polska 2024",
@@ -30,7 +30,7 @@
     ],
     "methodology_href": "/metodyki/MET-001-poLCA-EN-PL-2024.html",
     "related_ids": [
-      "PL2025_PHYSICAL_DELIVERED_v3_REVIEW",
+      "PL2025_PHYSICAL_DELIVERED_v4",
       "KOBIZE-EN-PL-ENDUSER-2024",
       "tool-energia"
     ],
