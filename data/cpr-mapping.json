@@ -1,0 +1,404 @@
+{
+  "scope": "Powiązania nawigacyjne z rodzinami wyrobów; nie stanowią kwalifikacji prawnej ani zatwierdzenia metody.",
+  "records": {
+    "PL2025_PHYSICAL_DELIVERED_v3_REVIEW": [],
+    "KOBIZE-EN-PL-ENDUSER-2024": [],
+    "POLCA-EN-PL-LCA-2024": [],
+    "POLCA-FUEL-DIESEL-DEFAULT-2026": [],
+    "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026": [],
+    "POLCA-TRUCK-40T-DEFAULT-2026": [],
+    "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": [
+      24
+    ],
+    "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026": [
+      24
+    ],
+    "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026": [
+      24
+    ],
+    "POLCA-AGG-PL-NATURAL-DEFAULT-2026": [
+      24
+    ],
+    "POLCA-BITUMEN-ROAD-DEFAULT-2026": [
+      23
+    ],
+    "POLCA-EMULSION-TACK-COAT-DEFAULT-2026": [
+      23
+    ],
+    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": [
+      24
+    ],
+    "POLCA-RAP-PROCESSING-DEFAULT-2026": [],
+    "POLCA-MMA-LCI-DEFAULTS-2026": [],
+    "POLCA-MMA-AC11S-2026": [
+      23
+    ],
+    "POLCA-MMA-AC16W-2026": [
+      23
+    ],
+    "POLCA-MMA-SMA11S-2026": [
+      23
+    ],
+    "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025": [
+      15
+    ],
+    "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026": [],
+    "CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026": [],
+    "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026": [],
+    "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026": [],
+    "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026": [],
+    "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026": [],
+    "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026": [],
+    "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026": [],
+    "tool-energia-2025": [],
+    "tool-energia": [],
+    "tool-mma": [
+      23
+    ],
+    "tool-kruszywa": [
+      24
+    ],
+    "tool-transport": [],
+    "tool-przelicznik": [],
+    "tool-materialy": [],
+    "tool-wskazniki": [],
+    "guide-use": [],
+    "guide-quality": [],
+    "method-index": [],
+    "method-energy-2024": [],
+    "method-energy-use": [],
+    "method-rules": [],
+    "method-mma": [
+      23
+    ],
+    "method-kruszywa": [
+      24
+    ],
+    "method-defaults": [],
+    "method-standards": [],
+    "guide-building": [],
+    "guide-citation": [],
+    "method-dpp": [],
+    "article-alokacja-metan-kopalniany": [],
+    "article-aluminium-epd": [],
+    "article-beton-emisje-kalkulator": [],
+    "article-beton-lcz": [],
+    "article-cement-polska": [
+      15
+    ],
+    "article-cpr-2024": [],
+    "article-ecoinvent-vs-krajowe": [],
+    "article-emisje-polska-vs-eu": [],
+    "article-en-pl-2024": [],
+    "article-en15804-a3-avs3plus": [],
+    "article-epd-czym-sa": [],
+    "article-fotowoltaika-epd": [],
+    "article-iso-14044-proximity": [],
+    "article-mma-rap": [
+      23
+    ],
+    "article-residual-mix-aib-kobize": [],
+    "article-stal-lca-eaf": [],
+    "page-analiza": [],
+    "page-sektor-cement": [
+      15
+    ],
+    "page-sektor-stal": [],
+    "page-o-polca-index": [],
+    "page-o-polca-dla-prasy": [],
+    "page-rejestr-zmian": [],
+    "guide-jak-korzystac": [],
+    "guide-slad-weglowy-czy-srodowiskowy": [],
+    "guide-zastosowanie-danych": [],
+    "guide-pytania": [],
+    "guide-porownanie-baz": [],
+    "guide-zastosowanie-epd-cpr": [],
+    "faq-1": [],
+    "faq-2": [],
+    "faq-3": [],
+    "faq-4": [],
+    "faq-5": [],
+    "faq-6": [],
+    "faq-7": [],
+    "faq-8": [],
+    "faq-9": [],
+    "faq-10": [],
+    "faq-11": [],
+    "faq-12": []
+  },
+  "related": {
+    "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+      },
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+      }
+    ],
+    "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+      },
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+      }
+    ],
+    "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+      },
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+      }
+    ],
+    "POLCA-AGG-PL-NATURAL-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Kruszywo o właściwościach wymaganych dla konkretnej mieszanki/warstwy drogowej; nie profil całej mieszanki."
+      },
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Kruszywo dopuszczone w recepturze danego prefabrykatu betonowego; nie profil prefabrykatu."
+      }
+    ],
+    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "input_to_product",
+        "note": "Wypełniacz do receptury mieszanki asfaltowej."
+      }
+    ],
+    "POLCA-RAP-PROCESSING-DEFAULT-2026": [
+      {
+        "family_id": 23,
+        "role": "process_for_product",
+        "note": "Obciążenie przetworzenia destruktu do receptury MMA; nie pełny profil wyrobu ani deklaracja statusu odpadu."
+      }
+    ],
+    "POLCA-MMA-LCI-DEFAULTS-2026": [
+      {
+        "family_id": 23,
+        "role": "parameters_for_product",
+        "note": "Zbiór założeń do obliczeń mieszanek; nie kolejny samodzielny wynik."
+      }
+    ],
+    "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026": [
+      {
+        "family_id": 15,
+        "role": "context_only",
+        "note": "Odrębne dane kontrolne CBAM dla cementu i surowców. Nie wliczać do danych oceny cyklu życia ani deklaracji środowiskowych tej rodziny."
+      }
+    ],
+    "article-beton-emisje-kalkulator": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Poradnik o betonie może wspierać analizę prefabrykatu, ale beton towarowy nie jest przez to rodziną 01."
+      }
+    ],
+    "article-beton-lcz": [
+      {
+        "family_id": 1,
+        "role": "editorial_context",
+        "note": "Tylko prefabrykowane elementy z autoklawizowanego betonu komórkowego o właściwym zakresie."
+      },
+      {
+        "family_id": 17,
+        "role": "editorial_context",
+        "note": "Tylko elementy murowe z betonu komórkowego; wybór zależy od konkretnego wyrobu i zastosowania."
+      }
+    ],
+    "article-stal-lca-eaf": [
+      {
+        "family_id": 16,
+        "role": "editorial_context",
+        "note": "Część o prętach zbrojeniowych; wartości historyczne, nie zbiór LCA."
+      },
+      {
+        "family_id": 20,
+        "role": "editorial_context",
+        "note": "Część o kształtownikach konstrukcyjnych; sama technologia EAF/BF-BOF nie wyznacza rodziny."
+      }
+    ],
+    "page-sektor-stal": [
+      {
+        "family_id": 20,
+        "role": "editorial_context",
+        "note": "Wyłącznie kontekst materiału po określeniu wyrobu konstrukcyjnego; kęsy/blachy nie mają automatycznego przypisania."
+      }
+    ]
+  },
+  "scope_notes": {
+    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": "Jeżeli jest kruszywem wypełniającym do MMA, a nie innym proszkiem mineralnym o innym zamierzonym zastosowaniu."
+  }
+}

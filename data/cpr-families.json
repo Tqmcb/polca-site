@@ -1,0 +1,439 @@
+{
+  "source": {
+    "title": "Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2024/3110",
+    "celex": "32024R3110",
+    "annex": "VII",
+    "annex_title": "Wykaz rodzin wyrobów",
+    "language": "pl",
+    "text_version": "Dz.U. UE L, 2024/3110, 18.12.2024",
+    "url": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/pol",
+    "pdf_url": "https://eur-lex.europa.eu/legal-content/PL/TXT/PDF/?uri=OJ:L_202403110",
+    "official_name_normalization": "Zachowano brzmienie, wielkie litery i interpunkcję; odstępy znormalizowano do pojedynczej spacji.",
+    "label_and_keywords_status": "Etykiety i słowa kluczowe są redakcyjną pomocą w wyszukiwaniu, a nie urzędową definicją zakresu rodziny."
+  },
+  "date": "2026-10-19",
+  "families": [
+    {
+      "id": 1,
+      "official_name": "WYROBY PREFABRYKOWANE Z BETONU ZWYKŁEGO/LEKKIEGO/AUTOKLAWIZOWANEGO NAPOWIETRZONEGO.",
+      "label": "Prefabrykaty betonowe",
+      "keywords": [
+        "beton",
+        "prefabrykaty",
+        "beton lekki",
+        "beton autoklawizowany",
+        "beton napowietrzony",
+        "prefabrykat",
+        "elementy betonowe",
+        "beton komórkowy"
+      ]
+    },
+    {
+      "id": 2,
+      "official_name": "DRZWI, OKNA, OKIENNICE, BRAMY I POWIĄZANE Z NIMI OKUCIA BUDOWLANE.",
+      "label": "Drzwi, okna i bramy",
+      "keywords": [
+        "drzwi",
+        "okna",
+        "okiennice",
+        "bramy",
+        "okucia budowlane"
+      ]
+    },
+    {
+      "id": 3,
+      "official_name": "MEMBRANY, W TYM STOSOWANE W POSTACI PŁYNNEJ I ZESTAWY (IZOLUJĄCE PRZED WODĄ LUB PARĄ WODNĄ).",
+      "label": "Membrany i izolacje przeciwwodne",
+      "keywords": [
+        "membrany",
+        "membrany płynne",
+        "izolacja przeciwwodna",
+        "izolacja przeciwwilgociowa",
+        "para wodna"
+      ]
+    },
+    {
+      "id": 4,
+      "official_name": "MATERIAŁY TERMOIZOLACYJNE ZŁOŻONE ZESTAWY/SYSTEMY IZOLACYJNE.",
+      "label": "Izolacja cieplna",
+      "keywords": [
+        "termoizolacja",
+        "materiały termoizolacyjne",
+        "zestawy izolacyjne",
+        "systemy izolacyjne",
+        "ocieplenie",
+        "styropian",
+        "wełna mineralna",
+        "izolacja termiczna"
+      ]
+    },
+    {
+      "id": 5,
+      "official_name": "ŁOŻYSKA KONSTRUKCYJNE TRZPIENIE DO ZŁĄCZY KONSTRUKCYJNYCH.",
+      "label": "Łożyska i trzpienie konstrukcyjne",
+      "keywords": [
+        "łożyska konstrukcyjne",
+        "trzpienie",
+        "złącza konstrukcyjne"
+      ]
+    },
+    {
+      "id": 6,
+      "official_name": "KOMINY, PRZEWODY KOMINOWE I WYROBY SPECJALNE.",
+      "label": "Kominy i przewody kominowe",
+      "keywords": [
+        "kominy",
+        "przewody kominowe",
+        "wyroby kominowe"
+      ]
+    },
+    {
+      "id": 7,
+      "official_name": "WYROBY GIPSOWE.",
+      "label": "Wyroby gipsowe",
+      "keywords": [
+        "gips",
+        "wyroby gipsowe"
+      ]
+    },
+    {
+      "id": 8,
+      "official_name": "GEOWŁÓKNINY, GEOMEMBRANY I WYROBY ZWIĄZANE.",
+      "label": "Geowłókniny i geomembrany",
+      "keywords": [
+        "geowłókniny",
+        "geomembrany",
+        "geosyntetyki",
+        "geowłóknina",
+        "geosiatka"
+      ]
+    },
+    {
+      "id": 9,
+      "official_name": "ŚCIANY OSŁONOWE/OKŁADZINY ŚCIAN ZEWNĘTRZNYCH/OSZKLENIE ZE SPOIWEM KONSTRUKCYJNYM.",
+      "label": "Ściany osłonowe i oszklenie",
+      "keywords": [
+        "ściany osłonowe",
+        "okładziny ścian zewnętrznych",
+        "oszklenie",
+        "spoiwo konstrukcyjne"
+      ]
+    },
+    {
+      "id": 10,
+      "official_name": "STAŁE URZĄDZENIA GAŚNICZE (WYROBY DO WYKRYWANIA I SYGNALIZACJI POŻARU, STAŁE URZĄDZENIA GAŚNICZE, WYROBY DO KONTROLI ROZPRZESTRZENIANIA OGNIA I DYMU ORAZ DO TŁUMIENIA WYBUCHU).",
+      "label": "Urządzenia gaśnicze i sygnalizacja pożaru",
+      "keywords": [
+        "urządzenia gaśnicze",
+        "wykrywanie pożaru",
+        "sygnalizacja pożaru",
+        "kontrola dymu",
+        "tłumienie wybuchu"
+      ]
+    },
+    {
+      "id": 11,
+      "official_name": "URZĄDZENIA SANITARNE.",
+      "label": "Urządzenia sanitarne",
+      "keywords": [
+        "urządzenia sanitarne",
+        "sanitariaty"
+      ]
+    },
+    {
+      "id": 12,
+      "official_name": "URZĄDZENIA BEZPIECZEŃSTWA RUCHU DROGOWEGO: WYPOSAŻENIE DRÓG.",
+      "label": "Bezpieczeństwo i wyposażenie dróg",
+      "keywords": [
+        "bezpieczeństwo ruchu drogowego",
+        "wyposażenie dróg",
+        "urządzenia drogowe"
+      ]
+    },
+    {
+      "id": 13,
+      "official_name": "KONSTRUKCYJNE WYROBY/ELEMENTY DREWNIANE I WYROBY POMOCNICZE.",
+      "label": "Drewno konstrukcyjne",
+      "keywords": [
+        "drewno",
+        "drewniane elementy konstrukcyjne",
+        "konstrukcyjne wyroby drewniane",
+        "wyroby pomocnicze",
+        "drewno konstrukcyjne"
+      ]
+    },
+    {
+      "id": 14,
+      "official_name": "PŁYTY I ELEMENTY DREWNOPOCHODNE.",
+      "label": "Płyty i elementy drewnopochodne",
+      "keywords": [
+        "płyty drewnopochodne",
+        "elementy drewnopochodne",
+        "drewno",
+        "OSB",
+        "płyta drewnopochodna"
+      ]
+    },
+    {
+      "id": 15,
+      "official_name": "CEMENTY, WAPNA BUDOWLANE I INNE SPOIWA HYDRAULICZNE.",
+      "label": "Cement, wapno i spoiwa",
+      "keywords": [
+        "cement",
+        "cementy",
+        "wapno budowlane",
+        "spoiwa hydrauliczne"
+      ]
+    },
+    {
+      "id": 16,
+      "official_name": "STAL ZBROJENIOWA I SPRĘŻAJĄCA DO BETONU (I WYROBY POMOCNICZE) ZESTAWY ZAKOTWIEŃ I CIĘGIEN.",
+      "label": "Stal zbrojeniowa i sprężająca",
+      "keywords": [
+        "stal zbrojeniowa",
+        "stal sprężająca",
+        "zbrojenie betonu",
+        "zakotwienia",
+        "cięgna",
+        "pręty",
+        "pręty zbrojeniowe"
+      ]
+    },
+    {
+      "id": 17,
+      "official_name": "WYROBY MURARSKIE I WYROBY POKREWNE ELEMENTY MUROWE, ZAPRAWY I WYROBY POMOCNICZE.",
+      "label": "Elementy murowe i zaprawy",
+      "keywords": [
+        "wyroby murarskie",
+        "elementy murowe",
+        "zaprawy",
+        "murowanie",
+        "cegła",
+        "pustak",
+        "bloczek",
+        "beton komórkowy",
+        "zaprawa"
+      ]
+    },
+    {
+      "id": 18,
+      "official_name": "WYROBY DO USUWANIA I OCZYSZCZANIA ŚCIEKÓW.",
+      "label": "Usuwanie i oczyszczanie ścieków",
+      "keywords": [
+        "ścieki",
+        "usuwanie ścieków",
+        "oczyszczanie ścieków"
+      ]
+    },
+    {
+      "id": 19,
+      "official_name": "WYROBY PODŁOGOWE I POSADZKOWE.",
+      "label": "Podłogi i posadzki",
+      "keywords": [
+        "podłogi",
+        "posadzki",
+        "wyroby podłogowe",
+        "wyroby posadzkowe"
+      ]
+    },
+    {
+      "id": 20,
+      "official_name": "KONSTRUKCYJNE WYROBY METALOWE I WYROBY POMOCNICZE.",
+      "label": "Metalowe wyroby konstrukcyjne",
+      "keywords": [
+        "metal",
+        "wyroby metalowe",
+        "konstrukcje metalowe",
+        "wyroby pomocnicze",
+        "stal",
+        "aluminium",
+        "konstrukcje stalowe",
+        "kształtowniki"
+      ]
+    },
+    {
+      "id": 21,
+      "official_name": "WYKOŃCZENIE ŚCIAN WEWNĘTRZNYCH, ZEWNĘTRZNYCH I SUFITÓW. ZESTAWY WYROBÓW DO WYKONYWANIA ŚCIAN DZIAŁOWYCH.",
+      "label": "Wykończenie ścian i sufitów",
+      "keywords": [
+        "wykończenie ścian",
+        "ściany wewnętrzne",
+        "ściany zewnętrzne",
+        "sufity",
+        "ściany działowe"
+      ]
+    },
+    {
+      "id": 22,
+      "official_name": "POKRYCIA DACHOWE, ŚWIETLIKI, OKNA DACHOWE I WYROBY POMOCNICZE, ZESTAWY DACHOWE.",
+      "label": "Dachy, świetliki i okna dachowe",
+      "keywords": [
+        "pokrycia dachowe",
+        "świetliki",
+        "okna dachowe",
+        "zestawy dachowe",
+        "wyroby dachowe"
+      ]
+    },
+    {
+      "id": 23,
+      "official_name": "WYROBY DO BUDOWY DRÓG.",
+      "label": "Mieszanki asfaltowe i wyroby drogowe",
+      "keywords": [
+        "drogi",
+        "budowa dróg",
+        "wyroby drogowe",
+        "nawierzchnie",
+        "asfalt",
+        "asfaltowe",
+        "mieszanki mineralno-asfaltowe",
+        "MMA",
+        "lepiszcze",
+        "emulsja asfaltowa",
+        "AC",
+        "SMA"
+      ]
+    },
+    {
+      "id": 24,
+      "official_name": "KRUSZYWA.",
+      "label": "Kruszywa",
+      "keywords": [
+        "kruszywo",
+        "kruszywa",
+        "piasek",
+        "żwir",
+        "kruszywa łamane",
+        "wypełniacz"
+      ]
+    },
+    {
+      "id": 25,
+      "official_name": "KLEJE BUDOWLANE.",
+      "label": "Kleje budowlane",
+      "keywords": [
+        "klej",
+        "kleje",
+        "kleje budowlane"
+      ]
+    },
+    {
+      "id": 26,
+      "official_name": "WYROBY ZWIĄZANE Z BETONEM, ZAPRAWĄ I ZACZYNEM.",
+      "label": "Wyroby do betonu, zaprawy i zaczynu",
+      "keywords": [
+        "beton",
+        "zaprawa",
+        "zaczyn",
+        "wyroby związane z betonem"
+      ]
+    },
+    {
+      "id": 27,
+      "official_name": "URZĄDZENIA DO OGRZEWANIA POMIESZCZEŃ.",
+      "label": "Ogrzewanie pomieszczeń",
+      "keywords": [
+        "ogrzewanie",
+        "urządzenia grzewcze",
+        "ogrzewanie pomieszczeń"
+      ]
+    },
+    {
+      "id": 28,
+      "official_name": "RURY, ZBIORNIKI I WYROBY POMOCNICZE NIESTYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+      "label": "Rury i zbiorniki — poza wodą pitną",
+      "keywords": [
+        "rury",
+        "zbiorniki",
+        "wyroby pomocnicze",
+        "bez kontaktu z wodą do spożycia"
+      ]
+    },
+    {
+      "id": 29,
+      "official_name": "WYROBY BUDOWLANE STYKAJĄCE SIĘ Z WODĄ PRZEZNACZONĄ DO SPOŻYCIA PRZEZ LUDZI.",
+      "label": "Wyroby do kontaktu z wodą pitną",
+      "keywords": [
+        "woda pitna",
+        "woda do spożycia",
+        "kontakt z wodą",
+        "wyroby stykające się z wodą"
+      ]
+    },
+    {
+      "id": 30,
+      "official_name": "WYROBY ZE SZKŁA PŁASKIEGO, PROFILOWANEGO I BLOKÓW SZKLANYCH.",
+      "label": "Szkło budowlane",
+      "keywords": [
+        "szkło płaskie",
+        "szkło profilowane",
+        "bloki szklane",
+        "wyroby szklane"
+      ]
+    },
+    {
+      "id": 31,
+      "official_name": "KABLE ZASILANIA, STERUJĄCE I KOMUNIKACYJNE.",
+      "label": "Kable zasilające, sterujące i komunikacyjne",
+      "keywords": [
+        "kable",
+        "kable zasilania",
+        "kable sterujące",
+        "kable komunikacyjne",
+        "kabel",
+        "przewody elektryczne"
+      ]
+    },
+    {
+      "id": 32,
+      "official_name": "WYROBY DO USZCZELNIANIA ZŁĄCZY.",
+      "label": "Uszczelnianie złączy",
+      "keywords": [
+        "uszczelnianie",
+        "uszczelniacze",
+        "złącza"
+      ]
+    },
+    {
+      "id": 33,
+      "official_name": "MOCOWANIA/ŁĄCZNIKI.",
+      "label": "Mocowania i łączniki",
+      "keywords": [
+        "mocowania",
+        "łączniki",
+        "zamocowania"
+      ]
+    },
+    {
+      "id": 34,
+      "official_name": "ZESTAWY BUDOWLANE, KOMPONENTY BUDOWLANE, PREFABRYKATY.",
+      "label": "Zestawy i komponenty budowlane",
+      "keywords": [
+        "zestawy budowlane",
+        "komponenty budowlane",
+        "prefabrykaty"
+      ]
+    },
+    {
+      "id": 35,
+      "official_name": "WYROBY DO ZATRZYMYWANIA OGNIA, USZCZELNIAJĄCE I OCHRONY OGNIOWEJ WYROBY HAMUJĄCE PALNOŚĆ.",
+      "label": "Bierna ochrona przeciwpożarowa",
+      "keywords": [
+        "zatrzymywanie ognia",
+        "uszczelnienia przeciwpożarowe",
+        "ochrona ogniowa",
+        "hamowanie palności"
+      ]
+    },
+    {
+      "id": 36,
+      "official_name": "DRABINY MOCOWANE NA STAŁE.",
+      "label": "Drabiny mocowane na stałe",
+      "keywords": [
+        "drabiny",
+        "drabiny stałe",
+        "drabiny mocowane na stałe"
+      ]
+    }
+  ]
+}

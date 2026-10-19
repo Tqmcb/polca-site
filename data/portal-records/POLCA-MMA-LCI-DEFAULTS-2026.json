@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-MMA-LCI-DEFAULTS-2026",
     "title": "Parametry do obliczeń mieszanek asfaltowych",
@@ -49,7 +49,16 @@
     "record_type": "parameters",
     "geography": "PL",
     "reference_unit": "t",
-    "source_record_href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json"
+    "source_record_href": "/data/datasets/POLCA-MMA-LCI-DEFAULTS-2026.json",
+    "cpr_family_ids": [],
+    "cpr_related": [
+      {
+        "family_id": 23,
+        "role": "parameters_for_product",
+        "note": "Zbiór założeń do obliczeń mieszanek; nie kolejny samodzielny wynik."
+      }
+    ],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

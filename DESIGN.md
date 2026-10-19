@@ -1,5 +1,5 @@
 # Interfejs poLCA
-Strona służy znalezieniu danych, wykonaniu obliczenia i sprawdzeniu metody. Wspólna nawigacja: Dane, Kalkulatory, Jak korzystać, Metody i źródła. Strona główna pokazuje globalne wyszukiwanie; katalog umożliwia zawężenie kategorii, rocznika i statusu. Wiersz wyniku zawiera tytuł, zakres i rozpoznawalne metadane.
+Strona służy znalezieniu danych, wykonaniu obliczenia i sprawdzeniu metody. Wspólna nawigacja: Wyroby, Dane, Kalkulatory, Jak korzystać, Metody i źródła. Strona główna prowadzi do wyboru wyrobu; katalog rodzin CPR łączy dane, metody i narzędzia. Dane składników i procesów są oznaczone osobno. Energia, paliwa i transport mają wspólny dział. Wyszukiwanie w całym portalu pozostaje w nagłówku. Katalog danych umożliwia zawężenie rodziny wyrobu, tematu, rocznika i statusu. Wiersz wyniku zawiera tytuł, zakres i rozpoznawalne metadane.
 
 HTML, CSS i JavaScript bez systemu zależności w przeglądarce. Dane prezentacyjne pochodzą z data/portal-catalog.json, odtwarzanego przez scripts/build-catalog.py. Liczniki wynikają z rekordów. Wszystkie starsze adresy pozostają dostępne.
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
     "title": "Gaz ziemny",
@@ -43,7 +43,10 @@
     "geography": "PL",
     "reference_unit": "m3",
     "source_record_href": "/data/datasets/POLCA-FUEL-NATURAL-GAS-DEFAULT-2026.json",
-    "value": 2
+    "value": 2,
+    "cpr_family_ids": [],
+    "cpr_related": [],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }

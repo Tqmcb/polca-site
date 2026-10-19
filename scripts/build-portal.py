@@ -12,9 +12,10 @@ GENERATED=set()
 def e(x): return h.escape(str(x if x is not None else ''),quote=True)
 def a(label,href,cls='',extra=''):return f'<a href="{e(href)}"'+(f' class="{e(cls)}"' if cls else '')+f' {extra}>{e(label)}</a>'
 def links(items,cls='portal-list'):return f'<ul class="{cls}">'+''.join('<li>'+a(x['label'],x['href'])+'</li>' for x in items)+'</ul>'
-NAV=[('Dane','/datasety.html','data'),('Kalkulatory','/kalkulatory.html','tools'),('Jak korzystać','/jak-korzystac.html','guide'),('Metody i źródła','/metodyka.html','methods')]
+NAV=[('Wyroby','/wyroby.html','products'),('Dane','/datasety.html','data'),('Kalkulatory','/kalkulatory.html','tools'),('Jak korzystać','/jak-korzystac.html','guide'),('Metody i źródła','/metodyka.html','methods')]
 def group(path):
- if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','pobierz.html']:return 'data'
+ if path.startswith(('wyroby/','c-pcr/')) or path=='wyroby.html':return 'products'
+ if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','pobierz.html','dane-wspolne.html']:return 'data'
  if 'kalkulat' in path or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
  if path.startswith('metody') or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
@@ -22,12 +23,12 @@ def group(path):
 def header(path):
  nav=''.join(a(title,url,'is-active' if g==group(path) else '', 'aria-current="page"' if path==url[1:] else '') for title,url,g in NAV)
  return f'''<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja">{nav}</nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header>'''
-def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
+def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
 def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False):
  mainhead='' if home else crumb(title,parent)+f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>'
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261018"><script src="/js/portal.js?v=20261018" defer></script></head><body class="portal">{header(path)}<main id="main" class="portal-main portal-shell" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261019cpr"><script src="/js/portal.js?v=20261019cpr" defer></script></head><body class="portal">{header(path)}<main id="main" class="portal-main portal-shell" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
@@ -36,25 +37,15 @@ def row(r):
  kind={'dataset':'Dane','tool':'Kalkulator','method':'Metoda i instrukcja','article':'Artykuł'}.get(r['kind'],'Zasób')
  return f'''<article class="portal-result" data-record-id="{e(r['id'])}"><div><div class="portal-result-meta"><span>{kind}</span><span>{e(r.get('category_label',''))}</span>{('<span>'+e(r['year'])+'</span>') if r.get('year') else ''}</div><h2>{a(r['title'],r['href'],'portal-result-title')}</h2><p class="portal-result-description">{e(r.get('description',''))}</p><div class="portal-result-meta">{status(r)}<span>{e(' · '.join(r.get('formats',[])))}</span></div></div>{val}</article>'''
 def searchform():return '''<form class="portal-search" action="/szukaj.html" method="get" role="search"><label for="q">Wyszukaj dane, kalkulator lub odpowiedź</label><div class="portal-search-control"><input id="q" type="search" name="q" placeholder="Np. energia 2025, cement, ślad węglowy" autocomplete="off"><button type="submit">Szukaj</button></div></form>'''
-def build_home():
- c=COPY['home'];tasks=c['tasks'];urls=['/datasety.html','/kalkulatory.html','/metodyka.html']
- body=f'<section class="portal-hero"><p class="portal-kicker">poLCA · dane, modele, obliczenia</p><h1>{e(c["title"])}</h1><p class="portal-lead">{e(c["lead"])}</p>{searchform()}<p class="portal-popular">Przejdź do: {a("Energia 2025","/energia-polska-2025-v3.html")} · {a("Cement","/datasety.html?category=cement")} · {a("Kruszywa","/datasety.html?category=kruszywa")}</p></section>'
- body+='<section class="portal-task-grid" aria-label="Najważniejsze zadania">'+''.join(f'<div class="portal-task"><h2>{a(t["title"],u)}</h2><p>{e(t["text"])}</p></div>' for t,u in zip(tasks,urls))+'</section>'
- body+='''<section class="portal-section"><div class="portal-sectionhead"><h2>Co chcesz obliczyć?</h2><a href="/jak-korzystac.html">Pomoc w wyborze danych</a></div><div class="portal-columns"><div><h3>Ślad węglowy</h3><p>Wpływ na klimat, wyrażony w równoważniku CO₂. Sprawdź, czy potrzebujesz emisji ze spalania, czy wyniku dla całego cyklu życia.</p><a href="/slad-weglowy-czy-srodowiskowy.html#klimat">Dane do obliczeń klimatycznych</a></div><div><h3>Oddziaływanie na środowisko</h3><p>Oprócz klimatu: m.in. wpływ na wodę, zakwaszenie i zużycie zasobów. Wybierz zestaw wskaźników odpowiedni do metody oceny.</p><a href="/slad-weglowy-czy-srodowiskowy.html#srodowisko">Zestawy wskaźników środowiskowych</a></div></div><p class="portal-context-links">Obliczenia dla: <a href="/zastosowanie-danych.html#wyrob">wyrobu</a> · <a href="/zastosowanie-danych.html#budynek">budynku</a> · <a href="/zastosowanie-danych.html#proces">procesu</a></p></section>'''
- cats={r['category_id']:r['category_label'] for r in CAT['datasets']};counts=Counter(r['category_id'] for r in CAT['datasets'])
- body+='<section class="portal-section"><div class="portal-sectionhead"><h2>Przeglądaj dane według tematu</h2>'+a('Cały katalog','/datasety.html')+'</div><div class="portal-categories">'+''.join(a(f'{label}  ·  {counts[k]}',f'/datasety.html?category={k}') for k,label in cats.items())+'</div></section>'
- r=CAT['datasets'][0]
- body+=f'''<section class="portal-feature"><div><p class="portal-kicker">Profil energii · rok danych 2025</p><h2>{a('Energia elektryczna dla Polski',r['href'])}</h2><p>37 wskaźników na 1 kWh fizycznie dostarczonej energii. Wyniki, źródła i przykład zastosowania w jednym pakiecie.</p>{status(r)}<p>{a('Otwórz model i dokumentację',r['href'],'portal-button')} {a('Pobierz pakiet ZIP',r['downloads'][0]['href'])}</p></div><div class="portal-feature-data"><span class="portal-number">37</span><span>wskaźników środowiskowych</span><small>Jednostka odniesienia: 1 kWh<br>Polska · miks fizyczny · v3</small></div></section>'''
- body+='''<section class="portal-section"><div class="portal-sectionhead"><h2>Zanim użyjesz danych</h2><a href="/pytania.html">Wszystkie pytania i odpowiedzi</a></div><div class="portal-columns"><div><h3>poLCA, KOBiZE czy ecoinvent?</h3><p>Sprawdź, co opisuje każda baza i kiedy wartości można porównać.</p><a href="/porownanie-baz.html">Porównanie zastosowań i zakresów</a></div><div><h3>Dane do deklaracji środowiskowej</h3><p>Dobierz model do procesu, rodzaju energii i zasad właściwego programu.</p><a href="/zastosowanie-epd-cpr.html">Zastosowanie w EPD i CPR</a></div></div></section>'''
- page('index.html',c['title'],c['lead'],body,home=True)
 def select(name,label,options):return f'<label for="filter-{name}">{label}</label><select id="filter-{name}" name="{name}"><option value="">Wszystkie</option>'+''.join(f'<option value="{e(k)}">{e(v)}</option>' for k,v in options)+'</select>'
 def build_catalog(all=False):
  records=CAT['datasets']+CAT['resources'] if all else CAT['datasets'];path='szukaj.html' if all else 'datasety.html'
  cats={r['category_id']:r['category_label'] for r in records if r.get('category_id')};years=sorted({r['year'] for r in records if r.get('year')},reverse=True);statuses={r['status_id']:r['status_label'] for r in records if r.get('status_id')}
- filters=select('category','Temat',cats.items())+select('year','Rok odniesienia',[(y,y) for y in years])+select('status','Status',statuses.items())
+ families=json.loads((ROOT/'data/cpr-families.json').read_text())['families']
+ filters=select('family','Rodzina wyrobu',[(f['id'],str(f['id'])+' — '+f['label']) for f in families])+select('category','Temat',cats.items())+select('year','Rok odniesienia',[(y,y) for y in years])+select('status','Status',statuses.items())
  if all:filters=select('kind','Rodzaj zasobu',[('dataset','Dane'),('tool','Kalkulatory'),('method','Metody i instrukcje'),('article','Artykuły')])+filters
  body=f'''<div class="portal-catalog-layout"><form id="catalog-filters" action="/{path}" method="get"><label for="catalog-query">{'Szukaj w całym portalu' if all else 'Szukaj w danych'}</label><div class="portal-search-control"><input id="catalog-query" type="search" name="q" placeholder="Wpisz nazwę lub pytanie"><button type="submit">Szukaj</button></div><details class="portal-filters" open><summary>Zawęź wyniki</summary><div>{filters}<button type="reset">Wyczyść filtry</button></div></details></form><div class="portal-results-panel"><p id="result-count" role="status" aria-live="polite">Wyniki: {len(records)}</p><noscript><p>Filtrowanie wymaga włączenia JavaScript. Poniżej znajdziesz pełną listę; możesz użyć funkcji szukania w przeglądarce.</p></noscript><div id="catalog-results">{''.join(row(r) for r in records)}</div><div id="catalog-empty" class="portal-callout" hidden><h2>Brak wyników dla tych ustawień</h2><p>Spróbuj krótszej nazwy lub usuń filtry. Pomoc w doborze danych znajdziesz w <a href="/jak-korzystac.html">przewodniku</a>.</p><button type="button" data-reset-filters>Wyczyść wyszukiwanie</button></div></div></div><script id="portal-search-data" type="application/json">{json.dumps(records,ensure_ascii=False).replace('<','\\u003c')}</script>'''
- if not all:body='<span id="referencyjne-szczegoly"></span>'+body
+ if not all:body='<p>Możesz też zacząć od <a href="/wyroby.html">rodzaju wyrobu</a> lub wybrać <a href="/dane-wspolne.html">energię, paliwa i transport</a>.</p><span id="referencyjne-szczegoly"></span>'+body
  page(path,'Szukaj w poLCA' if all else 'Katalog danych','Znajdź dane, kalkulator, metodę lub odpowiedź.' if all else 'Wybierz temat i sprawdź rok, zakres oraz status danych przed użyciem.',body,attrs=f'data-catalog-mode="{"all" if all else "datasets"}"')
 def sections(secs):
  out=[]
@@ -83,6 +74,8 @@ def build_cards():
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
   body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2><p>{source}</p>'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
+  family_links=[{'label':str(f['id'])+' — '+f['label'],'href':f'/wyroby/{f["id"]:02d}.html'} for f in json.loads((ROOT/'data/cpr-families.json').read_text())['families'] if f['id'] in r.get('cpr_family_ids',[])]
+  if family_links:body='<nav aria-label="Rodzina wyrobu">'+links(family_links,'product-inline-links')+'</nav>'+body
   page(r['href'][1:],r['title'],r['description'],body,parent=('Katalog danych','/datasety.html'))
 def build_indexes():
  tools=[r for r in CAT['resources'] if r['kind']=='tool'];articles=[r for r in CAT['resources'] if r['kind']=='article']
@@ -113,8 +106,8 @@ def migrate_shell():
   for el in head.xpath('./link[contains(@href,"fonts.googleapis") or contains(@href,"fonts.gstatic") or contains(@href,"/assets/portal.css")]'):head.remove(el)
   for el in head.xpath('.//html'):
    if el.getparent() is not None:el.getparent().remove(el)
-  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261018'))
-  head.append(etree.Element('script',src='/js/portal.js?v=20261018',defer='defer'))
+  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261019cpr'))
+  head.append(etree.Element('script',src='/js/portal.js?v=20261019cpr',defer='defer'))
   body.set('class','portal portal-legacy'+(' portal-tool' if group(rel)=='tools' else ''))
   nodes=html.fragments_fromstring(header(rel))
   for i,n in enumerate(nodes):body.insert(i,n)
@@ -130,6 +123,19 @@ def migrate_shell():
    container[0].insert(0,html.fromstring(crumb(title)))
   body.append(html.fromstring(footer()))
   p.write_bytes(etree.tostring(doc,encoding='utf-8',method='html',doctype='<!DOCTYPE html>',pretty_print=False)+b'\n')
+def sync_shell():
+ # Replace only the existing shared shell; retain legacy content and serialization.
+ for p in ROOT.rglob('*.html'):
+  rel=p.relative_to(ROOT).as_posix()
+  if rel in GENERATED or rel.startswith(('.git/','assets/','tests/')):continue
+  text=p.read_text()
+  if not re.search(r'<link[^>]+rel=[\"\'](?:shortcut )?icon[\"\']',text):text=text.replace('</head>','<link rel="icon" href="/favicon.svg" type="image/svg+xml"></head>')
+  text=re.sub(r'<header class="portal-header">.*?</header>',lambda m:header(rel).split('</a>',1)[1],text,flags=re.S)
+  text=re.sub(r'<footer class="portal-footer">.*?</footer>',lambda m:footer(),text,flags=re.S)
+  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261019cpr',text)
+  text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261019cpr',text)
+  p.write_text(text)
+
 def build_energy_calculator():
     profile=json.loads((ROOT/'data/energia-pl-2025-v3/profil-37.json').read_text())
     rows=''.join(f'<tr><th scope="row">{e(i["code"])}</th><td>{e(i["name_pl"])}</td><td>{e(num(i["value_per_kWh"]))}</td><td data-energy-result="{e(i["code"])}">{e(num(i["value_per_kWh"]*10))}</td><td>{e(i["impact_unit"])}</td></tr>' for i in profile['indicators'])
@@ -137,10 +143,13 @@ def build_energy_calculator():
     page('oblicz-energie-2025.html','Oblicz wkład energii — Polska 2025','Przelicz zużycie prądu na 37 wskaźników środowiskowych. Pobierz wynik wraz z jednostkami i identyfikacją modelu.',body,parent=('Kalkulatory','/kalkulatory.html'))
 
 def sitemap():
- paths=sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*.html') if p.name!='404.html' and not any(x.startswith('.') for x in p.relative_to(ROOT).parts))
+ paths=sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*.html') if p.name!='404.html' and 'noindex,follow' not in p.read_text() and not any(x.startswith('.') for x in p.relative_to(ROOT).parts))
  xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://polca.org.pl/'+e(p)+'</loc></url>' for p in paths)+'</urlset>\n';(ROOT/'sitemap.xml').write_text(xml)
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--migrate-shell',action='store_true');args=parser.parse_args()
- build_home();build_catalog();build_catalog(True);build_copy();build_cards();build_indexes();build_energy_calculator()
+ build_catalog();build_catalog(True);build_copy();build_cards();build_indexes();build_energy_calculator()
+ from cpr_portal import build as build_products
+ build_products(globals())
  if args.migrate_shell:migrate_shell()
+ sync_shell()
  sitemap();print(f'Generated {len(GENERATED)} pages; shell migration: {args.migrate_shell}')

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-18.1",
+  "catalog_version": "2026-10-19-cpr",
   "record": {
     "id": "POLCA-TRUCK-40T-DEFAULT-2026",
     "title": "Transport drogowy — zestaw 40 t",
@@ -45,7 +45,10 @@
     "geography": "PL/EU",
     "reference_unit": "tkm",
     "source_record_href": "/data/datasets/POLCA-TRUCK-40T-DEFAULT-2026.json",
-    "value": 0.095
+    "value": 0.095,
+    "cpr_family_ids": [],
+    "cpr_related": [],
+    "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
 }
