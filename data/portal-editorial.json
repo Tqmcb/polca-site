@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-10-19-cpr",
+  "catalog_version": "2026-10-19.1",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -50,7 +50,7 @@
       "indicator_label": "Emisja CO₂",
       "related_ids": [
         "POLCA-EN-PL-LCA-2024",
-        "PL2025_PHYSICAL_DELIVERED_v3_REVIEW"
+        "PL2025_PHYSICAL_DELIVERED_v4"
       ]
     },
     "POLCA-EN-PL-LCA-2024": {
@@ -70,7 +70,7 @@
       "boundary": "Cykl życia dostarczonej energii; składnik kopalny",
       "indicator_label": "GWP — składnik kopalny",
       "related_ids": [
-        "PL2025_PHYSICAL_DELIVERED_v3_REVIEW",
+        "PL2025_PHYSICAL_DELIVERED_v4",
         "KOBIZE-EN-PL-ENDUSER-2024",
         "tool-energia"
       ]
@@ -622,7 +622,7 @@
     }
   },
   "energy_2025": {
-    "title": "Energia elektryczna — Polska 2025, v3",
+    "title": "Energia elektryczna — Polska 2025, v4",
     "description": "Profil fizycznego miksu krajowego dla 1 kWh dostarczonej energii. Zawiera 37 wskaźników i opis przyjętej metody.",
     "boundary": "Cykl życia fizycznie dostarczonej energii; średni krajowy poziom napięć"
   },
@@ -637,9 +637,9 @@
       "status_id": "tool",
       "description": "Przelicz kWh, MWh lub MJ energii elektrycznej na 37 wskaźników. Pobierz wynik w CSV i JSON wraz z metryką modelu.",
       "href": "/oblicz-energie-2025.html",
-      "methodology_href": "/energia-polska-2025-v3.html",
+      "methodology_href": "/energia-polska-2025-v4.html",
       "related_ids": [
-        "PL2025_PHYSICAL_DELIVERED_v3_REVIEW"
+        "PL2025_PHYSICAL_DELIVERED_v4"
       ],
       "keywords": [
         "prąd",
@@ -812,7 +812,7 @@
       "href": "/metodyka.html",
       "keywords": [
         "Zasady obliczeń dla Twojego wyrobu Dobierz dokumenty PCR i c-PCR do rodzaju wyrobu i zasad programu deklaracji. Katalog rozdziela dokumenty wydane, projekty oraz dane pomocnicze. ",
-        "Energia elektryczna Aktualny profil publiczny: Polska 2025 v3, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW. Kontrola techniczna obliczeń i pakietu jest zakończona; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody. Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane. ",
+        "Energia elektryczna Aktualny profil publiczny: Polska 2025 v4, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v4. Odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody są zakończone; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody. Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane. ",
         "Katalog materiałów, paliw i transportu Każda pozycja katalogu ma rok danych, jednostkę, rodzaj wskaźnika, poziom dowodu źródła i wersję. Rekordy bez pełnego śladu do konkretnej deklaracji producenta są oznaczone jako wartości zastępcze lub referencyjne. Aktualny indeks to plik portal-catalog.json. ",
         "Kalkulatory Kalkulatory energii, mieszanek asfaltowych i kruszyw używa własnej, datowanej tabeli współczynników, pokazywanej i eksportowanej razem z wynikiem. Kalkulatory służą do wstępnych oszacowań. Rodzaj wskaźnika i zakres obliczenia są opisane przy wyniku. ",
         "Normy, dokumenty programowe i rejestr zmian Normy odniesienia i ich wydania wskazuje strona Podstawy normatywne. Projekty dokumentów programowych dla mieszanek mineralno-asfaltowych i kruszyw mają status projektu z datą w nagłówku. Zmiany danych są odnotowane w rejestrze zmian. "
@@ -829,7 +829,7 @@
       "description": "Status, zakres kontroli i źródło są zapisane przy konkretnej wersji zbioru. Tam sprawdzisz, co zostało skontrolowane i co pozostaje do decyzji.",
       "href": "/wiarygodnosc.html",
       "keywords": [
-        "Status przy wersji Każdy zbiór ma własne pola statusu, czytelne w pliku i na karcie. Dla profilu energii 2025 v3: kontrola techniczna zakończona, formalne przyjęcie do programu otwarte, zewnętrzna recenzja ekspercka niewykonana. Status zmienia się tylko przez nowe wydanie z wpisem w rejestrze zmian. ",
+        "Status przy wersji Każdy zbiór ma własne pola statusu, czytelne w pliku i na karcie. Dla profilu energii 2025 v4: odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody zakończone, formalne przyjęcie do programu otwarte, zewnętrzna recenzja ekspercka niewykonana. Status zmienia się tylko przez nowe wydanie z wpisem w rejestrze zmian. ",
         "Źródła i poziom dowodu Polityka źródeł określa, co trzeba podać, aby rekord powołał się na deklarację środowiskową wyrobu (EPD) producenta: numer deklaracji, produkt, zakład i tabelę. Rekordy bez tych danych są oznaczone jako wartości zastępcze lub referencyjne. Współczynniki kalkulatorów bez identyfikatora tabeli źródłowej są podpisane jako założenia kalkulatora. ",
         "Kontrola plików Pakiet energii 2025 ma manifest z sumami kontrolnymi plików oraz plik kontroli eksportu z wynikiem przeliczenia przykładu. Zmiany wartości w katalogu są odnotowane w rejestrze zmian z datą i wersją. ",
         "Ocena do zastosowania O przydatności zbioru do deklaracji decyduje ocena metody, reprezentatywności i zasad właściwego programu. Drogę od danych do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR) opisuje osobna strona. "
@@ -1026,7 +1026,7 @@
       "description": "Podaj nazwę zbioru, wersję, identyfikator modelu, datę wydania i adres pliku. Cytuj wersję, której użyto.",
       "href": "/o-polca/cytowanie.html",
       "keywords": [
-        "Wzór cytowania Multicert, poLCA: [nazwa zbioru], wersja [wersja], model [identyfikator], wydanie [data], polca.org.pl, [adres pliku]. Przykład: Multicert, poLCA: Polska 2025, 37 wskaźników energii, profil selected_2025_v3, model PL2025_PHYSICAL_DELIVERED_v3_REVIEW, wydanie pakietu 2026-10-18.1, polca.org.pl/data/energia-pl-2025-v3/profil-37.json. ",
+        "Wzór cytowania Multicert, poLCA: [nazwa zbioru], wersja [wersja], model [identyfikator], wydanie [data], polca.org.pl, [adres pliku]. Przykład: Multicert, poLCA: Polska 2025, 37 wskaźników energii, profil selected, model PL2025_PHYSICAL_DELIVERED_v4, wydanie pakietu 2026-10-19.1, polca.org.pl/data/energia-pl-2025-v4/profil-37.json. ",
         "Wymagany cytat źródła tła Przy użyciu profilu energii 2025 obowiązuje cytat: „Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026”. Dane tła są zmodyfikowane i tak oznaczone; BAFU (szwajcarski Federalny Urząd ds. Środowiska) nie poświadcza modyfikacji ani ich użycia. Szczegóły podają warunki wykorzystania. ",
         "DOI i dokumenty Identyfikator DOI (Digital Object Identifier) podajemy tylko przy dokumencie, który ma go nadanego; identyfikator jest zapisany w treści dokumentu. Dokumenty bez DOI cytuj przez adres i datę. "
       ]
@@ -1359,7 +1359,7 @@
       "description": "poLCA to katalog danych i modeli środowiskowych dla Polski, tworzony jako dane wejściowe do oceny cyklu życia, deklaracji EPD i ocen wymaganych przez CPR. Prowadzi go Multicert.",
       "href": "/o-polca/index.html",
       "keywords": [
-        "Co zawiera Katalog ma 37 pozycji danych w wersji 2026-10-18.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v3 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
+        "Co zawiera Katalog ma 37 pozycji danych w wersji 2026-10-19.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
@@ -1377,7 +1377,7 @@
       "href": "/o-polca/dla-prasy.html",
       "keywords": [
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
-        "Fakty do przytoczenia Katalog: 37 pozycji danych, wersja 2026-10-18.1. Profil energii Polska 2025 v3: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-18.1; kontrola techniczna zakończona, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
+        "Fakty do przytoczenia Katalog: 37 pozycji danych, wersja 2026-10-19.1. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
       ]
     },
@@ -1464,7 +1464,7 @@
         "Jak policzyć wynik z kWh? Pomnóż liczbę kWh przez wskaźnik na 1 kWh. Przelicznik energii 2025 wykonuje to działanie dla wszystkich 37 wskaźników i pozwala pobrać wynik z jednostkami. Wynik opisuje wkład energii; jednostkę wyrobu oraz etap cyklu życia przypisz w swoim modelu. ",
         "Skąd różnice między KOBiZE, ecoinvent a poLCA? KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami) publikuje wskaźniki emisji o granicach opisanych w publikacji, na przykład CO₂ dla odbiorcy końcowego; nie są to 37 wskaźników cyklu życia. ecoinvent zawiera dane dla Polski i pełne procesowe tło do modelowania. poLCA rozwija udokumentowane profile dla Polski z rozróżnieniem rocznika, typu miksu, napięcia i statusu. Liczby z różnych źródeł porównuj po zakresie i rodzaju wskaźnika. ",
         "Czy mam doliczyć energię do danych materiału? Tylko energię zużywaną w procesie, który modelujesz. Jeżeli dane materiału już obejmują energię jego produkcji, nie doliczaj jej drugi raz. Wkład energii przypisz do etapu, w którym jest zużywana. ",
-        "Czy mogę wykorzystać dane w EPD lub ocenie CPR? Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v3 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji. ",
+        "Czy mogę wykorzystać dane w EPD lub ocenie CPR? Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v4 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji. ",
         "Na jakiej licencji i co otrzymuję? Warunki wykorzystania są przypisane do zbioru lub dokumentu. Pakiet energii 2025 zawiera 37 zagregowanych wyników, przykład obliczenia, opis metody oraz pliki kontrolne. Pełna baza procesów tła pozostaje poza publicznym pakietem. Szczegóły licencji i wymagane oznaczenie źródła podano w warunkach wykorzystania. ",
         "Czy rok 2025 oznacza, że wszystkie dane pochodzą z 2025 r.? Nie. Rok modelu określa okres, który model ma przedstawiać. Źródła dotyczące miksu, emisji i procesów tła mogą pochodzić z różnych lat. Dokumentacja energii 2025 rozdziela aktualizowane parametry od historycznych danych tła i opisuje ich reprezentatywność. ",
         "Jak wybrać dane, gdy nie mam deklaracji producenta? Wybierz zbiór odpowiadający materiałowi, technologii, krajowi, rokowi i granicom obliczenia. Sprawdź, czy jest to średnia branżowa, wartość referencyjna czy dane zastępcze. Zanotuj wybór i uzasadnienie. W formalnej deklaracji znaczenie ma także hierarchia danych przyjęta w programie i regułach kategorii wyrobu. ",
@@ -1483,12 +1483,12 @@
       "title": "poLCA, KOBiZE czy ecoinvent?",
       "description": "Dobierz źródło do obliczenia. Porównaj rodzaj wskaźnika, miks energii, rok i zakres danych, zanim zestawisz wartości.",
       "keywords": [
-        "Co znajdziesz w poszczególnych źródłach KOBiZE dostarcza krajowe wskaźniki emisji. Ecoinvent udostępnia rozbudowane dane procesowe do oceny cyklu życia (LCA). poLCA publikuje polskie modele i wskaźniki wraz z opisem zastosowania. Wybór zależy od tego, jakich danych wymaga obliczenie. KOBiZE — energia u odbiorcy końcowego Wskaźnik emisji CO₂ uwzględniający zużycie własne i straty; bez pełnych łańcuchów paliw i infrastruktury 2024; publikacja 2025 Obliczenia emisji CO₂ w granicach publikacji; źródło kontroli danych o emisjach ecoinvent 3.12 — wybrane rynki energii dla Polski Procesy energii i powiązane tło, różne napięcia oraz modele systemowe; dostęp licencjonowany 2022 dla porównanego rynku fizycznego; 2024 dla rezydualnego Budowa modeli oceny cyklu życia i obliczanie wyników w programie LCA poLCA — profil energii 2025 v3 37 wskaźników na 1 kWh fizycznie dostarczonej energii; wyniki, metryka i dokumentacja 2025 dla aktualizowanych danych; lata procesów tła podano w dokumentacji Wkład energii w ocenę wyrobu lub budynku, po doborze profilu do zastosowania ÖKOBAUDAT — porównany niemiecki profil energii Niemiecki miks konsumpcyjny, format ILCD+EPD (format danych środowiskowych wyrobów); 31 z 37 pozycji ma wyniki 2023 Porównanie struktury danych; wartości opisują niemiecki, a nie polski system energii JRC — pakiet odniesienia EN 15804 Metoda EF 3.1 (metoda oceny śladu środowiskowego): przepływy, jednostki i współczynniki charakteryzacji Wersja metody, bez rocznika krajowego miksu Uzgodnienie metody, nazw przepływów i wskaźników AIB — miksy energii Udziały technologii oraz wskaźniki CO₂, w tym dla miksów rezydualnych 2025 Dane o strukturze miksu; pełny profil cyklu życia wymaga dodatkowych danych technologii",
+        "Co znajdziesz w poszczególnych źródłach KOBiZE dostarcza krajowe wskaźniki emisji. Ecoinvent udostępnia rozbudowane dane procesowe do oceny cyklu życia (LCA). poLCA publikuje polskie modele i wskaźniki wraz z opisem zastosowania. Wybór zależy od tego, jakich danych wymaga obliczenie. KOBiZE — energia u odbiorcy końcowego Wskaźnik emisji CO₂ dla odbiorców końcowych, z uwzględnieniem strat i różnic bilansowych; bez pełnych łańcuchów paliw i infrastruktury 2024; publikacja 2025 Obliczenia emisji CO₂ w granicach publikacji; źródło kontroli danych o emisjach ecoinvent 3.12 — wybrane rynki energii dla Polski Procesy energii i powiązane tło, różne napięcia oraz modele systemowe; dostęp licencjonowany 2022 dla porównanego rynku fizycznego; 2024 dla rezydualnego Budowa modeli oceny cyklu życia i obliczanie wyników w programie LCA poLCA — profil energii 2025 v4 37 wskaźników na 1 kWh fizycznie dostarczonej energii; wyniki, metryka i dokumentacja 2025 dla aktualizowanych danych; lata procesów tła podano w dokumentacji Wkład energii w ocenę wyrobu lub budynku, po doborze profilu do zastosowania ÖKOBAUDAT — porównany niemiecki profil energii Niemiecki miks konsumpcyjny, format ILCD+EPD (format danych środowiskowych wyrobów); 31 z 37 pozycji ma wyniki 2023 Porównanie struktury danych; wartości opisują niemiecki, a nie polski system energii JRC — pakiet odniesienia EN 15804 Metoda EF 3.1 (metoda oceny śladu środowiskowego): przepływy, jednostki i współczynniki charakteryzacji Wersja metody, bez rocznika krajowego miksu Uzgodnienie metody, nazw przepływów i wskaźników AIB — miksy energii Udziały technologii oraz wskaźniki CO₂, w tym dla miksów rezydualnych 2025 Dane o strukturze miksu; pełny profil cyklu życia wymaga dodatkowych danych technologii",
         "Zakres porównania Porównanie obejmuje znaczenie danych, wybrane rekordy, metody i formaty. Liczbowe porównanie z ecoinvent dla równoważnych procesów pozostaje do wykonania na podstawie uprawnionego eksportu wyników. ",
-        "Trzy liczby o Polsce, które mierzą co innego Wspólna jednostka na kWh nie oznacza wspólnego zakresu. Poniższe wartości pomagają rozpoznać właściwe dane; różnica między nimi nie jest miarą dokładności modeli. 0,6546 kg CO₂e/kWh poLCA v3 GWP-total — całkowity wpływ na klimat w modelu cyklu życia fizyczny 2025, 1 kWh dostarczona 0,553 kg CO₂/kWh KOBiZE CO₂ bezpośrednie u odbiorcy końcowego krajowy 2024, ze stratami 0,72696 kg CO₂/kWh AIB CO₂ bezpośrednie rezydualny 2025",
+        "Trzy liczby o Polsce, które mierzą co innego Wspólna jednostka na kWh nie oznacza wspólnego zakresu. Poniższe wartości pomagają rozpoznać właściwe dane; różnica między nimi nie jest miarą dokładności modeli. 0,644540 kg CO₂e/kWh poLCA v4 GWP-total — całkowity wpływ na klimat w modelu cyklu życia fizyczny 2025, 1 kWh dostarczona 0,553 kg CO₂/kWh KOBiZE CO₂ bezpośrednie u odbiorcy końcowego krajowy 2024, ze stratami 0,72696 kg CO₂/kWh AIB CO₂ bezpośrednie rezydualny 2025",
         "Skąd różnice Wskaźnik CO₂ ze spalania i wpływ na klimat w całym cyklu życia opisują różne granice. Ocena cyklu życia uwzględnia także łańcuchy paliw, infrastrukturę i inne gazy cieplarniane. Sposób uwzględnienia strat sieciowych trzeba sprawdzić w każdym zbiorze osobno. Miks rezydualny opisuje energię po rozliczeniu przypisanych odbiorcom atrybutów, m.in. gwarancji pochodzenia; nie jest fizycznym średnim miksem w sieci. ",
         "Porównanie z ecoinvent Dla ecoinvent 3.12 wskazano konkretne rekordy rynku energii dla Polski oraz ich lata i modele systemowe. Porównanie wyników wymaga uzgodnienia rodzaju miksu, napięcia, granic, metody oceny i jej wersji. Licencja użytkownika może umożliwiać taki eksport z programu obliczeniowego. Do czasu wykonania tej kontroli zestawienie opisuje dokumentację i zakresy danych. ",
-        "Jak użyć zestawienia Jeżeli potrzebujesz polskiego profilu energii 2025, otwórz model v3 i sprawdź zasady doboru miksu. Do obliczeń emisji CO₂ w granicach publikacji KOBiZE wybierz odpowiedni wskaźnik KOBiZE. Jeżeli budujesz cały model procesów, potrzebujesz również danych tła — publiczny profil poLCA udostępnia zagregowane wyniki energii. "
+        "Jak użyć zestawienia Jeżeli potrzebujesz polskiego profilu energii 2025, otwórz model v4 i sprawdź zasady doboru miksu. Do obliczeń emisji CO₂ w granicach publikacji KOBiZE wybierz odpowiedni wskaźnik KOBiZE. Jeżeli budujesz cały model procesów, potrzebujesz również danych tła — publiczny profil poLCA udostępnia zagregowane wyniki energii. "
       ]
     },
     {
@@ -1503,11 +1503,11 @@
       "description": "Jak dobrać profil energii do deklaracji środowiskowej wyrobu (EPD) oraz oceny wynikającej z rozporządzenia o wyrobach budowlanych (CPR). Zacznij od procesu, kraju i sposobu zakupu energii.",
       "keywords": [
         "Jak energia wchodzi do EPD Ustal zużycie energii w kWh na jednostkę wyrobu, etap cyklu życia i kraj procesu. Następnie dobierz profil do sposobu dostawy energii oraz zasad programu deklaracji. EN 15941, załącznik E, opisuje m.in. energię z sieci, własną produkcję i instrumenty umowne. Dobór powinien być spójny w całym obliczeniu. ",
-        "Reguła doboru profilu Dla energii z sieci znaczenie mają instrumenty umowne, takie jak gwarancje pochodzenia, i reguły programu. Poniższe zasady doboru nie przesądzają formalnej kwalifikacji konkretnej wersji zbioru. Procesy poza kontrolą deklarującego w modułach A4–C4 i D, w Polsce Miks konsumpcyjny właściwy dla miejsca procesu; poLCA 2025 v3 opisuje polski profil fizyczny E.2.6 Energia zakładu bez przypisanych atrybutów umownych, gdy program stosuje instrumenty umowne i miks rezydualny Miks rezydualny dla roku i napięcia poboru E.2.1, E.2.2 Zakup z kwalifikowanymi instrumentami umownymi albo energia własna Dane cyklu życia właściwej technologii lub produktu dostawcy; atrybuty nie mogą być przypisane także innemu odbiorcy E.2.1, E.2.2 Procesy dostawców poza kontrolą deklarującego w A1–A3 Spójne dane tła; przy dostępnych profilach rezydualnych norma określa zasadę ich użycia i warunki odstępstw E.2.5",
-        "Miks fizyczny a rezydualny Publiczny pakiet poLCA 2025 v3 przedstawia miks fizyczny. Jeżeli do obliczenia zakładu potrzebny jest miks rezydualny lub profil dostawcy, dobierz odrębny zbiór dla właściwego roku i napięcia. Sama gwarancja pochodzenia nie jest profilem środowiskowym i nie oznacza zerowego wpływu w cyklu życia. Potrzebne są dane odpowiedniej technologii, z uwzględnieniem infrastruktury i właściwych strat. ",
-        "Status profilu 2025 v3 Model opracowano jako dane wejściowe do oceny cyklu życia wyrobów i budynków. Kontrola techniczna obliczeń i pakietu jest zakończona. Formalne przyjęcie wersji v3 do określonego zastosowania w programie EPD pozostaje otwarte. Dokumentacja przedstawia podstawy oceny alokacji, przyjętej konwencji węgla biogenicznego i istotnych danych zastępczych. Zakres dopuszczonego użycia wymaga rozstrzygnięcia w programie deklaracji. ",
+        "Reguła doboru profilu Dla energii z sieci znaczenie mają instrumenty umowne, takie jak gwarancje pochodzenia, i reguły programu. Poniższe zasady doboru nie przesądzają formalnej kwalifikacji konkretnej wersji zbioru. Procesy poza kontrolą deklarującego w modułach A4–C4 i D, w Polsce Miks konsumpcyjny właściwy dla miejsca procesu; poLCA 2025 v4 opisuje polski profil fizyczny E.2.6 Energia zakładu bez przypisanych atrybutów umownych, gdy program stosuje instrumenty umowne i miks rezydualny Miks rezydualny dla roku i napięcia poboru E.2.1, E.2.2 Zakup z kwalifikowanymi instrumentami umownymi albo energia własna Dane cyklu życia właściwej technologii lub produktu dostawcy; atrybuty nie mogą być przypisane także innemu odbiorcy E.2.1, E.2.2 Procesy dostawców poza kontrolą deklarującego w A1–A3 Spójne dane tła; przy dostępnych profilach rezydualnych norma określa zasadę ich użycia i warunki odstępstw E.2.5",
+        "Miks fizyczny a rezydualny Publiczny pakiet poLCA 2025 v4 przedstawia miks fizyczny. Jeżeli do obliczenia zakładu potrzebny jest miks rezydualny lub profil dostawcy, dobierz odrębny zbiór dla właściwego roku i napięcia. Sama gwarancja pochodzenia nie jest profilem środowiskowym i nie oznacza zerowego wpływu w cyklu życia. Potrzebne są dane odpowiedniej technologii, z uwzględnieniem infrastruktury i właściwych strat. ",
+        "Status profilu 2025 v4 Model opracowano jako dane wejściowe do oceny cyklu życia wyrobów i budynków. Odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody są zakończone. Formalne przyjęcie wersji v4 do określonego zastosowania w programie EPD pozostaje otwarte. Dokumentacja przedstawia podstawy oceny alokacji, przyjętej konwencji węgla biogenicznego i istotnych danych zastępczych. Zakres dopuszczonego użycia wymaga rozstrzygnięcia w programie deklaracji. ",
         "CPR: energia jako dane wejściowe oceny wyrobu Rozporządzenie (UE) 2024/3110 w art. 15 określa deklarowanie właściwości zgodnie z odpowiednią zharmonizowaną specyfikacją techniczną lub europejskim dokumentem oceny. Właściwości środowiskowe oblicza się przy użyciu bezpłatnego oprogramowania Komisji; jego aktualizacje stają się obowiązkowe po roku od publikacji. Przepisy przejściowe w art. 95 wiążą stosowanie nowego systemu z odpowiednimi specyfikacjami dla wyrobów. Dla konkretnego wyrobu trzeba ustalić właściwą ścieżkę i obowiązujące wymagania. Profil energii może być składnikiem danych do takiej oceny, jeżeli spełnia wymagania właściwej specyfikacji i systemu obliczeniowego. Przyjęcie przez program EPD nie stanowi samo w sobie potwierdzenia zgodności wyrobu z CPR. W praktyce potrzebne jest sprawdzenie zarówno doboru danych, jak i ich prawidłowego wykorzystania w wymaganym oprogramowaniu. ",
-        "Pliki JSON i CSV Pakiet v3 zawiera JSON (strukturalny zapis danych) i CSV (tabelę tekstową): 37 wskaźników z kodami, jednostkami i oznaczeniem wersji. Po przeniesieniu do programu sprawdź każdy kod i jednostkę oraz wynik dla 1 kWh, czyli 3,6 MJ energii elektrycznej. Sumy wpływu na klimat i ich składników nie dodaje się ponownie. Pliki korzystają z własnego schematu poLCA; import do innego formatu wymaga mapowania. "
+        "Pliki JSON i CSV Pakiet v4 zawiera JSON (strukturalny zapis danych) i CSV (tabelę tekstową): 37 wskaźników z kodami, jednostkami i oznaczeniem wersji. Po przeniesieniu do programu sprawdź każdy kod i jednostkę oraz wynik dla 1 kWh, czyli 3,6 MJ energii elektrycznej. Sumy wpływu na klimat i ich składników nie dodaje się ponownie. Pliki korzystają z własnego schematu poLCA; import do innego formatu wymaga mapowania. "
       ]
     },
     {
@@ -1602,10 +1602,10 @@
       "year": null,
       "year_type": null,
       "status_id": "guide",
-      "description": "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v3 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyr…",
+      "description": "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v4 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyr…",
       "href": "/pytania.html#pytanie-7",
       "keywords": [
-        "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v3 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji."
+        "Dane są tworzone jako wejście do deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Profil energii 2025 v4 ma zakończoną kontrolę techniczną; formalne przyjęcie do programu pozostaje otwarte, a przydatność do konkretnego wyrobu ocenia się według zasad programu i właściwej specyfikacji. Status jest zapisany przy wersji."
       ]
     },
     {

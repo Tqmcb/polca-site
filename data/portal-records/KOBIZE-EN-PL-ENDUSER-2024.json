@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-19-cpr",
+  "catalog_version": "2026-10-19.1",
   "record": {
     "id": "KOBIZE-EN-PL-ENDUSER-2024",
     "title": "KOBiZE — energia elektryczna 2024",
@@ -31,7 +31,7 @@
     "methodology_href": "/metodyka.html",
     "related_ids": [
       "POLCA-EN-PL-LCA-2024",
-      "PL2025_PHYSICAL_DELIVERED_v3_REVIEW"
+      "PL2025_PHYSICAL_DELIVERED_v4"
     ],
     "keywords": [
       "KOBIZE-EN-PL-ENDUSER-2024",

@@ -24,7 +24,7 @@ Nazwa poLCA. Opracowanie: Multicert. Polski język, proste nazwy czynności i op
 
 ## Evidence on Hand
 
-Istniejące pliki data/, modele i opisy metod. Profil energii Polska 2025 v3 ma 37 wskaźników i jawny status do integracji i recenzji. Starszy profil 2024 oraz kalkulatory mają odrębne założenia. Nie ma podstaw do jednej deklaracji zgodności lub licencji dla wszystkich zasobów.
+Istniejące pliki data/, modele i opisy metod. Profil energii Polska 2025 v4 ma 37 wskaźników i zakończony odbiór techniczny obliczeń oraz wewnętrzną recenzję kodu i metody. Formalna kwalifikacja do zastosowania i zewnętrzna recenzja ekspercka pozostają odrębne. Starszy profil 2024 oraz kalkulatory mają odrębne założenia. Nie ma podstaw do jednej deklaracji zgodności lub licencji dla wszystkich zasobów.
 
 ## Product Principles
 

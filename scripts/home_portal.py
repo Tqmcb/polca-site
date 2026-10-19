@@ -7,7 +7,7 @@ def build(api, families):
     root, page, e = (api[key] for key in ('ROOT', 'page', 'e'))
     records = api['CAT']['datasets']
     methods = json.loads((root / 'data/product-methods.json').read_text())['documents']
-    energy = next(r for r in records if r['id'] == 'PL2025_PHYSICAL_DELIVERED_v3_REVIEW')
+    energy = next(r for r in records if r['id'] == 'PL2025_PHYSICAL_DELIVERED_v4')
     picks = [next(f for f in families if f['id'] == n) for n in [15, 24, 23, 1, 16, 20]]
     product_links = ''
     for family in picks:

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.4",
+    "version": "2026.5",
     "updated_at": "2026-10-19",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-10-19",
+      "kategoria": "przeglad_metody",
+      "status": "zakonczony",
+      "dotyczy": "PL2025_PHYSICAL_DELIVERED_v4; pakiet 2026-10-19.1",
+      "tytul": "Energia elektryczna Polska 2025 — wydanie v4",
+      "opis": "Opublikowano wybrany profil v4: 37 wskaźników na 1 kWh fizycznie dostarczonej energii. Wspólnie przeliczono zaktualizowaną bazę węgla kamiennego, paliwa i emisje węgla brunatnego oraz zastępczą technologię wzbogacania uranu. Całkowity wpływ na klimat wynosi 0,6445397488349277 kg CO₂ równ./kWh, o 1,54% mniej niż w v3. Zakończono odbiór techniczny obliczeń oraz wewnętrzną recenzję kodu i metody. Poprzednia karta i pakiet v3 pozostają dostępne jako archiwum.",
+      "podstawa": "Wybrany profil v4 po odbiorze technicznym; dokumentacja metody, ocena jakości i kontrola eksportu przypisane do wydania 2026-10-19.1.",
+      "link": "/energia-polska-2025-v4.html",
+      "skutek_dla_deklaracji": "Publikacja nie jest formalnym przyjęciem zbioru do programu ani zewnętrzną recenzją ekspercką przez człowieka. Dobór do konkretnego zastosowania wymaga oceny według zasad programu; nowa wersja nie przelicza automatycznie wcześniejszych deklaracji."
+    },
     {
       "data": "2026-10-19",
       "kategoria": "format",
