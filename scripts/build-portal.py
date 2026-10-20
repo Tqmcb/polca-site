@@ -28,7 +28,7 @@ def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True):
  mainhead='' if home else crumb(title,parent)+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261020emissions">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261021topics">' if home else ''
  main_class='portal-main home-main' if home else 'portal-main portal-shell'
  out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261020design">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
@@ -156,6 +156,8 @@ if __name__=='__main__':
  build_consultation(globals())
  from map_portal import build as build_map
  build_map(globals())
+ from topic_map_portal import build as build_topic_map
+ build_topic_map(globals())
  if args.migrate_shell:migrate_shell()
  sync_shell()
  sitemap();print(f'Generated {len(GENERATED)} pages; shell migration: {args.migrate_shell}')
