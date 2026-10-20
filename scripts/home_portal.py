@@ -8,6 +8,7 @@ def build(api, families):
     records = api['CAT']['datasets']
     methods = json.loads((root / 'data/product-methods.json').read_text())['documents']
     energy = next(r for r in records if r['id'] == 'PL2025_PHYSICAL_DELIVERED_v4')
+    consultation = json.loads((root / 'content/consultation-energy.json').read_text())
     picks = [next(f for f in families if f['id'] == n) for n in [15, 24, 23, 1, 16, 20]]
     product_links = ''
     for family in picks:
@@ -28,6 +29,8 @@ def build(api, families):
         energy_factor=e(f'{energy["value"]:.4f}'.replace('.', ',')),
         example_value=e(f'{energy["value"] * 100:.2f}'.replace('.', ',')),
         product_links=product_links,
+        consultation_title=e(consultation['home_title']),
+        consultation_description=e(consultation['home_description']),
     )
     page(
         'index.html',

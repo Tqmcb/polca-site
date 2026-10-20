@@ -27,3 +27,32 @@ Testy sprawdzają spójność katalogu, lokalne odnośniki, jednostki, podstawow
 Serwis jest publikowany przez GitHub Pages. Obecne przepływy GitHub Actions automatycznie tworzą i łączą pull request dla gałęzi `claude/**`. Wysłanie takiej gałęzi należy traktować jako publikację: dopiero po kontroli treści, obliczeń i wyglądu.
 
 Warunki wykorzystania danych podano przy zbiorach. Licencja fontu Source Sans 3 znajduje się w `assets/fonts/LICENSE.md`.
+
+## Konsultacje modelu energii
+
+Strony konsultacji generuje `scripts/consultation_portal.py` z treści w
+`content/consultation-energy.json` i pakietu
+`data/konsultacje/energia-2025-20261020/`. Projekt konsultacyjny jest oddzielony od
+modelu v4 używanego w kalkulatorze. Nie zastępuje go podczas zwykłej przebudowy.
+
+Formularz pomaga przygotować wiadomość w poczcie użytkownika albo skopiować lub
+pobrać jej treść. Strona statyczna nie przyjmuje zgłoszeń i nie nadaje im numerów.
+Obsługa otrzymanych wiadomości oraz publikacja odpowiedzi odbywają się redakcyjnie.
+
+Rejestr `uwagi.json` jest aktualizowany osobno od zamrożonego pakietu. Przed
+publikacją wpisu usuń dane kontaktowe i informacje poufne z każdego pola, zachowaj
+sens uwagi oraz użyj podpisu wskazanego do publikacji; brak podpisu oznacz
+„Anonimowo”. Każdy wpis otrzymuje `package_version`, trwałe `id`, `topic`, `comment`, `submitted_at`,
+`author_label` i `status`. Pola opcjonalne: `section`, `source`, `proposal`,
+`response`, `resolution`, `changed_in_version`. Dozwolone statusy:
+`received`, `in_review`, `author_response`, `revision_required`, `resolved`.
+Wersja każdego wpisu i rejestru musi odpowiadać pakietowi, którego dotyczą uwagi.
+Status `resolved` wymaga treści rozstrzygnięcia. Generator odrzuca wpisy zawierające
+adres e-mail, co nie zastępuje redakcyjnej kontroli pozostałych danych. Numer wpisu
+nie jest dowodem akceptacji modelu.
+
+Po aktualizacji rejestru przebuduj strony i uruchom testy. Zmiana obliczeń wymaga
+nowej, jednoznacznie oznaczonej wersji pakietu oraz nowych sum kontrolnych;
+nie nadpisuj opublikowanych wyników pod dotychczasową wersją. `manifest.json`
+opisuje pliki pakietu, a archiwum ZIP zawiera ich dokładne kopie. Bieżący rejestr
+uwag jest celowo wyłączony z manifestu i archiwum.

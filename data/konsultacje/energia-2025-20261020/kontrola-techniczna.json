@@ -1,0 +1,18 @@
+{
+  "model_id": "PL2025_METHOD_CLOSURE_CANDIDATE",
+  "package_version": "2026-10-20.1",
+  "scope_pl": "Zgodność eksportu z odebranym obliczeniem oraz zapis wcześniejszej kontroli arytmetycznej. Nie jest to raport niezależnego przeglądu eksperta.",
+  "source_verification_sha256": "e8bc627a5e95810c327622ae41f660130b2630f7ded7578617239ce01915bea0",
+  "export_checks": {
+    "all_37_exactly_match_source": true,
+    "all_37_finite": true
+  },
+  "calculation_checks": {
+    "all_37_independent_fsum": true,
+    "all_37_physical_units_reconcile": true,
+    "carbon_event_and_added_entries_sum_reconciles": true,
+    "required_quality_indicators_checked": 15,
+    "minimum_required_assessed_absolute_coverage": 0.809293170502905,
+    "coverage_is_not_good_quality_share": true
+  }
+}

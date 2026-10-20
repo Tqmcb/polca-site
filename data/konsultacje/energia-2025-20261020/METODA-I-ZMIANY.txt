@@ -1,0 +1,117 @@
+NOTA METODYCZNA — PROJEKT DO KONSULTACJI
+
+PL2025_METHOD_CLOSURE_CANDIDATE | 2026-10-20.1
+
+Jednostka: 1 kWh fizycznie dostarczonej energii w Polsce, rok odniesienia 2025.
+
+Opracowanie: Multicert Sp. z o.o. Data projektu: 20.10.2026.
+
+To opis metody projektu, nie raport niezależnego krytycznego przeglądu człowieka.
+
+
+
+JEDNOSTKA I GRANICE SYSTEMU
+
+Wynik projektu odnosi się do 1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce w 2025 r. Model opisuje fizyczny miks zużycia, nie miks produkcji, przy uśrednionej krajowej strukturze napięć. Nie wyodrębnia poziomów napięcia ani nie oblicza miksu resztkowego.
+
+Granice systemu przejęto z wersji v4: wydobycie i transport paliw, spalanie, infrastrukturę i straty sieci. Wynik nie jest dowodem niskiej emisji konkretnego producenta ani zamiennikiem energii dostawcy lub miksu resztkowego, gdy zasady kategorii wyrobów wymagają tych wielkości.
+
+Metoda i zmiany wcześniejszej wersji v4: https://polca.org.pl/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt
+
+
+
+KRAJOWE DANE I HISTORYCZNE TŁO
+
+Dane krajowe dotyczą produkcji energii elektrycznej i ciepła z węgla kamiennego i brunatnego: baza 2024 z panelem trendu 2025 dla węgla kamiennego oraz wspólne sumy Agencji Rynku Energii za 2025 r. dla węgla brunatnego. Ocenę jakości rozszerzono o 11 wcześniej nieobjętych nią procesów i dwa polskie bilanse wody kopalnianej.
+
+Pozostałe procesy pochodzą z historycznego tła bazy, w tym wydobycie uranu, transport gazu skroplonego i roboty strzałowe. Nowy rachunek nie zmienił tych przybliżeń w pomiary Polski 2025. Wewnętrzny rejestr 73 decyzji jakości podaje dla każdego istotnego elementu rok źródłowy, zakres użycia i warunek aktualizacji przed kolejnym wydaniem rocznym. W pakiecie publikujemy zagregowane udziały jakości danych dla 15 wskaźników.
+
+Dane krajowe w wersji v4: https://polca.org.pl/energia-polska-2025-v4.html
+
+Warunki wykorzystania bazy BAFU:2026: https://nexus.openlca.org/ws/files/40247
+
+
+
+WSPÓLNA ALOKACJA PRĄDU I CIEPŁA
+
+Względem wersji v4 zmieniono metodę alokacji. Dla nowych strumieni węgla kamiennego i brunatnego obciążenia dzieli wspólny klucz jakości energii aE = E/(E+qQ), z q = 0,35 dla obu paliw, zastosowany przed agregacją. E oznacza energię elektryczną, a Q — ciepło, wyrażone w tej samej jednostce energii. Procesów historycznych nie dzielono ponownie.
+
+Wartość q = 0,35 jest przybliżeniem jakości ciepła z literatury (Itten i in. 2023) dla sytuacji bez danych zakładowych, pomiędzy ciepłem grzewczym a parą przemysłową. Jest to przybliżenie modelowe, nie wartość zmierzona dla polskiego ciepła. Analiza 17 par współczynników daje dla wyniku klimatycznego zakres od około −10,7% (q = 1) do +8,8% (q = 0) wobec wyniku centralnego; są to testy graniczne, nie przedział ufności.
+
+Ograniczenia: brak niealokowanych inwentarzy historycznych, aktywność pierwszego spalania pozostaje bez przeskalowania, węgiel brunatny dzielony jest na poziomie grupy, a nieodtworzone wymiany historyczne zachowują dotychczasowe ilości na kWh.
+
+Alokacja we wcześniejszej wersji v4: https://polca.org.pl/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt
+
+Itten i in. 2023 — podstawa przybliżenia jakości ciepła, rozdział 3.4: https://digitalcollection.zhaw.ch/bitstreams/c63b348f-80ac-40c0-b5f1-d17f13bfead6/download
+
+
+
+RACHUNEK WĘGLA BIOGENICZNEGO
+
+Węgiel biogeniczny rozliczono jawnie dla objętych źródeł. CO₂ i CH₄ scharakteryzowano osobno, dla gazu z osadów ściekowych i bioodpadów przyjęto transfery netto węgla ze składu gazu, a drewno pozostawione w kopalniach rozliczono terminalnie z wejścia tarcicy, bez kredytu trwałego składowania. Nie zastosowano globalnej korekty wymuszającej zerowy bilans.
+
+Wybrano wariant źródłowy: dwie krawędzie grafu dla biogazu przeliczono z zachowaniem energii wejściowej po zmianie wartości opałowej, dlatego przeliczono cały graf, nie tylko wiersz biogeniczny. Potencjał globalnego ocieplenia związany z węglem biogenicznym (GWP-biogenic) wynosi 0,0013 kg CO₂ równ./kWh.
+
+Ograniczenia: rachunek nie jest pełnym fizycznym bilansem bazy, właściwości gazu pochodzą z 2007 r., ilości drewna są oszacowaniem autora bazy, a tlenek węgla i oleje pochodzenia biogenicznego nie mają współczynnika w użytym zestawie metody. Diagnostyka daje około 0,00013 kg CO₂/kWh dla utlenienia tlenku węgla i około 0,0000036 kg CO₂/kWh w skrajnym przeliczeniu olejów. To oszacowania ograniczeń, nie wartości dopisane do wyniku.
+
+
+
+WODA KOPALNIANA I JAKOŚĆ DANYCH
+
+Dla rozpoznanych krajowych ilości węgla brunatnego i kamiennego zastosowano polski współczynnik charakterystyki niedoboru wody 1,96 zamiast odziedziczonego 42,95. Zachowano źródłowe oszacowania poboru i założony zwrot 90%, który jest założeniem autora bazy, nie pomiarem. Wskaźnik zubożenia zasobów wodnych (WDP) zmienił się z 0,0212 do 0,0173 m³ równoważnika światowego/kWh; pozostałe 36 wskaźników nie zmieniło się w tym kroku.
+
+Ocena jakości obejmuje ponad 80% bezwzględnych wkładów w 13 podstawowych i dwóch dodatkowych wskaźnikach. Pokrycie oznacza udział objęty oceną, nie udział dobrych danych. Słaba lub bardzo słaba aktualność dotyczy ponad 80% wkładów m.in. w wynikach dla węgla biogenicznego, eutrofizacji wód słodkich, zasobów wodnych i odpadów promieniotwórczych. Historyczny model robót strzałowych odpowiada za 7,62% bezwzględnych wkładów eutrofizacji lądowej; jego ograniczenia wymagają uwzględnienia przy interpretacji tego wyniku.
+
+Status kontroli: https://polca.org.pl/konsultacje/energia-polska-2025-metoda.html#status
+
+
+
+STATUS KONTROLI I PRZEGLĄDU
+
+Zakończono wewnętrzną kontrolę obliczeń i metody z użyciem dwóch modeli sztucznej inteligencji. Sprawdzono 37 wskaźników, 17 wariantów alokacji, sumy składników klimatycznych oraz zachowanie dotychczasowych plików wersji v4.
+
+Ta nota jest własnym opisem metody, nie raportem niezależnego krytycznego przeglądu. Projekt nie przeszedł przeglądu eksperta, nie został formalnie przyjęty przez operatora programu. Publiczna wersja v4 pozostaje odrębnym wydaniem w kalkulatorze i katalogu danych.
+
+Pytania konsultacyjne: https://polca.org.pl/konsultacje/energia-polska-2025.html#pytania
+
+
+
+ŹRÓDŁA I SPOSÓB UŻYCIA
+
+Pakiet konsultacyjny 2026-10-20.1 zawiera 37 własnych wyników zagregowanych, opis zmian, ograniczenia, warunki wykorzystania i manifest. Nie zawiera kopii inwentarzy, norm ani raportów dostawców; tło pochodzi z publicznie opisanej bazy, do której podajemy odsyłacz.
+
+Różnica +0,42% względem v4 jest skutkiem zmiany modelowania: alokacji, grafu dostaw biogazu i charakterystyki węgla biogenicznego. Nie jest zmierzonym wzrostem emisji elektrowni. Wskaźnik klimatyczny należy czytać razem z pozostałymi 36 wskaźnikami i rejestrem jakości; 37 obliczonych wartości nie oznacza, że wszystkie mają równą jakość.
+
+Wyniki pakietu: https://polca.org.pl/konsultacje/energia-polska-2025.html#wyniki
+
+Warunki wykorzystania bazy BAFU:2026: https://nexus.openlca.org/ws/files/40247
+
+
+
+DOKUMENTACJA ZMIAN DANYCH TŁA
+
+Punktem wyjścia jest zmodyfikowany model opisany w wydaniu v4: https://polca.org.pl/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt . Projekt zachowuje opisane tam wcześniejsze zmiany i dodaje poniższe korekty.
+
+Dla aktualizowanych strumieni grup węgla kamiennego i brunatnego przyjęto wspólny udział energii elektrycznej aE = E/(E+0,35Q). Podział wykonywany jest przed agregacją. Historycznych procesów tła, których inwentarzy nie odtworzono, nie podzielono ponownie.
+
+W modelu wtórnego biogazu z osadów przeliczono dwie dostawy do silnika produkującego prąd i ciepło z wartości opałowej 22,73 na 23,56437362 MJ/m³, zachowując energię wejściową. Dodano jawne transfery netto węgla dla gazu z osadów i bioodpadów oraz rozliczenie drewna pozostawionego w kopalniach bez kredytu trwałego składowania.
+
+Dla rozpoznanego krajowego wydobycia węgla zastosowano polską charakterystykę wody 1,96 zamiast odziedziczonej 42,95 m³ równoważnika światowego/m³ wody. Zachowano źródłowe ilości poboru 0,0035 i 0,00169 m³/kg oraz założenie 90% zwrotu; dalsze tło i import pozostały osobno.
+
+Celem zmian jest spójność podziału prąd–ciepło, jawność rachunku biogenicznego i zgodność geografii charakterystyki wody z rozpoznanymi dostawami. Pełny graf i raporty dostawców nie są częścią pakietu zagregowanych wyników.
+
+
+
+JAK CZYTAĆ WRAŻLIWOŚĆ
+
+Plik wrazliwosc-37.csv obejmuje 17 par q dla węgla kamiennego i brunatnego, po 37 wyników. q=0 i q=1 są testami granicznymi. Centralna para wynosi 0,35/0,35. Są to deterministyczne scenariusze alokacji, nie przedziały ufności ani pełna niepewność modelu.
+
+
+
+ŹRÓDŁO TŁA I WARUNKI
+
+Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026
+
+Dane zmodyfikowano. Opracowanie nie stanowi oryginalnych zbiorów dostawcy ani deklaracji jego poparcia.
+
+Warunki towarzyszą pakietowi w WARUNKI-WYKORZYSTANIA.txt; źródło: https://nexus.openlca.org/ws/files/40247

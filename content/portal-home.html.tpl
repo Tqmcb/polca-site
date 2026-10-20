@@ -42,6 +42,19 @@
       <p class="home-example-status"><strong>$energy_status.</strong> Kwalifikacja modelu do konkretnego zastosowania w EPD pozostaje otwarta. <a href="$energy_href#status">Zakres i status wersji</a>.</p>
     </figure>
   </section>
+  <section class="home-section home-consultation" aria-labelledby="home-consultation-title">
+    <div>
+      <p class="home-eyebrow">Otwarte konsultacje · Polska 2025</p>
+      <h2 id="home-consultation-title">$consultation_title</h2>
+      <p>$consultation_description</p>
+      <a class="home-primary" href="/konsultacje/energia-polska-2025.html">Zobacz projekt i zgłoś uwagę →</a>
+    </div>
+    <ol class="home-consultation-route" aria-label="Jak wziąć udział">
+      <li><span>01</span><div><strong>Poznaj sposób obliczeń</strong><p>Sześć kroków od źródeł do oceny modelu.</p></div></li>
+      <li><span>02</span><div><strong>Sprawdź dane i założenia</strong><p>Dokumentacja, 37 wyników i warianty obliczeń.</p></div></li>
+      <li><span>03</span><div><strong>Wskaż konkretną poprawkę</strong><p>Uwaga powiązana z tematem i wersją projektu.</p></div></li>
+    </ol>
+  </section>
   <section class="home-section" aria-labelledby="home-products-title">
     <div class="home-products">
       <div class="home-products-intro">

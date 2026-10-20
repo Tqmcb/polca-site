@@ -5,7 +5,7 @@
     "data_positions": 37,
     "parameter_sets": 1,
     "control_references": 8,
-    "resources": 97,
+    "resources": 98,
     "collections": 3
   },
   "datasets": [
@@ -2071,6 +2071,42 @@
     }
   ],
   "resources": [
+    {
+      "id": "consultation-energia-2025",
+      "title": "Konsultacje: model energii Polska 2025",
+      "kind": "method",
+      "category_id": "energia",
+      "category_label": "Energia",
+      "year": 2025,
+      "year_type": "reference",
+      "status_id": "consultation",
+      "status_label": "Konsultacje techniczne",
+      "description": "Sprawdź sposób obliczeń, pobierz projekt z 37 wskaźnikami i zgłoś uwagę do danych lub metody.",
+      "href": "/konsultacje/energia-polska-2025.html",
+      "unit": null,
+      "boundary": null,
+      "indicator_label": null,
+      "source_name": null,
+      "source_url": null,
+      "formats": [],
+      "downloads": [],
+      "methodology_href": "/konsultacje/energia-polska-2025-metoda.html",
+      "related_ids": [],
+      "keywords": [
+        "konsultacje",
+        "energia",
+        "2025",
+        "prąd",
+        "jakość danych",
+        "alokacja",
+        "biogeniczny",
+        "przegląd",
+        "uwagi"
+      ],
+      "cpr_family_ids": [],
+      "cpr_related": [],
+      "cpr_scope_note": null
+    },
     {
       "id": "tool-energia-2025",
       "title": "Oblicz wkład energii — Polska 2025",

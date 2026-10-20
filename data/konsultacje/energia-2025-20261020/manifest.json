@@ -1,0 +1,40 @@
+{
+  "model_id": "PL2025_METHOD_CLOSURE_CANDIDATE",
+  "package_version": "2026-10-20.1",
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "METODA-I-ZMIANY.txt": {
+      "sha256": "2daa972349689ba4066b482786cf905a47e270d8280171904b117a1174fdc5eb",
+      "bytes": 9165
+    },
+    "START.txt": {
+      "sha256": "4834049b2dce8d5df5e4d85a9b5adb20a0f87c0d3818bba531402ba2c086262e",
+      "bytes": 765
+    },
+    "WARUNKI-WYKORZYSTANIA.txt": {
+      "sha256": "0ae4996dd0cb0ab90343decf4a105d4a6ef2bbfb485c2168ebb8413d2b5dc39d",
+      "bytes": 1627
+    },
+    "jakosc-danych.json": {
+      "sha256": "cb3bd240739090dc59a1d21c2f7c2499ac75f7f0ff53456dea3e05f4a56d5758",
+      "bytes": 11902
+    },
+    "kontrola-techniczna.json": {
+      "sha256": "a15ce7177cb950f521762a24478014523e9654ae9d9a66b965cc6a04d768ff86",
+      "bytes": 783
+    },
+    "profil-37.json": {
+      "sha256": "705bcced4b07774d830cd9f88ab03b44cf80546c46aed5e09957781bae5d4bf6",
+      "bytes": 13825
+    },
+    "wrazliwosc-37.csv": {
+      "sha256": "d9310fcc7c972445fc0aa0465e73bd746c37fd32e0c8e9ac8edd33ba58dbb7b6",
+      "bytes": 106329
+    },
+    "wskazniki-37.csv": {
+      "sha256": "6fbf6bb700a508bc054605186e15f655f24975ad1807360d11fb8d742e6072ca",
+      "bytes": 5806
+    }
+  },
+  "live_register_excluded": "uwagi.json"
+}

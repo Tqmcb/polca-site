@@ -1,0 +1,38 @@
+﻿model_id;package_version;status;code;name_pl;value_per_kWh;impact_unit;denominator_unit
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;GWP-total;Potencjał globalnego ocieplenia — łącznie;0.6472750830697663;kg CO2 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;GWP-fossil;Potencjał globalnego ocieplenia — pochodzenie kopalne;0.645814991576697;kg CO2 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;GWP-biogenic;Potencjał globalnego ocieplenia — pochodzenie biogeniczne;0.0013457094218741437;kg CO2 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;GWP-luluc;Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany;0.00011438207119520214;kg CO2 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;ODP;Potencjał zubożenia warstwy ozonowej;4.010742490247474e-09;kg CFC11 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;AP;Potencjał zakwaszenia;0.0010846349344005874;mol H+ eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;EP-fw;Potencjał eutrofizacji wód słodkich;6.266590352641346e-05;kg P eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;EP-mar;Potencjał eutrofizacji morskiej;0.00021979173206415075;kg N eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;EP-ter;Potencjał eutrofizacji lądowej;0.0024557932079604765;mol N eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;POCP;Potencjał powstawania ozonu przygruntowego;0.0007625694329655857;kg NMVOC eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;ADP-mm;Potencjał wyczerpywania zasobów abiotycznych — minerały i metale;7.900974421117845e-07;kg Sb eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;ADP-fossil;Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne;7.203216957632466;MJ (net calorific);kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;WDP;Potencjał pozbawienia wody;0.017305608868286276;m3 world eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PM;Potencjalna zachorowalność związana z pyłem;4.735631869688809e-09;disease incidence;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;IRP;Potencjalny wpływ promieniowania jonizującego na zdrowie;0.006816918041380697;kBq U235 eq;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;ETP-fw;Potencjał ekotoksyczności wód słodkich;1.9766588997572172;CTUe;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;HTP-c;Potencjał toksyczności dla ludzi — skutki rakotwórcze;3.234739595945085e-10;CTUh;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;HTP-nc;Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze;7.826023966783144e-09;CTUh;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;SQP;Potencjalny wpływ użytkowania gruntów na jakość gleby;3.278394853087632;dimensionless (pt);kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PERE;Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;1.92673527617644;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PERM;Odnawialne zasoby energii pierwotnej użyte jako surowce;0.0;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PERT;Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej;1.9267352761764398;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PENRE;Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;7.220855675787145;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PENRM;Nieodnawialne zasoby energii pierwotnej użyte jako surowce;0.0;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;PENRT;Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej;7.220855675787146;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;SM;Wykorzystanie materiałów wtórnych;0.001964688203361935;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;RSF;Wykorzystanie odnawialnych paliw wtórnych;0.002610644970605357;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;NRSF;Wykorzystanie nieodnawialnych paliw wtórnych;0.0;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;FW;Zużycie netto zasobów wody słodkiej;0.002047234914827837;m3;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;HWD;Odpady niebezpieczne poddane unieszkodliwianiu;0.11522455161706043;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;NHWD;Odpady inne niż niebezpieczne poddane unieszkodliwianiu;1.8556866735697828;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;RWD;Odpady promieniotwórcze poddane unieszkodliwianiu;0.0002928885274595877;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;CRU;Komponenty przeznaczone do ponownego użycia;0.0;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;MFR;Materiały przeznaczone do recyklingu;9.651018612809654e-06;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;MER;Materiały przeznaczone do odzysku energii;0.0;kg;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;EEE;Eksportowana energia elektryczna;0.0010206984004328048;MJ;kWh
+PL2025_METHOD_CLOSURE_CANDIDATE;2026-10-20.1;consultation_candidate;EET;Eksportowana energia cieplna;0.004668827944946297;MJ;kWh
