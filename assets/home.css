@@ -10,6 +10,9 @@
 .home-intro h1 span { color: var(--portal-link); }
 .home-illustration { grid-area: art; margin: -12px -24px 0 0; align-self: center; }
 .home-illustration img { display: block; width: 100%; height: auto; }
+.home-illustration > a { display: block; }
+.home-illustration figcaption { margin-top: 2px; text-align: right; font-size: .82rem; }
+.home-illustration figcaption a { display: inline-block; padding-block: 8px; }
 .home-description { grid-area: description; max-width: 540px; margin-bottom: 22px; font-size: 1.04rem; line-height: 1.48; color: var(--portal-muted); }
 .home-search { grid-area: search; max-width: 550px; }
 .home-search label { display: block; margin-bottom: 8px; font-size: .9rem; font-weight: 600; }
