@@ -9,12 +9,17 @@ colors:
   soft: "#f3f6fa"
   paper: "#ffffff"
   dark-surface-text: "#c9d7e9"
+  consultation-wash: "#eff5fc"
+  result-caption: "#d7e2f0"
+  input-border: "#8292a5"
+  preset-border: "#aab8c9"
+  input-error: "#963c36"
 typography:
   display-home:
     fontFamily: '"Source Sans 3", Arial, sans-serif'
-    fontSize: "clamp(2.65rem, 4.5vw, 3.8rem)"
+    fontSize: "clamp(2.6rem, 4.1vw, 3.55rem)"
     fontWeight: 620
-    lineHeight: 1.01
+    lineHeight: 1.04
     letterSpacing: "-0.038em"
   headline:
     fontFamily: '"Source Sans 3", Arial, sans-serif'
@@ -58,7 +63,7 @@ components:
 
 poLCA ma charakter atlasu danych i dokumentacji obliczeń. Hierarchię tworzą tytuły, proporcje kolumn, odstępy i cienkie linie. Liczby występują w obliczeniach, tabelach i opisach zbiorów; nie są dekoracją strony.
 
-Biała powierzchnia służy czytaniu i pracy z danymi. Granat porządkuje tekst i wydziela diagram modelu oraz zaproszenie do konsultacji. Kobalt wskazuje odnośniki, czynności i wybrany element. Każdy rodzaj treści ma właściwy mu układ: indeks zasobów, równanie, diagram, wykaz dokumentów, lista pytań lub formularz korespondencji.
+Biała powierzchnia służy czytaniu i pracy z danymi. Granat porządkuje tekst i wydziela diagram modelu oraz wynik obliczenia. Autorskie szkice techniczne łączą energię, materiały, transport i budynek oraz towarzyszą zaproszeniu do konsultacji. Kobalt wskazuje odnośniki, czynności i wybrany element. Każdy rodzaj treści ma właściwy mu układ: indeks zasobów, równanie, diagram, wykaz dokumentów, lista pytań lub formularz korespondencji.
 
 Treści są po polsku. Rok danych, wersja modelu, jednostka, źródło i status pozostają rozpoznawalnymi, odrębnymi informacjami. Sposób prezentacji wyniku nie stanowi potwierdzenia jego kwalifikacji do zastosowania.
 
@@ -100,11 +105,11 @@ Przy szerokości poniżej 760 px główne kompozycje strony głównej i konsulta
 
 ## Elevation & Depth
 
-Powierzchnie są płaskie. Podział treści wynika z odstępów, pojedynczych linii i zmian tła. Nie stosować cieni do obwodzenia kolejnych sekcji ani do tworzenia pozornej głębi kart. Obrys aktywnego kroku i podkreślenie aktywnej pozycji nawigacji oznaczają stan elementu.
+Warstwa danych jest oszczędna, a autorskie ilustracje wprowadzają przestrzeń i lekkość. Podział treści wynika z odstępów, pojedynczych linii i zmian tła. Nie stosować cieni do obwodzenia kolejnych sekcji ani do tworzenia pozornej głębi kart. Obrys aktywnego kroku i podkreślenie aktywnej pozycji nawigacji oznaczają stan elementu.
 
 ## Shapes
 
-Diagram, równanie i główne powierzchnie mają prostokątną formę. Zaokrąglenie pól konsultacji wynosi 3 px, a wspólnych przycisków i pól portalu — 4 px. Wyszukiwanie na stronie głównej ma proste narożniki. Małe koła w nawigacji procesu są punktami kolejnych etapów.
+Diagram, równanie i główne powierzchnie mają prostokątną formę. Zaokrąglenie pól konsultacji wynosi 3 px, a wspólnych przycisków i pól portalu — 4 px. Wyszukiwanie na stronie głównej ma narożniki 4 px. Obszar interaktywnego równania ma narożniki 8 px, a wynik 6 px. Małe koła w nawigacji procesu są punktami kolejnych etapów.
 
 Linie mają przeważnie grubość 1 px. Grubszy obrys służy wskazaniu fokusu klawiatury, nie dekoracyjnemu obramowaniu treści. Nie dodawać szerokich kolorowych pasków przy uwagach i zastrzeżeniach.
 
@@ -124,7 +129,7 @@ Pola mają białe tło, cienkie obramowanie i widoczną etykietę. Tekst podpowi
 
 ### Obliczenie i diagram modelu
 
-Przykład na stronie głównej pokazuje zależność: zużycie energii × wskaźnik modelu = wynik. Każdy człon ma nazwę i jednostkę. Pod obliczeniem znajduje się źródło, a obok opisu zastosowania — status wersji i odnośnik do jej zakresu.
+Przykład na stronie głównej pozwala zmienić zużycie i pokazuje zależność: zużycie energii × wskaźnik modelu = wynik. Obliczenie używa pełnej precyzji publicznego modelu v4. Bez skryptów pozostaje statyczny przykład dla 100 kWh. Każdy człon ma nazwę i jednostkę. Pod obliczeniem znajduje się źródło, a obok opisu zastosowania — status wersji i odnośnik do jej zakresu.
 
 Diagram konsultacji rozdziela dane wejściowe, obliczenie dla jednostki odniesienia i wyniki. Linie pokazują połączenia tych elementów; nie są ozdobnym wzorem tła. Diagram pozostaje czytelny bez odtwarzania opisu.
 
@@ -147,4 +152,8 @@ Formularz przygotowuje wiadomość do samodzielnego wysłania. Tekst, przyciski 
 - Nie przedstawiaj publikacji lub kontroli technicznej jako formalnego zatwierdzenia zastosowania danych.
 - Nie zmieniaj danych modelu ani domyślnego profilu kalkulatora w ramach zmiany wyglądu.
 
-Źródłem implementacji są `assets/portal.css`, `assets/home.css`, `assets/consultation.css`, `content/portal-home.html.tpl`, `scripts/consultation_portal.py` i `js/consultation.js`.
+Źródłem implementacji są `assets/portal.css`, `assets/home.css`, `assets/consultation.css`, `content/portal-home.html.tpl`, `scripts/consultation_portal.py`, `js/home.js` i `js/consultation.js`.
+
+## Ilustracje
+
+Dwa szkice w `images/polca-*.webp` są przygotowane dla portalu: panorama infrastruktury otwiera stronę, a rysunek dokumentacji i lupy towarzyszy konsultacji. Grafiki mają przezroczyste tło, delikatny grafitowy rysunek i kobaltowy akcent. Nie przedstawiają rzeczywistego zakładu, danych ani formalnego zatwierdzenia. Na telefonie panorama pozostaje między tytułem a opisem, a wyszukiwanie jest dostępne na pierwszym ekranie. Nie usuwać ilustracji w imię redukcji dekoracji: ich zadaniem jest ułatwienie rozpoznania tematu i przełamanie monotonii.

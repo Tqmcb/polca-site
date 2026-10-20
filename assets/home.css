@@ -3,40 +3,55 @@
 .home-main h1, .home-main h2, .home-main h3 { font-weight: 600; }
 .home-main h2 { margin: 0; font-size: clamp(1.8rem, 2.8vw, 2.3rem); line-height: 1.12; letter-spacing: -.025em; text-wrap: balance; }
 .home-main p { margin-top: 0; }
-.home-intro { padding: clamp(48px, 6vw, 84px) 0 64px; }
-.home-intro-grid { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(240px, .8fr); gap: clamp(40px, 7vw, 110px); align-items: end; }
-.home-intro h1 { margin: 0 0 24px; max-width: 900px; font-size: clamp(2.65rem, 4.5vw, 3.8rem); font-weight: 620; line-height: 1.01; letter-spacing: -.038em; }
+/* The opening connects the portal's four subjects through an authored drawing. */
+.home-intro { padding: 40px 0 48px; overflow: clip; }
+.home-intro-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.1fr); grid-template-areas: "title art" "description art" "search art" "actions art"; gap: 0 24px; align-items: start; }
+.home-intro h1 { grid-area: title; margin: 0 0 22px; font-size: clamp(2.6rem, 4.1vw, 3.55rem); font-weight: 620; line-height: 1.04; letter-spacing: -.038em; }
 .home-intro h1 span { color: var(--portal-link); }
-.home-description { max-width: 590px; margin-bottom: 30px; font-size: 1.08rem; line-height: 1.5; color: var(--portal-muted); }
-.home-search { max-width: 620px; }
-.home-search label { display: block; margin-bottom: 8px; font-size: .92rem; font-weight: 600; }
-.home-search .portal-search-control { gap: 0; }
-.home-search .portal-search-control input { min-height: 58px; padding: 12px 16px; border: 1px solid #8292a5; border-right: 0; border-radius: 0; background: #fff; }
-.home-search .portal-search-control button { min-width: 104px; border-radius: 0; padding-inline: 20px; }
-.home-actions { display: flex; flex-wrap: wrap; gap: 8px 26px; margin-top: 10px; }
-.home-actions a { display: inline-block; padding-block: 8px; font-size: .9rem; }
-.home-routes { align-self: stretch; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 4px; }
-.home-routes h2 { margin: 0 0 20px; font-size: 1.12rem; line-height: 1.3; letter-spacing: 0; }
-.home-routes ul { list-style: none; padding: 0; margin: 0; }
-.home-routes li { border-top: 1px solid var(--portal-line); }
-.home-routes li:last-child { border-bottom: 1px solid var(--portal-line); }
-body.portal .home-routes a { display: block; padding: 19px 0 22px; color: var(--portal-ink); text-decoration: none; }
-.home-routes strong { display: block; font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
-.home-routes span { display: block; margin-top: 7px; max-width: 30ch; color: var(--portal-muted); font-size: .94rem; line-height: 1.45; }
+.home-illustration { grid-area: art; margin: -12px -24px 0 0; align-self: center; }
+.home-illustration img { display: block; width: 100%; height: auto; }
+.home-description { grid-area: description; max-width: 540px; margin-bottom: 22px; font-size: 1.04rem; line-height: 1.48; color: var(--portal-muted); }
+.home-search { grid-area: search; max-width: 550px; }
+.home-search label { display: block; margin-bottom: 8px; font-size: .9rem; font-weight: 600; }
+.home-search .portal-search-control { gap: 0; flex-wrap: nowrap; }
+.home-search .portal-search-control input { min-height: 54px; padding: 12px 14px; border: 1px solid #8292a5; border-right: 0; border-radius: 4px 0 0 4px; background: #fff; }
+.home-search .portal-search-control button { min-width: 90px; width: auto; border-radius: 0 4px 4px 0; padding-inline: 18px; }
+.home-actions { grid-area: actions; display: flex; flex-wrap: wrap; gap: 4px 26px; margin-top: 8px; }
+.home-actions a { display: inline-block; padding-block: 8px; font-size: .88rem; }
+.home-routes { margin-top: 38px; display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 30px; padding: 22px 0; border-block: 1px solid var(--portal-line); }
+.home-routes h2 { font-size: 1.1rem; line-height: 1.3; letter-spacing: 0; }
+.home-routes ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; gap: 28px; }
+body.portal .home-routes a { display: block; padding: 8px 0; color: var(--portal-ink); text-decoration: none; }
+.home-routes strong { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: 1.13rem; font-weight: 600; line-height: 1.2; }
+.home-routes strong::after { content: "↗"; color: var(--portal-link); font-size: 1.2rem; }
+.home-routes span { display: block; margin-top: 7px; color: var(--portal-muted); font-size: .88rem; line-height: 1.4; }
 body.portal .home-routes a:hover strong { color: var(--portal-link); text-decoration: underline; text-underline-offset: .2em; }
-.home-energy { padding: 38px 0 68px; border-top: 1px solid var(--portal-ink); }
+.home-energy { padding: 12px 0 64px; }
 .home-energy-head { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: end; }
 .home-energy-head p { color: var(--portal-muted); font-size: 1rem; line-height: 1.5; margin: 0 0 2px; }
-.home-calculation { margin: 36px 0 0; }
-.home-calculation figcaption { padding-bottom: 12px; color: var(--portal-muted); font-size: .88rem; }
-.home-equation { display: grid; grid-template-columns: 1fr auto 1.4fr auto 1.3fr; column-gap: clamp(20px, 3.6vw, 56px); align-items: center; padding: 28px 0 30px; border-block: 1px solid var(--portal-line); }
+.home-calculation { margin: 30px 0 0; padding: 24px 28px 20px; background: var(--portal-soft); border-radius: 8px; }
+.home-calculation figcaption { color: var(--portal-muted); font-size: .88rem; }
+.home-equation { display: grid; grid-template-columns: 1.1fr auto 1.15fr auto 1.5fr; column-gap: clamp(16px, 2.5vw, 36px); align-items: center; padding: 24px 0 20px; }
 .home-equation-term { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
-.home-equation-label { font-size: .9rem; line-height: 1.3; color: var(--portal-muted); margin-bottom: 12px; }
-.home-equation-term strong { font-weight: 550; font-size: clamp(2.7rem, 4.8vw, 4rem); line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -.035em; }
-.home-equation-unit { display: block; margin-top: 10px; font-size: 1rem; line-height: 1.3; }
-.home-equation-operator { font-size: 2rem; line-height: 1; font-weight: 300; color: var(--portal-muted); }
-.home-equation-result strong, .home-equation-result .home-equation-unit { color: var(--portal-link); }
-.home-example-source { margin: 12px 0 0; color: var(--portal-muted); font-size: .84rem; line-height: 1.5; }
+.home-energy-static, .home-energy-editor { width: 100%; }
+.home-equation-label { display: block; font-size: .9rem; line-height: 1.3; color: var(--portal-muted); margin-bottom: 12px; }
+.home-equation-term strong, .home-equation-term output, #home-energy-use { font-weight: 550; font-size: clamp(2.4rem, 3.8vw, 3.4rem); line-height: 1.12; font-variant-numeric: tabular-nums; letter-spacing: -.035em; }
+#home-energy-use { display: block; width: 100%; min-width: 0; color: var(--portal-ink); background: #fff; border: 0; border-bottom: 2px solid var(--portal-link); border-radius: 3px 3px 0 0; padding: 3px 8px; font-family: inherit; }
+#home-energy-use[aria-invalid="true"] { border-bottom-color: #963c36; }
+.home-equation-unit { display: block; margin-top: 8px; font-size: .96rem; line-height: 1.3; }
+.home-equation-operator { font-size: 1.8rem; line-height: 1; font-weight: 300; color: var(--portal-muted); }
+.home-equation-result { padding: 24px; color: #fff; background: var(--portal-ink); border-radius: 6px; }
+.home-equation-result .home-equation-label { color: #d7e2f0; }
+.home-equation-result output { max-width: 100%; overflow-wrap: anywhere; }
+.home-equation-result .home-equation-unit { color: #d7e2f0; }
+.home-energy-presets { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; font-size: .84rem; }
+.home-energy-presets span { margin-right: 4px; color: var(--portal-muted); }
+.home-energy-presets button { min-height: 38px; padding: 6px 12px; border: 1px solid #aab8c9; background: transparent; color: var(--portal-ink); border-radius: 4px; font: inherit; cursor: pointer; }
+.home-energy-presets button:hover { border-color: var(--portal-link); background: #fff; color: var(--portal-link); }
+.home-main [hidden] { display: none !important; }
+#home-energy-error { color: #963c36; font-size: .9rem; margin: 4px 0 12px; }
+.home-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.home-example-source { margin: 0; padding-top: 14px; border-top: 1px solid var(--portal-line); color: var(--portal-muted); font-size: .82rem; line-height: 1.5; }
 .home-energy-foot { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-top: 30px; }
 .home-energy-copy p { margin-bottom: 18px; color: var(--portal-muted); font-size: .98rem; }
 .home-energy-copy strong { color: var(--portal-ink); font-weight: 600; }
@@ -46,14 +61,17 @@ body.portal .home-primary:hover { color: #fff; background: var(--portal-ink); te
 .home-example-status p { margin-bottom: 10px; }
 .home-example-status strong { font-weight: 600; }
 .home-example-status a { display: inline-block; margin: 0 16px 0 0; padding-block: 6px; }
-.home-consultation { background: var(--portal-ink); color: #fff; }
-.home-consultation-inner { display: grid; grid-template-columns: 1.6fr 1fr; gap: 80px; padding-block: 46px; align-items: center; }
-.home-consultation h2 { max-width: 24ch; font-size: clamp(1.9rem, 3.2vw, 2.5rem); line-height: 1.1; }
-.home-consultation h2 + p { margin: 18px 0 0; max-width: 56ch; color: #d7e2f0; font-size: 1rem; line-height: 1.5; }
-.home-consultation-access p { color: #d7e2f0; font-size: .92rem; line-height: 1.5; margin-bottom: 18px; }
-body.portal .home-consultation-access a { display: inline-block; padding-block: 8px; color: #fff; font-size: 1.12rem; line-height: 1.3; text-decoration-thickness: 1px; text-underline-offset: .3em; }
-body.portal .home-consultation-access a:hover { color: #fff; text-decoration-thickness: 2px; }
-body.portal .home-consultation :focus-visible { outline-color: #fff !important; }
+.home-consultation { background: #eff5fc; }
+.home-consultation-inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; padding-block: 32px; align-items: center; }
+.home-review-illustration { margin: 0; }
+.home-review-illustration img { display: block; width: 100%; max-width: 390px; height: auto; margin-inline: auto; }
+.home-consultation h2 { max-width: 24ch; font-size: clamp(2rem, 3.2vw, 2.65rem); line-height: 1.1; }
+.home-consultation h2 + p { margin: 20px 0 0; max-width: 52ch; color: var(--portal-muted); font-size: 1.02rem; line-height: 1.5; }
+.home-consultation-access { margin-top: 20px; }
+.home-consultation-access p { color: var(--portal-muted); font-size: .9rem; line-height: 1.5; margin-bottom: 10px; max-width: 47ch; }
+body.portal .home-consultation-access a { display: inline-flex; align-items: center; gap: 20px; padding-block: 8px; font-size: 1.1rem; font-weight: 600; line-height: 1.3; text-decoration-thickness: 1px; text-underline-offset: .3em; }
+.home-consultation-access a span { font-size: 1.45rem; }
+body.portal .home-consultation-access a:hover { text-decoration-thickness: 2px; }
 .home-products { display: grid; grid-template-columns: .8fr 1.5fr; gap: 70px; padding: 72px 0; }
 .home-products-intro p { margin: 22px 0 14px; max-width: 35ch; color: var(--portal-muted); font-size: .97rem; }
 .home-products-intro > a { display: inline-block; padding-block: 8px; font-size: .92rem; }
@@ -81,37 +99,47 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
 .home-about p { max-width: 780px; color: var(--portal-muted); margin: 0; font-size: .88rem; }
 .home-about > a { flex-shrink: 0; font-size: .9rem; align-self: start; }
 @media (max-width: 1000px) {
-  .home-intro-grid { grid-template-columns: minmax(0, 1.5fr) minmax(230px, 1fr); gap: 40px; }
-  .home-intro h1 { font-size: clamp(2.4rem, 4.8vw, 3.6rem); }
+  .home-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0 18px; }
+  .home-intro h1 { font-size: clamp(2.4rem, 4.2vw, 3.2rem); }
+  .home-routes { grid-template-columns: 140px 1fr; gap: 24px; }
+  .home-routes ul { gap: 20px; }
   .home-energy-head, .home-energy-foot { gap: 36px; }
+  .home-calculation { padding-inline: 22px; }
+  .home-equation-result { padding: 20px; }
   .home-consultation-inner { gap: 40px; }
   .home-products { gap: 40px; grid-template-columns: .8fr 1.4fr; }
   .home-guides-intro, .home-guide-links { column-gap: 40px; }
 }
 @media (max-width: 760px) {
-  .home-intro { padding: 36px 0 38px; }
-  .home-intro-grid { grid-template-columns: 1fr; gap: 34px; }
-  .home-intro h1 { font-size: clamp(2.5rem, 7.5vw, 3.6rem); margin-bottom: 20px; }
-  .home-description { max-width: 56ch; margin-bottom: 24px; }
+  .home-intro { padding: 28px 0 32px; }
+  .home-intro-grid { grid-template-columns: 1fr; grid-template-areas: "title" "art" "description" "search" "actions"; gap: 0; }
+  .home-intro h1 { font-size: clamp(2.3rem, 7.8vw, 3.2rem); margin-bottom: 2px; }
+  .home-illustration { margin: 0 -8px 8px; }
+  .home-illustration img { height: 220px; object-fit: contain; }
+  .home-description { max-width: 56ch; margin-bottom: 18px; font-size: 1rem; }
   .home-search { max-width: none; }
-  .home-routes h2 { margin-bottom: 12px; }
-  .home-routes a { min-height: 72px; }
-  body.portal .home-routes a { display: grid; grid-template-columns: 1fr 1.15fr; gap: 18px; align-items: baseline; padding: 16px 0; }
-  .home-routes strong { font-size: 1.12rem; }
-  .home-routes span { font-size: .88rem; margin-top: 0; }
-  .home-energy { padding: 30px 0 38px; }
+  .home-routes { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; padding-block: 20px; }
+  .home-routes ul { gap: 18px; }
+  .home-routes strong { font-size: 1.06rem; }
+  .home-routes span { font-size: .85rem; }
+  .home-energy { padding: 8px 0 38px; }
   .home-energy-head { grid-template-columns: 1fr; gap: 16px; }
   .home-energy-head h2 { font-size: 1.8rem; }
   .home-energy-head p { font-size: .92rem; }
-  .home-calculation { margin-top: 24px; }
-  .home-equation { column-gap: 14px; grid-template-columns: 1fr auto 1.35fr auto 1.1fr; padding-block: 22px; }
-  .home-equation-term strong { font-size: clamp(1.75rem, 5.8vw, 3rem); }
-  .home-equation-label { font-size: .77rem; margin-bottom: 10px; }
-  .home-equation-unit { font-size: .82rem; margin-top: 8px; }
+  .home-calculation { margin-top: 24px; padding: 20px; }
+  .home-equation { column-gap: 16px; grid-template-columns: 1fr auto 1.2fr; padding-block: 20px 16px; }
+  .home-equation-term strong, .home-equation-term output, #home-energy-use { font-size: clamp(2.2rem, 7vw, 3rem); }
+  .home-equation-label { font-size: .84rem; margin-bottom: 10px; }
+  .home-equation-unit { font-size: .88rem; margin-top: 8px; }
   .home-equation-operator { font-size: 1.45rem; }
+  .home-equation-operator:nth-child(4) { display: none; }
+  .home-equation-result { grid-column: 1 / -1; margin-top: 20px; padding: 18px 22px; display: grid; grid-template-columns: 1fr auto; gap: 0 16px; align-items: baseline; width: 100%; }
+  .home-equation-result .home-equation-label { grid-column: 1 / -1; }
+  .home-equation-result .home-equation-unit { margin: 0; }
   .home-energy-foot { grid-template-columns: 1fr; gap: 26px; margin-top: 24px; }
   .home-example-status { border-left: 0; border-top: 1px solid var(--portal-line); padding: 20px 0 0; }
-  .home-consultation-inner { grid-template-columns: 1fr; gap: 24px; padding-block: 34px; }
+  .home-consultation-inner { grid-template-columns: 1fr; gap: 12px; padding-block: 24px 36px; }
+  .home-review-illustration img { max-width: 260px; }
   .home-consultation h2 { max-width: 24ch; }
   .home-consultation-access p { max-width: 48ch; margin-bottom: 8px; }
   .home-products { grid-template-columns: 1fr; gap: 28px; padding-block: 38px; }
@@ -125,28 +153,20 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-about { display: block; }
   .home-about > a { display: inline-block; margin-top: 14px; padding-block: 8px; }
 }
-@media (max-width: 420px) {
-  .home-intro h1 { font-size: clamp(2.05rem, 8.9vw, 2.7rem); }
-  .home-description { font-size: 1rem; }
+@media (max-width: 540px) {
+  .home-intro h1 { font-size: clamp(2.05rem, 8.2vw, 2.7rem); }
+  .home-illustration img { height: 190px; }
   .home-search .portal-search-control button { min-width: 78px; padding-inline: 14px; }
-  .home-search .portal-search-control input { font-size: .9rem; padding-inline: 10px; }
+  .home-search .portal-search-control input { font-size: .95rem; padding-inline: 10px; }
   .home-actions { gap: 0 20px; }
   .home-actions a { font-size: .86rem; }
-  body.portal .home-routes a { grid-template-columns: 1fr; gap: 5px; }
-  .home-routes span { max-width: none; }
-  .home-equation { grid-template-columns: 1fr auto 1.4fr; gap: 20px 14px; }
-  .home-equation-label { font-size: .8rem; }
-  .home-equation-term strong { font-size: 2.4rem; }
-  .home-equation-unit { font-size: .88rem; }
-  .home-equation-operator:nth-child(4) { grid-column: 2; grid-row: 2; }
-  .home-equation-result { grid-column: 3; grid-row: 2; }
-  .home-equation-result .home-equation-label { color: var(--portal-ink); }
+  .home-routes ul { grid-template-columns: 1fr; gap: 0; }
+  .home-routes li + li { border-top: 1px solid var(--portal-line); }
+  body.portal .home-routes a { padding-block: 13px; }
+  .home-routes span { margin-top: 4px; }
   .home-products-columns { grid-template-columns: 1fr; }
   .home-products-columns span:last-child { display: none; }
   body.portal .home-products-list a { grid-template-columns: 1fr; gap: 4px; padding-block: 14px; }
   .home-common { display: block; }
   .home-common > div { margin-top: 8px; }
-}
-@media (max-width: 540px) {
-  .home-search .portal-search-control input { border-right: 1px solid #8292a5; }
 }
