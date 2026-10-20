@@ -16,9 +16,8 @@ def build(api, families):
         has_method = any(family['id'] in method['family_ids'] for method in methods)
         label = 'Dane i dokumenty' if has_data else ('Metody i objaśnienia' if has_method else 'Artykuły i objaśnienia')
         product_links += (
-            f'<li><a href="/wyroby/{family["id"]:02d}.html"><span>'
-            f'<strong>{e(family["label"])}</strong><small>{label}</small></span>'
-            '<span class="home-route-arrow" aria-hidden="true">→</span></a></li>'
+            f'<li><a href="/wyroby/{family["id"]:02d}.html">'
+            f'<strong>{e(family["label"])}</strong><small>{label}</small></a></li>'
         )
     body = Template((root / 'content/portal-home.html.tpl').read_text()).substitute(
         energy_year=e(energy['year']),

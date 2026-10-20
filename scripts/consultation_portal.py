@@ -125,7 +125,7 @@ def registry(entries, package_version):
         metadata += " · Pakiet " + package_version
         result.append(
             f'<article class="consult-comment" id="uwaga-{esc(entry_id)}">'
-            f'<p class="consult-eyebrow">{esc(entry_id)} · {esc(state)}</p>'
+            f'<p class="consult-meta">{esc(entry_id)} · {esc(state)}</p>'
             f'<h3>{esc(entry["topic"])}</h3><p class="consult-muted">{esc(metadata)}</p>'
             '<dl class="consult-comment-fields">'
             + "".join(
@@ -162,7 +162,7 @@ def build(api):
     total = next(row["value_per_kWh"] for row in indicators if row["code"] == "GWP-total")
     unit = profile["functional_unit"]
     unit_description = unit["description_pl"] if isinstance(unit, dict) else str(unit)
-    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261020">'
+    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261020design">'
     js = '<script src="/js/consultation.js?v=20261020" defer></script>'
 
     step_navigation = []
@@ -171,20 +171,19 @@ def build(api):
         step_navigation.append(
             f'<li><button type="button" data-step-select="{index - 1}" '
             f'aria-controls="krok-{esc(step["id"])}">'
-            f'<span class="consult-step-number" aria-hidden="true">{index:02d}</span>'
+            f'<span class="consult-step-dot" aria-hidden="true"></span>'
             f'<span>{esc(step["title"])}</span></button></li>'
         )
         step_content.append(
             f'<li class="consult-step" id="krok-{esc(step["id"])}" data-step="{index - 1}">'
-            f'<div class="consult-step-heading"><span class="consult-stage-number" aria-hidden="true">{index:02d}</span>'
-            f'<div><p class="consult-eyebrow">{esc(STATES[step["state"]])}</p>'
-            f'<h3>{esc(step["title"])}</h3></div></div>'
+            f'<div class="consult-step-heading"><h3>{esc(step["title"])}</h3>'
+            f'<p class="consult-step-state">{esc(STATES[step["state"]])}</p></div>'
             f'<p>{esc(step["text"])}</p>{link(step["evidence_label"], step["evidence_href"])}</li>'
         )
     questions = "".join(
         f'<article class="consult-question" id="pytanie-{esc(question["id"])}">'
-        f'<p class="consult-eyebrow">Pytanie {index:02d}</p><h3>{esc(question["title"])}</h3>'
-        f'<p>{esc(question["text"])}</p><p class="consult-question-hint">{esc(question["hint"])}</p>'
+        f'<details><summary><h3>{esc(question["title"])}</h3></summary>'
+        f'<div class="consult-question-content"><p>{esc(question["text"])}</p><p class="consult-question-hint">{esc(question["hint"])}</p></div></details>'
         f'<button type="button" class="consult-text-button" data-question-select="{esc(question["id"])}" hidden>'
         "Wybierz to pytanie</button></article>"
         for index, question in enumerate(copy["questions"], 1)
@@ -217,47 +216,50 @@ def build(api):
         for label, filename, format_label in downloads
     )
     body = f'''<div class="consultation" data-consultation data-model-id="{esc(model_id)}" data-package-version="{esc(version)}">
-<section class="consult-intro" aria-labelledby="consult-intro-title">
-  <div>
-    <p class="consult-eyebrow"><span class="portal-status portal-status-review">Projekt do konsultacji</span> <span>Pakiet {esc(version)}</span></p>
-    <h2 id="consult-intro-title">Sprawdź założenia.<br>Pomóż poprawić model.</h2>
-    <p class="consult-intro-text">{esc(copy["intro"])}</p>
-    <div class="consult-actions"><a class="portal-button" href="#pytania">Zobacz pytania</a><a href="#jak-powstaje-wynik">Jak powstaje wynik?</a></div>
+<header class="consult-intro" aria-labelledby="consult-intro-title">
+  <div class="consult-title-row"><h1 id="consult-intro-title">Model energii.<br><span>Polska 2025.</span></h1>
+    <div class="consult-intro-copy"><p>{esc(copy["intro"])}</p><div class="consult-actions"><a class="portal-button" href="#pytania">Zobacz pytania</a><a href="/{METHOD_PAGE}">Przeczytaj metodę</a></div></div>
   </div>
-  <figure class="consult-metric">
-    <figcaption>Wpływ energii na klimat w cyklu życia</figcaption>
-    <strong data-consultation-gwp="{esc(total)}">{esc(format(float(total), ".6f").replace(".", ","))}</strong>
-    <span class="consult-metric-unit">kg CO₂e / kWh</span>
-    <p>Fizyczny miks energii dostarczonej odbiorcy. Polska {esc(profile["reference_year"])}.</p>
-    <p class="consult-muted">CO₂e oznacza ekwiwalent dwutlenku węgla. Wynik projektu; szczegóły i ograniczenia podano poniżej.</p>
-  </figure>
-</section>
-<p class="consult-version-note">Projekt ma własny pakiet i rejestr uwag. <a href="/energia-polska-2025-v4.html">Wcześniejsza wersja v4</a> pozostaje osobnym wydaniem używanym w kalkulatorze.</p>
+  <div class="consult-publication"><p><strong>Projekt do konsultacji</strong><span>Pakiet {esc(version)}</span></p><p>Przegląd ekspercki: planowany.<br><a href="#status">Zakres wykonanej kontroli</a></p><p>W kalkulatorze pozostaje<br><a href="/energia-polska-2025-v4.html">wcześniejsza wersja v4</a>.</p></div>
+</header>
 <nav class="consult-jump" aria-label="Na tej stronie"><a href="#jak-powstaje-wynik">Jak liczymy</a><a href="#pytania">Pytania</a><a href="#dokumentacja">Dokumentacja</a><a href="#zglos-uwage">Zgłoś uwagę</a><a href="#rejestr">Uwagi i odpowiedzi</a></nav>
 
 <section class="consult-section consult-explainer" id="jak-powstaje-wynik" aria-labelledby="explainer-title">
-  <div class="consult-section-heading"><p class="consult-eyebrow">Od danych do oceny</p><h2 id="explainer-title">Jak powstaje wynik?</h2><p>Sześć kroków pokazuje, co już wykonano i gdzie potrzebna jest dalsza ocena.</p></div>
+  <div class="consult-section-heading"><h2 id="explainer-title">Od źródła do wyniku.</h2><p>Prześledź obliczenia, sprawdź ich podstawy i zobacz, które etapy oceny pozostają otwarte.</p></div>
+  <figure class="consult-model" aria-labelledby="model-caption">
+    <figcaption id="model-caption">Model fizycznego miksu energii dostarczonej odbiorcy · Polska {esc(profile["reference_year"])}</figcaption>
+    <div class="consult-model-flow">
+      <div class="consult-model-inputs" data-model-node="inputs"><div><strong>Dane krajowe</strong><span>Produkcja prądu i ciepła</span></div><div><strong>Historyczne tło</strong><span>Procesy i dane zastępcze</span></div></div>
+      <div class="consult-model-connector" aria-hidden="true"><span></span></div>
+      <div class="consult-model-core" data-model-node="model"><span>Obliczenia dla</span><strong>1 kWh</strong><span>Granice systemu i alokacja</span></div>
+      <div class="consult-model-connector consult-model-connector-single" aria-hidden="true"><span></span></div>
+      <div class="consult-model-output" data-model-node="output"><strong>37 wskaźników</strong><p>Wpływ na klimat w cyklu życia</p><span class="consult-model-value" data-consultation-gwp="{esc(total)}">{esc(format(float(total), ".6f").replace(".", ","))} <small>kg CO₂e/kWh</small></span></div>
+    </div>
+    <p class="consult-model-note">Wynik projektu. CO₂e oznacza ekwiwalent dwutlenku węgla. <a href="#wyniki">Sprawdź wszystkie wyniki i jednostki</a>.</p>
+  </figure>
   <div class="consult-player-controls" data-player-controls hidden>
     <div class="consult-player-buttons"><button type="button" class="consult-button" data-play aria-pressed="false">Odtwórz kroki</button><button type="button" class="consult-button consult-button-secondary" data-show-all aria-expanded="false">Pokaż cały opis</button></div>
     <p id="consult-step-status" role="status" aria-live="polite" aria-atomic="true"></p>
     <p class="consult-motion-note" data-motion-note hidden>Ograniczony ruch: wybierz krok, aby przeczytać jego opis.</p>
   </div>
-  <ol class="consult-step-navigation" aria-label="Wybierz krok wyjaśnienia" data-step-navigation hidden>{"".join(step_navigation)}</ol>
-  <div class="consult-progress" data-step-progress hidden aria-hidden="true"><span></span></div>
-  <ol class="consult-steps">{"".join(step_content)}</ol>
-  <div class="consult-step-arrows" data-step-arrows hidden><button type="button" class="consult-text-button" data-step-prev>Poprzedni krok</button><button type="button" class="consult-text-button" data-step-next>Następny krok</button></div>
+  <div class="consult-process-reader">
+    <ol class="consult-step-navigation" aria-label="Wybierz krok wyjaśnienia" data-step-navigation hidden>{"".join(step_navigation)}</ol>
+    <div class="consult-process-detail"><div class="consult-progress" data-step-progress hidden aria-hidden="true"><span></span></div>
+    <ol class="consult-steps">{"".join(step_content)}</ol>
+    <div class="consult-step-arrows" data-step-arrows hidden><button type="button" class="consult-text-button" data-step-prev>Poprzedni krok</button><button type="button" class="consult-text-button" data-step-next>Następny krok</button></div></div>
+  </div>
   <noscript><p class="consult-muted">Powyżej dostępny jest cały opis. Odtwarzanie kroków wymaga JavaScript.</p></noscript>
 </section>
 
-<section class="consult-section" id="pytania" aria-labelledby="questions-title">
-  <div class="consult-section-heading"><p class="consult-eyebrow">Czego dotyczy konsultacja</p><h2 id="questions-title">Cztery pytania do modelu</h2><p>Wybierz temat, w którym możesz wskazać lepsze dane, uzasadnienie lub poprawkę. Możesz też zgłosić inną uwagę.</p></div>
+<section class="consult-section consult-agenda" id="pytania" aria-labelledby="questions-title">
+  <div class="consult-section-heading"><h2 id="questions-title">Co wymaga rozstrzygnięcia?</h2><p>Wybierz temat, w którym możesz wskazać lepsze dane, uzasadnienie lub poprawkę. Możesz też zgłosić inną uwagę.</p></div>
   <div class="consult-questions">{questions}</div>
   <p id="consult-question-status" class="consult-feedback" role="status" aria-live="polite"></p>
   <p><a href="#zglos-uwage">Przejdź do przygotowania uwagi</a></p>
 </section>
 
 <section class="consult-section consult-documentation" id="dokumentacja" aria-labelledby="documentation-title">
-  <div class="consult-section-heading"><p class="consult-eyebrow">Sprawdzalne podstawy</p><h2 id="documentation-title">Metoda, wyniki i pliki</h2><p>Dokumentacja dotyczy pakietu {esc(version)}. Najpierw przeczytaj zakres modelu oraz opis danych zastępczych.</p></div>
+  <div class="consult-section-heading"><h2 id="documentation-title">Metoda, wyniki i pliki</h2><p>Dokumentacja dotyczy pakietu {esc(version)}. Najpierw przeczytaj zakres modelu oraz opis danych zastępczych.</p></div>
   <p class="consult-method-link"><a href="/{METHOD_PAGE}">Przeczytaj notę metodyczną</a><span>Założenia, zmiany względem v4 i ograniczenia projektu.</span></p>
   <ul class="consult-downloads">{download_html}</ul>
   <details class="consult-results" id="wyniki"><summary>Wszystkie 37 wyników dla 1 kWh</summary>
@@ -267,14 +269,12 @@ def build(api):
 </section>
 
 <section class="consult-section consult-status" id="status" aria-labelledby="status-title">
-  <div><p class="consult-eyebrow">Zakres oceny</p><h2 id="status-title">Co zostało sprawdzone?</h2></div>
+  <div><h2 id="status-title">Co zostało sprawdzone?</h2></div>
   <div><p>{esc(copy["status_summary"])}</p><p>Nota metodyczna jest opracowaniem autora. Raport z niezależnego krytycznego przeglądu eksperckiego nie jest jeszcze dostępny. Ewentualny przegląd, konsultacje publiczne i decyzja operatora programu będą odrębnie udokumentowane.</p><p><a href="/{METHOD_PAGE}">Przeczytaj zakres kontroli i ograniczenia</a></p></div>
 </section>
 
-<section class="consult-section" id="zglos-uwage" aria-labelledby="form-title">
-  <div class="consult-section-heading"><p class="consult-eyebrow">Twój wkład</p><h2 id="form-title">Przygotuj uwagę do modelu</h2><p>Formularz porządkuje treść wiadomości. Wysyłasz ją samodzielnie ze swojej poczty na <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>.</p></div>
-  <p class="consult-privacy-note" id="consult-privacy">Formularz działa w tej karcie przeglądarki. Jego kod nie wysyła treści na serwer ani nie zapisuje jej w plikach cookies lub lokalnym magazynie danych. Kopiowanie, pobranie pliku i otwarcie poczty następują po wybraniu przycisku. Nie dołączaj danych poufnych ani kopii materiałów objętych ograniczeniami licencyjnymi.</p>
-  <p class="consult-privacy-note">Administratorem danych przesłanych w korespondencji jest Multicert Sp. z o.o., ul. Mydlarska 47, 04-690 Warszawa. Dane wykorzystujemy do obsługi konsultacji i odpowiedzi na zgłoszenie; dobrowolnie podany podpis służy także oznaczeniu autora opublikowanej uwagi. Kontakt w sprawie danych, w tym zmiany lub usunięcia podpisu: <a href="mailto:biuro@multicert.pl">biuro@multicert.pl</a>. <a href="https://multicert.pl/polityka-prywatnosci/">Ogólne zasady ochrony danych w Multicert</a>.</p>
+<section class="consult-section consult-correspondence" id="zglos-uwage" aria-labelledby="form-title">
+  <div class="consult-section-heading"><h2 id="form-title">Przygotuj uwagę do modelu</h2><p>Formularz porządkuje treść wiadomości. Wysyłasz ją samodzielnie ze swojej poczty na <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>.</p></div>
   <noscript><p class="consult-form-fallback">Aby skorzystać z formularza, włącz JavaScript. Możesz też napisać na <a href="mailto:info@epd.org.pl">info@epd.org.pl</a>: podaj pakiet {esc(version)}, temat, fragment, uwagę, źródło i proponowaną poprawkę.</p></noscript>
   <form id="consultation-form" action="#zglos-uwage" method="get" autocomplete="off" aria-describedby="consult-privacy">
     <fieldset id="consult-form-fields" disabled><legend>Treść zgłoszenia</legend>
@@ -291,18 +291,22 @@ def build(api):
     <p id="consult-form-status" class="consult-feedback" role="status" aria-live="polite" aria-atomic="true"></p>
     <div id="consult-preview" class="consult-preview" hidden><label for="consult-message">Treść do wysłania</label><textarea id="consult-message" rows="12" readonly spellcheck="false"></textarea><p class="consult-muted">Możesz zaznaczyć i skopiować tę treść. Samo przygotowanie, skopiowanie lub pobranie wiadomości nie oznacza jej zgłoszenia.</p></div>
   </form>
+<aside class="consult-form-notes"><h3>Przed wysłaniem</h3>
+  <p class="consult-privacy-note" id="consult-privacy">Formularz działa w tej karcie przeglądarki. Jego kod nie wysyła treści na serwer ani nie zapisuje jej w plikach cookies lub lokalnym magazynie danych. Kopiowanie, pobranie pliku i otwarcie poczty następują po wybraniu przycisku. Nie dołączaj danych poufnych ani kopii materiałów objętych ograniczeniami licencyjnymi.</p>
+  <p class="consult-privacy-note">Administratorem danych przesłanych w korespondencji jest Multicert Sp. z o.o., ul. Mydlarska 47, 04-690 Warszawa. Dane wykorzystujemy do obsługi konsultacji i odpowiedzi na zgłoszenie; dobrowolnie podany podpis służy także oznaczeniu autora opublikowanej uwagi. Kontakt w sprawie danych, w tym zmiany lub usunięcia podpisu: <a href="mailto:biuro@multicert.pl">biuro@multicert.pl</a>. <a href="https://multicert.pl/polityka-prywatnosci/">Ogólne zasady ochrony danych w Multicert</a>.</p>
+</aside>
 </section>
 
 <section class="consult-section" id="rejestr" aria-labelledby="registry-title">
-  <div class="consult-section-heading"><p class="consult-eyebrow">Jawny przebieg konsultacji</p><h2 id="registry-title">Uwagi i odpowiedzi</h2><p>Publikujemy opracowane uwagi do tej wersji wraz z odpowiedzią i sposobem rozstrzygnięcia. Przed publikacją usuwamy dane kontaktowe oraz informacje poufne.</p></div>
+  <div class="consult-section-heading"><h2 id="registry-title">Uwagi i odpowiedzi</h2><p>Publikujemy opracowane uwagi do tej wersji wraz z odpowiedzią i sposobem rozstrzygnięcia. Przed publikacją usuwamy dane kontaktowe oraz informacje poufne.</p></div>
   <ol class="consult-review-path" aria-label="Przebieg obsługi uwagi"><li>Uwaga w korespondencji</li><li>Opracowanie i publikacja</li><li>Odpowiedź autora</li><li>Rozstrzygnięcie i ewentualna zmiana</li></ol>
   <div data-consultation-registry data-entry-count="{len(comments["entries"])}">{registry(comments["entries"], version)}</div>
   <p class="consult-muted">Stan rejestru: {esc(comments["updated_at"])} · {link("Pobierz rejestr uwag (JSON)", DATA + "uwagi.json", download=True)}</p>
 </section></div>'''
-    page(PAGE, copy["title"], copy["lead"], body, head_extra=css + js)
+    page(PAGE, copy["title"], copy["lead"], body, head_extra=css + js, pagehead=False, attrs='data-page="consultation"')
     method_body = (
         '<article class="consultation consult-method">'
-        f'<p class="consult-eyebrow">Nota autora do konsultacji · pakiet {esc(version)}</p>'
+        f'<p class="consult-meta">Nota autora do konsultacji · pakiet {esc(version)}</p>'
         '<p class="consult-method-intro">Ta nota opisuje projekt modelu i jego ograniczenia. '
         'Nie jest raportem niezależnego krytycznego przeglądu.</p>'
         f'<p>{link("Wróć do konsultacji i zgłoś uwagę", "/" + PAGE)}</p>'

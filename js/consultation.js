@@ -32,6 +32,7 @@
 
   function renderStep(index, animate) {
     currentStep = Math.max(0, Math.min(index, steps.length - 1));
+    explainer.setAttribute('data-model-focus', showingAll ? 'all' : (['inputs', 'model', 'output'][currentStep] || 'all'));
     if (animation) {
       animation.cancel();
       animation = null;
