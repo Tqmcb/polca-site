@@ -1,0 +1,252 @@
+{
+  "facilities": {
+    "000000349.FACILITY": {
+      "label": "Bełchatów",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        354,
+        343,
+        58,
+        404,
+        424
+      ],
+      "detail_badge": [
+        360,
+        355
+      ]
+    },
+    "000000031.FACILITY": {
+      "label": "Kozienice",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        584,
+        312,
+        58,
+        612,
+        381
+      ],
+      "detail_badge": [
+        581,
+        354
+      ]
+    },
+    "000000350.FACILITY": {
+      "label": "Turów",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        55,
+        426,
+        62,
+        86,
+        502
+      ],
+      "detail_badge": [
+        98,
+        462
+      ]
+    },
+    "000000260.FACILITY": {
+      "label": "Opole",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        249,
+        422,
+        52,
+        275,
+        487
+      ],
+      "detail_badge": [
+        274,
+        461
+      ]
+    },
+    "000003640.FACILITY": {
+      "label": "ORLEN · Płock",
+      "symbol": "rafineria",
+      "hero_layout": [
+        353,
+        225,
+        58,
+        355,
+        298
+      ],
+      "detail_badge": [
+        418,
+        255
+      ]
+    },
+    "000000468.FACILITY": {
+      "label": "Połaniec",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        636,
+        526,
+        56,
+        663,
+        594
+      ],
+      "detail_badge": [
+        635,
+        550
+      ]
+    },
+    "000000058.FACILITY": {
+      "label": "Huta · Dąbrowa G.",
+      "symbol": "huta",
+      "hero_layout": [
+        393,
+        541,
+        56,
+        420,
+        607
+      ],
+      "detail_badge": [
+        428,
+        588
+      ],
+      "hero_label_lines": [
+        "Huta",
+        "Dąbrowa G."
+      ]
+    },
+    "000000010.FACILITY": {
+      "label": "Zakład Nowa",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        527,
+        541,
+        50,
+        553,
+        607
+      ],
+      "detail_badge": [
+        515,
+        585
+      ],
+      "hero_label_lines": [
+        "Zakład",
+        "Nowa"
+      ]
+    },
+    "000000104.FACILITY": {
+      "label": "Górażdże",
+      "symbol": "cementownia",
+      "hero_layout": [
+        292,
+        493,
+        52,
+        318,
+        558
+      ],
+      "detail_badge": [
+        319,
+        528
+      ]
+    },
+    "000000163.FACILITY": {
+      "label": "Siekierki",
+      "symbol": "elektrownia",
+      "hero_layout": [
+        557,
+        232,
+        50,
+        581,
+        296
+      ],
+      "detail_badge": [
+        583,
+        272
+      ]
+    },
+    "000004638.FACILITY": {
+      "label": "Nowe Jaworzno",
+      "symbol": "elektrownia",
+      "hero_layout": null,
+      "detail_badge": [
+        480,
+        568
+      ]
+    },
+    "000000153.FACILITY": {
+      "label": "Rybnik",
+      "symbol": "elektrownia",
+      "hero_layout": null,
+      "detail_badge": [
+        297,
+        594
+      ]
+    },
+    "000000586.FACILITY": {
+      "label": "Azoty · Puławy",
+      "symbol": null,
+      "hero_layout": null,
+      "detail_badge": [
+        689,
+        353
+      ]
+    },
+    "000000318.FACILITY": {
+      "label": "Mondi · Świecie",
+      "symbol": null,
+      "hero_layout": null,
+      "detail_badge": [
+        267,
+        164
+      ]
+    },
+    "000000023.FACILITY": {
+      "label": "Rafineria · Gdańsk",
+      "symbol": "rafineria",
+      "hero_layout": null,
+      "detail_badge": [
+        469,
+        111
+      ]
+    },
+    "000000162.FACILITY": {
+      "label": "Żerań",
+      "symbol": "elektrownia",
+      "hero_layout": null,
+      "detail_badge": [
+        607,
+        221
+      ]
+    },
+    "000000352.FACILITY": {
+      "label": "Dolna Odra",
+      "symbol": "elektrownia",
+      "hero_layout": null,
+      "detail_badge": [
+        90,
+        246
+      ]
+    },
+    "000000053.FACILITY": {
+      "label": "Ożarów",
+      "symbol": "cementownia",
+      "hero_layout": null,
+      "detail_badge": [
+        648,
+        443
+      ]
+    },
+    "000000126.FACILITY": {
+      "label": "Łaziska",
+      "symbol": "elektrownia",
+      "hero_layout": null,
+      "detail_badge": [
+        351,
+        601
+      ]
+    },
+    "000000067.FACILITY": {
+      "label": "Warta",
+      "symbol": "cementownia",
+      "hero_layout": null,
+      "detail_badge": [
+        330,
+        415
+      ]
+    }
+  }
+}

@@ -8,3 +8,21 @@
   .portal-map-large { overflow-x: auto; }
   .portal-map-large img { min-width: 660px; }
 }
+
+.map-measure { max-width: 76ch; color: var(--portal-muted); }
+.map-measure strong { color: var(--portal-ink); font-weight: 600; }
+.map-reading { max-width: 80ch; margin: 0 0 36px; color: var(--portal-muted); }
+.map-table { width: 100%; }
+.map-table th:first-child { width: 46px; }
+.map-table th:nth-child(2) { width: 42%; }
+.map-table th:nth-child(3) { width: 24%; }
+.map-table td, .map-table th { vertical-align: top; }
+.map-table th[scope="row"] { font-weight: 600; }
+.map-table small { display: block; font-weight: 400; color: var(--portal-muted); }
+.map-table details { margin-top: 7px; max-width: 48ch; font-size: .84rem; font-weight: 400; }
+.map-table summary { color: var(--portal-link); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.map-table details p { margin: 8px 0 0; overflow-wrap: anywhere; }
+.map-table .map-value { white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
+.map-table th:last-child { text-align: right; }
+.map-downloads { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-block: 24px 48px; }
+@media (max-width: 600px) { .map-table { min-width: 660px; } }

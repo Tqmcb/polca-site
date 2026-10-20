@@ -172,3 +172,5 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-common { display: block; }
   .home-common > div { margin-top: 8px; }
 }
+
+.home-illustration figcaption span { display: block; color: var(--portal-muted); }
