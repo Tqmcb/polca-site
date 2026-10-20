@@ -1,0 +1,178 @@
+{
+  "title": "Polska — energia, surowce, transport i budynki",
+  "scope": "Przykłady tematyczne i geograficzne. Wielkość symbolu nie przedstawia wartości wskaźnika ani udziału w produkcji.",
+  "checked": "2026-10-21",
+  "items": [
+    {
+      "id": "wiatr-szymankowo",
+      "kind": "facility",
+      "name": "Farma wiatrowa Szymankowo",
+      "icon": "wiatr",
+      "lon": 18.918278,
+      "lat": 54.04025,
+      "layout": [
+        245,
+        35,
+        82,
+        286,
+        140
+      ],
+      "lines": [
+        "Energia wiatru",
+        "Szymankowo"
+      ],
+      "source": "https://www.polenergia.pl/nasze-aktywa/wytwarzanie/ladowe-farmy-wiatrowe/fw-szymankowo/",
+      "coordinate_source": "https://www.thewindpower.net/windfarm_en_35825_szymankowo.php",
+      "note": "Orientacyjny punkt farmy do mapy kraju. Źródło współrzędnych jawnie nie deklaruje precyzyjnej lokalizacji. Nie jest to wskazanie konkretnej turbiny, wejścia ani granicy obiektu."
+    },
+    {
+      "id": "slonce-brudzew",
+      "kind": "facility",
+      "name": "Farma fotowoltaiczna Brudzew",
+      "icon": "fotowoltaika",
+      "lon": 18.6499,
+      "lat": 52.0816,
+      "layout": [
+        285,
+        229,
+        78,
+        324,
+        318
+      ],
+      "lines": [
+        "Fotowoltaika",
+        "Brudzew"
+      ],
+      "source": "https://ri.zepak.com.pl/pl/aktualnosci/1632-najwieksza-elektrownia-sloneczna-w-polsce-juz-dziala-i-produkuje-prad.html",
+      "coordinate_source": "https://www.gem.wiki/Brudzew_solar_farm",
+      "note": "Punkt opublikowany w bazie Global Energy Monitor z odsyłaczem do miejsca Farma solarna w Google Maps. Nadaje się do oznaczenia rozległej farmy w skali kraju; nie jest pomiarem geodezyjnym, granicą ani gwarantowanym wejściem."
+    },
+    {
+      "id": "transport",
+      "kind": "topic",
+      "name": "Transport",
+      "icon": "transport",
+      "lon": 16.89994,
+      "lat": 52.405753,
+      "layout": [
+        142,
+        279,
+        86,
+        185,
+        375
+      ],
+      "lines": [
+        "Transport"
+      ],
+      "source": "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_10m_populated_places_simple.geojson",
+      "note": "Symbol tematu przy mieście, bez wskazania konkretnego obiektu."
+    },
+    {
+      "id": "budynki",
+      "kind": "topic",
+      "name": "Budynki",
+      "icon": "budynki",
+      "lon": 21.005347,
+      "lat": 52.230872,
+      "layout": [
+        575,
+        211,
+        80,
+        615,
+        308
+      ],
+      "lines": [
+        "Budynki"
+      ],
+      "source": "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_10m_populated_places_simple.geojson",
+      "note": "Symbol tematu przy mieście, bez wskazania konkretnego obiektu."
+    },
+    {
+      "id": "elektrownia",
+      "kind": "facility",
+      "name": "Elektrownia Bełchatów",
+      "icon": "elektrownia",
+      "lon": 19.3166675567627,
+      "lat": 51.2666664123535,
+      "layout": [
+        325,
+        350,
+        64,
+        357,
+        430
+      ],
+      "lines": [
+        "Bełchatów"
+      ],
+      "source": "https://www.eea.europa.eu/en/datahub/datahubitem-view/9405f714-8015-4b5b-a63c-280b82861b3d",
+      "source_id": "PL.MŚ / 000000349.FACILITY",
+      "note": "Położenie według rejestru zakładów Europejskiej Agencji Środowiska; bez wykorzystania danych o emisji."
+    },
+    {
+      "id": "cementownia",
+      "kind": "facility",
+      "name": "Cementownia Górażdże",
+      "icon": "cementownia",
+      "lon": 17.9777222222222,
+      "lat": 50.5348055555556,
+      "layout": [
+        270,
+        500,
+        64,
+        302,
+        580
+      ],
+      "lines": [
+        "Cement",
+        "Górażdże"
+      ],
+      "source": "https://www.eea.europa.eu/en/datahub/datahubitem-view/9405f714-8015-4b5b-a63c-280b82861b3d",
+      "source_id": "PL.MŚ / 000000104.FACILITY",
+      "note": "Położenie według rejestru zakładów Europejskiej Agencji Środowiska; bez wykorzystania danych o emisji."
+    },
+    {
+      "id": "Dolny Śląsk",
+      "kind": "region",
+      "name": "Dolny Śląsk",
+      "icon": "kruszywa",
+      "lon": 16.2761,
+      "lat": 51.0087,
+      "layout": [
+        144,
+        408,
+        76,
+        183,
+        497
+      ],
+      "lines": [
+        "Kopalnia kruszyw",
+        "Dolny Śląsk"
+      ],
+      "source": "https://www.pgi.gov.pl/surowce/skalne-i-inne/kamien-lamany-bloczny.html",
+      "coordinate_source": "https://colas.pl/pl/contact",
+      "note": "Przykład regionalny, punkt odniesienia: Rogoźnica, okolice Strzegomia."
+    },
+    {
+      "id": "Świętokrzyskie",
+      "kind": "region",
+      "name": "Świętokrzyskie",
+      "icon": "kruszywa",
+      "lon": 20.6015,
+      "lat": 50.7396,
+      "layout": [
+        550,
+        397,
+        72,
+        586,
+        486
+      ],
+      "lines": [
+        "Kopalnia kruszyw",
+        "Świętokrzyskie"
+      ],
+      "source": "https://www.pgi.gov.pl/surowce/skalne-i-inne/kamien-lamany-bloczny.html",
+      "coordinate_source": "https://api.openstreetmap.org/api/0.6/way/344605001/full",
+      "note": "Przykład regionalny, punkt odniesienia: Morawica, na południe od Kielc."
+    }
+  ]
+}

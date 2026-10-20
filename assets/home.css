@@ -8,9 +8,11 @@
 .home-intro-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.1fr); grid-template-areas: "title art" "description art" "search art" "actions art"; gap: 0 24px; align-items: start; }
 .home-intro h1 { grid-area: title; margin: 0 0 22px; font-size: clamp(2.6rem, 4.1vw, 3.55rem); font-weight: 620; line-height: 1.04; letter-spacing: -.038em; }
 .home-intro h1 span { color: var(--portal-link); }
-.home-illustration { grid-area: art; margin: -12px -24px 0 0; align-self: center; }
+.home-illustration { min-width: 0; grid-area: art; margin: -12px -24px 0 0; align-self: center; }
 .home-illustration img { display: block; width: 100%; height: auto; }
-.home-illustration > a { display: block; }
+.home-map-scroll a { display: block; }
+.home-map-scroll:focus-visible { outline: 3px solid var(--portal-link); outline-offset: 3px; }
+.home-illustration .home-map-hint { display: none; margin: 0 0 8px; color: var(--portal-muted); font-size: .82rem; }
 .home-illustration figcaption { margin-top: 2px; text-align: right; font-size: .82rem; }
 .home-illustration figcaption a { display: inline-block; padding-block: 8px; }
 .home-description { grid-area: description; max-width: 540px; margin-bottom: 22px; font-size: 1.04rem; line-height: 1.48; color: var(--portal-muted); }
@@ -118,7 +120,9 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-intro-grid { grid-template-columns: 1fr; grid-template-areas: "title" "art" "description" "search" "actions"; gap: 0; }
   .home-intro h1 { font-size: clamp(2.3rem, 7.8vw, 3.2rem); margin-bottom: 2px; }
   .home-illustration { margin: 0 -8px 8px; }
-  .home-illustration img { height: auto; }
+  .home-map-scroll { overflow-x: auto; }
+  .home-illustration img { height: auto; min-width: 660px; }
+  .home-illustration .home-map-hint { display: block; }
   .home-description { max-width: 56ch; margin-bottom: 18px; font-size: 1rem; }
   .home-search { max-width: none; }
   .home-routes { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; padding-block: 20px; }
