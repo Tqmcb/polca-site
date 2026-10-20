@@ -1,0 +1,10 @@
+.portal-map-large { margin: 24px auto 40px; max-width: 1000px; }
+.portal-map-large a { display: block; }
+.portal-map-large img { display: block; width: 100%; height: auto; }
+.portal-map-hint { display: none; }
+.portal-map-large:focus-visible { outline: 3px solid var(--portal-link); outline-offset: 3px; }
+@media (max-width: 600px) {
+  .portal-map-hint { display: block; color: var(--portal-muted); }
+  .portal-map-large { overflow-x: auto; }
+  .portal-map-large img { min-width: 660px; }
+}
