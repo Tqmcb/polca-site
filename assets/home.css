@@ -115,7 +115,7 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-intro-grid { grid-template-columns: 1fr; grid-template-areas: "title" "art" "description" "search" "actions"; gap: 0; }
   .home-intro h1 { font-size: clamp(2.3rem, 7.8vw, 3.2rem); margin-bottom: 2px; }
   .home-illustration { margin: 0 -8px 8px; }
-  .home-illustration img { height: 220px; object-fit: contain; }
+  .home-illustration img { height: auto; }
   .home-description { max-width: 56ch; margin-bottom: 18px; font-size: 1rem; }
   .home-search { max-width: none; }
   .home-routes { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; padding-block: 20px; }
@@ -155,7 +155,6 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
 }
 @media (max-width: 540px) {
   .home-intro h1 { font-size: clamp(2.05rem, 8.2vw, 2.7rem); }
-  .home-illustration img { height: 190px; }
   .home-search .portal-search-control button { min-width: 78px; padding-inline: 14px; }
   .home-search .portal-search-control input { font-size: .95rem; padding-inline: 10px; }
   .home-actions { gap: 0 20px; }
