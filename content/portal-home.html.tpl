@@ -1,7 +1,7 @@
 <section class="home-intro" aria-labelledby="home-title">
   <div class="portal-shell home-intro-grid">
       <h1 id="home-title">Ślad węglowy<br> i środowiskowy.<br> <span>Na polskich danych.</span></h1>
-      <figure class="home-illustration"><img src="/images/polca-infrastruktura-v2.webp" srcset="/images/polca-infrastruktura-v2-640.webp 640w, /images/polca-infrastruktura-v2.webp 1280w" sizes="(max-width: 760px) calc(100vw - 32px), 56vw" width="1280" height="853" alt="Rysunkowa panorama: produkcja energii, surowce, transport i budynek." fetchpriority="high"></figure>
+      <figure class="home-illustration"><img src="/images/polca-mapa-polski.webp" srcset="/images/polca-mapa-polski-640.webp 640w, /images/polca-mapa-polski.webp 1280w" sizes="(max-width: 760px) calc(100vw - 16px), 56vw" width="1280" height="960" alt="Ilustracyjna mapa Polski: elektrownia, linia przesyłowa, odnawialne źródła energii, kopalnia kruszyw, wywrotka i budynki." fetchpriority="high"></figure>
       <p class="home-description">poLCA to dane i kalkulatory do oceny wpływu energii, materiałów i transportu. Pomagają przygotować obliczenia dla wyrobów budowlanych i deklaracji środowiskowych (EPD).</p>
       <form class="home-search" action="/szukaj.html" method="get" role="search">
         <label for="home-query">Szukaj w danych i dokumentacji</label>
