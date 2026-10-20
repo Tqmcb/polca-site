@@ -47,7 +47,7 @@
 </div>
 <section class="home-consultation" aria-labelledby="home-consultation-title">
   <div class="portal-shell home-consultation-inner">
-    <figure class="home-review-illustration"><img src="/images/polca-przeglad-modelu.webp" width="800" height="800" alt="Szkic dokumentacji technicznej z lupą nad modelem budynku." loading="lazy"></figure>
+    <figure class="home-review-illustration"><img src="/images/polca-model-energii.webp" width="800" height="800" alt="Szkic modelu energii: elektrownia, wiatr, fotowoltaika, transformator pod lupą i licznik energii." loading="lazy"></figure>
     <div><h2 id="home-consultation-title">$consultation_title</h2><p>$consultation_description</p><div class="home-consultation-access"><p>Dokumentacja, 37 wyników i warianty obliczeń. Uwaga powiązana z tematem i wersją projektu.</p><a href="/konsultacje/energia-polska-2025.html">Zobacz projekt i zgłoś uwagę <span aria-hidden="true">→</span></a></div></div>
   </div>
 </section>
