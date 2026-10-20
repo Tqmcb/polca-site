@@ -1,0 +1,12 @@
+POLSKA 2025 — PROJEKT DO KONSULTACJI
+PL2025_METHOD_CLOSURE_CANDIDATE
+Pakiet: 2026-10-20.1
+
+Zacznij od METODA-I-ZMIANY.txt. Wyniki 37 wskaźników znajdują się w profil-37.json i wskazniki-37.csv. Do plików dołączono warunki wykorzystania, zagregowaną ocenę jakości, 17 scenariuszy alokacji i zapis kontroli technicznej.
+
+Pakiet służy konsultacji metody i danych. Nie zastępuje dotychczasowego publicznego v4 ani decyzji operatora o zastosowaniu. Niezależny przegląd ekspercki człowieka nie został przeprowadzony.
+
+Uwagi: https://polca.org.pl/konsultacje/energia-polska-2025.html
+Kontakt: info@epd.org.pl
+
+Bieżący rejestr uwag jest publikowany osobno jako uwagi.json i może być aktualizowany; nie należy do zamrożonego pakietu obliczeniowego.

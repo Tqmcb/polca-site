@@ -29,7 +29,8 @@
     "guide": "Instrukcja",
     "document": "Dokument metodyczny",
     "draft": "Projekt dokumentu",
-    "archive": "Publikacja archiwalna"
+    "archive": "Publikacja archiwalna",
+    "consultation": "Konsultacje techniczne"
   },
   "datasets": {
     "KOBIZE-EN-PL-ENDUSER-2024": {
@@ -627,6 +628,29 @@
     "boundary": "Cykl życia fizycznie dostarczonej energii; średni krajowy poziom napięć"
   },
   "resources": [
+    {
+      "id": "consultation-energia-2025",
+      "title": "Konsultacje: model energii Polska 2025",
+      "kind": "method",
+      "category_id": "energia",
+      "year": 2025,
+      "year_type": "reference",
+      "status_id": "consultation",
+      "description": "Sprawdź sposób obliczeń, pobierz projekt z 37 wskaźnikami i zgłoś uwagę do danych lub metody.",
+      "href": "/konsultacje/energia-polska-2025.html",
+      "methodology_href": "/konsultacje/energia-polska-2025-metoda.html",
+      "keywords": [
+        "konsultacje",
+        "energia",
+        "2025",
+        "prąd",
+        "jakość danych",
+        "alokacja",
+        "biogeniczny",
+        "przegląd",
+        "uwagi"
+      ]
+    },
     {
       "id": "tool-energia-2025",
       "title": "Oblicz wkład energii — Polska 2025",

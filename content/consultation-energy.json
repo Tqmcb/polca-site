@@ -1,0 +1,193 @@
+{
+  "title": "Konsultacje techniczne: model energii Polska 2025",
+  "lead": "Poznaj źródła i sposób obliczeń. Wskaż dane lub założenia, które warto poprawić w modelu energii dla Polski.",
+  "home_title": "Pomóż rozwinąć model energii dla Polski",
+  "home_description": "Zobacz, jak powstaje wynik dla 1 kWh. Sprawdź dokumentację projektu Polska 2025 i zgłoś uwagę do danych lub metody.",
+  "intro": "Projekt z 20 października 2026 r. opisuje wpływ 1 kWh energii elektrycznej dostarczonej odbiorcy w Polsce. Udostępniamy obliczenia, źródła i pytania do oceny. Twoja uwaga może wskazać lepsze dane, błąd lub potrzebny wariant modelu.",
+  "steps": [
+    {
+      "id": "zrodla",
+      "title": "Źródła danych",
+      "text": "Krajowe dane 2024–2025 o produkcji prądu i ciepła z węgla kamiennego i brunatnego połączono z historycznym tłem bazy. Dla istotnych danych zastępczych oceniono aktualność oraz zgodność geografii i technologii.",
+      "evidence_label": "Opis źródeł",
+      "evidence_href": "#dokumentacja",
+      "state": "completed"
+    },
+    {
+      "id": "granice",
+      "title": "Jednostka i granice",
+      "text": "Odniesienie: 1 kWh energii elektrycznej fizycznie dostarczonej w Polsce, miks zużycia, uśredniona krajowa struktura napięć. Wynik nie jest energią konkretnego dostawcy ani miksem resztkowym.",
+      "evidence_label": "Jednostka i granice systemu",
+      "evidence_href": "#dokumentacja",
+      "state": "completed"
+    },
+    {
+      "id": "obliczenia",
+      "title": "Obliczenia",
+      "text": "Przeliczono cały graf procesów i obliczono 37 wskaźników. Nowe strumienie węgla dzielą obciążenia między prąd i ciepło wspólnym kluczem (q = 0,35), a węgiel biogeniczny rozliczono jawnie.",
+      "evidence_label": "Wyniki pakietu",
+      "evidence_href": "#wyniki",
+      "state": "completed"
+    },
+    {
+      "id": "sprawdzenie",
+      "title": "Kontrola techniczna",
+      "text": "Sprawdzono 37 wyników, sumy ich składników i 17 wariantów podziału obciążeń. Zapisano 73 oceny danych zastępczych. Kontrola techniczna z użyciem dwóch modeli sztucznej inteligencji jest odrębna od przeglądu eksperta.",
+      "evidence_label": "Status kontroli",
+      "evidence_href": "#status",
+      "state": "completed"
+    },
+    {
+      "id": "przeglad",
+      "title": "Przegląd ekspercki",
+      "text": "Przegląd niezależnego eksperta i decyzja operatora o przyjęciu danych do programu nie zostały wykonane. Krok jest planowany; uwagi z konsultacji będą jego materiałem wejściowym.",
+      "evidence_label": "Zakres wykonanej oceny",
+      "evidence_href": "#status",
+      "state": "planned"
+    },
+    {
+      "id": "uwagi",
+      "title": "Uwagi z konsultacji",
+      "text": "Odpowiedzi na cztery pytania można przygotować w formularzu i wysłać pocztą elektroniczną. Opracowane zgłoszenia publikujemy w rejestrze. Brak uwag nie oznacza akceptacji metody.",
+      "evidence_label": "Rejestr uwag",
+      "evidence_href": "#rejestr",
+      "state": "open"
+    }
+  ],
+  "questions": [
+    {
+      "id": "granice",
+      "title": "Czy zakres modelu odpowiada Twojemu zastosowaniu?",
+      "text": "Wynik odnosi się do 1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce, przy uśrednionej krajowej strukturze napięć. Czy ta granica odpowiada potrzebom deklaracji środowiskowych wyrobów, czy zastosowania wymagają osobnych wariantów napięcia albo miksu resztkowego?",
+      "hint": "Wskaż zasady kategorii wyrobów lub przypadek użycia, w którym fizyczny miks zużycia nie wystarcza, oraz jakiej wielkości brakuje: poziomu napięcia, miksu resztkowego czy energii dostawcy."
+    },
+    {
+      "id": "alokacja",
+      "title": "Jak podzielić obciążenia między prąd i ciepło?",
+      "text": "Dla nowych strumieni węgla kamiennego i brunatnego obciążenia dzielimy kluczem jakości energii ze współczynnikiem q = 0,35, zapożyczonym z literatury wobec braku danych zakładowych. Czy znasz polskie dane o parametrach ciepła z elektrociepłowni, które pozwolą zastąpić to przybliżenie?",
+      "hint": "Dołącz źródło danych o temperaturze lub ciśnieniu ciepła sieciowego i pary, rok, zakres jednostek i warunki dostępu. Wskaż, czy współczynnik powinien różnić się między węglem kamiennym a brunatnym."
+    },
+    {
+      "id": "biogeniczny",
+      "title": "Jak rozliczyć węgiel w biogazie i drewnie kopalnianym?",
+      "text": "Węgiel biogeniczny gazu z osadów ściekowych i bioodpadów rozliczamy ze składu gazu, a drewno pozostawione w kopalniach jako emisję terminalną bez kredytu składowania. Ilości drewna są oszacowaniem autora bazy. Czy te założenia są akceptowalne i czy istnieją lepsze dane krajowe?",
+      "hint": "Podaj dane o składzie gazu z polskich instalacji, zużyciu tarcicy w górnictwie lub losie drewna kopalnianego, z rokiem i źródłem. Zaznacz, które założenie uważasz za błędne i jakie podejście proponujesz."
+    },
+    {
+      "id": "jakosc",
+      "title": "Które dane zastępcze warto zaktualizować najpierw?",
+      "text": "Do istotnych historycznych danych należą pobór i zwrot wody kopalnianej, tło energetyki jądrowej oraz model robót strzałowych o ograniczonej przydatności. Które z tych danych wymagają pilnej aktualizacji i czym można je zastąpić?",
+      "hint": "Wskaż, na jaki wynik i zastosowanie wpływa dany element. Dołącz źródło proponowanych danych, ich rok, geografię i technologię."
+    }
+  ],
+  "method_sections": [
+    {
+      "id": "jednostka",
+      "title": "Jednostka i granice systemu",
+      "paragraphs": [
+        "Wynik projektu odnosi się do 1 kWh energii elektrycznej fizycznie dostarczonej odbiorcy w Polsce w 2025 r. Model opisuje fizyczny miks zużycia, nie miks produkcji, przy uśrednionej krajowej strukturze napięć. Nie wyodrębnia poziomów napięcia ani nie oblicza miksu resztkowego.",
+        "Granice systemu przejęto z wersji v4: wydobycie i transport paliw, spalanie, infrastrukturę i straty sieci. Wynik nie jest dowodem niskiej emisji konkretnego producenta ani zamiennikiem energii dostawcy lub miksu resztkowego, gdy zasady kategorii wyrobów wymagają tych wielkości."
+      ],
+      "links": [
+        {
+          "label": "Metoda i zmiany wcześniejszej wersji v4",
+          "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
+        }
+      ]
+    },
+    {
+      "id": "dane",
+      "title": "Krajowe dane i historyczne tło",
+      "paragraphs": [
+        "Dane krajowe dotyczą produkcji energii elektrycznej i ciepła z węgla kamiennego i brunatnego: baza 2024 z panelem trendu 2025 dla węgla kamiennego oraz wspólne sumy Agencji Rynku Energii za 2025 r. dla węgla brunatnego. Ocenę jakości rozszerzono o 11 wcześniej nieobjętych nią procesów i dwa polskie bilanse wody kopalnianej.",
+        "Pozostałe procesy pochodzą z historycznego tła bazy, w tym wydobycie uranu, transport gazu skroplonego i roboty strzałowe. Nowy rachunek nie zmienił tych przybliżeń w pomiary Polski 2025. Wewnętrzny rejestr 73 decyzji jakości podaje dla każdego istotnego elementu rok źródłowy, zakres użycia i warunek aktualizacji przed kolejnym wydaniem rocznym. W pakiecie publikujemy zagregowane udziały jakości danych dla 15 wskaźników."
+      ],
+      "links": [
+        {
+          "label": "Dane krajowe w wersji v4",
+          "href": "/energia-polska-2025-v4.html"
+        },
+        {
+          "label": "Warunki wykorzystania bazy BAFU:2026",
+          "href": "https://nexus.openlca.org/ws/files/40247"
+        }
+      ]
+    },
+    {
+      "id": "alokacja",
+      "title": "Wspólna alokacja prądu i ciepła",
+      "paragraphs": [
+        "Względem wersji v4 zmieniono metodę alokacji. Dla nowych strumieni węgla kamiennego i brunatnego obciążenia dzieli wspólny klucz jakości energii aE = E/(E+qQ), z q = 0,35 dla obu paliw, zastosowany przed agregacją. E oznacza energię elektryczną, a Q — ciepło, wyrażone w tej samej jednostce energii. Procesów historycznych nie dzielono ponownie.",
+        "Wartość q = 0,35 jest przybliżeniem jakości ciepła z literatury (Itten i in. 2023) dla sytuacji bez danych zakładowych, pomiędzy ciepłem grzewczym a parą przemysłową. Jest to przybliżenie modelowe, nie wartość zmierzona dla polskiego ciepła. Analiza 17 par współczynników daje dla wyniku klimatycznego zakres od około −10,7% (q = 1) do +8,8% (q = 0) wobec wyniku centralnego; są to testy graniczne, nie przedział ufności.",
+        "Ograniczenia: brak niealokowanych inwentarzy historycznych, aktywność pierwszego spalania pozostaje bez przeskalowania, węgiel brunatny dzielony jest na poziomie grupy, a nieodtworzone wymiany historyczne zachowują dotychczasowe ilości na kWh."
+      ],
+      "links": [
+        {
+          "label": "Alokacja we wcześniejszej wersji v4",
+          "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
+        },
+        {
+          "label": "Itten i in. 2023 — podstawa przybliżenia jakości ciepła, rozdział 3.4",
+          "href": "https://digitalcollection.zhaw.ch/bitstreams/c63b348f-80ac-40c0-b5f1-d17f13bfead6/download"
+        }
+      ]
+    },
+    {
+      "id": "biogeniczny",
+      "title": "Rachunek węgla biogenicznego",
+      "paragraphs": [
+        "Węgiel biogeniczny rozliczono jawnie dla objętych źródeł. CO₂ i CH₄ scharakteryzowano osobno, dla gazu z osadów ściekowych i bioodpadów przyjęto transfery netto węgla ze składu gazu, a drewno pozostawione w kopalniach rozliczono terminalnie z wejścia tarcicy, bez kredytu trwałego składowania. Nie zastosowano globalnej korekty wymuszającej zerowy bilans.",
+        "Wybrano wariant źródłowy: dwie krawędzie grafu dla biogazu przeliczono z zachowaniem energii wejściowej po zmianie wartości opałowej, dlatego przeliczono cały graf, nie tylko wiersz biogeniczny. Potencjał globalnego ocieplenia związany z węglem biogenicznym (GWP-biogenic) wynosi 0,0013 kg CO₂ równ./kWh.",
+        "Ograniczenia: rachunek nie jest pełnym fizycznym bilansem bazy, właściwości gazu pochodzą z 2007 r., ilości drewna są oszacowaniem autora bazy, a tlenek węgla i oleje pochodzenia biogenicznego nie mają współczynnika w użytym zestawie metody. Diagnostyka daje około 0,00013 kg CO₂/kWh dla utlenienia tlenku węgla i około 0,0000036 kg CO₂/kWh w skrajnym przeliczeniu olejów. To oszacowania ograniczeń, nie wartości dopisane do wyniku."
+      ],
+      "links": []
+    },
+    {
+      "id": "woda",
+      "title": "Woda kopalniana i jakość danych",
+      "paragraphs": [
+        "Dla rozpoznanych krajowych ilości węgla brunatnego i kamiennego zastosowano polski współczynnik charakterystyki niedoboru wody 1,96 zamiast odziedziczonego 42,95. Zachowano źródłowe oszacowania poboru i założony zwrot 90%, który jest założeniem autora bazy, nie pomiarem. Wskaźnik zubożenia zasobów wodnych (WDP) zmienił się z 0,0212 do 0,0173 m³ równoważnika światowego/kWh; pozostałe 36 wskaźników nie zmieniło się w tym kroku.",
+        "Ocena jakości obejmuje ponad 80% bezwzględnych wkładów w 13 podstawowych i dwóch dodatkowych wskaźnikach. Pokrycie oznacza udział objęty oceną, nie udział dobrych danych. Słaba lub bardzo słaba aktualność dotyczy ponad 80% wkładów m.in. w wynikach dla węgla biogenicznego, eutrofizacji wód słodkich, zasobów wodnych i odpadów promieniotwórczych. Historyczny model robót strzałowych odpowiada za 7,62% bezwzględnych wkładów eutrofizacji lądowej; jego ograniczenia wymagają uwzględnienia przy interpretacji tego wyniku."
+      ],
+      "links": [
+        {
+          "label": "Status kontroli",
+          "href": "#status"
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "title": "Status kontroli i przeglądu",
+      "paragraphs": [
+        "Zakończono wewnętrzną kontrolę obliczeń i metody z użyciem dwóch modeli sztucznej inteligencji. Sprawdzono 37 wskaźników, 17 wariantów alokacji, sumy składników klimatycznych oraz zachowanie dotychczasowych plików wersji v4.",
+        "Ta nota jest własnym opisem metody, nie raportem niezależnego krytycznego przeglądu. Projekt nie przeszedł przeglądu eksperta, nie został formalnie przyjęty przez operatora programu. Publiczna wersja v4 pozostaje odrębnym wydaniem w kalkulatorze i katalogu danych."
+      ],
+      "links": [
+        {
+          "label": "Pytania konsultacyjne",
+          "href": "/konsultacje/energia-polska-2025.html#pytania"
+        }
+      ]
+    },
+    {
+      "id": "zrodla",
+      "title": "Źródła i sposób użycia",
+      "paragraphs": [
+        "Pakiet konsultacyjny 2026-10-20.1 zawiera 37 własnych wyników zagregowanych, opis zmian, ograniczenia, warunki wykorzystania i manifest. Nie zawiera kopii inwentarzy, norm ani raportów dostawców; tło pochodzi z publicznie opisanej bazy, do której podajemy odsyłacz.",
+        "Różnica +0,42% względem v4 jest skutkiem zmiany modelowania: alokacji, grafu dostaw biogazu i charakterystyki węgla biogenicznego. Nie jest zmierzonym wzrostem emisji elektrowni. Wskaźnik klimatyczny należy czytać razem z pozostałymi 36 wskaźnikami i rejestrem jakości; 37 obliczonych wartości nie oznacza, że wszystkie mają równą jakość."
+      ],
+      "links": [
+        {
+          "label": "Wyniki pakietu",
+          "href": "/konsultacje/energia-polska-2025.html#wyniki"
+        },
+        {
+          "label": "Warunki wykorzystania bazy BAFU:2026",
+          "href": "https://nexus.openlca.org/ws/files/40247"
+        }
+      ]
+    }
+  ],
+  "status_summary": "Zakończono obliczenia i kontrolę techniczną 37 wyników oraz 17 wariantów alokacji. Niezależny przegląd ekspercki i decyzja operatora o zastosowaniu danych pozostają odrębnymi etapami."
+}

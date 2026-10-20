@@ -18,7 +18,7 @@ def group(path):
  if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','pobierz.html','dane-wspolne.html']:return 'data'
  if 'kalkulat' in path or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
- if path.startswith('metody') or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
+ if path.startswith(('metody','konsultacje/')) or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
  return ''
 def header(path):
  nav=''.join(a(title,url,'is-active' if g==group(path) else '', 'aria-current="page"' if path==url[1:] else '') for title,url,g in NAV)
@@ -26,11 +26,11 @@ def header(path):
 def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
 def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
-def page(path,title,lead,body,parent=None,attrs='',home=False):
+def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra=''):
  mainhead='' if home else crumb(title,parent)+f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>'
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261019purpose">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261020consult">' if home else ''
  main_class='portal-main home-main' if home else 'portal-main portal-shell'
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261019visual">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script></head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261019visual">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
@@ -152,6 +152,8 @@ if __name__=='__main__':
  build_catalog();build_catalog(True);build_copy();build_cards();build_indexes();build_energy_calculator()
  from cpr_portal import build as build_products
  build_products(globals())
+ from consultation_portal import build as build_consultation
+ build_consultation(globals())
  if args.migrate_shell:migrate_shell()
  sync_shell()
  sitemap();print(f'Generated {len(GENERATED)} pages; shell migration: {args.migrate_shell}')
