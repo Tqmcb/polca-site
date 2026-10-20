@@ -156,6 +156,10 @@ Formularz przygotowuje wiadomość do samodzielnego wysłania. Tekst, przyciski 
 
 ## Ilustracje
 
-Stronę główną otwiera mapa geograficzna Polski z kropkami i nazwami głównych miast. Małe szkice oznaczają wybrane elektrownie i regiony kruszyw kamiennych; delikatne linie łączą je z punktami odniesienia. Położenie wynika ze współrzędnych w `content/home-map.json`, a podpisy i kontur są wektorowe. Grafitowo-kobaltowe szkice pozostają podporządkowane geografii. Nie zastępować tej mapy krajobrazem w konturze kraju ani przemieszczać punktów dla kompozycji. Strona `/mapa-polski.html` umożliwia większy podgląd i podaje źródła. Na telefonie duża mapa przewija się wewnątrz podpisanego obszaru dostępnego z klawiatury.
+Stronę główną otwiera geograficzna mapa Polski z 13 miastami i 10 największymi zgłoszonymi emisjami CO₂ ogółem do powietrza w polskim zbiorze E-PRTR za 2024 r., łącznie z biomasą. Strona `/mapa-polski.html` pokazuje 20 zakładów, numerację zgodną z tabelą, wartości i dane do pobrania. Zestawienie opisuje zgłoszoną roczną skalę emisji, a nie efektywność produkcji ani pełną emisję Polski.
+
+Powierzchnia niebieskiego koła jest proporcjonalna do rocznej emisji. Szkice rozróżniają elektrownię, rafinerię, hutę i cementownię. Szare szkice Dolnego Śląska i Świętokrzyskiego są kontekstem materiałowym kruszyw, bez udziału w rankingu. Linie łączą przesunięte podpisy z rzeczywistymi punktami; współrzędnych nigdy nie przesuwa się dla kompozycji.
+
+Kontur, rzeki i miasta zapisano w `content/home-map.json`; dane emisyjne i pochodzenie — w `data/mapa-emisje-pl-2024.json`, a rozmieszczenie podpisów — w `content/map-emissions-layout.json`. Oba widoki generuje `scripts/map_portal.py`. Grafitowo-kobaltowe szkice są podporządkowane danym. Na telefonie mapa w otwarciu zachowuje proporcje, a większy widok i tabela przewijają się w osobnych obszarach dostępnych z klawiatury.
 
 Szkic elektrowni, wiatru, fotowoltaiki, transformatora pod lupą i licznika towarzyszy konsultacji modelu energii. Ilustracje nie oznaczają formalnego zatwierdzenia wyników. Mapa nie przedstawia kompletnego wykazu instalacji ani pokrycia zasobów bazy poLCA. Na telefonie pozostaje między tytułem a opisem i zachowuje swoje proporcje. Nie usuwać ilustracji w imię redukcji dekoracji: ich zadaniem jest ułatwienie rozpoznania tematu i przełamanie monotonii.
