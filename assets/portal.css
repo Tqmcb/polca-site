@@ -15,13 +15,13 @@
 }
 html { font-size: 18px; scroll-padding-top: 24px; }
 body.portal {
-  --portal-ink: #172c49;
-  --portal-link: #185ca4;
+  --portal-ink: #142c45;
+  --portal-link: #1355c4;
   --portal-muted: #526173;
-  --portal-line: #d8e0e9;
-  --portal-soft: #f5f7fa;
-  --portal-review: #74500a;
-  --portal-review-bg: #fff5de;
+  --portal-line: #d4dce4;
+  --portal-soft: #f3f6fa;
+  --portal-review: #526173;
+  --portal-review-bg: transparent;
   margin: 0;
   background: #fff;
   color: var(--portal-ink);
@@ -34,7 +34,7 @@ body.portal *, body.portal *::before, body.portal *::after { box-sizing: border-
 body.portal [hidden] { display: none !important; }
 body.portal a { text-decoration: underline; color: var(--portal-link); text-underline-offset: .16em; text-decoration-thickness: 1px; }
 body.portal a:hover { color: var(--portal-ink); text-decoration: underline; }
-body.portal :focus-visible { outline: 3px solid #185ca4 !important; outline-offset: 3px !important; }
+body.portal :focus-visible { outline: 3px solid #1355c4 !important; outline-offset: 3px !important; }
 body.portal img, body.portal svg { max-width: 100%; }
 body.portal button, body.portal input, body.portal select, body.portal textarea { font: inherit; }
 body.portal button, body.portal summary, body.portal select { touch-action: manipulation; }
@@ -117,7 +117,7 @@ body.portal .portal-categories > a:hover strong { text-decoration: underline; te
 .portal-list > li:last-child { border-bottom: 1px solid var(--portal-line); }
 .portal-list > li > a { display: block; padding: 16px 0; font-weight: 600; }
 .portal-list p, .portal-list small { display: block; margin: 4px 0 0; color: var(--portal-muted); font-weight: 400; font-size: .9rem; }
-.portal-callout { margin-block: 24px; padding: 20px 24px; border: 0; background: var(--portal-soft); }
+.portal-callout { margin-block: 24px; padding: 18px 0; border-block: 1px solid var(--portal-line); background: transparent; }
 .portal-callout > :first-child { margin-top: 0; }
 .portal-callout > :last-child { margin-bottom: 0; }
 .portal-callout h2, .portal-callout h3 { font-size: 1.15rem; line-height: 1.3; }
@@ -150,7 +150,7 @@ body.portal .portal-result-title:hover { text-decoration: underline; }
 .portal-result-value strong { display: block; color: var(--portal-ink); font-size: 1.3rem; line-height: 1.25; font-weight: 600; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .portal-result-value small { display: block; color: var(--portal-muted); line-height: 1.4; font-size: .82rem; margin-top: 4px; }
 .portal-status { display: inline-block; width: fit-content; max-width: 100%; padding: 4px 8px; border: 1px solid var(--portal-line); border-radius: 4px; background: var(--portal-soft); color: var(--portal-muted); font-size: .8rem; line-height: 1.35; font-weight: 600; }
-.portal-status[data-status="review"], .portal-status.review, .portal-status-review { color: var(--portal-review); background: var(--portal-review-bg); border-color: #d9b974; }
+.portal-status[data-status="review"], .portal-status.review, .portal-status-review { color: var(--portal-review); background: var(--portal-review-bg); border-color: var(--portal-line); }
 #catalog-empty { margin: 24px 0; padding: 24px; border: 1px solid var(--portal-line); background: var(--portal-soft); border-radius: 4px; }
 #catalog-empty > :first-child { margin-top: 0; }
 #catalog-empty > :last-child { margin-bottom: 0; }
@@ -263,7 +263,7 @@ body.portal .portal-result-title:hover { text-decoration: underline; }
   .portal-footer nav > * + * { margin-top: 16px; }
 }
 /* Existing substantive pages retain their content and calculators. */
-body.portal.portal-legacy { --text-primary: #172c49; --text-body: #172c49; --text-secondary: #526173; --text-tertiary: #526173; --accent: #185ca4; --border: #d8e0e9; }
+body.portal.portal-legacy { --text-primary: #142c45; --text-body: #142c45; --text-secondary: #526173; --text-tertiary: #526173; --accent: #1355c4; --border: #d4dce4; }
 body.portal-legacy .polca-content, body.portal-legacy .main-content { margin-left: 0 !important; padding-top: 0 !important; }
 body.portal-legacy .polca-page { max-width: 1180px !important; width: calc(100% - 64px); margin-inline: auto; padding: 8px 0 64px !important; animation: none !important; }
 body.portal-legacy .fade-in { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
@@ -297,16 +297,16 @@ body.portal-legacy .en25 { font-family: "Source Sans 3", Arial, sans-serif; }
   body.portal *, body.portal *::before, body.portal *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 /* Tables, exports and compact purpose links. */
-.portal-table-wrap {max-width:100%;overflow-x:auto;border:1px solid var(--portal-border,#d8e0e9);margin:1.5rem 0;}
+.portal-table-wrap {max-width:100%;overflow-x:auto;border:1px solid var(--portal-border,#d4dce4);margin:1.5rem 0;}
 .portal-table-wrap table {width:100%;border-collapse:collapse;font-size:1rem;}
 .portal-table-wrap caption {text-align:left;padding:1rem;font-weight:600;}
-.portal-table-wrap th,.portal-table-wrap td {text-align:left;padding:.8rem 1rem;border-bottom:1px solid #d8e0e9;vertical-align:top;}
-.portal-table-wrap thead {background:#f5f7fa;}
+.portal-table-wrap th,.portal-table-wrap td {text-align:left;padding:.8rem 1rem;border-bottom:1px solid #d4dce4;vertical-align:top;}
+.portal-table-wrap thead {background:#f3f6fa;}
 #energy-calculation .portal-table-wrap td:nth-last-child(2) {font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap;}
 .portal-actions {display:flex;flex-wrap:wrap;gap:12px;margin:1rem 0;}
 #energy-form {display:grid;gap:12px;}
 #energy-form label {font-weight:600;}
-#energy-form input,#energy-form select {width:100%;padding:12px;border:1px solid #91a4bb;border-radius:4px;background:white;min-height:46px;color:#172c49;font:inherit;}
+#energy-form input,#energy-form select {width:100%;padding:12px;border:1px solid #91a4bb;border-radius:4px;background:white;min-height:46px;color:#142c45;font:inherit;}
 #energy-error {color:#9d2626;}
 #energy-summary {font-size:1.3rem;font-weight:600;}
 .portal button:disabled {opacity:.55;cursor:not-allowed;}
@@ -451,7 +451,8 @@ body.portal-legacy .en25 .en25-eyebrow {font:600 .9rem/1.45 "Source Sans 3",Aria
 body.portal-legacy .en25-record {border:1px solid var(--portal-line);background:#fff;}
 body.portal-legacy .en25-record dl > div, body.portal-legacy .en25-record dd {font-size:.94rem;}
 body.portal-legacy .en25-metric strong {font-family:inherit;color:var(--portal-ink);font-variant-numeric:tabular-nums;}
-body.portal-legacy .en25-status {border:0;}
+body.portal-legacy .en25-status {border:0;border-block:1px solid var(--portal-line);padding:24px 0;background:transparent;}
+body.portal-legacy .en25-tag, body.portal-legacy .en25-review-label {color:var(--portal-muted);}
 body.portal-legacy .en25-example {border:0;background:var(--portal-soft);}
 body.portal-legacy .en25-nav a {font-size:1rem;min-height:44px;padding-block:10px;text-decoration:none;}
 body.portal-legacy .en25-nav a:hover {text-decoration:underline;}
