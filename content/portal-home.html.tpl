@@ -1,14 +1,15 @@
 <section class="home-intro" aria-labelledby="home-title">
   <div class="portal-shell home-intro-grid">
-    <div class="home-intro-copy">
       <h1 id="home-title">Ślad węglowy<br> i środowiskowy.<br> <span>Na polskich danych.</span></h1>
+      <figure class="home-illustration"><img src="/images/polca-infrastruktura.webp" srcset="/images/polca-infrastruktura-640.webp 640w, /images/polca-infrastruktura.webp 1280w" sizes="(max-width: 760px) calc(100vw - 32px), 56vw" width="1280" height="853" alt="Rysunkowa panorama: produkcja energii, surowce, transport i budynek." fetchpriority="high"></figure>
       <p class="home-description">poLCA to dane i kalkulatory do oceny wpływu energii, materiałów i transportu. Pomagają przygotować obliczenia dla wyrobów budowlanych i deklaracji środowiskowych (EPD).</p>
       <form class="home-search" action="/szukaj.html" method="get" role="search">
         <label for="home-query">Szukaj w danych i dokumentacji</label>
         <div class="portal-search-control"><input id="home-query" type="search" name="q" placeholder="Np. energia 2025, cement"><button type="submit">Szukaj</button></div>
       </form>
       <div class="home-actions"><a href="/datasety.html">Przeglądaj dane</a><a href="/kalkulatory.html">Wszystkie kalkulatory</a></div>
-    </div>
+  </div>
+  <div class="portal-shell">
     <nav class="home-routes" aria-labelledby="home-routes-title">
       <h2 id="home-routes-title">Co chcesz obliczyć?</h2>
       <ul>
@@ -25,27 +26,29 @@
       <h2 id="home-energy-title">Od zużycia energii<br> do wyniku środowiskowego.</h2>
       <p>Energia elektryczna, Polska $energy_year.<br> Fizyczny miks energii dostarczonej odbiorcy.</p>
     </header>
-    <figure class="home-calculation">
+    <figure class="home-calculation" data-home-calculator data-factor="$energy_factor_raw">
       <figcaption>Przykładowe obliczenie wpływu na klimat w cyklu życia</figcaption>
       <div class="home-equation">
-        <div class="home-equation-term"><span class="home-equation-label">Zużycie energii</span><strong>100</strong><span class="home-equation-unit">kWh</span></div>
+        <div class="home-equation-term home-equation-input"><span class="home-energy-static"><span class="home-equation-label">Zużycie energii</span><strong>100</strong></span><div class="home-energy-editor" hidden><label class="home-equation-label" for="home-energy-use">Zmień zużycie energii</label><input id="home-energy-use" type="text" inputmode="decimal" value="100" autocomplete="off" maxlength="16" aria-describedby="home-energy-unit home-energy-error"></div><span class="home-equation-unit" id="home-energy-unit">kWh</span></div>
         <span class="home-equation-operator" aria-label="razy">×</span>
         <div class="home-equation-term"><span class="home-equation-label">Wskaźnik modelu</span><strong>$energy_factor</strong><span class="home-equation-unit">kg CO₂e/kWh</span></div>
         <span class="home-equation-operator" aria-label="równa się">=</span>
-        <div class="home-equation-term home-equation-result"><span class="home-equation-label">Wpływ na klimat</span><strong>$example_value</strong><span class="home-equation-unit">kg CO₂e</span></div>
+        <div class="home-equation-term home-equation-result"><span class="home-equation-label">Wpływ na klimat</span><output id="home-energy-result" for="home-energy-use" aria-live="off">$example_value</output><span class="home-equation-unit">kg CO₂e</span></div>
       </div>
-      <p class="home-example-source">Źródło: <a href="$energy_href">$energy_source</a>. CO₂e oznacza ekwiwalent dwutlenku węgla.</p>
+      <div class="home-energy-presets" hidden><span>Sprawdź przykład:</span><button type="button" data-energy-preset="100">100 kWh</button><button type="button" data-energy-preset="1000">1000 kWh</button><button type="button" data-energy-preset="10000">10 000 kWh</button></div>
+      <p id="home-energy-error" hidden></p><span class="home-sr-only" id="home-energy-announcement" role="status"></span>
+      <p class="home-example-source">Źródło: <a href="$energy_href">$energy_source</a>. Wyświetlony wskaźnik jest zaokrąglony; wynik korzysta z pełnej wartości. CO₂e oznacza ekwiwalent dwutlenku węgla.</p>
     </figure>
     <div class="home-energy-foot">
-      <div class="home-energy-copy"><p>Wpisz zużycie energii i otrzymaj <strong>$indicator_count wskaźników</strong>: wpływ na klimat, zużycie zasobów i wody, ilość odpadów oraz pozostałe wyniki modelu. Do każdego wyniku dołączono jednostkę, a do modelu — metodę, źródła i warunki wykorzystania.</p><a class="home-primary" href="/oblicz-energie-2025.html">Przelicz własne zużycie</a></div>
+      <div class="home-energy-copy"><p>Pełny kalkulator podaje <strong>$indicator_count wskaźników</strong>: wpływ na klimat, zużycie zasobów i wody, ilość odpadów oraz pozostałe wyniki modelu. Do każdego wyniku dołączono jednostkę, a do modelu — metodę, źródła i warunki wykorzystania.</p><a class="home-primary" href="/oblicz-energie-2025.html">Oblicz $indicator_count wskaźników</a></div>
       <div class="home-example-status"><p><strong>$energy_status.</strong> Kwalifikacja modelu do konkretnego zastosowania w EPD pozostaje otwarta.</p><a href="$energy_href#status">Zakres i status wersji</a><a href="$energy_href">Model i pliki</a></div>
     </div>
   </section>
 </div>
 <section class="home-consultation" aria-labelledby="home-consultation-title">
   <div class="portal-shell home-consultation-inner">
-    <div><h2 id="home-consultation-title">$consultation_title</h2><p>$consultation_description</p></div>
-    <div class="home-consultation-access"><p>Dokumentacja, 37 wyników i warianty obliczeń. Uwaga powiązana z tematem i wersją projektu.</p><a href="/konsultacje/energia-polska-2025.html">Zobacz projekt i zgłoś uwagę</a></div>
+    <figure class="home-review-illustration"><img src="/images/polca-przeglad-modelu.webp" width="800" height="800" alt="Szkic dokumentacji technicznej z lupą nad modelem budynku." loading="lazy"></figure>
+    <div><h2 id="home-consultation-title">$consultation_title</h2><p>$consultation_description</p><div class="home-consultation-access"><p>Dokumentacja, 37 wyników i warianty obliczeń. Uwaga powiązana z tematem i wersją projektu.</p><a href="/konsultacje/energia-polska-2025.html">Zobacz projekt i zgłoś uwagę <span aria-hidden="true">→</span></a></div></div>
   </div>
 </section>
 <div class="portal-shell">

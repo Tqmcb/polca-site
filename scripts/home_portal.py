@@ -26,6 +26,7 @@ def build(api, families):
         energy_status=e(energy['status_label']),
         energy_source=e(energy['source_name']),
         energy_factor=e(f'{energy["value"]:.4f}'.replace('.', ',')),
+        energy_factor_raw=e(energy['value']),
         example_value=e(f'{energy["value"] * 100:.2f}'.replace('.', ',')),
         product_links=product_links,
         consultation_title=e(consultation['home_title']),
@@ -37,4 +38,5 @@ def build(api, families):
         'poLCA: dane i kalkulatory dla energii, materiałów i transportu. Obliczenia dla wyrobów budowlanych oraz dokumentacja do deklaracji środowiskowych EPD.',
         body,
         home=True,
+        head_extra='<script src="/js/home.js?v=20261020illustrations" defer></script>',
     )
