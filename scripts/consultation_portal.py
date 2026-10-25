@@ -10,6 +10,7 @@ from urllib.parse import urlsplit
 
 PAGE = "konsultacje/energia-polska-2025.html"
 METHOD_PAGE = "konsultacje/energia-polska-2025-metoda.html"
+REPORT_PAGE = "konsultacje/energia-polska-2025-raport-lca.html"
 DATA = "/data/konsultacje/energia-2025-20261020/"
 STEP_IDS = ("zrodla", "granice", "obliczenia", "sprawdzenie", "przeglad", "uwagi")
 QUESTION_IDS = ("granice", "alokacja", "biogeniczny", "jakosc")
@@ -261,6 +262,7 @@ def build(api):
 <section class="consult-section consult-documentation" id="dokumentacja" aria-labelledby="documentation-title">
   <div class="consult-section-heading"><h2 id="documentation-title">Metoda, wyniki i pliki</h2><p>Dokumentacja dotyczy pakietu {esc(version)}. Najpierw przeczytaj zakres modelu oraz opis danych zastępczych.</p></div>
   <p class="consult-method-link"><a href="/{METHOD_PAGE}">Przeczytaj notę metodyczną</a><span>Założenia, zmiany względem v4 i ograniczenia projektu.</span></p>
+  <p class="consult-method-link"><a href="/{REPORT_PAGE}">Przeczytaj projekt raportu LCA (oceny cyklu życia)</a><span>Wersja 0.2 z 25.10.2026. Projekt do przeglądu krytycznego.</span></p>
   <ul class="consult-downloads">{download_html}</ul>
   <details class="consult-results" id="wyniki"><summary>Wszystkie 37 wyników dla 1 kWh</summary>
     <div class="consult-results-inner"><p>{esc(unit_description)}</p><p class="consult-muted">Wartości w tabeli są zaokrąglone do sześciu cyfr znaczących. Pełna precyzja znajduje się w plikach JSON i CSV. Wskaźników o różnych jednostkach ani sum i ich składników nie dodaje się ponownie.</p>
@@ -310,6 +312,7 @@ def build(api):
         '<p class="consult-method-intro">Ta nota opisuje projekt modelu i jego ograniczenia. '
         'Nie jest raportem niezależnego krytycznego przeglądu.</p>'
         f'<p>{link("Wróć do konsultacji i zgłoś uwagę", "/" + PAGE)}</p>'
+        f'<p>{link("Przeczytaj projekt raportu LCA (oceny cyklu życia), wersja 0.2", "/" + REPORT_PAGE)}</p>'
         + '<nav class="consult-method-nav" aria-label="Spis treści noty">'
         + links([{"label":section["title"], "href":"#" + identifier(section["id"])}
                  for section in copy["method_sections"]])

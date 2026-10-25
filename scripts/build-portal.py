@@ -154,6 +154,8 @@ if __name__=='__main__':
  build_products(globals())
  from consultation_portal import build as build_consultation
  build_consultation(globals())
+ from report_portal import build as build_report
+ build_report(globals())
  from map_portal import build as build_map
  build_map(globals())
  from topic_map_portal import build as build_topic_map
