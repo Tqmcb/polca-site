@@ -6,12 +6,12 @@
 |---|---|
 | Oceniany model | `PL2025_METHOD_CLOSURE_CANDIDATE` |
 | Wersja ocenianego modelu | zamrożenie R3 z 20.10.2026, 151 plików, SHA-256 `6de11084dfd4f59a883cf9256a01588074ee93bc7f410eac3ecfadd889d0b58f` |
-| Wersja raportu | projekt 0.2 z 25.10.2026 (uzupełnienia załącznika A) |
+| Wersja raportu | projekt 0.3 z 26.10.2026 (decyzje zlecającego A1, A2 i A13; wykaz zmian danych BAFU) |
 | Zlecający badanie | program EPD Polska; operator programu: Multicert Sp. z o.o. |
 | Wykonawca badania | Multicert Sp. z o.o. (zespół poLCA); obliczenia i dokumentację wykonano z użyciem narzędzi sztucznej inteligencji (Codex, Claude) pod nadzorem Grzegorza Suwary |
 | Status | wydanie publiczne projektu; nie przeszedł przeglądu krytycznego; dane nie zostały przyjęte do programu EPD Polska |
 
-Raport łączy dokumentację etapów prac z 17–20.10.2026. Nie zmienia centralnego wyniku wersji zamrożonej R3; uzupełnia go o obliczenia diagnostyczne i przeliczone warianty wrażliwości z 25.10.2026. Tabele 1–3, 5 i 6 wygenerowano automatycznie z plików wyników. Pełna dokumentacja robocza zawiera dane objęte licencją BAFU; zakres i tryb jej udostępnienia recenzentowi wymagają rozstrzygnięcia przez zlecającego (A13) oraz spełnienia warunków użytkowania BAFU. Wartości liczbowe z publicznie dostępnych raportów dokumentacji BAFU przytoczono z podaniem źródła; zbiorów danych BAFU nie rozpowszechnia się.
+Raport łączy dokumentację etapów prac z 17–20.10.2026. Nie zmienia centralnego wyniku wersji zamrożonej R3; uzupełnia go o obliczenia diagnostyczne i przeliczone warianty wrażliwości z 25.10.2026. Tabele 1–3, 5 i 6 wygenerowano automatycznie z plików wyników. Pełna dokumentacja robocza zawiera dane objęte licencją BAFU; recenzent pobiera bazę BAFU samodzielnie i otrzymuje od wykonawcy kod, wyniki, wykaz zmian danych BAFU i dokumentację roboczą na warunkach poufności (decyzja A13). Wartości liczbowe z publicznie dostępnych raportów dokumentacji BAFU przytoczono z podaniem źródła; zbiorów danych BAFU nie rozpowszechnia się.
 
 Układ raportu odpowiada wymaganiom PN-EN ISO 14044:2009, pkt 5.2, dotyczącym raportu dla strony trzeciej.
 
@@ -21,7 +21,7 @@ Układ raportu odpowiada wymaganiom PN-EN ISO 14044:2009, pkt 5.2, dotyczącym r
 
 **1.1. Zlecający i wykonawca.** Zlecającym badanie jest program EPD Polska, którego operatorem jest Multicert Sp. z o.o.; wykonawcą jest Multicert Sp. z o.o. (zespół poLCA). Ponieważ zlecający i wykonawca należą do tej samej organizacji, niezależność oceny zapewnia wyłącznie przegląd krytyczny przez eksperta zewnętrznego (rozdział 8).
 
-**1.2. Data raportu.** 25.10.2026 (projekt 0.2).
+**1.2. Data raportu.** 26.10.2026 (projekt 0.3).
 
 **1.3. Zgodność z normami.** Badanie przeprowadzono z zamiarem spełnienia wymagań PN-EN ISO 14040:2009 i PN-EN ISO 14044:2009 oraz z użyciem wskaźników i reguł EN 15804:2012+A2:2019/AC:2021 i EN 15941:2024. **Zgodności nie stwierdzono:** o zgodności rozstrzygnie przegląd krytyczny (rozdział 8). Niniejsze zdanie nie jest stwierdzeniem zgodności w rozumieniu PN-EN ISO 14044, pkt 5.2 a) 3).
 
@@ -115,7 +115,7 @@ Próg 80% bezwzględnych wkładów (EN 15941:2024, 7.1.2) zastosowano wyłączni
 
 ### 3.4. Baza danych tła
 
-Dane tła pochodzą z zamrożonego modelu 2024 v4, zbudowanego na bazie „Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026”, wydanie BAFU-2026 v1 (wydawca: szwajcarski Federalny Urząd Środowiska, BAFU/FOEN). Archiwa pobrano 27.09.2026 z serwisu openLCA Nexus po akceptacji warunków użytkowania; graf technosfery pochodzi z archiwum ecoSpold v1 (SHA-256 `ebaab56717a6227b5eb271fcb4c86fb9db206115eb937fb0ec0b10d7accf26c7`; 11 947 procesów, 420 063 wymiany), a plik openLCA w poprawce v1.1 posłużył do uzgodnienia ilości i jednostek. Warunki użytkowania BAFU z 23.06.2026 dopuszczają obliczenia własne na danych, zakazują rozpowszechniania danych jako takich i wymagają cytowania „BAFU:2026”; zmodyfikowane dane można udostępniać osobom trzecim tylko z osobną dokumentacją zmian i na zasadach równoważnych (pkt 2.1–2.3, 3.1–3.5). Pełnego grafu nie udostępnia się publicznie; publikowane są wyniki zbiorcze oraz pojedyncze parametry przytoczone z podaniem źródła. **Do rozstrzygnięcia przez zlecającego:** czy poprawki grafu modelu są danymi zmodyfikowanymi w rozumieniu pkt 3 warunków oraz w jakiej formie recenzent otrzyma dostęp do grafu (załącznik A, A13). Szczegóły i sumy kontrolne: załącznik C. Część procesów w bazach BAFU i ecoinvent ma wspólne pochodzenie, co ogranicza niezależność porównań z ecoinvent.
+Dane tła pochodzą z zamrożonego modelu 2024 v4, zbudowanego na bazie „Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026”, wydanie BAFU-2026 v1 (wydawca: szwajcarski Federalny Urząd Środowiska, BAFU/FOEN). Archiwa pobrano 27.09.2026 z serwisu openLCA Nexus po akceptacji warunków użytkowania; graf technosfery pochodzi z archiwum ecoSpold v1 (SHA-256 `ebaab56717a6227b5eb271fcb4c86fb9db206115eb937fb0ec0b10d7accf26c7`; 11 947 procesów, 420 063 wymiany), a plik openLCA w poprawce v1.1 posłużył do uzgodnienia ilości i jednostek. Warunki użytkowania BAFU z 23.06.2026 dopuszczają obliczenia własne na danych, zakazują rozpowszechniania danych jako takich i wymagają cytowania „BAFU:2026”; zmodyfikowane dane można udostępniać osobom trzecim tylko z osobną dokumentacją zmian i na zasadach równoważnych (pkt 2.1–2.3, 3.1–3.5). Pełnego grafu nie udostępnia się publicznie; publikowane są wyniki zbiorcze oraz pojedyncze parametry przytoczone z podaniem źródła. **Decyzja z 26.10.2026 (A13):** poprawki modelu wprowadzone do zbiorów BAFU traktuje się ostrożnie jako dane zmodyfikowane w rozumieniu pkt 3 warunków; ich wykaz (zbiory, charakter i cel zmian) sporządzono w osobnym dokumencie (załącznik K): 55 zmian samych zbiorów (współczynniki macierzy technosfery, wymiany elementarne, wpisy rachunku węgla biogenicznego) oraz 46 korekt emisji pierwszych procesów spalania, ujętych ostrożnie również jako dane zmodyfikowane; obejmuje to m.in. przejętą z modelu 2024 korektę CO₂ biogenicznego w procesie spalania zrębków 617593. Recenzent pobiera bazę BAFU-2026 v1 samodzielnie z serwisu openLCA Nexus i przyjmuje jej warunki; wykonawca przekazuje mu kod, wyniki, wykaz zmian i dokumentację roboczą, bez rozpowszechniania zbiorów BAFU. Część wewnętrzną obejmuje umowa o poufności. Szczegóły i sumy kontrolne: załącznik C. Część procesów w bazach BAFU i ecoinvent ma wspólne pochodzenie, co ogranicza niezależność porównań z ecoinvent.
 
 ### 3.5. Metoda obliczeń i oprogramowanie
 
@@ -451,7 +451,7 @@ Wskaźnik KOBiZE dla odbiorców końcowych (553 kg CO₂/MWh, czyli 0,553 kg CO�
 
 Model daje kompletny i odtwarzalny profil 37 wskaźników dla 1 kWh energii elektrycznej dostarczonej w Polsce w 2025 r., z jawnie opisanymi wyborami metodycznymi i ograniczeniami. Przed przyjęciem do programu EPD Polska zaleca się:
 - przeprowadzenie przeglądu krytycznego;
-- rozstrzygnięcie pozycji otwartych w załączniku A (A13 oraz status danych zmodyfikowanych BAFU);
+- przekazanie recenzentowi dokumentacji według decyzji A13;
 - decyzję o zastąpieniu energii elektrycznej kopalń miksem krajowym i o uzgodnieniu różnicy ARE–Eurostat;
 - podjęcie decyzji operatora o wpisie do wykazu przyjętych danych.
 
@@ -475,7 +475,7 @@ Przegląd krytyczny nie został jeszcze przeprowadzony. Proponowany zakres przeg
 |---|---|---|---|
 | A1 | Zlecający i wykonawca badania | zamknięte 26.10.2026: program EPD Polska (operator Multicert Sp. z o.o.) i Multicert Sp. z o.o. | 1.1 |
 | A2 | Potwierdzenie, że badanie nie służy stwierdzeniom porównawczym przewidzianym do udostępnienia publicznego | zamknięte 26.10.2026: potwierdzone przez zlecającego | 2.4 |
-| A3 | Nazwa, wersja i licencja bazy tła | zamknięte: BAFU-2026 v1, warunki użytkowania z 23.06.2026; otwarte: status „danych zmodyfikowanych” (pkt 3 warunków) | 3.4, zał. C |
+| A3 | Nazwa, wersja i licencja bazy tła | zamknięte: BAFU-2026 v1, warunki użytkowania z 23.06.2026; status danych zmodyfikowanych rozstrzygnięty w A13 | 3.4, zał. C |
 | A4 | Kryteria wyłączenia w procesach bazy tła | opisano jakościowo; ilościowej oceny pominięć nie wykonano | 3.3, zał. D |
 | A5 | Energia elektryczna w procesach tła | zamknięte opisowo; decyzja o zastąpieniu energii kopalń miksem krajowym otwarta (ok. +0,8% GWP-total) | 3.2, zał. D |
 | A6 | Metody charakteryzowania 19 wskaźników | zamknięte; odstępstwa od tab. C.1–C.2 opisano do oceny recenzenta | 5.1, zał. E |
@@ -485,7 +485,7 @@ Przegląd krytyczny nie został jeszcze przeprowadzony. Proponowany zakres przeg
 | A10 | Różnica 0,534% produkcji netto węgla brunatnego | wyjaśniona częściowo; wpływ +0,03% do +0,17%; procedura uzgodnienia zaproponowana | 4.2, zał. D |
 | A11 | Powiązanie pakietu `2026-10-20.1` z zamrożeniem R3 | zamknięte: 37 wartości identycznych, pliki na polca.org.pl zgodne z manifestem | zał. I |
 | A12 | Specyfikacja zastosowania i projekt decyzji operatora | zamknięte jako projekt wewnętrzny (niepodpisany) | 2.2 |
-| A13 | Dostęp recenzenta do danych licencjonowanych i części poufne | **otwarte — decyzja zlecającego** (w związku z warunkami BAFU, pkt 2–3) | 3.4 |
+| A13 | Dostęp recenzenta do danych licencjonowanych i części poufne | zamknięte 26.10.2026: poprawki traktowane jako dane zmodyfikowane BAFU z wykazem zmian; recenzent pobiera bazę BAFU samodzielnie; umowa o poufności | 3.4 |
 | A14 | Reguły 18 wskaźników zasobów, odpadów i przepływów wyjściowych | zamknięte; brak reguł dla NRSF, CRU i MER (zero konwencyjne) | 5.1, zał. E |
 | A15 | Pełne opisy bibliograficzne | zamknięte w zakresie dostępnych plików; braki wymienione w zał. G | zał. G |
 | A16 | Opis ilościowy pozostałych technologii pierwszego planu | zamknięte: technologie poza węglem odpowiadają za 19,9% GWP-total | zał. D |
@@ -493,7 +493,7 @@ Przegląd krytyczny nie został jeszcze przeprowadzony. Proponowany zakres przeg
 
 ## Dokumentacja uzupełniająca
 
-Załączniki C–I raportu (baza tła i warunki licencji, analizy diagnostyczne, metody i reguły wskaźników, zestawienie nazw, bibliografia, przeliczenie wariantów, powiązanie pakietu publicznego) są częścią dokumentacji roboczej. Zawierają dane objęte licencją BAFU; zakres i tryb ich udostępnienia wymagają rozstrzygnięcia A13 oraz spełnienia warunków użytkowania BAFU (pkt 2–3).
+Załączniki C–I i K raportu (baza tła i warunki licencji, analizy diagnostyczne, wykaz zmian danych BAFU, metody i reguły wskaźników, zestawienie nazw, bibliografia, przeliczenie wariantów, powiązanie pakietu publicznego) są częścią dokumentacji roboczej. Zawierają dane objęte licencją BAFU i są przekazywane recenzentowi według decyzji A13, z zachowaniem warunków użytkowania BAFU (pkt 2–3).
 
 ## Załącznik B. Pochodzenie tabel i dowody
 
