@@ -35,6 +35,18 @@ Strony konsultacji generuje `scripts/consultation_portal.py` z treści w
 `data/konsultacje/energia-2025-20261020/`. Projekt konsultacyjny jest oddzielony od
 modelu v4 używanego w kalkulatorze. Nie zastępuje go podczas zwykłej przebudowy.
 
+Projekt raportu LCA (oceny cyklu życia) na
+`konsultacje/energia-polska-2025-raport-lca.html` generuje
+`scripts/report_portal.py`, wywoływany przez `build-portal.py`, z polskiego źródła
+`content/raport-lca-energia-2025.md`. Treść raportu zmieniaj wyłącznie w źródle
+Markdown. Generator tworzy spis nagłówków drugiego poziomu, przewijane tabele
+oraz dokładną kopię źródła i manifest SHA-256 w
+`data/konsultacje/raport-lca-2025/`. Wersja raportu 0.2 jest odrębna od wersji
+zamrożonego pakietu konsultacyjnego; generator nie zapisuje niczego w tym pakiecie.
+Raport znajduje się w zasobach `data/portal-editorial.json`, z których
+`build-catalog.py` tworzy indeks wyszukiwania. `build-portal.py` aktualizuje też
+mapę witryny. Lista kontroli wyglądu dla prowadzącego: `scripts/render_check_raport.md`.
+
 Formularz pomaga przygotować wiadomość w poczcie użytkownika albo skopiować lub
 pobrać jej treść. Strona statyczna nie przyjmuje zgłoszeń i nie nadaje im numerów.
 Obsługa otrzymanych wiadomości oraz publikacja odpowiedzi odbywają się redakcyjnie.

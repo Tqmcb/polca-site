@@ -629,6 +629,20 @@
   },
   "resources": [
     {
+      "id": "report-lca-energia-2025",
+      "title": "Raport LCA (oceny cyklu życia) energii elektrycznej — Polska 2025",
+      "kind": "method",
+      "category_id": "energia",
+      "year": 2025,
+      "year_type": "reference",
+      "status_id": "consultation",
+      "description": "Projekt raportu, wersja 0.2 z 25.10.2026. Metoda, wyniki i ograniczenia badania; niezależny przegląd krytyczny pozostaje do wykonania.",
+      "href": "/konsultacje/energia-polska-2025-raport-lca.html",
+      "methodology_href": "/konsultacje/energia-polska-2025-metoda.html",
+      "related_ids": ["consultation-energia-2025"],
+      "keywords": ["raport", "LCA", "ocena cyklu życia", "energia elektryczna", "2025", "przegląd krytyczny", "konsultacje"]
+    },
+    {
       "id": "consultation-energia-2025",
       "title": "Konsultacje: model energii Polska 2025",
       "kind": "method",

@@ -1,0 +1,31 @@
+/* Public report: portal typography, readable prose and contained wide tables. */
+.consult-report { min-width: 0; max-width: 100%; }
+.consult-report-status { padding: 24px; margin-block: 24px; background: var(--portal-soft); border-block: 1px solid var(--portal-line); }
+.consult-report-status p { max-width: 90ch; margin: 0 0 16px; }
+.consult-report-status p:last-child { margin-bottom: 0; }
+.consult-report-downloads { margin-block: 24px; padding-left: 24px; }
+.consult-report-downloads li { padding-block: 5px; }
+.consult-report-toc { padding-block: 24px; margin-block: 32px; border-block: 1px solid var(--portal-line); }
+.consult-report-toc h2 { margin-top: 0; font-size: 1.5rem; }
+.consult-report-toc ul { margin: 0; padding-left: 24px; }
+.consult-report-toc li { padding-block: 5px; }
+.consult-report-hint { color: var(--portal-muted); font-size: .87rem; }
+.consult-report-content { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.consult-report-content > :is(p, h2, h3, h4, ul, ol, hr) { max-width: 76ch; margin-inline: auto; }
+.consult-report-content h2 { margin-top: 48px; font-size: 1.8rem; line-height: 1.2; font-weight: 600; }
+.consult-report-content h3 { margin-top: 32px; font-size: 1.3rem; line-height: 1.3; font-weight: 600; }
+.consult-report-content li { margin-block: 8px; }
+.consult-report-content code { font-size: .88em; white-space: normal; }
+.consult-report-content hr { margin-block: 36px; border: 0; border-top: 1px solid var(--portal-line); }
+.consult-report-table-wrap { min-width: 0; max-width: 100%; width: 100%; overflow-x: auto; overscroll-behavior-x: contain; margin-block: 24px; border: 1px solid var(--portal-line); }
+.consult-report-table-wrap table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: .87rem; font-variant-numeric: tabular-nums; }
+.consult-report-table-wrap th, .consult-report-table-wrap td { padding: 12px 14px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--portal-line); }
+.consult-report-table-wrap thead th { background: var(--portal-soft); font-weight: 600; }
+.consult-report-table-wrap tbody tr:last-child td { border-bottom: 0; }
+.consult-report-table-wrap :is(th, td) { overflow-wrap: normal; }
+.consult-report-table-wrap :is(th, td)[style*="right"] { white-space: nowrap; }
+.consult-report-table-wrap td code { overflow-wrap: anywhere; }
+@media (max-width: 540px) {
+  .consult-report-status { padding: 20px 16px; }
+  .consult-report-content h2 { font-size: 1.55rem; }
+}
