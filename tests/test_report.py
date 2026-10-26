@@ -71,7 +71,7 @@ class ReportTests(unittest.TestCase):
     def test_exact_status_is_visible_above_toc_and_links_to_consultation_and_form(self):
         status = self.doc.xpath("//*[@id='status-raportu']")[0]
         expected = (
-            "Projekt raportu, wersja 0.3 z 26.10.2026. "
+            "Projekt raportu, wersja 0.4 z 26.10.2026. "
             "Raport nie przeszedł jeszcze przeglądu krytycznego przez niezależnego eksperta. "
             "Kontrole wykonane narzędziami sztucznej inteligencji (Claude, Codex) nie zastępują tego przeglądu. "
             "Dane nie zostały przyjęte do wydawanych deklaracji w programie EPD Polska."
@@ -141,7 +141,7 @@ class ReportTests(unittest.TestCase):
         directory = ROOT / REPORT.DATA
         self.assertEqual((directory / REPORT.DOWNLOAD).read_bytes(), source)
         manifest = json.loads((directory / "manifest.json").read_text())
-        self.assertEqual(manifest["version"], "0.3")
+        self.assertEqual(manifest["version"], "0.4")
         self.assertEqual(manifest["date"], "2026-10-26")
         self.assertEqual(manifest["hash_algorithm"], "SHA-256")
         self.assertEqual(manifest["files"], {

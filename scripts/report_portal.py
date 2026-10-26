@@ -14,15 +14,15 @@ PAGE = "konsultacje/energia-polska-2025-raport-lca.html"
 CONSULTATION_PAGE = "/konsultacje/energia-polska-2025.html"
 SOURCE = "content/raport-lca-energia-2025.md"
 DATA = "data/konsultacje/raport-lca-2025"
-DOWNLOAD = "RAPORT-LCA-PL2025-0.3.md"
-VERSION = "0.3"
+DOWNLOAD = "RAPORT-LCA-PL2025-0.4.md"
+VERSION = "0.4"
 PUBLISHED = "2026-10-26"
 DESCRIPTION = (
     "Projekt raportu oceny cyklu życia energii elektrycznej w Polsce w 2025 r. "
-    "Wersja 0.3, wyniki, metoda i ograniczenia do konsultacji."
+    "Wersja 0.4, wyniki, metoda i ograniczenia do konsultacji."
 )
 STATUS = (
-    "Projekt raportu, wersja 0.3 z 26.10.2026. "
+    "Projekt raportu, wersja 0.4 z 26.10.2026. "
     "Raport nie przeszedł jeszcze przeglądu krytycznego przez niezależnego eksperta. "
     "Kontrole wykonane narzędziami sztucznej inteligencji (Claude, Codex) nie zastępują tego przeglądu. "
     "Dane nie zostały przyjęte do wydawanych deklaracji w programie EPD Polska."
@@ -108,7 +108,7 @@ def build(api):
   <p><a href="{CONSULTATION_PAGE}">Przejdź do konsultacji modelu</a> · <a href="{CONSULTATION_PAGE}#zglos-uwage">Zgłoś uwagę przez formularz</a></p>
 </aside>
 <ul class="consult-report-downloads">
-  <li><a href="/{DATA}/{DOWNLOAD}" download>Pobierz raport — Markdown, wersja 0.3</a></li>
+  <li><a href="/{DATA}/{DOWNLOAD}" download>Pobierz raport — Markdown, wersja 0.4</a></li>
   <li><a href="/{DATA}/manifest.json" download>Pobierz manifest — SHA-256 i rozmiar pliku (JSON)</a></li>
 </ul>
 <nav class="consult-report-toc" aria-label="Spis treści raportu"><h2>Spis treści</h2>{toc}</nav>
