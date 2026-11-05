@@ -41,7 +41,9 @@ Projekt raportu LCA (oceny cyklu życia) na
 `content/raport-lca-energia-2025.md`. Treść raportu zmieniaj wyłącznie w źródle
 Markdown. Generator tworzy spis nagłówków drugiego poziomu, przewijane tabele
 oraz dokładną kopię źródła i manifest SHA-256 w
-`data/konsultacje/raport-lca-2025/`. Wersja raportu 0.2 jest odrębna od wersji
+`data/konsultacje/raport-lca-2025/`. Rewizja redakcyjna raportu 0.4.1 z 05.11.2026 opisuje autorstwo i zastosowane
+narzędzia; nie zmienia wyników. Wcześniejszy plik raportu 0.4 zachowano jako
+wydanie archiwalne. Wersja raportu jest odrębna od wersji
 zamrożonego pakietu konsultacyjnego; generator nie zapisuje niczego w tym pakiecie.
 Raport znajduje się w zasobach `data/portal-editorial.json`, z których
 `build-catalog.py` tworzy indeks wyszukiwania. `build-portal.py` aktualizuje też

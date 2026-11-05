@@ -1,11 +1,11 @@
 {
-  "version": "0.4",
-  "date": "2026-10-26",
+  "version": "0.4.1",
+  "date": "2026-11-05",
   "hash_algorithm": "SHA-256",
   "files": {
-    "RAPORT-LCA-PL2025-0.4.md": {
-      "sha256": "da1311bfa541bc3a49cfd3d0b2f503f00f1b3c3038c5b089fc0f0daec57b13d3",
-      "bytes": 57960
+    "RAPORT-LCA-PL2025-0.4.1.md": {
+      "sha256": "f681f441e06c96a012676ff5b69dd96d6df95c72114be4992aeb57cc211023d6",
+      "bytes": 58336
     }
   }
 }

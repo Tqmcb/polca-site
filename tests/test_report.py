@@ -64,16 +64,15 @@ class ReportTests(unittest.TestCase):
         report = json.loads(self.doc.xpath("//script[@type='application/ld+json']")[0].text)
         self.assertEqual(report["@type"], "Report")
         self.assertEqual(report["name"], self.doc.xpath("//h1")[0].text_content())
-        self.assertEqual(report["datePublished"], "2026-10-26")
+        self.assertEqual(report["datePublished"], "2026-11-05")
         self.assertEqual(report["publisher"]["name"], "Multicert Sp. z o.o.")
         self.assertEqual(report["inLanguage"], "pl")
 
     def test_exact_status_is_visible_above_toc_and_links_to_consultation_and_form(self):
         status = self.doc.xpath("//*[@id='status-raportu']")[0]
         expected = (
-            "Projekt raportu, wersja 0.4 z 26.10.2026. "
+            "Projekt raportu, wersja 0.4.1 z 05.11.2026. "
             "Raport nie przeszedł jeszcze przeglądu krytycznego przez niezależnego eksperta. "
-            "Kontrole wykonane narzędziami sztucznej inteligencji (Claude, Codex) nie zastępują tego przeglądu. "
             "Dane nie zostały przyjęte do wydawanych deklaracji w programie EPD Polska."
         )
         self.assertEqual(normalize(status.xpath("./p")[0].text_content()), expected)
@@ -141,8 +140,8 @@ class ReportTests(unittest.TestCase):
         directory = ROOT / REPORT.DATA
         self.assertEqual((directory / REPORT.DOWNLOAD).read_bytes(), source)
         manifest = json.loads((directory / "manifest.json").read_text())
-        self.assertEqual(manifest["version"], "0.4")
-        self.assertEqual(manifest["date"], "2026-10-26")
+        self.assertEqual(manifest["version"], "0.4.1")
+        self.assertEqual(manifest["date"], "2026-11-05")
         self.assertEqual(manifest["hash_algorithm"], "SHA-256")
         self.assertEqual(manifest["files"], {
             REPORT.DOWNLOAD: {"sha256": hashlib.sha256(source).hexdigest(), "bytes": len(source)},

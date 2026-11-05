@@ -163,7 +163,7 @@ def build(api):
     total = next(row["value_per_kWh"] for row in indicators if row["code"] == "GWP-total")
     unit = profile["functional_unit"]
     unit_description = unit["description_pl"] if isinstance(unit, dict) else str(unit)
-    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261020design">'
+    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261105authors">'
     js = '<script src="/js/consultation.js?v=20261020" defer></script>'
 
     step_navigation = []
@@ -219,7 +219,7 @@ def build(api):
     body = f'''<div class="consultation" data-consultation data-model-id="{esc(model_id)}" data-package-version="{esc(version)}">
 <header class="consult-intro" aria-labelledby="consult-intro-title">
   <div class="consult-title-row"><h1 id="consult-intro-title">Model energii.<br><span>Polska 2025.</span></h1>
-    <div class="consult-intro-copy"><p>{esc(copy["intro"])}</p><div class="consult-actions"><a class="portal-button" href="#pytania">Zobacz pytania</a><a href="/{METHOD_PAGE}">Przeczytaj metodę</a></div></div>
+    <div class="consult-intro-copy"><p>{esc(copy["intro"])}</p><p class="consult-authorship">{esc(copy["author_line"])}</p><div class="consult-actions"><a class="portal-button" href="#pytania">Zobacz pytania</a><a href="/{METHOD_PAGE}">Przeczytaj metodę</a></div></div>
   </div>
   <div class="consult-publication"><p><strong>Projekt do konsultacji</strong><span>Pakiet {esc(version)}</span></p><p>Przegląd ekspercki: planowany.<br><a href="#status">Zakres wykonanej kontroli</a></p><p>W kalkulatorze pozostaje<br><a href="/energia-polska-2025-v4.html">wcześniejsza wersja v4</a>.</p></div>
 </header>
@@ -262,7 +262,7 @@ def build(api):
 <section class="consult-section consult-documentation" id="dokumentacja" aria-labelledby="documentation-title">
   <div class="consult-section-heading"><h2 id="documentation-title">Metoda, wyniki i pliki</h2><p>Dokumentacja dotyczy pakietu {esc(version)}. Najpierw przeczytaj zakres modelu oraz opis danych zastępczych.</p></div>
   <p class="consult-method-link"><a href="/{METHOD_PAGE}">Przeczytaj notę metodyczną</a><span>Założenia, zmiany względem v4 i ograniczenia projektu.</span></p>
-  <p class="consult-method-link"><a href="/{REPORT_PAGE}">Przeczytaj projekt raportu LCA (oceny cyklu życia)</a><span>Wersja 0.4 z 26.10.2026. Projekt do przeglądu krytycznego.</span></p>
+  <p class="consult-method-link"><a href="/{REPORT_PAGE}">Przeczytaj projekt raportu LCA (oceny cyklu życia)</a><span>Wersja 0.4.1 z 05.11.2026. Projekt do przeglądu krytycznego.</span></p>
   <ul class="consult-downloads">{download_html}</ul>
   <details class="consult-results" id="wyniki"><summary>Wszystkie 37 wyników dla 1 kWh</summary>
     <div class="consult-results-inner"><p>{esc(unit_description)}</p><p class="consult-muted">Wartości w tabeli są zaokrąglone do sześciu cyfr znaczących. Pełna precyzja znajduje się w plikach JSON i CSV. Wskaźników o różnych jednostkach ani sum i ich składników nie dodaje się ponownie.</p>
@@ -304,20 +304,24 @@ def build(api):
   <ol class="consult-review-path" aria-label="Przebieg obsługi uwagi"><li>Uwaga w korespondencji</li><li>Opracowanie i publikacja</li><li>Odpowiedź autora</li><li>Rozstrzygnięcie i ewentualna zmiana</li></ol>
   <div data-consultation-registry data-entry-count="{len(comments["entries"])}">{registry(comments["entries"], version)}</div>
   <p class="consult-muted">Stan rejestru: {esc(comments["updated_at"])} · {link("Pobierz rejestr uwag (JSON)", DATA + "uwagi.json", download=True)}</p>
-</section></div>'''
+</section>
+<aside class="consult-tools-note" aria-label="Informacja o zastosowanych narzędziach"><p>{esc(copy["tools_note"])}</p></aside>
+</div>'''
     page(PAGE, copy["title"], copy["lead"], body, head_extra=css + js, pagehead=False, attrs='data-page="consultation"')
     method_body = (
         '<article class="consultation consult-method">'
         f'<p class="consult-meta">Nota autora do konsultacji · pakiet {esc(version)}</p>'
+        f'<p class="consult-authorship">{esc(copy["author_line"])}</p>'
         '<p class="consult-method-intro">Ta nota opisuje projekt modelu i jego ograniczenia. '
         'Nie jest raportem niezależnego krytycznego przeglądu.</p>'
         f'<p>{link("Wróć do konsultacji i zgłoś uwagę", "/" + PAGE)}</p>'
-        f'<p>{link("Przeczytaj projekt raportu LCA (oceny cyklu życia), wersja 0.4", "/" + REPORT_PAGE)}</p>'
+        f'<p>{link("Przeczytaj projekt raportu LCA (oceny cyklu życia), wersja 0.4.1", "/" + REPORT_PAGE)}</p>'
         + '<nav class="consult-method-nav" aria-label="Spis treści noty">'
         + links([{"label":section["title"], "href":"#" + identifier(section["id"])}
                  for section in copy["method_sections"]])
         + "</nav>"
         + method_sections(copy["method_sections"])
+        + f'<aside class="consult-tools-note" aria-label="Informacja o zastosowanych narzędziach"><p>{esc(copy["tools_note"])}</p></aside>'
         + f'<p class="consult-method-return">{link("Przejdź do pytań i formularza", "/" + PAGE + "#pytania")}</p>'
         + "</article>"
     )
