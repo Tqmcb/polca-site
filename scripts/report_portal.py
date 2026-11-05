@@ -14,17 +14,16 @@ PAGE = "konsultacje/energia-polska-2025-raport-lca.html"
 CONSULTATION_PAGE = "/konsultacje/energia-polska-2025.html"
 SOURCE = "content/raport-lca-energia-2025.md"
 DATA = "data/konsultacje/raport-lca-2025"
-DOWNLOAD = "RAPORT-LCA-PL2025-0.4.md"
-VERSION = "0.4"
-PUBLISHED = "2026-10-26"
+DOWNLOAD = "RAPORT-LCA-PL2025-0.4.1.md"
+VERSION = "0.4.1"
+PUBLISHED = "2026-11-05"
 DESCRIPTION = (
     "Projekt raportu oceny cyklu życia energii elektrycznej w Polsce w 2025 r. "
-    "Wersja 0.4, wyniki, metoda i ograniczenia do konsultacji."
+    "Wersja 0.4.1, wyniki, metoda i ograniczenia do konsultacji."
 )
 STATUS = (
-    "Projekt raportu, wersja 0.4 z 26.10.2026. "
+    "Projekt raportu, wersja 0.4.1 z 05.11.2026. "
     "Raport nie przeszedł jeszcze przeglądu krytycznego przez niezależnego eksperta. "
-    "Kontrole wykonane narzędziami sztucznej inteligencji (Claude, Codex) nie zastępują tego przeglądu. "
     "Dane nie zostały przyjęte do wydawanych deklaracji w programie EPD Polska."
 )
 
@@ -58,6 +57,8 @@ def render_markdown(source):
         wrapper.append(table)
         for cell in table.xpath("./thead/tr/th"):
             cell.set("scope", "col")
+    for paragraph in body.xpath("./p[strong[starts-with(normalize-space(.), '1.4.')]]"):
+        paragraph.set("class", "consult-report-tools-note")
     content = "".join(
         etree.tostring(node, encoding="unicode", method="html") for node in body
     )
@@ -92,7 +93,7 @@ def build(api):
         "url": "https://polca.org.pl/" + PAGE,
     }
     head = (
-        '<link rel="stylesheet" href="/assets/report.css?v=20261026">'
+        '<link rel="stylesheet" href="/assets/report.css?v=20261105authors">'
         '<meta property="og:locale" content="pl_PL">'
         '<meta name="twitter:card" content="summary">'
         f'<meta name="twitter:title" content="{html.escape(title, quote=True)} — poLCA">'
@@ -108,7 +109,7 @@ def build(api):
   <p><a href="{CONSULTATION_PAGE}">Przejdź do konsultacji modelu</a> · <a href="{CONSULTATION_PAGE}#zglos-uwage">Zgłoś uwagę przez formularz</a></p>
 </aside>
 <ul class="consult-report-downloads">
-  <li><a href="/{DATA}/{DOWNLOAD}" download>Pobierz raport — Markdown, wersja 0.4</a></li>
+  <li><a href="/{DATA}/{DOWNLOAD}" download>Pobierz raport — Markdown, wersja {VERSION}</a></li>
   <li><a href="/{DATA}/manifest.json" download>Pobierz manifest — SHA-256 i rozmiar pliku (JSON)</a></li>
 </ul>
 <nav class="consult-report-toc" aria-label="Spis treści raportu"><h2>Spis treści</h2>{toc}</nav>

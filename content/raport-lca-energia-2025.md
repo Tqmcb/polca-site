@@ -6,9 +6,9 @@
 |---|---|
 | Oceniany model | `PL2025_METHOD_CLOSURE_CANDIDATE` |
 | Wersja ocenianego modelu | zamrożenie R3 z 20.10.2026, 151 plików, SHA-256 `6de11084dfd4f59a883cf9256a01588074ee93bc7f410eac3ecfadd889d0b58f` |
-| Wersja raportu | projekt 0.4 z 26.10.2026 (decyzje zlecającego A1, A2 i A13; wykaz zmian danych BAFU; warunki przekazania danych zmodyfikowanych) |
+| Wersja raportu | projekt 0.4.1 z 05.11.2026 (korekta redakcyjna autorstwa i opisu narzędzi; decyzje zlecającego A1, A2 i A13; wykaz zmian danych BAFU; warunki przekazania danych zmodyfikowanych) |
 | Zlecający badanie | program EPD Polska; operator programu: Multicert Sp. z o.o. |
-| Wykonawca badania | Multicert Sp. z o.o. (zespół poLCA); obliczenia i dokumentację wykonano z użyciem narzędzi sztucznej inteligencji (Codex, Claude) pod nadzorem Grzegorza Suwary |
+| Wykonawca badania | Multicert Sp. z o.o. (zespół poLCA); za metodykę i zakres walidacji odpowiadają Mikołaj Szaniawski i Grzegorz Suwara |
 | Status | wydanie publiczne projektu; nie przeszedł przeglądu krytycznego; dane nie zostały przyjęte do programu EPD Polska |
 
 Raport łączy dokumentację etapów prac z 17–20.10.2026. Nie zmienia centralnego wyniku wersji zamrożonej R3; uzupełnia go o obliczenia diagnostyczne i przeliczone warianty wrażliwości z 25.10.2026. Tabele 1–3, 5 i 6 wygenerowano automatycznie z plików wyników. Pełna dokumentacja robocza zawiera dane objęte licencją BAFU; recenzent pobiera bazę BAFU samodzielnie i otrzymuje od wykonawcy kod, wyniki, wykaz zmian danych BAFU i dokumentację roboczą, bez oryginalnych zbiorów BAFU; dane zmodyfikowane przekazuje się na warunkach równoważnych warunkom BAFU (decyzja A13). Wartości liczbowe z publicznie dostępnych raportów dokumentacji BAFU przytoczono z podaniem źródła; zbiorów danych BAFU nie rozpowszechnia się.
@@ -21,11 +21,11 @@ Układ raportu odpowiada wymaganiom PN-EN ISO 14044:2009, pkt 5.2, dotyczącym r
 
 **1.1. Zlecający i wykonawca.** Zlecającym badanie jest program EPD Polska, którego operatorem jest Multicert Sp. z o.o.; wykonawcą jest Multicert Sp. z o.o. (zespół poLCA). Ponieważ zlecający i wykonawca należą do tej samej organizacji, niezależność oceny zapewnia wyłącznie przegląd krytyczny przez eksperta zewnętrznego (rozdział 8).
 
-**1.2. Data raportu.** 26.10.2026 (projekt 0.4).
+**1.2. Data raportu.** 26.10.2026 (projekt 0.4); korekta redakcyjna 05.11.2026 (projekt 0.4.1). Wyniki i zakres badania pozostają bez zmian.
 
 **1.3. Zgodność z normami.** Badanie przeprowadzono z zamiarem spełnienia wymagań PN-EN ISO 14040:2009 i PN-EN ISO 14044:2009 oraz z użyciem wskaźników i reguł EN 15804:2012+A2:2019/AC:2021 i EN 15941:2024. **Zgodności nie stwierdzono:** o zgodności rozstrzygnie przegląd krytyczny (rozdział 8). Niniejsze zdanie nie jest stwierdzeniem zgodności w rozumieniu PN-EN ISO 14044, pkt 5.2 a) 3).
 
-**1.4. Udział narzędzi sztucznej inteligencji.** Skrypty obliczeniowe napisał i obliczenia wykonał Codex, dokumentację zestawił Claude, a prowadzący sprawdził i skorygował wyniki przed zamrożeniem. Ocenę jakości danych (73 decyzje) Codex wykonał jako ocenę techniczną; nie jest to ocena eksperta.
+**1.4. Narzędzia wspomagające opracowanie.** Przy opracowaniu użyto narzędzi sztucznej inteligencji (Codex i Claude) do gromadzenia i grupowania danych, napisania skryptów obliczeniowych, wykonania obliczeń oraz zestawienia dokumentacji. Ocenę jakości danych (73 decyzje) wykonano z użyciem narzędzia jako ocenę techniczną; nie jest to ocena eksperta. Prowadzący sprawdził i skorygował wyniki przed zamrożeniem. Kontrole narzędziowe nie zastępują przeglądu krytycznego, który nie został przeprowadzony (rozdział 8).
 
 ## 2. Cel badania
 
@@ -445,7 +445,7 @@ Wskaźnik KOBiZE dla odbiorców końcowych (553 kg CO₂/MWh, czyli 0,553 kg CO�
 7. Współczynniki z pakietu JRC opierają się dla zmiany klimatu na ocenie nowszej (IPCC 2021), a dla zubożenia warstwy ozonowej na ocenie starszej (WMO 1999) niż modele wskazane w PN-EN 15804+A2, tab. C.1 (5.1).
 8. Wynik nie obejmuje kopalnego CO₂ ze spalania odpadów (alokacja do usługi zagospodarowania odpadów; orientacyjnie +1,5% GWP-total przy przypisaniu całego kopalnego CO₂ energii elektrycznej); energię elektryczną zużywaną w kopalniach odwzorowuje w nim miks ENTSO-E z 2023 r. (zastąpienie miksem krajowym orientacyjnie +0,8%).
 9. Spośród wariantów wrażliwości innych niż alokacja największy wpływ na GWP-total ma powrót do poprzedniej bazy paliwa i CO₂ węgla kamiennego (+1,574%); wpływ wariantów uranu i metali dotyczy głównie ODP (+11,79%) oraz HTP-nc (+15,67%).
-10. Wszystkie wybory wartości i oceny jakości wykonano z użyciem narzędzi sztucznej inteligencji. Kontrole wykonane przez Claude i Codex nie zastępują oceny eksperta.
+10. Wybory wartości i oceny jakości przygotowano z użyciem narzędzi sztucznej inteligencji w zakresie opisanym w 1.4. Kontrole narzędziowe nie zastępują niezależnej oceny eksperckiej, która nie została wykonana.
 
 ### 7.5. Wnioski i zalecenia
 

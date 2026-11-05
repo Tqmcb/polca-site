@@ -29,3 +29,5 @@
   .consult-report-status { padding: 20px 16px; }
   .consult-report-content h2 { font-size: 1.55rem; }
 }
+
+.consult-report-content > .consult-report-tools-note { font-size: .875rem; line-height: 1.6; color: var(--portal-muted); padding-top: 12px; border-top: 1px solid var(--portal-line); }

@@ -32,7 +32,7 @@
     {
       "id": "sprawdzenie",
       "title": "Kontrola techniczna",
-      "text": "Sprawdzono 37 wyników, sumy ich składników i 17 wariantów podziału obciążeń. Zapisano 73 oceny danych zastępczych. Kontrola techniczna z użyciem dwóch modeli sztucznej inteligencji jest odrębna od przeglądu eksperta.",
+      "text": "Sprawdzono 37 wyników, sumy ich składników i 17 wariantów podziału obciążeń. Zapisano 73 oceny danych zastępczych. Jest to wewnętrzna kontrola techniczna.",
       "evidence_label": "Status kontroli",
       "evidence_href": "#status",
       "state": "completed"
@@ -160,7 +160,7 @@
       "id": "status",
       "title": "Status kontroli i przeglądu",
       "paragraphs": [
-        "Zakończono wewnętrzną kontrolę obliczeń i metody z użyciem dwóch modeli sztucznej inteligencji. Sprawdzono 37 wskaźników, 17 wariantów alokacji, sumy składników klimatycznych oraz zachowanie dotychczasowych plików wersji v4.",
+        "Zakończono wewnętrzną kontrolę obliczeń i metody. Sprawdzono 37 wskaźników, 17 wariantów alokacji, sumy składników klimatycznych oraz zachowanie dotychczasowych plików wersji v4.",
         "Ta nota jest własnym opisem metody, nie raportem niezależnego krytycznego przeglądu. Projekt nie przeszedł przeglądu eksperta, nie został formalnie przyjęty przez operatora programu. Publiczna wersja v4 pozostaje odrębnym wydaniem w kalkulatorze i katalogu danych."
       ],
       "links": [
@@ -189,5 +189,7 @@
       ]
     }
   ],
-  "status_summary": "Zakończono obliczenia i kontrolę techniczną 37 wyników oraz 17 wariantów alokacji. Niezależny przegląd ekspercki i decyzja operatora o zastosowaniu danych pozostają odrębnymi etapami."
+  "status_summary": "Zakończono obliczenia i kontrolę techniczną 37 wyników oraz 17 wariantów alokacji. Niezależny przegląd ekspercki i decyzja operatora o zastosowaniu danych pozostają odrębnymi etapami.",
+  "author_line": "Za metodykę i zakres walidacji odpowiadają Mikołaj Szaniawski i Grzegorz Suwara.",
+  "tools_note": "Przy opracowaniu modelu użyto narzędzi sztucznej inteligencji do gromadzenia i grupowania danych, przygotowania skryptów, wykonania obliczeń, technicznej oceny jakości danych oraz zestawienia dokumentacji. Automatyczne kontrole obliczeń nie zastępują niezależnego przeglądu eksperta, który jest planowany i dotąd nie został wykonany."
 }
