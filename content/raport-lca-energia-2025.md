@@ -6,7 +6,7 @@
 |---|---|
 | Oceniany model | `PL2025_METHOD_CLOSURE_CANDIDATE` |
 | Wersja ocenianego modelu | zamrożenie R3 z 20.10.2026, 151 plików, SHA-256 `6de11084dfd4f59a883cf9256a01588074ee93bc7f410eac3ecfadd889d0b58f` |
-| Wersja raportu | projekt 0.4 z 26.10.2026 (decyzje zlecającego A1, A2 i A13; wykaz zmian danych BAFU; warunki przekazania danych zmodyfikowanych) |
+| Wersja raportu | projekt 0.4.1 z 21.11.2026 (doprecyzowanie źródeł i sposobu obliczenia emisji metanu w pkt 4.2) |
 | Zlecający badanie | program EPD Polska; operator programu: Multicert Sp. z o.o. |
 | Wykonawca badania | Multicert Sp. z o.o. (zespół poLCA); obliczenia i dokumentację wykonano z użyciem narzędzi sztucznej inteligencji (Codex, Claude) pod nadzorem Grzegorza Suwary |
 | Status | wydanie publiczne projektu; nie przeszedł przeglądu krytycznego; dane nie zostały przyjęte do programu EPD Polska |
@@ -21,7 +21,7 @@ Układ raportu odpowiada wymaganiom PN-EN ISO 14044:2009, pkt 5.2, dotyczącym r
 
 **1.1. Zlecający i wykonawca.** Zlecającym badanie jest program EPD Polska, którego operatorem jest Multicert Sp. z o.o.; wykonawcą jest Multicert Sp. z o.o. (zespół poLCA). Ponieważ zlecający i wykonawca należą do tej samej organizacji, niezależność oceny zapewnia wyłącznie przegląd krytyczny przez eksperta zewnętrznego (rozdział 8).
 
-**1.2. Data raportu.** 26.10.2026 (projekt 0.4).
+**1.2. Data raportu.** 21.11.2026 (projekt 0.4.1).
 
 **1.3. Zgodność z normami.** Badanie przeprowadzono z zamiarem spełnienia wymagań PN-EN ISO 14040:2009 i PN-EN ISO 14044:2009 oraz z użyciem wskaźników i reguł EN 15804:2012+A2:2019/AC:2021 i EN 15941:2024. **Zgodności nie stwierdzono:** o zgodności rozstrzygnie przegląd krytyczny (rozdział 8). Niniejsze zdanie nie jest stwierdzeniem zgodności w rozumieniu PN-EN ISO 14044, pkt 5.2 a) 3).
 
@@ -155,8 +155,9 @@ Dane krajowe pobrano z publicznych źródeł pierwotnych i zarchiwizowano lokaln
 
 **Węgiel brunatny.** Przyjęto łączne roczne sumy dla grupy elektrowni na węglu brunatnym z ARE EMITOR 2025 (z Pątnowem II): 29 926 467 MWh energii elektrycznej netto i 2770,235 TJ ciepła netto; paliwo 37 605 500 t; CO₂ 34 561 935 t; emisje do powietrza SO₂, NOₓ, CO, CH₄, pyłu, Cd, Pb i Hg. Po alokacji (q = 0,35) intensywność wynosi około 1,1446 kg CO₂/kWh netto (wartość wyliczona z rejestru alokacji). Grupa ARE jest przybliżeniem kategorii Eurostatu C0220; produkcja netto ARE jest wyższa od oszacowania Eurostatu o 0,534% (miks przyjęto z Eurostatu, paliwo i emisje — z ARE). Różnica wynika z produkcji brutto (dane ARE wyższe o 0,573%), a nie ze wskaźnika potrzeb własnych; dane spółek (PGE i ZE PAK, łącznie 29,92 TWh netto) są zbliżone do ARE. Przyczyny różnicy nie ustalono: najlepiej zgodna liczbowo hipoteza (energia z paliw pomocniczych w grupie ARE) nie wyjaśnia danych za 2024 r. Uproszczony rachunek liniowy, bez pełnych łańcuchów dostaw, daje +0,03% (z wyrównaniem bilansu kosztem węgla kamiennego) albo +0,17% GWP-total (bez wyrównania bilansu); nie jest to przedział niepewności; wpływ jest jednak znacznie mniejszy niż wpływ wyboru q. Proponowaną procedurę uzgodnienia zawiera załącznik D.
 
+**Metan z krajowego węgla kamiennego.** Dla węgla energetycznego zastosowano średni współczynnik dla całego krajowego wydobycia węgla kamiennego, łącznie z węglem koksowym. Wynosi on 8,240 kg metanu na tonę węgla, w tym 6,565 kg podczas wydobycia i 1,675 kg po wydobyciu. Pierwszy składnik oszacowano na podstawie masy emisji z krajowej inwentaryzacji za 2024 r., zmiany objętości emitowanego metanu według Wyższego Urzędu Górniczego oraz wstępnych danych Eurostatu o krajowym wydobyciu węgla kamiennego w 2025 r. (42 770,313 tys. t). Dla etapu po wydobyciu zachowano współczynnik z inwentaryzacji za 2024 r. Oba składniki ujęto w wyniku dla dostarczonej energii. [Sprawozdanie za 2024 r., s. 23](https://www.gov.pl/attachment/021f33ee-cfaf-4bb6-8371-56c312d3a255#page=23) · [Sprawozdanie za 2025 r., s. 21](https://www.gov.pl/attachment/ba8c4376-b0d7-4a96-bd92-39f9757562b8#page=21) · [Krajowy raport inwentaryzacyjny, tabele 3.3.1 i 3.3.2](https://unfccc.int/sites/default/files/resource/NID%202026%20POL.pdf#page=108) · [Eurostat, krajowe wydobycie węgla kamiennego za 2025 r.](https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_cb_sff?geo=PL&time=2025&unit=THS_T&siec=C0100&nrg_bal=IPRD).
+
 **Pozostałe dane krajowe:**
-- metan kopalń węgla kamiennego: 0,008240 kg CH₄/kg (CRT 2024 przeskalowane danymi WUG 2025);
 - nadkład węgla brunatnego: 5,722 kg/kg (WUG i PIG-PIB, dane 2024 jako zamiennik 2025), z erratą emisji fosforanów (Doka);
 - import węgla: udział węgla krajowego w puli 83,28%; pochodzenie importu według Comext (Kazachstan 68,99%, Kolumbia 27,21%);
 - gaz: przyjęto strukturę dostaw dla całej gospodarki, a nie strukturę zakupów elektrowni;
