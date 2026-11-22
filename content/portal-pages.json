@@ -20,12 +20,12 @@
   "pages": [
     {
       "path": "jak-korzystac.html",
-      "title": "Jak korzystać z portalu",
-      "lead": "Wybierz cel obliczenia, znajdź dane i sprawdź ich zastosowanie.",
+      "title": "Jak korzystać z poLCA?",
+      "lead": "Od celu obliczenia zależy, jakich danych potrzebujesz i które wskaźniki zastosujesz. Przykład pokazuje dobór danych dla energii elektrycznej.",
       "sections": [
         {
           "id": "wybor-wyrobu",
-          "title": "Zacznij od rodzaju wyrobu",
+          "title": "Gdzie znaleźć dane dla rodzaju wyrobu?",
           "paragraphs": [
             "Wybierz rodzinę wyrobu, aby zobaczyć dostępne dane, dokumenty metodyczne i narzędzia. Energia, paliwa i transport są zebrane osobno jako dane wspólne."
           ],
@@ -38,28 +38,31 @@
               "label": "Energia, paliwa i transport",
               "href": "/dane-wspolne.html"
             }
-          ]
+          ],
+          "nav_label": "Dane według rodzaju wyrobu"
         },
         {
-          "title": "1. Ustal, co liczysz",
+          "title": "Czego dotyczy obliczenie?",
           "paragraphs": [
-            "Trzy typowe przypadki: wyrób (energia i materiały zużyte w produkcji), budynek (materiały, budowa, eksploatacja i koniec życia) oraz pojedynczy proces, na przykład zużycie energii w jednym etapie. Od przypadku zależy, czy wystarczy wpływ na klimat, czy potrzebny jest pełny zestaw wskaźników."
+            "Obliczenie może dotyczyć wyrobu (energii i materiałów zużytych w produkcji), budynku (materiałów, budowy, eksploatacji i końca życia) lub pojedynczego procesu, na przykład zużycia energii na jednym etapie. Od celu oceny zależy, czy wystarczy wskaźnik wpływu na klimat, czy potrzebny jest pełny zestaw wskaźników."
           ],
           "links": [
             {
-              "label": "Zastosowanie danych: wyrób, budynek, proces",
+              "label": "Dobór danych dla wyrobu, budynku lub procesu",
               "href": "/zastosowanie-danych.html"
             },
             {
               "label": "Ślad węglowy czy ocena środowiskowa",
               "href": "/slad-weglowy-czy-srodowiskowy.html"
             }
-          ]
+          ],
+          "id": "sekcja-2",
+          "nav_label": "Zużycie w procesie"
         },
         {
-          "title": "2. Wybierz dane",
+          "title": "Jak wybrać zbiór danych?",
           "paragraphs": [
-            "W katalogu wpisz nazwę materiału, wskaźnik albo rok, albo filtruj po kategorii i statusie. Dla energii elektrycznej wybierz rok odniesienia i typ miksu. Aktualny profil publiczny to miks fizyczny Polska 2025 na 1 kWh dostarczonej energii."
+            "Dane można wyszukać w katalogu według nazwy materiału, wskaźnika lub roku. Filtry pozwalają ograniczyć wyniki do wybranej kategorii i statusu. Dla energii elektrycznej znaczenie mają rok odniesienia i rodzaj miksu. Aktualny publiczny profil przedstawia fizyczny miks Polski za 2025 r. w przeliczeniu na 1 kWh dostarczonej energii."
           ],
           "links": [
             {
@@ -70,12 +73,14 @@
               "label": "Energia Polska 2025 v4",
               "href": "/energia-polska-2025-v4.html"
             }
-          ]
+          ],
+          "id": "sekcja-3",
+          "nav_label": "Profil energii"
         },
         {
-          "title": "3. Sprawdź dopasowanie",
+          "title": "Co sprawdzić w karcie danych?",
           "paragraphs": [
-            "Karta podaje jednostkę, granice, rodzaj wskaźnika i status przy wersji. Zwróć uwagę, czy wartość to samo CO₂ bezpośrednie, składnik kopalny GWP-fossil czy pełny GWP-total (potencjał globalnego ocieplenia). Energia uwzględniona już w danych materiału nie jest doliczana drugi raz."
+            "Karta zbioru podaje jednostkę odniesienia, granice, rodzaj wskaźnika i status wersji. Bezpośrednie emisje CO₂, składnik kopalny potencjału globalnego ocieplenia (GWP-fossil) i łączny potencjał globalnego ocieplenia (GWP-total) opisują różne wielkości. Energię ujętą już w danych materiału uwzględnia się tylko raz."
           ],
           "links": [
             {
@@ -86,12 +91,14 @@
               "label": "Jak dokumentujemy dane",
               "href": "/wiarygodnosc.html"
             }
-          ]
+          ],
+          "id": "sekcja-4",
+          "nav_label": "Wskaźnik wpływu na klimat"
         },
         {
-          "title": "4. Użyj danych",
+          "title": "Jak wykorzystać wskaźnik w obliczeniu?",
           "paragraphs": [
-            "Pobierz plik danych i pomnóż wielkość zużycia przez odpowiedni wskaźnik. Możesz także skorzystać z kalkulatorów — ich wyniki pokazują przyjęte dane i zakres obliczenia. Przed wykorzystaniem w deklaracji środowiskowej wyrobu (EPD) sprawdź zasady doboru profilu i status konkretnej wersji."
+            "Wielkość zużycia mnoży się przez odpowiedni wskaźnik z pliku danych. Kalkulatory pokazują przy wyniku przyjęte dane i zakres obliczenia. Przed wykorzystaniem wyniku w deklaracji środowiskowej wyrobu (EPD) należy sprawdzić zasady doboru profilu oraz status konkretnej wersji."
           ],
           "links": [
             {
@@ -103,89 +110,107 @@
               "href": "/oblicz-energie-2025.html"
             },
             {
-              "label": "Zastosowanie w EPD i CPR",
+              "label": "Dane w deklaracji środowiskowej i ocenie wyrobu",
               "href": "/zastosowanie-epd-cpr.html"
             }
-          ]
+          ],
+          "id": "sekcja-5",
+          "nav_label": "Wkład energii w wynik"
         }
-      ]
+      ],
+      "layout": "guide-workflow"
     },
     {
       "path": "metodyka.html",
-      "title": "Metody i źródła",
-      "lead": "Dokumentacja każdego zbioru: granice, źródła, wersja, status i ograniczenia. Wybierz zbiór, aby przejść do opisu.",
+      "title": "Metody i źródła danych",
+      "lead": "Gdzie sprawdzić, skąd pochodzi wskaźnik i kiedy można go zastosować? Dokumenty przy każdym zbiorze opisują jego granice, źródła, wersję, status i ograniczenia.",
       "sections": [
         {
           "id": "metody-wyrobu",
-          "title": "Zasady obliczeń dla Twojego wyrobu",
+          "title": "Które zasady dotyczą mojego wyrobu?",
           "paragraphs": [
-            "Dobierz dokumenty PCR i c-PCR do rodzaju wyrobu i zasad programu deklaracji. Katalog rozdziela dokumenty wydane, projekty oraz dane pomocnicze."
+            "Zasady kategorii wyrobów (PCR) i zasady uzupełniające (c-PCR) dobiera się do rodzaju wyrobu i zasad programu deklaracji. Katalog rozróżnia dokumenty wydane, projekty oraz dane pomocnicze."
           ],
           "links": [
             {
               "label": "Dokumenty PCR i c-PCR według wyrobu",
-              "href": "/c-pcr/"
+              "href": "/c-pcr/",
+              "note": "Dokumenty określające sposób obliczeń dla danej kategorii wyrobów."
             },
             {
               "label": "Rodziny wyrobów",
-              "href": "/wyroby.html"
+              "href": "/wyroby.html",
+              "note": "Wykaz rodzin z dostępnymi danymi i dokumentami."
             }
-          ]
+          ],
+          "nav_label": "Zasady dla wyrobów"
         },
         {
-          "title": "Energia elektryczna",
+          "title": "Jak udokumentowano profil energii elektrycznej?",
           "paragraphs": [
-            "Aktualny profil publiczny: Polska 2025 v4, miks fizyczny, 37 wskaźników na 1 kWh dostarczonej energii, model PL2025_PHYSICAL_DELIVERED_v4. Odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody są zakończone; decyzja operatora o zakresie zastosowania w deklaracjach środowiskowych wyrobu (EPD) pozostaje otwarta. Granice, kalibrację emisji, tło i alokację opisuje dokument metody.",
-            "Wcześniejsze ujęcia energii (model 2024 v9.1, dokumenty MET-001 i MET-002) są dostępne jako materiały datowane."
+            "Profil Polska 2025 v4 obejmuje fizyczny miks krajowy. Zawiera 37 wskaźników dla 1 kWh energii dostarczonej odbiorcy. Identyfikator modelu to PL2025_PHYSICAL_DELIVERED_v4.",
+            "Zakończyliśmy odbiór techniczny obliczeń oraz wewnętrzną recenzję kodu i metody. Operator programu nie podjął jeszcze decyzji o zakresie zastosowania tej wersji w deklaracjach środowiskowych wyrobu (EPD)."
           ],
           "links": [
             {
-              "label": "Karta: Energia Polska 2025 v4",
-              "href": "/energia-polska-2025-v4.html"
+              "label": "Karta profilu Polska 2025 v4",
+              "href": "/energia-polska-2025-v4.html",
+              "note": "Wartości wskaźników i pliki dla tej wersji."
             },
             {
-              "label": "METODA-I-ZMIANY.txt",
-              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
+              "label": "Opis metody i zmian (plik tekstowy)",
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt",
+              "note": "Granice modelu, kalibracja emisji, dane tła i alokacja."
             },
             {
               "label": "Starsze dokumenty metodyczne",
-              "href": "/metodyki/index.html"
+              "href": "/metodyki/index.html",
+              "note": "Materiały datowane, w tym model 2024 v9.1 i dokumenty MET-001 oraz MET-002."
             }
-          ]
+          ],
+          "id": "sekcja-2",
+          "nav_label": "Energia elektryczna"
         },
         {
-          "title": "Katalog materiałów, paliw i transportu",
+          "title": "Skąd pochodzą dane materiałów, paliw i transportu?",
           "paragraphs": [
-            "Każda pozycja katalogu ma rok danych, jednostkę, rodzaj wskaźnika, poziom dowodu źródła i wersję. Rekordy bez pełnego śladu do konkretnej deklaracji producenta są oznaczone jako wartości zastępcze lub referencyjne. Aktualny indeks to plik portal-catalog.json."
+            "Każda pozycja katalogu podaje rok danych, jednostkę, rodzaj wskaźnika, sposób udokumentowania źródła i wersję. Jeżeli źródła nie można w pełni powiązać z konkretną deklaracją producenta, oznaczamy wartość jako zastępczą lub referencyjną."
           ],
           "links": [
             {
               "label": "Katalog danych",
-              "href": "/datasety.html"
+              "href": "/datasety.html",
+              "note": "Karty poszczególnych zbiorów danych."
             },
             {
-              "label": "Indeks katalogu (portal-catalog.json)",
-              "href": "/data/portal-catalog.json"
+              "label": "Indeks katalogu do pobrania",
+              "href": "/data/portal-catalog.json",
+              "note": "Aktualny indeks w pliku portal-catalog.json."
             },
             {
               "label": "Polityka źródeł",
-              "href": "/data/epd-source-policy.json"
+              "href": "/data/epd-source-policy.json",
+              "note": "Zasady opisywania i kwalifikowania źródeł danych."
             }
-          ]
+          ],
+          "id": "sekcja-3",
+          "nav_label": "Materiały, paliwa i transport"
         },
         {
-          "title": "Kalkulatory",
+          "title": "Z jakich współczynników korzysta kalkulator?",
           "paragraphs": [
-            "Kalkulatory energii, mieszanek asfaltowych i kruszyw używa własnej, datowanej tabeli współczynników, pokazywanej i eksportowanej razem z wynikiem. Kalkulatory służą do wstępnych oszacowań. Rodzaj wskaźnika i zakres obliczenia są opisane przy wyniku."
+            "Kalkulatory energii, mieszanek asfaltowych i kruszyw służą do wstępnych oszacowań. Każdy korzysta z własnej, datowanej tabeli współczynników. Tabela jest widoczna przy wyniku i dostępna w pliku z wynikiem. Przy wyniku podajemy też rodzaj wskaźnika i zakres obliczenia."
           ],
           "links": [
             {
               "label": "Narzędzia i współczynniki",
-              "href": "/narzedzia.html"
+              "href": "/narzedzia.html",
+              "note": "Zakres narzędzi i stosowane zestawy współczynników."
             },
             {
               "label": "Oblicz wkład energii — profil 2025",
-              "href": "/oblicz-energie-2025.html"
+              "href": "/oblicz-energie-2025.html",
+              "note": "Zużycie energii przemnożone przez wskaźnik profilu."
             },
             {
               "label": "Kalkulator mieszanek mineralno-asfaltowych",
@@ -195,29 +220,37 @@
               "label": "Kalkulator kruszyw",
               "href": "/kalkulator-kruszywa.html"
             }
-          ]
+          ],
+          "id": "sekcja-4",
+          "nav_label": "Kalkulatory"
         },
         {
-          "title": "Normy, dokumenty programowe i rejestr zmian",
+          "title": "Gdzie sprawdzić wydania norm i zmiany danych?",
           "paragraphs": [
-            "Normy odniesienia i ich wydania wskazuje strona Podstawy normatywne. Projekty dokumentów programowych dla mieszanek mineralno-asfaltowych i kruszyw mają status projektu z datą w nagłówku. Zmiany danych są odnotowane w rejestrze zmian."
+            "W podstawach normatywnych podajemy normy odniesienia i ich wydania. Dokumenty programowe dla mieszanek mineralno-asfaltowych i kruszyw udostępnione jako projekty mają datę w nagłówku. Zmiany w danych odnotowujemy w rejestrze."
           ],
           "links": [
             {
               "label": "Podstawy normatywne",
-              "href": "/podstawy-normatywne.html"
+              "href": "/podstawy-normatywne.html",
+              "note": "Normy odniesienia i numery wydań."
             },
             {
               "label": "Projekty c-PCR",
-              "href": "/c-pcr/index.html"
+              "href": "/c-pcr/index.html",
+              "note": "Zasady uzupełniające dla poszczególnych kategorii wyrobów."
             },
             {
               "label": "Rejestr zmian",
-              "href": "/rejestr-zmian.html"
+              "href": "/rejestr-zmian.html",
+              "note": "Historia zmian w danych portalu."
             }
-          ]
+          ],
+          "id": "sekcja-5",
+          "nav_label": "Normy i zmiany"
         }
-      ]
+      ],
+      "layout": "guide-methods"
     },
     {
       "path": "wiarygodnosc.html",
@@ -617,7 +650,7 @@
     {
       "path": "metodyka-defaults-ue.html",
       "title": "Dane zastępcze w katalogu",
-      "lead": "Jak dobieramy wartości zastępcze, gdy brak danych zakładu, i co z tego wynika dla wyniku.",
+      "lead": "Jak wybrać dane, gdy brakuje pomiarów zakładu, i jakie wymagania stawia zbiorom danych tła Komisja Europejska.",
       "sections": [
         {
           "title": "Reguła doboru",
@@ -652,6 +685,110 @@
             {
               "label": "Metody i źródła",
               "href": "/metodyka.html"
+            }
+          ]
+        },
+        {
+          "id": "dane-tla-cpr",
+          "title": "Jakich danych tła wymaga specyfikacja przetargowa Komisji?",
+          "paragraphs": [
+            "W zamówieniu EC-GROW/2025/OP/0101 Komisja Europejska określiła, co wykonawca ma dostarczyć dla każdego procesu. Załącznik 7.2 obejmuje m.in. żwir 2/32 mm (poz. 16.1), drobne kruszywo wapienne po kruszeniu 0/2 mm (poz. 25.1) oraz piasek 0/2 mm (poz. 28.1). Dla tych trzech pozycji wskazano obszar Unii Europejskiej i państw Europejskiego Stowarzyszenia Wolnego Handlu."
+          ],
+          "table": {
+            "headers": [
+              "Przedmiot wymagania",
+              "Co zawiera zbiór zamawiany przez Komisję"
+            ],
+            "rows": [
+              [
+                "Model procesu",
+                "Inwentaryzację cyklu życia, czyli ilości zasobów pobranych ze środowiska i emisji przypadających na jednostkę odniesienia, metadane oraz wyniki oceny wpływu."
+              ],
+              [
+                "Metoda i jakość danych",
+                "Pełny zestaw wskaźników EN 15804+A2 oraz dobór i ocenę jakości danych zgodnie z EN 15941. Szczególną uwagę Komisja przywiązuje do danych dla charakterystyk z załącznika II do rozporządzenia."
+              ],
+              [
+                "Format wymiany",
+                "Archiwum ZIP w formacie międzynarodowego systemu danych cyklu życia (ILCD). Komisja wymaga zarówno danych zagregowanych, jak i postaci zdezagregowanej, która umożliwi aktualizację modelu (odpowiedź nr 77369). Dla pozycji z załącznika 7.2 wykonawca dostarcza wariant dla wyrobów budowlanych i wariant zgodny z unijną metodą śladu środowiskowego."
+              ],
+              [
+                "Przegląd i odtwarzalność",
+                "Każdy zbiór ma własny raport przeglądu. Dla nowych procesów wykonawca opisuje również zasady modelowania, przyjęte założenia i ograniczenia. Komisja przewidziała kontrole przed zatwierdzeniem danych do publikacji."
+              ]
+            ]
+          },
+          "links": [
+            {
+              "label": "Specyfikacja Komisji, pkt 1.4.2–1.4.3 i załącznik 7.2 (PDF, ang.)",
+              "href": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/tender-details/docs/627f4c62-9362-4147-ab7f-29ea48624f89-CN/TENDER_SPECIFICATIONS_EC-GROW2025OP0101_Life%20cycle%20information%20for%20construction_V1.pdf"
+            },
+            {
+              "label": "Wyjaśnienia Komisji do zamówienia, odpowiedź nr 77369 z 20 października 2025 r.",
+              "href": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/proc-qa/627f4c62-9362-4147-ab7f-29ea48624f89-CN/77369"
+            }
+          ]
+        },
+        {
+          "id": "wersja-metody",
+          "title": "Co oznaczają EF 3.1, EF 4.0 i v4 poLCA?",
+          "diagram": "charakteryzacja",
+          "paragraphs": [
+            "Komisja Europejska publikuje zestawy współczynników charakteryzacji. Współczynnik określa, jaki wpływ na daną kategorię środowiskową ma jednostka emisji lub zużycia zasobu. Dla wyrobów budowlanych Komisja udostępnia pakiet dla normy EN 15804 oparty na wersji 3.1 unijnej metody śladu środowiskowego (EF). Uwzględnia on zasady normy, m.in. dotyczące pobrania i emisji biogenicznego dwutlenku węgla. Dla biogenicznego CO₂ pakiet ten przypisuje −1 pobraniu i +1 emisji.",
+            "W zamówieniu na zbiory dla wyrobów budowlanych Komisja wyjaśniła, że udostępni wykonawcy wejściowe zbiory EF 3.1 w postaci zdezagregowanej, jeżeli taka jest dostępna. GreenDelta podaje na stronie projektu, że rozwija nowe zbiory dla materiałów budowlanych według metodyki EF 4.0. Numer wersji metodyki pochodzi z opisu wykonawcy.",
+            "Osobno Komisja opracowuje ogólną bazę zbiorów EF 4.0 dla wielu sektorów. Według stanu na 22 listopada 2026 r. przewiduje jej udostępnienie w 2028 r. Prognoza dotyczy wydania tej bazy.",
+            "Na karcie poLCA oznaczenie „v4” określa czwarte wydanie modelu polskiej energii za 2025 r. Model wykorzystuje współczynniki z wersji bazowej z 2024 r. oraz udokumentowane korekty. W przypadku biogenicznego CO₂ zachowuje masy przepływów i przyjmuje zerowy wkład do wskaźnika zmiany klimatu. Przed użyciem wyniku w deklaracji wyrobu trzeba ocenić różnicę względem współczynników −1 i +1 z pakietu Komisji dla EN 15804. Po zmianie współczynników trzeba ponownie obliczyć wskaźniki na podstawie danych inwentaryzacyjnych i podać wersję zastosowanej metody."
+          ],
+          "links": [
+            {
+              "label": "Pakiet referencyjny Komisji dla EN 15804 oparty na EF 3.1",
+              "href": "https://knowledge-for-policy.ec.europa.eu/european-platform-life-cycle-assessment-eplca/life-cycle-data-network-lcdn/en-15804-reference_en"
+            },
+            {
+              "label": "Dostępność zbiorów EF 4.0 według Komisji",
+              "href": "https://green-forum.ec.europa.eu/green-business/environmental-footprint-methods/data-ef-methods_en"
+            },
+            {
+              "label": "Energia elektryczna w Polsce w 2025 r., wydanie v4",
+              "href": "/energia-polska-2025-v4.html"
+            },
+            {
+              "label": "Metoda poLCA i korekty dotyczące węgla biogenicznego",
+              "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
+            },
+            {
+              "label": "Komisja o wejściowych zbiorach EF 3.1, odpowiedź nr 77370",
+              "href": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/proc-qa/627f4c62-9362-4147-ab7f-29ea48624f89-CN/77370"
+            },
+            {
+              "label": "Metodyka nowych zbiorów w opisie wykonawcy projektu",
+              "href": "https://www.greendelta.com/project/cprcompliance/"
+            }
+          ]
+        },
+        {
+          "id": "kruszywo-cpr",
+          "title": "Czy producent może przyjąć wartość poLCA dla kruszywa?",
+          "paragraphs": [
+            "Do wstępnego oszacowania wpływu kruszywa na klimat można przyjąć wartość grupową poLCA i zapisać to założenie. Dla twardego kruszywa łamanego podajemy 5,5 kg ekwiwalentu CO₂ na tonę u bramy zakładu kruszyw. Karta udostępnia jeden wskaźnik. W publicznym pakiecie brakuje inwentaryzacji, pozostałych wskaźników EN 15804 i raportu przeglądu tego zbioru.",
+            "Jeżeli producent deklaruje właściwości użytkowe i zgodność wyrobu na podstawie rozporządzenia (UE) 2024/3110, o doborze danych rozstrzygają specyfikacja mająca zastosowanie do wyrobu i reguły obliczeń w oprogramowaniu Komisji. Plan prac Komisji przewiduje obowiązkowe stosowanie wspólnych, konserwatywnych danych tła Komisji, gdy dane przedsiębiorstwa nie są łatwo dostępne lub są kosztowne do uzyskania. Dla konkretnego wyrobu producent ustala, które wymagania już go obowiązują i jakie dane może zastosować."
+          ],
+          "links": [
+            {
+              "label": "Karta twardego kruszywa łamanego w poLCA",
+              "href": "/dane/polca-agg-pl-crushed-default-2026.html"
+            },
+            {
+              "label": "Kruszywo w module A1 betonu",
+              "href": "/wyroby/24.html#modul-a1"
+            },
+            {
+              "label": "Rozporządzenie (UE) 2024/3110, art. 15 i 95",
+              "href": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/pol"
+            },
+            {
+              "label": "Plan prac Komisji, pkt 3.2.2 o danych tła",
+              "href": "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:52025DC0772"
             }
           ]
         }
@@ -795,14 +932,14 @@
     },
     {
       "path": "zastosowanie-danych.html",
-      "title": "Zastosowanie danych: wyrób, budynek, proces",
-      "lead": "Wskaźnik energii mnoży się przez zużyte kWh i dodaje do pozostałych składników obliczenia. Sposób użycia zależy od tego, co liczysz.",
+      "title": "Jak uwzględnić energię w ocenie wyrobu, budynku lub procesu?",
+      "lead": "Zużycie energii mnoży się przez wskaźnik dobranego profilu. To, gdzie uwzględnić wynik, zależy od przedmiotu oceny.",
       "sections": [
         {
-          "title": "Wyrób: produkcja",
+          "title": "Jak przypisać energię do jednostki wyrobu?",
           "paragraphs": [
             "Dla energii zakładu dobierz dane dostawcy, własnego wytwarzania lub odpowiedni miks według przyjętej metody. Publiczny fizyczny profil kraju opisuje inne zastosowanie niż profil rezydualny energii kupowanej przez zakład.",
-            "Ustal zużycie energii elektrycznej na jednostkę wyrobu (kWh na tonę, m³ lub sztukę) i pomnóż przez wskaźnik profilu energii. Wynik to wkład energii, nie cały wyrób; surowce i transport dolicz z ich własnych danych. Jeżeli dane materiału już zawierają energię jego produkcji, nie doliczaj jej drugi raz."
+            "Zużycie energii elektrycznej na jednostkę wyrobu (kWh na tonę, m³ lub sztukę) mnoży się przez wskaźnik profilu energii. Otrzymany wynik obejmuje wkład energii. Surowce i transport uwzględnia się na podstawie ich własnych danych. Jeśli dane materiału obejmują już energię zużytą przy jego produkcji, ponowne dodanie tej energii zawyży wynik."
           ],
           "links": [
             {
@@ -818,12 +955,13 @@
               "href": "/oblicz-energie-2025.html"
             }
           ],
-          "id": "wyrob"
+          "id": "wyrob",
+          "nav_label": "Wyrób"
         },
         {
-          "title": "Budynek",
+          "title": "Jak uwzględnić energię podczas użytkowania budynku?",
           "paragraphs": [
-            "Wynik budynku składa się z materiałów, budowy, eksploatacji i końca życia. Energia eksploatacyjna to zużycie w kWh pomnożone przez wskaźnik dla przyjętego roku. Dla wieloletniej eksploatacji scenariusz przyszłego miksu zależy od przyjętej metody oceny; rok odniesienia 2025 nie opisuje automatycznie 50 lat użytkowania."
+            "W ocenie budynku uwzględnia się materiały, budowę, eksploatację i koniec życia. Wkład energii podczas eksploatacji oblicza się, mnożąc zużycie w kWh przez wskaźnik dla przyjętego roku. Scenariusz przyszłego miksu zależy od metody oceny. Sam wskaźnik za 2025 r. nie opisuje 50 lat użytkowania budynku."
           ],
           "links": [
             {
@@ -835,43 +973,47 @@
               "href": "/metodyka.html"
             }
           ],
-          "id": "budynek"
+          "id": "budynek",
+          "nav_label": "Budynek"
         },
         {
-          "title": "Pojedynczy proces",
+          "title": "Do którego etapu przypisać zużycie energii?",
           "paragraphs": [
-            "Dla jednego etapu, na przykład przetwarzania odpadu w module C3, wkład energii to kWh pomnożone przez każdy z 37 wskaźników. Pakiet energii zawiera gotowy przykład dla 10 kWh i plik kontroli przeliczenia. Wynik przypisz do etapu, w którym energia jest zużywana; nie powielaj tych samych kWh w kilku etapach."
+            "Dla pojedynczego etapu, na przykład przetwarzania odpadu w module C3, zużycie w kWh mnoży się osobno przez każdy z 37 wskaźników. Pakiet energii zawiera przykład dla 10 kWh oraz plik kontroli przeliczenia. Wynik przypisuje się do etapu, w którym zużyto energię. Te same kWh uwzględnia się tylko raz."
           ],
           "links": [
             {
-              "label": "Przykład dla 10 kWh (JSON)",
+              "label": "Dane przykładowego obliczenia dla 10 kWh",
               "href": "/data/energia-pl-2025-v4/przyklad-10-kWh.json"
             },
             {
-              "label": "kontrola-eksportu.json",
+              "label": "Wyniki kontroli przeliczenia",
               "href": "/data/energia-pl-2025-v4/kontrola-eksportu.json"
             }
           ],
-          "id": "proces"
+          "id": "proces",
+          "nav_label": "Pojedynczy proces"
         },
         {
-          "title": "Deklaracja EPD i ocena CPR",
+          "title": "Kiedy dane można wykorzystać w deklaracji lub ocenie wyrobu?",
           "paragraphs": [
             "W deklaracji środowiskowej wyrobu (EPD) dane energii są jednym z wejść; dobór profilu do modułu zależy od tego, czy proces jest pod kontrolą producenta, zgodnie z EN 15941. W ocenach wymaganych przez rozporządzenie o wyrobach budowlanych (CPR) dane są wejściem do oceny określonego wyrobu według właściwej specyfikacji. Warunki i kolejne kroki podaje osobna strona."
           ],
           "links": [
             {
-              "label": "Zastosowanie w EPD i CPR",
+              "label": "Zasady stosowania danych w deklaracji i ocenie wyrobu",
               "href": "/zastosowanie-epd-cpr.html"
             },
             {
-              "label": "METODA-I-ZMIANY.txt",
+              "label": "Opis metody i zmian profilu energii",
               "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             }
           ],
-          "id": "deklaracja"
+          "id": "deklaracja",
+          "nav_label": "Warunki stosowania w deklaracji i ocenie wyrobu"
         }
-      ]
+      ],
+      "layout": "guide-applications"
     },
     {
       "path": "pytania.html",
@@ -1340,6 +1482,10 @@
             {
               "label": "Rozporządzenie (UE) 2024/3110 w EUR-Lex (PL)",
               "href": "https://eur-lex.europa.eu/eli/reg/2024/3110/oj/pol"
+            },
+            {
+              "label": "Wymagania dla danych tła w specyfikacji Komisji Europejskiej",
+              "href": "/metodyka-defaults-ue.html#dane-tla-cpr"
             }
           ]
         },

@@ -28,7 +28,7 @@ def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True):
  mainhead='' if home else crumb(title,parent)+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261122-widok">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261122-atlas">' if home else ''
  main_class='portal-main home-main' if home else 'portal-main portal-shell'
  out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261020design">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
@@ -78,6 +78,18 @@ def sections(secs, responsive_tables=False):
  out=[]
  for i,s in enumerate(secs):
   block=f'<section class="portal-prose" id="{e(s.get("id", "sekcja-"+str(i+1)))}"><h2>{e(s["title"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in s.get('paragraphs',[]))
+  if s.get('diagram') == 'charakteryzacja':
+   block += '''<figure class="characterisation-figure">
+   <figcaption>Jak oblicza się wkład emisji metanu w zmianę klimatu?</figcaption>
+   <div class="characterisation-equation">
+     <div><strong>Emisja metanu do powietrza</strong><span>kg metanu z inwentaryzacji</span></div>
+     <span class="characterisation-operator"><span aria-hidden="true">×</span><span class="characterisation-spoken">razy</span></span>
+     <div><strong>Współczynnik charakteryzacji</strong><span>kg ekwiwalentu CO₂ na kg metanu</span></div>
+     <span class="characterisation-operator"><span aria-hidden="true">=</span><span class="characterisation-spoken">równa się</span></span>
+     <div><strong>Wkład emisji metanu</strong><span>kg ekwiwalentu CO₂</span></div>
+   </div>
+   <p>Wskaźnik zmiany klimatu dla całego procesu to suma wkładów wszystkich przepływów uwzględnionych w tej kategorii.</p>
+   </figure>'''
   if s.get('table'):
    block += section_table(s, responsive_tables)
   out.append(block+links(s.get('links',[]))+'</section>')
@@ -96,17 +108,24 @@ def build_comparison(content):
       head_extra='<link rel="stylesheet" href="/assets/comparison.css?v=1">')
 
 def build_copy():
+ from reading_portal import build as build_reading_page
+ from visual_guides import build as build_visual_guide
  for c in COPY['pages']:
+  if c.get('layout', '').startswith('guide-'):
+   build_visual_guide(c, ROOT, page)
+   continue
   if c.get('layout') == 'comparison':
    build_comparison(c)
    continue
-  toc=links([{'label':sec['title'],'href':'#'+sec.get('id','sekcja-'+str(i+1))} for i,sec in enumerate(c['sections'])], 'portal-subnav')
-  body='<div class="portal-reading">'+toc+sections(c['sections'])+'</div>'
-  page(c['path'],c['title'],c['lead'],body)
+  build_reading_page(c, page, links, sections)
 def build_cards():
  for r in CAT['datasets']:
   if not r['href'].startswith('/dane/'):continue
-  fields=[('Rodzaj wskaźnika',r.get('indicator_label')),('Jednostka',r.get('unit')),('Rok',r.get('year')),('Znaczenie roku',{'reference':'Rok danych','publication':'Rok publikacji','application':'Rok zastosowania'}.get(r.get('year_type'),'')),('Obszar',r.get('geography')),('Zakres',r.get('boundary')),('Status',r.get('status_label')),('Identyfikator',r['id'])]
+  boundary = r.get('boundary')
+  aggregate_input = r.get('category_id') == 'kruszywa' and boundary == 'A1'
+  if aggregate_input:
+   boundary = 'A1 przy zastosowaniu kruszywa jako składnika kolejnego wyrobu'
+  fields=[('Rodzaj wskaźnika',r.get('indicator_label')),('Jednostka',r.get('unit')),('Rok',r.get('year')),('Znaczenie roku',{'reference':'Rok danych','publication':'Rok publikacji','application':'Rok zastosowania'}.get(r.get('year_type'),'')),('Obszar',r.get('geography')),('Zakres',boundary),('Status',r.get('status_label')),('Identyfikator',r['id'])]
   meta='<dl class="portal-metadata">'+''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k,v in fields if v is not None and v!='')+'</dl>'
   value=(f'<p class="portal-dataset-value"><strong>{e(num(r["value"]))}</strong> <span>{e(r.get("unit"))}</span></p><p>{e(r.get("indicator_label"))}</p>') if isinstance(r.get('value'),(int,float)) else '<p>Zestaw parametrów modelu. Szczegóły zawiera plik danych.</p>'
   downloads='<ul class="portal-downloads">'+''.join('<li>'+a(x['label'],x['href'],extra='download')+f'<span>{e(x["format"])}</span></li>' for x in r['downloads'])+'</ul>'
@@ -117,6 +136,12 @@ def build_cards():
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
   body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2><p>{source}</p>'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
+  if aggregate_input:
+   guidance = [
+    {'label': 'Co należy do A1 betonu i jak ująć transport kruszywa?', 'href': '/wyroby/24.html#modul-a1'},
+    {'label': 'Czy ten wskaźnik wystarcza do deklaracji właściwości środowiskowych wyrobu?', 'href': '/metodyka-defaults-ue.html#kruszywo-cpr'}
+   ]
+   body += '<nav aria-label="Zastosowanie kruszywa">' + links(guidance, 'product-inline-links') + '</nav>'
   family_links=[{'label':str(f['id'])+' — '+f['label'],'href':f'/wyroby/{f["id"]:02d}.html'} for f in json.loads((ROOT/'data/cpr-families.json').read_text())['families'] if f['id'] in r.get('cpr_family_ids',[])]
   if family_links:body='<nav aria-label="Rodzina wyrobu">'+links(family_links,'product-inline-links')+'</nav>'+body
   page(r['href'][1:],r['title'],r['description'],body,parent=('Katalog danych','/datasety.html'))
