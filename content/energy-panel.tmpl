@@ -1,6 +1,12 @@
 <div id="energy-calculation" class="energy-panel">
   <header class="energy-header">
-    <h1>Energia elektryczna w Polsce w 2025 r.</h1>
+    <div class="energy-header-title">
+      <h1>Energia elektryczna w Polsce w 2025 r.</h1>
+    </div>
+    <figure class="energy-photo">
+      <img class="energy-grid-photo" src="/images/strip-energy.jpg" width="1600" height="1067" alt="Słupy i przewody linii elektroenergetycznych o zachodzie słońca.">
+      <figcaption><a href="https://unsplash.com/photos/photo-of-truss-towers-yETqkLnhsUI/">Fot. Matthew Henry / Unsplash</a></figcaption>
+    </figure>
     <nav class="energy-jumps" aria-label="Sekcje panelu">
       <a href="#przelicz">Przelicz zużycie</a><a href="#skladniki">Składniki wyniku</a><a href="#metoda">Metoda</a><a href="#wyniki">37 wskaźników</a>
     </nav>
@@ -28,9 +34,9 @@
     </section>
   </div>
 
-  <div class="energy-analysis">
-    <section id="skladniki" aria-labelledby="climate-heading">
+    <section class="energy-breakdown" id="skladniki" aria-labelledby="climate-heading">
       <h2 id="climate-heading">Co składa się na wpływ na klimat?</h2>
+      <div class="energy-breakdown-body">
       <figure class="energy-chart">
         <figcaption>Udział trzech składników w krajowym wskaźniku na 1&nbsp;kWh</figcaption>
         <div class="energy-bar" aria-hidden="true">{full_bar}</div>
@@ -42,17 +48,23 @@
         <thead><tr><th scope="col">Składnik</th><th scope="col">Udział we wskaźniku</th><th scope="col">g równ. CO₂</th></tr></thead>
         <tbody>{parts_rows}</tbody>
       </table>
+      </div>
     </section>
-    <section id="metoda" aria-labelledby="method-heading">
+    <section class="energy-method-section" id="metoda" aria-labelledby="method-heading">
       <h2 id="method-heading">Jak obliczono wskaźnik?</h2>
+      <div class="energy-method-layout">
+      <figure class="energy-method-figure">
+        <img src="/images/polca-model-energii.webp" width="800" height="800" alt="Rysunek elektrowni, turbiny wiatrowej i paneli słonecznych oraz transformatora i licznika u odbiorcy." loading="lazy">
+        <figcaption>Od wytwarzania energii do punktu dostawy u odbiorcy</figcaption>
+      </figure>
       <ol class="energy-method">
-        <li><strong>Określenie ilości dostarczonej energii</strong><p>Podstawą jest wstępny bilans Eurostatu za 2025 r. Uwzględnia produkcję netto, import, eksport, pobór magazynów, pozostałe przetwarzanie i straty sieciowe. Kierunki importu pochodzą z danych Polskich Sieci Elektroenergetycznych.</p></li>
-        <li><strong>Obliczenie wpływu w cyklu życia</strong><p>Model obejmuje emisje związane z wydobyciem i dostawą paliw oraz wytwarzaniem energii. Emisje gazów cieplarnianych przeliczono na równoważnik CO₂ i odniesiono do 1 kWh dostarczonej energii. Część danych o procesach pochodzi z wcześniejszych lat.</p></li>
-        <li><strong>Przeliczenie na zużycie</strong><p>Kalkulator mnoży zużycie w kilowatogodzinach przez wskaźnik na 1 kWh. Korzysta z pełnej precyzji danych źródłowych.</p></li>
+        <li><strong>Jak ustalono ilość dostarczonej energii?</strong><p>Wstępny bilans Eurostatu za 2025&nbsp;r. obejmuje produkcję netto, import, eksport, pobór magazynów, pozostałe przetwarzanie i straty sieciowe. Dane Polskich Sieci Elektroenergetycznych określają kierunki importu.</p></li>
+        <li><strong>Jak obliczono wpływ 1&nbsp;kWh na klimat?</strong><p>Model obejmuje m.in. emisje z wydobycia i dostaw paliw oraz wytwarzania prądu. Emisje gazów cieplarnianych przeliczono na równoważnik CO₂ i odniesiono do 1&nbsp;kWh dostarczonej energii. Część danych pochodzi z wcześniejszych lat.</p></li>
+        <li><strong>Jak obliczyć wynik dla własnego zużycia?</strong><p>Kalkulator mnoży zużycie w kilowatogodzinach przez wskaźnik na 1&nbsp;kWh. W obliczeniach zachowuje pełną precyzję danych źródłowych.</p></li>
       </ol>
-      <a href="/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt">Przeczytaj pełny opis metody v4</a>
+      </div>
+      {full_method}
     </section>
-  </div>
 
   <section class="energy-use">
     <h2>Jak stosować wynik?</h2>
