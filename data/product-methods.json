@@ -140,6 +140,34 @@
         15
       ],
       "scope_note": "Projekt rewizji EN 16908 dla cementu, wapna budowlanego i wskazanych w projekcie spoiw hydraulicznych, w tym cementu murarskiego i hydraulicznych spoiw drogowych. Dotyczy przede wszystkim deklaracji od kołyski do bramy zakładu."
+    },
+    {
+      "id": "wi00154209",
+      "designation": "Część 1 · projekt 00154209",
+      "title_pl": "Kruszywo jako składnik innego wyrobu",
+      "url": "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:73535,25&cs=15BD5AB7F20913E6CBF04130E37442215",
+      "status_label": "Etap wstępny (Preliminary)",
+      "status": "preliminary",
+      "role": "complementary_pcr",
+      "family_ids": [
+        24
+      ],
+      "scope_note": "Kruszywa do zapraw, betonu, mieszanek mineralno-asfaltowych i mieszanek związanych hydraulicznie, również tych przeznaczonych na podbudowę.",
+      "checked_on": "2026-11-22"
+    },
+    {
+      "id": "wi00154207",
+      "designation": "Część 2 · projekt 00154207",
+      "title_pl": "Kruszywo do zastosowania bezpośredniego",
+      "url": "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:73521,25&cs=18333C1E508D048A759A2ADD7027F4DC0",
+      "status_label": "Etap wstępny (Preliminary)",
+      "status": "preliminary",
+      "role": "complementary_pcr",
+      "family_ids": [
+        24
+      ],
+      "scope_note": "Kruszywa do mieszanek niezwiązanych (np. na podbudowę), kruszywa na podsypkę kolejową oraz kamień do robót hydrotechnicznych.",
+      "checked_on": "2026-11-22"
     }
   ],
   "drafts_intro": "Projekty norm pokazują proponowane zasady uzupełniające, które mogą się zmienić przed publikacją. Dokument właściwy dla konkretnej EPD (deklaracji środowiskowej wyrobu) dobiera się zgodnie z zasadami programu, w którym deklaracja jest rejestrowana."

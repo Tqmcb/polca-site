@@ -123,6 +123,28 @@ class ProductNavigationTests(unittest.TestCase):
         self.assertEqual(mma.xpath('.//input[@data-param="gas"]/@value'), [str(gas).replace('.', ',')])
         self.assertIn('/wyroby/23.html', mma.xpath('.//a/@href'))
 
+    def test_aggregate_use_groups_and_preliminary_cen_work_items(self):
+        card = html.parse(str(ROOT / 'wyroby/24.html'))
+        groups = card.xpath('//*[@id="modul-a1"]//nav//*[@role="group"]')
+        self.assertEqual([g.xpath('.//a/@href') for g in groups],
+                         [['#kruszywo-beton', '#kruszywo-mma'], ['#kruszywo-podbudowa']])
+        self.assertEqual(groups[1].xpath('string(.//a)'), 'Podbudowa niezwiązana')
+        method_href = '/c-pcr/kruszywa.html#projekty-cen'
+        self.assertIn(method_href, card.xpath('//*[@id="modul-a1"]//a/@href'))
+
+        projects = [m for m in read('data/product-methods.json')['documents'] if 24 in m['family_ids']]
+        expected = {'wi00154209': '73535', 'wi00154207': '73521'}
+        records = {m['id']: m for m in projects}
+        method_page = html.parse(str(ROOT / 'c-pcr/kruszywa.html'))
+        sources = method_page.xpath('//section[h2[@id="projekty-cen"]]//article//a/@href')
+        published = html.parse(str(ROOT / 'c-pcr/index.html')).xpath('//*[@id="cpcr-lista"]//a/@href')
+        for key, project_id in expected.items():
+            project = records[key]
+            self.assertEqual(project['status'], 'preliminary')
+            self.assertIn(f'FSP_PROJECT,FSP_LANG_ID:{project_id},25', project['url'])
+            self.assertIn(project['url'], sources)
+            self.assertNotIn(project['url'], published)
+
     def test_methods_distinguish_draft_and_published_scope(self):
         methods = {r['id']: r for r in read('data/product-methods.json')['documents']}
         self.assertEqual(methods['ts18301']['status'], 'published')

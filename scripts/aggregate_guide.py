@@ -187,7 +187,7 @@ def aggregate_guide(catalog, mma_profile):
             },
         },
         {
-            'name': 'podbudowa', 'choice': 'Podbudowa', 'ingredient': False,
+            'name': 'podbudowa', 'choice': 'Podbudowa niezwiązana', 'ingredient': False,
             'title': 'Podbudowa z kruszywa niezwiązanego',
             'alt': 'Zakład produkcji kruszywa, jego przewóz na budowę i walec na warstwie kruszywa.',
             'material_target': 'kruszywo-podbudowa',
@@ -209,18 +209,29 @@ def aggregate_guide(catalog, mma_profile):
             },
         },
     ]
-    choices, examples = [], []
+    choices = {True: [], False: []}
+    examples = []
     for case in cases:
         operation = case['operation']
         operation['control'] = quantity_control(operation['key'], operation['argument'], operation['activity_unit'])
         stages = [product_example(materials, case), transport_example(records[TRUCK], case), operation]
         examples.append(scenario(case, stages))
-        choices.append(f'<a class="aggregate-choice" href="#kruszywo-{case["name"]}">{case["choice"]}</a>')
+        choices[case['ingredient']].append(f'<a class="aggregate-choice" href="#kruszywo-{case["name"]}">{case["choice"]}</a>')
+    groups = []
+    for ingredient, label_id, label in [
+        (True, 'kruszywo-skladnik', 'Kruszywo jako składnik'),
+        (False, 'kruszywo-wbudowane', 'Kruszywo wbudowane bezpośrednio'),
+    ]:
+        groups.append(f'''<div class="aggregate-choice-group" role="group" aria-labelledby="{label_id}">
+          <span class="aggregate-group-label" id="{label_id}">{label}</span>
+          <div class="aggregate-group-links">{''.join(choices[ingredient])}</div>
+        </div>''')
     return f'''<section id="modul-a1" class="portal-section aggregate-guide" aria-labelledby="aggregate-guide-title">
     <h2 id="aggregate-guide-title">Do których modułów należą produkcja i przewóz kruszywa?</h2>
     <p class="aggregate-intro">Gdy wytwórnia kupuje kruszywo jako składnik wyrobu, jego produkcję u dostawcy uwzględnia się w A1 tego wyrobu,
       a przewóz do wytwórni w A2. Gdy gotowe kruszywo trafia bezpośrednio
       na budowę, jego dostawa należy do A4, a wbudowanie do A5.</p>
-    <nav class="aggregate-choices" aria-label="Zastosowanie kruszywa">{''.join(choices)}</nav>
-    <p class="aggregate-help">Wybierz punkt, aby zobaczyć współczynnik i obliczenie.</p>
+    <nav class="aggregate-choices" aria-label="Zastosowanie kruszywa">{''.join(groups)}</nav>
+    <p class="aggregate-help">Wybierz punkt, aby zobaczyć współczynnik i obliczenie.
+      <a href="/c-pcr/kruszywa.html#projekty-cen">Planowany podział zastosowań kruszywa</a>.</p>
     {''.join(examples)}</section>'''
