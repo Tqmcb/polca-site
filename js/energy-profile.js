@@ -8,6 +8,8 @@
   var unit = document.getElementById('energy-unit');
   var error = document.getElementById('energy-error');
   var summary = document.getElementById('energy-summary');
+  var climateTotal = root.querySelector('[data-energy-climate-total]');
+  var climateParts = root.querySelectorAll('[data-energy-climate-part]');
   var buttons = root.querySelectorAll('[data-energy-download]');
   var result = null;
   var format = new Intl.NumberFormat('pl-PL', { maximumSignificantDigits: 7 });
@@ -22,6 +24,8 @@
       result = null;
       summary.textContent = 'Uzupełnij poprawne zużycie energii.';
       root.querySelectorAll('[data-energy-result]').forEach(function (el) { el.textContent = '—'; });
+      if (climateTotal) climateTotal.textContent = '—';
+      climateParts.forEach(function (el) { el.textContent = '—'; });
       return;
     }
     var kWh = amount * factor;
@@ -42,7 +46,14 @@
       scope_pl: 'Wyłącznie wkład podanej ilości energii; bez przypisania do rzeczywistego wyrobu, modułu lub jednostki wyrobu.',
       indicators: indicators
     };
-    summary.textContent = 'Wkład ' + format.format(kWh) + ' kWh: ' + format.format(indicators[0].value) + ' kg CO₂e — całkowity wpływ na klimat.';
+    var valuesByCode = new Map(indicators.map(function (item) { return [item.code, item.value]; }));
+    var total = format.format(valuesByCode.get('GWP-total'));
+    if (climateTotal) climateTotal.textContent = total;
+    climateParts.forEach(function (el) {
+      var kilograms = valuesByCode.get(el.dataset.energyClimatePart);
+      el.textContent = format.format(kilograms * 1000);
+    });
+    summary.textContent = 'Wpływ na klimat dla ' + format.format(kWh) + ' kWh wynosi ' + total + ' kg równoważnika CO₂.';
   }
   function csvCell(value) { return '"' + String(value).replace(/"/g, '""') + '"'; }
   buttons.forEach(function (button) {

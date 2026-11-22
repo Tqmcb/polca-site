@@ -68,6 +68,21 @@ class PortalTests(unittest.TestCase):
   self.assertEqual(len(codes),37)
   for link in ('/energia-polska-2025-v4.html', '/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt'):
    self.assertIn(link,d.xpath('//main//a/@href'))
+ def test_climate_panel_uses_profile_shares_and_grams_for_the_initial_quantity(self):
+  profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
+  per_kwh={item['code']:item['value_per_kWh'] for item in profile['indicators']}
+  doc=html.parse(str(ROOT/'oblicz-energie-2025.html'))
+  quantity=Decimal(doc.xpath('//*[@id="energy-quantity"]/@value')[0])
+  cells=doc.xpath('//*[@data-energy-climate-part]')
+  self.assertEqual({cell.get('data-energy-climate-part') for cell in cells},
+                   {'GWP-fossil','GWP-biogenic','GWP-luluc'})
+  for cell in cells:
+   value=per_kwh[cell.get('data-energy-climate-part')]
+   displayed_grams=Decimal(cell.text.replace(',','.'))
+   expected_grams=value*quantity*1000
+   self.assertLess(abs(displayed_grams-expected_grams),expected_grams*Decimal('0.000005'))
+   displayed_share=cell.getprevious().text
+   self.assertEqual(displayed_share,f'{100*value/per_kwh["GWP-total"]:.4f}%'.replace('.',','))
  def test_search_and_catalog_embed_current_model(self):
   profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
   total=next(i['value_per_kWh'] for i in profile['indicators'] if i['code']=='GWP-total')

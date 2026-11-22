@@ -673,7 +673,7 @@
       "year": 2025,
       "year_type": "reference",
       "status_id": "tool",
-      "description": "Przelicz kWh, MWh lub MJ energii elektrycznej na 37 wskaźników. Pobierz wynik w CSV i JSON wraz z metryką modelu.",
+      "description": "Oblicz wpływ zużycia energii na klimat. Zobacz na wykresie składniki wyniku, sprawdź metodę i pobierz 37 wskaźników dla podanej ilości energii.",
       "href": "/oblicz-energie-2025.html",
       "methodology_href": "/energia-polska-2025-v4.html",
       "related_ids": [
@@ -686,7 +686,9 @@
         "ślad węglowy",
         "środowiskowy",
         "37 wskaźników",
-        "obliczenia"
+        "obliczenia",
+        "panel",
+        "wykres"
       ]
     },
     {
