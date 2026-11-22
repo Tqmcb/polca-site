@@ -15,4 +15,4 @@ def build(content, page, links, sections):
     <div class="reading-chapters">{sections(chapters, responsive_tables=True)}</div>
     </div>'''
     page(content['path'], content['title'], content['lead'], body,
-         head_extra='<link rel="stylesheet" href="/assets/guide-reading.css?v=1">')
+         head_extra='<link rel="stylesheet" href="/assets/guide-reading.css?v=20261122-linki">')

@@ -107,7 +107,7 @@ Przy szerokości poniżej 760 px główne kompozycje strony głównej i konsulta
 
 ## Elevation & Depth
 
-Warstwa danych jest oszczędna, a autorskie ilustracje wprowadzają przestrzeń i lekkość. Podział treści wynika z odstępów, pojedynczych linii i zmian tła. Nie stosować cieni do obwodzenia kolejnych sekcji ani do tworzenia pozornej głębi kart. Obrys aktywnego kroku i podkreślenie aktywnej pozycji nawigacji oznaczają stan elementu.
+Warstwa danych jest oszczędna, a autorskie ilustracje wprowadzają przestrzeń i lekkość. Podział treści wynika z odstępów, pojedynczych linii i zmian tła. Nie stosować cieni do obwodzenia kolejnych sekcji ani do tworzenia pozornej głębi kart. Obrys wskazuje aktywny krok, a jasne tło wyróżnia aktualny dział nawigacji.
 
 ## Shapes
 
@@ -121,7 +121,7 @@ Linie mają przeważnie grubość 1 px. Grubszy obrys służy wskazaniu fokusu k
 
 Wspólna nawigacja prowadzi do wyrobów, danych, kalkulatorów, przewodników oraz metod i źródeł. Wyszukiwanie jest dostępne w nagłówku, a na stronie głównej również przy opisie portalu. Wynik wyszukiwania i indeks zasobów przedstawiają rzeczywistą zawartość; nie zastępują jej marketingowymi kartami.
 
-Odnośniki mają rozpoznawalne podkreślenie lub strukturę wiersza nawigacyjnego. Najechanie zmienia kolor lub podkreślenie. Fokus klawiatury ma kobaltowy obrys o grubości 3 px i odstępie 3 px; na ciemnych powierzchniach obrys jest biały. Odnośnik pomijający nawigację prowadzi do głównej treści.
+W akapitach odsyłacz wyróżniają kolor i półgruby krój pisma. W nawigacji oraz wykazach odsyłacze rozpoznaje się po układzie i etykiecie. Najechanie podświetla tekst lub tło. Wybrany klawiaturą odsyłacz ma obrys o grubości 3 px, oddalony od tekstu o 3 px. Na jasnych powierzchniach obrys jest kobaltowy, a na ciemnych jasny. Odnośnik pomijający nawigację prowadzi do głównej treści.
 
 ### Przyciski i pola
 

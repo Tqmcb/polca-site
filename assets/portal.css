@@ -32,8 +32,15 @@ body.portal {
 }
 body.portal *, body.portal *::before, body.portal *::after { box-sizing: border-box; }
 body.portal [hidden] { display: none !important; }
-body.portal a { text-decoration: underline; color: var(--portal-link); text-underline-offset: .16em; text-decoration-thickness: 1px; }
-body.portal a:hover { color: var(--portal-ink); text-decoration: underline; }
+body.portal a { text-decoration: none; color: var(--portal-link); }
+body.portal a:hover { color: var(--portal-ink); }
+/* Running text needs a visible cue before interaction, including on a touch screen. */
+body.portal main :where(p, td, th, dd, figcaption, blockquote, .portal-prose li, .blog-post-body li, .action li) a[href] { font-weight: 640; }
+@media (hover: hover) {
+  body.portal main :where(p, td, th, dd, figcaption, blockquote, .portal-prose li, .blog-post-body li, .action li) a[href]:hover {
+    background-color: color-mix(in srgb, currentColor 9%, transparent);
+  }
+}
 body.portal :focus-visible { outline: 3px solid #1355c4 !important; outline-offset: 3px !important; }
 body.portal img, body.portal svg { max-width: 100%; }
 body.portal button, body.portal input, body.portal select, body.portal textarea { font: inherit; }
@@ -57,7 +64,7 @@ body.portal .portal-nav a, body.portal .portal-search-link {
   color: var(--portal-ink); font-weight: 600; text-decoration: none; border-radius: 4px;
 }
 body.portal .portal-nav a:hover, body.portal .portal-search-link:hover { background: var(--portal-soft); color: var(--portal-link); }
-body.portal .portal-nav a[aria-current="page"], body.portal .portal-nav a[aria-current="true"] { color: var(--portal-link); box-shadow: inset 0 -3px var(--portal-link); }
+body.portal .portal-nav a[aria-current="page"], body.portal .portal-nav a[aria-current="true"] { color: var(--portal-link); font-weight: 680; }
 body.portal .portal-search-link { border: 1px solid var(--portal-line); flex-shrink: 0; }
 .portal-menu-toggle { display: none; border: 1px solid var(--portal-line); border-radius: 4px; background: #fff; color: var(--portal-ink); padding: 10px 14px; min-height: 48px; font-weight: 600; }
 .portal-main { padding-block: 32px 64px; min-height: 55vh; }
@@ -102,7 +109,7 @@ body.portal a.portal-button { color: #fff; text-decoration: none; }
 body.portal .portal-categories > a { min-width: 0; display: flex; flex-direction: column; justify-content: center; min-height: 94px; padding: 16px 0; border-bottom: 1px solid var(--portal-line); text-decoration: none; }
 .portal-categories strong { font-size: 1.08rem; font-weight: 600; }
 .portal-categories span { margin-top: 4px; color: var(--portal-muted); font-size: .9rem; }
-body.portal .portal-categories > a:hover strong { text-decoration: underline; text-underline-offset: .16em; }
+body.portal .portal-categories > a:hover strong { color: var(--portal-link); }
 .portal-feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .55fr); gap: 32px; padding: 32px; border: 1px solid var(--portal-line); background: var(--portal-soft); border-radius: 4px; }
 .portal-feature header { min-width: 0; }
 .portal-feature header p { margin: 16px 0; max-width: 64ch; }
@@ -130,7 +137,8 @@ body.portal .portal-categories > a:hover strong { text-decoration: underline; te
 #catalog-filters .portal-search-control { flex-direction: column; align-items: stretch; gap: 8px; margin-bottom: 20px; }
 #catalog-filters .portal-search-control input { margin-bottom: 0; min-height: 48px; }
 #catalog-filters .portal-search-control button[type="submit"] { width: 100%; margin: 0; }
-#catalog-filters button[type="reset"] { min-height: 44px; padding: 8px 0; border: 0; color: var(--portal-link); background: transparent; text-decoration: underline; text-underline-offset: .16em; }
+#catalog-filters button[type="reset"] { min-height: 44px; padding: 8px 0; border: 0; color: var(--portal-link); background: transparent; font-weight: 600; }
+#catalog-filters button[type="reset"]:hover { color: var(--portal-ink); }
 #catalog-filters button[type="submit"] { margin-right: 12px; margin-bottom: 8px; }
 .portal-filters { padding: 0; border: 1px solid var(--portal-line); border-radius: 4px; background: #fff; }
 .portal-filters > summary { padding: 16px; min-height: 52px; font-weight: 600; cursor: pointer; }
@@ -142,7 +150,7 @@ body.portal .portal-categories > a:hover strong { text-decoration: underline; te
 .portal-result h2 { margin: 0 0 8px; font-family: inherit; font-size: 1.18rem; font-weight: 600; line-height: 1.3; }
 .portal-result > h2, .portal-result > .portal-result-title, .portal-result > p, .portal-result > .portal-result-meta { grid-column: 1; }
 body.portal .portal-result-title { font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
-body.portal .portal-result-title:hover { text-decoration: underline; }
+body.portal .portal-result-title:hover { color: var(--portal-ink); }
 .portal-result-description { margin: 8px 0 12px; color: var(--portal-muted); line-height: 1.5; font-size: 1rem; }
 .portal-result-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-top: 12px; color: var(--portal-muted); font-size: .85rem; line-height: 1.4; }
 .portal-result-meta span { max-width: 100%; overflow-wrap: anywhere; }
@@ -341,7 +349,7 @@ body.portal-tool .page-hero > div:has(img) {display:none;}
 body.portal .product-picks a {display:flex;flex-direction:column;gap:6px;padding:20px 0;border-bottom:1px solid var(--portal-line);text-decoration:none;}
 .product-picks strong {font-size:1.13rem;font-weight:600;}
 .product-picks span,.product-meta {color:var(--portal-muted);font-size:.92rem;}
-.product-picks a:hover strong {text-decoration:underline;}
+.product-picks a:hover strong {color:var(--portal-link);}
 .product-common {padding:24px 0;border-block:1px solid var(--portal-line);}
 .product-common h2,.product-help h2 {margin-top:0;}
 .product-inline-links {display:flex;flex-wrap:wrap;gap:8px 28px;list-style:none;padding:0;margin:16px 0 0;}
@@ -355,9 +363,9 @@ body.portal .product-families a {display:grid;grid-template-columns:44px minmax(
 .product-families strong,.product-families small {display:block;}
 .product-families strong {font-size:1.12rem;font-weight:600;}
 .product-families small {margin-top:6px;font-size:.9rem;color:var(--portal-muted);}
-.product-families a:hover strong {text-decoration:underline;}
+.product-families a:hover strong {color:var(--portal-link);}
 .product-family-code {color:var(--portal-muted);font-variant-numeric:tabular-nums;}
-.product-open {font-size:.9rem;text-decoration:underline;}
+.product-open {font-size:.9rem;text-decoration: none;}
 .product-checkbox {display:flex;align-items:center;gap:10px;margin:20px 0;cursor:pointer;}
 body.portal .product-checkbox input {width:20px;height:20px;min-height:20px;flex:none;}
 .product-family-identity {color:var(--portal-muted);margin-top:-12px;}
@@ -380,7 +388,7 @@ body.portal :is(.portal-sectionhead,.portal-task,.product-methods) h3 a,
 body.portal .portal-sectionhead > a,
 body.portal .product-methods h3 a {text-decoration:none;}
 body.portal :is(.portal-breadcrumbs,.portal-subnav,.portal-footer,.portal-list,.portal-downloads,.product-inline-links,.product-method-families) a:hover,
-body.portal .product-methods h3 a:hover {text-decoration:underline;}
+body.portal .product-methods h3 a:hover {color:var(--portal-ink);}
 .product-method-families {list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:4px 24px;}
 .product-method-families a {display:inline-block;padding-block:6px;font-size:.94rem;}
 body.portal .portal-section > h2, .product-help h2 {font-size:1.5rem;line-height:1.3;font-weight:600;letter-spacing:-.012em;}
@@ -397,7 +405,7 @@ body.portal-legacy .card {background:#fff !important;box-shadow:none !important;
 body.portal-legacy :is(.card-accent-orange,.card-accent) {border-top:1px solid var(--portal-line) !important;}
 body.portal-legacy .tool-nav {gap:4px 24px;border-bottom:1px solid var(--portal-line);padding-bottom:12px;}
 body.portal-legacy .tool-nav-pill {border:0 !important;border-radius:0 !important;background:transparent !important;color:var(--portal-link) !important;padding:8px 0 !important;font:600 1rem/1.4 "Source Sans 3",Arial,sans-serif !important;white-space:normal;text-decoration:none;box-shadow:none !important;}
-body.portal-legacy .tool-nav-pill:hover, body.portal-legacy .tool-nav-pill.active {text-decoration:underline;text-underline-offset:6px;}
+body.portal-legacy .tool-nav-pill:is(:hover,.active) {color:var(--portal-ink) !important;background-color:var(--portal-soft) !important;}
 .portal-tool-meta {display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:20px;}
 body.portal-legacy .portal-tool-meta .doc-pill {color:var(--portal-muted);background:none;border:0;padding:0;}
 body.portal-legacy .portal-tool-meta .warn {color:var(--portal-review);}
@@ -455,9 +463,9 @@ body.portal-legacy .en25-status {border:0;border-block:1px solid var(--portal-li
 body.portal-legacy .en25-tag, body.portal-legacy .en25-review-label {color:var(--portal-muted);}
 body.portal-legacy .en25-example {border:0;background:var(--portal-soft);}
 body.portal-legacy .en25-nav a {font-size:1rem;min-height:44px;padding-block:10px;text-decoration:none;}
-body.portal-legacy .en25-nav a:hover {text-decoration:underline;}
+body.portal-legacy .en25-nav a:hover {background-color:var(--portal-soft);}
 body.portal-legacy .en25-files a {text-decoration:none;}
-body.portal-legacy .en25-files a:hover {text-decoration:underline;}
+body.portal-legacy .en25-files a:hover {color:var(--portal-ink);}
 body.portal-legacy .en25-btn {font-size:1rem;background:var(--portal-link);border-color:var(--portal-link);border-radius:4px;}
 body.portal-legacy .en25-btn-light {background:#fff;color:var(--portal-link) !important;border-color:var(--portal-line);}
 
@@ -507,7 +515,6 @@ body.portal .portal-header { border-color: #c9d8d1; }
 body.portal .portal-nav a, body.portal .portal-search-link { gap: .41em; }
 body.portal .portal-nav a .portal-nav-icon { color: var(--atlas-mineral); }
 body.portal .portal-nav a.is-active { background-color: #e9f2ed; color: #214c3f; }
-body.portal .portal-nav a.is-active[aria-current="page"] { box-shadow: inset 0 -2px #35745e; }
 body.portal .portal-search-link { border-color: #afc3ba; }
 .portal-main > .portal-pagehead { max-width: 920px; }
 body.portal .portal-footer {

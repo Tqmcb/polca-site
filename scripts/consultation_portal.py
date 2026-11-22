@@ -163,7 +163,7 @@ def build(api):
     total = next(row["value_per_kWh"] for row in indicators if row["code"] == "GWP-total")
     unit = profile["functional_unit"]
     unit_description = unit["description_pl"] if isinstance(unit, dict) else str(unit)
-    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261020design">'
+    css = '<link rel="stylesheet" href="/assets/consultation.css?v=20261122-linki">'
     js = '<script src="/js/consultation.js?v=20261020" defer></script>'
 
     step_navigation = []

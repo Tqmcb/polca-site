@@ -96,8 +96,8 @@ body.portal .guide-flow nav a::before {
 }
 body.portal .guide-flow li:last-child a::before { background: #bdd4ea; }
 body.portal .guide-flow a:focus-visible { outline-color: white !important; }
-body.portal .guide-flow a:is(:hover, :focus-visible) .flow-label { text-decoration-thickness: 2px; }
-.flow-label { font-size: .94rem; color: #dbe9f7; text-decoration: underline; text-underline-offset: .2em; }
+body.portal .guide-flow a:is(:hover, :focus-visible) .flow-label { color: white; background-color: #35516c; }
+.flow-label { font-size: .94rem; color: #dbe9f7; text-decoration: none; }
 .guide-flow strong {
   display: block;
   margin-top: 6px;
@@ -148,7 +148,6 @@ body.portal .method-index a {
   display: inline-block;
   padding-block: 9px;
   color: white;
-  text-underline-offset: .22em;
 }
 body.portal .method-index a:focus-visible { outline-color: white !important; }
 .method-entry {
@@ -237,8 +236,7 @@ body.portal .scope-branches a {
   font-size: 1.26rem;
   line-height: 1.2;
   font-weight: 620;
-  text-decoration: underline;
-  text-underline-offset: .15em;
+  text-decoration: none;
 }
 .scope-branches small { display: block; margin-top: 2px; color: var(--portal-muted); line-height: 1.3; font-size: .98rem; }
 .scope-drawing { display: block; flex: 0 0 auto; width: clamp(62px, 6vw, 85px); color: var(--portal-ink); }

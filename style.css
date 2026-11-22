@@ -3775,11 +3775,9 @@ body {
 /* --- Prose links ----------------------------------------- */
 .prose a {
     color: var(--accent);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
+    text-decoration: none;
 }
-.prose a:hover { text-decoration-thickness: 2px; }
+
 
 /* --- Footer brand ---------------------------------------- */
 .footer-brand-logo { font-size: 1.4rem; }
@@ -4230,8 +4228,7 @@ a:hover { color: #1E3A8A; }
 /* Prose links (artykuły) */
 .prose a, .blog-post-body a {
     color: #1E3A8A;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
 }
 .prose a:hover, .blog-post-body a:hover {
     color: #2563EB;

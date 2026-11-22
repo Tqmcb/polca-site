@@ -21,7 +21,7 @@ PRODUCT_PHOTOS = {
     15: ('cement', 'Dane dla poszczególnych rodzajów cementu',
          'Ilustracja pieca obrotowego i instalacji w cementowni.'),
 }
-FAMILY_CSS = '<link rel="stylesheet" href="/assets/product-photos.css?v=20261122-rodziny">'
+FAMILY_CSS = '<link rel="stylesheet" href="/assets/product-photos.css?v=20261122-linki">'
 
 
 def family_photo(family_id, *, standalone=False):
