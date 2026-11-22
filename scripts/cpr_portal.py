@@ -1,5 +1,8 @@
 """Product-first navigation; CPR families are discovery metadata, not approvals."""
 import json
+from itertools import groupby
+
+from aggregate_guide import aggregate_guide
 
 from atlas_icons import family_icon
 
@@ -66,6 +69,76 @@ def dataset_count(count):
     return f'{count} {noun} danych'
 
 
+def family_data(datasets, family_id, api):
+    e, a, num = (api[key] for key in ('e', 'a', 'num'))
+    if not datasets:
+        return ('<section id="dane" class="family-record-section"><h2>Dostępność danych dla rodziny</h2>'
+                '<p>W katalogu poLCA nie ma jeszcze branżowego zestawu danych dla tej rodziny.</p></section>')
+
+    def metadata(record):
+        year = record.get('year')
+        year_label = {'publication': 'Rok publikacji', 'reference': 'Rok odniesienia'}.get(record.get('year_type'), 'Rok')
+        return {
+            'indicator': record.get('indicator_label'),
+            'status': record.get('status_label'),
+            'year': f'{year_label} {year}' if year else '',
+            'formats': ', '.join(record.get('formats', [])),
+        }
+
+    def labels(values):
+        return ''.join(f'<span>{e(value)}</span>' for value in values if value)
+
+    metadata_rows = [metadata(record) for record in datasets]
+    first = metadata_rows[0]
+    shared = {key: value for key, value in first.items() if all(row[key] == value for row in metadata_rows)}
+    heading = 'Wskaźniki dla kruszyw' if family_id == 24 else 'Wskaźniki środowiskowe dla wyrobów'
+    parts = [f'<section id="dane" class="family-record-section"><h2>{heading}</h2>']
+    shared_labels = labels(shared.values())
+    if shared_labels:
+        parts.append(f'<p class="family-record-meta">{shared_labels}</p>')
+    parts.append('<div class="family-indicators">')
+    for description, grouped in groupby(datasets, key=lambda record: record.get('description', '')):
+        group = list(grouped)
+        if description and len(group) > 1:
+            parts.append(f'<p class="family-indicators-scope">{e(description)}</p>')
+        for record in group:
+            details = description if len(group) == 1 else ''
+            card_class = 'family-indicator'
+            if family_id == 24 and record['id'] == 'POLCA-FILLER-LIMESTONE-DEFAULT-2026':
+                card_class += ' family-indicator-filler'
+                details = ('Wartość dla 1 t kruszywa wypełniającego do mieszanki asfaltowej. '
+                           'Inne zastosowanie wymaga odrębnego przypisania.')
+            item_labels = labels(value for key, value in metadata(record).items() if key not in shared)
+            value = record.get('value')
+            parts.append(f'<article class="{card_class}" data-record-id="{e(record["id"])}">')
+            parts.append(f'<h3>{a(record["title"], record["href"])}</h3>')
+            if isinstance(value, (int, float)):
+                parts.append(f'<p class="family-indicator-value"><strong>{e(num(value))}</strong> <span>{e(record.get("unit"))}</span></p>')
+            if details:
+                parts.append(f'<p class="family-indicator-note">{e(details)}</p>')
+            if item_labels:
+                parts.append(f'<p class="family-indicator-note family-record-meta">{item_labels}</p>')
+            parts.append('</article>')
+    parts.append('</div></section>')
+    return ''.join(parts)
+
+
+def family_guides(has_methods, has_tools, api):
+    icon = api['navigation_icon']
+    # Keep old fragment URLs useful even on families with only shared guidance.
+    method_anchor = '' if has_methods else ' id="metoda"'
+    tool_anchor = '' if has_tools else ' id="narzedzia"'
+    method_note = '' if has_methods else '<small>W katalogu nie wskazano dokumentu branżowego dla tej rodziny.</small>'
+    return f'''<aside class="family-guides" aria-labelledby="family-shared-title">
+    <h2 id="family-shared-title">Dane i zasady wspólne dla wyrobów</h2>
+    <ul>
+      <li{method_anchor}>{icon('methods')}<div><a href="/c-pcr/#dobor">Jak dobrać zasady kategorii wyrobu i sprawdzić ich status?</a>{method_note}</div></li>
+      <li>{icon('data')}<a href="/dane-wspolne.html">Energia elektryczna, paliwa i transport</a></li>
+      <li>{icon('methods')}<a href="/metodyka-defaults-ue.html#dane-tla-cpr">Dane tła w zamówieniu Komisji Europejskiej</a></li>
+      <li{tool_anchor}>{icon('guide')}<a href="/zastosowanie-danych.html">Dobór danych do obliczeń dla wyrobu i budynku</a></li>
+    </ul></aside>'''
+
+
 def build(api):
     root, page, e, a, links, row = (api[k] for k in ('ROOT', 'page', 'e', 'a', 'links', 'row'))
     taxonomy, methods = load(root)
@@ -120,34 +193,60 @@ def build(api):
     page('wyroby.html', title, lead, body + intro, attrs='data-product-directory', head_extra=FAMILY_CSS, pagehead=False)
 
     for f in families:
-        datasets, tools, articles = (associated(f, k) for k in ['dataset','tool','article'])
-        body = '<details class="product-official"><summary>Pełna nazwa rodziny w rozporządzeniu</summary><p>' + e(f['official_name']) + '</p>' + a('Tekst rozporządzenia',source_url) + '</details>'
-        destinations = [{'label':'Dane','href':'#dane'},{'label':'Zasady obliczeń','href':'#metoda'},{'label':'Narzędzia i objaśnienia','href':'#narzedzia'}]
+        datasets, tools, articles = (associated(f, k) for k in ['dataset', 'tool', 'article'])
+        family_methods = rules(f)
+        drafts = [r for r in associated(f, 'method') if r['id'] in ['method-mma', 'method-kruszywa']]
+        has_methods = bool(family_methods or drafts)
+        has_tools = bool(tools or articles)
+        destinations = [{'label': 'Dane', 'href': '#dane'}]
         if f['id'] == 24:
-            destinations.insert(1, {'label': 'Kruszywo w module A1 betonu', 'href': '#modul-a1'})
-        navigation = links(destinations, 'portal-subnav')
-        body = family_heading(f, e, navigation) + body
-        body += '<section id="dane" class="portal-section"><h2>Dane dla tej rodziny</h2>' + (''.join(row(r) for r in datasets) if datasets else '<p>W poLCA nie ma obecnie branżowego zestawu danych dla tej rodziny. Poniżej znajdziesz dostępne dokumenty i objaśnienia.</p>') + '</section>'
+            destinations.append({'label': 'Kruszywo i transport do betoniarni', 'href': '#modul-a1'})
+        destinations += [
+            {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
+            {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
+        ]
+        body = family_heading(f, e, links(destinations, 'portal-subnav'))
+        body += family_data(datasets, f['id'], api)
         inputs = [r for r in catalog['datasets'] if any(x['family_id']==f['id'] and x['role'] in ['input_to_product','process_for_product','parameters_for_product'] for x in r.get('cpr_related',[]))]
         if inputs:
-            body += '<section class="portal-section"><h2>Składniki i parametry do obliczeń</h2><p>Dane wejściowe do receptury lub procesu. Nie opisują wyniku dla całego wyrobu.</p>' + links([{'label':r['title'],'href':r['href']} for r in inputs]) + '</section>'
-        if f['id']==24:
-            body += '<p class="product-intro">Wypełniacz wapienny jest powiązany z rodziną 24 jako kruszywo wypełniające do mieszanki asfaltowej. Inne zastosowanie wymaga odrębnego przypisania.</p>'
-            body += '''<section id="modul-a1" class="portal-section portal-prose">
-            <h2>Kiedy kruszywo wchodzi do modułu A1 betonu?</h2>
-            <p>W ocenie betonu produkcję zakupionego kruszywa do bramy zakładu, który je wytworzył, uwzględnia się w module A1. Transport kruszywa z tego zakładu do betoniarni należy do modułu A2. W deklaracji środowiskowej samego kruszywa procesy przypisuje się do modułów jego własnego cyklu życia. <a href="https://preview.sist.si/sist-preview/70993/968303feeecb4c8dab45d5e529c23d9d/SIST-EN-16757-2023.pdf">EN 16757, pkt 6.2.2</a>.</p>
-            <p>Proces rynkowy w bazie ecoinvent może już obejmować dostawę kruszywa. Przed doliczeniem transportu w A2 warto sprawdzić, który odcinek ujęto w danych, aby uwzględnić go tylko raz. <a href="https://support.ecoinvent.org/market-activities">Opis transportu w procesach rynkowych ecoinvent</a>.</p>
-            <p><a href="/metodyka-defaults-ue.html#dane-tla-cpr">Jakich danych tła wymaga Komisja Europejska w zamówieniu dotyczącym wyrobów budowlanych?</a></p>
-            </section>'''
-        body += '<section id="metoda" class="portal-section"><h2>Zasady obliczeń: PCR i c-PCR</h2><p>PCR to zasady kategorii wyrobów, a c-PCR — ich uzupełnienie dla konkretnej grupy produktów. Sprawdź zakres dokumentu i wydanie stosowane w programie deklaracji środowiskowych EPD.</p>' + method_list(rules(f)) + '<p><a href="/c-pcr/#dobor">Jak dobrać metodę i sprawdzić jej status</a></p></section>'
-        drafts = [r for r in associated(f, 'method') if r['id'] in ['method-mma','method-kruszywa']]
-        if drafts:
-            body += '<section class="portal-section"><h2>Dokumenty poLCA dla tej branży</h2>' + links([{'label':r['title'],'href':r['href']} for r in drafts]) + '</section>'
-        body += '<section id="narzedzia" class="portal-section"><h2>Narzędzia i objaśnienia</h2>' + (''.join(row(r) for r in tools + articles) if tools or articles else '<p><a href="/zastosowanie-danych.html">Przewodnik doboru danych do wyrobu i budynku</a></p>') + '</section>'
-        body += common()
-        body += '<p class="product-intro">Przypisanie do rodziny ułatwia znalezienie informacji. Zakres konkretnego wyrobu i zasady oceny wynikają z właściwych dokumentów technicznych.</p>'
-        page(family_url(f['id'])[1:],f['label'],'Dane i dokumenty dla rodziny ' + str(f['id']) + ' z załącznika VII CPR.',body,parent=('Rodziny wyrobów','/wyroby.html'), pagehead=False,
-             attrs='data-product-family data-product-photo' if f['id'] in PRODUCT_PHOTOS else 'data-product-family', head_extra=FAMILY_CSS)
+            body += ('<section class="family-record-section"><h2>Składniki i parametry do obliczeń</h2>'
+                     '<p>Dane wejściowe do receptury lub procesu. Nie opisują wyniku dla całego wyrobu.</p>'
+                     + links([{'label':r['title'],'href':r['href']} for r in inputs], 'family-inputs') + '</section>')
+        extra = FAMILY_CSS + '<link rel="stylesheet" href="/assets/family-record.css?v=1">'
+        if f['id'] == 24:
+            body += aggregate_guide()
+            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=1">'
+                      '<script src="/assets/aggregate-guide.js?v=1" defer></script>')
+
+        if has_methods or has_tools:
+            body += '<div class="family-resources">'
+            if has_methods:
+                body += '<section id="metoda"><h2>Dokumenty dla tej rodziny</h2>'
+                if family_methods:
+                    body += method_list(family_methods)
+                else:
+                    body += '<p>W katalogu nie wskazano branżowych zasad uzupełniających (c-PCR) dla tej rodziny.</p>'
+                for draft in drafts:
+                    body += (f'<p class="family-resource-link">{a(draft["title"], draft["href"])}</p>'
+                             f'<p class="family-resource-detail">{e(draft["status_label"])} · {e(draft["year"])} · wersja archiwalna</p>')
+                body += '</section>'
+            if has_tools:
+                body += '<section id="narzedzia"><h2>Narzędzia i opracowania dla wyrobu</h2>'
+                for resource in tools + articles:
+                    details = ' · '.join(str(v) for v in (resource.get('status_label'), resource.get('year')) if v)
+                    body += (f'<article class="family-resource" data-record-id="{e(resource["id"])}">'
+                             f'<h3>{a(resource["title"], resource["href"])}</h3>'
+                             f'<p>{e(resource["description"])}</p><small>{e(details)}</small></article>')
+                body += '</section>'
+            body += '</div>'
+
+        body += family_guides(has_methods, has_tools, api)
+        body += ('<details class="product-official"><summary>Pełna nazwa rodziny w rozporządzeniu</summary><p>'
+                 + e(f['official_name']) + '</p><p>Zakres wyrobu i zasady oceny określają właściwe dokumenty techniczne.</p>'
+                 + a('Tekst rozporządzenia',source_url) + '</details>')
+        page(family_url(f['id'])[1:], f['label'], 'Dane i dokumenty dla rodziny ' + str(f['id']) + ' z załącznika VII CPR.',
+             body, parent=('Rodziny wyrobów','/wyroby.html'), pagehead=False,
+             attrs='data-product-family data-product-photo' if f['id'] in PRODUCT_PHOTOS else 'data-product-family', head_extra=extra)
         if not available(f):
             p=root/family_url(f['id'])[1:]
             p.write_text(p.read_text().replace('</head>','<meta name="robots" content="noindex,follow"></head>'))
