@@ -171,3 +171,5 @@ Szkic elektrowni, wiatru, fotowoltaiki, transformatora pod lupą i licznika towa
 W panelu energii ilustracja metody pokazuje stację transformatorową i licznik na przezroczystym tle. Na telefonie zajmuje szerokość tekstu. W sekcji zastosowania przykład i zasady doboru danych tworzą dwie kolumny na komputerze, a na telefonie następują po sobie. Przy odbiorze porównujemy widok obu sąsiednich sekcji na całej szerokości strony.
 
 Katalog wyrobów i karty kruszyw, prefabrykatów betonowych oraz cementu wykorzystują wygenerowane ilustracje fotograficzne typowych procesów. Wyszukiwarka rodzin znajduje się przed ilustracjami. Opisy danych i wartości wskaźników pochodzą z katalogu poLCA.
+
+Wspólnym motywem nagłówków są poziomice Łysogór w jasnej zieleni. W tle treści barwa stopniowo przechodzi w biel, a tabele i wyniki zachowują jednolite podłoże. Nawigacja ma sześć znaków liniowych. Każda z 36 rodzin wyrobów ma własny piktogram obok nazwy. Znaki znajdują się w pliku `assets/ikony-polca.svg`, a ich samodzielne wersje do pobrania w archiwum `assets/ikony-polca.zip` tworzonym podczas budowania portalu.

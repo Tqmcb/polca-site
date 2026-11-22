@@ -1,8 +1,9 @@
 """Protect product classification boundaries and the public method statuses."""
 import json
 import unittest
+from hashlib import sha256
 from pathlib import Path
-from lxml import html
+from lxml import etree, html
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -21,6 +22,21 @@ class ProductNavigationTests(unittest.TestCase):
             self.assertIn(f['official_name'], doc.getroot().text_content())
         directory = html.parse(str(ROOT / 'wyroby.html'))
         self.assertEqual(len(directory.xpath('//*[@data-family]')), 36)
+
+    def test_each_catalogue_pictogram_resolves_to_its_product_family(self):
+        directory = html.parse(str(ROOT / 'wyroby.html'))
+        symbols = etree.parse(str(ROOT / 'assets/ikony-polca.svg'))
+        version = sha256((ROOT / 'assets/ikony-polca.svg').read_bytes()).hexdigest()[:10]
+        names = symbols.xpath('/*/*[local-name()="symbol"]/@id')
+        for family in read('data/cpr-families.json')['families']:
+            code = f'{family["id"]:02d}'
+            name = f'rodzina-{code}'
+            self.assertEqual(names.count(name), 1)
+            directory_link = directory.xpath(f'//*[@data-family]//a[@href="/wyroby/{code}.html"]')[0]
+            target = f'/assets/ikony-polca.svg?v={version}#{name}'
+            self.assertEqual(directory_link.xpath('.//use/@href'), [target])
+            family_page = html.parse(str(ROOT / f'wyroby/{code}.html'))
+            self.assertIn(target, family_page.xpath('//main//use/@href'))
 
     def test_shared_inputs_and_cbam_are_not_product_records(self):
         for r in read('data/portal-catalog.json')['datasets']:

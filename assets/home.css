@@ -199,3 +199,26 @@ body.portal .home-guide-index a:hover strong { color: var(--portal-link); text-d
   .home-common { display: block; }
   .home-common > div { margin-top: 8px; }
 }
+
+.home-atlas-band { position: relative; isolation: isolate; }
+.home-atlas-band::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(75deg, #82c0a94d 0%, #82c0a911 29%, transparent 47%);
+  mask: url("tlo-poziomice.svg") left -96px bottom -40px / auto 75% no-repeat;
+}
+.home-consultation { background-color: #eef5f1; border-color: #cadbd2; }
+.home-family-name { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.home-family-icon { width: 39px; height: 39px; flex: none; color: var(--portal-ink); }
+body.portal .home-products-list a { align-items: center; }
+@media (max-width: 760px) {
+  .home-atlas-band::before { opacity: .52; mask-size: auto 50%; }
+  .home-family-icon { width: 32px; height: 32px; }
+  .home-family-name { gap: 8px; }
+}
+@media print, (forced-colors: active) {
+  .home-atlas-band::before { display: none; }
+}
