@@ -1,6 +1,8 @@
 """Product-first navigation; CPR families are discovery metadata, not approvals."""
 import json
 
+from atlas_icons import family_icon
+
 
 def load(root):
     return json.loads((root / 'data/cpr-families.json').read_text()), json.loads((root / 'data/product-methods.json').read_text())
@@ -19,7 +21,7 @@ PRODUCT_PHOTOS = {
     15: ('cement', 'Dane dla poszczególnych rodzajów cementu',
          'Ilustracja pieca obrotowego i instalacji w cementowni.'),
 }
-PHOTO_CSS = '<link rel="stylesheet" href="/assets/product-photos.css?v=1">'
+FAMILY_CSS = '<link rel="stylesheet" href="/assets/product-photos.css?v=20261122-rodziny">'
 
 
 def family_photo(family_id, *, standalone=False):
@@ -41,11 +43,27 @@ def photo_directory(families, e):
             '<ul>' + ''.join(items) + '</ul></nav>')
 
 
-def family_banner(family, e):
-    return f'''<header class="family-photo-banner"><div>
-    <h1>{e(family['label'])}</h1>
-    <p>Rodzina {family['id']} w załączniku VII do rozporządzenia o wyrobach budowlanych.</p>
-    </div>{family_photo(family['id'], standalone=True)}</header>'''
+def family_heading(family, e, navigation):
+    family_id = family['id']
+    heading = f'''<div class="family-heading">
+    <span class="family-insignia">{family_icon(family_id)}</span>
+    <div><h1>{e(family['label'])}</h1>
+    <p>Rodzina {family_id} w załączniku VII do rozporządzenia o wyrobach budowlanych.</p>
+    </div></div>'''
+    nav = f'<nav class="family-banner-links" aria-label="Zawartość karty">{navigation}</nav>'
+    if family_id in PRODUCT_PHOTOS:
+        return (f'<header class="family-photo-banner">{heading}'
+                f'{family_photo(family_id, standalone=True)}</header>{nav}')
+    return f'<div class="family-overview"><header>{heading}</header>{nav}</div>'
+
+
+def dataset_count(count):
+    if count == 0:
+        return 'Bez branżowego zestawu danych'
+    if count == 1:
+        return '1 pozycja danych'
+    noun = 'pozycje' if 2 <= count % 10 <= 4 and not 12 <= count % 100 <= 14 else 'pozycji'
+    return f'{count} {noun} danych'
 
 
 def build(api):
@@ -86,20 +104,20 @@ def build(api):
     family_rows = ''
     for f in families:
         n = len(associated(f, 'dataset'))
-        label = f'{n} pozycji danych' if n else 'Bez branżowego zestawu danych'
+        label = dataset_count(n)
         if rules(f): label += ' · dokumenty metodyczne'
         elif associated(f, 'article'): label += ' · artykuły'
         product_names = [r['title']+' '+r['id'] for r in associated(f,'dataset')]
         search = ' '.join([str(f['id']), str(f['id']).zfill(2), f['official_name'], f['label']] + f['keywords'] + product_names)
-        family_rows += f'<li data-family="{f["id"]}" data-search="{e(search)}" data-available="{str(available(f)).lower()}"><a href="{family_url(f["id"])}"><span class="product-family-code">{f["id"]:02d}</span><span><strong>{e(f["label"])}</strong><small>{e(label)}</small></span><span class="product-open">Otwórz</span></a></li>'
+        family_rows += f'<li data-family="{f["id"]}" data-search="{e(search)}" data-available="{str(available(f)).lower()}"><a href="{family_url(f["id"])}"><span class="family-list-insignia">{family_icon(f["id"])}</span><span class="product-family-code">{f["id"]:02d}</span><span><strong>{e(f["label"])}</strong><small>{e(label)}</small></span></a></li>'
     title = 'Dane dla wyrobów budowlanych'
     lead = 'Dane środowiskowe, metody i narzędzia według rodziny wyrobu.'
     head = (f'<div class="family-directory-intro"><header><h1>{e(title)}</h1><p>{e(lead)}</p></header>'
             + form + '</div>')
     listing = ('<div class="family-list-heading" id="wykaz-rodzin" tabindex="-1"><h2>Wykaz rodzin</h2>'
                '<p id="family-count" role="status" aria-live="polite">Rodziny wyrobów: 36 z 36</p></div>')
-    body = head + photo_directory(families, e) + listing + '<noscript><p>Poniżej znajduje się pełna lista. Wyszukiwanie wymaga JavaScript; możesz też użyć wyszukiwania w przeglądarce.</p></noscript><ul class="product-families">' + family_rows + '</ul><div id="family-empty" hidden><h2>Nie znaleziono rodziny</h2><p>Wpisz krótszą nazwę, numer od 1 do 36 albo wyłącz filtr dostępnych materiałów.</p><button type="button" id="family-reset">Pokaż wszystkie rodziny</button></div><p class="product-intro">Dla energii, paliw i transportu wybierz <a href="/dane-wspolne.html">dane wspólne</a>. <a href="/c-pcr/">Jak dobierać zasady PCR i c-PCR</a>.</p>'
-    page('wyroby.html', title, lead, body + intro, attrs='data-product-directory', head_extra=PHOTO_CSS, pagehead=False)
+    body = head + photo_directory(families, e) + listing + '<noscript><p>Poniżej znajduje się pełna lista. Wyszukiwanie wymaga JavaScript; możesz też użyć wyszukiwania w przeglądarce.</p></noscript><ul id="family-list" class="product-families">' + family_rows + '</ul><div id="family-empty" hidden><h2>Nie znaleziono rodziny</h2><p>Wpisz krótszą nazwę, numer od 1 do 36 albo wyłącz filtr dostępnych materiałów.</p><button type="button" id="family-reset">Pokaż wszystkie rodziny</button></div><p class="product-intro">Dla energii, paliw i transportu wybierz <a href="/dane-wspolne.html">dane wspólne</a>. <a href="/c-pcr/">Jak dobierać zasady PCR i c-PCR</a>.</p>'
+    page('wyroby.html', title, lead, body + intro, attrs='data-product-directory', head_extra=FAMILY_CSS, pagehead=False)
 
     for f in families:
         datasets, tools, articles = (associated(f, k) for k in ['dataset','tool','article'])
@@ -108,11 +126,7 @@ def build(api):
         if f['id'] == 24:
             destinations.insert(1, {'label': 'Kruszywo w module A1 betonu', 'href': '#modul-a1'})
         navigation = links(destinations, 'portal-subnav')
-        featured = f['id'] in PRODUCT_PHOTOS
-        if featured:
-            body = family_banner(f, e) + '<nav class="family-banner-links" aria-label="Zawartość karty">' + navigation + '</nav>' + body
-        else:
-            body += navigation
+        body = family_heading(f, e, navigation) + body
         body += '<section id="dane" class="portal-section"><h2>Dane dla tej rodziny</h2>' + (''.join(row(r) for r in datasets) if datasets else '<p>W poLCA nie ma obecnie branżowego zestawu danych dla tej rodziny. Poniżej znajdziesz dostępne dokumenty i objaśnienia.</p>') + '</section>'
         inputs = [r for r in catalog['datasets'] if any(x['family_id']==f['id'] and x['role'] in ['input_to_product','process_for_product','parameters_for_product'] for x in r.get('cpr_related',[]))]
         if inputs:
@@ -132,8 +146,8 @@ def build(api):
         body += '<section id="narzedzia" class="portal-section"><h2>Narzędzia i objaśnienia</h2>' + (''.join(row(r) for r in tools + articles) if tools or articles else '<p><a href="/zastosowanie-danych.html">Przewodnik doboru danych do wyrobu i budynku</a></p>') + '</section>'
         body += common()
         body += '<p class="product-intro">Przypisanie do rodziny ułatwia znalezienie informacji. Zakres konkretnego wyrobu i zasady oceny wynikają z właściwych dokumentów technicznych.</p>'
-        page(family_url(f['id'])[1:],f['label'],'Dane i dokumenty dla rodziny ' + str(f['id']) + ' z załącznika VII CPR.',body,parent=('Rodziny wyrobów','/wyroby.html'),pagehead=not featured,
-             attrs='data-product-photo' if featured else '', head_extra=PHOTO_CSS if featured else '')
+        page(family_url(f['id'])[1:],f['label'],'Dane i dokumenty dla rodziny ' + str(f['id']) + ' z załącznika VII CPR.',body,parent=('Rodziny wyrobów','/wyroby.html'), pagehead=False,
+             attrs='data-product-family data-product-photo' if f['id'] in PRODUCT_PHOTOS else 'data-product-family', head_extra=FAMILY_CSS)
         if not available(f):
             p=root/family_url(f['id'])[1:]
             p.write_text(p.read_text().replace('</head>','<meta name="robots" content="noindex,follow"></head>'))

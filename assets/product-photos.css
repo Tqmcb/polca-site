@@ -6,7 +6,7 @@
   gap: clamp(24px, 6vw, 90px);
   padding-block: 10px clamp(24px, 3.8vw, 52px);
 }
-.family-directory-intro h1, .family-photo-banner h1 {
+.family-directory-intro h1, .family-heading h1 {
   margin: 0;
   font-size: clamp(2.15rem, 4.05vw, 3.5rem);
   font-weight: 620;
@@ -112,28 +112,101 @@ body.portal .family-photo-directory a:hover strong { text-decoration-thickness: 
   line-height: 1.18;
 }
 .family-list-heading p { margin: 0; color: var(--portal-muted); }
-[data-product-directory] .product-families { margin-top: 14px; }
+[data-product-directory] .product-families {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(22px, 4vw, 64px);
+  margin: 14px 0 24px;
+}
+body.portal [data-product-directory] .product-families a {
+  grid-template-columns: 45px 2ch minmax(0, 1fr);
+  align-items: center;
+  column-gap: clamp(10px, 1.1vw, 16px);
+  min-height: 80px;
+  height: 100%;
+  padding: 11px 4px;
+  color: var(--portal-ink);
+}
+.family-list-insignia, .family-insignia {
+  display: grid;
+  place-items: center;
+  color: var(--portal-ink);
+  --icon-fill: #cde2dc;
+  --icon-accent: #146756;
+}
+.family-icon { display: block; max-width: 100%; height: auto; }
+.family-list-insignia .family-icon { width: 44px; }
+[data-product-directory] .product-family-code {
+  font-size: .87rem;
+  line-height: 1;
+}
+[data-product-directory] .product-families strong {
+  font-size: clamp(1.05rem, 1.4vw, 1.24rem);
+  line-height: 1.2;
+  letter-spacing: -.014em;
+  text-wrap: pretty;
+}
+[data-product-directory] .product-families small {
+  margin-top: 4px;
+  font-size: .88rem;
+  line-height: 1.3;
+}
+body.portal [data-product-directory] .product-families a:hover strong,
+body.portal [data-product-directory] .product-families a:focus-visible strong {
+  color: var(--portal-link);
+  text-decoration: underline;
+  text-underline-offset: .16em;
+}
+
 /* A search or availability selection takes precedence over editorial recommendations. */
 [data-product-directory]:has(#family-query:not(:placeholder-shown), [name="available"]:checked) .family-photo-directory { display: none; }
 [data-product-directory]:has(#family-query:not(:placeholder-shown), [name="available"]:checked) .family-list-heading { margin-top: 0; }
 
+.family-heading {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 36px);
+}
+.family-heading h1 { font-size: clamp(1.85rem, 3.65vw, 3rem); }
+.family-heading p {
+  margin: 11px 0 0;
+  color: var(--portal-muted);
+  line-height: 1.4;
+}
+.family-insignia {
+  width: clamp(66px, 8vw, 108px);
+  aspect-ratio: 1;
+  background: #e1efea;
+  border-radius: 50%;
+}
+.family-insignia .family-icon { width: 77%; }
+.family-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(170px, .32fr);
+  align-items: center;
+  gap: clamp(24px, 4.2vw, 60px);
+  padding: clamp(20px, 3.3vw, 44px) 0;
+  border-block: 1px solid var(--portal-line);
+}
+.family-overview .family-banner-links {
+  padding-left: clamp(15px, 2.5vw, 32px);
+  border-left: 1px solid var(--portal-line);
+}
 .family-photo-banner {
   display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.55fr);
-  background: var(--portal-ink);
+  grid-template-columns: minmax(0, .98fr) minmax(0, 1.15fr);
   color: white;
+  background: var(--portal-ink);
 }
-.family-photo-banner > div {
+.family-photo-banner .family-heading {
   align-self: center;
-  padding: clamp(24px, 3.5vw, 50px);
+  padding: clamp(18px, 2.7vw, 39px);
+  gap: clamp(13px, 1.7vw, 25px);
 }
-.family-photo-banner h1 { font-size: clamp(1.85rem, 3.65vw, 3rem); }
-.family-photo-banner p {
-  max-width: 34ch;
-  margin: 15px 0 0;
-  color: #d5e1ed;
-  line-height: 1.38;
-}
+.family-photo-banner .family-insignia { width: clamp(55px, 5.8vw, 80px); }
+.family-photo-banner h1 { font-size: clamp(1.75rem, 3.1vw, 2.75rem); }
+.family-photo-banner p { max-width: 35ch; color: #d5e1ed; }
 .family-photo-banner img {
   height: clamp(195px, 19.4vw, 285px);
   min-height: 100%;
@@ -147,15 +220,29 @@ body.portal .family-photo-directory a:hover strong { text-decoration-thickness: 
   border-bottom: 1px solid var(--portal-line);
 }
 body.portal .family-banner-links .portal-subnav a { padding-block: 5px; text-decoration: underline; }
-[data-product-photo] .product-official { margin-block: 10px; }
-[data-product-photo] #dane { margin-top: 22px; }
+.family-overview .portal-subnav {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+  border: 0;
+}
+[data-product-family] .product-official { margin-block: 10px; }
+[data-product-family] #dane { margin-top: 22px; }
 
 @media (max-width: 820px) {
+  .family-overview { grid-template-columns: 1fr; gap: 15px; padding-bottom: 9px; }
+  .family-overview .family-banner-links { border: 0; padding: 0; }
+  .family-overview .portal-subnav { flex-direction: row; column-gap: 18px; }
+
   .family-directory-intro { grid-template-columns: 1fr; gap: 17px; }
   .family-directory-intro header p { max-width: 65ch; margin-top: 8px; }
   .family-directory-intro .portal-search { max-width: 650px; }
   .family-search-options { justify-content: flex-start; }
   .family-photo-directory ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  [data-product-directory] .product-families { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 580px) {
   [data-product-directory] .portal-breadcrumbs {
@@ -194,7 +281,13 @@ body.portal .family-banner-links .portal-subnav a { padding-block: 5px; text-dec
   .family-list-heading p { font-size: .86rem; }
   [data-product-directory] .product-families { margin-top: 9px; }
   .family-photo-banner { display: flex; flex-direction: column; }
-  .family-photo-banner > div { align-self: stretch; padding: 16px 19px; }
+  body.portal [data-product-directory] .product-families a { grid-template-columns: 40px 2ch minmax(0, 1fr); min-height: 66px; padding: 9px 0; gap: 9px; }
+  .family-list-insignia .family-icon { width: 40px; }
+  .family-heading { gap: 13px; }
+  .family-insignia, .family-photo-banner .family-insignia { width: 52px; }
+  .family-heading h1 { font-size: clamp(1.6rem, 6.4vw, 2rem); }
+  .family-heading p { margin-top: 7px; font-size: .95rem; }
+  .family-photo-banner .family-heading { align-self: stretch; padding: 16px; gap: 13px; }
   .family-photo-banner h1 { font-size: clamp(1.65rem, 6.5vw, 2.1rem); }
   .family-photo-banner p { margin-top: 7px; font-size: .95rem; max-width: none; }
   .family-photo-banner img { height: clamp(94px, 28vw, 132px); min-height: 0; }
@@ -204,5 +297,8 @@ body.portal .family-banner-links .portal-subnav a { padding-block: 5px; text-dec
   .family-photo-directory, .family-photo-banner img, .family-search-options { display: none; }
   .family-photo-banner { display: block; background: none; color: black; }
   .family-photo-banner p { color: black; }
-  .family-photo-banner > div { padding: 0; }
+  .family-photo-banner .family-heading { padding: 0; }
+  .family-insignia { background: none; }
+  .family-overview { display: block; }
+  .family-banner-links { display: none; }
 }

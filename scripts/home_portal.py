@@ -1,5 +1,6 @@
 """Build the homepage with figures derived from the published catalogue."""
 from string import Template
+from atlas_icons import family_icon
 import json
 from atlas_projection import WIDTH, HEIGHT, project, projection
 
@@ -45,7 +46,8 @@ def build(api, families):
         label = 'Dane i dokumenty' if has_data else ('Metody i objaśnienia' if has_method else 'Artykuły i objaśnienia')
         product_links += (
             f'<li><a href="/wyroby/{family["id"]:02d}.html">'
-            f'<strong>{e(family["label"])}</strong><small>{label}</small></a></li>'
+            f'<span class="home-family-name">{family_icon(family["id"], css_class="home-family-icon")}'
+            f'<strong>{e(family["label"])}</strong></span><small>{label}</small></a></li>'
         )
     body = Template((root / 'content/portal-home.html.tpl').read_text()).substitute(
         atlas_labels=atlas_labels(root, e),

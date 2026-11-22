@@ -5,6 +5,7 @@ import json, html as h, re, argparse
 from urllib.parse import urlsplit, unquote
 from collections import Counter
 from lxml import html, etree
+from atlas_icons import ICON_URL, export_icons
 ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'data/portal-catalog.json').read_text())
 COPY=json.loads((ROOT/'content/portal-pages.json').read_text())
@@ -20,17 +21,26 @@ def group(path):
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
  if path.startswith(('metody','konsultacje/')) or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
  return ''
+def navigation_icon(name):
+ return (f'<svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" '
+         f'aria-hidden="true" focusable="false"><use href="{ICON_URL}#nav-{name}"></use></svg>')
+
 def header(path):
- nav=''.join(a(title,url,'is-active' if g==group(path) else '', 'aria-current="page"' if path==url[1:] else '') for title,url,g in NAV)
- return f'''<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja">{nav}</nav><a class="portal-search-link" href="/szukaj.html">Szukaj</a></div></header>'''
+ nav_links = []
+ for title, url, name in NAV:
+  active = ' class="is-active"' if group(path) == name else ''
+  current = ' aria-current="page"' if path == url[1:] else ''
+  nav_links.append(f'<a href="{url}"{active}{current}>{navigation_icon(name)}{e(title)}</a>')
+ nav = ''.join(nav_links)
+ return f'''<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja">{nav}</nav><a class="portal-search-link" href="/szukaj.html">{navigation_icon("search")}Szukaj</a></div></header>'''
 def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
 def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True):
  mainhead='' if home else crumb(title,parent)+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261122-atlas">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261122-ikony">' if home else ''
  main_class='portal-main home-main' if home else 'portal-main portal-shell'
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261020design">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="website"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261122-atlas-icons">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
@@ -174,7 +184,7 @@ def migrate_shell():
   for el in head.xpath('./link[contains(@href,"fonts.googleapis") or contains(@href,"fonts.gstatic") or contains(@href,"/assets/portal.css")]'):head.remove(el)
   for el in head.xpath('.//html'):
    if el.getparent() is not None:el.getparent().remove(el)
-  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261020design'))
+  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261122-atlas-icons'))
   head.append(etree.Element('script',src='/js/portal.js?v=20261019cpr',defer='defer'))
   body.set('class','portal portal-legacy'+(' portal-tool' if group(rel)=='tools' else '')+(' portal-article' if rel.startswith('blog-') else ''))
   nodes=html.fragments_fromstring(header(rel))
@@ -200,7 +210,7 @@ def sync_shell():
   if not re.search(r'<link[^>]+rel=[\"\'](?:shortcut )?icon[\"\']',text):text=text.replace('</head>','<link rel="icon" href="/favicon.svg" type="image/svg+xml"></head>')
   text=re.sub(r'<header class="portal-header">.*?</header>',lambda m:header(rel).split('</a>',1)[1],text,flags=re.S)
   text=re.sub(r'<footer class="portal-footer">.*?</footer>',lambda m:footer(),text,flags=re.S)
-  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261020design',text)
+  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261122-atlas-icons',text)
   text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261019cpr',text)
   p.write_text(text)
 
@@ -289,6 +299,7 @@ if __name__=='__main__':
  build_catalog();build_catalog(True);build_copy();build_cards();build_indexes();build_energy_calculator()
  from cpr_portal import build as build_products
  build_products(globals())
+ export_icons(ROOT, json.loads((ROOT / "data/cpr-families.json").read_text())["families"])
  from consultation_portal import build as build_consultation
  build_consultation(globals())
  from report_portal import build as build_report
