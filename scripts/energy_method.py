@@ -53,6 +53,7 @@ def linked_text(text: str) -> str:
 
 def full_method_html(root: Path) -> str:
     title, *blocks = (root / METHOD_FILE).read_text(encoding='utf-8').strip().split('\n\n')
+    title = title.replace('METODA I ZMIANY', 'Metoda i zmiany', 1)
     markup = [
         '<details id="pelna-metoda" class="energy-method-full">',
         '<summary>Przeczytaj pełny opis metody v4</summary>',
@@ -63,6 +64,14 @@ def full_method_html(root: Path) -> str:
         if re.fullmatch(r'\d+\. [^\n]+', block):
             markup.append(f'<h3>{escape(block)}</h3>')
         elif block:
+            # The published text repeats the same qualification about allocation.
+            # Keep it once in the reading view. The release file remains available below.
+            block = block.replace(
+                'Ograniczenia tych oszacowań opisuje metoda; przyjęcie alokacji dla określonego programu ocenia się osobno. '
+                'Nie ogłasza się pełnej harmonizacji każdej pary współproduktów; przyjęcie tej alokacji dla określonego programu ocenia się osobno.',
+                'Nie potwierdzono, że zasady alokacji są w pełni spójne dla wszystkich par współproduktów. '
+                'Przydatność przyjętych zasad ocenia się odrębnie dla danego programu.',
+            )
             markup.extend(f'<p>{linked_text(paragraph)}</p>' for paragraph in PARAGRAPH_BREAK.split(block))
     markup.append(
         f'<p class="energy-method-download"><a href="/{METHOD_FILE}" download>'
