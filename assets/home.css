@@ -3,20 +3,35 @@
 .home-main h1, .home-main h2, .home-main h3 { font-weight: 600; }
 .home-main h2 { margin: 0; font-size: clamp(1.8rem, 2.8vw, 2.3rem); line-height: 1.12; letter-spacing: -.025em; text-wrap: balance; }
 .home-main p { margin-top: 0; }
-/* Keep the resource search and the link to the detailed atlas in one opening. */
-.home-intro { padding: clamp(34px, 4vw, 62px) 0 38px; }
-.home-intro-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .85fr); align-items: center; gap: clamp(32px, 6vw, 96px); }
-.home-start { max-width: 630px; min-width: 0; }
-.home-intro h1 { margin: 0; color: var(--portal-ink); font-size: clamp(2.7rem, 4.4vw, 3.85rem); font-weight: 570; line-height: 1.04; letter-spacing: -.045em; }
-.home-start .home-description { max-width: 52ch; margin: 18px 0 23px; font-size: 1.05rem; line-height: 1.52; color: var(--portal-muted); }
-.home-illustration { width: min(100%, 365px); margin: 0; justify-self: center; }
-body.portal .home-map-link { display: block; color: var(--portal-ink); text-decoration: none; }
-.home-map-link img { display: block; width: min(100%, 330px); height: auto; margin-inline: auto; }
-.home-map-caption { display: block; margin-top: 5px; text-align: center; }
+/* The site search and geographic index share the opening spread. */
+.home-intro { padding: 0 0 32px; }
+.home-atlas-band { background: #112e40; color: #f2f7f8; }
+.home-intro-grid {
+  display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr);
+  align-items: center; gap: clamp(20px, 3.4vw, 54px); padding-block: clamp(36px, 3.4vw, 52px);
+}
+.home-start { min-width: 0; }
+.home-intro h1 { margin: 0; color: #fff; max-width: 14ch; font-size: clamp(3.35rem, 5.1vw, 4.55rem); font-weight: 575; line-height: .99; letter-spacing: -.05em; }
+.home-start .home-description { max-width: 42ch; margin: 20px 0 24px; font-size: 1.09rem; line-height: 1.45; color: #d6e6ec; }
+.home-illustration { min-width: 0; width: 100%; margin: 0; }
+body.portal .home-map-link { display: block; color: white; text-decoration: none; }
+.home-atlas-art { display: block; width: 100%; position: relative; }
+.home-atlas-art picture,.home-atlas-art img { display: block; width: 100%; height: auto; }
+.home-atlas-marks { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.atlas-graticule path { fill: none; stroke: #85a4b1; stroke-width: .85; stroke-dasharray: 2 5; opacity: .38; }
+.atlas-graticule text { fill: #a4bdc5; font-size: 13px; }
+.atlas-points circle { fill: #124bb6; stroke: white; stroke-width: 2.6; }
+.atlas-points text { font-size: 23px; font-weight: 660; fill: #102c3b; paint-order: stroke; stroke: #e0ebec; stroke-width: 4px; stroke-linejoin: round; }
+.atlas-points .atlas-theme { font-size: 18px; font-weight: 520; }
+.home-map-caption { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; column-gap: 10px; padding-top: 10px; border-top: 1px solid #52707b; }
 .home-map-caption strong { font-size: 1rem; font-weight: 600; }
-.home-map-caption strong span { margin-left: .2em; color: var(--portal-link); }
-.home-map-caption small { display: block; margin-top: 3px; color: var(--portal-muted); font-size: .85rem; }
+.home-map-caption strong span { margin-left: .2em; color: #b5e1e6; }
+.home-map-caption small { color: #c2d6df; font-size: .82rem; }
 .home-map-link:hover strong, .home-map-link:focus-visible strong { text-decoration: underline; text-underline-offset: .18em; }
+body.portal .home-atlas-band .home-actions a { color: #dbeaf5; }
+body.portal .home-atlas-band :focus-visible { outline-color: #b7e2ff !important; }
+body.portal .home-search button { background: #c3e6eb; border-color: #c3e6eb; color: #112e40; }
+body.portal .home-search button:hover { background: #e5f6f8; border-color: #e5f6f8; }
 .home-search { max-width: 550px; }
 .home-search label { display: block; margin-bottom: 8px; font-size: .9rem; font-weight: 600; }
 .home-search .portal-search-control { gap: 0; flex-wrap: nowrap; }
@@ -24,7 +39,7 @@ body.portal .home-map-link { display: block; color: var(--portal-ink); text-deco
 .home-search .portal-search-control button { min-width: 90px; width: auto; border-radius: 0 4px 4px 0; padding-inline: 18px; }
 .home-actions { display: flex; flex-wrap: wrap; gap: 4px 26px; margin-top: 8px; }
 .home-actions a { display: inline-block; padding-block: 8px; font-size: .88rem; }
-.home-routes { margin-top: 32px; display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 30px; padding: 22px 0; border-block: 1px solid var(--portal-line); }
+.home-routes { margin-top: 0; display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 30px; padding: 24px 0; border-bottom: 1px solid var(--portal-line); }
 .home-routes h2 { font-size: 1.1rem; line-height: 1.3; letter-spacing: 0; }
 .home-routes ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); list-style: none; padding: 0; margin: 0; gap: 28px; }
 body.portal .home-routes a { display: block; padding: 8px 0; color: var(--portal-ink); text-decoration: none; }
@@ -60,6 +75,8 @@ body.portal .home-routes a:hover strong { color: var(--portal-link); text-decora
 .home-example-source { margin: 0; padding-top: 14px; border-top: 1px solid var(--portal-line); color: var(--portal-muted); font-size: .82rem; line-height: 1.5; }
 .home-energy-foot { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; margin-top: 30px; }
 .home-energy-copy p { margin-bottom: 18px; color: var(--portal-muted); font-size: .98rem; }
+.home-water-link { display: inline-block; margin: 8px 0; padding-block: 5px; font-size: .95rem; }
+.home-energy-copy .home-primary { margin-right: 18px; }
 .home-energy-copy strong { color: var(--portal-ink); font-weight: 600; }
 body.portal .home-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 10px 20px; color: #fff; background: var(--portal-link); text-decoration: none; font-weight: 600; }
 body.portal .home-primary:hover { color: #fff; background: var(--portal-ink); text-decoration: underline; }
@@ -93,20 +110,21 @@ body.portal .home-products-list a:hover strong { color: var(--portal-link); text
 .home-common > span { color: var(--portal-muted); }
 .home-common > div { display: flex; gap: 20px; }
 .home-guides { padding: 42px 0 50px; border-top: 1px solid var(--portal-ink); }
-.home-guides-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 0 64px; }
-.home-guides-intro h2 { grid-column: 1 / -1; }
-.home-guides > nav { margin-top: 30px; }
-.home-guides-intro p { margin: 20px 0 0; max-width: 58ch; font-size: .96rem; line-height: 1.55; color: var(--portal-muted); }
-.home-guides-intro p + p { margin-top: 20px; }
-.home-guide-links { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 64px; }
-.home-guide-links li { break-inside: avoid; margin-bottom: 8px; }
-body.portal .home-guide-links a { display: inline-block; padding: 8px 0; color: var(--portal-link); font-size: clamp(1.12rem, 1.7vw, 1.3rem); line-height: 1.4; text-decoration: underline; text-underline-offset: .2em; }
-body.portal .home-guide-links a:hover { color: var(--portal-link); text-decoration: underline; text-underline-offset: .2em; }
+.home-guides > nav { margin-top: 22px; }
+.home-guide-index { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.home-guide-index li { border-top: 2px solid #486e81; }
+body.portal .home-guide-index a { display: block; color: var(--portal-ink); text-decoration: none; padding: 16px 3px 12px 0; }
+.home-guide-index strong { display: flex; justify-content: space-between; gap: 5px; font-size: 1.18rem; line-height: 1.25; font-weight: 600; }
+.home-guide-index strong::after { content: "→"; color: var(--portal-link); }
+.home-guide-index span { display: block; margin-top: 6px; color: var(--portal-muted); font-size: .96rem; }
+body.portal .home-guide-index a:hover strong { color: var(--portal-link); text-decoration: underline; }
+.home-guide-related { list-style: none; margin: 14px 0 0; padding: 14px 0 0; display: flex; flex-wrap: wrap; gap: 5px 25px; border-top: 1px solid var(--portal-line); }
+.home-guide-related a { display: inline-block; padding-block: 4px; font-size: .92rem; }
 .home-about { border-top: 1px solid var(--portal-line); padding-top: 24px; display: flex; justify-content: space-between; gap: 40px; }
 .home-about p { max-width: 780px; color: var(--portal-muted); margin: 0; font-size: .88rem; }
 .home-about > a { flex-shrink: 0; font-size: .9rem; align-self: start; }
 @media (max-width: 1000px) {
-  .home-intro-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, .75fr); gap: 28px; }
+  .home-intro-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
   .home-intro h1 { font-size: clamp(2.4rem, 4.2vw, 3.2rem); }
   .home-routes { grid-template-columns: 140px 1fr; gap: 24px; }
   .home-routes ul { gap: 20px; }
@@ -115,19 +133,21 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-equation-result { padding: 20px; }
   .home-consultation-inner { gap: 40px; }
   .home-products { gap: 40px; grid-template-columns: .8fr 1.4fr; }
-  .home-guides-intro, .home-guide-links { column-gap: 40px; }
+
 }
 @media (max-width: 760px) {
-  .home-intro { padding: 28px 0 30px; }
-  .home-intro-grid { grid-template-columns: 1fr; gap: 14px; }
+  .home-intro { padding: 0 0 24px; }
+  .home-intro-grid { grid-template-columns: 1fr; gap: 14px; padding-block: 27px 16px; }
   .home-intro h1 { font-size: clamp(2.25rem, 7.8vw, 3.1rem); }
   .home-start .home-description { margin: 12px 0 16px; font-size: 1rem; }
   .home-illustration { width: 100%; justify-self: stretch; }
   body.portal .home-map-link { display: flex; align-items: center; gap: 14px; width: fit-content; min-height: 54px; }
-  .home-map-link img { width: 70px; flex: none; margin: 0; }
-  .home-map-caption { margin: 0; text-align: left; }
+  .home-atlas-art { width: clamp(101px, 28vw, 136px); flex: none; }
+  .home-atlas-marks .atlas-graticule, .home-atlas-marks text { display: none; }
+  .home-atlas-marks circle { r: 10px; stroke-width: 3px; }
+  .home-map-caption { display: grid; gap: 3px; padding: 0; border: 0; }
   .home-search { max-width: none; }
-  .home-routes { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; padding-block: 20px; }
+  .home-routes { grid-template-columns: 1fr; gap: 12px; padding-block: 20px; }
   .home-routes ul { gap: 18px; }
   .home-routes strong { font-size: 1.06rem; }
   .home-routes span { font-size: .85rem; }
@@ -153,12 +173,13 @@ body.portal .home-guide-links a:hover { color: var(--portal-link); text-decorati
   .home-consultation-access p { max-width: 48ch; margin-bottom: 8px; }
   .home-products { grid-template-columns: 1fr; gap: 28px; padding-block: 38px; }
   .home-guides { padding-block: 38px; }
-  .home-guides-intro { grid-template-columns: 1fr; }
+  .home-guide-index { grid-template-columns: 1fr; gap: 0; }
+  .home-guide-index li { border-top-width: 1px; }
   .home-guides > nav { margin-top: 22px; }
-  .home-products-intro p, .home-guides-intro p { max-width: 62ch; margin-top: 18px; }
+  .home-products-intro p { max-width: 62ch; margin-top: 18px; }
   .home-main h2 br { display: none; }
   .home-products-intro > a { padding-top: 0; }
-  .home-guide-links { columns: 1; }
+
   .home-about { display: block; }
   .home-about > a { display: inline-block; margin-top: 14px; padding-block: 8px; }
 }

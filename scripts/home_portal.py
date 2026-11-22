@@ -1,7 +1,35 @@
 """Build the homepage with figures derived from the published catalogue."""
 from string import Template
 import json
+from atlas_projection import WIDTH, HEIGHT, project, projection
 
+
+
+def atlas_labels(root, escape):
+    geography = json.loads((root / 'content/home-map.json').read_text())
+    topics = json.loads((root / 'content/topic-map.json').read_text())
+    points = {item['id']: item for item in topics['items']}
+    params = projection(geography['country']['coordinates'][0])
+    grid, labels = [], []
+    for lon in (16, 20, 24):
+        x, _ = project(lon, 52, params)
+        grid.append(f'<path d="M{x:.1f} 12 V477"/><text x="{x+5:.1f}" y="475">{lon}°E</text>')
+    for lat in (50, 52, 54):
+        _, y = project(20, lat, params)
+        grid.append(f'<path d="M18 {y:.1f} H732"/><text x="18" y="{y-5:.1f}">{lat}°N</text>')
+    for key, place, theme in [
+        ('wiatr-szymankowo', 'Szymankowo', 'Energia wiatru'),
+        ('budynki', 'Warszawa', 'Budynki'),
+        ('Dolny Śląsk', 'Dolny Śląsk', 'Kruszywa'),
+    ]:
+        item = points[key]
+        x, y = project(item['lon'], item['lat'], params)
+        labels.append(f'<g transform="translate({x:.1f} {y:.1f})"><circle r="6"/>'
+                      f'<text x="17" y="-1" text-anchor="start">{escape(place)}</text>'
+                      f'<text class="atlas-theme" x="17" y="20" text-anchor="start">{escape(theme)}</text></g>')
+    return (f'<svg viewBox="0 0 {WIDTH} {HEIGHT}" class="home-atlas-marks" aria-hidden="true">'
+            + '<g class="atlas-graticule">' + ''.join(grid) + '</g><g class="atlas-points">'
+            + ''.join(labels) + '</g></svg>')
 
 def build(api, families):
     root, page, e = (api[key] for key in ('ROOT', 'page', 'e'))
@@ -20,6 +48,7 @@ def build(api, families):
             f'<strong>{e(family["label"])}</strong><small>{label}</small></a></li>'
         )
     body = Template((root / 'content/portal-home.html.tpl').read_text()).substitute(
+        atlas_labels=atlas_labels(root, e),
         energy_year=e(energy['year']),
         indicator_count=e(energy['indicator_count']),
         energy_href=e(energy['href']),

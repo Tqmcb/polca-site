@@ -118,3 +118,137 @@
 .en25-metric { padding-top: 1.25rem; border-top: 1px solid #dbe0e8; margin-top: 1.5rem; }
 .en25-metric strong { font: 600 1.65rem/1.3 "IBM Plex Mono", monospace; color: #111318; }
 .en25-metric span { display: block; font-size: .8rem; color: #505c70; margin-top: .4rem; }
+
+/* Two water indicators for the same delivery, from the v4 results table. */
+.en25-table-actions { display: flex; flex-wrap: wrap; gap: .35rem 1.15rem; }
+.en25-water {
+  --water-line: #98adbf;
+  margin: 1rem 0 1.6rem;
+  padding: clamp(1rem, 2.8vw, 2.15rem);
+  border: 1px solid var(--portal-line);
+  border-radius: 4px;
+  color: var(--portal-ink);
+  scroll-margin-top: 1rem;
+}
+.en25-water-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem 2.5rem;
+  margin-bottom: 1.25rem;
+}
+.en25 .en25-water h3, .en25 .en25-water h4 {
+  margin: 0;
+  font-family: "Source Sans 3", Arial, sans-serif !important;
+  color: var(--portal-ink) !important;
+  letter-spacing: -.025em;
+  line-height: 1.16;
+  font-weight: 600;
+}
+.en25 .en25-water h3 { font-size: clamp(1.5rem, 2.4vw, 1.95rem) !important; max-width: 26ch; }
+.en25 .en25-water h4 { font-size: clamp(1.17rem, 1.7vw, 1.44rem) !important; }
+.en25 .en25-water p { margin: 0; }
+.en25-water-source {
+  background: var(--portal-soft);
+  border: 1px solid var(--portal-line);
+  padding: .8rem 1rem;
+  text-align: center;
+}
+.en25-water-choice { display: inline-block; min-width: 0; border: 0; margin: 0; padding: 0; }
+.en25-water-choice legend { float: left; margin-right: 1rem; padding: .54rem 0; font-weight: 600; }
+.en25-water-default { font-weight: 600; }
+.en25-water-options { display: inline-flex; border: 1px solid #a8b9c9; border-radius: 4px; background: #fff; }
+.en25-water-options label { position: relative; cursor: pointer; }
+.en25-water-options label + label { border-left: 1px solid #c8d3dc; }
+.en25-water-options input, .en25-water-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.en25-water-options span { display: grid; place-items: center; font: 600 .94rem/1.25 "Source Sans 3", Arial, sans-serif; letter-spacing: 0; min-height: 44px; padding: .35rem .92rem; font-weight: 600; }
+.en25-water-options label:first-child span { border-radius: 3px 0 0 3px; }
+.en25-water-options label:last-child span { border-radius: 0 3px 3px 0; }
+.en25-water-options label:hover span { background: #eaf1fa; }
+.en25-water-options input:checked + span { background: var(--portal-link); color: #fff; }
+.en25-water-options input:focus-visible + span { position: relative; outline: 3px solid var(--portal-ink); outline-offset: 3px; z-index: 1; }
+.en25-water-branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.5rem;
+  padding-top: 1.75rem;
+}
+.en25-water-branches::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: .85rem;
+  border-left: 1px solid var(--water-line);
+}
+.en25-water-branches::after {
+  content: "";
+  position: absolute;
+  inset: .85rem calc(25% - .625rem) auto;
+  height: .9rem;
+  border: 1px solid var(--water-line);
+  border-bottom: 0;
+}
+.en25-water-branch {
+  min-width: 0;
+  border-top: 1px solid var(--water-line);
+  padding: .9rem 0 0;
+}
+.en25-water-branch h4 + p { margin-top: .3rem; color: var(--portal-muted); }
+.en25-water-reading {
+  margin: .5rem 0 0;
+  color: var(--portal-ink);
+  font-size: clamp(2.45rem, 4.5vw, 3.65rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+.en25-water-unit { font-size: clamp(1.02rem, 1.7vw, 1.4rem); letter-spacing: -.015em; white-space: nowrap; }
+.en25 .en25-water .en25-water-equivalent { color: var(--portal-muted); margin: .1rem 0 .55rem; }
+.en25-water-method { margin-top: 1.15rem; padding-top: .65rem; border-top: 1px solid var(--portal-line); }
+.en25-water-method summary { width: fit-content; padding: .45rem .1rem; color: var(--portal-link); cursor: pointer; font-weight: 600; }
+.en25-water-method p { max-width: 76ch; }
+@media (max-width: 740px) {
+  .en25-table-actions { margin-bottom: .65rem; }
+  .en25-water { padding: 1rem .9rem; }
+  .en25-water-intro { grid-template-columns: minmax(0, 1fr); gap: .55rem; }
+  .en25 .en25-water h3 { max-width: none; }
+  .en25-water-source { text-align: left; padding: .7rem; }
+  .en25-water-choice legend { float: none; padding: 0 0 .35rem; margin: 0; }
+  .en25-water-options span { padding: .3rem .6rem; }
+  .en25-water-branches { display: block; padding: 0 0 0 .95rem; }
+  .en25-water-branches::before, .en25-water-branches::after { display: none; }
+  .en25-water-branch { position: relative; border: 0; padding: 1.05rem 0 0; }
+  .en25-water-branch::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -.95rem;
+    border-left: 1px solid var(--water-line);
+  }
+  .en25-water-branch:last-child::before { height: 1.7rem; }
+  .en25-water-branch::after {
+    content: "";
+    position: absolute;
+    left: -.95rem;
+    top: 1.7rem;
+    width: .65rem;
+    border-top: 1px solid var(--water-line);
+  }
+  .en25-water-reading { font-size: 2.45rem; }
+}
+@media print {
+  .en25-water { break-inside: avoid; }
+}

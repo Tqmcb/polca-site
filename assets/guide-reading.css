@@ -1,0 +1,195 @@
+/* Information pages with a chapter index and one continuous reading column. */
+.reading-layout {
+  display: grid;
+  grid-template-columns: minmax(14rem, 26%) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+  border-top: 1px solid var(--portal-line);
+  padding-top: clamp(1.35rem, 3vw, 2.15rem);
+}
+.reading-index {
+  position: sticky;
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding-right: clamp(1rem, 2vw, 1.6rem);
+  border-right: 1px solid var(--portal-line);
+  scrollbar-width: thin;
+}
+.reading-desktop-index > p, .reading-mobile-index summary {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 650;
+}
+.reading-index-list { list-style: none; padding: 0; margin: .5rem 0 0; }
+.reading-index-list li + li { margin-top: .15rem; }
+body.portal .reading-index-list a {
+  display: block;
+  padding: .36rem 0;
+  font-size: .95rem;
+  line-height: 1.35;
+  text-decoration: none;
+}
+body.portal .reading-index-list a:hover { text-decoration: underline; }
+.reading-mobile-index { display: none; }
+.reading-chapters { min-width: 0; container-type: inline-size; }
+.reading-chapters .portal-prose { max-width: none; }
+.reading-chapters .portal-prose + .portal-prose {
+  margin-top: 1.7rem;
+  padding-top: 1.55rem;
+  border-top: 1px solid var(--portal-line);
+}
+.reading-chapters h2 {
+  margin: 0 0 .6rem;
+  font-size: clamp(1.35rem, 2.15vw, 1.65rem);
+  letter-spacing: -.018em;
+  text-wrap: balance;
+}
+.reading-chapters p { max-width: 76ch; margin: 0; }
+.reading-chapters p + p { margin-top: .8rem; }
+.reading-chapters .portal-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .15rem 1.2rem;
+  margin: .6rem 0 0;
+  padding: 0;
+}
+.reading-chapters .portal-list:empty { display: none; }
+.reading-chapters .portal-list > li { min-width: 0; margin: 0; border: 0; }
+body.portal .reading-chapters .portal-list a {
+  display: inline-block;
+  padding: .22rem 0;
+  font-size: .95rem;
+  font-weight: 550;
+  text-decoration: underline;
+}
+.reading-chapters .portal-table-wrap { margin: 1rem 0 .7rem; }
+.reading-chapters table { line-height: 1.45; }
+.reading-chapters thead th { background: var(--portal-ink); color: #fff; }
+.reading-chapters th, .reading-chapters td { padding: .65rem .8rem; }
+.reading-chapters tbody tr:last-child > * { border-bottom: 0; }
+
+/* Use each row heading and the original column labels on narrow reading columns. */
+@media screen {
+  @container (min-width: 631px) {
+    .reading-chapters #dobor-profilu tr > :last-child { white-space: nowrap; }
+  }
+  @container (max-width: 630px) {
+    .reading-chapters .portal-table-wrap { border: 0; overflow: visible; }
+    .reading-chapters table, .reading-chapters tbody, .reading-chapters tr, .reading-chapters tbody th { display: block; }
+    .reading-chapters thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    .reading-chapters tbody tr + tr { margin-top: 1rem; }
+    .reading-chapters tbody th { padding: .55rem .65rem; border: 0; }
+    .reading-chapters td {
+      display: grid;
+      grid-template-columns: minmax(4.3rem, 1fr) minmax(0, 4fr);
+      gap: .65rem;
+      padding: .5rem .3rem;
+    }
+    .reading-chapters td::before {
+      content: attr(data-label) / "";
+      color: var(--portal-muted);
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .reading-chapters tbody tr:last-child > td { border-bottom: 1px solid var(--portal-line); }
+    .reading-chapters tbody td:last-child { border: 0; }
+  }
+  @container (max-width: 340px) {
+    .reading-chapters td { grid-template-columns: 1fr; gap: .12rem; }
+  }
+}
+@media (max-width: 800px) {
+  .reading-layout { grid-template-columns: minmax(0, 1fr); gap: 1.2rem; padding-top: 0; }
+  .reading-index { position: static; max-height: none; overflow: visible; border: 0; border-bottom: 1px solid var(--portal-line); padding: 0; }
+  .reading-desktop-index { display: none; }
+  .reading-mobile-index { display: block; }
+  .reading-mobile-index summary { padding: .68rem .15rem; color: var(--portal-link); cursor: pointer; }
+  .reading-index-list { margin: 0 0 .65rem; padding-left: .95rem; border-left: 1px solid var(--portal-line); }
+  .reading-index-list li + li { margin-top: 0; }
+  body.portal .reading-index-list a { padding: .55rem 0; }
+}
+@media print {
+  .reading-layout { display: block; border: 0; padding: 0; }
+  .reading-index { display: none; }
+  .reading-chapters { container-type: normal; }
+  .reading-chapters tr { break-inside: avoid; }
+}
+
+.characterisation-figure {
+  margin: 1.15rem 0;
+  padding: clamp(.9rem, 2.15vw, 1.45rem);
+  color: var(--portal-ink);
+  background: var(--portal-soft);
+  break-inside: avoid;
+}
+.characterisation-figure figcaption {
+  max-width: 45ch;
+  font-size: clamp(1.08rem, 1.55vw, 1.26rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -.015em;
+}
+.characterisation-equation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr) auto minmax(0, 1fr);
+  align-items: start;
+  gap: .7rem;
+  margin: 1.05rem 0 .9rem;
+}
+.characterisation-equation strong {
+  display: block;
+  font-weight: 600;
+  font-size: 1.02rem;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+.characterisation-equation div > span {
+  display: block;
+  margin-top: .25rem;
+  color: var(--portal-muted);
+  font-size: .93rem;
+  line-height: 1.28;
+}
+.characterisation-operator {
+  color: var(--portal-link);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+.characterisation-spoken {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.reading-chapters .characterisation-figure p {
+  margin: 0;
+  max-width: none;
+  padding-top: .7rem;
+  border-top: 1px solid var(--portal-line);
+  font-size: .93rem;
+  line-height: 1.4;
+}
+@container (min-width: 576px) {
+  .characterisation-equation strong { min-height: 2.36em; }
+}
+@container (max-width: 575px) {
+  .characterisation-equation {
+    grid-template-columns: 1rem minmax(0, 1fr);
+    gap: .7rem .45rem;
+  }
+  .characterisation-equation > div { grid-column: 2; }
+  .characterisation-operator { grid-column: 1; }
+  .characterisation-equation div > span { margin-top: .15rem; }
+}
