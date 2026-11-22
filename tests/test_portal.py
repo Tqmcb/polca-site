@@ -68,6 +68,16 @@ class PortalTests(unittest.TestCase):
   self.assertEqual(len(codes),37)
   for link in ('/energia-polska-2025-v4.html', '/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt'):
    self.assertIn(link,d.xpath('//main//a/@href'))
+ def test_full_energy_method_retains_release_headings_and_sources(self):
+  doc=html.parse(str(ROOT/'oblicz-energie-2025.html'))
+  method=doc.xpath('//details[@id="pelna-metoda"]')[0]
+  download,=method.xpath('.//a[@download]/@href')
+  self.assertEqual(download, '/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt')
+  source=(ROOT/download.lstrip('/')).read_text()
+  self.assertEqual(method.xpath('.//h3/text()'),re.findall(r'^\d+\. .+$',source,re.M))
+  self.assertEqual(method.xpath('.//a[starts-with(@href,"http")]/@href'),
+                   re.findall(r'https?://[^\s<>");]+',source))
+  self.assertNotIn('r..',method.text_content())
  def test_climate_panel_uses_profile_shares_and_grams_for_the_initial_quantity(self):
   profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
   per_kwh={item['code']:item['value_per_kWh'] for item in profile['indicators']}

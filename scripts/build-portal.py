@@ -140,6 +140,7 @@ def sync_shell():
 
 def build_energy_calculator():
     from consultation_portal import display_unit
+    from energy_method import full_method_html
 
     def panel_number(value):
         if value == 0:
@@ -194,6 +195,7 @@ def build_energy_calculator():
         for i in indicators
     )
     body = (ROOT / 'content/energy-panel.tmpl').read_text().format(
+        full_method=full_method_html(ROOT),
         reference=panel_number(total),
         example_total=panel_number(10 * total),
         full_bar=bar_segments(parts, total),
@@ -208,7 +210,7 @@ def build_energy_calculator():
         'oblicz-energie-2025.html', 'Energia elektryczna w Polsce w 2025 r.',
         'Sprawdź wskaźnik dla 1 kWh, jego składniki i metodę poLCA v4. Przelicz zużycie energii na 37 wskaźników środowiskowych.',
         body, parent=('Kalkulatory', '/kalkulatory.html'), pagehead=False,
-        head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122">',
+        head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122-metoda2">',
     )
 
 
