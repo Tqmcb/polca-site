@@ -49,16 +49,57 @@ def build_catalog(all=False):
  body=f'''<div class="portal-catalog-layout"><form id="catalog-filters" action="/{path}" method="get"><label for="catalog-query">{'Szukaj w całym portalu' if all else 'Szukaj w danych'}</label><div class="portal-search-control"><input id="catalog-query" type="search" name="q" placeholder="Wpisz nazwę lub pytanie"><button type="submit">Szukaj</button></div><details class="portal-filters" open><summary>Zawęź wyniki</summary><div>{filters}<button type="reset">Wyczyść filtry</button></div></details></form><div class="portal-results-panel"><p id="result-count" role="status" aria-live="polite">Wyniki: {len(records)}</p><noscript><p>Filtrowanie wymaga włączenia JavaScript. Poniżej znajdziesz pełną listę; możesz użyć funkcji szukania w przeglądarce.</p></noscript><div id="catalog-results">{''.join(row(r) for r in records)}</div><div id="catalog-empty" class="portal-callout" hidden><h2>Brak wyników dla tych ustawień</h2><p>Spróbuj krótszej nazwy lub usuń filtry. Pomoc w doborze danych znajdziesz w <a href="/jak-korzystac.html">przewodniku</a>.</p><button type="button" data-reset-filters>Wyczyść wyszukiwanie</button></div></div></div><script id="portal-search-data" type="application/json">{json.dumps(records,ensure_ascii=False).replace('<','\\u003c')}</script>'''
  if not all:body='<p>Możesz też zacząć od <a href="/wyroby.html">rodzaju wyrobu</a> lub wybrać <a href="/dane-wspolne.html">energię, paliwa i transport</a>.</p><span id="referencyjne-szczegoly"></span>'+body
  page(path,'Szukaj w poLCA' if all else 'Katalog danych','Znajdź dane, kalkulator, metodę lub odpowiedź.' if all else 'Wybierz temat i sprawdź rok, zakres oraz status danych przed użyciem.',body,attrs=f'data-catalog-mode="{"all" if all else "datasets"}"')
-def sections(secs):
+def section_table(section, responsive=False):
+ table = section['table']
+ title = e(section['title'])
+ headers = table['headers']
+ row_role = ' role="row"' if responsive else ''
+ group_role = ' role="rowgroup"' if responsive else ''
+ col_role = ' role="columnheader"' if responsive else ''
+ heading = ''.join(f'<th scope="col"{col_role}>{e(label)}</th>' for label in headers)
+ rows = []
+ for record in table['rows']:
+  row_header = ' role="rowheader"' if responsive else ''
+  cells = [f'<th scope="row"{row_header}>{e(record[0])}</th>']
+  for j, value in enumerate(record[1:], start=1):
+   attrs = f' role="cell" data-label="{e(headers[j])}"' if responsive else ''
+   cells.append(f'<td{attrs}>{e(value)}</td>')
+  rows.append(f'<tr{row_role}>' + ''.join(cells) + '</tr>')
+ table_attrs = f' role="table" aria-label="{title}"' if responsive else ''
+ markup = (f'<table{table_attrs}><thead{group_role}><tr{row_role}>{heading}</tr></thead>'
+           f'<tbody{group_role}>' + ''.join(rows) + '</tbody></table>')
+ if responsive:
+  return '<div class="portal-table-wrap">' + markup + '</div>'
+ return ('<p class="portal-scroll-hint">Przewiń tabelę w bok, aby zobaczyć wszystkie kolumny.</p>'
+         f'<div class="portal-table-wrap" tabindex="0" role="region" aria-label="{title} — tabela przewijana">'
+         + markup + '</div>')
+
+def sections(secs, responsive_tables=False):
  out=[]
  for i,s in enumerate(secs):
   block=f'<section class="portal-prose" id="{e(s.get("id", "sekcja-"+str(i+1)))}"><h2>{e(s["title"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in s.get('paragraphs',[]))
   if s.get('table'):
-   t=s['table'];block+='<p class="portal-scroll-hint">Przewiń tabelę w bok, aby zobaczyć wszystkie kolumny.</p><div class="portal-table-wrap" tabindex="0" role="region" aria-label="'+e(s['title'])+' — tabela przewijana"><table><thead><tr>'+''.join('<th scope="col">'+e(x)+'</th>' for x in t['headers'])+'</tr></thead><tbody>'+''.join('<tr>'+''.join(('<th scope="row">'+e(x)+'</th>') if j==0 else '<td>'+e(x)+'</td>' for j,x in enumerate(row))+'</tr>' for row in t['rows'])+'</tbody></table></div>'
+   block += section_table(s, responsive_tables)
   out.append(block+links(s.get('links',[]))+'</section>')
  return ''.join(out)
+def build_comparison(content):
+ items = [{'label': s['nav_label'], 'href': '#' + s['id']} for s in content['sections']]
+ index = links(items, 'comparison-index')
+ intro = f'''<div class="comparison-intro">
+ <header class="portal-pagehead"><h1>{e(content['title'])}</h1><p class="portal-lead">{e(content['lead'])}</p></header>
+ <nav class="comparison-nav" aria-label="Spis treści porównania">
+ <div class="comparison-desktop-index"><p>Spis treści</p>{index}</div>
+ <details class="comparison-mobile-index"><summary>Spis treści</summary>{index}</details>
+ </nav></div>'''
+ body = intro + '<div class="comparison-sections">' + sections(content['sections'], responsive_tables=True) + '</div>'
+ page(content['path'], content['title'], content['lead'], body, pagehead=False,
+      head_extra='<link rel="stylesheet" href="/assets/comparison.css?v=1">')
+
 def build_copy():
  for c in COPY['pages']:
+  if c.get('layout') == 'comparison':
+   build_comparison(c)
+   continue
   toc=links([{'label':sec['title'],'href':'#'+sec.get('id','sekcja-'+str(i+1))} for i,sec in enumerate(c['sections'])], 'portal-subnav')
   body='<div class="portal-reading">'+toc+sections(c['sections'])+'</div>'
   page(c['path'],c['title'],c['lead'],body)

@@ -1126,7 +1126,8 @@
               "label": "JRC: pakiet odniesienia EN 15804",
               "href": "https://knowledge-for-policy.ec.europa.eu/european-platform-life-cycle-assessment-eplca/life-cycle-data-network-lcdn/en-15804-reference_en"
             }
-          ]
+          ],
+          "nav_label": "Źródła danych"
         },
         {
           "id": "zastrzezenie",
@@ -1134,7 +1135,26 @@
           "paragraphs": [
             "Porównanie obejmuje znaczenie danych, wybrane rekordy, metody i formaty. Liczbowe porównanie z ecoinvent dla równoważnych procesów pozostaje do wykonania na podstawie uprawnionego eksportu wyników."
           ],
-          "links": []
+          "links": [],
+          "nav_label": "Zakres porównania"
+        },
+        {
+          "id": "ecoinvent",
+          "title": "Porównanie z ecoinvent",
+          "paragraphs": [
+            "Dla ecoinvent 3.12 wskazano konkretne rekordy rynku energii dla Polski oraz ich lata i modele systemowe. Porównanie wyników wymaga uzgodnienia rodzaju miksu, napięcia, granic, metody oceny i jej wersji. Licencja użytkownika może umożliwiać taki eksport z programu obliczeniowego. Do czasu wykonania tej kontroli zestawienie opisuje dokumentację i zakresy danych."
+          ],
+          "links": [
+            {
+              "label": "ecoinvent: sektor energii",
+              "href": "https://support.ecoinvent.org/energy"
+            },
+            {
+              "label": "ecoinvent: modele systemowe",
+              "href": "https://support.ecoinvent.org/system-models"
+            }
+          ],
+          "nav_label": "Dane ecoinvent"
         },
         {
           "id": "punkty-kontrolne",
@@ -1183,7 +1203,8 @@
               "label": "poLCA — profil źródłowy 2025 v4",
               "href": "/data/energia-pl-2025-v4/profil-37.json"
             }
-          ]
+          ],
+          "nav_label": "Trzy wskaźniki energii"
         },
         {
           "id": "roznice",
@@ -1191,24 +1212,8 @@
           "paragraphs": [
             "Wskaźnik CO₂ ze spalania i wpływ na klimat w całym cyklu życia opisują różne granice. Ocena cyklu życia uwzględnia także łańcuchy paliw, infrastrukturę i inne gazy cieplarniane. Sposób uwzględnienia strat sieciowych trzeba sprawdzić w każdym zbiorze osobno. Miks rezydualny opisuje energię po rozliczeniu przypisanych odbiorcom atrybutów, m.in. gwarancji pochodzenia; nie jest fizycznym średnim miksem w sieci."
           ],
-          "links": []
-        },
-        {
-          "id": "ecoinvent",
-          "title": "Porównanie z ecoinvent",
-          "paragraphs": [
-            "Dla ecoinvent 3.12 wskazano konkretne rekordy rynku energii dla Polski oraz ich lata i modele systemowe. Porównanie wyników wymaga uzgodnienia rodzaju miksu, napięcia, granic, metody oceny i jej wersji. Licencja użytkownika może umożliwiać taki eksport z programu obliczeniowego. Do czasu wykonania tej kontroli zestawienie opisuje dokumentację i zakresy danych."
-          ],
-          "links": [
-            {
-              "label": "ecoinvent: sektor energii",
-              "href": "https://support.ecoinvent.org/energy"
-            },
-            {
-              "label": "ecoinvent: modele systemowe",
-              "href": "https://support.ecoinvent.org/system-models"
-            }
-          ]
+          "links": [],
+          "nav_label": "Przyczyny różnic"
         },
         {
           "id": "jak-uzyc",
@@ -1233,9 +1238,11 @@
               "label": "Metodyka",
               "href": "/metodyka.html"
             }
-          ]
+          ],
+          "nav_label": "Dobór danych"
         }
-      ]
+      ],
+      "layout": "comparison"
     },
     {
       "path": "zastosowanie-epd-cpr.html",

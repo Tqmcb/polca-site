@@ -99,6 +99,8 @@ Układy dwukolumnowe są asymetryczne: szeroka kolumna zawiera obliczenie, opis 
 
 Przewodniki na stronie głównej mają pełnoszeroki tytuł i objaśnienie nad dwukolumnowym indeksem pytań. Nie powtarzają układu katalogu z opisem w bocznej kolumnie.
 
+W przewodniku „poLCA, KOBiZE czy ecoinvent?” obie tabele zajmują całą szerokość głównego kontenera. Szerokość wiersza tekstu ograniczamy na akapitach. Na telefonie każdy wiersz otrzymuje własny nagłówek, a pod nim pojawiają się podpisane pola z pozostałych kolumn. Przy odbiorze sprawdzamy, czy na wąskim ekranie można odczytać wartość razem z jej źródłem, miksem i rokiem.
+
 Strona konsultacji zachowuje odrębną strukturę pytań, dokumentów i korespondencji. Pytania są rozwijanymi pozycjami, dokumentacja zajmuje pełną szerokość i zawiera wykaz plików z formatami, a zgłoszenie jest formularzem z instrukcją w bocznej kolumnie.
 
 Przy szerokości poniżej 760 px główne kompozycje strony głównej i konsultacji przechodzą do jednej kolumny. Równanie i diagram zmieniają układ, zachowując kolejność informacji. Tabele przewija się wewnątrz podpisanego obszaru, a nie przez rozszerzenie całej strony.
