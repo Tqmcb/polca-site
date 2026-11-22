@@ -329,7 +329,7 @@ body.portal .aggregate-point[aria-current="true"] {
 @media screen and (min-width: 851px) and (max-width: 1000px) {
   @supports (grid-template-rows: subgrid) {
     .is-interactive [data-case="podbudowa"] .aggregate-layout:has(> .aggregate-note),
-    .is-interactive .aggregate-layout:has(.aggregate-panel[data-kind="power"]:not([hidden])) {
+    .is-interactive .aggregate-layout:has(.aggregate-panel[data-step="3"]:not([hidden])) {
       grid-template-areas: "figure calculation" "explanation calculation" "source calculation" "example example";
       grid-template-rows: max-content max-content 1fr auto;
     }

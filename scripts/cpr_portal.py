@@ -216,7 +216,7 @@ def build(api):
         if f['id'] == 24:
             mma_profile = json.loads((root / 'data/mma-client-example.json').read_text())
             body += aggregate_guide(catalog, mma_profile)
-            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=4">'
+            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=5">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')
 
         if has_methods or has_tools:
