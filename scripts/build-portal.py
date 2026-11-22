@@ -139,10 +139,78 @@ def sync_shell():
   p.write_text(text)
 
 def build_energy_calculator():
-    profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text())
-    rows=''.join(f'<tr><th scope="row">{e(i["code"])}</th><td>{e(i["name_pl"])}</td><td>{e(num(i["value_per_kWh"]))}</td><td data-energy-result="{e(i["code"])}">{e(num(i["value_per_kWh"]*10))}</td><td>{e(i["impact_unit"])}</td></tr>' for i in profile['indicators'])
-    body='''<div id="energy-calculation"><div class="portal-columns"><section class="portal-callout"><h2>Wpisz zużycie energii</h2><form id="energy-form"><label for="energy-quantity">Ilość energii przypisana do obliczanego procesu</label><input id="energy-quantity" type="number" min="0" max="1000000000000" step="any" value="10" required aria-describedby="energy-error"><label for="energy-unit">Jednostka zużycia</label><select id="energy-unit"><option value="kWh">kWh</option><option value="MWh">MWh</option><option value="MJ">MJ energii elektrycznej</option></select><p id="energy-error" hidden role="alert">Wpisz nieujemną liczbę nie większą niż 10¹².</p><button type="submit">Przelicz</button></form><noscript><p>Poniżej pokazano przykład dla 10 kWh. Zmiana ilości i pobranie wyniku wymagają JavaScript.</p></noscript></section><section class="portal-prose"><h2>Jak stosować wynik</h2><p>Przelicznik korzysta z fizycznego krajowego profilu energii Polska 2025 v4. Wynik opisuje wkład podanej ilości prądu; jednostkę wyrobu i etap cyklu życia określasz w swoim obliczeniu.</p><p>Dla energii kupowanej przez zakład dobierz dane zgodnie z zasadami programu. Zależnie od przyjętego podejścia będą to dane dostawcy, własnego wytwarzania, miks rezydualny albo odpowiedni profil fizyczny. Straty sieciowe ujęte w profilu nie wymagają ponownego doliczenia.</p><p><a href="/zastosowanie-epd-cpr.html">Dobór profilu do zastosowania</a> · <a href="/energia-polska-2025-v4.html">Metoda, źródła i status wersji v4</a></p></section></div><section class="portal-section"><h2>Wyniki dla podanej ilości energii</h2><p id="energy-summary" role="status" aria-live="polite">Przykład dla 10 kWh.</p><div class="portal-actions"><button type="button" data-energy-download="csv" disabled>Pobierz wynik CSV</button><button type="button" data-energy-download="json" disabled>Pobierz wynik JSON</button></div><p class="portal-lead-small">Każdy wynik = zużycie w kWh × wskaźnik na 1 kWh. Wskaźników o różnych jednostkach ani sum i ich składników nie dodaje się ponownie.</p><p class="portal-scroll-hint">Na małym ekranie przewiń tabelę w poziomie, aby zobaczyć wynik i jednostkę.</p><div class="portal-table-wrap" tabindex="0" role="region" aria-label="Wyniki 37 wskaźników, tabela przewijana"><table><caption>Wkład energii — Polska 2025 v4</caption><thead><tr><th scope="col">Kod</th><th scope="col">Wskaźnik</th><th scope="col">Wartość na 1 kWh</th><th scope="col">Wynik</th><th scope="col">Jednostka wyniku</th></tr></thead><tbody>'''+rows+'''</tbody></table></div><p>Wersja v4: odbiór techniczny obliczeń oraz wewnętrzna recenzja kodu i metody zakończone; formalne przyjęcie do określonych zastosowań w deklaracjach pozostaje otwarte. Eksport zachowuje oznaczenie modelu, jednostki i status źródłowego profilu.</p><p><a href="/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt">Warunki wykorzystania</a> · <a href="/data/energia-pl-2025-v4/przyklad-10-kWh.json">Źródłowy przykład 10 kWh</a></p></section></div><script id="energy-profile-data" type="application/json">'''+json.dumps(profile,ensure_ascii=False).replace('<','\\u003c')+'''</script><script src="/js/energy-profile.js" defer></script>'''
-    page('oblicz-energie-2025.html','Oblicz wkład energii — Polska 2025','Przelicz zużycie prądu na 37 wskaźników środowiskowych. Pobierz wynik wraz z jednostkami i identyfikacją modelu.',body,parent=('Kalkulatory','/kalkulatory.html'))
+    from consultation_portal import display_unit
+
+    def panel_number(value):
+        if value == 0:
+            return '0'
+        mantissa, _, exponent = format(value, '#.6g').partition('e')
+        label = mantissa.rstrip('.').replace('.', ',')
+        if exponent:
+            superscript = str.maketrans('-0123456789', '⁻⁰¹²³⁴⁵⁶⁷⁸⁹')
+            label += '·10' + str(int(exponent)).translate(superscript)
+        return label
+
+    profile = json.loads((ROOT / 'data/energia-pl-2025-v4/profil-37.json').read_text())
+    indicators = profile['indicators']
+    per_kwh = {item['code']: item['value_per_kWh'] for item in indicators}
+    total = per_kwh['GWP-total']
+    unit_labels = {
+        'kg CO2 eq': 'kg równoważnika CO₂', 'kg CFC11 eq': 'kg równoważnika CFC-11',
+        'mol H+ eq': 'mol równoważnika H⁺', 'kg P eq': 'kg równoważnika P',
+        'kg N eq': 'kg równoważnika N', 'mol N eq': 'mol równoważnika N',
+        'kg NMVOC eq': 'kg równoważnika niemetanowych lotnych związków organicznych',
+        'kg Sb eq': 'kg równoważnika Sb', 'kBq U235 eq': 'kBq równoważnika U-235',
+        'CTUe': 'CTUe (porównawcza jednostka ekotoksyczności)',
+        'CTUh': 'CTUh (porównawcza jednostka toksyczności dla ludzi)', 'm3': 'm³',
+    }
+    parts = (
+        ('GWP-fossil', 'Kopalny', 'fossil'),
+        ('GWP-biogenic', 'Biogeniczny', 'biogenic'),
+        ('GWP-luluc', 'Użytkowanie gruntów i jego zmiany', 'land'),
+    )
+    minor_total = sum(per_kwh[code] for code, _, _ in parts[1:])
+
+    def bar_segments(series, denominator):
+        return ''.join(
+            f'<span class="energy-{name}" style="width:{100 * per_kwh[code] / denominator:.9f}%"></span>'
+            for code, _, name in series
+        )
+
+    def percentage(value):
+        return f'{100 * value / total:.4f}'.replace('.', ',')
+
+    parts_rows = ''.join(
+        f'<tr><th scope="row"><i class="energy-swatch energy-{name}" aria-hidden="true"></i>{label}</th>'
+        f'<td>{percentage(per_kwh[code])}%</td>'
+        f'<td data-energy-climate-part="{code}">{panel_number(10 * 1000 * per_kwh[code])}</td></tr>'
+        for code, label, name in parts
+    )
+    rows = ''.join(
+        f'<tr><th scope="row">{e(i["code"])}</th><td>{e(i["name_pl"])}</td>'
+        f'<td>{panel_number(i["value_per_kWh"])}</td>'
+        f'<td data-energy-result="{e(i["code"])}">{panel_number(i["value_per_kWh"] * 10)}</td>'
+        f'<td>{e(unit_labels.get(i["impact_unit"], display_unit(i["impact_unit"])))}</td></tr>'
+        for i in indicators
+    )
+    body = (ROOT / 'content/energy-panel.tmpl').read_text().format(
+        reference=panel_number(total),
+        example_total=panel_number(10 * total),
+        full_bar=bar_segments(parts, total),
+        detail_bar=bar_segments(parts[1:], minor_total),
+        minor_share=percentage(minor_total),
+        parts_rows=parts_rows,
+        rows=rows,
+        source=e(profile['source_attribution']),
+        profile_json=json.dumps(profile, ensure_ascii=False).replace('<', r'\u003c'),
+    )
+    page(
+        'oblicz-energie-2025.html', 'Energia elektryczna w Polsce w 2025 r.',
+        'Sprawdź wskaźnik dla 1 kWh, jego składniki i metodę poLCA v4. Przelicz zużycie energii na 37 wskaźników środowiskowych.',
+        body, parent=('Kalkulatory', '/kalkulatory.html'), pagehead=False,
+        head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122">',
+    )
+
 
 def sitemap():
  paths=sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*.html') if p.name!='404.html' and 'noindex,follow' not in p.read_text() and not any(x.startswith('.') for x in p.relative_to(ROOT).parts))

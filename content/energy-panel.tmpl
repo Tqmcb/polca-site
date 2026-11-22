@@ -1,0 +1,80 @@
+<div id="energy-calculation" class="energy-panel">
+  <header class="energy-header">
+    <h1>Energia elektryczna w Polsce w 2025 r.</h1>
+    <nav class="energy-jumps" aria-label="Sekcje panelu">
+      <a href="#przelicz">Przelicz zużycie</a><a href="#skladniki">Składniki wyniku</a><a href="#metoda">Metoda</a><a href="#wyniki">37 wskaźników</a>
+    </nav>
+  </header>
+
+  <div class="energy-overview">
+    <section class="energy-reference" aria-labelledby="reference-heading">
+      <h2 id="reference-heading">Wpływ 1 kWh na klimat</h2>
+      <p class="energy-reference-number"><strong>{reference}</strong><span>kg równoważnika CO₂/kWh</span></p>
+      <p class="energy-scope">Średnia dla energii dostarczonej odbiorcom w Polsce przy krajowej strukturze napięć. Uwzględnia straty sieciowe.</p>
+      <a href="/energia-polska-2025-v4.html">Karta modelu poLCA v4</a>
+    </section>
+
+    <section id="przelicz" class="energy-calculator" aria-labelledby="calculator-heading">
+      <h2 id="calculator-heading">Przelicz zużycie energii</h2>
+      <form id="energy-form">
+        <div class="energy-field"><label for="energy-quantity">Zużycie</label><input id="energy-quantity" type="number" min="0" max="1000000000000" step="any" value="10" required aria-describedby="energy-error"></div>
+        <div class="energy-field"><label for="energy-unit">Jednostka</label><select id="energy-unit"><option value="kWh">kWh</option><option value="MWh">MWh</option><option value="MJ">MJ</option></select></div>
+        <button type="submit">Przelicz</button>
+        <p id="energy-error" hidden role="alert">Wpisz nieujemną liczbę nie większą niż 10¹².</p>
+      </form>
+      <p class="energy-scenario-result">Wpływ podanego zużycia na klimat <span><strong data-energy-climate-total>{example_total}</strong> kg równoważnika CO₂</span></p>
+      <p id="energy-summary" class="energy-sr-only" role="status" aria-live="polite">Przykład dla 10 kWh.</p>
+      <noscript><p>Przykład dotyczy 10 kWh. Włącz JavaScript, aby zmienić zużycie i pobrać wyniki.</p></noscript>
+    </section>
+  </div>
+
+  <div class="energy-analysis">
+    <section id="skladniki" aria-labelledby="climate-heading">
+      <h2 id="climate-heading">Co składa się na wpływ na klimat?</h2>
+      <figure class="energy-chart">
+        <figcaption>Udział trzech składników w krajowym wskaźniku na 1&nbsp;kWh</figcaption>
+        <div class="energy-bar" aria-hidden="true">{full_bar}</div>
+        <div class="energy-axis" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></div>
+        <p class="energy-detail-label">Powiększenie dwóch mniejszych składników <strong>{minor_share}% łącznie</strong></p>
+        <div class="energy-bar energy-bar-detail" aria-hidden="true">{detail_bar}</div>
+      </figure>
+      <table class="energy-parts"><caption>Wkład według pochodzenia dla wpisanego zużycia</caption>
+        <thead><tr><th scope="col">Składnik</th><th scope="col">Udział we wskaźniku</th><th scope="col">g równ. CO₂</th></tr></thead>
+        <tbody>{parts_rows}</tbody>
+      </table>
+    </section>
+    <section id="metoda" aria-labelledby="method-heading">
+      <h2 id="method-heading">Jak obliczono wskaźnik?</h2>
+      <ol class="energy-method">
+        <li><strong>Określenie ilości dostarczonej energii</strong><p>Podstawą jest wstępny bilans Eurostatu za 2025 r. Uwzględnia produkcję netto, import, eksport, pobór magazynów, pozostałe przetwarzanie i straty sieciowe. Kierunki importu pochodzą z danych Polskich Sieci Elektroenergetycznych.</p></li>
+        <li><strong>Obliczenie wpływu w cyklu życia</strong><p>Model obejmuje emisje związane z wydobyciem i dostawą paliw oraz wytwarzaniem energii. Emisje gazów cieplarnianych przeliczono na równoważnik CO₂ i odniesiono do 1 kWh dostarczonej energii. Część danych o procesach pochodzi z wcześniejszych lat.</p></li>
+        <li><strong>Przeliczenie na zużycie</strong><p>Kalkulator mnoży zużycie w kilowatogodzinach przez wskaźnik na 1 kWh. Korzysta z pełnej precyzji danych źródłowych.</p></li>
+      </ol>
+      <a href="/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt">Przeczytaj pełny opis metody v4</a>
+    </section>
+  </div>
+
+  <section class="energy-use">
+    <h2>Jak stosować wynik?</h2>
+    <div><p>Wynik określa wpływ energii zużytej w ocenianym procesie. Przypisz go do etapu, w którym zużyto energię. Dla energii zużywanej we własnym zakładzie sprawdź, czy zasady programu wymagają danych dostawcy lub miksu rezydualnego.</p>
+    <p>Obliczenia modelu v4 przeszły wewnętrzną kontrolę techniczną. Zewnętrzna recenzja ekspercka pozostaje do przeprowadzenia. Przydatność profilu do konkretnej deklaracji środowiskowej wyrobu (EPD) wymaga odrębnej oceny według zasad właściwego programu. <a href="/zastosowanie-epd-cpr.html">Zasady doboru danych</a></p></div>
+  </section>
+
+  <section id="wyniki" class="energy-results">
+    <h2>Sprawdź wszystkie 37 wskaźników</h2>
+    <p>Tabela podaje wartość na 1 kWh i wynik dla wpisanego zużycia. Całkowity wpływ na klimat obejmuje trzy składniki pokazane na wykresie. Każdy wskaźnik odczytuje się w jednostce podanej w jego wierszu.</p>
+    <div class="portal-actions"><button type="button" data-energy-download="csv" disabled>Pobierz tabelę (CSV)</button><button type="button" data-energy-download="json" disabled>Pobierz dane (JSON)</button></div>
+    <p class="portal-scroll-hint">Na małym ekranie przewiń tabelę w poziomie, aby zobaczyć wynik i jednostkę.</p>
+    <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Wyniki 37 wskaźników, tabela przewijana"><table><caption>Wkład energii — Polska 2025 v4</caption>
+      <thead><tr><th scope="col">Kod</th><th scope="col">Wskaźnik</th><th scope="col">Wartość na 1 kWh</th><th scope="col">Wynik</th><th scope="col">Jednostka wyniku</th></tr></thead><tbody>{rows}</tbody>
+    </table></div>
+  </section>
+
+  <section class="energy-sources">
+    <h2>Źródła i warunki wykorzystania</h2>
+    <p>Wersja v4 z 19 października 2026 r. Źródło zmodyfikowanych danych tła: <span lang="en">{source}</span> (baza inwentarza cyklu życia szwajcarskiej administracji federalnej).</p>
+    <p><a href="/data/energia-pl-2025-v4/Polska-energia-2025-v4.zip">Pobierz pakiet źródłowy v4</a> · <a href="/data/energia-pl-2025-v4/przyklad-10-kWh.json">Przykład dla 10 kWh</a> · <a href="/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt">Warunki wykorzystania</a></p>
+  </section>
+</div>
+<script id="energy-profile-data" type="application/json">{profile_json}</script>
+<script src="/js/energy-profile.js?v=20261122-panel" defer></script>
