@@ -162,6 +162,20 @@ def build(api):
         return '<ul class="product-methods">' + ''.join(
             f'<li><h3>{a(m["designation"],m["url"])}</h3><p>{e(m["title_pl"])}</p><p class="product-meta">{e(m["status_label"])}</p><p>{e(m["scope_note"])}</p>' + (links([{'label':f['label']+' (rodzina '+str(f['id'])+')','href':family_url(f['id'])} for f in families if f['id'] in m['family_ids']], 'product-method-families') if show_families else '') + '</li>' for m in items) + '</ul>'
 
+    def aggregate_projects(items):
+        checked_on = min(m['checked_on'] for m in items)
+        display_date = '.'.join(reversed(checked_on.split('-')))
+        cards = ''.join(
+            '<article><h3>' + e(m['title_pl']) + '</h3><p>' + e(m['scope_note'])
+            + '</p><p>' + a(m['designation'], m['url']) + '</p></article>' for m in items)
+        return ('<section id="sec-1" class="portal-section"><h2 id="projekty-cen">Jakie zastosowania kruszyw obejmują projekty CEN?</h2>'
+                '<div class="portal-reading"><p>Podstawowe zasady deklaracji środowiskowych wyrobów budowlanych określa '
+                + a('PN-EN 15804+A2', 'https://sklep.pkn.pl/normy/pn-en-15804-a2-2020-03p.html')
+                + '. Europejski Komitet Normalizacyjny (CEN) prowadzi prace nad zasadami dla samych kruszyw. '
+                f'Według stanu na <time datetime="{e(checked_on)}">{e(display_date)} r.</time> '
+                'oba projekty komitetu CEN/TC 154 mają status „Preliminary” (etap wstępny).</p></div>'
+                '<div class="portal-columns">' + cards + '</div></section>')
+
     def common():
         return '<section class="portal-section product-common"><h2>Energia, paliwa i transport</h2><p>Dane pomocnicze do procesów w różnych branżach. Wybór zależy od granic obliczenia i przyjętej metody.</p>' + links([
             {'label':'Energia elektryczna','href':'/datasety.html?category=energia'},
@@ -178,7 +192,10 @@ def build(api):
     for f in families:
         n = len(associated(f, 'dataset'))
         label = dataset_count(n)
-        if rules(f): label += ' · dokumenty metodyczne'
+        family_rules = rules(f)
+        if family_rules and all(m['status'] == 'preliminary' for m in family_rules):
+            label += ' · projekty CEN'
+        elif family_rules: label += ' · dokumenty metodyczne'
         elif associated(f, 'article'): label += ' · artykuły'
         product_names = [r['title']+' '+r['id'] for r in associated(f,'dataset')]
         search = ' '.join([str(f['id']), str(f['id']).zfill(2), f['official_name'], f['label']] + f['keywords'] + product_names)
@@ -200,7 +217,7 @@ def build(api):
         has_tools = bool(tools or articles)
         destinations = [{'label': 'Dane', 'href': '#dane'}]
         if f['id'] == 24:
-            destinations.append({'label': 'Kruszywo do betonu i na podbudowę', 'href': '#modul-a1'})
+            destinations.append({'label': 'Zastosowania kruszywa', 'href': '#modul-a1'})
         destinations += [
             {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
             {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
@@ -216,14 +233,17 @@ def build(api):
         if f['id'] == 24:
             mma_profile = json.loads((root / 'data/mma-client-example.json').read_text())
             body += aggregate_guide(catalog, mma_profile)
-            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=5">'
+            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=6">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')
 
         if has_methods or has_tools:
             body += '<div class="family-resources">'
             if has_methods:
                 body += '<section id="metoda"><h2>Dokumenty dla tej rodziny</h2>'
-                if family_methods:
+                if f['id'] == 24 and family_methods and all(m['status'] == 'preliminary' for m in family_methods):
+                    body += '<p>Projekty branżowych zasad dla kruszyw są na etapie wstępnym.</p>'
+                    body += a('Zakres obu części i karty projektów CEN', '/c-pcr/kruszywa.html#projekty-cen')
+                elif family_methods:
                     body += method_list(family_methods)
                 else:
                     body += '<p>W katalogu nie wskazano branżowych zasad uzupełniających (c-PCR) dla tej rodziny.</p>'
@@ -253,12 +273,23 @@ def build(api):
             p.write_text(p.read_text().replace('</head>','<meta name="robots" content="noindex,follow"></head>'))
 
     body = '<div class="portal-reading"><section id="wstep" class="portal-prose"><h2>Metoda ogólna i zasady dla wyrobu</h2><p>EN 15804 określa podstawowe zasady deklaracji środowiskowych EPD dla wyrobów budowlanych. Dokument c-PCR uzupełnia je w zakresie określonego rodzaju wyrobu. Jedna rodzina CPR może obejmować kilka różnych dokumentów metodycznych.</p></section><section id="dobor" class="portal-prose"><h2>Jak dobrać metodę</h2><ol><li>Określ wyrób, jego zastosowanie i zakres obliczenia.</li><li>Sprawdź zakres i wydanie dokumentu c-PCR oraz zasady programu EPD.</li><li>Dla oceny wymaganej przez CPR sprawdź właściwą specyfikację techniczną i wymagania mające zastosowanie do wyrobu.</li></ol><p>Wydana norma c-PCR nie jest automatycznie zharmonizowaną specyfikacją techniczną CPR. <a href="/zastosowanie-epd-cpr.html">Więcej o zastosowaniu danych w EPD i CPR</a>.</p></section><section id="cpcr-lista" class="portal-section"><h2>Dokumenty według wyrobu</h2>'
-    body += method_list([m for m in methods['documents'] if m['family_ids'] and m['status']=='published' and m['role']=='complementary_pcr'], show_families=True) + '</section><section class="portal-section"><h2>Dokumenty wspólne: zasady i jakość danych</h2>' + method_list([m for m in methods['documents'] if not m['family_ids']]) + '</section><section class="portal-section"><h2>Dokumenty pomocnicze</h2>' + method_list([m for m in methods['documents'] if m['role']=='technical_review'], show_families=True) + '</section><section id="projekty" class="portal-section"><h2>Projekty norm</h2><p>' + e(methods['drafts_intro']) + '</p>' + method_list([m for m in methods['documents'] if m['status']=='draft'], show_families=True) + '</section><section id="powiazania" class="portal-prose"><h2>Dokumenty poLCA</h2><p>Przy dokumentach branżowych podajemy ich wersję i status. Opublikowanie projektu nie potwierdza przyjęcia go jako reguły programu.</p>' + links([{'label':'Mieszanki asfaltowe — metoda i projekt poLCA','href':'/c-pcr/mma.html'},{'label':'Kruszywa — dane i status projektu poLCA','href':'/c-pcr/kruszywa.html'},{'label':'Wybierz rodzinę wyrobu','href':'/wyroby.html'}]) + '</section></div>'
+    body += method_list([m for m in methods['documents'] if m['family_ids'] and m['status']=='published' and m['role']=='complementary_pcr'], show_families=True) + '</section><section class="portal-section"><h2>Dokumenty wspólne: zasady i jakość danych</h2>' + method_list([m for m in methods['documents'] if not m['family_ids']]) + '</section><section class="portal-section"><h2>Dokumenty pomocnicze</h2>' + method_list([m for m in methods['documents'] if m['role']=='technical_review'], show_families=True) + '</section><section id="projekty" class="portal-section"><h2>Projekty norm</h2><p>' + e(methods['drafts_intro']) + '</p>' + method_list([m for m in methods['documents'] if m['status']=='draft'], show_families=True) + '</section>'
+    body += ('<section id="prace-wstepne" class="portal-prose"><h2>Prace CEN na etapie wstępnym</h2>'
+             '<p>' + a('Kruszywa jako składnik wyrobu i do zastosowania bezpośredniego', '/c-pcr/kruszywa.html#projekty-cen') + '</p></section>')
+    body += '<section id="powiazania" class="portal-prose"><h2>Dokumenty poLCA</h2><p>Przy dokumentach branżowych podajemy ich wersję i status. Opublikowanie projektu nie potwierdza przyjęcia go jako reguły programu.</p>' + links([{'label':'Mieszanki asfaltowe — metoda i projekt poLCA','href':'/c-pcr/mma.html'},{'label':'Kruszywa — dane i status projektu poLCA','href':'/c-pcr/kruszywa.html'},{'label':'Wybierz rodzinę wyrobu','href':'/wyroby.html'}]) + '</section></div>'
     page('c-pcr/index.html','Zasady obliczeń dla wyrobów','PCR — zasady kategorii wyrobów. c-PCR — zasady uzupełniające dla określonych grup produktów.',body)
 
     for slug, fid, title, version in [('mma',23,'Mieszanki mineralno-asfaltowe','v1.0-DRAFT'),('kruszywa',24,'Kruszywa','v0.9-DRAFT')]:
         f=next(x for x in families if x['id']==fid)
-        body='<div class="portal-reading"><section id="sec-1" class="portal-prose"><h2>Dokumenty metodyczne</h2>' + method_list(rules(f)) + '</section><section id="sec-2" class="portal-prose"><h2>Projekt poLCA — ' + version + '</h2><p>Historyczny projekt reguł programu EPD Polska. Nie jest prezentowany jako zatwierdzone wydanie końcowe. Do nowego opracowania dobierz właściwy dokument branżowy i zasady programu.</p>'
+        preliminary = [m for m in rules(f) if m['status'] == 'preliminary']
+        if slug == 'kruszywa' and preliminary:
+            body = aggregate_projects(preliminary) + '<div class="portal-reading">'
+            other_rules = [m for m in rules(f) if m['status'] != 'preliminary']
+            if other_rules:
+                body += '<section class="portal-prose"><h2>Dokumenty metodyczne</h2>' + method_list(other_rules) + '</section>'
+        else:
+            body = '<div class="portal-reading"><section id="sec-1" class="portal-prose"><h2>Dokumenty metodyczne</h2>' + method_list(rules(f)) + '</section>'
+        body += '<section id="sec-2" class="portal-prose"><h2>Projekt poLCA — ' + version + '</h2><p>Historyczny projekt reguł programu EPD Polska. Nie jest prezentowany jako zatwierdzone wydanie końcowe. Do nowego opracowania dobierz właściwy dokument branżowy i zasady programu.</p>'
         if slug=='mma':
             body+=links([{'label':'Archiwalny projekt c-PCR MMA — PDF','href':'/c-pcr/c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf'},{'label':'Archiwalny raport danych MMA — PDF','href':'/c-pcr/Raport-LCI-MMA-Polska-EN15804A2.pdf'}])
         else: body+='<p>W portalu nie udostępniono pełnego dokumentu projektu c-PCR kruszyw do pobrania.</p>'

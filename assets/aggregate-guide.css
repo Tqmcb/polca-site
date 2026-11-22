@@ -29,17 +29,35 @@ body.portal .aggregate-guide > h2 {
 .aggregate-choices {
   grid-column: 2;
   grid-row: 1 / 3;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px 16px;
   max-width: 100%;
-  align-items: stretch;
-  gap: 2px;
   justify-self: start;
+}
+.aggregate-choice-group {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 4px;
+  min-width: 0;
+}
+.aggregate-group-label {
+  align-self: end;
+  color: var(--portal-ink);
+  font-size: .85rem;
+  font-weight: 650;
+  line-height: 1.25;
+}
+.aggregate-group-links {
+  display: flex;
+  gap: 2px;
   padding: 3px;
   border: 1px solid var(--stage-rule);
   border-radius: 6px;
   background: var(--stage-paper);
 }
 body.portal .aggregate-choice {
+  flex: 1 1 auto;
   min-width: 0;
   display: inline-flex;
   align-items: center;
@@ -53,6 +71,7 @@ body.portal .aggregate-choice {
   line-height: 1.22;
   text-align: center;
 }
+.aggregate-choice + .aggregate-choice { border-inline-start: 1px solid var(--stage-rule); }
 body.portal .aggregate-choice:hover { background: #dcebe1; }
 body.portal .aggregate-choice[aria-current="true"] { background: var(--stage-green); color: white; }
 .aggregate-guide .aggregate-help {
@@ -363,12 +382,15 @@ body.portal .aggregate-point[aria-current="true"] {
   .aggregate-point-value { min-width: 0; overflow-wrap: anywhere; font-size: .87rem; }
   .aggregate-point-unit { font-size: .62rem; }
   .aggregate-panel { padding: 11px 13px 13px; }
-  .aggregate-choices {
-    display: grid;
-    grid-template-columns: max-content minmax(0, 1fr) max-content;
-    width: 100%;
+  .aggregate-choices { grid-template-columns: 1fr; gap: 8px; width: 100%; }
+  .aggregate-choice-group {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    grid-template-rows: auto;
+    gap: 8px;
+    align-items: center;
   }
-  body.portal .aggregate-choice { padding: 7px; font-size: .86rem; }
+  .aggregate-group-label { align-self: center; }
+  body.portal .aggregate-choice { min-width: min-content; padding: 7px; font-size: .86rem; }
 }
 @media print {
   .aggregate-guide, .aggregate-layout { display: block; }
