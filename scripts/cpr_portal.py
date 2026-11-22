@@ -215,7 +215,7 @@ def build(api):
         extra = FAMILY_CSS + '<link rel="stylesheet" href="/assets/family-record.css?v=1">'
         if f['id'] == 24:
             body += aggregate_guide(catalog)
-            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=2">'
+            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=3">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')
 
         if has_methods or has_tools:

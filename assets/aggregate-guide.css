@@ -254,6 +254,79 @@ body.portal .aggregate-point[aria-current="true"] {
   .aggregate-layout:has(> .aggregate-note) .aggregate-panels { grid-area: results; }
   .aggregate-layout > .aggregate-note { grid-area: source; }
 }
+@media screen and (min-width: 851px) {
+  @supports (grid-template-rows: subgrid) {
+    .is-interactive .aggregate-layout:has(> .aggregate-note) {
+      grid-template-areas: "figure calculation" "explanation calculation" "example example" "source source";
+      grid-template-rows: max-content 1fr auto auto;
+      row-gap: 0;
+    }
+    /* Keep each stage together in the reading order and share the illustration's grid. */
+    .is-interactive .aggregate-layout .aggregate-panels,
+    .is-interactive .aggregate-panels > .aggregate-panel:not([hidden]) {
+      display: grid;
+      grid-area: 1 / 1 / -1 / -1;
+      grid-template-columns: subgrid;
+      grid-template-rows: subgrid;
+      align-self: stretch;
+    }
+    .is-interactive .aggregate-panels > .aggregate-panel:not([hidden]) {
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+    .is-interactive :is(.aggregate-figure, .aggregate-note) { z-index: 1; }
+    body.portal .aggregate-point { width: max-content; max-width: 30%; }
+    .is-interactive .aggregate-control:has(input) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 12px;
+    }
+    .is-interactive .aggregate-control input { width: 7ch; }
+    .is-interactive .aggregate-calculation {
+      grid-area: calculation;
+      align-self: start;
+      padding: 12px clamp(13px, 1.6vw, 22px) 14px;
+      border-top: 2px solid var(--stage-green);
+      background: var(--stage-paper);
+    }
+    .is-interactive .aggregate-panel .aggregate-explanation {
+      grid-area: explanation;
+      margin: 8px 0 0;
+      align-self: start;
+    }
+    .is-interactive .aggregate-panel .aggregate-epd {
+      grid-area: example;
+      margin-top: 10px;
+      border-block: 1px solid var(--stage-rule);
+      padding: 10px 14px;
+      background: var(--stage-paper);
+    }
+    .is-interactive .aggregate-epd summary { cursor: pointer; }
+    .is-interactive .aggregate-epd[open]::details-content {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      column-gap: clamp(20px, 3vw, 40px);
+      align-content: start;
+    }
+    .is-interactive .aggregate-epd p:first-of-type { grid-row: 1 / 3; }
+    .is-interactive .aggregate-epd p + p { grid-column: 2; }
+    .is-interactive .aggregate-layout > .aggregate-note { margin-top: 8px; }
+  }
+}
+@media screen and (min-width: 851px) and (max-width: 1150px) {
+  .is-interactive .aggregate-layout { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); }
+}
+@media screen and (min-width: 851px) and (max-width: 1000px) {
+  @supports (grid-template-rows: subgrid) {
+    .is-interactive [data-case="podbudowa"] .aggregate-layout:has(> .aggregate-note),
+    .is-interactive .aggregate-layout:has(.aggregate-panel[data-kind="power"]:not([hidden])) {
+      grid-template-areas: "figure calculation" "explanation calculation" "source calculation" "example example";
+      grid-template-rows: max-content max-content 1fr auto;
+    }
+  }
+  .aggregate-figure { --headroom: 12px; padding-top: var(--headroom); }
+  .aggregate-points { top: var(--headroom); }
+}
 @media (max-width: 850px) {
   .aggregate-guide { grid-template-columns: minmax(0, 1fr); gap: 11px; }
   .aggregate-layout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
