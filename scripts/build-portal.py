@@ -211,7 +211,7 @@ def build_energy_calculator():
         'oblicz-energie-2025.html', 'Energia elektryczna w Polsce w 2025 r.',
         'Sprawdź wskaźnik dla 1 kWh, jego składniki i metodę poLCA v4. Przelicz zużycie energii na 37 wskaźników środowiskowych.',
         body, parent=('Kalkulatory', '/kalkulatory.html'), pagehead=False,
-        head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122-zastosowanie">',
+        head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122-pomiar">',
     )
 
 

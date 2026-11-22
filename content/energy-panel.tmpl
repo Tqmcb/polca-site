@@ -46,30 +46,29 @@
       </div>
     </section>
     <section class="energy-method-section" id="metoda" aria-labelledby="method-heading">
-      <h2 id="method-heading">Jak obliczono wskaźnik?</h2>
       <div class="energy-method-layout">
-      <ol class="energy-method">
-        <li><strong>Jak ustalono ilość dostarczonej energii?</strong><p>Wstępny bilans Eurostatu za 2025&nbsp;r. obejmuje produkcję netto, import, eksport, pobór magazynów, pozostałe przetwarzanie i straty sieciowe. Dane Polskich Sieci Elektroenergetycznych określają kierunki importu.</p></li>
-        <li><strong>Jak obliczono wpływ 1&nbsp;kWh na klimat?</strong><p>Model obejmuje m.in. emisje z wydobycia i dostaw paliw oraz wytwarzania prądu. Emisje gazów cieplarnianych przeliczono na równoważnik CO₂ i odniesiono do 1&nbsp;kWh dostarczonej energii. Część danych pochodzi z wcześniejszych lat.</p></li>
-        <li><strong>Jak obliczyć wynik dla własnego zużycia?</strong><p>Kalkulator mnoży zużycie w kilowatogodzinach przez wskaźnik na 1&nbsp;kWh. W obliczeniach zachowuje pełną precyzję danych źródłowych.</p></li>
-      </ol>
-      <figure class="energy-method-figure">
-        <img src="/images/polca-model-energii.webp" width="800" height="800" alt="Rysunek elektrowni, turbiny wiatrowej i paneli słonecznych oraz transformatora i licznika u odbiorcy." loading="lazy">
-        <figcaption>Od wytwarzania energii do punktu dostawy u odbiorcy</figcaption>
-      </figure>
+        <div class="energy-method-copy">
+          <h2 id="method-heading">Jak obliczono wpływ 1 kWh energii na klimat?</h2>
+          <p>Strukturę dostaw energii ustalono na podstawie wstępnego bilansu Eurostatu za 2025&nbsp;r. Bilans obejmuje produkcję netto, import i eksport, pobór energii przez magazyny, pozostałe przetwarzanie oraz straty sieciowe. Kierunki importu ustalono na podstawie danych Polskich Sieci Elektroenergetycznych.</p>
+          <p>Model uwzględnia m.in. emisje z wydobycia i dostaw paliw oraz wytwarzania energii elektrycznej. Część tych danych pochodzi z wcześniejszych lat. Emisje gazów cieplarnianych przeliczono na równoważnik CO₂ i odniesiono do ilości energii dostarczonej odbiorcom.</p>
+        </div>
+        <figure class="energy-method-figure">
+          <img src="/images/polca-punkt-dostawy-energii.webp" width="1080" height="720" alt="Stacja z transformatorem i powiększony licznik energii elektrycznej u odbiorcy." loading="lazy">
+          <figcaption>Wskaźnik na 1 kWh u odbiorcy uwzględnia straty sieciowe i krajową strukturę napięć.</figcaption>
+        </figure>
       </div>
       {full_method}
     </section>
 
   <section id="zastosowanie" class="energy-use" aria-labelledby="energy-use-heading">
     <h2 id="energy-use-heading">Jak uwzględnić zużycie energii elektrycznej w śladzie węglowym wyrobu?</h2>
-    <p>W tym przykładzie przetwarzanie odpadów betonowych odbywa się poza kontrolą właściciela deklaracji. Jeśli kruszarka zużyje 10&nbsp;kWh, wpływ tej energii na klimat wyniesie około {example_climate_kg}&nbsp;kg równoważnika CO₂ według modelu dla Polski za 2025&nbsp;r. W śladzie węglowym wyrobu ta wartość przypada na zasilanie kruszarki na etapie przetwarzania odpadów (moduł C3).</p>
-    <p>Przy sporządzaniu deklaracji środowiskowej wyrobu (EPD) o doborze danych decydują zasady właściwego programu. Dla energii kupowanej przez zakład program może wymagać danych dostawcy lub miksu rezydualnego. <a href="/zastosowanie-epd-cpr.html">Zasady doboru danych do deklaracji</a></p>
+    <p>Załóżmy, że kruszarka zużywa 10&nbsp;kWh podczas przetwarzania odpadów betonowych poza kontrolą właściciela deklaracji. Według modelu dla Polski za 2025&nbsp;r. samo zasilanie kruszarki odpowiada za około {example_climate_kg}&nbsp;kg równoważnika CO₂ na etapie przetwarzania odpadów (moduł C3).</p>
+    <p>Dobór danych do deklaracji środowiskowej wyrobu (EPD) zależy od zasad właściwego programu. Dla energii kupowanej przez zakład program może wymagać danych dostawcy lub miksu rezydualnego. <a href="/zastosowanie-epd-cpr.html">Zasady doboru danych do deklaracji</a></p>
   </section>
 
   <section id="wyniki" class="energy-results">
-    <h2>Sprawdź wszystkie 37 wskaźników</h2>
-    <p>Tabela podaje wartość na 1 kWh i wynik dla wpisanego zużycia. Całkowity wpływ na klimat obejmuje trzy składniki pokazane na wykresie. Każdy wskaźnik odczytuje się w jednostce podanej w jego wierszu.</p>
+    <h2>Wyniki dla 37 wskaźników środowiskowych</h2>
+    <p>Kalkulator mnoży zużycie energii w kWh przez niezaokrągloną wartość wskaźnika na 1 kWh. Jednostkę wyniku podano w ostatniej kolumnie.</p>
     <div class="portal-actions"><button type="button" data-energy-download="csv" disabled>Pobierz tabelę (CSV)</button><button type="button" data-energy-download="json" disabled>Pobierz dane (JSON)</button></div>
     <p class="portal-scroll-hint">Na małym ekranie przewiń tabelę w poziomie, aby zobaczyć wynik i jednostkę.</p>
     <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Wyniki 37 wskaźników, tabela przewijana"><table><caption>Wkład energii — Polska 2025 v4</caption>
