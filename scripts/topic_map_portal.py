@@ -21,22 +21,25 @@ def build(api):
     def path(coords):
         return 'M' + ' L'.join(f'{x:.2f},{y:.2f}' for x, y in (project(*p[:2]) for p in coords))
 
-    icons = []
+    icons = {}
     for name in sorted({item['icon'] for item in topics['items']}):
         encoded = base64.b64encode((root / f'images/mapa-symbol-{name}.webp').read_bytes()).decode()
-        icons.append(f'<image id="{name}" width="100" height="100" href="data:image/webp;base64,{encoded}"/>')
+        icons[name] = f'<image id="{name}" width="100" height="100" href="data:image/webp;base64,{encoded}"/>'
+    country = f'<path id="poland" d="{path(ring)} Z"/><clipPath id="country-clip"><use href="#poland"/></clipPath>'
     svg = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="650" viewBox="0 0 800 650" role="img" aria-labelledby="map-title map-desc">
 <title id="map-title">{escape(topics['title'])}</title>
 <desc id="map-desc">Mapa orientacyjna: miasta i przykłady energii wiatru, fotowoltaiki, energetyki konwencjonalnej, kruszyw, cementu, transportu i budynków. Symbole pokazują temat, a nie wartość wskaźnika. Oznaczenia budynków i transportu są ilustracjami tematycznymi przy miastach.</desc>
 <metadata>{escape(json.dumps({'scope': topics['scope'], 'checked': topics['checked']}, ensure_ascii=False))}</metadata>
-<defs><path id="poland" d="{path(ring)} Z"/><clipPath id="country-clip"><use href="#poland"/></clipPath>{''.join(icons)}</defs>
+<defs>{country}{''.join(icons.values())}</defs>
 <style>text{{font-family:Arial,sans-serif;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}}.city-label{{font-size:18px;font-weight:600;fill:#263e56}}.topic-label{{font-size:16px;font-weight:600;fill:#1355c4}}.place-label{{font-size:14px;font-weight:400;fill:#526173}}.callout{{fill:none;stroke:#9badbf;stroke-width:1}}.city-dot{{fill:#263e56;stroke:#fff;stroke-width:2}}</style>
 <use href="#poland" fill="#f3f7fb" stroke="#748ca3" stroke-width="1.6"/>
 <g clip-path="url(#country-clip)" fill="none" stroke="#bfd8ef" stroke-width="2" stroke-linecap="round">''']
+    rivers = []
     for river in geography['rivers']:
         geom = river['geometry']
         lines = geom['coordinates'] if geom['type'] == 'MultiLineString' else [geom['coordinates']]
-        svg.extend(f'<path d="{path(line)}"/>' for line in lines)
+        rivers.extend(f'<path d="{path(line)}"/>' for line in lines)
+    svg.extend(rivers)
     svg.append('</g>')
     for item in topics['items']:
         x, y = project(item['lon'], item['lat'])
@@ -58,6 +61,26 @@ def build(api):
         svg.append(f'<circle class="city-dot" cx="{x:.2f}" cy="{y:.2f}" r="3.2"/><text class="city-label" x="{x+dx:.2f}" y="{y+dy:.2f}" text-anchor="{anchor}">{escape(city["name"])}</text>')
     svg.append('</svg>')
     (root / 'images/polca-mapa-danych.svg').write_text('\n'.join(svg) + '\n')
+
+    # The homepage links to the labelled map. At this scale sketches sit at
+    # their reference coordinates and need no labels or leader lines.
+    preview_ids = {'wiatr-szymankowo', 'transport', 'budynki', 'elektrownia', 'Dolny Śląsk'}
+    preview_items = [item for item in topics['items'] if item['id'] in preview_ids]
+    preview_icons = ''.join(icons[name] for name in sorted({item['icon'] for item in preview_items}))
+    preview = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="364" height="316" viewBox="36 8 728 632" role="img" aria-labelledby="preview-title preview-desc">',
+        '<title id="preview-title">Mapa tematów poLCA</title>',
+        '<desc id="preview-desc">Kontur Polski z rzekami i szkicami energetyki, transportu, budynków oraz kruszyw.</desc>',
+        f'<defs>{country}{preview_icons}</defs>',
+        '<use href="#poland" fill="#f3f7fa" stroke="#8097a7" stroke-width="2.4" stroke-linejoin="round"/>',
+        '<g clip-path="url(#country-clip)" fill="none" stroke="#c8dbe3" stroke-width="2.7" stroke-linecap="round">',
+        *rivers, '</g>',
+    ]
+    for item in preview_items:
+        x, y = project(item['lon'], item['lat'])
+        preview.append(f'<use href="#{item["icon"]}" transform="translate({x-65:.2f} {y-79:.2f}) scale(1.3)"/>')
+    preview.append('</svg>')
+    (root / 'images/polca-mapa-podglad.svg').write_text('\n'.join(preview) + '\n')
 
     source_rows = []
     for item in topics['items']:

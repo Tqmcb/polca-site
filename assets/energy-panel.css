@@ -6,27 +6,20 @@
   --energy-inset: clamp(20px, 2.6vw, 36px);
 }
 .energy-panel h1, .energy-panel h2, .energy-panel p, .energy-panel figure { margin: 0; }
-.energy-panel h1 { max-width: 25ch; font-size: clamp(2rem, 4vw, 3.45rem); font-weight: 600; letter-spacing: -.038em; line-height: 1.04; text-wrap: balance; }
-.energy-panel h2 { font-size: clamp(1.28rem, 2vw, 1.62rem); line-height: 1.18; font-weight: 625; letter-spacing: -.023em; }
-.energy-header { display: grid; grid-template-columns: 1fr 1.05fr; grid-template-rows: 1fr auto; align-items: center; gap: 12px 32px; margin: 8px 0 24px; }
-.energy-header-title { align-self: end; padding-top: 18px; }
-.energy-photo { grid-column: 2; grid-row: 1 / 3; position: relative; }
-.energy-grid-photo { display: block; width: 100%; height: clamp(176px, 16vw, 220px); object-fit: cover; object-position: 50% 76%; }
-.energy-photo figcaption { position: absolute; right: 0; bottom: 0; padding: 3px 8px; background: #10283cdd; font-size: .75rem; }
-body.portal .energy-photo a { color: white; }
-.energy-jumps { display: flex; flex-wrap: wrap; align-self: start; gap: 0 18px; padding-bottom: 12px; }
-.energy-jumps a { display: inline-flex; align-items: center; min-height: 42px; font-size: .93rem; font-weight: 580; }
-.energy-overview { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); border: 1px solid var(--portal-line); }
-.energy-reference, .energy-calculator { min-width: 0; padding: var(--energy-inset); }
-.energy-reference { background: #163b59; color: #fff; }
-.energy-reference h2 { font-size: 1.06rem; letter-spacing: 0; font-weight: 560; }
-.energy-reference-number { padding: 12px 0 16px; }
-.energy-reference-number strong { display: block; font-weight: 590; font-size: clamp(2.7rem, 6.3vw, 5.15rem); line-height: .99; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
-.energy-reference-number span { display: block; margin-top: 6px; color: #dfedf6; font-size: 1.02rem; }
-.energy-scope { max-width: 52ch; font-size: .95rem; line-height: 1.45; }
-body.portal .energy-reference a { display: inline-flex; align-items: center; padding: 10px 0 0; color: #fff; font-weight: 580; }
-body.portal .energy-reference a:focus-visible { outline-color: #ffcc6c !important; }
-.energy-calculator { display: flex; flex-direction: column; justify-content: center; }
+.energy-panel h1 { max-width: 35ch; font-size: clamp(2rem, 3.4vw, 3rem); font-weight: 575; letter-spacing: -.035em; line-height: 1.06; text-wrap: balance; }
+.energy-panel h2 { font-size: clamp(1.3rem, 2vw, 1.62rem); line-height: 1.2; font-weight: 600; letter-spacing: -.02em; }
+.energy-header { padding-block: 4px 18px; border-bottom: 1px solid var(--portal-line); }
+.energy-jumps { display: flex; flex-wrap: wrap; gap: 0 20px; margin-top: 16px; border-bottom: 1px solid var(--portal-line); }
+.energy-jumps a { display: inline-flex; align-items: center; min-height: 42px; font-size: .9rem; font-weight: 530; }
+.energy-overview { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; padding-top: var(--energy-inset); }
+.energy-reference, .energy-calculator { min-width: 0; }
+.energy-reference h2 { font-size: 1.09rem; font-weight: 550; letter-spacing: 0; }
+.energy-reference-number { padding: 6px 0 14px; }
+.energy-reference-number strong { display: block; color: var(--portal-ink); font-weight: 560; font-size: clamp(2.85rem, 5.7vw, 4.55rem); line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.energy-reference-number span { display: block; margin-top: 3px; color: var(--portal-ink); font-size: 1rem; }
+.energy-scope { max-width: 50ch; color: var(--portal-muted); font-size: .94rem; line-height: 1.43; }
+.energy-reference .energy-status { margin-top: 8px; max-width: 48ch; color: var(--portal-muted); font-size: .88rem; line-height: 1.4; }
+.energy-calculator { padding: clamp(18px, 2.3vw, 30px); background: var(--portal-soft); }
 .energy-panel #energy-form { display: grid; grid-template-columns: minmax(80px, 1fr) minmax(80px, .7fr) auto; gap: 10px; align-items: end; margin: 18px 0; }
 .energy-field label { display: block; margin-bottom: 5px; font-size: .9rem; }
 .energy-field { min-width: 0; }
@@ -57,28 +50,35 @@ body.portal .energy-reference a:focus-visible { outline-color: #ffcc6c !importan
 .energy-parts th + th, .energy-parts td { text-align: right; padding-left: 10px; }
 .energy-parts td { white-space: nowrap; }
 .energy-swatch { display: inline-block; width: .65em; height: .65em; margin-right: .45em; }
-.energy-method-section { border-block: 1px solid var(--portal-line); padding: clamp(18px, 3vw, 32px); background: #f3f7f7; }
-.energy-method-layout { display: grid; grid-template-columns: minmax(210px, .85fr) minmax(0, 1.5fr); gap: 18px clamp(24px, 4vw, 52px); align-items: center; margin: 16px 0 24px; }
+.energy-method-section { padding-top: 24px; border-top: 1px solid var(--portal-line); }
+.energy-method-layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(190px, .7fr); gap: 18px clamp(24px, 6vw, 84px); align-items: center; margin: 12px 0 20px; }
 .energy-method-figure { text-align: center; }
-.energy-method-figure img { display: block; width: min(100%, 350px); height: auto; margin: 0 auto; }
-.energy-method-figure figcaption { max-width: 33ch; margin: 2px auto 0; font-size: .91rem; line-height: 1.35; color: var(--portal-muted); }
+.energy-method-figure img { display: block; width: min(100%, 240px); height: auto; margin: 0 auto; }
+.energy-method-figure figcaption { max-width: 30ch; margin: 0 auto; color: var(--portal-muted); font-size: .88rem; line-height: 1.36; }
 .energy-method { padding: 0; margin: 0; list-style: none; counter-reset: energy-step; }
 .energy-method li { position: relative; padding: 12px 0 14px 42px; counter-increment: energy-step; }
-.energy-method li + li { border-top: 1px solid #d1dcdd; }
-.energy-method li::before { content: counter(energy-step); position: absolute; top: 13px; left: 0; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: #dcebe8; color: #195546; font-size: .92rem; font-weight: 650; }
+.energy-method li + li { border-top: 1px solid var(--portal-line); }
+.energy-method li::before { content: counter(energy-step); position: absolute; top: 13px; left: 0; display: grid; place-items: center; width: 27px; height: 27px; border-radius: 50%; background: var(--portal-soft); color: var(--portal-ink); font-size: .92rem; font-weight: 650; }
 .energy-method strong { display: block; font-size: 1.08rem; line-height: 1.35; }
 .energy-method p { max-width: 67ch; color: var(--portal-muted); line-height: 1.48; margin-top: 4px; }
-.energy-method-full { border: 1px solid var(--portal-line); background: white; }
-.energy-method-full summary { padding: 13px 20px; color: var(--portal-ink); font-weight: 650; cursor: pointer; }
-.energy-method-full summary::marker { color: var(--energy-biogenic); }
+.energy-method-full { border-block: 1px solid var(--portal-line); }
+.energy-method-full summary { padding: 14px 4px; color: var(--portal-ink); font-weight: 650; cursor: pointer; }
+.energy-method-full summary::marker { color: var(--portal-link); }
 .energy-method-full[open] summary { border-bottom: 1px solid var(--portal-line); }
 .energy-method-body { box-sizing: content-box; max-width: 72ch; margin: 0 auto; padding: clamp(16px, 3vw, 34px); line-height: 1.62; overflow-wrap: break-word; }
 .energy-method-body h3 { margin: 1.35em 0 .45em; font-size: 1.15rem; line-height: 1.3; }
 .energy-method-body p + p { margin-top: .7em; }
 .energy-method-title { font-weight: 650; }
 .energy-method-download { padding-top: 10px; }
-.energy-use { display: grid; grid-template-columns: minmax(190px, .45fr) minmax(0, 1fr); gap: 18px 36px; padding: 24px var(--energy-inset); background: var(--portal-soft); border-left: 3px solid var(--energy-fossil); }
+.energy-use { display: grid; grid-template-columns: minmax(0, 1fr) minmax(160px, 240px); gap: 12px clamp(32px, 7vw, 92px); align-items: center; }
+.energy-use h2 { grid-column: 1; align-self: end; }
+.energy-use > div { grid-column: 1; max-width: 70ch; align-self: start; }
+.energy-use p { line-height: 1.5; }
 .energy-use p + p { margin-top: 8px; }
+.energy-photo { grid-column: 2; grid-row: 1 / 3; }
+.energy-grid-photo { display: block; width: 100%; height: auto; aspect-ratio: 2.3; object-fit: cover; object-position: 50% 73%; }
+.energy-photo figcaption { font-size: .78rem; line-height: 1.4; padding-top: 5px; }
+body.portal .energy-photo a { color: var(--portal-muted); }
 .energy-results, .energy-sources { margin-top: 42px; }
 .energy-results h2, .energy-sources h2 { margin-bottom: 10px; }
 .energy-results > .portal-actions { margin-block: 16px; }
@@ -87,34 +87,36 @@ body.portal .energy-reference a:focus-visible { outline-color: #ffcc6c !importan
 .energy-sources p + p { margin-top: 8px; }
 
 @media (max-width: 890px) {
-  .energy-overview { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .energy-panel #energy-form { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
   .energy-panel #energy-form button { grid-column: 1 / -1; }
-  .energy-header { column-gap: 20px; }
 }
 
 @media (max-width: 700px) {
-  .energy-header { grid-template-columns: 1fr; gap: 10px; margin-top: 0; }
-  .energy-header-title { padding: 0; }
-  .energy-photo { grid-column: auto; grid-row: auto; }
-  .energy-grid-photo { height: clamp(116px, 32vw, 190px); object-position: 50% 76%; }
-  .energy-jumps { column-gap: 16px; padding: 0; }
+  .portal-breadcrumbs:has(+ .energy-panel) { margin-bottom: 14px; }
+  .portal-breadcrumbs:has(+ .energy-panel) > :nth-last-child(-n+2) { display: none; }
+  .energy-header { padding-block: 0 12px; }
+  .energy-jumps { gap: 0 14px; }
+  .energy-jumps a { font-size: .86rem; }
   .energy-overview, .energy-breakdown-body, .energy-method-layout, .energy-use { grid-template-columns: minmax(0, 1fr); }
-  .energy-method-layout { gap: 14px; }
-  .energy-method-figure img { width: min(100%, 216px); }
-  .energy-method-figure figcaption { margin-top: 0; }
-  .energy-method li { padding-left: 36px; }
-  .energy-method-full { margin-inline: -8px; }
-  .energy-method-body { padding: 14px; }
-  .energy-overview { border: 0; }
-  .energy-calculator { border: 1px solid var(--portal-line); }
-  .energy-use { gap: 10px; }
+  .energy-overview { gap: 12px; padding-top: 18px; }
+  .energy-reference-number { padding-block: 3px 8px; }
+  .energy-calculator { padding: 17px; }
   .energy-panel #energy-form { grid-template-columns: minmax(0, 1fr) minmax(68px, .7fr) auto; }
   .energy-panel #energy-form button { grid-column: auto; }
+  .energy-method-layout { gap: 12px; margin-bottom: 14px; }
+  .energy-method-figure, .energy-photo { display: flex; align-items: center; gap: 16px; }
+  .energy-method-figure { text-align: left; }
+  .energy-method-figure img { width: min(34%, 126px); margin: 0; }
+  .energy-method-figure figcaption { max-width: 24ch; margin: 0; }
+  .energy-method li { padding-left: 35px; }
+  .energy-method-body { padding: 14px 0; }
+  .energy-use { gap: 12px; }
+  .energy-photo { grid-column: 1; grid-row: auto; }
+  .energy-grid-photo { width: min(42%, 158px); }
+  .energy-photo figcaption { padding: 0; }
   .energy-parts { font-size: .87rem; }
   .energy-parts th + th, .energy-parts td { padding-left: 5px; }
 }
-
 @media (max-width: 370px) {
   .energy-panel #energy-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .energy-panel #energy-form button { grid-column: 1 / -1; }
