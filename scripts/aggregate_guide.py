@@ -126,6 +126,7 @@ def scenario(name, image, alt, title, stages):
                         'power': 'Energia w Polsce, 2025', 'fuel': 'Karta paliwa'}[key]
         panels.append(f'''<article id="{panel_id}" class="aggregate-panel" data-step="{index}" data-kind="{key}"
           data-factor="{factor}" data-result-unit="{unit}" tabindex="-1">
+          <div class="aggregate-calculation">
           <h4 class="aggregate-panel-heading"><span>{code}</span> {step_title}</h4>
           <p class="aggregate-unit-caption">{stage['caption']}</p>
           <p class="aggregate-result" aria-atomic="true"><strong data-output>{value}</strong> <span>{unit}</span></p>
@@ -134,7 +135,8 @@ def scenario(name, image, alt, title, stages):
           <p class="aggregate-source">Współczynnik poLCA <strong><span data-factor-value>{factor_text}</span> {factor_unit}</strong> · <a data-source href="{source}">{source_label}</a></p>
           <p class="aggregate-equation">{expression} × <span data-factor-value>{factor_text}</span> {factor_unit}
           {operator} <span data-output>{value}</span> {equation_unit}</p>
-          <p>{stage['description']}</p>{stage.get('extras','')}
+          </div>
+          <p class="aggregate-explanation">{stage['description']}</p>{stage.get('extras','')}
           <a class="aggregate-backlink" href="#{point_id}">Punkt {code} na ilustracji</a>
           </article>''')
     boundary = (f'<a href="{CONCRETE_STANDARD}">EN 16757, pkt 6.2.2</a>'
