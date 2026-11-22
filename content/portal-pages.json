@@ -771,7 +771,7 @@
           "title": "Czy producent może przyjąć wartość poLCA dla kruszywa?",
           "paragraphs": [
             "Do wstępnego oszacowania wpływu kruszywa na klimat można przyjąć wartość grupową poLCA i zapisać to założenie. Dla twardego kruszywa łamanego podajemy 5,5 kg ekwiwalentu CO₂ na tonę u bramy zakładu kruszyw. Karta udostępnia jeden wskaźnik. W publicznym pakiecie brakuje inwentaryzacji, pozostałych wskaźników EN 15804 i raportu przeglądu tego zbioru.",
-            "Jeżeli producent deklaruje właściwości użytkowe i zgodność wyrobu na podstawie rozporządzenia (UE) 2024/3110, o doborze danych rozstrzygają specyfikacja mająca zastosowanie do wyrobu i reguły obliczeń w oprogramowaniu Komisji. Plan prac Komisji przewiduje stosowanie wspólnych, konserwatywnych danych tła, gdy dane przedsiębiorstwa są trudno dostępne lub kosztowne do uzyskania. Spełnienie warunków zamówienia i możliwość użycia zbioru w deklaracji konkretnego wyrobu wymagają odrębnego potwierdzenia."
+            "Jeżeli producent deklaruje właściwości użytkowe i zgodność wyrobu na podstawie rozporządzenia (UE) 2024/3110, o doborze danych rozstrzygają specyfikacja mająca zastosowanie do wyrobu i reguły obliczeń w oprogramowaniu Komisji. Plan prac Komisji przewiduje obowiązkowe stosowanie wspólnych, konserwatywnych danych tła Komisji, gdy dane przedsiębiorstwa nie są łatwo dostępne lub są kosztowne do uzyskania. Dla konkretnego wyrobu producent ustala, które wymagania już go obowiązują i jakie dane może zastosować."
           ],
           "links": [
             {
