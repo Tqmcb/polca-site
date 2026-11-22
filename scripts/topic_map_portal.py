@@ -103,4 +103,4 @@ def build(api):
 <p>Osobny materiał z wartościami liczbowymi: <a href="/mapa-polski.html">zgłoszone emisje CO₂ z zakładów w Polsce — mapa i dane za 2024 rok</a>.</p></div>'''
     page('mapa-danych.html', 'Polska w danych środowiskowych',
          'Energia, surowce, transport i budynki — przykłady na mapie Polski.', body,
-         head_extra='<link rel="stylesheet" href="/assets/map.css?v=20261020emissions">')
+         head_extra='<link rel="stylesheet" href="/assets/map.css?v=20261122-linki">')

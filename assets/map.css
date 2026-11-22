@@ -20,7 +20,8 @@
 .map-table th[scope="row"] { font-weight: 600; }
 .map-table small { display: block; font-weight: 400; color: var(--portal-muted); }
 .map-table details { margin-top: 7px; max-width: 48ch; font-size: .84rem; font-weight: 400; }
-.map-table summary { color: var(--portal-link); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.map-table summary { color: var(--portal-link); cursor: pointer; font-weight: 600; }
+.map-table summary:hover { color: var(--portal-ink); }
 .map-table details p { margin: 8px 0 0; overflow-wrap: anywhere; }
 .map-table .map-value { white-space: nowrap; font-variant-numeric: tabular-nums; text-align: right; }
 .map-table th:last-child { text-align: right; }

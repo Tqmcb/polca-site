@@ -145,4 +145,4 @@ def build(content, root, page):
         raise ValueError(f'Nieznany układ przewodnika: {layout}')
     page(content['path'], content['title'], content['lead'], body,
          attrs=f'data-guide="{layout}"', pagehead=False,
-         head_extra='<link rel="stylesheet" href="/assets/visual-guides.css?v=1">')
+         head_extra='<link rel="stylesheet" href="/assets/visual-guides.css?v=20261122-linki">')

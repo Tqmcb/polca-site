@@ -65,7 +65,7 @@ body.portal .comparison-sections .portal-list a {
   padding: 5px 0;
   font-size: .95rem;
   font-weight: 550;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .comparison-sections section:has(table) {

@@ -31,7 +31,7 @@ body.portal .reading-index-list a {
   line-height: 1.35;
   text-decoration: none;
 }
-body.portal .reading-index-list a:hover { text-decoration: underline; }
+body.portal .reading-index-list a:hover { background-color: var(--portal-soft); }
 .reading-mobile-index { display: none; }
 .reading-chapters { min-width: 0; container-type: inline-size; }
 .reading-chapters .portal-prose { max-width: none; }
@@ -62,7 +62,7 @@ body.portal .reading-chapters .portal-list a {
   padding: .22rem 0;
   font-size: .95rem;
   font-weight: 550;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .reading-chapters .portal-table-wrap { margin: 1rem 0 .7rem; }
 .reading-chapters table { line-height: 1.45; }
