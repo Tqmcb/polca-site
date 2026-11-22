@@ -554,7 +554,9 @@
           "title": "Normy odniesienia",
           "paragraphs": [
             "EN 15804:2012+A2:2019/AC:2021: zasady deklaracji środowiskowych wyrobów budowlanych, w tym zestaw wskaźników i moduły cyklu życia. AC:2021 jest sprostowaniem, nie dodatkiem.",
-            "EN 15941:2024: jakość i dobór danych, w tym załącznik E o danych energii elektrycznej. Teksty są dostępne w katalogu wydawcy."
+            "Moduł A3 obejmuje produkcję wyrobu (pkt 6.2.2), a moduł C3 obejmuje przetwarzanie odpadów w celu ponownego użycia, odzysku lub recyklingu (pkt 6.2.6). Wskaźniki oddziaływania na środowisko określono w pkt 7.2.3, a wskaźniki zużycia zasobów, kategorie odpadów i strumienie wyjściowe w pkt 7.2.4.",
+            "EN 15941:2024: jakość i dobór danych, w tym załącznik E o danych energii elektrycznej. Teksty są dostępne w katalogu wydawcy.",
+            "W programie EPD Polska o przyjęciu konkretnej wersji zbioru danych do określonego zastosowania decyduje operator programu."
           ],
           "links": [
             {
@@ -564,6 +566,10 @@
             {
               "label": "EN 15941:2024 (EVS)",
               "href": "https://www.evs.ee/en/evs-en-15941-2024"
+            },
+            {
+              "label": "Status oceny profilu energii za 2025 r. (wersja v4)",
+              "href": "/energia-polska-2025-v4.html#status"
             }
           ],
           "id": "mapa-normatywna"
@@ -580,12 +586,16 @@
               "href": "/energia-polska-2025-v4.html"
             },
             {
+              "label": "Wyniki dla 37 wskaźników energii elektrycznej za 2025 r.",
+              "href": "/oblicz-energie-2025.html#wyniki"
+            },
+            {
               "label": "METODA-I-ZMIANY.txt",
               "href": "/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt"
             },
             {
-              "label": "Zastosowanie w EPD i CPR",
-              "href": "/zastosowanie-epd-cpr.html"
+              "label": "Dobór profilu energii według załącznika E do EN 15941",
+              "href": "/zastosowanie-epd-cpr.html#dobor-profilu"
             }
           ],
           "id": "procedury"
