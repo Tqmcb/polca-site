@@ -2623,7 +2623,14 @@
         "EN 15804",
         "EN 16908",
         "EN 16757",
-        "CEN/TS 18301"
+        "CEN/TS 18301",
+        "PN-EN 16485:2026-09",
+        "drewno konstrukcyjne",
+        "płyty drewnopochodne",
+        "PN-EN 16903:2026-03",
+        "PN-EN 16904:2026-03",
+        "rury",
+        "przewody z tworzyw sztucznych"
       ],
       "cpr_family_ids": [],
       "cpr_related": [],
@@ -2792,7 +2799,12 @@
       "related_ids": [],
       "keywords": [
         "Dane wyrobu a analiza budynku",
-        "instrukcje"
+        "instrukcje",
+        "PN-EN 15978:2026-08",
+        "2024/1275",
+        "2026/52",
+        "świadectwo charakterystyki energetycznej",
+        "GWP budynku"
       ],
       "cpr_family_ids": [],
       "cpr_related": [],
@@ -3201,7 +3213,10 @@
       "related_ids": [],
       "keywords": [
         "Deklaracje środowiskowe wyrobów",
-        "epd czym sa"
+        "epd czym sa",
+        "ISO 14025:2026",
+        "GWP-total",
+        "moduł D"
       ],
       "published_at": "2026-01-20",
       "cpr_family_ids": [],

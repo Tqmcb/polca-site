@@ -51,6 +51,61 @@
       "scope_note": "Dla betonu i elementów betonowych objętych zakresem normy. Wyłącza beton komórkowy autoklawizowany i beton związany żywicą; obejmuje tylko część rodziny 1."
     },
     {
+      "id": "en16485",
+      "designation": "PN-EN 16485:2026-09",
+      "title_pl": "Deklaracje środowiskowe drewna i wyrobów drewnopochodnych stosowanych w budownictwie",
+      "url": "https://sklep.pkn.pl/pn-en-16485-2026-09e.html",
+      "status_label": "Polska Norma w wersji angielskiej",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        13,
+        14
+      ],
+      "scope_note": "Norma uzupełnia EN 15804. Obejmuje m.in. drewno konstrukcyjne i płyty drewnopochodne. Określa, jak w obliczeniach uwzględniać zawartość węgla w drewnie.",
+      "checked_on": "2026-11-22"
+    },
+    {
+      "id": "en16903",
+      "designation": "PN-EN 16903:2026-03",
+      "title_pl": "Deklaracje środowiskowe systemów przewodów z tworzyw sztucznych układanych pod ziemią na zewnątrz budynku",
+      "url": "https://sklep.pkn.pl/normy/pn-en-16903-2026-03e.html",
+      "status_label": "Polska Norma w wersji angielskiej",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        28,
+        29
+      ],
+      "scope_note": "Obejmuje m.in. sieci kanalizacyjne, wodociągowe i gazowe. Wyłączono rury ciepłownicze oraz rury i kształtki z tworzyw sztucznych wzmocnionych włóknem szklanym.",
+      "checked_on": "2026-11-22",
+      "installation": "Pod ziemią, na zewnątrz budynku",
+      "family_scope": {
+        "28": "Dla tej rodziny norma obejmuje m.in. podziemne przewody kanalizacyjne i gazowe układane na zewnątrz budynku. Wyłączono rury ciepłownicze oraz rury i kształtki z tworzyw sztucznych wzmocnionych włóknem szklanym.",
+        "29": "W tej rodzinie norma dotyczy przewodów sieci wody przeznaczonej do spożycia przez ludzi, układanych pod ziemią na zewnątrz budynku. Wyłączono rury i kształtki z tworzyw sztucznych wzmocnionych włóknem szklanym."
+      }
+    },
+    {
+      "id": "en16904",
+      "designation": "PN-EN 16904:2026-03",
+      "title_pl": "Deklaracje środowiskowe systemów przewodów z tworzyw sztucznych wewnątrz budynku",
+      "url": "https://sklep.pkn.pl/pn-en-16904-2026-03e.html",
+      "status_label": "Polska Norma w wersji angielskiej",
+      "status": "published",
+      "role": "complementary_pcr",
+      "family_ids": [
+        28,
+        29
+      ],
+      "scope_note": "Obejmuje m.in. instalacje wody pitnej, ogrzewania, chłodzenia i kanalizacji. Wyłączono rury izolowane.",
+      "checked_on": "2026-11-22",
+      "installation": "Wewnątrz budynku",
+      "family_scope": {
+        "28": "Dla tej rodziny norma obejmuje m.in. przewody instalacji ogrzewania, chłodzenia i kanalizacji wewnątrz budynku. Wyłączono rury izolowane.",
+        "29": "W tej rodzinie norma dotyczy przewodów wewnętrznych instalacji wody przeznaczonej do spożycia przez ludzi. Wyłączono rury izolowane."
+      }
+    },
+    {
       "id": "ts18301",
       "designation": "CEN/TS 18301:2026",
       "title_pl": "Materiały drogowe — reguły uzupełniające EN 15804 dla mieszanek mineralno-asfaltowych",
