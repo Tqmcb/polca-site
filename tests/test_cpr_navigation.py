@@ -63,13 +63,20 @@ class ProductNavigationTests(unittest.TestCase):
                 self.assertEqual(guides, [], f'Rodzina {family}')
                 continue
             guide, = guides
-            points = guide.xpath('.//nav//a')
-            self.assertEqual(len(points), 3)
-            self.assertEqual(len({a.get('href') for a in points}), 3)
-            for point in points:
-                stage, = guide.xpath('.//li[@id=$target]', target=point.get('href')[1:])
-                self.assertTrue(stage.xpath('./p[normalize-space()]'))
-                self.assertIn('#' + point.get('id'), stage.xpath('.//a/@href'))
+            cases = guide.xpath('.//*[@data-case and contains(concat(" ", normalize-space(@class), " "), " aggregate-case ")]')
+            self.assertEqual([c.get('data-case') for c in cases], ['beton', 'podbudowa'])
+            destinations = set()
+            for case in cases:
+                points = case.xpath('.//nav[contains(concat(" ", normalize-space(@class), " "), " aggregate-points ")]//a')
+                self.assertEqual(len(points), 3)
+                for point in points:
+                    target = point.get('href')[1:]
+                    self.assertNotIn(target, destinations)
+                    destinations.add(target)
+                    panel, = case.xpath('.//article[@id=$target]', target=target)
+                    self.assertTrue(panel.xpath('./p[normalize-space()] | .//p[normalize-space()]'))
+                    self.assertIn('#' + point.get('id'), panel.xpath('.//a/@href'))
+                    self.assertTrue(panel.xpath('.//a[not(starts-with(@href,"#"))]'))
 
     def test_methods_distinguish_draft_and_published_scope(self):
         methods = {r['id']: r for r in read('data/product-methods.json')['documents']}
