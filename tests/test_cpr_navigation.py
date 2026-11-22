@@ -65,7 +65,7 @@ class ProductNavigationTests(unittest.TestCase):
                 continue
             guide, = guides
             cases = guide.xpath('.//*[@data-case and contains(concat(" ", normalize-space(@class), " "), " aggregate-case ")]')
-            self.assertEqual([c.get('data-case') for c in cases], ['beton', 'podbudowa'])
+            self.assertEqual([c.get('data-case') for c in cases], ['beton', 'mma', 'podbudowa'])
             destinations = set()
             for case in cases:
                 points = case.xpath('.//nav[contains(concat(" ", normalize-space(@class), " "), " aggregate-points ")]//a')
@@ -86,9 +86,10 @@ class ProductNavigationTests(unittest.TestCase):
             'distance': ('POLCA-TRUCK-40T-DEFAULT-2026', 'kg CO₂e/t'),
             'power': ('PL2025_PHYSICAL_DELIVERED_v4', 'kg CO₂e/m³'),
             'fuel': ('POLCA-FUEL-DIESEL-DEFAULT-2026', 'kg CO₂e/t'),
+            'gas': ('POLCA-FUEL-NATURAL-GAS-DEFAULT-2026', 'kg CO₂e/t'),
         }
         panels = doc.xpath('//article[@data-kind and @data-result-unit]')
-        self.assertEqual(len(panels), 6)
+        self.assertEqual(len(panels), 9)
         for panel in panels:
             kind = panel.get('data-kind')
             if kind == 'material':
@@ -108,6 +109,19 @@ class ProductNavigationTests(unittest.TestCase):
             self.assertEqual(point.xpath('string(.//*[contains(@class,"aggregate-point-unit")])'), unit)
             self.assertEqual(point.xpath('.//*[@data-output]/text()'), [result])
             self.assertEqual(panel.xpath('.//p[contains(@class,"aggregate-result")]//*[@data-output]/text()'), [result])
+
+    def test_aggregate_use_determines_modules_and_activity_data(self):
+        doc = html.parse(str(ROOT / 'wyroby/24.html'))
+        for name, modules in {'beton': ['A1', 'A2', 'A3'], 'mma': ['A1', 'A2', 'A3'],
+                              'podbudowa': ['A1–A3', 'A4', 'A5']}.items():
+            case, = doc.xpath('//section[@data-case=$name]', name=name)
+            self.assertEqual(case.xpath('.//h4/span/text()'), modules)
+            self.assertEqual(case.xpath('.//*[@data-param="material"]/option/@value'),
+                             doc.xpath('//section[@data-case="beton"]//option/@value'))
+        mma, = doc.xpath('//section[@data-case="mma"]')
+        gas = read('data/mma-client-example.json')['activity_data']['production_a3']['natural_gas_m3_per_mg']
+        self.assertEqual(mma.xpath('.//input[@data-param="gas"]/@value'), [str(gas).replace('.', ',')])
+        self.assertIn('/wyroby/23.html', mma.xpath('.//a/@href'))
 
     def test_methods_distinguish_draft_and_published_scope(self):
         methods = {r['id']: r for r in read('data/product-methods.json')['documents']}
