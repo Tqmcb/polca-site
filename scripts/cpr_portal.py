@@ -156,11 +156,21 @@ def build(api):
     def available(f):
         return any(associated(f, k) for k in ['dataset', 'tool', 'article']) or bool(rules(f))
 
-    def method_list(items, show_families=False):
+    def method_list(items, show_families=False, family_id=None):
         if not items:
             return '<p>W tym katalogu nie wskazano jeszcze branżowego dokumentu c-PCR dla tej rodziny. Dobierz go do konkretnego wyrobu i zasad programu deklaracji.</p>'
-        return '<ul class="product-methods">' + ''.join(
-            f'<li><h3>{a(m["designation"],m["url"])}</h3><p>{e(m["title_pl"])}</p><p class="product-meta">{e(m["status_label"])}</p><p>{e(m["scope_note"])}</p>' + (links([{'label':f['label']+' (rodzina '+str(f['id'])+')','href':family_url(f['id'])} for f in families if f['id'] in m['family_ids']], 'product-method-families') if show_families else '') + '</li>' for m in items) + '</ul>'
+        cards = []
+        for method in items:
+            scope = method.get('family_scope', {}).get(str(family_id), method['scope_note'])
+            card = (f'<li><h3>{a(method["designation"], method["url"])}</h3>'
+                    f'<p>{e(method["title_pl"])}</p><p class="product-meta">{e(method["status_label"])}</p>'
+                    f'<p>{e(scope)}</p>')
+            if show_families:
+                related = [{'label': f['label'] + ' (rodzina ' + str(f['id']) + ')',
+                            'href': family_url(f['id'])} for f in families if f['id'] in method['family_ids']]
+                card += links(related, 'product-method-families')
+            cards.append(card + '</li>')
+        return '<ul class="product-methods">' + ''.join(cards) + '</ul>'
 
     def aggregate_projects(items):
         checked_on = min(m['checked_on'] for m in items)
@@ -175,6 +185,20 @@ def build(api):
                 f'Według stanu na <time datetime="{e(checked_on)}">{e(display_date)} r.</time> '
                 'oba projekty komitetu CEN/TC 154 mają status „Preliminary” (etap wstępny).</p></div>'
                 '<div class="portal-columns">' + cards + '</div></section>')
+
+    def piping_table(items):
+        rows = ''.join(
+            f'<tr><th scope="row">{e(m["installation"])}</th>'
+            f'<td>{a(m["designation"], m["url"])}<br>{e(m["scope_note"])}</td></tr>'
+            for m in items)
+        family_ids = {fid for m in items for fid in m['family_ids']}
+        family_links = [{'label': f['label'] + ' (rodzina ' + str(f['id']) + ')',
+                         'href': family_url(f['id'])} for f in families if f['id'] in family_ids]
+        return ('<section id="przewody"><h3>Jak dobrać normę dla przewodów z tworzyw sztucznych?</h3>'
+                '<p>Obie normy uzupełniają EN 15804. O wyborze decydują miejsce montażu i zastosowanie przewodu.</p>'
+                '<div class="portal-table-wrap" role="region" aria-label="Dobór normy dla przewodów" tabindex="0">'
+                '<table><thead><tr><th scope="col">Miejsce montażu</th><th scope="col">Norma i zakres</th></tr></thead>'
+                '<tbody>' + rows + '</tbody></table></div>' + links(family_links, 'product-method-families') + '</section>')
 
     def common():
         return '<section class="portal-section product-common"><h2>Energia, paliwa i transport</h2><p>Dane pomocnicze do procesów w różnych branżach. Wybór zależy od granic obliczenia i przyjętej metody.</p>' + links([
@@ -244,7 +268,9 @@ def build(api):
                     body += '<p>Projekty branżowych zasad dla kruszyw są na etapie wstępnym.</p>'
                     body += a('Zakres obu części i karty projektów CEN', '/c-pcr/kruszywa.html#projekty-cen')
                 elif family_methods:
-                    body += method_list(family_methods)
+                    body += method_list(family_methods, family_id=f['id'])
+                    if any('installation' in m for m in family_methods):
+                        body += a('Porównanie norm dla przewodów według miejsca montażu', '/c-pcr/index.html#przewody')
                 else:
                     body += '<p>W katalogu nie wskazano branżowych zasad uzupełniających (c-PCR) dla tej rodziny.</p>'
                 for draft in drafts:
@@ -273,7 +299,10 @@ def build(api):
             p.write_text(p.read_text().replace('</head>','<meta name="robots" content="noindex,follow"></head>'))
 
     body = '<div class="portal-reading"><section id="wstep" class="portal-prose"><h2>Metoda ogólna i zasady dla wyrobu</h2><p>EN 15804 określa podstawowe zasady deklaracji środowiskowych EPD dla wyrobów budowlanych. Dokument c-PCR uzupełnia je w zakresie określonego rodzaju wyrobu. Jedna rodzina CPR może obejmować kilka różnych dokumentów metodycznych.</p></section><section id="dobor" class="portal-prose"><h2>Jak dobrać metodę</h2><ol><li>Określ wyrób, jego zastosowanie i zakres obliczenia.</li><li>Sprawdź zakres i wydanie dokumentu c-PCR oraz zasady programu EPD.</li><li>Dla oceny wymaganej przez CPR sprawdź właściwą specyfikację techniczną i wymagania mające zastosowanie do wyrobu.</li></ol><p>Wydana norma c-PCR nie jest automatycznie zharmonizowaną specyfikacją techniczną CPR. <a href="/zastosowanie-epd-cpr.html">Więcej o zastosowaniu danych w EPD i CPR</a>.</p></section><section id="cpcr-lista" class="portal-section"><h2>Dokumenty według wyrobu</h2>'
-    body += method_list([m for m in methods['documents'] if m['family_ids'] and m['status']=='published' and m['role']=='complementary_pcr'], show_families=True) + '</section><section class="portal-section"><h2>Dokumenty wspólne: zasady i jakość danych</h2>' + method_list([m for m in methods['documents'] if not m['family_ids']]) + '</section><section class="portal-section"><h2>Dokumenty pomocnicze</h2>' + method_list([m for m in methods['documents'] if m['role']=='technical_review'], show_families=True) + '</section><section id="projekty" class="portal-section"><h2>Projekty norm</h2><p>' + e(methods['drafts_intro']) + '</p>' + method_list([m for m in methods['documents'] if m['status']=='draft'], show_families=True) + '</section>'
+    published = [m for m in methods['documents'] if m['family_ids'] and m['status']=='published' and m['role']=='complementary_pcr']
+    body += method_list([m for m in published if 'installation' not in m], show_families=True)
+    body += piping_table([m for m in published if 'installation' in m])
+    body += '</section><section class="portal-section"><h2>Dokumenty wspólne: zasady i jakość danych</h2>' + method_list([m for m in methods['documents'] if not m['family_ids']]) + '</section><section class="portal-section"><h2>Dokumenty pomocnicze</h2>' + method_list([m for m in methods['documents'] if m['role']=='technical_review'], show_families=True) + '</section><section id="projekty" class="portal-section"><h2>Projekty norm</h2><p>' + e(methods['drafts_intro']) + '</p>' + method_list([m for m in methods['documents'] if m['status']=='draft'], show_families=True) + '</section>'
     body += ('<section id="prace-wstepne" class="portal-prose"><h2>Prace CEN na etapie wstępnym</h2>'
              '<p>' + a('Kruszywa jako składnik wyrobu i do zastosowania bezpośredniego', '/c-pcr/kruszywa.html#projekty-cen') + '</p></section>')
     body += '<section id="powiazania" class="portal-prose"><h2>Dokumenty poLCA</h2><p>Przy dokumentach branżowych podajemy ich wersję i status. Opublikowanie projektu nie potwierdza przyjęcia go jako reguły programu.</p>' + links([{'label':'Mieszanki asfaltowe — metoda i projekt poLCA','href':'/c-pcr/mma.html'},{'label':'Kruszywa — dane i status projektu poLCA','href':'/c-pcr/kruszywa.html'},{'label':'Wybierz rodzinę wyrobu','href':'/wyroby.html'}]) + '</section></div>'

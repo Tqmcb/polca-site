@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ślad węglowy budynku — osobna warstwa obliczeń — poLCA</title>
-    <meta name="description" content="Zasady rozdzielenia katalogu wskaźników materiałowych poLCA od obliczeń śladu węglowego całego budynku. Wynik budynku wymaga ilości, modułów i scenariuszy.">
+    <title>Ślad węglowy budynku w całym cyklu życia — poLCA</title>
+    <meta name="description" content="Ślad węglowy budynku według PN-EN 15978. Zakres obliczeń, terminy podawania wyniku w świadectwie charakterystyki energetycznej i dobór danych do obliczeń.">
     <link rel="canonical" href="https://polca.org.pl/slad-budynku.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ślad węglowy budynku — osobna warstwa obliczeń — poLCA">
-    <meta property="og:description" content="Wskaźnik materiału nie jest wynikiem budynku. Wynik obiektu powstaje dopiero z ilości, modułów EN 15804 i scenariuszy.">
+    <meta property="og:title" content="Ślad węglowy budynku w całym cyklu życia — poLCA">
+    <meta property="og:description" content="Ślad węglowy nowego budynku. Metoda oceny, jednostka wyniku i terminy przewidziane w prawie unijnym.">
     <meta property="og:url" content="https://polca.org.pl/slad-budynku.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ślad węglowy budynku — osobna warstwa obliczeń — poLCA">
-    <meta name="twitter:description" content="Zasady rozdzielenia danych materiałowych od wyniku całego budynku.">
+    <meta name="twitter:title" content="Ślad węglowy budynku w całym cyklu życia — poLCA">
+    <meta name="twitter:description" content="Metoda oceny budynku i terminy ujawniania wyniku w świadectwie charakterystyki energetycznej.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-laboratory.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=10.1">
     <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
     <style>
+        #terminy-gwp ul{margin:.85rem 0;padding-left:1.4rem}
+        #terminy-gwp li+li{margin-top:.45rem}
+        #terminy-gwp h3{margin:1.3rem 0 .4rem}
         .scope-table{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
         .scope-card{border:1px solid var(--border);border-radius:10px;background:var(--paper-card);padding:1rem}
         .scope-card strong{display:block;font-size:1rem;color:var(--text-primary);margin:.2rem 0 .45rem}
@@ -40,18 +43,16 @@
 <body class="portal portal-legacy">
 
 <a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main class="polca-content" id="main">
-<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Ślad węglowy budynku nie jest pojedynczym wskaźnikiem materiału</span></nav><div class="polca-page">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Jak oblicza się ślad węglowy budynku?</span></nav><div class="polca-page">
 
     <div class="page-hero fade-in" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;padding:2.5rem 0 2rem;">
         <div>
-            <div class="section-num">Osobna warstwa obliczeń</div>
-            <h1 class="page-title">Ślad węglowy budynku nie jest pojedynczym wskaźnikiem materiału</h1>
+            <h1 class="page-title">Jak oblicza się ślad węglowy budynku?</h1>
             <p class="page-subtitle">
-                Katalog poLCA dostarcza wskaźniki dla wyrobów, materiałów, energii, paliw i transportu.
-                Wynik budynku powstaje dopiero po przypisaniu ilości, modułów EN 15804, scenariuszy i granic obiektu.
+                Do obliczeń potrzebne są ilości materiałów i energii oraz dane o ich wpływie na klimat. Wynik dla całego budynku obejmuje kolejne etapy jego cyklu życia.
             </p>
             <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
-                <a href="#proces" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Proces obliczeń</a>
+                <a href="#terminy-gwp" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-size:.82rem;font-weight:800;">Terminy i zasady obliczeń</a>
                 <a href="datasety.html#referencyjne-szczegoly" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Katalog wskaźników</a>
                 <a href="narzedzia.html" style="display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border-radius:8px;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-primary);text-decoration:none;font-size:.82rem;font-weight:800;">Kalkulatory</a>
             </div>
@@ -61,6 +62,30 @@
             <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.06);pointer-events:none;"></div>
         </div>
     </div>
+
+    <section id="terminy-gwp" class="card card-lg section-gap fade-in">
+        <h2 class="card-title">Kiedy w świadectwie nowego budynku trzeba podać jego ślad węglowy?</h2>
+        <p class="card-text">Państwa członkowskie mają zapewnić obliczanie współczynnika globalnego ocieplenia (GWP)
+            w cyklu życia nowego budynku i ujawnianie wyniku w świadectwie charakterystyki energetycznej.
+            <a href="https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:02024L1275-20260524">Dyrektywa (UE) 2024/1275</a> określa odrębne terminy dla krajowych planów działania i dla świadectw (art. 7 ust. 2 i 5).</p>
+        <ul>
+            <li><strong>Do 1 stycznia 2027 r.</strong> państwa członkowskie publikują i przedkładają Komisji Europejskiej plan wprowadzenia wartości granicznych GWP dla nowych budynków.</li>
+            <li><strong>Od 1 stycznia 2028 r.</strong> obliczenie i podanie wyniku w świadectwie jest wymagane dla nowych budynków o powierzchni użytkowej większej niż 1 000 m².</li>
+            <li><strong>Od 1 stycznia 2030 r.</strong> wymóg obejmuje wszystkie nowe budynki.</li>
+        </ul>
+        <p class="card-text">Państwo może przewidzieć odstępstwo dla budynków, dla których przed danym terminem złożono wniosek o pozwolenie na budowę lub równoważny wniosek.
+            Może także wyłączyć kategorie budynków zwolnione z obowiązku posiadania świadectwa na podstawie art. 20 ust. 6 dyrektywy.</p>
+        <h3>Jak wyraża się wynik w świadectwie?</h3>
+        <p class="card-text">Obliczenia obejmują referencyjny okres 50 lat. Wynik ujawniany w świadectwie odzwierciedla stan powykonawczy.
+            Podaje się go w kilogramach ekwiwalentu dwutlenku węgla na metr kwadratowy powierzchni użytkowej (kg CO₂e/m²).
+            Zasady te określa <a href="https://eur-lex.europa.eu/eli/reg_del/2026/52/oj/pol">załącznik III do dyrektywy w brzmieniu nadanym rozporządzeniem delegowanym Komisji (UE) 2026/52</a>.</p>
+        <h3>Która norma określa metodę oceny budynku?</h3>
+        <p class="card-text">Polski Komitet Normalizacyjny opublikował 19 sierpnia 2026 r.
+            <a href="https://sklep.pkn.pl/pn-en-15978-2026-08e.html">PN-EN 15978:2026-08</a>. Norma określa metodę oceny oddziaływania budynku na środowisko w całym cyklu życia.
+            Zastąpiła PN-EN 15978:2012. W ocenie zgodności poprzednie wydanie zachowuje status aktualnego dokumentu odniesienia do 31 marca 2028 r.,
+            z uwzględnieniem odrębnych przepisów określających inny termin
+            (<a href="https://pkn.pl/sites/default/files/sites/default/files/imce/files/komunikaty/Komunikat_nr%2011_2026.pdf">komunikat nr 11/2026 Prezesa PKN, sektor budownictwa, poz. 5</a>).</p>
+    </section>
 
     <section class="card card-lg section-gap fade-in">
         <div class="section-num">Rozdzielenie poziomów</div>
@@ -87,7 +112,7 @@
                 <strong>Ślad węglowy budynku</strong>
                 <p class="card-text">Wynik obejmuje ilości materiałów i scenariusze dla całego obiektu.</p>
                 <ul>
-                    <li>jednostka: kg CO₂e/m², kg CO₂e/rok albo wynik całkowity</li>
+                    <li>w świadectwie nowego budynku: kg CO₂e/m² powierzchni użytkowej za 50 lat</li>
                     <li>zakres: konstrukcja, przegrody, instalacje, plac budowy, eksploatacja</li>
                     <li>scenariusze: transport, straty, wymiany, energia użytkowania, koniec życia</li>
                     <li>raport: suma modułów oraz oddzielne wyniki częściowe</li>
