@@ -26,17 +26,19 @@ def product_example(concrete, materials):
         + f'>{escape(r["title"])}</option>' for r in materials)
     details = ''
     if concrete:
-        explanation = ('W ocenie betonu zakupione kruszywo jest składnikiem. Do A1 betonu wchodzi '
-                       'jego produkcja do bramy producenta.')
+        explanation = ('Zakupione kruszywo jest składnikiem betonu. Gdy brakuje pełnych danych inwentaryzacyjnych kruszywa, '
+                       'EN 16757 pozwala wykorzystać wynik A1–A3 z deklaracji kruszywa zgodnej z EN 15804+A2 '
+                       'jako wkład do A1 betonu. Tutaj produkcję do bramy oszacowano ze wskaźnika poLCA.')
     else:
-        explanation = ('To wartość modelowa do bramy zakładu. Przy kruszywie łamanym własne A3 obejmuje '
-                       'm.in. kruszenie i przesiewanie. Rekord poLCA nie podaje osobnej wartości A3. '
-                       'Dobór kruszywa zależy od uziarnienia i właściwości przewidzianych w projekcie podbudowy.')
+        explanation = ('Kruszywo jest tu gotowym wyrobem. Ten sam wskaźnik do bramy producenta służy '
+                       'do oszacowania jego etapu A1–A3, bez rozbicia na moduły. Dobór kruszywa zależy '
+                       'od uziarnienia i właściwości przewidzianych w projekcie podbudowy.')
         details = f'''<details class="aggregate-epd" id="a3-kruszywa-sitkowka">
           <summary>Ile wynosi samo A3 kruszywa? Przykład z Sitkówki</summary>
           <p>W deklaracji środowiskowej kruszywa wapiennego z zakładu Trzuskawica w Sitkówce wpływ na klimat wynosi
           0,79 w A1, 0,010 w A2 i <strong>2,48 kg CO₂e/t w A3</strong>. Dla całego etapu A1–A3 producent deklaruje
-          3,27 kg CO₂e/t. W deklaracji wartości podano po zaokrągleniu. Dane dotyczą tego zakładu i stanowią odrębny przykład.</p>
+          3,27 kg CO₂e/t po zaokrągleniu. Są to dane zakładowe za 2023 r. Wartość poLCA dla wapienia jest wskaźnikiem grupowym.</p>
+          <p>W Sitkówce do A3 zaliczono roboty strzałowe, rozbijanie większych brył, załadunek, przewóz w zakładzie oraz kruszenie i przesiewanie.</p>
           <p><a href="{SITKOWKA_EPD}">Deklaracja ITB nr 707/2024, tabela 3, s. 8</a></p></details>'''
     return {
         'key': 'material', 'code': 'A1' if concrete else 'A1–A3',
@@ -56,16 +58,15 @@ def quantity_control(key, value, unit):
 
 def transport_example(concrete, record):
     place = 'do betoniarni' if concrete else 'na budowę'
+    delivery = ('W bazie ecoinvent <a href="https://support.ecoinvent.org/market-activities">dane rynkowe</a> '
+                'mogą już obejmować dostawę. Każdy odcinek przewozu uwzględnia się tylko raz.' if concrete else
+                'Gotowe kruszywo jedzie prosto od producenta na plac budowy, dlatego przewóz należy do A4.')
     return {
         'key': 'distance', 'code': 'A2' if concrete else 'A4',
-        'title': 'Przewóz ' + place, 'caption': 'Wpływ przewozu jednej tony kruszywa',
-        'description': ('Samochód dostarcza składnik do produkcji betonu. W bazie ecoinvent '
-                        '<a href="https://support.ecoinvent.org/market-activities">dane rynkowe</a> mogą już obejmować '
-                        'transport. Dany odcinek należy uwzględnić raz.' if concrete else
-                        'Samochód dostarcza gotowe kruszywo od producenta prosto na plac budowy, '
-                        'gdzie powstanie podbudowa. Dlatego ten przewóz należy do A4.'),
+        'title': 'Przewóz ' + place, 'caption': 'Wpływ przewozu 1 t kruszywa na podaną odległość',
+        'description': ('Współczynnik dla zestawu 40 t nie wyodrębnia pustych przebiegów. ' + delivery),
         'record': record, 'result_unit': 'kg CO₂e/t', 'factor_unit': 'kg CO₂e/(t·km)',
-        'argument': 20, 'activity_unit': 'km', 'label': 'Odległość przewozu',
+        'argument': 20, 'activity_unit': 'km', 'label': 'Odległość przewozu w jedną stronę',
         'control': quantity_control('distance', 20, 'km'),
         'ids': ('punkt-transport', 'opis-transport') if concrete else ('punkt-przewoz-na-budowe', 'opis-przewoz-na-budowe'),
     }
@@ -79,7 +80,7 @@ def final_example(concrete, record):
             'description': ('W betoniarni składniki są dozowane i mieszane. Przykład obejmuje '
                             'wyłącznie zużycie energii elektrycznej w zakładzie. Produkcja zakupionych składników należy do A1.'),
             'record': record, 'result_unit': 'kg CO₂e/m³', 'factor_unit': 'kg CO₂e/kWh',
-            'argument': 2, 'activity_unit': 'kWh/m³', 'label': 'Zużycie prądu przy produkcji betonu',
+            'argument': 2, 'activity_unit': 'kWh/m³', 'label': 'Zużycie energii elektrycznej przy produkcji betonu',
             'control': quantity_control('power', 2, 'kWh/m³'),
             'ids': ('punkt-betoniarnia', 'opis-betoniarnia'),
         }
@@ -87,7 +88,7 @@ def final_example(concrete, record):
         'key': 'fuel', 'code': 'A5', 'title': 'Rozścielenie i zagęszczenie',
         'caption': 'Wkład oleju napędowego na 1 t wbudowanego kruszywa',
         'description': ('Rozścielacz lub równiarka rozprowadza kruszywo, a walec zagęszcza warstwę. '
-                        'Przykład obejmuje olej napędowy zużyty przez te maszyny przy wbudowaniu.'),
+                        'Wynik obejmuje tylko olej napędowy maszyn. W pełnym A5 uwzględnia się również ewentualne straty kruszywa podczas wbudowania.'),
         'record': record, 'result_unit': 'kg CO₂e/t', 'factor_unit': 'kg CO₂e/l',
         'argument': .5, 'activity_unit': 'l/t', 'label': 'Łączne zużycie oleju napędowego przez maszyny',
         'control': quantity_control('fuel', .5, 'l/t'),
@@ -106,8 +107,11 @@ def scenario(name, image, alt, title, stages):
         step_title = stage['title']
         key = stage['key']
         unit = stage['result_unit']
+        scope = {'material': 'Kruszywo', 'distance': 'Przewóz', 'power': 'Prąd', 'fuel': 'Paliwo'}[key]
+        accessible_name = f'{code}, {scope}, {step_title}'
         points.append(f'''<a class="aggregate-point" id="{point_id}" href="#{panel_id}" data-step="{index}"
-          aria-label="{code}, {step_title}, {value} {unit}" data-marker-name="{code}, {step_title}">
+          aria-label="{accessible_name}, {value} {unit}" data-marker-name="{accessible_name}">
+          <span class="aggregate-point-scope">{scope}</span>
           <span class="aggregate-marker">{code}</span><strong class="aggregate-point-value" data-output>{value}</strong>
           <small class="aggregate-point-unit">{unit}</small></a>''')
         plain_unit = stage['activity_unit']
@@ -116,10 +120,8 @@ def scenario(name, image, alt, title, stages):
         source = escape(record['href'])
         note = '<small class="aggregate-assumption">Wartość przykładowa. Możesz wpisać własną.</small>' if key != 'material' else ''
         expression = ('1 t' if key == 'material' else f'<span data-quantity>{number(quantity)}</span> {plain_unit}')
-        if key == 'material':
-            equation_unit = 'kg CO₂e za 1 t'
-        else:
-            equation_unit = unit
+        equation_unit = 'kg CO₂e' if key == 'material' else unit
+        operator = '=' if key == 'material' else '≈'
         source_label = {'material': 'Karta kruszywa', 'distance': 'Karta przewozu',
                         'power': 'Energia w Polsce, 2025', 'fuel': 'Karta paliwa'}[key]
         panels.append(f'''<article id="{panel_id}" class="aggregate-panel" data-step="{index}" data-kind="{key}"
@@ -131,12 +133,15 @@ def scenario(name, image, alt, title, stages):
           <p class="aggregate-error" id="{panel_id}-blad" data-error hidden>Wpisz liczbę równą zeru lub większą.</p>
           <p class="aggregate-source">Współczynnik poLCA <strong><span data-factor-value>{factor_text}</span> {factor_unit}</strong> · <a data-source href="{source}">{source_label}</a></p>
           <p class="aggregate-equation">{expression} × <span data-factor-value>{factor_text}</span> {factor_unit}
-          ≈ <span data-output>{value}</span> {equation_unit}</p>
+          {operator} <span data-output>{value}</span> {equation_unit}</p>
           <p>{stage['description']}</p>{stage.get('extras','')}
           <a class="aggregate-backlink" href="#{point_id}">Punkt {code} na ilustracji</a>
           </article>''')
     boundary = (f'<a href="{CONCRETE_STANDARD}">EN 16757, pkt 6.2.2</a>'
                 if name == 'beton' else f'<a href="{PRODUCT_STANDARD}">EN 15804+A2, pkt 6.3.5.2–6.3.5.3</a>')
+    reading_note = ('<strong>Jak odnieść wynik do 1 m³ betonu?</strong> W A1 i A2 pokazano wkład 1 t kruszywa. '
+                    'Każdą z tych wartości pomnóż przez masę kruszywa w recepturze (t/m³). '
+                    'W A3 podano tylko wkład energii elektrycznej na 1 m³ betonu. ' if name == 'beton' else '')
     return f'''<section class="aggregate-case" id="kruszywo-{name}" data-case="{name}" aria-labelledby="tytul-{name}">
       <h3 class="aggregate-case-title" id="tytul-{name}">{title}</h3>
       <div class="aggregate-layout">
@@ -144,7 +149,7 @@ def scenario(name, image, alt, title, stages):
             decoding="async" alt="{alt}">
           <nav class="aggregate-points" aria-label="Etapy i wyniki modelu dla zastosowania: {title}">{''.join(points)}</nav>
         </div><div class="aggregate-panels">{''.join(panels)}</div>
-        <p class="aggregate-note">Podział na moduły według {boundary}. Wyniki dotyczą jednostek podanych przy poszczególnych punktach.</p>
+        <p class="aggregate-note">{reading_note}Podział na moduły według {boundary}.</p>
       </div></section>'''
 
 

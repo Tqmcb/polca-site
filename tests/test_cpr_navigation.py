@@ -1,6 +1,7 @@
 """Protect product classification boundaries and the public method statuses."""
 import json
 import unittest
+from decimal import Decimal
 from hashlib import sha256
 from pathlib import Path
 from lxml import etree, html
@@ -77,6 +78,36 @@ class ProductNavigationTests(unittest.TestCase):
                     self.assertTrue(panel.xpath('./p[normalize-space()] | .//p[normalize-space()]'))
                     self.assertIn('#' + point.get('id'), panel.xpath('.//a/@href'))
                     self.assertTrue(panel.xpath('.//a[not(starts-with(@href,"#"))]'))
+
+    def test_aggregate_map_results_use_catalogue_factors_and_stage_units(self):
+        doc = html.parse(str(ROOT / 'wyroby/24.html'))
+        records = {r['id']: r for r in read('data/portal-catalog.json')['datasets']}
+        factors = {
+            'distance': ('POLCA-TRUCK-40T-DEFAULT-2026', 'kg CO₂e/t'),
+            'power': ('PL2025_PHYSICAL_DELIVERED_v4', 'kg CO₂e/m³'),
+            'fuel': ('POLCA-FUEL-DIESEL-DEFAULT-2026', 'kg CO₂e/t'),
+        }
+        panels = doc.xpath('//article[@data-kind and @data-result-unit]')
+        self.assertEqual(len(panels), 6)
+        for panel in panels:
+            kind = panel.get('data-kind')
+            if kind == 'material':
+                selected, = panel.xpath('.//select/option[@selected]/@value')
+                record, unit, amount = records[selected], 'kg CO₂e/t', Decimal(1)
+            else:
+                key, unit = factors[kind]
+                record = records[key]
+                value, = panel.xpath('.//input/@value')
+                amount = Decimal(value.replace(',', '.'))
+            factor = Decimal(str(record['value']))
+            self.assertEqual(Decimal(panel.get('data-factor')), factor)
+            self.assertEqual(panel.xpath('.//a[@data-source]/@href'), [record['href']])
+            result = f'{amount * factor:.2f}'.replace('.', ',')
+            point, = doc.xpath('//nav//a[@href=$href]', href='#' + panel.get('id'))
+            self.assertEqual(panel.get('data-result-unit'), unit)
+            self.assertEqual(point.xpath('string(.//*[contains(@class,"aggregate-point-unit")])'), unit)
+            self.assertEqual(point.xpath('.//*[@data-output]/text()'), [result])
+            self.assertEqual(panel.xpath('.//p[contains(@class,"aggregate-result")]//*[@data-output]/text()'), [result])
 
     def test_methods_distinguish_draft_and_published_scope(self):
         methods = {r['id']: r for r in read('data/product-methods.json')['documents']}

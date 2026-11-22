@@ -136,15 +136,24 @@ body.portal .aggregate-point[aria-current="true"] {
   outline: 1px solid var(--stage-green);
   color: white;
 }
+.aggregate-point-scope {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-size: .72rem;
+  font-weight: 620;
+  line-height: 1.04;
+}
 .aggregate-marker {
+  grid-column: 1;
+  grid-row: 2;
   align-self: center;
   border-right: 1px solid #bccfc5;
   padding-right: 5px;
   font-weight: 720;
   font-size: .72rem;
 }
-.aggregate-point-value { min-width: 0; overflow-wrap: anywhere; font-size: 1.04rem; font-weight: 720; }
-.aggregate-point-unit { grid-column: 1 / -1; white-space: nowrap; font-size: .69rem; font-weight: 590; }
+.aggregate-point-value { grid-column: 2; grid-row: 2; min-width: 0; overflow-wrap: anywhere; font-size: 1.04rem; font-weight: 720; }
+.aggregate-point-unit { grid-column: 1 / -1; grid-row: 3; white-space: nowrap; font-size: .69rem; font-weight: 590; }
 .aggregate-panels { min-width: 0; }
 .aggregate-panel {
   min-width: 0;
@@ -252,7 +261,7 @@ body.portal .aggregate-point[aria-current="true"] {
   .aggregate-guide > h2 { max-width: none; }
 }
 @media (max-width: 480px) {
-  .aggregate-figure { --headroom: 10px; padding-top: var(--headroom); }
+  .aggregate-figure { --headroom: 22px; padding-top: var(--headroom); }
   .aggregate-points { top: var(--headroom); }
   body.portal .aggregate-point {
     --stem: 6px;
@@ -262,6 +271,7 @@ body.portal .aggregate-point[aria-current="true"] {
     gap: 1px 3px;
     padding: 4px;
   }
+  .aggregate-point-scope { font-size: .65rem; }
   .aggregate-marker { padding-right: 3px; font-size: .67rem; }
   .aggregate-point-value { min-width: 0; overflow-wrap: anywhere; font-size: .87rem; }
   .aggregate-point-unit { font-size: .62rem; }
