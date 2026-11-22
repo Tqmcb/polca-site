@@ -200,7 +200,7 @@ def build(api):
         has_tools = bool(tools or articles)
         destinations = [{'label': 'Dane', 'href': '#dane'}]
         if f['id'] == 24:
-            destinations.append({'label': 'Kruszywo i transport do betoniarni', 'href': '#modul-a1'})
+            destinations.append({'label': 'Kruszywo do betonu i na podbudowę', 'href': '#modul-a1'})
         destinations += [
             {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
             {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
@@ -214,9 +214,9 @@ def build(api):
                      + links([{'label':r['title'],'href':r['href']} for r in inputs], 'family-inputs') + '</section>')
         extra = FAMILY_CSS + '<link rel="stylesheet" href="/assets/family-record.css?v=1">'
         if f['id'] == 24:
-            body += aggregate_guide()
-            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=1">'
-                      '<script src="/assets/aggregate-guide.js?v=1" defer></script>')
+            body += aggregate_guide(catalog)
+            extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=2">'
+                      '<script src="/assets/aggregate-guide.js?v=2" defer></script>')
 
         if has_methods or has_tools:
             body += '<div class="family-resources">'
