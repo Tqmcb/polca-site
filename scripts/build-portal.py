@@ -141,11 +141,20 @@ def sync_shell():
 def build_energy_calculator():
     from consultation_portal import display_unit
 
+    def panel_number(value):
+        if value == 0:
+            return '0'
+        mantissa, _, exponent = format(value, '#.6g').partition('e')
+        label = mantissa.rstrip('.').replace('.', ',')
+        if exponent:
+            superscript = str.maketrans('-0123456789', '⁻⁰¹²³⁴⁵⁶⁷⁸⁹')
+            label += '·10' + str(int(exponent)).translate(superscript)
+        return label
+
     profile = json.loads((ROOT / 'data/energia-pl-2025-v4/profil-37.json').read_text())
     indicators = profile['indicators']
     per_kwh = {item['code']: item['value_per_kWh'] for item in indicators}
     total = per_kwh['GWP-total']
-    reference = f'{total:.6f}'.replace('.', ',')
     unit_labels = {
         'kg CO2 eq': 'kg równoważnika CO₂', 'kg CFC11 eq': 'kg równoważnika CFC-11',
         'mol H+ eq': 'mol równoważnika H⁺', 'kg P eq': 'kg równoważnika P',
@@ -174,19 +183,19 @@ def build_energy_calculator():
     parts_rows = ''.join(
         f'<tr><th scope="row"><i class="energy-swatch energy-{name}" aria-hidden="true"></i>{label}</th>'
         f'<td>{percentage(per_kwh[code])}%</td>'
-        f'<td data-energy-climate-part="{code}">{num(10 * 1000 * per_kwh[code])}</td></tr>'
+        f'<td data-energy-climate-part="{code}">{panel_number(10 * 1000 * per_kwh[code])}</td></tr>'
         for code, label, name in parts
     )
     rows = ''.join(
         f'<tr><th scope="row">{e(i["code"])}</th><td>{e(i["name_pl"])}</td>'
-        f'<td>{reference if i["code"] == "GWP-total" else e(num(i["value_per_kWh"]))}</td>'
-        f'<td data-energy-result="{e(i["code"])}">{e(num(i["value_per_kWh"] * 10))}</td>'
+        f'<td>{panel_number(i["value_per_kWh"])}</td>'
+        f'<td data-energy-result="{e(i["code"])}">{panel_number(i["value_per_kWh"] * 10)}</td>'
         f'<td>{e(unit_labels.get(i["impact_unit"], display_unit(i["impact_unit"])))}</td></tr>'
         for i in indicators
     )
     body = (ROOT / 'content/energy-panel.tmpl').read_text().format(
-        reference=reference,
-        example_total=num(10 * total),
+        reference=panel_number(total),
+        example_total=panel_number(10 * total),
         full_bar=bar_segments(parts, total),
         detail_bar=bar_segments(parts[1:], minor_total),
         minor_share=percentage(minor_total),

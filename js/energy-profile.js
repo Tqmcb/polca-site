@@ -12,7 +12,19 @@
   var climateParts = root.querySelectorAll('[data-energy-climate-part]');
   var buttons = root.querySelectorAll('[data-energy-download]');
   var result = null;
-  var format = new Intl.NumberFormat('pl-PL', { maximumSignificantDigits: 7 });
+  var amountFormat = new Intl.NumberFormat('pl-PL', { maximumSignificantDigits: 12 });
+  function panelNumber(value) {
+    if (value === 0) return '0';
+    var parts = value.toExponential(5).split('e');
+    var exponent = Number(parts[1]);
+    if (exponent >= -4 && exponent < 6) {
+      return Number(parts.join('e')).toFixed(5 - exponent).replace('.', ',');
+    }
+    var power = String(exponent).replace(/[-0-9]/g, function (digit) {
+      return '⁻⁰¹²³⁴⁵⁶⁷⁸⁹'['-0123456789'.indexOf(digit)];
+    });
+    return parts[0].replace('.', ',') + '·10' + power;
+  }
   function calculate() {
     var amount = quantity.valueAsNumber;
     var factor = {kWh: 1, MWh: 1000, MJ: 1/3.6}[unit.value];
@@ -31,7 +43,7 @@
     var kWh = amount * factor;
     var indicators = profile.indicators.map(function (item) {
       var value = kWh * item.value_per_kWh;
-      root.querySelector('[data-energy-result="' + item.code + '"]').textContent = format.format(value);
+      root.querySelector('[data-energy-result="' + item.code + '"]').textContent = panelNumber(value);
       return {code: item.code, name_pl: item.name_pl, source_value_per_kWh: item.value_per_kWh, value: value, impact_unit: item.impact_unit};
     });
     result = {
@@ -47,13 +59,13 @@
       indicators: indicators
     };
     var valuesByCode = new Map(indicators.map(function (item) { return [item.code, item.value]; }));
-    var total = format.format(valuesByCode.get('GWP-total'));
+    var total = panelNumber(valuesByCode.get('GWP-total'));
     if (climateTotal) climateTotal.textContent = total;
     climateParts.forEach(function (el) {
       var kilograms = valuesByCode.get(el.dataset.energyClimatePart);
-      el.textContent = format.format(kilograms * 1000);
+      el.textContent = panelNumber(kilograms * 1000);
     });
-    summary.textContent = 'Wpływ na klimat dla ' + format.format(kWh) + ' kWh wynosi ' + total + ' kg równoważnika CO₂.';
+    summary.textContent = 'Wpływ na klimat dla ' + amountFormat.format(kWh) + ' kWh wynosi ' + total + ' kg równoważnika CO₂.';
   }
   function csvCell(value) { return '"' + String(value).replace(/"/g, '""') + '"'; }
   buttons.forEach(function (button) {

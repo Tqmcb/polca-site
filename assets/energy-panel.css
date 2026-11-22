@@ -52,7 +52,7 @@ body.portal .energy-reference a:focus-visible { outline-color: #ffcc6c !importan
 .energy-parts th { text-align: left; font-weight: 570; }
 .energy-parts thead th { color: var(--portal-muted); font-size: .82rem; font-weight: 500; border-top: 1px solid var(--portal-line); }
 .energy-parts th + th, .energy-parts td { text-align: right; padding-left: 10px; }
-.energy-parts td:last-child { overflow-wrap: anywhere; }
+.energy-parts td { white-space: nowrap; }
 .energy-swatch { display: inline-block; width: .65em; height: .65em; margin-right: .45em; }
 .energy-method { padding-left: 0; margin: 0; list-style: none; counter-reset: energy-step; }
 .energy-method li { position: relative; padding: 0 0 17px 42px; counter-increment: energy-step; }
@@ -93,5 +93,4 @@ body.portal .energy-reference a:focus-visible { outline-color: #ffcc6c !importan
 @media (max-width: 370px) {
   .energy-panel #energy-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .energy-panel #energy-form button { grid-column: 1 / -1; }
-  .energy-parts tbody td { white-space: normal; overflow-wrap: anywhere; }
 }
