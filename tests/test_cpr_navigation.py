@@ -55,6 +55,22 @@ class ProductNavigationTests(unittest.TestCase):
             self.assertEqual(rows, [r['id'] for r in datasets if family in r['cpr_family_ids']])
             self.assertEqual(len(rows), len(set(rows)))
 
+    def test_aggregate_illustration_links_each_point_to_a_static_description(self):
+        for family in range(1, 37):
+            doc = html.parse(str(ROOT / f'wyroby/{family:02d}.html'))
+            guides = doc.xpath('//main//section[@id="modul-a1"]')
+            if family != 24:
+                self.assertEqual(guides, [], f'Rodzina {family}')
+                continue
+            guide, = guides
+            points = guide.xpath('.//nav//a')
+            self.assertEqual(len(points), 3)
+            self.assertEqual(len({a.get('href') for a in points}), 3)
+            for point in points:
+                stage, = guide.xpath('.//li[@id=$target]', target=point.get('href')[1:])
+                self.assertTrue(stage.xpath('./p[normalize-space()]'))
+                self.assertIn('#' + point.get('id'), stage.xpath('.//a/@href'))
+
     def test_methods_distinguish_draft_and_published_scope(self):
         methods = {r['id']: r for r in read('data/product-methods.json')['documents']}
         self.assertEqual(methods['ts18301']['status'], 'published')
