@@ -45,12 +45,12 @@
                 <select id="sourceSelect" class="calc-select">
                     <option value="644.54" data-scope="total-lca" selected>Prąd PL 2025 v4 — 644,54 kg CO₂e/MWh (GWP-total)</option>
                     <option value="599" data-scope="fossil-lca">Prąd PL 2024 — 599 kg CO₂e/MWh (GWP-fossil)</option>
-                    <option value="202">Gaz ziemny — 202 kg CO₂/MWh (spalanie)</option>
-                    <option value="279">Olej opałowy — 279 kg CO₂/MWh (spalanie)</option>
-                    <option value="344">Węgiel kamienny — 344 kg CO₂/MWh (spalanie)</option>
+                    <option value="202">Gaz ziemny — 202 kg CO₂/MWh (spalanie, KOBiZE)</option>
+                    <option value="275">Olej opałowy — 275 kg CO₂/MWh (spalanie, KOBiZE)</option>
+                    <option value="341">Węgiel kamienny — 341 kg CO₂/MWh (spalanie, KOBiZE)</option>
                     <option value="0">Biomasa — 0 kg kopalnego CO₂/MWh (założenie)</option>
                 </select></div>
-                <p class="calc-note">MWh (megawatogodzina) oznacza ilość energii. Dla paliw przyjęto historyczne współczynniki kalkulatora, bez przeliczenia sprawności urządzenia i bez dostaw paliwa. Zero dla biomasy dotyczy wyłącznie przyjętej emisji kopalnego CO₂; spalanie emituje także CO₂ biogeniczny.</p>
+                <p class="calc-note">MWh (megawatogodzina) oznacza ilość energii. Dla paliw przyjęto wskaźniki emisji CO₂ z <a href="https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf">tabel KOBiZE do raportowania w EU ETS za 2026 r.</a> (dane z 2023 r.): gaz ziemny 56,18, olej opałowy 76,32, węgiel kamienny 94,75 kg CO₂/GJ, przeliczone na MWh. Wynik nie uwzględnia sprawności urządzenia ani dostaw paliwa. Zero dla biomasy dotyczy wyłącznie przyjętej emisji kopalnego CO₂; spalanie emituje także CO₂ biogeniczny.</p>
             </div>
             <div class="card calc-result-block" aria-live="polite">
                 <div class="calc-result-label">Wynik dla wybranego zakresu</div>
@@ -83,6 +83,6 @@
 </div></main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/calculator.js?v=20261123"></script>
+<script src="js/calculator.js?v=20261123f"></script>
     <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>
