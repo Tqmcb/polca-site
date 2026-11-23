@@ -6,7 +6,7 @@
     var EF_EL = 0.599;          // kg CO2e / kWh — poLCA-EN-PL-2024 v9.1
     var EF_DIESEL = 3.17;       // kg CO2e / L — historyczne założenie kalkulatora
     var EF_EXPLOSIVE = 0.5;     // kg CO2e / kg materiału wybuchowego (ANFO / emulsja)
-    var EF_TRANSPORT = 0.100;   // kg CO2e / (t·km) — historyczne założenie kalkulatora
+    var EF_TRANSPORT = 0.0843;  // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
     var WASH_KWH = 0.5;         // dodatkowe kWh/t przy płukaniu
     var GWP_RC = 2.50;          // Oszacowanie A1-A3 frakcji recyklingowej RC [kg CO2eq/t]
 
@@ -106,7 +106,7 @@
         [sType, sA4, sEf, aRock, aEnergy, aDiesel, aExpl, aA2, aRc, aA4].forEach(function (input) { input.setAttribute('aria-invalid', 'false'); });
         if (mode === 'simple') {
             checkChoice(sType, ['5.50', '3.99', '4.50', '3.20', '1.80', '3.80', '2.50'], 'Typ kruszywa', errors);
-            checkChoice(sEf, ['0.100', '0.031', '0.049', '0.082'], 'Współczynnik transportu', errors);
+            checkChoice(sEf, ['0.0843'], 'Współczynnik transportu', errors);
             checkNumber(sA4, 'Transport A4 [km]', 0, 500, errors);
         } else {
             checkChoice(aRock, Object.keys(ROCK_DEFAULTS), 'Typ skały', errors);

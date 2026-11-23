@@ -298,12 +298,10 @@ def build(api):
                     transport_note = ''
                     if f['id'] == 24 and resource['id'] == 'tool-kruszywa':
                         factor = next(r['value'] for r in catalog['datasets'] if r['id'] == TRUCK)
-                        # The historical calculator has its own default in aggSimpleEf.
                         transport_note = (
                             f'<p>Przy przewozie 1 t kruszywa na budowę na odległość 40 km wynik na karcie wynosi '
                             f'{display_result(40 * factor)} kg CO₂e w module A4 (współczynnik {api["num"](factor)} kg CO₂e/(t·km)). '
-                            'Kalkulator domyślnie stosuje historyczny współczynnik 0,100 kg CO₂e/(t·km), '
-                            'co dla tej samej trasy daje 4,00 kg CO₂e.</p>')
+                            'Kalkulator stosuje ten sam współczynnik.</p>')
                     body += (f'<article class="family-resource" data-record-id="{e(resource["id"])}">'
                              f'<h3>{a(resource["title"], resource["href"])}</h3>'
                              f'<p>{e(resource["description"])}</p>{transport_note}<small>{e(details)}</small></article>')

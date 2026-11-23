@@ -266,7 +266,7 @@
 
         <div class="mma-warn ok" id="mmaSumWarn" role="alert">Suma składników: 1000 kg/t — zgodna z jednostką deklarowaną.</div>
         <p class="calc-note" style="margin-top:.6rem;">
-            EF transportu drogowego (mix flot EURO5/6 PL): 0,100 kg CO₂eq/(t·km). EF energii elektrycznej:
+            Współczynnik przewozu zestawem ciężarowym 40 t: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>. EF energii elektrycznej:
             poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh; zużycie 2,5 kWh/t MMA → 1,50 kg CO₂e/t MMA (stała składowa A3).
         </p>
     </div>
@@ -342,7 +342,7 @@
     <div id="metodyka" class="card card-lg section-gap fade-in">
         <div class="section-num">03 — Założenia i zakres</div>
         <div class="card-title">Co liczy ten kalkulator</div>
-        <div class="prose"><p>A1 sumuje masę każdego składnika pomnożoną przez jego współczynnik. A2 liczy masę, odległość i stałą transportu 0,100 kg CO₂e/(t·km). A3 sumuje paliwo wytwórni oraz stały wkład energii elektrycznej 1,50 kg CO₂e/t.</p>
+        <div class="prose"><p>A1 sumuje masę każdego składnika pomnożoną przez jego współczynnik. A2 liczy masę, odległość i współczynnik przewozu 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). A3 sumuje paliwo wytwórni oraz stały wkład energii elektrycznej 1,50 kg CO₂e/t.</p>
             <p>Historyczne stałe: kruszywo drobne 1,80; wypełniacz 5,50; włókno 800; dodatek do technologii na ciepło 1200; granulat asfaltowy 0 kg CO₂e/t składnika. Współczynnik lepiszcza i kruszywa grubego określa wybrana pozycja formularza. Są to założenia tego kalkulatora; inne karty katalogowe mogą opisywać inny produkt, rok lub zakres.</p>
             <p>Podstawa paliwowa A3 wynosi: produkcja na gorąco — 24,1 dla oleju i 17,0 dla gazu; produkcja na ciepło — 17,4 dla oleju i 12,5 dla gazu, w kg CO₂e/t mieszanki. Model zwiększa tę wartość o 5% na każde 10°C powyżej temperatury odniesienia 160°C lub 130°C. Jest to uproszczenie, a nie pomiar zużycia paliwa.</p>
             <p>Wkład prądu 1,50 kg CO₂e/t jest historyczną, zaokrągloną stałą. Odwołuje się do profilu <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>: 0,599 kg CO₂e/kWh dla GWP-fossil, czyli części wpływu związanej z węglem kopalnym. Nie jest automatycznie aktualizowany po zmianach innych wydań poLCA.</p>
@@ -388,6 +388,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-mma.js?v=20261019"></script>
+<script src="js/kalkulator-mma.js?v=20261123c"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

@@ -11,7 +11,7 @@
         addWma: 1200          // dodatek WMA chemiczny
         /* bitumen i kruszywo grube — z dropdownów */
     };
-    var EF_TRANSPORT = 0.100; // kg CO2eq / (t·km) — historyczne założenie kalkulatora
+    var EF_TRANSPORT = 0.0843; // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
     var EL_A3 = 1.50;         // kg CO2e / t MMA — historyczna stała, zaokrąglona z 2,5 × 0,599
     var FUEL_BASE = {         // emisja paliwa w temp. bazowej [kg CO2 / t MMA]
         'HMA-olej': 24.1, 'HMA-gaz': 17.0,
