@@ -1,482 +1,68 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie — poLCA Blog</title>
-    <meta name="description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania.">
-    <link rel="canonical" href="https://polca.org.pl/blog-epd-czym-sa.html">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie — poLCA Blog">
-    <meta property="og:description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania.">
-    <meta property="og:url" content="https://polca.org.pl/blog-epd-czym-sa.html">
-    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
-    <meta property="og:locale" content="pl_PL">
-    <meta property="og:image" content="https://polca.org.pl/images/blog-epd-czym-sa.jpg">
-    <meta property="article:published_time" content="2026-01-20T00:00:00+01:00">
-    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
-    <meta property="article:section" content="LCA / EPD">
-    <meta property="article:tag" content="EPD">
-    <meta property="article:tag" content="LCA">
-    <meta property="article:tag" content="EN 15804">
-    <meta property="article:tag" content="ISO 14025">
-    <meta property="article:tag" content="deklaracja środowiskowa">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie">
-    <meta name="twitter:description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania.">
-    <meta name="twitter:image" content="https://polca.org.pl/images/blog-epd-czym-sa.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "BlogPosting",
-          "@id": "https://polca.org.pl/blog-epd-czym-sa.html",
-          "headline": "EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie",
-          "description": "EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania.",
-          "url": "https://polca.org.pl/blog-epd-czym-sa.html",
-          "datePublished": "2026-01-20",
-          "dateModified": "2026-11-22",
-          "inLanguage": "pl-PL",
-          "author": {
-            "@type": "Organization",
-            "name": "poLCA — Polska Baza Danych LCA",
-            "url": "https://polca.org.pl"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Multicert Sp. z o.o.",
-            "url": "https://polca.org.pl",
-            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
-          },
-          "isPartOf": {
-            "@type": "Blog",
-            "@id": "https://polca.org.pl/blog.html",
-            "name": "Blog poLCA"
-          },
-          "keywords": ["EPD", "Deklaracja Środowiskowa Produktu", "LCA", "EN 15804", "ISO 14025", "wyroby budowlane", "zielone zamówienia publiczne"]
-        },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "Czym jest EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Deklaracja środowiskowa wyrobu (EPD) przedstawia wyniki oceny cyklu życia w zadeklarowanych modułach. Podlega weryfikacji zgodnie z zasadami programu. Podstawowe reguły dla wyrobów budowlanych określa EN 15804+A2."}
-            },
-            {
-              "@type": "Question",
-              "name": "Jak długo ważna jest EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "EPD jest ważna przez 5 lat od daty wydania. Po tym czasie wygasa lub wymaga aktualizacji, jeśli producent chce ją dalej stosować. Zmiana składu produktu lub procesu produkcji przed upływem 5 lat może wymagać wcześniejszej aktualizacji."}
-            },
-            {
-              "@type": "Question",
-              "name": "Czym różni się EPD od certyfikatu ekologicznego (np. ekoznaku)?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Deklaracja środowiskowa wyrobu przedstawia dane liczbowe dla ocenionych etapów cyklu życia. Oznakowanie ekologiczne, takie jak unijne EU Ecolabel, potwierdza spełnienie kryteriów danego programu."}
-            },
-            {
-              "@type": "Question",
-              "name": "Gdzie można znaleźć polskie EPD?",
-              "acceptedAnswer": {"@type": "Answer", "text": "Polskie EPD są rejestrowane w programie EPD Polska (epd.org.pl) prowadzonym przez Multicert Sp. z o.o. Można je też znaleźć w globalnych bazach: EPD International (environdec.com), IBU (ibu-epd.com) oraz INIES (Francja). Łączna liczba EPD dla wyrobów budowlanych w Europie przekracza 25 000 dokumentów."}
-            }
-          ]
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
-            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
-            {"@type": "ListItem", "position": 3, "name": "EPD — czym są Deklaracje Środowiskowe Produktu"}
-          ]
-        }
-      ]
-    }
-    </script>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=10.1">
-    <noscript><style>.fade-in{opacity:1!important;transform:none!important}</style></noscript>
-<meta name="metadata_revision" content="2026-10-19">
-<link rel="stylesheet" href="/assets/portal.css?v=20261122-linki"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
-<body class="portal portal-legacy portal-article">
-
-<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main class="polca-content" id="main">
-<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie</span></nav><div class="polca-page">
-
-
-
-    <div class="fade-in">
-        <a href="blog.html" class="blog-back-link">
-            <svg width="15" height="15" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
-            Wróć do bloga
-        </a>
-
-        <nav class="breadcrumbs" aria-label="Nawigacja okruszkowa">
-            <a href="index.html">poLCA</a>
-            <span class="breadcrumbs-sep">›</span>
-            <a href="blog.html">Blog</a>
-            <span class="breadcrumbs-sep">›</span>
-            <span class="breadcrumbs-current">EPD — czym są Deklaracje Środowiskowe Produktu</span>
-        </nav>
-
-        <div class="blog-post-header">
-            <div class="blog-post-meta">
-                <span class="blog-tag">LCA / EPD</span>
-                <span class="blog-date">20 stycznia 2026 · aktualizacja <time datetime="2026-11-22">22 listopada 2026</time></span>
-                <span class="blog-read-time">· 9 min czytania</span>
-            </div>
-            <h1 class="blog-post-title">
-                EPD — czym są Deklaracje Środowiskowe Produktu i dlaczego mają znaczenie
-            </h1>
-            <p class="blog-post-lead">
-                Deklaracja środowiskowa wyrobu (EPD) przedstawia wyniki oceny cyklu życia dla etapów objętych deklaracją.
-                Oznaczenia modułów w tabeli wyników wskazują, które etapy oceniono.
-            </p>
-        </div>
-        <figure class="portal-article-image"><img src="images/blog-epd-czym-sa.jpg" alt="Nowoczesny zielony budynek z roślinnością" loading="lazy"></figure>
-    </div>
-
-    <!-- TL;DR -->
-    <div class="tldr-box fade-in">
-        <div class="tldr-box-label">TL;DR — skrót dla zabieganych</div>
-        <ul>
-            <li>EPD przedstawia wyniki oceny cyklu życia i podlega niezależnej weryfikacji według zasad programu.</li>
-            <li>Przy opracowaniu deklaracji stosuje się zasady wybranego programu i reguły kategorii wyrobów. Podstawowe reguły dla wyrobów budowlanych określa EN 15804+A2.</li>
-            <li>W Polsce wydawaniem EPD zajmuje się <strong>EPD Polska</strong> (Multicert), w Europie także EPD International (Szwecja) i IBU (Niemcy).</li>
-            <li>EPD jest ważna <strong>5 lat</strong> i dotyczy konkretnego produktu, konkretnej instalacji produkcyjnej i konkretnego roku referencyjnego.</li>
-        </ul>
-    </div>
-
-    <!-- Key stats -->
-    <div class="key-stat-row section-gap fade-in">
-        <div class="key-stat">
-            <div class="key-stat-number">1993</div>
-            <div class="key-stat-unit">rok</div>
-            <div class="key-stat-label">Pierwsza EPD wydana<br>w Szwecji (program STEM)</div>
-        </div>
-        <div class="key-stat">
-            <div class="key-stat-number">5</div>
-            <div class="key-stat-unit">lat</div>
-            <div class="key-stat-label">Ważność EPD od daty<br>wydania przez program</div>
-        </div>
-        <div class="key-stat">
-            <div class="key-stat-number accent">25 000+</div>
-            <div class="key-stat-unit">dokumentów</div>
-            <div class="key-stat-label">EPD dla wyrobów budowlanych<br>w europejskich bazach (2025)</div>
-        </div>
-    </div>
-
-    <div class="blog-post-body section-gap fade-in">
-
-        <h2>Definicja i miejsce EPD w rodzinie deklaracji środowiskowych</h2>
-        <p>
-            W starszych normach i dokumentach programów można spotkać podział na trzy typy oznaczeń i deklaracji środowiskowych.
-        </p>
-        <ul>
-            <li><strong>Typ I</strong> — oznakowanie ekologiczne (np. EU Ecolabel, Nordic Swan): zewnętrzna certyfikacja, że produkt spełnia określone kryteria środowiskowe. Orzeka, czy produkt jest „wystarczająco dobry”.</li>
-            <li><strong>Typ II</strong> — samodeklaracje producenta (np. „wyprodukowane z recyklingu”): oświadczenia składane na odpowiedzialność producenta. Reguluje je ISO 14021.</li>
-            <li><strong>Typ III</strong> — deklaracje środowiskowe produktu (EPD): wyniki oceny cyklu życia dla zadeklarowanych modułów, zweryfikowane zgodnie z zasadami programu. Zasady programów deklaracji środowiskowych wyrobu określa ISO 14025.</li>
-        </ul>
-        <p>
-            EPD nie ocenia — informuje. To nie jest certyfikat „zielonego” produktu.
-            Deklaracja może dotyczyć wyrobów o różnym wpływie na klimat.
-            Przy porównywaniu wyrobów budowlanych trzeba uwzględnić ich funkcję w budynku, jednostki odniesienia, zakres deklarowanych modułów i przyjęte scenariusze.
-        </p>
-
-        <div class="callout callout-definition">
-            <div class="callout-label">Definicja</div>
-            <p class="callout-body">
-                <strong>Deklaracja środowiskowa wyrobu (EPD)</strong> podaje wyniki oceny cyklu życia dla wskazanej jednostki wyrobu i zadeklarowanych modułów. Zakres deklaracji wynika z reguł kategorii wyrobów i zasad programu. Dla wyrobów budowlanych podstawowe reguły określa EN 15804+A2.
-            </p>
-        </div>
-
-        <h2>Podstawy normatywne: ISO 14025, EN 15804 i PCR</h2>
-        <p>
-            Zakres deklaracji wyrobu budowlanego określają dokumenty programu oraz reguły wspólne dla budownictwa i właściwe dla danej grupy wyrobów.
-        </p>
-
-        <div class="process-steps">
-            <div class="process-step">
-                <div class="process-step-num">1</div>
-                <div class="process-step-content">
-                    <div class="process-step-title">Które wydanie ISO 14025 stosuje program EPD Polska?</div>
-                    <div class="process-step-text">
-                        W czerwcu 2026 r. ukazało się drugie wydanie normy dotyczącej programów deklaracji środowiskowych wyrobu i samych deklaracji
-                        (<a href="https://www.iso.org/standard/14025">ISO 14025:2026</a>).
-                        W programie EPD Polska nadal stosujemy PN-EN ISO 14025:2010.
-                        Podstawę tego wyboru wyjaśniamy w <a href="https://epd.org.pl/wp-content/uploads/2026/08/Ogolna-instrukcja-programu-EPD-Polska-v6.0.pdf">pkt 1.4 ogólnej instrukcji programu, wydanie 6.0</a>.
-                    </div>
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="process-step-num">2</div>
-                <div class="process-step-content">
-                    <div class="process-step-title">EN 15804+A2 — podstawowy PCR dla wyrobów budowlanych</div>
-                    <div class="process-step-text">
-                        Europejska norma definiująca zasady tworzenia EPD dla wszystkich wyrobów i
-                        usług budowlanych. Określa: moduły informacyjne (A1–D), obowiązkowe
-                        wskaźniki środowiskowe (GWP, AP, EP, ODP itd.), zasady granic systemu,
-                        wymagania dotyczące danych pierwotnych i wtórnych oraz zasadę
-                        deklarowania węgla biogennego.
-                    </div>
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="process-step-num">3</div>
-                <div class="process-step-content">
-                    <div class="process-step-title">PCR (Product Category Rules) — reguły dla kategorii produktu</div>
-                    <div class="process-step-text">
-                        Szczegółowe zasady dla konkretnej grupy produktów (np. cement, stal,
-                        płyty gipsowo-kartonowe). PCR precyzuje jednostkę deklarowaną,
-                        domyślne scenariusze modułu C i D, wymagania dotyczące danych pierwotnych i wskaźniki branżowe. W programie EPD Polska stosujemy hierarchię reguł określoną w
-                        <a href="https://epd.org.pl/wp-content/uploads/2026/08/Ogolna-instrukcja-programu-EPD-Polska-v6.0.pdf#page=20">pkt 13.1 ogólnej instrukcji programu</a>.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h2>Które etapy cyklu życia obejmuje deklaracja?</h2>
-        <p>
-            Zgodnie z <a href="https://sklep.pkn.pl/normy/pn-en-15804-a2-2020-03p.html">EN 15804+A2</a> podstawowy zakres deklaracji dla wyrobu budowlanego obejmuje
-            etap produkcji (A1–A3), etap końca życia (C1–C4) oraz moduł D.
-            Punkt 5.2 normy określa warunki, które wyrób musi spełnić łącznie, aby można było pominąć C1–C4 i D.
-        </p>
-
-        <div class="card card-lg fade-in" style="max-width: 760px; margin: 1.5rem 0;">
-            <div class="card-title" style="font-size:0.9rem;">Moduły cyklu życia w EPD</div>
-            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 1, przewijana poziomo"><table style="width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:0.75rem; line-height:1.6;">
-                <thead>
-                    <tr style="border-bottom:2px solid var(--border);">
-                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Moduł</th>
-                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Faza</th>
-                        <th style="text-align:left; padding:0.5rem 0.75rem; color:var(--text-secondary); font-weight:600;">Obowiązkowo?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">A1–A3</td>
-                        <td style="padding:0.55rem 0.75rem;">Produkcja (surowce, transport do fabryki, produkcja)</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--func-green);">Tak</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">A4–A5</td>
-                        <td style="padding:0.55rem 0.75rem;">Transport do placu budowy, wbudowanie</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Opcjonalne</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">B1–B7</td>
-                        <td style="padding:0.55rem 0.75rem;">Użytkowanie budynku (emisje, konserwacja, wymiana, energia)</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Opcjonalne</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">C1–C4</td>
-                        <td style="padding:0.55rem 0.75rem;">Koniec życia (rozbiórka, transport, przetwarzanie, składowanie)</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Wymagane z wyjątkiem określonym w pkt 5.2</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:0.55rem 0.75rem; font-family: var(--font-mono);">D</td>
-                        <td style="padding:0.55rem 0.75rem;">Korzyści i obciążenia poza granicami systemu (recykling, odzysk energii)</td>
-                        <td style="padding:0.55rem 0.75rem; color:var(--text-secondary);">Wymagany z wyjątkiem określonym w pkt 5.2</td>
-                    </tr>
-                </tbody>
-            </table></div>
-        </div>
-
-        <div class="callout callout-tip">
-            <h3 class="callout-label" id="gwp-total">Jak odczytać GWP-total w deklaracji?</h3>
-            <p class="callout-body">
-                GWP-total oznacza całkowity potencjał globalnego ocieplenia. Wynik dla danego modułu, także dla łącznie wykazanych modułów A1–A3, stanowi sumę trzech składowych. Są to składowa kopalna (GWP-fossil), biogeniczna (GWP-biogenic) oraz związana z użytkowaniem gruntów i zmianą ich użytkowania (GWP-luluc).
-                Do składowej kopalnej zalicza się m.in. emisje ze spalania paliw kopalnych i z kalcynacji wapienia oraz pochłanianie dwutlenku węgla podczas karbonatyzacji materiałów cementowych.
-                Wartość w kolumnie A1–A3 dotyczy zatem wyłącznie produkcji wyrobu.
-                Korzyści i obciążenia poza granicami systemu wykazuje się oddzielnie w module D.
-                <a href="https://epd.org.pl/wp-content/uploads/2024/04/PCR-EPD-polska.pdf">Zasady przedstawiania wyników w programie EPD Polska, rozdział 13</a>.
-            </p>
-        </div>
-
-        <h2>Obowiązkowe wskaźniki środowiskowe w EPD</h2>
-        <p>
-            EN 15804+A2 definiuje obowiązkowy zestaw wskaźników wpływu środowiskowego.
-            Każda EPD dla wyrobu budowlanego musi je zawierać:
-        </p>
-        <ul>
-            <li><strong>GWP</strong> — Global Warming Potential (potencjał globalnego ocieplenia), kg CO₂ eq.</li>
-            <li><strong>ODP</strong> — Ozone Depletion Potential, kg CFC-11 eq.</li>
-            <li><strong>AP</strong> — Acidification Potential (potencjał zakwaszenia), mol H&amp;spplus; eq.</li>
-            <li><strong>EP-freshwater, EP-marine, EP-terrestrial</strong> — potencjał eutrofizacji.</li>
-            <li><strong>POCP</strong> — Photochemical Ozone Creation Potential, kg NMVOC eq.</li>
-            <li><strong>ADP-minerals&amp;metals</strong> i <strong>ADP-fossil</strong> — potencjał zubożenia zasobów.</li>
-            <li><strong>WDP</strong> — Water Deprivation Potential (zużycie wody), m³ eq.</li>
-        </ul>
-        <p>
-            Poza wskaźnikami wpływu, EPD zawiera również przepływy zasobów (zużycie energii pierwotnej,
-            zużycie wody netto) i wskaźniki odpadów.
-        </p>
-
-        <h2>Rodzaje EPD: average, specific i sector</h2>
-        <p>
-            Nie każda EPD dotyczy jednego produktu z jednej fabryki. W praktyce występują trzy typy:
-        </p>
-        <ul>
-            <li><strong>Specific EPD</strong> — dla konkretnego produktu z konkretnej instalacji produkcyjnej w konkretnym roku. Najdokładniejsza, możliwa do stosowania w projektach wymagających danych specyficznych.</li>
-            <li><strong>Average Industry EPD</strong> — średnia branżowa dla kategorii produktu, opracowana przez stowarzyszenie producentów. Mniej precyzyjna, ale użyteczna gdy brak EPD dla konkretnego wyrobu.</li>
-            <li><strong>Sector EPD</strong> — podobna do average, opracowywana na poziomie sektora. Stosowana np. przez stowarzyszenia cementowe lub stalowe w LCA budynków.</li>
-        </ul>
-
-        <div class="callout callout-warning">
-            <div class="callout-label">Uwaga metodyczna</div>
-            <p class="callout-body">
-                Average Industry EPD nie może być stosowana w badaniach porównawczych między
-                producentami. Jeżeli projekt wymaga porównania dostawców — konieczne są
-                EPD dla konkretnego wyrobu każdego z nich. Stosowanie średniej branżowej w takiej sytuacji
-                jest błędem metodycznym i może zostać zakwestionowane podczas przeglądu krytycznego.
-            </p>
-        </div>
-
-        <h2>Weryfikacja: kto i jak</h2>
-        <p>
-            Weryfikację EPD prowadzi niezależny weryfikator zgodnie z wymaganiami programu. Akceptacji weryfikatora przez program nie należy utożsamiać z akredytacją. Weryfikator sprawdza:
-        </p>
-        <ul>
-            <li>zgodność metodyki LCA z ISO 14040/44 i EN 15804+A2,</li>
-            <li>zgodność danych pierwotnych z dokumentacją produkcji,</li>
-            <li>prawidłowość wyboru danych wtórnych i ich reprezentatywność,</li>
-            <li>poprawność obliczeń i prezentacji wyników,</li>
-            <li>zgodność z PCR.</li>
-        </ul>
-        <p>
-            Weryfikator wydaje oświadczenie weryfikacyjne. Bez niego EPD nie może
-            być zarejestrowana w programie. To kluczowa różnica między EPD
-            a nieformalną „analią LCA” dostarczaną przez producenta bez niezależnej kontroli.
-        </p>
-
-        <h2>Gdzie i jak stosuje się EPD?</h2>
-        <p>
-            EPD ma kilka głównych zastosowań w branży budowlanej:
-        </p>
-        <ul>
-            <li><strong>LCA budynku</strong> — EPD są głównym źródłem danych środowiskowych dla wyrobów wbudowanych. Oprogramowanie jak One Click LCA, SimaPro czy OpenLCA je importuje.</li>
-            <li><strong>Zielone certyfikaty budynków</strong> — BREEAM, LEED, DGNB wymagają lub premiują EPD dla materiałów. BREEAM Mat 01 daje punkty za EPD o każdego materiału.</li>
-            <li><strong>Zamówienia publiczne</strong> — sposób dokumentowania właściwości środowiskowych należy sprawdzić w wymaganiach danego postępowania. <a href="https://green-forum.ec.europa.eu/green-business/green-public-procurement/gpp-criteria-and-requirements_en">Komisja Europejska rozróżnia dobrowolne kryteria zielonych zamówień publicznych i wymagania wynikające z przepisów sektorowych</a>; nie oznacza to powszechnego obowiązku EPD od 2025 r.</li>
-            <li><strong>Deklaracja węglowa producenta</strong> — EPD dla konkretnego wyrobu jest podstawą do komunikacji śladu węglowego produktu wobec klientów instytucjonalnych (CSRD, należyta staranność).</li>
-        </ul>
-
-        <h2>EPD a certyfikat: kluczowa różnica</h2>
-        <p>
-            Producent posiadający EPD nie ma „certyfikatu ekologicznego” — ma dokładny opis środowiskowy.
-            Weryfikacja deklaracji dotyczy danych, metody i przedstawionych wyników. Kryteria przyznania oznakowania ekologicznego określa odrębny program.
-        </p>
-        <p>
-            EPD stwarza warunki do obiektywnego porównania — ale sama porównania nie przeprowadza.
-            To odpowiedzialność osoby wykonującej LCA budynku lub opracowującej kryteria zakupu.
-        </p>
-
-        <!-- FAQ -->
-        <div class="faq-section">
-            <div class="faq-section-title">Najczęściej zadawane pytania</div>
-
-            <div class="faq-item">
-                <div class="faq-q">Czym jest EPD?</div>
-                <div class="faq-a">
-                    Deklaracja środowiskowa wyrobu (EPD) przedstawia wyniki oceny cyklu życia w zadeklarowanych modułach. Podlega weryfikacji zgodnie z zasadami programu. Podstawowe reguły dla wyrobów budowlanych określa EN 15804+A2.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Jak długo ważna jest EPD?</div>
-                <div class="faq-a">
-                    EPD jest ważna przez 5 lat od daty wydania. Po tym czasie wygasa lub wymaga
-                    aktualizacji. Zmiana składu produktu lub procesu produkcji przed upływem 5 lat
-                    może wymagać wcześniejszej aktualizacji.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Czym różni się EPD od certyfikatu ekologicznego?</div>
-                <div class="faq-a">
-                    Deklaracja środowiskowa wyrobu przedstawia dane liczbowe dla ocenionych etapów cyklu życia. Oznakowanie ekologiczne, takie jak unijne EU Ecolabel, potwierdza spełnienie kryteriów danego programu.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Gdzie można znaleźć polskie EPD?</div>
-                <div class="faq-a">
-                    Polskie EPD są rejestrowane w programie EPD Polska (<a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">epd.org.pl</a>)
-                    prowadzonym przez Multicert. Można je też znaleźć w bazach EPD International
-                    (environdec.com) i IBU (ibu-epd.com). Łączna liczba EPD dla wyrobów budowlanych
-                    w Europie przekracza 25 000 dokumentów.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-q">Czy EPD jest obowiązkowa?</div>
-                <div class="faq-a">
-                    Aktualnie EPD nie jest powszechnie obowiązkowa, ale staje się de facto wymogiem
-                    rynkowym. CPR 2024/3110 wprowadza obowiązek deklarowania właściwości środowiskowych
-                    dla określonych grup produktów. Zamówienia publiczne, certyfikaty budynków (BREEAM, LEED)
-                    i wymagania dużych inwestorów coraz częściej wymagają EPD jako warunku udziału w przetargu.
-                </div>
-            </div>
-        </div>
-
-        <hr class="blog-post-divider">
-
-        <p style="font-size: 0.82rem; color: var(--text-tertiary);">
-            <strong>źródła:</strong>
-            ISO 14025:2026 oraz PN-EN ISO 14025:2010 przywołana w instrukcji programu EPD Polska;
-            EN 15804:2012+A2:2019/AC:2021, Zrównoważone budownictwo — deklaracje środowiskowe wyrobów;
-            ISO 14040:2006 i ISO 14044:2006, Zarządzanie środowiskowe — ocena cyklu życia;
-            Rozporządzenie (UE) 2024/3110 (CPR), Dz.U. UE 2024;
-            EPD International (2025), „General Programme Instructions” v5.0;
-            IBU (2023), „PCR Part A: Computation Rules” v2.0;
-            EPD Polska / Multicert (2025), rejestr EPD.
-        </p>
-    </div>
-
-    <!-- Tool CTA -->
-    <div class="card card-accent-blue fade-in" style="margin-top: 1.5rem;">
-        <div class="card-title">Narzędzia LCA poLCA</div>
-        <p class="card-text" style="margin-bottom: 0.75rem;">Konwerter jednostek, przelicznik transportu, porównywarka materiałów i tabela wskaźników emisji służą do wstępnych obliczeń. Zakres i przydatność wyniku opisano przy narzędziu; użycie w EPD wymaga osobnej oceny.</p>
-        <a href="narzedzia.html" style="display:inline-flex;align-items:center;gap:0.35rem;font-size:0.82rem;font-weight:600;color:var(--func-blue);text-decoration:none;">
-            Przejdź do narzędzi
-            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-    </div>
-
-    <!-- Related posts -->
-    <div class="section-gap fade-in">
-        <div class="section-num">Powiązane artykuły</div>
-        <div class="blog-grid" style="grid-template-columns: repeat(2, 1fr);">
-            <a href="blog-cpr-2024.html" class="blog-card">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag regulacje">Regulacje</span>
-                        <span class="blog-date">5 lutego 2026</span>
-                    </div>
-                    <div class="blog-card-title">CPR 2024/3110 — co zmienia się dla polskich producentów wyrobów budowlanych</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
-                        <span class="blog-read-time">8 min czytania</span>
-                    </div>
-                </div>
-            </a>
-            <a href="blog-fotowoltaika-epd.html" class="blog-card">
-                <div class="blog-card-body">
-                    <div class="blog-card-meta">
-                        <span class="blog-tag metodyka">Metodyka</span>
-                        <span class="blog-tag">EPD</span>
-                        <span class="blog-date">18 lutego 2026</span>
-                    </div>
-                    <div class="blog-card-title">Zainstalowałeś panele słoneczne w zakładzie. Twoje EPD się nie zmieniło — oto dlaczego</div>
-                    <div class="blog-card-footer">
-                        <span class="blog-read-more">Czytaj dalej <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
-                        <span class="blog-read-time">10 min czytania</span>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-
-</div>
-</main>
-
-<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
-</html>
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jak czytać deklarację środowiskową wyrobu (EPD)? — poLCA</title><meta name="description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania."><link rel="canonical" href="https://polca.org.pl/blog-epd-czym-sa.html"><meta property="og:title" content="Jak czytać deklarację środowiskową wyrobu (EPD)? — poLCA"><meta property="og:description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania."><meta property="og:type" content="article"><meta property="og:url" content="https://polca.org.pl/blog-epd-czym-sa.html"><link rel="stylesheet" href="/assets/portal.css?v=20261122-linki"><script src="/js/portal.js?v=20261019cpr" defer></script><link rel="stylesheet" href="/assets/article-guide.css?v=20261123">
+<meta property="og:locale" content="pl_PL"><meta property="og:image" content="https://polca.org.pl/images/wyroby-beton.webp">
+<meta property="article:published_time" content="2026-01-20T00:00:00+01:00"><meta property="article:modified_time" content="2026-11-23T00:00:00+01:00">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Jak czytać deklarację środowiskową wyrobu (EPD)?">
+<meta name="twitter:description" content="EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania."><meta name="twitter:image" content="https://polca.org.pl/images/wyroby-beton.webp">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://polca.org.pl/blog-epd-czym-sa.html", "url": "https://polca.org.pl/blog-epd-czym-sa.html", "headline": "Jak czytać deklarację środowiskową wyrobu (EPD)?", "description": "EPD przedstawia wyniki oceny cyklu życia wyrobu i podlega niezależnej weryfikacji według zasad programu. Artykuł wyjaśnia zawartość deklaracji, sposób jej czytania i zastosowania.", "inLanguage": "pl-PL", "image": "https://polca.org.pl/images/wyroby-beton.webp", "datePublished": "2026-01-20T00:00:00+01:00", "dateModified": "2026-11-23T00:00:00+01:00", "author": {"@type": "Organization", "name": "poLCA — Polska Baza Danych LCA", "url": "https://polca.org.pl"}, "publisher": {"@type": "Organization", "name": "Multicert Sp. z o.o.", "url": "https://polca.org.pl", "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}}, "isPartOf": {"@type": "Blog", "name": "Artykuły i wyjaśnienia", "url": "https://polca.org.pl/blog.html"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://polca.org.pl/"}, {"@type": "ListItem", "position": 2, "name": "Artykuły i wyjaśnienia", "item": "https://polca.org.pl/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Jak czytać deklarację środowiskową wyrobu (EPD)?", "item": "https://polca.org.pl/blog-epd-czym-sa.html"}]}]}</script></head><body class="portal"><a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main id="main" class="guide-main" ><article class="article-guide">
+<header class="guide-cover"><img src="/images/wyroby-beton.webp" width="1280" height="853" alt="" fetchpriority="high">
+<div class="guide-cover-inner"><nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/" >Strona główna</a><span aria-hidden="true">/</span><a href="/blog.html" >Artykuły i wyjaśnienia</a><span aria-hidden="true">/</span><span aria-current="page">Deklaracje środowiskowe wyrobów</span></nav>
+<p class="guide-type">Przewodnik</p><h1>Jak czytać deklarację środowiskową wyrobu (EPD)?</h1>
+<div class="guide-byline"><span>Redakcja poLCA</span><span>Opublikowano <time datetime="2026-01-20">20 stycznia 2026</time></span>
+<span>Aktualizacja <time datetime="2026-11-23">23 listopada 2026</time></span></div></div></header>
+<div class="guide-layout">
+<nav class="guide-toc guide-toc-mobile" aria-label="Spis treści artykułu"><details><summary>Spis treści</summary><ul><li><a href="#czym-jest-epd">Co przedstawia deklaracja środowiskowa wyrobu?</a></li><li><a href="#moduly">Które etapy cyklu życia obejmuje EPD?</a></li><li><a href="#gwp-total">Jak odczytać wskaźnik GWP-total?</a></li><li><a href="#podstawy">Według jakich zasad opracowuje się deklarację?</a></li><li><a href="#sprawdzenie">Kiedy można wykorzystać deklarację w projekcie?</a></li></ul></details></nav>
+<div class="guide-prose"><p>Deklaracja środowiskowa wyrobu (EPD) dla prefabrykatu betonowego podaje wpływ produkcji na klimat w wierszu GWP-total. Wyniki dla modułów A1, A2 i A3 można odczytać osobno lub łącznie, zależnie od układu tabeli. Przed wykorzystaniem wyników w ocenie budynku projektant sprawdza, jakiej ilości gotowego prefabrykatu dotyczą i które etapy po opuszczeniu zakładu uwzględniono w deklaracji.</p>
+<h2 id="czym-jest-epd">Co przedstawia deklaracja środowiskowa wyrobu?</h2>
+<p>Deklaracja przedstawia wyniki oceny cyklu życia (LCA) odniesione do określonej jednostki, na przykład jednej tony stali lub jednego metra sześciennego betonu. W tabeli wyników wiersz odpowiada wskaźnikowi środowiskowemu, a kolumna wskazuje moduł, którego dotyczy obliczenie.</p>
+<p>W PN-EN ISO 14025:2010 i dokumentach opartych na tej normie EPD nosi nazwę „deklaracji środowiskowej III typu”. Podane w niej wielkości podlegają niezależnej weryfikacji zgodnie z zasadami programu. W dawnym podziale typ I oznaczał oznakowanie ekologiczne, takie jak <a href="https://green-forum.ec.europa.eu/green-business/eu-ecolabel/about-eu-ecolabel_en">unijne oznakowanie EU Ecolabel</a>, przyznawane po spełnieniu kryteriów dla danej grupy wyrobów. Do typu II zaliczano <a href="https://www.iso.org/standard/14021">własne stwierdzenia środowiskowe</a>, które na własną odpowiedzialność składa na przykład producent, importer lub dystrybutor.</p>
+<h2 id="moduly">Które etapy cyklu życia obejmuje EPD?</h2>
+<p>Podstawowy zakres deklaracji dla wyrobu budowlanego obejmuje produkcję (A1–A3), koniec cyklu życia (C1–C4) oraz moduł D. W samej deklaracji można sprawdzić, czy producent uwzględnił też transport na budowę, wbudowanie lub użytkowanie. <a href="https://sklep.pkn.pl/normy/pn-en-15804-a2-2020-03p.html">Podstawowe zasady dla wyrobów budowlanych określa norma EN 15804+A2.</a></p>
+<table>
+<thead>
+<tr>
+<th>Moduł</th>
+<th>Co obejmuje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1–A3</td>
+<td>Pozyskanie i przygotowanie surowców, transport do zakładu oraz wytwarzanie wyrobu.</td>
+</tr>
+<tr>
+<td>A4–A5</td>
+<td>Transport na plac budowy i wbudowanie wyrobu.</td>
+</tr>
+<tr>
+<td>B1–B7</td>
+<td>Użytkowanie, w tym konserwację, naprawy, wymianę, przebudowę oraz zużycie energii i wody.</td>
+</tr>
+<tr>
+<td>C1–C4</td>
+<td>Rozbiórkę lub demontaż, transport odpadów, ich przetwarzanie i unieszkodliwianie.</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Korzyści i obciążenia poza granicami systemu, na przykład związane z ponownym użyciem, recyklingiem lub odzyskiem energii.</td>
+</tr>
+</tbody>
+</table>
+<p>Punkt 5.2 normy dopuszcza pominięcie modułów C1–C4 i D, gdy wyrób spełnia łącznie trzy warunki. Po wbudowaniu jest fizycznie połączony z innymi wyrobami tak, że na końcu cyklu życia nie można go od nich oddzielić. W wyniku przemian fizycznych lub chemicznych przestaje być wówczas rozpoznawalny. Ponadto nie zawiera węgla biogenicznego. W deklaracji trzeba uzasadnić pominięcie tych modułów i wskazać, gdzie opisano scenariusze końca cyklu życia.</p>
+<h2 id="gwp-total">Jak odczytać wskaźnik GWP-total?</h2>
+<p>GWP-total oznacza całkowity potencjał globalnego ocieplenia. Wynik podaje się w kilogramach równoważnika dwutlenku węgla (kg CO₂ eq.) na jednostkę wskazaną w deklaracji. W każdym module jest to suma trzech składowych, które można odczytać także oddzielnie. Składowe te określa <a href="https://sklep.pkn.pl/normy/pn-en-15804-a2-2020-03p.html">załącznik C, pkt C.2 normy EN 15804+A2</a>.</p>
+<ul>
+<li><strong>GWP-fossil</strong> to składowa kopalna. Obejmuje między innymi emisje ze spalania paliw kopalnych i z kalcynacji wapienia. Uwzględnia również pochłanianie dwutlenku węgla podczas karbonatyzacji materiałów cementowych.</li>
+<li><strong>GWP-biogenic</strong> to składowa biogeniczna, związana z emisjami i pochłanianiem gazów cieplarnianych pochodzenia biogenicznego.</li>
+<li><strong>GWP-luluc</strong> to składowa związana z użytkowaniem gruntów i zmianą ich użytkowania.</li>
+</ul>
+<p>Jeśli producent podał jeden wynik dla A1–A3, obejmuje on łącznie trzy moduły produkcji. Korzyści i obciążenia poza granicami systemu odczytuje się oddzielnie w module D. <a href="https://epd.org.pl/wp-content/uploads/2024/04/PCR-EPD-polska.pdf">Zasady łączenia modułów w programie EPD Polska podajemy w rozdziale 13 reguł kategorii wyrobów.</a></p>
+<p>Kolejne wiersze tabeli mogą dotyczyć między innymi zakwaszenia, eutrofizacji, zubożenia warstwy ozonowej, tworzenia ozonu fotochemicznego, wykorzystania zasobów i niedoboru wody. Jednostkę miary podano przy nazwie wskaźnika.</p>
+<h2 id="podstawy">Według jakich zasad opracowuje się deklarację?</h2>
+<p>W czerwcu 2026 r. ukazało się drugie wydanie normy dotyczącej deklaracji środowiskowych wyrobów i zasad prowadzenia programów, <a href="https://www.iso.org/standard/14025">ISO 14025:2026</a>. W programie EPD Polska nadal stosujemy PN-EN ISO 14025:2010. Podstawę tego wyboru wyjaśniamy w <a href="https://epd.org.pl/wp-content/uploads/2026/08/Ogolna-instrukcja-programu-EPD-Polska-v6.0.pdf#page=8">pkt 1.4 ogólnej instrukcji programu EPD Polska, wydanie 6.0</a>.</p>
+<p>Producent stosuje też reguły kategorii wyrobów (PCR). Podstawowe reguły wspólne dla budownictwa określa EN 15804+A2. Dokumenty właściwe dla danej grupy wyrobów precyzują między innymi jednostkę deklarowaną, wymagania dotyczące danych i scenariusze końca cyklu życia. <a href="https://epd.org.pl/wp-content/uploads/2026/08/Ogolna-instrukcja-programu-EPD-Polska-v6.0.pdf#page=20">Hierarchię reguł w naszym programie podajemy w pkt 13.1 instrukcji.</a></p>
+<h2 id="sprawdzenie">Kiedy można wykorzystać deklarację w projekcie?</h2>
+<p><strong>Wyrób i producent.</strong> Deklaracja może opisywać wyrób konkretnego producenta lub przedstawiać średnią dla grupy wyrobów. Średnia branżowa opisuje grupę objętą badaniem. Przy porównywaniu dwóch wyrobów w budynku znaczenie mają ich funkcja, ilość potrzebna do jej spełnienia, uwzględnione moduły oraz przyjęte scenariusze.</p>
+<p><strong>Weryfikacja i ważność.</strong> Niezależny weryfikator sprawdza dane, metodę obliczeń oraz zgodność deklaracji z regułami kategorii wyrobów. W naszym programie podstawowy okres ważności deklaracji wynosi pięć lat od dnia wydania. Dla niektórych rodzajów deklaracji instrukcja określa krótsze okresy. Termin dla konkretnego wyrobu można sprawdzić w dokumencie i w <a href="https://epd.org.pl/rejestr-epd/">rejestrze deklaracji EPD Polska</a>. <a href="https://epd.org.pl/wp-content/uploads/2026/08/Ogolna-instrukcja-programu-EPD-Polska-v6.0.pdf#page=13">Okresy ważności i przesłanki aktualizacji określa rozdział 6 instrukcji programu.</a></p>
+<p><strong>Zastosowanie.</strong> Projektant wykorzystuje dane z deklaracji w <a href="/slad-budynku.html">ocenie cyklu życia budynku</a>. Przy zamówieniu na materiały budowlane zakres wymaganych danych i sposób ich udokumentowania określa zamawiający w dokumentacji postępowania. Do przeliczenia ilości materiału lub transportu służą <a href="/narzedzia.html">narzędzia poLCA</a>.</p></div>
+<nav class="guide-toc guide-toc-desktop" aria-label="Spis treści artykułu"><p>Spis treści</p><ul><li><a href="#czym-jest-epd">Co przedstawia deklaracja środowiskowa wyrobu?</a></li><li><a href="#moduly">Które etapy cyklu życia obejmuje EPD?</a></li><li><a href="#gwp-total">Jak odczytać wskaźnik GWP-total?</a></li><li><a href="#podstawy">Według jakich zasad opracowuje się deklarację?</a></li><li><a href="#sprawdzenie">Kiedy można wykorzystać deklarację w projekcie?</a></li></ul></nav>
+</div></article></main><footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body></html>

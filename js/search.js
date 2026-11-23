@@ -19,7 +19,7 @@
         { title: 'Polskie emisje CO₂ a europejska średnia', url: 'blog-emisje-polska-vs-eu.html', type: 'Artykuł', tags: 'emisje CO2 Polska EU miks energetyczny 597' },
         { title: 'CPR 2024/3110 — zmiany dla producentów', url: 'blog-cpr-2024.html', type: 'Artykuł', tags: 'CPR rozporządzenie EPD obowiązek regulacje 2024' },
         { title: 'Granulat asfaltowy (RAP) w LCA', url: 'blog-mma-rap.html', type: 'Artykuł', tags: 'asfalt RAP recykling MMA mieszanka mineralno-asfaltowa' },
-        { title: 'EPD — czym są Deklaracje Środowiskowe Produktu', url: 'blog-epd-czym-sa.html', type: 'Artykuł', tags: 'EPD deklaracja środowiskowa LCA certyfikat' },
+        { title: 'Jak czytać deklarację środowiskową wyrobu (EPD)?', url: 'blog-epd-czym-sa.html', type: 'Artykuł', tags: 'EPD deklaracja środowiskowa LCA certyfikat' },
         { title: 'Ecoinvent a krajowe bazy danych', url: 'blog-ecoinvent-vs-krajowe.html', type: 'Artykuł', tags: 'ecoinvent bazy danych porównanie krajowe polskie' },
         { title: 'Polski cement a europejska średnia', url: 'blog-cement-polska.html', type: 'Artykuł', tags: 'cement klinkier paliwa alternatywne cementownia' },
         { title: 'Zasada proximity w ISO 14044', url: 'blog-iso-14044-proximity.html', type: 'Artykuł', tags: 'ISO 14044 proximity bliskość dane LCI' }
