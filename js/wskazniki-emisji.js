@@ -107,7 +107,7 @@
         }
 
         tbody.innerHTML = html;
-        $('tableCount').textContent = count + ' ' + (count === 1 ? 'wskaźnik' : count < 5 ? 'wskaźniki' : 'wskaźników');
+        $('tableCount').textContent = count + ' ' + (count === 1 ? 'wskaźnik' : [2,3,4].includes(count % 10) && ![12,13,14].includes(count % 100) ? 'wskaźniki' : 'wskaźników');
     }
 
     // Filter pills
