@@ -109,7 +109,7 @@
           "name": "Czy EAF jest zawsze ekologiczniejszy ni&#380; BF-BOF?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Historyczny przykład zakłada dominujący udział złomu w EAF (>85%). Nie uzasadnia to przewagi dla każdej instalacji lub dostawy. EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy &#380;elaza koksem), kt&#243;re stanowi&#261; ok. 65% &#347;ladu BF-BOF. Jednak wynik EAF silnie zale&#380;y od mieszanki energetycznej: ten sam piec w Polsce emituje ok. 0,22 t CO&#8322;e/t z energii elektrycznej, podczas gdy w Norwegii (praktycznie 100% hydro) jedynie ok. 0,04 t CO&#8322;e/t."
+            "text": "Historyczny przykład zakłada dominujący udział złomu w EAF (>85%). Nie uzasadnia to przewagi dla każdej instalacji lub dostawy. EAF unika emisji z procesowych reakcji karbochemicznych (redukcja rudy &#380;elaza koksem), kt&#243;re stanowi&#261; ok. 65% &#347;ladu BF-BOF. Jednak wynik EAF silnie zale&#380;y od mieszanki energetycznej: ten sam piec w Polsce emituje ok. 0,22 t CO&#8322;e/t z energii elektrycznej, podczas gdy w Norwegii (wskaźnik ok. 0,011 kg CO&#8322;e/kWh) jedynie ok. 0,004 t CO&#8322;e/t."
           }
         },
         {
@@ -175,10 +175,11 @@
 
     <!-- TL;DR -->
     <div class="tldr-box fade-in">
-        <div class="tldr-box-label">TL;DR — skrót dla zabieganych</div>
+        <div class="tldr-box-label">Najważniejsze w skrócie</div>
         <ul>
             <li>W 2023 r. <strong>51,2%</strong> polskiej produkcji stali surowej pochodziło z EAF — pieców elektrycznych łukowych (worldsteel)</li>
             <li>Wskaźnik GWP (A1–A3) polskiej stali EAF: <strong>0,58 kg CO₂e/kg</strong>; ecoinvent 3.10 Europa: <strong>1,78 kg CO₂e/kg</strong></li>
+            <li>Deklaracje środowiskowe czterech hut w Polsce podają dla stali zbrojeniowej 0,36–0,96 kg CO₂e/kg (mediana 0,79; <a href="/dane/polca-steel-rebar-pl-median-2026.html">rekord poLCA</a>). Wartość 0,58 kg CO₂e/kg pochodzi z modelu opisanego w tym wpisie.</li>
             <li>W historycznym zestawieniu zapisano różnicę <strong>+207%</strong>. To porównanie przyjętych scenariuszy, nie miara błędu bazy ani dokładności danych poLCA.</li>
             <li>Wynik EAF silnie zależy od mieszanki energetycznej: polska sieć (0,599 kg CO₂e/kWh) to główna składowa wskaźnika</li>
         </ul>
@@ -238,7 +239,7 @@
         <p class="comp-note">
             Zakres: A1–A3 (cradle-to-gate), GWP100, kg CO₂e/kg stali walcowanej.
             Słupki znormalizowane względem średniej worldsteel = 100%.
-            źródła: poLCA (Multicert 2026), Eurofer Industry Report 2023, ecoinvent 3.10, Worldsteel (2023).
+            źródła: poLCA (Multicert 2026), Eurofer Industry Report 2023, ecoinvent 3.10, Worldsteel (2023). Wartości porównawcze są przybliżone; różnią się zakresem (stal surowa lub wyrób walcowany) i nie zostały ponownie sprawdzone w przeglądzie z 23.11.2026.
         </p>
     </div>
 
@@ -267,10 +268,8 @@
                     <div class="process-step-text">
                         Tradycyjna droga oparta na rudzie żelaza redukowanej koksem w wielkim piecu.
                         Koks pełni rolę zarówno reduktora chemicznego, jak i paliwa.
-                        Reakcje procesowe (Fe₂O₃ + CO → Fe + CO₂) generują emisje
-                        według stechiometrii — każda tona klinkieru żelaza wiąże się
-                        z emisją ok. 500–550 kg CO₂. Po dodaniu upstream koksu, gazu
-                        wielkopiecowego i konwertora tlenowego, ślad GWP wynosi 1,7–2,1 t CO₂e/t stali.
+                        Redukcja tlenków żelaza tlenkiem węgla (Fe₂O₃ + 3 CO → 2 Fe + 3 CO₂) jest źródłem emisji procesowej. Po uwzględnieniu produkcji koksu, gazu
+                        wielkopiecowego i konwertora tlenowego ślad GWP wynosi 1,7–2,1 t CO₂e/t stali.
                     </div>
                 </div>
             </div>
@@ -432,10 +431,9 @@
 
         <p>
             Dla porównania: ta sama huta EAF działająca w kraju z czystą siatką energetyczną
-            osiągałaby znacznie niższe wyniki. Przy norweskiej sieci (praktycznie 100% hydro,
-            ok. 0,011 kg CO₂e/kWh) składowa energetyczna spadłaby do zaledwie
+            osiągałaby znacznie niższe wyniki. Przy wskaźniku dla energii elektrycznej w Norwegii ok. 0,011 kg CO₂e/kWh składowa energetyczna spadłaby do zaledwie
             0,004 kg CO₂e/kg — a całkowity ślad A1–A3 wynosiłby ok.
-            0,25 kg CO₂e/kg. To scenariusz ilustracyjny; nie stanowi dowodu przewagi wszystkich polskich dostaw nad innymi danymi stali.
+            0,36 kg CO₂e/kg. To scenariusz ilustracyjny; nie stanowi dowodu przewagi wszystkich polskich dostaw nad innymi danymi stali.
         </p>
 
         <h2>Jak dobierać dane LCI dla stali w EPD</h2>
