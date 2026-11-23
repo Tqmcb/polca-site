@@ -50,7 +50,7 @@ Wybieraj obrazy tematycznie odpowiednie — np. artykuł o asfalcie = asfalt, ni
 - Wspólny interfejs: `assets/portal.css`, zmienne `--portal-*`
 - Starsze strony zachowują `style.css` i własne style sekcji; wspólna nawigacja jest nadpisana przez styl portalu
 - Nazwy klas: BEM-like, lowercase kebab-case
-- Font portalu: Source Sans 3, pliki i licencja lokalnie w `assets/fonts/`
+- Krój interfejsu: Source Sans 3 z `assets/fonts/`, zastępczo Arial, sans-serif. Wyniki i etykiety liczbowe mają cyfry tabelaryczne. Kod korzysta z systemowego kroju o stałej szerokości, a przewodniki zachowują szeryfowe nagłówki i inicjały.
 
 ## JavaScript
 

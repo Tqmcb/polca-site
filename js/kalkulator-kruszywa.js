@@ -226,10 +226,10 @@
                     }
                 },
                 scales: {
-                    x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Inter', sans-serif", size: 10 }, color: '#6B7280', maxRotation: 0, autoSkip: false } },
+                    x: { grid: { color: 'rgba(0,0,0,0.05)' }, ticks: { font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 }, color: '#6B7280', maxRotation: 0, autoSkip: false } },
                     y: {
                         beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' },
-                        ticks: { font: { family: "'IBM Plex Mono', monospace", size: 10 }, color: '#9CA3AF',
+                        ticks: { font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 }, color: '#9CA3AF',
                                  callback: function (v) { return fmt(v, 1) + ' kg'; } }
                     }
                 }

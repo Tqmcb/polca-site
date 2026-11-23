@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emisje z transportu na budowę (A4) — poLCA</title>
+    <meta name="description" content="Oszacowanie emisji z przewozu materiałów z zakładu na budowę według odległości, masy ładunku, środka transportu i przebiegu powrotnego.">
+    <link rel="canonical" href="https://polca.org.pl/transport-a4.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Emisje z transportu na budowę (A4) — poLCA">
+    <meta property="og:description" content="Oszacowanie emisji z przewozu materiałów z zakładu na budowę według odległości, masy ładunku, środka transportu i przebiegu powrotnego.">
+    <meta property="og:url" content="https://polca.org.pl/transport-a4.html">
+    <meta property="og:image" content="https://polca.org.pl/images/polca-atlas-rzezba.webp">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emisje z transportu na budowę (A4) — poLCA">
+    <meta name="twitter:description" content="Oszacowanie emisji z przewozu materiałów z zakładu na budowę według odległości, masy ładunku, środka transportu i przebiegu powrotnego.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/polca-atlas-rzezba.webp">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css?v=10.1">
+<link rel="stylesheet" href="/assets/portal.css?v=20261122-linki"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
+<body class="portal portal-legacy portal-tool">
+
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html" class="is-active"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main class="polca-content" id="main"><nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><a href="/kalkulatory.html">Kalkulatory</a><span aria-hidden="true">/</span><span aria-current="page">Emisje z transportu na budowę (A4)</span></nav><div class="polca-page">
+    <header class="page-hero">
+        <h1 class="page-title">Emisje z transportu na budowę (A4)</h1>
+        <p class="page-subtitle">Oszacowanie emisji z przewozu materiałów z zakładu na budowę według odległości, masy ładunku, środka transportu i przebiegu powrotnego.</p>
+    </header>
+
+    <section id="transport" class="card card-lg section-gap">
+        <h2 class="card-title">Kalkulator emisji z transportu</h2>
+        <p class="card-text" style="margin-bottom: 1.25rem;">Wynik = odległość × masa × wybrany współczynnik × mnożnik powrotu. Współczynniki transportu są historycznymi założeniami tego narzędzia, w kg CO₂e na tonokilometr (tkm). Opcje powrotu to scenariusze użytkownika; nie stanowią uniwersalnego wymagania normy.</p>
+
+        <p class="calc-note" id="transInputWarn" role="alert" hidden></p>
+        <div class="calc-grid">
+            <div class="calc-group">
+                <div>
+                    <label class="calc-label" for="transDistance">Dystans [km]</label>
+                    <input type="number" id="transDistance" required aria-describedby="transInputWarn" class="calc-input" value="100" min="0" step="10">
+                </div>
+                <div>
+                    <label class="calc-label" for="transMass">Masa ładunku [t]</label>
+                    <input type="number" id="transMass" required aria-describedby="transInputWarn" class="calc-input" value="24" min="0" step="1">
+                </div>
+                <div>
+                    <label class="calc-label" for="transMode">Środek transportu</label>
+                    <select id="transMode" class="calc-select">
+                        <option value="0.031">TIR &gt; 32 t (0,031 kg CO₂e/tkm)</option>
+                        <option value="0.049">Samochód 16–32 t (0,049 kg CO₂e/tkm)</option>
+                        <option value="0.082">Samochód 7,5–16 t (0,082 kg CO₂e/tkm)</option>
+                        <option value="0.146">Samochód &lt; 7,5 t (0,146 kg CO₂e/tkm)</option>
+                        <option value="0.009">Kolej elektryczna (0,009 kg CO₂e/tkm)</option>
+                        <option value="0.025">Kolej spalinowa (0,025 kg CO₂e/tkm)</option>
+                        <option value="0.031">Barka śródlądowa (0,031 kg CO₂e/tkm)</option>
+                        <option value="0.005">Statek morski (0,005 kg CO₂e/tkm)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="calc-label" for="transReturn">Pusty przebieg powrotny</label>
+                    <select id="transReturn" class="calc-select">
+                        <option value="1">Nie uwzględniaj</option>
+                        <option value="1.5" selected>50% (scenariusz × 1,5)</option>
+                        <option value="2">100% (pełny powrót)</option>
+                    </select>
+                </div>
+                <p class="calc-note">Wartości są orientacyjne. Dobierz współczynnik do pojazdu, ładowności, paliwa i założenia o powrocie. Kalkulator nie aktualizuje współczynników z zewnętrznej bazy.</p>
+            </div>
+            <div class="card calc-result-block">
+                <div>
+                    <div class="calc-result-label">Oszacowanie CO₂e — transport całkowity</div>
+                    <div class="calc-result-value">
+                        <span id="transResult">111,6</span> <small>kg CO₂e</small>
+                    </div>
+                </div>
+                <div class="calc-divider"></div>
+                <div>
+                    <div class="calc-result-label">Na tonę materiału</div>
+                    <div class="calc-result-value secondary">
+                        <span id="transPerTon">4,65</span> <small>kg CO₂e/t</small>
+                    </div>
+                </div>
+                <div>
+                    <div class="calc-result-label">Na tonokilometr (z powrotem)</div>
+                    <div class="calc-result-value secondary">
+                        <span id="transPerTkm">0,047</span> <small>kg CO₂e/tkm</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div></main>
+<script src="js/narzedzia.js?v=20261123"></script>
+<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
+</html>

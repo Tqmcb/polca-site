@@ -8,6 +8,16 @@ from lxml import html, etree
 from atlas_icons import ICON_URL, export_icons
 ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'data/portal-catalog.json').read_text())
+# The published catalog retains its original addresses. Use current routes in the portal.
+TOOL_PAGES = {
+ 'tool-przelicznik': 'przelicznik-jednostek.html',
+ 'tool-transport': 'transport-a4.html',
+ 'tool-materialy': 'gwp-materialow.html',
+ 'tool-wskazniki': 'wskazniki-emisji.html',
+}
+for resource in CAT['resources']:
+ if resource['id'] in TOOL_PAGES:
+  resource['href'] = '/' + TOOL_PAGES[resource['id']]
 COPY=json.loads((ROOT/'content/portal-pages.json').read_text())
 GENERATED=set()
 def e(x): return h.escape(str(x if x is not None else ''),quote=True)
@@ -17,7 +27,7 @@ NAV=[('Wyroby','/wyroby.html','products'),('Dane','/datasety.html','data'),('Kal
 def group(path):
  if path.startswith(('wyroby/','c-pcr/')) or path=='wyroby.html':return 'products'
  if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','pobierz.html','dane-wspolne.html']:return 'data'
- if 'kalkulat' in path or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
+ if 'kalkulat' in path or path in TOOL_PAGES.values() or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
  if path.startswith(('metody','konsultacje/')) or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
  return ''
@@ -199,7 +209,8 @@ def migrate_shell():
   container=body.xpath('//*[@id="main"]')
   if container:
    for old in container[0].xpath('./nav[contains(@class,"portal-breadcrumbs")]'):container[0].remove(old)
-   container[0].insert(0,html.fromstring(crumb(title)))
+   parent = ('Kalkulatory', '/kalkulatory.html') if rel in TOOL_PAGES.values() or rel == 'narzedzia.html' else None
+   container[0].insert(0,html.fromstring(crumb(title, parent)))
   body.append(html.fromstring(footer()))
   p.write_bytes(etree.tostring(doc,encoding='utf-8',method='html',doctype='<!DOCTYPE html>',pretty_print=False)+b'\n')
 def sync_shell():

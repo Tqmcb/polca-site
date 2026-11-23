@@ -19,7 +19,8 @@
     background: rgba(4, 18, 16, 0.72);
     backdrop-filter: blur(8px);
     border-top: 1px solid rgba(13, 191, 159, 0.18);
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 0.72rem;
     color: rgba(255,255,255,0.5);
     overflow: hidden;
@@ -57,7 +58,7 @@
 }
 .ix-section-header-dark { text-align: center; margin-bottom: 2rem; }
 .ix-section-title {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: 700;
     color: #fff;
@@ -65,7 +66,7 @@
     letter-spacing: -0.02em;
 }
 .ix-section-title-dark {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: clamp(1.3rem, 2.5vw, 1.75rem);
     font-weight: 700;
     color: var(--ink);
@@ -74,9 +75,9 @@
 }
 .ix-section-sub { color: rgba(255,255,255,0.45); font-size: 0.88rem; margin: 0; }
 .ix-section-sub-dark { color: var(--text-secondary); font-size: 0.88rem; margin: 0; }
-.ix-section-dark .section-num    { color: rgba(13,191,159,0.7); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
-.ix-section-light .section-num   { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
-.ix-section-neutral .section-num { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.ix-section-dark .section-num    { color: rgba(13,191,159,0.7); font-size: 0.72rem; letter-spacing: normal; text-transform: none; }
+.ix-section-light .section-num   { color: var(--accent); font-size: 0.72rem; letter-spacing: normal; text-transform: none; }
+.ix-section-neutral .section-num { color: var(--accent); font-size: 0.72rem; letter-spacing: normal; text-transform: none; }
 .ix-section-neutral .ix-section-title { color: var(--ink); }
 .ix-section-neutral .ix-section-sub   { color: var(--text-secondary); }
 
@@ -113,7 +114,8 @@
     margin-bottom: 0.25rem;
 }
 .lca-stage-letter {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 1.1rem;
     font-weight: 700;
     line-height: 1;
@@ -155,14 +157,15 @@
     background: rgba(13,191,159,0.05);
 }
 .lca-mod-label {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 0.72rem;
     font-weight: 600;
     color: #0DBF9F;
-    letter-spacing: 0.04em;
+    letter-spacing: normal;
 }
 .lca-mod-name {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: 0.88rem;
     font-weight: 700;
     color: #fff;
@@ -173,11 +176,12 @@
     line-height: 1.45;
 }
 .lca-mod-badge {
-    font-size: 0.62rem;
-    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     padding: 2px 7px;
     border-radius: 20px;
-    letter-spacing: 0.05em;
+    letter-spacing: normal;
     width: fit-content;
     margin-top: 0.2rem;
 }
@@ -270,14 +274,15 @@
     margin-bottom: 0.2rem;
 }
 .wf-label {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 0.72rem;
     font-weight: 600;
     color: #0DBF9F;
-    letter-spacing: 0.05em;
+    letter-spacing: normal;
 }
 .wf-name {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     color: #fff;
@@ -289,7 +294,8 @@
     flex: 1;
 }
 .wf-co2 {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 0.72rem;
     color: rgba(13,191,159,0.75);
     margin-top: auto;
@@ -301,12 +307,13 @@
     top: -10px; right: 10px;
     background: #0DBF9F;
     color: #071714;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.72rem;
     font-weight: 700;
     padding: 2px 8px;
     border-radius: 20px;
-    letter-spacing: 0.04em;
+    letter-spacing: normal;
 }
 .wf-arrow {
     display: flex; align-items: center; justify-content: center;
@@ -420,8 +427,8 @@
     transition: opacity 0.12s, transform 0.12s;
 }
 .hotspot-tooltip.visible { opacity: 1; transform: translateY(0); }
-.htt-title { font-family: 'Inter Tight', sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
-.htt-value { font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem; color: #0DBF9F; font-weight: 600; margin-bottom: 0.5rem; }
+.htt-title { font-family: 'Source Sans 3', Arial, sans-serif; font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.3rem; }
+.htt-value { font-family: 'Source Sans 3', Arial, sans-serif; font-variant-numeric: tabular-nums; font-size: 0.8rem; color: #0DBF9F; font-weight: 600; margin-bottom: 0.5rem; }
 .htt-desc  { font-size: 0.75rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
 /* Legenda hotspotów */
@@ -462,7 +469,7 @@
 }
 .chart-card-header { flex-shrink: 0; }
 .chart-card-title {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: 0.95rem;
     font-weight: 700;
     color: var(--ink);
@@ -505,15 +512,16 @@
 }
 .stc-body { flex: 1; min-width: 0; }
 .stc-label {
-    font-size: 0.68rem;
-    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     color: var(--accent);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    letter-spacing: normal;
+    text-transform: none;
     margin-bottom: 0.3rem;
 }
 .stc-title {
-    font-family: 'Inter Tight', sans-serif;
+    font-family: 'Source Sans 3', Arial, sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     color: var(--ink);
@@ -620,7 +628,8 @@
 }
 .pkn-item + .pkn-item { border-left: 1px solid var(--border); }
 .pkn-val {
-    font-family: 'IBM Plex Mono', monospace;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
     font-size: 1.4rem; font-weight: 600;
     color: var(--accent); line-height: 1;
     margin-bottom: 0.4rem;
@@ -650,13 +659,15 @@
     border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.5rem 0;
 }
 .pf-title {
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.8rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums; font-size: 0.8rem;
     color: rgba(13,191,159,0.6); margin-bottom: 0.75rem;
-    letter-spacing: 0.05em;
+    letter-spacing: normal;
 }
 .pf-eq {
     display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
-    font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums; font-size: 0.95rem;
     color: #fff; margin-bottom: 1rem;
 }
 .pf-term { background: rgba(13,191,159,0.08); border-radius: 4px; padding: 0.3rem 0.6rem; }
@@ -676,7 +687,7 @@
     border-radius: 10px; padding: 1.25rem;
 }
 .sidebar-card-title {
-    font-family: 'Inter Tight', sans-serif; font-size: 0.72rem;
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 0.72rem;
     font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
     color: var(--text-tertiary); margin-bottom: 0.75rem;
 }
@@ -701,7 +712,8 @@
     border-color: rgba(13,191,159,0.2);
 }
 .sidebar-stat {
-    font-family: 'IBM Plex Mono', monospace; font-size: 1.8rem;
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-variant-numeric: tabular-nums; font-size: 1.8rem;
     font-weight: 600; color: var(--accent); line-height: 1;
 }
 .sidebar-stat span { font-size: 0.85rem; color: rgba(13,191,159,0.7); }
@@ -712,4 +724,4 @@
 .ix-section-light .ix-section-sub   { color: var(--text-secondary); }
 .ix-section-light .chart-card-title { color: var(--ink); }
 .ix-section-light .chart-card-sub   { color: var(--text-tertiary); }
-.ix-section-light .section-num      { color: var(--accent); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.ix-section-light .section-num      { color: var(--accent); font-size: 0.72rem; letter-spacing: normal; text-transform: none; }
