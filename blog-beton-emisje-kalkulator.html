@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku — poLCA</title>
-    <meta name="description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
+    <meta name="description" content="Jak obliczyć wynik A1–A3 dla 1 m³ betonu towarowego: wzór, przykład dla receptury z 330 kg cementu CEM II i dane, które należy zastąpić danymi wytwórni.">
     <link rel="canonical" href="https://polca.org.pl/blog-beton-emisje-kalkulator.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku">
-    <meta property="og:description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
+    <meta property="og:description" content="Jak obliczyć wynik A1–A3 dla 1 m³ betonu towarowego: wzór, przykład dla receptury z 330 kg cementu CEM II i dane, które należy zastąpić danymi wytwórni.">
     <meta property="og:url" content="https://polca.org.pl/blog-beton-emisje-kalkulator.html">
     <meta property="og:image" content="https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg">
     <meta property="og:image:width" content="1200">
@@ -17,16 +17,16 @@
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Jak liczyć emisje CO₂ dla betonu w Polsce?">
-    <meta name="twitter:description" content="Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.">
+    <meta name="twitter:description" content="Jak obliczyć wynik A1–A3 dla 1 m³ betonu towarowego: wzór, przykład dla receptury z 330 kg cementu CEM II i dane, które należy zastąpić danymi wytwórni.">
     <meta name="twitter:image" content="https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg">
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku",
-  "description": "Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników.",
+  "description": "Jak obliczyć wynik A1–A3 dla 1 m³ betonu towarowego: wzór, przykład dla receptury z 330 kg cementu CEM II i dane, które należy zastąpić danymi wytwórni.",
   "image": "https://polca.org.pl/images/blog-beton-emisje-kalkulator.jpg",
   "datePublished": "2026-02-24T00:00:00+01:00",
-  "dateModified": "2026-02-24T00:00:00+01:00",
+  "dateModified": "2026-11-23T00:00:00+01:00",
   "author": {
     "@type": "Organization",
     "name": "Multicert Sp. z o.o.",
@@ -43,7 +43,7 @@
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://polca.org.pl/blog-beton-emisje-kalkulator.html",
-    "description": "Historyczny przykład obliczeń dla betonu z założeniem energii 2024 v9.1: GWP-fossil 0,599 kg CO₂e/kWh. Schemat procesu i zakres założeń; bez porównywania różnych granic wskaźników."
+    "description": "Jak obliczyć wynik A1–A3 dla 1 m³ betonu towarowego: wzór, przykład dla receptury z 330 kg cementu CEM II i dane, które należy zastąpić danymi wytwórni."
   },
   "keywords": [
     "beton",
@@ -85,13 +85,13 @@
                 <span class="blog-tag dane">Dane</span>
                 <span class="blog-tag sektory">Sektory</span>
                 <span class="blog-date">24 lutego 2026</span>
-                <span class="blog-read-time">11 min czytania</span>
+                <span class="blog-read-time">4 min czytania</span>
             </div>
             <h1 class="blog-post-title">Jak liczyć emisje CO₂ dla betonu w Polsce? Wytwórnia krok po kroku</h1>
-<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a>.</p></aside>
+<aside class="legacy-note" aria-label="Sprostowanie"><p><strong>Sprostowanie z 23.11.2026.</strong> Wpis przeredagowano. Wcześniejsza wersja podawała udziały źródeł emisji (np. 13% dla energii elektrycznej) i różnicę +18% nazwaną błędem danych generycznych. Tych wartości nie dało się odtworzyć z podanych założeń. Wcześniejsza wersja zawierała też wzór mnożący masę cementu przez wskaźnik dla klinkieru.</p></aside>
             <p class="blog-post-lead">
-                Diagram hot-spotów, wpływ polskiego miksu energetycznego, różnica między
-                danymi generycznymi a poLCA. Konkretne liczby, interaktywna analiza.
+                Wynik A1–A3 dla 1 m³ betonu towarowego oblicza się jako sumę iloczynów: masa każdego składnika razy jego wskaźnik,
+                masa składnika razy odległość przewozu razy wskaźnik transportu oraz zużycie energii w wytwórni razy wskaźnik energii.
             </p>
         </div>
     </div>
@@ -101,283 +101,43 @@
     <article class="blog-post-content">
 
         <div class="prose fade-in">
-            <p>Beton to najpowszechniej stosowany materiał budowlany na świecie — i jeden z największych emitentów CO₂ w sektorze budowlanym. Jednak pytanie <em>ile dokładnie emituje beton wyprodukowany w Polsce</em> ma różne odpowiedzi w zależności od tego, skąd pochodzi przyjęta baza danych LCI.</p>
-            <p>W tym artykule przechodzimy krok po kroku przez wytwórnię betonu towarowego klasy C30/37, identyfikujemy hot-spoty emisyjne i pokazujemy, jak wybór danych — generycznych europejskich versus poLCA — zmienia końcowy wynik GWP.</p>
-        </div>
-
-        <!-- Kluczowe liczby -->
-        <div class="post-key-numbers fade-in">
-            <div class="pkn-item">
-                <div class="pkn-val">~278</div>
-                <div class="pkn-label">kg CO₂e/m³<br>GWP betonu C30/37</div>
-            </div>
-            <div class="pkn-sep"></div>
-            <div class="pkn-item">
-                <div class="pkn-val">74%</div>
-                <div class="pkn-label">udziału GWP<br>z produkcji cementu</div>
-            </div>
-            <div class="pkn-sep"></div>
-            <div class="pkn-item">
-                <div class="pkn-val">+18%</div>
-                <div class="pkn-label">błąd przy danych<br>generycznych EU</div>
-            </div>
-            <div class="pkn-sep"></div>
-            <div class="pkn-item">
-                <div class="pkn-val">599</div>
-                <div class="pkn-label">kg CO₂e/MWh<br>poLCA-EN-PL-2024 v9.1</div>
-            </div>
-        </div>
-
-        <!-- HOTSPOT DIAGRAM -->
-        <section class="ix-section ix-section-dark fade-in" style="margin:2rem 0;" aria-label="Diagram wytwórni betonu">
-            <div class="ix-section-header">
-                <div class="section-num">Analiza hot-spotów</div>
-                <h2 class="ix-section-title">Wytwórnia betonu — gdzie powstają emisje?</h2>
-                <p class="ix-section-sub">Najedź kursorem lub kliknij punkt, aby zobaczyć dane emisyjne</p>
-            </div>
-
-            <div class="hotspot-diagram" role="img" aria-label="Schemat wytwórni betonu z punktami emisyjnymi">
-                <svg class="hotspot-svg" font-family="'Source Sans 3', Arial, sans-serif" style="font-variant-numeric: tabular-nums" viewbox="0 0 900 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <rect width="900" height="420" fill="#0f1a17" rx="12"></rect>
-                    <rect x="0" y="360" width="900" height="60" fill="#0a1510"></rect>
-                    <line x1="0" y1="360" x2="900" y2="360" stroke="#1a3028" stroke-width="1.5"></line>
-                    <!-- Silos cementu -->
-                    <rect x="60" y="140" width="90" height="200" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"></rect>
-                    <ellipse cx="105" cy="140" rx="45" ry="14" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"></ellipse>
-                    <ellipse cx="105" cy="340" rx="45" ry="10" fill="#0c1e17"></ellipse>
-                    <text x="105" y="248" text-anchor="middle" fill="#4a9a7a" font-size="11">SILOS</text>
-                    <text x="105" y="262" text-anchor="middle" fill="#4a9a7a" font-size="11">CEMENTU</text>
-                    <line x1="150" y1="300" x2="230" y2="300" stroke="#1d4535" stroke-width="8" stroke-linecap="round"></line>
-                    <line x1="150" y1="300" x2="230" y2="300" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"></line>
-                    <!-- Węzeł betoniarski -->
-                    <rect x="230" y="180" width="180" height="160" fill="#112820" stroke="#1d4535" stroke-width="2" rx="6"></rect>
-                    <rect x="250" y="160" width="140" height="30" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5" rx="3"></rect>
-                    <rect x="250" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
-                    <rect x="310" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
-                    <rect x="350" y="200" width="40" height="30" fill="#0a2218" stroke="#1d4535" stroke-width="1" rx="2"></rect>
-                    <text x="320" y="264" text-anchor="middle" fill="#4a9a7a" font-size="12" font-weight="500">WĘZEŁ</text>
-                    <text x="320" y="280" text-anchor="middle" fill="#4a9a7a" font-size="12" font-weight="500">BETONIARSKI</text>
-                    <ellipse cx="320" cy="320" rx="35" ry="18" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1.5"></ellipse>
-                    <text x="320" y="325" text-anchor="middle" fill="#0DBF9F" font-size="9">⟳ MIESZALNIK</text>
-                    <!-- Silos kruszywa -->
-                    <rect x="460" y="200" width="80" height="140" fill="#112820" stroke="#1d4535" stroke-width="1.5" rx="4"></rect>
-                    <polygon points="460,200 540,200 520,160 480,160" fill="#1a3c2d" stroke="#1d4535" stroke-width="1.5"></polygon>
-                    <line x1="460" y1="280" x2="410" y2="280" stroke="#1d4535" stroke-width="6" stroke-linecap="round"></line>
-                    <line x1="460" y1="280" x2="410" y2="280" stroke="#0DBF9F" stroke-width="2" stroke-dasharray="6 4" opacity="0.4"></line>
-                    <text x="500" y="278" text-anchor="middle" fill="#4a9a7a" font-size="10">KRUSZYWO</text>
-                    <!-- Zbiornik wody -->
-                    <ellipse cx="570" cy="290" rx="36" ry="50" fill="#0d1e2b" stroke="#1a3050" stroke-width="1.5"></ellipse>
-                    <ellipse cx="570" cy="245" rx="36" ry="14" fill="#142438" stroke="#1a3050" stroke-width="1.5"></ellipse>
-                    <line x1="534" y1="290" x2="460" y2="290" stroke="#1a3050" stroke-width="5" stroke-linecap="round"></line>
-                    <text x="570" y="298" text-anchor="middle" fill="#3a7ab0" font-size="9">WODA</text>
-                    <!-- Kocioł -->
-                    <rect x="660" y="220" width="80" height="120" fill="#1e1208" stroke="#3d2408" stroke-width="1.5" rx="4"></rect>
-                    <rect x="675" y="200" width="50" height="28" fill="#2a1a0c" stroke="#3d2408" stroke-width="1.5" rx="3"></rect>
-                    <rect x="700" y="100" width="22" height="110" fill="#1a1208" stroke="#3d2408" stroke-width="1.5" rx="3"></rect>
-                    <ellipse cx="711" cy="88" rx="12" ry="16" fill="none" stroke="#4a3020" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.7"></ellipse>
-                    <ellipse cx="711" cy="66" rx="18" ry="14" fill="none" stroke="#4a3020" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"></ellipse>
-                    <text x="700" y="278" text-anchor="middle" fill="#8a5a30" font-size="9">KOCIOŁ</text>
-                    <text x="700" y="291" text-anchor="middle" fill="#8a5a30" font-size="9">GRZEWCZY</text>
-                    <!-- Betoniarka -->
-                    <rect x="160" y="340" width="110" height="22" fill="#1a3c2d" stroke="#1d4535" stroke-width="1" rx="2"></rect>
-                    <circle cx="180" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"></circle>
-                    <circle cx="250" cy="362" r="10" fill="#0a1510" stroke="#1d4535" stroke-width="1.5"></circle>
-                    <ellipse cx="215" cy="335" rx="40" ry="20" fill="#1a3c2d" stroke="#0DBF9F" stroke-width="1" opacity="0.6"></ellipse>
-                    <text x="215" y="338" text-anchor="middle" fill="#0DBF9F" font-size="8">AUTOBETONOMIESZARKA</text>
-                    <!-- Sieć el. -->
-                    <line x1="740" y1="200" x2="740" y2="120" stroke="#2d4a2a" stroke-width="1.5"></line>
-                    <line x1="740" y1="120" x2="820" y2="120" stroke="#2d4a2a" stroke-width="1.5"></line>
-                    <line x1="820" y1="120" x2="820" y2="180" stroke="#2d4a2a" stroke-width="1.5"></line>
-                    <circle cx="740" cy="120" r="4" fill="#2e9e5a" opacity="0.6"></circle>
-                    <circle cx="820" cy="120" r="4" fill="#2e9e5a" opacity="0.6"></circle>
-                    <text x="780" y="115" text-anchor="middle" fill="#2e9e5a" font-size="9">SIEĆ EL.</text>
-                    <rect x="795" y="180" width="50" height="60" fill="#0d1a0d" stroke="#2d4a2a" stroke-width="1.5" rx="3"></rect>
-                    <text x="820" y="216" text-anchor="middle" fill="#2e9e5a" font-size="9">TRAFO</text>
-                    <!-- Droga -->
-                    <rect x="0" y="358" width="900" height="6" fill="#151f1a"></rect>
-                    <line x1="0" y1="361" x2="900" y2="361" stroke="#1d3028" stroke-width="1" stroke-dasharray="20 12"></line>
-                    <!-- Etykiety % -->
-                    <text x="105" y="128" text-anchor="middle" fill="#0DBF9F" font-size="10" font-weight="600">74% GWP</text>
-                    <text x="711" y="58" text-anchor="middle" fill="#D97706" font-size="10" font-weight="600">13% GWP</text>
-                    <text x="500" y="148" text-anchor="middle" fill="#6B7280" font-size="10">7% GWP</text>
-                </svg>
-
-                <!-- Hotspoty -->
-                <button class="hotspot hotspot-critical" style="top:26%;left:10.5%" data-title="Cement (klinkier) — Hotspot #1" data-value="74% udziału w GWP betonu" data-desc="Produkcja klinkieru wymaga wypalania wapienia w ~1450°C. W Polsce paliwa alternatywne dostarczyły 76,5% ciepła (SPC, dane z 2022 r.) — rzeczywisty ślad węglowy jest niższy niż w danych generycznych.">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-                <button class="hotspot hotspot-medium" style="top:38%;left:34%" data-title="Energia elektryczna (A3)" data-value="13% udziału w GWP" data-desc="Historyczny przykład: energia z modelem 2024 v9.1, GWP-fossil 0,599 kg CO₂e/kWh. Dokumenty dostawy i własna generacja wymagają odrębnej oceny; nie ustalają automatycznie udziału 3%.">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-                <button class="hotspot hotspot-warm" style="top:50%;left:76%" data-title="Kocioł grzewczy (gaz / olej)" data-value="~5% udziału w GWP" data-desc="Ogrzewanie wody zarobowej i suszarnie kruszywa zimą. Gaz ziemny: 56,1 kg CO₂/GJ. Olej opałowy: 77,4 kg CO₂/GJ.">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-                <button class="hotspot hotspot-low" style="top:62%;left:26%" data-title="Transport surowców (A2)" data-value="7% udziału w GWP" data-desc="Dowozy cementu (~80 km) i kruszywa (~35 km). Kalkulator modułu A4 poLCA przelicza emisje wg euro-klasy floty i rodzaju drogi.">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-                <button class="hotspot hotspot-low" style="top:54%;left:62%" data-title="Woda procesowa" data-value="2% udziału w GWP" data-desc="Woda na mieszanie betonu i pielęgnację. Emisje z uzdatniania i pompowania. Kategoria wskaźnikowa EN 15804: Freshwater use (FW).">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-                <button class="hotspot hotspot-medium" style="top:20%;left:88%" data-title="Miks energetyczny PL — kluczowa różnica" data-value="2024 v9.1: GWP-fossil 599 kg CO₂e/MWh" data-desc="599 kg CO₂e/MWh i około 210 kg CO₂/MWh mają różne granice. Nie wyznaczają procentu niedoszacowania śladu betonu.">
-                    <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
-                </button>
-            </div>
-
-            <div class="hotspot-legend">
-                <span class="hsl-item"><span class="hsl-dot critical"></span>Krytyczny (&gt;50% GWP)</span>
-                <span class="hsl-item"><span class="hsl-dot medium"></span>Znaczący (10–50%)</span>
-                <span class="hsl-item"><span class="hsl-dot warm"></span>Umiarkowany (5–10%)</span>
-                <span class="hsl-item"><span class="hsl-dot low"></span>Nieznaczny (&lt;5%)</span>
-            </div>
-        </section>
-
-        <div class="prose fade-in">
-            <h2 id="hot-spot-cement">Hot-spot nr 1: cement i klinkier (74% GWP)</h2>
-            <p>Zdecydowanie dominującym źródłem emisji w betonie jest cement — a konkretnie klinkier portlandzki, który stanowi jego główny składnik. Produkcja klinkieru generuje emisje CO₂ dwoma drogami:</p>
+            <h2 id="wzor">Jak zbudowany jest wynik A1–A3 betonu?</h2>
+            <p>Według EN 16757 produkcja składników betonu należy do modułu A1, ich przewóz do wytwórni do modułu A2, a produkcja w wytwórni do modułu A3. Dla 1 m³ betonu:</p>
             <ul>
-                <li><strong>Kalcynacja wapienia</strong> — rozkład CaCO₃ → CaO + CO₂ jest procesem nieuchronnym chemicznie i według SPC wynosi 470 kg CO₂ na tonę klinkieru, czyli ok. 61% emisji z produkcji klinkieru</li>
-                <li><strong>Spalanie paliw</strong> w piecu obrotowym</li>
+                <li><strong>A1</strong> = Σ (masa składnika [t/m³] × wskaźnik składnika [kg CO₂e/t]),</li>
+                <li><strong>A2</strong> = Σ (masa składnika [t/m³] × odległość [km] × wskaźnik transportu [kg CO₂e/(t·km)]),</li>
+                <li><strong>A3</strong> = zużycie energii elektrycznej [kWh/m³] × wskaźnik energii [kg CO₂e/kWh] + zużycie paliw × wskaźnik paliwa.</li>
             </ul>
-            <p>Polskie cementownie uzyskały w 2022 r. z paliw alternatywnych 76,5% ciepła zużytego w produkcji (deklaracja sektorowa SPC 2025). Oznacza to, że przy stosowaniu danych generycznych Ecoinvent dla Polski — emisje z fazy paliwowej są <strong>zawyżone</strong>, co paradoksalnie karze polskich producentów za inwestycje w nowoczesne instalacje do spalania odpadów.</p>
+            <p>Masy składników należy przyjąć z receptury, odległości z dokumentów dostaw, a zużycie energii z liczników wytwórni.</p>
 
-            <h2 id="hot-spot-energia">Hot-spot nr 2: energia elektryczna w węźle (13% GWP)</h2>
-            <p>Mieszalnik betonomieszarni, podajniki ślimakowe, systemy ważące i sterowanie — wszystko to pobiera energię elektryczną. W typowej wytwórni betonu towarowego zużycie energii elektrycznej wynosi 3–6 kWh/m³ betonu.</p>
-            <p>W historycznym przykładzie zastosowano 0,599 kg CO₂e/kWh, czyli składnik kopalny modelu energii 2024 v9.1. Przywołane wcześniej około 210 kg CO₂/MWh dla UE dotyczyło emisji bezpośrednich. Porównanie tych liczb nie dowodzi ani wielokrotności śladu, ani wielkości niedoszacowania wyniku betonu.</p>
-
-            <div class="post-callout post-callout-accent">
-                <strong>Ważne:</strong> Jeśli wytwórnia posiada Gwarancje Pochodzenia (GO) lub własną instalację OZE, udział energii elektrycznej w GWP spada z ~13% do ok. 3%. Wymaga to jednak odpowiedniej dokumentacji w raporcie LCA — sama faktura za prąd z OZE nie wystarczy bez potwierdzenia atrybutu środowiskowego.
-            </div>
-
-            <h2 id="hot-spot-transport">Hot-spot nr 3: transport surowców (7% GWP)</h2>
-            <p>Cement dostarczany jest do silosów wytwórni ciężarówkami (zazwyczaj auto-silosami). Kruszywo — wywrotkami. Średnie odległości dla typowej polskiej wytwórni betonu:</p>
+            <h2 id="przyklad">Jaki wynik daje przykładowa receptura?</h2>
+            <p>Przykład dotyczy 1 m³ betonu z 330 kg cementu CEM II i 1850 kg kruszywa naturalnego. Recepturę, odległości (cement 100 km, kruszywo 30 km) i zużycie energii (4 kWh/m³) przyjęto dla ilustracji; nie opisują one konkretnej wytwórni. Wodę pominięto. Domieszek nie uwzględniono, ponieważ katalog poLCA nie podaje dla nich wskaźnika. Wynik obejmuje więc pięć pozycji z tabeli, a nie wszystkie procesy, które EN 16757 przypisuje modułom A1–A3.</p>
         </div>
 
-        <!-- Tabela transportu -->
-        <div class="card fade-in" style="margin:1.5rem 0;">
-            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 1, przewijana poziomo"><table class="polca-table">
-                <thead>
-                    <tr>
-                        <th>Surowiec</th>
-                        <th>Śr. dystans [km]</th>
-                        <th>Typ pojazdu</th>
-                        <th>Emisja [kg CO₂/t·km]</th>
-                        <th>Udział w GWP betonu</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cement</td>
-                        <td class="mono">80</td>
-                        <td>Auto-silos 24t</td>
-                        <td class="mono emission-mid">0,062</td>
-                        <td class="mono">~4%</td>
-                    </tr>
-                    <tr>
-                        <td>Kruszywo grube</td>
-                        <td class="mono">35</td>
-                        <td>Wywrotka 22t</td>
-                        <td class="mono emission-low">0,058</td>
-                        <td class="mono">~2%</td>
-                    </tr>
-                    <tr>
-                        <td>Piasek</td>
-                        <td class="mono">25</td>
-                        <td>Wywrotka 22t</td>
-                        <td class="mono emission-low">0,058</td>
-                        <td class="mono">~1%</td>
-                    </tr>
-                    <tr>
-                        <td>Domieszki</td>
-                        <td class="mono">150</td>
-                        <td>Furgon 3,5t</td>
-                        <td class="mono emission-mid">0,198</td>
-                        <td class="mono">&lt;1%</td>
-                    </tr>
-                </tbody>
-            </table></div>
-            <p style="font-size:0.72rem;color:var(--text-tertiary);margin-top:0.5rem;">Wskaźniki emisji transportu wg EN 16258:2012, euro VI. Kalkulator modułu A4 dostępny w narzędziach poLCA.</p>
-        </div>
-
-        <!-- Wykres GWP -->
-        <section class="ix-section ix-section-neutral fade-in" style="margin:2rem 0;" aria-label="Wykres GWP betonu">
-            <div class="ix-section-header">
-                <div class="section-num">Struktura emisji</div>
-                <h2 class="ix-section-title">Podział GWP betonu C30/37</h2>
-                <p class="ix-section-sub">Udział procentowy procesów · dane poLCA-EN-PL-2024 v9.1 (0,599 kg CO₂e/kWh)</p>
-            </div>
-            <div class="charts-row">
-                <div class="chart-card">
-                    <div class="chart-card-header">
-                        <div class="chart-card-title">Struktura GWP — donut</div>
-                        <div class="chart-card-sub">Najedź kursorem na segment</div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="donutChartPost"></canvas>
-                    </div>
-                </div>
-                <div class="chart-card">
-                    <div class="chart-card-header">
-                        <div class="chart-card-title">Porównanie: poLCA vs dane generyczne</div>
-                        <div class="chart-card-sub">GWP betonu C30/37 [kg CO₂e/m³]</div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="compareChartPost"></canvas>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="prose fade-in">
-            <h2 id="blad-generycznych">Jak duży jest błąd przy danych generycznych?</h2>
-            <p>Porównując wynik LCA dla polskiego betonu C30/37 oparty na danych poLCA z wynikiem opartym na Ecoinvent 3.10 (mix europejski), uzyskujemy różnicę na poziomie <strong>+18% przy zastosowaniu danych poLCA</strong>. Wynik wyższy — bo polska energetyka jest droższa węglowo niż europejska średnia.</p>
-            <p>Oznacza to, że producent betonu w Polsce, który sporządza EPD na podstawie Ecoinvent EU, <strong>oficjalnie deklaruje niższy ślad węglowy niż wynosi rzeczywistość</strong>. To problem nie tylko formalny — przy benchmarkach regulacyjnych CPR 2024/3110 i wymaganiach LEED/BREEAM może to prowadzić do błędnych decyzji projektowych.</p>
-
-            <h2 id="kalkulator">Kalkulator: wzór na GWP betonu w Polsce</h2>
-            <p>Uproszczone równanie dla modułu A1–A3 betonu towarowego:</p>
-        </div>
-
-        <!-- Wzór -->
-        <div class="post-formula fade-in">
-            <div class="pf-title">GWP<sub>A1–A3</sub> [kg CO₂e/m³]</div>
-            <div class="pf-eq">
-                <span class="pf-term"><span class="pf-coef">m<sub>cem</sub></span> × EF<sub>klinkier</sub></span>
-                <span class="pf-op">+</span>
-                <span class="pf-term"><span class="pf-coef">E<sub>el</sub></span> × 0,599</span>
-                <span class="pf-op">+</span>
-                <span class="pf-term"><span class="pf-coef">m<sub>krus</sub></span> × d × EF<sub>trans</sub></span>
-                <span class="pf-op">+</span>
-                <span class="pf-term"><span class="pf-coef">E<sub>gaz</sub></span> × 0,0561</span>
-            </div>
-            <div class="pf-legend">
-                <span><code>m<sub>cem</sub></code> — masa cementu [kg/m³] · typowo 300–380 kg</span>
-                <span><code>EF<sub>klinkier</sub></code> — wskaźnik emisji klinkieru PL [kg CO₂/kg] · SPC 2025: 0,775</span>
-                <span><code>E<sub>el</sub></code> — energia elektryczna [kWh/m³] · typowo 4–6</span>
-                <span><code>0,599</code> — wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 [kg CO₂e/kWh, historyczny GWP-fossil]</span>
-                <span><code>d</code> — dystans transportu [km]</span>
-                <span><code>0,0561</code> — wskaźnik gazu ziemnego [kg CO₂/MJ]</span>
-            </div>
+        <div class="table-wrap fade-in" style="overflow-x:auto;">
+            <table class="polca-table">
+                <thead><tr><th>Moduł</th><th>Pozycja</th><th>Obliczenie</th><th>kg CO₂e/m³</th><th>Udział</th></tr></thead>
+                <tbody><tr><td>A1</td><td><a href="/dane/polca-cement-cem-ii-spc-pl-2025.html">Cement CEM II (średnia krajowa SPC 2025)</a></td><td>0,330 t × 613 kg CO₂e/t</td><td class="mono">202,3</td><td class="mono">92,5%</td></tr><tr><td>A1</td><td><a href="/dane/polca-agg-pl-natural-default-2026.html">Kruszywo naturalne</a></td><td>1,850 t × 3,5 kg CO₂e/t</td><td class="mono">6,5</td><td class="mono">3,0%</td></tr><tr><td>A2</td><td><a href="/dane/polca-truck-40t-default-2026.html">Przewóz cementu, 100 km</a></td><td>0,330 t × 100 km × 0,0843</td><td class="mono">2,8</td><td class="mono">1,3%</td></tr><tr><td>A2</td><td><a href="/dane/polca-truck-40t-default-2026.html">Przewóz kruszywa, 30 km</a></td><td>1,850 t × 30 km × 0,0843</td><td class="mono">4,7</td><td class="mono">2,1%</td></tr><tr><td>A3</td><td><a href="/energia-polska-2025-v4.html">Energia elektryczna w wytwórni</a></td><td>4 kWh × 0,6445 kg CO₂e/kWh</td><td class="mono">2,6</td><td class="mono">1,2%</td></tr><tr><td colspan="3"><strong>Suma uwzględnionych pozycji A1–A3</strong></td><td class="mono"><strong>218,8</strong></td><td class="mono">100%</td></tr></tbody>
+            </table>
         </div>
 
         <div class="prose fade-in">
-            <p style="margin-top:1.25rem;padding:1rem 1.1rem;border-left:3px solid var(--accent);background:var(--bg-subtle);border-radius:8px;">
-                <strong>Jak czytać 0,599:</strong> to nie jest samodzielny wynik A1–A3 betonu ani cementu.
-                Jest to wskaźnik przepływu „energia elektryczna z sieci PL” w granicy well-to-meter.
-                W tym przykładzie trafia do modułu A3, ponieważ energia jest zużywana w wytwórni betonu.
-                W innych analizach ten sam wskaźnik może zostać przypisany do A5, B6, C3 albo D — zależnie od miejsca zużycia energii.
-            </p>
-            <h2 id="wnioski">Wnioski praktyczne</h2>
-            <ol>
-                <li><strong>Klinkier to dominanta</strong> — optymalizacja receptury (zmniejszenie wskaźnika w/c, stosowanie cementów z dodatkami CEM II/B, CEM III) ma największy efekt na GWP.</li>
-                <li><strong>Energia elektryczna ma znaczenie</strong> — w Polsce dwukrotnie większe niż wynikałoby z danych generycznych. Gwarancje Pochodzenia to skuteczny instrument redukcji GWP w EPD.</li>
-                <li><strong>Transport jest drugorzędny</strong> — nawet podwojenie odległości dostaw zmienia GWP o &lt;5%. Nie jest priorytetem optymalizacyjnym.</li>
-                <li><strong>Sprawdź reprezentatywność danych:</strong> pochodzenie z bazy europejskiej nie jest samo dowodem niezgodności. Trzeba ocenić proces, technologię, rok i granice.</li>
-            </ol>
+            <p>Cement wnosi w tym przykładzie 202,3 kg CO₂e, czyli 92,5% wyniku. Przewóz i energia elektryczna w wytwórni odpowiadają razem za 4,6% wyniku. Dlatego dla wyniku betonu najważniejsze są ilość i rodzaj cementu w recepturze.</p>
+            <p>Z cementem CEM I (766 kg CO₂e/t) ten sam beton miałby wynik wyższy o 50,5 kg CO₂e/m³, a z cementem CEM III (483 kg CO₂e/t) niższy o 42,9 kg CO₂e/m³. Wskaźniki dla rodzajów cementu podaje <a href="https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5">deklaracja sektorowa SPC 2025</a>.</p>
 
-            <p style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.85rem;color:var(--text-secondary);">
-                <strong>Źródła:</strong> Multicert Sp. z o.o. (2026), MET-001:2026 — poLCA-EN-PL-2024 v9.1 = 0,599 kg CO₂e/kWh · Multicert Sp. z o.o. (2026), MET-002:2026 — wyłączenie wskaźników KOBiZE z LCA EPD · c-PCR-BET-EPD-PL:2026 v1.3 §6.3 — 3-poziomowa hierarchia wskaźnika energii · KOBiZE (2025), „Wskaźniki emisyjności CO₂" za 2024 (end-user: 553 kg CO₂/MWh) · EN 15804+A2:2019 · ISO 14044:2006 · Ecoinvent 3.10 · dane własne poLCA dla klinkieru PL.
-             <span class="legacy-citation-note">MET-002 przywołano pod tytułem wydania historycznego; <a href="/metodyki/MET-002-energia.html">zob. korektę HTML</a>. Określenie „3-poziomowa hierarchia” opisuje wcześniejsze ujęcie.</span></p>
+            <h2 id="dane">Które dane należy zastąpić danymi wytwórni?</h2>
+            <ul>
+                <li><strong>Cement:</strong> wskaźnik z deklaracji środowiskowej dostawcy cementu; średnia krajowa SPC 2025 tylko wtedy, gdy dostawca nie ma takiej deklaracji.</li>
+                <li><strong>Receptura:</strong> rzeczywiste masy składników na 1 m³.</li>
+                <li><strong>Przewóz:</strong> odległości i rodzaj pojazdów z dokumentów dostaw.</li>
+                <li><strong>Energia i paliwa:</strong> roczne zużycie z liczników i faktur podzielone przez roczną produkcję betonu w m³.</li>
+            </ul>
+            <p>Obliczenia dla cementu w betonie i dla kruszyw pokazują <a href="/wyroby/15.html#modul-a1-cement">karta cementu</a> i <a href="/wyroby/24.html">karta kruszyw</a>.</p>
         </div>
 
+        <div class="prose fade-in">
+            <p style="font-size: 0.82rem; color: var(--text-tertiary);"><strong>Źródła wskaźników:</strong> <a href="https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5">deklaracja sektorowa SPC 2025, tabela 2</a>; <a href="/dane/polca-agg-pl-natural-default-2026.html">rekord poLCA dla kruszywa naturalnego</a>; <a href="/dane/polca-truck-40t-default-2026.html">ÖKOBAUDAT 2026, zestaw ciężarowy 40 t</a>; <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a>.</p>
+        </div>
     </article>
 
     <!-- Sidebar -->
@@ -385,12 +145,9 @@
         <div class="sidebar-card">
             <div class="sidebar-card-title">W tym artykule</div>
             <nav class="sidebar-toc">
-                <a href="#hot-spot-cement">Hot-spot #1: Cement (74%)</a>
-                <a href="#hot-spot-energia">Hot-spot #2: Energia (13%)</a>
-                <a href="#hot-spot-transport">Hot-spot #3: Transport (7%)</a>
-                <a href="#blad-generycznych">Błąd przy danych generycznych</a>
-                <a href="#kalkulator">Wzór kalkulacyjny</a>
-                <a href="#wnioski">Wnioski praktyczne</a>
+                <a href="#wzor">Budowa wyniku A1–A3</a>
+                <a href="#przyklad">Przykładowa receptura</a>
+                <a href="#dane">Dane wytwórni</a>
             </nav>
         </div>
         <div class="sidebar-card">
@@ -404,16 +161,16 @@
                     <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line></svg>
                     Kalkulator modułu A4
                 </a>
-                <a href="datasety.html" class="sidebar-link">
+                <a href="datasety.html?q=beton" class="sidebar-link">
                     <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
-                    Zbiór danych: poLCA-BET-C30
+                    Katalog danych
                 </a>
             </div>
         </div>
         <div class="sidebar-card sidebar-card-accent">
             <div class="sidebar-card-title">Kluczowy wskaźnik</div>
-            <div class="sidebar-stat">599 <span>kg CO₂e/MWh</span></div>
-            <div class="sidebar-stat-label">poLCA-EN-PL-2024 v9.1<br>historyczny GWP-fossil</div>
+            <div class="sidebar-stat">644,5 <span>kg CO₂e/MWh</span></div>
+            <div class="sidebar-stat-label">Energia Polska 2025 v4<br>GWP-total u odbiorcy</div>
         </div>
     </aside>
     </div><!-- /.blog-post-layout -->
@@ -473,52 +230,6 @@
 </div><!-- /.polca-page -->
 </main><!-- /.polca-content -->
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/interactive.js?v=1.0"></script>
-<script>
-(function() {
-    'use strict';
-    function initPostCharts() {
-        if (!window.Chart) return;
-        var accent = '#0DBF9F';
-        // Donut
-        var d = document.getElementById('donutChartPost');
-        if (d) new window.Chart(d.getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Cement (klinkier)', 'Energia el. (A3)', 'Transport surowców', 'Kruszywo', 'Kocioł / gaz', 'Woda'],
-                datasets: [{ data: [74, 13, 7, 4, 2, 0], backgroundColor: ['#0DBF9F','#2d7dd2','#6B7280','#7c4dcc','#D97706','#34d399'], borderColor: '#f9f8f5', borderWidth: 3, hoverOffset: 10 }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, cutout: '65%',
-                plugins: { legend: { position: 'right', labels: { color: '#555566', font: { family: "'Source Sans 3',sans-serif", size: 12 }, padding: 12, boxWidth: 10, usePointStyle: true } },
-                tooltip: { backgroundColor: '#071714', borderColor: accent, borderWidth: 1, titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', padding: 10,
-                    callbacks: { label: function(c) { return ' ' + c.raw + '% GWP'; } } } },
-                animation: { animateRotate: true, duration: 900, easing: 'easeOutQuart' }
-            }
-        });
-        // Compare bar
-        var c = document.getElementById('compareChartPost');
-        if (c) new window.Chart(c.getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: [['Dane generyczne', '(Ecoinvent EU)'], ['Dane poLCA-EN-PL-2024', '(0,599 kg CO₂e/kWh)']],
-                datasets: [{ label: 'GWP [kg CO₂e/m³]', data: [236, 278],
-                    backgroundColor: ['rgba(107,114,128,0.25)', accent],
-                    borderColor: ['#6B7280', accent], borderWidth: 2, borderRadius: 8 }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, indexAxis: 'y',
-                plugins: { legend: { display: false },
-                    tooltip: { backgroundColor: '#071714', borderColor: accent, borderWidth: 1, titleColor: '#fff', bodyColor: 'rgba(255,255,255,0.7)', padding: 10,
-                        callbacks: { label: function(c) { return ' ' + c.raw + ' kg CO₂e/m³'; }, afterLabel: function(c) { return c.dataIndex === 1 ? '+18% vs dane generyczne' : 'Podstawa porównania'; } } } },
-                scales: { x: { beginAtZero: true, max: 340, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { color: '#6B7280', font: { family: "'Source Sans 3',sans-serif", size: 12 }, callback: function(v) { return v + ' kg'; } } },
-                    y: { grid: { display: false }, ticks: { color: '#6B7280', font: { family: "'Source Sans 3',sans-serif", size: 12 } } } },
-                animation: { duration: 900, easing: 'easeOutQuart' }
-            }
-        });
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initPostCharts);
-    else initPostCharts();
-})();
-</script>
+
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

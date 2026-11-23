@@ -35,7 +35,7 @@
     "data_quality": "official_public",
     "status": "active",
     "source_name": "KOBiZE, wskaźniki emisyjności dla energii elektrycznej za 2024 rok",
-    "source_url": "https://www.kobize.pl/",
+    "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf#page=5",
     "scope": "Oficjalny wskaźnik KOBiZE dla energii elektrycznej dostarczonej do odbiorcy końcowego. To jest wskaźnik CO2 ze spalania, nie pełny wskaźnik LCA CO2e.",
     "methodology_note": "Oficjalny wskaźnik CO2 jako wejście kontrolne i punkt odniesienia. Nie obejmuje pełnego cyklu życia; nie należy automatycznie zastępować nim wskaźnika LCA ani uznawać innego modelu za obowiązkowy.",
     "limitations": "Zakres CO2 only / end-user; nie jest pełnym GWP-fossil w cyklu życia. Rekord ma inną granicę systemu niż wynik 0,599 kg CO2e/kWh.",
@@ -53,7 +53,7 @@
         "name": "KOBiZE",
         "type": "official_public",
         "use": "emisje CO2 i wskaźnik end-user energii elektrycznej",
-        "url": "https://www.kobize.pl/"
+        "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf#page=5"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
