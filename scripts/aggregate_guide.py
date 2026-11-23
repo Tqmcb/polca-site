@@ -80,11 +80,16 @@ def scenario(case, stages):
         unit = stage['result_unit']
         scope = {'material': 'Kruszywo', 'distance': 'Przewóz', 'power': 'Prąd', 'fuel': 'Paliwo', 'gas': 'Gaz'}[key]
         accessible_name = f'{code}, {scope}, {step_title}'
+        basis = case.get('point_basis', {}).get(key)
+        basis_label = ''
+        if basis:
+            accessible_name += ', ' + basis
+            basis_label = f'<span class="aggregate-point-basis">{basis}</span>'
         points.append(f'''<a class="aggregate-point" id="{point_id}" href="#{panel_id}" data-step="{index}"
           aria-label="{accessible_name}, {value} {unit}" data-marker-name="{accessible_name}">
           <span class="aggregate-point-scope">{scope}</span>
           <span class="aggregate-marker">{code}</span><strong class="aggregate-point-value" data-output>{value}</strong>
-          <small class="aggregate-point-unit">{unit}</small></a>''')
+          <small class="aggregate-point-unit">{unit}</small>{basis_label}</a>''')
         plain_unit = stage['activity_unit']
         factor_unit = stage['factor_unit']
         factor_text = number(factor)
@@ -138,6 +143,7 @@ def aggregate_guide(catalog, mma_profile):
         {
             'name': 'beton', 'choice': 'Beton', 'ingredient': True,
             'title': 'Kruszywo jako składnik betonu',
+            'point_basis': {'material': 'na 1 t kruszywa', 'distance': 'na 1 t kruszywa', 'power': 'na 1 m³ betonu'},
             'alt': 'Zakład produkcji kruszywa, wywrotka i betoniarnia z silosami.',
             'material_target': 'kopalnia',
             'material_description': ('Zakupione kruszywo jest składnikiem betonu. Gdy brakuje pełnych danych inwentaryzacyjnych kruszywa, '

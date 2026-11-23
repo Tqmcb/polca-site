@@ -110,6 +110,19 @@ class ProductNavigationTests(unittest.TestCase):
             self.assertEqual(point.xpath('.//*[@data-output]/text()'), [result])
             self.assertEqual(panel.xpath('.//p[contains(@class,"aggregate-result")]//*[@data-output]/text()'), [result])
 
+    def test_transport_comparison_matches_both_tools_at_40_km(self):
+        family = html.parse(str(ROOT / 'wyroby/24.html'))
+        calculator = html.parse(str(ROOT / 'kalkulator-kruszywa.html'))
+        link, = family.xpath('//*[@id="narzedzia"]//*[@data-record-id="tool-kruszywa"]//a')
+        self.assertEqual(link.get('href'), '/kalkulator-kruszywa.html')
+        description = ' '.join(link.getparent().getparent().xpath('./p/text()'))
+        card_factor = family.xpath('string(//*[@id="opis-przewoz-na-budowe"]/@data-factor)')
+        historical_factor = calculator.xpath('string(//*[@id="aggSimpleEf"]/option[@selected]/@value)')
+        for value in (card_factor, historical_factor):
+            factor = Decimal(value)
+            self.assertIn(f'{factor:.3f}'.replace('.', ',') + ' kg CO₂e/(t·km)', description)
+            self.assertIn(f'{factor * 40:.2f}'.replace('.', ',') + ' kg CO₂e', description)
+
     def test_aggregate_use_determines_modules_and_activity_data(self):
         doc = html.parse(str(ROOT / 'wyroby/24.html'))
         for name, modules in {'beton': ['A1', 'A2', 'A3'], 'mma': ['A1', 'A2', 'A3'],

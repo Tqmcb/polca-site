@@ -72,6 +72,8 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
         reference_unit=raw_unit,
         source_record_href=f'/data/datasets/{code}.json',
     )
+    if 'scope_profile' in note:
+        result.update(editorial['material_scopes'][note['scope_profile']])
     if is_parameters:
         result['downloads'].append(download('Parametry i założenia — JSON', result['source_record_href']))
     if code == 'KOBIZE-EN-PL-ENDUSER-2024':

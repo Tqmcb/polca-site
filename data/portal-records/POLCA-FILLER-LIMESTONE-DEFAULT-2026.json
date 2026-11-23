@@ -14,7 +14,7 @@
     "description": "Wartość dla 1 t wypełniacza stosowanego w mieszankach asfaltowych.",
     "href": "/dane/polca-filler-limestone-default-2026.html",
     "unit": "kg CO₂e/t",
-    "boundary": "A1",
+    "boundary": "Produkcja wypełniacza do bramy zakładu",
     "indicator_label": "Wpływ na klimat (GWP)",
     "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
     "source_url": "https://polca.org.pl/metodyka.html",
@@ -45,6 +45,15 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-FILLER-LIMESTONE-DEFAULT-2026.json",
+    "production_scope": "Pozyskanie surowca i produkcja 1 t mielonego wypełniacza wapiennego do bramy zakładu. Wskaźnik obejmuje mielenie i ewentualne suszenie.",
+    "application_contexts": {
+      "constituent": {
+        "label": "W mieszance mineralno-asfaltowej",
+        "module": "A1",
+        "transport_module": "A2",
+        "description": "Produkcję zakupionego wypełniacza uwzględnia się w A1 mieszanki, a przewóz do wytwórni w A2."
+      }
+    },
     "value": 30,
     "cpr_family_ids": [
       24
