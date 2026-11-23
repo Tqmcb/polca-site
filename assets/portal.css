@@ -13,8 +13,17 @@
   font-weight: 200 900;
   font-display: swap;
 }
+@font-face {
+  font-family: "Source Sans 3 Fallback";
+  src: local("Arial");
+  size-adjust: 111.6885%;
+  ascent-override: 89.5347%;
+  descent-override: 29.1883%;
+  line-gap-override: 0%;
+}
 html { font-size: 18px; scroll-padding-top: 24px; }
 body.portal {
+  --portal-font: "Source Sans 3", "Source Sans 3 Fallback", Arial, sans-serif;
   --portal-ink: #142c45;
   --portal-link: #1355c4;
   --portal-muted: #526173;
@@ -25,7 +34,7 @@ body.portal {
   margin: 0;
   background: #fff;
   color: var(--portal-ink);
-  font-family: "Source Sans 3", Arial, sans-serif;
+  font-family: var(--portal-font);
   font-size: 18px;
   line-height: 1.55;
   -webkit-text-size-adjust: 100%;
@@ -279,17 +288,17 @@ body.portal-legacy .polca-content, body.portal-legacy .main-content { margin-lef
 body.portal-legacy .polca-page { max-width: 1180px !important; width: calc(100% - 64px); margin-inline: auto; padding: 8px 0 64px !important; animation: none !important; }
 body.portal-legacy .fade-in { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
 body.portal-legacy .page-hero { margin-bottom: 24px; padding-block: 8px 24px !important; }
-body.portal-legacy .page-title, body.portal-legacy .page-header h1 { font-family: "Source Sans 3", Arial, sans-serif; color: var(--portal-ink); font-size: clamp(1.8rem, 3.1vw, 2.6rem) !important; line-height: 1.16 !important; letter-spacing: -.02em; }
-body.portal-legacy .page-subtitle { font-family: "Source Sans 3", Arial, sans-serif; color: var(--portal-muted); font-size: 1.1rem !important; line-height: 1.55 !important; max-width: 70ch; }
-body.portal-legacy .prose, body.portal-legacy .card-text { font-family: "Source Sans 3", Arial, sans-serif; font-size: 1rem; line-height: 1.6; }
-body.portal-legacy .card-title, body.portal-legacy .calc-label { font-family: "Source Sans 3", Arial, sans-serif; }
+body.portal-legacy .page-title, body.portal-legacy .page-header h1 { font-family: var(--portal-font); color: var(--portal-ink); font-size: clamp(1.8rem, 3.1vw, 2.6rem) !important; line-height: 1.16 !important; letter-spacing: -.02em; }
+body.portal-legacy .page-subtitle { font-family: var(--portal-font); color: var(--portal-muted); font-size: 1.1rem !important; line-height: 1.55 !important; max-width: 70ch; }
+body.portal-legacy .prose, body.portal-legacy .card-text { font-family: var(--portal-font); font-size: 1rem; line-height: 1.6; }
+body.portal-legacy .card-title, body.portal-legacy .calc-label { font-family: var(--portal-font); }
 body.portal-legacy .calc-note { color: var(--portal-muted); font-size: .85rem; line-height: 1.5; }
 body.portal-legacy .calc-input, body.portal-legacy .calc-select, body.portal-legacy .mma-input-sm, body.portal-legacy .agg-input-sm { min-height: 44px; font-size: 1rem; }
 body.portal-legacy .calc-export-btn, body.portal-legacy .calc-export-json, body.portal-legacy .tool-nav-pill { min-height: 44px; }
 body.portal-legacy input:disabled, body.portal-legacy select:disabled { opacity: .65; background: #edf0f4; }
 body.portal-legacy .card { box-shadow: none; border-radius: 4px; }
 body.portal-legacy .polca-table { font-size: .9rem; }
-body.portal-legacy .en25 { font-family: "Source Sans 3", Arial, sans-serif; }
+body.portal-legacy .en25 { font-family: var(--portal-font); }
 @media (max-width: 850px) {
   body.portal-legacy .polca-page { width: calc(100% - 40px); }
 }
@@ -340,7 +349,7 @@ body.portal-legacy .en25 { font-family: "Source Sans 3", Arial, sans-serif; }
   [data-catalog-mode="datasets"] .portal-result-meta { margin-top: 6px; }
 }
 /* Keep navigation identical when historical pages load their older typography. */
-body.portal .portal-header, body.portal .portal-footer {font-family:"Source Sans 3",Arial,sans-serif!important;}
+body.portal .portal-header, body.portal .portal-footer {font-family:var(--portal-font)!important;}
 body.portal .portal-header * {font-family:inherit!important;}
 body.portal .portal-brand small {font-size:12px!important;line-height:1.2!important;color:var(--portal-ink)!important;}
 body.portal .portal-footer h2 {font-family:inherit!important;font-size:1rem!important;line-height:1.4!important;}
@@ -351,7 +360,7 @@ body.portal-legacy .en25-crumb {display:none;}
 .portal-actions button {background:white;color:var(--portal-link);}
 .portal-actions button:disabled {opacity:.5;}
 @media(max-width:540px){body.portal-legacy main.polca-content > .portal-breadcrumbs{width:calc(100% - 32px);margin-top:24px;}}
-body.portal-legacy,body.portal-legacy p,body.portal-legacy li,body.portal-legacy td,body.portal-legacy h1,body.portal-legacy h2,body.portal-legacy h3 {font-family:"Source Sans 3",Arial,sans-serif!important;}
+body.portal-legacy,body.portal-legacy p,body.portal-legacy li,body.portal-legacy td,body.portal-legacy h1,body.portal-legacy h2,body.portal-legacy h3 {font-family:var(--portal-font)!important;}
 body.portal-tool .page-hero {grid-template-columns:1fr!important;max-width:900px;}
 body.portal-tool .page-hero > div:has(img) {display:none;}
 .portal-scroll-hint {display:none;}
@@ -420,7 +429,7 @@ body.portal-legacy .section-num {color:var(--portal-muted) !important;font-weigh
 body.portal-legacy .card {background:#fff !important;box-shadow:none !important;border-radius:3px !important;}
 body.portal-legacy :is(.card-accent-orange,.card-accent) {border-top:1px solid var(--portal-line) !important;}
 body.portal-legacy .tool-nav {gap:4px 24px;border-bottom:1px solid var(--portal-line);padding-bottom:12px;}
-body.portal-legacy .tool-nav-pill {border:0 !important;border-radius:0 !important;background:transparent !important;color:var(--portal-link) !important;padding:8px 0 !important;font:600 1rem/1.4 "Source Sans 3",Arial,sans-serif !important;white-space:normal;text-decoration:none;box-shadow:none !important;}
+body.portal-legacy .tool-nav-pill {border:0 !important;border-radius:0 !important;background:transparent !important;color:var(--portal-link) !important;padding:8px 0 !important;font:600 1rem/1.4 var(--portal-font) !important;white-space:normal;text-decoration:none;box-shadow:none !important;}
 body.portal-legacy .tool-nav-pill:is(:hover,.active) {color:var(--portal-ink) !important;background-color:var(--portal-soft) !important;}
 .portal-tool-meta {display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:20px;}
 body.portal-legacy .portal-tool-meta .doc-pill {color:var(--portal-muted);background:none;border:0;padding:0;}
@@ -453,7 +462,7 @@ body.portal-article :is(.blog-post-body,.prose) h2 {font-size:1.5rem !important;
 body.portal-article :is(.blog-post-body,.prose) h3 {font-size:1.18rem !important;line-height:1.35 !important;font-weight:600 !important;}
 body.portal-article .verdict-box {background:var(--portal-soft);border-radius:0;border:0;color:var(--portal-ink);}
 body.portal-article .verdict-box :is(p,strong,.verdict-box-label) {color:var(--portal-ink) !important;}
-body.portal-article .verdict-box-label {font:600 .9rem/1.4 "Source Sans 3",Arial,sans-serif;letter-spacing:normal;text-transform:none;}
+body.portal-article .verdict-box-label {font:600 .9rem/1.4 var(--portal-font);letter-spacing:normal;text-transform:none;}
 @media(max-width:850px) {
   body.portal-legacy main.polca-content > .portal-breadcrumbs {width:calc(100% - 40px);}
 }
@@ -471,7 +480,7 @@ body.portal-legacy .portal-related-tool:hover {transform:none !important;}
 /* The electricity profile uses the same type scale and neutral record styling. */
 body.portal-legacy .en25 h1 {font-size:clamp(1.9rem,3.2vw,2.7rem) !important;line-height:1.15 !important;font-weight:600 !important;letter-spacing:-.025em !important;color:var(--portal-ink) !important;}
 body.portal-legacy .en25 h2 {font-weight:600 !important;color:var(--portal-ink) !important;}
-body.portal-legacy .en25 .en25-eyebrow {font:600 .9rem/1.45 "Source Sans 3",Arial,sans-serif !important;text-transform:none;letter-spacing:normal;color:var(--portal-muted) !important;}
+body.portal-legacy .en25 .en25-eyebrow {font:600 .9rem/1.45 var(--portal-font) !important;text-transform:none;letter-spacing:normal;color:var(--portal-muted) !important;}
 body.portal-legacy .en25-record {border:1px solid var(--portal-line);background:#fff;}
 body.portal-legacy .en25-record dl > div, body.portal-legacy .en25-record dd {font-size:.94rem;}
 body.portal-legacy .en25-metric strong {font-family:inherit;color:var(--portal-ink);font-variant-numeric:tabular-nums;}
@@ -538,7 +547,7 @@ body.portal-legacy .portal-main > .polca-page { width: 100%; padding: 0 !importa
 .portal-heading-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .portal-heading-actions + .rej-latest { margin-bottom: 32px; }
 body.portal .portal-footer {
-  background: #183b38;
+  background: #112e40;
   border: 0;
   color: #d5e4dd;
   position: relative;
