@@ -149,10 +149,13 @@ def build_copy():
    continue
   build_reading_page(c, page, links, sections)
 def build_cards():
- for r in CAT['datasets']:
+ current = {r['id']: r for r in CAT['datasets']}
+ for r in [*CAT['datasets'], *CAT['withdrawn_datasets']]:
   if not r['href'].startswith('/dane/'):continue
   contexts = r.get('application_contexts', {})
   scope_fields = []
+  if 'publication_year' in r:
+   scope_fields.append(('Rok publikacji deklaracji', r['publication_year']))
   if contexts:
    scope_fields.append(('Zakres u producenta', r['production_scope']))
    scope_fields.extend((context['label'], context['description']) for context in contexts.values())
@@ -162,7 +165,7 @@ def build_cards():
   downloads='<ul class="portal-downloads">'+''.join('<li>'+a(x['label'],x['href'],extra='download')+f'<span>{e(x["format"])}</span></li>' for x in r['downloads'])+'</ul>'
   source=a(r['source_name'],r['source_url']) if r.get('source_url') else e(r.get('source_name',''))
   more=links([{'label':x['title'],'href':x['href']} for x in CAT['datasets'] if x['id'] in r.get('related_ids',[])])
-  notes=[]
+  notes=[r['methodology_note']] if r.get('methodology_note') else []
   if r['id']=='POLCA-EN-PL-LCA-2024':notes.append('Wartość 0,599 dotyczy składnika kopalnego wpływu na klimat. Informacyjna suma w pełnym modelu 2024 wynosi 0,600 kg CO₂e/kWh. Rekord do pobrania zachowuje rozróżnienie rodzaju wskaźnika.')
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
@@ -175,7 +178,12 @@ def build_cards():
    body += '<nav aria-label="Zastosowanie kruszywa">' + links(guidance, 'product-inline-links') + '</nav>'
   family_links=[{'label':str(f['id'])+' — '+f['label'],'href':f'/wyroby/{f["id"]:02d}.html'} for f in json.loads((ROOT/'data/cpr-families.json').read_text())['families'] if f['id'] in r.get('cpr_family_ids',[])]
   if family_links:body='<nav aria-label="Rodzina wyrobu">'+links(family_links,'product-inline-links')+'</nav>'+body
-  page(r['href'][1:],r['title'],r['description'],body,parent=('Katalog danych','/datasety.html'))
+  head_extra = ''
+  if r.get('superseded_by'):
+   replacement = current[r['superseded_by']]
+   body = '<p class="portal-callout">Aktualny wskaźnik: ' + a(replacement['title'], replacement['href']) + '</p>' + body
+   head_extra = '<meta name="robots" content="noindex,follow">'
+  page(r['href'][1:],r['title'],r['description'],body,parent=('Katalog danych','/datasety.html'),head_extra=head_extra)
 def build_indexes():
  tools=[r for r in CAT['resources'] if r['kind']=='tool'];articles=[r for r in CAT['resources'] if r['kind']=='article']
  page('kalkulatory.html','Kalkulatory','Wybierz, co chcesz obliczyć. Każde narzędzie pokazuje przyjęte współczynniki i zakres wyniku.','<div class="portal-reading">'+''.join(row(r) for r in tools)+'</div>')

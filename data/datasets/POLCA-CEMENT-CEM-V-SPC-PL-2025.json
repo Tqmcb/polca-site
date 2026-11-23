@@ -1,0 +1,87 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
+    "version": "2026.7-cement",
+    "status": "legacy_metadata",
+    "published_at": "2026-11-23",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 — historyczne odniesienie"
+    ],
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "dpp_readiness": {
+      "status": "not_implemented",
+      "format": "JSON",
+      "export_formats": [
+        "JSON"
+      ],
+      "note": "Własny schemat JSON; brak zwalidowanego eksportu ILCD+EPD i wdrożonego paszportu cyfrowego.",
+      "documentation_url": "/o-polca/gotowosc-dpp.html"
+    },
+    "methodology_basis_status": "references_not_conformity_assessment"
+  },
+  "dataset": {
+    "code": "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+    "name": "Cement CEM V — średnia krajowa (SPC 2025)",
+    "category": "materiał",
+    "module_default": "A1-A3",
+    "unit": "t",
+    "gwp_total_kg_co2e": 546,
+    "gwp_fossil_kg_co2e": 545,
+    "gwp_net_kg_co2e": 430,
+    "year": 2022,
+    "publication_year": 2025,
+    "source_valid_until": "2030-12-18",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
+    "review_cycle": "annual",
+    "geography": "PL",
+    "technology": "Produkcja cementu CEM V luzem w polskich cementowniach.",
+    "data_quality": "verified_sector_epd_reference",
+    "status": "published_sector_dataset",
+    "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+    "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+    "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+    "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM V wynosi 546 kg CO₂e/t. Wskaźnik GWP-fossil (potencjał cieplarniany – paliwa kopalne) wynosi 545 kg CO₂e/t. Wartość netto (430 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+    "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+    "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_preparation"
+    ],
+    "source_trace": [
+      {
+        "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+        "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+        "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+        "type": "verified_sector_epd_reference"
+      }
+    ],
+    "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+    "evidence_level": "sector_proxy",
+    "selection_mode": "context_specific_assessment",
+    "product_groups": [
+      "beton",
+      "prefabrykaty",
+      "zaprawy",
+      "ogolne-epd"
+    ],
+    "material_role": "cement",
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters"
+  },
+  "metadata_revision": "2026-11-23",
+  "current_catalog_url": "/data/portal-catalog.json"
+}

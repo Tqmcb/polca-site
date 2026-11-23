@@ -3,6 +3,7 @@ import json
 from itertools import groupby
 
 from aggregate_guide import TRUCK, aggregate_guide, display_result
+from cement_guide import cement_guide
 
 from atlas_icons import family_icon
 
@@ -93,6 +94,9 @@ def family_data(datasets, family_id, api):
     shared = {key: value for key, value in first.items() if all(row[key] == value for row in metadata_rows)}
     heading = 'Wskaźniki dla kruszyw' if family_id == 24 else 'Wskaźniki środowiskowe dla wyrobów'
     parts = [f'<section id="dane" class="family-record-section"><h2>{heading}</h2>']
+    if family_id == 15:
+        parts.append('<p>Wskaźniki dla poszczególnych klas cementu wycofano '
+                     '<a href="/rejestr-zmian.html#rejestr">23.11.2026</a>, ponieważ ich wartości nie potwierdzono w deklaracjach środowiskowych producentów.</p>')
     shared_labels = labels(shared.values())
     if shared_labels:
         parts.append(f'<p class="family-record-meta">{shared_labels}</p>')
@@ -242,6 +246,8 @@ def build(api):
         destinations = [{'label': 'Dane', 'href': '#dane'}]
         if f['id'] == 24:
             destinations.append({'label': 'Zastosowania kruszywa', 'href': '#modul-a1'})
+        elif f['id'] == 15:
+            destinations.append({'label': 'Cement w betonie', 'href': '#modul-a1-cement'})
         destinations += [
             {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
             {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
@@ -257,6 +263,9 @@ def build(api):
         if f['id'] == 24:
             mma_profile = json.loads((root / 'data/mma-client-example.json').read_text())
             body += aggregate_guide(catalog, mma_profile)
+        elif f['id'] == 15:
+            body += cement_guide(catalog, api['section_table'])
+        if f['id'] in (15, 24):
             extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=7">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')
 

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-19.1",
+  "catalog_version": "2026-11-23.1",
   "record": {
     "id": "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024",
     "title": "Cement CEM II/B-V 32,5R",
@@ -9,9 +9,9 @@
     "category_label": "Cement",
     "year": 2024,
     "year_type": "reference",
-    "status_id": "reference",
-    "status_label": "Wartość referencyjna",
-    "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+    "status_id": "withdrawn",
+    "status_label": "Wskaźnik wycofany",
+    "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
     "href": "/dane/polca-cement-cem-ii-b-v-32-5r-epd-pl-2024.html",
     "unit": "kg CO₂e/t",
     "boundary": "A1-A3",
@@ -44,17 +44,14 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024.json",
+    "withdrawn_at": "2026-11-23",
+    "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+    "is_default": false,
     "value": 556,
     "cpr_family_ids": [
       15
     ],
-    "cpr_related": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
+    "cpr_related": [],
     "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."

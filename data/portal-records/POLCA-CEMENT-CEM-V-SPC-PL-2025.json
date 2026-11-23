@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-11-23.1",
+  "record": {
+    "id": "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+    "title": "Cement CEM V — średnia krajowa (SPC 2025)",
+    "kind": "dataset",
+    "category_id": "cement",
+    "category_label": "Cement",
+    "year": 2022,
+    "year_type": "reference",
+    "status_id": "published_sector_dataset",
+    "status_label": "Dane z deklaracji sektorowej",
+    "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+    "href": "/dane/polca-cement-cem-v-spc-pl-2025.html",
+    "unit": "kg CO₂e/t",
+    "boundary": "A1–A3",
+    "indicator_label": "Globalne ocieplenie brutto",
+    "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+    "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-CEMENT-CEM-V-SPC-PL-2025.json"
+      }
+    ],
+    "methodology_href": "/wyroby/15.html#modul-a1-cement",
+    "related_ids": [],
+    "keywords": [
+      "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+      "cement",
+      "spoiwo",
+      "A1-A3",
+      "SPC",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "t",
+    "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-V-SPC-PL-2025.json",
+    "publication_year": 2025,
+    "source_valid_until": "2030-12-18",
+    "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM V wynosi 546 kg CO₂e/t. Wskaźnik GWP-fossil (potencjał cieplarniany – paliwa kopalne) wynosi 545 kg CO₂e/t. Wartość netto (430 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+    "gwp_fossil_kg_co2e": 545,
+    "gwp_net_kg_co2e": 430,
+    "value": 546,
+    "cpr_family_ids": [
+      15
+    ],
+    "cpr_related": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "cpr_scope_note": null
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

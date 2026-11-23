@@ -154,7 +154,22 @@
     "faq-9": [],
     "faq-10": [],
     "faq-11": [],
-    "faq-12": []
+    "faq-12": [],
+    "POLCA-CEMENT-CEM-I-SPC-PL-2025": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-II-SPC-PL-2025": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-III-SPC-PL-2025": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-IV-SPC-PL-2025": [
+      15
+    ],
+    "POLCA-CEMENT-CEM-V-SPC-PL-2025": [
+      15
+    ]
   },
   "related": {
     "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": [
@@ -224,83 +239,6 @@
         "family_id": 23,
         "role": "parameters_for_product",
         "note": "Zbiór założeń do obliczeń mieszanek; nie kolejny samodzielny wynik."
-      }
-    ],
-    "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
-    "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
       }
     ],
     "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026": [
@@ -395,6 +333,41 @@
         "family_id": 20,
         "role": "editorial_context",
         "note": "Wyłącznie kontekst materiału po określeniu wyrobu konstrukcyjnego; kęsy/blachy nie mają automatycznego przypisania."
+      }
+    ],
+    "POLCA-CEMENT-CEM-I-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-II-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-III-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-IV-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-CEMENT-CEM-V-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
       }
     ]
   },

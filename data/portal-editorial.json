@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-10-19.1",
+  "catalog_version": "2026-11-23.1",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -30,7 +30,9 @@
     "document": "Dokument metodyczny",
     "draft": "Projekt dokumentu",
     "archive": "Publikacja archiwalna",
-    "consultation": "Konsultacje techniczne"
+    "consultation": "Konsultacje techniczne",
+    "withdrawn": "Wskaźnik wycofany",
+    "published_sector_dataset": "Dane z deklaracji sektorowej"
   },
   "material_scopes": {
     "aggregate": {
@@ -364,8 +366,8 @@
       "title": "Cement CEM I 52,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-I-52-5R-EPD-PL-2024",
@@ -378,8 +380,8 @@
       "title": "Cement CEM I 42,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -392,8 +394,8 @@
       "title": "Cement CEM I 42,5N",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024",
@@ -406,8 +408,8 @@
       "title": "Cement CEM I 32,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024",
@@ -420,8 +422,8 @@
       "title": "Cement CEM II/A-S 42,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024",
@@ -434,8 +436,8 @@
       "title": "Cement CEM II/B-S 32,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
@@ -448,8 +450,8 @@
       "title": "Cement CEM II/A-V 32,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024",
@@ -462,8 +464,8 @@
       "title": "Cement CEM II/B-V 32,5R",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024",
@@ -476,8 +478,8 @@
       "title": "Cement CEM III/A 42,5N",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
@@ -490,8 +492,8 @@
       "title": "Cement CEM III/B 32,5N",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024",
@@ -504,8 +506,9 @@
       "title": "Cement CEM IV — średnia krajowa PL",
       "category_id": "cement",
       "year_type": "reference",
-      "status_id": "reference",
-      "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+      "status_id": "withdrawn",
+      "indicator_label": "Globalne ocieplenie netto (wartość archiwalna)",
+      "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
@@ -657,6 +660,91 @@
       "boundary": "Emisje bezpośrednie i pośrednie oraz narzut zapisany w rekordzie",
       "indicator_label": "Emisje — wartość kontrolna CBAM",
       "source_name": "Komisja Europejska — źródło wskazane w rekordzie CBAM"
+    },
+    "POLCA-CEMENT-CEM-I-SPC-PL-2025": {
+      "title": "Cement CEM I — średnia krajowa (SPC 2025)",
+      "category_id": "cement",
+      "year_type": "reference",
+      "status_id": "published_sector_dataset",
+      "indicator_label": "Globalne ocieplenie brutto",
+      "boundary": "A1–A3",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_href": "/wyroby/15.html#modul-a1-cement",
+      "keywords": [
+        "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+        "cement",
+        "spoiwo",
+        "A1-A3",
+        "SPC"
+      ]
+    },
+    "POLCA-CEMENT-CEM-II-SPC-PL-2025": {
+      "title": "Cement CEM II — średnia krajowa (SPC 2025)",
+      "category_id": "cement",
+      "year_type": "reference",
+      "status_id": "published_sector_dataset",
+      "indicator_label": "Globalne ocieplenie brutto",
+      "boundary": "A1–A3",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_href": "/wyroby/15.html#modul-a1-cement",
+      "keywords": [
+        "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+        "cement",
+        "spoiwo",
+        "A1-A3",
+        "SPC"
+      ]
+    },
+    "POLCA-CEMENT-CEM-III-SPC-PL-2025": {
+      "title": "Cement CEM III — średnia krajowa (SPC 2025)",
+      "category_id": "cement",
+      "year_type": "reference",
+      "status_id": "published_sector_dataset",
+      "indicator_label": "Globalne ocieplenie brutto",
+      "boundary": "A1–A3",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_href": "/wyroby/15.html#modul-a1-cement",
+      "keywords": [
+        "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+        "cement",
+        "spoiwo",
+        "A1-A3",
+        "SPC"
+      ]
+    },
+    "POLCA-CEMENT-CEM-IV-SPC-PL-2025": {
+      "title": "Cement CEM IV — średnia krajowa (SPC 2025)",
+      "category_id": "cement",
+      "year_type": "reference",
+      "status_id": "published_sector_dataset",
+      "indicator_label": "Globalne ocieplenie brutto",
+      "boundary": "A1–A3",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_href": "/wyroby/15.html#modul-a1-cement",
+      "keywords": [
+        "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+        "cement",
+        "spoiwo",
+        "A1-A3",
+        "SPC"
+      ]
+    },
+    "POLCA-CEMENT-CEM-V-SPC-PL-2025": {
+      "title": "Cement CEM V — średnia krajowa (SPC 2025)",
+      "category_id": "cement",
+      "year_type": "reference",
+      "status_id": "published_sector_dataset",
+      "indicator_label": "Globalne ocieplenie brutto",
+      "boundary": "A1–A3",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_href": "/wyroby/15.html#modul-a1-cement",
+      "keywords": [
+        "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+        "cement",
+        "spoiwo",
+        "A1-A3",
+        "SPC"
+      ]
     }
   },
   "energy_2025": {
@@ -1452,7 +1540,7 @@
       "description": "poLCA to katalog danych i modeli środowiskowych dla Polski, tworzony jako dane wejściowe do oceny cyklu życia, deklaracji EPD i ocen wymaganych przez CPR. Prowadzi go Multicert.",
       "href": "/o-polca/index.html",
       "keywords": [
-        "Co zawiera Katalog ma 37 pozycji danych w wersji 2026-10-19.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
+        "Co zawiera Katalog ma 31 pozycji danych w wersji 2026-11-23.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
@@ -1470,7 +1558,7 @@
       "href": "/o-polca/dla-prasy.html",
       "keywords": [
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
-        "Fakty do przytoczenia Katalog: 37 pozycji danych, wersja 2026-10-19.1. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
+        "Fakty do przytoczenia Katalog: 31 pozycji danych, wersja 2026-11-23.1. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
       ]
     },
@@ -2667,7 +2755,7 @@
       "id": "collection-legacy-catalog",
       "title": "Wcześniejszy katalog danych",
       "kind": "collection",
-      "description": "Zbiorcze pliki 36 wcześniejszych rekordów.",
+      "description": "Zbiorcze pliki źródłowe zawierają również rekordy wycofane z bieżącego katalogu.",
       "href": "/data/datasets.json",
       "member_ids": [
         "KOBIZE-EN-PL-ENDUSER-2024",
@@ -2705,7 +2793,12 @@
         "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
         "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
         "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026",
-        "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026"
+        "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026",
+        "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+        "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+        "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+        "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+        "POLCA-CEMENT-CEM-V-SPC-PL-2025"
       ],
       "downloads": [
         {

@@ -47,6 +47,8 @@ def base_record(*, id: str, title: str, kind: str, category_id: str,
 def build_legacy_record(raw: dict, editorial: dict) -> dict:
     code = raw['code']
     note = editorial['datasets'][code]
+    if (raw['status'] == 'withdrawn') != (note['status_id'] == 'withdrawn'):
+        raise ValueError(f'Inconsistent withdrawal status for {code}')
     raw_unit = raw['unit']
     denominator = {'l': 'l', 'm3': 'm³', 'tkm': 't·km'}.get(raw_unit, raw_unit)
     category = editorial['categories'][note['category_id']]
@@ -74,6 +76,14 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
     )
     if 'scope_profile' in note:
         result.update(editorial['material_scopes'][note['scope_profile']])
+    if raw['status'] == 'withdrawn':
+        result.update(withdrawn_at=raw['withdrawn_at'], superseded_by=raw['superseded_by'],
+                      is_default=False)
+    if note['status_id'] == 'published_sector_dataset':
+        for field in ('publication_year', 'source_valid_until', 'methodology_note',
+                      'gwp_fossil_kg_co2e', 'gwp_net_kg_co2e'):
+            if field in raw:
+                result[field] = raw[field]
     if is_parameters:
         result['downloads'].append(download('Parametry i założenia — JSON', result['source_record_href']))
     if code == 'KOBIZE-EN-PL-ENDUSER-2024':
@@ -174,17 +184,25 @@ def build_catalog() -> dict:
         for related in item['related_ids']:
             if related not in known_ids:
                 raise ValueError(f"Unknown related ID in {item['id']}: {related}")
+    withdrawn = [r for r in datasets if r['status_id'] == 'withdrawn']
+    datasets = [r for r in datasets if r['status_id'] != 'withdrawn']
+    current_ids = {r['id'] for r in datasets}
+    for record in withdrawn:
+        if record['superseded_by'] not in current_ids:
+            raise ValueError(f"Missing current replacement for {record['id']}")
     return {
         'schema_version': '1.0',
         'catalog_version': editorial['catalog_version'],
         'counts': {
             'data_positions': len(datasets),
+            'withdrawn_positions': len(withdrawn),
             'parameter_sets': sum(x['record_type'] == 'parameters' for x in datasets),
             'control_references': sum(x['category_id'] == 'cbam' for x in datasets),
             'resources': len(resources),
             'collections': len(collections),
         },
-        'datasets': datasets, 'resources': resources, 'collections': collections,
+        'datasets': datasets, 'withdrawn_datasets': withdrawn,
+        'resources': resources, 'collections': collections,
     }
 
 
@@ -198,7 +216,8 @@ def main() -> int:
     args = parser.parse_args()
     catalog = build_catalog()
     output = serialize(catalog)
-    record_files = {ROOT / ('data/portal-records/' + item['id'] + '.json'): serialize({'schema_version':'1.0', 'catalog_version':catalog['catalog_version'], 'record':item, 'usage_note':'Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania.'}) for item in catalog['datasets'] if item['id'] != ENERGY_ID}
+    records = catalog['datasets'] + catalog['withdrawn_datasets']
+    record_files = {ROOT / ('data/portal-records/' + item['id'] + '.json'): serialize({'schema_version':'1.0', 'catalog_version':catalog['catalog_version'], 'record':item, 'usage_note':'Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania.'}) for item in records if item['id'] != ENERGY_ID}
     if args.check:
         for file, content in record_files.items():
             if not file.exists() or file.read_text(encoding='utf-8') != content:

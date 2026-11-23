@@ -1,4 +1,4 @@
-"""Interactive worked examples for the product family page for aggregates."""
+"""Interactive product scenarios and the worked examples for aggregates."""
 from html import escape
 
 CONCRETE_STANDARD = 'https://preview.sist.si/sist-preview/70993/968303feeecb4c8dab45d5e529c23d9d/SIST-EN-16757-2023.pdf#page=15'
@@ -31,16 +31,18 @@ def sitkowka_example():
 
 
 def product_example(materials, case):
-    initial = next(r for r in materials if r['id'] == DEFAULT_MATERIAL)
+    default_id = case.get('default_material', DEFAULT_MATERIAL)
+    material = case.get('material_genitive', 'kruszywa')
+    initial = next(r for r in materials if r['id'] == default_id)
     select = ''.join(
         f'<option value="{escape(r["id"])}" data-factor="{r["value"]}" data-source="{escape(r["href"])}"'
-        + (' selected' if r['id'] == DEFAULT_MATERIAL else '')
+        + (' selected' if r['id'] == default_id else '')
         + f'>{escape(r["title"])}</option>' for r in materials)
     return {
         'key': 'material', 'code': 'A1' if case['ingredient'] else 'A1–A3',
-        'title': 'Produkcja kruszywa', 'caption': 'Wpływ na klimat na tonę kruszywa u producenta',
+        'title': f'Produkcja {material}', 'caption': f'Wpływ na klimat na tonę {material} u producenta',
         'description': case['material_description'], 'result_unit': 'kg CO₂e/t', 'record': initial,
-        'label': 'Rodzaj kruszywa', 'control': f'<select data-param="material" disabled>{select}</select>',
+        'label': f'Rodzaj {material}', 'control': f'<select data-param="material" disabled>{select}</select>',
         'argument': 1, 'activity_unit': 't', 'factor_unit': 'kg CO₂e/t', 'extras': case.get('extras', ''),
         'target': case['material_target'],
     }
@@ -53,13 +55,15 @@ def quantity_control(key, value, unit):
 
 
 def transport_example(record, case):
+    distance = case.get('distance', 20)
+    material = case.get('material_genitive', 'kruszywa')
     return {
         'key': 'distance', 'code': 'A2' if case['ingredient'] else 'A4',
-        'title': 'Przewóz ' + case['transport_destination'], 'caption': 'Wpływ przewozu 1 t kruszywa na podaną odległość',
+        'title': 'Przewóz ' + case['transport_destination'], 'caption': f'Wpływ przewozu 1 t {material} na podaną odległość',
         'description': ('Współczynnik dla zestawu 40 t nie wyodrębnia pustych przebiegów. ' + case['transport_description']),
         'record': record, 'result_unit': 'kg CO₂e/t', 'factor_unit': 'kg CO₂e/(t·km)',
-        'argument': 20, 'activity_unit': 'km', 'label': 'Odległość przewozu w jedną stronę',
-        'control': quantity_control('distance', 20, 'km'),
+        'argument': distance, 'activity_unit': 'km', 'label': 'Odległość przewozu w jedną stronę',
+        'control': quantity_control('distance', distance, 'km'),
         'target': case['transport_target'],
     }
 
@@ -67,6 +71,8 @@ def transport_example(record, case):
 def scenario(case, stages):
     name = case['name']
     title = case['title']
+    case_id = case.get('id', f'kruszywo-{name}')
+    image = case.get('image', f'/images/kruszywa-{name}-fotografia.jpg')
     points, panels = [], []
     for index, stage in enumerate(stages, start=1):
         record = stage['record']
@@ -78,7 +84,7 @@ def scenario(case, stages):
         step_title = stage['title']
         key = stage['key']
         unit = stage['result_unit']
-        scope = {'material': 'Kruszywo', 'distance': 'Przewóz', 'power': 'Prąd', 'fuel': 'Paliwo', 'gas': 'Gaz'}[key]
+        scope = {'material': case.get('material_scope', 'Kruszywo'), 'distance': 'Przewóz', 'power': 'Prąd', 'fuel': 'Paliwo', 'gas': 'Gaz'}[key]
         accessible_name = f'{code}, {scope}, {step_title}'
         basis = case.get('point_basis', {}).get(key)
         basis_label = ''
@@ -96,15 +102,16 @@ def scenario(case, stages):
         source = escape(record['href'])
         note = '<small class="aggregate-assumption">Wartość przykładowa. Możesz wpisać własną.</small>' if key != 'material' else ''
         if key == 'material':
-            note = ('<small class="aggregate-assumption">Wskaźnik powinien odpowiadać frakcji kruszywa, '
-                    'technologii produkcji i zakresowi procesów ujętych w danych.</small>')
+            material_note = case.get('material_note', 'Wskaźnik powinien odpowiadać frakcji kruszywa, '
+                                     'technologii produkcji i zakresowi procesów ujętych w danych.')
+            note = f'<small class="aggregate-assumption">{material_note}</small>'
         elif key == 'gas':
             note = ('<small class="aggregate-assumption">Zużycie przyjęte w '
                     '<a href="/data/mma-client-example.json">przykładowym profilu poLCA dla betonu asfaltowego AC 16 W z 20% granulatu asfaltowego</a>. Możesz wpisać zużycie ze swojej wytwórni.</small>')
         expression = ('1 t' if key == 'material' else f'<span data-quantity>{number(quantity)}</span> {plain_unit}')
         equation_unit = 'kg CO₂e' if key == 'material' else unit
         operator = '=' if key == 'material' else '≈'
-        source_label = {'material': 'Karta kruszywa', 'distance': 'Karta przewozu',
+        source_label = {'material': 'Karta ' + case.get('material_genitive', 'kruszywa'), 'distance': 'Karta przewozu',
                         'power': 'Energia w Polsce, 2025', 'fuel': 'Karta paliwa', 'gas': 'Karta gazu ziemnego'}[key]
         panels.append(f'''<article id="{panel_id}" class="aggregate-panel" data-step="{index}" data-kind="{key}"
           data-factor="{factor}" data-result-unit="{unit}" tabindex="-1">
@@ -121,18 +128,36 @@ def scenario(case, stages):
           <p class="aggregate-explanation">{stage['description']}</p>{stage.get('extras','')}
           <a class="aggregate-backlink" href="#{point_id}">Punkt {code} na ilustracji</a>
           </article>''')
-    return f'''<section class="aggregate-case" id="kruszywo-{name}" data-case="{name}" aria-labelledby="tytul-{name}">
+    return f'''<section class="aggregate-case" id="{case_id}" data-case="{name}" aria-labelledby="tytul-{name}">
       <header class="aggregate-case-heading">
         <h3 class="aggregate-case-title" id="tytul-{name}">{title}</h3>
         <small>Kadry wygenerowane przez sztuczną inteligencję</small>
       </header>
       <div class="aggregate-layout">
-        <div class="aggregate-figure"><img src="/images/kruszywa-{name}-fotografia.jpg" width="1600" height="571" loading="lazy"
+        <div class="aggregate-figure"><img src="{image}" width="1600" height="571" loading="lazy"
             decoding="async" alt="{case['alt']}">
           <nav class="aggregate-points" aria-label="Etapy i wyniki modelu dla zastosowania: {title}">{''.join(points)}</nav>
         </div><div class="aggregate-panels">{''.join(panels)}</div>
         <p class="aggregate-note">{case['reading_note']}</p>
       </div></section>'''
+
+
+def concrete_operation(record):
+    return {
+        'key': 'power', 'code': 'A3', 'title': 'Produkcja betonu w betoniarni',
+        'caption': 'Wkład energii elektrycznej na 1 m³ betonu',
+        'description': ('W betoniarni składniki są dozowane i mieszane. Przykład obejmuje '
+                        'wyłącznie zużycie energii elektrycznej w zakładzie. Produkcja zakupionych składników należy do A1.'),
+        'record': record, 'result_unit': 'kg CO₂e/m³', 'factor_unit': 'kg CO₂e/kWh',
+        'argument': 2, 'activity_unit': 'kWh/m³', 'label': 'Zużycie energii elektrycznej przy produkcji betonu',
+        'target': 'betoniarnia',
+    }
+
+
+def render_case(case, materials, transport):
+    operation = case['operation']
+    operation = dict(operation, control=quantity_control(operation['key'], operation['argument'], operation['activity_unit']))
+    return scenario(case, [product_example(materials, case), transport_example(transport, case), operation])
 
 
 def aggregate_guide(catalog, mma_profile):
@@ -156,15 +181,7 @@ def aggregate_guide(catalog, mma_profile):
                              'Każdą z tych wartości pomnóż przez masę kruszywa w recepturze (t/m³). '
                              'W A3 podano tylko wkład energii elektrycznej na 1 m³ betonu. '
                              f'Podział na moduły według <a href="{CONCRETE_STANDARD}">EN 16757, pkt 6.2.2</a>.'),
-            'operation': {
-                'key': 'power', 'code': 'A3', 'title': 'Produkcja betonu w betoniarni',
-                'caption': 'Wkład energii elektrycznej na 1 m³ betonu',
-                'description': ('W betoniarni składniki są dozowane i mieszane. Przykład obejmuje '
-                                'wyłącznie zużycie energii elektrycznej w zakładzie. Produkcja zakupionych składników należy do A1.'),
-                'record': records[ELECTRICITY], 'result_unit': 'kg CO₂e/m³', 'factor_unit': 'kg CO₂e/kWh',
-                'argument': 2, 'activity_unit': 'kWh/m³', 'label': 'Zużycie energii elektrycznej przy produkcji betonu',
-                'target': 'betoniarnia',
-            },
+            'operation': concrete_operation(records[ELECTRICITY]),
         },
         {
             'name': 'mma', 'choice': 'Mieszanka mineralno-asfaltowa', 'ingredient': True,
@@ -218,10 +235,7 @@ def aggregate_guide(catalog, mma_profile):
     choices = {True: [], False: []}
     examples = []
     for case in cases:
-        operation = case['operation']
-        operation['control'] = quantity_control(operation['key'], operation['argument'], operation['activity_unit'])
-        stages = [product_example(materials, case), transport_example(records[TRUCK], case), operation]
-        examples.append(scenario(case, stages))
+        examples.append(render_case(case, materials, records[TRUCK]))
         choices[case['ingredient']].append(f'<a class="aggregate-choice" href="#kruszywo-{case["name"]}">{case["choice"]}</a>')
     groups = []
     for ingredient, label_id, label in [
