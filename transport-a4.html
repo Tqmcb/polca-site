@@ -47,12 +47,13 @@
                 <div>
                     <label class="calc-label" for="transMode">Środek transportu</label>
                     <select id="transMode" class="calc-select">
-                        <option value="0.0843">Zestaw ciężarowy 40 t (0,0843 kg CO₂e/tkm, wskaźnik poLCA)</option>
-                        <option value="0.146">Samochód &lt; 7,5 t (0,146 kg CO₂e/tkm)</option>
-                        <option value="0.009">Kolej elektryczna (0,009 kg CO₂e/tkm)</option>
-                        <option value="0.025">Kolej spalinowa (0,025 kg CO₂e/tkm)</option>
-                        <option value="0.031">Barka śródlądowa (0,031 kg CO₂e/tkm)</option>
-                        <option value="0.005">Statek morski (0,005 kg CO₂e/tkm)</option>
+                        <option value="0.0843">Zestaw ciężarowy 40 t (0,0843 kg CO₂e/tkm)</option>
+                        <option value="0.111">Samochód ciężarowy 20–26 t (0,111 kg CO₂e/tkm)</option>
+                        <option value="0.156">Samochód ciężarowy 12–14 t (0,156 kg CO₂e/tkm)</option>
+                        <option value="0.261">Samochód ciężarowy 7,5–12 t (0,261 kg CO₂e/tkm)</option>
+                        <option value="0.0170">Kolej elektryczna (0,0170 kg CO₂e/tkm)</option>
+                        <option value="0.0201">Barka śródlądowa (0,0201 kg CO₂e/tkm)</option>
+                        <option value="0.00540">Masowiec morski (0,00540 kg CO₂e/tkm)</option>
                     </select>
                 </div>
                 <div>
@@ -63,7 +64,7 @@
                         <option value="2">100% (pełny powrót)</option>
                     </select>
                 </div>
-                <p class="calc-note">Wartości są orientacyjne. Dobierz współczynnik do pojazdu, ładowności, paliwa i założenia o powrocie. Kalkulator nie aktualizuje współczynników z zewnętrznej bazy.</p>
+                <p class="calc-note">Współczynniki GWP-total dla modułu A4 pochodzą ze zbiorów ÖKOBAUDAT 2026 (wersja 20.26.070): <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070">zestaw 40 t</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=bb74d2a2-249a-4245-a1bb-7bde61f2f613&version=20.26.070">20–26 t</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=96115e68-18fe-4cdb-a1e4-ef38d0965929&version=20.26.070">12–14 t</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=49bf7941-ef0e-44d1-ba17-98ff0dae08c6&version=20.26.070">7,5–12 t</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=b04a12ef-0842-4ee9-b411-02d8073f0f96&version=20.26.070">kolej</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=5b617407-2029-4b47-84d0-2caf10937b1d&version=20.26.070">barka</a>, <a href="https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=32c020ee-4c79-4fe1-9550-02813e06c7f0&version=20.26.070">masowiec</a>. Zbiory dotyczą Niemiec, rok odniesienia 2023. Zbiory dla samochodów dotyczą pojazdów Euro 5 przy załadowaniu 85%. Wskaźnik dla kolei obejmuje energię elektryczną z sieci niemieckiej, dlatego dla przewozu w Polsce jest zaniżony. Dla własnej floty należy stosować dane przewoźnika.</p>
             </div>
             <div class="card calc-result-block">
                 <div>
@@ -89,6 +90,6 @@
         </div>
     </section>
 </div></main>
-<script src="js/narzedzia.js?v=20261123c"></script>
+<script src="js/narzedzia.js?v=20261123d"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>
