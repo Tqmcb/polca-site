@@ -84,7 +84,8 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
         result['limitations'] = raw['limitations']
     if note['status_id'] == 'published_sector_dataset' or note.get('include_source_trace'):
         for field in ('publication_year', 'source_valid_until', 'methodology_note',
-                      'gwp_fossil_kg_co2e', 'gwp_net_kg_co2e'):
+                      'gwp_fossil_kg_co2e', 'gwp_net_kg_co2e',
+                      'binder_content_pct_m_m', 'gwp_modules_kg_co2e_per_t'):
             if field in raw:
                 result[field] = raw[field]
     if is_parameters:

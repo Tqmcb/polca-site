@@ -22,15 +22,15 @@
   "collection": {
     "code": "POLCA-MMA-MIXES-2026",
     "name": "Mieszanki mineralno-asfaltowe — modele referencyjne (poLCA 2026)",
-    "description": "Jedenaście referencyjnych mieszanek MMA (AC, SMA, BBTM, PA, MA oraz warianty WMA i z granulatem asfaltowym RA) z GWP A1-A3 dla recept referencyjnych. Moduł A3 i suma A1-A3 zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh.",
+    "description": "Trzy aktualne wyniki kalkulatora przy minimalnej zawartości lepiszcza według WT-2 2014 cz. I (AC 11 S, AC 16 W i SMA 11 S) oraz osiem archiwalnych wyników wcześniejszego modelu.",
     "parent_dataset": "POLCA-MMA-LCI-DEFAULTS-2026",
     "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
     "scope": "A1-A3",
     "unit": "t",
     "geography": "PL",
     "year": 2026,
-    "last_reviewed_at": "2026-05-11",
-    "next_review_due": "2027-05-11",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
     "review_cycle": "annual",
     "count": 11,
     "data_level": "reference_recipes_and_aggregated_results"
@@ -42,29 +42,27 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 112.17,
+      "gwp_total_kg_co2e": 66.73024,
       "year": 2026,
       "geography": "PL",
       "technology": "Wytwarzanie mieszanki AC 11 S (Beton asfaltowy do warstwy ścieralnej AC 11 S) w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 165°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "A1-A3",
+      "scope": "AC 11 S, 1 t mieszanki. A1 (surowce) 35,59, A2 (transport) 4,83, A3 (wytwarzanie) 26,31 kg CO₂e/t.",
       "norm": "EN 13108-1",
       "layer": "warstwa ścieralna",
       "technology_class": "HMA",
       "process_temperature_c": 165,
-      "binder_content_pct_m_m": 15.0,
+      "binder_content_pct_m_m": 5.8,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 82.14,
-        "A2": 6.65,
-        "A3": 23.38,
-        "A1_A3": 112.17,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
-        "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
+        "A1": 35.5861,
+        "A2": 4.83039,
+        "A3": 26.31375,
+        "A1_A3": 66.73024
       },
-      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 11 S (EN 13108-1, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 15.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 112.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 15% lepiszcza (AC 11 S), co zawyżało wynik. W obliczeniu przyjęto 58 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -74,12 +72,12 @@
         "internal_report",
         "epd_plus_preparation"
       ],
-      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza, dane recepturowe wytwórni i rzeczywisty transport A2.",
+      "quality_rule": "Obliczenia dla konkretnej wytwórni wymagają jej receptury, danych o dostawach składników oraz o zużyciu paliw i energii.",
       "source_trace": [
         {
           "name": "Raport LCI MMA Polska EN 15804+A2",
           "url": "https://polca.org.pl/c-pcr/mma.html",
-          "role": "roboczy inwentarz LCI dla mieszanek mineralno-asfaltowych w Polsce",
+          "role": "Archiwalny raport inwentaryzacyjny. Korektę wyników tabeli 6.1 opisano przy raporcie.",
           "type": "methodology_source"
         },
         {
@@ -90,14 +88,14 @@
         },
         {
           "name": "Eurobitume LCA 4.0 (2025)",
-          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
           "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
           "type": "methodology_source"
         },
         {
-          "name": "poLCA-EN-PL-2024 v9.1",
-          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "name": "Energia Polska 2025 v4",
+          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -111,10 +109,16 @@
           "url": "https://www.asphaltpavement.org/expertise/sustainability/epd-program",
           "role": "zasada cut-off dla granulatu asfaltowego RA",
           "type": "product_category_rules"
+        },
+        {
+          "name": "GDDKiA, WT-2 2014 cz. I, załącznik do zarządzenia nr 47 z 25.09.2014 r.",
+          "url": "http://web.archive.org/web/20261004121819/https://www.archiwum.gddkia.gov.pl/userfiles/articles/z/zarzadzenia-generalnego-dyrektor_13901/zalacznik%20do%20zarz%2047.pdf",
+          "role": "Minimalna zawartość lepiszcza przy gęstości kruszywa 2,650 Mg/m³ (tab. 16–17).",
+          "type": "methodology_source"
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Wynik modelu dla przykładowej receptury. Dla wyrobu z konkretnej wytwórni należy zastosować jej dane.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
@@ -134,7 +138,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -142,7 +146,9 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23"
     },
     {
       "code": "POLCA-MMA-AC16W-2026",
@@ -150,29 +156,27 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 74.14,
+      "gwp_total_kg_co2e": 59.65638,
       "year": 2026,
       "geography": "PL",
       "technology": "Wytwarzanie mieszanki AC 16 W (Beton asfaltowy do warstwy wiążącej AC 16 W) w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 160°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "A1-A3",
+      "scope": "AC 16 W, 1 t mieszanki. A1 (surowce) 29,22, A2 (transport) 4,73, A3 (wytwarzanie) 25,71 kg CO₂e/t.",
       "norm": "EN 13108-1",
       "layer": "warstwa wiążąca",
       "technology_class": "HMA",
       "process_temperature_c": 160,
-      "binder_content_pct_m_m": 8.0,
+      "binder_content_pct_m_m": 4.6,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 45.34,
-        "A2": 5.95,
-        "A3": 22.85,
-        "A1_A3": 74.14,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
-        "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
+        "A1": 29.2159,
+        "A2": 4.72923,
+        "A3": 25.71125,
+        "A1_A3": 59.65638
       },
-      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki AC 16 W (EN 13108-1, warstwa wiążąca, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 8.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 74.14 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 8% lepiszcza (AC 16 W), co zawyżało wynik. W obliczeniu przyjęto 46 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -182,12 +186,12 @@
         "internal_report",
         "epd_plus_preparation"
       ],
-      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza, dane recepturowe wytwórni i rzeczywisty transport A2.",
+      "quality_rule": "Obliczenia dla konkretnej wytwórni wymagają jej receptury, danych o dostawach składników oraz o zużyciu paliw i energii.",
       "source_trace": [
         {
           "name": "Raport LCI MMA Polska EN 15804+A2",
           "url": "https://polca.org.pl/c-pcr/mma.html",
-          "role": "roboczy inwentarz LCI dla mieszanek mineralno-asfaltowych w Polsce",
+          "role": "Archiwalny raport inwentaryzacyjny. Korektę wyników tabeli 6.1 opisano przy raporcie.",
           "type": "methodology_source"
         },
         {
@@ -198,14 +202,14 @@
         },
         {
           "name": "Eurobitume LCA 4.0 (2025)",
-          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
           "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
           "type": "methodology_source"
         },
         {
-          "name": "poLCA-EN-PL-2024 v9.1",
-          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "name": "Energia Polska 2025 v4",
+          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -219,10 +223,16 @@
           "url": "https://www.asphaltpavement.org/expertise/sustainability/epd-program",
           "role": "zasada cut-off dla granulatu asfaltowego RA",
           "type": "product_category_rules"
+        },
+        {
+          "name": "GDDKiA, WT-2 2014 cz. I, załącznik do zarządzenia nr 47 z 25.09.2014 r.",
+          "url": "http://web.archive.org/web/20261004121819/https://www.archiwum.gddkia.gov.pl/userfiles/articles/z/zarzadzenia-generalnego-dyrektor_13901/zalacznik%20do%20zarz%2047.pdf",
+          "role": "Minimalna zawartość lepiszcza przy gęstości kruszywa 2,650 Mg/m³ (tab. 11).",
+          "type": "methodology_source"
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Wynik modelu dla przykładowej receptury. Dla wyrobu z konkretnej wytwórni należy zastosować jej dane.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
@@ -242,7 +252,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -250,7 +260,9 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23"
     },
     {
       "code": "POLCA-MMA-AC22P-2026",
@@ -350,7 +362,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -358,7 +370,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-SMA11S-2026",
@@ -366,29 +379,27 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 120.17,
+      "gwp_total_kg_co2e": 74.189875,
       "year": 2026,
       "geography": "PL",
       "technology": "Wytwarzanie mieszanki SMA 11 S (Mieszanka mastyksowo-grysowa do warstwy ścieralnej SMA 11 S) w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 170°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "A1-A3",
+      "scope": "SMA 11 S, 1 t mieszanki. A1 (surowce) 42,34, A2 (transport) 4,94, A3 (wytwarzanie) 26,92 kg CO₂e/t.",
       "norm": "EN 13108-5",
       "layer": "warstwa ścieralna",
       "technology_class": "HMA",
       "process_temperature_c": 170,
-      "binder_content_pct_m_m": 14.0,
+      "binder_content_pct_m_m": 6.6,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 89.47,
-        "A2": 6.79,
-        "A3": 23.91,
-        "A1_A3": 120.17,
-        "A3_note": "Moduł A3 przeliczony na wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh: A3 = A3(założenie robocze 0,715) − 2,5 kWh/t × (0,715 − 0,599) = A3(założenie robocze) − 0,29 kg CO2e/t.",
-        "A1_A3_formula": "A1 + A2 + A3 (po przeliczeniu A3 na poLCA 0,599)"
+        "A1": 42.33786,
+        "A2": 4.935765,
+        "A3": 26.91625,
+        "A1_A3": 74.189875
       },
-      "methodology_note": "Rekord przedstawia kontrolowane parametry i wyniki referencyjne dla mieszanki SMA 11 S (EN 13108-5, warstwa ścieralna, technologia na gorąco (HMA)). Receptura referencyjna: zawartość lepiszcza ok. 14.0% m/m, lepiszcze wg Eurobitume LCA 4.0 (2025) = 530 kg CO2e/t (PMB 560), kruszywa wg datasetu POLCA-MMA-LCI-DEFAULTS-2026, energia A3 z paliwa procesowego i 2,5 kWh/t energii elektrycznej. Wynik GWP A1-A3 = 120.17 kg CO2e/t MMA. Moduł A3 i suma A1-A3 zostały zsynchronizowane z wskaźnikiem energii elektrycznej poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 z Raportu LCI nie jest tu potwierdzonym wskaźnikiem KOBiZE). Lepiszcze stanowi ponad 90% emisji modułu A1.",
+      "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 14% lepiszcza (SMA 11 S), co zawyżało wynik. W obliczeniu przyjęto 66 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, mixu kruszyw, mixu paliwowego ani zweryfikowanego zużycia energii. Finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -398,12 +409,12 @@
         "internal_report",
         "epd_plus_preparation"
       ],
-      "quality_rule": "Lepiszcze odpowiada za ponad 90% emisji A1; dla wyników audytowych pierwszeństwo mają EPD producenta lepiszcza, dane recepturowe wytwórni i rzeczywisty transport A2.",
+      "quality_rule": "Obliczenia dla konkretnej wytwórni wymagają jej receptury, danych o dostawach składników oraz o zużyciu paliw i energii.",
       "source_trace": [
         {
           "name": "Raport LCI MMA Polska EN 15804+A2",
           "url": "https://polca.org.pl/c-pcr/mma.html",
-          "role": "roboczy inwentarz LCI dla mieszanek mineralno-asfaltowych w Polsce",
+          "role": "Archiwalny raport inwentaryzacyjny. Korektę wyników tabeli 6.1 opisano przy raporcie.",
           "type": "methodology_source"
         },
         {
@@ -414,14 +425,14 @@
         },
         {
           "name": "Eurobitume LCA 4.0 (2025)",
-          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
           "role": "inwentarz cradle-to-gate dla bitumu, AR6 IPCC",
           "type": "methodology_source"
         },
         {
-          "name": "poLCA-EN-PL-2024 v9.1",
-          "url": "https://polca.org.pl/data/polca-en-pl-2024.json",
-          "role": "wskaźnik energii elektrycznej PL 0,599 kg CO2e/kWh — synchronizacja modułu A3",
+          "name": "Energia Polska 2025 v4",
+          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -435,10 +446,16 @@
           "url": "https://www.asphaltpavement.org/expertise/sustainability/epd-program",
           "role": "zasada cut-off dla granulatu asfaltowego RA",
           "type": "product_category_rules"
+        },
+        {
+          "name": "GDDKiA, WT-2 2014 cz. I, załącznik do zarządzenia nr 47 z 25.09.2014 r.",
+          "url": "http://web.archive.org/web/20261004121819/https://www.archiwum.gddkia.gov.pl/userfiles/articles/z/zarzadzenia-generalnego-dyrektor_13901/zalacznik%20do%20zarz%2047.pdf",
+          "role": "Minimalna zawartość lepiszcza przy gęstości kruszywa 2,650 Mg/m³ (tab. 26).",
+          "type": "methodology_source"
         }
       ],
       "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
-      "open_data_note": "Historyczna wartość referencyjna poLCA dla MMA. Nie udaje danych konkretnej wytwórni; służy do jednolitych zasad liczenia i wstępnej kwalifikacji.",
+      "open_data_note": "Wynik modelu dla przykładowej receptury. Dla wyrobu z konkretnej wytwórni należy zastosować jej dane.",
       "evidence_level": "industry_average",
       "source_policy": {
         "priority": "EPD/dane producenta dla lepiszcza, kruszyw, paliw, energii i transportu > model referencyjny POLCA-MMA > proxy sektorowe",
@@ -458,7 +475,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -466,7 +483,9 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23"
     },
     {
       "code": "POLCA-MMA-SMA16S-2026",
@@ -566,7 +585,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -574,7 +593,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-BBTM11A-2026",
@@ -674,7 +694,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -682,7 +702,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-PA11-2026",
@@ -782,7 +803,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -790,7 +811,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-MA11-2026",
@@ -890,7 +912,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -898,7 +920,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-AC16W-WMA-2026",
@@ -998,7 +1021,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -1006,7 +1029,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-AC16W-RA30-2026",
@@ -1106,7 +1130,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -1114,7 +1138,8 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     },
     {
       "code": "POLCA-MMA-SMA11S-WMA-2026",
@@ -1214,7 +1239,7 @@
         "DQR": 1.8,
         "assessment_status": "historical_author_assessment"
       },
-      "notes": "Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
+      "notes": "Wynik archiwalny sprzed korekty z 23.11.2026 r. Energia elektryczna zsynchronizowana z poLCA-EN-PL-2024 v9.1 = 0,599 kg CO2e/kWh (wcześniejsze robocze założenie 0,715 nie jest tu potwierdzonym wskaźnikiem KOBiZE). Historyczne założenie odcięcia RA z odniesieniem do EN 15804+A2 §6.3.6 + NAPA EPD PCR v2.0:2022; bez odrębnego potwierdzenia zgodności w tym pliku.",
       "product_groups": [
         "mma",
         "roboty-drogowe"
@@ -1222,9 +1247,10 @@
       "material_role": "mieszanka mineralno-asfaltowa",
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
-      "data_level": "aggregated_indicators_and_parameters"
+      "data_level": "aggregated_indicators_and_parameters",
+      "model_variant_status": "historical_recipe"
     }
   ],
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

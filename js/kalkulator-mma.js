@@ -1,18 +1,19 @@
-/** poLCA — kalkulator MMA. Historyczne założenia obliczeniowe, eksport własny poLCA 2.0. */
+/** poLCA — kalkulator MMA. Receptury według WT-2 2014 cz. I, eksport własny poLCA 2.0. */
 (function () {
     'use strict';
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
     var GWP = {
-        aggFine: 1.80,        // kruszywo naturalne: piasek / żwir
-        filler: 5.50,         // filler wapienny
+        aggFine: 3.5,        // kruszywo naturalne: piasek / żwir
+        filler: 30,         // wypełniacz wapienny
         fiber: 800,           // włókno celulozowe (stabilizator SMA)
         ra: 0,                // granulat asfaltowy RA — cut-off (A1 = 0)
         addWma: 1200          // dodatek WMA chemiczny
         /* bitumen i kruszywo grube — z dropdownów */
     };
     var EF_TRANSPORT = 0.0843; // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
-    var EL_A3 = 1.50;         // kg CO2e / t MMA — historyczna stała, zaokrąglona z 2,5 × 0,599
+    var EF_EL = 0.6445;       // PL2025_PHYSICAL_DELIVERED_v4, GWP-total [kg CO2e/kWh]
+    var EL_A3 = 2.5 * EF_EL;  // zużycie energii elektrycznej 2,5 kWh/t MMA
     var FUEL_BASE = {         // emisja paliwa w temp. bazowej [kg CO2 / t MMA]
         'HMA-olej': 24.1, 'HMA-gaz': 17.0,
         'WMA-olej': 17.4, 'WMA-gaz': 12.5
@@ -21,18 +22,25 @@
     var TEMP_STEP_PCT = 0.05;              // +5% paliwa na każde 10°C powyżej bazowej
 
     /* ---- Przykładowe receptury (na 1 t = 1000 kg MMA) ---- */
+    // Lepiszcze = Bmin wg WT-2 2014 cz. I (zarządzenie GDDKiA nr 47/2014); minimum, nie zawartość projektowa.
     var PRESETS = {
-        ac11s:    { label: 'AC 11 S (ścieralna)',  norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 165, bitType: '530', aggType: '3.80', aggC: 670, aggF: 130, filler: 50, bitumen: 150, ra: 0,   fiber: 0, addWma: 0 },
-        ac16w:    { label: 'AC 16 W (wiążąca)',     norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 160, bitType: '530', aggType: '3.80', aggC: 555, aggF: 320, filler: 50, bitumen: 75,  ra: 0,   fiber: 0, addWma: 0 },
-        ac22p:    { label: 'AC 22 P (podbudowa)',   norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 155, bitType: '530', aggType: '3.80', aggC: 640, aggF: 290, filler: 35, bitumen: 35,  ra: 0,   fiber: 0, addWma: 0 },
-        sma11s:   { label: 'SMA 11 S (ścieralna)',  norm: 'EN 13108-5', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '530', aggType: '3.99', aggC: 700, aggF: 107, filler: 50, bitumen: 140, ra: 0,   fiber: 3, addWma: 0 },
-        bbtm11:   { label: 'BBTM 11 A (ścieralna)', norm: 'EN 13108-2', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '560', aggType: '3.99', aggC: 690, aggF: 69,  filler: 50, bitumen: 190, ra: 0,   fiber: 1, addWma: 0 },
-        pa11:     { label: 'PA 11 (ścieralna)',     norm: 'EN 13108-7', tech: 'HMA',    fuel: 'olej', temp: 175, bitType: '560', aggType: '3.99', aggC: 760, aggF: 40,  filler: 48, bitumen: 150, ra: 0,   fiber: 2, addWma: 0 },
-        ma11:     { label: 'MA 11 (asfalt lany)',   norm: 'EN 13108-6', tech: 'HMA',    fuel: 'olej', temp: 230, bitType: '530', aggType: '3.20', aggC: 480, aggF: 200, filler: 70, bitumen: 250, ra: 0,   fiber: 0, addWma: 0 },
-        ac16wma:  { label: 'AC 16 W-WMA (wiążąca)', norm: 'EN 13108-1', tech: 'WMA',    fuel: 'gaz',  temp: 130, bitType: '530', aggType: '3.80', aggC: 550, aggF: 327, filler: 50, bitumen: 70,  ra: 0,   fiber: 0, addWma: 3 },
+        ac11s:    { label: 'AC 11 S (ścieralna)',  norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 165, bitType: '530', aggType: '3.80', aggC: 747, aggF: 145, filler: 50, bitumen: 58, ra: 0,   fiber: 0, addWma: 0 },
+        ac16w:    { label: 'AC 16 W (wiążąca)',     norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 160, bitType: '530', aggType: '3.80', aggC: 573, aggF: 331, filler: 50, bitumen: 46, ra: 0,   fiber: 0, addWma: 0 },
+        ac22p:    { label: 'AC 22 P (podbudowa)',   norm: 'EN 13108-1', tech: 'HMA',    fuel: 'olej', temp: 155, bitType: '530', aggType: '3.80', aggC: 637, aggF: 288, filler: 35, bitumen: 40, ra: 0,   fiber: 0, addWma: 0 },
+        sma11s:   { label: 'SMA 11 S (ścieralna)',  norm: 'EN 13108-5', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '530', aggType: '3.99', aggC: 764, aggF: 117, filler: 50, bitumen: 66, ra: 0,   fiber: 3, addWma: 0 },
+        bbtm11:   { label: 'BBTM 11 A (ścieralna)', norm: 'EN 13108-2', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '560', aggType: '3.99', aggC: 808, aggF: 81,  filler: 50, bitumen: 60, ra: 0,   fiber: 1, addWma: 0 },
+        pa11:     { label: 'PA 11 (ścieralna)',     norm: 'EN 13108-7', tech: 'HMA',    fuel: 'olej', temp: 175, bitType: '560', aggType: '3.99', aggC: 845, aggF: 45,  filler: 48, bitumen: 60, ra: 0,   fiber: 2, addWma: 0 },
+        ma11:     { label: 'MA 11 (asfalt lany)',   norm: 'EN 13108-6', tech: 'HMA',    fuel: 'olej', temp: 230, bitType: '530', aggType: '4.00', aggC: 608, aggF: 254, filler: 70, bitumen: 68, ra: 0,   fiber: 0, addWma: 0 },
+        ac16wma:  { label: 'AC 16 W-WMA (wiążąca)', norm: 'EN 13108-1', tech: 'WMA',    fuel: 'gaz',  temp: 130, bitType: '530', aggType: '3.80', aggC: 565, aggF: 336, filler: 50, bitumen: 46, ra: 0,   fiber: 0, addWma: 3 },
+        // Łączną zawartość lepiszcza należy sprawdzić względem Bmin 4,6% z uwzględnieniem zawartości lepiszcza w granulacie podanej przez wytwórnię.
         ac16ra30: { label: 'AC 16 W-RA30 (wiążąca)',norm: 'EN 13108-1', tech: 'HMA+RA', fuel: 'olej', temp: 165, bitType: '530', aggType: '3.80', aggC: 410, aggF: 224, filler: 36, bitumen: 30,  ra: 300, fiber: 0, addWma: 0 }
     };
     var DIST_DEFAULT = { bitumen: 150, agg: 50, filler: 80, ra: 30, fiber: 200, addWma: 300 };
+
+    if (typeof module === 'object' && module.exports) {
+        module.exports = { calculate: calculate, presets: PRESETS, distances: DIST_DEFAULT };
+        return;
+    }
 
     /* ---- Uchwyty DOM ---- */
     var el = function (id) { return document.getElementById(id); };
@@ -115,7 +123,7 @@
         [[dBitumen, 'Transport lepiszcza'], [dAgg, 'Transport kruszywa'], [dFiller, 'Transport wypełniacza'], [dRA, 'Transport granulatu'], [dFiber, 'Transport włókna'], [dAddWma, 'Transport dodatku']].forEach(function (entry) { checkNumber(entry[0], entry[1] + ' [km]', 0, null, errors); });
         checkChoice(presetSel, Object.keys(PRESETS).concat(['custom']), 'Receptura', errors);
         checkChoice(bitTypeSel, ['530', '560'], 'Lepiszcze', errors);
-        checkChoice(aggTypeSel, ['3.99', '4.50', '3.20', '3.80'], 'Kruszywo grube', errors);
+        checkChoice(aggTypeSel, ['3.99', '4.50', '4.00', '3.80'], 'Kruszywo grube', errors);
         if (['HMA', 'WMA', 'HMA+RA'].indexOf(radioVal('mmaTech')) < 0) errors.push('Wybierz technologię produkcji');
         if (['olej', 'gaz'].indexOf(radioVal('mmaFuel')) < 0) errors.push('Wybierz paliwo wytwórni');
         if (!errors.length && (totalMass < 980 || totalMass > 1020)) errors.push('Suma składników: ' + fmt(totalMass, 0) + ' kg/t — odbiega od 1000 kg/t. Dopuszczalna suma w kalkulatorze wynosi 980–1020 kg/t (±2%)');
@@ -138,28 +146,30 @@
         var errors = inputErrors();
         setValidation(errors);
         if (errors.length) return null;
-        var tech = radioVal('mmaTech');
-        var fuel = radioVal('mmaFuel');
-        var temp = num(tempInput);
-        var gwpBit = Number(bitTypeSel.value);
-        var gwpAggC = Number(aggTypeSel.value);
-
-        var m = {
-            aggC:   num(fAggC),
-            aggF:   num(fAggF),
-            filler: num(fFiller),
-            bitumen:num(fBitumen),
-            ra:     num(fRA),
-            fiber:  num(fFiber),
-            addWma: num(fAddWma)
+        var recipe = {
+            tech: radioVal('mmaTech'), fuel: radioVal('mmaFuel'), temp: num(tempInput),
+            bitType: bitTypeSel.value, aggType: aggTypeSel.value,
+            aggC: num(fAggC), aggF: num(fAggF), filler: num(fFiller),
+            bitumen: num(fBitumen), ra: num(fRA), fiber: num(fFiber), addWma: num(fAddWma)
         };
-        var d = {
-            bitumen: num(dBitumen),
-            agg:     num(dAgg),
-            filler:  num(dFiller),
-            ra:      num(dRA),
-            fiber:   num(dFiber),
-            addWma:  num(dAddWma)
+        var distances = {
+            bitumen: num(dBitumen), agg: num(dAgg), filler: num(dFiller),
+            ra: num(dRA), fiber: num(dFiber), addWma: num(dAddWma)
+        };
+        var result = calculate(recipe, distances);
+        if (!Number.isFinite(result.total)) {
+            setValidation(['Dane są zbyt duże do obliczenia skończonego wyniku']);
+            return null;
+        }
+        return result;
+    }
+
+    function calculate(recipe, d) {
+        var tech = recipe.tech, fuel = recipe.fuel, temp = recipe.temp;
+        var gwpBit = Number(recipe.bitType), gwpAggC = Number(recipe.aggType);
+        var m = {
+            aggC: recipe.aggC, aggF: recipe.aggF, filler: recipe.filler, bitumen: recipe.bitumen,
+            ra: recipe.ra, fiber: recipe.fiber, addWma: recipe.addWma
         };
 
         /* A1 — surowce (RA: GWP = 0) */
@@ -193,7 +203,6 @@
         var a3 = fuelEm + EL_A3;
 
         var total = a1 + a2 + a3;
-        if (![a1, a2, a3, total].every(Number.isFinite)) { setValidation(['Dane są zbyt duże do obliczenia skończonego wyniku']); return null; }
         var sumMass = m.aggC + m.aggF + m.filler + m.bitumen + m.ra + m.fiber + m.addWma;
 
         return {
@@ -285,7 +294,7 @@
             '<td class="mono highlight">' + fmt(r.a1, 2) + '</td><td class="mono">100,0</td></tr>';
         a1Table.innerHTML = rows;
 
-        benchBox.textContent = 'Oszacowanie według historycznego zestawu założeń kalkulatora MMA. Energia: poLCA-EN-PL-2024 v9.1 (GWP-fossil). Pozostałe składniki mają własne założenia — wynik służy do analizy scenariuszy.';
+        benchBox.textContent = 'Wynik dla podanej receptury i odległości dostaw. Wkład energii elektrycznej pochodzi z modelu Energia Polska 2025 v4 (GWP-total).';
 
         /* walidacja sumy składników */
         var dev = Math.abs(r.sumMass - 1000) / 1000 * 100;
@@ -327,7 +336,7 @@
         var presetName = presetSel.value;
         var pLabel = PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura';
         var lines = [];
-        lines.push('Kalkulator MMA — poLCA;Własny format poLCA 2.0;Historyczny zestaw założeń kalkulatora');
+        lines.push('Kalkulator MMA — poLCA;Własny format poLCA 2.0;Założenia z 23.11.2026');
         lines.push('Preset;' + pLabel);
         lines.push('Technologia;' + r.tech);
         lines.push('Paliwo wytwórni;' + (r.fuel === 'gaz' ? 'gaz ziemny' : 'olej opałowy'));
@@ -345,7 +354,7 @@
         lines.push('A3 — produkcja (paliwo ' + num6(r.fuelEm) + ' + energia el. ' + num6(r.el) + ');' + num6(r.a3) + ';' + num6(p.share.a3));
         lines.push('Oszacowanie A1-A3 — łącznie;' + num6(r.total) + ';100');
         lines.push('');
-        lines.push('Zakres;Historyczny zestaw MMA 2026.1. Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Suma orientacyjnych współczynników o różnych zakresach; zastosowanie w EPD wymaga odrębnej oceny danych i metody.');
+        lines.push('Zakres;Założenia MMA z 23.11.2026. Energia Polska 2025 v4 (GWP-total). Suma orientacyjnych współczynników o różnych zakresach; zastosowanie w EPD wymaga odrębnej oceny danych i metody.');
         copyText(lines.join('\n'), el('mmaExportCsv'), 'Kopiuj CSV');
     }
 
@@ -357,9 +366,9 @@
         var obj = {
             tool: 'poLCA — Kalkulator MMA',
             schema: 'polca-mma-calculation/2.0',
-            assumptions_version: 'historyczny zestaw MMA 2026.1; energia 2024 v9.1',
-            indicator: 'Orientacyjne oszacowanie klimatyczne z historycznych współczynników o różnych zakresach',
-            note: 'Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Wynik służy do analizy scenariuszy. Zastosowanie w deklaracji EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
+            assumptions_version: 'MMA 2026-11-23, WT-2 2014 cz. I, PL2025_PHYSICAL_DELIVERED_v4',
+            indicator: 'Orientacyjne oszacowanie klimatyczne ze współczynników o różnych zakresach',
+            note: 'Energia Polska 2025 v4 (GWP-total). Wynik służy do analizy scenariuszy. Zastosowanie w deklaracji EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
             preset: PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura',
             declared_unit: '1 t (1000 kg) MMA',
             inputs: {
@@ -374,7 +383,7 @@
             factors: {
                 ef_transport_kg_per_t_km: EF_TRANSPORT,
                 electricity_A3_kg_per_t: EL_A3,
-                electricity_factor_kg_per_kWh: 0.599,
+                electricity_factor_kg_per_kWh: EF_EL,
                 fuel_base_kg_per_t: FUEL_BASE,
                 temp_correction_factor: num6(r.tempFactor)
             },
