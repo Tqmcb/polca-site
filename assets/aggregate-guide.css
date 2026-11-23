@@ -135,6 +135,7 @@ body.portal .aggregate-point {
 .aggregate-point[data-step="1"] { --point-x: 22%; --point-y: 57%; }
 .aggregate-point[data-step="2"] { --point-x: 51%; --point-y: 53%; }
 .aggregate-point[data-step="3"] { --point-x: 83%; --point-y: 64%; }
+[data-case="beton"] .aggregate-point[data-step="2"] { --point-y: 58%; }
 [data-case="mma"] .aggregate-point[data-step="3"] { --point-x: 84%; --point-y: 55%; }
 [data-case="podbudowa"] .aggregate-point[data-step="3"] { --point-x: 80%; --point-y: 62%; }
 .aggregate-point::before, .aggregate-point::after {
@@ -184,6 +185,14 @@ body.portal .aggregate-point[aria-current="true"] {
 }
 .aggregate-point-value { grid-column: 2; grid-row: 2; min-width: 0; overflow-wrap: anywhere; font-size: 1.04rem; font-weight: 720; }
 .aggregate-point-unit { grid-column: 1 / -1; grid-row: 3; white-space: nowrap; font-size: .69rem; font-weight: 590; }
+.aggregate-point-basis {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  margin-top: 2px;
+  font-size: .75rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
 .aggregate-panels { min-width: 0; }
 .aggregate-panel {
   min-width: 0;
@@ -368,6 +377,10 @@ body.portal .aggregate-point[aria-current="true"] {
 }
 @media (max-width: 480px) {
   .aggregate-figure { --headroom: 38px; padding-top: var(--headroom); background: #f2f5f3; }
+  [data-case="beton"] .aggregate-figure { --headroom: 52px; }
+  body.portal [data-case="beton"] .aggregate-point { max-width: 32%; }
+  [data-case="beton"] .aggregate-point[data-step="1"] { --point-x: 17%; }
+  [data-case="beton"] .aggregate-point[data-step="2"] { --point-x: 50%; }
   .aggregate-points { top: var(--headroom); }
   body.portal .aggregate-point {
     --stem: clamp(33px, 11vw, 52px);
@@ -381,6 +394,7 @@ body.portal .aggregate-point[aria-current="true"] {
   .aggregate-marker { padding-right: 3px; font-size: .67rem; }
   .aggregate-point-value { min-width: 0; overflow-wrap: anywhere; font-size: .87rem; }
   .aggregate-point-unit { font-size: .62rem; }
+  .aggregate-point-basis { font-size: .68rem; }
   .aggregate-panel { padding: 11px 13px 13px; }
   .aggregate-choices { grid-template-columns: 1fr; gap: 8px; width: 100%; }
   .aggregate-choice-group {

@@ -32,6 +32,38 @@
     "archive": "Publikacja archiwalna",
     "consultation": "Konsultacje techniczne"
   },
+  "material_scopes": {
+    "aggregate": {
+      "boundary": "A1-A3",
+      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "application_contexts": {
+        "constituent": {
+          "label": "W betonie lub mieszance mineralno-asfaltowej",
+          "module": "A1",
+          "transport_module": "A2",
+          "description": "Produkcję zakupionego kruszywa uwzględnia się w A1 wyrobu, a przewóz do wytwórni w A2."
+        },
+        "unbound_base": {
+          "label": "W podbudowie niezwiązanej",
+          "module": "A1-A3",
+          "transport_module": "A4",
+          "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
+        }
+      }
+    },
+    "asphalt_filler": {
+      "boundary": "Produkcja wypełniacza do bramy zakładu",
+      "production_scope": "Pozyskanie surowca i produkcja 1 t mielonego wypełniacza wapiennego do bramy zakładu. Wskaźnik obejmuje mielenie i ewentualne suszenie.",
+      "application_contexts": {
+        "constituent": {
+          "label": "W mieszance mineralno-asfaltowej",
+          "module": "A1",
+          "transport_module": "A2",
+          "description": "Produkcję zakupionego wypełniacza uwzględnia się w A1 mieszanki, a przewóz do wytwórni w A2."
+        }
+      }
+    }
+  },
   "datasets": {
     "KOBIZE-EN-PL-ENDUSER-2024": {
       "title": "KOBiZE — energia elektryczna 2024",
@@ -118,11 +150,12 @@
       ]
     },
     "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": {
+      "scope_profile": "aggregate",
       "title": "Kruszywo łamane twarde do MMA i betonu",
       "category_id": "kruszywa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wartość dla 1 t kruszywa na wyjściu z zakładu, w granicach opisanych w rekordzie.",
+      "description": "Wartość służy do wstępnego oszacowania wpływu na klimat. Obejmuje produkcję 1 t kruszywa od wydobycia do bramy zakładu.",
       "methodology_href": "/c-pcr/kruszywa.html",
       "keywords": [
         "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
@@ -135,11 +168,12 @@
       ]
     },
     "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026": {
+      "scope_profile": "aggregate",
       "title": "Kruszywo wapienne",
       "category_id": "kruszywa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wartość dla 1 t kruszywa na wyjściu z zakładu, w granicach opisanych w rekordzie.",
+      "description": "Wartość służy do wstępnego oszacowania wpływu na klimat. Obejmuje produkcję 1 t kruszywa od wydobycia do bramy zakładu.",
       "methodology_href": "/c-pcr/kruszywa.html",
       "keywords": [
         "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
@@ -152,11 +186,12 @@
       ]
     },
     "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026": {
+      "scope_profile": "aggregate",
       "title": "Kruszywo dolomitowe",
       "category_id": "kruszywa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wartość dla 1 t kruszywa na wyjściu z zakładu, w granicach opisanych w rekordzie.",
+      "description": "Wartość służy do wstępnego oszacowania wpływu na klimat. Obejmuje produkcję 1 t kruszywa od wydobycia do bramy zakładu.",
       "methodology_href": "/c-pcr/kruszywa.html",
       "keywords": [
         "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
@@ -169,11 +204,12 @@
       ]
     },
     "POLCA-AGG-PL-NATURAL-DEFAULT-2026": {
+      "scope_profile": "aggregate",
       "title": "Kruszywo naturalne: piasek i żwir",
       "category_id": "kruszywa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wartość dla 1 t kruszywa na wyjściu z zakładu, w granicach opisanych w rekordzie.",
+      "description": "Wartość służy do wstępnego oszacowania wpływu na klimat. Obejmuje produkcję 1 t kruszywa od wydobycia do bramy zakładu.",
       "methodology_href": "/c-pcr/kruszywa.html",
       "keywords": [
         "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
@@ -216,6 +252,7 @@
       ]
     },
     "POLCA-FILLER-LIMESTONE-DEFAULT-2026": {
+      "scope_profile": "asphalt_filler",
       "title": "Wypełniacz wapienny",
       "category_id": "mma",
       "year_type": "publication",

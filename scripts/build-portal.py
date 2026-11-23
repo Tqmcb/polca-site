@@ -131,11 +131,12 @@ def build_copy():
 def build_cards():
  for r in CAT['datasets']:
   if not r['href'].startswith('/dane/'):continue
-  boundary = r.get('boundary')
-  aggregate_input = r.get('category_id') == 'kruszywa' and boundary == 'A1'
-  if aggregate_input:
-   boundary = 'A1 przy zastosowaniu kruszywa jako składnika kolejnego wyrobu'
-  fields=[('Rodzaj wskaźnika',r.get('indicator_label')),('Jednostka',r.get('unit')),('Rok',r.get('year')),('Znaczenie roku',{'reference':'Rok danych','publication':'Rok publikacji','application':'Rok zastosowania'}.get(r.get('year_type'),'')),('Obszar',r.get('geography')),('Zakres',boundary),('Status',r.get('status_label')),('Identyfikator',r['id'])]
+  contexts = r.get('application_contexts', {})
+  scope_fields = []
+  if contexts:
+   scope_fields.append(('Zakres u producenta', r['production_scope']))
+   scope_fields.extend((context['label'], context['description']) for context in contexts.values())
+  fields=scope_fields+[('Rodzaj wskaźnika',r.get('indicator_label')),('Jednostka',r.get('unit')),('Rok',r.get('year')),('Znaczenie roku',{'reference':'Rok danych','publication':'Rok publikacji','application':'Rok zastosowania'}.get(r.get('year_type'),'')),('Obszar',r.get('geography')),('Zakres',None if contexts else r.get('boundary')),('Status',r.get('status_label')),('Identyfikator',r['id'])]
   meta='<dl class="portal-metadata">'+''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k,v in fields if v is not None and v!='')+'</dl>'
   value=(f'<p class="portal-dataset-value"><strong>{e(num(r["value"]))}</strong> <span>{e(r.get("unit"))}</span></p><p>{e(r.get("indicator_label"))}</p>') if isinstance(r.get('value'),(int,float)) else '<p>Zestaw parametrów modelu. Szczegóły zawiera plik danych.</p>'
   downloads='<ul class="portal-downloads">'+''.join('<li>'+a(x['label'],x['href'],extra='download')+f'<span>{e(x["format"])}</span></li>' for x in r['downloads'])+'</ul>'
@@ -146,7 +147,7 @@ def build_cards():
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
   body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2><p>{source}</p>'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
-  if aggregate_input:
+  if 'unbound_base' in contexts:
    guidance = [
     {'label': 'Co należy do A1 betonu i jak ująć transport kruszywa?', 'href': '/wyroby/24.html#modul-a1'},
     {'label': 'Czy ten wskaźnik wystarcza do deklaracji właściwości środowiskowych wyrobu?', 'href': '/metodyka-defaults-ue.html#kruszywo-cpr'}

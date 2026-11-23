@@ -11,10 +11,10 @@
     "year_type": "publication",
     "status_id": "default",
     "status_label": "Wartość przyjęta w modelu",
-    "description": "Wartość dla 1 t kruszywa na wyjściu z zakładu, w granicach opisanych w rekordzie.",
+    "description": "Wartość służy do wstępnego oszacowania wpływu na klimat. Obejmuje produkcję 1 t kruszywa od wydobycia do bramy zakładu.",
     "href": "/dane/polca-agg-pl-limestone-default-2026.html",
     "unit": "kg CO₂e/t",
-    "boundary": "A1",
+    "boundary": "A1-A3",
     "indicator_label": "Wpływ na klimat (GWP)",
     "source_name": "poLCA 2026, wartość grupowa dla kruszyw wapiennych",
     "source_url": "https://polca.org.pl/metodyka.html",
@@ -46,6 +46,21 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-AGG-PL-LIMESTONE-DEFAULT-2026.json",
+    "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+    "application_contexts": {
+      "constituent": {
+        "label": "W betonie lub mieszance mineralno-asfaltowej",
+        "module": "A1",
+        "transport_module": "A2",
+        "description": "Produkcję zakupionego kruszywa uwzględnia się w A1 wyrobu, a przewóz do wytwórni w A2."
+      },
+      "unbound_base": {
+        "label": "W podbudowie niezwiązanej",
+        "module": "A1-A3",
+        "transport_module": "A4",
+        "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
+      }
+    },
     "value": 4,
     "cpr_family_ids": [
       24
