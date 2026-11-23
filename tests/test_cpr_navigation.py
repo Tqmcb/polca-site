@@ -116,11 +116,14 @@ class ProductNavigationTests(unittest.TestCase):
         link, = family.xpath('//*[@id="narzedzia"]//*[@data-record-id="tool-kruszywa"]//a')
         self.assertEqual(link.get('href'), '/kalkulator-kruszywa.html')
         description = ' '.join(link.getparent().getparent().xpath('./p/text()'))
-        card_factor = family.xpath('string(//*[@id="opis-przewoz-na-budowe"]/@data-factor)')
+        truck = next(r for r in read('data/portal-catalog.json')['datasets']
+                     if r['id'] == 'POLCA-TRUCK-40T-DEFAULT-2026')
+        factor = Decimal(str(truck['value']))
+        self.assertEqual(Decimal(family.xpath('string(//*[@id="opis-przewoz-na-budowe"]/@data-factor)')), factor)
         historical_factor = calculator.xpath('string(//*[@id="aggSimpleEf"]/option[@selected]/@value)')
-        for value in (card_factor, historical_factor):
+        for value in (str(factor), historical_factor):
             factor = Decimal(value)
-            self.assertIn(f'{factor:.3f}'.replace('.', ',') + ' kg CO₂e/(t·km)', description)
+            self.assertIn(value.replace('.', ',') + ' kg CO₂e/(t·km)', description)
             self.assertIn(f'{factor * 40:.2f}'.replace('.', ',') + ' kg CO₂e', description)
 
     def test_aggregate_use_determines_modules_and_activity_data(self):

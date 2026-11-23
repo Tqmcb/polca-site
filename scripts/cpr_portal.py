@@ -4,6 +4,7 @@ from itertools import groupby
 
 from aggregate_guide import TRUCK, aggregate_guide, display_result
 from cement_guide import cement_guide
+from precast_guide import precast_guide
 
 from atlas_icons import family_icon
 
@@ -248,6 +249,8 @@ def build(api):
             destinations.append({'label': 'Zastosowania kruszywa', 'href': '#modul-a1'})
         elif f['id'] == 15:
             destinations.append({'label': 'Cement w betonie', 'href': '#modul-a1-cement'})
+        elif f['id'] == 1:
+            destinations.append({'label': 'Przykład obliczeń', 'href': '#przyklad-prefabrykat'})
         destinations += [
             {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
             {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
@@ -265,6 +268,8 @@ def build(api):
             body += aggregate_guide(catalog, mma_profile)
         elif f['id'] == 15:
             body += cement_guide(catalog, api['section_table'])
+        elif f['id'] == 1:
+            body += precast_guide(catalog, api['section_table'])
         if f['id'] in (15, 24):
             extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=7">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')

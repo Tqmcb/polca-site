@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-11-23.1",
+  "catalog_version": "2026-11-23.2",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -139,9 +139,9 @@
     "POLCA-TRUCK-40T-DEFAULT-2026": {
       "title": "Transport drogowy — zestaw 40 t",
       "category_id": "transport",
-      "year_type": "publication",
+      "year_type": "reference",
       "status_id": "default",
-      "description": "Współczynnik dla przewozu 1 t ładunku na odległość 1 km.",
+      "description": "Przewóz 1 t ładunku na odległość 1 km zestawem ciężarowym.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-TRUCK-40T-DEFAULT-2026",
@@ -149,7 +149,9 @@
         "ciężarówka",
         "tkm",
         "tonokilometr"
-      ]
+      ],
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "include_source_trace": true
     },
     "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": {
       "scope_profile": "aggregate",
@@ -745,6 +747,26 @@
         "A1-A3",
         "SPC"
       ]
+    },
+    "POLCA-STEEL-REBAR-PL-MEDIAN-2026": {
+      "title": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+      "category_id": "materialy",
+      "year_type": "publication",
+      "status_id": "reference",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "boundary": "A1–A3",
+      "description": "Mediana wyników A1–A3 z czterech ważnych deklaracji środowiskowych hut w Polsce, wytwarzających stal w piecach elektrycznych z 87–100% udziałem złomu. Wyniki wynoszą od 358 do 961 kg CO₂e/t. Różnice wynikają głównie z modelowania energii elektrycznej. Moduł D nie jest uwzględniony. W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+      "methodology_href": "/wyroby/01.html#przyklad-prefabrykat",
+      "keywords": [
+        "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+        "stal zbrojeniowa",
+        "pręty",
+        "walcówka",
+        "huty",
+        "mediana",
+        "prefabrykaty"
+      ],
+      "include_source_trace": true
     }
   },
   "energy_2025": {
@@ -1540,7 +1562,7 @@
       "description": "poLCA to katalog danych i modeli środowiskowych dla Polski, tworzony jako dane wejściowe do oceny cyklu życia, deklaracji EPD i ocen wymaganych przez CPR. Prowadzi go Multicert.",
       "href": "/o-polca/index.html",
       "keywords": [
-        "Co zawiera Katalog ma 31 pozycji danych w wersji 2026-11-23.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
+        "Co zawiera Katalog ma 32 pozycje danych w wersji 2026-11-23.2: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v4 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
@@ -1558,7 +1580,7 @@
       "href": "/o-polca/dla-prasy.html",
       "keywords": [
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
-        "Fakty do przytoczenia Katalog: 31 pozycji danych, wersja 2026-11-23.1. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
+        "Fakty do przytoczenia Katalog: 32 pozycje danych, wersja 2026-11-23.2. Profil energii Polska 2025 v4: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-10-19.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
       ]
     },

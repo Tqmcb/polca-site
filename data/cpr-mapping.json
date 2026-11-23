@@ -169,6 +169,9 @@
     ],
     "POLCA-CEMENT-CEM-V-SPC-PL-2025": [
       15
+    ],
+    "POLCA-STEEL-REBAR-PL-MEDIAN-2026": [
+      16
     ]
   },
   "related": {
@@ -364,6 +367,13 @@
       }
     ],
     "POLCA-CEMENT-CEM-V-SPC-PL-2025": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "POLCA-STEEL-REBAR-PL-MEDIAN-2026": [
       {
         "family_id": 1,
         "role": "input_to_product",

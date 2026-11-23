@@ -2,7 +2,7 @@
   "meta": {
     "id": "POLCA-MMA-CLIENT-EXAMPLE-AC16W-20RAP-2026",
     "name": "Przykładowy profil danych klienta dla MMA AC 16 W HMA z 20% RAP",
-    "version": "2026.1",
+    "version": "2026.2",
     "status": "example_profile",
     "published_at": "2026-05-04",
     "declared_unit": "1 Mg mieszanki mineralno-asfaltowej",
@@ -13,7 +13,8 @@
       "ISO 14044",
       "cPCR MMA EPD Polska - profil roboczy"
     ],
-    "scope_note": "Profil przykładowy do pokazania przepływu danych EPD+. Nie jest deklaracją konkretnego producenta i nie zastępuje EPD wyrobu."
+    "scope_note": "Profil przykładowy do pokazania przepływu danych EPD+. Nie jest deklaracją konkretnego producenta i nie zastępuje EPD wyrobu.",
+    "updated_at": "2026-11-23"
   },
   "client_example": {
     "owner": "Przykładowy producent MMA",
@@ -93,10 +94,11 @@
     {
       "dataset_code": "POLCA-TRUCK-40T-DEFAULT-2026",
       "name": "Transport drogowy 40 t",
-      "value": 0.095,
+      "value": 0.0843,
       "unit": "kg CO2e/tkm",
       "module": "A2/A4/C2",
-      "replacement": "dokumenty WZ/CMR, trasa, ładowność i spalanie floty"
+      "replacement": "dokumenty WZ/CMR, trasa, ładowność i spalanie floty",
+      "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070"
     },
     {
       "dataset_code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
@@ -123,49 +125,59 @@
       "replacement": "rzeczywiste zużycie paliwa i dane sprzętu"
     }
   ],
+  "non_transport_gwp_shares": {
+    "note": "Modelowe udziały składowych całkowitego wpływu na klimat, odtworzone z wyników przykładu 2026.1. Dla A2, A4 i C2 stosuje się składowe procesu przewozu z ÖKOBAUDAT.",
+    "components": ["GWP-fossil", "GWP-biogenic", "GWP-luluc"],
+    "A1": [0.96, 0.02, 0.02],
+    "A3": [0.92, 0.05, 0.03],
+    "A5": [0.99, 0.005, 0.005],
+    "C1": [0.99, 0.005, 0.005],
+    "C3": [0.94, 0.03, 0.03],
+    "C4": [0.94, 0.03, 0.03]
+  },
   "module_results_kg_co2e_per_mg": {
     "A1": 27.06,
-    "A2": 4.925,
+    "A2": 4.37,
     "A3": 16.273,
-    "A1-A3": 48.258,
-    "A4": 2.375,
-    "A5": 1.496,
+    "A1-A3": 47.703,
+    "A4": 2.108,
+    "A5": 1.494,
     "C1": 0.8,
-    "C2": 2.85,
+    "C2": 2.529,
     "C3": 1.199,
     "C4": 0.1,
-    "C1-C4": 4.949,
+    "C1-C4": 4.628,
     "D": -6.4,
-    "A-C_without_D": 57.078,
-    "net_with_D": 50.678
+    "A-C_without_D": 55.932,
+    "net_with_D": 49.532
   },
   "en15804_a2_indicators": {
     "GWP-total": {
       "unit": "kg CO2e",
-      "A1-A3": 48.258,
-      "A4-A5": 3.871,
-      "C1-C4": 4.949,
+      "A1-A3": 47.703,
+      "A4-A5": 3.601,
+      "C1-C4": 4.628,
       "D": -6.4
     },
     "GWP-fossil": {
       "unit": "kg CO2e",
-      "A1-A3": 45.824,
-      "A4-A5": 3.833,
-      "C1-C4": 4.834,
+      "A1-A3": 45.215,
+      "A4-A5": 3.536,
+      "C1-C4": 4.482,
       "D": -6.144
     },
     "GWP-biogenic": {
       "unit": "kg CO2e",
-      "A1-A3": 1.379,
-      "A4-A5": 0.019,
-      "C1-C4": 0.057,
+      "A1-A3": 1.377,
+      "A4-A5": 0.018,
+      "C1-C4": 0.056,
       "D": -0.128
     },
     "GWP-luluc": {
       "unit": "kg CO2e",
-      "A1-A3": 1.054,
-      "A4-A5": 0.019,
-      "C1-C4": 0.057,
+      "A1-A3": 1.111,
+      "A4-A5": 0.047,
+      "C1-C4": 0.09,
       "D": -0.128
     },
     "ODP": {
@@ -267,5 +279,5 @@
       "D": 0
     }
   },
-  "data_quality_note": "Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
+  "data_quality_note": "Korekta z 23.11.2026 obejmuje całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
 }

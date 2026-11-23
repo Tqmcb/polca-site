@@ -4,6 +4,7 @@ from pathlib import Path
 import json, html as h, re, argparse
 from urllib.parse import urlsplit, unquote
 from collections import Counter
+from datetime import date
 from lxml import html, etree
 from atlas_icons import ICON_URL, export_icons
 ROOT=Path(__file__).resolve().parents[1]
@@ -154,8 +155,9 @@ def build_cards():
   if not r['href'].startswith('/dane/'):continue
   contexts = r.get('application_contexts', {})
   scope_fields = []
-  if 'publication_year' in r:
-   scope_fields.append(('Rok publikacji deklaracji', r['publication_year']))
+  if 'publication_year' in r and r['year_type'] != 'publication':
+   label = 'Rok publikacji deklaracji' if r['status_id'] == 'published_sector_dataset' else 'Rok publikacji zbioru'
+   scope_fields.append((label, r['publication_year']))
   if contexts:
    scope_fields.append(('Zakres u producenta', r['production_scope']))
    scope_fields.extend((context['label'], context['description']) for context in contexts.values())
@@ -163,13 +165,21 @@ def build_cards():
   meta='<dl class="portal-metadata">'+''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k,v in fields if v is not None and v!='')+'</dl>'
   value=(f'<p class="portal-dataset-value"><strong>{e(num(r["value"]))}</strong> <span>{e(r.get("unit"))}</span></p><p>{e(r.get("indicator_label"))}</p>') if isinstance(r.get('value'),(int,float)) else '<p>Zestaw parametrów modelu. Szczegóły zawiera plik danych.</p>'
   downloads='<ul class="portal-downloads">'+''.join('<li>'+a(x['label'],x['href'],extra='download')+f'<span>{e(x["format"])}</span></li>' for x in r['downloads'])+'</ul>'
-  source=a(r['source_name'],r['source_url']) if r.get('source_url') else e(r.get('source_name',''))
+  source='<p>' + (a(r['source_name'],r['source_url']) if r.get('source_url') else e(r.get('source_name',''))) + '</p>'
+  declarations = [s for s in r.get('source_trace', []) if s['type'] == 'manufacturer_epd']
+  if declarations:
+   source = '<ul>' + ''.join(
+       f'<li>{e(s["manufacturer"])}, {e(s["product"])} — {a(s["name"], s["url"])}, '
+       f'ważna do {date.fromisoformat(s["source_valid_until"]):%d.%m.%Y}, '
+       f'<strong>{e(num(s["gwp_total_kg_co2e"]))} {e(r["unit"])}</strong> (A1–A3).</li>'
+       for s in declarations) + '</ul>'
   more=links([{'label':x['title'],'href':x['href']} for x in CAT['datasets'] if x['id'] in r.get('related_ids',[])])
   notes=[r['methodology_note']] if r.get('methodology_note') else []
+  if r.get('limitations'):notes.append(r['limitations'])
   if r['id']=='POLCA-EN-PL-LCA-2024':notes.append('Wartość 0,599 dotyczy składnika kopalnego wpływu na klimat. Informacyjna suma w pełnym modelu 2024 wynosi 0,600 kg CO₂e/kWh. Rekord do pobrania zachowuje rozróżnienie rodzaju wskaźnika.')
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
-  body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2><p>{source}</p>'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
+  body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2>{source}'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
   if 'unbound_base' in contexts:
    guidance = [
     {'label': 'Co należy do A1 betonu i jak ująć transport kruszywa?', 'href': '/wyroby/24.html#modul-a1'},
