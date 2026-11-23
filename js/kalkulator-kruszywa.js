@@ -4,7 +4,7 @@
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
     var EF_EL = 0.6445;         // kg CO2e / kWh — PL2025_PHYSICAL_DELIVERED_v4 (GWP-total)
-    var EF_DIESEL = 3.2;        // kg CO2e / L — POLCA-FUEL-DIESEL-DEFAULT-2026
+    var EF_DIESEL = 3.72;        // kg CO2e / L — POLCA-FUEL-DIESEL-DEFAULT-2026
     var EF_EXPLOSIVE = 0.5;     // kg CO2e / kg materiału wybuchowego (ANFO / emulsja)
     var EF_TRANSPORT = 0.0843;  // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
     var WASH_KWH = 0.5;         // dodatkowe kWh/t przy płukaniu
@@ -105,7 +105,7 @@
         if (['simple', 'advanced'].indexOf(mode) < 0) return ['Wybierz tryb obliczeń'];
         [sType, sA4, sEf, aRock, aEnergy, aDiesel, aExpl, aA2, aRc, aA4].forEach(function (input) { input.setAttribute('aria-invalid', 'false'); });
         if (mode === 'simple') {
-            checkChoice(sType, ['5.50', '3.99', '4.50', '4.00', '3.50', '3.80', '30', '2.50'], 'Typ kruszywa', errors);
+            checkChoice(sType, ['3.99', '4.50', '3.27', '3.91', '3.86', '3.80', '72', '2.50'], 'Typ kruszywa', errors);
             checkChoice(sEf, ['0.0843'], 'Współczynnik transportu', errors);
             checkNumber(sA4, 'Transport A4 [km]', 0, 500, errors);
         } else {

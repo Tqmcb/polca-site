@@ -2,7 +2,7 @@
   "meta": {
     "title": "Metodyka wartości domyślnych poLCA dla MMA",
     "version": "2026.1-draft",
-    "updated_at": "2026-05-03",
+    "updated_at": "2026-11-23",
     "principle": "Wartości domyślne poLCA są kontrolowanymi wartościami referencyjnymi do zastosowania wtedy, gdy brak danych pierwotnych, EPD dostawcy albo danych zakładowych zgodnych z zakresem obliczenia."
   },
   "methodology_framework": {
@@ -147,9 +147,9 @@
   },
   "defaults": {
     "POLCA-FILLER-LIMESTONE-DEFAULT-2026": {
-      "declared_value": "30 kg CO2e/t",
-      "module": "A1",
-      "system_boundary": "produkcja wypełniacza wapiennego przed transportem do wytwórni; transport A2 należy liczyć oddzielnie",
+      "declared_value": "72 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
         "wydobycie lub pozyskanie kamienia wapiennego",
         "kruszenie i przygotowanie surowca",
@@ -159,28 +159,13 @@
       ],
       "source_basis": [
         {
-          "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
-          "url": "https://www.environdec.com/library/epd12771",
-          "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych"
-        },
-        {
-          "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
-          "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
-          "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego"
-        },
-        {
-          "name": "ÖKOBAUDAT",
-          "url": "https://www.oekobaudat.de/",
-          "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych"
-        },
-        {
-          "name": "Model EPD+ MMA / raport tła obliczeniowego",
-          "url": "https://polca.org.pl/datasety.html",
-          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+          "name": "EPD-IES-0012771 (EPD International)",
+          "url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie."
         }
       ],
-      "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
-      "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
+      "rationale": "Brak ważnej polskiej deklaracji dla wypełniacza wapiennego; przyjęto jedyną znalezioną deklarację z regionu (Litwa). Wcześniejszy opis rekordu powoływał się na wartość 0,023 kg CO₂e/kg, której ta deklaracja nie zawiera.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
         "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",
         "czy deklarowana frakcja i wilgotność odpowiadają produktowi stosowanemu w MMA",
@@ -189,52 +174,38 @@
       ]
     },
     "POLCA-AGG-PL-CRUSHED-DEFAULT-2026": {
-      "declared_value": "5,0 kg CO2e/t",
-      "module": "A1",
-      "system_boundary": "wydobycie i przeróbka kruszywa łamanego przed transportem",
+      "declared_value": "3,99 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
-        "wydobycie",
+        "zdejmowanie nadkładu i wydobycie",
         "kruszenie",
         "przesiewanie",
-        "opcjonalne płukanie/suszenie",
-        "załadunek"
+        "opcjonalne płukanie lub suszenie",
+        "magazynowanie i załadunek"
       ],
       "source_basis": [
         {
-          "name": "PIG-PIB MIDAS",
-          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-          "role": "klasyfikacja złoża i kopaliny"
-        },
-        {
-          "name": "PZPK",
-          "url": "https://kruszpol.pl/",
-          "role": "kontekst branży kruszyw"
-        },
-        {
-          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-          "url": "https://www.oekobaudat.de/",
-          "role": "kontrola rzędu wielkości LCA"
-        },
-        {
-          "name": "literatura LCA kruszyw",
-          "url": "https://link.springer.com/article/10.1007/s11367-025-02442-x",
-          "role": "potwierdzenie znaczenia energii kruszenia i przesiewania"
+          "name": "ITB-EPD nr 706/2024",
+          "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie."
         }
       ],
-      "rationale": "Wartość grupowa dla kruszyw łamanych, różnicowana dalej w taksonomii według rodzaju skały.",
-      "required_replacement": "EPD kopalni albo dane energii i procesu dla konkretnego zakładu.",
+      "rationale": "Wartość z jedynej znalezionej ważnej polskiej deklaracji dla kruszywa ze skał twardych (bazalt). Deklaracja ITB nr 674/2024 (CEMEX, naturalne kruszywo łamane) podaje 3,28 kg CO₂e/t, lecz nie określa rodzaju skały. Dla granitu, gabra, melafiru i piaskowca nie znaleziono ważnej polskiej deklaracji.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
         "rodzaj skały",
-        "frakcja",
+        "frakcja d/D",
         "energia kruszenia",
         "płukanie/suszenie",
+        "materiały wybuchowe",
         "transport A2"
       ]
     },
     "POLCA-AGG-PL-NATURAL-DEFAULT-2026": {
-      "declared_value": "3,5 kg CO2e/t",
-      "module": "A1",
-      "system_boundary": "pozyskanie, sortowanie i przygotowanie kruszywa naturalnego przed transportem",
+      "declared_value": "3,86 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
         "wydobycie ze złoża",
         "sortowanie",
@@ -243,19 +214,20 @@
       ],
       "source_basis": [
         {
-          "name": "PIG-PIB MIDAS",
-          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-          "role": "klasyfikacja złoża"
+          "name": "ITB-EPD nr 674/2024",
+          "url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6",
+          "role": "Wynik brutto dla żwiru uwzględniony w medianie."
         },
         {
-          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-          "url": "https://www.oekobaudat.de/",
-          "role": "kontrola rzędu wielkości LCA"
+          "name": "Łukasiewicz-ICiMB nr 02-04/2024",
+          "url": "https://icimb.lukasiewicz.gov.pl/wp-content/uploads/sites/46/2025/12/pdf31.pdf#page=12",
+          "role": "Wynik dla produktu płukanego uwzględniony w medianie po przeliczeniu z kg na tonę."
         }
       ],
-      "rationale": "Kruszywa naturalne zwykle wymagają mniej energochłonnego kruszenia niż kruszywa łamane, ale wynik zależy od płukania, sortowania i transportu.",
-      "required_replacement": "Dane kopalni lub EPD dostawcy.",
+      "rationale": "Mediana dwóch deklaracji o dużym rozrzucie (1,03 i 6,69); wynik zależy od płukania i zużycia energii w zakładzie. Produkty suszone termicznie (np. 29,3 kg CO₂e/t w tej samej deklaracji Eurokrusz) nie są objęte. W deklaracji CEMEX przyjęto wynik oznaczony jako wpływ na klimat brutto. Wynik Eurokrusz 6,69 × 10⁻³ kg CO₂e/kg przeliczono na tonę.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
+        "źródło złoża",
         "płukanie",
         "sortowanie",
         "wilgotność",
@@ -313,6 +285,64 @@
         "wilgotność",
         "udział RAP",
         "alokacja i moduł D"
+      ]
+    },
+    "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026": {
+      "declared_value": "3,27 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
+      "process_model": [
+        "wydobycie wapienia",
+        "kruszenie",
+        "przesiewanie",
+        "opcjonalne płukanie",
+        "magazynowanie i załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "ITB-EPD nr 707/2024",
+          "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie."
+        }
+      ],
+      "rationale": "Przyjęto wynik dla kruszywa wapiennego z zakładu w Sitkówce.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "audit_checks": [
+        "kopalnia",
+        "frakcja",
+        "płukanie",
+        "zużycie energii",
+        "wilgotność",
+        "transport A2"
+      ]
+    },
+    "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026": {
+      "declared_value": "3,91 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
+      "process_model": [
+        "wydobycie dolomitu",
+        "kruszenie",
+        "przesiewanie",
+        "opcjonalne płukanie",
+        "magazynowanie i załadunek"
+      ],
+      "source_basis": [
+        {
+          "name": "Łukasiewicz-ICiMB nr 03-05/2025",
+          "url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11",
+          "role": "Suma wyników A1, A2 i A3 przed zaokrągleniem."
+        }
+      ],
+      "rationale": "Deklaracja podaje wspólny wynik dla kruszywa dolomitowego i wapiennego z kopalń Budy i Janczyce. Suma modułów wynosi 0,375 + 0,0202 + 3,51 = 3,9052 kg CO₂e/t, po zaokrągleniu 3,91 kg CO₂e/t.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "audit_checks": [
+        "kopalnia",
+        "frakcja",
+        "płukanie",
+        "zużycie energii",
+        "wilgotność",
+        "transport A2"
       ]
     }
   }

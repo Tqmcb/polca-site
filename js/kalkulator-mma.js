@@ -4,8 +4,8 @@
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
     var GWP = {
-        aggFine: 3.5,        // kruszywo naturalne: piasek / żwir
-        filler: 30,         // wypełniacz wapienny
+        aggFine: 3.86,        // kruszywo naturalne: piasek / żwir
+        filler: 72,          // wypełniacz wapienny
         fiber: 800,           // włókno celulozowe (stabilizator SMA)
         ra: 0,                // granulat asfaltowy RA — cut-off (A1 = 0)
         addWma: 1200          // dodatek WMA chemiczny
@@ -30,7 +30,7 @@
         sma11s:   { label: 'SMA 11 S (ścieralna)',  norm: 'EN 13108-5', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '530', aggType: '3.99', aggC: 764, aggF: 117, filler: 50, bitumen: 66, ra: 0,   fiber: 3, addWma: 0 },
         bbtm11:   { label: 'BBTM 11 A (ścieralna)', norm: 'EN 13108-2', tech: 'HMA',    fuel: 'olej', temp: 170, bitType: '560', aggType: '3.99', aggC: 808, aggF: 81,  filler: 50, bitumen: 60, ra: 0,   fiber: 1, addWma: 0 },
         pa11:     { label: 'PA 11 (ścieralna)',     norm: 'EN 13108-7', tech: 'HMA',    fuel: 'olej', temp: 175, bitType: '560', aggType: '3.99', aggC: 845, aggF: 45,  filler: 48, bitumen: 60, ra: 0,   fiber: 2, addWma: 0 },
-        ma11:     { label: 'MA 11 (asfalt lany)',   norm: 'EN 13108-6', tech: 'HMA',    fuel: 'olej', temp: 230, bitType: '530', aggType: '4.00', aggC: 608, aggF: 254, filler: 70, bitumen: 68, ra: 0,   fiber: 0, addWma: 0 },
+        ma11:     { label: 'MA 11 (asfalt lany)',   norm: 'EN 13108-6', tech: 'HMA',    fuel: 'olej', temp: 230, bitType: '530', aggType: '3.27', aggC: 608, aggF: 254, filler: 70, bitumen: 68, ra: 0,   fiber: 0, addWma: 0 },
         ac16wma:  { label: 'AC 16 W-WMA (wiążąca)', norm: 'EN 13108-1', tech: 'WMA',    fuel: 'gaz',  temp: 130, bitType: '530', aggType: '3.80', aggC: 565, aggF: 336, filler: 50, bitumen: 46, ra: 0,   fiber: 0, addWma: 3 },
         // Łączną zawartość lepiszcza należy sprawdzić względem Bmin 4,6% z uwzględnieniem zawartości lepiszcza w granulacie podanej przez wytwórnię.
         ac16ra30: { label: 'AC 16 W-RA30 (wiążąca)',norm: 'EN 13108-1', tech: 'HMA+RA', fuel: 'olej', temp: 165, bitType: '530', aggType: '3.80', aggC: 410, aggF: 224, filler: 36, bitumen: 30,  ra: 300, fiber: 0, addWma: 0 }
@@ -123,7 +123,7 @@
         [[dBitumen, 'Transport lepiszcza'], [dAgg, 'Transport kruszywa'], [dFiller, 'Transport wypełniacza'], [dRA, 'Transport granulatu'], [dFiber, 'Transport włókna'], [dAddWma, 'Transport dodatku']].forEach(function (entry) { checkNumber(entry[0], entry[1] + ' [km]', 0, null, errors); });
         checkChoice(presetSel, Object.keys(PRESETS).concat(['custom']), 'Receptura', errors);
         checkChoice(bitTypeSel, ['530', '560'], 'Lepiszcze', errors);
-        checkChoice(aggTypeSel, ['3.99', '4.50', '4.00', '3.80'], 'Kruszywo grube', errors);
+        checkChoice(aggTypeSel, ['3.99', '4.50', '3.27', '3.80'], 'Kruszywo grube', errors);
         if (['HMA', 'WMA', 'HMA+RA'].indexOf(radioVal('mmaTech')) < 0) errors.push('Wybierz technologię produkcji');
         if (['olej', 'gaz'].indexOf(radioVal('mmaFuel')) < 0) errors.push('Wybierz paliwo wytwórni');
         if (!errors.length && (totalMass < 980 || totalMass > 1020)) errors.push('Suma składników: ' + fmt(totalMass, 0) + ' kg/t — odbiega od 1000 kg/t. Dopuszczalna suma w kalkulatorze wynosi 980–1020 kg/t (±2%)');

@@ -23,23 +23,23 @@
     "code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
     "name": "Kruszywo dolomitowe",
     "category": "materiał",
-    "module_default": "A1",
+    "module_default": "A1-A3",
     "unit": "t",
-    "gwp_total_kg_co2e": 4.5,
+    "gwp_total_kg_co2e": 3.91,
     "year": 2026,
-    "last_reviewed_at": "2026-05-11",
-    "next_review_due": "2027-05-11",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
     "review_cycle": "annual",
     "geography": "PL",
     "technology": "Wydobycie, kruszenie i przesiewanie kruszywa dolomitowego przed transportem",
-    "data_quality": "industry",
+    "data_quality": "manufacturer_epd_reference",
     "status": "published_sector_dataset",
-    "source_name": "poLCA 2026, wartość grupowa dla kruszyw dolomitowych",
-    "source_url": "https://polca.org.pl/metodyka.html",
-    "scope": "A1 produkcji kruszywa dolomitowego. Transport do zakładu klienta jest liczony oddzielnie w A2.",
-    "methodology_note": "Dataset służy do mapowania kruszyw dolomitowych, gdy brak EPD kopalni lub danych zakładowych. Wartość 4,5 kg CO2e/t rozdziela dolomit od wapienia i twardych skał magmowych, zachowując konserwatywny charakter dla braku danych dostawcy.",
-    "limitations": "Nie rozróżnia kopalni, frakcji, wilgotności, płukania, zużycia energii ani transportu A2.",
-    "preferred_replacement": "EPD kopalni dolomitu albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+    "source_name": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+    "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11",
+    "scope": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
+    "methodology_note": "Deklaracja podaje wspólny wynik dla kruszywa dolomitowego i wapiennego z kopalń Budy i Janczyce. Suma modułów wynosi 0,375 + 0,0202 + 3,51 = 3,9052 kg CO₂e/t, po zaokrągleniu 3,91 kg CO₂e/t. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+    "limitations": "Deklaracja podaje wspólny wynik dla dolomitu i wapienia z dwóch kopalń. Wskaźnik dla samego dolomitu wymaga danych dostawcy.",
+    "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "publication_status": "published_sector_dataset",
     "review_required": false,
     "use_allowed_for": [
@@ -50,50 +50,30 @@
     "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
     "source_trace": [
       {
-        "name": "EPD Polska — cPCR Kruszywa Budowlane",
-        "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
-        "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
-        "type": "product_category_rules"
-      },
-      {
-        "name": "PIG-PIB MIDAS",
-        "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-        "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
-        "type": "official_public_register"
-      },
-      {
-        "name": "Polski Związek Producentów Kruszyw",
-        "url": "https://kruszpol.pl/",
-        "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
-        "type": "sector_context"
-      },
-      {
-        "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
-        "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
-        "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
-        "type": "verified_epd_benchmark"
-      },
-      {
-        "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-        "url": "https://www.oekobaudat.de/",
-        "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
-        "type": "methodology_source"
+        "name": "Łukasiewicz-ICiMB nr 03-05/2025",
+        "type": "manufacturer_epd",
+        "role": "Suma wyników A1, A2 i A3 przed zaokrągleniem.",
+        "manufacturer": "Kopalnie Dolomitu S.A. w Sandomierzu",
+        "product": "kruszywo dolomitowe i wapienne, Budy i Janczyce (wynik uśredniony)",
+        "source_valid_until": "2030-05-21",
+        "gwp_total_kg_co2e": 3.9052,
+        "url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość grupowa poLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+    "open_data_note": "Wskaźnik referencyjny na podstawie deklaracji producentów. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "evidence_level": "sector_proxy",
     "source_policy": {
       "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
-      "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+      "when_allowed": "Przy braku danych dostawcy dla użytego materiału należy uzasadnić dobór wskaźnika na podstawie rodzaju wyrobu, pochodzenia i technologii.",
       "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
     },
     "selection_mode": "context_specific_assessment",
     "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
-      "declared_value": "4,5 kg CO2e/t",
-      "module": "A1",
-      "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+      "declared_value": "3,91 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
         "wydobycie dolomitu",
         "kruszenie",
@@ -103,28 +83,13 @@
       ],
       "source_basis": [
         {
-          "name": "EPD Polska — cPCR Kruszywa Budowlane",
-          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
-          "role": "reguły kategorii produktu dla kruszyw budowlanych"
-        },
-        {
-          "name": "PIG-PIB MIDAS",
-          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-          "role": "klasyfikacja złoża i kopaliny"
-        },
-        {
-          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
-          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
-          "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
-        },
-        {
-          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-          "url": "https://www.oekobaudat.de/",
-          "role": "kontrola rzędu wielkości LCA"
+          "name": "Łukasiewicz-ICiMB nr 03-05/2025",
+          "url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11",
+          "role": "Suma wyników A1, A2 i A3 przed zaokrągleniem."
         }
       ],
-      "rationale": "Dolomit jest kruszywem węglanowym, ale jego przeróbka i właściwości mogą odbiegać od wapienia. Osobny rekord ogranicza mieszanie różnych kruszyw w jednym wskaźniku.",
-      "required_replacement": "EPD kopalni dolomitu albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+      "rationale": "Deklaracja podaje wspólny wynik dla kruszywa dolomitowego i wapiennego z kopalń Budy i Janczyce. Suma modułów wynosi 0,375 + 0,0202 + 3,51 = 3,9052 kg CO₂e/t, po zaokrągleniu 3,91 kg CO₂e/t.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
         "kopalnia",
         "frakcja",
@@ -144,6 +109,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

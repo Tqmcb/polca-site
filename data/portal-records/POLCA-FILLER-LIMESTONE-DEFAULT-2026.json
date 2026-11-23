@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "record": {
     "id": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
     "title": "Wypełniacz wapienny",
@@ -15,9 +15,9 @@
     "href": "/dane/polca-filler-limestone-default-2026.html",
     "unit": "kg CO₂e/t",
     "boundary": "Produkcja wypełniacza do bramy zakładu",
-    "indicator_label": "Wpływ na klimat (GWP)",
-    "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
-    "source_url": "https://polca.org.pl/metodyka.html",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "source_name": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+    "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10",
     "formats": [
       "JSON"
     ],
@@ -42,7 +42,7 @@
       "produkt"
     ],
     "record_type": "indicator_value",
-    "geography": "PL",
+    "geography": "PL/LT",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-FILLER-LIMESTONE-DEFAULT-2026.json",
     "production_scope": "Pozyskanie surowca i produkcja 1 t mielonego wypełniacza wapiennego do bramy zakładu. Wskaźnik obejmuje mielenie i ewentualne suszenie.",
@@ -54,7 +54,21 @@
         "description": "Produkcję zakupionego wypełniacza uwzględnia się w A1 mieszanki, a przewóz do wytwórni w A2."
       }
     },
-    "value": 30,
+    "source_trace": [
+      {
+        "name": "EPD-IES-0012771 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+        "manufacturer": "Naujasis kalcitas",
+        "product": "mączka wapienna, Litwa",
+        "source_valid_until": "2029-02-27",
+        "gwp_total_kg_co2e": 72,
+        "url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
+      }
+    ],
+    "limitations": "Nie rozróżnia technologii mielenia, suszenia, pochodzenia surowca ani transportu.",
+    "methodology_note": "Brak ważnej polskiej deklaracji dla wypełniacza wapiennego; przyjęto jedyną znalezioną deklarację z regionu (Litwa). Wcześniejszy opis rekordu powoływał się na wartość 0,023 kg CO₂e/kg, której ta deklaracja nie zawiera. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+    "value": 72,
     "cpr_family_ids": [
       24
     ],

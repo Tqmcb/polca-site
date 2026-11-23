@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -37,7 +37,7 @@
   "material_scopes": {
     "aggregate": {
       "boundary": "A1-A3",
-      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
       "application_contexts": {
         "constituent": {
           "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -115,26 +115,28 @@
       "category_id": "paliwa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Współczynnik do przeliczenia zużycia paliwa w etapach wskazanych w rekordzie.",
+      "description": "Wydobycie, dostawa i spalanie 1 l oleju napędowego w maszynie pozadrogowej.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-FUEL-DIESEL-DEFAULT-2026",
         "paliwo",
         "olej napędowy"
-      ]
+      ],
+      "include_source_trace": true
     },
     "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026": {
       "title": "Gaz ziemny",
       "category_id": "paliwa",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Współczynnik do przeliczenia zużycia paliwa w etapach wskazanych w rekordzie.",
+      "description": "Wydobycie, dostawa i spalanie 1 m³ gazu ziemnego wysokometanowego.",
       "methodology_href": "/metodyka.html",
       "keywords": [
         "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
         "paliwo",
         "gaz ziemny"
-      ]
+      ],
+      "include_source_trace": true
     },
     "POLCA-TRUCK-40T-DEFAULT-2026": {
       "title": "Transport drogowy — zestaw 40 t",
@@ -169,7 +171,9 @@
       ],
       "related_ids": [
         "tool-kruszywa"
-      ]
+      ],
+      "include_source_trace": true,
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)"
     },
     "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026": {
       "scope_profile": "aggregate",
@@ -187,7 +191,9 @@
       ],
       "related_ids": [
         "tool-kruszywa"
-      ]
+      ],
+      "include_source_trace": true,
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)"
     },
     "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026": {
       "scope_profile": "aggregate",
@@ -205,7 +211,9 @@
       ],
       "related_ids": [
         "tool-kruszywa"
-      ]
+      ],
+      "include_source_trace": true,
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)"
     },
     "POLCA-AGG-PL-NATURAL-DEFAULT-2026": {
       "scope_profile": "aggregate",
@@ -223,7 +231,9 @@
       ],
       "related_ids": [
         "tool-kruszywa"
-      ]
+      ],
+      "include_source_trace": true,
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)"
     },
     "POLCA-BITUMEN-ROAD-DEFAULT-2026": {
       "title": "Asfalt drogowy — lepiszcze",
@@ -270,7 +280,9 @@
         "filler",
         "wapień",
         "MMA"
-      ]
+      ],
+      "include_source_trace": true,
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)"
     },
     "POLCA-RAP-PROCESSING-DEFAULT-2026": {
       "title": "Przygotowanie granulatu asfaltowego",

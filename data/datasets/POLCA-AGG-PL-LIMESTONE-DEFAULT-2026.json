@@ -23,23 +23,23 @@
     "code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
     "name": "Kruszywo wapienne",
     "category": "materiał",
-    "module_default": "A1",
+    "module_default": "A1-A3",
     "unit": "t",
-    "gwp_total_kg_co2e": 4,
+    "gwp_total_kg_co2e": 3.27,
     "year": 2026,
-    "last_reviewed_at": "2026-05-11",
-    "next_review_due": "2027-05-11",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
     "review_cycle": "annual",
     "geography": "PL",
     "technology": "Wydobycie, kruszenie i przesiewanie kruszywa wapiennego przed transportem",
-    "data_quality": "industry",
+    "data_quality": "manufacturer_epd_reference",
     "status": "published_sector_dataset",
-    "source_name": "poLCA 2026, wartość grupowa dla kruszyw wapiennych",
-    "source_url": "https://polca.org.pl/metodyka.html",
-    "scope": "A1 produkcji kruszywa wapiennego. Transport z kopalni do zakładu klienta jest liczony oddzielnie w A2.",
-    "methodology_note": "Dataset oparto na koszyku źródeł dla kruszyw węglanowych. Kluczowym punktem kontrolnym jest ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych: 1 t, A1-A3, GWP total 3,27 kg CO2e/t. poLCA stosuje 4,0 kg CO2e/t jako wartość grupową, aby uwzględnić różnice kopalni, frakcji, płukania i przeróbki przy braku danych konkretnego dostawcy.",
-    "limitations": "Nie zastępuje EPD Trzuskawica ani EPD innej konkretnej kopalni. Nie obejmuje transportu A2 do wytwórni/betoniarni.",
-    "preferred_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+    "source_name": "Trzuskawica S.A., ITB-EPD nr 707/2024",
+    "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8",
+    "scope": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
+    "methodology_note": "Przyjęto wynik dla kruszywa wapiennego z zakładu w Sitkówce. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+    "limitations": "Wynik dotyczy wapienia z Sitkówki. Przy zastosowaniu do innej kopalni należy sprawdzić technologię przeróbki. Dostawę do odbiorcy rozlicza się oddzielnie.",
+    "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "publication_status": "published_sector_dataset",
     "review_required": false,
     "use_allowed_for": [
@@ -50,50 +50,30 @@
     "quality_rule": "Kruszywo jest składnikiem masowym. Dla wyników audytowych pierwszeństwo mają EPD kopalni, dane zakładowe i rzeczywisty transport A2.",
     "source_trace": [
       {
-        "name": "EPD Polska — cPCR Kruszywa Budowlane",
-        "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
-        "role": "zasady jednostki deklarowanej, granicy systemu, danych i weryfikacji dla kruszyw",
-        "type": "product_category_rules"
-      },
-      {
-        "name": "PIG-PIB MIDAS",
-        "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-        "role": "klasyfikacja złoża, kopaliny i lokalizacji źródła",
-        "type": "official_public_register"
-      },
-      {
-        "name": "Polski Związek Producentów Kruszyw",
-        "url": "https://kruszpol.pl/",
-        "role": "kontekst branżowy i kwalifikacja sektora kruszyw w Polsce",
-        "type": "sector_context"
-      },
-      {
-        "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
-        "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
-        "role": "zweryfikowany benchmark producenta: 1 t kruszywa wapiennego, A1-A3, GWP total 3,27 kg CO2e/t",
-        "type": "verified_epd_benchmark"
-      },
-      {
-        "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-        "url": "https://www.oekobaudat.de/",
-        "role": "kontrola rzędu wielkości LCA dla procesów kruszyw",
-        "type": "methodology_source"
+        "name": "ITB-EPD nr 707/2024",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+        "manufacturer": "Trzuskawica S.A.",
+        "product": "kruszywa wapienne, Sitkówka",
+        "source_valid_until": "2029-11-18",
+        "gwp_total_kg_co2e": 3.27,
+        "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość grupowa poLCA. Nie udaje danych konkretnej kopalni; służy do jednolitych zasad liczenia, gdy brak EPD lub danych dostawcy.",
+    "open_data_note": "Wskaźnik referencyjny na podstawie deklaracji producentów. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "evidence_level": "sector_proxy",
     "source_policy": {
       "priority": "EPD konkretnej kopalni > zweryfikowane dane kopalni > regionalny dataset poLCA > wartość grupowa poLCA",
-      "when_allowed": "Brak EPD lub danych kopalni dla rzeczywiście użytego kruszywa; wynik oznaczony jako wartość grupowa.",
+      "when_allowed": "Przy braku danych dostawcy dla użytego materiału należy uzasadnić dobór wskaźnika na podstawie rodzaju wyrobu, pochodzenia i technologii.",
       "auditor_note": "Sprawdzić rodzaj skały, frakcję, technologię przeróbki, płukanie/suszenie, wilgotność i transport A2."
     },
     "selection_mode": "context_specific_assessment",
     "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
-      "declared_value": "4,0 kg CO2e/t; benchmark EPD Trzuskawica: 3,27 kg CO2e/t A1-A3",
-      "module": "A1",
-      "system_boundary": "wydobycie i przygotowanie kruszywa przed transportem do zakładu klienta; transport A2 liczony oddzielnie",
+      "declared_value": "3,27 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
         "wydobycie wapienia",
         "kruszenie",
@@ -103,28 +83,13 @@
       ],
       "source_basis": [
         {
-          "name": "EPD Polska — cPCR Kruszywa Budowlane",
-          "url": "https://epd.org.pl/cpcr-dla-kruszyw/",
-          "role": "reguły kategorii produktu dla kruszyw budowlanych"
-        },
-        {
-          "name": "PIG-PIB MIDAS",
-          "url": "https://geoportal.pgi.gov.pl/portal/page/portal/midas",
-          "role": "klasyfikacja złoża i kopaliny"
-        },
-        {
-          "name": "ITB-EPD 707 Trzuskawica S.A. — kruszywa wapienne",
-          "url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf",
-          "role": "punkt kontrolny dla kruszyw wapiennych: A1-A3 = 3,27 kg CO2e/t"
-        },
-        {
-          "name": "ÖKOBAUDAT / sektorowe EPD kruszyw",
-          "url": "https://www.oekobaudat.de/",
-          "role": "kontrola rzędu wielkości LCA"
+          "name": "ITB-EPD nr 707/2024",
+          "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie."
         }
       ],
-      "rationale": "Wapień ma zwykle niższą energochłonność kruszenia niż skały bardzo twarde, ale wynik zależy od zakładu i frakcji. Wartość poLCA jest wartością grupową, nie wynikiem konkretnej kopalni.",
-      "required_replacement": "EPD kopalni wapienia albo zweryfikowane dane kopalni dla rzeczywiście użytego kruszywa.",
+      "rationale": "Przyjęto wynik dla kruszywa wapiennego z zakładu w Sitkówce.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
         "kopalnia",
         "frakcja",
@@ -144,6 +109,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

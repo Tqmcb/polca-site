@@ -181,10 +181,13 @@ class PrecastTests(unittest.TestCase):
         self.assertEqual(steel['cpr_family_ids'], [16])
         self.assertEqual([(r['family_id'], r['role']) for r in steel['cpr_related']], [(1, 'input_to_product')])
         card = html.parse(str(ROOT / steel['href'][1:]))
+        table, = card.xpath('//main//table')
+        self.assertIn('kg CO₂e/t', table.xpath('string(thead)'))
         for entry in sources:
-            row, = card.xpath('//main//li[a[@href=$url]]', url=entry['url'])
-            for text in (entry['manufacturer'], entry['name'], entry['product'], f'{entry["gwp_total_kg_co2e"]} kg CO₂e/t'):
-                self.assertIn(text, row.text_content())
+            row, = table.xpath('tbody/tr[th/a[@href=$url]]', url=entry['url'])
+            self.assertEqual(row.xpath('string(th)'), entry['name'])
+            self.assertEqual(row.xpath('td/text()')[:2], [entry['manufacturer'], entry['product']])
+            self.assertEqual(pl_decimal(row.xpath('string(td[last()])')), entry['gwp_total_kg_co2e'])
 
     def test_precast_example_uses_declared_masses_and_linked_record_values(self):
         page = html.parse(str(ROOT / 'wyroby/01.html'))

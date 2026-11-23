@@ -168,9 +168,9 @@
             <div class="mma-field">
                 <label class="calc-label" for="mmaTypeAgg">Rodzaj kruszywa grubego (łamanego)</label>
                 <select id="mmaTypeAgg" class="calc-select">
-                    <option value="3.99">Kruszywo bazaltowe łamane — 3,99 kg CO₂eq/t (wartość historyczna bez rekordu w katalogu)</option>
+                    <option value="3.99">Kruszywo łamane twarde (bazalt, Targowica) — 3,99 kg CO₂eq/t</option>
                     <option value="4.50">Kruszywo granitowe łamane — 4,50 kg CO₂eq/t (wartość historyczna bez rekordu w katalogu)</option>
-                    <option value="4.00">Kruszywo wapienne łamane — 4,00 kg CO₂eq/t</option>
+                    <option value="3.27">Kruszywo wapienne łamane — 3,27 kg CO₂eq/t</option>
                     <option value="3.80" selected>Kruszywo — wariant mieszany kalkulatora — 3,80 kg CO₂eq/t (wartość historyczna bez rekordu w katalogu)</option>
                 </select>
             </div>
@@ -185,14 +185,14 @@
                     <label class="calc-label" for="mAggF" style="margin-bottom:0;">Kruszywo drobne — piasek / żwir [kg/t]</label>
                     <input type="number" required aria-describedby="mmaSumWarn" id="mAggF" class="mma-input-sm" value="331" min="0" step="1" max="1020">
                 </div>
-                <p class="calc-note"><a href="/dane/polca-agg-pl-natural-default-2026.html">Kruszywo naturalne (piasek, żwir) — 3,50 kg CO₂e/t</a>.</p>
+                <p class="calc-note"><a href="/dane/polca-agg-pl-natural-default-2026.html">Kruszywo naturalne (piasek, żwir) — 3,86 kg CO₂e/t</a>.</p>
             </div>
             <div class="mma-field">
                 <div class="mma-comp-grid">
                     <label class="calc-label" for="mFiller" style="margin-bottom:0;">Filler wapienny [kg/t]</label>
                     <input type="number" required aria-describedby="mmaSumWarn" id="mFiller" class="mma-input-sm" value="50" min="0" step="1" max="1020">
                 </div>
-                <p class="calc-note"><a href="/dane/polca-filler-limestone-default-2026.html">Mączka wapienna — 30 kg CO₂e/t</a>.</p>
+                <p class="calc-note"><a href="/dane/polca-filler-limestone-default-2026.html">Mączka wapienna — 72 kg CO₂e/t</a>.</p>
             </div>
             <div class="mma-field">
                 <div class="mma-comp-grid">
@@ -278,25 +278,25 @@
 
         <div style="margin:1.25rem 0 .25rem;">
             <div class="calc-result-label">Oszacowanie A1-A3 — łącznie</div>
-            <div class="mma-result-hero"><span id="mmaTotal">59,66</span> <small>kg CO₂eq / t MMA</small></div>
+            <div class="mma-result-hero"><span id="mmaTotal">61,88</span> <small>kg CO₂eq / t MMA</small></div>
             <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="mmaTotalNote">AC 16 W (wiążąca) · HMA · olej opałowy · 160°C</div>
         </div>
 
         <div class="mma-mod-grid">
             <div class="mma-mod-box">
                 <div class="mma-mod-name">A1 — surowce</div>
-                <div class="mma-mod-val"><span id="mmaA1">29,22</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
-                <div class="mma-mod-share"><span id="mmaA1pct">49,0</span>% udziału</div>
+                <div class="mma-mod-val"><span id="mmaA1">31,44</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
+                <div class="mma-mod-share"><span id="mmaA1pct">50,8</span>% udziału</div>
             </div>
             <div class="mma-mod-box">
                 <div class="mma-mod-name">A2 — transport</div>
                 <div class="mma-mod-val"><span id="mmaA2">4,73</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
-                <div class="mma-mod-share"><span id="mmaA2pct">7,9</span>% udziału</div>
+                <div class="mma-mod-share"><span id="mmaA2pct">7,6</span>% udziału</div>
             </div>
             <div class="mma-mod-box">
                 <div class="mma-mod-name">A3 — produkcja w wytwórni</div>
                 <div class="mma-mod-val"><span id="mmaA3">25,71</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
-                <div class="mma-mod-share"><span id="mmaA3pct">43,1</span>% udziału</div>
+                <div class="mma-mod-share"><span id="mmaA3pct">41,6</span>% udziału</div>
             </div>
         </div>
 
@@ -385,6 +385,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-mma.js?v=20261123f"></script>
+<script src="js/kalkulator-mma.js?v=20261123h"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

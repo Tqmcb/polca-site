@@ -113,10 +113,10 @@
     "declared_unit": "1 t kruszywa wapiennego",
     "module_scope": "A1-A3",
     "gwp_total": "3,27 kg CO2e/t",
-    "use_in_polca": "Zweryfikowany benchmark producenta dla kruszyw wapiennych; bezpośrednie użycie tylko dla zadeklarowanego produktu i zakładu, a jako wartość domyślna wyłącznie po włączeniu do koszyka porównywalnych EPD.",
-    "source_url": "https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf"
+    "use_in_polca": "Wynik dla kruszywa z Sitkówki przyjęto jako wartość referencyjną dla wapienia. W deklaracji wyrobu należy stosować deklarację dostawcy użytego kruszywa.",
+    "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
   },
   "audit_rule": "Audytor musi widzieć nie tylko końcowy wskaźnik, ale też listę EPD źródłowych, kryteria porównywalności, zakres modułów, jednostki, daty ważności i powód użycia EPD jako danych bezpośrednich albo benchmarku.",
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

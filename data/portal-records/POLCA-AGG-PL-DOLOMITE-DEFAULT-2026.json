@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "record": {
     "id": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
     "title": "Kruszywo dolomitowe",
@@ -15,9 +15,9 @@
     "href": "/dane/polca-agg-pl-dolomite-default-2026.html",
     "unit": "kg CO₂e/t",
     "boundary": "A1-A3",
-    "indicator_label": "Wpływ na klimat (GWP)",
-    "source_name": "poLCA 2026, wartość grupowa dla kruszyw dolomitowych",
-    "source_url": "https://polca.org.pl/metodyka.html",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "source_name": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+    "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11",
     "formats": [
       "JSON"
     ],
@@ -46,7 +46,7 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-AGG-PL-DOLOMITE-DEFAULT-2026.json",
-    "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+    "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
     "application_contexts": {
       "constituent": {
         "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -61,7 +61,21 @@
         "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
       }
     },
-    "value": 4.5,
+    "source_trace": [
+      {
+        "name": "Łukasiewicz-ICiMB nr 03-05/2025",
+        "type": "manufacturer_epd",
+        "role": "Suma wyników A1, A2 i A3 przed zaokrągleniem.",
+        "manufacturer": "Kopalnie Dolomitu S.A. w Sandomierzu",
+        "product": "kruszywo dolomitowe i wapienne, Budy i Janczyce (wynik uśredniony)",
+        "source_valid_until": "2030-05-21",
+        "gwp_total_kg_co2e": 3.9052,
+        "url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
+      }
+    ],
+    "limitations": "Deklaracja podaje wspólny wynik dla dolomitu i wapienia z dwóch kopalń. Wskaźnik dla samego dolomitu wymaga danych dostawcy.",
+    "methodology_note": "Deklaracja podaje wspólny wynik dla kruszywa dolomitowego i wapiennego z kopalń Budy i Janczyce. Suma modułów wynosi 0,375 + 0,0202 + 3,51 = 3,9052 kg CO₂e/t, po zaokrągleniu 3,91 kg CO₂e/t. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+    "value": 3.91,
     "cpr_family_ids": [
       24
     ],

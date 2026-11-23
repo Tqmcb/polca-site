@@ -25,7 +25,7 @@ def sitkowka_example():
           <summary>Ile wynosi samo A3 kruszywa? Przykład z Sitkówki</summary>
           <p>W deklaracji środowiskowej kruszywa wapiennego z zakładu Trzuskawica w Sitkówce wpływ na klimat wynosi
           0,79 w A1, 0,010 w A2 i <strong>2,48 kg CO₂e/t w A3</strong>. Dla całego etapu A1–A3 producent deklaruje
-          3,27 kg CO₂e/t po zaokrągleniu. Są to dane zakładowe za 2023 r. Wartość poLCA dla wapienia jest wskaźnikiem grupowym.</p>
+          3,27 kg CO₂e/t po zaokrągleniu. Są to dane zakładowe za 2023 r. Ten wynik A1–A3 przyjęto w rekordzie poLCA dla kruszywa wapiennego.</p>
           <p>W Sitkówce do A3 zaliczono roboty strzałowe, rozbijanie większych brył, załadunek, przewóz w zakładzie oraz kruszenie i przesiewanie.</p>
           <p><a href="{SITKOWKA_EPD}">Deklaracja ITB nr 707/2024, tabela 3, s. 8</a></p></details>'''
 
@@ -199,10 +199,10 @@ def aggregate_guide(catalog, mma_profile):
                              f'Podział na moduły według <a href="{ASPHALT_SPEC}">CEN/TS 18301:2026, pkt 6.3.5.2–6.3.5.3</a>. '
                              '<a href="/wyroby/23.html">Dane i zasady obliczeń dla mieszanek</a>.'),
             'operation': {
-                'key': 'gas', 'code': 'A3', 'title': 'Spalanie gazu w wytwórni mieszanki',
-                'caption': 'Wpływ spalania gazu ziemnego na 1 t gotowej mieszanki',
+                'key': 'gas', 'code': 'A3', 'title': 'Zużycie gazu w wytwórni mieszanki',
+                'caption': 'Wkład gazu ziemnego w wynik na 1 t gotowej mieszanki',
                 'description': ('W suszarce kruszywo jest suszone i podgrzewane przed zmieszaniem z lepiszczem. '
-                                'Wynik obejmuje wyłącznie spalanie gazu ziemnego w wytwórni. '
+                                'Wynik obejmuje wydobycie i dostawę gazu oraz jego spalanie w wytwórni. '
                                 'Pełne A3 obejmuje także m.in. energię elektryczną do napędu urządzeń.'),
                 'record': records[GAS], 'result_unit': 'kg CO₂e/t', 'factor_unit': 'kg CO₂e/m³',
                 'argument': gas_quantity, 'activity_unit': 'm³/t', 'label': 'Zużycie gazu na tonę mieszanki',

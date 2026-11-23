@@ -177,11 +177,15 @@ def build_cards():
   source='<p>' + (a(r['source_name'],r['source_url']) if r.get('source_url') else e(r.get('source_name',''))) + '</p>'
   declarations = [s for s in r.get('source_trace', []) if s['type'] == 'manufacturer_epd']
   if declarations:
-   source = '<ul>' + ''.join(
-       f'<li>{e(s["manufacturer"])}, {e(s["product"])} — {a(s["name"], s["url"])}, '
-       f'ważna do {date.fromisoformat(s["source_valid_until"]):%d.%m.%Y}, '
-       f'<strong>{e(num(s["gwp_total_kg_co2e"]))} {e(r["unit"])}</strong> (A1–A3).</li>'
-       for s in declarations) + '</ul>'
+   rows = ''.join(
+       f'<tr><th scope="row">{a(s["name"], s["url"])}</th><td>{e(s["manufacturer"])}</td>'
+       f'<td>{e(s["product"])}</td><td>{date.fromisoformat(s["source_valid_until"]):%d.%m.%Y}</td>'
+       f'<td>{num(s["gwp_total_kg_co2e"])}</td></tr>' for s in declarations)
+   source = ('<div class="portal-table-wrap" role="region" aria-label="Deklaracje źródłowe" tabindex="0">'
+             '<table><caption>Deklaracje środowiskowe przyjęte w obliczeniu</caption><thead><tr>'
+             '<th scope="col">Deklaracja</th><th scope="col">Producent</th><th scope="col">Wyrób</th>'
+             f'<th scope="col">Ważna do</th><th scope="col">GWP-total A1–A3 [{e(r["unit"])}]</th>'
+             f'</tr></thead><tbody>{rows}</tbody></table></div>')
   more=links([{'label':x['title'],'href':x['href']} for x in CAT['datasets'] if x['id'] in r.get('related_ids',[])])
   modules = r.get('gwp_modules_kg_co2e_per_t')
   if modules:
@@ -193,7 +197,12 @@ def build_cards():
   if r['id']=='POLCA-EN-PL-LCA-2024':notes.append('Wartość 0,599 dotyczy składnika kopalnego wpływu na klimat. Informacyjna suma w pełnym modelu 2024 wynosi 0,600 kg CO₂e/kWh. Rekord do pobrania zachowuje rozróżnienie rodzaju wskaźnika.')
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
   if r.get('status_id') in ['proxy','reference','earlier_model','control']:notes.append('Dobór do konkretnego obliczenia wymaga zgodności jednostki, granic i roku. Status opisuje tę pozycję katalogu; źródło i warunki stosowania są wskazane w pliku oraz dokumentacji.')
-  body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2>{source}'+''.join(f'<p>{e(t)}</p>' for t in notes)+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
+  notes_html = ''.join(f'<p>{e(t)}</p>' for t in notes)
+  for item in r.get('source_trace', []):
+   url = item['url']
+   notes_html = re.sub(r'\[([^\[\]]+)\]\(' + re.escape(e(url)) + r'\)',
+                       lambda m: a(h.unescape(m[1]), url), notes_html)
+  body=f'<div class="portal-detail-layout"><div><section class="portal-prose">{status(r)}{value}{meta}</section><section class="portal-prose"><h2>Źródło i interpretacja</h2>{source}'+notes_html+f'<p>{a("Dokumentacja metody",r["methodology_href"])}</p><p>{a("Jak dobrać dane do zastosowania","/zastosowanie-danych.html")}</p></section>'+ (f'<section class="portal-prose"><h2>Powiązane dane</h2>{more}</section>' if more!='<ul class="portal-list"></ul>' else '')+f'</div><aside class="portal-callout"><h2>Pliki do pobrania</h2>{downloads}<p>Jednostki, założenia oraz warunki wykorzystania sprawdź razem z danymi.</p><p>{a("Formaty i integracja","/o-polca/gotowosc-dpp.html")}</p></aside></div>'
   if 'unbound_base' in contexts:
    guidance = [
     {'label': 'Co należy do A1 betonu i jak ująć transport kruszywa?', 'href': '/wyroby/24.html#modul-a1'},

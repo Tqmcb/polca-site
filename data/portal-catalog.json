@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "counts": {
     "data_positions": 32,
     "withdrawn_positions": 11,
@@ -225,13 +225,13 @@
       "year_type": "publication",
       "status_id": "default",
       "status_label": "Wartość przyjęta w modelu",
-      "description": "Współczynnik do przeliczenia zużycia paliwa w etapach wskazanych w rekordzie.",
+      "description": "Wydobycie, dostawa i spalanie 1 l oleju napędowego w maszynie pozadrogowej.",
       "href": "/dane/polca-fuel-diesel-default-2026.html",
       "unit": "kg CO₂e/l",
       "boundary": "A5/C1/C3",
       "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość domyślna dla oleju napędowego",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "source_name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7",
       "formats": [
         "JSON"
       ],
@@ -257,7 +257,47 @@
       "geography": "PL",
       "reference_unit": "l",
       "source_record_href": "/data/datasets/POLCA-FUEL-DIESEL-DEFAULT-2026.json",
-      "value": 3.2,
+      "source_trace": [
+        {
+          "name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16",
+          "type": "methodology_source",
+          "role": "Wartość opałowa 43,0 MJ/kg i emisja CO₂ ze spalania 74,1 kg/GJ.",
+          "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
+        },
+        {
+          "name": "Rozporządzenie wykonawcze Komisji (UE) 2022/996, załącznik IX",
+          "type": "methodology_source",
+          "role": "Gęstość oleju napędowego 832 kg/m³.",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R0996"
+        },
+        {
+          "name": "Dz.U. z 2015 r. poz. 1680, załącznik nr 3",
+          "type": "methodology_source",
+          "role": "Zakres gęstości w temperaturze 15°C podany w załączniku.",
+          "url": "https://dziennikustaw.gov.pl/D2015000168001.pdf"
+        },
+        {
+          "name": "Wytyczne IPCC 2006, tom 2, tabele 3.3.1 i 3.2.2",
+          "type": "methodology_source",
+          "role": "Emisje CH₄ i N₂O z maszyn pozadrogowych w przemyśle oraz z transportu drogowego.",
+          "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_3_Ch3_Mobile_Combustion.pdf"
+        },
+        {
+          "name": "Szósty raport IPCC, grupa robocza I, tabela 7.15",
+          "type": "methodology_source",
+          "role": "Potencjał tworzenia efektu cieplarnianego w okresie 100 lat dla metanu kopalnego i podtlenku azotu.",
+          "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/"
+        },
+        {
+          "name": "Rozporządzenie delegowane Komisji (UE) 2023/1185, załącznik, część B",
+          "type": "methodology_source",
+          "role": "Emisje związane z wydobyciem i dostawą paliwa w Unii Europejskiej.",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185"
+        }
+      ],
+      "limitations": "Nie rozróżnia biokomponentów, normy emisji silnika ani rzeczywistego obciążenia maszyny. Wydobycie i dostawę paliwa opisuje wskaźnik unijny. Wydobycie i dostawę paliwa opisuje wskaźnik unijny.",
+      "methodology_note": "Według [KOBiZE, tabela 16](https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7) emisja CO₂ ze spalania wynosi 74,1 kg/GJ, a wartość opałowa 43,0 MJ/kg. Gęstość 832 kg/m³ z [załącznika IX do rozporządzenia (UE) 2022/996](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R0996) daje 35,776 MJ/l. W [Dz.U. z 2015 r. poz. 1680, zał. 3](https://dziennikustaw.gov.pl/D2015000168001.pdf) podano 820–845 kg/m³. Dla maszyn pozadrogowych w przemyśle [IPCC 2006, tom 2, tabela 3.3.1](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_3_Ch3_Mobile_Combustion.pdf) podaje 4,15 kg CH₄/TJ i 28,6 kg N₂O/TJ. Po zastosowaniu mnożników 29,8 i 273 z [szóstego raportu IPCC, tabela 7.15](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/) ich łączny wkład wynosi 7,93 g CO₂e/MJ. Wydobycie i dostawa odpowiadają za 21,9 g CO₂e/MJ według [rozporządzenia (UE) 2023/1185, załącznik, część B](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185). Łącznie (74,1 + 7,93 + 21,9) g CO₂e/MJ × 35,78 MJ/l ≈ 3,72 kg CO₂e/l. Dla transportu drogowego emisje CH₄ i N₂O z tabeli 3.2.2 dają 1,18 g CO₂e/MJ i wynik 3,48 kg CO₂e/l.",
+      "value": 3.72,
       "cpr_family_ids": [],
       "cpr_related": [],
       "cpr_scope_note": null
@@ -272,13 +312,13 @@
       "year_type": "publication",
       "status_id": "default",
       "status_label": "Wartość przyjęta w modelu",
-      "description": "Współczynnik do przeliczenia zużycia paliwa w etapach wskazanych w rekordzie.",
+      "description": "Wydobycie, dostawa i spalanie 1 m³ gazu ziemnego wysokometanowego.",
       "href": "/dane/polca-fuel-natural-gas-default-2026.html",
       "unit": "kg CO₂e/m³",
       "boundary": "A3",
       "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość domyślna dla gazu ziemnego",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "source_name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6",
       "formats": [
         "JSON"
       ],
@@ -304,7 +344,35 @@
       "geography": "PL",
       "reference_unit": "m3",
       "source_record_href": "/data/datasets/POLCA-FUEL-NATURAL-GAS-DEFAULT-2026.json",
-      "value": 2,
+      "source_trace": [
+        {
+          "name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+          "type": "methodology_source",
+          "role": "Wartość opałowa 37,17 MJ/m³ i emisja CO₂ ze spalania 56,18 kg/GJ.",
+          "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
+        },
+        {
+          "name": "Wytyczne IPCC 2006, tom 2, tabela 2.4",
+          "type": "methodology_source",
+          "role": "Emisje CH₄ i N₂O ze spalania stacjonarnego gazu, założenie dla instalacji.",
+          "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+        },
+        {
+          "name": "Szósty raport IPCC, grupa robocza I, tabela 7.15",
+          "type": "methodology_source",
+          "role": "Potencjał tworzenia efektu cieplarnianego w okresie 100 lat dla metanu kopalnego i podtlenku azotu.",
+          "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/"
+        },
+        {
+          "name": "Rozporządzenie delegowane Komisji (UE) 2023/1185, załącznik, część B",
+          "type": "methodology_source",
+          "role": "Emisje związane z wydobyciem i dostawą paliwa w Unii Europejskiej.",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185"
+        }
+      ],
+      "limitations": "Wydobycie i dostawę opisuje wskaźnik unijny. Dla emisji CH₄ i N₂O przyjęto parametry spalania stacjonarnego dla sektora handlu i usług z tabeli 2.4 IPCC. W obliczeniu dla konkretnej instalacji należy uwzględnić skład i wartość opałową dostarczanego gazu oraz zastosowanie paliwa.",
+      "methodology_note": "Dla gazu wysokometanowego [KOBiZE, tabela 14](https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6) podaje 56,18 kg CO₂/GJ ze spalania i wartość opałową 37,17 MJ/m³. Dla spalania stacjonarnego przyjęto 5 kg CH₄/TJ i 0,1 kg N₂O/TJ według [IPCC 2006, tom 2, tabela 2.4](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf). Mnożniki 29,8 i 273 z [szóstego raportu IPCC, tabela 7.15](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/) dają 0,18 g CO₂e/MJ. Wydobycie i dostawa odpowiadają za 9,7 g CO₂e/MJ według [rozporządzenia (UE) 2023/1185, załącznik, część B](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185). Łącznie (56,18 + 0,18 + 9,7) g CO₂e/MJ × 37,17 MJ/m³ ≈ 2,46 kg CO₂e/m³. Wcześniejsza wartość 2,0 kg CO₂e/m³ była niższa od emisji samego CO₂ ze spalania (2,09 kg CO₂/m³).",
+      "value": 2.46,
       "cpr_family_ids": [],
       "cpr_related": [],
       "cpr_scope_note": null
@@ -388,9 +456,9 @@
       "href": "/dane/polca-agg-pl-crushed-default-2026.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1-A3",
-      "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość grupowa dla kruszyw łamanych twardych",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "source_name": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7",
       "formats": [
         "JSON"
       ],
@@ -419,7 +487,7 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-CRUSHED-DEFAULT-2026.json",
-      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
       "application_contexts": {
         "constituent": {
           "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -434,7 +502,21 @@
           "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
         }
       },
-      "value": 5.5,
+      "source_trace": [
+        {
+          "name": "ITB-EPD nr 706/2024",
+          "type": "manufacturer_epd",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+          "manufacturer": "Trzuskawica S.A.",
+          "product": "kruszywa bazaltowe, Targowica",
+          "source_valid_until": "2029-11-18",
+          "gwp_total_kg_co2e": 3.99,
+          "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
+        }
+      ],
+      "limitations": "Nie zastępuje danych konkretnej kopalni. Nie rozróżnia dokładnej frakcji, zużycia energii, materiałów wybuchowych, płukania, wilgotności ani transportu A2.",
+      "methodology_note": "Wartość z jedynej znalezionej ważnej polskiej deklaracji dla kruszywa ze skał twardych (bazalt). Deklaracja ITB nr 674/2024 (CEMEX, naturalne kruszywo łamane) podaje 3,28 kg CO₂e/t, lecz nie określa rodzaju skały. Dla granitu, gabra, melafiru i piaskowca nie znaleziono ważnej polskiej deklaracji. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "value": 3.99,
       "cpr_family_ids": [
         24
       ],
@@ -466,9 +548,9 @@
       "href": "/dane/polca-agg-pl-limestone-default-2026.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1-A3",
-      "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość grupowa dla kruszyw wapiennych",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "source_name": "Trzuskawica S.A., ITB-EPD nr 707/2024",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8",
       "formats": [
         "JSON"
       ],
@@ -497,7 +579,7 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-LIMESTONE-DEFAULT-2026.json",
-      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
       "application_contexts": {
         "constituent": {
           "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -512,7 +594,21 @@
           "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
         }
       },
-      "value": 4,
+      "source_trace": [
+        {
+          "name": "ITB-EPD nr 707/2024",
+          "type": "manufacturer_epd",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+          "manufacturer": "Trzuskawica S.A.",
+          "product": "kruszywa wapienne, Sitkówka",
+          "source_valid_until": "2029-11-18",
+          "gwp_total_kg_co2e": 3.27,
+          "url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
+        }
+      ],
+      "limitations": "Wynik dotyczy wapienia z Sitkówki. Przy zastosowaniu do innej kopalni należy sprawdzić technologię przeróbki. Dostawę do odbiorcy rozlicza się oddzielnie.",
+      "methodology_note": "Przyjęto wynik dla kruszywa wapiennego z zakładu w Sitkówce. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "value": 3.27,
       "cpr_family_ids": [
         24
       ],
@@ -544,9 +640,9 @@
       "href": "/dane/polca-agg-pl-dolomite-default-2026.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1-A3",
-      "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość grupowa dla kruszyw dolomitowych",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "source_name": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+      "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11",
       "formats": [
         "JSON"
       ],
@@ -575,7 +671,7 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-DOLOMITE-DEFAULT-2026.json",
-      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
       "application_contexts": {
         "constituent": {
           "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -590,7 +686,21 @@
           "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
         }
       },
-      "value": 4.5,
+      "source_trace": [
+        {
+          "name": "Łukasiewicz-ICiMB nr 03-05/2025",
+          "type": "manufacturer_epd",
+          "role": "Suma wyników A1, A2 i A3 przed zaokrągleniem.",
+          "manufacturer": "Kopalnie Dolomitu S.A. w Sandomierzu",
+          "product": "kruszywo dolomitowe i wapienne, Budy i Janczyce (wynik uśredniony)",
+          "source_valid_until": "2030-05-21",
+          "gwp_total_kg_co2e": 3.9052,
+          "url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
+        }
+      ],
+      "limitations": "Deklaracja podaje wspólny wynik dla dolomitu i wapienia z dwóch kopalń. Wskaźnik dla samego dolomitu wymaga danych dostawcy.",
+      "methodology_note": "Deklaracja podaje wspólny wynik dla kruszywa dolomitowego i wapiennego z kopalń Budy i Janczyce. Suma modułów wynosi 0,375 + 0,0202 + 3,51 = 3,9052 kg CO₂e/t, po zaokrągleniu 3,91 kg CO₂e/t. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "value": 3.91,
       "cpr_family_ids": [
         24
       ],
@@ -622,9 +732,9 @@
       "href": "/dane/polca-agg-pl-natural-default-2026.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1-A3",
-      "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość grupowa dla kruszyw naturalnych",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "source_name": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
+      "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6",
       "formats": [
         "JSON"
       ],
@@ -653,7 +763,7 @@
       "geography": "PL",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-AGG-PL-NATURAL-DEFAULT-2026.json",
-      "production_scope": "Wskaźnik grupowy służy do oszacowania łącznego wyniku A1–A3 kruszywa do bramy zakładu. Obejmuje wydobycie i przygotowanie kruszywa, bez podziału wyniku na poszczególne moduły.",
+      "production_scope": "Wskaźnik służy do oszacowania łącznego wyniku A1–A3 dla 1 t kruszywa. Obejmuje wydobycie i przygotowanie kruszywa do bramy zakładu.",
       "application_contexts": {
         "constituent": {
           "label": "W betonie lub mieszance mineralno-asfaltowej",
@@ -668,7 +778,31 @@
           "description": "Przy bezpośrednim wbudowaniu wskaźnik służy do oszacowania A1–A3 kruszywa. Dostawę na budowę rozlicza się w A4."
         }
       },
-      "value": 3.5,
+      "source_trace": [
+        {
+          "name": "ITB-EPD nr 674/2024",
+          "type": "manufacturer_epd",
+          "role": "Wynik brutto dla żwiru uwzględniony w medianie.",
+          "manufacturer": "CEMEX Polska",
+          "product": "żwir naturalny",
+          "source_valid_until": "2029-09-20",
+          "gwp_total_kg_co2e": 1.03,
+          "url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
+        },
+        {
+          "name": "Łukasiewicz-ICiMB nr 02-04/2024",
+          "type": "manufacturer_epd",
+          "role": "Wynik dla produktu płukanego uwzględniony w medianie po przeliczeniu z kg na tonę.",
+          "manufacturer": "Eurokrusz",
+          "product": "piasek i żwir płukany, Dąbrowa",
+          "source_valid_until": "2029-04-19",
+          "gwp_total_kg_co2e": 6.69,
+          "url": "https://icimb.lukasiewicz.gov.pl/wp-content/uploads/sites/46/2025/12/pdf31.pdf#page=12"
+        }
+      ],
+      "limitations": "Deklaracja CEMEX powołuje EN 15804+A2. Tabela wyników podaje wpływ na klimat brutto, bez rozbicia na składowe. Mediana dwóch deklaracji nie uwzględnia wielkości produkcji zakładów.",
+      "methodology_note": "Mediana dwóch deklaracji o dużym rozrzucie (1,03 i 6,69); wynik zależy od płukania i zużycia energii w zakładzie. Produkty suszone termicznie (np. 29,3 kg CO₂e/t w tej samej deklaracji Eurokrusz) nie są objęte. W deklaracji CEMEX przyjęto wynik oznaczony jako wpływ na klimat brutto. Wynik Eurokrusz 6,69 × 10⁻³ kg CO₂e/kg przeliczono na tonę. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "value": 3.86,
       "cpr_family_ids": [
         24
       ],
@@ -812,9 +946,9 @@
       "href": "/dane/polca-filler-limestone-default-2026.html",
       "unit": "kg CO₂e/t",
       "boundary": "Produkcja wypełniacza do bramy zakładu",
-      "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/danych tła",
-      "source_url": "https://polca.org.pl/metodyka.html",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "source_name": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+      "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10",
       "formats": [
         "JSON"
       ],
@@ -839,7 +973,7 @@
         "produkt"
       ],
       "record_type": "indicator_value",
-      "geography": "PL",
+      "geography": "PL/LT",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-FILLER-LIMESTONE-DEFAULT-2026.json",
       "production_scope": "Pozyskanie surowca i produkcja 1 t mielonego wypełniacza wapiennego do bramy zakładu. Wskaźnik obejmuje mielenie i ewentualne suszenie.",
@@ -851,7 +985,21 @@
           "description": "Produkcję zakupionego wypełniacza uwzględnia się w A1 mieszanki, a przewóz do wytwórni w A2."
         }
       },
-      "value": 30,
+      "source_trace": [
+        {
+          "name": "EPD-IES-0012771 (EPD International)",
+          "type": "manufacturer_epd",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+          "manufacturer": "Naujasis kalcitas",
+          "product": "mączka wapienna, Litwa",
+          "source_valid_until": "2029-02-27",
+          "gwp_total_kg_co2e": 72,
+          "url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
+        }
+      ],
+      "limitations": "Nie rozróżnia technologii mielenia, suszenia, pochodzenia surowca ani transportu.",
+      "methodology_note": "Brak ważnej polskiej deklaracji dla wypełniacza wapiennego; przyjęto jedyną znalezioną deklarację z regionu (Litwa). Wcześniejszy opis rekordu powoływał się na wartość 0,023 kg CO₂e/kg, której ta deklaracja nie zawiera. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
+      "value": 72,
       "cpr_family_ids": [
         24
       ],
@@ -1062,12 +1210,12 @@
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 15% lepiszcza (AC 11 S), co zawyżało wynik. W obliczeniu przyjęto 58 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "binder_content_pct_m_m": 5.8,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 35.5861,
+        "A1": 37.7383,
         "A2": 4.83039,
         "A3": 26.31375,
-        "A1_A3": 66.73024
+        "A1_A3": 68.88244
       },
-      "value": 66.73024,
+      "value": 68.88244,
       "cpr_family_ids": [
         23
       ],
@@ -1157,12 +1305,12 @@
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 8% lepiszcza (AC 16 W), co zawyżało wynik. W obliczeniu przyjęto 46 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "binder_content_pct_m_m": 4.6,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 29.2159,
+        "A1": 31.43506,
         "A2": 4.72923,
         "A3": 25.71125,
-        "A1_A3": 59.65638
+        "A1_A3": 61.87554
       },
-      "value": 59.65638,
+      "value": 61.87554,
       "cpr_family_ids": [
         23
       ],
@@ -1252,12 +1400,12 @@
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 14% lepiszcza (SMA 11 S), co zawyżało wynik. W obliczeniu przyjęto 66 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "binder_content_pct_m_m": 6.6,
       "gwp_modules_kg_co2e_per_t": {
-        "A1": 42.33786,
+        "A1": 44.47998,
         "A2": 4.935765,
         "A3": 26.91625,
-        "A1_A3": 74.189875
+        "A1_A3": 76.331995
       },
-      "value": 74.189875,
+      "value": 76.331995,
       "cpr_family_ids": [
         23
       ],

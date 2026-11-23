@@ -37,7 +37,7 @@
     "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "scope": "A1-A3",
-    "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v4. Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
+    "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa bazaltowego, naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v4. Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
     "limitations": "Nie zastępuje danych konkretnej wytwórni, recepty mieszanki, dostawcy lepiszcza ani zweryfikowanego wskaźnika energii. Wartości domyślne są konserwatywne i służą do wstępnej kwalifikacji (pre-qualify) oraz raportów wewnętrznych; finalna EPD wymaga danych producenta dla składników kluczowych — lepiszcza, kruszyw, paliw, energii i transportu.",
     "preferred_replacement": "Recepta mieszanki i bilans masowy producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
     "publication_status": "published_sector_dataset",
@@ -74,21 +74,9 @@
         "type": "polca_model"
       },
       {
-        "name": "ITB-EPD 706/2024, Trzuskawica S.A.",
-        "url": "https://www.itb.pl/",
-        "role": "zweryfikowany benchmark dla kruszywa bazaltowego łamanego",
-        "type": "verified_epd_benchmark"
-      },
-      {
         "name": "Ecoinvent 3.10",
         "url": "https://ecoinvent.org/",
-        "role": "tło dla kruszyw granitowych i wapiennych, wypełniacza, włókna celulozowego, transportu i dodatków",
-        "type": "methodology_source"
-      },
-      {
-        "name": "Gruber et al. (2023)",
-        "url": "https://doi.org/10.1016/j.jclepro.2023.137000",
-        "role": "wartości GWP dla kruszyw wapiennych i naturalnych",
+        "role": "Historyczne parametry granitu, włókna celulozowego, transportu i dodatków.",
         "type": "methodology_source"
       },
       {
@@ -108,6 +96,30 @@
         "url": "http://web.archive.org/web/20261004121819/https://www.archiwum.gddkia.gov.pl/userfiles/articles/z/zarzadzenia-generalnego-dyrektor_13901/zalacznik%20do%20zarz%2047.pdf",
         "role": "Minimalna zawartość lepiszcza przy gęstości kruszywa 2,650 Mg/m³.",
         "type": "methodology_source"
+      },
+      {
+        "name": "Kruszywo łamane twarde do MMA i betonu",
+        "url": "https://polca.org.pl/dane/polca-agg-pl-crushed-default-2026.html",
+        "role": "Wskaźnik składnika w module A1 mieszanki.",
+        "type": "polca_model"
+      },
+      {
+        "name": "Kruszywo wapienne",
+        "url": "https://polca.org.pl/dane/polca-agg-pl-limestone-default-2026.html",
+        "role": "Wskaźnik składnika w module A1 mieszanki.",
+        "type": "polca_model"
+      },
+      {
+        "name": "Kruszywo naturalne: piasek i żwir",
+        "url": "https://polca.org.pl/dane/polca-agg-pl-natural-default-2026.html",
+        "role": "Wskaźnik składnika w module A1 mieszanki.",
+        "type": "polca_model"
+      },
+      {
+        "name": "Wypełniacz wapienny do MMA",
+        "url": "https://polca.org.pl/dane/polca-filler-limestone-default-2026.html",
+        "role": "Wskaźnik składnika w module A1 mieszanki.",
+        "type": "polca_model"
       }
     ],
     "methodology_url": "https://polca.org.pl/c-pcr/mma.html",
@@ -159,8 +171,7 @@
           "code": "AGG-BASALT",
           "name": "Kruszywo bazaltowe łamane",
           "value_kg_co2e_per_t": 3.99,
-          "source": "ITB-EPD 706/2024, Trzuskawica S.A.",
-          "note": "wartość historyczna bez rekordu w katalogu"
+          "source": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026"
         },
         {
           "code": "AGG-GRANITE",
@@ -172,13 +183,13 @@
         {
           "code": "AGG-LIMESTONE",
           "name": "Kruszywo wapienne łamane",
-          "value_kg_co2e_per_t": 4,
+          "value_kg_co2e_per_t": 3.27,
           "source": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026"
         },
         {
           "code": "AGG-NATURAL",
           "name": "Kruszywo naturalne (piasek, żwir)",
-          "value_kg_co2e_per_t": 3.5,
+          "value_kg_co2e_per_t": 3.86,
           "source": "POLCA-AGG-PL-NATURAL-DEFAULT-2026"
         },
         {
@@ -191,7 +202,7 @@
         {
           "code": "FILLER-LIMESTONE",
           "name": "Wypełniacz wapienny",
-          "value_kg_co2e_per_t": 30,
+          "value_kg_co2e_per_t": 72,
           "source": "POLCA-FILLER-LIMESTONE-DEFAULT-2026"
         },
         {
@@ -310,7 +321,7 @@
         "actual_production_mt_per_year": "20-25 mln ton/rok",
         "source": "Ammann (2022), PSAW"
       },
-      "key_finding": "W recepturze AC 16 W zawierającej 46 kg lepiszcza na tonę wkład asfaltu drogowego wynosi 24,38 kg CO₂e/t, czyli 83,4% wyniku A1."
+      "key_finding": "W recepturze AC 16 W zawierającej 46 kg lepiszcza na tonę wkład asfaltu drogowego wynosi 24,38 kg CO₂e/t, czyli 77,6% wyniku A1."
     },
     "data_quality_rating": {
       "system": "EN 15804+A2 / EF 3.1 pedigree matrix",
