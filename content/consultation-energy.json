@@ -2,7 +2,7 @@
   "title": "Konsultacje techniczne: model energii Polska 2025",
   "lead": "Poznaj źródła i sposób obliczeń. Wskaż dane lub założenia, które warto poprawić w modelu energii dla Polski.",
   "home_title": "Jak zgłosić uwagę do modelu energii Polska 2025?",
-  "home_description": "Dokumentację modelu, {indicator_count} wskaźników i {variant_count} wariantów alokacji udostępniamy do konsultacji technicznych.",
+  "home_description": "Dokumentację projektu z 20.10.2026, {indicator_count} wskaźników i {variant_count} wariantów alokacji udostępniamy do konsultacji technicznych.",
   "intro": "Projekt z 20 października 2026 r. opisuje wpływ 1 kWh energii elektrycznej dostarczonej odbiorcy w Polsce. Udostępniamy obliczenia, źródła i pytania do oceny. Twoja uwaga może wskazać lepsze dane, błąd lub potrzebny wariant modelu.",
   "steps": [
     {
@@ -161,7 +161,7 @@
       "title": "Status kontroli i przeglądu",
       "paragraphs": [
         "Zakończono wewnętrzną kontrolę obliczeń i metody z użyciem dwóch modeli sztucznej inteligencji. Sprawdzono 37 wskaźników, 17 wariantów alokacji, sumy składników klimatycznych oraz zachowanie dotychczasowych plików wersji v4.",
-        "Ta nota jest własnym opisem metody, nie raportem niezależnego krytycznego przeglądu. Projekt nie przeszedł przeglądu eksperta, nie został formalnie przyjęty przez operatora programu. Publiczna wersja v4 pozostaje odrębnym wydaniem w kalkulatorze i katalogu danych."
+        "Ta nota jest własnym opisem metody, nie raportem niezależnego krytycznego przeglądu. Projekt nie przeszedł przeglądu eksperta, nie został formalnie przyjęty przez operatora programu. W kalkulatorze i katalogu danych dostępny jest model v5 z 23.11.2026."
       ],
       "links": [
         {

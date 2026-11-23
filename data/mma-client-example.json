@@ -2,7 +2,7 @@
   "meta": {
     "id": "POLCA-MMA-CLIENT-EXAMPLE-AC16W-20RAP-2026",
     "name": "Przykładowy profil danych klienta dla MMA AC 16 W HMA z 20% RAP",
-    "version": "2026.4",
+    "version": "2026.5",
     "status": "example_profile",
     "published_at": "2026-05-04",
     "declared_unit": "1 Mg mieszanki mineralno-asfaltowej",
@@ -113,12 +113,13 @@
       "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
     },
     {
-      "dataset_code": "POLCA-EN-PL-LCA-2024",
+      "dataset_code": "PL2025_PHYSICAL_DELIVERED_v5",
       "name": "Energia elektryczna, Polska",
-      "value": 0.599,
+      "value": 0.6700305358587492,
       "unit": "kg CO2e/kWh",
-      "module": "A3",
-      "replacement": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej"
+      "module": "A3/C3",
+      "replacement": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej",
+      "source_url": "/data/energia-pl-2025-v5/METODA-I-ZMIANY.txt"
     },
     {
       "dataset_code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
@@ -143,46 +144,46 @@
   "module_results_kg_co2e_per_mg": {
     "A1": 31.073,
     "A2": 4.37,
-    "A3": 19.013,
-    "A1-A3": 54.456,
+    "A3": 19.524,
+    "A1-A3": 54.967,
     "A4": 2.108,
-    "A5": 1.709,
+    "A5": 1.712,
     "C1": 0.93,
     "C2": 2.529,
-    "C3": 1.277,
+    "C3": 1.362,
     "C4": 0.1,
-    "C1-C4": 4.836,
+    "C1-C4": 4.921,
     "D": -6.4,
-    "A-C_without_D": 63.108,
-    "net_with_D": 56.708
+    "A-C_without_D": 63.708,
+    "net_with_D": 57.308
   },
   "en15804_a2_indicators": {
     "GWP-total": {
       "unit": "kg CO2e",
-      "A1-A3": 54.456,
-      "A4-A5": 3.817,
-      "C1-C4": 4.836,
+      "A1-A3": 54.967,
+      "A4-A5": 3.819,
+      "C1-C4": 4.921,
       "D": -6.4
     },
     "GWP-fossil": {
       "unit": "kg CO2e",
-      "A1-A3": 51.588,
-      "A4-A5": 3.75,
-      "C1-C4": 4.684,
+      "A1-A3": 52.059,
+      "A4-A5": 3.752,
+      "C1-C4": 4.764,
       "D": -6.144
     },
     "GWP-biogenic": {
       "unit": "kg CO2e",
-      "A1-A3": 1.594,
+      "A1-A3": 1.62,
       "A4-A5": 0.019,
-      "C1-C4": 0.059,
+      "C1-C4": 0.061,
       "D": -0.128
     },
     "GWP-luluc": {
       "unit": "kg CO2e",
-      "A1-A3": 1.274,
+      "A1-A3": 1.289,
       "A4-A5": 0.048,
-      "C1-C4": 0.093,
+      "C1-C4": 0.096,
       "D": -0.128
     },
     "ODP": {
@@ -284,5 +285,5 @@
       "D": 0
     }
   },
-  "data_quality_note": "W wersji 2026.4 z 23.11.2026 przeliczono kruszywo, wypełniacz i paliwa według zaktualizowanych rekordów. Dla asfaltu drogowego przyjęto wskaźnik z raportu Eurobitume (2025, s. 8). Przeliczono całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
+  "data_quality_note": "W wersji 2026.5 zastosowano pełną wartość GWP-total dla energii Polska 2025 v5. Przeliczono moduły A3 i C3, stratę materiału w A5 oraz sumy i udziały składowych. W wersji 2026.4 z 23.11.2026 przeliczono kruszywo, wypełniacz i paliwa według zaktualizowanych rekordów. Dla asfaltu drogowego przyjęto wskaźnik z raportu Eurobitume (2025, s. 8). Przeliczono całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
 }

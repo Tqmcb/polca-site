@@ -102,7 +102,7 @@
     <div class="portal-tool-meta">
         <span class="doc-pill">1 t produktu</span>
         <span class="doc-pill">kruszywa budowlane</span>
-        <span class="doc-pill">energia 2025 · GWP-total 0,6445 kg CO₂e/kWh</span>
+        <span class="doc-pill">energia 2025 · GWP-total 0,6700 kg CO₂e/kWh</span>
         <span class="doc-pill warn">oszacowanie orientacyjne</span>
     </div>
 
@@ -183,7 +183,7 @@
                         <label class="calc-label" for="aggEnergy" style="margin-bottom:0;">Energia el. kruszenia / przesiewania [kWh/t]</label>
                         <input type="number" required aria-describedby="aggInputWarn" id="aggEnergy" class="agg-input-sm" value="6" min="0" max="15" step="0.1">
                     </div>
-                    <p class="calc-note">Domyślnie: twarde 6, wapień 3, naturalne 1, wariant RC 4 kWh/t (parametr używany tylko przy udziale RC poniżej 100%). W modelu <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a> całkowity wpływ na klimat (GWP-total) wynosi 0,6445 kg CO₂e/kWh w zaokrągleniu do czterech miejsc po przecinku.</p>
+                    <p class="calc-note">Domyślnie: twarde 6, wapień 3, naturalne 1, wariant RC 4 kWh/t (parametr używany tylko przy udziale RC poniżej 100%). W modelu <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a> całkowity wpływ na klimat (GWP-total) wynosi 0,6700 kg CO₂e/kWh w zaokrągleniu do czterech miejsc po przecinku.</p>
                 </div>
                 <div class="agg-field">
                     <div class="agg-comp-grid">
@@ -234,7 +234,7 @@
 
         <p class="calc-note" id="aggRcScope" aria-live="polite"></p>
         <div class="agg-warn ok" id="aggInputWarn" role="alert">Parametry w dopuszczalnych zakresach.</div>
-        <p class="calc-note" style="margin-top:.6rem;">W modelu przyjęto następujące wskaźniki emisji na jednostkę zużycia lub przewozu. Energia elektryczna 0,6445 kg CO₂e/kWh (GWP-total), olej napędowy 3,72 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). Zakresy tych założeń są opisane poniżej.</p>
+        <p class="calc-note" style="margin-top:.6rem;">W modelu przyjęto następujące wskaźniki emisji na jednostkę zużycia lub przewozu. Energia elektryczna 0,6700 kg CO₂e/kWh (GWP-total), olej napędowy 3,72 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). Zakresy tych założeń są opisane poniżej.</p>
     </div>
 
     <!-- ============================================================
@@ -319,8 +319,8 @@
     <div id="metodyka" class="card card-lg section-gap fade-in">
         <div class="section-num">Założenia i zakres</div>
         <div class="card-title">Co liczy ten kalkulator</div>
-        <div class="prose"><p>Tryb uproszczony zwraca wskaźnik dla wybranego materiału. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,6445 + olej napędowy × 3,72 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,0843. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
-            <p>Współczynnik energii obejmuje całkowity wpływ na klimat (GWP-total) według modelu <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a>. Opcja płukania dodaje 0,5 kWh/t frakcji pierwotnej.</p>
+        <div class="prose"><p>Tryb uproszczony zwraca wskaźnik dla wybranego materiału. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,6700 + olej napędowy × 3,72 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,0843. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
+            <p>Współczynnik energii obejmuje całkowity wpływ na klimat (GWP-total) według modelu <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>. Opcja płukania dodaje 0,5 kWh/t frakcji pierwotnej.</p>
             <p>Frakcja recyklingowa (RC) ma stałą wartość 2,50 kg CO₂e/t. Wynik = baza × (1 − udział RC) + 2,50 × udział RC. Przy RC = 100% wynik wynosi 2,50, a pola dotyczące procesu frakcji pierwotnej są wyłączone. Przy niższym udziale RC znów wpływają na wynik. Wykres, tabela i eksport pokazują wkłady po uwzględnieniu udziałów.</p>
             <p>Transport do budowy (A4) jest liczony oddzielnie: odległość × współczynnik transportu. Oba tryby przyjmują wskaźnik poLCA dla zestawu ciężarowego 40 t: 0,0843 kg CO₂e/(t·km).</p>
             <p>Wynik jest orientacyjną sumą współczynników o różnych założeniach, wyrażoną w kg CO₂e/t. Oznaczenia A1–A3 opisują przyjęte etapy produkcji. Pełna deklaracja środowiskowa produktu wymaga ustalenia metody oceny, źródeł, granic systemu i wskaźników zgodnie z zasadami wybranego programu.</p>
@@ -365,6 +365,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-kruszywa.js?v=20261123h"></script>
+<script src="js/kalkulator-kruszywa.js?v=20261123-energia5"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

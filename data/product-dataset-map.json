@@ -164,8 +164,8 @@
       "replacement_rule": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia zastępują wartość poLCA."
     },
     {
-      "code": "PL2025_PHYSICAL_DELIVERED_v4",
-      "name": "Energia Polska 2025 v4 (GWP-total)",
+      "code": "PL2025_PHYSICAL_DELIVERED_v5",
+      "name": "Energia Polska 2025 v5 (GWP-total)",
       "used_by": [
         "mma",
         "aggregate_product"

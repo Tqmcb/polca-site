@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location('build_catalog', ROOT / 'scripts/build-catalog.py')
 BUILDER = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(BUILDER)
-ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v4'
+ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v5'
 ENERGY_HASHES = {
     'Polska-energia-2025-v3-do-recenzji.zip': 'df4adf267fa0e8266aacaa279f5b7becbe6744ef5941f263a82335c31f4e3558',
     'przyklad-10-kWh.json': '368986391b5909145a7a93042dfe50f1d7d73227d62e6ef85e29536c586b99d9',
@@ -34,6 +34,19 @@ ENERGY_HASHES = {
 
 def read(path):
     return json.loads((ROOT / path).read_text(encoding='utf-8'), parse_float=Decimal)
+
+
+V4_HASHES = {
+    "METODA-I-ZMIANY.txt": "8a73265c23628b1b2a25c710a5dad3ac8baa5ab7bf2b23dd60e7162c9c19f5a8",
+    "Polska-energia-2025-v4.zip": "106efe9a6c3a505323a066f46ddac462cfcebc5edce87096d3ccb7c95b680d7a",
+    "START.txt": "4e43eb4723370bb9bd987c3882712e6d8eae9fdc5f3d1def5acd8940aab803ac",
+    "WARUNKI-WYKORZYSTANIA.txt": "05a381ae77f48929a650427c08c88b5dfce83ec90adc2b90971d9ddf8cf15e5e",
+    "kontrola-eksportu.json": "e74b0ec47744d2838037d8534aa044d27038e4f5d8407ddea24c547257ed76fd",
+    "manifest.json": "bf1326887a09b5e2b925b435e6b044ba64a5b410b8b54d3985f360033b03ccf9",
+    "profil-37.json": "1824b471d3a25543d9ea3a6140ceb23fefffe6573e4a35ffb5d03a2f212a21f1",
+    "przyklad-10-kWh.json": "445bf6bb09a73f6aae44ac69835c876ec0029e0d1a982deed123f8dcf357e1cb",
+    "wskazniki-37.csv": "e732763f1030c45df0d13ea5b47581e71c80bef947f4e84874c01e9fc4531453"
+}
 
 
 class IDs(HTMLParser):
@@ -63,11 +76,11 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(expected, (ROOT / 'data/portal-catalog.json').read_text(encoding='utf-8'))
 
     def test_positions_not_files_or_indicators(self):
-        self.assertEqual(len(self.datasets), 43)
-        self.assertEqual(set(self.datasets), set(self.legacy) | {ENERGY_ID})
+        self.assertEqual(len(self.datasets), 44)
+        self.assertEqual(set(self.datasets), set(self.legacy) | {ENERGY_ID, 'PL2025_PHYSICAL_DELIVERED_v4'})
         self.assertEqual(self.catalog['counts']['data_positions'], len(self.catalog['datasets']))
         self.assertEqual(self.catalog['counts']['data_positions'], 32)
-        self.assertEqual(self.catalog['counts']['withdrawn_positions'], 11)
+        self.assertEqual(self.catalog['counts']['withdrawn_positions'], 12)
         self.assertEqual(self.catalog['counts']['parameter_sets'], 1)
         self.assertEqual(self.catalog['counts']['control_references'], 8)
         self.assertNotIn('POLCA-MMA-MIXES-2026', self.datasets)
@@ -102,7 +115,7 @@ class CatalogTests(unittest.TestCase):
 
     def test_primary_download_preserves_indicator_and_source(self):
         for item in self.datasets.values():
-            if item['id'] == ENERGY_ID:
+            if item['record_type'] == 'indicator_profile':
                 continue
             with self.subTest(id=item['id']):
                 exported = read(item['downloads'][0]['href'].lstrip('/'))['record']
@@ -121,21 +134,21 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(fossil['value'], Decimal('0.599'))
         self.assertIn('kopalny', fossil['indicator_label'])
         self.assertEqual(fossil['status_id'], 'earlier_model')
-        self.assertEqual(current['value'], Decimal('0.6445397488349277'))
+        self.assertEqual(current['value'], Decimal('0.6700305358587492'))
         self.assertEqual(current['indicator_count'], 37)
         self.assertEqual(current['status_id'], 'review')
         self.assertFalse(current['is_default'])
-        profile = read('data/energia-pl-2025-v4/profil-37.json')
+        profile = read('data/energia-pl-2025-v5/profil-37.json')
         total = next(x for x in profile['indicators'] if x['code'] == 'GWP-total')
         self.assertEqual(current['value'], total['value_per_kWh'])
         self.assertEqual(current['reference_unit'], profile['functional_unit']['unit'])
         self.assertEqual(current['year'], profile['reference_year'])
 
     def test_current_profile_keeps_technical_and_formal_status_separate(self):
-        profile = read('data/energia-pl-2025-v4/profil-37.json')
+        profile = read('data/energia-pl-2025-v5/profil-37.json')
         self.assertEqual(profile['model_id'], ENERGY_ID)
         self.assertEqual(profile['variant'], 'selected')
-        self.assertEqual(profile['package_version'], '2026-10-19.1')
+        self.assertEqual(profile['package_version'], '2026-11-23.1')
         self.assertEqual(self.catalog['catalog_version'], read('data/portal-editorial.json')['catalog_version'])
         status = profile['status']
         self.assertEqual(status['state'], 'technical_review_complete')
@@ -146,22 +159,46 @@ class CatalogTests(unittest.TestCase):
                       'internal_checks_are_external_expert_review'):
             self.assertFalse(status[field], field)
         self.assertEqual(status['external_expert_review'], 'NOT_PERFORMED')
+        start = (ROOT / 'data/energia-pl-2025-v5/START.txt').read_text()
+        status_text = start.split('\nSTATUS\n', 1)[1].split('\n\n', 1)[0]
+        self.assertIn('Nie przeprowadzono niezależnej recenzji eksperckiej ani formalnej oceny zbioru w programie deklaracji.', status_text)
         current = self.datasets[ENERGY_ID]
-        self.assertEqual(current['href'], '/energia-polska-2025-v4.html')
-        self.assertEqual(current['source_record_href'], '/data/energia-pl-2025-v4/profil-37.json')
-        self.assertTrue(all(x['href'].startswith('/data/energia-pl-2025-v4/')
+        self.assertEqual(current['href'], '/energia-polska-2025-v5.html')
+        self.assertEqual(current['source_record_href'], '/data/energia-pl-2025-v5/profil-37.json')
+        self.assertTrue(all(x['href'].startswith('/data/energia-pl-2025-v5/')
                             for x in current['downloads']))
         self.assertEqual(len(profile['indicators']), 37)
         self.assertEqual(len({x['code'] for x in profile['indicators']}), 37)
         self.assertEqual(profile['quality_assessment']['assessed_data_units'], 60)
         self.assertEqual(profile['quality_assessment']['source_processes'], 49)
 
-    def test_archived_v3_publication_bytes_unchanged(self):
-        folder = ROOT / 'data/energia-pl-2025-v3'
-        self.assertEqual(set(x.name for x in folder.iterdir() if x.is_file()), set(ENERGY_HASHES))
-        for name, expected in ENERGY_HASHES.items():
-            with self.subTest(file=name):
-                self.assertEqual(hashlib.sha256((folder / name).read_bytes()).hexdigest(), expected)
+    def test_archived_publication_bytes_unchanged(self):
+        for version, pins in [('v3', ENERGY_HASHES), ('v4', V4_HASHES)]:
+            folder = ROOT / f'data/energia-pl-2025-{version}'
+            self.assertEqual({x.name for x in folder.iterdir()}, set(pins))
+            for name, expected in pins.items():
+                with self.subTest(version=version, file=name):
+                    self.assertEqual(hashlib.sha256((folder / name).read_bytes()).hexdigest(), expected)
+
+    def test_archived_energy_catalog_record(self):
+        old = self.datasets['PL2025_PHYSICAL_DELIVERED_v4']
+        for record in (old, self.datasets[ENERGY_ID]):
+            self.assertEqual(read(f"data/portal-records/{record['id']}.json")['record'], record)
+        self.assertEqual(old['status_id'], 'archive')
+        self.assertEqual(old['superseded_by'], ENERGY_ID)
+        self.assertEqual(old['value'], Decimal('0.6445397488349277'))
+        self.assertIn(old, self.catalog['withdrawn_datasets'])
+        self.assertNotIn(old, self.catalog['datasets'])
+        self.assertEqual(old['href'], '/energia-polska-2025-v4.html')
+
+    def test_v5_matches_frozen_selected_model_and_units(self):
+        # Digest of code, exact Decimal value and unit from the model's profiles-37.json.
+        profile = read('data/energia-pl-2025-v5/profil-37.json')
+        rows = [f"{r['code']}|{r['value_per_kWh']}|{r['impact_unit']}/{r['denominator_unit']}"
+                for r in profile['indicators']]
+        self.assertEqual(len(rows), 37)
+        self.assertEqual(hashlib.sha256('\n'.join(rows).encode()).hexdigest(),
+                         '4ff01a8407726cc1e88b0be3e54d31d9382b336f1d5b5ba9a44c31a77de5b05b')
 
     def test_required_metadata_and_no_inherited_approval(self):
         fields = {'id', 'title', 'kind', 'category_id', 'category_label', 'year', 'year_type',

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA MMA kluczowe źródło wpływu database",
-    "version": "2026.5",
+    "version": "2026.6",
     "status": "startowy zakres publiczny",
     "principle": "Publiczna baza pokazuje wynikowe wartości poLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
   },
@@ -127,12 +127,12 @@
       "use_rule": "Zużycie energii i paliw powinno pochodzić z faktur, liczników albo alokacji rocznej na produkcję. Wartości poLCA są wskaźnikami do przeliczenia aktywności.",
       "values": [
         {
-          "name": "Energia elektryczna Polska 2025 v4",
-          "value": "0,6445 kg CO2e/kWh",
+          "name": "Energia elektryczna Polska 2025 v5",
+          "value": "0,6700 kg CO2e/kWh",
           "status": "model POLCA-EN-PL",
-          "basis": "Energia Polska 2025 v4, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
-          "dataset_code": "PL2025_PHYSICAL_DELIVERED_v4",
-          "source_url": "https://polca.org.pl/energia-polska-2025-v4.html"
+          "basis": "Energia Polska 2025 v5, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
+          "dataset_code": "PL2025_PHYSICAL_DELIVERED_v5",
+          "source_url": "https://polca.org.pl/energia-polska-2025-v5.html"
         },
         {
           "name": "Gaz ziemny",
@@ -173,7 +173,7 @@
         },
         {
           "name": "AC 11 S",
-          "value": "68,88244 kg CO2e/t",
+          "value": "68,94619 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 5,8% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-AC11S-2026",
@@ -181,7 +181,7 @@
         },
         {
           "name": "AC 16 W",
-          "value": "61,87554 kg CO2e/t",
+          "value": "61,93929 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 4,6% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-AC16W-2026",
@@ -189,7 +189,7 @@
         },
         {
           "name": "SMA 11 S",
-          "value": "76,331995 kg CO2e/t",
+          "value": "76,395745 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 6,6% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-SMA11S-2026",

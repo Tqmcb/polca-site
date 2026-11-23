@@ -5,7 +5,7 @@ CONCRETE_STANDARD = 'https://preview.sist.si/sist-preview/70993/968303feeecb4c8d
 PRODUCT_STANDARD = 'https://sklep.pkn.pl/normy/pn-en-15804-a2-2020-03p.html'
 SITKOWKA_EPD = 'https://www.itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8'
 TRUCK = 'POLCA-TRUCK-40T-DEFAULT-2026'
-ELECTRICITY = 'PL2025_PHYSICAL_DELIVERED_v4'
+ELECTRICITY = 'PL2025_PHYSICAL_DELIVERED_v5'
 DIESEL = 'POLCA-FUEL-DIESEL-DEFAULT-2026'
 GAS = 'POLCA-FUEL-NATURAL-GAS-DEFAULT-2026'
 ASPHALT_SPEC = 'https://knowledge.bsigroup.com/products/road-materials-environmental-product-declarations-product-category-rules-complementary-to-en-15804-for-bituminous-mixtures'

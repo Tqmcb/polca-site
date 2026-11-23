@@ -8,7 +8,7 @@
       <h2 id="reference-heading">Wpływ 1 kWh na klimat</h2>
       <p class="energy-reference-number"><strong>{reference}</strong><span>kg równoważnika CO₂/kWh</span></p>
       <p class="energy-scope">Średnia dla odbiorców w Polsce. Uwzględnia krajową strukturę napięć i straty sieciowe.</p>
-      <p class="energy-status"><a href="/energia-polska-2025-v4.html">Model poLCA v4</a> po kontroli wewnętrznej, przed recenzją zewnętrzną.</p>
+      <p class="energy-status"><a href="/energia-polska-2025-v5.html">Model poLCA v5</a> po kontroli wewnętrznej, bez recenzji zewnętrznej.</p>
     </section>
 
     <section id="przelicz" class="energy-calculator" aria-labelledby="calculator-heading">
@@ -71,16 +71,16 @@
     <p>Kalkulator mnoży zużycie energii w kWh przez niezaokrągloną wartość wskaźnika na 1 kWh. Jednostkę wyniku podano w ostatniej kolumnie. <a href="/podstawy-normatywne.html#mapa-normatywna">Wskaźniki i moduły cyklu życia według EN 15804+A2</a></p>
     <div class="portal-actions"><button type="button" data-energy-download="csv" disabled>Pobierz tabelę (CSV)</button><button type="button" data-energy-download="json" disabled>Pobierz dane (JSON)</button></div>
     <p class="portal-scroll-hint">Na małym ekranie przewiń tabelę w poziomie, aby zobaczyć wynik i jednostkę.</p>
-    <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Wyniki 37 wskaźników, tabela przewijana"><table><caption>Wkład energii — Polska 2025 v4</caption>
+    <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Wyniki 37 wskaźników, tabela przewijana"><table><caption>Wkład energii — Polska 2025 v5</caption>
       <thead><tr><th scope="col">Kod</th><th scope="col">Wskaźnik</th><th scope="col">Wartość na 1 kWh</th><th scope="col">Wynik</th><th scope="col">Jednostka wyniku</th></tr></thead><tbody>{rows}</tbody>
     </table></div>
   </section>
 
   <section class="energy-sources">
     <h2>Źródła i warunki wykorzystania</h2>
-    <p>Wersja v4 z 19 października 2026 r. Źródło zmodyfikowanych danych tła: <span lang="en">{source}</span> (baza inwentarza cyklu życia szwajcarskiej administracji federalnej).</p>
-    <p><a href="/data/energia-pl-2025-v4/Polska-energia-2025-v4.zip">Pobierz pakiet źródłowy v4</a> · <a href="/data/energia-pl-2025-v4/przyklad-10-kWh.json">Przykład dla 10 kWh</a> · <a href="/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt">Warunki wykorzystania</a></p>
+    <p>Wersja v5 z 23 listopada 2026 r. Źródło zmodyfikowanych danych tła: <span lang="en">{source}</span> (baza inwentarza cyklu życia szwajcarskiej administracji federalnej).</p>
+    <p><a href="/data/energia-pl-2025-v5/Polska-energia-2025-v5.zip">Pobierz pakiet źródłowy v5</a> · <a href="/data/energia-pl-2025-v5/przyklad-10-kWh.json">Przykład dla 10 kWh</a> · <a href="/data/energia-pl-2025-v5/WARUNKI-WYKORZYSTANIA.txt">Warunki wykorzystania</a></p>
   </section>
 </div>
 <script id="energy-profile-data" type="application/json">{profile_json}</script>
-<script src="/js/energy-profile.js?v=20261122-panel" defer></script>
+<script src="/js/energy-profile.js?v=20261123-energia5" defer></script>

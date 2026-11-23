@@ -135,7 +135,7 @@ class PrecastTests(unittest.TestCase):
         production = activity['production_a3']
         scenario = activity['scenario_a5_c_d']
         diesel = self.records['POLCA-FUEL-DIESEL-DEFAULT-2026']['value']
-        electricity = self.records['POLCA-EN-PL-LCA-2024']['value']
+        electricity = self.records['PL2025_PHYSICAL_DELIVERED_v5']['value']
         a3 = (production['natural_gas_m3_per_mg'] * self.records['POLCA-FUEL-NATURAL-GAS-DEFAULT-2026']['value']
               + production['electricity_kwh_per_mg'] * electricity + production['diesel_l_per_mg'] * diesel)
         a1_a3 = a1 + tkm * factor + a3

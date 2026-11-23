@@ -4,7 +4,7 @@ Statyczny katalog danych środowiskowych, instrukcji i kalkulatorów dla Polski.
 
 Treści przewodników: `content/portal-pages.json`. Opisy katalogu: `data/portal-editorial.json`. Skrypt katalogu łączy je ze źródłowymi rekordami; nie przelicza modeli. Kanoniczny eksport katalogu to `data/portal-catalog.json`, a pojedynczych pozycji — `data/portal-records/`.
 
-Pole `datasets` eksportu zawiera pozycje dostępne w katalogu i wyszukiwarce. Rekordy wycofane trafiają do `withdrawn_datasets`. Ich karty zachowują dotychczasowe adresy, a pole `superseded_by` wskazuje aktualny rekord.
+Pole `datasets` eksportu zawiera pozycje dostępne w katalogu i wyszukiwarce. Rekordy wycofane oraz zastąpione wydania modelu energii trafiają do `withdrawn_datasets`. Wydanie archiwalne energii ma status `archive`. Ich karty zachowują dotychczasowe adresy, a pole `superseded_by` wskazuje aktualny rekord.
 
 ## Budowanie i sprawdzanie
 
@@ -35,7 +35,7 @@ Warunki wykorzystania danych podano przy zbiorach. Licencja fontu Source Sans 3 
 Strony konsultacji generuje `scripts/consultation_portal.py` z treści w
 `content/consultation-energy.json` i pakietu
 `data/konsultacje/energia-2025-20261020/`. Projekt konsultacyjny jest oddzielony od
-modelu v4 używanego w kalkulatorze. Nie zastępuje go podczas zwykłej przebudowy.
+modelu v5 używanego w kalkulatorze. Nie zastępuje go podczas zwykłej przebudowy.
 
 Projekt raportu LCA (oceny cyklu życia) na
 `konsultacje/energia-polska-2025-raport-lca.html` generuje

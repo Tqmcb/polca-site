@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.10",
+    "version": "2026.11",
     "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,29 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "przeglad_metody",
+      "status": "zakonczony",
+      "dotyczy": "PL2025_PHYSICAL_DELIVERED_v5, wydanie 2026-11-23.1",
+      "tytul": "Energia elektryczna Polska 2025 — wydanie v5",
+      "zastapione_wydania": [
+        {
+          "wersja": "2026.5",
+          "status": "superseded",
+          "plik": "/data/archiwum/2026.5/mma-hotspots.json"
+        },
+        {
+          "wersja": "2026.8-prefabrykaty",
+          "status": "superseded",
+          "plik": "/data/archiwum/2026.8-prefabrykaty/datasets.json"
+        }
+      ],
+      "opis": "W modelu v5 dla węgla kamiennego i brunatnego zastosowano wspólną regułę alokacji E/(E+q·Q). Współczynnik jakości ciepła q = 0,20 oszacowano dla Polski. Całkowity potencjał globalnego ocieplenia wzrósł z 0,644540 do 0,670031 kg CO₂ równ./kWh (+3,955%). Wersje v4 i v3 są dostępne w archiwum. W tabeli POLCA-GWP-2026.6 zaktualizowano współczynnik energii i trzy wyniki dla mieszanek mineralno-asfaltowych. Poprzednie wydanie tabeli POLCA-GWP-2026.5 można pobrać z archiwum. Przeliczone wyniki mieszanek opublikowano w zestawieniu głównych źródeł wpływu mieszanek mineralno-asfaltowych w wersji 2026.6 i w katalogu źródłowym w wersji 2026.9-energia-v5.",
+      "podstawa": "Bilanse Eurostatu za 2024 r., dane Urzędu Regulacji Energetyki i tabele regulacyjne sieci ciepłowniczych w Łodzi i Krakowie. Opis metody i analizy wrażliwości podano na karcie v5.",
+      "link": "/energia-polska-2025-v5.html",
+      "skutek_dla_deklaracji": "Przydatność profilu ocenia się dla określonego zastosowania według zasad właściwego programu."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "aktualizacja_danych",

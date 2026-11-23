@@ -9,8 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / 'data/portal-catalog.json'
 EDITORIAL = ROOT / 'data/portal-editorial.json'
-ENERGY_FILE = 'data/energia-pl-2025-v4/profil-37.json'
-ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v4'
+ENERGY_ID = 'PL2025_PHYSICAL_DELIVERED_v5'
 
 
 def read_json(path: str | Path):
@@ -103,9 +102,15 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
     return result
 
 
-def build_energy_record(editorial: dict) -> dict:
-    profile = read_json(ENERGY_FILE)
-    if profile['model_id'] != ENERGY_ID:
+def build_energy_record(editorial: dict, version: str = 'v5') -> dict:
+    directory = f'data/energia-pl-2025-{version}'
+    source_file = f'{directory}/profil-37.json'
+    model_id = f'PL2025_PHYSICAL_DELIVERED_{version}'
+    card = f'/energia-polska-2025-{version}.html'
+    current = model_id == ENERGY_ID
+    status = 'review' if current else 'archive'
+    profile = read_json(source_file)
+    if profile['model_id'] != model_id:
         raise ValueError('Unexpected 2025 energy model')
     if profile['status']['state'] != 'technical_review_complete' or profile['is_default']:
         raise ValueError('2025 energy publication status needs a manual catalog review')
@@ -113,33 +118,34 @@ def build_energy_record(editorial: dict) -> dict:
     total = next(item for item in indicators if item['code'] == 'GWP-total')
     note = editorial['energy_2025']
     files = [
-        download('Cały pakiet ZIP', 'data/energia-pl-2025-v4/Polska-energia-2025-v4.zip'),
-        download('37 wskaźników — JSON', ENERGY_FILE),
-        download('37 wskaźników — CSV', 'data/energia-pl-2025-v4/wskazniki-37.csv'),
-        download('Opis pakietu', 'data/energia-pl-2025-v4/START.txt'),
-        download('Metoda i zmiany', 'data/energia-pl-2025-v4/METODA-I-ZMIANY.txt'),
-        download('Warunki wykorzystania', 'data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt'),
-        download('Przykład dla 10 kWh', 'data/energia-pl-2025-v4/przyklad-10-kWh.json'),
-        download('Kontrola eksportu', 'data/energia-pl-2025-v4/kontrola-eksportu.json'),
-        download('Spis plików i sum kontrolnych', 'data/energia-pl-2025-v4/manifest.json'),
+        download('Cały pakiet ZIP', f'{directory}/Polska-energia-2025-{version}.zip'),
+        download('37 wskaźników — JSON', source_file),
+        download('37 wskaźników — CSV', f'{directory}/wskazniki-37.csv'),
+        download('Opis pakietu', f'{directory}/START.txt'),
+        download('Metoda i zmiany', f'{directory}/METODA-I-ZMIANY.txt'),
+        download('Warunki wykorzystania', f'{directory}/WARUNKI-WYKORZYSTANIA.txt'),
+        download('Przykład dla 10 kWh', f'{directory}/przyklad-10-kWh.json'),
+        download('Kontrola eksportu', f'{directory}/kontrola-eksportu.json'),
+        download('Spis plików i sum kontrolnych', f'{directory}/manifest.json'),
     ]
     return base_record(
-        id=ENERGY_ID, title=note['title'], kind='dataset',
+        id=model_id, title=note['title'] if current else f'Energia elektryczna — Polska 2025, {version}', kind='dataset',
         category_id='energia', category_label=editorial['categories']['energia'],
         year=profile['reference_year'], year_type='reference',
-        status_id='review', status_label=editorial['statuses']['review'],
-        description=note['description'], href='/energia-polska-2025-v4.html',
+        status_id=status, status_label=editorial['statuses'][status],
+        description=note['description'], href=card,
         downloads=files, record_type='indicator_profile',
         unit='kg CO₂e/kWh', reference_unit=profile['functional_unit']['unit'],
         boundary=note['boundary'], indicator_label='GWP-total — wpływ na klimat',
         value=total['value_per_kWh'], indicator_count=len(indicators),
-        source_name='poLCA — model Polska 2025 v4',
-        source_url='/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt',
-        source_record_href='/' + ENERGY_FILE,
-        methodology_href='/energia-polska-2025-v4.html#metoda',
+        source_name=f'poLCA — model Polska 2025 {version}',
+        source_url=f'/{directory}/METODA-I-ZMIANY.txt',
+        source_record_href='/' + source_file,
+        methodology_href=card + '#metoda',
         related_ids=['POLCA-EN-PL-LCA-2024', 'KOBIZE-EN-PL-ENDUSER-2024'],
         keywords=['prąd', 'energia elektryczna', '2025', '37 wskaźników', 'miks fizyczny', 'woda', 'odpady', 'ślad węglowy', 'ślad środowiskowy', 'wyrób', 'produkt', 'budynek'],
         geography=profile['country'], is_default=False,
+        **({} if current else {'superseded_by': ENERGY_ID}),
     )
 
 
@@ -157,7 +163,7 @@ def build_catalog() -> dict:
     source_ids = {item['code'] for item in legacy}
     if source_ids != set(editorial['datasets']):
         raise ValueError('Editorial records and source records differ')
-    datasets = [build_energy_record(editorial)]
+    datasets = [build_energy_record(editorial), build_energy_record(editorial, "v4")]
     datasets += [build_legacy_record(item, editorial) for item in legacy]
     resources = [build_resource(item, editorial) for item in editorial['resources']]
     mapping = read_json('data/cpr-mapping.json')
@@ -188,8 +194,8 @@ def build_catalog() -> dict:
         for related in item['related_ids']:
             if related not in known_ids:
                 raise ValueError(f"Unknown related ID in {item['id']}: {related}")
-    withdrawn = [r for r in datasets if r['status_id'] == 'withdrawn']
-    datasets = [r for r in datasets if r['status_id'] != 'withdrawn']
+    withdrawn = [r for r in datasets if r['status_id'] in ('withdrawn', 'archive')]
+    datasets = [r for r in datasets if r['status_id'] not in ('withdrawn', 'archive')]
     current_ids = {r['id'] for r in datasets}
     for record in withdrawn:
         if record['superseded_by'] not in current_ids:
@@ -221,7 +227,7 @@ def main() -> int:
     catalog = build_catalog()
     output = serialize(catalog)
     records = catalog['datasets'] + catalog['withdrawn_datasets']
-    record_files = {ROOT / ('data/portal-records/' + item['id'] + '.json'): serialize({'schema_version':'1.0', 'catalog_version':catalog['catalog_version'], 'record':item, 'usage_note':'Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania.'}) for item in records if item['id'] != ENERGY_ID}
+    record_files = {ROOT / ('data/portal-records/' + item['id'] + '.json'): serialize({'schema_version':'1.0', 'catalog_version':catalog['catalog_version'], 'record':item, 'usage_note':'Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania.'}) for item in records}
     if args.check:
         for file, content in record_files.items():
             if not file.exists() or file.read_text(encoding='utf-8') != content:

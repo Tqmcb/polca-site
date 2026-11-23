@@ -7,8 +7,8 @@
     var profiles = {
         'total-lca': {
             indicator: 'GWP-total',
-            scope: 'Energia elektryczna — Polska 2025, wydanie v4, wskaźnik GWP-total (po kontroli technicznej)',
-            reference: '/energia-polska-2025-v4.html'
+            scope: 'Energia elektryczna — Polska 2025, wydanie v5, wskaźnik GWP-total (po kontroli technicznej)',
+            reference: '/energia-polska-2025-v5.html'
         },
         'fossil-lca': {
             indicator: 'GWP-fossil',
@@ -32,7 +32,7 @@
         var raw = energyInput.value.trim();
         var energy = raw === '' ? NaN : Number(raw);
         if (raw === '' || !Number.isFinite(energy) || energy < 0) return invalid('Zużycie energii: wpisz liczbę nieujemną w MWh. Puste pole nie oznacza zera.');
-        if (['644.54', '599', '202', '275', '341', '0'].indexOf(sourceSelect.value) < 0) return invalid('Wybierz źródło energii z listy.');
+        if (['670.03', '599', '202', '275', '341', '0'].indexOf(sourceSelect.value) < 0) return invalid('Wybierz źródło energii z listy.');
         var option = sourceSelect.options[sourceSelect.selectedIndex];
         var factor = Number(sourceSelect.value);
         if (!Number.isFinite(energy * factor)) return invalid('Zużycie energii jest zbyt duże do obliczenia skończonego wyniku. Zmniejsz wartość.');

@@ -1,22 +1,23 @@
-"""Format the published method from the v4 release for in-page reading."""
+"""Format the published method from the v5 release for in-page reading."""
 from html import escape
 from pathlib import Path
 import re
 from urllib.parse import urlsplit
 
 
-METHOD_FILE = 'data/energia-pl-2025-v4/METODA-I-ZMIANY.txt'
+METHOD_FILE = 'data/energia-pl-2025-v5/METODA-I-ZMIANY.txt'
 
 # Use the citation titles already printed in this edition as the link text.
 CITATIONS = (
     'bilansu energii elektrycznej Eurostatu', 'tablic produkcji z paliw',
     'źródeł niepalnych', 'raportu Polskich Sieci Elektroenergetycznych za 2025 r.',
     'arkusz EMITOR 2025', 'formularz G-10.2 za 2025 r.', 'Wyższego Urzędu Górniczego',
-    'Państwowego Instytutu Geologicznego', 'errata autora modelu składowania nadkładu',
+    'Państwowego Instytutu Geologicznego', 'erraty autora modelu składowania nadkładu',
     'NID 2026', 'zweryfikowanych emisji w unijnym systemie handlu uprawnieniami do emisji, ETS',
     'Departament Energii USA', 'Orano', 'Euro Chlor', 'noty holenderskiej krajowej bazy środowiskowej NMD',
     'raport NMD o elektryczności', 'PN-EN 15804+A2:2020-03', 'wydanie skonsolidowane',
-    'EN 15941:2024', 'ogólne instrukcje programu EPD Polska',
+    'nrg_bal_peh', 'nrg_bal_c', '„Energetyka cieplna w liczbach – 2024”', 'Veolia Energia Łódź',
+    'MPEC Kraków', 'EN ISO 14044, punkt 4.3.4', 'EN 15941:2024', 'ogólne instrukcje programu EPD Polska',
 )
 
 # The source uses both “title (url)” and a bibliography with unparenthesized URLs.
@@ -56,7 +57,7 @@ def full_method_html(root: Path) -> str:
     title = title.replace('METODA I ZMIANY', 'Metoda i zmiany', 1)
     markup = [
         '<details id="pelna-metoda" class="energy-method-full">',
-        '<summary>Przeczytaj pełny opis metody v4</summary>',
+        '<summary>Przeczytaj pełny opis metody v5</summary>',
         '<div class="energy-method-body">',
         f'<p class="energy-method-title">{escape(title)}</p>',
     ]
@@ -64,14 +65,6 @@ def full_method_html(root: Path) -> str:
         if re.fullmatch(r'\d+\. [^\n]+', block):
             markup.append(f'<h3>{escape(block)}</h3>')
         elif block:
-            # The published text repeats the same qualification about allocation.
-            # Keep it once in the reading view. The release file remains available below.
-            block = block.replace(
-                'Ograniczenia tych oszacowań opisuje metoda; przyjęcie alokacji dla określonego programu ocenia się osobno. '
-                'Nie ogłasza się pełnej harmonizacji każdej pary współproduktów; przyjęcie tej alokacji dla określonego programu ocenia się osobno.',
-                'Nie potwierdzono, że zasady alokacji są w pełni spójne dla wszystkich par współproduktów. '
-                'Przydatność przyjętych zasad ocenia się odrębnie dla danego programu.',
-            )
             markup.extend(f'<p>{linked_text(paragraph)}</p>' for paragraph in PARAGRAPH_BREAK.split(block))
     markup.append(
         f'<p class="energy-method-download"><a href="/{METHOD_FILE}" download>'

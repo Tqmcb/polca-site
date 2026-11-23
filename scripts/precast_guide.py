@@ -61,5 +61,5 @@ def precast_guide(catalog, section_table):
     <p>Szacunek A1 ze wskaźników poLCA wynosi {fixed(total, 1)} kg CO₂e/t, a deklaracja podaje 171 kg CO₂e/t. Deklaracja nie podaje wskaźników przyjętych dla składników, dlatego różnicy nie można przypisać konkretnemu składnikowi.</p>
     <p>Największy wkład w A1 ma cement: {fixed(cement, 1)} kg CO₂e/t, czyli {fixed(100 * cement / total, 1)}% szacunku.</p>
     <p>Dla porównania płyty kanałowe w deklaracjach ITB nr <a href="{DBB}">646/2024</a> i <a href="{POZ_BRUK}">491/2023</a> mają wynik A1–A3 odpowiednio 166 i 201 kg CO₂e/t.</p>
-    <p>W deklaracji własnego wyrobu należy przyjąć recepturę zakładu oraz wskaźniki z deklaracji dostawców cementu i stali.</p>
+    <p>W deklaracji własnego wyrobu należy przyjąć recepturę zakładu oraz wskaźniki z deklaracji dostawców cementu i stali. Wkład energii elektrycznej zużytej w zakładzie można obliczyć z danych o zużyciu i odpowiednio dobranego profilu. Zakres krajowego miksu fizycznego podano na <a href="/energia-polska-2025-v5.html#zastosowanie">karcie energii Polska 2025 v5</a>.</p>
     <p><a href="{FORMEE}#page=7">Deklaracja ITB nr 561/2023, skład s. 3, wyniki s. 7</a>. Formee Sp. z o.o., EN 15804+A2, ważna do 01.12.2028. W deklaracji podano cement CEM I 42,5R i średnią gęstość wyrobów 2330 kg/m³.</p></section>'''

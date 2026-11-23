@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.3",
+  "catalog_version": "2026-11-23.4",
   "record": {
     "id": "POLCA-MMA-AC11S-2026",
     "title": "Mieszanka AC 11 S",
@@ -16,7 +16,7 @@
     "unit": "kg CO₂e/t",
     "boundary": "A1-A3",
     "indicator_label": "Wpływ na klimat (GWP)",
-    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "formats": [
       "JSON"
@@ -68,9 +68,9 @@
         "type": "methodology_source"
       },
       {
-        "name": "Energia Polska 2025 v4",
-        "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-        "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+        "name": "Energia Polska 2025 v5",
+        "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+        "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
         "type": "polca_model"
       },
       {
@@ -86,10 +86,10 @@
     "gwp_modules_kg_co2e_per_t": {
       "A1": 37.7383,
       "A2": 4.83039,
-      "A3": 26.31375,
-      "A1_A3": 68.88244
+      "A3": 26.3775,
+      "A1_A3": 68.94619
     },
-    "value": 68.88244,
+    "value": 68.94619,
     "cpr_family_ids": [
       23
     ],

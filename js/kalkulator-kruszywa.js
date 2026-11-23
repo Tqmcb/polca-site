@@ -3,7 +3,7 @@
     'use strict';
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
-    var EF_EL = 0.6445;         // kg CO2e / kWh — PL2025_PHYSICAL_DELIVERED_v4 (GWP-total)
+    var EF_EL = 0.6700;         // kg CO2e / kWh — PL2025_PHYSICAL_DELIVERED_v5 (GWP-total)
     var EF_DIESEL = 3.72;        // kg CO2e / L — POLCA-FUEL-DIESEL-DEFAULT-2026
     var EF_EXPLOSIVE = 0.5;     // kg CO2e / kg materiału wybuchowego (ANFO / emulsja)
     var EF_TRANSPORT = 0.0843;  // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
@@ -249,7 +249,7 @@
     function benchmark(r) {
         if (r.mode === 'simple') return 'Wynik dla wybranego kruszywa.';
         if (r.rcPct === 100) return 'Wariant dla kruszywa z recyklingu — wartość historyczna bez rekordu w katalogu.';
-        return 'Wkład energii elektrycznej dla frakcji pierwotnej obliczono według modelu Energia Polska 2025 v4 (GWP-total).';
+        return 'Wkład energii elektrycznej dla frakcji pierwotnej obliczono według modelu Energia Polska 2025 v5 (GWP-total).';
     }
 
     /* ---- Render ---- */
@@ -339,9 +339,9 @@
         var fixed = r.mode === 'advanced' && r.rcPct === 100;
         var data = {
             schema: 'polca-aggregate-calculation/2.0', tool: 'poLCA — Kalkulator kruszyw',
-            assumptions_version: 'Kruszywa 2026-11-23, PL2025_PHYSICAL_DELIVERED_v4',
+            assumptions_version: 'Kruszywa 2026-11-23, PL2025_PHYSICAL_DELIVERED_v5',
             indicator: 'Orientacyjne oszacowanie klimatyczne ze współczynników o różnych zakresach',
-            note: 'Energia Polska 2025 v4 (GWP-total). Zastosowanie w EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
+            note: 'Energia Polska 2025 v5 (GWP-total). Zastosowanie w EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
             reference_unit: '1 t kruszywa', mode: r.mode,
             fixed_recycled_variant: fixed,
             factors: { electricity_kg_CO2e_per_kWh: EF_EL, diesel_kg_CO2e_per_L: EF_DIESEL,

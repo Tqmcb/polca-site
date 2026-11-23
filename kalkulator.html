@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator emisji energii CO₂ — poLCA</title>
-    <meta name="description" content="Kalkulator zużycia energii z profilem Polska 2025 v4 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
+    <meta name="description" content="Kalkulator zużycia energii z profilem Polska 2025 v5 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
     <link rel="canonical" href="https://polca.org.pl/kalkulator.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Kalkulator Emisji CO₂ — poLCA">
-    <meta property="og:description" content="Kalkulator zużycia energii z profilem Polska 2025 v4 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
+    <meta property="og:description" content="Kalkulator zużycia energii z profilem Polska 2025 v5 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
     <meta property="og:url" content="https://polca.org.pl/kalkulator.html">
     <meta property="og:image" content="https://polca.org.pl/images/strip-energy.jpg">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kalkulator Emisji CO₂ — poLCA">
-    <meta name="twitter:description" content="Kalkulator zużycia energii z profilem Polska 2025 v4 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
+    <meta name="twitter:description" content="Kalkulator zużycia energii z profilem Polska 2025 v5 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.">
     <meta name="twitter:image" content="https://polca.org.pl/images/strip-energy.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css?v=20261123">
@@ -34,7 +34,7 @@
         <a class="tool-nav-pill" href="kalkulatory.html">Wszystkie kalkulatory</a>
         <a class="tool-nav-pill" href="kalkulator-mma.html">Mieszanki mineralno-asfaltowe</a>
         <a class="tool-nav-pill" href="kalkulator-kruszywa.html">Kruszywa</a>
-        <a class="tool-nav-pill" href="energia-polska-2025-v4.html">Model energii 2025</a>
+        <a class="tool-nav-pill" href="energia-polska-2025-v5.html">Model energii 2025</a>
     </div>
     <div class="card card-lg section-gap fade-in">
         <div class="calc-grid">
@@ -43,7 +43,7 @@
                 <input type="number" id="energyInput" required aria-describedby="energyInputWarn" class="calc-input" value="100" min="0" step="10"></div>
                 <div><label class="calc-label" for="sourceSelect">Współczynnik i zakres</label>
                 <select id="sourceSelect" class="calc-select">
-                    <option value="644.54" data-scope="total-lca" selected>Prąd PL 2025 v4 — 644,54 kg CO₂e/MWh (GWP-total)</option>
+                    <option value="670.03" data-scope="total-lca" selected>Prąd PL 2025 v5 — 670,03 kg CO₂e/MWh (GWP-total)</option>
                     <option value="599" data-scope="fossil-lca">Prąd PL 2024 — 599 kg CO₂e/MWh (GWP-fossil)</option>
                     <option value="202">Gaz ziemny — 202 kg CO₂/MWh (spalanie, KOBiZE)</option>
                     <option value="275">Olej opałowy — 275 kg CO₂/MWh (spalanie, KOBiZE)</option>
@@ -54,9 +54,9 @@
             </div>
             <div class="card calc-result-block" aria-live="polite">
                 <div class="calc-result-label">Wynik dla wybranego zakresu</div>
-                <div class="calc-result-value"><span id="resultMain">64 454</span> <small id="resultUnit">kg CO₂e</small></div>
+                <div class="calc-result-value"><span id="resultMain">67 003</span> <small id="resultUnit">kg CO₂e</small></div>
                 <p class="calc-note" id="energyInputWarn" role="alert" hidden></p>
-                <p class="calc-note" id="resultScope"><a href="/energia-polska-2025-v4.html">Energia elektryczna — Polska 2025, wydanie v4, wskaźnik GWP-total (po kontroli technicznej)</a></p>
+                <p class="calc-note" id="resultScope"><a href="/energia-polska-2025-v5.html">Energia elektryczna — Polska 2025, wydanie v5, wskaźnik GWP-total (po kontroli technicznej)</a></p>
                 <div style="display:flex;gap:0.5rem;margin-top:1rem;">
                     <button id="matExportCsv" class="calc-export-btn" type="button">Kopiuj CSV</button>
                     <button id="matExportJson" class="calc-export-btn calc-export-json" type="button">Kopiuj JSON</button>
@@ -78,11 +78,11 @@
     <div class="card card-lg section-gap fade-in">
         <div class="card-title">Jak wykorzystać wynik</div>
         <p class="card-text">Wynik to zużycie energii pomnożone przez wybrany współczynnik. Pliki CSV i JSON zawierają również jednostkę i zakres. Przy przygotowaniu oceny cyklu życia dobierz rok, granice systemu i rodzaj wskaźnika do badanego wyrobu oraz zasad programu deklaracji środowiskowych.</p>
-        <p class="card-text"><a href="metodyki/MET-001-poLCA-EN-PL-2024.html">Dokumentacja historycznego profilu 2024</a> · <a href="energia-polska-2025-v4.html">Wydanie energii 2025 i jego status</a></p>
+        <p class="card-text"><a href="metodyki/MET-001-poLCA-EN-PL-2024.html">Dokumentacja historycznego profilu 2024</a> · <a href="energia-polska-2025-v5.html">Wydanie energii 2025 i jego status</a></p>
     </div>
 </div></main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/calculator.js?v=20261123f"></script>
+<script src="js/calculator.js?v=20261123-energia5"></script>
     <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

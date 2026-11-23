@@ -10,7 +10,7 @@ from statistics import median
 from lxml import html
 
 ROOT = Path(__file__).resolve().parents[1]
-ENERGY = 'PL2025_PHYSICAL_DELIVERED_v4'
+ENERGY = 'PL2025_PHYSICAL_DELIVERED_v5'
 MIXES = ('ac11s', 'ac16w', 'sma11s')
 
 
@@ -32,6 +32,43 @@ def pl(value, decimals):
 
 
 class CalculatorTests(unittest.TestCase):
+    def test_release_versions_for_recalculated_mix_data(self):
+        hotspot_version = read('data/mma-hotspots.json')['meta']['version']
+        catalog = read('data/datasets.json')
+        registry = catalog['registry']
+        self.assertEqual(hotspot_version, '2026.6')
+        self.assertEqual(registry['version'], '2026.9-energia-v5')
+        self.assertEqual(catalog['meta']['version'], registry['version'])
+        for code in ('POLCA-TRUCK-40T-DEFAULT-2026', 'POLCA-STEEL-REBAR-PL-MEDIAN-2026'):
+            with self.subTest(code=code):
+                self.assertEqual(read(f'data/datasets/{code}.json')['registry'], registry)
+        release = next(row for row in read('data/rejestr-zmian.json')['wpisy'] if ENERGY in row['dotyczy'])
+        self.assertEqual({item['wersja'] for item in release['zastapione_wydania']},
+                         {'2026.5', '2026.8-prefabrykaty'})
+        for item in release['zastapione_wydania']:
+            self.assertEqual(item['status'], 'superseded')
+            self.assertEqual(read(item['plik'].lstrip('/'))['meta']['version'], item['wersja'])
+
+    def test_short_table_release_and_previous_downloads(self):
+        table = read('data/polca-gwp-v2026-1.json')
+        csv_rows = read_csv('data/polca-gwp-v2026-1.csv', 'id', ';')
+        self.assertEqual(table['version'], 'POLCA-GWP-2026.6')
+        self.assertEqual({r['wersja_tabeli'] for r in csv_rows.values()}, {table['version']})
+        self.assertEqual(set(csv_rows), set(by_id(table['records'])))
+        kobize_id = 'KOBIZE-EN-PL-ENDUSER-2024'
+        scope = by_id(table['records'])[kobize_id]['replace_with']
+        self.assertEqual(csv_rows[kobize_id]['zastap_danymi'], scope)
+        for phrase in ('0,599', 'składnik kopalny', 'POLCA-GWP-EN-PL-LCA-2024', 'Energia Polska 2025 v5'):
+            self.assertIn(phrase, scope)
+        archive = table['previous_release']
+        older = read(archive['json'].lstrip('/'))
+        self.assertEqual(archive['status'], 'superseded')
+        self.assertEqual(older['version'], table['supersedes'])
+        self.assertEqual(older['version'], 'POLCA-GWP-2026.5')
+        old_energy = 'PL2025_PHYSICAL_DELIVERED_v4'
+        self.assertEqual(by_id(older['records'])[old_energy]['value'], 0.6445)
+        self.assertEqual(read_csv(archive['csv'].lstrip('/'), 'id', ';')[old_energy]['wartosc'], '0,6445')
+
     @classmethod
     def setUpClass(cls):
         script = """
@@ -175,7 +212,10 @@ class CalculatorTests(unittest.TestCase):
         def factor(code):
             return self.catalog['POLCA-' + code + '-DEFAULT-2026']['value']
 
-        energy = round(self.catalog[ENERGY]['value'], 4)
+        profile = read('data/energia-pl-2025-v5/profil-37.json')
+        gwp_total = next(row['value_per_kWh'] for row in profile['indicators'] if row['code'] == 'GWP-total')
+        self.assertEqual(self.catalog[ENERGY]['value'], gwp_total)
+        energy = round(gwp_total, 4)
         result = self.results['ac16w']
         components = by_id(result['a1items'], 'key')
         self.assertEqual(components['aggF']['gwp'], factor('AGG-PL-NATURAL'))
@@ -199,7 +239,7 @@ class CalculatorTests(unittest.TestCase):
             self.assertEqual(set(re.findall(r"'([\d.]+)'", allowed)),
                              set(page.xpath(f'//select[@id="{select}"]/option/@value')))
             self.assertNotIn('0,599', page.getroot().text_content())
-            self.assertIn('/energia-polska-2025-v4.html', page.xpath('//a/@href'))
+            self.assertIn('/energia-polska-2025-v5.html', page.xpath('//a/@href'))
         source = (ROOT / 'js/kalkulator-kruszywa.js').read_text()
         self.assertEqual(float(re.search(r'var EF_DIESEL = ([\d.]+);', source)[1]),
                          factor('FUEL-DIESEL'))

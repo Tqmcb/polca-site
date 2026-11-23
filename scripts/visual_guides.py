@@ -36,7 +36,7 @@ def printed_number(number, digits):
 
 
 def example_flow(root, steps):
-    directory = root / 'data/energia-pl-2025-v4'
+    directory = root / 'data/energia-pl-2025-v5'
     profile = json.loads((directory / 'profil-37.json').read_text(), parse_float=Decimal)
     example = json.loads((directory / 'przyklad-10-kWh.json').read_text(), parse_float=Decimal)
     indicator = next(row for row in profile['indicators'] if row['code'] == 'GWP-total')
@@ -49,7 +49,7 @@ def example_flow(root, steps):
         raise ValueError('Niezgodne jednostki, model albo wynik w przykładzie przewodnika.')
     samples = [
         (f'{quantity} <small>kWh</small>', 'Przetwarzanie odpadu w module C3'),
-        (f'Polska {profile["reference_year"]}', 'Fizyczny miks dostarczonej energii, wersja v4'),
+        (f'Polska {profile["reference_year"]}', 'Fizyczny miks dostarczonej energii, wersja v5'),
         (f'≈ {printed_number(indicator["value_per_kWh"], 5)}', 'kg ekwiwalentu CO₂ na 1 kWh'),
         (f'≈ {printed_number(result["value_for_10_kWh"], 2)}', f'kg ekwiwalentu CO₂ dla {quantity} kWh'),
     ]
@@ -63,7 +63,7 @@ def example_flow(root, steps):
     <p>Cztery kroki przykładu pokazują, jak mnożymy zużycie energii przez wskaźnik profilu. Proces odbywa się poza kontrolą właściciela deklaracji.</p></figcaption>
     <nav aria-label="Etapy doboru danych"><ol>{''.join(nodes)}</ol></nav>
     <div class="flow-source"><span>Wynik obejmuje tylko wkład energii w łączny potencjał globalnego ocieplenia (GWP-total).</span>
-    <a href="/data/energia-pl-2025-v4/przyklad-10-kWh.json">Dane przykładowego obliczenia</a></div></figure>'''
+    <a href="/data/energia-pl-2025-v5/przyklad-10-kWh.json">Dane przykładowego obliczenia</a></div></figure>'''
 
 
 def workflow(content, root):

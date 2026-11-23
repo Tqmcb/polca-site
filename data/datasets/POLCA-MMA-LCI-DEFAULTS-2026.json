@@ -34,10 +34,10 @@
     "technology": "Wytwarzanie mieszanek mineralno-asfaltowych w wytwórni cyklicznej lub ciągłej; technologia na gorąco (HMA) i na ciepło (WMA), z opcjonalnym udziałem granulatu asfaltowego (RA).",
     "data_quality": "industry",
     "status": "published_sector_dataset",
-    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "scope": "A1-A3",
-    "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa bazaltowego, naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v4. Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
+    "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa bazaltowego, naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v5. Zużycie 2,5 kWh/t × 0,6700 kg CO₂e/kWh daje 1,675 kg CO₂e/t w module A3.",
     "limitations": "Nie zastępuje danych konkretnej wytwórni, recepty mieszanki, dostawcy lepiszcza ani zweryfikowanego wskaźnika energii. Wartości domyślne są konserwatywne i służą do wstępnej kwalifikacji (pre-qualify) oraz raportów wewnętrznych; finalna EPD wymaga danych producenta dla składników kluczowych — lepiszcza, kruszyw, paliw, energii i transportu.",
     "preferred_replacement": "Recepta mieszanki i bilans masowy producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
     "publication_status": "published_sector_dataset",
@@ -68,9 +68,9 @@
         "type": "methodology_source"
       },
       {
-        "name": "Energia Polska 2025 v4",
-        "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-        "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+        "name": "Energia Polska 2025 v5",
+        "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+        "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
         "type": "polca_model"
       },
       {
@@ -306,10 +306,10 @@
         "temperature_correction": "+5% zużycia paliwa na każde 10°C powyżej 160°C (Schönauer & Gruber 2024).",
         "electricity": {
           "consumption_kwh_per_t": 2.5,
-          "emission_factor_kg_co2e_per_kwh": 0.6445,
-          "emission_factor_source": "PL2025_PHYSICAL_DELIVERED_v4 (GWP-total)",
-          "co2e_from_electricity_kg_per_t": 1.61125,
-          "note": "Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
+          "emission_factor_kg_co2e_per_kwh": 0.6700,
+          "emission_factor_source": "PL2025_PHYSICAL_DELIVERED_v5 (GWP-total)",
+          "co2e_from_electricity_kg_per_t": 1.675,
+          "note": "Zużycie 2,5 kWh/t × 0,6700 kg CO₂e/kWh daje 1,675 kg CO₂e/t w module A3.",
           "source_consumption": "Schönauer & Gruber (2024)"
         }
       },

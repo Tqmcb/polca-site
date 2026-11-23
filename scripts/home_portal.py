@@ -66,7 +66,7 @@ def build(api, families):
     root, page, e = (api[key] for key in ('ROOT', 'page', 'e'))
     records = api['CAT']['datasets']
     methods = json.loads((root / 'data/product-methods.json').read_text())['documents']
-    energy = next(r for r in records if r['id'] == 'PL2025_PHYSICAL_DELIVERED_v4')
+    energy = next(r for r in records if r['id'] == 'PL2025_PHYSICAL_DELIVERED_v5')
     consultation = json.loads((root / 'content/consultation-energy.json').read_text())
     sensitivity_file = root / CONSULTATION_DATA.lstrip('/') / 'wrazliwosc-37.csv'
     with sensitivity_file.open(encoding='utf-8-sig', newline='') as source:

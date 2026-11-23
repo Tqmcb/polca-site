@@ -12,7 +12,7 @@
         /* bitumen i kruszywo grube — z dropdownów */
     };
     var EF_TRANSPORT = 0.0843; // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
-    var EF_EL = 0.6445;       // PL2025_PHYSICAL_DELIVERED_v4, GWP-total [kg CO2e/kWh]
+    var EF_EL = 0.6700;       // PL2025_PHYSICAL_DELIVERED_v5, GWP-total [kg CO2e/kWh]
     var EL_A3 = 2.5 * EF_EL;  // zużycie energii elektrycznej 2,5 kWh/t MMA
     var FUEL_BASE = {         // emisja paliwa w temp. bazowej [kg CO2 / t MMA]
         'HMA-olej': 24.1, 'HMA-gaz': 17.0,
@@ -294,7 +294,7 @@
             '<td class="mono highlight">' + fmt(r.a1, 2) + '</td><td class="mono">100,0</td></tr>';
         a1Table.innerHTML = rows;
 
-        benchBox.textContent = 'Wynik dla podanej receptury i odległości dostaw. Wkład energii elektrycznej pochodzi z modelu Energia Polska 2025 v4 (GWP-total).';
+        benchBox.textContent = 'Wynik dla podanej receptury i odległości dostaw. Wkład energii elektrycznej pochodzi z modelu Energia Polska 2025 v5 (GWP-total).';
 
         /* walidacja sumy składników */
         var dev = Math.abs(r.sumMass - 1000) / 1000 * 100;
@@ -354,7 +354,7 @@
         lines.push('A3 — produkcja (paliwo ' + num6(r.fuelEm) + ' + energia el. ' + num6(r.el) + ');' + num6(r.a3) + ';' + num6(p.share.a3));
         lines.push('Oszacowanie A1-A3 — łącznie;' + num6(r.total) + ';100');
         lines.push('');
-        lines.push('Zakres;Założenia MMA z 23.11.2026. Energia Polska 2025 v4 (GWP-total). Suma orientacyjnych współczynników o różnych zakresach; zastosowanie w EPD wymaga odrębnej oceny danych i metody.');
+        lines.push('Zakres;Założenia MMA z 23.11.2026. Energia Polska 2025 v5 (GWP-total). Suma orientacyjnych współczynników o różnych zakresach; zastosowanie w EPD wymaga odrębnej oceny danych i metody.');
         copyText(lines.join('\n'), el('mmaExportCsv'), 'Kopiuj CSV');
     }
 
@@ -366,9 +366,9 @@
         var obj = {
             tool: 'poLCA — Kalkulator MMA',
             schema: 'polca-mma-calculation/2.0',
-            assumptions_version: 'MMA 2026-11-23, WT-2 2014 cz. I, PL2025_PHYSICAL_DELIVERED_v4',
+            assumptions_version: 'MMA 2026-11-23, WT-2 2014 cz. I, PL2025_PHYSICAL_DELIVERED_v5',
             indicator: 'Orientacyjne oszacowanie klimatyczne ze współczynników o różnych zakresach',
-            note: 'Energia Polska 2025 v4 (GWP-total). Wynik służy do analizy scenariuszy. Zastosowanie w deklaracji EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
+            note: 'Energia Polska 2025 v5 (GWP-total). Wynik służy do analizy scenariuszy. Zastosowanie w deklaracji EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
             preset: PRESETS[presetName] ? PRESETS[presetName].label : 'Własna receptura',
             declared_unit: '1 t (1000 kg) MMA',
             inputs: {

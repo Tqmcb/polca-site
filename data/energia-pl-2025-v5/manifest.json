@@ -1,0 +1,34 @@
+{
+  "model_id": "PL2025_PHYSICAL_DELIVERED_v5",
+  "package_version": "2026-11-23.1",
+  "files": {
+    "METODA-I-ZMIANY.txt": {
+      "sha256": "a96fa3a0eb8fd52fe888b4a750d9b587863bea6ab9cddb2651a755980b17f9c2",
+      "bytes": 14289
+    },
+    "START.txt": {
+      "sha256": "403bc480992b63da53cc1df097f598529813aa94e35e80355e76195573c0f9fe",
+      "bytes": 4577
+    },
+    "WARUNKI-WYKORZYSTANIA.txt": {
+      "sha256": "d9076606a1ac778b5de8262a0b15daf91451ede1cfaef953cbb235aeffcf99b6",
+      "bytes": 1612
+    },
+    "kontrola-eksportu.json": {
+      "sha256": "fcbe25139721254c20b4d063f9f8cdccda9282d2bb56d7d06cbaf3382109581d",
+      "bytes": 1935
+    },
+    "profil-37.json": {
+      "sha256": "a1dc5e0494a237b74ec799b7a0e28ff6b0f0ea66c4665990845a33ab1dff2e6b",
+      "bytes": 15056
+    },
+    "przyklad-10-kWh.json": {
+      "sha256": "ae3d37031ac19b2d767b7263defbe791f5544d9a683abf107c46c0a6a8c1ffa0",
+      "bytes": 10921
+    },
+    "wskazniki-37.csv": {
+      "sha256": "945a8f00ca78100247f7b7ba181b6d4c215177f763be876320f8a39f54108c43",
+      "bytes": 4593
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.3",
+  "catalog_version": "2026-11-23.4",
   "record": {
     "id": "POLCA-MMA-LCI-DEFAULTS-2026",
     "title": "Parametry do obliczeń mieszanek asfaltowych",
@@ -16,7 +16,7 @@
     "unit": "1 t mieszanki",
     "boundary": "A1-A3",
     "indicator_label": null,
-    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "formats": [
       "JSON"
