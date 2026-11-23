@@ -238,7 +238,8 @@
         "asfalt",
         "lepiszcze",
         "emulsja"
-      ]
+      ],
+      "include_source_trace": true
     },
     "POLCA-EMULSION-TACK-COAT-DEFAULT-2026": {
       "title": "Emulsja asfaltowa do skropienia",

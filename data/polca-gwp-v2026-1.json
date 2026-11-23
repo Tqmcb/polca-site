@@ -103,7 +103,7 @@
       "id": "POLCA-GWP-BITUMEN-ROAD-2026",
       "group": "lepiszcza",
       "name": "Lepiszcze asfaltowe drogowe",
-      "value": 450,
+      "value": 530,
       "unit": "kg CO2e/t",
       "module": "A1",
       "status": "wartość sektorowa poLCA",
@@ -112,8 +112,10 @@
         "emulsje asfaltowe",
         "warstwy sczepne"
       ],
-      "basis": "Eurobitume LCA 4.0, background branżowy bitumu",
-      "replace_with": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy"
+      "basis": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+      "replace_with": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy",
+      "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
+      "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026"
     },
     {
       "id": "POLCA-GWP-AGG-HARD-CRUSHED-2026",

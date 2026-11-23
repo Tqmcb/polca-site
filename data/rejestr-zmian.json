@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.7",
+    "version": "2026.8",
     "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
+      "tytul": "Korekta wskaźnika dla asfaltu drogowego",
+      "opis": "Skorygowano wskaźnik dla asfaltu drogowego z 450 do 530 kg CO₂e/t zgodnie z raportem Eurobitume. W przykładzie mieszanki mineralno-asfaltowej z 48 kg lepiszcza na tonę przeliczono wyniki wpływu na klimat (wersja 2026.3).",
+      "podstawa": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+      "link": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
+      "skutek_dla_deklaracji": "Wyniki obliczeń opartych na poprzedniej wartości wymagają oceny z uwzględnieniem masy lepiszcza w recepturze."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "aktualizacja_danych",
