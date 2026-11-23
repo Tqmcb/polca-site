@@ -313,7 +313,8 @@
       "category_id": "mma",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wynik przykładowej receptury mieszanki, obejmujący surowce, transport i wytwarzanie (A1–A3).",
+      "description": "Wynik dla 1 t mieszanki AC 11 S przy minimalnej zawartości lepiszcza 5,8% według WT-2 2014 cz. I. Obejmuje surowce, transport i wytwarzanie (A1–A3).",
+      "include_source_trace": true,
       "methodology_href": "/c-pcr/mma.html",
       "keywords": [
         "POLCA-MMA-AC11S-2026",
@@ -332,7 +333,8 @@
       "category_id": "mma",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wynik przykładowej receptury mieszanki, obejmujący surowce, transport i wytwarzanie (A1–A3).",
+      "description": "Wynik dla 1 t mieszanki AC 16 W przy minimalnej zawartości lepiszcza 4,6% według WT-2 2014 cz. I. Obejmuje surowce, transport i wytwarzanie (A1–A3).",
+      "include_source_trace": true,
       "methodology_href": "/c-pcr/mma.html",
       "keywords": [
         "POLCA-MMA-AC16W-2026",
@@ -351,7 +353,8 @@
       "category_id": "mma",
       "year_type": "publication",
       "status_id": "default",
-      "description": "Wynik przykładowej receptury mieszanki, obejmujący surowce, transport i wytwarzanie (A1–A3).",
+      "description": "Wynik dla 1 t mieszanki SMA 11 S przy minimalnej zawartości lepiszcza 6,6% według WT-2 2014 cz. I. Obejmuje surowce, transport i wytwarzanie (A1–A3).",
+      "include_source_trace": true,
       "methodology_href": "/c-pcr/mma.html",
       "keywords": [
         "POLCA-MMA-SMA11S-2026",
@@ -874,7 +877,7 @@
       "href": "/kalkulator-mma.html",
       "related_ids": [
         "POLCA-MMA-LCI-DEFAULTS-2026",
-        "POLCA-EN-PL-LCA-2024"
+        "PL2025_PHYSICAL_DELIVERED_v4"
       ],
       "keywords": [
         "MMA",
@@ -899,7 +902,7 @@
       "description": "Oszacowanie z wartości referencyjnej albo z zużycia energii, paliwa i transportu w zakładzie.",
       "href": "/kalkulator-kruszywa.html",
       "related_ids": [
-        "POLCA-EN-PL-LCA-2024"
+        "PL2025_PHYSICAL_DELIVERED_v4"
       ],
       "keywords": [
         "kruszywa",
@@ -2838,7 +2841,7 @@
       "id": "collection-gwp-table",
       "title": "Wcześniejsza tabela wskaźników",
       "kind": "collection",
-      "description": "Zestawienie 32 wartości z odrębnego pliku; nie powiększa liczby pozycji katalogu.",
+      "description": "Tabela współczynników materiałowych i energetycznych oraz wyników modelowych dla mieszanek asfaltowych.",
       "href": "/data/polca-gwp-v2026-1.json",
       "downloads": [
         {
@@ -2855,7 +2858,7 @@
       "id": "collection-mma",
       "title": "Trzy przykładowe mieszanki asfaltowe",
       "kind": "collection",
-      "description": "Zbiorczy plik rekordów AC 11 S, AC 16 W i SMA 11 S.",
+      "description": "Rekordy AC 11 S, AC 16 W i SMA 11 S po korekcie z 23.11.2026 r. Plik zawiera również osiem wyników archiwalnych.",
       "href": "/data/datasets/POLCA-MMA-MIXES-2026.json",
       "member_ids": [
         "POLCA-MMA-AC11S-2026",

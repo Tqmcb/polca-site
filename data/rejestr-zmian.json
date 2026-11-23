@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.8",
+    "version": "2026.9",
     "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-MMA-AC11S-2026, POLCA-MMA-AC16W-2026, POLCA-MMA-SMA11S-2026",
+      "tytul": "Korekta zawartości lepiszcza w modelu mieszanek mineralno-asfaltowych",
+      "opis": "W recepturach bez granulatu przyjęto minima Bmin według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wyniki A1–A3 dla 1 t mieszanki po przeliczeniu kalkulatorem przy domyślnych odległościach dostaw: AC 11 S z 112,17 do 66,73, AC 16 W z 74,14 do 59,66, SMA 11 S z 120,17 do 74,19 kg CO₂e/t. Uzgodniono wskaźniki składników i energii w kalkulatorach mieszanek i kruszyw oraz wskaźnik dla oleju napędowego w kalkulatorze kruszyw.",
+      "podstawa": "GDDKiA, WT-2 2014 cz. I, załącznik do zarządzenia nr 47 z 25.09.2014 r.",
+      "link": "http://web.archive.org/web/20261004121819/https://www.archiwum.gddkia.gov.pl/userfiles/articles/z/zarzadzenia-generalnego-dyrektor_13901/zalacznik%20do%20zarz%2047.pdf",
+      "skutek_dla_deklaracji": "Wyniki oparte na wcześniejszych recepturach wymagają oceny z uwzględnieniem zawartości lepiszcza i danych wytwórni."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "aktualizacja_danych",

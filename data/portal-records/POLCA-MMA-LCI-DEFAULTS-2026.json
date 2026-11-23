@@ -16,7 +16,7 @@
     "unit": "1 t mieszanki",
     "boundary": "A1-A3",
     "indicator_label": null,
-    "source_name": "Raport LCI MMA Polska EN 15804+A2; c-PCR-MMA-EPD-Polska-2026 v1.0-DRAFT; Eurobitume LCA 4.0 (2025); poLCA-EN-PL-2024 v9.1",
+    "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
     "source_url": "https://polca.org.pl/c-pcr/mma.html",
     "formats": [
       "JSON"

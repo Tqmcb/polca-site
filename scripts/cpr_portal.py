@@ -342,6 +342,9 @@ def build(api):
         body += '<section id="sec-2" class="portal-prose"><h2>Projekt poLCA — ' + version + '</h2><p>Historyczny projekt reguł programu EPD Polska. Nie jest prezentowany jako zatwierdzone wydanie końcowe. Do nowego opracowania dobierz właściwy dokument branżowy i zasady programu.</p>'
         if slug=='mma':
             body+=links([{'label':'Archiwalny projekt c-PCR MMA — PDF','href':'/c-pcr/c-PCR-MMA-EPD-Polska-2026-v1.0-DRAFT.pdf'},{'label':'Archiwalny raport danych MMA — PDF','href':'/c-pcr/Raport-LCI-MMA-Polska-EN15804A2.pdf'}])
+            body += ('<p class="portal-callout">Tabela 6.1 raportu przyjmuje zawartość lepiszcza wyższą niż minimalne wartości WT-2 2014 '
+                     '(np. 15% dla AC 11 S przy Bmin 5,8%). Wyniki z tej tabeli są zawyżone; aktualne wartości podają '
+                     '<a href="/wyroby/23.html#dane">rekordy poLCA</a> i <a href="/kalkulator-mma.html">kalkulator MMA</a>.</p>')
         else: body+='<p>W portalu nie udostępniono pełnego dokumentu projektu c-PCR kruszyw do pobrania.</p>'
         body+='</section>'+''.join(f'<span id="sec-{n}"></span>' for n in range(4,10))+'<section id="sec-3" class="portal-prose"><h2>Dane i obliczenia</h2>' + links([{'label':title+' — dane, narzędzia i dokumenty','href':family_url(fid)}]) + '</section><section class="portal-prose"><h2>Dobór danych</h2><p>Jednostkę, granice systemu, moduły i założenia określ dla konkretnego badania. Samo zestawienie wskaźników materiałowych nie zastępuje metody oceny.</p>' + a('Jak wybrać metodę','/c-pcr/#dobor')+'</section></div>'
         page(f'c-pcr/{slug}.html',title+' — zasady obliczeń i dokumenty','Dokumenty branżowe, status projektu i odnośniki do danych dla wyrobu.',body,parent=('Zasady obliczeń','/c-pcr/'))

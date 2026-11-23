@@ -1,9 +1,26 @@
 {
-  "version": "POLCA-GWP-2026.3",
+  "version": "POLCA-GWP-2026.4",
   "published_at": "2026-11-23",
   "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
+    {
+      "id": "PL2025_PHYSICAL_DELIVERED_v4",
+      "group": "energia_i_paliwa",
+      "name": "Energia elektryczna, Polska 2025 v4",
+      "value": 0.6445,
+      "unit": "kg CO2e/kWh",
+      "module": "A3",
+      "status": "wartość przyjęta w kalkulatorach",
+      "use_for": [
+        "MMA",
+        "kruszywa"
+      ],
+      "basis": "Energia Polska 2025 v4, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
+      "replace_with": "Dane o energii odpowiednie dla zastosowania i okresu odniesienia.",
+      "source_url": "https://polca.org.pl/energia-polska-2025-v4.html",
+      "indicator_type": "GWP-total"
+    },
     {
       "id": "POLCA-GWP-EN-PL-LCA-2024",
       "group": "energia_i_paliwa",
@@ -11,7 +28,7 @@
       "value": 0.599,
       "unit": "kg CO2e/kWh",
       "module": "A3/A5/B6/C3/D",
-      "status": "historyczny model poLCA",
+      "status": "historyczny model poLCA (GWP-fossil)",
       "use_for": [
         "MMA",
         "beton",
@@ -536,6 +553,51 @@
       "replace_with": "W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
       "source_url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9",
       "source_record_href": "/data/datasets/POLCA-STEEL-REBAR-PL-MEDIAN-2026.json"
+    },
+    {
+      "id": "POLCA-MMA-AC11S-2026",
+      "group": "mma",
+      "name": "AC 11 S",
+      "value": 66.73024,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 5,8% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-ac11s-2026.html"
+    },
+    {
+      "id": "POLCA-MMA-AC16W-2026",
+      "group": "mma",
+      "name": "AC 16 W",
+      "value": 59.65638,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 4,6% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-ac16w-2026.html"
+    },
+    {
+      "id": "POLCA-MMA-SMA11S-2026",
+      "group": "mma",
+      "name": "SMA 11 S",
+      "value": 74.189875,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 6,6% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-sma11s-2026.html"
     }
   ],
   "metadata_revision": "2026-11-23",

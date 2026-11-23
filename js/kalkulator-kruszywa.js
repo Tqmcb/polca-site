@@ -1,10 +1,10 @@
-/** poLCA — kalkulator kruszyw. Historyczny zestaw założeń; eksport własny poLCA 2.0. */
+/** poLCA — kalkulator kruszyw. Parametry produkcji i warianty materiałowe; eksport własny poLCA 2.0. */
 (function () {
     'use strict';
 
     /* ---- Stałe wartości obliczeniowe (default data) ---- */
-    var EF_EL = 0.599;          // kg CO2e / kWh — poLCA-EN-PL-2024 v9.1
-    var EF_DIESEL = 3.17;       // kg CO2e / L — historyczne założenie kalkulatora
+    var EF_EL = 0.6445;         // kg CO2e / kWh — PL2025_PHYSICAL_DELIVERED_v4 (GWP-total)
+    var EF_DIESEL = 3.2;        // kg CO2e / L — POLCA-FUEL-DIESEL-DEFAULT-2026
     var EF_EXPLOSIVE = 0.5;     // kg CO2e / kg materiału wybuchowego (ANFO / emulsja)
     var EF_TRANSPORT = 0.0843;  // kg CO2e / (t·km) — rekord poLCA POLCA-TRUCK-40T-DEFAULT-2026 (ÖKOBAUDAT 2026, zestaw 40 t)
     var WASH_KWH = 0.5;         // dodatkowe kWh/t przy płukaniu
@@ -105,7 +105,7 @@
         if (['simple', 'advanced'].indexOf(mode) < 0) return ['Wybierz tryb obliczeń'];
         [sType, sA4, sEf, aRock, aEnergy, aDiesel, aExpl, aA2, aRc, aA4].forEach(function (input) { input.setAttribute('aria-invalid', 'false'); });
         if (mode === 'simple') {
-            checkChoice(sType, ['5.50', '3.99', '4.50', '3.20', '1.80', '3.80', '2.50'], 'Typ kruszywa', errors);
+            checkChoice(sType, ['5.50', '3.99', '4.50', '4.00', '3.50', '3.80', '30', '2.50'], 'Typ kruszywa', errors);
             checkChoice(sEf, ['0.0843'], 'Współczynnik transportu', errors);
             checkNumber(sA4, 'Transport A4 [km]', 0, 500, errors);
         } else {
@@ -239,7 +239,7 @@
     function updateChart(r) {
         if (!modChart) return;
         var c = contributions(r);
-        var labels = r.mode === 'simple' ? ['Wartość historyczna A1-A3'] : ['Energia', 'Paliwo', 'Wybuchowe', 'Transport A2', 'Płukanie', 'Frakcja RC'];
+        var labels = r.mode === 'simple' ? ['Wartość wariantu A1–A3'] : ['Energia', 'Paliwo', 'Wybuchowe', 'Transport A2', 'Płukanie', 'Frakcja RC'];
         modChart.data.labels = labels;
         modChart.data.datasets[0].data = Object.keys(c).map(function (k) { return c[k]; });
         modChart.data.datasets[0].backgroundColor = ['#1E3A8A', '#C4721A', '#9B3B3B', '#0B5D33', '#6366F1', '#64748B'];
@@ -247,7 +247,9 @@
         modChart.update();
     }
     function benchmark(r) {
-        return 'Historyczne założenia kalkulatora kruszyw. Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Pozostałe składniki mają własne założenia. Wynik służy do analizy scenariuszy.';
+        if (r.mode === 'simple') return 'Wynik dla wybranego kruszywa.';
+        if (r.rcPct === 100) return 'Wariant dla kruszywa z recyklingu — wartość historyczna bez rekordu w katalogu.';
+        return 'Wkład energii elektrycznej dla frakcji pierwotnej obliczono według modelu Energia Polska 2025 v4 (GWP-total).';
     }
 
     /* ---- Render ---- */
@@ -297,7 +299,7 @@
         }
 
         var rows = '';
-        var names = { reference: 'Wartość historyczna wybranego wariantu', energy: 'Energia kruszenia', diesel: 'Paliwo maszyn', explosive: 'Materiały wybuchowe', transport: 'Transport wewnętrzny', wash: 'Płukanie', recycled: 'Frakcja recyklingowa RC' };
+        var names = { reference: 'Wartość wybranego wariantu', energy: 'Energia kruszenia', diesel: 'Paliwo maszyn', explosive: 'Materiały wybuchowe', transport: 'Transport wewnętrzny', wash: 'Płukanie', recycled: 'Frakcja recyklingowa RC' };
         Object.keys(c).forEach(function (key) {
             if (r.mode === 'advanced' && r.rcPct === 100 && key !== 'recycled') return;
             var share = r.mode === 'simple' ? 1 : (key === 'recycled' ? r.rcPct / 100 : 1 - r.rcPct / 100);
@@ -312,7 +314,7 @@
 
         inputWarn.className = 'agg-warn ok';
         inputWarn.textContent = r.mode === 'simple'
-            ? 'Tryb uproszczony — wybrana historyczna wartość kalkulatora kruszyw.'
+            ? 'Tryb uproszczony — wartość dla wybranego kruszywa.'
             : (r.rcPct === 100 ? 'RC = 100% — stały wariant 2,50 kg CO₂e/t. Parametry frakcji pierwotnej są wyłączone.' : 'Parametry frakcji pierwotnej w zakresach kalkulatora.');
 
         updateChart(r);
@@ -337,12 +339,12 @@
         var fixed = r.mode === 'advanced' && r.rcPct === 100;
         var data = {
             schema: 'polca-aggregate-calculation/2.0', tool: 'poLCA — Kalkulator kruszyw',
-            assumptions_version: 'historyczny zestaw kruszyw 2026.1; energia 2024 v9.1',
-            indicator: 'Orientacyjne oszacowanie klimatyczne z historycznych współczynników o różnych zakresach',
-            note: 'Energia: GWP-fossil poLCA-EN-PL-2024 v9.1. Zastosowanie w EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
+            assumptions_version: 'Kruszywa 2026-11-23, PL2025_PHYSICAL_DELIVERED_v4',
+            indicator: 'Orientacyjne oszacowanie klimatyczne ze współczynników o różnych zakresach',
+            note: 'Energia Polska 2025 v4 (GWP-total). Zastosowanie w EPD wymaga oceny danych i metody przez jej autora i weryfikatora.',
             reference_unit: '1 t kruszywa', mode: r.mode,
             fixed_recycled_variant: fixed,
-            factors: { electricity_fossil_kg_CO2e_per_kWh: EF_EL, diesel_kg_CO2e_per_L: EF_DIESEL,
+            factors: { electricity_kg_CO2e_per_kWh: EF_EL, diesel_kg_CO2e_per_L: EF_DIESEL,
                 explosive_kg_CO2e_per_kg: EF_EXPLOSIVE, transport_kg_CO2e_per_t_km: EF_TRANSPORT,
                 washing_extra_kWh_per_t: WASH_KWH, recycled_variant_kg_CO2e_per_t: GWP_RC },
             inputs: r.mode === 'simple'
@@ -363,7 +365,7 @@
         if (!data) return;
         var r = data.results_kg_CO2e_per_t;
         var quote = function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; };
-        var lines = ['Kalkulator kruszyw poLCA;Własny format 2.0;Historyczne założenia kalkulatora',
+        var lines = ['Kalkulator kruszyw poLCA;Własny format 2.0;Założenia z 23.11.2026',
             'Zakres;' + quote(data.indicator), 'Tryb;' + data.mode,
             'Stały wariant RC 100%;' + data.fixed_recycled_variant,
             'Dane zastosowane;' + quote(JSON.stringify(data.inputs)),
