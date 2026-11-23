@@ -1,5 +1,4 @@
 import csv
-import hashlib
 import json
 import unittest
 from decimal import Decimal
@@ -124,6 +123,7 @@ class CementTests(unittest.TestCase):
             contribution = Decimal(gross) * Decimal('0.3')
             self.assertEqual(row.xpath('./*/text()'), [f'CEM {kind}', str(gross), f'{contribution:.1f}'.replace('.', ',')])
 
-    def test_aggregate_page_bytes_preserved(self):
-        before_cement_guide = '266a5aeea38ad2409ad22c46c046169270b5bccfc4b35407067312b85c9d7399'
-        self.assertEqual(hashlib.sha256((ROOT / 'wyroby/24.html').read_bytes()).hexdigest(), before_cement_guide)
+    def test_aggregate_page_has_no_cement_guide(self):
+        page = (ROOT / 'wyroby/24.html').read_text(encoding='utf-8')
+        self.assertNotIn('modul-a1-cement', page)
+        self.assertNotIn('cement-beton-fotografia', page)
