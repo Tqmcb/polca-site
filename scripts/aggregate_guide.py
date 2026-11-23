@@ -60,7 +60,7 @@ def transport_example(record, case):
     return {
         'key': 'distance', 'code': 'A2' if case['ingredient'] else 'A4',
         'title': 'Przewóz ' + case['transport_destination'], 'caption': f'Wpływ przewozu 1 t {material} na podaną odległość',
-        'description': ('Współczynnik dla zestawu 40 t nie wyodrębnia pustych przebiegów. ' + case['transport_description']),
+        'description': ('Źródło współczynnika dla zestawu 40 t nie określa stopnia załadowania ani udziału pustych przebiegów. ' + case['transport_description']),
         'record': record, 'result_unit': 'kg CO₂e/t', 'factor_unit': 'kg CO₂e/(t·km)',
         'argument': distance, 'activity_unit': 'km', 'label': 'Odległość przewozu w jedną stronę',
         'control': quantity_control('distance', distance, 'km'),
