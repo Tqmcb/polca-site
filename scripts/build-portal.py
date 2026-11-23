@@ -18,6 +18,12 @@ TOOL_PAGES = {
 for resource in CAT['resources']:
  if resource['id'] in TOOL_PAGES:
   resource['href'] = '/' + TOOL_PAGES[resource['id']]
+ if resource['id'] == 'tool-energia':
+  # Describe the live calculator in the portal while preserving the published catalog.
+  resource.update(year=2025, description=html.parse(str(ROOT / 'kalkulator.html')).xpath(
+      'string(//meta[@name="description"]/@content)'),
+      boundary='Energia elektryczna: GWP-total (2025 v4) lub GWP-fossil (2024). Paliwa: CO₂ ze spalania.',
+      related_ids=['PL2025_PHYSICAL_DELIVERED_v4', 'POLCA-EN-PL-LCA-2024'])
 COPY=json.loads((ROOT/'content/portal-pages.json').read_text())
 GENERATED=set()
 def e(x): return h.escape(str(x if x is not None else ''),quote=True)
@@ -48,16 +54,23 @@ def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True,main_class=None,show_crumb=True,og_type='website'):
  mainhead='' if home else (crumb(title,parent) if show_crumb else '')+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261122-linki">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261123">' if home else ''
  main_class=main_class or ('portal-main home-main' if home else 'portal-main portal-shell')
  out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261122-linki">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
-def row(r):
+def row(r, dataset_catalog=False):
  val=f'<div class="portal-result-value"><strong>{e(num(r["value"]))}</strong><small>{e(r.get("unit"))}</small><small>{e(r.get("indicator_label"))}</small></div>' if isinstance(r.get('value'),(int,float)) else ''
  kind={'dataset':'Dane','tool':'Kalkulator','method':'Metoda i instrukcja','article':'Artykuł'}.get(r['kind'],'Zasób')
- return f'''<article class="portal-result" data-record-id="{e(r['id'])}"><div><div class="portal-result-meta"><span>{kind}</span><span>{e(r.get('category_label',''))}</span>{('<span>'+e(r['year'])+'</span>') if r.get('year') else ''}</div><h2>{a(r['title'],r['href'],'portal-result-title')}</h2><p class="portal-result-description">{e(r.get('description',''))}</p><div class="portal-result-meta">{status(r)}<span>{e(' · '.join(r.get('formats',[])))}</span></div></div>{val}</article>'''
+ meta=[r.get('category_label'),r.get('year')]
+ if not dataset_catalog:meta.insert(0,kind)
+ title=('<div class="portal-result-meta">'+''.join(f'<span>{e(item)}</span>' for item in meta if item)+'</div>'
+        +f'<h2>{a(r["title"],r["href"],"portal-result-title")}</h2>')
+ details=(f'<p class="portal-result-description">{e(r.get("description",""))}</p>'
+          +f'<div class="portal-result-meta">{status(r)}<span>{e(" · ".join(r.get("formats",[])))}</span></div>')
+ content=title+val+details if dataset_catalog else '<div>'+title+details+'</div>'+val
+ return f'<article class="portal-result" data-record-id="{e(r["id"])}">{content}</article>'
 def searchform():return '''<form class="portal-search" action="/szukaj.html" method="get" role="search"><label for="q">Wyszukaj dane, kalkulator lub odpowiedź</label><div class="portal-search-control"><input id="q" type="search" name="q" placeholder="Np. energia 2025, cement, ślad węglowy" autocomplete="off"><button type="submit">Szukaj</button></div></form>'''
 def select(name,label,options):return f'<label for="filter-{name}">{label}</label><select id="filter-{name}" name="{name}"><option value="">Wszystkie</option>'+''.join(f'<option value="{e(k)}">{e(v)}</option>' for k,v in options)+'</select>'
 def build_catalog(all=False):
@@ -66,7 +79,10 @@ def build_catalog(all=False):
  families=json.loads((ROOT/'data/cpr-families.json').read_text())['families']
  filters=select('family','Rodzina wyrobu',[(f['id'],str(f['id'])+' — '+f['label']) for f in families])+select('category','Temat',cats.items())+select('year','Rok odniesienia',[(y,y) for y in years])+select('status','Status',statuses.items())
  if all:filters=select('kind','Rodzaj zasobu',[('dataset','Dane'),('tool','Kalkulatory'),('method','Metody i instrukcje'),('article','Artykuły')])+filters
- body=f'''<div class="portal-catalog-layout"><form id="catalog-filters" action="/{path}" method="get"><label for="catalog-query">{'Szukaj w całym portalu' if all else 'Szukaj w danych'}</label><div class="portal-search-control"><input id="catalog-query" type="search" name="q" placeholder="Wpisz nazwę lub pytanie"><button type="submit">Szukaj</button></div><details class="portal-filters" open><summary>Zawęź wyniki</summary><div>{filters}<button type="reset">Wyczyść filtry</button></div></details></form><div class="portal-results-panel"><p id="result-count" role="status" aria-live="polite">Wyniki: {len(records)}</p><noscript><p>Filtrowanie wymaga włączenia JavaScript. Poniżej znajdziesz pełną listę; możesz użyć funkcji szukania w przeglądarce.</p></noscript><div id="catalog-results">{''.join(row(r) for r in records)}</div><div id="catalog-empty" class="portal-callout" hidden><h2>Brak wyników dla tych ustawień</h2><p>Spróbuj krótszej nazwy lub usuń filtry. Pomoc w doborze danych znajdziesz w <a href="/jak-korzystac.html">przewodniku</a>.</p><button type="button" data-reset-filters>Wyczyść wyszukiwanie</button></div></div></div><script id="portal-search-data" type="application/json">{json.dumps(records,ensure_ascii=False).replace('<','\\u003c')}</script>'''
+ disclosure = '<details class="portal-filters" open><summary>Zawęź wyniki</summary>' if all else (
+     '<details class="portal-filters"><summary>Zawęź wyniki (<span id="filter-count">0</span>)</summary>')
+ rows = ''.join(row(r, dataset_catalog=not all) for r in records)
+ body=f'''<div class="portal-catalog-layout"><form id="catalog-filters" action="/{path}" method="get"><label for="catalog-query">{'Szukaj w całym portalu' if all else 'Szukaj w danych'}</label><div class="portal-search-control"><input id="catalog-query" type="search" name="q" placeholder="Wpisz nazwę lub pytanie"><button type="submit">Szukaj</button></div>{disclosure}<div>{filters}<button type="reset">Wyczyść filtry</button></div></details></form><div class="portal-results-panel"><p id="result-count" role="status" aria-live="polite">Wyniki: {len(records)}</p><noscript><p>Filtrowanie wymaga włączenia JavaScript. Poniżej znajdziesz pełną listę; możesz użyć funkcji szukania w przeglądarce.</p></noscript><div id="catalog-results">{rows}</div><div id="catalog-empty" class="portal-callout" hidden><h2>Brak wyników dla tych ustawień</h2><p>Spróbuj krótszej nazwy lub usuń filtry. Pomoc w doborze danych znajdziesz w <a href="/jak-korzystac.html">przewodniku</a>.</p><button type="button" data-reset-filters>Wyczyść wyszukiwanie</button></div></div></div><script id="portal-search-data" type="application/json">{json.dumps(records,ensure_ascii=False).replace('<','\\u003c')}</script>'''
  if not all:body='<p>Możesz też zacząć od <a href="/wyroby.html">rodzaju wyrobu</a> lub wybrać <a href="/dane-wspolne.html">energię, paliwa i transport</a>.</p><span id="referencyjne-szczegoly"></span>'+body
  page(path,'Szukaj w poLCA' if all else 'Katalog danych','Znajdź dane, kalkulator, metodę lub odpowiedź.' if all else 'Wybierz temat i sprawdź rok, zakres oraz status danych przed użyciem.',body,attrs=f'data-catalog-mode="{"all" if all else "datasets"}"')
 def section_table(section, responsive=False):

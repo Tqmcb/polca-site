@@ -30,8 +30,6 @@ body.portal .home-map-link { display: block; color: white; text-decoration: none
 .home-map-link:is(:hover, :focus-visible) strong { color: #c3e6eb; }
 body.portal .home-atlas-band .home-actions a { color: #dbeaf5; }
 body.portal .home-atlas-band :focus-visible { outline-color: #b7e2ff !important; }
-body.portal .home-search button { background: #c3e6eb; border-color: #c3e6eb; color: #112e40; }
-body.portal .home-search button:hover { background: #e5f6f8; border-color: #e5f6f8; }
 .home-search { max-width: 550px; }
 .home-search label { display: block; margin-bottom: 8px; font-size: .9rem; font-weight: 600; }
 .home-search .portal-search-control { gap: 0; flex-wrap: nowrap; }

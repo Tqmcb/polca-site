@@ -118,6 +118,15 @@
             if (control) controls[name] = control;
         });
         if (!controls.q) return;
+        var filterCount = document.getElementById('filter-count');
+        if (filterCount) {
+            var disclosure = filterCount.closest('details');
+            var narrow = window.matchMedia('(max-width: 900px)');
+            function setFilterLayout() { disclosure.open = !narrow.matches; }
+            setFilterLayout();
+            if (narrow.addEventListener) narrow.addEventListener('change', setFilterLayout);
+            else narrow.addListener(setFilterLayout);
+        }
 
         function value(name) { return controls[name] ? controls[name].value.trim() : ''; }
         function activeFilter(name) {
@@ -154,6 +163,9 @@
         }
         function render(persist) {
             var tokens = words(value('q'));
+            if (filterCount) filterCount.textContent = names.filter(function (name) {
+                return name !== 'q' && activeFilter(name);
+            }).length;
             var visible = 0;
             var question = /^(jak|czy|co|ktore|jakie|jaki|jaka|czym)\b/.test(normalize(value('q')));
             items.forEach(function (item) {

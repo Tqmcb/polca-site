@@ -19,7 +19,6 @@
     <style>
         html{scroll-padding-top:76px}
         #cykle,#wersje,#skutek,#rejestr{scroll-margin-top:76px}
-        .rej-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
         .rej-latest {padding:1.15rem 1.4rem;border:1px solid var(--portal-line);background:var(--portal-soft)}
         .rej-latest h2 {margin:0 0 .6rem}
         .rej-latest ol {list-style:none;padding:0;margin:0}
@@ -50,34 +49,27 @@
         .rej-zrodla td.rej-zmiana{color:#E65100;font-weight:600}
         .rej-status{display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:600;color:#E65100}
         .rej-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#E65100}
-        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-entry{grid-template-columns:minmax(0,1fr);gap:.5rem}.rej-entry p a{overflow-wrap:anywhere}.rej-zrodla{display:block;overflow-x:auto;white-space:nowrap}.rej-zrodla td,.rej-zrodla th{white-space:normal;min-width:9rem}}
+        @media(max-width:900px){.rej-cycles{grid-template-columns:1fr}.rej-entry{grid-template-columns:minmax(0,1fr);gap:.5rem}.rej-entry p a{overflow-wrap:anywhere}.rej-zrodla{display:block;overflow-x:auto;white-space:nowrap}.rej-zrodla td,.rej-zrodla th{white-space:normal;min-width:9rem}}
     </style>
 <link rel="stylesheet" href="/assets/portal.css?v=20261122-linki"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
 <body class="portal portal-legacy">
 
-<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main class="polca-content" id="main">
-<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Kiedy dane poLCA są przeglądane i co zmienia numer wersji</span></nav><div class="polca-page">
-
-    <section class="rej-hero fade-in">
-        <div>
-            <div class="section-num">Rejestr przeglądów i zmian</div>
-            <h1 class="page-title">Kiedy dane poLCA są przeglądane i co zmienia numer wersji</h1>
-            <p class="page-subtitle">
-                Baza referencyjna podlega przeglądom okresowym według ustalonych cykli. Rejestr
-                zawiera zapis przeglądów, aktualizacji danych i zmian metodycznych wraz z podstawą
-                normatywną każdej decyzji. Wersje zastąpione pozostają dostępne do celów kontrolnych.
-            </p>
-            <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
-                <a href="#rejestr" class="portal-button">Rejestr wpisów</a>
-                <a href="#skutek" class="portal-button portal-button-secondary" style="border-color:var(--portal-line);">Skutek dla deklaracji</a>
-                <a href="data/rejestr-zmian.json" class="portal-button portal-button-secondary" style="border-color:var(--portal-line);">Rejestr w JSON</a>
-            </div>
-        </div>
-        <aside class="rej-latest" aria-labelledby="rej-latest-title">
-            <h2 id="rej-latest-title">Najnowsze wpisy</h2>
-            <div id="rej-latest-list"><p>Daty i opisy zmian zawiera <a href="data/rejestr-zmian.json">plik rejestru</a>.</p></div>
-        </aside>
-    </section>
+<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja"><a href="/wyroby.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-products"></use></svg>Wyroby</a><a href="/datasety.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-data"></use></svg>Dane</a><a href="/kalkulatory.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-tools"></use></svg>Kalkulatory</a><a href="/jak-korzystac.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-guide"></use></svg>Jak korzystać</a><a href="/metodyka.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-methods"></use></svg>Metody i źródła</a></nav><a class="portal-search-link" href="/szukaj.html"><svg class="portal-nav-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="/assets/ikony-polca.svg?v=15fc36d1e0#nav-search"></use></svg>Szukaj</a></div></header><main id="main" class="portal-main portal-shell">
+<nav class="portal-breadcrumbs" aria-label="Ścieżka strony"><a href="/">Strona główna</a><span aria-hidden="true">/</span><span aria-current="page">Kiedy dane poLCA są przeglądane i co zmienia numer wersji</span></nav>
+<header class="portal-pagehead">
+    <h1>Kiedy dane poLCA są przeglądane i co zmienia numer wersji</h1>
+    <p class="portal-lead">Baza referencyjna podlega przeglądom okresowym według ustalonych cykli. Rejestr zawiera zapis przeglądów, aktualizacji danych i zmian metodycznych wraz z podstawą normatywną każdej decyzji. Wersje zastąpione pozostają dostępne do celów kontrolnych.</p>
+</header>
+<div class="polca-page">
+    <nav class="portal-heading-actions" aria-label="Odnośniki do rejestru zmian">
+        <a class="portal-button" href="#rejestr">Rejestr wpisów</a>
+        <a class="portal-button portal-button-secondary" href="#skutek">Skutek dla deklaracji</a>
+        <a class="portal-button portal-button-secondary" href="data/rejestr-zmian.json">Rejestr w JSON</a>
+    </nav>
+    <aside class="rej-latest" aria-labelledby="rej-latest-title">
+        <h2 id="rej-latest-title">Najnowsze wpisy</h2>
+        <div id="rej-latest-list"><p>Daty i opisy zmian zawiera <a href="data/rejestr-zmian.json">plik rejestru</a>.</p></div>
+    </aside>
 
     <section class="card section-gap fade-in" id="cykle" aria-labelledby="cykle-title">
         <h2 id="cykle-title" style="font-family:'Source Sans 3', Arial, sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Cykle przeglądu</h2>
