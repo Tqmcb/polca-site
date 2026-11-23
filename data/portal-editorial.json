@@ -1315,13 +1315,13 @@
     },
     {
       "id": "article-cement-polska",
-      "title": "Polski cement a średnia europejska — gdzie jesteśmy naprawdę",
+      "title": "Ile wynosi ślad węglowy polskiego cementu i od czego zależy?",
       "kind": "article",
       "category_id": "cement",
       "year": 2025,
       "year_type": "publication",
       "status_id": "archive",
-      "description": "Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.",
+      "description": "Średnia krajowa dla cementu CEM I wynosi 766 kg CO₂e/t, dla CEM III 483 kg CO₂e/t (EPD sektorowa SPC 2025). Skąd pochodzi emisja, jaki udział mają paliwa alternatywne i klinkier.",
       "href": "/blog-cement-polska.html",
       "published_at": "2025-11-14",
       "keywords": [

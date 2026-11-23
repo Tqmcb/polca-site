@@ -203,7 +203,7 @@
                 </svg>
 
                 <!-- Hotspoty -->
-                <button class="hotspot hotspot-critical" style="top:26%;left:10.5%" data-title="Cement (klinkier) — Hotspot #1" data-value="74% udziału w GWP betonu" data-desc="Produkcja klinkieru wymaga wypalania wapienia w ~1450°C. Polska: 70–80% paliw alternatywnych (vs EU 56%) — rzeczywisty ślad węglowy jest niższy niż w danych generycznych.">
+                <button class="hotspot hotspot-critical" style="top:26%;left:10.5%" data-title="Cement (klinkier) — Hotspot #1" data-value="74% udziału w GWP betonu" data-desc="Produkcja klinkieru wymaga wypalania wapienia w ~1450°C. W Polsce paliwa alternatywne dostarczyły 76,5% ciepła (SPC, dane z 2022 r.) — rzeczywisty ślad węglowy jest niższy niż w danych generycznych.">
                     <span class="hotspot-ring"></span><span class="hotspot-dot"></span>
                 </button>
                 <button class="hotspot hotspot-medium" style="top:38%;left:34%" data-title="Energia elektryczna (A3)" data-value="13% udziału w GWP" data-desc="Historyczny przykład: energia z modelem 2024 v9.1, GWP-fossil 0,599 kg CO₂e/kWh. Dokumenty dostawy i własna generacja wymagają odrębnej oceny; nie ustalają automatycznie udziału 3%.">
@@ -235,10 +235,10 @@
             <h2 id="hot-spot-cement">Hot-spot nr 1: cement i klinkier (74% GWP)</h2>
             <p>Zdecydowanie dominującym źródłem emisji w betonie jest cement — a konkretnie klinkier portlandzki, który stanowi jego główny składnik. Produkcja klinkieru generuje emisje CO₂ dwoma drogami:</p>
             <ul>
-                <li><strong>Kalcynacja wapienia</strong> — rozkład CaCO₃ → CaO + CO₂ jest procesem nieuchronnym chemicznie i odpowiada za ok. 60% emisji z tej fazy (ok. 525 kg CO₂/t klinkieru)</li>
-                <li><strong>Spalanie paliw</strong> w piecu obrotowym — odpowiada za pozostałe ~40%</li>
+                <li><strong>Kalcynacja wapienia</strong> — rozkład CaCO₃ → CaO + CO₂ jest procesem nieuchronnym chemicznie i według SPC wynosi 470 kg CO₂ na tonę klinkieru, czyli ok. 61% emisji z produkcji klinkieru</li>
+                <li><strong>Spalanie paliw</strong> w piecu obrotowym</li>
             </ul>
-            <p>Polskie cementownie osiągają wskaźnik udziału paliw alternatywnych (AFR) na poziomie 70–80%, podczas gdy średnia europejska wynosi 56%. Oznacza to, że przy stosowaniu danych generycznych Ecoinvent dla Polski — emisje z fazy paliwowej są <strong>zawyżone</strong>, co paradoksalnie karze polskich producentów za inwestycje w nowoczesne instalacje do spalania odpadów.</p>
+            <p>Polskie cementownie uzyskały w 2022 r. z paliw alternatywnych 76,5% ciepła zużytego w produkcji (deklaracja sektorowa SPC 2025). Oznacza to, że przy stosowaniu danych generycznych Ecoinvent dla Polski — emisje z fazy paliwowej są <strong>zawyżone</strong>, co paradoksalnie karze polskich producentów za inwestycje w nowoczesne instalacje do spalania odpadów.</p>
 
             <h2 id="hot-spot-energia">Hot-spot nr 2: energia elektryczna w węźle (13% GWP)</h2>
             <p>Mieszalnik betonomieszarni, podajniki ślimakowe, systemy ważące i sterowanie — wszystko to pobiera energię elektryczną. W typowej wytwórni betonu towarowego zużycie energii elektrycznej wynosi 3–6 kWh/m³ betonu.</p>
@@ -350,7 +350,7 @@
             </div>
             <div class="pf-legend">
                 <span><code>m<sub>cem</sub></code> — masa cementu [kg/m³] · typowo 300–380 kg</span>
-                <span><code>EF<sub>klinkier</sub></code> — wskaźnik emisji klinkieru PL [kg CO₂e/kg] · poLCA: 0,825</span>
+                <span><code>EF<sub>klinkier</sub></code> — wskaźnik emisji klinkieru PL [kg CO₂/kg] · SPC 2025: 0,775</span>
                 <span><code>E<sub>el</sub></code> — energia elektryczna [kWh/m³] · typowo 4–6</span>
                 <span><code>0,599</code> — wskaźnik energii elektrycznej poLCA-EN-PL-2024 v9.1 [kg CO₂e/kWh, historyczny GWP-fossil]</span>
                 <span><code>d</code> — dystans transportu [km]</span>
@@ -435,9 +435,9 @@
                         <span class="blog-tag dane">Dane</span>
                         <span class="blog-date">14 listopada 2025</span>
                     </div>
-                    <div class="blog-card-title">Polski cement a średnia europejska — gdzie jesteśmy naprawdę</div>
+                    <div class="blog-card-title">Ile wynosi ślad węglowy polskiego cementu i od czego zależy?</div>
                     <div class="blog-card-footer">
-                        <span class="blog-read-time">6 min</span>
+                        <span class="blog-read-time">4 min</span>
                     </div>
                 </div>
             </a>
