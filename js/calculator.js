@@ -1,9 +1,21 @@
-/** poLCA — kalkulator energii, zestaw historyczny 2024. */
+/** poLCA — kalkulator energii elektrycznej i paliw. */
 (function () {
     'use strict';
     var energyInput = document.getElementById('energyInput');
     var sourceSelect = document.getElementById('sourceSelect');
     if (!energyInput || !sourceSelect) return;
+    var profiles = {
+        'total-lca': {
+            indicator: 'GWP-total',
+            scope: 'Energia elektryczna — Polska 2025, wydanie v4, wskaźnik GWP-total (po kontroli technicznej)',
+            reference: '/energia-polska-2025-v4.html'
+        },
+        'fossil-lca': {
+            indicator: 'GWP-fossil',
+            scope: 'Historyczny profil poLCA-EN-PL-2024 v9.1, część kopalna cyklu życia',
+            reference: 'data/polca-en-pl-2024.json'
+        }
+    };
     function invalid(message) {
         document.getElementById('energyInputWarn').textContent = message;
         document.getElementById('energyInputWarn').hidden = !message;
@@ -20,22 +32,22 @@
         var raw = energyInput.value.trim();
         var energy = raw === '' ? NaN : Number(raw);
         if (raw === '' || !Number.isFinite(energy) || energy < 0) return invalid('Zużycie energii: wpisz liczbę nieujemną w MWh. Puste pole nie oznacza zera.');
-        if (['599', '202', '279', '344', '0'].indexOf(sourceSelect.value) < 0) return invalid('Wybierz źródło energii z listy.');
+        if (['644.54', '599', '202', '279', '344', '0'].indexOf(sourceSelect.value) < 0) return invalid('Wybierz źródło energii z listy.');
         var option = sourceSelect.options[sourceSelect.selectedIndex];
         var factor = Number(sourceSelect.value);
         if (!Number.isFinite(energy * factor)) return invalid('Zużycie energii jest zbyt duże do obliczenia skończonego wyniku. Zmniejsz wartość.');
         invalid('');
-        var electricity = option.getAttribute('data-scope') === 'fossil-lca';
+        var profile = profiles[option.getAttribute('data-scope')];
         return {
             schema: 'polca-energy-calculation/2.0',
             source: option.text,
             energy_MWh: energy,
             factor_kg_per_MWh: factor,
             result_kg: energy * factor,
-            unit: electricity ? 'kg CO2e' : 'kg CO2',
-            indicator: electricity ? 'GWP-fossil' : 'direct fossil CO2',
-            scope: electricity ? 'Historyczny profil poLCA-EN-PL-2024 v9.1, część kopalna cyklu życia' : 'Historyczne założenie kalkulatora: CO2 kopalny ze spalania, bez dostaw paliwa',
-            reference: electricity ? 'data/polca-en-pl-2024.json' : 'Założenia kalkulatora paliw; wartości nie zastępują danych paliwa i instalacji',
+            unit: profile ? 'kg CO2e' : 'kg CO2',
+            indicator: profile ? profile.indicator : 'direct fossil CO2',
+            scope: profile ? profile.scope : 'Historyczne założenie kalkulatora: CO2 kopalny ze spalania, bez dostaw paliwa',
+            reference: profile ? profile.reference : 'Założenia kalkulatora paliw; wartości nie zastępują danych paliwa i instalacji',
             timestamp: new Date().toISOString()
         };
     }
@@ -44,7 +56,15 @@
         if (!r) return;
         document.getElementById('resultMain').textContent = Math.round(r.result_kg).toLocaleString('pl-PL');
         document.getElementById('resultUnit').textContent = r.unit.replace('2', '₂');
-        document.getElementById('resultScope').textContent = r.scope;
+        var caption = document.getElementById('resultScope');
+        if (r.indicator === 'GWP-total') {
+            var link = document.createElement('a');
+            link.href = r.reference;
+            link.textContent = r.scope;
+            caption.replaceChildren(link);
+        } else {
+            caption.textContent = r.scope;
+        }
     }
     function copy(text, btn, label) {
         function fallback() {

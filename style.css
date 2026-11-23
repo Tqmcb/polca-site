@@ -4154,7 +4154,8 @@ input:focus, textarea:focus, select:focus {
 /* Kompletna skala typograficzna: Display→H4, Body scale, Labels, Mono */
 
 /* === DISPLAY & HEADINGS === */
-h1, .h1,
+/* The shared portal heading and lead have their own responsive typography. */
+h1:where(:not(.portal-pagehead h1)), .h1,
 .page-title,
 .hero-title,
 .blog-post-title {
@@ -4171,7 +4172,7 @@ h1, .h1,
     line-height: 1.05 !important;
 }
 
-h1, .h1, .page-title {
+h1:where(:not(.portal-pagehead h1)), .h1, .page-title {
     font-size: 2.5rem !important;
     letter-spacing: -0.03em !important;
     line-height: 1.10 !important;
@@ -4205,7 +4206,7 @@ h4, .h4 {
 }
 
 /* === BODY TEXT === */
-body, p, li, td {
+body, p:where(:not(.portal-lead)), li, td {
     font-family: 'Source Sans 3', Arial, sans-serif !important;
     font-size: 0.95rem !important;
     font-weight: 400 !important;
