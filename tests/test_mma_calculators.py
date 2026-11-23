@@ -37,7 +37,7 @@ class CalculatorTests(unittest.TestCase):
         catalog = read('data/datasets.json')
         registry = catalog['registry']
         self.assertEqual(hotspot_version, '2026.6')
-        self.assertEqual(registry['version'], '2026.9-energia-v5')
+        self.assertEqual(registry['version'], '2026.10-beton')
         self.assertEqual(catalog['meta']['version'], registry['version'])
         for code in ('POLCA-TRUCK-40T-DEFAULT-2026', 'POLCA-STEEL-REBAR-PL-MEDIAN-2026'):
             with self.subTest(code=code):

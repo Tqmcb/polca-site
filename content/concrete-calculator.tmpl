@@ -1,0 +1,56 @@
+<div class="concrete-calculator">
+<noscript><p>Do przeliczenia własnej receptury potrzebna jest obsługa JavaScript. Dostępne są
+<a href="/blog-beton-emisje-kalkulator.html#przyklad">obliczenia dla przykładowej receptury</a>
+oraz <a href="/wyroby/26.html#beton-towarowy">wyniki deklaracji dla dziewięciu klas betonu</a>.</p></noscript>
+<div class="concrete-layout">
+<form id="concrete-form" aria-label="Dane dla 1 m³ betonu">
+<fieldset><legend>Jaki jest skład 1 m³ betonu?</legend>
+<div class="concrete-fields">
+<label>Rodzaj cementu<select name="cement" required>{cements}</select></label>
+<label>Masa cementu [kg]<input name="cement_kg" type="number" min="0" step="any" value="330" required></label>
+<label>Rodzaj kruszywa<select name="aggregate" required>{aggregates}</select></label>
+<label>Masa kruszywa [kg]<input name="aggregate_kg" type="number" min="0" step="any" value="1850" required></label>
+<label>Masa domieszek [kg]<input name="admixtures_kg" type="number" min="0" step="any" value="0" required aria-describedby="concrete-omissions"></label>
+</div>
+<p id="concrete-omissions">Katalog nie zawiera wskaźnika dla domieszek, dlatego w obliczeniach pominięto wodę i domieszki. Masa domieszek jest podana w zestawieniu receptury.</p></fieldset>
+<fieldset><legend>Z jakiej odległości dostarcza się surowce?</legend>
+<div class="concrete-fields">
+<label>Odległość dostawy cementu [km]<input name="cement_km" type="number" min="0" step="any" value="100" required></label>
+<label>Odległość dostawy kruszywa [km]<input name="aggregate_km" type="number" min="0" step="any" value="30" required></label>
+</div><p>Dla obu dostaw przyjęto transport zestawem ciężarowym 40 t.</p></fieldset>
+<fieldset><legend>Ile energii i paliw zużywa wytwórnia na 1 m³?</legend>
+<div class="concrete-fields">
+<label>Energia elektryczna [kWh]<input name="electricity_kwh" type="number" min="0" step="any" value="4" required></label>
+<label>Gaz ziemny [m³]<input name="gas_m3" type="number" min="0" step="any" value="0" required></label>
+<label>Olej napędowy [l]<input name="diesel_l" type="number" min="0" step="any" value="0" required></label>
+</div></fieldset>
+<fieldset><legend>Z którą klasą porównać wynik?</legend>
+<label>Klasa wytrzymałości na ściskanie<select name="strength_class" required>{classes}</select></label>
+<p>Klasa służy wyłącznie do porównania. Jej wybór nie zmienia receptury.</p></fieldset>
+<p id="concrete-error" role="alert"></p>
+</form>
+<section class="concrete-summary" aria-labelledby="concrete-summary-title">
+<h2 id="concrete-summary-title">Jaki jest wynik A1–A3 dla tej receptury?</h2>
+<div aria-live="polite" aria-atomic="true"><p class="concrete-total"><strong id="concrete-total">—</strong> kg CO₂e/m³</p>
+<p>Udział produkcji cementu w wyniku: <strong id="cement-share">—</strong></p></div>
+<dl class="concrete-stages"><div><dt>A1 · Produkcja składników</dt><dd id="concrete-a1">—</dd></div>
+<div><dt>A2 · Dostawa do wytwórni</dt><dd id="concrete-a2">—</dd></div>
+<div><dt>A3 · Produkcja betonu</dt><dd id="concrete-a3">—</dd></div></dl>
+<h3>Jak wynik wypada na tle deklaracji?</h3><p id="concrete-comparison" aria-live="polite">—</p>
+<a href="/wyroby/26.html#beton-towarowy">Wyniki według klas i deklaracje źródłowe</a>
+</section></div>
+<section><h2>Jaki udział w wyniku mają poszczególne składniki i procesy?</h2>
+<p>W module A1 masę cementu i kruszywa w tonach pomnożono przez wskaźniki ich produkcji.
+W module A2 wskaźnik transportu pomnożono przez pracę przewozową w tonokilometrach, a w module A3 wskaźniki energii i paliw przez ich zużycie.
+Wskaźniki cementu pochodzą z deklaracji sektorowej Stowarzyszenia Producentów Cementu z 2025 r.
+Dla energii elektrycznej przyjęto krajowy model poLCA za 2025 r. w wersji 5, a dla oleju napędowego wskaźnik dla maszyn pozadrogowych.</p>
+<div class="portal-table-wrap" tabindex="0" role="region" aria-label="Składniki wyniku dla 1 m³ betonu">
+<table><thead><tr><th scope="col">Moduł</th><th scope="col">Pozycja i źródło</th><th scope="col">Ilość na 1 m³</th>
+<th scope="col">Wskaźnik</th><th scope="col">Wkład [kg CO₂e/m³]</th></tr></thead>
+<tbody id="concrete-breakdown"></tbody></table></div>
+<p>Wynik dotyczy procesów ujętych w tabeli. W deklaracji środowiskowej betonu należy stosować dane wytwórni.</p>
+<div class="portal-actions"><button type="button" id="concrete-csv" disabled>Pobierz tabelę (CSV)</button>
+<button type="button" id="concrete-json" disabled>Pobierz dane obliczenia (JSON)</button></div>
+<p><a href="/blog-beton-emisje-kalkulator.html#przyklad">Przykład obliczenia dla 330 kg cementu CEM II</a></p>
+</section></div>
+<script type="application/json" id="concrete-config">{config}</script>

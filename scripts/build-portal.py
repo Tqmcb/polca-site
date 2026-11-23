@@ -60,6 +60,8 @@ def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',page
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v, spec='.6g'):return format(v,spec).replace('.',',')
 def record_value(r):
+ if r.get('category_id') == 'beton':
+  return num(r['value'], '.1f')
  if 'gwp_modules_kg_co2e_per_t' in r:
   return num(r['value'], '.2f')
  return num(r['value'])

@@ -56,6 +56,17 @@
   "wpisy": [
     {
       "data": "2026-11-23",
+      "kategoria": "nowe_dane",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-CONCRETE-C25-30-EPD-PL-2026, POLCA-CONCRETE-C30-37-EPD-PL-2026",
+      "tytul": "Beton towarowy — wyniki z polskich deklaracji i kalkulator dla 1 m³",
+      "opis": "Zestawiono wyniki A1–A3 pięciu deklaracji dla dziewięciu klas betonu. Dla C25/30 mediana z trzech deklaracji wynosi 216,5 kg CO₂e/m³, a dla C30/37 mediana z czterech deklaracji wynosi po zaokrągleniu 210,9 kg CO₂e/m³. Średnie dla C20/25 wynoszą 184 i 197,5 kg CO₂e/m³. Kalkulator uwzględnia produkcję cementu i kruszywa, ich transport oraz zużycie energii i paliw w wytwórni.",
+      "podstawa": "Pięć deklaracji Instytutu Techniki Budowlanej według EN 15804+A2 z wynikami dla cementu w wariancie brutto.",
+      "link": "/wyroby/26.html#beton-towarowy",
+      "skutek_dla_deklaracji": "W deklaracji betonu należy stosować dane wytwórni."
+    },
+    {
+      "data": "2026-11-23",
       "kategoria": "przeglad_metody",
       "status": "zakonczony",
       "dotyczy": "PL2025_PHYSICAL_DELIVERED_v5, wydanie 2026-11-23.1",

@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-11-23.5",
+  "record": {
+    "id": "POLCA-CONCRETE-C30-37-EPD-PL-2026",
+    "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych",
+    "kind": "dataset",
+    "category_id": "beton",
+    "category_label": "Beton towarowy",
+    "year": 2026,
+    "year_type": "publication",
+    "status_id": "reference",
+    "status_label": "Wartość referencyjna",
+    "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+    "href": "/dane/polca-concrete-c30-37-epd-pl-2026.html",
+    "unit": "kg CO₂e/m³",
+    "boundary": "A1–A3",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "source_name": "Zestawienie deklaracji ITB-EPD 447, 558, 566 i 662 dla klasy C30/37",
+    "source_url": "https://polca.org.pl/wyroby/26.html#beton-towarowy",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-CONCRETE-C30-37-EPD-PL-2026.json"
+      }
+    ],
+    "methodology_href": "/wyroby/26.html#beton-towarowy",
+    "related_ids": [],
+    "keywords": [
+      "POLCA-CONCRETE-C30-37-EPD-PL-2026",
+      "C30/37",
+      "beton towarowy",
+      "mediana",
+      "deklaracja środowiskowa",
+      "EPD",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "m3",
+    "source_record_href": "/data/datasets/POLCA-CONCRETE-C30-37-EPD-PL-2026.json",
+    "source_trace": [
+      {
+        "name": "ITB-EPD 447/2023",
+        "type": "manufacturer_epd",
+        "role": "Średnia w obrębie deklaracji.",
+        "manufacturer": "Budokrusz S.A.",
+        "product": "ECO LINE, C30/37",
+        "source_valid_until": "2028-04-24",
+        "gwp_total_kg_co2e": 208.75,
+        "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_447_CEM-30-37-Budokrusz-v5.pdf#page=6",
+        "source_rows": [
+          {
+            "page": 6,
+            "value": 217
+          },
+          {
+            "page": 8,
+            "value": 209
+          },
+          {
+            "page": 10,
+            "value": 199
+          },
+          {
+            "page": 12,
+            "value": 210
+          }
+        ]
+      },
+      {
+        "name": "ITB-EPD 558/2023",
+        "type": "manufacturer_epd",
+        "role": "Wynik dla klasy betonu.",
+        "manufacturer": "STEFANCO Sp. z o.o.",
+        "product": "Beton posadzkowy, C30/37",
+        "source_valid_until": "2028-12-01",
+        "gwp_total_kg_co2e": 193,
+        "url": "https://www.itb.pl/wp-content/uploads/2023/12/ITB-EPD_558_STEFANCO-Sp.-z-o.o.-Ready-mixed-concrete-for-flooring.pdf#page=8",
+        "source_rows": [
+          {
+            "page": 8,
+            "value": 193
+          }
+        ]
+      },
+      {
+        "name": "ITB-EPD 566/2023",
+        "type": "manufacturer_epd",
+        "role": "Wynik dla klasy betonu.",
+        "manufacturer": "Dyckerhoff Polska Sp. z o.o.",
+        "product": "Dyckerhoff EKO, C30/37",
+        "source_valid_until": "2028-12-06",
+        "gwp_total_kg_co2e": 213,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/03/ITB-EPD_566_Dyckerhoff-Polska-Sp.-z-o.o.-Concrete-Dyckerhoff-EKO.pdf#page=10",
+        "source_rows": [
+          {
+            "page": 10,
+            "value": 213
+          }
+        ]
+      },
+      {
+        "name": "ITB-EPD 662/2024",
+        "type": "manufacturer_epd",
+        "role": "Średnia w obrębie deklaracji.",
+        "manufacturer": "P.P.M.D. Kruszbet S.A.",
+        "product": "Beton towarowy, C30/37",
+        "source_valid_until": "2029-09-13",
+        "gwp_total_kg_co2e": 223.5,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_662_P.P.M.D.-KRUSZBET-S.A.-Ready-mix-concrete.pdf#page=8",
+        "source_rows": [
+          {
+            "page": 8,
+            "value": 226
+          },
+          {
+            "page": 9,
+            "value": 221
+          }
+        ]
+      }
+    ],
+    "limitations": "Próba obejmuje wyłącznie deklaracje z wynikiem dla tej klasy. Przy obliczaniu mediany pominięto wielkość produkcji wytwórni.",
+    "publication_year": 2026,
+    "methodology_note": "Każda deklaracja ma jednakową wagę. Dla klasy C30/37 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 4 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+    "value": 210.875,
+    "cpr_family_ids": [
+      26
+    ],
+    "cpr_related": [],
+    "cpr_scope_note": "Przypisanie do rodziny 26 służy nawigacji w katalogu."
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

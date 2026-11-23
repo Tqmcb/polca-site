@@ -111,7 +111,9 @@
     "method-dpp": [],
     "article-alokacja-metan-kopalniany": [],
     "article-aluminium-epd": [],
-    "article-beton-emisje-kalkulator": [],
+    "article-beton-emisje-kalkulator": [
+      26
+    ],
     "article-beton-lcz": [],
     "article-cement-polska": [
       15
@@ -172,6 +174,15 @@
     ],
     "POLCA-STEEL-REBAR-PL-MEDIAN-2026": [
       16
+    ],
+    "POLCA-CONCRETE-C25-30-EPD-PL-2026": [
+      26
+    ],
+    "POLCA-CONCRETE-C30-37-EPD-PL-2026": [
+      26
+    ],
+    "tool-beton": [
+      26
     ]
   },
   "related": {
@@ -382,6 +393,8 @@
     ]
   },
   "scope_notes": {
-    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": "Jeżeli jest kruszywem wypełniającym do MMA, a nie innym proszkiem mineralnym o innym zamierzonym zastosowaniu."
+    "POLCA-FILLER-LIMESTONE-DEFAULT-2026": "Jeżeli jest kruszywem wypełniającym do MMA, a nie innym proszkiem mineralnym o innym zamierzonym zastosowaniu.",
+    "POLCA-CONCRETE-C25-30-EPD-PL-2026": "Przypisanie do rodziny 26 służy nawigacji w katalogu.",
+    "POLCA-CONCRETE-C30-37-EPD-PL-2026": "Przypisanie do rodziny 26 służy nawigacji w katalogu."
   }
 }

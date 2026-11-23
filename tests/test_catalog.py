@@ -76,10 +76,10 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(expected, (ROOT / 'data/portal-catalog.json').read_text(encoding='utf-8'))
 
     def test_positions_not_files_or_indicators(self):
-        self.assertEqual(len(self.datasets), 44)
+        self.assertEqual(len(self.datasets), 46)
         self.assertEqual(set(self.datasets), set(self.legacy) | {ENERGY_ID, 'PL2025_PHYSICAL_DELIVERED_v4'})
         self.assertEqual(self.catalog['counts']['data_positions'], len(self.catalog['datasets']))
-        self.assertEqual(self.catalog['counts']['data_positions'], 32)
+        self.assertEqual(self.catalog['counts']['data_positions'], 34)
         self.assertEqual(self.catalog['counts']['withdrawn_positions'], 12)
         self.assertEqual(self.catalog['counts']['parameter_sets'], 1)
         self.assertEqual(self.catalog['counts']['control_references'], 8)
