@@ -10,6 +10,7 @@ from lxml import html
 
 ROOT = Path(__file__).resolve().parents[1]
 TRUCK = 'POLCA-TRUCK-40T-DEFAULT-2026'
+BITUMEN = 'POLCA-BITUMEN-ROAD-DEFAULT-2026'
 STEEL = 'POLCA-STEEL-REBAR-PL-MEDIAN-2026'
 UUID = '330f8948-8463-4b63-a14a-3fedcc175180'
 
@@ -71,7 +72,44 @@ class PrecastTests(unittest.TestCase):
             if path.suffix.lower() in {'.py', '.js', '.mjs', '.html', '.json', '.csv', '.md', '.php', '.xml'}:
                 self.assertIsNone(stale.search(path.read_text()), str(path.relative_to(ROOT)))
 
-    def test_mma_transport_results_follow_the_route_and_recipe(self):
+    def test_road_bitumen_agrees_with_eurobitume_and_its_exports(self):
+        record = self.records[BITUMEN]
+        value, url = record['value'], record['source_url']
+        self.assertEqual(value, 530)
+        self.assertTrue(url.endswith('/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8'))
+        self.assertEqual(record['source_name'], 'Eurobitume LCA 4.0 (2025), raport GWP, s. 8')
+        single = read(record['source_record_href'])['dataset']
+        registry = next(r for r in read('data/datasets.json')['datasets'] if r['code'] == BITUMEN)
+        for data in (record, registry, single):
+            self.assertEqual((data['source_name'], data['source_url']), (record['source_name'], url))
+            self.assertEqual(data['source_trace'][0]['url'], url)
+            self.assertIn('dla asfaltu utlenionego raport podaje 616 kg CO₂e/t', data['methodology_note'])
+        for method in (read('data/default-methodology.json')['defaults'][BITUMEN],
+                       registry['default_methodology'], single['default_methodology']):
+            self.assertEqual(method['declared_value'], f'{value} kg CO2e/t')
+            self.assertEqual(method['source_basis'][0]['url'], url)
+        row = csv_record('data/datasets.csv', 'code', BITUMEN)
+        self.assertEqual((Decimal(row['gwp_total_kg_co2e']), row['source_url']), (value, url))
+        short_id = 'POLCA-GWP-BITUMEN-ROAD-2026'
+        short = next(r for r in read('data/polca-gwp-v2026-1.json')['records'] if r['id'] == short_id)
+        row = csv_record('data/polca-gwp-v2026-1.csv', 'id', short_id, ';')
+        self.assertEqual((short['value'], short['source_url']), (value, url))
+        self.assertEqual((pl_decimal(row['wartosc']), row['podstawa']), (value, record['source_name']))
+        hotspots = read('data/mma-hotspots.json')['kluczowe źródło wpływus']
+        hot = next(r for r in hotspots if r['id'] == 'bitumen')['values'][0]
+        self.assertEqual((hot['value'], hot['source_url']), (f'{value} kg CO2e/t', url))
+
+    def test_no_obsolete_road_bitumen_value_in_text(self):
+        stale = re.compile(r'(?<![\d.,])450\s*kg\s*CO[2₂]e\s*/\s*t\b', re.I)
+        bitumen = re.compile(r'bitum|lepiszcz|asfalt', re.I)
+        for path in ROOT.rglob('*'):
+            if path.suffix.lower() in {'.html', '.json', '.csv', '.js', '.py', '.md'}:
+                text = path.read_text()
+                for match in stale.finditer(text):
+                    context = text[max(0, match.start() - 200):match.end() + 200]
+                    self.assertIsNone(bitumen.search(context), str(path.relative_to(ROOT)))
+
+    def test_mma_results_follow_the_route_and_recipe(self):
         profile = read('data/mma-client-example.json')
         activity = profile['activity_data']
         mass = activity['recipe_kg_per_mg']
@@ -81,16 +119,43 @@ class PrecastTests(unittest.TestCase):
                       'additives': 'additives_to_plant'}
         tkm = sum(Decimal(mass[item]) * km[route] for item, route in deliveries.items()) / 1000
         factor = self.records[TRUCK]['value']
-        background = next(r for r in profile['background_factors'] if r['dataset_code'] == TRUCK)
-        self.assertEqual(background['value'], factor)
+        for background in profile['background_factors']:
+            record = self.records[background['dataset_code']]
+            self.assertEqual(background['value'], record['value'])
+            if 'source_url' in background:
+                self.assertEqual(background['source_url'], record['source_url'])
         result = profile['module_results_kg_co2e_per_mg']
+        materials = {'virgin_aggregate': 'POLCA-AGG-PL-CRUSHED-DEFAULT-2026',
+                     'rap': 'POLCA-RAP-PROCESSING-DEFAULT-2026', 'road_bitumen_35_50': BITUMEN,
+                     'limestone_filler': 'POLCA-FILLER-LIMESTONE-DEFAULT-2026'}
+        a1 = sum(mass[item] * self.records[code]['value'] for item, code in materials.items()) / Decimal(1000)
+        self.assertEqual(result['A1'], round(a1, 3))
         for module, distance in [('A2', tkm), ('A4', km['plant_to_site_a4']), ('C2', km['rap_to_processing_c2'])]:
             self.assertEqual(result[module], round(distance * factor, 3))
-        self.assertEqual(result['A1-A3'], result['A1'] + result['A2'] + result['A3'])
-        self.assertEqual(result['net_with_D'], result['A-C_without_D'] + result['D'])
+        production = activity['production_a3']
+        scenario = activity['scenario_a5_c_d']
+        diesel = self.records['POLCA-FUEL-DIESEL-DEFAULT-2026']['value']
+        electricity = self.records['POLCA-EN-PL-LCA-2024']['value']
+        a3 = (production['natural_gas_m3_per_mg'] * self.records['POLCA-FUEL-NATURAL-GAS-DEFAULT-2026']['value']
+              + production['electricity_kwh_per_mg'] * electricity + production['diesel_l_per_mg'] * diesel)
+        a1_a3 = a1 + tkm * factor + a3
+        a4 = km['plant_to_site_a4'] * factor
+        a5 = (scenario['paving_diesel_l_per_mg'] * diesel + a1_a3 * scenario['installation_waste_percent'] / 100
+              + scenario['tack_coat_emulsion_kg_per_mg'] * self.records['POLCA-EMULSION-TACK-COAT-DEFAULT-2026']['value'])
+        c1 = scenario['milling_diesel_l_per_mg'] * diesel
+        c3 = scenario['rap_processing_electricity_kwh_per_mg'] * electricity + scenario['rap_processing_diesel_l_per_mg'] * diesel
+        c1_c4 = c1 + km['rap_to_processing_c2'] * factor + c3 + result['C4']
+        ac = a1_a3 + a4 + a5 + c1_c4
+        d = scenario['module_d_credit_kg_co2e_per_mg']
+        for module, expected in {'A3': a3, 'A1-A3': a1_a3, 'A5': a5, 'C1': c1, 'C3': c3, 'C1-C4': c1_c4,
+                                 'A-C_without_D': ac, 'D': d, 'net_with_D': ac + d}.items():
+            self.assertEqual(result[module], round(expected, 3), module)
         indicators = profile['en15804_a2_indicators']
+        for group, total in [('A1-A3', a1_a3), ('A4-A5', a4 + a5), ('C1-C4', c1_c4), ('D', d)]:
+            self.assertEqual(indicators['GWP-total'][group], round(total, 3))
         shares = profile['non_transport_gwp_shares']
         transport = self.records[TRUCK]['source_trace'][0]
+        non_transport = {'A1': a1, 'A3': a3, 'A5': a5, 'C1': c1, 'C3': c3, 'C4': result['C4']}
         for i, key in enumerate(shares['components']):
             source_factor = transport[f'gwp_{key.split("-")[1]}_kg_co2e']
             for group, stages, work in (
@@ -98,9 +163,8 @@ class PrecastTests(unittest.TestCase):
                 ('A4-A5', ('A5',), km['plant_to_site_a4']),
                 ('C1-C4', ('C1', 'C3', 'C4'), km['rap_to_processing_c2']),
             ):
-                estimate = work * source_factor + sum(result[k] * shares[k][i] for k in stages)
-                # Published module totals and components are independently rounded to 0.001.
-                self.assertLessEqual(abs(indicators[key][group] - estimate), Decimal('0.001'))
+                estimate = work * source_factor + sum(non_transport[k] * shares[k][i] for k in stages)
+                self.assertEqual(indicators[key][group], round(estimate, 3), (key, group))
         for group in ('A1-A3', 'A4-A5', 'C1-C4'):
             climate = sum(indicators[k][group] for k in ('GWP-fossil', 'GWP-biogenic', 'GWP-luluc'))
             self.assertLessEqual(abs(indicators['GWP-total'][group] - climate), Decimal('0.002'))

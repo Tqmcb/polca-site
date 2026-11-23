@@ -701,8 +701,8 @@
       "unit": "kg CO₂e/t",
       "boundary": "A1",
       "indicator_label": "Wpływ na klimat (GWP)",
-      "source_name": "Eurobitume LCA 4.0, branżowe dane tła dla bitumu",
-      "source_url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+      "source_name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+      "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
       "formats": [
         "JSON"
       ],
@@ -730,7 +730,17 @@
       "geography": "PL/EU",
       "reference_unit": "t",
       "source_record_href": "/data/datasets/POLCA-BITUMEN-ROAD-DEFAULT-2026.json",
-      "value": 450,
+      "source_trace": [
+        {
+          "name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
+          "role": "branżowy background cradle-to-gate dla bitumu",
+          "type": "methodology_source"
+        }
+      ],
+      "limitations": "Nie rozróżnia rafinerii, konkretnego producenta, asfaltów modyfikowanych, dodatków specjalnych, transportu do wytwórni ani alokacji właściwej dla konkretnej dostawy.",
+      "methodology_note": "Zbiór danych lepiszcza opiera się na podejściu branżowym Eurobitume LCA 4.0 dla bitumu w zakresie cradle-to-gate. Rekord ma status branżowych danych tła dla modułu A1. Dla dostawcy z własną EPD baza wskazuje deklarację producenta; dla braku EPD stosuje wartość sektorową z jawnie oznaczoną jakością danych. Wartość 530 kg CO₂e/t to GWP100 według AR6 dla bitumu drogowego; dla asfaltu utlenionego raport podaje 616 kg CO₂e/t.",
+      "value": 530,
       "cpr_family_ids": [
         23
       ],
