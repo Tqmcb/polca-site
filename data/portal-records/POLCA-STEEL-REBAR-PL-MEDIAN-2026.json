@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-11-23.2",
+  "record": {
+    "id": "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+    "title": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+    "kind": "dataset",
+    "category_id": "materialy",
+    "category_label": "Materiały",
+    "year": 2026,
+    "year_type": "publication",
+    "status_id": "reference",
+    "status_label": "Wartość referencyjna",
+    "description": "Mediana wyników A1–A3 z czterech ważnych deklaracji środowiskowych hut w Polsce, wytwarzających stal w piecach elektrycznych z 87–100% udziałem złomu. Wyniki wynoszą od 358 do 961 kg CO₂e/t. Różnice wynikają głównie z modelowania energii elektrycznej. Moduł D nie jest uwzględniony. W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+    "href": "/dane/polca-steel-rebar-pl-median-2026.html",
+    "unit": "kg CO₂e/t",
+    "boundary": "A1–A3",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "source_name": "ArcelorMittal Warszawa, ITB-EPD nr 688/2024 v2",
+    "source_url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9",
+    "formats": [
+      "JSON"
+    ],
+    "downloads": [
+      {
+        "label": "Rekord z metryką — JSON",
+        "format": "JSON",
+        "href": "/data/portal-records/POLCA-STEEL-REBAR-PL-MEDIAN-2026.json"
+      }
+    ],
+    "methodology_href": "/wyroby/01.html#przyklad-prefabrykat",
+    "related_ids": [],
+    "keywords": [
+      "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+      "stal zbrojeniowa",
+      "pręty",
+      "walcówka",
+      "huty",
+      "mediana",
+      "prefabrykaty",
+      "ślad węglowy",
+      "wpływ na klimat",
+      "wyrób",
+      "produkt"
+    ],
+    "record_type": "indicator_value",
+    "geography": "PL",
+    "reference_unit": "t",
+    "source_record_href": "/data/datasets/POLCA-STEEL-REBAR-PL-MEDIAN-2026.json",
+    "source_trace": [
+      {
+        "name": "ITB-EPD nr 596/2024",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "CMC Poland Zawiercie",
+        "product": "pręty żebrowane",
+        "source_valid_until": "2029-01-24",
+        "gwp_total_kg_co2e": 358,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/08/ITB-EPD_596_CMC-Poland-Sp.-z-o.o.-Ribbed-bars.pdf#page=10"
+      },
+      {
+        "name": "ITB-EPD nr 688/2024 v2",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "ArcelorMittal Warszawa",
+        "product": "pręty i walcówka",
+        "source_valid_until": "2029-10-24",
+        "gwp_total_kg_co2e": 775,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9"
+      },
+      {
+        "name": "S-P-08502 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "Celsa Huta Ostrowiec",
+        "product": "pręty, kręgi i walcówka",
+        "source_valid_until": "2028-03-28",
+        "gwp_total_kg_co2e": 805,
+        "url": "https://api.environdec.com/api/v1/EPDLibrary/Files/46e24cc8-b3e4-4009-90d9-08db7203e99c/Data#page=15"
+      },
+      {
+        "name": "EPD-IES-0031613:001 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "Cognor (Ferrostal Łabędy)",
+        "product": "wyroby długie",
+        "source_valid_until": "2031-04-21",
+        "gwp_total_kg_co2e": 961,
+        "url": "https://api.environdec.com/api/v1/EPDLibrary/Files/82e87aee-d1ec-43ce-1754-08dea6a1f947/Data#page=15"
+      }
+    ],
+    "limitations": "Mediana czterech deklaracji producentów nie uwzględnia wielkości produkcji hut.",
+    "publication_year": 2026,
+    "methodology_note": "Wskaźnik jest średnią arytmetyczną dwóch środkowych wyników w uporządkowanym zbiorze czterech deklaracji. Każdą hutę uwzględniono raz.",
+    "value": 790,
+    "cpr_family_ids": [
+      16
+    ],
+    "cpr_related": [
+      {
+        "family_id": 1,
+        "role": "input_to_product",
+        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
+      }
+    ],
+    "cpr_scope_note": null
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}

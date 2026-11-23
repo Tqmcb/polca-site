@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA MMA kluczowe źródło wpływu database",
-    "version": "2026.1-start",
+    "version": "2026.2",
     "status": "startowy zakres publiczny",
     "principle": "Publiczna baza pokazuje wynikowe wartości poLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
   },
@@ -93,9 +93,11 @@
       "values": [
         {
           "name": "Transport drogowy, zestaw 40 t",
-          "value": "0,095 kg CO2e/tkm",
+          "value": "0,0843 kg CO2e/tkm",
           "status": "wartość domyślna poLCA",
-          "basis": "Publiczne bazy LCA/transportu i EMEP/EEA; w projekcie preferowane są dane floty, trasy i rzeczywiste obciążenie."
+          "basis": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+          "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+          "dataset_code": "POLCA-TRUCK-40T-DEFAULT-2026"
         }
       ]
     },

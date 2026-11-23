@@ -1,6 +1,6 @@
 {
-  "version": "POLCA-GWP-2026.2",
-  "published_at": "2026-05-03",
+  "version": "POLCA-GWP-2026.3",
+  "published_at": "2026-11-23",
   "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
@@ -83,7 +83,7 @@
       "id": "POLCA-GWP-TRUCK-40T-2026",
       "group": "transport",
       "name": "Transport drogowy, zestaw 40 t",
-      "value": 0.095,
+      "value": 0.0843,
       "unit": "kg CO2e/tkm",
       "module": "A2/A4/C2",
       "status": "wartość domyślna poLCA",
@@ -94,8 +94,10 @@
         "kruszywa",
         "roboty drogowe"
       ],
-      "basis": "publiczne bazy LCA transportu, EMEP/EEA",
-      "replace_with": "dokumenty WZ/CMR, trasa, ładowność, spalanie floty"
+      "basis": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+      "replace_with": "dokumenty WZ/CMR, trasa, ładowność, spalanie floty",
+      "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+      "limitations": "Zbiór dla Niemiec, norma Euro 5, ładowność 27 t, stopień załadowania 85%. Źródło nie opisuje pustych przebiegów. Dla przewozu z pustym powrotem i dla własnej floty należy stosować dane przewoźnika."
     },
     {
       "id": "POLCA-GWP-BITUMEN-ROAD-2026",
@@ -515,6 +517,23 @@
       ],
       "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 30 00; wartość 2026 obejmuje direct + indirect + narzut.",
       "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+      "group": "stal",
+      "name": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+      "value": 790,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wartość referencyjna poLCA",
+      "use_for": [
+        "stal zbrojeniowa",
+        "prefabrykaty żelbetowe"
+      ],
+      "basis": "Mediana czterech deklaracji środowiskowych hut w Polsce (ITB 596/2024, ITB 688/2024 v2, S-P-08502, EPD-IES-0031613:001).",
+      "replace_with": "W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+      "source_url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9",
+      "source_record_href": "/data/datasets/POLCA-STEEL-REBAR-PL-MEDIAN-2026.json"
     }
   ],
   "metadata_revision": "2026-11-23",

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA product-to-dataset map",
-    "version": "2026.6-cement",
+    "version": "2026.7-prefabrykaty",
     "purpose": "Mapa pokazuje, które wspólne datasety poLCA mogą być stosowane w poszczególnych grupach wyrobów. Dataset jest utrzymywany raz, a karta wyrobu określa zastosowanie, moduł i wymagane dane aktywności.",
     "rule": "Nie kopiować wskaźników do każdego wyrobu. Produkt używa wspólnych rekordów przez identyfikator datasetu, a wynik zapisuje wersję datasetu i jakość danych."
   },
@@ -212,7 +212,16 @@
         "road_works"
       ],
       "not_used_by_default": [],
-      "replacement_rule": "Dokumenty WZ/CMR, dane floty, trasa i ładowność zastępują domyślną wartość tkm."
+      "replacement_rule": "Zbiór dla Niemiec, norma Euro 5, ładowność 27 t, stopień załadowania 85%. Źródło nie opisuje pustych przebiegów. Dla przewozu z pustym powrotem i dla własnej floty należy stosować dane przewoźnika."
+    },
+    {
+      "code": "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+      "name": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+      "used_by": [
+        "precast"
+      ],
+      "not_used_by_default": [],
+      "replacement_rule": "W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali."
     }
   ],
   "product_models": [

@@ -1,10 +1,10 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
-    "version": "2026.4-aggregates",
+    "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
+    "version": "2026.8-prefabrykaty",
     "status": "legacy_metadata",
-    "published_at": "2026-05-03",
+    "published_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
       "EN 15804+A2",
@@ -17,28 +17,37 @@
     "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
     "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
     "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "dpp_readiness": {
+      "status": "not_implemented",
+      "format": "JSON",
+      "export_formats": [
+        "JSON"
+      ],
+      "note": "Własny schemat JSON; brak zwalidowanego eksportu ILCD+EPD i wdrożonego paszportu cyfrowego.",
+      "documentation_url": "/o-polca/gotowosc-dpp.html"
+    },
     "methodology_basis_status": "references_not_conformity_assessment"
   },
   "dataset": {
     "code": "POLCA-TRUCK-40T-DEFAULT-2026",
-    "name": "Transport drogowy - zestaw 40 t",
+    "name": "Transport drogowy — zestaw 40 t",
     "category": "transport",
     "module_default": "A2/A4/C2",
     "unit": "tkm",
-    "gwp_total_kg_co2e": 0.095,
-    "year": 2026,
-    "last_reviewed_at": "2026-07-31",
-    "next_review_due": "2026-10-31",
+    "gwp_total_kg_co2e": 0.0843,
+    "year": 2023,
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2026-12-31",
     "review_cycle": "quarterly",
-    "geography": "PL/EU",
-    "technology": "Samochod ciężarowy / zestaw 40 t, transport drogowy",
-    "data_quality": "industry",
+    "geography": "DE",
+    "technology": "Zestaw ciężarowy Euro 5 o ładowności 27 t.",
+    "data_quality": "public_database",
     "status": "published_polca_default",
-    "source_name": "ÖKOBAUDAT / EMEP-EEA jako publiczne punkty odniesienia dla transportu",
-    "source_url": "https://www.oekobaudat.de/",
-    "scope": "Współczynnik dla transportu liczony jako tkm. poLCA moze przeliczyć mase ladunku i odleglosc z lokalizacji dostawcy oraz wytwórni.",
-    "methodology_note": "Transport jest liczony jako tkm z masy ładunku i odległości. Publiczne bazy służą jako punkt odniesienia, ale dla klienta preferowane są dane floty, trasy, ładowności i puste przebiegi.",
-    "limitations": "Nie rozróżnia normy EURO, spalania konkretnej floty, pustych przebiegow ani rodzaju drogi. Dla finalnej EPD wymaga potwierdzenia założeń transportowych.",
+    "source_name": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+    "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+    "scope": "Przewóz 1 t ładunku na odległość 1 km zestawem ciężarowym.",
+    "methodology_note": "Źródło podaje całkowity wpływ na klimat w module A4 na tonokilometr według EN 15804+A2, metodą śladu środowiskowego EF 3.1. W obliczeniach poLCA pracę przewozową przypisuje się do A2, A4 lub C2 zależnie od etapu przewozu. Rok odniesienia to 2023, a ważność zbioru obejmuje okres do 2026 r.",
+    "limitations": "Zbiór dla Niemiec, norma Euro 5, ładowność 27 t, stopień załadowania 85%. Źródło nie opisuje pustych przebiegów. Dla przewozu z pustym powrotem i dla własnej floty należy stosować dane przewoźnika.",
     "preferred_replacement": "Dane floty, dokumenty WZ/CMR, potwierdzona trasa i rzeczywiste spalanie.",
     "publication_status": "published_polca_default",
     "review_required": false,
@@ -47,26 +56,24 @@
       "internal_report",
       "epd_plus_preparation"
     ],
-    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "quality_rule": "Rekord otrzymuje status pozycji istotnej dla jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
     "source_trace": [
       {
-        "name": "ÖKOBAUDAT",
+        "name": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
         "type": "public_database",
-        "role": "transport/building LCA proxy",
-        "url": "https://www.oekobaudat.de/"
-      },
-      {
-        "name": "EMEP/EEA Guidebook 2023",
-        "type": "official_public",
-        "role": "road transport emission factors cross-check",
-        "url": "https://www.eea.europa.eu/publications/emep-eea-guidebook-2023"
+        "role": "Wynik dla 1 t·km w module A4.",
+        "url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+        "gwp_total_kg_co2e": 0.084310395322016,
+        "gwp_fossil_kg_co2e": 0.0823015251223586,
+        "gwp_biogenic_kg_co2e": 0.000427594315896087,
+        "gwp_luluc_kg_co2e": 0.00158127588376131
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
-    "evidence_level": "conservative_default",
+    "open_data_note": "Wartość poLCA zaokrąglono do czterech miejsc po przecinku. Wynik źródłowy i jego składowe podano w polu source_trace.",
+    "evidence_level": "sector_proxy",
     "source_policy": {
-      "priority": "dane floty/trasy > dokumenty WZ/CMR > ÖKOBAUDAT/EMEP proxy",
+      "priority": "Dane przewoźnika i dokumentacja przewozu, a w razie braku danych — wskaźnik ÖKOBAUDAT po ocenie warunków przewozu.",
       "when_allowed": "Brak danych przewoźnika; system zna masę i odległość.",
       "auditor_note": "Sprawdzić czy trasa i ładowność odpowiadają rzeczywistemu transportowi surowców lub mieszanki."
     },
@@ -81,8 +88,10 @@
     "material_role": "transport",
     "record_use_status": "reference_requires_assessment",
     "epd_use_status": "requires_context_specific_assessment",
-    "data_level": "aggregated_indicators_and_parameters"
+    "data_level": "aggregated_indicators_and_parameters",
+    "publication_year": 2026,
+    "source_valid_until": 2026
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

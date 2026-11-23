@@ -1,0 +1,116 @@
+{
+  "registry": {
+    "id": "POLCA-REF-MMA-2026-MVP",
+    "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
+    "version": "2026.8-prefabrykaty",
+    "status": "legacy_metadata",
+    "published_at": "2026-11-23",
+    "operator": "Multicert Sp. z o.o. / EPD Polska",
+    "methodology_basis": [
+      "EN 15804+A2",
+      "ISO 14040",
+      "ISO 14044",
+      "ISO 14025",
+      "CPR 2024/3110 — historyczne odniesienie"
+    ],
+    "use_rule": "Dobór danych wymaga oceny rodzaju wskaźnika, granicy systemu, reprezentatywności i zasad właściwego programu EPD. Sam wpis w katalogu nie rozstrzyga zastosowania.",
+    "default_value_rule": "Wartość referencyjną można rozważyć przy luce danych po uzasadnieniu jej doboru. Katalog nie ustanawia obowiązku użycia poLCA ani zakazu innych właściwych źródeł.",
+    "producer_data_rule": "Dane kluczowe dla wyniku, w szczególności lepiszcze, cement, energia, paliwa, główne surowce i transport, mają pochodzić od producenta, dostawcy, EPD albo zweryfikowanych dokumentów klienta, jeżeli są dostępne.",
+    "ready_dataset_rule": "Plik zachowano dla odczytu starszego schematu. Bieżące opisy, metryki i statusy są w current_catalog_url; zastosowanie w EPD wymaga oceny konkretnego przypadku.",
+    "dpp_readiness": {
+      "status": "not_implemented",
+      "format": "JSON",
+      "export_formats": [
+        "JSON"
+      ],
+      "note": "Własny schemat JSON; brak zwalidowanego eksportu ILCD+EPD i wdrożonego paszportu cyfrowego.",
+      "documentation_url": "/o-polca/gotowosc-dpp.html"
+    },
+    "methodology_basis_status": "references_not_conformity_assessment"
+  },
+  "dataset": {
+    "code": "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+    "name": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+    "category": "materiał",
+    "module_default": "A1-A3",
+    "unit": "t",
+    "gwp_total_kg_co2e": 790,
+    "year": 2026,
+    "publication_year": 2026,
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
+    "review_cycle": "annual",
+    "geography": "PL",
+    "technology": "Wytapianie stali w piecach elektrycznych i walcowanie wyrobów długich.",
+    "data_quality": "manufacturer_epd_reference",
+    "status": "published_sector_dataset",
+    "source_name": "ArcelorMittal Warszawa, ITB-EPD nr 688/2024 v2",
+    "source_url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9",
+    "scope": "Mediana wyników A1–A3 z czterech ważnych deklaracji środowiskowych hut w Polsce, wytwarzających stal w piecach elektrycznych z 87–100% udziałem złomu. Wyniki wynoszą od 358 do 961 kg CO₂e/t. Różnice wynikają głównie z modelowania energii elektrycznej. Moduł D nie jest uwzględniony. W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+    "methodology_note": "Wskaźnik jest średnią arytmetyczną dwóch środkowych wyników w uporządkowanym zbiorze czterech deklaracji. Każdą hutę uwzględniono raz.",
+    "limitations": "Mediana czterech deklaracji producentów nie uwzględnia wielkości produkcji hut.",
+    "preferred_replacement": "W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+    "publication_status": "published_sector_dataset",
+    "review_required": false,
+    "use_allowed_for": [
+      "screening",
+      "internal_report",
+      "epd_preparation"
+    ],
+    "source_trace": [
+      {
+        "name": "ITB-EPD nr 596/2024",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "CMC Poland Zawiercie",
+        "product": "pręty żebrowane",
+        "source_valid_until": "2029-01-24",
+        "gwp_total_kg_co2e": 358,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/08/ITB-EPD_596_CMC-Poland-Sp.-z-o.o.-Ribbed-bars.pdf#page=10"
+      },
+      {
+        "name": "ITB-EPD nr 688/2024 v2",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "ArcelorMittal Warszawa",
+        "product": "pręty i walcówka",
+        "source_valid_until": "2029-10-24",
+        "gwp_total_kg_co2e": 775,
+        "url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9"
+      },
+      {
+        "name": "S-P-08502 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "Celsa Huta Ostrowiec",
+        "product": "pręty, kręgi i walcówka",
+        "source_valid_until": "2028-03-28",
+        "gwp_total_kg_co2e": 805,
+        "url": "https://api.environdec.com/api/v1/EPDLibrary/Files/46e24cc8-b3e4-4009-90d9-08db7203e99c/Data#page=15"
+      },
+      {
+        "name": "EPD-IES-0031613:001 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 uwzględniony w medianie.",
+        "manufacturer": "Cognor (Ferrostal Łabędy)",
+        "product": "wyroby długie",
+        "source_valid_until": "2031-04-21",
+        "gwp_total_kg_co2e": 961,
+        "url": "https://api.environdec.com/api/v1/EPDLibrary/Files/82e87aee-d1ec-43ce-1754-08dea6a1f947/Data#page=15"
+      }
+    ],
+    "methodology_url": "/wyroby/01.html#przyklad-prefabrykat",
+    "evidence_level": "sector_proxy",
+    "selection_mode": "context_specific_assessment",
+    "product_groups": [
+      "prefabrykaty",
+      "ogolne-epd"
+    ],
+    "material_role": "stal zbrojeniowa",
+    "record_use_status": "reference_requires_assessment",
+    "epd_use_status": "requires_context_specific_assessment",
+    "data_level": "aggregated_indicators_and_parameters"
+  },
+  "metadata_revision": "2026-11-23",
+  "current_catalog_url": "/data/portal-catalog.json"
+}

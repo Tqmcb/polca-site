@@ -79,7 +79,10 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
     if raw['status'] == 'withdrawn':
         result.update(withdrawn_at=raw['withdrawn_at'], superseded_by=raw['superseded_by'],
                       is_default=False)
-    if note['status_id'] == 'published_sector_dataset':
+    if note.get('include_source_trace'):
+        result['source_trace'] = raw['source_trace']
+        result['limitations'] = raw['limitations']
+    if note['status_id'] == 'published_sector_dataset' or note.get('include_source_trace'):
         for field in ('publication_year', 'source_valid_until', 'methodology_note',
                       'gwp_fossil_kg_co2e', 'gwp_net_kg_co2e'):
             if field in raw:

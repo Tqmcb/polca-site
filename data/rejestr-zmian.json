@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.6",
+    "version": "2026.7",
     "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "Przewóz zestawem 40 t, stal zbrojeniowa i prefabrykaty betonowe",
+      "tytul": "Korekta wskaźnika przewozu oraz mediana dla stali zbrojeniowej",
+      "opis": "W wersji katalogu 2026-11-23.2 wskaźnik przewozu zestawem 40 t wynosi 0,0843 kg CO₂e/(t·km). Przeliczono przykłady przewozu kruszyw, cementu i mieszanki mineralno-asfaltowej. Dodano wskaźnik dla stali zbrojeniowej (790 kg CO₂e/t, A1–A3) oraz przykład obliczeń dla 1 t prefabrykatu żelbetowego.",
+      "podstawa": "ÖKOBAUDAT, LKW-Zug, wersja 20.26.070. Deklaracje hut: ITB 596/2024 i 688/2024 v2, S-P-08502 i EPD-IES-0031613:001. Skład i wyniki prefabrykatów według deklaracji ITB nr 561/2023.",
+      "link": "/wyroby/01.html#przyklad-prefabrykat",
+      "skutek_dla_deklaracji": "Dla własnej floty lub pustego powrotu należy przyjąć dane przewoźnika. Dla stali zbrojeniowej w deklaracji własnego wyrobu należy przyjąć dane dostawcy stali."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "aktualizacja_danych",

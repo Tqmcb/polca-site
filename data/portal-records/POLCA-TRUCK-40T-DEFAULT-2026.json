@@ -1,23 +1,23 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.1",
+  "catalog_version": "2026-11-23.2",
   "record": {
     "id": "POLCA-TRUCK-40T-DEFAULT-2026",
     "title": "Transport drogowy — zestaw 40 t",
     "kind": "dataset",
     "category_id": "transport",
     "category_label": "Transport",
-    "year": 2026,
-    "year_type": "publication",
+    "year": 2023,
+    "year_type": "reference",
     "status_id": "default",
     "status_label": "Wartość przyjęta w modelu",
-    "description": "Współczynnik dla przewozu 1 t ładunku na odległość 1 km.",
+    "description": "Przewóz 1 t ładunku na odległość 1 km zestawem ciężarowym.",
     "href": "/dane/polca-truck-40t-default-2026.html",
     "unit": "kg CO₂e/t·km",
     "boundary": "A2/A4/C2",
-    "indicator_label": "Wpływ na klimat (GWP)",
-    "source_name": "ÖKOBAUDAT / EMEP-EEA jako publiczne punkty odniesienia dla transportu",
-    "source_url": "https://www.oekobaudat.de/",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "source_name": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+    "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
     "formats": [
       "JSON"
     ],
@@ -42,10 +42,26 @@
       "produkt"
     ],
     "record_type": "indicator_value",
-    "geography": "PL/EU",
+    "geography": "DE",
     "reference_unit": "tkm",
     "source_record_href": "/data/datasets/POLCA-TRUCK-40T-DEFAULT-2026.json",
-    "value": 0.095,
+    "source_trace": [
+      {
+        "name": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+        "type": "public_database",
+        "role": "Wynik dla 1 t·km w module A4.",
+        "url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+        "gwp_total_kg_co2e": 0.084310395322016,
+        "gwp_fossil_kg_co2e": 0.0823015251223586,
+        "gwp_biogenic_kg_co2e": 0.000427594315896087,
+        "gwp_luluc_kg_co2e": 0.00158127588376131
+      }
+    ],
+    "limitations": "Zbiór dla Niemiec, norma Euro 5, ładowność 27 t, stopień załadowania 85%. Źródło nie opisuje pustych przebiegów. Dla przewozu z pustym powrotem i dla własnej floty należy stosować dane przewoźnika.",
+    "publication_year": 2026,
+    "source_valid_until": 2026,
+    "methodology_note": "Źródło podaje całkowity wpływ na klimat w module A4 na tonokilometr według EN 15804+A2, metodą śladu środowiskowego EF 3.1. W obliczeniach poLCA pracę przewozową przypisuje się do A2, A4 lub C2 zależnie od etapu przewozu. Rok odniesienia to 2023, a ważność zbioru obejmuje okres do 2026 r.",
+    "value": 0.0843,
     "cpr_family_ids": [],
     "cpr_related": [],
     "cpr_scope_note": null
