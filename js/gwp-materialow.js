@@ -6,15 +6,14 @@
     if (!$('materialSelect') || !$('materialChart')) return;
 
     var materials = [
-        { id: 'cement_i',     name: 'Cement CEM I 42.5',     gwp: 800,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: true },
-        { id: 'cement_ii',    name: 'Cement CEM II/B-S',     gwp: 600,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
-        { id: 'cement_iii',   name: 'Cement CEM III/A',      gwp: 400,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
+        { id: 'cement_i',     name: 'Cement CEM I (SPC 2025)', gwp: 766,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: true },
+        { id: 'cement_ii',    name: 'Cement CEM II (SPC 2025)', gwp: 613,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
+        { id: 'cement_iii',   name: 'Cement CEM III (SPC 2025)', gwp: 483,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
         { id: 'concrete_20',  name: 'Beton C20/25',          gwp: 200,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: false },
         { id: 'concrete_25',  name: 'Beton C25/30',          gwp: 250,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: true },
         { id: 'concrete_30',  name: 'Beton C30/37',          gwp: 300,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: false },
-        { id: 'steel_eaf',    name: 'Stal EAF (PL)',          gwp: 620,   unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: true },
         { id: 'steel_bof',    name: 'Stal BOF (EU avg)',      gwp: 1780,  unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: true },
-        { id: 'rebar',        name: 'Stal zbrojeniowa (PL)',  gwp: 750,   unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: false },
+        { id: 'rebar',        name: 'Stal zbrojeniowa (mediana EPD PL)', gwp: 790,   unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: true },
         { id: 'alu_prim',     name: 'Aluminium (pierwotne)', gwp: 8000,  unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: false },
         { id: 'alu_rec',      name: 'Aluminium (recykling)', gwp: 600,   unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: false },
         { id: 'glass',        name: 'Szk\u0142o p\u0142askie',          gwp: 1200,  unit: 'kg CO\u2082e/t',  cat: 'Inne',      checked: false },

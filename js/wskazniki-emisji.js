@@ -7,6 +7,7 @@
 
     var emissionFactors = [
         // Energia
+        { name: 'Energia elektryczna PL 2025 — GWP-total u odbiorcy', value: '644,5',     unit: 'g CO\u2082e/kWh',   source: 'poLCA Energia Polska 2025 v4', cat: 'energia' },
         { name: 'Miks elektryczny PL — CO₂ u odbiorcy, dane 2024', value: '553',       unit: 'kg CO\u2082/MWh',   source: 'KOBiZE, publikacja XII 2025, dane 2024', cat: 'energia' },
         { name: 'Miks elektryczny PL — GWP-fossil, profil 2024', value: '599',       unit: 'g CO\u2082e/kWh',   source: 'poLCA-EN-PL-2024 v9.1, profil historyczny', cat: 'energia' },
         { name: 'Ciep\u0142o systemowe PL (\u015brednia)',      value: '~380',      unit: 'kg CO\u2082/MWh',   source: 'URE 2024',        cat: 'energia' },
@@ -26,25 +27,25 @@
         { name: 'Biomasa (pelet drzewny)',            value: '0 *',       unit: 'kg CO\u2082/GJ',    source: 'EU ETS konwencja', cat: 'paliwa' },
 
         // Transport
-        { name: 'TIR > 32 t (pe\u0142ny)',                 value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Samoch\u00f3d 16\u201332 t',                    value: '0,049',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Samoch\u00f3d 7,5\u201316 t',                   value: '0,082',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Samoch\u00f3d < 7,5 t',                   value: '0,146',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Kolej elektryczna',                 value: '0,009',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Kolej spalinowa',                   value: '0,025',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Barka \u015br\u00f3dl\u0105dowa',                   value: '0,031',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
-        { name: 'Statek morski (bulk)',               value: '0,005',     unit: 'kg CO\u2082e/tkm',  source: 'Założenie historyczne kalkulatora',      cat: 'transport' },
+        { name: 'Zestaw ci\u0119\u017carowy 40 t', value: '0,0843', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Samoch\u00f3d 20\u201326 t', value: '0,111', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Samoch\u00f3d 12\u201314 t', value: '0,156', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Samoch\u00f3d 7,5\u201312 t', value: '0,261', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Kolej elektryczna', value: '0,0170', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Barka \u015br\u00f3dl\u0105dowa', value: '0,0201', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
+        { name: 'Masowiec morski', value: '0,00540', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
 
         // Materiały budowlane
-        { name: 'Cement CEM I 42.5',                 value: '~800',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
-        { name: 'Cement CEM II/B-S',                 value: '~600',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
-        { name: 'Cement CEM III/A',                  value: '~400',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
+        { name: 'Cement CEM I — \u015brednia krajowa', value: '766', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
+        { name: 'Cement CEM II — \u015brednia krajowa', value: '613', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
+        { name: 'Cement CEM III — \u015brednia krajowa', value: '483', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
+        { name: 'Cement CEM IV — \u015brednia krajowa', value: '510', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
+        { name: 'Cement CEM V — \u015brednia krajowa', value: '546', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
         { name: 'Beton C20/25',                      value: '~200',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
         { name: 'Beton C25/30',                      value: '~250',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
         { name: 'Beton C30/37',                      value: '~300',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
-        { name: 'Stal EAF (PL)',                     value: '~620',      unit: 'kg CO\u2082e/t',    source: 'poLCA',           cat: 'materialy' },
         { name: 'Stal BOF (EU avg)',                  value: '~1 780',    unit: 'kg CO\u2082e/t',    source: 'ecoinvent 3.10',  cat: 'materialy' },
-        { name: 'Stal zbrojeniowa (PL)',              value: '~750',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
+        { name: 'Stal zbrojeniowa (PL) — mediana 4 EPD', value: '790 (358\u2013961)', unit: 'kg CO\u2082e/t', source: 'EPD hut w Polsce, mediana poLCA', cat: 'materialy' },
         { name: 'Aluminium (pierwotne)',              value: '~8 000',    unit: 'kg CO\u2082e/t',    source: 'EAA',             cat: 'materialy' },
         { name: 'Aluminium (recykling)',              value: '~600',      unit: 'kg CO\u2082e/t',    source: 'EAA',             cat: 'materialy' },
         { name: 'Szk\u0142o p\u0142askie',                      value: '~1 200',    unit: 'kg CO\u2082e/t',    source: 'Glass for Europe', cat: 'materialy' },
@@ -63,7 +64,8 @@
         { name: 'Papa bitumiczna',                   value: '~350',      unit: 'kg CO\u2082e/t',    source: 'EPD Polska',      cat: 'materialy' },
 
         // Procesy przemysłowe
-        { name: 'Produkcja klinkieru (PL)',          value: '~625',      unit: 'kg CO\u2082/t',     source: 'GUS/CEMBUREAU',   cat: 'procesy' },
+        { name: 'Produkcja klinkieru (PL) — emisja ca\u0142kowita', value: '775', unit: 'kg CO\u2082/t', source: 'EPD sektorowa SPC 2025, dane 2022', cat: 'procesy' },
+        { name: 'Produkcja klinkieru (PL) — emisja procesowa', value: '470', unit: 'kg CO\u2082/t', source: 'EPD sektorowa SPC 2025, dane 2022', cat: 'procesy' },
         { name: 'Kalcynacja CaCO\u2083 (wapna)',          value: '785',       unit: 'kg CO\u2082/t CaO', source: 'IPCC 2006',    cat: 'procesy' },
         { name: 'Produkcja wapna palonego',          value: '~750',      unit: 'kg CO\u2082/t',     source: 'EuLA',            cat: 'procesy' },
         { name: 'Huta szk\u0142a (miks PL)',              value: '~500',      unit: 'kg CO\u2082/t',     source: 'Glass for Europe', cat: 'procesy' },
