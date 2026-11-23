@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "poLCA material taxonomy for asphalt mixtures",
-    "version": "2026.1-draft",
-    "updated_at": "2026-05-03",
+    "version": "2026.2-draft",
+    "updated_at": "2026-11-23",
     "note": "Projekt taksonomii do wspomagania przypisania materiałów do kategorii. Dobór konkretnego zbioru wymaga oceny zakresu i reprezentatywności; automatyczny dobór nie jest wdrożoną funkcją tego katalogu.",
     "background": {
-      "plain_language": "Wartości w katalogu materiałów nie stanowią niezależnych danych urzędowych. Są to kontrolowane wartości startowe opracowane na podstawie dostępnych źródeł publicznych i branżowych oraz modelu EPD MMA. Ich celem jest jednolite mapowanie materiałów w sytuacji braku EPD dostawcy lub danych kopalni.",
+      "plain_language": "Wskaźniki referencyjne kruszyw pierwotnych pochodzą z deklaracji środowiskowych wskazanych przy rekordach. Zastosowanie wartości w obliczeniu wymaga oceny rodzaju wyrobu i technologii dostawcy.",
       "source_layers": [
         {
           "layer": "EPD branżowe, stowarzyszeniowe i producentów kruszyw",
@@ -130,166 +130,192 @@
       "code": "aggregate_crushed_hard_igneous",
       "label": "Kruszywa łamane twarde / magmowe i metamorficzne",
       "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
-      "controlled_default_kg_co2e_per_t": 5.5,
-      "source_basis": "Pakiet danych obliczeniowych EPD / background report: ÖKOBAUDAT 2024 + MPA UK Sector EPD; zakres do potwierdzenia w konsultacjach poLCA.",
+      "controlled_default_kg_co2e_per_t": 3.99,
+      "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
       "audit_focus": "rodzaj skały, frakcja, energia kruszenia, płukanie/suszenie, lokalizacja kopalni, transport A2",
       "status": "group_proxy_to_validate",
       "materials": [
         {
           "code": "basalt",
           "label": "Bazalt",
-          "default_kg_co2e_per_t": 6,
+          "default_kg_co2e_per_t": 3.99,
           "note": "bardzo twarde kruszywo; wyższa energochłonność kruszenia",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "kruszywo łamane bardzo twarde; wyższa energochłonność kruszenia",
-          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Wynik dla bazaltu z Targowicy.",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "gabbro",
           "label": "Gabro",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "twarde kruszywo magmowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "kruszywo łamane twarde; wartość grupowa dla skał magmowych",
-          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "granite",
           "label": "Granit",
-          "default_kg_co2e_per_t": 5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "twarde kruszywo magmowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "kruszywo łamane twarde; wartość grupowa dla skał magmowych",
-          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "melaphyre",
           "label": "Melafir",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "częste kruszywo drogowe, do potwierdzenia danymi kopalni",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "kruszywo łamane twarde stosowane w drogownictwie; wartość grupowa stosowana do czasu pozyskania danych kopalni",
-          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "potwierdzić kopalnię, frakcję, zużycie energii, płukanie/suszenie i transport A2",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "porphyry",
           "label": "Porfir",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "mapowanie grupowe do czasu danych kopalni",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "wartość grupowa dla skał magmowych/metamorficznych o zbliżonej energochłonności przeróbki",
-          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "diabase",
           "label": "Diabaz",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "mapowanie grupowe do czasu danych kopalni",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "wartość grupowa dla skał magmowych/metamorficznych o zbliżonej energochłonności przeróbki",
-          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "amphibolite",
           "label": "Amfibolit",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "mapowanie grupowe do czasu danych kopalni",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "wartość grupowa dla skał metamorficznych o zbliżonej energochłonności przeróbki",
-          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
           "code": "quartzite",
           "label": "Kwarcyt",
-          "default_kg_co2e_per_t": 5.5,
+          "default_kg_co2e_per_t": 3.99,
           "note": "mapowanie grupowe do czasu danych kopalni",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "wartość grupowa dla bardzo twardych kruszyw; wymaga potwierdzenia technologii przeróbki",
-          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna"
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "data_character": "Dane zastępcze na podstawie deklaracji bazaltu z Targowicy.",
+          "required_validation": "wymagane dane kopalni lub EPD dostawcy przed zastosowaniem jako dana specyficzna",
+          "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         }
       ],
-      "background_note": "Wartości bazowe pochodzą z modelu EPD MMA i porównania z publicznymi/europejskimi datasetami kruszyw. Różnicowanie typów wynika głównie z energochłonności kruszenia twardych skał. Do potwierdzenia: dane kopalni, energia, frakcja, płukanie/suszenie i transport.",
-      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA wskazująca wpływ twardości skały, kruszenia i przesiewania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+      "background_note": "Wartość z jedynej znalezionej ważnej polskiej deklaracji dla kruszywa ze skał twardych (bazalt). Deklaracja ITB nr 674/2024 (CEMEX, naturalne kruszywo łamane) podaje 3,28 kg CO₂e/t, lecz nie określa rodzaju skały. Dla granitu, gabra, melafiru i piaskowca nie znaleziono ważnej polskiej deklaracji.",
+      "group_source_provenance": "Trzuskawica S.A., ITB-EPD nr 706/2024"
     },
     {
       "code": "aggregate_crushed_carbonate",
       "label": "Kruszywa łamane węglanowe",
-      "default_dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
-      "controlled_default_kg_co2e_per_t": 4.3,
-      "source_basis": "Pakiet danych obliczeniowych EPD / background report: wartości grupowe dla wapienia i dolomitu; wymagane potwierdzenie kopalni.",
+      "default_dataset_code": null,
+      "controlled_default_kg_co2e_per_t": null,
+      "source_basis": "Wskaźniki dla kruszywa wapiennego i dolomitowego podano oddzielnie.",
       "audit_focus": "mielenie/kruszenie, zapylenie, płukanie, wilgotność, frakcja, transport A2",
       "status": "group_proxy_to_validate",
       "materials": [
         {
           "code": "limestone",
           "label": "Wapień",
-          "default_kg_co2e_per_t": 4,
+          "default_kg_co2e_per_t": 3.27,
           "note": "skała osadowa, zwykle niższa energochłonność kruszenia",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "Trzuskawica S.A., ITB-EPD nr 707/2024",
           "data_character": "kruszywo łamane węglanowe; zwykle niższa energochłonność kruszenia niż skały bardzo twarde",
-          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport"
+          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport",
+          "default_dataset_code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
         },
         {
           "code": "dolomite",
           "label": "Dolomit",
-          "default_kg_co2e_per_t": 4.5,
+          "default_kg_co2e_per_t": 3.91,
           "note": "kruszywo węglanowe, do potwierdzenia kopalnią",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
-          "data_character": "kruszywo łamane węglanowe; wartość grupowa dla dolomitu",
-          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport"
+          "source_basis": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+          "data_character": "Wynik wspólny dla kruszywa dolomitowego i wapiennego.",
+          "required_validation": "potwierdzić kopalnię, frakcję, technologię przeróbki, pylność, wilgotność i transport",
+          "default_dataset_code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
+          "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
         }
       ],
-      "background_note": "Wartości bazowe pochodzą z modelu EPD MMA oraz rozdzielenia kruszyw węglanowych od twardych skał magmowych. Do potwierdzenia: technologia przeróbki, frakcja, wilgotność i dane kopalni.",
-      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz PZPK jako kontekst branży. Wartość LCA: model EPD MMA, ÖKOBAUDAT/sektorowe EPD kruszyw oraz literatura LCA dla procesów wydobycia, kruszenia i sortowania kruszyw węglanowych. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+      "background_note": "Wybór rekordu zależy od rodzaju skały.",
+      "group_source_provenance": "Wskaźniki dla kruszywa wapiennego i dolomitowego podano oddzielnie."
     },
     {
       "code": "aggregate_natural",
       "label": "Kruszywa naturalne",
       "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
-      "controlled_default_kg_co2e_per_t": 3.5,
-      "source_basis": "Kontrolowana wartość domyślna poLCA dla kruszyw naturalnych; transport oraz ewentualne płukanie i sortowanie należy modelować oddzielnie.",
+      "controlled_default_kg_co2e_per_t": 3.86,
+      "source_basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
       "audit_focus": "źródło złoża, płukanie, sortowanie, frakcja, wilgotność, transport A2",
       "status": "group_proxy_to_validate",
       "materials": [
         {
           "code": "sand",
           "label": "Piasek",
-          "default_kg_co2e_per_t": 3.5,
+          "default_kg_co2e_per_t": 3.86,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
           "data_character": "kruszywo naturalne; prostszy proces pozyskania/sortowania niż kruszywa łamane",
-          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
+          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport",
+          "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
         },
         {
           "code": "gravel",
           "label": "Żwir",
-          "default_kg_co2e_per_t": 3.5,
+          "default_kg_co2e_per_t": 3.86,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
           "data_character": "kruszywo naturalne; proces pozyskania/sortowania bez typowej energochłonności kruszenia skały",
-          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport"
+          "required_validation": "potwierdzić źródło złoża, płukanie, sortowanie, wilgotność, frakcję i transport",
+          "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
         },
         {
           "code": "sand_gravel",
           "label": "Pospółka / mieszanka piaskowo-żwirowa",
-          "default_kg_co2e_per_t": 3.5,
+          "default_kg_co2e_per_t": 3.86,
           "note": "mapowanie grupowe",
-          "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
+          "source_basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
           "data_character": "mieszanka piaskowo-żwirowa; wartość grupowa dla kruszyw naturalnych",
-          "required_validation": "potwierdzić skład, płukanie, sortowanie, wilgotność, frakcję i transport"
+          "required_validation": "potwierdzić skład, płukanie, sortowanie, wilgotność, frakcję i transport",
+          "default_dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
         },
         {
           "code": "natural_crushed_gravel",
           "label": "Grys z otoczaków / kruszywo naturalne łamane",
           "default_kg_co2e_per_t": 4,
-          "note": "wymaga decyzji, czy traktować jako naturalne czy łamane",
+          "note": "Wariant historyczny, poza zakresem rekordu dla piasku i żwiru. Dobór danych wymaga potwierdzenia rodzaju kruszywa.",
           "source_basis": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu.",
           "data_character": "kruszywo naturalne poddane kruszeniu; wymaga decyzji klasyfikacyjnej na podstawie technologii",
           "required_validation": "potwierdzić, czy dominują procesy sortowania/płukania czy kruszenia; potwierdzić dane kopalni"
         }
       ],
-      "background_note": "Wartość grupowa dla kruszyw naturalnych wynika z prostszego procesu pozyskania/sortowania względem kruszyw łamanych. Do potwierdzenia: płukanie, sortowanie, frakcja, wilgotność i transport.",
-      "group_source_provenance": "Klasyfikacja materiału: PIG-PIB MIDAS / dane geologiczne oraz statystyka publiczna. Wartość LCA: kontrolowana wartość domyślna poLCA, ÖKOBAUDAT/sektorowe EPD kruszyw naturalnych oraz literatura LCA dla pozyskania, płukania i sortowania. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
+      "background_note": "Mediana dwóch deklaracji o dużym rozrzucie (1,03 i 6,69); wynik zależy od płukania i zużycia energii w zakładzie. Produkty suszone termicznie (np. 29,3 kg CO₂e/t w tej samej deklaracji Eurokrusz) nie są objęte. W deklaracji CEMEX przyjęto wynik oznaczony jako wpływ na klimat brutto. Wynik Eurokrusz 6,69 × 10⁻³ kg CO₂e/kg przeliczono na tonę.",
+      "group_source_provenance": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024"
     },
     {
       "code": "aggregate_secondary_recycled",
@@ -350,6 +376,6 @@
       "group_source_provenance": "Klasyfikacja materiału: dokumentacja źródła odpadu/produktu, EN 15804+A2/cPCR oraz dane procesu recyklingu. Wartość LCA: model EPD MMA, literatura LCA materiałów wtórnych oraz EPD/dane producenta, jeżeli dostępne. EPD branżowe i stowarzyszeniowe mogą być stosowane wyłącznie jako punkt odniesienia lub źródło do ustalenia wartości domyślnej po sprawdzeniu zgodności produktu, geografii, roku i granic systemu."
     }
   ],
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

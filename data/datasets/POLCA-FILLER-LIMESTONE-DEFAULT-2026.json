@@ -23,23 +23,23 @@
     "code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
     "name": "Wypełniacz wapienny do MMA",
     "category": "materiał",
-    "module_default": "A1",
+    "module_default": "A1-A3",
     "unit": "t",
-    "gwp_total_kg_co2e": 30,
+    "gwp_total_kg_co2e": 72,
     "year": 2026,
-    "last_reviewed_at": "2026-05-11",
-    "next_review_due": "2027-05-11",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
     "review_cycle": "annual",
-    "geography": "PL",
+    "geography": "PL/LT",
     "technology": "Produkcja wypełniacza wapiennego przed transportem",
-    "data_quality": "industry",
+    "data_quality": "manufacturer_epd_reference",
     "status": "published_sector_dataset",
-    "source_name": "poLCA 2026, wartość sektorowa na podstawie EPD/backgroundu",
-    "source_url": "https://polca.org.pl/metodyka.html",
-    "scope": "A1 produkcji wypełniacza. Transport do wytwórni liczyć oddzielnie.",
-    "methodology_note": "Dataset jest wartością domyślną dla wypełniacza wapiennego w mieszankach mineralno-asfaltowych. Dla finalnej EPD preferowane są dane dostawcy, szczególnie gdy wypełniacz ma nietypowy udział lub pochodzi z procesu o innej energochłonności. Podstawa wartości domyślnej: Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
+    "source_name": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+    "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10",
+    "scope": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
+    "methodology_note": "Brak ważnej polskiej deklaracji dla wypełniacza wapiennego; przyjęto jedyną znalezioną deklarację z regionu (Litwa). Wcześniejszy opis rekordu powoływał się na wartość 0,023 kg CO₂e/kg, której ta deklaracja nie zawiera. Wskaźnik obejmuje całkowity wpływ na klimat (GWP-total) w modułach A1–A3 według deklaracji środowiskowych zgodnych z EN 15804+A2. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "limitations": "Nie rozróżnia technologii mielenia, suszenia, pochodzenia surowca ani transportu.",
-    "preferred_replacement": "EPD dostawcy wypełniacza lub zweryfikowane dane procesu.",
+    "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "publication_status": "published_sector_dataset",
     "review_required": false,
     "use_allowed_for": [
@@ -47,47 +47,33 @@
       "internal_report",
       "epd_plus_preparation"
     ],
-    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "quality_rule": "Rekord otrzymuje status pozycji istotnej dla jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
     "source_trace": [
       {
-        "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
-        "url": "https://www.environdec.com/library/epd12771",
-        "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych",
-        "type": "methodology_source"
-      },
-      {
-        "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
-        "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
-        "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego",
-        "type": "methodology_source"
-      },
-      {
-        "name": "ÖKOBAUDAT",
-        "url": "https://www.oekobaudat.de/",
-        "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych",
-        "type": "methodology_source"
-      },
-      {
-        "name": "Model EPD MMA / background report",
-        "url": "https://polca.org.pl/datasety.html",
-        "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t",
-        "type": "methodology_source"
+        "name": "EPD-IES-0012771 (EPD International)",
+        "type": "manufacturer_epd",
+        "role": "Wynik A1–A3 wykorzystany w rekordzie.",
+        "manufacturer": "Naujasis kalcitas",
+        "product": "mączka wapienna, Litwa",
+        "source_valid_until": "2029-02-27",
+        "gwp_total_kg_co2e": 72,
+        "url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
+    "open_data_note": "Wskaźnik referencyjny na podstawie deklaracji producentów. W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
     "evidence_level": "sector_proxy",
     "source_policy": {
       "priority": "dane kopalni lub EPD > regionalny dataset poLCA > proxy publiczne",
-      "when_allowed": "Brak danych kopalni/dostawcy; wynik oznaczony jako branżowy/proxy.",
+      "when_allowed": "Przy braku danych dostawcy dla użytego materiału należy uzasadnić dobór wskaźnika na podstawie rodzaju wyrobu, pochodzenia i technologii.",
       "auditor_note": "Sprawdzić frakcję, rodzaj skały, technologię przeróbki, wilgotność i transport do wytwórni."
     },
     "selection_mode": "context_specific_assessment",
     "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
-      "declared_value": "30 kg CO2e/t",
-      "module": "A1",
-      "system_boundary": "produkcja wypełniacza wapiennego przed transportem do wytwórni; transport A2 jest oddzielnym rekordem",
+      "declared_value": "72 kg CO2e/t",
+      "module": "A1–A3 u producenta, A1 jako składnik wyrobu",
+      "system_boundary": "Produkcja do bramy zakładu (A1–A3). Dostawę do odbiorcy rozlicza się oddzielnie.",
       "process_model": [
         "wydobycie lub pozyskanie kamienia wapiennego",
         "kruszenie i przygotowanie surowca",
@@ -97,28 +83,13 @@
       ],
       "source_basis": [
         {
-          "name": "Publiczna EPD — Calcium carbonate filler (benchmark)",
-          "url": "https://www.environdec.com/library/epd12771",
-          "role": "potwierdza zakres procesu dla filleru CaCO3: suszenie, mielenie i przesiewanie produktu z kruszonego wapienia oraz zastosowanie w mieszankach bitumicznych"
-        },
-        {
-          "name": "BV Kalk — EPD stowarzyszeniowe produktów wapiennych",
-          "url": "https://www.kalk.de/rohstoff/rohmaterialgewinnung/abbau-1",
-          "role": "punkt odniesienia dla produktów wapiennych, w tym mączki wapiennej i kruszywa wapiennego"
-        },
-        {
-          "name": "ÖKOBAUDAT",
-          "url": "https://www.oekobaudat.de/",
-          "role": "publiczny punkt odniesienia dla danych LCA produktów budowlanych i mineralnych"
-        },
-        {
-          "name": "Model EPD MMA / background report",
-          "url": "https://polca.org.pl/datasety.html",
-          "role": "wartość startowa użyta w modelu MMA jako 0,023 kg CO2e/kg = 23 kg CO2e/t; wartość poLCA zaokrąglono konserwatywnie do 30 kg CO2e/t"
+          "name": "EPD-IES-0012771 (EPD International)",
+          "url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10",
+          "role": "Wynik A1–A3 wykorzystany w rekordzie."
         }
       ],
-      "rationale": "Wypełniacz wapienny jest produktem drobno mielonym. Publiczny benchmark EPD dla mielonego węglanu wapnia wskazuje rząd wielkości 0,023 kg CO2e/kg, czyli około 23 kg CO2e/t dla A1-A3. poLCA przyjmuje 30 kg CO2e/t jako wartość domyślną konserwatywną, ponieważ rzeczywisty wynik zależy od energochłonności mielenia, suszenia, granulacji i lokalnej technologii. Wartość nie obejmuje kalcynacji, więc nie może być stosowana dla wapna palonego ani hydratyzowanego.",
-      "required_replacement": "EPD dostawcy wypełniacza, dane producenta dotyczące energii mielenia/suszenia albo dane zakładowe potwierdzone w audycie.",
+      "rationale": "Brak ważnej polskiej deklaracji dla wypełniacza wapiennego; przyjęto jedyną znalezioną deklarację z regionu (Litwa). Wcześniejszy opis rekordu powoływał się na wartość 0,023 kg CO₂e/kg, której ta deklaracja nie zawiera.",
+      "required_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację dostawcy użytego materiału.",
       "audit_checks": [
         "czy produkt jest wypełniaczem wapiennym/CaCO3, a nie wapnem palonym lub hydratyzowanym",
         "czy deklarowana frakcja i wilgotność odpowiadają produktowi stosowanemu w MMA",
@@ -134,6 +105,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

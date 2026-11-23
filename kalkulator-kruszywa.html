@@ -136,14 +136,13 @@
                 <div class="agg-field agg-field-full">
                     <label class="calc-label" for="aggSimpleType">Typ kruszywa</label>
                     <select id="aggSimpleType" class="calc-select">
-                        <option value="5.50" selected>Kruszywo łamane twarde — 5,50 kg CO₂eq/t</option>
-                        <option value="3.99">Kruszywo bazaltowe łamane — wartość historyczna bez rekordu w katalogu — 3,99 kg CO₂eq/t</option>
+                        <option value="3.99" selected>Kruszywo łamane twarde (bazalt, Targowica) — 3,99 kg CO₂eq/t</option>
                         <option value="4.50">Kruszywo granitowe łamane — wartość historyczna bez rekordu w katalogu — 4,50 kg CO₂eq/t</option>
-                        <option value="4.00">Kruszywo wapienne łamane — 4,00 kg CO₂eq/t</option>
-                        <option value="4.50">Kruszywo dolomitowe (POLCA-AGG-PL-DOLOMITE-DEFAULT-2026) — 4,50 kg CO₂eq/t</option>
-                        <option value="3.50">Kruszywo naturalne (piasek, żwir) — 3,50 kg CO₂eq/t</option>
+                        <option value="3.27">Kruszywo wapienne łamane — 3,27 kg CO₂eq/t</option>
+                        <option value="3.91">Kruszywo dolomitowe (wynik dla dolomitu i wapienia) — 3,91 kg CO₂eq/t</option>
+                        <option value="3.86">Kruszywo naturalne (piasek, żwir) — 3,86 kg CO₂eq/t</option>
                         <option value="3.80">Kruszywo mieszane — wartość historyczna bez rekordu w katalogu — 3,80 kg CO₂eq/t</option>
-                        <option value="30">Wypełniacz wapienny (mączka) — 30 kg CO₂eq/t</option>
+                        <option value="72">Wypełniacz wapienny (mączka) — 72 kg CO₂eq/t</option>
                         <option value="2.50">Kruszywo recyklingowe z betonu (RC) — wartość historyczna bez rekordu w katalogu — 2,50 kg CO₂eq/t</option>
                     </select>
                     <p class="calc-note">Wskaźniki poLCA pochodzą z rekordów dla <a href="/dane/polca-agg-pl-crushed-default-2026.html">kruszywa łamanego twardego</a>, <a href="/dane/polca-agg-pl-limestone-default-2026.html">kruszywa wapiennego</a>, <a href="/dane/polca-agg-pl-dolomite-default-2026.html">dolomitu</a>, <a href="/dane/polca-agg-pl-natural-default-2026.html">piasku i żwiru</a> oraz <a href="/dane/polca-filler-limestone-default-2026.html">wypełniacza wapiennego</a>.</p>
@@ -191,7 +190,7 @@
                         <label class="calc-label" for="aggDiesel" style="margin-bottom:0;">Olej napędowy maszyn — koparki, ładowarki [L/t]</label>
                         <input type="number" required aria-describedby="aggInputWarn" id="aggDiesel" class="agg-input-sm" value="0.4" min="0" max="2" step="0.05">
                     </div>
-                    <p class="calc-note">Domyślne zużycie wynosi 0,3–0,5 l/t. W obliczeniach przyjęto <a href="/dane/polca-fuel-diesel-default-2026.html">wskaźnik dla oleju napędowego 3,2 kg CO₂e/l</a>.</p>
+                    <p class="calc-note">Domyślne zużycie wynosi 0,3–0,5 l/t. W obliczeniach przyjęto <a href="/dane/polca-fuel-diesel-default-2026.html">wskaźnik dla oleju napędowego 3,72 kg CO₂e/l</a>.</p>
                 </div>
                 <div class="agg-field">
                     <div class="agg-comp-grid">
@@ -235,7 +234,7 @@
 
         <p class="calc-note" id="aggRcScope" aria-live="polite"></p>
         <div class="agg-warn ok" id="aggInputWarn" role="alert">Parametry w dopuszczalnych zakresach.</div>
-        <p class="calc-note" style="margin-top:.6rem;">W modelu przyjęto następujące wskaźniki emisji na jednostkę zużycia lub przewozu. Energia elektryczna 0,6445 kg CO₂e/kWh (GWP-total), olej napędowy 3,2 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). Zakresy tych założeń są opisane poniżej.</p>
+        <p class="calc-note" style="margin-top:.6rem;">W modelu przyjęto następujące wskaźniki emisji na jednostkę zużycia lub przewozu. Energia elektryczna 0,6445 kg CO₂e/kWh (GWP-total), olej napędowy 3,72 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). Zakresy tych założeń są opisane poniżej.</p>
     </div>
 
     <!-- ============================================================
@@ -247,8 +246,8 @@
 
         <div style="margin:1.25rem 0 .25rem;">
             <div class="calc-result-label">Oszacowanie A1-A3 — łącznie</div>
-            <div class="agg-result-hero"><span id="aggTotal">5,50</span> <small>kg CO₂eq / t kruszywa</small></div>
-            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · Kruszywo łamane twarde</div>
+            <div class="agg-result-hero"><span id="aggTotal">3,99</span> <small>kg CO₂eq / t kruszywa</small></div>
+            <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="aggTotalNote">Tryb uproszczony · Kruszywo łamane twarde (bazalt, Targowica)</div>
             <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.2rem;display:none;" id="aggA4Note"></div>
         </div>
 
@@ -320,7 +319,7 @@
     <div id="metodyka" class="card card-lg section-gap fade-in">
         <div class="section-num">Założenia i zakres</div>
         <div class="card-title">Co liczy ten kalkulator</div>
-        <div class="prose"><p>Tryb uproszczony zwraca wskaźnik dla wybranego materiału. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,6445 + olej napędowy × 3,2 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,0843. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
+        <div class="prose"><p>Tryb uproszczony zwraca wskaźnik dla wybranego materiału. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,6445 + olej napędowy × 3,72 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,0843. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
             <p>Współczynnik energii obejmuje całkowity wpływ na klimat (GWP-total) według modelu <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a>. Opcja płukania dodaje 0,5 kWh/t frakcji pierwotnej.</p>
             <p>Frakcja recyklingowa (RC) ma stałą wartość 2,50 kg CO₂e/t. Wynik = baza × (1 − udział RC) + 2,50 × udział RC. Przy RC = 100% wynik wynosi 2,50, a pola dotyczące procesu frakcji pierwotnej są wyłączone. Przy niższym udziale RC znów wpływają na wynik. Wykres, tabela i eksport pokazują wkłady po uwzględnieniu udziałów.</p>
             <p>Transport do budowy (A4) jest liczony oddzielnie: odległość × współczynnik transportu. Oba tryby przyjmują wskaźnik poLCA dla zestawu ciężarowego 40 t: 0,0843 kg CO₂e/(t·km).</p>
@@ -366,6 +365,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-kruszywa.js?v=20261123f"></script>
+<script src="js/kalkulator-kruszywa.js?v=20261123h"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

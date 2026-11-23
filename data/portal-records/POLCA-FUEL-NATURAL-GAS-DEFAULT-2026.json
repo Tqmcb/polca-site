@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "record": {
     "id": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
     "title": "Gaz ziemny",
@@ -11,13 +11,13 @@
     "year_type": "publication",
     "status_id": "default",
     "status_label": "Wartość przyjęta w modelu",
-    "description": "Współczynnik do przeliczenia zużycia paliwa w etapach wskazanych w rekordzie.",
+    "description": "Wydobycie, dostawa i spalanie 1 m³ gazu ziemnego wysokometanowego.",
     "href": "/dane/polca-fuel-natural-gas-default-2026.html",
     "unit": "kg CO₂e/m³",
     "boundary": "A3",
     "indicator_label": "Wpływ na klimat (GWP)",
-    "source_name": "poLCA 2026, wartość domyślna dla gazu ziemnego",
-    "source_url": "https://polca.org.pl/metodyka.html",
+    "source_name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+    "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6",
     "formats": [
       "JSON"
     ],
@@ -43,7 +43,35 @@
     "geography": "PL",
     "reference_unit": "m3",
     "source_record_href": "/data/datasets/POLCA-FUEL-NATURAL-GAS-DEFAULT-2026.json",
-    "value": 2,
+    "source_trace": [
+      {
+        "name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+        "type": "methodology_source",
+        "role": "Wartość opałowa 37,17 MJ/m³ i emisja CO₂ ze spalania 56,18 kg/GJ.",
+        "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
+      },
+      {
+        "name": "Wytyczne IPCC 2006, tom 2, tabela 2.4",
+        "type": "methodology_source",
+        "role": "Emisje CH₄ i N₂O ze spalania stacjonarnego gazu, założenie dla instalacji.",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
+      },
+      {
+        "name": "Szósty raport IPCC, grupa robocza I, tabela 7.15",
+        "type": "methodology_source",
+        "role": "Potencjał tworzenia efektu cieplarnianego w okresie 100 lat dla metanu kopalnego i podtlenku azotu.",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/"
+      },
+      {
+        "name": "Rozporządzenie delegowane Komisji (UE) 2023/1185, załącznik, część B",
+        "type": "methodology_source",
+        "role": "Emisje związane z wydobyciem i dostawą paliwa w Unii Europejskiej.",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185"
+      }
+    ],
+    "limitations": "Wydobycie i dostawę opisuje wskaźnik unijny. Dla emisji CH₄ i N₂O przyjęto parametry spalania stacjonarnego dla sektora handlu i usług z tabeli 2.4 IPCC. W obliczeniu dla konkretnej instalacji należy uwzględnić skład i wartość opałową dostarczanego gazu oraz zastosowanie paliwa.",
+    "methodology_note": "Dla gazu wysokometanowego [KOBiZE, tabela 14](https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6) podaje 56,18 kg CO₂/GJ ze spalania i wartość opałową 37,17 MJ/m³. Dla spalania stacjonarnego przyjęto 5 kg CH₄/TJ i 0,1 kg N₂O/TJ według [IPCC 2006, tom 2, tabela 2.4](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf). Mnożniki 29,8 i 273 z [szóstego raportu IPCC, tabela 7.15](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/) dają 0,18 g CO₂e/MJ. Wydobycie i dostawa odpowiadają za 9,7 g CO₂e/MJ według [rozporządzenia (UE) 2023/1185, załącznik, część B](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185). Łącznie (56,18 + 0,18 + 9,7) g CO₂e/MJ × 37,17 MJ/m³ ≈ 2,46 kg CO₂e/m³. Wcześniejsza wartość 2,0 kg CO₂e/m³ była niższa od emisji samego CO₂ ze spalania (2,09 kg CO₂/m³).",
+    "value": 2.46,
     "cpr_family_ids": [],
     "cpr_related": [],
     "cpr_scope_note": null

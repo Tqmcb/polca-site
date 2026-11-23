@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "record": {
     "id": "POLCA-MMA-SMA11S-2026",
     "title": "Mieszanka SMA 11 S",
@@ -84,12 +84,12 @@
     "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 14% lepiszcza (SMA 11 S), co zawyżało wynik. W obliczeniu przyjęto 66 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
     "binder_content_pct_m_m": 6.6,
     "gwp_modules_kg_co2e_per_t": {
-      "A1": 42.33786,
+      "A1": 44.47998,
       "A2": 4.935765,
       "A3": 26.91625,
-      "A1_A3": 74.189875
+      "A1_A3": 76.331995
     },
-    "value": 74.189875,
+    "value": 76.331995,
     "cpr_family_ids": [
       23
     ],

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.9",
+    "version": "2026.10",
     "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026, POLCA-AGG-PL-LIMESTONE-DEFAULT-2026, POLCA-AGG-PL-DOLOMITE-DEFAULT-2026, POLCA-AGG-PL-NATURAL-DEFAULT-2026, POLCA-FILLER-LIMESTONE-DEFAULT-2026, POLCA-FUEL-DIESEL-DEFAULT-2026, POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+      "tytul": "Korekta wskaźników dla kruszyw, wypełniacza wapiennego i paliw",
+      "opis": "Na podstawie źródeł pierwotnych zmieniono wskaźniki A1–A3 w kg CO₂e/t dla kruszywa łamanego twardego z 5,5 do 3,99, wapiennego z 4,0 do 3,27, dolomitowego z 4,5 do 3,91, naturalnego z 3,5 do 3,86 oraz wypełniacza wapiennego z 30 do 72. Po uwzględnieniu wydobycia, dostawy i spalania paliw wskaźnik oleju napędowego dla maszyn pozadrogowych zmieniono z 3,2 do 3,72 kg CO₂e/l, a gazu ziemnego z 2,0 do 2,46 kg CO₂e/m³. Przeliczono receptury mieszanek mineralno-asfaltowych i przykłady obliczeń.",
+      "podstawa": "Deklaracje środowiskowe ITB, Łukasiewicz-ICiMB i EPD International oraz dane KOBiZE, IPCC i rozporządzenia Komisji (UE) 2022/996 i 2023/1185. Źródła poszczególnych wskaźników podano na kartach danych.",
+      "link": "/datasety.html",
+      "skutek_dla_deklaracji": "W obliczeniach wykorzystujących dotychczasowe wskaźniki należy ocenić wpływ zmiany stosownie do masy składników i zużycia paliw."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "aktualizacja_danych",

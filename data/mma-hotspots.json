@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA MMA kluczowe źródło wpływu database",
-    "version": "2026.4",
+    "version": "2026.5",
     "status": "startowy zakres publiczny",
     "principle": "Publiczna baza pokazuje wynikowe wartości poLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
   },
@@ -38,21 +38,35 @@
       "values": [
         {
           "name": "Kruszywo łamane twarde",
-          "value": "5,0-6,0 kg CO2e/t",
-          "status": "wartość grupowa poLCA",
-          "basis": "Model referencyjny poLCA dla MMA, publiczne i sektorowe EPD kruszyw, ÖKOBAUDAT, literatura LCA kruszenia i przesiewania."
+          "value": "3,99 kg CO2e/t",
+          "status": "Wskaźnik z deklaracji producenta",
+          "basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+          "dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
         },
         {
-          "name": "Kruszywo wapienne / dolomitowe",
-          "value": "4,0-4,5 kg CO2e/t",
-          "status": "wartość grupowa poLCA",
-          "basis": "Benchmark: ITB-EPD 707 Trzuskawica S.A. dla kruszyw wapiennych A1-A3 = 3,27 kg CO2e/t; wartość poLCA pozostaje konserwatywna dla braku danych konkretnej kopalni."
+          "name": "Kruszywo wapienne",
+          "value": "3,27 kg CO2e/t",
+          "status": "Wskaźnik z deklaracji producenta",
+          "basis": "Trzuskawica S.A., ITB-EPD nr 707/2024",
+          "dataset_code": "POLCA-AGG-PL-LIMESTONE-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
+        },
+        {
+          "name": "Kruszywo dolomitowe",
+          "value": "3,91 kg CO2e/t",
+          "status": "Wskaźnik z deklaracji producenta",
+          "basis": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+          "dataset_code": "POLCA-AGG-PL-DOLOMITE-DEFAULT-2026",
+          "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
         },
         {
           "name": "Piasek / żwir",
-          "value": "3,5 kg CO2e/t",
-          "status": "wartość domyślna poLCA",
-          "basis": "Niższa energochłonność niż kruszywa łamane; wymaga potwierdzenia płukania, sortowania, wilgotności i transportu."
+          "value": "3,86 kg CO2e/t",
+          "status": "Mediana dwóch deklaracji producentów",
+          "basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
+          "dataset_code": "POLCA-AGG-PL-NATURAL-DEFAULT-2026",
+          "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
         }
       ]
     },
@@ -65,9 +79,11 @@
       "values": [
         {
           "name": "Wypełniacz wapienny do MMA",
-          "value": "30 kg CO2e/t",
-          "status": "konserwatywna wartość poLCA",
-          "basis": "Benchmarki EPD dla mielonego węglanu wapnia, ÖKOBAUDAT i model referencyjny MMA; wartość obejmuje mielenie/suszenie, transport liczony oddzielnie."
+          "value": "72 kg CO2e/t",
+          "status": "Wskaźnik z deklaracji producenta",
+          "basis": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+          "dataset_code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
+          "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
         }
       ]
     },
@@ -120,15 +136,19 @@
         },
         {
           "name": "Gaz ziemny",
-          "value": "2,0 kg CO2e/m3",
-          "status": "wartość domyślna poLCA",
-          "basis": "Wartość przeliczeniowa do A3; zużycie gazu musi pochodzić z danych zakładu."
+          "value": "2,46 kg CO2e/m3",
+          "status": "Wskaźnik obliczony dla paliwa",
+          "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14 oraz IPCC i rozporządzenie (UE) 2023/1185",
+          "dataset_code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
+          "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
         },
         {
           "name": "Olej napędowy",
-          "value": "3,2 kg CO2e/l",
-          "status": "wartość domyślna poLCA",
-          "basis": "Spalanie i upstream paliwa; stosować dla sprzętu, procesów pomocniczych i scenariuszy."
+          "value": "3,72 kg CO2e/l",
+          "status": "Wskaźnik obliczony dla paliwa",
+          "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16 oraz IPCC i rozporządzenie (UE) 2023/1185",
+          "dataset_code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
+          "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
         }
       ]
     },
@@ -153,7 +173,7 @@
         },
         {
           "name": "AC 11 S",
-          "value": "66,73024 kg CO2e/t",
+          "value": "68,88244 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 5,8% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-AC11S-2026",
@@ -161,7 +181,7 @@
         },
         {
           "name": "AC 16 W",
-          "value": "59,65638 kg CO2e/t",
+          "value": "61,87554 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 4,6% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-AC16W-2026",
@@ -169,7 +189,7 @@
         },
         {
           "name": "SMA 11 S",
-          "value": "74,189875 kg CO2e/t",
+          "value": "76,331995 kg CO2e/t",
           "status": "wynik modelu poLCA",
           "basis": "Kalkulator MMA, Bmin 6,6% według WT-2 2014 cz. I",
           "dataset_code": "POLCA-MMA-SMA11S-2026",

@@ -1,5 +1,5 @@
 {
-  "version": "POLCA-GWP-2026.4",
+  "version": "POLCA-GWP-2026.5",
   "published_at": "2026-11-23",
   "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
@@ -66,35 +66,37 @@
       "id": "POLCA-GWP-NATURAL-GAS-2026",
       "group": "energia_i_paliwa",
       "name": "Gaz ziemny",
-      "value": 2,
+      "value": 2.46,
       "unit": "kg CO2e/m3",
       "module": "A3",
-      "status": "wartość domyślna poLCA",
+      "status": "Wskaźnik obliczony dla paliwa",
       "use_for": [
         "MMA",
         "beton",
         "emulsje asfaltowe",
         "kruszywa"
       ],
-      "basis": "KOBiZE/JEC, wartość przeliczeniowa dla paliwa",
-      "replace_with": "faktury, wartość opałowa, zużycie zakładu, dane dostawcy paliwa"
+      "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14 oraz IPCC i rozporządzenie (UE) 2023/1185",
+      "replace_with": "faktury, wartość opałowa, zużycie zakładu, dane dostawcy paliwa",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
     },
     {
       "id": "POLCA-GWP-DIESEL-2026",
       "group": "energia_i_paliwa",
       "name": "Olej napędowy",
-      "value": 3.2,
+      "value": 3.72,
       "unit": "kg CO2e/l",
       "module": "A3/A5/C1",
-      "status": "wartość domyślna poLCA",
+      "status": "Wskaźnik obliczony dla paliwa",
       "use_for": [
         "sprzęt",
         "transport pomocniczy",
         "frezowanie",
         "roboty drogowe"
       ],
-      "basis": "KOBiZE/JEC, spalanie i upstream paliwa",
-      "replace_with": "rzeczywiste zużycie paliwa, dane sprzętu lub floty"
+      "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16 oraz IPCC i rozporządzenie (UE) 2023/1185",
+      "replace_with": "rzeczywiste zużycie paliwa, dane sprzętu lub floty",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
     },
     {
       "id": "POLCA-GWP-TRUCK-40T-2026",
@@ -138,83 +140,88 @@
       "id": "POLCA-GWP-AGG-HARD-CRUSHED-2026",
       "group": "kruszywa",
       "name": "Kruszywo łamane twarde",
-      "value": 5.5,
+      "value": 3.99,
       "unit": "kg CO2e/t",
-      "module": "A1",
-      "status": "wartość grupowa poLCA",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "EPD kruszyw, ÖKOBAUDAT, literatura LCA, PIG-PIB/MIDAS",
-      "replace_with": "EPD kopalni lub zweryfikowane dane procesu"
+      "basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+      "replace_with": "EPD kopalni lub zweryfikowane dane procesu",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
     },
     {
       "id": "POLCA-GWP-AGG-LIMESTONE-2026",
       "group": "kruszywa",
       "name": "Kruszywo wapienne",
-      "value": 4,
+      "value": 3.27,
       "unit": "kg CO2e/t",
-      "module": "A1",
-      "status": "wartość grupowa poLCA",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "benchmark ITB-EPD 707 Trzuskawica A1-A3 = 3.27 kg CO2e/t, EPD kruszyw, poLCA",
-      "replace_with": "EPD kopalni lub dane zakładowe"
+      "basis": "Trzuskawica S.A., ITB-EPD nr 707/2024",
+      "replace_with": "EPD kopalni lub dane zakładowe",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
     },
     {
       "id": "POLCA-GWP-AGG-DOLOMITE-2026",
       "group": "kruszywa",
       "name": "Kruszywo dolomitowe",
-      "value": 4.5,
+      "value": 3.91,
       "unit": "kg CO2e/t",
-      "module": "A1",
-      "status": "wartość grupowa poLCA",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "EPD kruszyw, ÖKOBAUDAT, poLCA, dane geologiczne",
-      "replace_with": "EPD kopalni lub dane zakładowe"
+      "basis": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+      "replace_with": "EPD kopalni lub dane zakładowe",
+      "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
     },
     {
       "id": "POLCA-GWP-AGG-NATURAL-2026",
       "group": "kruszywa",
       "name": "Piasek / żwir",
-      "value": 3.5,
+      "value": 3.86,
       "unit": "kg CO2e/t",
-      "module": "A1",
-      "status": "wartość domyślna poLCA",
+      "module": "A1-A3",
+      "status": "Mediana dwóch deklaracji producentów",
       "use_for": [
         "MMA",
         "beton",
         "podbudowy",
         "kruszywa jako wyrób"
       ],
-      "basis": "EPD kruszyw naturalnych, ÖKOBAUDAT, poLCA",
-      "replace_with": "EPD kopalni, dane płukania/sortowania i transportu"
+      "basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
+      "replace_with": "EPD kopalni, dane płukania/sortowania i transportu",
+      "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
     },
     {
       "id": "POLCA-GWP-FILLER-LIMESTONE-2026",
       "group": "wypelniacze",
       "name": "Wypełniacz wapienny do MMA",
-      "value": 30,
+      "value": 72,
       "unit": "kg CO2e/t",
-      "module": "A1",
-      "status": "konserwatywna wartość poLCA",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
       "use_for": [
         "MMA"
       ],
-      "basis": "benchmarki EPD mielonego CaCO3, ÖKOBAUDAT, model referencyjny MMA",
-      "replace_with": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia"
+      "basis": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+      "replace_with": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia",
+      "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
     },
     {
       "id": "POLCA-GWP-RAP-PROCESSING-2026",
@@ -558,7 +565,7 @@
       "id": "POLCA-MMA-AC11S-2026",
       "group": "mma",
       "name": "AC 11 S",
-      "value": 66.73024,
+      "value": 68.88244,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",
@@ -573,7 +580,7 @@
       "id": "POLCA-MMA-AC16W-2026",
       "group": "mma",
       "name": "AC 16 W",
-      "value": 59.65638,
+      "value": 61.87554,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",
@@ -588,7 +595,7 @@
       "id": "POLCA-MMA-SMA11S-2026",
       "group": "mma",
       "name": "SMA 11 S",
-      "value": 74.189875,
+      "value": 76.331995,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",

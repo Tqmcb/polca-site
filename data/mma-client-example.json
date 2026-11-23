@@ -2,7 +2,7 @@
   "meta": {
     "id": "POLCA-MMA-CLIENT-EXAMPLE-AC16W-20RAP-2026",
     "name": "Przykładowy profil danych klienta dla MMA AC 16 W HMA z 20% RAP",
-    "version": "2026.3",
+    "version": "2026.4",
     "status": "example_profile",
     "published_at": "2026-05-04",
     "declared_unit": "1 Mg mieszanki mineralno-asfaltowej",
@@ -62,10 +62,11 @@
     {
       "dataset_code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",
       "name": "Kruszywo łamane twarde",
-      "value": 5.5,
+      "value": 3.99,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "replacement": "EPD kopalni lub zweryfikowane dane kopalni"
+      "replacement": "EPD kopalni lub zweryfikowane dane kopalni",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
     },
     {
       "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
@@ -79,10 +80,11 @@
     {
       "dataset_code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
       "name": "Wypełniacz wapienny",
-      "value": 30,
+      "value": 72,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "replacement": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia"
+      "replacement": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia",
+      "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
     },
     {
       "dataset_code": "POLCA-RAP-PROCESSING-DEFAULT-2026",
@@ -104,10 +106,11 @@
     {
       "dataset_code": "POLCA-FUEL-NATURAL-GAS-DEFAULT-2026",
       "name": "Gaz ziemny",
-      "value": 2,
+      "value": 2.46,
       "unit": "kg CO2e/m3",
       "module": "A3",
-      "replacement": "faktury, wartość opałowa i zużycie zakładu"
+      "replacement": "faktury, wartość opałowa i zużycie zakładu",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
     },
     {
       "dataset_code": "POLCA-EN-PL-LCA-2024",
@@ -120,10 +123,11 @@
     {
       "dataset_code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
       "name": "Olej napędowy",
-      "value": 3.2,
+      "value": 3.72,
       "unit": "kg CO2e/l",
       "module": "A5/C1/C3",
-      "replacement": "rzeczywiste zużycie paliwa i dane sprzętu"
+      "replacement": "rzeczywiste zużycie paliwa i dane sprzętu",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
     }
   ],
   "non_transport_gwp_shares": {
@@ -137,48 +141,48 @@
     "C4": [0.94, 0.03, 0.03]
   },
   "module_results_kg_co2e_per_mg": {
-    "A1": 30.9,
+    "A1": 31.073,
     "A2": 4.37,
-    "A3": 16.273,
-    "A1-A3": 51.543,
+    "A3": 19.013,
+    "A1-A3": 54.456,
     "A4": 2.108,
-    "A5": 1.513,
-    "C1": 0.8,
+    "A5": 1.709,
+    "C1": 0.93,
     "C2": 2.529,
-    "C3": 1.199,
+    "C3": 1.277,
     "C4": 0.1,
-    "C1-C4": 4.628,
+    "C1-C4": 4.836,
     "D": -6.4,
-    "A-C_without_D": 59.791,
-    "net_with_D": 53.391
+    "A-C_without_D": 63.108,
+    "net_with_D": 56.708
   },
   "en15804_a2_indicators": {
     "GWP-total": {
       "unit": "kg CO2e",
-      "A1-A3": 51.543,
-      "A4-A5": 3.620,
-      "C1-C4": 4.628,
+      "A1-A3": 54.456,
+      "A4-A5": 3.817,
+      "C1-C4": 4.836,
       "D": -6.4
     },
     "GWP-fossil": {
       "unit": "kg CO2e",
-      "A1-A3": 48.901,
-      "A4-A5": 3.555,
-      "C1-C4": 4.482,
+      "A1-A3": 51.588,
+      "A4-A5": 3.75,
+      "C1-C4": 4.684,
       "D": -6.144
     },
     "GWP-biogenic": {
       "unit": "kg CO2e",
-      "A1-A3": 1.454,
-      "A4-A5": 0.018,
-      "C1-C4": 0.056,
+      "A1-A3": 1.594,
+      "A4-A5": 0.019,
+      "C1-C4": 0.059,
       "D": -0.128
     },
     "GWP-luluc": {
       "unit": "kg CO2e",
-      "A1-A3": 1.188,
-      "A4-A5": 0.047,
-      "C1-C4": 0.09,
+      "A1-A3": 1.274,
+      "A4-A5": 0.048,
+      "C1-C4": 0.093,
       "D": -0.128
     },
     "ODP": {
@@ -280,5 +284,5 @@
       "D": 0
     }
   },
-  "data_quality_note": "W wersji 2026.3 z 23.11.2026 przyjęto dla asfaltu drogowego wskaźnik z raportu Eurobitume (2025, s. 8). Przeliczono całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
+  "data_quality_note": "W wersji 2026.4 z 23.11.2026 przeliczono kruszywo, wypełniacz i paliwa według zaktualizowanych rekordów. Dla asfaltu drogowego przyjęto wskaźnik z raportu Eurobitume (2025, s. 8). Przeliczono całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
 }

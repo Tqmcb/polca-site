@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.2",
+  "catalog_version": "2026-11-23.3",
   "record": {
     "id": "POLCA-MMA-AC16W-2026",
     "title": "Mieszanka AC 16 W",
@@ -84,12 +84,12 @@
     "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 8% lepiszcza (AC 16 W), co zawyżało wynik. W obliczeniu przyjęto 46 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
     "binder_content_pct_m_m": 4.6,
     "gwp_modules_kg_co2e_per_t": {
-      "A1": 29.2159,
+      "A1": 31.43506,
       "A2": 4.72923,
       "A3": 25.71125,
-      "A1_A3": 59.65638
+      "A1_A3": 61.87554
     },
-    "value": 59.65638,
+    "value": 61.87554,
     "cpr_family_ids": [
       23
     ],

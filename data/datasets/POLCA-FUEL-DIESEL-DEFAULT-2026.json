@@ -21,24 +21,24 @@
   },
   "dataset": {
     "code": "POLCA-FUEL-DIESEL-DEFAULT-2026",
-    "name": "Olej napędowy - sprzęt i procesy pomocnicze",
+    "name": "Olej napędowy — sprzęt i procesy pomocnicze",
     "category": "fuel",
     "module_default": "A5/C1/C3",
     "unit": "l",
-    "gwp_total_kg_co2e": 3.2,
+    "gwp_total_kg_co2e": 3.72,
     "year": 2026,
-    "last_reviewed_at": "2026-07-31",
-    "next_review_due": "2026-10-31",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-02-23",
     "review_cycle": "quarterly",
     "geography": "PL",
-    "technology": "Spalanie oleju napędowego w maszynach i transporcie pomocniczym",
-    "data_quality": "industry",
+    "technology": "Zużycie oleju napędowego przez maszyny pozadrogowe w przemyśle",
+    "data_quality": "polca_model",
     "status": "published_polca_default",
-    "source_name": "poLCA 2026, wartość domyślna dla oleju napędowego",
-    "source_url": "https://polca.org.pl/metodyka.html",
-    "scope": "Współczynnik dla litra oleju napędowego stosowany w scenariuszach wbudowania, frezowania lub przetwarzania RAP.",
-    "methodology_note": "Dataset służy do scenariuszy, w ktorych znane jest zużycie paliwa na 1 Mg albo na operacje technologiczna. W EPD jako lepsze źródło stosuje się dane ze zużycia sprzętu lub potwierdzony wskaźnik paliwowy dla istotnego udziału w wyniku.",
-    "limitations": "Nie rozróżnia biokomponentów, normy emisji silnika ani rzeczywistego obciążenia maszyny.",
+    "source_name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16",
+    "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7",
+    "scope": "Wydobycie, dostawa i spalanie 1 l oleju napędowego w maszynie pozadrogowej.",
+    "methodology_note": "Według [KOBiZE, tabela 16](https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7) emisja CO₂ ze spalania wynosi 74,1 kg/GJ, a wartość opałowa 43,0 MJ/kg. Gęstość 832 kg/m³ z [załącznika IX do rozporządzenia (UE) 2022/996](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R0996) daje 35,776 MJ/l. W [Dz.U. z 2015 r. poz. 1680, zał. 3](https://dziennikustaw.gov.pl/D2015000168001.pdf) podano 820–845 kg/m³. Dla maszyn pozadrogowych w przemyśle [IPCC 2006, tom 2, tabela 3.3.1](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_3_Ch3_Mobile_Combustion.pdf) podaje 4,15 kg CH₄/TJ i 28,6 kg N₂O/TJ. Po zastosowaniu mnożników 29,8 i 273 z [szóstego raportu IPCC, tabela 7.15](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/) ich łączny wkład wynosi 7,93 g CO₂e/MJ. Wydobycie i dostawa odpowiadają za 21,9 g CO₂e/MJ według [rozporządzenia (UE) 2023/1185, załącznik, część B](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185). Łącznie (74,1 + 7,93 + 21,9) g CO₂e/MJ × 35,78 MJ/l ≈ 3,72 kg CO₂e/l. Dla transportu drogowego emisje CH₄ i N₂O z tabeli 3.2.2 dają 1,18 g CO₂e/MJ i wynik 3,48 kg CO₂e/l.",
+    "limitations": "Nie rozróżnia biokomponentów, normy emisji silnika ani rzeczywistego obciążenia maszyny. Wydobycie i dostawę paliwa opisuje wskaźnik unijny. Wydobycie i dostawę paliwa opisuje wskaźnik unijny.",
     "preferred_replacement": "Rejestr zużycia paliwa, dane wykonawcy robót drogowych lub EPD/dane dostawcy paliwa.",
     "publication_status": "published_polca_default",
     "review_required": false,
@@ -47,32 +47,50 @@
       "internal_report",
       "epd_plus_preparation"
     ],
-    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "quality_rule": "Rekord otrzymuje status pozycji istotnej dla jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
     "source_trace": [
       {
-        "name": "KOBiZE",
-        "type": "official_public",
-        "role": "fuel emission factor control",
-        "url": "https://www.kobize.pl/"
+        "name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16",
+        "type": "methodology_source",
+        "role": "Wartość opałowa 43,0 MJ/kg i emisja CO₂ ze spalania 74,1 kg/GJ.",
+        "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
       },
       {
-        "name": "JEC Well-to-Tank v5",
-        "type": "method_reference",
-        "role": "upstream fuel factor",
-        "url": "https://publications.jrc.ec.europa.eu/"
+        "name": "Rozporządzenie wykonawcze Komisji (UE) 2022/996, załącznik IX",
+        "type": "methodology_source",
+        "role": "Gęstość oleju napędowego 832 kg/m³.",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R0996"
       },
       {
-        "name": "faktury i dane klienta",
-        "type": "primary_verified",
-        "role": "preferred activity data",
-        "url": "https://polca.org.pl/metodyka.html"
+        "name": "Dz.U. z 2015 r. poz. 1680, załącznik nr 3",
+        "type": "methodology_source",
+        "role": "Zakres gęstości w temperaturze 15°C podany w załączniku.",
+        "url": "https://dziennikustaw.gov.pl/D2015000168001.pdf"
+      },
+      {
+        "name": "Wytyczne IPCC 2006, tom 2, tabele 3.3.1 i 3.2.2",
+        "type": "methodology_source",
+        "role": "Emisje CH₄ i N₂O z maszyn pozadrogowych w przemyśle oraz z transportu drogowego.",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_3_Ch3_Mobile_Combustion.pdf"
+      },
+      {
+        "name": "Szósty raport IPCC, grupa robocza I, tabela 7.15",
+        "type": "methodology_source",
+        "role": "Potencjał tworzenia efektu cieplarnianego w okresie 100 lat dla metanu kopalnego i podtlenku azotu.",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/"
+      },
+      {
+        "name": "Rozporządzenie delegowane Komisji (UE) 2023/1185, załącznik, część B",
+        "type": "methodology_source",
+        "role": "Emisje związane z wydobyciem i dostawą paliwa w Unii Europejskiej.",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
-    "evidence_level": "conservative_default",
+    "open_data_note": "Wskaźnik obliczono dla zużycia paliwa z uwzględnieniem jego wydobycia i dostawy.",
+    "evidence_level": "polca_model",
     "source_policy": {
-      "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy poLCA",
+      "priority": "Wskaźnik dostawcy odpowiedni dla zakresu obliczeń lub wskaźnik poLCA z uwzględnieniem wydobycia, dostawy i spalania paliwa.",
       "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
       "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
     },
@@ -89,6 +107,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

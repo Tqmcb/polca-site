@@ -25,20 +25,20 @@
     "category": "fuel",
     "module_default": "A3",
     "unit": "m3",
-    "gwp_total_kg_co2e": 2,
+    "gwp_total_kg_co2e": 2.46,
     "year": 2026,
-    "last_reviewed_at": "2026-07-31",
-    "next_review_due": "2026-10-31",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-02-23",
     "review_cycle": "quarterly",
     "geography": "PL",
-    "technology": "Spalanie gazu ziemnego w źródle ciepła wytwórni",
-    "data_quality": "industry",
+    "technology": "Spalanie stacjonarne gazu ziemnego wysokometanowego",
+    "data_quality": "polca_model",
     "status": "published_polca_default",
-    "source_name": "poLCA 2026, wartość domyślna dla gazu ziemnego",
-    "source_url": "https://polca.org.pl/metodyka.html",
-    "scope": "Współczynnik dla m3 gazu ziemnego zużytego w produkcji MMA, suszeniu kruszywa lub podgrzewaniu procesu.",
-    "methodology_note": "Dataset jest kontrolowaną wartością domyślną dla gazu ziemnego, stosowaną gdy producent zna zużycie gazu, ale nie posiada zweryfikowanego współczynnika dostawcy. Zużycie gazu pochodzi z faktur, liczników albo rocznej alokacji na wolumen produkcji.",
-    "limitations": "Wartość nie uwzględnia szczegółowego składu gazu ani sprawności konkretnej instalacji. Dla finalnej EPD rekord wskazuje współczynnik i zużycie jako dane do potwierdzenia źródłowego.",
+    "source_name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+    "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6",
+    "scope": "Wydobycie, dostawa i spalanie 1 m³ gazu ziemnego wysokometanowego.",
+    "methodology_note": "Dla gazu wysokometanowego [KOBiZE, tabela 14](https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6) podaje 56,18 kg CO₂/GJ ze spalania i wartość opałową 37,17 MJ/m³. Dla spalania stacjonarnego przyjęto 5 kg CH₄/TJ i 0,1 kg N₂O/TJ według [IPCC 2006, tom 2, tabela 2.4](https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf). Mnożniki 29,8 i 273 z [szóstego raportu IPCC, tabela 7.15](https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/) dają 0,18 g CO₂e/MJ. Wydobycie i dostawa odpowiadają za 9,7 g CO₂e/MJ według [rozporządzenia (UE) 2023/1185, załącznik, część B](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185). Łącznie (56,18 + 0,18 + 9,7) g CO₂e/MJ × 37,17 MJ/m³ ≈ 2,46 kg CO₂e/m³. Wcześniejsza wartość 2,0 kg CO₂e/m³ była niższa od emisji samego CO₂ ze spalania (2,09 kg CO₂/m³).",
+    "limitations": "Wydobycie i dostawę opisuje wskaźnik unijny. Dla emisji CH₄ i N₂O przyjęto parametry spalania stacjonarnego dla sektora handlu i usług z tabeli 2.4 IPCC. W obliczeniu dla konkretnej instalacji należy uwzględnić skład i wartość opałową dostarczanego gazu oraz zastosowanie paliwa.",
     "preferred_replacement": "Dane dostawcy paliwa, faktury z wartością opałową lub zweryfikowany model spalania.",
     "publication_status": "published_polca_default",
     "review_required": false,
@@ -47,32 +47,38 @@
       "internal_report",
       "epd_plus_preparation"
     ],
-    "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
+    "quality_rule": "Rekord otrzymuje status pozycji istotnej dla jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
     "source_trace": [
       {
-        "name": "KOBiZE",
-        "type": "official_public",
-        "role": "fuel emission factor control",
-        "url": "https://www.kobize.pl/"
+        "name": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14",
+        "type": "methodology_source",
+        "role": "Wartość opałowa 37,17 MJ/m³ i emisja CO₂ ze spalania 56,18 kg/GJ.",
+        "url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
       },
       {
-        "name": "JEC Well-to-Tank v5",
-        "type": "method_reference",
-        "role": "upstream fuel factor",
-        "url": "https://publications.jrc.ec.europa.eu/"
+        "name": "Wytyczne IPCC 2006, tom 2, tabela 2.4",
+        "type": "methodology_source",
+        "role": "Emisje CH₄ i N₂O ze spalania stacjonarnego gazu, założenie dla instalacji.",
+        "url": "https://www.ipcc-nggip.iges.or.jp/public/2006gl/pdf/2_Volume2/V2_2_Ch2_Stationary_Combustion.pdf"
       },
       {
-        "name": "faktury i dane klienta",
-        "type": "primary_verified",
-        "role": "preferred activity data",
-        "url": "https://polca.org.pl/metodyka.html"
+        "name": "Szósty raport IPCC, grupa robocza I, tabela 7.15",
+        "type": "methodology_source",
+        "role": "Potencjał tworzenia efektu cieplarnianego w okresie 100 lat dla metanu kopalnego i podtlenku azotu.",
+        "url": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-7/"
+      },
+      {
+        "name": "Rozporządzenie delegowane Komisji (UE) 2023/1185, załącznik, część B",
+        "type": "methodology_source",
+        "role": "Emisje związane z wydobyciem i dostawą paliwa w Unii Europejskiej.",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32023R1185"
       }
     ],
     "methodology_url": "https://polca.org.pl/metodyka.html",
-    "open_data_note": "Wartość domyślna/proxy. Nie udaje danych dostawcy; służy do jednakowych zasad liczenia, gdy brak lepszego źródła.",
-    "evidence_level": "conservative_default",
+    "open_data_note": "Wskaźnik obliczono dla zużycia paliwa z uwzględnieniem jego wydobycia i dostawy.",
+    "evidence_level": "polca_model",
     "source_policy": {
-      "priority": "faktury/zużycie klienta > wskaźniki paliwowe KOBiZE/JEC > proxy poLCA",
+      "priority": "Wskaźnik dostawcy odpowiedni dla zakresu obliczeń lub wskaźnik poLCA z uwzględnieniem wydobycia, dostawy i spalania paliwa.",
       "when_allowed": "Znane zużycie paliwa, ale brak zweryfikowanego współczynnika dostawcy.",
       "auditor_note": "Sprawdzić jednostkę paliwa, wartość opałową, okres danych i alokację na tonę wyróbu."
     },
@@ -89,6 +95,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }
