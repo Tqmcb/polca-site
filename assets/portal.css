@@ -533,7 +533,12 @@ body.portal .portal-footer::before {
   background: linear-gradient(102deg, transparent 58%, rgb(144 201 171 / .26));
   mask: url("tlo-poziomice.svg") right bottom / auto 105% no-repeat;
 }
-body.portal .portal-footer :is(h2, h3, .portal-brand) { color: #f2f7f3; }
+body.portal .portal-footer .portal-brand { color: #f2f7f3; }
+@media screen {
+  /* Older page styles set important colors directly on headings and paragraphs. */
+  body.portal .portal-footer :is(h2, h3) { color: #f2f7f3 !important; }
+  body.portal .portal-footer p { color: inherit !important; }
+}
 body.portal .portal-footer a:not(.portal-brand) { color: #dceddf; }
 body.portal .portal-footer a:hover { color: #fff; }
 body.portal .portal-footer :focus-visible { outline-color: #b7e6d0 !important; }
@@ -558,4 +563,45 @@ body.portal .portal-footer-bottom { border-color: #51736a; color: #d4e4da; }
 }
 @media print {
   body.portal .portal-footer, body.portal .portal-footer * { background: none; color: #111; }
+}
+
+/* Screen typography for archived documents with their own print styles. */
+@media screen {
+  body.portal :is(main:has(.met-doc-meta), main:has(.doc-id)) :where(:not(code, pre, kbd)) {
+    font-family: inherit !important;
+  }
+  body.portal .page:has(.doc-id) :is(.meta, .value, .num, .check, .mono),
+  body.portal .page:has(.doc-id) .action ol li::before,
+  body.portal :is(.met-doc-meta-label, .met-h3-num, .met-keywords, .formula-block, .point-card-num, .citation-label, .ref-num) {
+    font-variant-numeric: tabular-nums;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  body.portal .page:has(.doc-id) .action ol li::before { font-family: inherit; }
+  body.portal .page:has(.doc-id) :is(.brand-sub, .meta, .table-title, th, td, .footer),
+  body.portal .page:has(.doc-id) .action ol li::before,
+  body.portal main:has(.met-doc-meta) :is(.met-doc-meta-label, .met-keywords-label, .citation-label, .polca-table thead th) {
+    font-size: .72rem;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+}
+body.portal :is(code, pre, kbd) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace !important; }
+
+/* Keep controls and tables inside the calculator's content column. */
+body.portal-tool :is(.tool-converter-block, .calc-group, .calc-result-block) { min-width: 0; }
+body.portal-tool .calc-select { max-width: 100%; }
+body.portal-tool .tool-conv-val { overflow-wrap: anywhere; }
+.tool-emission-table { max-width: 100%; overflow-x: auto; }
+
+@media (max-width: 640px) {
+  body.portal-tool :is(#przelicznik, #transport, #materialy, #wskazniki) { padding: 1rem !important; }
+  #materialChart .polca-table :is(th, td) { padding: .45rem; white-space: normal; }
+  #emissionTable thead {
+    position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%);
+  }
+  #emissionTable, #emissionTable tbody { display: block; }
+  #emissionTable tr { display: grid; gap: .25rem; padding-block: .75rem; border-bottom: 1px solid var(--portal-line); }
+  #emissionTable td { padding: 0; border: 0; overflow-wrap: anywhere; }
+  #emissionTable td:last-child { color: var(--portal-muted); }
 }

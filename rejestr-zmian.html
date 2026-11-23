@@ -10,7 +10,7 @@
     <meta property="og:title" content="Rejestr przeglądów i zmian bazy poLCA">
     <meta property="og:description" content="Kiedy dane poLCA są przeglądane, co zmienia numer wersji i co zmiana oznacza dla deklaracji już wydanych.">
     <meta property="og:url" content="https://polca.org.pl/rejestr-zmian.html">
-    <meta property="og:image" content="https://polca.org.pl/images/strip-data.jpg">
+    <meta property="og:image" content="https://polca.org.pl/images/polca-atlas-rzezba.webp">
     <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
     <meta property="og:locale" content="pl_PL">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -20,31 +20,37 @@
         html{scroll-padding-top:76px}
         #cykle,#wersje,#skutek,#rejestr{scroll-margin-top:76px}
         .rej-hero{display:grid;grid-template-columns:1fr .82fr;gap:2rem;align-items:center;padding:2.5rem 0 1.5rem}
+        .rej-latest {padding:1.15rem 1.4rem;border:1px solid var(--portal-line);background:var(--portal-soft)}
+        .rej-latest h2 {margin:0 0 .6rem}
+        .rej-latest ol {list-style:none;padding:0;margin:0}
+        .rej-latest li + li {border-top:1px solid var(--portal-line)}
+        .rej-latest a {display:block;padding-block:.5rem;line-height:1.35}
+        .rej-latest time {display:block;color:var(--portal-muted);font-size:.82rem;font-variant-numeric:tabular-nums}
         .rej-cycles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:1rem}
         .rej-cycle{padding:1rem;border:1px solid var(--border);border-radius:8px;background:var(--bg)}
         .rej-cycle strong{display:block;color:var(--text-primary);font-size:.92rem;margin-bottom:.3rem}
         .rej-cycle p{margin:0;color:var(--text-secondary);font-size:.8rem;line-height:1.55}
-        .rej-cycle .rej-applies{margin-top:.5rem;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-secondary);opacity:.8}
+        .rej-cycle .rej-applies{margin-top:.5rem;font-family:'Source Sans 3', Arial, sans-serif; font-variant-numeric: tabular-nums;font-size:0.72rem;color:var(--text-secondary);opacity:.8}
         .answer-box{padding:1rem;border-left:3px solid var(--accent);border-radius:8px;background:var(--bg-subtle);color:var(--text-secondary);font-size:.86rem;line-height:1.7}
         .rej-entry{display:grid;grid-template-columns:9rem 1fr;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid var(--border)}
         .rej-entry:last-child{border-bottom:0}
-        .rej-date{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--text-primary);font-weight:600}
-        .rej-tag{display:inline-block;margin-top:.4rem;padding:.16rem .5rem;border-radius:4px;font-size:.68rem;font-weight:600;letter-spacing:.02em;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary)}
+        .rej-date{font-family:'Source Sans 3', Arial, sans-serif; font-variant-numeric: tabular-nums;font-size:.82rem;color:var(--text-primary);font-weight:600}
+        .rej-tag{display:inline-block;margin-top:.4rem;padding:.16rem .5rem;border-radius:4px;font-size:0.72rem;font-weight:600;letter-spacing:.02em;background:var(--bg-subtle);border:1px solid var(--border);color:var(--text-secondary)}
         .rej-tag.przeglad_metody{background:#FFF8E1;border-color:#FFB74D;color:#E65100}
         .rej-tag.nowe_dane{background:#E8F5E9;border-color:#81C784;color:#2E7D32}
-        .rej-title{font-family:'Inter Tight',sans-serif;font-size:1rem;font-weight:600;color:var(--text-primary);margin:0 0 .35rem}
-        .rej-scope{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--text-secondary);margin:0 0 .5rem}
+        .rej-title{font-family:'Source Sans 3', Arial, sans-serif;font-size:1rem;font-weight:600;color:var(--text-primary);margin:0 0 .35rem}
+        .rej-scope{font-family:'Source Sans 3', Arial, sans-serif; font-variant-numeric: tabular-nums;font-size:.72rem;color:var(--text-secondary);margin:0 0 .5rem}
         .rej-desc{margin:0;color:var(--text-secondary);font-size:.86rem;line-height:1.65}
         .rej-meta{margin:.6rem 0 0;padding:.6rem .8rem;border-radius:6px;background:var(--bg-subtle);font-size:.78rem;line-height:1.6;color:var(--text-secondary)}
         .rej-meta strong{color:var(--text-primary)}
         .rej-zrodla{width:100%;border-collapse:collapse;margin:.7rem 0 0;font-size:.76rem}
-        .rej-zrodla caption{text-align:left;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text-tertiary);padding-bottom:.4rem}
+        .rej-zrodla caption{text-align:left;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--text-tertiary);padding-bottom:.4rem}
         .rej-zrodla th{text-align:left;padding:.4rem .55rem;background:var(--bg-subtle);border-bottom:1px solid var(--border);color:var(--text-primary);font-weight:700}
         .rej-zrodla td{padding:.45rem .55rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:top;line-height:1.5}
         .rej-zrodla td.rej-zmiana{color:#E65100;font-weight:600}
         .rej-status{display:inline-flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:600;color:#E65100}
         .rej-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#E65100}
-        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-hero>div:last-child{order:-1}.rej-entry{grid-template-columns:minmax(0,1fr);gap:.5rem}.rej-entry p a{overflow-wrap:anywhere}.rej-zrodla{display:block;overflow-x:auto;white-space:nowrap}.rej-zrodla td,.rej-zrodla th{white-space:normal;min-width:9rem}}
+        @media(max-width:900px){.rej-hero,.rej-cycles{grid-template-columns:1fr}.rej-entry{grid-template-columns:minmax(0,1fr);gap:.5rem}.rej-entry p a{overflow-wrap:anywhere}.rej-zrodla{display:block;overflow-x:auto;white-space:nowrap}.rej-zrodla td,.rej-zrodla th{white-space:normal;min-width:9rem}}
     </style>
 <link rel="stylesheet" href="/assets/portal.css?v=20261122-linki"><script src="/js/portal.js?v=20261019cpr" defer></script></head>
 <body class="portal portal-legacy">
@@ -62,19 +68,19 @@
                 normatywną każdej decyzji. Wersje zastąpione pozostają dostępne do celów kontrolnych.
             </p>
             <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem;">
-                <a href="#rejestr" class="btn-primary">Rejestr wpisów</a>
-                <a href="#skutek" class="btn-ghost" style="border:1px solid var(--border);">Skutek dla deklaracji</a>
-                <a href="data/rejestr-zmian.json" class="btn-ghost" style="border:1px solid var(--border);">Rejestr w JSON</a>
+                <a href="#rejestr" class="portal-button">Rejestr wpisów</a>
+                <a href="#skutek" class="portal-button portal-button-secondary" style="border-color:var(--portal-line);">Skutek dla deklaracji</a>
+                <a href="data/rejestr-zmian.json" class="portal-button portal-button-secondary" style="border-color:var(--portal-line);">Rejestr w JSON</a>
             </div>
         </div>
-        <div style="border-radius:12px;overflow:hidden;position:relative;">
-            <img src="images/strip-data.jpg" alt="Kontrola danych i analiza wykresów" loading="lazy" style="width:100%;height:260px;object-fit:cover;display:block;border-radius:12px;">
-            <div style="position:absolute;inset:0;border-radius:12px;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none;"></div>
-        </div>
+        <aside class="rej-latest" aria-labelledby="rej-latest-title">
+            <h2 id="rej-latest-title">Najnowsze wpisy</h2>
+            <div id="rej-latest-list"><p>Daty i opisy zmian zawiera <a href="data/rejestr-zmian.json">plik rejestru</a>.</p></div>
+        </aside>
     </section>
 
     <section class="card section-gap fade-in" id="cykle" aria-labelledby="cykle-title">
-        <h2 id="cykle-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Cykle przeglądu</h2>
+        <h2 id="cykle-title" style="font-family:'Source Sans 3', Arial, sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Cykle przeglądu</h2>
         <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.7;margin:0;">
             Terminy przeglądu są ustalone z góry w polityce aktualizacji bazy. Dane szybkozmienne,
             takie jak energia, paliwa i transport, są przeglądane częściej niż wartości materiałowe.
@@ -89,7 +95,7 @@
     </section>
 
     <section class="card section-gap fade-in" id="wersje" aria-labelledby="wersje-title">
-        <h2 id="wersje-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Co oznacza numer wersji</h2>
+        <h2 id="wersje-title" style="font-family:'Source Sans 3', Arial, sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.5rem;">Co oznacza numer wersji</h2>
         <div class="rej-cycles" id="wersje-lista">
             <p style="color:var(--text-secondary);font-size:.84rem;margin:0;">Wczytywanie zasad wersjonowania…</p>
         </div>
@@ -98,7 +104,7 @@
     <section class="card section-gap fade-in" id="skutek" aria-labelledby="skutek-title"><h2 id="skutek-title">Zmiana danych a wydana deklaracja</h2><p>Nowa publikacja danych nie przelicza automatycznie wydanych deklaracji. Potrzebę aktualizacji ocenia się według zasad właściwego programu i znaczenia zmiany dla wyrobu. W dokumentacji obliczenia zachowaj źródło, wersję i wartości wykorzystanych danych.</p><p><a href="/zastosowanie-epd-cpr.html">Zasady doboru i zastosowania danych</a></p></section>
 
     <section class="card section-gap fade-in" id="rejestr" aria-labelledby="rejestr-title">
-        <h2 id="rejestr-title" style="font-family:'Inter Tight',sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.25rem;">Rejestr wpisów</h2>
+        <h2 id="rejestr-title" style="font-family:'Source Sans 3', Arial, sans-serif;font-size:1.35rem;font-weight:600;color:var(--text-primary);margin-bottom:.25rem;">Rejestr wpisów</h2>
         <p id="rejestr-meta" style="color:var(--text-secondary);font-size:.8rem;margin:0 0 1rem;"></p>
         <div id="rejestr-lista">
             <p style="color:var(--text-secondary);font-size:.84rem;">Wczytywanie rejestru…</p>
@@ -110,6 +116,7 @@
 
 <script>
 (async function () {
+    'use strict';
     const bledy = (el, tekst) => {
         el.innerHTML = '<div class="card" style="border-color:#FFB74D;background:#FFF8E1;color:#E65100;">' + tekst + '</div>';
     };
@@ -120,13 +127,12 @@
     const metaWpisow = document.getElementById('rejestr-meta');
 
     try {
-        const [rejestrRes, politykaRes] = await Promise.all([
+        const [rejestrRes, polityka] = await Promise.all([
             fetch('data/rejestr-zmian.json'),
-            fetch('data/update-policy.json')
+            fetch('data/update-policy.json').then((res) => res.ok ? res.json() : null).catch(() => null)
         ]);
         if (!rejestrRes.ok) throw new Error('rejestr');
         const rejestr = await rejestrRes.json();
-        const polityka = politykaRes.ok ? await politykaRes.json() : null;
         const kategorie = Object.fromEntries((rejestr.kategorie || []).map((k) => [k.code, k]));
 
         if (polityka && polityka.review_cycles) {
@@ -150,10 +156,15 @@
         metaWpisow.textContent = 'Rejestr w wersji ' + (rejestr.meta?.version || '—') +
             ', zaktualizowany ' + (rejestr.meta?.updated_at || '—') + '. Wpisów: ' + (rejestr.wpisy || []).length + '.';
 
-        listaWpisow.innerHTML = (rejestr.wpisy || []).map((w) => {
+        const wpisy = (rejestr.wpisy || []).map((w) => {
+            const nazwa = w.tytul.toLowerCase().replace(/ł/g, 'l').normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            return { ...w, anchor: 'wpis-' + w.data + '-' + nazwa };
+        });
+        listaWpisow.innerHTML = wpisy.map((w) => {
             const kat = kategorie[w.kategoria] || {name: w.kategoria};
             return `
-            <article class="rej-entry">
+            <article class="rej-entry" id="${esc(w.anchor)}">
                 <div>
                     <div class="rej-date">${esc(w.data)}</div>
                     <span class="rej-tag ${esc(w.kategoria)}">${esc(kat.name)}</span>
@@ -181,6 +192,15 @@
                 </div>
             </article>`;
         }).join('');
+        const ostatnie = wpisy.slice().sort((a, b) => b.data.localeCompare(a.data)).slice(0, 3);
+        if (ostatnie.length) {
+            document.getElementById('rej-latest-list').innerHTML = '<ol>' + ostatnie.map((w) =>
+                `<li><a href="#${esc(w.anchor)}"><time datetime="${esc(w.data)}">${esc(w.data)}</time>${esc(w.tytul)}</a></li>`
+            ).join('') + '</ol>';
+        }
+        // Entries are fetched after the browser's initial fragment navigation.
+        const target = document.getElementById(window.location.hash.slice(1));
+        if (target && target.classList.contains('rej-entry')) target.scrollIntoView();
     } catch (e) {
         bledy(listaWpisow, 'Nie udało się wczytać rejestru zmian. Brak lub błąd pliku data/rejestr-zmian.json.');
     }

@@ -101,7 +101,7 @@
                         grid: { color: 'rgba(255,255,255,0.05)' },
                         ticks: {
                             color: 'rgba(255,255,255,0.38)',
-                            font: { family: "'IBM Plex Mono', monospace", size: 11 }
+                            font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 }
                         }
                     },
                     y: {
@@ -110,7 +110,7 @@
                         grid: { color: 'rgba(255,255,255,0.06)' },
                         ticks: {
                             color: 'rgba(255,255,255,0.38)',
-                            font: { family: "'IBM Plex Mono', monospace", size: 11 },
+                            font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 },
                             callback: function(v) { return v + ' kg'; }
                         }
                     }
@@ -153,7 +153,7 @@
                         position: 'right',
                         labels: {
                             color: 'rgba(255,255,255,0.6)',
-                            font: { family: "'Inter', sans-serif", size: 12 },
+                            font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 },
                             padding: 14,
                             boxWidth: 12,
                             boxHeight: 12,
@@ -290,7 +290,7 @@
                         grid: { color: 'rgba(255,255,255,0.06)' },
                         ticks: {
                             color: 'rgba(255,255,255,0.38)',
-                            font: { family: "'IBM Plex Mono', monospace", size: 11 },
+                            font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 },
                             callback: function(v) { return (v > 0 ? '+' : '') + v + '%'; }
                         }
                     },
@@ -298,7 +298,7 @@
                         grid: { color: 'rgba(255,255,255,0.04)' },
                         ticks: {
                             color: 'rgba(255,255,255,0.65)',
-                            font: { family: "'Inter', sans-serif", size: 12 }
+                            font: { family: "'Source Sans 3', Arial, sans-serif", size: 13 }
                         }
                     }
                 },
