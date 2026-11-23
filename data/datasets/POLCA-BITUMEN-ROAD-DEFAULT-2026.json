@@ -25,19 +25,19 @@
     "category": "materiał",
     "module_default": "A1",
     "unit": "t",
-    "gwp_total_kg_co2e": 450,
+    "gwp_total_kg_co2e": 530,
     "year": 2026,
-    "last_reviewed_at": "2026-05-11",
-    "next_review_due": "2027-05-11",
+    "last_reviewed_at": "2026-11-23",
+    "next_review_due": "2027-11-23",
     "review_cycle": "annual",
     "geography": "PL/EU",
     "technology": "Produkcja asfaltu drogowego przed transportem do wytwórni",
     "data_quality": "industry",
     "status": "published_sector_dataset",
-    "source_name": "Eurobitume LCA 4.0, background branżowy dla bitumu",
-    "source_url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+    "source_name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+    "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
     "scope": "A1 produkcji lepiszcza. Transport do wytwórni liczyć oddzielnie w A2.",
-    "methodology_note": "Dataset lepiszcza opiera się na podejściu branżowym Eurobitume LCA 4.0 dla bitumu w zakresie cradle-to-gate. Rekord ma status backgroundu branżowego A1. Dla dostawcy z własną EPD baza wskazuje deklarację producenta; dla braku EPD stosuje wartość sektorową z jawnie oznaczoną jakością danych.",
+    "methodology_note": "Dataset lepiszcza opiera się na podejściu branżowym Eurobitume LCA 4.0 dla bitumu w zakresie cradle-to-gate. Rekord ma status backgroundu branżowego A1. Dla dostawcy z własną EPD baza wskazuje deklarację producenta; dla braku EPD stosuje wartość sektorową z jawnie oznaczoną jakością danych. Wartość 530 kg CO₂e/t to GWP100 według AR6 dla bitumu drogowego; dla asfaltu utlenionego raport podaje 616 kg CO₂e/t.",
     "limitations": "Nie rozróżnia rafinerii, konkretnego producenta, asfaltów modyfikowanych, dodatków specjalnych, transportu do wytwórni ani alokacji właściwej dla konkretnej dostawy.",
     "preferred_replacement": "EPD producenta asfaltu albo zweryfikowany wskaźnik dostawcy dla konkretnego produktu i zakładu.",
     "publication_status": "published_sector_dataset",
@@ -50,8 +50,8 @@
     "quality_rule": "Rekord otrzymuje status obszaru wpływu jakości danych i wskazuje lepsze źródło: dane pierwotne, EPD lub audyt.",
     "source_trace": [
       {
-        "name": "Eurobitume LCA 4.0",
-        "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+        "name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+        "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
         "role": "branżowy background cradle-to-gate dla bitumu",
         "type": "methodology_source"
       }
@@ -67,7 +67,7 @@
     "selection_mode": "context_specific_assessment",
     "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
-      "declared_value": "450 kg CO2e/t",
+      "declared_value": "530 kg CO2e/t",
       "module": "A1",
       "system_boundary": "produkcja lepiszcza przed transportem do wytwórni",
       "process_model": [
@@ -77,8 +77,8 @@
       ],
       "source_basis": [
         {
-          "name": "Eurobitume LCA 4.0",
-          "url": "https://eurobitume.eu/bitumen-life-cycle-inventory/",
+          "name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
           "role": "branżowy background cradle-to-gate dla bitumu"
         }
       ],
@@ -101,6 +101,6 @@
     "epd_use_status": "requires_context_specific_assessment",
     "data_level": "aggregated_indicators_and_parameters"
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

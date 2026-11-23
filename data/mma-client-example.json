@@ -2,7 +2,7 @@
   "meta": {
     "id": "POLCA-MMA-CLIENT-EXAMPLE-AC16W-20RAP-2026",
     "name": "Przykładowy profil danych klienta dla MMA AC 16 W HMA z 20% RAP",
-    "version": "2026.2",
+    "version": "2026.3",
     "status": "example_profile",
     "published_at": "2026-05-04",
     "declared_unit": "1 Mg mieszanki mineralno-asfaltowej",
@@ -70,10 +70,11 @@
     {
       "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026",
       "name": "Lepiszcze asfaltowe drogowe",
-      "value": 450,
+      "value": 530,
       "unit": "kg CO2e/t",
       "module": "A1",
-      "replacement": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy"
+      "replacement": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy",
+      "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8"
     },
     {
       "dataset_code": "POLCA-FILLER-LIMESTONE-DEFAULT-2026",
@@ -136,46 +137,46 @@
     "C4": [0.94, 0.03, 0.03]
   },
   "module_results_kg_co2e_per_mg": {
-    "A1": 27.06,
+    "A1": 30.9,
     "A2": 4.37,
     "A3": 16.273,
-    "A1-A3": 47.703,
+    "A1-A3": 51.543,
     "A4": 2.108,
-    "A5": 1.494,
+    "A5": 1.513,
     "C1": 0.8,
     "C2": 2.529,
     "C3": 1.199,
     "C4": 0.1,
     "C1-C4": 4.628,
     "D": -6.4,
-    "A-C_without_D": 55.932,
-    "net_with_D": 49.532
+    "A-C_without_D": 59.791,
+    "net_with_D": 53.391
   },
   "en15804_a2_indicators": {
     "GWP-total": {
       "unit": "kg CO2e",
-      "A1-A3": 47.703,
-      "A4-A5": 3.601,
+      "A1-A3": 51.543,
+      "A4-A5": 3.620,
       "C1-C4": 4.628,
       "D": -6.4
     },
     "GWP-fossil": {
       "unit": "kg CO2e",
-      "A1-A3": 45.215,
-      "A4-A5": 3.536,
+      "A1-A3": 48.901,
+      "A4-A5": 3.555,
       "C1-C4": 4.482,
       "D": -6.144
     },
     "GWP-biogenic": {
       "unit": "kg CO2e",
-      "A1-A3": 1.377,
+      "A1-A3": 1.454,
       "A4-A5": 0.018,
       "C1-C4": 0.056,
       "D": -0.128
     },
     "GWP-luluc": {
       "unit": "kg CO2e",
-      "A1-A3": 1.111,
+      "A1-A3": 1.188,
       "A4-A5": 0.047,
       "C1-C4": 0.09,
       "D": -0.128
@@ -279,5 +280,5 @@
       "D": 0
     }
   },
-  "data_quality_note": "Korekta z 23.11.2026 obejmuje całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
+  "data_quality_note": "W wersji 2026.3 z 23.11.2026 przyjęto dla asfaltu drogowego wskaźnik z raportu Eurobitume (2025, s. 8). Przeliczono całkowity wpływ na klimat i jego trzy składowe. Dla przewozu w modułach A2, A4 i C2 użyto wskaźnika poLCA i składowych źródłowych ÖKOBAUDAT. Zachowano modelowy podział wpływu pozostałych procesów. Straty przy wbudowaniu wynoszą 0,5% wyniku A1–A3. Pozostałe wskaźniki środowiskowe pochodzą z wersji 2026.1 i zachowują jej założenia. Wskaźniki poza GWP są wartościami modelowymi opartymi na proporcjach z generatora EPD+ MMA i publicznych źródłach branżowych. W finalnej EPD powinny zostać potwierdzone pełnym modelem LCIA, EPD dostawców albo zweryfikowanymi danymi producenta."
 }

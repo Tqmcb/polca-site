@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "poLCA MMA kluczowe źródło wpływu database",
-    "version": "2026.2",
+    "version": "2026.3",
     "status": "startowy zakres publiczny",
     "principle": "Publiczna baza pokazuje wynikowe wartości poLCA dla najpopularniejszych składników i procesów MMA w Polsce. Pełna trasowalność źródeł pozostaje w kartach datasetów i plikach JSON."
   },
@@ -15,9 +15,11 @@
       "values": [
         {
           "name": "Asfalt drogowy / lepiszcze asfaltowe",
-          "value": "450 kg CO2e/t",
+          "value": "530 kg CO2e/t",
           "status": "wartość sektorowa poLCA",
-          "basis": "Eurobitume LCA 4.0, background branżowy dla bitumu; transport do wytwórni liczony oddzielnie."
+          "basis": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+          "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
+          "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026"
         },
         {
           "name": "Asfalt modyfikowany PMB",

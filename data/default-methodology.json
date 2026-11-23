@@ -264,7 +264,7 @@
       ]
     },
     "POLCA-BITUMEN-ROAD-DEFAULT-2026": {
-      "declared_value": "450 kg CO2e/t",
+      "declared_value": "530 kg CO2e/t",
       "module": "A1",
       "system_boundary": "produkcja lepiszcza przed transportem do wytwórni",
       "process_model": [
@@ -274,8 +274,8 @@
       ],
       "source_basis": [
         {
-          "name": "Eurobitume LCA 4.0",
-          "url": "https://eurobitume.eu/lci_4-0_request/",
+          "name": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+          "url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
           "role": "branżowe dane tła dla bitumu w zakresie od wydobycia surowca do bramy zakładu"
         }
       ],
