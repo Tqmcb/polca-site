@@ -16,14 +16,14 @@
         { name: '\u015arednia EU (miks elektr.)',           value: '~210',      unit: 'kg CO\u2082/MWh',   source: 'Ember 2025 (dane 2024)',        cat: 'energia' },
 
         // Paliwa
-        { name: 'Gaz ziemny',                        value: '56,1',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
-        { name: 'Olej opa\u0142owy',                       value: '77,4',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
-        { name: 'W\u0119giel kamienny',                    value: '95,5',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
-        { name: 'W\u0119giel brunatny',                    value: '101,2',     unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
+        { name: 'Gaz ziemny',                        value: '56,18',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'paliwa' },
+        { name: 'Olej opa\u0142owy',                       value: '76,32',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'paliwa' },
+        { name: 'W\u0119giel kamienny',                    value: '94,75',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'paliwa' },
+        { name: 'W\u0119giel brunatny',                    value: '110,54',     unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'paliwa' },
         { name: 'Olej nap\u0119dowy (diesel)',              value: '74,1',      unit: 'kg CO\u2082/GJ',    source: 'IPCC 2006',       cat: 'paliwa' },
         { name: 'Benzyna',                           value: '69,3',      unit: 'kg CO\u2082/GJ',    source: 'IPCC 2006',       cat: 'paliwa' },
         { name: 'LPG',                               value: '63,1',      unit: 'kg CO\u2082/GJ',    source: 'IPCC 2006',       cat: 'paliwa' },
-        { name: 'Koks',                              value: '107,0',     unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'paliwa' },
+        { name: 'Koks',                              value: '107,0',     unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'paliwa' },
         { name: 'Biomasa (pelet drzewny)',            value: '0 *',       unit: 'kg CO\u2082/GJ',    source: 'EU ETS konwencja', cat: 'paliwa' },
 
         // Transport
@@ -70,7 +70,7 @@
         { name: 'Produkcja wapna palonego',          value: '~750',      unit: 'kg CO\u2082/t',     source: 'EuLA',            cat: 'procesy' },
         { name: 'Huta szk\u0142a (miks PL)',              value: '~500',      unit: 'kg CO\u2082/t',     source: 'Glass for Europe', cat: 'procesy' },
         { name: 'Elektroliza aluminium',             value: '~6 500',    unit: 'kg CO\u2082e/t',    source: 'IAI',             cat: 'procesy' },
-        { name: 'Spalanie gazu w kotle (>1 MW)',     value: '56,1',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE 2024',     cat: 'procesy' },
+        { name: 'Spalanie gazu w kotle (>1 MW)',     value: '56,18',      unit: 'kg CO\u2082/GJ',    source: 'KOBiZE, ETS 2026 (dane 2023)',     cat: 'procesy' },
         { name: 'Paliwa alternatywne w cemencie PL', value: '70\u201380%',    unit: 'udzia\u0142 substytucji', source: 'SPC 2024',   cat: 'procesy' }
     ];
 
@@ -93,7 +93,7 @@
                 f.source.toLowerCase().indexOf(search) === -1 &&
                 f.unit.toLowerCase().indexOf(search) === -1) continue;
 
-            var sourceLabel = (f.name.indexOf('Miks elektryczny PL') === 0 || f.source === 'Założenie historyczne kalkulatora') ? f.source : 'Zestaw historyczny; przypisanie: ' + f.source;
+            var sourceLabel = (f.name.indexOf('Miks elektryczny PL') === 0 || /^(KOBiZE|ÖKOBAUDAT|EPD|poLCA Energia)/.test(f.source)) ? f.source : 'Zestaw historyczny; przypisanie: ' + f.source; // sprawdzone źródła bez etykiety historycznej
             var isHighlight = f.cat === 'energia' && f.name.indexOf('Miks elektryczny PL') === 0 && f.name.indexOf('LCA') === -1;
 
             html += '<tr role="row">' +

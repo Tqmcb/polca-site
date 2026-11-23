@@ -52,8 +52,8 @@
     };
 
     var fuelData = {
-        'gas_nm3':  { kWh: 10.55,  label: 'Nm³ gazu ziemnego' },
-        'coal_t':   { kWh: 6322,   label: 't węgla kamiennego' },
+        'gas_nm3':  { kWh: 10.33,  label: 'Nm³ gazu ziemnego' },
+        'coal_t':   { kWh: 6253,   label: 't węgla kamiennego' },
         'diesel_l': { kWh: 10.0,   label: 'L oleju napędowego' },
         'petrol_l': { kWh: 8.89,   label: 'L benzyny' },
         'lpg_l':    { kWh: 6.67,   label: 'L LPG' },
