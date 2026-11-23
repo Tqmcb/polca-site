@@ -89,7 +89,7 @@
 <div class="polca-page">
     <div class="portal-tool-meta">
         <span class="doc-pill">1 t produktu</span>
-        <span class="doc-pill">energia 2025 · GWP-total 0,6445 kg CO₂e/kWh</span>
+        <span class="doc-pill">energia 2025 · GWP-total 0,6700 kg CO₂e/kWh</span>
         <span class="doc-pill warn">oszacowanie orientacyjne</span>
     </div>
 
@@ -265,7 +265,7 @@
 
         <div class="mma-warn ok" id="mmaSumWarn" role="alert">Suma składników: 1000 kg/t — zgodna z jednostką deklarowaną.</div>
         <p class="calc-note" style="margin-top:.6rem;">
-            Współczynnik przewozu zestawem ciężarowym 40 t: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>. Wskaźnik modelu <a href="/energia-polska-2025-v4.html">Energia Polska 2025 v4</a> wynosi 0,6445 kg CO₂e/kWh dla całkowitego wpływu na klimat (GWP-total). Przy zużyciu 2,5 kWh/t wkład energii elektrycznej do A3 wynosi 1,61125 kg CO₂e/t.
+            Współczynnik przewozu zestawem ciężarowym 40 t: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>. Wskaźnik modelu <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a> wynosi 0,6700 kg CO₂e/kWh dla całkowitego wpływu na klimat (GWP-total). Przy zużyciu 2,5 kWh/t wkład energii elektrycznej do A3 wynosi 1,675 kg CO₂e/t.
         </p>
     </div>
 
@@ -278,7 +278,7 @@
 
         <div style="margin:1.25rem 0 .25rem;">
             <div class="calc-result-label">Oszacowanie A1-A3 — łącznie</div>
-            <div class="mma-result-hero"><span id="mmaTotal">61,88</span> <small>kg CO₂eq / t MMA</small></div>
+            <div class="mma-result-hero"><span id="mmaTotal">61,94</span> <small>kg CO₂eq / t MMA</small></div>
             <div style="font-size:.78rem;color:var(--text-secondary);margin-top:.3rem;" id="mmaTotalNote">AC 16 W (wiążąca) · HMA · olej opałowy · 160°C</div>
         </div>
 
@@ -295,7 +295,7 @@
             </div>
             <div class="mma-mod-box">
                 <div class="mma-mod-name">A3 — produkcja w wytwórni</div>
-                <div class="mma-mod-val"><span id="mmaA3">25,71</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
+                <div class="mma-mod-val"><span id="mmaA3">25,78</span> <span style="font-size:0.72rem;font-weight:400;color:var(--text-secondary);">kg CO₂eq/t</span></div>
                 <div class="mma-mod-share"><span id="mmaA3pct">41,6</span>% udziału</div>
             </div>
         </div>
@@ -305,7 +305,7 @@
             <div class="mma-chart-canvas"><canvas id="mmaModChart"></canvas></div>
         </div>
 
-        <div class="mma-bench" id="mmaBench">Wynik dla podanej receptury i odległości dostaw. Wkład energii elektrycznej pochodzi z modelu Energia Polska 2025 v4 (GWP-total).</div>
+        <div class="mma-bench" id="mmaBench">Wynik dla podanej receptury i odległości dostaw. Wkład energii elektrycznej pochodzi z modelu Energia Polska 2025 v5 (GWP-total).</div>
 
         <div style="margin-top:1.5rem;">
             <div class="card-title" style="font-size:1rem;margin-bottom:.65rem;">Rozbicie modułu A1 wg składników</div>
@@ -340,7 +340,7 @@
     <div id="metodyka" class="card card-lg section-gap fade-in">
         <div class="section-num">Założenia i zakres</div>
         <div class="card-title">Co liczy ten kalkulator</div>
-        <div class="prose"><p>A1 sumuje masę każdego składnika pomnożoną przez jego współczynnik. A2 liczy masę, odległość i współczynnik przewozu 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). A3 sumuje paliwo wytwórni oraz stały wkład energii elektrycznej 1,61125 kg CO₂e/t.</p>
+        <div class="prose"><p>A1 sumuje masę każdego składnika pomnożoną przez jego współczynnik. A2 liczy masę, odległość i współczynnik przewozu 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). A3 sumuje paliwo wytwórni oraz stały wkład energii elektrycznej 1,675 kg CO₂e/t.</p>
             <p>Wskaźniki dla <a href="/dane/polca-bitumen-road-default-2026.html">asfaltu drogowego</a> i <a href="/dane/polca-agg-pl-limestone-default-2026.html">kruszywa wapiennego</a> pochodzą z katalogu. Dla granulatu asfaltowego przyjęto zerowy wkład surowca do A1. Wskaźniki pozostałych składników podano przy polach receptury.</p>
             <p>Podstawa paliwowa A3 wynosi: produkcja na gorąco — 24,1 dla oleju i 17,0 dla gazu; produkcja na ciepło — 17,4 dla oleju i 12,5 dla gazu, w kg CO₂e/t mieszanki. Model zwiększa tę wartość o 5% na każde 10°C powyżej temperatury odniesienia 160°C lub 130°C. Jest to uproszczenie, a nie pomiar zużycia paliwa.</p>
             <p>Wynik jest orientacyjną sumą współczynników o różnych założeniach, wyrażoną w kg CO₂e/t. Oznaczenia A1–A3 opisują przyjęte etapy produkcji. Pełna deklaracja środowiskowa produktu wymaga ustalenia metody oceny, źródeł, granic systemu i wskaźników zgodnie z zasadami wybranego programu.</p>
@@ -385,6 +385,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-mma.js?v=20261123h"></script>
+<script src="js/kalkulator-mma.js?v=20261123-energia5"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

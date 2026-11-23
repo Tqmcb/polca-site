@@ -42,7 +42,7 @@ class PortalTests(unittest.TestCase):
     self.assertEqual(len(d.xpath('//footer[contains(@class,"portal-footer")]')),1)
     self.assertEqual(len(d.xpath('//*[@id="portal-navigation"]')),1)
  def test_energy_profile_values_for_current_and_archived_cards(self):
-  for version in ('v3','v4'):
+  for version in ('v3','v4','v5'):
    with self.subTest(version=version):
     profile=json.loads((ROOT/f'data/energia-pl-2025-{version}/profil-37.json').read_text(),parse_float=Decimal)
     d=html.parse(str(ROOT/f'energia-polska-2025-{version}.html'))
@@ -55,31 +55,53 @@ class PortalTests(unittest.TestCase):
     for item in profile['indicators']:
      self.assertEqual(Decimal(rows[item['code']].get('data-value')),item['value_per_kWh'])
      self.assertEqual(rows[item['code']].get('data-unit'),item['impact_unit'])
-     if version=='v4':
+     if version in ('v4','v5'):
       visible=rows[item['code']].xpath('./td[contains(@class,"en25-value")]')[0].text
       self.assertEqual(Decimal(visible.replace(',','.')), Decimal(format(float(item['value_per_kWh']),'.6g')))
+ def test_kobize_table_units_follow_each_rows_scope(self):
+  card = html.parse(str(ROOT / 'energia-polska-2025-v5.html'))
+  table, = card.xpath('//*[@id="kobize"]//details//table')
+  self.assertEqual(table.xpath('./thead/tr/th/text()'), ['Krok', 'Wartość', 'Jednostka'])
+  self.assertEqual([row.xpath('./td[position() > 1]/text()') for row in table.xpath('./tbody/tr')], [
+      ['670,0', 'kg CO₂ równ./MWh'], ['−120,7', 'kg CO₂ równ./MWh'],
+      ['549,3', 'kg CO₂/MWh'], ['−79,1', 'kg CO₂/MWh'], ['470,2', 'kg CO₂/MWh'],
+      ['+82,8', 'kg CO₂/MWh'], ['553', 'kg CO₂/MWh'],
+  ])
  def test_calculator_embeds_current_full_profile(self):
-  profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
+  profile=json.loads((ROOT/'data/energia-pl-2025-v5/profil-37.json').read_text(),parse_float=Decimal)
   d=html.parse(str(ROOT/'oblicz-energie-2025.html'))
   embedded=json.loads(d.xpath('//*[@id="energy-profile-data"]')[0].text,parse_float=Decimal)
   self.assertEqual(embedded,profile)
   codes=d.xpath('//*[@data-energy-result]/@data-energy-result')
   self.assertEqual(codes,[i['code'] for i in profile['indicators']])
   self.assertEqual(len(codes),37)
-  for link in ('/energia-polska-2025-v4.html', '/data/energia-pl-2025-v4/WARUNKI-WYKORZYSTANIA.txt'):
+  for link in ('/energia-polska-2025-v5.html', '/data/energia-pl-2025-v5/WARUNKI-WYKORZYSTANIA.txt'):
    self.assertIn(link,d.xpath('//main//a/@href'))
+ def test_archive_button_identifies_calculator_results(self):
+  for version in ('v3', 'v4'):
+   with self.subTest(version=version):
+    doc = html.parse(str(ROOT / f'energia-polska-2025-{version}.html'))
+    button, = doc.xpath('//main//a[@href="/oblicz-energie-2025.html"]')
+    self.assertEqual(button.text_content(), 'Otwórz panel aktualnej wersji v5')
+    self.assertEqual(button.getnext().text_content(), 'Wyniki w panelu dotyczą wersji v5.')
+ def test_historical_article_correction_date(self):
+  doc = html.parse(str(ROOT / 'blog-en15804-a3-avs3plus.html'))
+  self.assertIn('Opis mechanizmu przejściowego skorygowano 19 października 2026 r.', doc.xpath('string(//main)'))
  def test_full_energy_method_retains_release_headings_and_sources(self):
   doc=html.parse(str(ROOT/'oblicz-energie-2025.html'))
   method=doc.xpath('//details[@id="pelna-metoda"]')[0]
   download,=method.xpath('.//a[@download]/@href')
-  self.assertEqual(download, '/data/energia-pl-2025-v4/METODA-I-ZMIANY.txt')
+  self.assertEqual(download, '/data/energia-pl-2025-v5/METODA-I-ZMIANY.txt')
   source=(ROOT/download.lstrip('/')).read_text()
+  card = html.parse(str(ROOT / 'energia-polska-2025-v5.html'))
+  for text in (source, card.xpath('string(//*[@id="metoda"])'), method.text_content()):
+   self.assertIn('mimo że wyznaczono je z krajowej struktury', text)
   self.assertEqual(method.xpath('.//h3/text()'),re.findall(r'^\d+\. .+$',source,re.M))
   self.assertEqual(method.xpath('.//a[starts-with(@href,"http")]/@href'),
                    re.findall(r'https?://[^\s<>");]+',source))
   self.assertNotIn('r..',method.text_content())
  def test_climate_panel_uses_profile_shares_and_grams_for_the_initial_quantity(self):
-  profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
+  profile=json.loads((ROOT/'data/energia-pl-2025-v5/profil-37.json').read_text(),parse_float=Decimal)
   per_kwh={item['code']:item['value_per_kWh'] for item in profile['indicators']}
   doc=html.parse(str(ROOT/'oblicz-energie-2025.html'))
   quantity=Decimal(doc.xpath('//*[@id="energy-quantity"]/@value')[0])
@@ -94,7 +116,7 @@ class PortalTests(unittest.TestCase):
    displayed_share=cell.getprevious().text
    self.assertEqual(displayed_share,f'{100*value/per_kwh["GWP-total"]:.4f}%'.replace('.',','))
  def test_search_and_catalog_embed_current_model(self):
-  profile=json.loads((ROOT/'data/energia-pl-2025-v4/profil-37.json').read_text(),parse_float=Decimal)
+  profile=json.loads((ROOT/'data/energia-pl-2025-v5/profil-37.json').read_text(),parse_float=Decimal)
   total=next(i['value_per_kWh'] for i in profile['indicators'] if i['code']=='GWP-total')
   for name in ('datasety.html','szukaj.html'):
    with self.subTest(page=name):
@@ -103,6 +125,6 @@ class PortalTests(unittest.TestCase):
     current=[r for r in records if r['id']==profile['model_id']]
     self.assertEqual(len(current),1)
     self.assertEqual(current[0]['value'],total)
-    self.assertEqual(current[0]['href'],'/energia-polska-2025-v4.html')
-    self.assertFalse(any(r['id']=='PL2025_PHYSICAL_DELIVERED_v3_REVIEW' for r in records))
+    self.assertEqual(current[0]['href'],'/energia-polska-2025-v5.html')
+    self.assertFalse(any(r['id'] in ('PL2025_PHYSICAL_DELIVERED_v3_REVIEW', 'PL2025_PHYSICAL_DELIVERED_v4') for r in records))
 if __name__=='__main__':unittest.main()

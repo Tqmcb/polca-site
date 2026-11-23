@@ -111,7 +111,8 @@ class ConsultationTests(unittest.TestCase):
             parse_float=Decimal,
         )
         previous = ROOT / self.profile["provenance"]["previous_public_profile"].lstrip("/")
-        self.assertEqual(embedded, read_json(previous))
+        self.assertEqual(read_json(previous)["model_id"], "PL2025_PHYSICAL_DELIVERED_v4")
+        self.assertEqual(embedded, read_json(ROOT / "data/energia-pl-2025-v5/profil-37.json"))
         self.assertNotEqual(embedded["model_id"], self.model)
 
     def test_quality_coverage_is_complete_and_not_presented_as_good_data(self):

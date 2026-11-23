@@ -84,7 +84,7 @@ class ProductNavigationTests(unittest.TestCase):
         records = {r['id']: r for r in read('data/portal-catalog.json')['datasets']}
         factors = {
             'distance': ('POLCA-TRUCK-40T-DEFAULT-2026', 'kg CO₂e/t'),
-            'power': ('PL2025_PHYSICAL_DELIVERED_v4', 'kg CO₂e/m³'),
+            'power': ('PL2025_PHYSICAL_DELIVERED_v5', 'kg CO₂e/m³'),
             'fuel': ('POLCA-FUEL-DIESEL-DEFAULT-2026', 'kg CO₂e/t'),
             'gas': ('POLCA-FUEL-NATURAL-GAS-DEFAULT-2026', 'kg CO₂e/t'),
         }

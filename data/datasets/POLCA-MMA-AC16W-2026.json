@@ -4,7 +4,7 @@
   "category": "materiał",
   "module_default": "A1-A3",
   "unit": "t",
-  "gwp_total_kg_co2e": 61.87554,
+  "gwp_total_kg_co2e": 61.93929,
   "year": 2026,
   "last_reviewed_at": "2026-11-23",
   "next_review_due": "2027-11-23",
@@ -13,9 +13,9 @@
   "technology": "Wytwarzanie mieszanki AC 16 W w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 160°C.",
   "data_quality": "industry",
   "status": "published_sector_dataset",
-  "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+  "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
   "source_url": "https://polca.org.pl/c-pcr/mma.html",
-  "scope": "AC 16 W, 1 t mieszanki. A1 (surowce) 31,44, A2 (transport) 4,73, A3 (wytwarzanie) 25,71 kg CO₂e/t.",
+  "scope": "AC 16 W, 1 t mieszanki. A1 (surowce) 31,44, A2 (transport) 4,73, A3 (wytwarzanie) 25,78 kg CO₂e/t.",
   "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 8% lepiszcza (AC 16 W), co zawyżało wynik. W obliczeniu przyjęto 46 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
   "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, składu kruszyw, struktury paliwowej ani zweryfikowanego zużycia energii.",
   "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
@@ -47,9 +47,9 @@
       "type": "methodology_source"
     },
     {
-      "name": "Energia Polska 2025 v4",
-      "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-      "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+      "name": "Energia Polska 2025 v5",
+      "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+      "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
       "type": "polca_model"
     },
     {
@@ -84,7 +84,7 @@
   "gwp_modules_kg_co2e_per_t": {
     "A1": 31.43506,
     "A2": 4.72923,
-    "A3": 25.71125,
-    "A1_A3": 61.87554
+    "A3": 25.775,
+    "A1_A3": 61.93929
   }
 }

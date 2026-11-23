@@ -7,7 +7,7 @@
 
     var emissionFactors = [
         // Energia
-        { name: 'Energia elektryczna PL 2025 — GWP-total u odbiorcy', value: '644,5',     unit: 'g CO\u2082e/kWh',   source: 'poLCA Energia Polska 2025 v4', cat: 'energia' },
+        { name: 'Energia elektryczna PL 2025 — GWP-total u odbiorcy', value: '670,0',     unit: 'g CO\u2082e/kWh',   source: 'poLCA Energia Polska 2025 v5', cat: 'energia' },
         { name: 'Miks elektryczny PL — CO₂ u odbiorcy, dane 2024', value: '553',       unit: 'kg CO\u2082/MWh',   source: 'KOBiZE, publikacja XII 2025, dane 2024', cat: 'energia' },
         { name: 'Miks elektryczny PL — GWP-fossil, profil 2024', value: '599',       unit: 'g CO\u2082e/kWh',   source: 'poLCA-EN-PL-2024 v9.1, profil historyczny', cat: 'energia' },
         { name: 'Ciep\u0142o systemowe PL (\u015brednia)',      value: '~380',      unit: 'kg CO\u2082/MWh',   source: 'URE 2024',        cat: 'energia' },

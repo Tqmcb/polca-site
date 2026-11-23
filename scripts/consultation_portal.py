@@ -221,7 +221,7 @@ def build(api):
   <div class="consult-title-row"><h1 id="consult-intro-title">Model energii.<br><span>Polska 2025.</span></h1>
     <div class="consult-intro-copy"><p>{esc(copy["intro"])}</p><div class="consult-actions"><a class="portal-button" href="#pytania">Zobacz pytania</a><a href="/{METHOD_PAGE}">Przeczytaj metodę</a></div></div>
   </div>
-  <div class="consult-publication"><p><strong>Projekt do konsultacji</strong><span>Pakiet {esc(version)}</span></p><p>Przegląd ekspercki: planowany.<br><a href="#status">Zakres wykonanej kontroli</a></p><p>W kalkulatorze pozostaje<br><a href="/energia-polska-2025-v4.html">wcześniejsza wersja v4</a>.</p></div>
+  <div class="consult-publication"><p><strong>Projekt do konsultacji</strong><span>Pakiet {esc(version)}</span></p><p>Przegląd ekspercki: planowany.<br><a href="#status">Zakres wykonanej kontroli</a></p><p>Kalkulator wykorzystuje<br><a href="/energia-polska-2025-v5.html">model v5 z 23.11.2026</a>.</p></div>
 </header>
 <nav class="consult-jump" aria-label="Na tej stronie"><a href="#jak-powstaje-wynik">Jak liczymy</a><a href="#pytania">Pytania</a><a href="#dokumentacja">Dokumentacja</a><a href="#zglos-uwage">Zgłoś uwagę</a><a href="#rejestr">Uwagi i odpowiedzi</a></nav>
 

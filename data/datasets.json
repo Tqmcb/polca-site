@@ -2,7 +2,7 @@
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
     "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
-    "version": "2026.8-prefabrykaty",
+    "version": "2026.9-energia-v5",
     "status": "legacy_metadata",
     "published_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
@@ -1153,10 +1153,10 @@
       "technology": "Wytwarzanie mieszanek mineralno-asfaltowych w wytwórni cyklicznej lub ciągłej; technologia na gorąco (HMA) i na ciepło (WMA), z opcjonalnym udziałem granulatu asfaltowego (RA).",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
       "scope": "A1-A3 (cradle-to-gate) dla mieszanek mineralno-asfaltowych. Surowce A1, transport A2, energia procesu i energia elektryczna A3.",
-      "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa bazaltowego, naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v4. Zużycie 2,5 kWh/t × 0,6445 kg CO₂e/kWh daje 1,61125 kg CO₂e/t w module A3.",
+      "methodology_note": "W recepturach bez granulatu przyjęto minimalną zawartość lepiszcza według WT-2 2014 cz. I dla gęstości kruszywa 2,650 Mg/m³. Wariant z granulatem wymaga danych wytwórni o zawartości lepiszcza w granulacie. W A1 zastosowano katalogowe wskaźniki dla asfaltu drogowego, kruszywa bazaltowego, naturalnego i wapiennego oraz wypełniacza wapiennego. W A2 przyjęto 0,0843 kg CO₂e/(t·km) dla zestawu 40 t. A3 obejmuje paliwo procesowe oraz energię elektryczną z modelu Energia Polska 2025 v5. Zużycie 2,5 kWh/t × 0,6700 kg CO₂e/kWh daje 1,675 kg CO₂e/t w module A3.",
       "limitations": "Nie zastępuje danych konkretnej wytwórni, recepty mieszanki, dostawcy lepiszcza ani zweryfikowanego wskaźnika energii. Wartości domyślne służą do wstępnej kwalifikacji i raportów wewnętrznych; finalna EPD wymaga danych producenta dla składników kluczowych.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
       "publication_status": "published_sector_dataset",
@@ -1187,9 +1187,9 @@
           "type": "methodology_source"
         },
         {
-          "name": "Energia Polska 2025 v4",
-          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+          "name": "Energia Polska 2025 v5",
+          "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -1255,7 +1255,7 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 68.88244,
+      "gwp_total_kg_co2e": 68.94619,
       "year": 2026,
       "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-11-23",
@@ -1264,9 +1264,9 @@
       "technology": "Wytwarzanie mieszanki AC 11 S w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 165°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "AC 11 S, 1 t mieszanki. A1 (surowce) 37,74, A2 (transport) 4,83, A3 (wytwarzanie) 26,31 kg CO₂e/t.",
+      "scope": "AC 11 S, 1 t mieszanki. A1 (surowce) 37,74, A2 (transport) 4,83, A3 (wytwarzanie) 26,38 kg CO₂e/t.",
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 15% lepiszcza (AC 11 S), co zawyżało wynik. W obliczeniu przyjęto 58 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, składu kruszyw, struktury paliwowej ani zweryfikowanego zużycia energii.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
@@ -1298,9 +1298,9 @@
           "type": "methodology_source"
         },
         {
-          "name": "Energia Polska 2025 v4",
-          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+          "name": "Energia Polska 2025 v5",
+          "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -1333,8 +1333,8 @@
       "gwp_modules_kg_co2e_per_t": {
         "A1": 37.7383,
         "A2": 4.83039,
-        "A3": 26.31375,
-        "A1_A3": 68.88244
+        "A3": 26.3775,
+        "A1_A3": 68.94619
       }
     },
     {
@@ -1343,7 +1343,7 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 61.87554,
+      "gwp_total_kg_co2e": 61.93929,
       "year": 2026,
       "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-11-23",
@@ -1352,9 +1352,9 @@
       "technology": "Wytwarzanie mieszanki AC 16 W w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 160°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "AC 16 W, 1 t mieszanki. A1 (surowce) 31,44, A2 (transport) 4,73, A3 (wytwarzanie) 25,71 kg CO₂e/t.",
+      "scope": "AC 16 W, 1 t mieszanki. A1 (surowce) 31,44, A2 (transport) 4,73, A3 (wytwarzanie) 25,78 kg CO₂e/t.",
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 8% lepiszcza (AC 16 W), co zawyżało wynik. W obliczeniu przyjęto 46 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, składu kruszyw, struktury paliwowej ani zweryfikowanego zużycia energii.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
@@ -1386,9 +1386,9 @@
           "type": "methodology_source"
         },
         {
-          "name": "Energia Polska 2025 v4",
-          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+          "name": "Energia Polska 2025 v5",
+          "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -1421,8 +1421,8 @@
       "gwp_modules_kg_co2e_per_t": {
         "A1": 31.43506,
         "A2": 4.72923,
-        "A3": 25.71125,
-        "A1_A3": 61.87554
+        "A3": 25.775,
+        "A1_A3": 61.93929
       }
     },
     {
@@ -1431,7 +1431,7 @@
       "category": "materiał",
       "module_default": "A1-A3",
       "unit": "t",
-      "gwp_total_kg_co2e": 76.331995,
+      "gwp_total_kg_co2e": 76.395745,
       "year": 2026,
       "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-11-23",
@@ -1440,9 +1440,9 @@
       "technology": "Wytwarzanie mieszanki SMA 11 S w wytwórni MMA — technologia na gorąco (HMA), temperatura procesu ok. 170°C.",
       "data_quality": "industry",
       "status": "published_sector_dataset",
-      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v4",
+      "source_name": "Model poLCA dla mieszanek mineralno-asfaltowych, WT-2 2014 cz. I, Eurobitume LCA 4.0 (2025), Energia Polska 2025 v5",
       "source_url": "https://polca.org.pl/c-pcr/mma.html",
-      "scope": "SMA 11 S, 1 t mieszanki. A1 (surowce) 44,48, A2 (transport) 4,94, A3 (wytwarzanie) 26,92 kg CO₂e/t.",
+      "scope": "SMA 11 S, 1 t mieszanki. A1 (surowce) 44,48, A2 (transport) 4,94, A3 (wytwarzanie) 26,98 kg CO₂e/t.",
       "methodology_note": "Wynik modelu poLCA dla receptury z minimalną zawartością lepiszcza Bmin według WT-2 2014 cz. I. Do 23.11.2026 rekord podawał wynik dla receptury z ok. 14% lepiszcza (SMA 11 S), co zawyżało wynik. W obliczeniu przyjęto 66 kg świeżego lepiszcza na 1 t mieszanki przy gęstości kruszywa 2,650 Mg/m³ oraz domyślne odległości dostaw kalkulatora MMA.",
       "limitations": "Wartości domyślne dla recepty referencyjnej. Nie zastępują rzeczywistej recepty wytwórni, dostawcy lepiszcza, składu kruszyw, struktury paliwowej ani zweryfikowanego zużycia energii.",
       "preferred_replacement": "Recepta i bilans masowy mieszanki producenta, EPD lepiszcza i kruszyw, faktury paliw i energii, zweryfikowane dane transportowe oraz pomierzone zużycie energii wytwórni.",
@@ -1474,9 +1474,9 @@
           "type": "methodology_source"
         },
         {
-          "name": "Energia Polska 2025 v4",
-          "url": "https://polca.org.pl/energia-polska-2025-v4.html",
-          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6445 kg CO₂e/kWh.",
+          "name": "Energia Polska 2025 v5",
+          "url": "https://polca.org.pl/energia-polska-2025-v5.html",
+          "role": "Całkowity wpływ na klimat (GWP-total) dla energii elektrycznej. W obliczeniach przyjęto 0,6700 kg CO₂e/kWh.",
           "type": "polca_model"
         },
         {
@@ -1509,8 +1509,8 @@
       "gwp_modules_kg_co2e_per_t": {
         "A1": 44.47998,
         "A2": 4.935765,
-        "A3": 26.91625,
-        "A1_A3": 76.331995
+        "A3": 26.98,
+        "A1_A3": 76.395745
       }
     },
     {
@@ -3848,7 +3848,7 @@
   ],
   "meta": {
     "registry_code": "POLCA-REF-MMA-2026-MVP",
-    "version": "2026.8-prefabrykaty",
+    "version": "2026.9-energia-v5",
     "updated_at": "2026-11-23",
     "status": "legacy_metadata",
     "methodology_note": "Katalog źródłowy obejmuje bieżące i wycofane rekordy w starszym schemacie danych. W eksporcie portal-catalog.json rekordy wycofane znajdują się w polu withdrawn_datasets.",

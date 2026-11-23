@@ -31,7 +31,7 @@ def links(items,cls='portal-list'):return f'<ul class="{cls}">'+''.join('<li>'+a
 NAV=[('Wyroby','/wyroby.html','products'),('Dane','/datasety.html','data'),('Kalkulatory','/kalkulatory.html','tools'),('Jak korzystać','/jak-korzystac.html','guide'),('Metody i źródła','/metodyka.html','methods')]
 def group(path):
  if path.startswith(('wyroby/','c-pcr/')) or path=='wyroby.html':return 'products'
- if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','pobierz.html','dane-wspolne.html']:return 'data'
+ if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','energia-polska-2025-v5.html','pobierz.html','dane-wspolne.html']:return 'data'
  if 'kalkulat' in path or path in TOOL_PAGES.values() or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
  if path.startswith(('metody','konsultacje/')) or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
@@ -222,9 +222,9 @@ def build_indexes():
  page('kalkulatory.html','Kalkulatory','Wybierz, co chcesz obliczyć. Każde narzędzie pokazuje przyjęte współczynniki i zakres wyniku.','<div class="portal-reading">'+''.join(row(r) for r in tools)+'</div>')
  page('blog.html','Artykuły i wyjaśnienia','Objaśnienia pojęć i analizy sektorowe. Przy korzystaniu z danych liczbowych sprawdź rocznik i wersję.','<div class="portal-reading">'+''.join(row(r) for r in articles)+'</div>')
  docs=[{'label':'MET-001 — energia Polska 2024 (PDF)','href':'/metodyki/MET-001-poLCA-EN-PL-2024.pdf'},{'label':'MET-001 — opis i korekta','href':'/metodyki/MET-001-poLCA-EN-PL-2024.html'},{'label':'MET-002 — wcześniejsza metodyka energii (PDF)','href':'/metodyki/MET-002-energia.pdf'},{'label':'MET-002 — opis i korekta','href':'/metodyki/MET-002-energia.html'},{'label':'Energia dla producenta — wcześniejszy dokument (PDF)','href':'/dokumenty/onepager-energia-producent.pdf'},{'label':'Energia dla producenta — aktualizacja objaśnień','href':'/dokumenty/onepager-energia-producent.html'}]
- body='<div class="portal-reading"><section class="portal-prose"><h2>Model energii Polska 2025</h2><p>Wyniki, opis metody i przykład obliczenia są dostępne razem z wersją modelu.</p>'+links([{'label':'Energia Polska 2025 v4 — dokumentacja i pliki','href':'/energia-polska-2025-v4.html#pliki'}])+'</section><section class="portal-prose"><h2>Wcześniejsze dokumenty</h2><p>Pliki PDF zachowują treść z daty wydania. Korekty dotyczące wyboru miksu energii i zakresu wskaźników opisano w towarzyszących wersjach internetowych. Do nowego obliczenia korzystaj z aktualnej instrukcji doboru danych.</p>'+links(docs)+'</section><section class="portal-prose"><h2>Zasady dla kategorii wyrobów</h2>'+links([{'label':'Projekty dokumentów dla mieszanek asfaltowych i kruszyw','href':'/c-pcr/'}])+'</section></div>'
+ body='<div class="portal-reading"><section class="portal-prose"><h2>Model energii Polska 2025</h2><p>Wyniki, opis metody i przykład obliczenia są dostępne razem z wersją modelu.</p>'+links([{'label':'Energia Polska 2025 v5 — dokumentacja i pliki','href':'/energia-polska-2025-v5.html#pliki'}])+'</section><section class="portal-prose"><h2>Wcześniejsze dokumenty</h2><p>Pliki PDF zachowują treść z daty wydania. Korekty dotyczące wyboru miksu energii i zakresu wskaźników opisano w towarzyszących wersjach internetowych. Do nowego obliczenia korzystaj z aktualnej instrukcji doboru danych.</p>'+links(docs)+'</section><section class="portal-prose"><h2>Zasady dla kategorii wyrobów</h2>'+links([{'label':'Projekty dokumentów dla mieszanek asfaltowych i kruszyw','href':'/c-pcr/'}])+'</section></div>'
  page('metodyki/index.html','Dokumenty metodyczne','Dokumentacja modeli i wcześniejsze wydania wraz z objaśnieniami.',body,parent=('Metody i źródła','/metodyka.html'))
- body='<div class="portal-reading"><section class="portal-prose"><h2>Energia elektryczna — Polska 2025 v4</h2><p>Profil 37 wskaźników wraz z instrukcją, przykładem i warunkami wykorzystania.</p>'+links([{'label':x['label']+' · '+x['format'],'href':x['href']} for x in CAT['datasets'][0]['downloads']])+'</section>'
+ body='<div class="portal-reading"><section class="portal-prose"><h2>Energia elektryczna — Polska 2025 v5</h2><p>Profil 37 wskaźników wraz z instrukcją, przykładem i warunkami wykorzystania.</p>'+links([{'label':x['label']+' · '+x['format'],'href':x['href']} for x in CAT['datasets'][0]['downloads']])+'</section>'
  for c in CAT['collections']:body+=f'<section class="portal-prose"><h2>{e(c["title"])}</h2><p>{e(c["description"])}</p>'+links([{'label':x['label']+' · '+x['format'],'href':x['href']} for x in c['downloads']])+'</section>'
  body+='<section class="portal-prose"><h2>Pojedyncze rekordy i dokumenty</h2>'+links([{'label':'Wybierz rekord w katalogu danych','href':'/datasety.html'},{'label':'Dokumenty metodyczne i korekty wcześniejszych wydań','href':'/metodyki/'},{'label':'Formaty i instrukcja integracji','href':'/o-polca/gotowosc-dpp.html'}])+'</section></div>'
  page('pobierz.html','Pliki do pobrania','Pobierz konkretną wersję danych wraz z dokumentacją. Warunki wykorzystania są przypisane do zbioru.',body,parent=('Dane','/datasety.html'))
@@ -296,7 +296,7 @@ def build_energy_calculator():
             label += '·10' + str(int(exponent)).translate(superscript)
         return label
 
-    profile = json.loads((ROOT / 'data/energia-pl-2025-v4/profil-37.json').read_text())
+    profile = json.loads((ROOT / 'data/energia-pl-2025-v5/profil-37.json').read_text())
     indicators = profile['indicators']
     per_kwh = {item['code']: item['value_per_kWh'] for item in indicators}
     total = per_kwh['GWP-total']
@@ -353,7 +353,7 @@ def build_energy_calculator():
     )
     page(
         'oblicz-energie-2025.html', 'Energia elektryczna w Polsce w 2025 r.',
-        'Sprawdź wskaźnik dla 1 kWh, jego składniki i metodę poLCA v4. Przelicz zużycie energii na 37 wskaźników środowiskowych.',
+        'Sprawdź wskaźnik dla 1 kWh, jego składniki i metodę poLCA v5. Przelicz zużycie energii na 37 wskaźników środowiskowych.',
         body, parent=('Kalkulatory', '/kalkulatory.html'), pagehead=False,
         head_extra='<link rel="stylesheet" href="/assets/energy-panel.css?v=20261122-pomiar">',
     )

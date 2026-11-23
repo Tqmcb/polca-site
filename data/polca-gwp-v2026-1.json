@@ -1,14 +1,14 @@
 {
-  "version": "POLCA-GWP-2026.5",
+  "version": "POLCA-GWP-2026.6",
   "published_at": "2026-11-23",
   "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
     {
-      "id": "PL2025_PHYSICAL_DELIVERED_v4",
+      "id": "PL2025_PHYSICAL_DELIVERED_v5",
       "group": "energia_i_paliwa",
-      "name": "Energia elektryczna, Polska 2025 v4",
-      "value": 0.6445,
+      "name": "Energia elektryczna, Polska 2025 v5",
+      "value": 0.6700,
       "unit": "kg CO2e/kWh",
       "module": "A3",
       "status": "wartość przyjęta w kalkulatorach",
@@ -16,9 +16,9 @@
         "MMA",
         "kruszywa"
       ],
-      "basis": "Energia Polska 2025 v4, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
+      "basis": "Energia Polska 2025 v5, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
       "replace_with": "Dane o energii odpowiednie dla zastosowania i okresu odniesienia.",
-      "source_url": "https://polca.org.pl/energia-polska-2025-v4.html",
+      "source_url": "https://polca.org.pl/energia-polska-2025-v5.html",
       "indicator_type": "GWP-total"
     },
     {
@@ -56,7 +56,7 @@
         "porównanie"
       ],
       "basis": "KOBiZE, wskaźniki emisyjności energii elektrycznej za 2024",
-      "replace_with": "POLCA-GWP-EN-PL-LCA-2024 jest odrębnym historycznym modelem o innym zakresie. Dobór danych wymaga oceny konkretnego zastosowania.",
+      "replace_with": "Wskaźnik KOBiZE obejmuje bezpośrednią emisję CO₂. Wartość 0,599 kg CO₂ równ./kWh to składnik kopalny historycznego modelu POLCA-GWP-EN-PL-LCA-2024. Aktualny profil cyklu życia energii elektrycznej to Energia Polska 2025 v5. Dobór danych wymaga oceny konkretnego zastosowania.",
       "indicator_type": "direct_CO2",
       "legacy_field_semantics": {
         "value": "CO2 dla odbiorcy końcowego; nie pełny GWP cyklu życia."
@@ -565,7 +565,7 @@
       "id": "POLCA-MMA-AC11S-2026",
       "group": "mma",
       "name": "AC 11 S",
-      "value": 68.88244,
+      "value": 68.94619,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",
@@ -580,7 +580,7 @@
       "id": "POLCA-MMA-AC16W-2026",
       "group": "mma",
       "name": "AC 16 W",
-      "value": 61.87554,
+      "value": 61.93929,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",
@@ -595,7 +595,7 @@
       "id": "POLCA-MMA-SMA11S-2026",
       "group": "mma",
       "name": "SMA 11 S",
-      "value": 76.331995,
+      "value": 76.395745,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
       "status": "wynik modelu poLCA",
@@ -608,5 +608,12 @@
     }
   ],
   "metadata_revision": "2026-11-23",
-  "current_catalog_url": "/data/portal-catalog.json"
+  "current_catalog_url": "/data/portal-catalog.json",
+  "supersedes": "POLCA-GWP-2026.5",
+  "previous_release": {
+    "version": "POLCA-GWP-2026.5",
+    "status": "superseded",
+    "json": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.json",
+    "csv": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.csv"
+  }
 }

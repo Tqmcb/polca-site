@@ -131,7 +131,7 @@ Pola mają białe tło, cienkie obramowanie i widoczną etykietę. Tekst podpowi
 
 ### Obliczenie i diagram modelu
 
-Przykład na stronie głównej pozwala zmienić zużycie i pokazuje zależność: zużycie energii × wskaźnik modelu = wynik. Obliczenie używa pełnej precyzji publicznego modelu v4. Bez skryptów pozostaje statyczny przykład dla 100 kWh. Każdy człon ma nazwę i jednostkę. Pod obliczeniem znajduje się źródło, a obok opisu zastosowania — status wersji i odnośnik do jej zakresu.
+Przykład na stronie głównej pozwala zmienić zużycie i pokazuje zależność: zużycie energii × wskaźnik modelu = wynik. Obliczenie używa pełnej precyzji publicznego modelu v5. Bez skryptów pozostaje statyczny przykład dla 100 kWh. Każdy człon ma nazwę i jednostkę. Pod obliczeniem znajduje się źródło, a obok opisu zastosowania — status wersji i odnośnik do jej zakresu.
 
 Diagram konsultacji rozdziela dane wejściowe, obliczenie dla jednostki odniesienia i wyniki. Linie pokazują połączenia tych elementów; nie są ozdobnym wzorem tła. Diagram pozostaje czytelny bez odtwarzania opisu.
 

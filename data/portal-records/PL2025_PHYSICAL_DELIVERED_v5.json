@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0",
+  "catalog_version": "2026-11-23.4",
+  "record": {
+    "id": "PL2025_PHYSICAL_DELIVERED_v5",
+    "title": "Energia elektryczna — Polska 2025, v5",
+    "kind": "dataset",
+    "category_id": "energia",
+    "category_label": "Energia",
+    "year": 2025,
+    "year_type": "reference",
+    "status_id": "review",
+    "status_label": "Po kontroli technicznej",
+    "description": "Profil fizycznego miksu krajowego dla 1 kWh dostarczonej energii. Zawiera 37 wskaźników i opis przyjętej metody.",
+    "href": "/energia-polska-2025-v5.html",
+    "unit": "kg CO₂e/kWh",
+    "boundary": "Cykl życia fizycznie dostarczonej energii; średni krajowy poziom napięć",
+    "indicator_label": "GWP-total — wpływ na klimat",
+    "source_name": "poLCA — model Polska 2025 v5",
+    "source_url": "/data/energia-pl-2025-v5/METODA-I-ZMIANY.txt",
+    "formats": [
+      "ZIP",
+      "JSON",
+      "CSV",
+      "TXT"
+    ],
+    "downloads": [
+      {
+        "label": "Cały pakiet ZIP",
+        "format": "ZIP",
+        "href": "/data/energia-pl-2025-v5/Polska-energia-2025-v5.zip"
+      },
+      {
+        "label": "37 wskaźników — JSON",
+        "format": "JSON",
+        "href": "/data/energia-pl-2025-v5/profil-37.json"
+      },
+      {
+        "label": "37 wskaźników — CSV",
+        "format": "CSV",
+        "href": "/data/energia-pl-2025-v5/wskazniki-37.csv"
+      },
+      {
+        "label": "Opis pakietu",
+        "format": "TXT",
+        "href": "/data/energia-pl-2025-v5/START.txt"
+      },
+      {
+        "label": "Metoda i zmiany",
+        "format": "TXT",
+        "href": "/data/energia-pl-2025-v5/METODA-I-ZMIANY.txt"
+      },
+      {
+        "label": "Warunki wykorzystania",
+        "format": "TXT",
+        "href": "/data/energia-pl-2025-v5/WARUNKI-WYKORZYSTANIA.txt"
+      },
+      {
+        "label": "Przykład dla 10 kWh",
+        "format": "JSON",
+        "href": "/data/energia-pl-2025-v5/przyklad-10-kWh.json"
+      },
+      {
+        "label": "Kontrola eksportu",
+        "format": "JSON",
+        "href": "/data/energia-pl-2025-v5/kontrola-eksportu.json"
+      },
+      {
+        "label": "Spis plików i sum kontrolnych",
+        "format": "JSON",
+        "href": "/data/energia-pl-2025-v5/manifest.json"
+      }
+    ],
+    "methodology_href": "/energia-polska-2025-v5.html#metoda",
+    "related_ids": [
+      "POLCA-EN-PL-LCA-2024",
+      "KOBIZE-EN-PL-ENDUSER-2024"
+    ],
+    "keywords": [
+      "prąd",
+      "energia elektryczna",
+      "2025",
+      "37 wskaźników",
+      "miks fizyczny",
+      "woda",
+      "odpady",
+      "ślad węglowy",
+      "ślad środowiskowy",
+      "wyrób",
+      "produkt",
+      "budynek"
+    ],
+    "record_type": "indicator_profile",
+    "reference_unit": "kWh",
+    "value": 0.6700305358587492,
+    "indicator_count": 37,
+    "source_record_href": "/data/energia-pl-2025-v5/profil-37.json",
+    "geography": "PL",
+    "is_default": false,
+    "cpr_family_ids": [],
+    "cpr_related": [],
+    "cpr_scope_note": null
+  },
+  "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."
+}
