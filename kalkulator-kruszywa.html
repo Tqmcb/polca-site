@@ -153,15 +153,12 @@
                 <div class="agg-field">
                     <label class="calc-label" for="aggSimpleA4">Transport A4 do budowy [km] — opcjonalny</label>
                     <input type="number" required aria-describedby="aggInputWarn" id="aggSimpleA4" class="agg-input-sm" value="0" min="0" max="500" step="5">
-                    <p class="calc-note">Dolicza moduł A4 (transport z bramy kopalni do placu budowy). EF transportu drogowego (historyczny wariant drogowy): 0,100 kg CO₂eq/(t·km). Pozostaw 0, aby raportować wyłącznie A1-A3.</p>
+                    <p class="calc-note">Dolicza moduł A4 (transport z bramy kopalni do placu budowy). Współczynnik przewozu zestawem ciężarowym 40 t: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>. Pozostaw 0, aby raportować wyłącznie A1-A3.</p>
                 </div>
                 <div class="agg-field">
                     <label class="calc-label" for="aggSimpleEf">EF transportu A4 [kg CO₂eq/(t·km)]</label>
                     <select id="aggSimpleEf" class="calc-select">
-                        <option value="0.100" selected>0,100 — historyczny wariant drogowy (domyślny)</option>
-                        <option value="0.031">0,031 — TIR &gt; 32 t (wariant historyczny)</option>
-                        <option value="0.049">0,049 — samochód 16–32 t</option>
-                        <option value="0.082">0,082 — samochód 7,5–16 t</option>
+                        <option value="0.0843" selected>0,0843 — zestaw ciężarowy 40 t (wskaźnik poLCA)</option>
                     </select>
                 </div>
             </div>
@@ -217,7 +214,7 @@
                         <label class="calc-label" for="aggA2km" style="margin-bottom:0;">Transport wewnętrzny A2 [km]</label>
                         <input type="number" required aria-describedby="aggInputWarn" id="aggA2km" class="agg-input-sm" value="2" min="0" max="50" step="0.5">
                     </div>
-                    <p class="calc-note">Domyślnie 2 km (przewóz w obrębie zakładu / do magazynu wyrobu). EF: 0,100 kg CO₂eq/(t·km).</p>
+                    <p class="calc-note">Domyślnie 2 km (przewóz w obrębie zakładu / do magazynu wyrobu). Współczynnik: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>.</p>
                 </div>
                 <div class="agg-field">
                     <label class="calc-label" for="aggRcPct">Zawartość frakcji recyklingowej RC [%]</label>
@@ -232,14 +229,14 @@
                         <label class="calc-label" for="aggA4km" style="margin-bottom:0;">Transport A4 do budowy [km] — opcjonalny</label>
                         <input type="number" required aria-describedby="aggInputWarn" id="aggA4km" class="agg-input-sm" value="0" min="0" max="500" step="5">
                     </div>
-                    <p class="calc-note">Dolicza moduł A4 (poza A1-A3). EF: 0,100 kg CO₂eq/(t·km).</p>
+                    <p class="calc-note">Dolicza moduł A4 (poza A1-A3). Współczynnik: <a href="/dane/polca-truck-40t-default-2026.html">0,0843 kg CO₂e/(t·km)</a>.</p>
                 </div>
             </div>
         </div>
 
         <p class="calc-note" id="aggRcScope" aria-live="polite"></p>
         <div class="agg-warn ok" id="aggInputWarn" role="alert">Parametry w dopuszczalnych zakresach.</div>
-        <p class="calc-note" style="margin-top:.6rem;">Stałe historycznego zestawu: energia 0,599 kg CO₂e/kWh (GWP-fossil, poLCA-EN-PL-2024 v9.1), olej napędowy 3,17 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,100 kg CO₂e/(t·km). Zakresy tych założeń są opisane poniżej.</p>
+        <p class="calc-note" style="margin-top:.6rem;">Stałe historycznego zestawu: energia 0,599 kg CO₂e/kWh (GWP-fossil, poLCA-EN-PL-2024 v9.1), olej napędowy 3,17 kg CO₂e/L, materiały wybuchowe 0,5 kg CO₂e/kg, transport 0,0843 kg CO₂e/(t·km) (wskaźnik poLCA dla zestawu ciężarowego 40 t). Zakresy tych założeń są opisane poniżej.</p>
     </div>
 
     <!-- ============================================================
@@ -324,10 +321,10 @@
     <div id="metodyka" class="card card-lg section-gap fade-in">
         <div class="section-num">03 — Założenia i zakres</div>
         <div class="card-title">Co liczy ten kalkulator</div>
-        <div class="prose"><p>Tryb uproszczony zwraca wybrany wariant historyczny. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,599 + olej napędowy × 3,17 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,100. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
+        <div class="prose"><p>Tryb uproszczony zwraca wybrany wariant historyczny. Tryb zaawansowany oblicza bazę dla 1 t frakcji pierwotnej: energia × 0,599 + olej napędowy × 3,17 + materiały wybuchowe × 0,5 + płukanie + transport wewnętrzny × 0,0843. Jednostki wejściowe to odpowiednio kWh/t, L/t, kg/t i km.</p>
             <p>Energia korzysta z kopalnej części wpływu na klimat <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>. Pozostałe stałe są historycznymi założeniami kalkulatora. Nie są automatycznie zastępowane współczynnikami z innych wydań katalogu. Opcja płukania dodaje 0,5 kWh/t frakcji pierwotnej.</p>
             <p>Frakcja recyklingowa (RC) ma stałą wartość 2,50 kg CO₂e/t. Wynik = baza × (1 − udział RC) + 2,50 × udział RC. Przy RC = 100% wynik wynosi 2,50, a pola dotyczące procesu frakcji pierwotnej są wyłączone. Przy niższym udziale RC znów wpływają na wynik. Wykres, tabela i eksport pokazują wkłady po uwzględnieniu udziałów.</p>
-            <p>Transport do budowy (A4) jest liczony oddzielnie: odległość × współczynnik transportu. Tryb zaawansowany przyjmuje 0,100 kg CO₂e/(t·km), a uproszczony pozwala wybrać historyczny wariant współczynnika.</p>
+            <p>Transport do budowy (A4) jest liczony oddzielnie: odległość × współczynnik transportu. Oba tryby przyjmują wskaźnik poLCA dla zestawu ciężarowego 40 t: 0,0843 kg CO₂e/(t·km).</p>
             <p>Wynik jest orientacyjną sumą współczynników o różnych założeniach, wyrażoną w kg CO₂e/t. Oznaczenia A1–A3 opisują przyjęte etapy produkcji. Pełna deklaracja środowiskowa produktu wymaga ustalenia metody oceny, źródeł, granic systemu i wskaźników zgodnie z zasadami wybranego programu.</p>
             <p>CSV (tabela tekstowa), JSON (dane strukturalne) i XML (dokument strukturalny) zapisują wynik oraz założenia w formacie własnym poLCA. Integracja z innym programem wymaga dostosowania tego formatu. Przed użyciem wyniku w deklaracji środowiskowej produktu (EPD) jej autor i weryfikator powinni ocenić dane oraz metodę.</p>
         </div>
@@ -370,6 +367,6 @@
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
-<script src="js/kalkulator-kruszywa.js?v=20261019"></script>
+<script src="js/kalkulator-kruszywa.js?v=20261123c"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc w doborze</h2><a href="/jak-korzystac.html">Jak korzystać</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania opisano przy zbiorach.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

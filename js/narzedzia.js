@@ -110,7 +110,7 @@
         var errors = [];
         var distance = nonnegative('transDistance', 'Odległość [km]', errors);
         var mass = nonnegative('transMass', 'Masa [t]', errors);
-        var factor = Number(choice('transMode', ['0.031', '0.049', '0.082', '0.146', '0.009', '0.025', '0.005'], 'Środek transportu', errors));
+        var factor = Number(choice('transMode', ['0.0843', '0.146', '0.009', '0.025', '0.031', '0.005'], 'Środek transportu', errors));
         var returnFactor = Number(choice('transReturn', ['1', '1.5', '2'], 'Przebieg powrotny', errors));
         if (showError('transInputWarn', errors, ['transResult', 'transPerTon', 'transPerTkm'])) return;
 
