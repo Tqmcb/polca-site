@@ -4,6 +4,8 @@ Statyczny katalog danych środowiskowych, instrukcji i kalkulatorów dla Polski.
 
 Treści przewodników: `content/portal-pages.json`. Opisy katalogu: `data/portal-editorial.json`. Skrypt katalogu łączy je ze źródłowymi rekordami; nie przelicza modeli. Kanoniczny eksport katalogu to `data/portal-catalog.json`, a pojedynczych pozycji — `data/portal-records/`.
 
+Pole `datasets` eksportu zawiera pozycje dostępne w katalogu i wyszukiwarce. Rekordy wycofane trafiają do `withdrawn_datasets`. Ich karty zachowują dotychczasowe adresy, a pole `superseded_by` wskazuje aktualny rekord.
+
 ## Budowanie i sprawdzanie
 
 Python 3.10 lub nowszy, z zależnościami z `requirements-dev.txt`:

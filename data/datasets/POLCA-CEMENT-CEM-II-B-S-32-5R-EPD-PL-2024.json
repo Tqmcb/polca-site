@@ -27,26 +27,22 @@
     "unit": "t",
     "gwp_total_kg_co2e": 637,
     "year": 2024,
-    "last_reviewed_at": "2026-05-10",
+    "last_reviewed_at": "2026-11-23",
     "next_review_due": "2027-05-10",
     "review_cycle": "annual",
     "geography": "PL",
     "technology": "cement portlandzki żużlowy zgodny z EN 197-1",
     "data_quality": "historical_sector_proxy",
-    "status": "historical_reference",
+    "status": "withdrawn",
     "source_name": "EPD Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
     "source_url": "https://www.epd.org.pl/",
     "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-    "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+    "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
     "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-    "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-    "publication_status": "historical_reference",
+    "preferred_replacement": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+    "publication_status": "withdrawn",
     "review_required": true,
-    "use_allowed_for": [
-      "screening",
-      "internal_report",
-      "epd_preparation"
-    ],
+    "use_allowed_for": [],
     "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
     "source_trace": [
       {
@@ -67,10 +63,10 @@
     "evidence_level": "sector_proxy",
     "source_policy": {
       "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-      "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+      "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
       "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
     },
-    "selection_mode": "context_specific_assessment",
+    "selection_mode": "archive_only",
     "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
     "default_methodology": {
       "declared_value": "637 kg CO2e/t",
@@ -113,12 +109,15 @@
       "ogolne-epd"
     ],
     "material_role": "cement",
-    "record_use_status": "reference_requires_assessment",
-    "epd_use_status": "requires_context_specific_assessment",
+    "record_use_status": "archive_only",
+    "epd_use_status": "archive_only",
     "data_level": "aggregated_indicators_and_parameters",
     "provenance_status": "incomplete_epd_identification",
-    "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+    "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+    "withdrawn_at": "2026-11-23",
+    "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+    "is_default": false
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

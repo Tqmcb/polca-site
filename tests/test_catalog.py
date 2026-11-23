@@ -52,7 +52,8 @@ class CatalogTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.catalog = read('data/portal-catalog.json')
-        cls.datasets = {x['id']: x for x in cls.catalog['datasets']}
+        cls.records = cls.catalog['datasets'] + cls.catalog['withdrawn_datasets']
+        cls.datasets = {x['id']: x for x in cls.records}
         cls.resources = cls.catalog['resources']
         cls.legacy = {x['code']: x for x in read('data/datasets.json')['datasets']}
 
@@ -62,9 +63,11 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(expected, (ROOT / 'data/portal-catalog.json').read_text(encoding='utf-8'))
 
     def test_positions_not_files_or_indicators(self):
-        self.assertEqual(len(self.datasets), 37)
+        self.assertEqual(len(self.datasets), 42)
         self.assertEqual(set(self.datasets), set(self.legacy) | {ENERGY_ID})
-        self.assertEqual(self.catalog['counts']['data_positions'], 37)
+        self.assertEqual(self.catalog['counts']['data_positions'], len(self.catalog['datasets']))
+        self.assertEqual(self.catalog['counts']['data_positions'], 31)
+        self.assertEqual(self.catalog['counts']['withdrawn_positions'], 11)
         self.assertEqual(self.catalog['counts']['parameter_sets'], 1)
         self.assertEqual(self.catalog['counts']['control_references'], 8)
         self.assertNotIn('POLCA-MMA-MIXES-2026', self.datasets)
@@ -74,7 +77,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(self.datasets[ENERGY_ID]['indicator_count'], 37)
 
     def test_all_ids_unique_and_relationships_resolve(self):
-        all_items = self.catalog['datasets'] + self.resources + self.catalog['collections']
+        all_items = self.records + self.resources + self.catalog['collections']
         all_ids = [x['id'] for x in all_items]
         self.assertEqual(len(all_ids), len(set(all_ids)))
         for item in all_items:
@@ -133,7 +136,7 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(profile['model_id'], ENERGY_ID)
         self.assertEqual(profile['variant'], 'selected')
         self.assertEqual(profile['package_version'], '2026-10-19.1')
-        self.assertEqual(self.catalog['catalog_version'], profile['package_version'])
+        self.assertEqual(self.catalog['catalog_version'], read('data/portal-editorial.json')['catalog_version'])
         status = profile['status']
         self.assertEqual(status['state'], 'technical_review_complete')
         self.assertTrue(status['computation_complete'])
@@ -165,7 +168,7 @@ class CatalogTests(unittest.TestCase):
                   'status_id', 'status_label', 'description', 'href', 'unit', 'boundary',
                   'indicator_label', 'source_name', 'source_url', 'formats', 'downloads',
                   'methodology_href', 'related_ids', 'keywords'}
-        for item in self.catalog['datasets'] + self.resources:
+        for item in self.records + self.resources:
             with self.subTest(id=item['id']):
                 self.assertTrue(fields.issubset(item))
                 self.assertIn(item['kind'], {'dataset', 'tool', 'method', 'article'})
@@ -187,7 +190,7 @@ class CatalogTests(unittest.TestCase):
             self.assertNotIn('A1', item['boundary'])
 
     def test_downloads_and_format_claims_match_files(self):
-        for item in self.catalog['datasets'] + self.resources + self.catalog['collections']:
+        for item in self.records + self.resources + self.catalog['collections']:
             expected_formats = []
             for download in item['downloads']:
                 with self.subTest(id=item['id'], href=download['href']):
@@ -200,7 +203,7 @@ class CatalogTests(unittest.TestCase):
             self.assertEqual(item['formats'], expected_formats)
 
     def test_all_local_links_and_fragments(self):
-        all_items = self.catalog['datasets'] + self.resources + self.catalog['collections']
+        all_items = self.records + self.resources + self.catalog['collections']
         for item in all_items:
             links = [item.get(key) for key in ('href', 'source_url', 'source_record_href', 'methodology_href')]
             links += [x['href'] for x in item['downloads']]

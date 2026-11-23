@@ -233,15 +233,12 @@
       "value": 883,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Górażdże/Holcim PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-I-42-5R-2026",
@@ -250,15 +247,12 @@
       "value": 856,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Górażdże/Holcim PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-I-42-5N-2026",
@@ -267,15 +261,12 @@
       "value": 836,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Ożarów/Dyckerhoff PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-I-32-5R-2026",
@@ -284,15 +275,12 @@
       "value": 816,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Ożarów PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-II-A-S-42-5R-2026",
@@ -301,15 +289,12 @@
       "value": 762,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Górażdże PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-II-B-S-32-5R-2026",
@@ -318,15 +303,12 @@
       "value": 637,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Holcim PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-II-A-V-32-5R-2026",
@@ -335,15 +317,12 @@
       "value": 703,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Ożarów PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-II-B-V-32-5R-2026",
@@ -352,15 +331,12 @@
       "value": 556,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Ożarów PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-III-A-42-5N-2026",
@@ -369,15 +345,12 @@
       "value": 374,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Dyckerhoff PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-III-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-III-B-32-5N-2026",
@@ -386,15 +359,12 @@
       "value": 228,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD PL",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD Dyckerhoff PL 2024; EN 197-1; EN 15804+A2. Dane SPC/EY 2024 służą jako kontekst sektorowy CO2 netto, nie jako zamiennik GWP A1-A3.",
-      "replace_with": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-III-SPC-PL-2025"
     },
     {
       "id": "POLCA-GWP-CEMENT-CEM-IV-AVG-PL-2026",
@@ -403,15 +373,12 @@
       "value": 397,
       "unit": "kg CO2e/t",
       "module": "A1-A3",
-      "status": "wartość referencyjna poLCA z EPD SPC/ITB 2025",
+      "status": "Wskaźnik wycofany 23.11.2026",
       "use_for": [
-        "beton",
-        "prefabrykaty",
-        "zaprawy",
-        "cement jako wyrób"
+        "odtworzenie wcześniejszych obliczeń"
       ],
-      "basis": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce; EN 197-1; EN 16908; EN 15804+A2. W EPD wartość śladu węglowego CEM IV wynosi 397 kg CO2/t; wartość brutto w tabeli wynosi 510 kg CO2e/t i służy jako kontrola.",
-      "replace_with": "EPD konkretnego cementu CEM IV, wskaźnik dostawcy albo zweryfikowane dane cementowni"
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025. Wcześniejsza wartość 397 kg CO₂e/t pochodzi z wiersza netto tabeli 2. Wartość brutto wynosi 510 kg CO₂e/t.",
+      "replace_with": "POLCA-CEMENT-CEM-IV-SPC-PL-2025"
     },
     {
       "id": "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026",
@@ -550,6 +517,6 @@
       "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
     }
   ],
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

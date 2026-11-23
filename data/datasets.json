@@ -1,10 +1,10 @@
 {
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
-    "name": "poLCA — historyczny katalog wskaźników i parametrów modeli",
-    "version": "2026.6-mma",
+    "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
+    "version": "2026.7-cement",
     "status": "legacy_metadata",
-    "published_at": "2026-05-11",
+    "published_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
       "EN 15804+A2",
@@ -1582,26 +1582,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 883,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki o wysokiej wytrzymałości zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Górażdże/Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -1622,10 +1618,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "883 kg CO2e/t",
@@ -1668,11 +1664,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
@@ -1682,26 +1681,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 856,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Górażdże/Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -1722,10 +1717,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "856 kg CO2e/t",
@@ -1768,11 +1763,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-I-42-5N-EPD-PL-2024",
@@ -1782,26 +1780,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 836,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Ożarów/Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -1822,10 +1816,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "836 kg CO2e/t",
@@ -1868,11 +1862,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-I-32-5R-EPD-PL-2024",
@@ -1882,26 +1879,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 816,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -1922,10 +1915,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "816 kg CO2e/t",
@@ -1968,11 +1961,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-II-A-S-42-5R-EPD-PL-2024",
@@ -1982,26 +1978,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 762,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki żużlowy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Górażdże PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2022,10 +2014,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "762 kg CO2e/t",
@@ -2068,11 +2060,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
@@ -2082,26 +2077,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 637,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki żużlowy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Holcim PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2122,10 +2113,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "637 kg CO2e/t",
@@ -2168,11 +2159,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-II-A-V-32-5R-EPD-PL-2024",
@@ -2182,26 +2176,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 703,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki popiołowy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2222,10 +2212,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "703 kg CO2e/t",
@@ -2268,11 +2258,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-II-B-V-32-5R-EPD-PL-2024",
@@ -2282,26 +2275,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 556,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement portlandzki popiołowy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Ożarów PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2322,10 +2311,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "556 kg CO2e/t",
@@ -2368,11 +2357,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
@@ -2382,26 +2374,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 374,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement hutniczy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2422,10 +2410,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "374 kg CO2e/t",
@@ -2468,11 +2456,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-III-B-32-5N-EPD-PL-2024",
@@ -2482,26 +2473,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 228,
       "year": 2024,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement hutniczy zgodny z EN 197-1",
       "data_quality": "historical_sector_proxy",
-      "status": "historical_reference",
+      "status": "withdrawn",
       "source_name": "EPD Dyckerhoff PL 2024; rejestry EPD producentów cementu; SPC/EY 2024 jako kontrola sektorowa",
       "source_url": "https://www.epd.org.pl/",
       "scope": "Wartość GWP A1-A3 dla 1 t cementu przed transportem do wytwórni betonu. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Historyczny opis wskazuje polskie EPD producentów cementu 2023-2024 oraz dane sektorowe SPC/EY 2024. Brak identyfikacji konkretnych deklaracji i tabel nie pozwala potwierdzić przypisania wartości do EPD producenta.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
       "limitations": "Nie zastępuje EPD konkretnego cementu użytego przez producenta. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani zmian recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu, wskaźnik dostawcy albo zweryfikowane dane cementowni dla właściwego typu CEM.",
-      "publication_status": "historical_reference",
+      "preferred_replacement": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": true,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu, EPD dostawcy ma pierwszeństwo przed wartością referencyjną poLCA.",
       "source_trace": [
         {
@@ -2522,10 +2509,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "Źródło dla konkretnego cementu dobiera się według zakresu i reprezentatywności; ten historyczny rekord poLCA wymaga uzupełnienia identyfikacji EPD.",
-        "when_allowed": "Porównania orientacyjne z jawnym statusem źródła. Zastosowanie w EPD wymaga ustalenia pochodzenia wartości i oceny jej przydatności.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ cementu, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła uzasadnia się produktem, dostawcą, geografią, rokiem, rodzajem wskaźnika i zakresem obliczenia. Rekord nie jest wybierany automatycznie jako obowiązkowy.",
       "default_methodology": {
         "declared_value": "228 kg CO2e/t",
@@ -2568,11 +2555,14 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "data_level": "aggregated_indicators_and_parameters",
       "provenance_status": "incomplete_epd_identification",
-      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy."
+      "provenance_note": "Zachowano pierwotną wartość i opis źródeł. Rekord nie identyfikuje konkretnej deklaracji, produktu, zakładu ani tabeli wyników; nie potwierdza wartości z EPD dostawcy.",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
@@ -2582,26 +2572,22 @@
       "unit": "t",
       "gwp_total_kg_co2e": 397,
       "year": 2025,
-      "last_reviewed_at": "2026-05-10",
+      "last_reviewed_at": "2026-11-23",
       "next_review_due": "2027-05-10",
       "review_cycle": "annual",
       "geography": "PL",
       "technology": "cement pucolanowy CEM IV zgodny z EN 197-1; średnia krajowa produkcji w Polsce, reprezentatywność danych 2022",
       "data_quality": "verified_sector_epd_reference",
-      "status": "published_reference_dataset",
+      "status": "withdrawn",
       "source_name": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
       "scope": "Wartość A1-A3 dla 1 t cementu CEM IV produkowanego w Polsce, przed transportem do zakładu klienta. Transport cementu do zakładu należy liczyć oddzielnie w A2.",
-      "methodology_note": "Zbiór danych oparto na zweryfikowanej EPD Typu III Stowarzyszenia Producentów Cementu / ITB z 2025 r. EPD podaje ślad węglowy CEM IV równy 0,397 t CO2/t dla A1-A3. W tej samej tabeli podano także wartość globalnego ocieplenia brutto 510 kg CO2e/t jako informację kontrolną; główna wartość poLCA stosuje ślad węglowy wskazany w EPD.",
+      "methodology_note": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025. Wcześniejsza wartość 397 kg CO₂e/t pochodzi z wiersza netto tabeli 2. Wartość brutto wynosi 510 kg CO₂e/t.",
       "limitations": "Jest to średnia krajowa dla CEM IV, a nie EPD konkretnego cementu ani konkretnej cementowni. Nie obejmuje transportu do wytwórni betonu, alokacji zakładu klienta ani wpływu konkretnej recepty betonu.",
-      "preferred_replacement": "EPD konkretnego cementu CEM IV, wskaźnik dostawcy albo zweryfikowane dane cementowni dla użytego cementu.",
-      "publication_status": "published_reference_dataset",
+      "preferred_replacement": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+      "publication_status": "withdrawn",
       "review_required": false,
-      "use_allowed_for": [
-        "screening",
-        "internal_report",
-        "epd_preparation"
-      ],
+      "use_allowed_for": [],
       "quality_rule": "Cement jest składnikiem kluczowym betonu. Jeżeli producent ma EPD dla użytego cementu CEM IV, EPD dostawcy ma pierwszeństwo przed średnią krajową poLCA.",
       "source_trace": [
         {
@@ -2622,10 +2608,10 @@
       "evidence_level": "sector_proxy",
       "source_policy": {
         "priority": "EPD konkretnego cementu > zweryfikowany wskaźnik dostawcy > referencyjna wartość poLCA z EPD SPC/ITB 2025",
-        "when_allowed": "Brak EPD lub danych dostawcy dla konkretnego CEM IV; wynik oznaczony jako wartość referencyjna średnia krajowa.",
+        "when_allowed": "Wyłącznie do odtworzenia wcześniejszych obliczeń.",
         "auditor_note": "Sprawdzić typ CEM IV, producenta, datę EPD, jednostkę deklarowaną, moduły A1-A3, lokalizację dostawy i transport A2."
       },
-      "selection_mode": "context_specific_assessment",
+      "selection_mode": "archive_only",
       "user_choice_policy": "Dobór źródła dla użytego cementu wymaga oceny produktu, dostawcy, granic, roku i reprezentatywności. Średnia krajowa nie jest automatycznie obowiązkowym zamiennikiem danych dostawcy.",
       "default_methodology": {
         "declared_value": "397 kg CO2e/t; wartość brutto w tabeli EPD: 510 kg CO2e/t",
@@ -2663,10 +2649,13 @@
         "ogolne-epd"
       ],
       "material_role": "cement",
-      "record_use_status": "reference_requires_assessment",
-      "epd_use_status": "requires_context_specific_assessment",
+      "record_use_status": "archive_only",
+      "epd_use_status": "archive_only",
       "metadata_revision": "2026-10-18",
-      "current_catalog_url": "/data/portal-catalog.json"
+      "current_catalog_url": "/data/portal-catalog.json",
+      "withdrawn_at": "2026-11-23",
+      "superseded_by": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+      "is_default": false
     },
     {
       "code": "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026",
@@ -3563,14 +3552,284 @@
       "record_use_status": "reference_requires_assessment",
       "epd_use_status": "requires_context_specific_assessment",
       "data_level": "aggregated_indicators_and_parameters"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "name": "Cement CEM I — średnia krajowa (SPC 2025)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 766,
+      "gwp_fossil_kg_co2e": 766,
+      "gwp_net_kg_co2e": 584,
+      "year": 2022,
+      "publication_year": 2025,
+      "source_valid_until": "2030-12-18",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23",
+      "review_cycle": "annual",
+      "geography": "PL",
+      "technology": "Produkcja cementu CEM I luzem w polskich cementowniach.",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_sector_dataset",
+      "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM I wynosi 766 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (584 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+      "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "source_trace": [
+        {
+          "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+          "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+          "type": "verified_sector_epd_reference"
+        }
+      ],
+      "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "evidence_level": "sector_proxy",
+      "selection_mode": "context_specific_assessment",
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "name": "Cement CEM II — średnia krajowa (SPC 2025)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 613,
+      "gwp_fossil_kg_co2e": 613,
+      "gwp_net_kg_co2e": 473,
+      "year": 2022,
+      "publication_year": 2025,
+      "source_valid_until": "2030-12-18",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23",
+      "review_cycle": "annual",
+      "geography": "PL",
+      "technology": "Produkcja cementu CEM II luzem w polskich cementowniach.",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_sector_dataset",
+      "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM II wynosi 613 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (473 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+      "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "source_trace": [
+        {
+          "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+          "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+          "type": "verified_sector_epd_reference"
+        }
+      ],
+      "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "evidence_level": "sector_proxy",
+      "selection_mode": "context_specific_assessment",
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "name": "Cement CEM III — średnia krajowa (SPC 2025)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 483,
+      "gwp_fossil_kg_co2e": 483,
+      "gwp_net_kg_co2e": 398,
+      "year": 2022,
+      "publication_year": 2025,
+      "source_valid_until": "2030-12-18",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23",
+      "review_cycle": "annual",
+      "geography": "PL",
+      "technology": "Produkcja cementu CEM III luzem w polskich cementowniach.",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_sector_dataset",
+      "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM III wynosi 483 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (398 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+      "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "source_trace": [
+        {
+          "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+          "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+          "type": "verified_sector_epd_reference"
+        }
+      ],
+      "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "evidence_level": "sector_proxy",
+      "selection_mode": "context_specific_assessment",
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+      "name": "Cement CEM IV — średnia krajowa (SPC 2025)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 510,
+      "gwp_fossil_kg_co2e": 510,
+      "gwp_net_kg_co2e": 397,
+      "year": 2022,
+      "publication_year": 2025,
+      "source_valid_until": "2030-12-18",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23",
+      "review_cycle": "annual",
+      "geography": "PL",
+      "technology": "Produkcja cementu CEM IV luzem w polskich cementowniach.",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_sector_dataset",
+      "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM IV wynosi 510 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (397 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+      "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "source_trace": [
+        {
+          "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+          "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+          "type": "verified_sector_epd_reference"
+        }
+      ],
+      "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "evidence_level": "sector_proxy",
+      "selection_mode": "context_specific_assessment",
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+      "name": "Cement CEM V — średnia krajowa (SPC 2025)",
+      "category": "materiał",
+      "module_default": "A1-A3",
+      "unit": "t",
+      "gwp_total_kg_co2e": 546,
+      "gwp_fossil_kg_co2e": 545,
+      "gwp_net_kg_co2e": 430,
+      "year": 2022,
+      "publication_year": 2025,
+      "source_valid_until": "2030-12-18",
+      "last_reviewed_at": "2026-11-23",
+      "next_review_due": "2027-11-23",
+      "review_cycle": "annual",
+      "geography": "PL",
+      "technology": "Produkcja cementu CEM V luzem w polskich cementowniach.",
+      "data_quality": "verified_sector_epd_reference",
+      "status": "published_sector_dataset",
+      "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "scope": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM V wynosi 546 kg CO₂e/t. Wskaźnik GWP-fossil (potencjał cieplarniany – paliwa kopalne) wynosi 545 kg CO₂e/t. Wartość netto (430 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "limitations": "Wynik dotyczy rodzaju cementu. Nie obejmuje dostawy cementu do odbiorcy.",
+      "preferred_replacement": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "publication_status": "published_sector_dataset",
+      "review_required": false,
+      "use_allowed_for": [
+        "screening",
+        "internal_report",
+        "epd_preparation"
+      ],
+      "source_trace": [
+        {
+          "name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
+          "url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+          "role": "Wynik globalnego ocieplenia brutto w modułach A1–A3 dla 1 t cementu luzem.",
+          "type": "verified_sector_epd_reference"
+        }
+      ],
+      "methodology_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "evidence_level": "sector_proxy",
+      "selection_mode": "context_specific_assessment",
+      "product_groups": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy",
+        "ogolne-epd"
+      ],
+      "material_role": "cement",
+      "record_use_status": "reference_requires_assessment",
+      "epd_use_status": "requires_context_specific_assessment",
+      "data_level": "aggregated_indicators_and_parameters"
     }
   ],
   "meta": {
     "registry_code": "POLCA-REF-MMA-2026-MVP",
-    "version": "2026.6-mma",
-    "updated_at": "2026-05-11",
+    "version": "2026.7-cement",
+    "updated_at": "2026-11-23",
     "status": "legacy_metadata",
-    "methodology_note": "Historyczny katalog wartości, parametrów i modeli. Zachowano wersje źródłowe i liczby. Bieżące opisy oraz statusy udostępnia current_catalog_url.",
+    "methodology_note": "Katalog źródłowy obejmuje bieżące i wycofane rekordy w starszym schemacie danych. W eksporcie portal-catalog.json rekordy wycofane znajdują się w polu withdrawn_datasets.",
     "evidence_levels": {
       "official_public": "Dane opublikowane przez instytucję publiczną; zwykle surowy wskaźnik lub parametr wejściowy.",
       "polca_model": "Wskaźnik obliczony modelem poLCA z publicznych źródeł i jawnych przeliczników.",
@@ -3602,6 +3861,6 @@
       "status": "context_specific_selection"
     }
   },
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }

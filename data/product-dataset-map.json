@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "poLCA product-to-dataset map",
-    "version": "2026.5-aggregate-layer",
+    "version": "2026.6-cement",
     "purpose": "Mapa pokazuje, które wspólne datasety poLCA mogą być stosowane w poszczególnych grupach wyrobów. Dataset jest utrzymywany raz, a karta wyrobu określa zastosowanie, moduł i wymagane dane aktywności.",
     "rule": "Nie kopiować wskaźników do każdego wyrobu. Produkt używa wspólnych rekordów przez identyfikator datasetu, a wynik zapisuje wersję datasetu i jakość danych."
   },
   "shared_datasets": [
     {
-      "code": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
-      "name": "Cement CEM IV — średnia krajowa PL",
+      "code": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "name": "Cement CEM I — średnia krajowa (SPC 2025)",
       "used_by": [
         "concrete",
         "precast",
@@ -19,11 +19,11 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu CEM IV albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
+      "replacement_rule": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna."
     },
     {
-      "code": "POLCA-CEMENT-CEM-III-A-42-5N-EPD-PL-2024",
-      "name": "Cement CEM III/A 42,5N",
+      "code": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "name": "Cement CEM II — średnia krajowa (SPC 2025)",
       "used_by": [
         "concrete",
         "precast",
@@ -34,11 +34,11 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
+      "replacement_rule": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna."
     },
     {
-      "code": "POLCA-CEMENT-CEM-II-B-S-32-5R-EPD-PL-2024",
-      "name": "Cement CEM II/B-S 32,5R",
+      "code": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "name": "Cement CEM III — średnia krajowa (SPC 2025)",
       "used_by": [
         "concrete",
         "precast",
@@ -49,11 +49,11 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
+      "replacement_rule": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna."
     },
     {
-      "code": "POLCA-CEMENT-CEM-I-42-5R-EPD-PL-2024",
-      "name": "Cement CEM I 42,5R",
+      "code": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+      "name": "Cement CEM IV — średnia krajowa (SPC 2025)",
       "used_by": [
         "concrete",
         "precast",
@@ -64,7 +64,22 @@
         "mma",
         "asphalt_emulsion"
       ],
-      "replacement_rule": "EPD konkretnego cementu albo zweryfikowany wskaźnik dostawcy zastępuje wartość referencyjną poLCA."
+      "replacement_rule": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna."
+    },
+    {
+      "code": "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+      "name": "Cement CEM V — średnia krajowa (SPC 2025)",
+      "used_by": [
+        "concrete",
+        "precast",
+        "mortar",
+        "cement_product"
+      ],
+      "not_used_by_default": [
+        "mma",
+        "asphalt_emulsion"
+      ],
+      "replacement_rule": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna."
     },
     {
       "code": "POLCA-AGG-PL-CRUSHED-DEFAULT-2026",

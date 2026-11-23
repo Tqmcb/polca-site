@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-10-19.1",
+  "catalog_version": "2026-11-23.1",
   "record": {
     "id": "POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025",
     "title": "Cement CEM IV — średnia krajowa PL",
@@ -9,13 +9,13 @@
     "category_label": "Cement",
     "year": 2025,
     "year_type": "reference",
-    "status_id": "reference",
-    "status_label": "Wartość referencyjna",
-    "description": "Wartość dla 1 t cementu w etapach A1–A3, według źródeł wskazanych w rekordzie.",
+    "status_id": "withdrawn",
+    "status_label": "Wskaźnik wycofany",
+    "description": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
     "href": "/dane/polca-cement-cem-iv-avg-spc-epd-pl-2025.html",
     "unit": "kg CO₂e/t",
     "boundary": "A1-A3",
-    "indicator_label": "Wpływ na klimat (GWP)",
+    "indicator_label": "Globalne ocieplenie netto (wartość archiwalna)",
     "source_name": "EPD SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce",
     "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf",
     "formats": [
@@ -44,17 +44,14 @@
     "geography": "PL",
     "reference_unit": "t",
     "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-IV-AVG-SPC-EPD-PL-2025.json",
+    "withdrawn_at": "2026-11-23",
+    "superseded_by": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+    "is_default": false,
     "value": 397,
     "cpr_family_ids": [
       15
     ],
-    "cpr_related": [
-      {
-        "family_id": 1,
-        "role": "input_to_product",
-        "note": "Tylko jako składnik konkretnej receptury prefabrykatu betonowego; nie jako profil prefabrykatu."
-      }
-    ],
+    "cpr_related": [],
     "cpr_scope_note": null
   },
   "usage_note": "Rodzaj wskaźnika, jednostka, granice i status są opisane w rekordzie. Dobierz dane do metody oceny i zastosowania."

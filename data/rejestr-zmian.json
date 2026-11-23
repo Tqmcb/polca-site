@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
-    "version": "2026.5",
-    "updated_at": "2026-10-19",
+    "version": "2026.6",
+    "updated_at": "2026-11-23",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
     "policy_url": "data/update-policy.json",
     "validity_rule": "Nowa publikacja danych nie przelicza automatycznie wydanych deklaracji. Potrzebę ich aktualizacji ocenia się według zasad programu i znaczenia zmiany. Zachowuje się identyfikację danych wykorzystanych w danej deklaracji.",
-    "archive_rule": "poLCA nie usuwa poprzednich wersji. Wersje zastąpione otrzymują status superseded i pozostają dostępne do celów kontrolnych."
+    "archive_rule": "Wersje zastąpione (superseded) oraz rekordy wycofane (withdrawn) pozostają dostępne do odtworzenia wcześniejszych obliczeń."
   },
   "kategorie": [
     {
@@ -54,6 +54,17 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-23",
+      "kategoria": "aktualizacja_danych",
+      "status": "zakonczony",
+      "dotyczy": "Cement CEM I–V, rodzina 15",
+      "tytul": "Zmiana wskaźników dla cementu",
+      "opis": "Wycofano dziesięć wskaźników dla klas cementu CEM I–III bez potwierdzenia w deklaracjach producentów oraz wcześniejszy wskaźnik CEM IV oparty na wartości netto. Pięć nowych rekordów podaje średnie krajowe globalnego ocieplenia brutto dla 1 t cementu luzem w modułach A1–A3. Dla CEM IV wartość brutto wynosi 510 kg CO₂e/t, a netto 397 kg CO₂e/t.",
+      "podstawa": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Dane cementowni za 2022 r.",
+      "link": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "skutek_dla_deklaracji": "Do nowych obliczeń należy dobrać wskaźnik dla użytego cementu. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna. Archiwalne karty umożliwiają odtworzenie wcześniejszych obliczeń."
+    },
     {
       "data": "2026-10-19",
       "kategoria": "przeglad_metody",
@@ -212,6 +223,6 @@
       "podstawa": "Polityka aktualizacji poLCA — audytowalność"
     }
   ],
-  "metadata_revision": "2026-10-18",
+  "metadata_revision": "2026-11-23",
   "current_catalog_url": "/data/portal-catalog.json"
 }
