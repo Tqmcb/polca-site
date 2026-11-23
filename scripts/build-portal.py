@@ -18,12 +18,6 @@ TOOL_PAGES = {
 for resource in CAT['resources']:
  if resource['id'] in TOOL_PAGES:
   resource['href'] = '/' + TOOL_PAGES[resource['id']]
- if resource['id'] == 'tool-energia':
-  # Describe the live calculator in the portal while preserving the published catalog.
-  resource.update(year=2025, description=html.parse(str(ROOT / 'kalkulator.html')).xpath(
-      'string(//meta[@name="description"]/@content)'),
-      boundary='Energia elektryczna: GWP-total (2025 v4) lub GWP-fossil (2024). Paliwa: CO₂ ze spalania.',
-      related_ids=['PL2025_PHYSICAL_DELIVERED_v4', 'POLCA-EN-PL-LCA-2024'])
 COPY=json.loads((ROOT/'content/portal-pages.json').read_text())
 GENERATED=set()
 def e(x): return h.escape(str(x if x is not None else ''),quote=True)
@@ -56,7 +50,7 @@ def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',page
  mainhead='' if home else (crumb(title,parent) if show_crumb else '')+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
  home_css='<link rel="stylesheet" href="/assets/home.css?v=20261123">' if home else ''
  main_class=main_class or ('portal-main home-main' if home else 'portal-main portal-shell')
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261122-linki">{home_css}<script src="/js/portal.js?v=20261019cpr" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><link rel="stylesheet" href="/assets/portal.css?v=20261123">{home_css}<script src="/js/portal.js?v=20261123" defer></script>{head_extra}</head><body class="portal">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v):return format(v,'.6g').replace('.',',')
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
@@ -211,8 +205,8 @@ def migrate_shell():
   for el in head.xpath('./link[contains(@href,"fonts.googleapis") or contains(@href,"fonts.gstatic") or contains(@href,"/assets/portal.css")]'):head.remove(el)
   for el in head.xpath('.//html'):
    if el.getparent() is not None:el.getparent().remove(el)
-  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261122-linki'))
-  head.append(etree.Element('script',src='/js/portal.js?v=20261019cpr',defer='defer'))
+  head.append(etree.Element('link',rel='stylesheet',href='/assets/portal.css?v=20261123'))
+  head.append(etree.Element('script',src='/js/portal.js?v=20261123',defer='defer'))
   body.set('class','portal portal-legacy'+(' portal-tool' if group(rel)=='tools' else '')+(' portal-article' if rel.startswith('blog-') else ''))
   nodes=html.fragments_fromstring(header(rel))
   for i,n in enumerate(nodes):body.insert(i,n)
@@ -238,8 +232,8 @@ def sync_shell():
   if not re.search(r'<link[^>]+rel=[\"\'](?:shortcut )?icon[\"\']',text):text=text.replace('</head>','<link rel="icon" href="/favicon.svg" type="image/svg+xml"></head>')
   text=re.sub(r'<header class="portal-header">.*?</header>',lambda m:header(rel).split('</a>',1)[1],text,flags=re.S)
   text=re.sub(r'<footer class="portal-footer">.*?</footer>',lambda m:footer(),text,flags=re.S)
-  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261122-linki',text)
-  text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261019cpr',text)
+  text=re.sub(r'/assets/portal\.css\?v=[^"\s]+','/assets/portal.css?v=20261123',text)
+  text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261123',text)
   p.write_text(text)
 
 def build_energy_calculator():

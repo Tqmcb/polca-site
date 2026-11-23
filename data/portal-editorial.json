@@ -733,12 +733,13 @@
       "title": "Kalkulator energii i paliw",
       "kind": "tool",
       "category_id": "energia",
-      "year": 2024,
+      "year": 2025,
       "year_type": "reference",
       "status_id": "estimate",
-      "description": "Przelicza zużycie energii lub paliwa według starszych współczynników zapisanych w narzędziu.",
+      "description": "Kalkulator zużycia energii z profilem Polska 2025 v4 (GWP-total), historycznym profilem 2024 (GWP-fossil) i współczynnikami emisji CO₂ ze spalania paliw.",
       "href": "/kalkulator.html",
       "related_ids": [
+        "PL2025_PHYSICAL_DELIVERED_v4",
         "POLCA-EN-PL-LCA-2024"
       ],
       "keywords": [
@@ -748,7 +749,7 @@
         "MWh",
         "emisje"
       ],
-      "boundary": "Energia: składnik kopalny GWP; paliwa: CO₂ ze spalania"
+      "boundary": "Energia elektryczna: GWP-total (2025 v4) lub GWP-fossil (2024). Paliwa: CO₂ ze spalania."
     },
     {
       "id": "tool-mma",
