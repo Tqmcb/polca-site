@@ -33,7 +33,7 @@ def links(items,cls='portal-list'):return f'<ul class="{cls}">'+''.join('<li>'+a
 NAV=[('Wyroby','/wyroby.html','products'),('Dane','/datasety.html','data'),('Kalkulatory','/kalkulatory.html','tools'),('Jak korzystać','/jak-korzystac.html','guide'),('Metody i źródła','/metodyka.html','methods')]
 def group(path):
  if path.startswith(('wyroby/','c-pcr/')) or path=='wyroby.html':return 'products'
- if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','energia-polska-2025-v5.html','pobierz.html','dane-wspolne.html']:return 'data'
+ if path.startswith('dane/') or path in ['datasety.html','energia-polska-2025-v3.html','energia-polska-2025-v4.html','energia-polska-2025-v5.html','energia-rezydualna-polska-2025-v6.html','pobierz.html','dane-wspolne.html']:return 'data'
  if 'kalkulat' in path or path in TOOL_PAGES.values() or path in ['narzedzia.html','oblicz-energie-2025.html']:return 'tools'
  if path in ['jak-korzystac.html','pytania.html','zastosowanie-danych.html','slad-weglowy-czy-srodowiskowy.html','porownanie-baz.html','zastosowanie-epd-cpr.html']:return 'guide'
  if path.startswith(('metody','konsultacje/')) or path in ['wiarygodnosc.html','podstawy-normatywne.html']:return 'methods'
@@ -383,6 +383,8 @@ def sitemap():
 if __name__=='__main__':
  parser=argparse.ArgumentParser();parser.add_argument('--migrate-shell',action='store_true');args=parser.parse_args()
  build_catalog();build_catalog(True);build_copy();build_cards();build_indexes();build_energy_calculator()
+ from residual_energy import build as build_residual_energy
+ build_residual_energy(ROOT, page)
  from cpr_portal import build as build_products
  build_products(globals())
  export_icons(ROOT, json.loads((ROOT / "data/cpr-families.json").read_text())["families"])

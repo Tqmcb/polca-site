@@ -1,0 +1,49 @@
+<div class="residual-data">
+  <section aria-labelledby="wyniki">
+    <h2 id="wyniki">Wpływ 1 kWh dostarczonej energii na klimat</h2>
+    <dl class="residual-totals">
+      <div><dt>Średnie napięcie</dt><dd><strong>$medium</strong> kg ekw. CO₂/kWh</dd></div>
+      <div><dt>Niskie napięcie</dt><dd><strong>$low</strong> kg ekw. CO₂/kWh</dd></div>
+    </dl>
+    <p>Wartości obejmują cały cykl życia dostarczonej energii. Odpowiadają wskaźnikowi całkowitego potencjału globalnego ocieplenia (GWP-total).</p>
+    <p><a href="#wskazniki">Wszystkie wskaźniki</a> · <a href="$csv_url" download>Pobierz wyniki obu profili (CSV)</a></p>
+  </section>
+
+  <section aria-labelledby="zastosowanie">
+    <h2 id="zastosowanie">Kiedy stosuje się miks rezydualny?</h2>
+    <p>Miks rezydualny opisuje pochodzenie energii pozostałej po rozliczeniu gwarancji pochodzenia i innych uznanych sposobów przypisania źródła energii odbiorcom. O zastosowaniu tego profilu decydują zasady oceny danego wyrobu i sposób udokumentowania zakupu energii. Poziom napięcia ustala się dla punktu dostawy do odbiorcy.</p>
+    <p>Jeżeli ocena wymaga średniego fizycznego miksu zużycia energii w Polsce, właściwy zakres opisuje <a href="/energia-polska-2025-v5.html">krajowy profil fizyczny Polska 2025</a>.</p>
+  </section>
+
+  <section aria-labelledby="metoda">
+    <h2 id="metoda">Jak obliczyliśmy oba profile?</h2>
+    <p>Udziały źródeł odtworzyliśmy z zaokrąglonych tabel w <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/AIB_2025_Residual_Mix_Final%20Results_%2026052026.pdf">raporcie Stowarzyszenia Organów Wydających Gwarancje Pochodzenia (AIB)</a>. W opublikowanym przez AIB <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/2025_Final%20_Residual%20mix%20calculation%20results_25052026.xlsx">arkuszu za 2025 r. (wiersz PL)</a> sprawdziliśmy później strukturę polskiego miksu rezydualnego i wskaźnik bezpośrednich emisji CO₂. W obliczeniach zachowaliśmy udziały odtworzone z raportu. Wskaźnik emisji bezpośrednich wynosi <strong>726,96 g CO₂/kWh</strong>. Wartości poLCA obejmują również wydobycie i dostawy paliw, pozostałe gazy cieplarniane oraz dostarczenie energii do odbiorcy.</p>
+    <p>Źródłem danych tła jest <cite>Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026</cite>, baza inwentarza cyklu życia szwajcarskiej administracji federalnej. Zaktualizowaliśmy w modelu wybrane krajowe dane o paliwach, wydobyciu i emisjach związanych z wytwarzaniem energii z węgla kamiennego i brunatnego. Podział zbiorczych kategorii między technologie wytwarzania opiera się na danych za 2024 r. Tam, gdzie brakowało danych dla danej technologii, zastosowaliśmy procesy zastępcze. Parametry sieci i infrastruktury przejęliśmy z wcześniejszej wersji modelu. Dane o paliwach i technologiach pochodzą z różnych lat.</p>
+    <p>W podziale obciążeń między energię elektryczną a ciepło dla obu rodzajów węgla przyjęliśmy współczynnik jakości ciepła <em>q</em> = 0,35. Jest to założenie modelowe. Parametry sieci wykorzystane do rozróżnienia poziomów napięcia mają charakter historyczny.</p>
+  </section>
+
+  <section class="residual-status" aria-labelledby="status">
+    <h2 id="status">Status oceny i uwagi do modelu</h2>
+    <p><strong>Wersja v6, obliczenie run-005.</strong> W ramach kontroli wewnętrznej odtworzyliśmy obliczenia dla obu poziomów napięcia. Model nie przeszedł recenzji naukowej niezależnego eksperta ani formalnej kwalifikacji do stosowania w deklaracjach środowiskowych wyrobów (EPD). Przydatność danych do konkretnej deklaracji ocenia się zgodnie z zasadami jej programu.</p>
+    <p>W uwagach prosimy podać poziom napięcia, wskaźnik oraz źródło danych, których dotyczy uwaga. <a href="mailto:info@epd.org.pl?subject=Uwaga%20do%20modelu%20miksu%20rezydualnego%20Polska%202025%20v6%20run-005">Prześlij uwagę do modelu v6</a>.</p>
+  </section>
+
+  <section aria-labelledby="ograniczenia">
+    <h2 id="ograniczenia">Ograniczenia wyników</h2>
+    <p>Pełny bilans węgla biogenicznego pozostaje otwarty. Dla emisji metanu biogenicznego przyjęliśmy w tej wersji modelu współczynnik 29,8 kg ekwiwalentu CO₂ na kilogram metanu. Zachowaliśmy sposób ujmowania wody i chloru z poprzedniej wersji. Dla wersji v6 nie wyznaczyliśmy ponownie udziału danych objętych oceną jakości.</p>
+  </section>
+
+  <section aria-labelledby="wskazniki">
+    <h2 id="wskazniki">Wyniki 37 wskaźników dla obu poziomów napięcia</h2>
+    <p>Każdy wynik dotyczy 1 kWh dostarczonej energii. W tabeli zaokrągliliśmy liczby do pięciu cyfr znaczących. <a href="$csv_url" download>Arkusz wyników w formacie CSV</a> zawiera wartości z pełną precyzją obliczeń.</p>
+    <table class="residual-table">
+      <thead><tr><th scope="col">Wskaźnik i jednostka</th><th scope="col">Średnie napięcie</th><th scope="col">Niskie napięcie</th></tr></thead>
+      <tbody>$rows</tbody>
+    </table>
+  </section>
+
+  <section aria-labelledby="warunki">
+    <h2 id="warunki">Warunki wykorzystania danych</h2>
+    <p>Karta i plik do pobrania zawierają zagregowane wyniki własnych obliczeń poLCA. <a href="https://www.bafu.admin.ch/dam/en/sd-web/-9ZObeMCZy8A/BAFU-20XY%20Terms%20of%20Use_EN%201.pdf">Warunki korzystania z danych źródłowych</a> określa szwajcarski Federalny Urząd Środowiska. Przy cytowaniu wyniku prosimy wskazać poLCA, wersję v6, rok atrybutów i poziom napięcia.</p>
+  </section>
+</div>
