@@ -1,5 +1,5 @@
 {
-  "catalog_version": "2026-11-23.5",
+  "catalog_version": "2026-11-24.1",
   "categories": {
     "energia": "Energia",
     "paliwa": "Paliwa",
@@ -685,9 +685,9 @@
       "category_id": "cement",
       "year_type": "reference",
       "status_id": "published_sector_dataset",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "boundary": "A1–A3",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "methodology_href": "/wyroby/15.html#modul-a1-cement",
       "keywords": [
         "POLCA-CEMENT-CEM-I-SPC-PL-2025",
@@ -702,9 +702,9 @@
       "category_id": "cement",
       "year_type": "reference",
       "status_id": "published_sector_dataset",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "boundary": "A1–A3",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "methodology_href": "/wyroby/15.html#modul-a1-cement",
       "keywords": [
         "POLCA-CEMENT-CEM-II-SPC-PL-2025",
@@ -719,9 +719,9 @@
       "category_id": "cement",
       "year_type": "reference",
       "status_id": "published_sector_dataset",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "boundary": "A1–A3",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "methodology_href": "/wyroby/15.html#modul-a1-cement",
       "keywords": [
         "POLCA-CEMENT-CEM-III-SPC-PL-2025",
@@ -736,9 +736,9 @@
       "category_id": "cement",
       "year_type": "reference",
       "status_id": "published_sector_dataset",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "boundary": "A1–A3",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "methodology_href": "/wyroby/15.html#modul-a1-cement",
       "keywords": [
         "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
@@ -753,9 +753,9 @@
       "category_id": "cement",
       "year_type": "reference",
       "status_id": "published_sector_dataset",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "boundary": "A1–A3",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "methodology_href": "/wyroby/15.html#modul-a1-cement",
       "keywords": [
         "POLCA-CEMENT-CEM-V-SPC-PL-2025",
@@ -786,13 +786,13 @@
       "include_source_trace": true
     },
     "POLCA-CONCRETE-C25-30-EPD-PL-2026": {
-      "title": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych",
+      "title": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych (wariant brutto)",
       "category_id": "beton",
       "year_type": "publication",
       "status_id": "reference",
-      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total) — brutto",
       "boundary": "A1–A3",
-      "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+      "description": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
       "methodology_href": "/wyroby/26.html#beton-towarowy",
       "keywords": [
         "POLCA-CONCRETE-C25-30-EPD-PL-2026",
@@ -805,13 +805,13 @@
       "include_source_trace": true
     },
     "POLCA-CONCRETE-C30-37-EPD-PL-2026": {
-      "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych",
+      "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych (wariant brutto)",
       "category_id": "beton",
       "year_type": "publication",
       "status_id": "reference",
-      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total) — brutto",
       "boundary": "A1–A3",
-      "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+      "description": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
       "methodology_href": "/wyroby/26.html#beton-towarowy",
       "keywords": [
         "POLCA-CONCRETE-C30-37-EPD-PL-2026",
@@ -934,7 +934,7 @@
       "year": 2026,
       "year_type": "publication",
       "status_id": "estimate",
-      "description": "Wynik dla 1 m³ betonu według receptury, odległości dostaw oraz zużycia energii i paliw w wytwórni. Porównanie z deklaracjami dla wybranej klasy wytrzymałości.",
+      "description": "Wynik dla 1 m³ betonu według receptury, odległości dostaw oraz zużycia energii i paliw w wytwórni. Wybór cementu netto lub brutto. Porównanie brutto z deklaracjami dla wybranej klasy wytrzymałości.",
       "href": "/kalkulator-betonu.html",
       "related_ids": [
         "POLCA-CONCRETE-C25-30-EPD-PL-2026",
@@ -1412,7 +1412,7 @@
       "year": 2025,
       "year_type": "publication",
       "status_id": "archive",
-      "description": "Średnia krajowa dla cementu CEM I wynosi 766 kg CO₂e/t, dla CEM III 483 kg CO₂e/t (EPD sektorowa SPC 2025). Skąd pochodzi emisja, jaki udział mają paliwa alternatywne i klinkier.",
+      "description": "Według deklaracji sektorowej SPC 2025 wpływ na klimat 1 t cementu CEM I wynosi 584 kg CO₂e netto i 766 kg CO₂e brutto. Dla CEM III wartość netto wynosi 398 kg CO₂e/t.",
       "href": "/blog-cement-polska.html",
       "published_at": "2025-11-14",
       "keywords": [
@@ -1654,7 +1654,7 @@
       "description": "poLCA to katalog danych i modeli środowiskowych dla Polski, tworzony jako dane wejściowe do oceny cyklu życia, deklaracji EPD i ocen wymaganych przez CPR. Prowadzi go Multicert.",
       "href": "/o-polca/index.html",
       "keywords": [
-        "Co zawiera Katalog ma 34 pozycje danych w wersji 2026-11-23.5: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
+        "Co zawiera Katalog ma 34 pozycje danych w wersji 2026-11-24.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
@@ -1672,7 +1672,7 @@
       "href": "/o-polca/dla-prasy.html",
       "keywords": [
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
-        "Fakty do przytoczenia Katalog: 34 pozycje danych, wersja 2026-11-23.5. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
+        "Fakty do przytoczenia Katalog: 34 pozycje danych, wersja 2026-11-24.1. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
       ]
     },
@@ -2929,16 +2929,24 @@
       "id": "collection-gwp-table",
       "title": "Wcześniejsza tabela wskaźników",
       "kind": "collection",
-      "description": "Wydanie POLCA-GWP-2026.6 obejmuje współczynniki materiałowe i energetyczne oraz wyniki modelowe dla mieszanek asfaltowych. Zastąpione wydanie POLCA-GWP-2026.5 jest dostępne w archiwum.",
+      "description": "Wydanie POLCA-GWP-2026.7 podaje dla cementu wartości netto i brutto. Obejmuje również współczynniki dla pozostałych materiałów i energii oraz wyniki dla mieszanek asfaltowych.",
       "href": "/data/polca-gwp-v2026-1.json",
       "downloads": [
         {
-          "label": "POLCA-GWP-2026.6",
+          "label": "POLCA-GWP-2026.7",
           "href": "/data/polca-gwp-v2026-1.json"
         },
         {
-          "label": "POLCA-GWP-2026.6",
+          "label": "POLCA-GWP-2026.7",
           "href": "/data/polca-gwp-v2026-1.csv"
+        },
+        {
+          "label": "Archiwum POLCA-GWP-2026.6",
+          "href": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.json"
+        },
+        {
+          "label": "Archiwum POLCA-GWP-2026.6",
+          "href": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.csv"
         },
         {
           "label": "Archiwum POLCA-GWP-2026.5",

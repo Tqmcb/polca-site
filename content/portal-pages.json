@@ -335,7 +335,7 @@
         {
           "title": "Co zawiera",
           "paragraphs": [
-            "Katalog ma 34 pozycje danych w wersji 2026-11-23.5: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe.",
+            "Katalog ma 34 pozycje danych w wersji 2026-11-24.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe.",
             "Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie."
           ],
           "links": [
@@ -542,7 +542,7 @@
         {
           "title": "Fakty do przytoczenia",
           "paragraphs": [
-            "Katalog: 34 pozycje danych, wersja 2026-11-23.5. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte.",
+            "Katalog: 34 pozycje danych, wersja 2026-11-24.1. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte.",
             "Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026)."
           ],
           "links": [

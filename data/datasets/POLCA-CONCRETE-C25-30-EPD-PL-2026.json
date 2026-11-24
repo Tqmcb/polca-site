@@ -2,9 +2,9 @@
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
     "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
-    "version": "2026.10-beton",
+    "version": "2026.11-cement-netto",
     "status": "legacy_metadata",
-    "published_at": "2026-11-23",
+    "published_at": "2026-11-24",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
       "EN 15804+A2",
@@ -30,15 +30,15 @@
   },
   "dataset": {
     "code": "POLCA-CONCRETE-C25-30-EPD-PL-2026",
-    "name": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych",
+    "name": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych (wariant brutto)",
     "category": "materiał",
     "module_default": "A1-A3",
     "unit": "m3",
     "gwp_total_kg_co2e": 216.5,
     "year": 2026,
     "publication_year": 2026,
-    "last_reviewed_at": "2026-11-23",
-    "next_review_due": "2027-11-23",
+    "last_reviewed_at": "2026-11-24",
+    "next_review_due": "2027-11-24",
     "review_cycle": "annual",
     "geography": "PL",
     "technology": "Produkcja betonu towarowego w polskich wytwórniach.",
@@ -46,8 +46,8 @@
     "status": "published_sector_dataset",
     "source_name": "P.P.M.D. Kruszbet S.A., ITB-EPD 662/2024",
     "source_url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_662_P.P.M.D.-KRUSZBET-S.A.-Ready-mix-concrete.pdf#page=8",
-    "scope": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
-    "methodology_note": "Każda deklaracja ma jednakową wagę. Dla klasy C25/30 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 3 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+    "scope": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+    "methodology_note": "Medianę obliczono z wyników w wariancie brutto. Każda deklaracja ma jednakową wagę. Dla klasy C25/30 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 3 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
     "limitations": "Próba obejmuje wyłącznie deklaracje z wynikiem dla tej klasy. Przy obliczaniu mediany pominięto wielkość produkcji wytwórni.",
     "preferred_replacement": "Dane wytwórni dla danej receptury betonu.",
     "publication_status": "published_sector_dataset",
@@ -72,7 +72,8 @@
             "page": 6,
             "value": 255
           }
-        ]
+        ],
+        "cement_basis": "brutto"
       },
       {
         "name": "ITB-EPD 566/2023",
@@ -88,7 +89,8 @@
             "page": 8,
             "value": 189
           }
-        ]
+        ],
+        "cement_basis": "brutto"
       },
       {
         "name": "ITB-EPD 662/2024",
@@ -108,7 +110,9 @@
             "page": 9,
             "value": 214
           }
-        ]
+        ],
+        "cement_basis": "brutto",
+        "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
       }
     ],
     "methodology_url": "/wyroby/26.html#beton-towarowy",
@@ -120,8 +124,10 @@
     "material_role": "beton towarowy",
     "record_use_status": "reference_requires_assessment",
     "epd_use_status": "requires_context_specific_assessment",
-    "data_level": "aggregated_indicators_and_parameters"
+    "data_level": "aggregated_indicators_and_parameters",
+    "cement_basis": "brutto",
+    "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
   },
-  "metadata_revision": "2026-11-23",
+  "metadata_revision": "2026-11-24",
   "current_catalog_url": "/data/portal-catalog.json"
 }

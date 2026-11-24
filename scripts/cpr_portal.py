@@ -103,7 +103,7 @@ def family_data(datasets, family_id, api):
     if shared_labels:
         parts.append(f'<p class="family-record-meta">{shared_labels}</p>')
     parts.append('<div class="family-indicators">')
-    for description, grouped in groupby(datasets, key=lambda record: record.get('description', '')):
+    for description, grouped in groupby(datasets, key=api['description_with_basis']):
         group = list(grouped)
         if description and len(group) > 1:
             parts.append(f'<p class="family-indicators-scope">{e(description)}</p>')

@@ -2,9 +2,9 @@
   "registry": {
     "id": "POLCA-REF-MMA-2026-MVP",
     "name": "poLCA — katalog źródłowy wskaźników i parametrów modeli",
-    "version": "2026.10-beton",
+    "version": "2026.11-cement-netto",
     "status": "legacy_metadata",
-    "published_at": "2026-11-23",
+    "published_at": "2026-11-24",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "methodology_basis": [
       "EN 15804+A2",

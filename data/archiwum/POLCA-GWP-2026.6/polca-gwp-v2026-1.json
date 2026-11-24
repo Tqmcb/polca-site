@@ -1,0 +1,619 @@
+{
+  "version": "POLCA-GWP-2026.6",
+  "published_at": "2026-11-23",
+  "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
+  "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
+  "records": [
+    {
+      "id": "PL2025_PHYSICAL_DELIVERED_v5",
+      "group": "energia_i_paliwa",
+      "name": "Energia elektryczna, Polska 2025 v5",
+      "value": 0.6700,
+      "unit": "kg CO2e/kWh",
+      "module": "A3",
+      "status": "wartość przyjęta w kalkulatorach",
+      "use_for": [
+        "MMA",
+        "kruszywa"
+      ],
+      "basis": "Energia Polska 2025 v5, całkowity wpływ na klimat (GWP-total), zaokrąglenie do czterech miejsc po przecinku",
+      "replace_with": "Dane o energii odpowiednie dla zastosowania i okresu odniesienia.",
+      "source_url": "https://polca.org.pl/energia-polska-2025-v5.html",
+      "indicator_type": "GWP-total"
+    },
+    {
+      "id": "POLCA-GWP-EN-PL-LCA-2024",
+      "group": "energia_i_paliwa",
+      "name": "Energia elektryczna, Polska",
+      "value": 0.599,
+      "unit": "kg CO2e/kWh",
+      "module": "A3/A5/B6/C3/D",
+      "status": "historyczny model poLCA (GWP-fossil)",
+      "use_for": [
+        "MMA",
+        "beton",
+        "emulsje asfaltowe",
+        "kruszywa",
+        "roboty drogowe"
+      ],
+      "basis": "KOBiZE, PSE, GUS, WUG, EEA, IPCC/JEC, model POLCA-EN-PL",
+      "replace_with": "zweryfikowany wskaźnik dostawcy energii lub zasady energii kontraktowej",
+      "indicator_type": "GWP-fossil",
+      "legacy_field_semantics": {
+        "value": "GWP-fossil, czyli składnik kopalny; nie GWP-total."
+      }
+    },
+    {
+      "id": "KOBIZE-EN-PL-ENDUSER-2024",
+      "group": "energia_i_paliwa",
+      "name": "Energia elektryczna, Polska, wskaźnik kontrolny KOBiZE",
+      "value": 0.553,
+      "unit": "kg CO2/kWh",
+      "module": "A3",
+      "status": "dane publiczne",
+      "use_for": [
+        "kontrola",
+        "porównanie"
+      ],
+      "basis": "KOBiZE, wskaźniki emisyjności energii elektrycznej za 2024",
+      "replace_with": "Wskaźnik KOBiZE obejmuje bezpośrednią emisję CO₂. Wartość 0,599 kg CO₂ równ./kWh to składnik kopalny historycznego modelu POLCA-GWP-EN-PL-LCA-2024. Aktualny profil cyklu życia energii elektrycznej to Energia Polska 2025 v5. Dobór danych wymaga oceny konkretnego zastosowania.",
+      "indicator_type": "direct_CO2",
+      "legacy_field_semantics": {
+        "value": "CO2 dla odbiorcy końcowego; nie pełny GWP cyklu życia."
+      }
+    },
+    {
+      "id": "POLCA-GWP-NATURAL-GAS-2026",
+      "group": "energia_i_paliwa",
+      "name": "Gaz ziemny",
+      "value": 2.46,
+      "unit": "kg CO2e/m3",
+      "module": "A3",
+      "status": "Wskaźnik obliczony dla paliwa",
+      "use_for": [
+        "MMA",
+        "beton",
+        "emulsje asfaltowe",
+        "kruszywa"
+      ],
+      "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 14 oraz IPCC i rozporządzenie (UE) 2023/1185",
+      "replace_with": "faktury, wartość opałowa, zużycie zakładu, dane dostawcy paliwa",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=6"
+    },
+    {
+      "id": "POLCA-GWP-DIESEL-2026",
+      "group": "energia_i_paliwa",
+      "name": "Olej napędowy",
+      "value": 3.72,
+      "unit": "kg CO2e/l",
+      "module": "A3/A5/C1",
+      "status": "Wskaźnik obliczony dla paliwa",
+      "use_for": [
+        "sprzęt",
+        "transport pomocniczy",
+        "frezowanie",
+        "roboty drogowe"
+      ],
+      "basis": "KOBiZE, wartości opałowe i wskaźniki emisji CO₂ do raportowania w SHUE za 2026 r., tabela 16 oraz IPCC i rozporządzenie (UE) 2023/1185",
+      "replace_with": "rzeczywiste zużycie paliwa, dane sprzętu lub floty",
+      "source_url": "https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/135.WO_i_WE_do_monitorowania_ETS_2026.pdf#page=7"
+    },
+    {
+      "id": "POLCA-GWP-TRUCK-40T-2026",
+      "group": "transport",
+      "name": "Transport drogowy, zestaw 40 t",
+      "value": 0.0843,
+      "unit": "kg CO2e/tkm",
+      "module": "A2/A4/C2",
+      "status": "wartość domyślna poLCA",
+      "use_for": [
+        "MMA",
+        "beton",
+        "emulsje asfaltowe",
+        "kruszywa",
+        "roboty drogowe"
+      ],
+      "basis": "ÖKOBAUDAT 2026, LKW-Zug (zestaw ciężarowy), UUID 330f8948-8463-4b63-a14a-3fedcc175180, wersja 20.26.070",
+      "replace_with": "dokumenty WZ/CMR, trasa, ładowność, spalanie floty",
+      "source_url": "https://oekobaudat.de/OEKOBAU.DAT/datasetdetail/process.xhtml?uuid=330f8948-8463-4b63-a14a-3fedcc175180&version=20.26.070",
+      "limitations": "Zbiór dla Niemiec, norma Euro 5, ładowność 27 t, stopień załadowania 85%. Źródło nie opisuje pustych przebiegów. Dla przewozu z pustym powrotem i dla własnej floty należy stosować dane przewoźnika."
+    },
+    {
+      "id": "POLCA-GWP-BITUMEN-ROAD-2026",
+      "group": "lepiszcza",
+      "name": "Lepiszcze asfaltowe drogowe",
+      "value": 530,
+      "unit": "kg CO2e/t",
+      "module": "A1",
+      "status": "wartość sektorowa poLCA",
+      "use_for": [
+        "MMA",
+        "emulsje asfaltowe",
+        "warstwy sczepne"
+      ],
+      "basis": "Eurobitume LCA 4.0 (2025), raport GWP, s. 8",
+      "replace_with": "EPD producenta asfaltu lub zweryfikowany wskaźnik dostawcy",
+      "source_url": "https://eurobitume.eu/wp-content/uploads/2025/03/EB-GWP-Report-to-LCA-4.0-2025.pdf#page=8",
+      "dataset_code": "POLCA-BITUMEN-ROAD-DEFAULT-2026"
+    },
+    {
+      "id": "POLCA-GWP-AGG-HARD-CRUSHED-2026",
+      "group": "kruszywa",
+      "name": "Kruszywo łamane twarde",
+      "value": 3.99,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
+      "use_for": [
+        "MMA",
+        "beton",
+        "podbudowy",
+        "kruszywa jako wyrób"
+      ],
+      "basis": "Trzuskawica S.A., ITB-EPD nr 706/2024",
+      "replace_with": "EPD kopalni lub zweryfikowane dane procesu",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_706_Trzuskawica-S.A.-for-BASALT-AGGREGATES.pdf#page=7"
+    },
+    {
+      "id": "POLCA-GWP-AGG-LIMESTONE-2026",
+      "group": "kruszywa",
+      "name": "Kruszywo wapienne",
+      "value": 3.27,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
+      "use_for": [
+        "MMA",
+        "beton",
+        "podbudowy",
+        "kruszywa jako wyrób"
+      ],
+      "basis": "Trzuskawica S.A., ITB-EPD nr 707/2024",
+      "replace_with": "EPD kopalni lub dane zakładowe",
+      "source_url": "https://itb.pl/wp-content/uploads/2025/01/ITB-EPD_707_Trzuskawica-S.A.-for-Limestone-aggregates.pdf#page=8"
+    },
+    {
+      "id": "POLCA-GWP-AGG-DOLOMITE-2026",
+      "group": "kruszywa",
+      "name": "Kruszywo dolomitowe",
+      "value": 3.91,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
+      "use_for": [
+        "MMA",
+        "beton",
+        "podbudowy",
+        "kruszywa jako wyrób"
+      ],
+      "basis": "Kopalnie Dolomitu S.A. w Sandomierzu, Łukasiewicz-ICiMB nr 03-05/2025",
+      "replace_with": "EPD kopalni lub dane zakładowe",
+      "source_url": "https://lukasiewicz.gov.pl/wp-content/uploads/sites/46/2026/07/EPD_03-05-2025_Kopalnie-Dolomitu-S.A.-w-Sandomierzu_Dolomite-and-limestone-aggregate_21.05.2025.pdf#page=11"
+    },
+    {
+      "id": "POLCA-GWP-AGG-NATURAL-2026",
+      "group": "kruszywa",
+      "name": "Piasek / żwir",
+      "value": 3.86,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Mediana dwóch deklaracji producentów",
+      "use_for": [
+        "MMA",
+        "beton",
+        "podbudowy",
+        "kruszywa jako wyrób"
+      ],
+      "basis": "CEMEX Polska, ITB-EPD nr 674/2024 i Eurokrusz, Łukasiewicz-ICiMB nr 02-04/2024",
+      "replace_with": "EPD kopalni, dane płukania/sortowania i transportu",
+      "source_url": "https://itb.pl/wp-content/uploads/2024/10/ITB-EPD_674_CEMEX-Polska-Sp.-z-o.o.-Natural-crushed-and-gravel-aggregates-and-recycled-crushed-aggregates-offered-by-Cemex-Polska.pdf#page=6"
+    },
+    {
+      "id": "POLCA-GWP-FILLER-LIMESTONE-2026",
+      "group": "wypelniacze",
+      "name": "Wypełniacz wapienny do MMA",
+      "value": 72,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik z deklaracji producenta",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Naujasis kalcitas, EPD-IES-0012771 (EPD International)",
+      "replace_with": "EPD dostawcy wypełniacza lub dane procesu mielenia/suszenia",
+      "source_url": "https://api.prod.environdec.com/api/v1/EPDLibrary/Files/EPDs/80d4505c-5b4d-4c0f-3865-08dc2e3a4f3f/Documents#page=10"
+    },
+    {
+      "id": "POLCA-GWP-RAP-PROCESSING-2026",
+      "group": "materialy_wtorne",
+      "name": "RAP / destrukt asfaltowy, przygotowanie",
+      "value": 3,
+      "unit": "kg CO2e/t",
+      "module": "A1/A3",
+      "status": "wartość procesowa poLCA",
+      "use_for": [
+        "MMA",
+        "roboty drogowe"
+      ],
+      "basis": "model referencyjny MMA, proces przygotowania RAP",
+      "replace_with": "dane zakładu: frakcjonowanie, wilgotność, energia, podgrzewanie"
+    },
+    {
+      "id": "POLCA-GWP-EMULSION-TACK-COAT-2026",
+      "group": "emulsje",
+      "name": "Emulsja asfaltowa / warstwa sczepna",
+      "value": 0.45,
+      "unit": "kg CO2e/kg",
+      "module": "A5",
+      "status": "wartość sektorowa poLCA",
+      "use_for": [
+        "emulsje asfaltowe",
+        "MMA",
+        "roboty drogowe"
+      ],
+      "basis": "model referencyjny poLCA, lepiszcze i scenariusz wbudowania",
+      "replace_with": "EPD producenta emulsji, zawartość lepiszcza, emulgator, dodatki, energia"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-I-52-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM I 52,5R",
+      "value": 883,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-I-42-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM I 42,5R",
+      "value": 856,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-I-42-5N-2026",
+      "group": "cement",
+      "name": "Cement CEM I 42,5N",
+      "value": 836,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-I-32-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM I 32,5R",
+      "value": 816,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-I-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-II-A-S-42-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM II/A-S 42,5R",
+      "value": 762,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-II-B-S-32-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM II/B-S 32,5R",
+      "value": 637,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-II-A-V-32-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM II/A-V 32,5R",
+      "value": 703,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-II-B-V-32-5R-2026",
+      "group": "cement",
+      "name": "Cement CEM II/B-V 32,5R",
+      "value": 556,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-II-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-III-A-42-5N-2026",
+      "group": "cement",
+      "name": "Cement CEM III/A 42,5N",
+      "value": 374,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-III-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-III-B-32-5N-2026",
+      "group": "cement",
+      "name": "Cement CEM III/B 32,5N",
+      "value": 228,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025.",
+      "replace_with": "POLCA-CEMENT-CEM-III-SPC-PL-2025"
+    },
+    {
+      "id": "POLCA-GWP-CEMENT-CEM-IV-AVG-PL-2026",
+      "group": "cement",
+      "name": "Cement CEM IV — średnia krajowa PL",
+      "value": 397,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "Wskaźnik wycofany 23.11.2026",
+      "use_for": [
+        "odtworzenie wcześniejszych obliczeń"
+      ],
+      "basis": "Wskaźnik wycofany 23.11.2026. Wartości nie potwierdzono w deklaracji środowiskowej producenta. Wskaźnik zastąpiono średnią krajową dla rodzaju cementu z deklaracji sektorowej SPC 2025. Wcześniejsza wartość 397 kg CO₂e/t pochodzi z wiersza netto tabeli 2. Wartość brutto wynosi 510 kg CO₂e/t.",
+      "replace_with": "POLCA-CEMENT-CEM-IV-SPC-PL-2025"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-CALCINED-CLAY-2507-00-80-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — glina kalcynowana",
+      "value": 308,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2507 00 80; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-WHITE-CLINKER-2523-10-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — klinkier biały",
+      "value": 1507,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 10 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-GREY-CLINKER-2523-10-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — klinkier szary",
+      "value": 1551,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 10 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-WHITE-PORTLAND-2523-21-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — cement portlandzki biały",
+      "value": 1595,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 21 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-GREY-PORTLAND-2523-29-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — cement portlandzki szary",
+      "value": 1584,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 29 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-WHITE-HYDRAULIC-2523-90-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — cement hydrauliczny biały",
+      "value": 1639,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 90 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-GREY-HYDRAULIC-2523-90-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — cement hydrauliczny szary",
+      "value": 1507,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 90 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "CBAM-GROSS-CEMENT-ALUMINOUS-2523-30-00-2026",
+      "group": "regulacyjne_cbam",
+      "name": "CBAM brutto 2026 — cement glinowy",
+      "value": 2233,
+      "unit": "kg CO2e/t",
+      "module": "CBAM direct+indirect 2026",
+      "status": "wartość regulacyjna CBAM brutto z narzutem",
+      "use_for": [
+        "kontrola konserwatywna",
+        "cement",
+        "klinkier",
+        "brak danych producenta"
+      ],
+      "basis": "Komisja Europejska, CBAM default values definitive period, Other Countries and Territories, CN 2523 30 00; wartość 2026 obejmuje direct + indirect + narzut.",
+      "replace_with": "rzeczywiste dane producenta, EPD cementu albo zweryfikowane dane instalacji"
+    },
+    {
+      "id": "POLCA-STEEL-REBAR-PL-MEDIAN-2026",
+      "group": "stal",
+      "name": "Stal zbrojeniowa — mediana EPD hut w Polsce",
+      "value": 790,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wartość referencyjna poLCA",
+      "use_for": [
+        "stal zbrojeniowa",
+        "prefabrykaty żelbetowe"
+      ],
+      "basis": "Mediana czterech deklaracji środowiskowych hut w Polsce (ITB 596/2024, ITB 688/2024 v2, S-P-08502, EPD-IES-0031613:001).",
+      "replace_with": "W deklaracji wyrobu należy stosować wskaźnik z deklaracji dostawcy stali.",
+      "source_url": "https://www.itb.pl/wp-content/uploads/2024/12/ITB-EPD_688_ArcelorMittal-Long-Products-Europe-Hot-rolled-bars-and-wires_v2.pdf#page=9",
+      "source_record_href": "/data/datasets/POLCA-STEEL-REBAR-PL-MEDIAN-2026.json"
+    },
+    {
+      "id": "POLCA-MMA-AC11S-2026",
+      "group": "mma",
+      "name": "AC 11 S",
+      "value": 68.94619,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 5,8% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-ac11s-2026.html"
+    },
+    {
+      "id": "POLCA-MMA-AC16W-2026",
+      "group": "mma",
+      "name": "AC 16 W",
+      "value": 61.93929,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 4,6% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-ac16w-2026.html"
+    },
+    {
+      "id": "POLCA-MMA-SMA11S-2026",
+      "group": "mma",
+      "name": "SMA 11 S",
+      "value": 76.395745,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "wynik modelu poLCA",
+      "use_for": [
+        "MMA"
+      ],
+      "basis": "Kalkulator MMA, Bmin 6,6% według WT-2 2014 cz. I",
+      "replace_with": "Receptura i dane wytwórni.",
+      "source_url": "https://polca.org.pl/dane/polca-mma-sma11s-2026.html"
+    }
+  ],
+  "metadata_revision": "2026-11-23",
+  "current_catalog_url": "/data/portal-catalog.json",
+  "supersedes": "POLCA-GWP-2026.5",
+  "previous_release": {
+    "version": "POLCA-GWP-2026.5",
+    "status": "superseded",
+    "json": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.json",
+    "csv": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.csv"
+  }
+}

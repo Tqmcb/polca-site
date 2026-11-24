@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.5",
+  "catalog_version": "2026-11-24.1",
   "record": {
     "id": "POLCA-CONCRETE-C30-37-EPD-PL-2026",
-    "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych",
+    "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych (wariant brutto)",
     "kind": "dataset",
     "category_id": "beton",
     "category_label": "Beton towarowy",
@@ -11,11 +11,11 @@
     "year_type": "publication",
     "status_id": "reference",
     "status_label": "Wartość referencyjna",
-    "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+    "description": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
     "href": "/dane/polca-concrete-c30-37-epd-pl-2026.html",
     "unit": "kg CO₂e/m³",
     "boundary": "A1–A3",
-    "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+    "indicator_label": "Całkowity wpływ na klimat (GWP-total) — brutto",
     "source_name": "Zestawienie deklaracji ITB-EPD 447, 558, 566 i 662 dla klasy C30/37",
     "source_url": "https://polca.org.pl/wyroby/26.html#beton-towarowy",
     "formats": [
@@ -73,7 +73,8 @@
             "page": 12,
             "value": 210
           }
-        ]
+        ],
+        "cement_basis": "brutto"
       },
       {
         "name": "ITB-EPD 558/2023",
@@ -89,7 +90,8 @@
             "page": 8,
             "value": 193
           }
-        ]
+        ],
+        "cement_basis": "brutto"
       },
       {
         "name": "ITB-EPD 566/2023",
@@ -105,7 +107,8 @@
             "page": 10,
             "value": 213
           }
-        ]
+        ],
+        "cement_basis": "brutto"
       },
       {
         "name": "ITB-EPD 662/2024",
@@ -125,12 +128,16 @@
             "page": 9,
             "value": 221
           }
-        ]
+        ],
+        "cement_basis": "brutto",
+        "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
       }
     ],
     "limitations": "Próba obejmuje wyłącznie deklaracje z wynikiem dla tej klasy. Przy obliczaniu mediany pominięto wielkość produkcji wytwórni.",
     "publication_year": 2026,
-    "methodology_note": "Każda deklaracja ma jednakową wagę. Dla klasy C30/37 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 4 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+    "methodology_note": "Medianę obliczono z wyników w wariancie brutto. Każda deklaracja ma jednakową wagę. Dla klasy C30/37 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 4 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+    "cement_basis": "brutto",
+    "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto.",
     "value": 210.875,
     "cpr_family_ids": [
       26

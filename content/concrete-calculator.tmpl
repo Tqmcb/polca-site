@@ -12,7 +12,11 @@ oraz <a href="/wyroby/26.html#beton-towarowy">wyniki deklaracji dla dziewięciu 
 <label>Masa kruszywa [kg]<input name="aggregate_kg" type="number" min="0" step="any" value="1850" required></label>
 <label>Masa domieszek [kg]<input name="admixtures_kg" type="number" min="0" step="any" value="0" required aria-describedby="concrete-omissions"></label>
 </div>
-<p id="concrete-omissions">Katalog nie zawiera wskaźnika dla domieszek, dlatego w obliczeniach pominięto wodę i domieszki. Masa domieszek jest podana w zestawieniu receptury.</p></fieldset>
+<p id="concrete-omissions">W obliczeniach pominięto wodę i domieszki. Katalog nie zawiera wskaźnika dla domieszek.</p></fieldset>
+<fieldset class="cement-basis"><legend>Który wariant wskaźnika cementu przyjąć?</legend>
+<label><input type="radio" name="cement_basis" value="netto" checked>netto — wartość deklarowana w deklaracji SPC</label>
+<label><input type="radio" name="cement_basis" value="brutto">brutto — informacja dodatkowa w deklaracji SPC</label>
+<p>{basis_rule}</p></fieldset>
 <fieldset><legend>Z jakiej odległości dostarcza się surowce?</legend>
 <div class="concrete-fields">
 <label>Odległość dostawy cementu [km]<input name="cement_km" type="number" min="0" step="any" value="100" required></label>
@@ -31,7 +35,7 @@ oraz <a href="/wyroby/26.html#beton-towarowy">wyniki deklaracji dla dziewięciu 
 </form>
 <section class="concrete-summary" aria-labelledby="concrete-summary-title">
 <h2 id="concrete-summary-title">Jaki jest wynik A1–A3 dla tej receptury?</h2>
-<div aria-live="polite" aria-atomic="true"><p class="concrete-total"><strong id="concrete-total">—</strong> kg CO₂e/m³</p>
+<div aria-live="polite" aria-atomic="true"><p class="concrete-total"><strong id="concrete-total">—</strong> kg CO₂e/m³ <span id="concrete-basis"></span></p>
 <p>Udział produkcji cementu w wyniku: <strong id="cement-share">—</strong></p></div>
 <dl class="concrete-stages"><div><dt>A1 · Produkcja składników</dt><dd id="concrete-a1">—</dd></div>
 <div><dt>A2 · Dostawa do wytwórni</dt><dd id="concrete-a2">—</dd></div>

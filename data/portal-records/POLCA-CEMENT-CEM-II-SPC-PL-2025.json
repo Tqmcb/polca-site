@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.5",
+  "catalog_version": "2026-11-24.1",
   "record": {
     "id": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
     "title": "Cement CEM II — średnia krajowa (SPC 2025)",
@@ -11,11 +11,11 @@
     "year_type": "reference",
     "status_id": "published_sector_dataset",
     "status_label": "Dane z deklaracji sektorowej",
-    "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+    "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
     "href": "/dane/polca-cement-cem-ii-spc-pl-2025.html",
     "unit": "kg CO₂e/t",
     "boundary": "A1–A3",
-    "indicator_label": "Globalne ocieplenie brutto",
+    "indicator_label": "Globalne ocieplenie netto",
     "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
     "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
     "formats": [
@@ -36,6 +36,8 @@
       "spoiwo",
       "A1-A3",
       "SPC",
+      "473 netto",
+      "613 brutto",
       "ślad węglowy",
       "wpływ na klimat",
       "wyrób",
@@ -47,10 +49,13 @@
     "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-SPC-PL-2025.json",
     "publication_year": 2025,
     "source_valid_until": "2030-12-18",
-    "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM II wynosi 613 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (473 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+    "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
     "gwp_fossil_kg_co2e": 613,
+    "gwp_fossil_basis": "brutto",
     "gwp_net_kg_co2e": 473,
-    "value": 613,
+    "gwp_gross_kg_co2e": 613,
+    "cement_basis": "netto",
+    "value": 473,
     "cpr_family_ids": [
       15
     ],

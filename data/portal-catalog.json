@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "catalog_version": "2026-11-23.5",
+  "catalog_version": "2026-11-24.1",
   "counts": {
     "data_positions": 34,
     "withdrawn_positions": 12,
@@ -1830,11 +1830,11 @@
       "year_type": "reference",
       "status_id": "published_sector_dataset",
       "status_label": "Dane z deklaracji sektorowej",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "href": "/dane/polca-cement-cem-i-spc-pl-2025.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1–A3",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
       "formats": [
@@ -1855,6 +1855,8 @@
         "spoiwo",
         "A1-A3",
         "SPC",
+        "584 netto",
+        "766 brutto",
         "ślad węglowy",
         "wpływ na klimat",
         "wyrób",
@@ -1866,10 +1868,13 @@
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-I-SPC-PL-2025.json",
       "publication_year": 2025,
       "source_valid_until": "2030-12-18",
-      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM I wynosi 766 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (584 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
       "gwp_fossil_kg_co2e": 766,
+      "gwp_fossil_basis": "brutto",
       "gwp_net_kg_co2e": 584,
-      "value": 766,
+      "gwp_gross_kg_co2e": 766,
+      "cement_basis": "netto",
+      "value": 584,
       "cpr_family_ids": [
         15
       ],
@@ -1892,11 +1897,11 @@
       "year_type": "reference",
       "status_id": "published_sector_dataset",
       "status_label": "Dane z deklaracji sektorowej",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "href": "/dane/polca-cement-cem-ii-spc-pl-2025.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1–A3",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
       "formats": [
@@ -1917,6 +1922,8 @@
         "spoiwo",
         "A1-A3",
         "SPC",
+        "473 netto",
+        "613 brutto",
         "ślad węglowy",
         "wpływ na klimat",
         "wyrób",
@@ -1928,10 +1935,13 @@
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-II-SPC-PL-2025.json",
       "publication_year": 2025,
       "source_valid_until": "2030-12-18",
-      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM II wynosi 613 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (473 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
       "gwp_fossil_kg_co2e": 613,
+      "gwp_fossil_basis": "brutto",
       "gwp_net_kg_co2e": 473,
-      "value": 613,
+      "gwp_gross_kg_co2e": 613,
+      "cement_basis": "netto",
+      "value": 473,
       "cpr_family_ids": [
         15
       ],
@@ -1954,11 +1964,11 @@
       "year_type": "reference",
       "status_id": "published_sector_dataset",
       "status_label": "Dane z deklaracji sektorowej",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "href": "/dane/polca-cement-cem-iii-spc-pl-2025.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1–A3",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
       "formats": [
@@ -1979,6 +1989,8 @@
         "spoiwo",
         "A1-A3",
         "SPC",
+        "398 netto",
+        "483 brutto",
         "ślad węglowy",
         "wpływ na klimat",
         "wyrób",
@@ -1990,10 +2002,13 @@
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-III-SPC-PL-2025.json",
       "publication_year": 2025,
       "source_valid_until": "2030-12-18",
-      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM III wynosi 483 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (398 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
       "gwp_fossil_kg_co2e": 483,
+      "gwp_fossil_basis": "brutto",
       "gwp_net_kg_co2e": 398,
-      "value": 483,
+      "gwp_gross_kg_co2e": 483,
+      "cement_basis": "netto",
+      "value": 398,
       "cpr_family_ids": [
         15
       ],
@@ -2016,11 +2031,11 @@
       "year_type": "reference",
       "status_id": "published_sector_dataset",
       "status_label": "Dane z deklaracji sektorowej",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "href": "/dane/polca-cement-cem-iv-spc-pl-2025.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1–A3",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
       "formats": [
@@ -2041,6 +2056,8 @@
         "spoiwo",
         "A1-A3",
         "SPC",
+        "397 netto",
+        "510 brutto",
         "ślad węglowy",
         "wpływ na klimat",
         "wyrób",
@@ -2052,10 +2069,13 @@
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-IV-SPC-PL-2025.json",
       "publication_year": 2025,
       "source_valid_until": "2030-12-18",
-      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM IV wynosi 510 kg CO₂e/t. Tę samą wartość podano dla wskaźnika GWP-fossil (potencjał cieplarniany – paliwa kopalne). Wartość netto (397 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
       "gwp_fossil_kg_co2e": 510,
+      "gwp_fossil_basis": "brutto",
       "gwp_net_kg_co2e": 397,
-      "value": 510,
+      "gwp_gross_kg_co2e": 510,
+      "cement_basis": "netto",
+      "value": 397,
       "cpr_family_ids": [
         15
       ],
@@ -2078,11 +2098,11 @@
       "year_type": "reference",
       "status_id": "published_sector_dataset",
       "status_label": "Dane z deklaracji sektorowej",
-      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik brutto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
+      "description": "Średnia krajowa z danych cementowni członków Stowarzyszenia Producentów Cementu za okres od stycznia do grudnia 2022 r. Wynik netto obejmuje produkcję 1 t cementu luzem do bramy zakładu, bez opakowania.",
       "href": "/dane/polca-cement-cem-v-spc-pl-2025.html",
       "unit": "kg CO₂e/t",
       "boundary": "A1–A3",
-      "indicator_label": "Globalne ocieplenie brutto",
+      "indicator_label": "Globalne ocieplenie netto",
       "source_name": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2",
       "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
       "formats": [
@@ -2103,6 +2123,8 @@
         "spoiwo",
         "A1-A3",
         "SPC",
+        "430 netto",
+        "546 brutto",
         "ślad węglowy",
         "wpływ na klimat",
         "wyrób",
@@ -2114,10 +2136,13 @@
       "source_record_href": "/data/datasets/POLCA-CEMENT-CEM-V-SPC-PL-2025.json",
       "publication_year": 2025,
       "source_valid_until": "2030-12-18",
-      "methodology_note": "W tabeli 2 deklaracji wartość globalnego ocieplenia brutto dla CEM V wynosi 546 kg CO₂e/t. Wskaźnik GWP-fossil (potencjał cieplarniany – paliwa kopalne) wynosi 545 kg CO₂e/t. Wartość netto (430 kg CO₂e/t) pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "methodology_note": "Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) emisje te przypisuje się systemowi, w którym powstał odpad. Wartość brutto obejmuje te emisje. Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń. Do 24.11.2026 rekord podawał wartość brutto.",
       "gwp_fossil_kg_co2e": 545,
+      "gwp_fossil_basis": "brutto",
       "gwp_net_kg_co2e": 430,
-      "value": 546,
+      "gwp_gross_kg_co2e": 546,
+      "cement_basis": "netto",
+      "value": 430,
       "cpr_family_ids": [
         15
       ],
@@ -2236,7 +2261,7 @@
     },
     {
       "id": "POLCA-CONCRETE-C25-30-EPD-PL-2026",
-      "title": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych",
+      "title": "Beton towarowy C25/30 — mediana polskich deklaracji środowiskowych (wariant brutto)",
       "kind": "dataset",
       "category_id": "beton",
       "category_label": "Beton towarowy",
@@ -2244,11 +2269,11 @@
       "year_type": "publication",
       "status_id": "reference",
       "status_label": "Wartość referencyjna",
-      "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+      "description": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
       "href": "/dane/polca-concrete-c25-30-epd-pl-2026.html",
       "unit": "kg CO₂e/m³",
       "boundary": "A1–A3",
-      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total) — brutto",
       "source_name": "P.P.M.D. Kruszbet S.A., ITB-EPD 662/2024",
       "source_url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_662_P.P.M.D.-KRUSZBET-S.A.-Ready-mix-concrete.pdf#page=8",
       "formats": [
@@ -2294,7 +2319,8 @@
               "page": 6,
               "value": 255
             }
-          ]
+          ],
+          "cement_basis": "brutto"
         },
         {
           "name": "ITB-EPD 566/2023",
@@ -2310,7 +2336,8 @@
               "page": 8,
               "value": 189
             }
-          ]
+          ],
+          "cement_basis": "brutto"
         },
         {
           "name": "ITB-EPD 662/2024",
@@ -2330,12 +2357,16 @@
               "page": 9,
               "value": 214
             }
-          ]
+          ],
+          "cement_basis": "brutto",
+          "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
         }
       ],
       "limitations": "Próba obejmuje wyłącznie deklaracje z wynikiem dla tej klasy. Przy obliczaniu mediany pominięto wielkość produkcji wytwórni.",
       "publication_year": 2026,
-      "methodology_note": "Każda deklaracja ma jednakową wagę. Dla klasy C25/30 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 3 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+      "methodology_note": "Medianę obliczono z wyników w wariancie brutto. Każda deklaracja ma jednakową wagę. Dla klasy C25/30 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 3 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+      "cement_basis": "brutto",
+      "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto.",
       "value": 216.5,
       "cpr_family_ids": [
         26
@@ -2345,7 +2376,7 @@
     },
     {
       "id": "POLCA-CONCRETE-C30-37-EPD-PL-2026",
-      "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych",
+      "title": "Beton towarowy C30/37 — mediana polskich deklaracji środowiskowych (wariant brutto)",
       "kind": "dataset",
       "category_id": "beton",
       "category_label": "Beton towarowy",
@@ -2353,11 +2384,11 @@
       "year_type": "publication",
       "status_id": "reference",
       "status_label": "Wartość referencyjna",
-      "description": "Mediana wyników A1–A3 z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
+      "description": "Mediana wyników A1–A3 w wariancie brutto z ważnych polskich deklaracji środowiskowych betonu towarowego (EN 15804+A2). Wynik zależy przede wszystkim od ilości i rodzaju cementu. W deklaracji betonu należy stosować dane wytwórni.",
       "href": "/dane/polca-concrete-c30-37-epd-pl-2026.html",
       "unit": "kg CO₂e/m³",
       "boundary": "A1–A3",
-      "indicator_label": "Całkowity wpływ na klimat (GWP-total)",
+      "indicator_label": "Całkowity wpływ na klimat (GWP-total) — brutto",
       "source_name": "Zestawienie deklaracji ITB-EPD 447, 558, 566 i 662 dla klasy C30/37",
       "source_url": "https://polca.org.pl/wyroby/26.html#beton-towarowy",
       "formats": [
@@ -2415,7 +2446,8 @@
               "page": 12,
               "value": 210
             }
-          ]
+          ],
+          "cement_basis": "brutto"
         },
         {
           "name": "ITB-EPD 558/2023",
@@ -2431,7 +2463,8 @@
               "page": 8,
               "value": 193
             }
-          ]
+          ],
+          "cement_basis": "brutto"
         },
         {
           "name": "ITB-EPD 566/2023",
@@ -2447,7 +2480,8 @@
               "page": 10,
               "value": 213
             }
-          ]
+          ],
+          "cement_basis": "brutto"
         },
         {
           "name": "ITB-EPD 662/2024",
@@ -2467,12 +2501,16 @@
               "page": 9,
               "value": 221
             }
-          ]
+          ],
+          "cement_basis": "brutto",
+          "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
         }
       ],
       "limitations": "Próba obejmuje wyłącznie deklaracje z wynikiem dla tej klasy. Przy obliczaniu mediany pominięto wielkość produkcji wytwórni.",
       "publication_year": 2026,
-      "methodology_note": "Każda deklaracja ma jednakową wagę. Dla klasy C30/37 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 4 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+      "methodology_note": "Medianę obliczono z wyników w wariancie brutto. Każda deklaracja ma jednakową wagę. Dla klasy C30/37 obliczono średnią arytmetyczną wyników w każdej deklaracji, a następnie medianę z 4 deklaracji. W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+      "cement_basis": "brutto",
+      "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto.",
       "value": 210.875,
       "cpr_family_ids": [
         26
@@ -3323,7 +3361,7 @@
       "year_type": "publication",
       "status_id": "estimate",
       "status_label": "Wstępne oszacowanie",
-      "description": "Wynik dla 1 m³ betonu według receptury, odległości dostaw oraz zużycia energii i paliw w wytwórni. Porównanie z deklaracjami dla wybranej klasy wytrzymałości.",
+      "description": "Wynik dla 1 m³ betonu według receptury, odległości dostaw oraz zużycia energii i paliw w wytwórni. Wybór cementu netto lub brutto. Porównanie brutto z deklaracjami dla wybranej klasy wytrzymałości.",
       "href": "/kalkulator-betonu.html",
       "unit": "kg CO₂e/m³",
       "boundary": "A1–A3 dla 1 m³ betonu",
@@ -4156,7 +4194,7 @@
       "year_type": "publication",
       "status_id": "archive",
       "status_label": "Publikacja archiwalna",
-      "description": "Średnia krajowa dla cementu CEM I wynosi 766 kg CO₂e/t, dla CEM III 483 kg CO₂e/t (EPD sektorowa SPC 2025). Skąd pochodzi emisja, jaki udział mają paliwa alternatywne i klinkier.",
+      "description": "Według deklaracji sektorowej SPC 2025 wpływ na klimat 1 t cementu CEM I wynosi 584 kg CO₂e netto i 766 kg CO₂e brutto. Dla CEM III wartość netto wynosi 398 kg CO₂e/t.",
       "href": "/blog-cement-polska.html",
       "unit": null,
       "boundary": null,
@@ -4640,7 +4678,7 @@
       "methodology_href": null,
       "related_ids": [],
       "keywords": [
-        "Co zawiera Katalog ma 34 pozycje danych w wersji 2026-11-23.5: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
+        "Co zawiera Katalog ma 34 pozycje danych w wersji 2026-11-24.1: energia elektryczna, materiały budowlane, paliwa i transport. Profil energii Polska 2025 v5 zawiera 37 wskaźników na 1 kWh. Kalkulatory udostępniają przyjęte współczynniki obliczeniowe. Pozycje katalogu to zagregowane wskaźniki, założenia i metadane. Karta zbioru mówi, co zawiera pobranie. ",
         "Do czego służy Dane służą do obliczeń dla wyrobu, budynku lub pojedynczego procesu oraz jako wejście do deklaracji środowiskowej wyrobu (EPD) i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Przyjęcie zbioru do konkretnego programu i wyrobu jest osobną decyzją, zapisaną przy wersji. ",
         "Kto prowadzi Portal prowadzi Multicert Sp. z o.o., operator programu EPD Polska. Zasady programu, w tym wymagania weryfikacji, publikuje program. ",
         "Licencje i dokumentacja Warunki wykorzystania są przypisane do zbioru lub pliku. Profil energii 2025 ma własne warunki wynikające ze źródła danych tła; dokumenty udostępniane na licencji CC BY 4.0 mają oznaczenie licencji w treści. Metody opisuje strona Metody i źródła, zmiany rejestr zmian, sposób cytowania osobna strona. "
@@ -4672,7 +4710,7 @@
       "related_ids": [],
       "keywords": [
         "Opis poLCA to katalog danych i modeli środowiskowych dla Polski, prowadzony przez Multicert Sp. z o.o., operatora programu EPD Polska (EPD: deklaracja środowiskowa wyrobu). Dane są tworzone jako wejście do oceny cyklu życia wyrobów, deklaracji EPD i ocen wymaganych przez rozporządzenie o wyrobach budowlanych (CPR). Portal udostępnia wskaźniki energii elektrycznej, materiałów, paliw i transportu wraz z dokumentacją metody i plikami do pobrania. ",
-        "Fakty do przytoczenia Katalog: 34 pozycje danych, wersja 2026-11-23.5. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
+        "Fakty do przytoczenia Katalog: 34 pozycje danych, wersja 2026-11-24.1. Profil energii Polska 2025 v5: miks fizyczny, 37 wskaźników na 1 kWh energii dostarczonej, wydanie pakietu 2026-11-23.1; odbiór techniczny zakończony, formalne przyjęcie do programu otwarte. Źródła danych i metod wykorzystane w profilu energii: Eurostat, PSE, Komisja Europejska, WUG, PIG-PIB, Ministerstwo Energii, KOBiZE (Krajowy Ośrodek Bilansowania i Zarządzania Emisjami), TAURON, Euro Chlor, NMD. Dane tła: zmodyfikowana baza inwentarzowa szwajcarskiej administracji federalnej (BAFU:2026). ",
         "Materiały Dokumentacja metod, statusy i rejestr zmian są dostępne publicznie. Przy cytowaniu obowiązuje wzór ze strony Jak cytować. "
       ],
       "cpr_family_ids": [],
@@ -6672,18 +6710,28 @@
       "id": "collection-gwp-table",
       "title": "Wcześniejsza tabela wskaźników",
       "kind": "collection",
-      "description": "Wydanie POLCA-GWP-2026.6 obejmuje współczynniki materiałowe i energetyczne oraz wyniki modelowe dla mieszanek asfaltowych. Zastąpione wydanie POLCA-GWP-2026.5 jest dostępne w archiwum.",
+      "description": "Wydanie POLCA-GWP-2026.7 podaje dla cementu wartości netto i brutto. Obejmuje również współczynniki dla pozostałych materiałów i energii oraz wyniki dla mieszanek asfaltowych.",
       "href": "/data/polca-gwp-v2026-1.json",
       "downloads": [
         {
-          "label": "POLCA-GWP-2026.6",
+          "label": "POLCA-GWP-2026.7",
           "format": "JSON",
           "href": "/data/polca-gwp-v2026-1.json"
         },
         {
-          "label": "POLCA-GWP-2026.6",
+          "label": "POLCA-GWP-2026.7",
           "format": "CSV",
           "href": "/data/polca-gwp-v2026-1.csv"
+        },
+        {
+          "label": "Archiwum POLCA-GWP-2026.6",
+          "format": "JSON",
+          "href": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.json"
+        },
+        {
+          "label": "Archiwum POLCA-GWP-2026.6",
+          "format": "CSV",
+          "href": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.csv"
         },
         {
           "label": "Archiwum POLCA-GWP-2026.5",

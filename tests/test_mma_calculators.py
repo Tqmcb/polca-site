@@ -37,7 +37,7 @@ class CalculatorTests(unittest.TestCase):
         catalog = read('data/datasets.json')
         registry = catalog['registry']
         self.assertEqual(hotspot_version, '2026.6')
-        self.assertEqual(registry['version'], '2026.10-beton')
+        self.assertEqual(registry['version'], '2026.11-cement-netto')
         self.assertEqual(catalog['meta']['version'], registry['version'])
         for code in ('POLCA-TRUCK-40T-DEFAULT-2026', 'POLCA-STEEL-REBAR-PL-MEDIAN-2026'):
             with self.subTest(code=code):
@@ -52,7 +52,7 @@ class CalculatorTests(unittest.TestCase):
     def test_short_table_release_and_previous_downloads(self):
         table = read('data/polca-gwp-v2026-1.json')
         csv_rows = read_csv('data/polca-gwp-v2026-1.csv', 'id', ';')
-        self.assertEqual(table['version'], 'POLCA-GWP-2026.6')
+        self.assertEqual(table['version'], 'POLCA-GWP-2026.7')
         self.assertEqual({r['wersja_tabeli'] for r in csv_rows.values()}, {table['version']})
         self.assertEqual(set(csv_rows), set(by_id(table['records'])))
         kobize_id = 'KOBIZE-EN-PL-ENDUSER-2024'
@@ -64,6 +64,11 @@ class CalculatorTests(unittest.TestCase):
         older = read(archive['json'].lstrip('/'))
         self.assertEqual(archive['status'], 'superseded')
         self.assertEqual(older['version'], table['supersedes'])
+        self.assertEqual(older['version'], 'POLCA-GWP-2026.6')
+        self.assertEqual(by_id(older['records'])[ENERGY]['value'], 0.6700)
+        self.assertEqual(read_csv(archive['csv'].lstrip('/'), 'id', ';')[ENERGY]['wartosc'], '0,6700')
+        archive = older['previous_release']
+        older = read(archive['json'].lstrip('/'))
         self.assertEqual(older['version'], 'POLCA-GWP-2026.5')
         old_energy = 'PL2025_PHYSICAL_DELIVERED_v4'
         self.assertEqual(by_id(older['records'])[old_energy]['value'], 0.6445)

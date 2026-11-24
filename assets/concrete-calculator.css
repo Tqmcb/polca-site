@@ -6,6 +6,8 @@
 .concrete-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; }
 .concrete-calculator input, .concrete-calculator select { width: 100%; min-height: 44px; border: 1px solid #8292a5; border-radius: 3px; padding: 8px 12px; color: var(--portal-ink); background: white; }
 .concrete-calculator [aria-invalid="true"] { border: 2px solid #963c36; }
+.concrete-calculator .cement-basis label { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.concrete-calculator input[type="radio"] { width: 1.15rem; height: 1.15rem; min-height: 0; padding: 0; flex-shrink: 0; }
 .concrete-calculator fieldset p { margin: 8px 0 0; color: var(--portal-muted); font-size: .94rem; }
 .concrete-calculator #concrete-error { color: #963c36; }
 .concrete-summary { background: var(--portal-soft); padding: clamp(18px, 3vw, 32px); }

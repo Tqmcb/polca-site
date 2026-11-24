@@ -32,7 +32,7 @@
     <section id="wskazniki" class="card card-lg section-gap">
         <h2 class="card-title">Tabela wskaźników i założeń</h2>
         <p class="card-text">Przegląd wskaźników i historycznych założeń kalkulatora. Filtruj po kategorii albo wyszukuj nazwę. Każdy wiersz ma własną jednostkę i zakres.</p>
-        <p class="card-text" style="margin-bottom: 1rem;">Dla energii za 2024 r. rozróżniamy 553 kg CO₂/MWh u odbiorcy końcowego według <a href="https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf">KOBiZE (publikacja z grudnia 2025, tabela 2)</a> oraz 599 kg CO₂e/MWh dla kopalnej części wpływu w cyklu życia według <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>. To różne zakresy. Pozostałe wiersze zachowują historyczne przypisania źródeł i wymagają sprawdzenia konkretnego dokumentu przed zastosowaniem.</p>
+        <p class="card-text" style="margin-bottom: 1rem;">Dla energii za 2024 r. rozróżniamy 553 kg CO₂/MWh u odbiorcy końcowego według <a href="https://www.kobize.pl/uploads/materialy/materialy_do_pobrania/aktualnosci/2025/142_Wskazniki_emisyjnosci_2025.pdf">KOBiZE (publikacja z grudnia 2025, tabela 2)</a> oraz 599 kg CO₂e/MWh dla kopalnej części wpływu w cyklu życia według <a href="data/polca-en-pl-2024.json">poLCA-EN-PL-2024 v9.1</a>. To różne zakresy. Wiersze z historycznym przypisaniem źródła wymagają sprawdzenia dokumentu przed zastosowaniem.</p>
 
         <p class="calc-note">Miks rezydualny to odrębny rodzaj danych. Wybierz właściwy rocznik publikacji AIB (Association of Issuing Bodies — stowarzyszenia jednostek wydających gwarancje pochodzenia) i sprawdź zakres wskaźnika. <a href="porownanie-baz.html">Porównanie źródeł i rodzajów miksu</a> pomaga w doborze; ta tabela nie podaje wartości zastępczej dla miksu rezydualnego.</p>
 
@@ -58,14 +58,17 @@
                     </tr>
                 </thead>
                 <tbody id="emissionTableBody" role="rowgroup">
+                    <tr><td>Beton C25/30</td><td class="mono">216,5 kg CO₂e/m³</td><td>mediana deklaracji ITB, wariant brutto</td></tr>
+                    <tr><td>Beton C30/37</td><td class="mono">210,9 kg CO₂e/m³</td><td>mediana deklaracji ITB, wariant brutto</td></tr>
                 </tbody>
             </table>
         </div>
         <div class="tool-table-count" id="tableCount"></div>
+        <p class="calc-note">Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto.</p>
 
         <p style="font-size: 0.72rem; color: var(--text-tertiary); margin-top: 0.75rem; font-style: italic;">CO₂ oznacza dwutlenek węgla; CO₂e — ekwiwalent uwzględniający wpływ różnych gazów. Wartość zero dla biomasy dotyczy przyjętej emisji kopalnego CO₂, a nie całej emisji ze spalania. Kolumna źródła wskazuje sprawdzone źródło (KOBiZE, ÖKOBAUDAT, deklaracje środowiskowe, Energia Polska 2025 v5) albo oznacza pozycję jako historyczne przypisanie bez sprawdzonego źródła.</p>
     </section>
 </div></main>
-<script src="js/wskazniki-emisji.js?v=20261123-energia5"></script>
+<script src="js/wskazniki-emisji.js?v=20261124b"></script>
 <footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer></body>
 </html>

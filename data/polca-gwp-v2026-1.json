@@ -1,6 +1,6 @@
 {
-  "version": "POLCA-GWP-2026.6",
-  "published_at": "2026-11-23",
+  "version": "POLCA-GWP-2026.7",
+  "published_at": "2026-11-24",
   "scope": "Historyczna skrócona tabela współczynników o różnych zakresach. Przydatność każdej wartości wymaga oceny rodzaju wskaźnika, granic i zastosowania.",
   "rule": "Dane producenta, EPD dostawcy albo zweryfikowane dane zakładowe mają pierwszeństwo przed wartością poLCA.",
   "records": [
@@ -605,15 +605,120 @@
       "basis": "Kalkulator MMA, Bmin 6,6% według WT-2 2014 cz. I",
       "replace_with": "Receptura i dane wytwórni.",
       "source_url": "https://polca.org.pl/dane/polca-mma-sma11s-2026.html"
+    },
+    {
+      "id": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+      "group": "cement",
+      "name": "Cement CEM I — średnia krajowa (SPC 2025) — netto",
+      "value": 584,
+      "value_gross": 766,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "deklaracja sektorowa",
+      "use_for": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy"
+      ],
+      "basis": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Wartość podstawowa netto, dodatkowa brutto.",
+      "replace_with": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "indicator_type": "Globalne ocieplenie netto",
+      "gwp_fossil_kg_co2e": 766,
+      "gwp_fossil_basis": "brutto"
+    },
+    {
+      "id": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+      "group": "cement",
+      "name": "Cement CEM II — średnia krajowa (SPC 2025) — netto",
+      "value": 473,
+      "value_gross": 613,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "deklaracja sektorowa",
+      "use_for": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy"
+      ],
+      "basis": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Wartość podstawowa netto, dodatkowa brutto.",
+      "replace_with": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "indicator_type": "Globalne ocieplenie netto",
+      "gwp_fossil_kg_co2e": 613,
+      "gwp_fossil_basis": "brutto"
+    },
+    {
+      "id": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+      "group": "cement",
+      "name": "Cement CEM III — średnia krajowa (SPC 2025) — netto",
+      "value": 398,
+      "value_gross": 483,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "deklaracja sektorowa",
+      "use_for": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy"
+      ],
+      "basis": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Wartość podstawowa netto, dodatkowa brutto.",
+      "replace_with": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "indicator_type": "Globalne ocieplenie netto",
+      "gwp_fossil_kg_co2e": 483,
+      "gwp_fossil_basis": "brutto"
+    },
+    {
+      "id": "POLCA-CEMENT-CEM-IV-SPC-PL-2025",
+      "group": "cement",
+      "name": "Cement CEM IV — średnia krajowa (SPC 2025) — netto",
+      "value": 397,
+      "value_gross": 510,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "deklaracja sektorowa",
+      "use_for": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy"
+      ],
+      "basis": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Wartość podstawowa netto, dodatkowa brutto.",
+      "replace_with": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "indicator_type": "Globalne ocieplenie netto",
+      "gwp_fossil_kg_co2e": 510,
+      "gwp_fossil_basis": "brutto"
+    },
+    {
+      "id": "POLCA-CEMENT-CEM-V-SPC-PL-2025",
+      "group": "cement",
+      "name": "Cement CEM V — średnia krajowa (SPC 2025) — netto",
+      "value": 430,
+      "value_gross": 546,
+      "unit": "kg CO2e/t",
+      "module": "A1-A3",
+      "status": "deklaracja sektorowa",
+      "use_for": [
+        "beton",
+        "prefabrykaty",
+        "zaprawy"
+      ],
+      "basis": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2. Wartość podstawowa netto, dodatkowa brutto.",
+      "replace_with": "W deklaracji środowiskowej wyrobu należy stosować deklarację środowiskową producenta użytego cementu, jeżeli jest dostępna.",
+      "source_url": "https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5",
+      "indicator_type": "Globalne ocieplenie netto",
+      "gwp_fossil_kg_co2e": 545,
+      "gwp_fossil_basis": "brutto"
     }
   ],
-  "metadata_revision": "2026-11-23",
+  "metadata_revision": "2026-11-24",
   "current_catalog_url": "/data/portal-catalog.json",
-  "supersedes": "POLCA-GWP-2026.5",
+  "supersedes": "POLCA-GWP-2026.6",
   "previous_release": {
-    "version": "POLCA-GWP-2026.5",
+    "version": "POLCA-GWP-2026.6",
     "status": "superseded",
-    "json": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.json",
-    "csv": "/data/archiwum/POLCA-GWP-2026.5/polca-gwp-v2026-1.csv"
+    "json": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.json",
+    "csv": "/data/archiwum/POLCA-GWP-2026.6/polca-gwp-v2026-1.csv"
   }
 }
