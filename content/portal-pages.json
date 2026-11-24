@@ -1452,7 +1452,12 @@
           "paragraphs": [
             "Publiczny pakiet poLCA 2025 v5 przedstawia miks fizyczny. Jeżeli do obliczenia zakładu potrzebny jest miks rezydualny lub profil dostawcy, dobierz odrębny zbiór dla właściwego roku i napięcia. Sama gwarancja pochodzenia nie jest profilem środowiskowym i nie oznacza zerowego wpływu w cyklu życia. Potrzebne są dane odpowiedniej technologii, z uwzględnieniem infrastruktury i właściwych strat."
           ],
-          "links": []
+          "links": [
+            {
+              "label": "Polski miks rezydualny 2025 na średnim i niskim napięciu — model v6",
+              "href": "/energia-rezydualna-polska-2025-v6.html"
+            }
+          ]
         },
         {
           "id": "status-v5",

@@ -1,0 +1,24 @@
+.residual-data { max-width: 850px; }
+.residual-data section { margin: 0 0 2.7rem; }
+.residual-data h2 { margin: 0 0 1rem; font-size: clamp(1.32rem, 2.3vw, 1.68rem); line-height: 1.23; }
+.residual-data p { max-width: 72ch; margin: .85rem 0; }
+.residual-totals { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.residual-totals > div { padding: 1rem 1.25rem; background: var(--portal-soft); border-top: 3px solid var(--portal-line); }
+.residual-totals dt { font-weight: 650; }
+.residual-totals dd { margin: .35rem 0 0; }
+.residual-totals strong { display: block; font-size: clamp(1.45rem, 4vw, 2.35rem); line-height: 1.2; font-variant-numeric: tabular-nums; }
+.residual-status { padding: 1.15rem 1.35rem; border-left: 3px solid var(--portal-line); background: var(--portal-soft); }
+.residual-table { width: 100%; border-collapse: collapse; }
+.residual-table thead { background: var(--portal-soft); }
+.residual-table th, .residual-table td { padding: .65rem .75rem; border-bottom: 1px solid var(--portal-line); text-align: left; }
+.residual-table tbody th { width: 56%; font-weight: 550; }
+.residual-table small { display: block; margin-top: .2rem; color: var(--portal-muted); font-weight: 400; }
+.residual-table td, .residual-table th:not(:first-child) { text-align: right; }
+.residual-table td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .residual-totals { gap: .45rem; }
+  .residual-totals > div { padding: .65rem; }
+  .residual-table { font-size: .88rem; }
+  .residual-table th, .residual-table td { padding: .55rem .25rem; }
+  .residual-table tbody th { width: 48%; overflow-wrap: anywhere; }
+}
