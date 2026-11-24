@@ -9,7 +9,7 @@ from lxml import html, etree
 from atlas_icons import ICON_URL, export_icons
 from change_register import static_entries
 from cement_guide import BASIS_RULE
-from concrete_portal import worked_example
+from article_portal import build as build_articles
 ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'data/portal-catalog.json').read_text())
 CHANGE_ENTRIES=json.loads((ROOT/'data/rejestr-zmian.json').read_text())['wpisy']
@@ -53,12 +53,14 @@ def header(path):
 def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/blog.html">Artykuły i wyjaśnienia</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
 def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
-def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True,main_class=None,show_crumb=True,og_type='website'):
+def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True,main_class=None,show_crumb=True,og_type='website',head_metadata=None):
  mainhead='' if home else (crumb(title,parent) if show_crumb else '')+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
  home_css='<link rel="stylesheet" href="/assets/home.css?v=20261124a">' if home else ''
  body_class='portal portal-home' if home else 'portal'
  main_class=main_class or ('portal-main home-main' if home else 'portal-main portal-shell')
- out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}">{FONT_PRELOAD}<link rel="stylesheet" href="{PORTAL_CSS}">{home_css}<script src="/js/portal.js?v=20261123" defer></script>{head_extra}</head><body class="{body_class}">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
+ if head_metadata is None:
+  head_metadata=f'''<meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}">'''
+ out=f'''<!DOCTYPE html><html lang="pl"><head>{head_metadata}{FONT_PRELOAD}<link rel="stylesheet" href="{PORTAL_CSS}">{home_css}<script src="/js/portal.js?v=20261123" defer></script>{head_extra}</head><body class="{body_class}">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v, spec='.6g'):return format(v,spec).replace('.',',')
 def record_value(r):
@@ -295,10 +297,6 @@ def sync_shell():
   if rel=='rejestr-zmian.html':
    text=re.sub(r'(<div id="rejestr-lista">).*?(</div>\s*</section>)',
                lambda m:m[1]+'\n'+static_entries(CHANGE_ENTRIES,e)+'\n        '+m[2],text,count=1,flags=re.S)
-  if rel=='blog-beton-emisje-kalkulator.html':
-   before, block = text.split('<!-- BEGIN concrete-example -->')
-   _, after = block.split('<!-- END concrete-example -->')
-   text = before + '<!-- BEGIN concrete-example -->\n' + worked_example(CAT) + '\n<!-- END concrete-example -->' + after
   text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261123',text)
   p.write_text(text)
 
@@ -396,8 +394,7 @@ if __name__=='__main__':
  build_map(globals())
  from topic_map_portal import build as build_topic_map
  build_topic_map(globals())
- from article_guides import build as build_guides
- build_guides(ROOT, CAT['resources'], page, crumb)
+ build_articles(ROOT, CAT, page, crumb)
  if args.migrate_shell:migrate_shell()
  sync_shell()
  sitemap();print(f'Generated {len(GENERATED)} pages; shell migration: {args.migrate_shell}')

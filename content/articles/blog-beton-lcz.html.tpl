@@ -1,0 +1,464 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beton komórkowy i tradycyjny w LCA — porównanie GWP | poLCA</title>
+    <meta name="description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
+    <link rel="canonical" href="https://polca.org.pl/blog-beton-lcz.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Beton komórkowy i tradycyjny w LCA — porównanie GWP">
+    <meta property="og:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
+    <meta property="og:url" content="https://polca.org.pl/blog-beton-lcz.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-beton-lcz.jpg">
+    <meta property="article:published_time" content="2026-02-23T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Dane">
+    <meta property="article:tag" content="beton">
+    <meta property="article:tag" content="AAC">
+    <meta property="article:tag" content="LCA">
+    <meta property="article:tag" content="GWP">
+    <meta property="article:tag" content="EN 15804">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Beton komórkowy vs tradycyjny w LCA — porównanie GWP">
+    <meta name="twitter:description" content="Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-beton-lcz.jpg">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-beton-lcz.html",
+      "headline": "Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP",
+      "description": "Historyczne omówienie doboru danych i przykłady dla wskazanych lat. Reprezentatywność i możliwość wykorzystania należy ocenić dla konkretnego wyrobu oraz zastosowania.",
+      "url": "https://polca.org.pl/blog-beton-lcz.html",
+      "datePublished": "2026-02-23T00:00:00+01:00",
+      "dateModified": "2026-02-23T00:00:00+01:00",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "Zesp&oacute;&lstrok; poLCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "image": "https://polca.org.pl/images/blog-beton-lcz.jpg",
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "beton kom&oacute;rkowy",
+        "AAC",
+        "gazobeton",
+        "LCA",
+        "GWP",
+        "EN 15804",
+        "beton C25/30",
+        "unit funkcjonalna",
+        "EPD"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Beton kom&oacute;rkowy i tradycyjny w LCA &mdash; por&oacute;wnanie GWP"
+        }
+      ]
+    }
+  ]
+}</script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    </head>
+<body data-minutes="6">
+<h1>
+                Beton komórkowy i tradycyjny w LCA — porównanie GWP
+            </h1>
+<p class="article-lead">
+                Beton komórkowy autoklawizowany (AAC) i beton tradycyjny C25/30 służą różnym celom
+                konstrukcyjnym, ale oba są powszechnie stosowane w polskim budownictwie.
+                Porównanie ich ´ladu węglowego wymaga precyzyjnej jednostki funkcjonalnej —
+                na kg materiału wyniki są odwrotne niż na m³, a na m² ´ciany o okre´lonych wła´ciwo´ciach
+                termicznych różnica sięga <strong>70%</strong> na korzy´ć AAC klasy 400.
+            </p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p></aside>
+<figure class="article-figure"><img src="images/blog-beton-lcz.jpg" alt="Plac budowy z koparką — produkcja i zastosowanie mater iałów budowlanych" loading="lazy"></figure>
+<ol class="article-findings">
+<li>AAC klasy 400 ma GWP <strong>86 kg CO₂e/m³</strong> — ponad 3-krotnie niższy niż beton C25/30 (278 kg CO₂e/m³)</li>
+<li>Na kg masy wynik jest odwrotny: AAC 0,215 kg CO₂e/kg vs beton C25/30 0,116 kg CO₂e/kg</li>
+<li>Przy poprawnej jednostce funkcjonalnej (m² ´ciany o U = 0,20 W/m²K) ´ciana z AAC 400 jest niższoemisyjna od betonu C20/25 z izolacją o ok. <strong>60–70%</strong></li>
+<li>Wartości poLCA 2024 w tym artykule są historycznymi założeniami; nie zastępują weryfikacji danych konkretnego produktu.</li>
+</ol>
+<ul class="article-values">
+<li><strong>86 kg CO₂e/m³</strong> <span>AAC klasa 400 (poLCA)</span></li>
+<li><strong>278 kg CO₂e/m³</strong> <span>Beton C25/30 (poLCA)</span></li>
+<li><strong>~70% mniej emisji</strong> <span>AAC vs beton (na m² ´ciany)</span></li>
+</ul>
+<aside class="article-tools"><a href="/kalkulator-betonu.html">Kalkulator betonu towarowego</a></aside>
+<div class="article-prose"><div class="card card-lg section-gap">
+        <div class="card-title">Porównanie wskaźników GWP (A1–A3) — beton komórkowy i tradycyjny</div>
+        <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 1, przewijana poziomo"><table class="polca-table">
+            <thead>
+                <tr>
+                    <th>Materiał</th>
+                    <th>Gęsto´ć [kg/m³]</th>
+                    <th>GWP [kg CO₂e/kg]</th>
+                    <th>GWP [kg CO₂e/m³]</th>
+                    <th>Źródło</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AAC klasa 400</td>
+                    <td>400</td>
+                    <td>0,215</td>
+                    <td>86</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>AAC klasa 500</td>
+                    <td>500</td>
+                    <td>0,228</td>
+                    <td>114</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>AAC klasa 600</td>
+                    <td>600</td>
+                    <td>0,241</td>
+                    <td>145</td>
+                    <td>EPD Ytong PL / poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C16/20</td>
+                    <td>2350</td>
+                    <td>0,107</td>
+                    <td>252</td>
+                    <td>poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C25/30</td>
+                    <td>2400</td>
+                    <td>0,116</td>
+                    <td>278</td>
+                    <td>poLCA 2024</td>
+                </tr>
+                <tr>
+                    <td>Beton C35/45</td>
+                    <td>2450</td>
+                    <td>0,148</td>
+                    <td>362</td>
+                    <td>poLCA 2024</td>
+                </tr>
+            </tbody>
+        </table></div>
+        <p class="comp-note">
+            Zakres: A1–A3 (cradle-to-gate), GWP100, IPCC AR6.
+            źródła: poLCA 2024 (Multicert), EPD Ytong PL (Xella Polska Sp. z o.o., 2023).
+        </p>
+    </div>
+
+    <h2>Wprowadzenie: dwa systemy, dwa profile emisyjne</h2>
+
+        <p>
+            Beton jest najszerzej stosowanym materiałem budowlanym na ´wiecie, a jego ´lad węglowy
+            ma fundamentalne znaczenie dla LCA budynków. W Polsce funkcjonują dwa dominujące systemy:
+            beton tradycyjny (towarowy i prefabrykowany, klasy C12/15–C40/50) oraz beton
+            komórkowy autoklawizowany (AAC / gazobeton, klasy 400–700 kg/m³).
+        </p>
+
+        <p>
+            Obydwa materiały mają diametralnie różne składy i procesy produkcji — co przekłada się
+            na istotne różnice w wskaźnikach GWP. Jednak porównanie bez precyzyjnej jednostki
+            funkcjonalnej prowadzi do błędnych wniosków.
+        </p>
+
+        <h2>Co to jest AAC i jak powstaje?</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Skład AAC klasy 400</div>
+            Cement: ~15–20%<br>
+            Wapno palone: ~20%<br>
+            Piasek kwarcowy: ~60%<br>
+            Proszek aluminiowy: &lt;1%<br>
+            Woda: reszta<br><br>
+            Gęsto´ć: 300–700 kg/m³<br>
+            (beton trad.: 2200–2400 kg/m³)
+        </div>
+
+        <p>
+            Beton komórkowy autoklawizowany (Autoclaved Aerated Concrete, AAC) to lekki materiał
+            ´cienny wytwarzany z cementu (~15–20%), wapna palonego (~20%), piasku kwarcowego (~60%),
+            proszku aluminiowego (mniej niż 1%) i wody. W procesie produkcji aluminium reaguje
+            z wapnem i wodą wytwarzając wodór, który tworzy drobne, równomierne pory
+            w masę ´wieżego betonu.
+        </p>
+
+        <p>
+            Finalny produkt ma gęsto´ć 300–700 kg/m³ — wobec 2200–2400 kg/m³
+            dla betonu tradycyjnego. Autoklawizacja (obróbka parą pod ci´nieniem ok. 12 bar,
+            w temperaturze ok. 190°C) nadaje materiałowi trwało´ć — ale jest energochłonna
+            i stanowi jedną ze składowych GWP procesu produkcyjnego.
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Wapno palone — główna składowa emisyjna</div>
+                    <div class="process-step-text">
+                        Produkcja CaO wymaga wypalenia wapienia (CaCO₃ → CaO + CO₂)
+                        w temperaturze ok. 900°C. Emisja z kalcynacji wynosi ok. 780 kg CO₂/t wapna
+                        — to emisja procesowa, nieunikniona bez zastosowania technologii CCS.
+                        Przy 20% udziale wapna w AAC i gęsto´ci 400 kg/m³,
+                        wapno odpowiada za ok. 62 kg CO₂e/m³ produktu.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Autoklawizacja — energochłonno´ć procesu</div>
+                    <div class="process-step-text">
+                        Obróbka w autoklawie zużywa ok. 100–150 kWh energii cieplnej
+                        na tonę produktu suchego. Przy polskim miksie energetycznym i cieplnym
+                        przekłada się to na ok. 8–12 kg CO₂e/m³ AAC — mniejszy udział
+                        niż wapno, ale znaczący. Producenci redukują tę składową poprzez
+                        odzysk pary między cyklami autoklawizacji.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Jaka jednostka funkcjonalna?</h2>
+
+        <p>
+            Wybór jednostki funkcjonalnej ma krytyczne znaczenie w porównaniach LCA materiałów
+            budowlanych. ISO 14044 i EN 15804 wymagają, aby jednostka funkcjonalna odwzorowała
+            faktyczną funkcję spełnianą przez materiał w budynku — a nie jedynie masę lub objęto´ć.
+        </p>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Zasada metodyczna</div>
+            <p class="callout-body">
+                Dla ´cian budynku wła´ciwą jednostką funkcjonalną jest <strong>m² ´ciany
+                o okre´lonej izolacyjno´ci termicznej (Uw) i no´no´ci</strong>, nie kg ani m³ materiału.
+                Porównanie kg do kg lub m³ do m³ daje wyniki mylne przy materiałach o tak różnej gęsto´ci.
+            </p>
+        </div>
+
+        <p>
+            Przykład dla ´ciany zewnętrznej o U = 0,20 W/(m²K) — wymaganie wg WT 2021:
+        </p>
+
+        <div class="card card-lg">
+            <div class="card-title">GWP (A1–A3) na m² ´ciany zewnętrznej, U = 0,20 W/(m²K)</div>
+            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 2, przewijana poziomo"><table>
+                <thead>
+                    <tr>
+                        <th>Wariant ´ciany</th>
+                        <th>Grubo´ć materiału</th>
+                        <th>GWP materiału</th>
+                        <th>GWP izolacji</th>
+                        <th>GWP łącznie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AAC klasa 400, 36,5 cm</td>
+                        <td>36,5 cm</td>
+                        <td>31 kg CO₂e/m²</td>
+                        <td>—</td>
+                        <td>31 kg CO₂e/m²</td>
+                    </tr>
+                    <tr>
+                        <td>AAC klasa 600, 24 cm + wełna 14 cm</td>
+                        <td>24 + 14 cm</td>
+                        <td>27 kg CO₂e/m²</td>
+                        <td>23 kg CO₂e/m²</td>
+                        <td>50 kg CO₂e/m²</td>
+                    </tr>
+                    <tr>
+                        <td>Beton C20/25, 20 cm + izolacja 16 cm</td>
+                        <td>20 + 16 cm</td>
+                        <td>56 kg CO₂e/m²</td>
+                        <td>23 kg CO₂e/m²</td>
+                        <td>79 kg CO₂e/m²</td>
+                    </tr>
+                </tbody>
+            </table></div>
+            <p class="comp-note">
+                Izolacja: wełna skalna 40 kg/m³, GWP 1,6 kg CO₂e/kg.
+                U-warto´ci obliczone wg PN-EN ISO 6946. źródła: poLCA 2024.
+            </p>
+        </div>
+
+        <div class="pull-quote-lg">
+            <p>Ściana monolityczna z AAC klasy 400 (36,5 cm) spełniająca wymaganie
+            WT 2021 (U ≤ 0,20 W/m²K) ma GWP na poziomie zaledwie
+            <strong>31 kg CO₂e/m²</strong> — wobec <strong>79 kg CO₂e/m²</strong>
+            dla ´ciany betonowej z izolacją. Różnica to ok. 60–70% —
+            wystarczająca, by istotnie wpłynąć na wynik LCA całego budynku.</p>
+            <cite>Obliczenia poLCA 2024; EN 15804+A2, IPCC AR6</cite>
+        </div>
+
+        <h2>Emisje z wapna i aluminium — analiza składowych</h2>
+
+        <p>
+            Dwa składniki AAC mają nieproporcjonalnie duży udział w GWP produktu:
+        </p>
+
+        <div class="card card-lg">
+            <div class="card-title">Składowe GWP (A1–A3) dla AAC klasy 400, kg CO₂e/m³</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label">Wapno palone — kalcynacja + upstream</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 72%;">62 kg CO₂e/m³</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Cement CEM I / CEM III — upstream klinkieru</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 12%;">10 kg CO₂e/m³</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Energia autoklawizacji — para, ciepło</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 11%;">10 kg CO₂e/m³</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">Pozostałe (piasek, proszek Al, transport)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 5%;">4 kg CO₂e/m³</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">Łącznie A1–A3</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill green" style="width: 100%; font-weight: 600;">86 kg CO₂e/m³</div>
+                </div>
+            </div>
+            <p class="comp-note">
+                źródła: EPD Ytong PL (Xella Polska 2023), obliczenia poLCA 2024.
+                Wapno: 780 kg CO₂/t wapna (kalcynacja) + upstream ≈ 0,775 kg CO₂e/kg CaO.
+            </p>
+        </div>
+
+        <p>
+            Możliwo´ci redukcji GWP AAC przez producentów obejmują:
+        </p>
+
+        <ul>
+            <li>Stosowanie cementu z wyższym udziałem materiałów substituujących klinkier
+                (CEM III/B z 66–80% żużla wielkopiecowego, CEM IV z popiołem lotnym)</li>
+            <li>Czę´ciowe zastąpienie wapna popiołem lotnym lub krzemionką reaktywną
+                — zmniejsza emisje z kalcynacji, ale wymaga dostosowania parametrów autoklawizacji</li>
+            <li>Odzysk pary między cyklami autoklawów — redukcja zużycia energii cieplnej
+                o 15–25%</li>
+        </ul>
+
+        <h2>Implikacje dla LEED, BREEAM i LCA budynku</h2>
+
+        <p>
+            W certyfikacji <strong>LEED v4.1</strong> (MRc2 — Environmental Product Declarations)
+            i <strong>BREEAM Mat 01</strong> materiał jest oceniany przez pryzmat zadeklarowanego EPD
+            (EN 15804). Dla AAC w Polsce istnieje kilka EPD od producentów — Ytong (Xella Polska),
+            Solbet. Dla betonu towarowego EPD są rzadkie, co wymusza stosowanie danych branżowych
+            lub danych poLCA 2024.
+        </p>
+
+        <p>
+            W modelach LCA budynku wielorodzinnego typowe udziały w module A1–A3:
+        </p>
+
+        <ul>
+            <li>Konstrukcja żelbetowa: 35–45% całkowitego GWP budynku</li>
+            <li>Ściany wypełniające i no´ne (AAC lub bloczki): 8–12%</li>
+            <li>Izolacje termiczne: 15–20%</li>
+            <li>Wykończenia i instalacje: 10–18%</li>
+        </ul>
+
+        <p>
+            Redukcja GWP ´cian poprzez wybór AAC klasy 400 zamiast bloczków wapienno-piaskowych
+            (ok. 0,19 kg CO₂e/kg, ale 1900 kg/m³) lub ´ciany betonowej z izolacją przynosi wymierny
+            efekt na poziomie całego budynku. Przy typowych 250–350 m² ´cian zewnętrznych
+            w bloku mieszkalnym, oszczędno´ć może wynie´ć 12 000–17 000 kg CO₂e/budynek —
+            co odpowiada ok. 3–5% całkowitego GWP A1–A3 obiektu.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <h2 class="faq-section-title">Najczę´ciej zadawane pytania</h2>
+
+            <details class="faq-item">
+                <summary class="faq-q">Czy beton komórkowy AAC ma niższy GWP niż beton tradycyjny?</summary>
+                <div class="faq-a">
+                    To zależy od jednostki porównania. Na kilogram masy AAC ma wyższy GWP
+                    (ok. 0,215–0,241 kg CO₂e/kg) niż beton C25/30 (0,116 kg CO₂e/kg).
+                    Na metr sze´cienny sytuacja jest odwrotna — AAC klasy 400 ma GWP
+                    ok. 86 kg CO₂e/m³ wobec 278 kg CO₂e/m³ dla betonu C25/30.
+                    Jedynie porównanie przez jednostkę funkcjonalną m² ´ciany jest metodycznie poprawne.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Skąd pochodzi wysoki GWP AAC na kg?</summary>
+                <div class="faq-a">
+                    Głównymi składowymi GWP AAC są wapno palone (CaO), którego produkcja wymaga
+                    kalcynacji wapienia (ok. 780 kg CO₂/t wapna — emisja procesowa nieunikniona)
+                    oraz cement. Proszek aluminiowy stosowany jako ´rodek porotwórczy ma wysoki GWP
+                    jednostkowy (ok. 8 kg CO₂e/kg), ale jego udział masowy wynosi poniżej 1%, więc
+                    jego wpływ na cało´ć jest ograniczony (ok. 4 kg CO₂e/m³ AAC).
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Jakie EPD są dostępne dla betonu komórkowego w Polsce?</summary>
+                <div class="faq-a">
+                    W Polsce EPD dla AAC posiadają m.in. Xella Polska (marka Ytong) oraz Solbet.
+                    Deklaracje są opracowane zgodnie z EN 15804+A1 lub +A2 i weryfikowane przez
+                    trzecią stronę. Dla betonu towarowego brak powszechnych EPD — projektanci LCA
+                    muszą korzystać z danych branżowych lub danych poLCA 2024. Szczegóły można
+                    uzgodnić z <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programem EPD Polska</a>.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Czy dane poLCA 2024 dla AAC są zgodne z EN 15804+A2?</summary>
+                <div class="faq-a">Status i zakres trzeba sprawdzić dla konkretnego wydania. Historyczne wartości w tym artykule nie stanowią potwierdzenia formalnej zgodności całego katalogu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</div>
+            </details>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <section class="article-sources"><h2>Źródła</h2><ul><li>Multicert Sp. z o.o. (2026), „poLCA — Wskaźniki GWP materiałów ´ciennych 2024”;</li><li>Xella Polska Sp. z o.o. (2023), EPD „YTONG Gazobeton (AAC)”, program EPD Polska;</li><li>Solbet Sp. z o.o. (2023), EPD dla bloczków AAC, program EPD Polska;</li><li>PN-EN 15804+A2 — Zrównoważone budownictwo — Deklaracje ´rodowiskowe wyrobu;</li><li>Rozporządzenie WT 2021 (Dz.U. 2022 poz. 1225) — warunki techniczne dot. izolacyjno´ci;</li><li>IPCC (2021), AR6 WG1 — GWP100.</li></ul></section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluminium recyklingowe w EPD — różnica 10-krotna | poLCA</title>
+    <meta name="description" content="Dlaczego GWP aluminium pierwotnego (8,24 kg CO₂e/kg) różni się 10-krotnie od aluminium recyklingowego (0,55 kg CO₂e/kg)? Metodologia cut-off vs system expansion w EPD.">
+    <link rel="canonical" href="https://polca.org.pl/blog-aluminium-epd.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Aluminium recyklingowe w EPD — różnica 10-krotna">
+    <meta property="og:description" content="Aluminium pierwotne (8,24 kg CO₂e/kg) vs recyklingowe (0,55 kg CO₂e/kg) — metodologia cut-off vs system expansion w EPD. Konsekwencje dla polskich producentów.">
+    <meta property="og:url" content="https://polca.org.pl/blog-aluminium-epd.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-aluminium-epd.jpg">
+    <meta property="article:published_time" content="2026-02-23T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka">
+    <meta property="article:tag" content="aluminium">
+    <meta property="article:tag" content="recykling">
+    <meta property="article:tag" content="EPD">
+    <meta property="article:tag" content="GWP">
+    <meta property="article:tag" content="cut-off">
+    <meta property="article:tag" content="EN 15804">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aluminium recyklingowe w EPD — różnica 10-krotna">
+    <meta name="twitter:description" content="GWP aluminium pierwotnego to 8,24 kg CO₂e/kg, recyklingowego — 0,55 kg CO₂e/kg. Dlaczego ta różnica ma krytyczne znaczenie dla EPD i jak ją poprawnie czytać.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-aluminium-epd.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-aluminium-epd.html",
+          "headline": "Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna",
+          "description": "Dlaczego GWP aluminium pierwotnego (8,24 kg CO&#8322;e/kg) r&oacute;&#380;ni si&eogon; 10-krotnie od aluminium recyklingowego (0,55 kg CO&#8322;e/kg). Metodologia cut-off vs system expansion w EPD.",
+          "url": "https://polca.org.pl/blog-aluminium-epd.html",
+          "datePublished": "2026-02-23T00:00:00+01:00",
+          "dateModified": "2026-05-10T00:00:00+01:00",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "Zesp&oacute;&lstrok; poLCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "image": "https://polca.org.pl/images/blog-aluminium-epd.jpg",
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["aluminium", "recykling", "EPD", "GWP", "cut-off", "system expansion", "EN 15804", "LCA", "aluminium pierwotne", "aluminium wt&oacute;rne"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Aluminium recyklingowe w EPD &mdash; r&oacute;&#380;nica 10-krotna"}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Dlaczego GWP aluminium pierwotnego jest tak wysokie?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Produkcja aluminium pierwotnego wymaga elektrolizy tlenku glinu w piecu Halla-H&eacute;roaulta, zui&#380;ywaj&#261;c 13&ndash;15 kWh/kg. Przy typowym europejskim miksie energetycznym daje to 7&ndash;9 kg CO&#8322;e/kg tylko z energii. Dodatkowo dochodzi&#261; emisje procesowe (perfluorow&eogon;glowodory PFC) i emisje z anod grafitowych. Suma: 8,0&ndash;8,6 kg CO&#8322;e/kg (A1&ndash;A3)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Co to jest metoda cut-off w EPD aluminium?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Metoda cut-off (EN 15804+A1) traktuje z&#322;om aluminiowy jako odpad przekazywany do recyklingu &bdquo;za darmo&rdquo; &mdash; producent wyrobu z aluminium wt&oacute;rnego nie ponosi obci&#261;&#380;e&#324; emisyjnych z pierwotnej produkcji. W efekcie EPD wyrobu z 95% wsadem wt&oacute;rnym mo&#380;e wykazywa&#263; GWP A1&ndash;A3 poni&#380;ej 1,5 kg CO&#8322;e/kg. Metoda system expansion (EN 15804+A2) modyfikuje t&#281; zasad&#281;, alokuj&#261;c cz&eogon;&acute;&#263; emisji proporcjonalnie do warto&acute;ci z&#322;omu."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Czy mo&#380;na bezpo&acute;rednio por&oacute;wna&#263; dwie EPD aluminium r&oacute;&#380;nych producent&oacute;w?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tylko wtedy, gdy obydwie EPD zastosowa&#322;y t&#281; sam&#261; wersj&eogon; EN 15804 (+A1 lub +A2) i ten sam protok&oacute;&lstrok; kategorii wyrobu (PCR). R&oacute;&#380;ne wersje EN 15804 stosuj&#261; odmienne metodologie dla wsadu wt&oacute;rnego &mdash; bezpo&acute;rednie por&oacute;wnanie jest metodologicznie b&#322;&eogon;dne i mo&#380;e prowadzi&#263; do fa&#322;szywych wniosk&oacute;w."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    </head>
+<body data-minutes="7">
+<h1>
+                Aluminium recyklingowe w EPD — różnica 10-krotna
+            </h1>
+<p class="article-lead">
+                Aluminium jest trzecim najszerzej stosowanym materiałem w budownictwie, po betonie i stali.
+                Okna, fasady, profile konstrukcyjne, blachodachówka — wszystkie te wyroby mają EPD.
+                I wszystkie mają dramatycznie różny GWP w zależno´ci od jednego parametru:
+                udziału aluminium wtórnego (recyklingowego) w wsadzie. Różnica między
+                aluminium pierwotnym a recyklingowym wynosi około <strong>10-krotno´ci</strong>:
+                8,24 vs 0,55 kg CO₂e/kg.
+            </p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Wartość energii 0,599 kg CO₂e/kWh oznacza historyczny składnik kopalny (GWP-fossil) modelu 2024 v9.1. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p></aside>
+<figure class="article-figure"><img src="images/blog-aluminium-epd.jpg" alt="Pracownik przy złomie metalowym — recykling aluminium w przemy´le" loading="lazy"></figure>
+<ol class="article-findings">
+<li>GWP aluminium pierwotnego: <strong>8,0–8,6 kg CO₂e/kg</strong> (A1–A3); recyklingowego: <strong>0,45–0,65 kg CO₂e/kg</strong></li>
+<li>Różnica wynika głównie z energochłonno´ci elektrolizy (13–15 kWh/kg Al) vs topienia złomu (0,7 kWh/kg)</li>
+<li>Metodologie cut-off (EN 15804+A1) i system expansion (EN 15804+A2) dają różne wyniki — <strong>porównanie EPD między wersjami jest metodologicznie błędne</strong></li>
+<li>Polskie aluminium (100% wtórne z przerobu złomu) ma GWP zbliżone do dolnej granicy: 0,5–0,7 kg CO₂e/kg</li>
+</ol>
+<ul class="article-values">
+<li><strong>8,24 kg CO₂e/kg</strong> <span>Aluminium pierwotne (IAI 2022)</span></li>
+<li><strong>0,55 kg CO₂e/kg</strong> <span>Aluminium recyklingowe (IAI 2022)</span></li>
+<li><strong>~15x różnica</strong> <span>w ekstremalnych przypadkach</span></li>
+</ul>
+<aside class="article-tools"><a href="/gwp-materialow.html">Zestawienie materiałów</a></aside>
+<div class="article-prose"><div class="card card-lg section-gap">
+        <div class="card-title">Porównanie GWP aluminium — pierwotne vs recyklingowe (A1–A3, kg CO₂e/kg)</div>
+        <div class="vcol-chart" style="height: 240px;">
+            <div class="vcol-group">
+                <div class="vcol-value accent" style="font-weight: 700;">0,55</div>
+                <div class="vcol-bar green" style="height: 6%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">4,0</div>
+                <div class="vcol-bar gray" style="height: 46%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">8,24</div>
+                <div class="vcol-bar ink" style="height: 95%;"></div>
+            </div>
+            <div class="vcol-group">
+                <div class="vcol-value">8,60</div>
+                <div class="vcol-bar ink" style="height: 100%;"></div>
+            </div>
+        </div>
+        <div class="vcol-labels">
+            <div class="vcol-label">Al. wtórne<br><span>IAI 2022</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span>Norwegia OZE</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span>IAI ´rednia</span></div>
+            <div class="vcol-label">Al. pierwotne<br><span>Polska sieć</span></div>
+        </div>
+        <p class="comp-note">
+            Zakres: A1–A3 (cradle-to-gate), GWP100, kg CO₂e/kg aluminium.
+            źródła: IAI (International Aluminium Institute) 2022, obliczenia poLCA 2024.
+        </p>
+    </div>
+
+    <h2>Skąd pochodzi ta różnica?</h2>
+
+        <h3>Aluminium pierwotne — energochłonno´ć elektrolizy</h3>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Porządek wielko´ci</div>
+            Topienie złomu: 0,7 kWh/kg<br>
+            Elektroliza pierwotna: 13–15 kWh/kg<br><br>
+            Stosunek: <strong>20:1</strong> na korzy´ć recyklingu
+        </div>
+
+        <p>
+            Produkcja aluminium pierwotnego wymaga trzech głównych etapów:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Wydobycie boksytu i produkcja tlenku glinu (proces Bayera)</div>
+                    <div class="process-step-text">
+                        Boksyt (ruda zawierająca 30–60% Al₂O₃) przetwarzany jest na tlenek glinu
+                        w procesie Bayera (opłukiwanie ługiem sodowym, kalcynacja). Emisje z tego etapu:
+                        1,2–2,0 t CO₂e/t Al₂O₃ — głównie z energii cieplnej kalcynacji.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Elektroliza — piec Halla-Héroaulta</div>
+                    <div class="process-step-text">
+                        Podstawowa reakcja: 2 Al₂O₃ + 3C → 4 Al + 3 CO₂.
+                        Anody grafitowe spalają się w procesie, emitując CO₂. Przy zużyciu
+                        13–15 kWh/kg i polskim miksie (0,599 kg CO₂e/kWh, poLCA-EN-PL 2024) sama energia
+                        elektryczna generuje 7,8–9,0 kg CO₂e/kg aluminium.
+                        Dochodzią do tego emisje PFC (perfluorowęglowodory, tzw. efekt anodowy).
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Odlewanie i obróbka — walcarki, prasy, wyciskarki</div>
+                    <div class="process-step-text">
+                        Odlewanie węzlin, walcowanie blach lub wyciskanie profili zużywają dodatkową
+                        energię (ok. 0,5–1,2 kWh/kg), ale ich udział w GWP jest pomijający
+                        przy dominującej składowej elektrolizy.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Aluminium recyklingowe (wtórne) — tylko topienie złomu</h3>
+
+        <p>
+            Recykling aluminium wymaga jedynie stopienia złomu — zużywa ok. 0,7 kWh/kg
+            (5% energii procesu pierwotnego). Emisje to ok. 0,3–0,8 kg CO₂e/kg
+            z energii topienia + transport złomu + emisje z piecza (gaz, olej opałowy).
+        </p>
+
+        <p>
+            Łączny GWP aluminium wtórnego: <strong>0,45–0,65 kg CO₂e/kg</strong> (IAI 2022, A1–A3).
+            Stosunek do pierwotnego: 8,24 / 0,55 ≈ <strong>15-krotny</strong> w ekstremalnych przypadkach,
+            typowo ok. <strong>10-krotny</strong>.
+        </p>
+
+        <h2>Problem metodologiczny: cut-off vs system expansion</h2>
+
+        <p>
+            Tu zaczyna się kontrowersja, która ma bezpo´rednie konsekwencje dla porównywalności EPD.
+            W EPD dla wyrobów aluminiowych kluczowe jest, jak traktujemy złom aluminiowy
+            na początku i końcu życia produktu.
+        </p>
+
+        <div class="card card-lg">
+            <div class="card-title">Cut-off vs System Expansion — porównanie podej´ć</div>
+            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Tabela 1, przewijana poziomo"><table>
+                <thead>
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>Metoda cut-off (EN 15804+A1)</th>
+                        <th>System expansion (EN 15804+A2)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Złom wej´ciowy</td>
+                        <td>„Bezpłatny” odpad; brak alokacji emisji z produkcji pierwotnej</td>
+                        <td>Dziedziczenie czę´ci emisji proporcjonalnie do warto´ci złomu</td>
+                    </tr>
+                    <tr>
+                        <td>GWP wyrobu (95% wsad wtórny)</td>
+                        <td>ok. 1,1 kg CO₂e/kg</td>
+                        <td>ok. 2,5–3,5 kg CO₂e/kg</td>
+                    </tr>
+                    <tr>
+                        <td>GWP wyrobu (40% wsad wtórny)</td>
+                        <td>ok. 5,2 kg CO₂e/kg</td>
+                        <td>ok. 4,2 kg CO₂e/kg</td>
+                    </tr>
+                    <tr>
+                        <td>Porównywalno´ć</td>
+                        <td>Niekompatybilna z EN 15804+A2</td>
+                        <td>Niekompatybilna z EN 15804+A1</td>
+                    </tr>
+                </tbody>
+            </table></div>
+            <p class="comp-note">
+                źródła: EN 15804+A1 (2012+A1:2013), EN 15804+A2 (2019+A2:2021).
+                Warto´ci GWP są orientacyjne — zależą od składu wyrobu i kraju produkcji.
+            </p>
+        </div>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Kluczowa przestroga</div>
+            <p class="callout-body">
+                Porównanie dwu EPD aluminiowych systemów fasadowych, gdzie EPD-A stosuje EN 15804+A1
+                (cut-off, 95% wsad wtórny: GWP = 1,1 kg CO₂e/kg) a EPD-B stosuje EN 15804+A2
+                (system expansion, 40% wsad wtórny: GWP = 4,2 kg CO₂e/kg) — jest
+                <strong>metodologicznie niepoprawne</strong>. Naiwny wniosek „EPD-A jest 4x lepsze”
+                może być fałszywy. Zawsze weryfikuj wersję normy przed porównaniem.
+            </p>
+        </div>
+
+        <h2>Aluminium w polskim budownictwie — struktura wsadu</h2>
+
+        <p>
+            Polska nie posiada własnej huty aluminium pierwotnego. Całe aluminium pierwotne jest
+            importowane — głównie z Norwegii i Islandii, gdzie huty zasilane są energią wodną
+            lub geotermalną. GWP takiego aluminium pierwotnego wynosi ok. 3–4 kg CO₂e/kg
+            — znacznie poniżej globalnej ´redniej 8,24 kg CO₂e/kg.
+        </p>
+
+        <p>
+            Krajowa produkcja aluminium to wyłącznie przetop złomu (aluminium wtórne).
+            Dane IBDiM/GUS wskazują:
+        </p>
+
+        <ul>
+            <li>Ok. <strong>75%</strong> aluminium w polskim budownictwie pochodzi z wtórnego przerobu złomu</li>
+            <li>Ok. <strong>25%</strong> to aluminium pierwotne importowane jako gotowe półwyroby
+                (blachy, profile z Niemiec, Austrii, Norwegii)</li>
+        </ul>
+
+        <p>
+            Konsekwencja dla EPD polskich producentów: przeciętne EPD polskiego systemu fasadowego
+            powinno mieć GWP A1–A3 w przedziale <strong>2–4 kg CO₂e/kg wyrobu aluminiowego</strong>
+            (po uwzględnieniu powłok, uszczelek, akcesoriów stalowych i innych składników).
+            Wyroby oparte wyłącznie na złomie krajowym mogą osiągać GWP poniżej 1,5 kg CO₂e/kg.
+        </p>
+
+        <h2>Jak czytać EPD dla aluminium?</h2>
+
+        <div class="card card-lg">
+            <div class="card-title">Lista kontrolna przy analizie EPD dla aluminium</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label" style="font-weight: 600;">1. Wersja EN 15804: +A1 czy +A2?</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span>Różne wersje → różne metodologie → niekompatybilne wyniki</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">2. Udział wsadu wtórnego (recycled content) [%]</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span>Kluczowy parametr — powinien być podany explicite w EPD</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">3. Kraj produkcji aluminium wsadowego</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span>Norwegia/Islandia (OZE): ~3–4 kg CO₂e/kg; Chiny (węgiel): do 18 kg CO₂e/kg</span>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label" style="font-weight: 600;">4. Deklaracja modułu D (potencjał recyklingu)</div>
+                <div class="comp-bar-track" style="background: transparent; border: 1px dashed var(--border); padding: 0.4rem 0.75rem; height: auto;">
+                    <span>Istotne dla long-life products: modul D pokazuje potencjał odzysku na końcu życia</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pull-quote-lg">
+            <p>Aluminium importowane z Norwegii (OZE, hydroelektrownie) ma GWP około
+            <strong>3–4 kg CO₂e/kg</strong> — ponad dwukrotnie mniej niż globalna
+            ´rednia 8,24 kg CO₂e/kg. Polskie aluminium wtórne (z przerobu złomu) to
+            zaledwie <strong>0,5–0,7 kg CO₂e/kg</strong>. Porównanie tych dwóch wielko´ci
+            bez znajomo´ci ´ródła wsadu jest pozbawione metodycznego sensu.</p>
+            <cite>IAI (2022); obliczenia poLCA 2024</cite>
+        </div>
+
+        <h2>Implikacje dla certyfikatów i regulacji</h2>
+
+        <p>
+            <strong>LEED v4.1</strong> (MRc2) akceptuje EPD z EN 15804 lub ISO 14025. Nie porównuje wyrobów
+            bezpo´rednio na etapie kwalifikacji — wymaga jedynie obecno´ci EPD. Jednak narzędzia
+            LCA całego budynku (Tally, OneClick LCA, SimaPro) importują GWP z EPD i wykonują
+            obliczenia porównawcze — tu metodologia EPD ma bezpo´redni wpływ na wynik.
+        </p>
+
+        <p>
+            <strong>BREEAM Mat 01</strong> wymaga EPD i używa warto´ci GWP do obliczenia punktacji.
+            Różnica 10-krotna w GWP aluminium przekłada się bezpo´rednio na wynik punktowy
+            w systemach oceniających cały budynek.
+        </p>
+
+        <p>
+            <strong>CPR 2024/3110</strong> (nowe Rozporządzenie o wyrobach budowlanych): nowe wymagania
+            wprowadzą obowiązek deklaracji GWP dla klas wyrobów, w tym aluminium budowlanego.
+            Producenci bez EPD będą musieli stosować warto´ci domy´lne z bazy referencyjnej
+            — co oznacza górną granicę przedziału (warto´ci najgorsze w kategorii).
+            Dla aluminium bez EPD może to być warto´ć zbliżona do 8 kg CO₂e/kg,
+            nawet je´li faktyczne wsad jest w 80% wtórny.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <h2 class="faq-section-title">Najczę´ciej zadawane pytania</h2>
+
+            <details class="faq-item">
+                <summary class="faq-q">Dlaczego GWP aluminium pierwotnego jest tak wysokie?</summary>
+                <div class="faq-a">
+                    Produkcja aluminium pierwotnego wymaga elektrolizy tlenku glinu w piecu
+                    Halla-Héroaulta, zużywając 13–15 kWh/kg. Przy typowym europejskim miksie
+                    energetycznym daje to 7–9 kg CO₂e/kg tylko z energii. Dodatkowo dochodzią
+                    emisje procesowe (perfluorowęglowodory PFC) z efektu anodowego oraz CO₂
+                    ze spalania anod grafitowych. Suma wynosi 8,0–8,6 kg CO₂e/kg (A1–A3).
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Co to jest metoda cut-off w EPD aluminium?</summary>
+                <div class="faq-a">
+                    Metoda cut-off (EN 15804+A1) traktuje złom aluminiowy jako odpad przekazywany
+                    do recyklingu „za darmo” — producent wyrobu z aluminium wtórnego
+                    nie ponosi obciążeń emisyjnych z pierwotnej produkcji. W efekcie EPD wyrobu
+                    z 95% wsadem wtórnym może wykazywać GWP A1–A3 poniżej 1,5 kg CO₂e/kg.
+                    Metoda system expansion (EN 15804+A2) modyfikuje tę zasadę,
+                    alokując czę´ć emisji proporcjonalnie do warto´ci złomu.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Czy można bezpo´rednio porównać dwie EPD aluminium różnych producentów?</summary>
+                <div class="faq-a">
+                    Tylko wtedy, gdy obydwie EPD zastosowały tę samą wersję EN 15804 (+A1 lub +A2)
+                    i ten sam protokół kategorii wyrobu (PCR). Różne wersje EN 15804 stosują
+                    odmienne metodologie dla wsadu wtórnego — bezpo´rednie porównanie
+                    jest metodologicznie błędne i może prowadzić do fałszywych wniosków.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Jakie GWP ma aluminium z norweskich hut?</summary>
+                <div class="faq-a">
+                    Huty norweskie (Hydro, Norsk Hydro) i islandzkie zasilane są prądem
+                    z hydroelektrowni lub geotermalnym. Wskaźnik emisyjno´ci norweskiej sieci
+                    wynosi ok. 0,011 kg CO₂e/kWh — wobec 0,599 kg CO₂e/kWh w Polsce (poLCA-EN-PL 2024).
+                    GWP aluminium pierwotnego z Norwegii: ok. 3,0–4,0 kg CO₂e/kg (A1–A3) —
+                    ponad 2-krotnie mniej niż globalna ´rednia IAI. Polscy producenci okien i fasad
+                    importujący profile z Norwegii mogą — i powinni — uwzględniać tę warto´ć
+                    w swoich EPD, podając ´ródło geograficzne wsadu.
+                </div>
+            </details>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <section class="article-sources"><h2>Źródła</h2><ul><li>IAI — International Aluminium Institute (2022), „Aluminium Sector Greenhouse Gas Pathways to 2050”;</li><li>IAI (2022), „Life Cycle Inventory Data and Environmental Metrics for the Primary Aluminium Sector”;</li><li>Multicert Sp. z o.o. (2026), „poLCA — Dane dla aluminium w polskim budownictwie 2024”;</li><li>EN 15804+A2 (2019+A2:2021) — Zrównoważone budownictwo — Deklaracje ´rodowiskowe wyrobu;</li><li>GUS (2024), dane o strukturze importu aluminium do Polski;</li><li>IPCC (2021), AR6 WG1 / EF 3.1 — GWP100: CH₄ fossil = 29,8, N₂O = 273.</li></ul></section>
+
+    </div>
+</body>
+</html>
