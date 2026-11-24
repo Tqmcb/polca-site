@@ -119,6 +119,7 @@ body.portal .home-products-list a:hover strong { color: var(--portal-link); text
 .home-updates ol { list-style: none; padding: 0; margin: 22px 0 16px; }
 .home-updates li { padding-block: 10px; border-bottom: 1px solid var(--portal-line); }
 .home-updates time { color: var(--portal-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.home-articles li p { margin: 4px 0 0; }
 .home-guides { border-top: 1px solid var(--portal-ink); }
 .home-guides > nav { margin-top: 22px; }
 .home-guide-index { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
@@ -171,7 +172,7 @@ body.portal .home-guide-index a:hover strong { color: var(--portal-link); text-d
   .home-equation-result .home-equation-label { grid-column: 1 / -1; }
   .home-equation-result .home-equation-unit { margin: 0; }
   .home-energy-foot { grid-template-columns: 1fr; gap: 26px; margin-top: 24px; }
-  .home-common a, .home-guide-related a, .home-example-status a {
+  .home-common a, .home-guide-related a, .home-example-status a, .home-articles a {
     display: inline-flex; align-items: center; min-height: 44px; padding-block: 10px;
   }
   .home-energy-presets button { min-height: 44px; }

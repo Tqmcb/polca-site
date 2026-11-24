@@ -14,7 +14,7 @@ ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'data/portal-catalog.json').read_text())
 CHANGE_ENTRIES=json.loads((ROOT/'data/rejestr-zmian.json').read_text())['wpisy']
 FONT_PRELOAD='<link rel="preload" href="/assets/fonts/SourceSans3-roman.woff2" as="font" type="font/woff2" crossorigin>'
-PORTAL_CSS='/assets/portal.css?v=20261123b'
+PORTAL_CSS='/assets/portal.css?v=20261124a'
 # The published catalog retains its original addresses. Use current routes in the portal.
 TOOL_PAGES = {
  'tool-przelicznik': 'przelicznik-jednostek.html',
@@ -50,12 +50,12 @@ def header(path):
   nav_links.append(f'<a href="{url}"{active}{current}>{navigation_icon(name)}{e(title)}</a>')
  nav = ''.join(nav_links)
  return f'''<a class="portal-skip-link" href="#main">Przejdź do treści</a><header class="portal-header"><div class="portal-shell"><a class="portal-brand" href="/" aria-label="poLCA — strona główna">po<span>LCA</span><small>Dane środowiskowe dla Polski</small></a><button class="portal-menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" hidden>Menu</button><nav class="portal-nav" id="portal-navigation" aria-label="Główna nawigacja">{nav}</nav><a class="portal-search-link" href="/szukaj.html">{navigation_icon("search")}Szukaj</a></div></header>'''
-def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
+def footer():return '''<footer class="portal-footer"><div class="portal-shell"><div><a class="portal-brand" href="/">po<span>LCA</span></a><p>Dane i modele do oceny cyklu życia.</p><p>Multicert Sp. z o.o.<br>Operator programu EPD Polska</p></div><div><h2>Dane i obliczenia</h2><a href="/wyroby.html">Rodziny wyrobów</a><a href="/dane-wspolne.html">Energia, paliwa i transport</a><a href="/datasety.html">Katalog danych</a><a href="/kalkulatory.html">Kalkulatory</a><a href="/pobierz.html">Pliki do pobrania</a></div><div><h2>Pomoc</h2><a href="/jak-korzystac.html">Jak korzystać z portalu</a><a href="/pytania.html">Pytania i odpowiedzi</a><a href="/blog.html">Artykuły i wyjaśnienia</a><a href="/metodyka.html">Metody i źródła</a></div><div><h2>O projekcie</h2><a href="/o-polca/">O poLCA</a><a href="/rejestr-zmian.html">Rejestr zmian</a><a href="/o-polca/cytowanie.html">Jak cytować</a><a href="mailto:info@epd.org.pl">info@epd.org.pl</a></div></div><div class="portal-shell portal-footer-bottom"><span>© 2026 Multicert</span><span>Warunki wykorzystania danych podano w opisie każdego zbioru.</span><a href="https://epd.org.pl/">Program EPD Polska</a></div></footer>'''
 def crumb(title,parent=None):
  return '<nav class="portal-breadcrumbs" aria-label="Ścieżka strony">'+a('Strona główna','/')+'<span aria-hidden="true">/</span>'+((a(parent[0],parent[1])+'<span aria-hidden="true">/</span>') if parent else '')+f'<span aria-current="page">{e(title)}</span></nav>'
 def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',pagehead=True,main_class=None,show_crumb=True,og_type='website'):
  mainhead='' if home else (crumb(title,parent) if show_crumb else '')+('' if not pagehead else f'<header class="portal-pagehead"><h1>{e(title)}</h1><p class="portal-lead">{e(lead)}</p></header>')
- home_css='<link rel="stylesheet" href="/assets/home.css?v=20261123b">' if home else ''
+ home_css='<link rel="stylesheet" href="/assets/home.css?v=20261124a">' if home else ''
  body_class='portal portal-home' if home else 'portal'
  main_class=main_class or ('portal-main home-main' if home else 'portal-main portal-shell')
  out=f'''<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — poLCA</title><meta name="description" content="{e(lead)}"><link rel="canonical" href="https://polca.org.pl/{e(path) if path!='index.html' else ''}"><meta property="og:title" content="{e(title)} — poLCA"><meta property="og:description" content="{e(lead)}"><meta property="og:type" content="{e(og_type)}"><meta property="og:url" content="https://polca.org.pl/{e(path) if path!='index.html' else ''}">{FONT_PRELOAD}<link rel="stylesheet" href="{PORTAL_CSS}">{home_css}<script src="/js/portal.js?v=20261123" defer></script>{head_extra}</head><body class="{body_class}">{header(path)}<main id="main" class="{main_class}" {attrs}>{mainhead}{body}</main>{footer()}</body></html>'''
@@ -70,14 +70,15 @@ def record_value(r):
 def description_with_basis(r):
  return ' '.join(filter(None, (r.get('description'), r.get('basis_note'))))
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
-def row(r, dataset_catalog=False):
+def row(r, dataset_catalog=False, related_tools=()):
  val=f'<div class="portal-result-value"><strong>{e(record_value(r))}</strong><small>{e(r.get("unit"))}</small><small>{e(r.get("indicator_label"))}</small></div>' if isinstance(r.get('value'),(int,float)) else ''
  kind={'dataset':'Dane','tool':'Kalkulator','method':'Metoda i instrukcja','article':'Artykuł'}.get(r['kind'],'Zasób')
  meta=[r.get('category_label'),r.get('year')]
  if not dataset_catalog:meta.insert(0,kind)
  title=('<div class="portal-result-meta">'+''.join(f'<span>{e(item)}</span>' for item in meta if item)+'</div>'
         +f'<h2>{a(r["title"],r["href"],"portal-result-title")}</h2>')
- details=(f'<p class="portal-result-description">{e(description_with_basis(r))}</p>'
+ tool_links=''.join(' '+a(tool['title'],tool['href']) for tool in related_tools)
+ details=(f'<p class="portal-result-description">{e(description_with_basis(r))}{tool_links}</p>'
           +f'<div class="portal-result-meta">{status(r)}<span>{e(" · ".join(r.get("formats",[])))}</span></div>')
  content=title+val+details if dataset_catalog else '<div>'+title+details+'</div>'+val
  return f'<article class="portal-result" data-record-id="{e(r["id"])}">{content}</article>'
@@ -233,8 +234,9 @@ def build_cards():
   page(r['href'][1:],r['title'],r['description'],body,parent=('Katalog danych','/datasety.html'),head_extra=head_extra)
 def build_indexes():
  tools=[r for r in CAT['resources'] if r['kind']=='tool'];articles=[r for r in CAT['resources'] if r['kind']=='article']
+ article_rows=''.join(row(r, related_tools=[tool for tool in tools if tool['id'] in r['related_ids']]) for r in articles)
  page('kalkulatory.html','Kalkulatory','Wybierz, co chcesz obliczyć. Każde narzędzie pokazuje przyjęte współczynniki i zakres wyniku.','<div class="portal-reading">'+''.join(row(r) for r in tools)+'</div>')
- page('blog.html','Artykuły i wyjaśnienia','Objaśnienia pojęć i analizy sektorowe. Przy korzystaniu z danych liczbowych sprawdź rocznik i wersję.','<div class="portal-reading">'+''.join(row(r) for r in articles)+'</div>')
+ page('blog.html','Artykuły i wyjaśnienia','Objaśnienia pojęć i analizy sektorowe. Przy korzystaniu z danych liczbowych należy sprawdzić rocznik i wersję.','<div class="portal-reading">'+article_rows+'</div>')
  docs=[{'label':'MET-001 — energia Polska 2024 (PDF)','href':'/metodyki/MET-001-poLCA-EN-PL-2024.pdf'},{'label':'MET-001 — opis i korekta','href':'/metodyki/MET-001-poLCA-EN-PL-2024.html'},{'label':'MET-002 — wcześniejsza metodyka energii (PDF)','href':'/metodyki/MET-002-energia.pdf'},{'label':'MET-002 — opis i korekta','href':'/metodyki/MET-002-energia.html'},{'label':'Energia dla producenta — wcześniejszy dokument (PDF)','href':'/dokumenty/onepager-energia-producent.pdf'},{'label':'Energia dla producenta — aktualizacja objaśnień','href':'/dokumenty/onepager-energia-producent.html'}]
  body='<div class="portal-reading"><section class="portal-prose"><h2>Model energii Polska 2025</h2><p>Wyniki, opis metody i przykład obliczenia są dostępne razem z wersją modelu.</p>'+links([{'label':'Energia Polska 2025 v5 — dokumentacja i pliki','href':'/energia-polska-2025-v5.html#pliki'}])+'</section><section class="portal-prose"><h2>Wcześniejsze dokumenty</h2><p>Pliki PDF zachowują treść z daty wydania. Korekty dotyczące wyboru miksu energii i zakresu wskaźników opisano w towarzyszących wersjach internetowych. Do nowego obliczenia korzystaj z aktualnej instrukcji doboru danych.</p>'+links(docs)+'</section><section class="portal-prose"><h2>Zasady dla kategorii wyrobów</h2>'+links([{'label':'Projekty dokumentów dla mieszanek asfaltowych i kruszyw','href':'/c-pcr/'}])+'</section></div>'
  page('metodyki/index.html','Dokumenty metodyczne','Dokumentacja modeli i wcześniejsze wydania wraz z objaśnieniami.',body,parent=('Metody i źródła','/metodyka.html'))

@@ -65,6 +65,11 @@
     <ol>$update_items</ol>
     <a href="/rejestr-zmian.html">Pełny rejestr zmian</a>
   </section>
+  <section class="home-updates home-articles" aria-labelledby="home-articles-title">
+    <h2 id="home-articles-title">Które artykuły opisują aktualne dane?</h2>
+    <ol>$article_items</ol>
+    <a href="/blog.html">Wszystkie artykuły i wyjaśnienia</a>
+  </section>
   <section class="home-guides" aria-labelledby="home-guides-title">
     <div class="home-guides-intro"><h2 id="home-guides-title">Jak dobrać dane do obliczenia?</h2></div>
     <nav aria-label="Przewodniki po danych i obliczeniach">
