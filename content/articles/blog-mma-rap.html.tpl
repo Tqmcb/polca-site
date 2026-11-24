@@ -1,0 +1,320 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Granulat asfaltowy (RAP) w LCA — jak modelować zawartość materiałów z recyklingu — poLCA Blog</title>
+    <meta name="description" content="Granulat asfaltowy (RAP) w mieszankach mineralno-asfaltowych obniża GWP nawet o 15–25%. Metoda cut-off i metoda kredytowa — jak ISO 14044 i EN 15804+A2 nakazują modelować recykling w asfaltobetonie.">
+    <link rel="canonical" href="https://polca.org.pl/blog-mma-rap.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Granulat asfaltowy (RAP) w LCA — jak modelować zawartość materiałów z recyklingu — poLCA Blog">
+    <meta property="og:description" content="RAP w MMA obniża GWP o 15–25%. Metoda cut-off i metoda kredytowa — jak ISO 14044 i EN 15804+A2 nakazują modelować recykling asfaltobetonu.">
+    <meta property="og:url" content="https://polca.org.pl/blog-mma-rap.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-mma-rap.jpg">
+    <meta property="article:published_time" content="2026-01-10T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka LCA">
+    <meta property="article:tag" content="RAP">
+    <meta property="article:tag" content="granulat asfaltowy">
+    <meta property="article:tag" content="MMA">
+    <meta property="article:tag" content="recykling">
+    <meta property="article:tag" content="LCA asfalt">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Granulat asfaltowy (RAP) w LCA — jak modelować recykling w MMA">
+    <meta name="twitter:description" content="RAP obniża GWP MMA o 15–25%. Metoda cut-off i kredytowa — ISO 14044 i EN 15804+A2 określają sposób modelowania. Analiza dla polskiej branży drogowej.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-mma-rap.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-mma-rap.html",
+          "headline": "Granulat asfaltowy (RAP) w LCA — jak modelować zawartość materiałów z recyklingu",
+          "description": "Granulat asfaltowy (RAP, Reclaimed Asphalt Pavement) może stanowić 20–50% masy mieszanki mineralno-asfaltowej. ISO 14044 i EN 15804+A2 definiują dwie metody jego modelowania: cut-off (zasada podziału) i credit/avoided burden. Wybór metody znacząco wpływa na deklarowane GWP i powinien być udokumentowany w EPD lub raporcie LCA.",
+          "url": "https://polca.org.pl/blog-mma-rap.html",
+          "datePublished": "2026-01-10",
+          "dateModified": "2026-01-10",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {"@type": "ImageObject", "url": "https://polca.org.pl/favicon.svg"}
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["RAP", "granulat asfaltowy", "MMA", "recykling asfalt", "cut-off method", "LCA asfalt", "GWP MMA", "EN 15804", "EPD asfalt", "asfaltobeton"]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Co to jest RAP w kontekście LCA?",
+              "acceptedAnswer": {"@type": "Answer", "text": "RAP (Reclaimed Asphalt Pavement) to granulat asfaltowy pozyskiwany ze sfrezowanej nawierzchni drogowej. W LCA mieszanek mineralno-asfaltowych (MMA) RAP jest traktowany jako materiał z recyklingu, którego modelowanie wymaga wyboru metody alokacji zgodnej z ISO 14044 i EN 15804+A2."}
+            },
+            {
+              "@type": "Question",
+              "name": "Jaka jest różnica między metodą cut-off a kredytową dla RAP?",
+              "acceptedAnswer": {"@type": "Answer", "text": "W metodzie cut-off (zasada podziału) RAP wchodzi do systemu z zerowym obciążeniem środowiskowym z wydobycia i pierwotnej produkcji — to obciążenie ponosi 'pierwotny' producent asfaltu. W metodzie kredytowej (avoided burden) pełne obciążenie jest przypisane do pierwotnego systemu, a system przyjmujący RAP otrzymuje kredyt środowiskowy za zastąpienie materiału pierwotnego. EN 15804+A2 domyślnie stosuje podejście zbliżone do cut-off."}
+            },
+            {
+              "@type": "Question",
+              "name": "Ile RAP można dodać do mieszanki MMA?",
+              "acceptedAnswer": {"@type": "Answer", "text": "Norma EN 13108 oraz specyfikacje GDDKiA dopuszczają różne poziomy RAP w zależności od warstwy i technologii: warstwy ścieralne 10–25%, warstwy wiążące i podbudowy 20–50%. Technologie z grzaniem RAP (hot RAP recycling) pozwalają na wyższe udziały. Typowe polskie realizacje stosują 15–30% RAP."}
+            }
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Granulat asfaltowy (RAP) w LCA"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    </head>
+<body data-minutes="10">
+<h1>
+                Granulat asfaltowy (RAP) w LCA — jak modelować zawartość materiałów z recyklingu
+            </h1>
+<p class="article-lead">
+                Granulat asfaltowy (RAP) wchodzi do coraz większej części polskich nawierzchni drogowych.
+                Producenci asfaltobetonu pytają: czy i jak można tę zaletę wykazać w EPD?
+                ISO 14044 i EN 15804+A2 definiują metody — ale ich wybór nie jest oczywisty
+                i ma istotny wpływ na deklarowane GWP.
+            </p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dane i przykłady odnoszą się do wydań oraz lat wskazanych w artykule. Nie zastępują danych konkretnego wyrobu lub zakładu. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p></aside>
+<figure class="article-figure"><img src="images/blog-mma-rap.jpg" alt="" loading="lazy"></figure>
+<ol class="article-findings">
+<li><strong>20–40% masy MMA</strong> <span>Typowy udział RAP<br>w polskich mieszankach (2025)</span></li>
+<li><strong>15–25% redukcja GWP</strong> <span>Obniżenie śladu węglowego MMA<br>przy 30% RAP (metoda cut-off)</span></li>
+<li><strong>~55 kg CO₂/t</strong> <span>GWP frezowania i przetwarzania RAP<br>(transport + rozdrobnienie)</span></li>
+</ol>
+<aside class="article-tools"><a href="/kalkulator-mma.html">Kalkulator mieszanek asfaltowych</a></aside>
+<div class="article-prose"><h2>Czym jest RAP i dlaczego ma znaczenie dla LCA?</h2>
+        <p>
+            RAP (<em>Reclaimed Asphalt Pavement</em>) to granulat pozyskiwany przez frezowanie
+            istniejącej nawierzchni asfaltowej podczas remontu lub przebudowy drogi.
+            Zawiera kruszywo i lepiszcze asfaltowe — dwa główne składniki MMA
+            — w stanie nadającym się do ponownego użycia po ewentualnym
+            wzbogaceniu świeżym asfaltem.
+        </p>
+        <p>
+            Z perspektywy LCA, RAP stwarza fundamentalne pytanie:
+            kto ponosi obciążenie środowiskowe za surowce zawarte w granulacie?
+            Odpowiedź zależy od wybranej metody modelowania recyklingu.
+        </p>
+
+        <div class="callout callout-definition">
+            <div class="callout-label">Definicja</div>
+            <p class="callout-body">
+                <strong>RAP (Reclaimed Asphalt Pavement)</strong> — granulat asfaltowy
+                pozyskiwany przez mechaniczne frezowanie nawierzchni drogowej.
+                Składa się z kruszywa mineralnego i asfaltu — może być stosowany jako
+                częściowy substytut kruszywa pierwotnego i asfaltu świeżego w nowych MMA.
+                W Polsce reguluje to m.in. WT-2:2014 GDDKiA i norma EN 13108-8.
+            </p>
+        </div>
+
+        <h2>Dwie metody modelowania recyklingu: cut-off i credit</h2>
+        <p>
+            ISO 14044 §4.3.4 oraz EN 15804+A2 definiują dwa główne podejścia
+            do alokacji obciążeń środowiskowych dla materiałów z recyklingu:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">A</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Metoda cut-off (zasada podziału, „polluter pays”)</div>
+                    <div class="process-step-text">
+                        Obciążenie środowiskowe z wydobycia surowców i pierwotnej produkcji
+                        pozostaje w systemie, który wytworzył materiał pierwotny.
+                        RAP wchodzi do nowego systemu z <strong>zerowym obciążeniem</strong>
+                        z fazy surowcowej — jedynie z faktycznym obciążeniem
+                        frezowania, transportu i przetwarzania.
+                        Jest to domyślna metoda w EN 15804+A2 dla materiałów wchodzących
+                        po granicy systemu.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">B</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Metoda kredytowa / avoided burden (obciążenie uniknięte)</div>
+                    <div class="process-step-text">
+                        Pełne obciążenie środowiskowe jest przypisane do systemu pierwotnego.
+                        System przyjmujący RAP <strong>otrzymuje kredyt</strong> środowiskowy
+                        za uniknięcie użycia materiału pierwotnego — zwykle wykazywany
+                        w module D (poza granicami systemu).
+                        Metoda bardziej złożona, wymaga danych o zastopowanym materiale pierwotnym.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="callout callout-warning">
+            <div class="callout-label">Uwaga: brak porównywalności między metodami</div>
+            <p class="callout-body">
+                EPD MMA modelowana metodą cut-off będzie wykazywać niższy GWP
+                w modułach A1–A3, ale wyższy lub brak wartości w module D.
+                EPD modelowana metodą kredytową może wykazywać wyższe A1–A3,
+                ale znaczący kredyt w D. Porównywanie tych dwóch typów EPD „GWP total”
+                bez uwzględnienia metodyki jest błędem. Zawsze sprawdzaj, która metoda została zastosowana.
+            </p>
+        </div>
+
+        <h2>Co nakazuje EN 15804+A2?</h2>
+        <p>
+            EN 15804+A2 §6.4.4 definiuje podejście do materiałów z recyklingu
+            wchodzących do systemu po granicy systemu. Zasada jest zbliżona do cut-off:
+        </p>
+        <ul>
+            <li>Materiał z recyklingu wchodzi do systemu z <strong>obciążeniem procesu
+            zbiórki, sortowania i przetwarzania</strong> — nie z obciążeniem pierwotnej produkcji.</li>
+            <li>Korzyść środowiskowa z recyklingu (uniknięte wydobycie pierwotne)
+            może być wykazana w <strong>module D</strong>, poza granicami systemu.</li>
+            <li>Modul D jest obowiązkowy do raportowania, gdy istotne korzyści lub obciążenia
+            występują poza granicami systemu — ale nie wchodzi do sumć GWP A1–A3.</li>
+        </ul>
+
+        <h2>Wpływ udziału RAP na GWP mieszanki MMA: szacunek</h2>
+
+        <div class="card card-lg">
+            <div class="card-title">Szacunkowy GWP MMA AC11S (warstwa ścieralna) w zależności od udziału RAP</div>
+            <div class="comp-bar-group" style="margin-top: 1rem;">
+                <div class="comp-bar-label">0% RAP (materiały pierwotne)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill green" style="width: 100%;">~55–65 kg CO₂/t</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">20% RAP (typowa polska realizacja)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 82%;">~46–54 kg CO₂/t</div>
+                </div>
+            </div>
+            <div class="comp-bar-group">
+                <div class="comp-bar-label">40% RAP (zaawansowane technologie)</div>
+                <div class="comp-bar-track">
+                    <div class="comp-bar-fill gray" style="width: 64%;">~36–44 kg CO₂/t</div>
+                </div>
+            </div>
+            <p class="comp-note">
+                Wartości szacunkowe, metoda cut-off, moduł A1–A3.
+                źródło: kalkulacje własne na podstawie EPD Polska i literatury branżowej (2024).
+                Rzeczywisty GWP zależy od technologii wytwarzania, dystansu transportu i miks surowców.
+            </p>
+        </div>
+
+        <h2>Obciążenie z przetwarzania RAP: co wchodzi do A1–A3?</h2>
+        <p>
+            Nawet przy metodzie cut-off RAP nie jest „bezpłatny” środowiskowo.
+            Do granicy systemu należy zaliczyć:
+        </p>
+        <ul>
+            <li><strong>Frezowanie nawierzchni</strong> — emisje z pracy maszyny frezującej,
+            ok. 5–10 kg CO₂/t RAP.</li>
+            <li><strong>Transport RAP na wytwórnię</strong> — zależy od dystansu; typowo
+            20–40 km, ok. 5–15 kg CO₂/t.</li>
+            <li><strong>Kruszenie i sortowanie</strong> — energia elektryczna; ok. 2–5 kg CO₂/t.</li>
+            <li><strong;>Dodatkowe ciepło technologiczne — podgrzanie RAP w mieszalniku
+            (zwłaszcza przy wyższych udziałach) może częściowo kompensować korzyść
+            z redukcji materiałów pierwotnych; wymaga szczegółowego bilansowania.</strong;></li>
+        </ul>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Wskazówka dla producentów MMA</div>
+            <p class="callout-body">
+                Aby EPD z RAP była wiarygodna metodycznie:
+                (1) dokładnie zmierz i zadeklaruj udział RAP w mieszance (% masy),
+                (2) udokumentuj metodę modelowania (cut-off lub credit) z odwołaniem do PCR,
+                (3) wykazuj korzyści środowiskowe z RAP w module D i określ scenariusz
+                końca życia nawiązci w C3–C4. Brak tych informacji obniża wartość EPD
+                jako narzędzia porównawczego.
+            </p>
+        </div>
+
+        <h2>RAP w specyfikacjach zamawiających: co się zmienia?</h2>
+        <p>
+            Generalna Dyrekcja Dróg Krajowych i Autostrad coraz częściej dopuszcza
+            i premiuje wysoki udział RAP w przetargach na roboty drogowe.
+            W perspektywie zmian CPR 2024 i europejskich zielonych kryteriów zakupów (GPP)
+            oczekuje się, że zamawiający będą wymagać EPD dla MMA jako warunku udziału
+            w postępowaniu — analogicznie do wymogów dla materiałów budowlanych.
+        </p>
+        <p>
+            EPD z deklarowanym udziałem RAP i obliczonym GWP może stać się
+            elementem oceny oferty w kryterium środowiskowym — co daje wytwórniom
+            dysponującym technologią recyklingu realną przewagę przetargową.
+            Producenci MMA mogą rejestrować takie deklaracje w <a href="https://www.epd.org.pl" target="_blank" rel="noopener noreferrer">programie EPD Polska</a>.
+        </p>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-section-title">Najczęściej zadawane pytania</h2>
+
+            <details class="faq-item">
+                <summary class="faq-q">Co to jest RAP w kontekście LCA?</summary>
+                <div class="faq-a">
+                    RAP (Reclaimed Asphalt Pavement) to granulat asfaltowy pozyskiwany ze sfrezowanej
+                    nawierzchni drogowej. W LCA mieszanek mineralno-asfaltowych RAP jest traktowany
+                    jako materiał z recyklingu, którego modelowanie wymaga wyboru metody alokacji
+                    zgodnej z ISO 14044 i EN 15804+A2.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Jaka jest różnica między metodą cut-off a kredytową dla RAP?</summary>
+                <div class="faq-a">
+                    W metodzie cut-off RAP wchodzi do systemu z zerowym obciążeniem środowiskowym
+                    z pierwotnej produkcji — to obciążenie ponosi producent oryginalnego asfaltu.
+                    W metodzie kredytowej system przyjmujący RAP otrzymuje kredyt za zastąpienie
+                    materiału pierwotnego, wykazywany w module D. EN 15804+A2 domyślnie
+                    stosuje podejście zbliżone do cut-off.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Ile RAP można dodać do mieszanki MMA?</summary>
+                <div class="faq-a">
+                    Norma EN 13108 i specyfikacje GDDKiA określają limity zależnie od warstwy:
+                    warstwy ścieralne: 10–25%; warstwy wiążące i podbudowy: 20–50%.
+                    Technologie z grzaniem RAP pozwalają na wyższe udziały. Typowe polskie
+                    realizacje stosują 15–30% RAP.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Czy EPD dla MMA z RAP jest porównywalny z EPD bez RAP?</summary>
+                <div class="faq-a">
+                    Porównanie GWP A1–A3 jest możliwe, jeżeli obie EPD używają tej samej metody
+                    modelowania recyklingu i tego samego zakresu modułów. Jeżeli jedna używa cut-off,
+                    a druga metody kredytowej z deklaracją w module D, bezpośrednie porównanie
+                    GWP A1–A3 jest mylące — należy uwzględnić modul D.
+                </div>
+            </details>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <section class="article-sources"><h2>Źródła</h2><ul><li>EN 15804+A2:2019/A1:2021, §6.4.4 (materiały z recyklingu) i moduł D;</li><li>ISO 14044:2006, §4.3.4 (alokacja w systemach z recyklingiem);</li><li>EN 13108-8:2016, Mieszanki mineralno-asfaltowe z destruktem;</li><li>GDDKiA, Wymagania techniczne WT-2:2014 (nawierzchnie asfaltowe);</li><li>EAPA (European Asphalt Pavement Association), „Asphalt in Figures 2023”;</li><li>Birgisdottir H. i in. (2020), „LCA of asphalt mixtures with RAP”,
+            Journal of Cleaner Production 276;</li><li>EFCA (European Foam Concrete Association) / EAPA PCR for asphalt (2021).</li></ul></section>
+    </div>
+</body>
+</html>

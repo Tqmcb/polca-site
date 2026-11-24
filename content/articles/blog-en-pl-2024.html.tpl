@@ -1,0 +1,433 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poLCA-EN-PL 2024 — emisyjność prądu elektrycznego w Polsce w cyklu życia — poLCA Blog</title>
+    <meta name="description" content="Historyczny model energii elektrycznej za 2024 r., wersja 9.1: GWP-fossil 0,599 kg CO₂e/kWh. Składowe, źródła i ograniczenia wcześniejszego opracowania.">
+    <link rel="canonical" href="https://polca.org.pl/blog-en-pl-2024.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="poLCA-EN-PL 2024 — emisyjność prądu elektrycznego w Polsce w cyklu życia">
+    <meta property="og:description" content="Historyczny model energii elektrycznej za 2024 r., wersja 9.1: GWP-fossil 0,599 kg CO₂e/kWh. Składowe, źródła i ograniczenia wcześniejszego opracowania.">
+    <meta property="og:url" content="https://polca.org.pl/blog-en-pl-2024.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-en-pl-2024.jpg">
+    <meta property="article:published_time" content="2026-02-18T00:00:00+01:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Dane">
+    <meta property="article:tag" content="poLCA-EN-PL">
+    <meta property="article:tag" content="emisyjność energii elektrycznej">
+    <meta property="article:tag" content="LCA">
+    <meta property="article:tag" content="KOBiZE">
+    <meta property="article:tag" content="dekarbonizacja">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="poLCA-EN-PL 2024 — emisyjność prądu w Polsce w cyklu życia">
+    <meta name="twitter:description" content="Historyczny model energii elektrycznej za 2024 r., wersja 9.1: GWP-fossil 0,599 kg CO₂e/kWh. Składowe, źródła i ograniczenia wcześniejszego opracowania.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-en-pl-2024.jpg">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://polca.org.pl/blog-en-pl-2024.html",
+      "headline": "poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; energii elektrycznej w Polsce w pe&#322;nym cyklu &#380;ycia",
+      "description": "Historyczny model energii elektrycznej za 2024 r., wersja 9.1: GWP-fossil 0,599 kg CO₂e/kWh. Składowe, źródła i ograniczenia wcześniejszego opracowania.",
+      "url": "https://polca.org.pl/blog-en-pl-2024.html",
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18",
+      "inLanguage": "pl-PL",
+      "author": {
+        "@type": "Organization",
+        "name": "poLCA &#8212; Polska Baza Danych LCA",
+        "url": "https://polca.org.pl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Multicert Sp. z o.o.",
+        "url": "https://polca.org.pl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://polca.org.pl/favicon.svg"
+        }
+      },
+      "isPartOf": {
+        "@type": "Blog",
+        "@id": "https://polca.org.pl/blog.html",
+        "name": "Blog poLCA"
+      },
+      "keywords": [
+        "poLCA-EN-PL",
+        "emisyjno&#347;&#263; energii elektrycznej",
+        "LCA",
+        "CO2e",
+        "kWh",
+        "KOBiZE",
+        "dekarbonizacja",
+        "metan z w&#281;gla",
+        "OZE",
+        "EPD"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Wska&#378;nik emisyjno&#347;ci energii elektrycznej LCA"
+        },
+        {
+          "@type": "Thing",
+          "name": "poLCA-EN-PL"
+        },
+        {
+          "@type": "Thing",
+          "name": "Emisje fugitywne metanu"
+        },
+        {
+          "@type": "Thing",
+          "name": "Dekarbonizacja energetyki polskiej"
+        },
+        {
+          "@type": "Thing",
+          "name": "Ocena cyklu &#380;ycia (LCA)"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "poLCA",
+          "item": "https://polca.org.pl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://polca.org.pl/blog.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "poLCA-EN-PL 2024 &#8212; emisyjno&#347;&#263; pr&#261;du elektrycznego w Polsce w cyklu &#380;ycia"
+        }
+      ]
+    }
+  ]
+}</script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="metadata_revision" content="2026-10-18">
+</head>
+<body data-minutes="7">
+<h1>
+                poLCA-EN-PL 2024 — emisyjność energii elektrycznej w Polsce w pełnym cyklu życia
+            </h1>
+<p class="article-lead">Historyczny model poLCA-EN-PL-2024 v9.1 podaje 0,599 kg CO₂e/kWh dla składnika kopalnego (GWP-fossil); wcześniej opublikowane porównanie z 2023 r. wynosiło 0,642. Poniżej zachowano opis składowych i danych tej wersji. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dokument historyczny: model energii za 2024 r. Wartość 0,599 kg CO₂e/kWh oznacza składnik kopalny (GWP-fossil), nie GWP-total. Dawna hierarchia trzech poziomów nie jest uniwersalną instrukcją doboru energii do deklaracji środowiskowej. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p></aside>
+<figure class="article-figure"><img src="images/blog-en-pl-2024.jpg" alt="Linie wysokiego napięcia — transmisja energii elektrycznej" loading="lazy"></figure>
+<ol class="article-findings">
+<li>Wskaźnik poLCA-EN-PL za 2024: <strong>0,599 kg CO₂e/kWh</strong> (2023: 0,642 kg)</li>
+<li>Spadek o <strong>6,7%</strong> rok do roku — głównie przez wzrost OZE i niższe zużycie węgla</li>
+<li>W odróżnieniu od KOBiZE, poLCA-EN-PL obejmuje metan z wydobycia węgla, upstream paliw i infrastrukturę OZE</li>
+<li>Porównanie międzynarodowe: Lewandowska et al. (2025) wyznaczyli wskaźnik 0,650 kg CO₂/kWh za 2022 (różnica wynika z innych granic systemu i roku)</li>
+</ol>
+<ul class="article-values">
+<li><strong>0,599 kg CO₂e/kWh</strong> <span>poLCA-EN-PL 2024</span></li>
+<li><strong>0,642 kg CO₂e/kWh</strong> <span>poLCA-EN-PL 2023</span></li>
+<li><strong>−6,7% zmiana r/r</strong> <span>Redukcja emisji</span></li>
+</ul>
+<aside class="article-tools"><div class="card-title">Kalkulator emisji poLCA</div>
+        <p class="card-text">
+            Oblicz ślad węglowy procesu lub materiału korzystając z wspołczynnika
+            poLCA-EN-PL-2024 (0,599 kg CO₂e/kWh) i innych polskich wskaźników emisji.
+        </p>
+        <a href="kalkulator.html">
+            Przejdź do kalkulatora
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a></aside>
+<div class="article-prose"><div class="card card-lg section-gap">
+        <div class="card-title">Składowe wskaźnika poLCA-EN-PL 2024</div>
+        <div class="donut-chart-wrap">
+            <div class="donut-chart" style="background: conic-gradient(var(--text-tertiary) 0deg 317.2deg, var(--accent) 317.2deg 351.4deg, var(--func-blue) 351.4deg 356.1deg, var(--func-green) 356.1deg 360deg);">
+                <div class="donut-chart-center">
+                    <div class="donut-chart-center-value">0,599</div>
+                    <div class="donut-chart-center-label">kg CO₂e/kWh</div>
+                </div>
+            </div>
+            <div class="donut-legend">
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--text-tertiary);"></div>
+                    <div><span class="donut-legend-value">88%</span> EF_oper — emisje operacyjne (Gate-to-Gate)<br><span>0,528 kg CO₂e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--accent);"></div>
+                    <div><span class="donut-legend-value">10%</span> WTT_CH₄ — metan fugitywny z wydobycia węgla<br><span>0,057 kg CO₂e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--func-blue);"></div>
+                    <div><span class="donut-legend-value">1%</span> WTT_fuels — upstream paliw (JEC WTT v5)<br><span>0,008 kg CO₂e/kWh</span></div>
+                </div>
+                <div class="donut-legend-item">
+                    <div class="donut-legend-swatch" style="background: var(--func-green);"></div>
+                    <div><span class="donut-legend-value">1%</span> WTT_OZE — infrastruktura OZE (ecoinvent 3.12)<br><span>0,006 kg CO₂e/kWh</span></div>
+                </div>
+            </div>
+        </div>
+        <p class="comp-note">
+            źródło: poLCA-EN-PL-2024 Metodologia, Multicert Sp. z o.o. (luty 2026).
+            GWP100 dla CH₄ fossil = 29,8 (IPCC AR6, EF 3.1).
+        </p>
+    </div>
+
+    <h2>Co mierzy poLCA-EN-PL i dlaczego różni się od KOBiZE</h2>
+
+        <div class="margin-note">
+            <div class="margin-note-label">Kluczowe rozróżnienie</div>
+            KOBiZE = bezpośrednie spalanie CO₂ na bramie elektrowni.<br>
+            poLCA-EN-PL = pełny łańcuch: wydobycie paliw + metan + spalanie + infrastruktura OZE.<br>
+            Różnica wynosi ok. 20–25% na korzyść pełnego LCA.
+        </div>
+
+        <p>
+            Krajowy Ośrodek Bilansowania i Zarządzania Emisjami (KOBiZE) corocznie publikuje
+            wskaźnik emisyjności CO₂ dla energii elektrycznej w Polsce. Jest to średnia ważona
+            emisji ze spalania paliw w elektrowniach — metodologicznie poprawna i szeroko stosowana
+            w raportowaniu Scope 2 i uproszczonych kalkulacjach.
+        </p>
+        <p>
+            Wskaźnik poLCA-EN-PL powstaje z innego pytania: <em>ile CO₂e wnosi do atmosfery
+            każda kWh energii elektrycznej, jeżeli wliczymy cały łańcuch dostaw?</em>
+            Oznacza to uwzględnienie czterech kategorii emisji:
+        </p>
+
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="process-step-num">1</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">EF_oper — emisje operacyjne — 88%</div>
+                    <div class="process-step-text">
+                        Bezpośrednie spalanie węgla kamiennego, brązowego, gazu ziemnego, oleju i biomasy
+                        w elektrowniach i elektrociepłowniach wchodzących do KSE. To ten sam zakres,
+                        który obejmuje KOBiZE — tyle że u nas stanowi tylko 77% całości.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">2</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">WTT_CH₄ — metan z wydobycia węgla — 10%</div>
+                    <div class="process-step-text">
+                        Polskie kopalnie węgla kamiennego emitują średnio 8–12 m³ CH₄
+                        na tonę wydobytego węgla. Przy GWP100 metanu fossil równym 29,8 (IPCC AR6, EF 3.1)
+                        te emisje fugitywne stanowią 10% całkowitego śladu — drugą co do wielkości
+                        składową wskaźnika.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">3</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">WTT_fuels — upstream pozostałych paliw — 1%</div>
+                    <div class="process-step-text">
+                        Wydobycie, transport i dystrybucja gazu ziemnego, oleju opałowego i biomasy
+                        przed dotarciem do elektrowni generują dodatkowe 1% śladu. Dla gazu
+                        szczególnie istotne są straty przesyłowe metanu w rurociągach.
+                    </div>
+                </div>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">4</div>
+                <div class="process-step-content">
+                    <div class="process-step-title">Infrastruktura OZE — 1%</div>
+                    <div class="process-step-text">
+                        Produkcja, transport i montaż turbin wiatrowych oraz modułów fotowoltaicznych
+                        generuje emisje w fazach A1–A5. Przy rosnącym udziale OZE ta składowa
+                        nabiera znaczenia — choć wciąż marginalnego wobec emisji ze spalania paliw.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela 2023 vs 2024 -->
+        <h2>Porównanie 2023–2024 według kategorii emisji</h2>
+
+        <div class="card card-lg">
+            <div class="card-title">poLCA-EN-PL — rozkład składowych</div>
+            <div class="portal-table-wrap" tabindex="0" role="region" aria-label="Rozkład składowych emisji, tabela przewijana">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kategoria emisji</th>
+                        <th>2023</th>
+                        <th>2024</th>
+                        <th>Zmiana</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>EF_oper (emisje operacyjne Gate-to-Gate)</td>
+                        <td>0,566 kg CO₂e/kWh</td>
+                        <td>0,528 kg CO₂e/kWh</td>
+                        <td>−6,7%</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_CH₄ (metan z wydobycia węgla)</td>
+                        <td>0,062 kg CO₂e/kWh</td>
+                        <td>0,057 kg CO₂e/kWh</td>
+                        <td>−8,1%</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_fuels (upstream paliw, JEC WTT v5, stałe)</td>
+                        <td>0,008 kg CO₂e/kWh</td>
+                        <td>0,008 kg CO₂e/kWh</td>
+                        <td>0,0%</td>
+                    </tr>
+                    <tr>
+                        <td>WTT_OZE (infrastruktura OZE, ecoinvent 3.12, stałe)</td>
+                        <td>0,006 kg CO₂e/kWh</td>
+                        <td>0,006 kg CO₂e/kWh</td>
+                        <td>0,0%</td>
+                    </tr>
+                    <tr>
+                        <td>Łącznie poLCA-EN-PL</td>
+                        <td>0,642 kg CO₂e/kWh</td>
+                        <td>0,599 kg CO₂e/kWh</td>
+                        <td>−6,7%</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <p class="comp-note">
+                Wszystkie wartości wyrażone w kg CO₂e na kWh energii elektrycznej dostarczonej do odbiorcy.
+                GWP100: CO₂ = 1; CH₄ fossil = 29,8; N₂O = 273 (IPCC AR6, EF 3.1, 2023).
+            </p>
+        </div>
+
+        <!-- Trendy dekarbonizacji -->
+        <h2>Trendy dekarbonizacji: co napędza poprawę</h2>
+        <p>
+            Poprawa o 6,7% r/r wynika ze zbiegu kilku trendów, które wzajemnie się wzmacniają.
+            Polska energetyka przechodzi przez przyspieszenie transformacji, którego skutki
+            są wyraźnie widoczne już w danych za 2024 rok.
+        </p>
+
+        <div class="card card-lg section-gap">
+            <div class="card-title">Produkcja energii elektrycznej z OZE w Polsce</div>
+            <div class="vcol-chart" style="height: 180px;">
+                <div class="vcol-group">
+                    <div class="vcol-value">35,2 TWh</div>
+                    <div class="vcol-bar gray" style="height: 83%;"></div>
+                </div>
+                <div class="vcol-group">
+                    <div class="vcol-value">42,2 TWh</div>
+                    <div class="vcol-bar accent" style="height: 100%;"></div>
+                </div>
+            </div>
+            <div class="vcol-labels">
+                <div class="vcol-label">2023</div>
+                <div class="vcol-label">2024 (+20%)</div>
+            </div>
+            <p class="comp-note">
+                Udział OZE w bilansie odbiorcy końcowego: 25,2% (2023) → 28,2% (2024).
+                źródło: URE, Sprawozdanie z działalności 2024; PSE, Raport roczny 2024.
+            </p>
+        </div>
+
+        <p>
+            Kluczowe czynniki połączone z redukcją emisyjności w 2024 roku:
+        </p>
+        <ul>
+            <li>
+                <strong>Wzrost OZE o 20%</strong> — fotowoltaika i energetyka wiatrowa łącznie
+                dostarczyły 42,2 TWh, wypierając produkcję węglową ze szczytu.
+            </li>
+            <li>
+                <strong>Mniejsze zużycie węgla (−10%)</strong> — redukcja produkcji z węgla kamiennego
+                bezpośrednio obniżyła emisje gate i powiązaną metanowość wydobycia.
+            </li>
+            <li>
+                <strong>Niższa emisyjność upstream gazu</strong> — zmiana struktury dostaw i
+                wyższy udział LNG redukuje straty metanu w rurociągach przesyłowych.
+            </li>
+        </ul>
+
+        <!-- Walidacja -->
+        <div class="pull-quote-lg">
+            <p>Porównanie międzynarodowe: Lewandowska et al. (2025) wyznaczyli wskaźnik
+            location-based na poziomie <strong>0,650 kg CO₂/kWh</strong> dla 2022 roku.
+            Wartość poLCA-EN-PL za 2023 wynosi 0,642 kg CO₂e/kWh —
+            różnica wynika głównie z innego roku referencyjnego i granic systemu.</p>
+            <cite>Lewandowska et al. (2025), MDPI Energies; poLCA-EN-PL-2024 v9.1, Multicert Sp. z o.o.</cite>
+        </div>
+
+        <h2>Jak stosować poLCA-EN-PL w praktyce</h2>
+
+        <div class="callout callout-tip">
+            <div class="callout-label">Zastosowania wskaźnika</div>
+            <p class="callout-body">Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section section-gap">
+            <h2 class="faq-section-title">Najczęściej zadawane pytania</h2>
+
+            <details class="faq-item">
+                <summary class="faq-q">Czym różni się poLCA-EN-PL od wskaźnika KOBiZE?</summary>
+                <div class="faq-a">Wskaźnik KOBiZE dla odbiorcy końcowego za 2024 r. wynosi 0,553 kg CO₂/kWh. Opisuje CO₂, a nie kompletny wynik oceny cyklu życia. Historyczny model poLCA-EN-PL-2024 v9.1 podaje 0,599 kg CO₂e/kWh dla składnika kopalnego (GWP-fossil). Wartości mają różny zakres. Operacyjna składowa dawnego modelu wynosiła 0,528 kg CO₂e/kWh; jej udział około 88% nie jest udziałem surowego wskaźnika 0,553.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Kiedy stosować poLCA-EN-PL, a kiedy KOBiZE?</summary>
+                <div class="faq-a">Dobór danych energii zależy od zastosowania, kontroli nad procesem i dokumentów dotyczących dostawy. Sam kraj produkcji nie rozstrzyga wyboru między miksem konsumpcyjnym, rezydualnym i danymi dostawcy. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Jak często aktualizowany jest wskaźnik?</summary>
+                <div class="faq-a">
+                    Wskaźnik jest aktualizowany rocznie, po publikacji danych przez URE, PSE i GUS
+                    za poprzedni rok. Dane za 2024 rok opublikowano w lutym 2026. Aktualizacja
+                    obejmuje rewizję struktury produkcji energii, współczynników metanowości kopalń
+                    i zmian w strukturze OZE.
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-q">Dlaczego metan z wydobycia węgla ma tak duży udział (10%)?</summary>
+                <div class="faq-a">
+                    Polskie kopalnie węgla kamiennego należą do najbardziej metanonośnych w Europie —
+                    średnio 8–12 m³ CH₄ na tonę wydobytego węgla. Metan fossil ma współczynnik GWP100
+                    równy 29,8 (IPCC AR6, EF 3.1), więc nawet stosunkowo niewielka ilość gazu fugitywnego
+                    przekształca się w istotny udział śladu CO₂e energii elektrycznej.
+                </div>
+            </details>
+        </div>
+
+        <hr class="blog-post-divider">
+
+        <section class="article-sources"><h2>Źródła</h2><ul><li>Multicert Sp. z o.o. (2026), MET-001:2026 — „Wskaźnik emisyjności
+            energii elektrycznej w Polsce w pełnym cyklu życia (poLCA-EN-PL-2024 v9.1)”;</li><li>Multicert Sp. z o.o. (2026), MET-002:2026 — „Wyłączenie wskaźników KOBiZE z LCA EPD wyrobów budowlanych”;</li><li>Lewandowska A. et al. (2025), MDPI Energies — wskaźnik location-based
+            dla Polski za 2022: 0,650 kg CO₂/kWh;</li><li>KOBiZE (2025), „Wskaźniki emisyjności CO₂” za rok 2024 (end-user: 553 kg CO₂/MWh);</li><li>PSE S.A. (2025), Raport roczny KSE 2024;</li><li>WUG (2025), Ocena stanu bezpieczeństwa w górnictwie 2024;</li><li>IPCC (2021), AR6 WG1 / EF 3.1 — GWP100: CH₄ fossil = 29,8, N₂O = 273.
+         <span class="legacy-citation-note">MET-002 przywołano pod tytułem wydania historycznego; <a href="/metodyki/MET-002-energia.html">zob. korektę HTML</a>.</span></li></ul></section>
+
+    <div class="callout callout-definition">
+        <div class="callout-label">Dokumentacja metodologiczna</div>
+        <p class="callout-body">
+            Pełny tok obliczeniowy, tabele parametrów, analiza niepewności i wszystkie załączniki
+            dostępne są w dokumentach metodycznych programu — recenzowalnych preprintach MET-001 i MET-002.
+        </p>
+        <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">
+            MET-001:2026 — Wskaźnik emisyjności energii elektrycznej PL (poLCA-EN-PL-2024 v9.1)
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="metodyki/MET-002-energia.html">
+            MET-002:2026 — wcześniejsza metodyka energii i korekta
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">
+            poLCA-EN-PL-2024 — Pełna dokumentacja metodologiczna
+            <svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+    </div>
+
+    </div>
+</body>
+</html>

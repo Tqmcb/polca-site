@@ -1,0 +1,209 @@
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku — poLCA Blog</title>
+    <meta name="description" content="Jedna kopalnia wydobywa węgiel energetyczny i koksowy, ale metan uchodzi ze złoża wspólnie. EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2 określają, jak podzielić tę emisję między produkty — i dlaczego przy dużej różnicy cen alokacja masowa nie wystarcza.">
+    <link rel="canonical" href="https://polca.org.pl/blog-alokacja-metan-kopalniany.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku">
+    <meta property="og:description" content="Węgiel energetyczny i koksowy pochodzą z tych samych złóż, a metan uchodzi wspólnie. Reguły alokacji EN 15804+A2 i ISO 14044 decydują, ile z tej emisji obciąża energię elektryczną.">
+    <meta property="og:url" content="https://polca.org.pl/blog-alokacja-metan-kopalniany.html">
+    <meta property="og:site_name" content="poLCA — Polska Baza Danych LCA">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:image" content="https://polca.org.pl/images/blog-alokacja-metan-kopalniany.jpg">
+    <meta property="article:published_time" content="2026-07-31T00:00:00+02:00">
+    <meta property="article:author" content="poLCA — Polska Baza Danych LCA">
+    <meta property="article:section" content="Metodyka LCA">
+    <meta property="article:tag" content="metan kopalniany">
+    <meta property="article:tag" content="alokacja">
+    <meta property="article:tag" content="EN 15804+A2">
+    <meta property="article:tag" content="ISO 14044">
+    <meta property="article:tag" content="węgiel koksowy">
+    <meta property="article:tag" content="energia elektryczna">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku">
+    <meta name="twitter:description" content="Węgiel energetyczny i koksowy z tych samych złóż, metan uchodzi wspólnie. Reguły alokacji EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2.">
+    <meta name="twitter:image" content="https://polca.org.pl/images/blog-alokacja-metan-kopalniany.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BlogPosting",
+          "@id": "https://polca.org.pl/blog-alokacja-metan-kopalniany.html",
+          "headline": "Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku",
+          "description": "Jedna kopalnia wydobywa węgiel energetyczny i koksowy, ale metan uchodzi ze złoża wspólnie. EN 15804+A2 §6.4.3.2 i ISO 14044 §4.3.4.2 określają, jak podzielić tę emisję między produkty, a przy dużej różnicy wartości ekonomicznej alokacja masowa przestaje wystarczać.",
+          "url": "https://polca.org.pl/blog-alokacja-metan-kopalniany.html",
+          "datePublished": "2026-07-31",
+          "dateModified": "2026-07-31",
+          "inLanguage": "pl-PL",
+          "author": {
+            "@type": "Organization",
+            "name": "poLCA — Polska Baza Danych LCA",
+            "url": "https://polca.org.pl"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Multicert Sp. z o.o.",
+            "url": "https://polca.org.pl",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://polca.org.pl/favicon.svg"
+            }
+          },
+          "isPartOf": {
+            "@type": "Blog",
+            "@id": "https://polca.org.pl/blog.html",
+            "name": "Blog poLCA"
+          },
+          "keywords": ["metan kopalniany", "alokacja", "EN 15804+A2", "ISO 14044", "węgiel koksowy", "węgiel energetyczny", "LCA", "energia elektryczna", "GWP", "IPCC AR6"],
+          "about": [
+            {"@type": "Thing", "name": "Metan kopalniany (CMM)"},
+            {"@type": "Thing", "name": "Alokacja w analizie cyklu życia"},
+            {"@type": "Thing", "name": "EN 15804+A2"},
+            {"@type": "Thing", "name": "Węgiel koksowy"}
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "poLCA", "item": "https://polca.org.pl/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://polca.org.pl/blog.html"},
+            {"@type": "ListItem", "position": 3, "name": "Metan kopalniany w śladzie węglowym energii"}
+          ]
+        }
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    </head>
+<body data-minutes="7">
+<h1>
+                Metan kopalniany w śladzie węglowym energii — dlaczego alokacja decyduje o wyniku
+            </h1>
+<p class="article-lead">
+                Kopalnia wydobywa z jednego złoża węgiel energetyczny i węgiel koksowy, a metan uchodzi
+                z górotworu wspólnie dla obu. Pytanie, na które musi odpowiedzieć każda analiza cyklu życia
+                energii elektrycznej, nie brzmi więc „ile metanu emitują kopalnie”, tylko „ile z tej emisji
+                obciąża prąd, a ile stal”. Odpowiedzi nie ustala się uznaniowo — dają ją reguły alokacji
+                z ISO 14044 i EN 15804+A2.
+            </p>
+<aside class="legacy-note" aria-label="Informacja o wersji"><p><strong>Informacja o wydaniu.</strong> Dokument historyczny: model energii za 2024 r. Wartość 0,599 kg CO₂e/kWh oznacza składnik kopalny (GWP-fossil), nie GWP-total. Dawna hierarchia trzech poziomów nie jest uniwersalną instrukcją doboru energii do deklaracji środowiskowej. <a href="/jak-korzystac.html">Zasady doboru danych</a> · <a href="/energia-polska-2025-v5.html">Energia Polska 2025 v5</a>.</p></aside>
+<figure class="article-figure"><img src="images/blog-alokacja-metan-kopalniany.jpg" alt="Hałda węgla i przenośnik taśmowy zakładu przeróbczego" loading="lazy"></figure>
+<ol class="article-findings">
+<li><strong>Kluczowa liczba</strong>
+            Współczynnik ocieplenia globalnego metanu pochodzenia kopalnego w horyzoncie 100 lat
+            wynosi <strong>29,8 kg CO₂e/kg</strong> wg IPCC AR6 (WG1, tabela 7.15).<br>
+            Ta sama masa metanu waży w bilansie prawie trzydzieści razy więcej niż dwutlenek węgla.</li>
+<li><strong>Co z tego wynika</strong>
+            Węgiel koksowy jest trwale i wyraźnie droższy od energetycznego — różnica cen jest
+            wielokrotnie większa niż próg 25%. Przy takiej rozpiętości norma nie zostawia analitykowi
+            wyboru między alokacją masową a ekonomiczną.</li>
+</ol>
+<aside class="article-tools"><a href="/dane/polca-en-pl-lca-2024.html">Karta modelu energii za 2024 r.</a></aside>
+<div class="article-prose"><h2>Dlaczego metan kopalniany w ogóle liczy się w bilansie energii</h2>
+
+
+
+        <p>
+            Ślad węglowy energii elektrycznej ze spalania węgla nie kończy się na kominie elektrowni.
+            Granica systemu w pełnej analizie cyklu życia obejmuje także wydobycie paliwa, a przy węglu
+            kamiennym najistotniejszym składnikiem tego etapu jest metan uwalniany z górotworu podczas
+            eksploatacji złoża — w literaturze branżowej opisywany jako <em>coal mine methane</em>.
+        </p>
+
+        <p>
+            Skala zjawiska zależy od metanowości konkretnego złoża i sposobu zagospodarowania ujętego
+            gazu. Część metanu jest wychwytywana przez systemy odmetanowania i wykorzystywana energetycznie
+            lub spalana w pochodniach, część uchodzi z powietrzem wentylacyjnym w stężeniach zbyt niskich,
+            by dało się je łatwo zagospodarować. W Polsce dane o metanowości poszczególnych zakładów
+            górniczych publikuje corocznie Wyższy Urząd Górniczy w sprawozdaniach o stanie bezpieczeństwa
+            w górnictwie, w podziale na kopalnie.
+        </p>
+
+        <h2>Jedno złoże, dwa produkty o różnym przeznaczeniu</h2>
+
+        <p>
+            Tu zaczyna się właściwy problem metodyczny. Polskie kopalnie węgla kamiennego wydobywają dwa
+            zasadniczo różne produkty. Węgiel energetyczny trafia do elektrowni i ciepłowni. Węgiel koksowy
+            trafia do koksowni, a stamtąd do wielkich pieców — jest surowcem hutniczym, nie paliwem
+            energetycznym, i figuruje na unijnej liście surowców krytycznych.
+        </p>
+
+        <p>
+            Metan nie odróżnia jednak przeznaczenia urobku. Uchodzi ze złoża w trakcie eksploatacji, zanim
+            ktokolwiek zdecyduje, do której gałęzi przemysłu pojedzie wydobyty węgiel. Powstaje sytuacja
+            podręcznikowa dla analizy cyklu życia: jeden proces, jedna emisja, dwa wyroby o odmiennych
+            rynkach zbytu.
+        </p>
+
+        <p>
+            Konsekwencja jest praktyczna i policzalna. Jeżeli kopalnia o wysokiej metanowości wydobywa
+            przede wszystkim węgiel koksowy, a jej emisję przypiszemy w całości energii elektrycznej,
+            wskaźnik dla sieci zostanie zawyżony o wielkość, która w rzeczywistości obciąża produkcję stali.
+            Zależność działa też w drugą stronę — pominięcie metanu z kopalń dostarczających węgiel do
+            elektrowni zaniża wynik.
+        </p>
+
+        <h2>Co mówią normy</h2>
+
+        <p>
+            ISO 14044:2006 w §4.3.4.2 porządkuje postępowanie w trzech krokach. Najpierw należy alokacji
+            unikać — przez podział procesu na podprocesy albo rozszerzenie granic systemu. Gdy to niemożliwe,
+            emisje dzieli się według zależności fizycznej między produktami. Dopiero gdy zależności fizycznej
+            nie da się sensownie ustalić, stosuje się inne relacje, w tym wartość ekonomiczną.
+        </p>
+
+        <p>
+            EN 15804+A2:2019 uszczegóławia tę regułę dla wyrobów budowlanych w §6.4.3.2. Norma wskazuje
+            wprost, że przy współproduktach o istotnie różnej wartości rynkowej podział według masy
+            zniekształca obraz, i wyznacza próg: gdy różnica wartości ekonomicznej współproduktów
+            przekracza 25%, alokację prowadzi się według wartości, a nie według masy.
+        </p>
+
+
+
+        <h2>Dlaczego to nie jest szczegół dla specjalistów</h2>
+
+        <p>
+            Wybór klucza alokacji nie jest kwestią preferencji autora analizy. Jest decyzją metodyczną,
+            która musi zostać udokumentowana, uzasadniona i poddana weryfikacji — EN 15804+A2 wymaga
+            opisania zastosowanych reguł alokacji w dokumentacji deklaracji, a ISO 14044 nakazuje wykazanie
+            wrażliwości wyniku na przyjęte założenia.
+        </p>
+
+        <p>
+            Dla odbiorcy wskaźnika oznacza to prosty test jakości. Jeżeli dokumentacja podaje wartość
+            składnika metanowego bez wyjaśnienia, jak podzielono emisję między węgiel energetyczny
+            i koksowy, to nie wiadomo, co ta liczba właściwie mierzy. Sama liczba nie wystarcza —
+            potrzebny jest opis granicy, klucza podziału i danych, na których go oparto.
+        </p>
+
+        <h2>Jak to zweryfikować w praktyce</h2>
+
+        <p>
+            Rachunek daje się odtworzyć z danych publicznych. Metanowość poszczególnych kopalń i stopień
+            zagospodarowania ujętego gazu wynikają ze sprawozdań Wyższego Urzędu Górniczego. Strukturę
+            produkcji w podziale na węgiel energetyczny i koksowy przedsiębiorstwa górnicze notowane
+            na giełdzie ujawniają w raportach rocznych, w podziale na poszczególne zakłady. Ceny obu
+            sortymentów publikuje Agencja Rozwoju Przemysłu w comiesięcznych indeksach rynku węgla.
+        </p>
+
+        <p>
+            Zestawienie tych trzech źródeł pozwala sprawdzić, czy przyjęty w danym wskaźniku klucz alokacji
+            odpowiada rzeczywistej strukturze wydobycia — a to jest dokładnie ten rodzaj kontroli, którego
+            weryfikator deklaracji środowiskowej ma prawo oczekiwać.
+        </p>
+
+        <div class="answer-box">
+            Metodyka wskaźnika emisyjności energii elektrycznej stosowanego w poLCA, wraz z opisem
+            składników i granicy systemu, jest opublikowana jako dokument
+            <a href="metodyki/MET-001-poLCA-EN-PL-2024.html">MET-001</a>
+            z identyfikatorem DOI. Terminy przeglądów okresowych i zapis zmian metodycznych prowadzimy
+            w <a href="rejestr-zmian.html">rejestrze przeglądów i zmian</a>.
+        </div>
+
+    </div>
+</body>
+</html>

@@ -2,51 +2,34 @@
 from datetime import date, datetime, time
 from html import escape
 import json
-from pathlib import Path
+import re
 from zoneinfo import ZoneInfo
 
+from lxml import html
 from markdown import Markdown
 
 
 ORIGIN = "https://polca.org.pl"
-MONTHS = "stycznia lutego marca kwietnia maja czerwca lipca sierpnia września października listopada grudnia".split()
-
-
-def date_label(value):
-    day = date.fromisoformat(value)
-    return f"{day.day} {MONTHS[day.month - 1]} {day.year}"
 
 
 def timestamp(value):
-    return datetime.combine(date.fromisoformat(value), time.min, ZoneInfo("Europe/Warsaw")).isoformat()
+    return datetime.combine(date.fromisoformat(value[:10]), time.min, ZoneInfo("Europe/Warsaw")).isoformat()
 
 
-def build(root, resources, page, crumb):
-    directory = root / "content/articles"
-    for entry in resources:
-        source = directory / (Path(entry["href"]).stem + ".md")
-        if entry["kind"] == "article" and source.is_file():
-            render(entry, source.read_text(encoding="utf-8"), page, crumb)
-
-
-def render(entry, source, page, crumb):
+def markdown_source(entry, source):
     md = Markdown(extensions=["meta", "tables", "attr_list", "toc"],
                   extension_configs={"toc": {"toc_depth": "2-2"}})
     content = md.convert(source)
     fields = md.Meta
-    image = fields["image"][0]
-    updated = fields["updated"][0]
+    image = fields.get("image", [None])[0]
     published = entry["published_at"]
+    updated = fields.get("updated", [published])[0]
     title = entry["title"]
     url = ORIGIN + entry["href"]
-    toc = "".join(
-        f'<li><a href="#{escape(token["id"])}">{escape(token["name"])}</a></li>'
-        for token in md.toc_tokens
-    )
-    byline = "Redakcja poLCA"
     graph = [
         {"@type": "BlogPosting", "@id": url, "url": url, "headline": title,
-         "description": entry["description"], "inLanguage": "pl-PL", "image": ORIGIN + image,
+         "description": entry["description"], "inLanguage": "pl-PL",
+         **({"image": ORIGIN + image} if image else {}),
          "datePublished": timestamp(published), "dateModified": timestamp(updated),
          "author": {"@type": "Organization", "name": "poLCA — Polska Baza Danych LCA", "url": ORIGIN},
          "publisher": {"@type": "Organization", "name": "Multicert Sp. z o.o.", "url": ORIGIN,
@@ -59,22 +42,34 @@ def render(entry, source, page, crumb):
                 (title, url)], 1)]},
     ]
     schema = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False).replace("<", r"\u003c")
-    head = f'''<link rel="stylesheet" href="/assets/article-guide.css?v=20261123">
-<meta property="og:locale" content="pl_PL"><meta property="og:image" content="{escape(ORIGIN + image)}">
+    image_url = escape(ORIGIN + image) if image else ""
+    og_image = f'<meta property="og:image" content="{image_url}">' if image else ""
+    twitter_image = f'<meta name="twitter:image" content="{image_url}">' if image else ""
+    head = f'''<meta property="og:locale" content="pl_PL">{og_image}
 <meta property="article:published_time" content="{timestamp(published)}"><meta property="article:modified_time" content="{timestamp(updated)}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{escape(title)}">
-<meta name="twitter:description" content="{escape(entry['description'])}"><meta name="twitter:image" content="{escape(ORIGIN + image)}">
+<meta name="twitter:card" content="{'summary_large_image' if image else 'summary'}"><meta name="twitter:title" content="{escape(title)}">
+<meta name="twitter:description" content="{escape(entry['description'])}">{twitter_image}
 <script type="application/ld+json">{schema}</script>'''
-    body = f'''<article class="article-guide">
-<header class="guide-cover"><img src="{escape(image)}" width="1280" height="853" alt="" fetchpriority="high">
-<div class="guide-cover-inner">{crumb(fields['breadcrumb'][0], ("Artykuły i wyjaśnienia", "/blog.html"))}
-<p class="guide-type">Przewodnik</p><h1>{escape(title)}</h1>
-<div class="guide-byline"><span>{byline}</span><span>Opublikowano <time datetime="{published}">{date_label(published)}</time></span>
-<span>Aktualizacja <time datetime="{updated}">{date_label(updated)}</time></span></div></div></header>
-<div class="guide-layout">
-<nav class="guide-toc guide-toc-mobile" aria-label="Spis treści artykułu"><details><summary>Spis treści</summary><ul>{toc}</ul></details></nav>
-<div class="guide-prose">{content}</div>
-<nav class="guide-toc guide-toc-desktop" aria-label="Spis treści artykułu"><p>Spis treści</p><ul>{toc}</ul></nav>
-</div></article>'''
-    page(entry["href"].lstrip("/"), title, entry["description"], body, head_extra=head,
-         pagehead=False, main_class="guide-main", show_crumb=False, og_type="article")
+    article = html.Element("body")
+    article.append(html.fragment_fromstring(f"<h1>{escape(title)}</h1>"))
+    prose = html.fragment_fromstring(content, create_parent="div")
+    prose.set("class", "article-prose")
+    lead = prose.find("p")
+    lead.set("class", "article-lead")
+    article.append(lead)
+    if image:
+        article.append(html.fragment_fromstring(
+            f'<figure class="article-figure"><img src="{escape(image)}" alt="" loading="lazy"></figure>'))
+    findings = html.Element("ol", {"class": "article-findings"})
+    excerpts = fields.get("findings")
+    if not excerpts:
+        paragraphs = [lead, *reversed(prose.xpath(".//p"))]
+        sentences = [sentence for p in paragraphs for sentence in
+                     re.split(r"(?<=[.!?])\s+(?=[A-ZĄĆĘŁŃÓŚŹŻ])", p.text_content().strip()) if sentence]
+        excerpts = list(dict.fromkeys(sentences))[:3]
+    for sentence in excerpts:
+        item = html.Element("li")
+        item.text = sentence
+        findings.append(item)
+    article.extend([findings, prose])
+    return article, head, updated
