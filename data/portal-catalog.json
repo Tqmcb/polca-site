@@ -4113,7 +4113,7 @@
       "year_type": "publication",
       "status_id": "guide",
       "status_label": "Instrukcja",
-      "description": "Przykład obliczenia dla 1 m³ betonu z cementem CEM II i kruszywem naturalnym, z zastosowaniem modelu energii elektrycznej Polska 2025 v5.",
+      "description": "Dla przykładowej receptury z 330 kg cementu CEM II na 1 m³ betonu kalkulator podaje 173,4 kg CO₂e/m³ netto i 219,6 kg CO₂e/m³ brutto.",
       "href": "/blog-beton-emisje-kalkulator.html",
       "unit": null,
       "boundary": null,
@@ -4131,6 +4131,7 @@
         "beton emisje kalkulator"
       ],
       "published_at": "2026-02-24T00:00:00+01:00",
+      "reviewed_at": "2026-11-24",
       "cpr_family_ids": [
         26
       ],
@@ -4192,9 +4193,9 @@
       "category_label": "Cement",
       "year": 2025,
       "year_type": "publication",
-      "status_id": "archive",
-      "status_label": "Publikacja archiwalna",
-      "description": "Według deklaracji sektorowej SPC 2025 wpływ na klimat 1 t cementu CEM I wynosi 584 kg CO₂e netto i 766 kg CO₂e brutto. Dla CEM III wartość netto wynosi 398 kg CO₂e/t.",
+      "status_id": "guide",
+      "status_label": "Instrukcja",
+      "description": "Według deklaracji sektorowej Stowarzyszenia Producentów Cementu (SPC) z 2025 r. ślad węglowy cementu CEM I wynosi 584 kg CO₂e/t netto i 766 kg CO₂e/t brutto.",
       "href": "/blog-cement-polska.html",
       "unit": null,
       "boundary": null,
@@ -4210,6 +4211,7 @@
         "cement polska"
       ],
       "published_at": "2025-11-14",
+      "reviewed_at": "2026-11-24",
       "cpr_family_ids": [
         15
       ],

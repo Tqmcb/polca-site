@@ -40,6 +40,8 @@ class PortalTests(unittest.TestCase):
     self.assertEqual(len(d.xpath('//*[@id="main"]')),1)
     self.assertEqual(len(d.xpath('//h1')),1)
     self.assertEqual(len(d.xpath('//footer[contains(@class,"portal-footer")]')),1)
+    self.assertEqual(d.xpath('//footer//div[h2="Pomoc"]/a[@href="/pytania.html"]/following-sibling::*[1]'
+                             '[self::a and @href="/blog.html"]/text()'), ['Artykuły i wyjaśnienia'])
     self.assertEqual(len(d.xpath('//*[@id="portal-navigation"]')),1)
  def test_energy_profile_values_for_current_and_archived_cards(self):
   for version in ('v3','v4','v5'):

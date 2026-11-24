@@ -35,6 +35,23 @@ def update_items(entries, escape):
     )
 
 
+def article_items(resources, escape):
+    dated_articles = []
+    for article in resources:
+        if article['kind'] != 'article' or article['status_id'] == 'archive':
+            continue
+        # The catalogue also classifies undated institutional pages as articles.
+        date = article.get('reviewed_at') or article.get('published_at')
+        if date:
+            dated_articles.append((date.partition('T')[0], article))
+    dated_articles.sort(key=lambda item: item[0], reverse=True)
+    return '\n'.join(
+        f'<li><a href="{escape(article["href"])}">{escape(article["title"])}</a>'
+        f'<p><time datetime="{escape(date)}">{polish_date(date)}</time> · {escape(article["description"])}</p></li>'
+        for date, article in dated_articles[:3]
+    )
+
+
 def atlas_labels(root, escape):
     geography = json.loads((root / 'content/home-map.json').read_text())
     topics = json.loads((root / 'content/topic-map.json').read_text())
@@ -94,6 +111,7 @@ def build(api, families):
         family_total=len(families),
         family_coverage=e(family_coverage(labels)),
         update_items=update_items(api['CHANGE_ENTRIES'], e),
+        article_items=article_items(api['CAT']['resources'], e),
         energy_year=e(energy['year']),
         indicator_count=e(energy['indicator_count']),
         energy_href=e(energy['href']),

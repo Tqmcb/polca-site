@@ -13,7 +13,7 @@ from lxml import html
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'scripts'))
-from home_portal import build, counted, family_coverage
+from home_portal import article_items, build, counted, family_coverage
 from consultation_portal import DATA
 
 
@@ -86,6 +86,37 @@ class HomepageTests(unittest.TestCase):
             target = urlsplit(item.xpath('string(a/@href)'))
             self.assertEqual(target.path, '/rejestr-zmian.html')
             self.assertEqual(register.xpath('//article[@id=$id]//h3/text()', id=target.fragment), [entry['tytul']])
+
+    def test_published_homepage_lists_current_editorial_articles(self):
+        section, = self.home.xpath('//*[@id="home-updates-title"]/../following-sibling::section[1]')
+        self.assertEqual(section.xpath('h2/text()'), ['Które artykuły opisują aktualne dane?'])
+        self.assertEqual(section.xpath('a[@href="/blog.html"]/text()'), ['Wszystkie artykuły i wyjaśnienia'])
+        articles = [r for r in read_json('data/portal-editorial.json')['resources']
+                    if r['kind'] == 'article' and r['status_id'] != 'archive'
+                    and (r.get('reviewed_at') or r.get('published_at'))]
+        articles.sort(key=lambda r: (r.get('reviewed_at') or r['published_at'])[:10], reverse=True)
+        items = section.xpath('ol/li')
+        self.assertEqual([item.xpath('string(a/@href)') for item in items], [r['href'] for r in articles[:3]])
+        for item, article in zip(items, articles):
+            dt = date.fromisoformat((article.get('reviewed_at') or article['published_at'])[:10])
+            self.assertEqual(item.xpath('a/text()'), [article['title']])
+            self.assertEqual(item.xpath('.//time/@datetime'), [dt.isoformat()])
+            self.assertEqual(item.xpath('.//time/text()'), [f'{dt.day}.{dt:%m.%Y}'])
+            self.assertIn(article['description'], item.text_content())
+
+    def test_article_limit_uses_review_or_publication_day(self):
+        base = dict(kind='article', status_id='guide', description='Opis', href='/article.html')
+        resources = [
+            dict(base, title='Starszy wpis', published_at='2026-10-20'),
+            dict(base, title='Przegląd', published_at='2025-12-01', reviewed_at='2026-11-03'),
+            dict(base, title='Archiwum', published_at='2026-11-05', status_id='archive'),
+            dict(base, title='Kalkulator', kind='tool', published_at='2026-11-06'),
+            dict(base, title='Wpis z godziną', published_at='2026-11-04T10:00:00+01:00'),
+            dict(base, title='Trzeci wpis', published_at='2026-11-01'),
+        ]
+        items = html.fragment_fromstring(article_items(resources, html_text.escape), create_parent='ol')
+        self.assertEqual(items.xpath('li/a/text()'), ['Wpis z godziną', 'Przegląd', 'Trzeci wpis'])
+        self.assertEqual(items.xpath('.//time/text()'), ['4.11.2026', '3.11.2026', '1.11.2026'])
 
     def test_consultation_figures_come_from_the_consultation_package(self):
         package = ROOT / DATA.lstrip('/')

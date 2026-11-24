@@ -245,6 +245,8 @@ body.portal .portal-result-title:hover { color: var(--portal-ink); }
   .portal-categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; }
   .portal-main { padding-top: 24px; }
   .portal-footer > .portal-shell { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portal-footer .portal-shell > div > a:not(.portal-brand) { display: flex; align-items: center; min-height: 44px; }
+  .portal-result-description a { display: inline-flex; align-items: center; min-height: 44px; }
 }
 @media (max-width: 540px) {
   .portal-shell { width: calc(100% - 32px); }
