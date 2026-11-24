@@ -6,12 +6,11 @@
     if (!$('materialSelect') || !$('materialChart')) return;
 
     var materials = [
-        { id: 'cement_i',     name: 'Cement CEM I (SPC 2025)', gwp: 766,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: true },
-        { id: 'cement_ii',    name: 'Cement CEM II (SPC 2025)', gwp: 613,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
-        { id: 'cement_iii',   name: 'Cement CEM III (SPC 2025)', gwp: 483,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
-        { id: 'concrete_20',  name: 'Beton C20/25',          gwp: 200,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: false },
-        { id: 'concrete_25',  name: 'Beton C25/30',          gwp: 250,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: true },
-        { id: 'concrete_30',  name: 'Beton C30/37',          gwp: 300,   unit: 'kg CO\u2082e/m\u00b3', cat: 'Beton',     checked: false },
+        { id: 'cement_i',     name: 'Cement CEM I (SPC 2025, netto)', gwp: 584,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: true },
+        { id: 'cement_ii',    name: 'Cement CEM II (SPC 2025, netto)', gwp: 473,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
+        { id: 'cement_iii',   name: 'Cement CEM III (SPC 2025, netto)', gwp: 398,   unit: 'kg CO\u2082e/t',  cat: 'Spoiwa',    checked: false },
+        { id: 'concrete_25', name: 'Beton C25/30', gwp: 216.5, unit: 'kg CO₂e/m³', source: 'mediana deklaracji ITB, wariant brutto', cat: 'Beton', checked: true },
+        { id: 'concrete_30', name: 'Beton C30/37', gwp: 210.9, unit: 'kg CO₂e/m³', source: 'mediana deklaracji ITB, wariant brutto', cat: 'Beton', checked: false },
         { id: 'steel_bof',    name: 'Stal BOF (EU avg)',      gwp: 1780,  unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: true },
         { id: 'rebar',        name: 'Stal zbrojeniowa (mediana EPD PL)', gwp: 790,   unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: true },
         { id: 'alu_prim',     name: 'Aluminium (pierwotne)', gwp: 8000,  unit: 'kg CO\u2082e/t',  cat: 'Metale',    checked: false },
@@ -77,9 +76,10 @@
             return;
         }
 
-        var html = '<table class="polca-table"><thead><tr><th>Materiał</th><th>Wartość historyczna</th><th>Jednostka</th></tr></thead><tbody>';
+        var html = '<table class="polca-table"><thead><tr><th>Materiał</th><th>Wartość A1–A3</th><th>Jednostka</th></tr></thead><tbody>';
         selected.forEach(function (m) {
-            html += '<tr><td>' + m.name + '</td><td class="mono">' + m.gwp.toLocaleString('pl-PL') + '</td><td>' + m.unit + '</td></tr>';
+            var source = m.source ? '<br><small>' + m.source + '</small>' : '';
+            html += '<tr><td>' + m.name + source + '</td><td class="mono">' + m.gwp.toLocaleString('pl-PL') + '</td><td>' + m.unit + '</td></tr>';
         });
         container.innerHTML = html + '</tbody></table><p class="calc-note">Wartości mają różne jednostki odniesienia i założenia. Porównanie wyrobów wymaga tej samej funkcji, granic cyklu życia i metody oceny. Ujemna wartość dla drewna obejmuje założenie o węglu biogenicznym w etapie produkcji.</p>';
     }

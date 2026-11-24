@@ -83,7 +83,8 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
         result['limitations'] = raw['limitations']
     if note['status_id'] == 'published_sector_dataset' or note.get('include_source_trace'):
         for field in ('publication_year', 'source_valid_until', 'methodology_note',
-                      'gwp_fossil_kg_co2e', 'gwp_net_kg_co2e',
+                      'gwp_fossil_kg_co2e', 'gwp_fossil_basis', 'gwp_net_kg_co2e', 'gwp_gross_kg_co2e',
+                      'cement_basis', 'basis_note',
                       'binder_content_pct_m_m', 'gwp_modules_kg_co2e_per_t'):
             if field in raw:
                 result[field] = raw[field]
@@ -97,6 +98,8 @@ def build_legacy_record(raw: dict, editorial: dict) -> dict:
         if not isinstance(value, (int, float)):
             raise ValueError(f'Missing numeric result for {code}')
         result['value'] = value
+        if 'gwp_gross_kg_co2e' in result:
+            result['keywords'] = result['keywords'] + [f'{value} netto', f'{result["gwp_gross_kg_co2e"]} brutto']
         if note['category_id'] != 'cbam':
             result['keywords'] = result['keywords'] + ['ślad węglowy', 'wpływ na klimat', 'wyrób', 'produkt']
     return result

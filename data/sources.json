@@ -138,7 +138,7 @@
         {
           "name": "Stowarzyszenie Producentów Cementu",
           "scope": "Polski kontekst rynku cementu, technologii, dekarbonizacji oraz zweryfikowana EPD sektorowa SPC/ITB 2025 dla cementów CEM I-CEM V produkowanych w Polsce.",
-          "use_when": "Dla cementów CEM I–V poLCA przyjmuje globalne ocieplenie brutto z tabeli 2 deklaracji sektorowej wydanej w grudniu 2025 r. Wyniki za okres od stycznia do grudnia 2022 r. dotyczą 1 t cementu luzem w modułach A1–A3.",
+          "use_when": "Dla cementów CEM I–V poLCA przyjmuje globalne ocieplenie netto i podaje dodatkowo wartość brutto z tabeli 2 deklaracji sektorowej wydanej w grudniu 2025 r. Wyniki za okres od stycznia do grudnia 2022 r. dotyczą 1 t cementu luzem w modułach A1–A3.",
           "audit_check": "Kontrola obejmuje: użyty parametr dotyczy właściwego typu cementu, roku, technologii, zakresu emisji oraz czy odróżniono ślad węglowy netto od wartości brutto w tabeli EPD.",
           "limitation": "Dane sektorowe nie zastępują EPD konkretnej cementowni ani danych zakładowych, jeżeli są dostępne.",
           "free_status": "public_sector_source",

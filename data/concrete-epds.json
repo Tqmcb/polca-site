@@ -1,0 +1,302 @@
+{
+  "as_of": "2026-11-24",
+  "boundary": "A1–A3",
+  "unit": "kg CO₂e/m³",
+  "indicator": "GWP-total",
+  "standard": "EN 15804+A2",
+  "transport_note": "W deklaracjach ITB-EPD 447, 558, 565 i 566 wynik modułu A2 uśredniony dla wyrobów objętych deklaracją wynosi po zaokrągleniu od 44 do 55 kg CO₂e/m³. W deklaracji Kruszbet podano łączny wynik A1–A3.",
+  "declarations": [
+    {
+      "name": "ITB-EPD 447/2023",
+      "manufacturer": "Budokrusz S.A.",
+      "product": "ECO LINE",
+      "source_valid_until": "2028-04-24",
+      "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_447_CEM-30-37-Budokrusz-v5.pdf",
+      "note": "Cztery receptury klasy C30/37.",
+      "rows": [
+        {
+          "strength_class": "C30/37",
+          "page": 6,
+          "value": 217
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 8,
+          "value": 209
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 10,
+          "value": 199
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 12,
+          "value": 210
+        }
+      ],
+      "cement_basis": "brutto"
+    },
+    {
+      "name": "ITB-EPD 558/2023",
+      "manufacturer": "STEFANCO Sp. z o.o.",
+      "product": "Beton posadzkowy",
+      "source_valid_until": "2028-12-01",
+      "url": "https://www.itb.pl/wp-content/uploads/2023/12/ITB-EPD_558_STEFANCO-Sp.-z-o.o.-Ready-mixed-concrete-for-flooring.pdf",
+      "note": "W tekście deklaracji podano klasę C20/25. Do zestawienia przyjęto C25/30 zgodnie z tabelą wyników na s. 6.",
+      "rows": [
+        {
+          "strength_class": "C25/30",
+          "page": 6,
+          "value": 255
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 8,
+          "value": 193
+        }
+      ],
+      "cement_basis": "brutto"
+    },
+    {
+      "name": "ITB-EPD 565/2023",
+      "manufacturer": "Dyckerhoff Polska Sp. z o.o.",
+      "product": "Dyckerhoff EKO PLUS",
+      "source_valid_until": "2028-12-06",
+      "url": "https://www.itb.pl/wp-content/uploads/2024/03/ITB-EPD_565_Dyckerhoff-Polska-Sp.-z-o.o.-Concrete-Dyckerhoff-EKO-PLUS.pdf",
+      "note": "",
+      "rows": [
+        {
+          "strength_class": "C35/45",
+          "page": 6,
+          "value": 228
+        },
+        {
+          "strength_class": "C40/50",
+          "page": 8,
+          "value": 245
+        }
+      ],
+      "cement_basis": "brutto"
+    },
+    {
+      "name": "ITB-EPD 566/2023",
+      "manufacturer": "Dyckerhoff Polska Sp. z o.o.",
+      "product": "Dyckerhoff EKO",
+      "source_valid_until": "2028-12-06",
+      "url": "https://www.itb.pl/wp-content/uploads/2024/03/ITB-EPD_566_Dyckerhoff-Polska-Sp.-z-o.o.-Concrete-Dyckerhoff-EKO.pdf",
+      "note": "",
+      "rows": [
+        {
+          "strength_class": "C20/25",
+          "page": 6,
+          "value": 184
+        },
+        {
+          "strength_class": "C25/30",
+          "page": 8,
+          "value": 189
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 10,
+          "value": 213
+        }
+      ],
+      "cement_basis": "brutto"
+    },
+    {
+      "name": "ITB-EPD 662/2024",
+      "manufacturer": "P.P.M.D. Kruszbet S.A.",
+      "product": "Beton towarowy",
+      "source_valid_until": "2029-09-13",
+      "url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_662_P.P.M.D.-KRUSZBET-S.A.-Ready-mix-concrete.pdf",
+      "note": "Wyniki wytwórni w Stożnem (s. 8) i Suwałkach (s. 9) uśredniono w obrębie każdej klasy. Tabele A1–A3 nie określają wariantu cementu. W zestawieniu przyjęliśmy wariant brutto zgodnie z regułą poLCA.",
+      "rows": [
+        {
+          "strength_class": "C8/10",
+          "page": 8,
+          "value": 148
+        },
+        {
+          "strength_class": "C12/15",
+          "page": 8,
+          "value": 163
+        },
+        {
+          "strength_class": "C16/20",
+          "page": 8,
+          "value": 188
+        },
+        {
+          "strength_class": "C20/25",
+          "page": 8,
+          "value": 200
+        },
+        {
+          "strength_class": "C25/30",
+          "page": 8,
+          "value": 219
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 8,
+          "value": 226
+        },
+        {
+          "strength_class": "C35/45",
+          "page": 8,
+          "value": 286
+        },
+        {
+          "strength_class": "C40/50",
+          "page": 8,
+          "value": 312
+        },
+        {
+          "strength_class": "C50/60",
+          "page": 8,
+          "value": 339
+        },
+        {
+          "strength_class": "C8/10",
+          "page": 9,
+          "value": 143
+        },
+        {
+          "strength_class": "C12/15",
+          "page": 9,
+          "value": 158
+        },
+        {
+          "strength_class": "C16/20",
+          "page": 9,
+          "value": 183
+        },
+        {
+          "strength_class": "C20/25",
+          "page": 9,
+          "value": 195
+        },
+        {
+          "strength_class": "C25/30",
+          "page": 9,
+          "value": 214
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 9,
+          "value": 221
+        },
+        {
+          "strength_class": "C35/45",
+          "page": 9,
+          "value": 281
+        },
+        {
+          "strength_class": "C40/50",
+          "page": 9,
+          "value": 307
+        },
+        {
+          "strength_class": "C50/60",
+          "page": 9,
+          "value": 333
+        }
+      ],
+      "cement_basis": "brutto",
+      "basis_note": "Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto."
+    },
+    {
+      "name": "EPD-P-01.09.2024",
+      "manufacturer": "Concrete-Zabłoccy sp.j.",
+      "product": "Beton towarowy Zabłoccy Beton",
+      "source_valid_until": "2029-09-09",
+      "url": "https://epd.org.pl/wp-content/uploads/2024/09/EPDP-09.09.2024.pdf",
+      "cement_basis": "netto",
+      "note": "Deklaracja wydana w programie EPD Polska prowadzonym przez Multicert.",
+      "rows": [
+        {
+          "strength_class": "C20/25",
+          "page": 12,
+          "value": 168.2
+        },
+        {
+          "strength_class": "C30/37",
+          "page": 15,
+          "value": 212.9
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "owner": "Warbud Beton",
+      "reason": "GWP-fossil oznacza wpływ związany z węglem kopalnym. Wyniki są wewnętrznie sprzeczne: GWP-total jest mniejsze od GWP-fossil, a składnik biogeniczny w A1 jest dodatni.",
+      "sources": [
+        {
+          "label": "ICiMB 02-03/2024",
+          "url": "https://icimb.lukasiewicz.gov.pl/wp-content/uploads/sites/46/2025/12/pdf30.pdf#page=11"
+        }
+      ]
+    },
+    {
+      "owner": "Budokrusz ECO LINE",
+      "reason": "Wyniki pogrupowano według zawartości cementu. Nie podano klas wytrzymałości.",
+      "sources": [
+        {
+          "label": "ITB-EPD 550",
+          "url": "https://www.itb.pl/wp-content/uploads/2024/03/ITB-EPD_550_Budokrusz-S.A.-Group-of-ECO-LINE-concretes.pdf#page=6"
+        }
+      ]
+    },
+    {
+      "owner": "Lafarge ECOPact",
+      "reason": "Deklaracje podają wyniki dla grup według zawartości cementu, bez przypisania do klas wytrzymałości; wynik podstawowy jest w wariancie netto (np. 87,2 kg CO₂e/m³ w deklaracji 434).",
+      "sources": [
+        {
+          "label": "ITB-EPD 433",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_433_2023_ECOPact-PoznaAaaEz-Sector_20230330_Lafarge-Cement-S.A..pdf#page=6"
+        },
+        {
+          "label": "ITB-EPD 434",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_434_2023_ECOPact-GdaAaaEzsk-Sector_20230330_Lafarge-Cement-S.A..pdf#page=6"
+        },
+        {
+          "label": "ITB-EPD 435",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_435_2023_ECOPact-Krakow-Sector_20230330_Lafarge-Cement-S.A..pdf#page=6"
+        },
+        {
+          "label": "ITB-EPD 436",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_436_2023_ECOPact-Warsaw-Sector_20230330_Lafarge-Cement-S.A..pdf#page=6"
+        }
+      ]
+    },
+    {
+      "owner": "CEMEX",
+      "reason": "Deklaracje CEMEX 271, 273, 332 i 421 podają wyniki według EN 15804+A1; deklaracja 272 wskazuje EN 15804 bez oznaczenia zmiany i podaje wyniki netto i brutto według CML 4.2.",
+      "sources": [
+        {
+          "label": "ITB-EPD 271",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB_EPD-271-CEMEX-concrete-CEM-I.pdf#page=18"
+        },
+        {
+          "label": "ITB-EPD 272",
+          "url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_272_CEMEX-Polska-Sp.-z-o.o.-Vertua®-concrete-groups-based-on-mix-CEM-I-and-CEM-III-produced-by-Cemex-Polska.pdf#page=31"
+        },
+        {
+          "label": "ITB-EPD 273",
+          "url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_273_CEMEX-Polska-Sp.-z-o.o.-Vertua®-concrete-groups-based-on-CEM-III-produced-by-Cemex-Polska.pdf#page=31"
+        },
+        {
+          "label": "ITB-EPD 332",
+          "url": "https://www.itb.pl/wp-content/uploads/2024/09/ITB-EPD_332_CEMEX-Polska-Sp.-z-o.o.-Vertua®-concrete-groups-based-on-CEM-II-produced-by-Cemex-Polska.pdf#page=31"
+        },
+        {
+          "label": "ITB-EPD 421",
+          "url": "https://www.itb.pl/wp-content/uploads/2023/07/ITB-EPD_421_ODN56-Cemex-concrete-v3.pdf#page=8"
+        }
+      ]
+    }
+  ]
+}

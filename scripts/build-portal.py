@@ -8,6 +8,8 @@ from datetime import date
 from lxml import html, etree
 from atlas_icons import ICON_URL, export_icons
 from change_register import static_entries
+from cement_guide import BASIS_RULE
+from concrete_portal import worked_example
 ROOT=Path(__file__).resolve().parents[1]
 CAT=json.loads((ROOT/'data/portal-catalog.json').read_text())
 CHANGE_ENTRIES=json.loads((ROOT/'data/rejestr-zmian.json').read_text())['wpisy']
@@ -60,9 +62,13 @@ def page(path,title,lead,body,parent=None,attrs='',home=False,head_extra='',page
  p=ROOT/path;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(out+'\n');GENERATED.add(path)
 def num(v, spec='.6g'):return format(v,spec).replace('.',',')
 def record_value(r):
+ if r.get('category_id') == 'beton':
+  return num(r['value'], '.1f')
  if 'gwp_modules_kg_co2e_per_t' in r:
   return num(r['value'], '.2f')
  return num(r['value'])
+def description_with_basis(r):
+ return ' '.join(filter(None, (r.get('description'), r.get('basis_note'))))
 def status(r):return f'<span class="portal-status portal-status-{e(r.get("status_id",""))}">{e(r.get("status_label",""))}</span>'
 def row(r, dataset_catalog=False):
  val=f'<div class="portal-result-value"><strong>{e(record_value(r))}</strong><small>{e(r.get("unit"))}</small><small>{e(r.get("indicator_label"))}</small></div>' if isinstance(r.get('value'),(int,float)) else ''
@@ -71,7 +77,7 @@ def row(r, dataset_catalog=False):
  if not dataset_catalog:meta.insert(0,kind)
  title=('<div class="portal-result-meta">'+''.join(f'<span>{e(item)}</span>' for item in meta if item)+'</div>'
         +f'<h2>{a(r["title"],r["href"],"portal-result-title")}</h2>')
- details=(f'<p class="portal-result-description">{e(r.get("description",""))}</p>'
+ details=(f'<p class="portal-result-description">{e(description_with_basis(r))}</p>'
           +f'<div class="portal-result-meta">{status(r)}<span>{e(" · ".join(r.get("formats",[])))}</span></div>')
  content=title+val+details if dataset_catalog else '<div>'+title+details+'</div>'+val
  return f'<article class="portal-result" data-record-id="{e(r["id"])}">{content}</article>'
@@ -173,6 +179,12 @@ def build_cards():
   fields=scope_fields+[('Rodzaj wskaźnika',r.get('indicator_label')),('Jednostka',r.get('unit')),('Rok',r.get('year')),('Znaczenie roku',{'reference':'Rok danych','publication':'Rok publikacji','application':'Rok zastosowania'}.get(r.get('year_type'),'')),('Obszar',r.get('geography')),('Zakres',None if contexts else r.get('boundary')),('Status',r.get('status_label')),('Identyfikator',r['id'])]
   meta='<dl class="portal-metadata">'+''.join(f'<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>' for k,v in fields if v is not None and v!='')+'</dl>'
   value=(f'<p class="portal-dataset-value"><strong>{e(record_value(r))}</strong> <span>{e(r.get("unit"))}</span></p><p>{e(r.get("indicator_label"))}</p>') if isinstance(r.get('value'),(int,float)) else '<p>Zestaw parametrów modelu. Szczegóły zawiera plik danych.</p>'
+  if 'gwp_gross_kg_co2e' in r:
+   value += f'<p>Wartość brutto (informacja dodatkowa): {num(r["gwp_gross_kg_co2e"])} {e(r["unit"])}</p>'
+  if 'gwp_fossil_basis' in r:
+   value += f'<p>GWP-fossil: {num(r["gwp_fossil_kg_co2e"])} {e(r["unit"])} (składnik kopalny według rozliczenia {e(r["gwp_fossil_basis"])})</p>'
+  if r.get('basis_note'):
+   value += f'<p>{e(r["basis_note"])}</p>'
   downloads='<ul class="portal-downloads">'+''.join('<li>'+a(x['label'],x['href'],extra='download')+f'<span>{e(x["format"])}</span></li>' for x in r['downloads'])+'</ul>'
   source='<p>' + (a(r['source_name'],r['source_url']) if r.get('source_url') else e(r.get('source_name',''))) + '</p>'
   declarations = [s for s in r.get('source_trace', []) if s['type'] == 'manufacturer_epd']
@@ -193,6 +205,8 @@ def build_cards():
        f'<div><dt>{label}</dt><dd>{num(modules[key], ".2f")} kg CO₂e/t</dd></div>'
        for key, label in [('A1', 'A1 — surowce'), ('A2', 'A2 — transport'), ('A3', 'A3 — wytwarzanie')]) + '</dl>'
   notes=[r['methodology_note']] if r.get('methodology_note') else []
+  if 'gwp_gross_kg_co2e' in r:
+   notes.append(BASIS_RULE)
   if r.get('limitations'):notes.append(r['limitations'])
   if r['id']=='POLCA-EN-PL-LCA-2024':notes.append('Wartość 0,599 dotyczy składnika kopalnego wpływu na klimat. Informacyjna suma w pełnym modelu 2024 wynosi 0,600 kg CO₂e/kWh. Rekord do pobrania zachowuje rozróżnienie rodzaju wskaźnika.')
   if r['id']=='KOBIZE-EN-PL-ENDUSER-2024':notes.append('Wartość dotyczy emisji CO₂ u odbiorcy końcowego, w granicach opisanych w publikacji KOBiZE. Do pełnej oceny cyklu życia energii służy odrębny profil środowiskowy.')
@@ -279,6 +293,10 @@ def sync_shell():
   if rel=='rejestr-zmian.html':
    text=re.sub(r'(<div id="rejestr-lista">).*?(</div>\s*</section>)',
                lambda m:m[1]+'\n'+static_entries(CHANGE_ENTRIES,e)+'\n        '+m[2],text,count=1,flags=re.S)
+  if rel=='blog-beton-emisje-kalkulator.html':
+   before, block = text.split('<!-- BEGIN concrete-example -->')
+   _, after = block.split('<!-- END concrete-example -->')
+   text = before + '<!-- BEGIN concrete-example -->\n' + worked_example(CAT) + '\n<!-- END concrete-example -->' + after
   text=re.sub(r'/js/portal\.js\?v=[^"\s]+','/js/portal.js?v=20261123',text)
   p.write_text(text)
 

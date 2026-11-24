@@ -2,7 +2,7 @@
   "meta": {
     "title": "poLCA — rejestr przeglądów i zmian bazy referencyjnej",
     "version": "2026.11",
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-24",
     "operator": "Multicert Sp. z o.o. / EPD Polska",
     "purpose": "Publiczny zapis przeglądów okresowych, aktualizacji danych i zmian metodycznych w bazie poLCA. Rejestr realizuje zasadę audytowalności z polityki aktualizacji: każde wydanie ma numer wersji, datę przeglądu i opis zmian.",
     "policy_url": "data/update-policy.json",
@@ -54,6 +54,28 @@
     }
   ],
   "wpisy": [
+    {
+      "data": "2026-11-24",
+      "kategoria": "przeglad_metody",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-CEMENT-CEM-I-SPC-PL-2025, POLCA-CEMENT-CEM-II-SPC-PL-2025, POLCA-CEMENT-CEM-III-SPC-PL-2025, POLCA-CEMENT-CEM-IV-SPC-PL-2025, POLCA-CEMENT-CEM-V-SPC-PL-2025",
+      "tytul": "Wskaźniki cementu według deklaracji SPC — wartość podstawowa netto",
+      "opis": "Poprzednia wartość brutto i nowa wartość netto w kg CO₂e/t wynoszą odpowiednio dla CEM I 766 i 584, CEM II 613 i 473, CEM III 483 i 398, CEM IV 510 i 397, CEM V 546 i 430. Przy 300 kg cementu na 1 m³ betonu wkłady zmieniły się kolejno z 229,8 na 175,2, ze 183,9 na 141,9, ze 144,9 na 119,4, ze 153,0 na 119,1 i ze 163,8 na 129,0 kg CO₂e/m³. Dla 1 t prefabrykatu wkład cementu zmienił się ze 114,9 na 87,6, a szacunek A1 ze 144,3 na 117,0 kg CO₂e/t. W recepturze z 330 kg CEM II wkład cementu zmienił się z 202,29 na 156,09, a wynik A1–A3 z 219,57 na 173,37 kg CO₂e/m³. Wartości brutto pozostają dostępne na kartach i w plikach do pobrania.",
+      "podstawa": "Deklaracja środowiskowa sektorowa SPC 2025, tabela 2, s. 5. EN 15804+A2, pkt 6.3.5.1 i załącznik D.3.2 (wzory D.2 i D.3).",
+      "link": "/wyroby/15.html#modul-a1-cement",
+      "skutek_dla_deklaracji": "Wartość netto przyjmujemy, gdy deklaracja środowiskowa cementu podaje wynik netto albo potwierdza, że współspalane paliwa mają status odpadu. W pozostałych przypadkach przyjmujemy wartość brutto. Porównujemy wyłącznie wyniki obliczone w tym samym wariancie."
+    },
+    {
+      "data": "2026-11-24",
+      "kategoria": "nowe_dane",
+      "status": "zakonczony",
+      "dotyczy": "POLCA-CONCRETE-C25-30-EPD-PL-2026, POLCA-CONCRETE-C30-37-EPD-PL-2026",
+      "tytul": "Beton towarowy — wyniki z polskich deklaracji i kalkulator dla 1 m³",
+      "opis": "W wariancie brutto zestawiono pięć deklaracji dla dziewięciu klas. Deklaracja Kruszbet nie określa wariantu dla A1–A3; zgodnie z regułą poLCA zaliczono ją do wariantu brutto. Mediana dla C25/30 wynosi 216,5 kg CO₂e/m³ (3 deklaracje), a dla C30/37 wynosi 210,9 kg CO₂e/m³ (4 deklaracje). Dla C20/25 średnie z dwóch deklaracji wynoszą 184 i 197,5 kg CO₂e/m³. W odrębnym zestawieniu netto podano wyniki Zabłoccy Beton dla C20/25 i C30/37, odpowiednio 168,2 i 212,9 kg CO₂e/m³, po jednej deklaracji dla klasy. Kalkulator porównuje recepturę z danymi brutto po przeliczeniu cementu na ten wariant.",
+      "podstawa": "Deklaracje ITB nr 447, 558, 565, 566 i 662 oraz deklaracja EPD-P-01.09.2024 wydana w programie EPD Polska prowadzonym przez Multicert.",
+      "link": "/wyroby/26.html#beton-towarowy",
+      "skutek_dla_deklaracji": "W deklaracji betonu należy stosować dane wytwórni."
+    },
     {
       "data": "2026-11-23",
       "kategoria": "przeglad_metody",

@@ -10,7 +10,7 @@ POZ_BRUK = 'https://www.itb.pl/wp-content/uploads/2023/08/ITB-EPD_491_POZ-BRUK-S
 CEMENT = 'POLCA-CEMENT-CEM-I-SPC-PL-2025'
 # Mass percentages as reported on page 3. Do not normalize them.
 MATERIALS = (
-    ('Cement CEM I', '15', CEMENT),
+    ('Cement CEM I (netto)', '15', CEMENT),
     ('Kruszywa (przyjęto kruszywo naturalne)', '73', 'POLCA-AGG-PL-NATURAL-DEFAULT-2026'),
     ('Wypełniacze (przyjęto mączkę wapienną)', '4', 'POLCA-FILLER-LIMESTONE-DEFAULT-2026'),
     ('Stal zbrojeniowa', '3', 'POLCA-STEEL-REBAR-PL-MEDIAN-2026'),
@@ -55,11 +55,11 @@ def precast_guide(catalog, section_table):
     <h3 id="sklad-prefabrykatu">Skład 1 t elementu i wkład składników w module A1</h3>
     <div class="portal-table-wrap" role="region" aria-labelledby="sklad-prefabrykatu" tabindex="0">
     <table aria-labelledby="sklad-prefabrykatu"><thead><tr>{''.join(f'<th scope="col">{h}</th>' for h in headers)}</tr></thead>
-    <tbody>{''.join(rows)}</tbody><tfoot><tr><th scope="row" colspan="4">Szacunek A1</th><td>{fixed(total, 1)}</td></tr></tfoot></table></div>
+    <tbody>{''.join(rows)}</tbody><tfoot><tr><th scope="row" colspan="4">Szacunek A1 z cementem netto</th><td>{fixed(total, 1)}</td></tr></tfoot></table></div>
     <p>Udziały podane w deklaracji sumują się do 103,1%. Masy w tabeli odpowiadają udziałom z deklaracji. Deklaracja nie podaje rodzaju kruszywa ani wypełniacza, dlatego przyjęto wskaźniki oznaczone w tabeli.</p>
     <h3>{epd_title}</h3>{declared}
-    <p>Szacunek A1 ze wskaźników poLCA wynosi {fixed(total, 1)} kg CO₂e/t, a deklaracja podaje 171 kg CO₂e/t. Deklaracja nie podaje wskaźników przyjętych dla składników, dlatego różnicy nie można przypisać konkretnemu składnikowi.</p>
-    <p>Największy wkład w A1 ma cement: {fixed(cement, 1)} kg CO₂e/t, czyli {fixed(100 * cement / total, 1)}% szacunku.</p>
-    <p>Dla porównania płyty kanałowe w deklaracjach ITB nr <a href="{DBB}">646/2024</a> i <a href="{POZ_BRUK}">491/2023</a> mają wynik A1–A3 odpowiednio 166 i 201 kg CO₂e/t.</p>
+    <p>Szacunek A1 z cementem w wariancie netto wynosi {fixed(total, 1)} kg CO₂e/t. Wyniki podane przez producenta przedstawiono w osobnej tabeli. Deklaracja nie podaje wskaźników przyjętych dla poszczególnych składników.</p>
+    <p>Na cement przypada {fixed(cement, 1)} kg CO₂e/t, czyli {fixed(100 * cement / total, 1)}% szacunku netto.</p>
+    <p>Dla porównania płyty kanałowe w deklaracjach ITB nr <a href="{DBB}">646/2024</a> i <a href="{POZ_BRUK}">491/2023</a> mają wynik A1–A3 odpowiednio 166 i 201 kg CO₂e/t. Deklaracje nie określają wariantu cementu.</p>
     <p>W deklaracji własnego wyrobu należy przyjąć recepturę zakładu oraz wskaźniki z deklaracji dostawców cementu i stali. Wkład energii elektrycznej zużytej w zakładzie można obliczyć z danych o zużyciu i odpowiednio dobranego profilu. Zakres krajowego miksu fizycznego podano na <a href="/energia-polska-2025-v5.html#zastosowanie">karcie energii Polska 2025 v5</a>.</p>
     <p><a href="{FORMEE}#page=7">Deklaracja ITB nr 561/2023, skład s. 3, wyniki s. 7</a>. Formee Sp. z o.o., EN 15804+A2, ważna do 01.12.2028. W deklaracji podano cement CEM I 42,5R i średnią gęstość wyrobów 2330 kg/m³.</p></section>'''

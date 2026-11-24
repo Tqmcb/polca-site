@@ -3,6 +3,10 @@ from html import escape
 
 from aggregate_guide import CONCRETE_STANDARD, ELECTRICITY, TRUCK, concrete_operation, render_case
 
+BASIS_RULE = ('Wartość netto przyjmujemy, gdy deklaracja środowiskowa cementu podaje wynik netto albo potwierdza, '
+              'że współspalane paliwa mają status odpadu. W pozostałych przypadkach przyjmujemy wartość brutto. '
+              'Porównujemy wyłącznie wyniki obliczone w tym samym wariancie.')
+
 
 def cement_guide(catalog, section_table):
     records = {r['id']: r for r in catalog['datasets']}
@@ -10,17 +14,17 @@ def cement_guide(catalog, section_table):
     cem_i = cements['I']
     details = f'''<details class="aggregate-epd" id="srednia-krajowa-cementu">
       <summary>Co obejmuje średnia krajowa dla cementu?</summary>
-      <p>Deklaracja sektorowa Stowarzyszenia Producentów Cementu obejmuje dane zebrane przez cementownie członków stowarzyszenia od stycznia do grudnia 2022 r. Dla cementu CEM I podaje wskaźnik globalnego ocieplenia brutto <strong>{cem_i['value']} kg CO₂e/t</strong> i netto {cem_i['gwp_net_kg_co2e']} kg CO₂e/t.</p>
-      <p>Wartość netto pomija emisje z paliw kopalnych zawartych w paliwach alternatywnych. W 2022 r. paliwa alternatywne dostarczyły 76,5% ciepła zużytego w produkcji cementu. poLCA podaje wartość brutto, równą wartości wskaźnika GWP-fossil w tabeli 2 deklaracji.</p>
+      <p>Deklaracja sektorowa Stowarzyszenia Producentów Cementu obejmuje dane cementowni członkowskich za 2022 r. Dla CEM I deklarowana wartość netto wynosi <strong>{cem_i['value']} kg CO₂e/t</strong>. Wartość brutto wynosi {cem_i['gwp_gross_kg_co2e']} kg CO₂e/t i stanowi informację dodatkową.</p>
+      <p>W wariancie netto emisje ze spalania kopalnej części paliw o statusie odpadu przypisuje się systemowi, w którym powstał odpad (EN 15804+A2, pkt 6.3.5.1 i załącznik D.3.2). {BASIS_RULE}</p>
       <p><a href="{escape(cem_i['source_url'])}">Deklaracja sektorowa SPC 2025, tabela 2, s. 5</a></p></details>'''
     case = {
         'name': 'cement', 'id': 'cement-w-betonie', 'ingredient': True, 'title': 'Cement jako składnik betonu',
         'image': '/images/cement-beton-fotografia.jpg',
         'alt': 'Cementownia z piecem obrotowym, cementowóz na drodze i betoniarnia z silosami.',
-        'point_basis': {'material': 'na 1 t cementu', 'distance': 'na 1 t cementu', 'power': 'na 1 m³ betonu'},
+        'point_basis': {'material': 'netto na 1 t cementu', 'distance': 'na 1 t cementu', 'power': 'na 1 m³ betonu'},
         'default_material': cements['II']['id'], 'material_scope': 'Cement', 'material_genitive': 'cementu',
         'material_target': 'cementownia', 'extras': details,
-        'material_description': ('Wartości są średnimi krajowymi dla poszczególnych rodzajów cementu, obliczonymi na podstawie danych cementowni za 2022 r. '
+        'material_description': ('Wskaźniki netto są średnimi krajowymi dla poszczególnych rodzajów cementu, obliczonymi na podstawie danych cementowni za 2022 r. '
                                  'W deklaracji betonu należy stosować wskaźnik z deklaracji środowiskowej dostawcy cementu, jeżeli jest dostępna.'),
         'material_note': 'Wskaźnik powinien odpowiadać rodzajowi cementu w recepturze betonu.',
         'transport_target': 'przewoz-cementu', 'transport_destination': 'do betoniarni', 'distance': 100,
@@ -31,11 +35,14 @@ def cement_guide(catalog, section_table):
                          'W A3 podano tylko wkład energii elektrycznej na 1 m³ betonu. '
                          f'Podział na moduły według <a href="{CONCRETE_STANDARD}">EN 16757, pkt 6.2.2</a>.'),
     }
-    example = render_case(case, cements.values(), records[TRUCK])
+    example = render_case(case, [dict(r, title=f'CEM {kind} — netto (SPC 2025)') for kind, r in cements.items()], records[TRUCK])
     table_title = 'Ile wnosi cement do 1 m³ betonu?'
     table = section_table({'title': table_title, 'table': {
-        'headers': ['Rodzaj cementu', 'Wskaźnik, kg CO₂e/t', 'Wkład w 1 m³ betonu, kg CO₂e'],
-        'rows': [[f'CEM {kind}', r['value'], f"{r['value'] * 0.3:.1f}".replace('.', ',')] for kind, r in cements.items()],
+        'headers': ['Rodzaj cementu', 'Wskaźnik netto, kg CO₂e/t', 'Wkład netto, kg CO₂e/m³',
+                    'Wskaźnik brutto, kg CO₂e/t', 'Wkład brutto, kg CO₂e/m³'],
+        'rows': [[f'CEM {kind}', r['value'], f"{r['value'] * 0.3:.1f}".replace('.', ','),
+                  r['gwp_gross_kg_co2e'], f"{r['gwp_gross_kg_co2e'] * 0.3:.1f}".replace('.', ',')]
+                 for kind, r in cements.items()],
     }}, responsive=True)
     return f'''<section id="modul-a1-cement" class="portal-section aggregate-guide" aria-labelledby="cement-guide-title">
     <h2 id="cement-guide-title">Jaki wpływ na klimat ma cement w betonie?</h2>

@@ -36,8 +36,10 @@ class CementTests(unittest.TestCase):
         for kind, (gross, fossil, net) in TABLE_2.items():
             record = self.cements[spc_id(kind)]
             with self.subTest(kind=kind):
-                self.assertEqual((record['value'], record['gwp_fossil_kg_co2e'], record['gwp_net_kg_co2e']), (gross, fossil, net))
+                self.assertEqual((record['value'], record['gwp_fossil_kg_co2e'], record['gwp_net_kg_co2e'],
+                                  record['gwp_gross_kg_co2e'], record['cement_basis']), (net, fossil, net, gross, 'netto'))
                 self.assertEqual(record['source_url'], SPC_URL)
+                self.assertEqual(record['gwp_fossil_basis'], 'brutto')
                 self.assertEqual(record['source_name'], 'Deklaracja środowiskowa sektorowa SPC 2025, tabela 2')
                 self.assertEqual(record['source_valid_until'], '2030-12-18')
                 self.assertEqual((record['year'], record['publication_year'], record['year_type']), (2022, 2025, 'reference'))
@@ -48,6 +50,28 @@ class CementTests(unittest.TestCase):
                 card = html.parse(str(ROOT / record['href'][1:]))
                 self.assertIn(SPC_URL, card.xpath('//main//a/@href'))
                 self.assertIn(record['methodology_note'], card.xpath('//main//p/text()'))
+                self.assertTrue(record['methodology_note'].startswith(
+                    'Wartość podstawowa to globalne ocieplenie netto z tabeli 2 deklaracji SPC. '
+                    'Nie obejmuje ona emisji ze spalania kopalnej części paliw o statusie odpadu. '
+                    'Według zasady „zanieczyszczający płaci” (EN 15804+A2, pkt 6.3.5.1, załącznik D.3.2) '
+                    'emisje te przypisuje się systemowi, w którym powstał odpad.'))
+                self.assertIn('Porównanie z danymi EU ETS lub CBAM wymaga uzgodnienia granic obliczeń.', record['methodology_note'])
+                self.assertIn(f'GWP-fossil: {fossil} kg CO₂e/t (składnik kopalny według rozliczenia brutto)',
+                              card.xpath('//main//p/text()'))
+                self.assertIn(f'Wartość brutto (informacja dodatkowa): {gross} kg CO₂e/t', card.xpath('//main//p/text()'))
+
+    def test_basis_rule_on_all_cement_pages(self):
+        rule = ('Wartość netto przyjmujemy, gdy deklaracja środowiskowa cementu podaje wynik netto albo potwierdza, '
+                'że współspalane paliwa mają status odpadu. W pozostałych przypadkach przyjmujemy wartość brutto. '
+                'Porównujemy wyłącznie wyniki obliczone w tym samym wariancie.')
+        entries = read('data/rejestr-zmian.json')['wpisy']
+        self.assertIn(rule, [entry.get('skutek_dla_deklaracji') for entry in entries])
+        paths = ['wyroby/15.html', 'sektor-cement.html', 'kalkulator-betonu.html',
+                 'blog-cement-polska.html', 'blog-beton-emisje-kalkulator.html']
+        paths.extend(record['href'][1:] for record in self.cements.values())
+        for path in paths:
+            with self.subTest(path=path):
+                self.assertIn(rule, html.parse(str(ROOT / path)).xpath('string(//main)'))
 
     def test_archived_cards_remain_addressable_with_current_replacement(self):
         archived = {r['id']: r for r in self.catalog['withdrawn_datasets'] if r['category_id'] == 'cement'}
@@ -69,6 +93,10 @@ class CementTests(unittest.TestCase):
             doc = html.parse(str(ROOT / file))
             rows = json.loads(doc.xpath('string(//*[@id="portal-search-data"])'))
             self.assertEqual({r['id'] for r in rows if r['kind'] == 'dataset' and r['category_id'] == 'cement'}, set(self.cements))
+            for r in rows:
+                if r['id'] in self.cements:
+                    self.assertIn(f"{r['value']} netto", r['keywords'])
+                    self.assertIn(f"{r['gwp_gross_kg_co2e']} brutto", r['keywords'])
             self.assertTrue(OLD_IDS.isdisjoint(doc.xpath('//@data-record-id')))
         shared = read('data/product-dataset-map.json')['shared_datasets']
         self.assertEqual({r['code'] for r in shared if r['code'].startswith('POLCA-CEMENT-')}, set(self.cements))
@@ -83,10 +111,26 @@ class CementTests(unittest.TestCase):
                 self.assertEqual(read(f'data/datasets/{code}.json')['dataset'], row)
                 self.assertEqual(csv_rows[code]['status'], row['status'])
                 self.assertEqual(Decimal(csv_rows[code]['gwp_total_kg_co2e']), row['gwp_total_kg_co2e'])
+                if code in self.cements:
+                    self.assertEqual(row['gwp_total_kg_co2e'], self.cements[code]['value'])
+                    self.assertEqual(int(csv_rows[code]['gwp_gross_kg_co2e']), self.cements[code]['gwp_gross_kg_co2e'])
+                    self.assertEqual(csv_rows[code]['cement_basis'], 'netto')
+                    self.assertEqual((row['gwp_fossil_basis'], csv_rows[code]['gwp_fossil_basis']), ('brutto', 'brutto'))
+                    self.assertEqual(int(csv_rows[code]['gwp_fossil_kg_co2e']), self.cements[code]['gwp_fossil_kg_co2e'])
         legacy = read('data/polca-gwp-v2026-1.json')['records']
         with (ROOT / 'data/polca-gwp-v2026-1.csv').open() as old_csv:
             legacy_csv = {r['id']: r for r in csv.DictReader(old_csv, delimiter=';')}
-        cement_rows = [r for r in legacy if r['group'] == 'cement']
+        current = {r['id']: r for r in legacy if r['group'] == 'cement' and 'wycofany' not in r['status']}
+        self.assertEqual(set(current), set(self.cements))
+        for code, r in current.items():
+            expected = self.cements[code]
+            for export in (r, legacy_csv[code]):
+                self.assertEqual(export['gwp_fossil_basis'], 'brutto')
+                self.assertEqual(int(export['gwp_fossil_kg_co2e']), expected['gwp_fossil_kg_co2e'])
+            self.assertEqual((r['value'], r['value_gross']), (expected['value'], expected['gwp_gross_kg_co2e']))
+            self.assertEqual((int(legacy_csv[code]['wartosc']), int(legacy_csv[code]['wartosc_brutto'])),
+                             (r['value'], r['value_gross']))
+        cement_rows = [r for r in legacy if r['group'] == 'cement' and r['id'] not in current]
         self.assertEqual(len(cement_rows), 11)
         for row in cement_rows:
             self.assertIn('wycofany', row['status'])
@@ -119,9 +163,32 @@ class CementTests(unittest.TestCase):
         rows = guide.xpath('.//table/tbody/tr')
         self.assertEqual(len(rows), 5)
         for row, kind in zip(rows, TABLE_2):
-            gross = self.cements[spc_id(kind)]['value']
-            contribution = Decimal(gross) * Decimal('0.3')
-            self.assertEqual(row.xpath('./*/text()'), [f'CEM {kind}', str(gross), f'{contribution:.1f}'.replace('.', ',')])
+            gross, _, net = TABLE_2[kind]
+            expected = [f'CEM {kind}']
+            for value in (net, gross):
+                expected.extend([str(value), f"{Decimal(value) * Decimal('0.3'):.1f}".replace('.', ',')])
+            self.assertEqual(row.xpath('./*/text()'), expected)
+
+    def test_sector_chart_and_legacy_indicators_use_declared_values(self):
+        sector = html.parse(str(ROOT / 'sektor-cement.html'))
+        self.assertIn('deklaracja sektorowa SPC 2025, s. 4', sector.xpath('//a[contains(@href,"#page=4")]/text()'))
+        table, = sector.xpath('//table[.//th[contains(., "netto (podstawowa)")]]')
+        blog = html.parse(str(ROOT / 'blog-cement-polska.html'))
+        chart = dict(zip(blog.xpath('//*[@class="vcol-label"]/text()'), blog.xpath('//*[@class="vcol-value"]/text()')))
+        text = (ROOT / 'js/wskazniki-emisji.js').read_text().splitlines()
+        materials = (ROOT / 'js/gwp-materialow.js').read_text().splitlines()
+        fallback = html.parse(str(ROOT / 'gwp-materialow.html'))
+        for kind, (gross, _, net) in TABLE_2.items():
+            name = f'CEM {kind}'
+            row, = table.xpath('.//tr[td/strong=$name]', name=name)
+            self.assertEqual(row.xpath('td[@class="mono"]/text()'), [str(net), str(gross)])
+            self.assertEqual(int(chart[name]), net)
+            self.assertTrue(any(name + ' —' in line and f"value: '{net}'" in line and 'netto' in line for line in text))
+            if kind in ('I', 'II', 'III'):
+                self.assertTrue(any(name + ' (' in line and f'gwp: {net},' in line and 'netto' in line for line in materials))
+                row, = fallback.xpath('//noscript//tr[contains(td[1], $label)]', label=name + ' (')
+                self.assertEqual(row.xpath('string(td[2])'), str(net))
+                self.assertIn('netto', row.xpath('string(td[1])'))
 
     def test_aggregate_page_has_no_cement_guide(self):
         page = (ROOT / 'wyroby/24.html').read_text(encoding='utf-8')

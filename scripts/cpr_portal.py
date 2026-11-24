@@ -4,6 +4,7 @@ from itertools import groupby
 
 from aggregate_guide import TRUCK, aggregate_guide, display_result
 from cement_guide import cement_guide
+from concrete_portal import build_calculator as build_concrete_calculator, concrete_guide, concrete_references
 from precast_guide import precast_guide
 
 from atlas_icons import family_icon
@@ -102,7 +103,7 @@ def family_data(datasets, family_id, api):
     if shared_labels:
         parts.append(f'<p class="family-record-meta">{shared_labels}</p>')
     parts.append('<div class="family-indicators">')
-    for description, grouped in groupby(datasets, key=lambda record: record.get('description', '')):
+    for description, grouped in groupby(datasets, key=api['description_with_basis']):
         group = list(grouped)
         if description and len(group) > 1:
             parts.append(f'<p class="family-indicators-scope">{e(description)}</p>')
@@ -118,7 +119,8 @@ def family_data(datasets, family_id, api):
             parts.append(f'<article class="{card_class}" data-record-id="{e(record["id"])}">')
             parts.append(f'<h3>{a(record["title"], record["href"])}</h3>')
             if isinstance(value, (int, float)):
-                parts.append(f'<p class="family-indicator-value"><strong>{e(num(value))}</strong> <span>{e(record.get("unit"))}</span></p>')
+                displayed = api['record_value'](record) if record['category_id'] == 'beton' else num(value)
+                parts.append(f'<p class="family-indicator-value"><strong>{e(displayed)}</strong> <span>{e(record.get("unit"))}</span></p>')
             if details:
                 parts.append(f'<p class="family-indicator-note">{e(details)}</p>')
             if item_labels:
@@ -251,6 +253,8 @@ def build(api):
             destinations.append({'label': 'Cement w betonie', 'href': '#modul-a1-cement'})
         elif f['id'] == 1:
             destinations.append({'label': 'Przykład obliczeń', 'href': '#przyklad-prefabrykat'})
+        elif f['id'] == 26:
+            destinations.append({'label': 'Beton według klasy wytrzymałości', 'href': '#beton-towarowy'})
         destinations += [
             {'label': 'Dokumenty branżowe' if has_methods else 'Dobór zasad obliczeń', 'href': '#metoda'},
             {'label': 'Narzędzia i opracowania' if has_tools else 'Dobór danych', 'href': '#narzedzia'},
@@ -270,6 +274,10 @@ def build(api):
             body += cement_guide(catalog, api['section_table'])
         elif f['id'] == 1:
             body += precast_guide(catalog, api['section_table'])
+        elif f['id'] == 26:
+            evidence, references = concrete_references(root, catalog)
+            body += concrete_guide(evidence, references, api['section_table'], api['num'])
+            build_concrete_calculator(root, catalog, references, page)
         if f['id'] in (15, 24):
             extra += ('<link rel="stylesheet" href="/assets/aggregate-guide.css?v=7">'
                       '<script src="/assets/aggregate-guide.js?v=2" defer></script>')

@@ -195,6 +195,9 @@ class PrecastTests(unittest.TestCase):
         self.assertEqual(page.xpath('//a[@href=$target]/text()', target='#' + name), ['Przykład obliczeń'])
         section, = page.xpath('//section[h2[@id=$name]]', name=name)
         recipe, declared = section.xpath('.//table')
+        comparison, = section.xpath('.//p[a[text()="646/2024"] and a[text()="491/2023"]]')
+        self.assertIn('166 i 201 kg CO₂e/t', comparison.text_content())
+        self.assertIn('deklaracje nie określają wariantu cementu', comparison.text_content().lower())
         rows = recipe.xpath('tbody/tr')
         codes = ['POLCA-CEMENT-CEM-I-SPC-PL-2025', 'POLCA-AGG-PL-NATURAL-DEFAULT-2026',
                  'POLCA-FILLER-LIMESTONE-DEFAULT-2026', STEEL]

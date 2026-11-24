@@ -1,0 +1,24 @@
+.concrete-calculator { margin-bottom: 3rem; font-variant-numeric: tabular-nums; }
+.concrete-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+.concrete-calculator fieldset { margin: 0 0 24px; padding: 0; border: 0; min-width: 0; }
+.concrete-calculator legend, .concrete-calculator h2 { margin: 0 0 12px; padding: 0; font-size: 1.4rem; font-weight: 600; line-height: 1.2; }
+.concrete-calculator label { display: grid; gap: 4px; }
+.concrete-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 16px; }
+.concrete-calculator input, .concrete-calculator select { width: 100%; min-height: 44px; border: 1px solid #8292a5; border-radius: 3px; padding: 8px 12px; color: var(--portal-ink); background: white; }
+.concrete-calculator [aria-invalid="true"] { border: 2px solid #963c36; }
+.concrete-calculator .cement-basis label { display: flex; align-items: center; gap: 8px; min-height: 44px; }
+.concrete-calculator input[type="radio"] { width: 1.15rem; height: 1.15rem; min-height: 0; padding: 0; flex-shrink: 0; }
+.concrete-calculator fieldset p { margin: 8px 0 0; color: var(--portal-muted); font-size: .94rem; }
+.concrete-calculator #concrete-error { color: #963c36; }
+.concrete-summary { background: var(--portal-soft); padding: clamp(18px, 3vw, 32px); }
+.concrete-summary h3 { font-size: 1.15rem; margin: 24px 0 6px; }
+.concrete-summary p { margin: 6px 0 10px; }
+.concrete-total strong { font-size: clamp(2.4rem, 5vw, 3.75rem); line-height: 1.1; font-weight: 600; }
+.concrete-stages { margin: 24px 0 0; }
+.concrete-stages div { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 12px; border-bottom: 1px solid var(--portal-line); padding: 8px 0; }
+.concrete-stages dd { font-weight: 600; margin: 0; }
+.concrete-calculator > section { margin-top: 32px; }
+.concrete-calculator > section > p { max-width: 76ch; }
+.concrete-calculator .portal-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 760px) { .concrete-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+@media (max-width: 540px) { .concrete-fields { grid-template-columns: minmax(0, 1fr); } }

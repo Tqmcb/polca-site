@@ -36,14 +36,13 @@
         { name: 'Masowiec morski', value: '0,00540', unit: 'kg CO\u2082e/tkm', source: 'ÖKOBAUDAT 2026 (20.26.070), dane DE', cat: 'transport' },
 
         // Materiały budowlane
-        { name: 'Cement CEM I — \u015brednia krajowa', value: '766', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
-        { name: 'Cement CEM II — \u015brednia krajowa', value: '613', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
-        { name: 'Cement CEM III — \u015brednia krajowa', value: '483', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
-        { name: 'Cement CEM IV — \u015brednia krajowa', value: '510', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
-        { name: 'Cement CEM V — \u015brednia krajowa', value: '546', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, brutto', cat: 'materialy' },
-        { name: 'Beton C20/25',                      value: '~200',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
-        { name: 'Beton C25/30',                      value: '~250',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
-        { name: 'Beton C30/37',                      value: '~300',      unit: 'kg CO\u2082e/m\u00b3',   source: 'EPD Polska',      cat: 'materialy' },
+        { name: 'Cement CEM I — \u015brednia krajowa', value: '584', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, netto', cat: 'materialy' },
+        { name: 'Cement CEM II — \u015brednia krajowa', value: '473', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, netto', cat: 'materialy' },
+        { name: 'Cement CEM III — \u015brednia krajowa', value: '398', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, netto', cat: 'materialy' },
+        { name: 'Cement CEM IV — \u015brednia krajowa', value: '397', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, netto', cat: 'materialy' },
+        { name: 'Cement CEM V — \u015brednia krajowa', value: '430', unit: 'kg CO\u2082e/t', source: 'EPD sektorowa SPC 2025, netto', cat: 'materialy' },
+        { name: 'Beton C25/30', value: '216,5', unit: 'kg CO₂e/m³', source: 'mediana deklaracji ITB, wariant brutto', cat: 'materialy' },
+        { name: 'Beton C30/37', value: '210,9', unit: 'kg CO₂e/m³', source: 'mediana deklaracji ITB, wariant brutto', cat: 'materialy' },
         { name: 'Stal BOF (EU avg)',                  value: '~1 780',    unit: 'kg CO\u2082e/t',    source: 'ecoinvent 3.10',  cat: 'materialy' },
         { name: 'Stal zbrojeniowa (PL) — mediana 4 EPD', value: '790 (358\u2013961)', unit: 'kg CO\u2082e/t', source: 'EPD hut w Polsce, mediana poLCA', cat: 'materialy' },
         { name: 'Aluminium (pierwotne)',              value: '~8 000',    unit: 'kg CO\u2082e/t',    source: 'EAA',             cat: 'materialy' },
@@ -93,7 +92,7 @@
                 f.source.toLowerCase().indexOf(search) === -1 &&
                 f.unit.toLowerCase().indexOf(search) === -1) continue;
 
-            var sourceLabel = (f.name.indexOf('Miks elektryczny PL') === 0 || /^(KOBiZE|ÖKOBAUDAT|EPD|poLCA Energia)/.test(f.source)) ? f.source : 'Zestaw historyczny; przypisanie: ' + f.source; // sprawdzone źródła bez etykiety historycznej
+            var sourceLabel = (f.name.indexOf('Miks elektryczny PL') === 0 || /^(KOBiZE|ÖKOBAUDAT|EPD|poLCA Energia|mediana deklaracji ITB)/.test(f.source)) ? f.source : 'Zestaw historyczny; przypisanie: ' + f.source; // sprawdzone źródła bez etykiety historycznej
             var isHighlight = f.cat === 'energia' && f.name.indexOf('Miks elektryczny PL') === 0 && f.name.indexOf('LCA') === -1;
 
             html += '<tr role="row">' +
