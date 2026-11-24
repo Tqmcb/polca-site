@@ -295,6 +295,52 @@ class ConcreteTests(unittest.TestCase):
                 self.assertIn(source, line)
                 self.assertIn(f'gwp: {value},' if tool == 'gwp-materialow' else f"value: '{listed}'", line)
 
+    def test_supplier_changes_only_cement_and_preserves_the_declared_basis(self):
+        script = """
+            const assert = require('node:assert/strict');
+            const {calculate, compareSupplier, exportData, toCsv} = require('./js/kalkulator-betonu.js');
+            const {inputs, config} = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+            const expected = [ [519, 695], [547, 718], [497, 663], [532, 688], [260, 335], [307, 395] ];
+            let index = 0;
+            for (const epd of config.supplier_epds) {
+                for (const plant of epd.plants) {
+                    assert.deepEqual([plant.netto, plant.brutto], expected[index++]);
+                    for (const basis of ['netto', 'brutto']) {
+                        const recipe = {...inputs, cement: epd.sector_id, cement_basis: basis, cement_kg: 300};
+                        const result = calculate(recipe, config);
+                        const source = {sector_id: epd.sector_id, product: epd.product, declaration: epd.declaration,
+                            url: epd.source, basis, factor: plant[basis], plant: plant.plant};
+                        const cmp = compareSupplier(result, source);
+                        const sector = basis === 'netto' ? config.factors[epd.sector_id].value
+                            : config.factors[epd.sector_id].gwp_gross_kg_co2e;
+                        assert.ok(Math.abs(cmp.supplier_total - result.total - (plant[basis] - sector) * .3) < 1e-9);
+                        assert.ok(Math.abs(cmp.difference - (plant[basis] - sector) * .3) < 1e-9);
+                        const data = exportData(recipe, config, result, cmp);
+                        assert.equal(data.supplier_comparison.source.url, epd.source);
+                        assert.ok(toCsv(data).includes(epd.declaration));
+                        assert.throws(() => compareSupplier(result, {...source, basis: 'other'}), RangeError);
+                        assert.throws(() => compareSupplier(result, {...source, sector_id: 'other'}), RangeError);
+                        assert.throws(() => compareSupplier(result, {...source, factor: NaN}), RangeError);
+                        const zero = calculate({...recipe, cement_kg: 0}, config);
+                        assert.equal(Math.abs(compareSupplier(zero, source).difference), 0);
+                    }
+                }
+            }
+            assert.equal(index, 6);
+            const result = calculate(inputs, config);
+            assert.equal(exportData(inputs, config, result).schema, 'polca-concrete-calculation/1.1');
+            const manual = {sector_id: inputs.cement, product: '=wpis', declaration: 'EPD, tabela 2',
+                origin: 'Dane wprowadzone przez użytkownika', basis: 'netto', factor: 497};
+            const cmp = compareSupplier(result, manual);
+            const exported = exportData(inputs, config, result, cmp);
+            assert.equal(exported.schema, 'polca-concrete-calculation/1.2');
+            assert.equal(exported.supplier_comparison.source.product, '=wpis');
+            assert.ok(toCsv(exported).includes("'=wpis"));
+            assert.throws(() => compareSupplier(result, {...manual, declaration: ''}), RangeError);
+        """
+        subprocess.run(['node', '-e', script], cwd=ROOT, check=True,
+                       input=json.dumps(dict(config=self.config, inputs=self.defaults)), text=True)
+
     def test_invalid_inputs_and_zero_result(self):
         for field in self.calculator.xpath('//form//input[@type="number"]'):
             name = field.get('name')

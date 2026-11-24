@@ -22,3 +22,11 @@
 .concrete-calculator .portal-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 @media (max-width: 760px) { .concrete-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
 @media (max-width: 540px) { .concrete-fields { grid-template-columns: minmax(0, 1fr); } }
+#cement-dostawcy { scroll-margin-top: 6rem; }
+.supplier-fields { max-width: 55rem; }
+.supplier-fields > label { max-width: 42rem; }
+.supplier-fields .concrete-fields { margin: 1rem 0; }
+.supplier-totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(13rem, 100%), 1fr)); border-block: 1px solid var(--portal-line); padding: 1rem 0; gap: 1rem 1.5rem; }
+.supplier-totals dd { margin: .3rem 0 0; font-weight: 650; font-size: 1.3rem; }
+#cement-dostawcy details { margin: 1rem 0; }
+#cement-dostawcy summary { cursor: pointer; }

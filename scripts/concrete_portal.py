@@ -152,7 +152,8 @@ def build_calculator(root, catalog, references, page):
     for code in cements.values():
         factors[code]['gwp_gross_kg_co2e'] = records[code]['gwp_gross_kg_co2e']
     config = dict(catalog_version=catalog['catalog_version'], factors=factors, processes=processes,
-                  cements=list(cements.values()), aggregates=list(aggregates.values()), references=references)
+                  cements=list(cements.values()), aggregates=list(aggregates.values()), references=references,
+                  supplier_epds=json.loads((root / 'data/supplier-cement-epds.json').read_text()))
 
     def options(choices, default):
         return ''.join(f'<option value="{escape(code)}"{" selected" if code == default else ""}>'
@@ -160,6 +161,7 @@ def build_calculator(root, catalog, references, page):
 
     body = (root / 'content/concrete-calculator.tmpl').read_text().format(
         cements=options(cements, cements['CEM II']),
+        supplier_groups=options(cements, None),
         aggregates=options(aggregates, aggregates['Naturalne (piasek i żwir)']),
         classes=options({c: c for c in references}, 'C30/37'),
         basis_rule=escape(BASIS_RULE),
@@ -168,5 +170,5 @@ def build_calculator(root, catalog, references, page):
          'Kalkulator A1–A3 uwzględnia produkcję cementu i kruszywa, ich dostawę do wytwórni '
          'oraz zużycie energii i paliw w wytwórni.',
          body, parent=('Kalkulatory', '/kalkulatory.html'),
-         head_extra='<link rel="stylesheet" href="/assets/concrete-calculator.css?v=2">'
-                    '<script src="/js/kalkulator-betonu.js?v=3" defer></script>')
+         head_extra='<link rel="stylesheet" href="/assets/concrete-calculator.css?v=3">'
+                    '<script src="/js/kalkulator-betonu.js?v=4" defer></script>')

@@ -63,14 +63,37 @@
         };
     }
 
-    function exportData(inputs, config, result) {
+    function compareSupplier(result, source) {
+        if (source.sector_id !== result.breakdown[0].record_id) {
+            invalid('supplier-group', 'Wybierz rodzaj cementu podany w deklaracji.');
+        }
+        if (source.basis !== result.basis) {
+            invalid('supplier-basis', 'W obu obliczeniach wybierz ten sam wariant wskaźnika cementu (netto lub brutto).');
+        }
+        if (!Number.isFinite(source.factor)) invalid('supplier-factor', 'Podaj wartość wskaźnika z deklaracji cementu.');
+        if (!source.product.trim()) invalid('supplier-product', 'Podaj producenta, zakład i oznaczenie cementu z deklaracji.');
+        if (!source.declaration.trim()) invalid('supplier-reference', 'Podaj numer deklaracji i stronę tabeli.');
+        const cement = result.breakdown[0];
+        const supplierTotal = result.breakdown.slice(1).reduce(
+            (sum, item) => sum + item.emission_kg_CO2eq_per_m3, cement.quantity * source.factor);
+        const difference = cement.quantity * (source.factor - cement.factor);
+        if (!Number.isFinite(supplierTotal) || !Number.isFinite(difference)) {
+            invalid('supplier-factor', 'Wartość przekracza zakres obliczeń.');
+        }
+        return {source, sector_factor: cement.factor, factor_unit: 'kg CO₂e/t',
+            sector_total: result.total, supplier_total: supplierTotal, difference, result_unit: resultUnit};
+    }
+
+    function exportData(inputs, config, result, supplier) {
         const used = result.breakdown.map(item => item.record_id);
         const round6 = value => value === null ? null : Number(value.toFixed(6));
         const breakdown = result.breakdown.map(item => ({
             ...item, emission_kg_CO2eq_per_m3: round6(item.emission_kg_CO2eq_per_m3)
         }));
         return {
-            tool: 'poLCA — Kalkulator betonu towarowego', schema: 'polca-concrete-calculation/1.1',
+            tool: 'poLCA — Kalkulator betonu towarowego', schema: supplier ? 'polca-concrete-calculation/1.2' : 'polca-concrete-calculation/1.1',
+            ...(supplier && {supplier_comparison: {...supplier, sector_total: round6(supplier.sector_total),
+                supplier_total: round6(supplier.supplier_total), difference: round6(supplier.difference)}}),
             assumptions_version: config.catalog_version, declared_unit: '1 m³ betonu towarowego',
             indicator: 'Oszacowanie całkowitego wpływu na klimat A1–A3', note: scope,
             inputs: {...inputs, cement_basis: result.basis},
@@ -110,9 +133,25 @@
             [ref.strength_class, ref.n, ref.min, ref.median, ref.max, ref.difference_from_median,
                 ref.row_min, ref.row_max, ref.record_id]);
         if (ref.basis_note) rows.push(['basis_note', ref.basis_note]);
+        const cmp = data.supplier_comparison;
+        if (cmp) {
+            const source = cmp.source;
+            rows.push([], ['Porównanie dla tej samej receptury', source.basis],
+                ['Rodzaj cementu (rekord sektorowy)', source.sector_id], ['Pochodzenie danych', source.origin],
+                ['Wyrób', source.product], ['Producent i zakład', source.plant || 'Podano w opisie wyrobu'],
+                ['Deklaracja i tabela', source.declaration], ['Adres źródła', source.url || ''],
+                ['Termin ważności deklaracji', source.valid_until || ''],
+                ['Karta średniej sektorowej', data.factors[source.sector_id].href],
+                ['Wskaźnik sektorowy [kg CO₂e/t]', cmp.sector_factor], ['Wskaźnik dostawcy [kg CO₂e/t]', source.factor],
+                ['Receptura ze średnią sektorową [kg CO₂e/m³]', cmp.sector_total],
+                ['Receptura z danymi dostawcy [kg CO₂e/m³]', cmp.supplier_total],
+                ['Różnica względem średniej sektorowej [kg CO₂e/m³]', cmp.difference]);
+        }
         function cell(value) {
             if (typeof value === 'number') return String(value).replace('.', ',');
-            return '"' + String(value ?? '').replace(/"/g, '""') + '"';
+            const text = String(value ?? '');
+            const safe = /^[\s]*[=+@-]|^[\t\r\n]/.test(text) ? "'" + text : text;
+            return '"' + safe.replace(/"/g, '""') + '"';
         }
         return rows.map(row => row.map(cell).join(';')).join('\r\n');
     }
@@ -148,7 +187,7 @@
     }
 
     if (typeof module === 'object' && module.exports) {
-        module.exports = {calculate, comparison, exportData, toCsv};
+        module.exports = {calculate, comparison, compareSupplier, exportData, toCsv};
         return;
     }
 
@@ -186,6 +225,86 @@
         }
     }
 
+    const supplierSelect = el('supplier-select');
+    const manual = el('supplier-manual');
+    const sources = new Map();
+
+    function populateSuppliers() {
+        const sector = fields.cement.value;
+        if (supplierSelect.dataset.sector === sector) return;
+        supplierSelect.dataset.sector = sector;
+        sources.clear();
+        supplierSelect.replaceChildren(new Option('Wybierz deklarację', ''));
+        for (const epd of config.supplier_epds.filter(item => item.sector_id === sector)) {
+            for (const plant of epd.plants) {
+                sources.set(plant.id, {epd, plant});
+                supplierSelect.add(new Option(epd.product + ' · ' + plant.plant + ' · ' + epd.declaration, plant.id));
+            }
+        }
+        supplierSelect.add(new Option('Własna deklaracja dla tego rodzaju cementu', 'manual'));
+        for (const control of manual.querySelectorAll('input,select')) control.value = '';
+    }
+
+    function supplierSource(result) {
+        if (supplierSelect.value === 'manual') {
+            return {origin: 'Dane wprowadzone przez użytkownika', sector_id: el('supplier-group').value,
+                product: el('supplier-product').value.trim(), declaration: el('supplier-reference').value.trim(),
+                basis: el('supplier-basis').value, factor: el('supplier-factor').valueAsNumber};
+        }
+        const {epd, plant} = sources.get(supplierSelect.value);
+        return {origin: 'Deklaracja producenta', sector_id: epd.sector_id, product: epd.product,
+            plant: epd.manufacturer + ', ' + plant.plant, basis: result.basis, factor: plant[result.basis],
+            declaration: epd.declaration + ', tabela ' + epd.table + ', s. ' + epd.page, url: epd.source,
+            valid_until: epd.valid_until};
+    }
+
+    function renderSupplier(result) {
+        populateSuppliers();
+        manual.hidden = supplierSelect.value !== 'manual';
+        const status = el('supplier-status');
+        status.textContent = '';
+        el('supplier-results').hidden = true;
+        for (const control of manual.querySelectorAll('[aria-invalid]')) {
+            control.removeAttribute('aria-invalid');
+            control.removeAttribute('aria-describedby');
+        }
+        if (!result || !supplierSelect.value) return null;
+        let cmp;
+        try {
+            cmp = compareSupplier(result, supplierSource(result));
+        } catch (error) {
+            if (!(error instanceof RangeError)) throw error;
+            status.textContent = error.message;
+            if (error.field === 'supplier-group' && el('supplier-group').value) {
+                status.textContent = 'Rodzaj cementu w deklaracji (' + el('supplier-group').selectedOptions[0].text
+                    + ') różni się od rodzaju w recepturze (' + fields.cement.selectedOptions[0].text + ').';
+            }
+            el(error.field).setAttribute('aria-invalid', 'true');
+            el(error.field).setAttribute('aria-describedby', 'supplier-status');
+            return null;
+        }
+        const src = cmp.source;
+        el('supplier-sector-total').textContent = fmt(cmp.sector_total) + ' ' + resultUnit;
+        el('supplier-total').textContent = fmt(cmp.supplier_total) + ' ' + resultUnit;
+        const roundedDifference = Math.abs(cmp.difference) < 0.005 ? 0 : cmp.difference;
+        el('supplier-delta').textContent = (roundedDifference > 0 ? '+' : '') + fmt(roundedDifference) + ' ' + resultUnit;
+        const provenance = el('supplier-provenance');
+        provenance.textContent = 'Wariant ' + src.basis + '. Średnia sektorowa ' + number(cmp.sector_factor)
+            + ' kg CO₂e/t, cement dostawcy ' + number(src.factor) + ' kg CO₂e/t. '
+            + (src.plant ? src.plant + ', ' : '') + src.product + '. ';
+        if (src.url) {
+            const link = document.createElement('a');
+            link.href = src.url;
+            link.textContent = src.declaration;
+            const date = src.valid_until.split('-').reverse().join('.');
+            provenance.append(link, '. Deklaracja ważna do ' + date + ' r.');
+        } else {
+            provenance.append('Dane wprowadzone przez użytkownika. ' + src.declaration);
+        }
+        el('supplier-results').hidden = false;
+        return cmp;
+    }
+
     function render() {
         for (const control of form.querySelectorAll('[aria-invalid]')) {
             control.removeAttribute('aria-invalid');
@@ -205,7 +324,8 @@
             }
             el('concrete-error').textContent = error.message;
         }
-        for (const button of Object.values(buttons)) button.disabled = !result;
+        const supplier = renderSupplier(result);
+        for (const button of Object.values(buttons)) button.disabled = !result || (!!supplierSelect.value && !supplier);
         el('concrete-total').textContent = result ? fmt(result.total) : '—';
         el('concrete-basis').textContent = result ? result.basis : '';
         el('cement-share').textContent = result && result.cementShare !== null ? fmt(result.cementShare, 1) + '%' : '—';
@@ -219,13 +339,13 @@
         }
         el('concrete-error').textContent = '';
         renderBreakdown(result, inputs);
-        return {inputs, result};
+        return {inputs, result, supplier};
     }
 
     function download(format) {
         const current = render();
-        if (!current) return;
-        const data = exportData(current.inputs, config, current.result);
+        if (!current || (supplierSelect.value && !current.supplier)) return;
+        const data = exportData(current.inputs, config, current.result, current.supplier);
         const csv = format === 'csv';
         const blob = new Blob([csv ? '\uFEFF' + toCsv(data) : JSON.stringify(data, null, 2)],
             {type: csv ? 'text/csv;charset=utf-8' : 'application/json;charset=utf-8'});
@@ -238,6 +358,9 @@
         setTimeout(() => URL.revokeObjectURL(link.href), 1000);
     }
 
+    supplierSelect.addEventListener('change', render);
+    manual.addEventListener('input', render);
+    manual.addEventListener('change', render);
     form.addEventListener('input', render);
     form.addEventListener('change', render);
     form.addEventListener('submit', event => { event.preventDefault(); render(); });

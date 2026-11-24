@@ -1,0 +1,74 @@
+[
+  {
+    "sector_id": "POLCA-CEMENT-CEM-I-SPC-PL-2025",
+    "product": "CEM I 42,5 R",
+    "manufacturer": "Górażdże Cement S.A.",
+    "declaration": "ITB 695/2024",
+    "valid_until": "2029-11-15",
+    "table": "3",
+    "page": 7,
+    "source": "https://www.itb.pl/wp-content/uploads/2025/10/ITB-EPD_695_Gorazdze-Cement-S.A.-Cement-CEM-I-425R-Ekocem-i-Chorula.pdf#page=7",
+    "plants": [
+      {
+        "id": "695-chorula",
+        "plant": "Chorula",
+        "netto": 519,
+        "brutto": 695
+      },
+      {
+        "id": "695-ekocem",
+        "plant": "Ekocem (Dąbrowa Górnicza)",
+        "netto": 547,
+        "brutto": 718
+      }
+    ]
+  },
+  {
+    "sector_id": "POLCA-CEMENT-CEM-II-SPC-PL-2025",
+    "product": "CEM II/A-LL 52,5 R",
+    "manufacturer": "Górażdże Cement S.A.",
+    "declaration": "ITB 698/2024",
+    "valid_until": "2029-11-15",
+    "table": "3",
+    "page": 7,
+    "source": "https://www.itb.pl/wp-content/uploads/2025/10/ITB-EPD_698_Gorazdze-Cement-S.A.-Cement-CEM-II-A-LL-525R-Ekocem-i-Chorula.pdf#page=7",
+    "plants": [
+      {
+        "id": "698-chorula",
+        "plant": "Chorula",
+        "netto": 497,
+        "brutto": 663
+      },
+      {
+        "id": "698-ekocem",
+        "plant": "Ekocem (Dąbrowa Górnicza)",
+        "netto": 532,
+        "brutto": 688
+      }
+    ]
+  },
+  {
+    "sector_id": "POLCA-CEMENT-CEM-III-SPC-PL-2025",
+    "product": "CEM III/A 42,5 N-LH/HSR/NA",
+    "manufacturer": "Górażdże Cement S.A.",
+    "declaration": "ITB 702/2024",
+    "valid_until": "2029-11-15",
+    "table": "3",
+    "page": 7,
+    "source": "https://www.itb.pl/wp-content/uploads/2025/10/ITB-EPD_702_Gorazdze-Cement-S.A.-Cement-CEM-III-A-425N-LH-HSR-NA-Ekocem-i-Chorula.pdf#page=7",
+    "plants": [
+      {
+        "id": "702-chorula",
+        "plant": "Chorula",
+        "netto": 260,
+        "brutto": 335
+      },
+      {
+        "id": "702-ekocem",
+        "plant": "Ekocem (Dąbrowa Górnicza)",
+        "netto": 307,
+        "brutto": 395
+      }
+    ]
+  }
+]
