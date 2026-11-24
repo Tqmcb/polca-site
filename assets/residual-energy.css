@@ -15,6 +15,13 @@
 .residual-table small { display: block; margin-top: .2rem; color: var(--portal-muted); font-weight: 400; }
 .residual-table td, .residual-table th:not(:first-child) { text-align: right; }
 .residual-table td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.residual-table caption { padding: .6rem 0; text-align: left; font-weight: 650; }
+.residual-data details { border-bottom: 1px solid var(--portal-line); }
+.residual-data summary { cursor: pointer; padding: .8rem 0; font-weight: 650; }
+.residual-scroll { max-width: 100%; overflow-x: auto; }
+.residual-scroll:focus-visible, .residual-data summary:focus-visible { outline: 2px solid currentColor; outline-offset: -2px; }
+.residual-comparison { min-width: 33rem; }
+.residual-comparison tbody th { width: 44%; }
 @media (max-width: 600px) {
   .residual-totals { gap: .45rem; }
   .residual-totals > div { padding: .65rem; }
