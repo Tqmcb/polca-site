@@ -1,0 +1,75 @@
+﻿kod;wskaznik;jednostka;na;napiecie;bazowy_v6;wariant_krajowy_bez_podzialu_wegla;wariant_krajowy_i_pula_europejska_bez_podzialu_wegla;roznica_pelny_minus_bazowy;zmiana_pelny_wzgledem_bazowego_proc
+GWP-total;Potencjał globalnego ocieplenia — łącznie;kg ekw. CO₂;1 kWh;średnie;0.7966910117799431;0.7528529631397269;0.7526746731118883;-0.0440163386680548;-5.524895
+GWP-fossil;Potencjał globalnego ocieplenia — pochodzenie kopalne;kg ekw. CO₂;1 kWh;średnie;0.7956039915858217;0.7516509140954806;0.7514697033801561;-0.0441342882056656;-5.547268
+GWP-biogenic;Potencjał globalnego ocieplenia — pochodzenie biogeniczne;kg ekw. CO₂;1 kWh;średnie;0.0010595531730363454;0.0011678956644599154;0.0011706156811612173;0.0001110625081248719;10.482014
+GWP-luluc;Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany;kg ekw. CO₂;1 kWh;średnie;0.000027467021084905103;0.000034153379786895004;0.000034354050570923795;0.000006887029486018692;25.073813
+ODP;Potencjał zubożenia warstwy ozonowej;kg ekw. CFC-11;1 kWh;średnie;4.777817517011051E-9;4.344742573920486E-9;4.337563768140198E-9;-4.40253748870853E-10;-9.214537
+AP;Potencjał zakwaszenia;mol ekw. H⁺;1 kWh;średnie;0.001348347520437615;0.001097147325271013;0.0010978825442175973;-0.0002504649762200177;-18.575699
+EP-fw;Potencjał eutrofizacji wód słodkich;kg ekw. P;1 kWh;średnie;0.00007129580364243657;0.00003383829808523867;0.00003276876554128456;-0.00003852703810115201;-54.038297
+EP-mar;Potencjał eutrofizacji morskiej;kg ekw. N;1 kWh;średnie;0.00029170265917575296;0.0002662529435079486;0.0002666335633955499;-0.00002506909578020306;-8.594058
+EP-ter;Potencjał eutrofizacji lądowej;mol ekw. N;1 kWh;średnie;0.0032284171491993013;0.0029631684620225873;0.002968694147364056;-0.0002597230018352453;-8.044902
+POCP;Potencjał powstawania ozonu przygruntowego;kg ekw. niemetanowych lotnych związków organicznych;1 kWh;średnie;0.0009573581008267937;0.0008393348863632577;0.0008395732648001275;-0.0001177848360266662;-12.303112
+ADP-mm;Potencjał wyczerpywania zasobów abiotycznych — minerały i metale;kg ekw. Sb;1 kWh;średnie;4.0103442111259406E-7;4.08181549342886E-7;4.0846154801437955E-7;7.42712690178549E-9;1.851992
+ADP-fossil;Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne;MJ (wartość opałowa);1 kWh;średnie;8.642884680313694;8.704241090077426;8.705299519705864;0.062414839392170;0.722153
+WDP;Potencjał pozbawienia wody;m³ ekw. wody pozbawionej dostępności (średnia światowa);1 kWh;średnie;0.10629827089712544;0.1025731255211984;0.10256031246242854;-0.00373795843469690;-3.516481
+PM;Potencjalna zachorowalność związana z pyłem;przypadki zachorowań;1 kWh;średnie;6.0520946450965955E-9;6.966746567460128E-9;6.989740993250228E-9;9.376463481536325E-10;15.492923
+IRP;Potencjalny wpływ promieniowania jonizującego na zdrowie;kBq ekw. U-235;1 kWh;średnie;0.006492322593057317;0.007344376431316802;0.007376326310718181;0.000884003717660864;13.616140
+ETP-fw;Potencjał ekotoksyczności wód słodkich;CTUe (jednostki ekotoksyczności);1 kWh;średnie;2.384671384703921;2.0272820925069968;2.020109633044883;-0.364561751659038;-15.287714
+HTP-c;Potencjał toksyczności dla ludzi — skutki rakotwórcze;CTUh (jednostki toksyczności dla ludzi);1 kWh;średnie;3.313604485728736E-10;2.1829947744240676E-10;2.1541720935056905E-10;-1.1594323922230455E-10;-34.990066
+HTP-nc;Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze;CTUh (jednostki toksyczności dla ludzi);1 kWh;średnie;9.094267532364179E-9;1.076873445620364E-8;1.0745953035222294E-8;1.651685502858115E-9;18.161831
+SQP;Potencjalny wpływ użytkowania gruntów na jakość gleby;punkty;1 kWh;średnie;2.5993879650021103;2.942573556009572;2.9486066900513004;0.3492187250491901;13.434652
+PERE;Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;MJ (wartość opałowa);1 kWh;średnie;1.1223465083672781;1.1584950666584064;1.1593524791075092;0.0370059707402311;3.297197
+PERM;Odnawialne zasoby energii pierwotnej użyte jako surowce;MJ (wartość opałowa);1 kWh;średnie;0.0;0.0;0.0;0.0;
+PERT;Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej;MJ (wartość opałowa);1 kWh;średnie;1.1223465083672781;1.1584950666584064;1.1593524791075094;0.0370059707402313;3.297197
+PENRE;Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;MJ (wartość opałowa);1 kWh;średnie;8.68267655259845;8.744073817189;8.745133387056821;0.062456834458371;0.719327
+PENRM;Nieodnawialne zasoby energii pierwotnej użyte jako surowce;MJ (wartość opałowa);1 kWh;średnie;0.0;0.0;0.0;0.0;
+PENRT;Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej;MJ (wartość opałowa);1 kWh;średnie;8.682676552598451;8.744073817189;8.745133387056821;0.062456834458370;0.719327
+SM;Wykorzystanie materiałów wtórnych;kg;1 kWh;średnie;0.001744488566419394;0.0019412662257189464;0.0019488153070874737;0.0002043267406680797;11.712702
+RSF;Wykorzystanie odnawialnych paliw wtórnych;MJ (wartość opałowa);1 kWh;średnie;0.0026910573305914593;0.0031167605605926713;0.0031310939849143846;0.0004400366543229253;16.351813
+NRSF;Wykorzystanie nieodnawialnych paliw wtórnych;MJ (wartość opałowa);1 kWh;średnie;0.0;0.0;0.0;0.0;
+FW;Zużycie netto zasobów wody słodkiej;m³;1 kWh;średnie;0.0024796774817902557;0.002393407879842983;0.0023931233412026777;-0.0000865541405875780;-3.490540
+HWD;Odpady niebezpieczne poddane unieszkodliwianiu;kg;1 kWh;średnie;0.05933604473502232;0.08900124117140967;0.08946627794794697;0.03013023321292465;50.778971
+NHWD;Odpady inne niż niebezpieczne poddane unieszkodliwianiu;kg;1 kWh;średnie;2.319262861343271;0.9535852544200462;0.9143373076834413;-1.4049255536598297;-60.576383
+RWD;Odpady promieniotwórcze poddane unieszkodliwianiu;kg;1 kWh;średnie;0.00020513859397442309;0.00023290064029639454;0.00023394516635004428;0.00002880657237562119;14.042493
+CRU;Komponenty przeznaczone do ponownego użycia;kg;1 kWh;średnie;0.0;0.0;0.0;0.0;
+MFR;Materiały przeznaczone do recyklingu;kg;1 kWh;średnie;0.00000676995506966734;0.000007083757222528834;0.000007090226105519926;3.20271035852586E-7;4.730770
+MER;Materiały przeznaczone do odzysku energii;kg;1 kWh;średnie;0.0;0.0;0.0;0.0;
+EEE;Eksportowana energia elektryczna;MJ;1 kWh;średnie;0.0007553150990863499;0.0007718434083895547;0.0007733538019837179;0.0000180387028973680;2.388235
+EET;Eksportowana energia cieplna;MJ;1 kWh;średnie;0.003627624608262982;0.0034913873053493555;0.0034992955604792714;-0.0001283290477837106;-3.537550
+GWP-total;Potencjał globalnego ocieplenia — łącznie;kg ekw. CO₂;1 kWh;niskie;0.8344047068544689;0.7886283119387896;0.7884421386264031;-0.0459625682280658;-5.508426
+GWP-fossil;Potencjał globalnego ocieplenia — pochodzenie kopalne;kg ekw. CO₂;1 kWh;niskie;0.8332622377895521;0.7873657278999318;0.7871765047587347;-0.0460857330308174;-5.530760
+GWP-biogenic;Potencjał globalnego ocieplenia — pochodzenie biogeniczne;kg ekw. CO₂;1 kWh;niskie;0.00111297473688141;0.0012261077076086767;0.00122894799276183;0.00011597325588042;10.420116
+GWP-luluc;Potencjał globalnego ocieplenia — użytkowanie gruntów i jego zmiany;kg ekw. CO₂;1 kWh;niskie;0.00002949432803519503;0.00003647633124893748;0.000036685874906620085;0.000007191546871425055;24.382813
+ODP;Potencjał zubożenia warstwy ozonowej;kg ekw. CFC-11;1 kWh;niskie;5.097229024253343E-9;4.645005208688418E-9;4.637508984321349E-9;-4.59720039931994E-10;-9.019019
+AP;Potencjał zakwaszenia;mol ekw. H⁺;1 kWh;niskie;0.001479255711409723;0.0012169484305538574;0.0012177161579936542;-0.0002615395534160688;-17.680483
+EP-fw;Potencjał eutrofizacji wód słodkich;kg ekw. P;1 kWh;niskie;0.0000828748352255603;0.000043761105939499445;0.00004264428286854043;-0.00004023055235701987;-48.543749
+EP-mar;Potencjał eutrofizacji morskiej;kg ekw. N;1 kWh;niskie;0.0003091029921120407;0.00028252799000685024;0.0002829254394104628;-0.0000261775527015779;-8.468877
+EP-ter;Potencjał eutrofizacji lądowej;mol ekw. N;1 kWh;niskie;0.003435018754216606;0.003158041812229091;0.0031638118216664782;-0.0002712069325501278;-7.895355
+POCP;Potencjał powstawania ozonu przygruntowego;kg ekw. niemetanowych lotnych związków organicznych;1 kWh;niskie;0.0010175435241193476;0.0008943017868139027;0.0008945507054086847;-0.0001229928187106629;-12.087229
+ADP-mm;Potencjał wyczerpywania zasobów abiotycznych — minerały i metale;kg ekw. Sb;1 kWh;niskie;0.0000011964248892616399;0.0000012038880354219073;0.0000012041804145345667;7.7555252729268E-9;0.648225
+ADP-fossil;Potencjał wyczerpywania zasobów abiotycznych — paliwa kopalne;MJ (wartość opałowa);1 kWh;niskie;9.048796741364693;9.112866090504848;9.113971319732984;0.065174578368291;0.720257
+WDP;Potencjał pozbawienia wody;m³ ekw. wody pozbawionej dostępności (średnia światowa);1 kWh;niskie;0.11160780592684652;0.10771794925812793;0.10770456965624048;-0.00390323627060604;-3.497279
+PM;Potencjalna zachorowalność związana z pyłem;przypadki zachorowań;1 kWh;niskie;6.5085877531120874E-9;7.463681989904583E-9;7.487693138860264E-9;9.791053857481766E-10;15.043285
+IRP;Potencjalny wpływ promieniowania jonizującego na zdrowie;kBq ekw. U-235;1 kWh;niskie;0.006905103894762616;0.007794832206113728;0.007828194783654279;0.000923090888891663;13.368240
+ETP-fw;Potencjał ekotoksyczności wód słodkich;CTUe (jednostki ekotoksyczności);1 kWh;niskie;2.523772334345155;2.150580691794863;2.143091094355223;-0.380681239989932;-15.083819
+HTP-c;Potencjał toksyczności dla ludzi — skutki rakotwórcze;CTUh (jednostki toksyczności dla ludzi);1 kWh;niskie;3.5482084971248007E-10;2.367607666441237E-10;2.337510559814142E-10;-1.2106979373106587E-10;-34.121387
+HTP-nc;Potencjał toksyczności dla ludzi — skutki inne niż rakotwórcze;CTUh (jednostki toksyczności dla ludzi);1 kWh;niskie;1.038680702039331E-8;1.2135312292788164E-8;1.2111523566876988E-8;1.724716546483678E-9;16.604877
+SQP;Potencjalny wpływ użytkowania gruntów na jakość gleby;punkty;1 kWh;niskie;2.7358689933981823;3.0942289028973677;3.100528798422827;0.3646598050246447;13.328847
+PERE;Odnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;MJ (wartość opałowa);1 kWh;niskie;1.177477205705706;1.2152241112203177;1.2161194350792306;0.0386422293735246;3.281782
+PERM;Odnawialne zasoby energii pierwotnej użyte jako surowce;MJ (wartość opałowa);1 kWh;niskie;0.0;0.0;0.0;0.0;
+PERT;Całkowite wykorzystanie odnawialnych zasobów energii pierwotnej;MJ (wartość opałowa);1 kWh;niskie;1.177477205705706;1.2152241112203177;1.2161194350792304;0.0386422293735244;3.281782
+PENRE;Nieodnawialna energia pierwotna z wyłączeniem zasobów użytych jako surowce;MJ (wartość opałowa);1 kWh;niskie;9.090352385130137;9.154464395537035;9.15557081542146;0.065218430291323;0.717447
+PENRM;Nieodnawialne zasoby energii pierwotnej użyte jako surowce;MJ (wartość opałowa);1 kWh;niskie;0.0;0.0;0.0;0.0;
+PENRT;Całkowite wykorzystanie nieodnawialnych zasobów energii pierwotnej;MJ (wartość opałowa);1 kWh;niskie;9.090352385130137;9.154464395537035;9.15557081542146;0.065218430291323;0.717447
+SM;Wykorzystanie materiałów wtórnych;kg;1 kWh;niskie;0.0022037163884971274;0.0024091947827707258;0.002417077654857766;0.0002133612663606386;9.681884
+RSF;Wykorzystanie odnawialnych paliw wtórnych;MJ (wartość opałowa);1 kWh;niskie;0.002909275531952398;0.0033538016862379016;0.003368768878268493;0.000459493346316095;15.794081
+NRSF;Wykorzystanie nieodnawialnych paliw wtórnych;MJ (wartość opałowa);1 kWh;niskie;0.0;0.0;0.0;0.0;
+FW;Zużycie netto zasobów wody słodkiej;m³;1 kWh;niskie;0.002604777448083838;0.0025146933432832882;0.0025143962234622317;-0.0000903812246216063;-3.469825
+HWD;Odpady niebezpieczne poddane unieszkodliwianiu;kg;1 kWh;niskie;0.1047044445025038;0.1356813193736524;0.13616691824936406;0.03146247374686026;30.048843
+NHWD;Odpady inne niż niebezpieczne poddane unieszkodliwianiu;kg;1 kWh;niskie;2.4305802329374875;1.004517727849885;0.9635343911099316;-1.4670458418275559;-60.357845
+RWD;Odpady promieniotwórcze poddane unieszkodliwianiu;kg;1 kWh;niskie;0.0002177604567347047;0.0002467500316706687;0.00024784074256256996;0.00003008028582786526;13.813475
+CRU;Komponenty przeznaczone do ponownego użycia;kg;1 kWh;niskie;0.0;0.0;0.0;0.0;
+MFR;Materiały przeznaczone do recyklingu;kg;1 kWh;niskie;0.000007201070591131553;0.000007528747842294618;0.0000075355027538759644;3.344321627444114E-7;4.644201
+MER;Materiały przeznaczone do odzysku energii;kg;1 kWh;niskie;0.0;0.0;0.0;0.0;
+EEE;Eksportowana energia elektryczna;MJ;1 kWh;niskie;0.0011433641848485247;0.001160623311051007;0.0011622004883157149;0.0000188363034671902;1.647446
+EET;Eksportowana energia cieplna;MJ;1 kWh;niskie;0.005558672467674544;0.00541641128648912;0.005424669213590118;-0.000134003254084426;-2.410706

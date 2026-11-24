@@ -1,12 +1,12 @@
 <div class="residual-data">
   <section aria-labelledby="wyniki">
-    <h2 id="wyniki">Wpływ 1 kWh dostarczonej energii na klimat</h2>
+    <h2 id="wyniki">Wpływ 1 kWh dostarczonej energii na klimat w modelu bazowym</h2>
     <dl class="residual-totals">
       <div><dt>Średnie napięcie</dt><dd><strong>$medium</strong> kg ekw. CO₂/kWh</dd></div>
       <div><dt>Niskie napięcie</dt><dd><strong>$low</strong> kg ekw. CO₂/kWh</dd></div>
     </dl>
     <p>Wartości obejmują cały cykl życia dostarczonej energii. Odpowiadają wskaźnikowi całkowitego potencjału globalnego ocieplenia (GWP-total).</p>
-    <p><a href="#wskazniki">Wszystkie wskaźniki</a> · <a href="$csv_url" download>Pobierz wyniki obu profili (CSV)</a></p>
+    <p><a href="#porownanie-wegla">Jak podział paliw wpływa na wynik?</a> · <a href="#wskazniki">37 wskaźników modelu bazowego</a> · <a href="$csv_url" download>Pobierz dane bazowe (CSV)</a></p>
   </section>
 
   <section aria-labelledby="zastosowanie">
@@ -16,10 +16,36 @@
   </section>
 
   <section aria-labelledby="metoda">
-    <h2 id="metoda">Jak obliczyliśmy oba profile?</h2>
-    <p>Udziały źródeł odtworzyliśmy z zaokrąglonych tabel w <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/AIB_2025_Residual_Mix_Final%20Results_%2026052026.pdf">raporcie Stowarzyszenia Organów Wydających Gwarancje Pochodzenia (AIB)</a>. W opublikowanym przez AIB <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/2025_Final%20_Residual%20mix%20calculation%20results_25052026.xlsx">arkuszu za 2025 r. (wiersz PL)</a> sprawdziliśmy później strukturę polskiego miksu rezydualnego i wskaźnik bezpośrednich emisji CO₂. W obliczeniach zachowaliśmy udziały odtworzone z raportu. Wskaźnik emisji bezpośrednich wynosi <strong>726,96 g CO₂/kWh</strong>. Wartości poLCA obejmują również wydobycie i dostawy paliw, pozostałe gazy cieplarniane oraz dostarczenie energii do odbiorcy.</p>
-    <p>Źródłem danych tła jest <cite>Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026</cite>, baza inwentarza cyklu życia szwajcarskiej administracji federalnej. Zaktualizowaliśmy w modelu wybrane krajowe dane o paliwach, wydobyciu i emisjach związanych z wytwarzaniem energii z węgla kamiennego i brunatnego. Podział zbiorczych kategorii między technologie wytwarzania opiera się na danych za 2024 r. Tam, gdzie brakowało danych dla danej technologii, zastosowaliśmy procesy zastępcze. Parametry sieci i infrastruktury przejęliśmy z wcześniejszej wersji modelu. Dane o paliwach i technologiach pochodzą z różnych lat.</p>
-    <p>W podziale obciążeń między energię elektryczną a ciepło dla obu rodzajów węgla przyjęliśmy współczynnik jakości ciepła <em>q</em> = 0,35. Jest to założenie modelowe. Parametry sieci wykorzystane do rozróżnienia poziomów napięcia mają charakter historyczny.</p>
+    <h2 id="metoda">Jak obliczyliśmy wyniki dla średniego i niskiego napięcia?</h2>
+    <p>Udziały źródeł odtworzyliśmy z zaokrąglonych tabel w <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/AIB_2025_Residual_Mix_Final%20Results_%2026052026.pdf">raporcie Stowarzyszenia Organów Wydających Gwarancje Pochodzenia (AIB)</a>. W opublikowanym przez AIB <a href="https://www.aib-net.org/sites/default/files/assets/eecs/Residual%20Mix/2025_Final%20_Residual%20mix%20calculation%20results_25052026.xlsx">arkuszu za 2025 r. (wiersz PL)</a> sprawdziliśmy później strukturę polskiego miksu rezydualnego i wskaźnik bezpośrednich emisji CO₂. W obliczeniach zachowaliśmy udziały odtworzone z raportu. Wskaźnik bezpośrednich emisji CO₂ przy wytwarzaniu energii wynosi <strong>726,96 g CO₂/kWh</strong> (około 0,727 kg CO₂/kWh). Wartości poLCA obejmują również wydobycie i dostawy paliw, pozostałe gazy cieplarniane oraz dostarczenie energii do odbiorcy.</p>
+    <p>Źródłem danych tła jest <cite>Life Cycle Inventory database of the Swiss Federal Administration, BAFU:2026</cite>, baza inwentarza cyklu życia szwajcarskiej administracji federalnej. Zaktualizowaliśmy w modelu wybrane krajowe dane o paliwach, wydobyciu i emisjach związanych z wytwarzaniem energii z węgla kamiennego i brunatnego. Tam, gdzie brakowało danych dla danej technologii, zastosowaliśmy procesy zastępcze. Parametry sieci i infrastruktury przejęliśmy z wcześniejszej wersji modelu. Dane o paliwach i technologiach pochodzą z różnych lat.</p>
+    <p>W podziale obciążeń między energię elektryczną a ciepło dla obu rodzajów węgla przyjęliśmy współczynnik jakości ciepła <em>q</em> = 0,35. Jest to założenie modelowe. Dostarczenie 1 kWh wymaga w modelu wytworzenia około 1,030 kWh dla odbiorcy na średnim napięciu i 1,076 kWh dla odbiorcy na niskim napięciu. Są to historyczne parametry sieci.</p>
+  </section>
+
+  <section aria-labelledby="porownanie-wegla">
+    <h2 id="porownanie-wegla">Jak przypisanie węgla do technologii zmienia wyniki?</h2>
+    <p>W tabeli 2 raportu AIB węgiel kamienny stanowi 61,61% polskiego miksu rezydualnego, a węgiel brunatny 0,01%. Z kolei w tabeli 5, która opisuje produkcję w Polsce, przy węglu brunatnym widnieje 0,00%. Dlatego w modelu bazowym przyjęliśmy, że pod krajową kategorią „węgiel kamienny” mogą występować różne paliwa. Jest to założenie poLCA. Raport nie określa rzeczywistego podziału tej kategorii w polskim miksie rezydualnym za 2025 r.</p>
+    <p>Krajowa część kategorii „węgiel kamienny” stanowi 60,98% całego miksu. Podzieliliśmy ją według <a href="https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_peh/default/table?lang=en">danych Eurostatu o produkcji brutto w 2024 r.</a> W tym podziale 58,58% przypada na węgiel kamienny i jego produkty, 37,21% na węgiel brunatny, 2,00% na gazy przemysłowe i 2,21% na paliwa ciekłe. W rezultacie <strong>22,69% energii wytworzonej przed uwzględnieniem strat sieciowych</strong> przypisaliśmy wytwarzaniu w Polsce z węgla brunatnego (60,98% × 37,21%).</p>
+    <p>W pierwszym wariancie porównawczym całą krajową część kategorii „węgiel kamienny” przypisaliśmy elektrowni na węgiel kamienny. W drugim zastosowaliśmy tę zasadę również do europejskiej puli atrybutów pochodzenia energii (ang. <em>European Attribute Mix</em>, EAM). AIB tworzy tę pulę z nadwyżek atrybutów w poszczególnych krajach i wykorzystuje ją do uzupełnienia krajowych miksów rezydualnych, gdy atrybutów brakuje. Jej udział w polskim miksie wynosi w modelu około 1,96%, z czego na kategorię „węgiel kamienny” przypada około 0,625% całego miksu. W obu wariantach zachowaliśmy udziały atrybutów i te same parametry sieci. Przeliczyliśmy zużycie paliw i emisje dla zmienionej struktury wytwarzania.</p>
+    <table class="residual-table">
+      <caption>Całkowity potencjał globalnego ocieplenia dla 1 kWh dostarczonej energii, kg ekw. CO₂/kWh</caption>
+      <thead><tr><th scope="col">Wariant obliczeń</th><th scope="col">Średnie napięcie</th><th scope="col">Niskie napięcie</th></tr></thead>
+      <tbody>$climate_rows</tbody>
+    </table>
+    <p>Po zmianie dla źródeł krajowych i puli europejskiej wpływ na klimat jest niższy od wyniku bazowego o $change_medium% na średnim i o $change_low% na niskim napięciu. Ilość odpadów niebezpiecznych poddanych unieszkodliwianiu wzrasta odpowiednio o $hazardous_medium% i $hazardous_low%. Ilość odpadów innych niż niebezpieczne poddanych unieszkodliwianiu maleje o $nonhazardous_medium% i $nonhazardous_low%.</p>
+    <details><summary>Porównanie 37 wskaźników dla średniego napięcia</summary>
+      <div class="residual-scroll" role="region" aria-label="Wyniki na średnim napięciu" tabindex="0"><table class="residual-table residual-comparison">
+        <caption>Średnie napięcie, wyniki na 1 kWh dostarczonej energii</caption>
+        <thead><tr><th scope="col">Wskaźnik i jednostka</th><th scope="col">Model bazowy v6</th><th scope="col">Zmiana krajowa</th><th scope="col">Zmiana krajowa i w puli europejskiej</th></tr></thead>
+        <tbody>$medium_rows</tbody></table></div>
+    </details>
+    <details><summary>Porównanie 37 wskaźników dla niskiego napięcia</summary>
+      <div class="residual-scroll" role="region" aria-label="Wyniki na niskim napięciu" tabindex="0"><table class="residual-table residual-comparison">
+        <caption>Niskie napięcie, wyniki na 1 kWh dostarczonej energii</caption>
+        <thead><tr><th scope="col">Wskaźnik i jednostka</th><th scope="col">Model bazowy v6</th><th scope="col">Zmiana krajowa</th><th scope="col">Zmiana krajowa i w puli europejskiej</th></tr></thead>
+        <tbody>$low_rows</tbody></table></div>
+    </details>
+    <p><a href="$comparison_url" download>Pobierz porównanie trzech wariantów dla 37 wskaźników (CSV)</a>. Arkusz zawiera również różnicę między pełnym wariantem porównawczym a bazowym. Zmianę procentową odnosimy do modelu bazowego. Jeżeli wynik bazowy wynosi zero, pole procentowe pozostaje puste.</p>
   </section>
 
   <section class="residual-status" aria-labelledby="status">
@@ -34,8 +60,8 @@
   </section>
 
   <section aria-labelledby="wskazniki">
-    <h2 id="wskazniki">Wyniki 37 wskaźników dla obu poziomów napięcia</h2>
-    <p>Każdy wynik dotyczy 1 kWh dostarczonej energii. W tabeli zaokrągliliśmy liczby do pięciu cyfr znaczących. <a href="$csv_url" download>Arkusz wyników w formacie CSV</a> zawiera wartości z pełną precyzją obliczeń.</p>
+    <h2 id="wskazniki">Wyniki 37 wskaźników modelu bazowego dla obu poziomów napięcia</h2>
+    <p>Każdy wynik dotyczy 1 kWh dostarczonej energii. W tabeli zaokrągliliśmy liczby do najwyżej pięciu cyfr znaczących. <a href="$csv_url" download>Arkusz wyników w formacie CSV</a> zawiera wartości z pełną precyzją obliczeń.</p>
     <table class="residual-table">
       <thead><tr><th scope="col">Wskaźnik i jednostka</th><th scope="col">Średnie napięcie</th><th scope="col">Niskie napięcie</th></tr></thead>
       <tbody>$rows</tbody>
@@ -44,6 +70,6 @@
 
   <section aria-labelledby="warunki">
     <h2 id="warunki">Warunki wykorzystania danych</h2>
-    <p>Karta i plik do pobrania zawierają zagregowane wyniki własnych obliczeń poLCA. <a href="https://www.bafu.admin.ch/dam/en/sd-web/-9ZObeMCZy8A/BAFU-20XY%20Terms%20of%20Use_EN%201.pdf">Warunki korzystania z danych źródłowych</a> określa szwajcarski Federalny Urząd Środowiska. Przy cytowaniu wyniku prosimy wskazać poLCA, wersję v6, rok atrybutów i poziom napięcia.</p>
+    <p>Karta i oba pliki do pobrania zawierają zagregowane wyniki własnych obliczeń poLCA. <a href="https://www.bafu.admin.ch/dam/en/sd-web/-9ZObeMCZy8A/BAFU-20XY%20Terms%20of%20Use_EN%201.pdf">Warunki korzystania z danych źródłowych</a> określa szwajcarski Federalny Urząd Środowiska. Przy cytowaniu wyniku prosimy wskazać poLCA, wersję v6, wariant obliczeń, rok atrybutów i poziom napięcia.</p>
   </section>
 </div>
