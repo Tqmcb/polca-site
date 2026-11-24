@@ -16,7 +16,7 @@ oraz <a href="/wyroby/26.html#beton-towarowy">wyniki deklaracji dla dziewięciu 
 <fieldset class="cement-basis"><legend>Który wariant wskaźnika cementu przyjąć?</legend>
 <label><input type="radio" name="cement_basis" value="netto" checked>netto — wartość deklarowana w deklaracji SPC</label>
 <label><input type="radio" name="cement_basis" value="brutto">brutto — informacja dodatkowa w deklaracji SPC</label>
-<p>{basis_rule}</p></fieldset>
+<p>{basis_rule}</p><p><a href="#cement-dostawcy">Porównanie z deklaracją dostawcy cementu</a></p></fieldset>
 <fieldset><legend>Z jakiej odległości dostarcza się surowce?</legend>
 <div class="concrete-fields">
 <label>Odległość dostawy cementu [km]<input name="cement_km" type="number" min="0" step="any" value="100" required></label>
@@ -43,8 +43,33 @@ oraz <a href="/wyroby/26.html#beton-towarowy">wyniki deklaracji dla dziewięciu 
 <h3>Jak wynik wypada na tle deklaracji?</h3><p id="concrete-comparison" aria-live="polite">—</p>
 <a href="/wyroby/26.html#beton-towarowy">Wyniki według klas i deklaracje źródłowe</a>
 </section></div>
+<section id="cement-dostawcy" aria-labelledby="supplier-title">
+<h2 id="supplier-title">Jak deklaracja dostawcy cementu zmienia wynik tej samej receptury?</h2>
+<p>Porównujemy <a href="https://www.polskicement.pl/content/uploads/2026/01/EPD-Deklaracja-srodowiskowa-2025-POL.pdf#page=5">średnią sektorową dla wybranego rodzaju cementu</a> z wartością dla cementu z konkretnego zakładu. Średnia dla grupy cementów obejmuje także inne odmiany i klasy wytrzymałości. W obu obliczeniach zachowujemy tę samą recepturę i odległości dostaw.</p>
+<div class="supplier-fields">
+<label>Deklaracja środowiskowa wyrobu (EPD) i zakład produkcyjny<select id="supplier-select"><option value="">Wybierz deklarację</option></select></label>
+<div id="supplier-manual" hidden>
+<p>Z deklaracji cementu odczytaj całkowity wpływ na klimat dla etapów A1–A3 na 1 tonę cementu luzem. Sprawdź nazwę cementu, zakład, termin ważności oraz sposób rozliczenia emisji netto lub brutto.</p>
+<div class="concrete-fields">
+<label>Producent, zakład i pełne oznaczenie cementu<input id="supplier-product" maxlength="240"></label>
+<label>Numer deklaracji i strona tabeli wyników<input id="supplier-reference" maxlength="240"></label>
+<label>Rodzaj cementu według deklaracji<select id="supplier-group"><option value="">Wybierz rodzaj</option>{supplier_groups}</select></label>
+<label>Wariant wskaźnika w deklaracji<select id="supplier-basis"><option value="">Wybierz wariant</option><option value="netto">Netto</option><option value="brutto">Brutto</option></select></label>
+<label>Całkowity wpływ na klimat A1–A3 [kg CO₂e/t]<input id="supplier-factor" type="number" step="any"></label>
+</div></div></div>
+<p id="supplier-status" role="status"></p>
+<div id="supplier-results" hidden>
+<dl class="supplier-totals"><div><dt>Receptura ze średnią sektorową</dt><dd id="supplier-sector-total"></dd></div>
+<div><dt>Receptura z danymi dostawcy</dt><dd id="supplier-total"></dd></div>
+<div><dt>Różnica względem średniej sektorowej</dt><dd id="supplier-delta" aria-live="polite" aria-atomic="true"></dd></div></dl>
+<p id="supplier-provenance"></p>
+<p>Porównanie ma charakter orientacyjny. Różnica pokazuje wpływ wyboru danych o cemencie na obliczony wynik. W obu obliczeniach pominięto wodę i domieszki.</p>
+</div>
+<details><summary>Jak udokumentować wybór danych?</summary>
+<p>Do obliczenia dołącz deklarację cementu i dokument dostawy wskazujący wyrób oraz zakład produkcyjny. Zapisz numer tabeli, moduły, jednostkę i wariant wskaźnika. Porównanie szacuje wpływ wyboru danych. Zastosowanie ich w ocenie wyrobu zależy od reguł właściwych dla tej oceny.</p></details>
+</section>
 <section><h2>Jaki udział w wyniku mają poszczególne składniki i procesy?</h2>
-<p>W module A1 masę cementu i kruszywa w tonach pomnożono przez wskaźniki ich produkcji.
+<p>Tabela przedstawia recepturę ze średnią sektorową dla cementu. W module A1 masę cementu i kruszywa w tonach pomnożono przez wskaźniki ich produkcji.
 W module A2 wskaźnik transportu pomnożono przez pracę przewozową w tonokilometrach, a w module A3 wskaźniki energii i paliw przez ich zużycie.
 Wskaźniki cementu pochodzą z deklaracji sektorowej Stowarzyszenia Producentów Cementu z 2025 r.
 Dla energii elektrycznej przyjęto krajowy model poLCA za 2025 r. w wersji 5, a dla oleju napędowego wskaźnik dla maszyn pozadrogowych.</p>
